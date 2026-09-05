@@ -1,0 +1,43 @@
+name: Optimizar fotos de productos
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "assets/products/**"
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar sharp (herramienta de compresion de imagenes)
+        run: npm install --no-save sharp
+
+      - name: Optimizar fotos nuevas o modificadas
+        run: node .github/scripts/optimize-images.mjs
+
+      - name: Publicar las fotos optimizadas (si hubo cambios)
+        run: |
+          if [ -n "$(git status --porcelain assets/products)" ]; then
+            git config user.name "boomart-bot"
+            git config user.email "boomart.3d@gmail.com"
+            git add assets/products
+            git commit -m "Optimiza automaticamente fotos de productos [skip ci]"
+            git push
+          else
+            echo "Ninguna foto necesitaba optimizarse."
+          fi

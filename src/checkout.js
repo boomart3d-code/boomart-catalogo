@@ -213,6 +213,10 @@
 
   window.BoomartCart.subscribe(renderCart);
   renderCart();
+  // El carrito puede traer productos guardados de una visita anterior antes de que
+  // el catalogo (data/products.json) termine de cargar; se vuelve a pintar cuando
+  // ya esta listo para no mostrar el carrito vacio por error.
+  document.addEventListener("boomart:products-ready", () => renderCart());
 
   // ---------- Checkout: pasos ----------
 

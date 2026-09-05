@@ -1,0 +1,107 @@
+backend:
+  name: github
+  repo: boomart3d-code/boomart-catalogo
+  branch: main
+  base_url: https://boomart-cms-auth.boomart-3d.workers.dev
+
+# Las fotos que subas se guardan en assets/products/ (junto a las que ya existen)
+media_folder: "assets/products"
+public_folder: "assets/products"
+
+# El sitio no tiene "borradores": todo lo que guardas aqui se publica directo en la web.
+publish_mode: simple
+
+locale: "es"
+
+collections:
+  - name: "products"
+    label: "Catálogo de productos"
+    label_singular: "Producto"
+    files:
+      - name: "catalog"
+        label: "Todos los productos"
+        file: "data/products.json"
+        fields:
+          - name: "products"
+            label: "Productos"
+            label_singular: "Producto"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.category}}"
+            fields:
+              - label: "Identificador interno"
+                name: "id"
+                widget: "string"
+                hint: "Solo minúsculas, números y guiones, sin espacios ni tildes (ej: templo-aries). No lo cambies en un producto que ya existe."
+                pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "Usa solo minúsculas, números y guiones, sin espacios"]
+              - label: "Nombre del producto"
+                name: "name"
+                widget: "string"
+              - label: "Categoría"
+                name: "category"
+                widget: "select"
+                options:
+                  - "Esculturas"
+                  - "Decoración"
+                  - "Colecciones"
+                  - "Templos del Zodiaco"
+              - label: "Descripción"
+                name: "description"
+                widget: "text"
+              - label: "Foto principal"
+                name: "image"
+                widget: "image"
+                hint: "Sube la foto en cualquier tamaño o peso: la web la deja lista automáticamente."
+              - label: "Galería de fotos (opcional, además de la principal)"
+                name: "gallery"
+                widget: "list"
+                required: false
+                field: { label: "Foto", name: "photo", widget: "image" }
+              - label: "Altura / medida"
+                name: "height"
+                widget: "string"
+                required: false
+              - label: "Material"
+                name: "material"
+                widget: "string"
+                default: "PLA"
+                required: false
+              - label: "Disponibilidad"
+                name: "availability"
+                widget: "string"
+                default: "A pedido"
+                required: false
+              - label: "Etiquetas"
+                name: "tags"
+                widget: "list"
+                required: false
+                hint: "Ej: Saint Seiya, Oferta, Destacado"
+              - label: "¿Aparece en \"Piezas destacadas\" (inicio)?"
+                name: "featured"
+                widget: "boolean"
+                default: false
+              - label: "¿Tiene etiqueta de OFERTA?"
+                name: "offer"
+                widget: "boolean"
+                default: false
+              - label: "Precio regular (S/)"
+                name: "regularPrice"
+                widget: "number"
+                value_type: "float"
+                required: false
+                hint: "Déjalo vacío si este producto usa precios de Templo/Pandora Box/Combo más abajo."
+              - label: "Precio de oferta (S/)"
+                name: "offerPrice"
+                widget: "number"
+                value_type: "float"
+                required: false
+                hint: "Si tiene descuento, este es el precio final que se muestra tachando el regular."
+              - label: "Precios de Templo del Zodiaco (solo para esos 12 productos)"
+                name: "templePricing"
+                widget: "object"
+                required: false
+                collapsed: true
+                hint: "Completa esto SOLO en los templos del Zodiaco. Para el resto de productos, déjalo sin abrir."
+                fields:
+                  - { label: "Solo el templo (S/)", name: "temple", widget: "number", value_type: "float", required: false }
+                  - { label: "Solo Pandora Box + pedestal (S/)", name: "pandora", widget: "number", value_type: "float", required: false }
+                  - { label: "Combo completo (S/)", name: "combo", widget: "number", value_type: "float", required: false }

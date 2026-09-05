@@ -1,4 +1,4 @@
-const products = window.BOOMART_PRODUCTS;
+let products = [];
 const config = window.BOOMART_CONFIG;
 
 const productGrid = document.querySelector("#productGrid");
@@ -278,8 +278,12 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "ArrowRight") changeImage(1);
 });
 
-renderFilters();
-renderFeatured();
-renderProducts();
-renderShowcase();
 setGlobalWhatsapp();
+
+document.addEventListener("boomart:products-ready", () => {
+  products = window.BOOMART_PRODUCTS || [];
+  renderFilters();
+  renderFeatured();
+  renderProducts();
+  renderShowcase();
+});
