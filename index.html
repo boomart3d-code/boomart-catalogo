@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Catálogo interactivo de BoomArt: coleccionables, decoración e impresión 3D.">
+    <title>BoomArt | Catálogo interactivo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="BoomArt inicio">
+        <img class="brand-logo" src="assets/boomart-logo.svg" alt="BoomArt">
+        <span>
+          <strong>BOOM ART</strong>
+          <small>Catálogo 3D</small>
+        </span>
+      </a>
+      <nav aria-label="Secciones del catálogo">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#ofertas">Ofertas</a>
+        <a href="#contacto">WhatsApp</a>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Coleccionables • Decoración • Impresión 3D</p>
+          <img class="hero-logo" src="assets/boomart-logo.svg" alt="BoomArt">
+          <h1>BOOM ART</h1>
+          <p class="hero-text">Coleccionables y piezas decorativas impresas en 3D, listas para lucirse en tu vitrina, escritorio o set de colección.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#catalogo">Ver catálogo</a>
+            <a class="button secondary" id="heroWhatsapp" target="_blank" rel="noreferrer">Consultar por WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-showcase" aria-label="Productos destacados">
+          <div class="showcase-card tall" data-showcase="0"></div>
+          <div class="showcase-card" data-showcase="1"></div>
+          <div class="showcase-card" data-showcase="2"></div>
+        </div>
+      </section>
+
+      <section class="featured-section" aria-labelledby="featuredTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Selección BoomArt</p>
+          <h2 id="featuredTitle">Piezas destacadas</h2>
+        </div>
+        <div class="featured-grid" id="featuredGrid"></div>
+      </section>
+
+      <section class="catalog-section" id="catalogo" aria-labelledby="catalogTitle">
+        <div class="catalog-head">
+          <div>
+            <p class="eyebrow">Catálogo BoomArt</p>
+            <h2 id="catalogTitle">Elige tu próxima pieza</h2>
+          </div>
+          <label class="search-box">
+            <span>Buscar</span>
+            <input id="searchInput" type="search" placeholder="Atena, Aries, templo..." autocomplete="off">
+          </label>
+        </div>
+
+        <div class="filter-row" id="filterRow" aria-label="Filtros de productos"></div>
+
+        <div class="result-meta">
+          <span id="resultCount"></span>
+          <button class="link-button" id="clearFilters" type="button">Limpiar filtros</button>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+        <p class="empty-state" id="emptyState" hidden>No encontramos productos con esa búsqueda.</p>
+      </section>
+
+      <section class="offers-band" id="ofertas">
+        <div>
+          <p class="eyebrow">Promociones</p>
+          <h2>Promos Saint Seiya</h2>
+          <p>Consulta esculturas, colecciones mini y templos del Zodiaco con opción de Pandora Box + pedestal. Escríbenos por WhatsApp y te ayudamos a elegir la pieza o combo ideal.</p>
+        </div>
+        <a class="button primary" id="offersWhatsapp" target="_blank" rel="noreferrer">Consultar promociones</a>
+      </section>
+    </main>
+
+    <footer class="footer" id="contacto">
+      <div>
+        <strong>BOOM ART</strong>
+        <p>Piezas hechas a pedido. Consulta disponibilidad, colores, acabados y tiempos de entrega por WhatsApp.</p>
+      </div>
+      <a class="button secondary" id="footerWhatsapp" target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+    </footer>
+
+    <dialog class="product-modal" id="productModal">
+      <div class="modal-shell">
+        <button class="icon-button close-modal" id="closeModal" type="button" aria-label="Cerrar">×</button>
+        <div class="modal-gallery">
+          <button class="gallery-nav" id="prevImage" type="button" aria-label="Imagen anterior">‹</button>
+          <div class="modal-image-wrap" id="modalImageWrap"></div>
+          <button class="gallery-nav" id="nextImage" type="button" aria-label="Imagen siguiente">›</button>
+          <div class="thumb-row" id="thumbRow"></div>
+        </div>
+        <div class="modal-info">
+          <p class="eyebrow" id="modalCategory"></p>
+          <h2 id="modalTitle"></h2>
+          <p id="modalDescription"></p>
+          <div class="detail-list" id="modalDetails"></div>
+          <div id="modalPricing"></div>
+          <a class="button primary full" id="modalWhatsapp" target="_blank" rel="noreferrer">Consultar este producto</a>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="src/products.js"></script>
+    <script src="src/app.js"></script>
+  </body>
+</html>
