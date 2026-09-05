@@ -58,6 +58,52 @@ const productImage = (product, className = "") => {
   return `<img class="${className}" src="${product.image}" alt="${product.name}" loading="lazy">`;
 };
 
+const VARIANT_LABELS = { temple: "Templo", pandora: "Pandora Box + pedestal", combo: "Combo (templo + Pandora Box)" };
+
+// Controles para agregar al carrito. Cada tarjeta/modal tiene su propia instancia
+// independiente (no comparten estado entre si), identificada por data-product.
+// Los templos vienen con el Combo preseleccionado (misma opcion que ya se resalta en
+// la tabla de precios de arriba) para que el boton de agregar quede listo de inmediato;
+// el cliente puede cambiar a Templo o Pandora Box en cualquier momento antes de agregar.
+const DEFAULT_TEMPLE_VARIANT = "combo";
+
+const addToCartMarkup = (product) => {
+  const variantPicker = product.templePricing
+    ? `
+      <div class="variant-select" role="group" aria-label="Elige una opcion para ${product.name}">
+        ${Object.keys(product.templePricing)
+          .map((key) => {
+            const selected = key === DEFAULT_TEMPLE_VARIANT;
+            return `
+              <button type="button" class="variant-option${selected ? " is-selected" : ""}" data-variant-option="${key}" aria-pressed="${selected}">
+                ${VARIANT_LABELS[key]} · ${formatPrice(product.templePricing[key])}
+              </button>
+            `;
+          })
+          .join("")}
+      </div>
+    `
+    : "";
+
+  const initialVariant = product.templePricing ? DEFAULT_TEMPLE_VARIANT : "";
+
+  return `
+    <div class="add-to-cart" data-product="${product.id}" data-variant="${initialVariant}">
+      ${variantPicker}
+      <div class="add-to-cart-row">
+        <div class="qty-stepper" role="group" aria-label="Cantidad">
+          <button type="button" class="qty-btn" data-qty-decrease aria-label="Quitar una unidad">−</button>
+          <span class="qty-value" data-qty-value>1</span>
+          <button type="button" class="qty-btn" data-qty-increase aria-label="Agregar una unidad">+</button>
+        </div>
+        <button type="button" class="button primary add-to-cart-btn" data-add-to-cart>
+          Agregar al carrito
+        </button>
+      </div>
+    </div>
+  `;
+};
+
 const priceMarkup = (product) => {
   if (product.templePricing) {
     return `
@@ -90,6 +136,7 @@ const productCard = (product) => `
         <p>${product.description}</p>
       </div>
       ${priceMarkup(product)}
+      ${addToCartMarkup(product)}
       <div class="card-actions">
         <button class="button dark" type="button" data-open="${product.id}">Ver producto</button>
         <a class="button whatsapp" href="${whatsappUrl(productMessage(product))}" target="_blank" rel="noreferrer">WhatsApp</a>
@@ -182,7 +229,7 @@ const openProduct = (productId) => {
     <div><span>Material</span><strong>${activeProduct.material}</strong></div>
     <div><span>Disponibilidad</span><strong>${activeProduct.availability}</strong></div>
   `;
-  modalPricing.innerHTML = priceMarkup(activeProduct);
+  modalPricing.innerHTML = priceMarkup(activeProduct) + addToCartMarkup(activeProduct);
   modalWhatsapp.href = whatsappUrl(productMessage(activeProduct));
   renderModalImage();
   modal.showModal();

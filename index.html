@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css">
+    <link rel="stylesheet" href="src/styles.css?v=3">
   </head>
   <body>
     <header class="site-header">
@@ -23,6 +23,14 @@
         <a href="#catalogo">Catálogo</a>
         <a href="#ofertas">Ofertas</a>
         <a href="#contacto">WhatsApp</a>
+        <button type="button" class="icon-button cart-toggle" id="cartToggle" aria-haspopup="true" aria-controls="cartDrawer" aria-expanded="false" aria-label="Ver carrito">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 3h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L20 8H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="20" r="1.4" fill="currentColor"/>
+            <circle cx="17" cy="20" r="1.4" fill="currentColor"/>
+          </svg>
+          <span class="cart-count" id="cartCount" hidden>0</span>
+        </button>
       </nav>
     </header>
 
@@ -114,7 +122,145 @@
       </div>
     </dialog>
 
-    <script src="src/products.js"></script>
-    <script src="src/app.js"></script>
+    <div class="cart-toast" id="cartToast" role="status" aria-live="polite" hidden></div>
+
+    <div class="cart-backdrop" id="cartBackdrop" hidden></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compra" hidden>
+      <div class="cart-drawer-header">
+        <h2>Tu carrito</h2>
+        <button type="button" class="icon-button" id="closeCart" aria-label="Cerrar carrito">×</button>
+      </div>
+      <div class="cart-drawer-body" id="cartLines"></div>
+      <div class="cart-drawer-footer">
+        <div class="cart-total-row">
+          <span>Total de productos</span>
+          <strong id="cartTotalDisplay">S/0.00</strong>
+        </div>
+        <p class="cart-note">El envío se coordina aparte según tu destino, no está incluido.</p>
+        <button type="button" class="button primary full" id="startCheckout" disabled>Continuar con el pedido</button>
+        <button type="button" class="link-button" id="clearCartBtn">Vaciar carrito</button>
+      </div>
+    </aside>
+
+    <dialog class="checkout-dialog" id="checkoutDialog" aria-label="Completar pedido">
+      <div class="checkout-shell">
+        <button class="icon-button close-modal" id="closeCheckout" type="button" aria-label="Cerrar">×</button>
+
+        <section class="checkout-step" data-step="customer">
+          <p class="eyebrow">Paso 1 de 3 · Tus datos</p>
+          <h2>Datos del cliente y destino</h2>
+          <form id="customerForm" novalidate>
+            <label class="field">
+              <span>Nombre</span>
+              <input type="text" id="customerName" autocomplete="name" required>
+            </label>
+
+            <div class="field-group">
+              <span class="field-group-label">Destino</span>
+              <div class="segmented" role="group" aria-label="Destino del pedido">
+                <button type="button" class="segmented-option" data-destination="lima" aria-pressed="false">Lima y Callao</button>
+                <button type="button" class="segmented-option" data-destination="provincias" aria-pressed="false">Provincias</button>
+              </div>
+            </div>
+
+            <div class="destination-fields" data-destination-fields="lima" hidden>
+              <label class="field">
+                <span>Distrito</span>
+                <input type="text" id="limaDistrict" autocomplete="address-level3">
+              </label>
+            </div>
+
+            <div class="destination-fields" data-destination-fields="provincias" hidden>
+              <label class="field">
+                <span>Departamento</span>
+                <input type="text" id="provDepartment">
+              </label>
+              <label class="field">
+                <span>Provincia</span>
+                <input type="text" id="provProvince">
+              </label>
+              <label class="field">
+                <span>Distrito</span>
+                <input type="text" id="provDistrict">
+              </label>
+            </div>
+
+            <p class="field-hint">La dirección exacta, referencias y agencia Shalom se coordinan por WhatsApp.</p>
+            <p class="form-error" id="customerFormError" role="alert" hidden></p>
+
+            <div class="checkout-actions">
+              <button type="button" class="button secondary" data-back-to-cart>Volver al carrito</button>
+              <button type="submit" class="button primary">Continuar</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="checkout-step" data-step="summary" hidden>
+          <p class="eyebrow">Paso 2 de 3 · Resumen</p>
+          <h2>Resumen y adelanto</h2>
+          <div class="summary-lines" id="summaryLines"></div>
+          <div class="summary-totals">
+            <div class="summary-row">
+              <span>Total de productos</span>
+              <strong id="summaryTotal"></strong>
+            </div>
+            <div class="summary-row advance">
+              <span>Adelanto a pagar ahora (50%)</span>
+              <strong id="summaryAdvance"></strong>
+            </div>
+            <div class="summary-row">
+              <span>Saldo pendiente de productos</span>
+              <strong id="summaryBalance"></strong>
+            </div>
+            <div class="summary-row shipping">
+              <span>Envío</span>
+              <strong>Costo por coordinar, no incluido</strong>
+            </div>
+          </div>
+          <div class="delivery-terms" id="deliveryTerms"></div>
+          <p class="field-hint">Fabricación: 48 horas útiles desde la validación de tu adelanto.</p>
+          <div class="checkout-actions">
+            <button type="button" class="button secondary" data-back-to="customer">Atrás</button>
+            <button type="button" class="button primary" data-go-to="payment">Continuar al pago</button>
+          </div>
+        </section>
+
+        <section class="checkout-step" data-step="payment" hidden>
+          <p class="eyebrow">Paso 3 de 3 · Pago del adelanto</p>
+          <h2>Paga tu adelanto</h2>
+          <p class="field-hint">Elige un método, escanea el código y paga exactamente <strong id="paymentAdvanceAmount"></strong>. Luego vuelve a esta página para continuar.</p>
+
+          <div class="payment-methods" role="group" aria-label="Método de pago">
+            <button type="button" class="payment-method" data-payment-method="yape" aria-pressed="false">Yape</button>
+            <button type="button" class="payment-method" data-payment-method="plin" aria-pressed="false">Plin</button>
+          </div>
+
+          <div class="payment-detail" id="paymentDetail"></div>
+
+          <p class="payment-disclaimer">Este código QR no confirma tu pago automáticamente. BoomArt valida cada adelanto de forma manual antes de iniciar la fabricación.</p>
+
+          <div class="checkout-actions">
+            <button type="button" class="button secondary" data-back-to="summary">Atrás</button>
+            <button type="button" class="button whatsapp full" id="confirmWhatsapp" disabled>Ya pagué mi adelanto: continuar por WhatsApp</button>
+          </div>
+        </section>
+
+        <section class="checkout-step" data-step="done" hidden>
+          <p class="eyebrow">Pedido enviado a WhatsApp</p>
+          <h2>Revisa y envía tu mensaje</h2>
+          <p>Se abrió WhatsApp con tu pedido ya redactado. Revisa el mensaje, pulsa <strong>Enviar</strong> dentro de WhatsApp y adjunta la foto de tu comprobante de pago. Tu pedido queda pendiente de validación por BoomArt.</p>
+          <a class="button whatsapp full" id="reopenWhatsapp" target="_blank" rel="noreferrer">Abrir WhatsApp de nuevo</a>
+          <div class="checkout-actions">
+            <button type="button" class="button secondary full" data-close-checkout>Cerrar</button>
+          </div>
+        </section>
+      </div>
+    </dialog>
+
+    <script src="src/checkout-config.js?v=3"></script>
+    <script src="src/cart.js?v=3"></script>
+    <script src="src/products.js?v=3"></script>
+    <script src="src/app.js?v=3"></script>
+    <script src="src/checkout.js?v=3"></script>
   </body>
 </html>
