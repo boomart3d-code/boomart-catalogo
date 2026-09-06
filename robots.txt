@@ -1,5 +1,58 @@
+# BoomArt - https://boomart.pe
+# El catalogo tambien esta disponible en formato legible por maquinas:
+#   https://boomart.pe/catalogo.html   (HTML estatico, sin JavaScript)
+#   https://boomart.pe/catalogo.json   (feed estructurado)
+#   https://boomart.pe/llms.txt         (resumen del sitio)
+#   https://boomart.pe/llms-full.txt    (catalogo completo en Markdown)
+
 User-agent: *
 Allow: /
 Disallow: /admin/
+
+# Asistentes de IA y sus rastreadores: acceso permitido a todo el sitio.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
 
 Sitemap: https://boomart.pe/sitemap.xml

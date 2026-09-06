@@ -1,0 +1,33 @@
+# BoomArt
+
+> Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao (Peru), con envios a todo el pais. Tematicas: Saint Seiya (Caballeros del Zodiaco), Harry Potter, Marvel, DC, mundial de futbol, macetas decorativas y piezas personalizadas. Precios en soles (PEN). Contacto y pedidos por WhatsApp.
+
+## Catalogo
+
+- [Catalogo completo (HTML, texto plano)](https://boomart.pe/catalogo.html): las 45 piezas con descripcion, material y precios.
+- [Catalogo en Markdown](https://boomart.pe/llms-full.txt): mismo contenido en un solo archivo de texto.
+- [Feed JSON](https://boomart.pe/catalogo.json): datos estructurados (precios, imagenes, categorias).
+- [Datos del panel de administracion](https://boomart.pe/data/products.json): fuente original.
+
+## Paginas
+
+- [Inicio / tienda interactiva](https://boomart.pe/): catalogo con carrito y checkout.
+- [Nosotros](https://boomart.pe/nosotros.html): quienes somos y como trabajamos.
+- [Politicas](https://boomart.pe/politicas.html): compra, envio y privacidad.
+
+## Categorias
+
+- Templos del Zodiaco: 12 piezas
+- Saint Seiya: 10 piezas
+- Harry Potter: 4 piezas
+- Marvel & DC: 4 piezas
+- Series y Películas: 3 piezas
+- Macetas Decorativas: 8 piezas
+- Mundial de Fútbol: 4 piezas
+
+## Contacto
+
+- WhatsApp: https://wa.me/51925666542
+- Instagram: https://www.instagram.com/boomart_3d
+- Ubicacion: Bellavista, Callao, Peru
+- Actualizado: 2026-09-06

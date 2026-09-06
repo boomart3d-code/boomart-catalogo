@@ -1,0 +1,1112 @@
+{
+  "store": "BoomArt",
+  "url": "https://boomart.pe/",
+  "description": "Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao, Peru. Envios a todo el pais.",
+  "currency": "PEN",
+  "updated": "2026-09-06",
+  "contact": {
+    "whatsapp": "https://wa.me/51925666542",
+    "instagram": "https://www.instagram.com/boomart_3d"
+  },
+  "count": 45,
+  "products": [
+    {
+      "id": "templo-aries",
+      "name": "Templo de Aries",
+      "category": "Templos del Zodiaco",
+      "tags": [
+        "Saint Seiya",
+        "Templo",
+        "Combo"
+      ],
+      "description": "La Casa de Aries del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Templo solo: S/100",
+        "Pandora Box + pedestal: S/45",
+        "Combo (templo + Pandora Box + pedestal): S/130"
+      ],
+      "image": "https://boomart.pe/assets/products/templo-aries.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/templo-aries.jpg",
+        "https://boomart.pe/assets/products/templo-aries-pandora.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#templo-aries",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Aries"
+    },
+    {
+      "id": "templo-tauro",
+      "name": "Templo de Tauro",
+      "category": "Templos del Zodiaco",
+      "tags": [
+        "Saint Seiya",
+        "Templo",
+        "Combo"
+      ],
+      "description": "La Casa de Tauro del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Templo solo: S/100",
+        "Pandora Box + pedestal: S/45",
+        "Combo (templo + Pandora Box + pedestal): S/130"
+      ],
+      "image": "https://boomart.pe/assets/products/templo-tauro-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/templo-tauro-1.jpg",
+        "https://boomart.pe/assets/products/templo-tauro-2.jpg",
+        "https://boomart.pe/assets/products/templo-tauro-pandora.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#templo-tauro",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Tauro"
+    },
+    {
+      "id": "templo-geminis",
+      "name": "Templo de Géminis",
+      "category": "Templos del Zodiaco",
+      "tags": [
+        "Saint Seiya",
+        "Templo",
+        "Combo"
+      ],
+      "description": "La Casa de Géminis del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Templo solo: S/100",
+        "Pandora Box + pedestal: S/45",
+        "Combo (templo + Pandora Box + pedestal): S/130"
+      ],
+      "image": "https://boomart.pe/assets/products/templo-geminis-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/templo-geminis-1.jpg",
+        "https://boomart.pe/assets/products/templo-geminis-2.jpg",
+        "https://boomart.pe/assets/products/templo-geminis-pandora.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#templo-geminis",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20G%C3%A9minis"
+    },
+    {
+      "id": "templo-cancer",
+      "name": "Templo de Cáncer",
+      "category": "Templos del Zodiaco",
+      "tags": [
+        "Saint Seiya",
+        "Templo",
+        "Combo"
+      ],
+      "description": "La Casa de Cáncer del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Templo solo: S/100",
+        "Pandora Box + pedestal: S/45",
+        "Combo (templo + Pandora Box + pedestal): S/130"
+      ],
+      "image": "https://boomart.pe/assets/products/templo-cancer-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/templo-cancer-1.jpg",
+        "https://boomart.pe/assets/products/templo-cancer-2.jpg",
+        "https://boomart.pe/assets/products/templo-cancer-pandora.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#templo-cancer",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20C%C3%A1ncer"
+    },
+    {
+      "id": "templo-leo",
+      "name": "Templo de Leo",
+      "category": "Templos del Zodiaco",
+      "tags": [
+        "Saint Seiya",
+        "Templo",
+        "Combo"
+      ],
+      "description": "La Casa de Leo del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Templo solo: S/100",
+        "Pandora Box + pedestal: S/45",
+        "Combo (templo + Pandora Box + pedestal): S/130"
+      ],
+      "image": "https://boomart.pe/assets/products/templo-leo.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/templo-leo.jpg",
+        "https://boomart.pe/assets/products/templo-leo-pandora.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#templo-leo",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Leo"
+    },
+    {
+      "id": "templo-virgo",
+      "name": "Templo de Virgo",
+      "category": "Templos del Zodiaco",
+      "tags": [
+        "Saint Seiya",
+        "Templo",
+        "Combo"
+      ],
+      "description": "La Casa de Virgo del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Templo solo: S/100",
+        "Pandora Box + pedestal: S/45",
+        "Combo (templo + Pandora Box + pedestal): S/130"
+      ],
+      "image": "https://boomart.pe/assets/products/templo-virgo-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/templo-virgo-1.jpg",
+        "https://boomart.pe/assets/products/templo-virgo-2.jpg",
+        "https://boomart.pe/assets/products/templo-virgo-pandora.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#templo-virgo",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Virgo"
+    },
+    {
+      "id": "templo-libra",
+      "name": "Templo de Libra",
+      "category": "Templos del Zodiaco",
+      "tags": [
+        "Saint Seiya",
+        "Templo",
+        "Combo"
+      ],
+      "description": "La Casa de Libra del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Templo solo: S/100",
+        "Pandora Box + pedestal: S/45",
+        "Combo (templo + Pandora Box + pedestal): S/130"
+      ],
+      "image": "https://boomart.pe/assets/products/templo-libra.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/templo-libra.jpg",
+        "https://boomart.pe/assets/products/templo-libra-pandora.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#templo-libra",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Libra"
+    },
+    {
+      "id": "templo-escorpio",
+      "name": "Templo de Escorpio",
+      "category": "Templos del Zodiaco",
+      "tags": [
+        "Saint Seiya",
+        "Templo",
+        "Combo"
+      ],
+      "description": "La Casa de Escorpio del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Templo solo: S/100",
+        "Pandora Box + pedestal: S/45",
+        "Combo (templo + Pandora Box + pedestal): S/130"
+      ],
+      "image": "https://boomart.pe/assets/products/templo-escorpio.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/templo-escorpio.jpg",
+        "https://boomart.pe/assets/products/templo-escorpio-pandora.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#templo-escorpio",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Escorpio"
+    },
+    {
+      "id": "templo-sagitario",
+      "name": "Templo de Sagitario",
+      "category": "Templos del Zodiaco",
+      "tags": [
+        "Saint Seiya",
+        "Templo",
+        "Combo"
+      ],
+      "description": "La Casa de Sagitario del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Templo solo: S/100",
+        "Pandora Box + pedestal: S/45",
+        "Combo (templo + Pandora Box + pedestal): S/130"
+      ],
+      "image": "https://boomart.pe/assets/products/templo-sagitario.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/templo-sagitario.jpg",
+        "https://boomart.pe/assets/products/templo-sagitario-pandora.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#templo-sagitario",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Sagitario"
+    },
+    {
+      "id": "templo-capricornio",
+      "name": "Templo de Capricornio",
+      "category": "Templos del Zodiaco",
+      "tags": [
+        "Saint Seiya",
+        "Templo",
+        "Combo"
+      ],
+      "description": "La Casa de Capricornio del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Templo solo: S/100",
+        "Pandora Box + pedestal: S/45",
+        "Combo (templo + Pandora Box + pedestal): S/130"
+      ],
+      "image": "https://boomart.pe/assets/products/templo-capricornio.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/templo-capricornio.jpg",
+        "https://boomart.pe/assets/products/templo-capricornio-pandora.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#templo-capricornio",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Capricornio"
+    },
+    {
+      "id": "templo-acuario",
+      "name": "Templo de Acuario",
+      "category": "Templos del Zodiaco",
+      "tags": [
+        "Saint Seiya",
+        "Templo",
+        "Combo"
+      ],
+      "description": "La Casa de Acuario del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Templo solo: S/100",
+        "Pandora Box + pedestal: S/45",
+        "Combo (templo + Pandora Box + pedestal): S/130"
+      ],
+      "image": "https://boomart.pe/assets/products/templo-acuario.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/templo-acuario.jpg",
+        "https://boomart.pe/assets/products/templo-acuario-pandora.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#templo-acuario",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Acuario"
+    },
+    {
+      "id": "templo-piscis",
+      "name": "Templo de Piscis",
+      "category": "Templos del Zodiaco",
+      "tags": [
+        "Saint Seiya",
+        "Templo",
+        "Combo"
+      ],
+      "description": "La Casa de Piscis del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Templo solo: S/100",
+        "Pandora Box + pedestal: S/45",
+        "Combo (templo + Pandora Box + pedestal): S/130"
+      ],
+      "image": "https://boomart.pe/assets/products/templo-piscis.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/templo-piscis.jpg",
+        "https://boomart.pe/assets/products/templo-piscis-pandora.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#templo-piscis",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Piscis"
+    },
+    {
+      "id": "busto-de-atena-saint-seiya",
+      "name": "Busto de Atena · 25 cm · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Atena",
+        "Esculturas",
+        "Saint Seiya"
+      ],
+      "description": "El busto de Atena, diosa protectora del Santuario, es la pieza central que toda colección de Saint Seiya (Caballeros del Zodiaco) merece. Rostro sereno, casco con detalle y armadura trabajada, con espectacular acabado estilo piedra envejecida.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Precio oferta: S/100 (antes S/130)"
+      ],
+      "image": "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-1.jpg",
+        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-2.jpg",
+        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-3.jpg",
+        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-4.jpg",
+        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-5.jpg",
+        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-6.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#busto-de-atena-saint-seiya",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Busto%20de%20Atena%20%C2%B7%2025%20cm%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "templo-con-caja-de-pandora-y-pedestal",
+      "name": "Colección Completa · 12 Templos + 12 Cajas de Pandora y Pedestales · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Cajas De Pandora",
+        "Combo",
+        "Saint Seiya",
+        "Templos"
+      ],
+      "description": "La colección completa del Santuario de Athena: los 12 Templos de las Casas del Zodiaco (Aries a Piscis), cada uno con su Caja de Pandora dorada y su pedestal a juego. Acabado tipo piedra gris envejecida, detallado a mano.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 1500,
+      "pricing": [
+        "Precio oferta: S/1500 (antes S/1560)"
+      ],
+      "image": "https://boomart.pe/assets/products/templo-con-caja-de-pandora-y-pedestal.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/templo-con-caja-de-pandora-y-pedestal.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#templo-con-caja-de-pandora-y-pedestal",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Colecci%C3%B3n%20Completa%20%C2%B7%2012%20Templos%20%2B%2012%20Cajas%20de%20Pandora%20y%20Pedestales%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "torre-del-reloj-saint-seiya",
+      "name": "Torre del Reloj de Fuego · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Saint Seiya"
+      ],
+      "description": "La icónica Torre del Reloj del Santuario de Athena, con sus doce llamas encendidas marcando la cuenta regresiva. Réplica decorativa de 32 cm de alto, acabado tipo piedra envejecida, impresa en 3D en PLA+/PETG y detallada a mano. Hecha a pedido en Lima.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Precio oferta: S/100 (antes S/130)"
+      ],
+      "image": "https://boomart.pe/assets/products/torre-del-reloj-saint-seiya-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/torre-del-reloj-saint-seiya-1.jpg",
+        "https://boomart.pe/assets/products/torre-del-reloj-saint-seiya-2.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#torre-del-reloj-saint-seiya",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Torre%20del%20Reloj%20de%20Fuego%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "set-de-12-templos-mini",
+      "name": "Set de 12 Templos Mini · Casas del Zodiaco",
+      "category": "Saint Seiya",
+      "tags": [
+        "Saint Seiya",
+        "Templos"
+      ],
+      "description": "Las 12 Casas del Santuario de Athena en versión miniatura: un set de 12 templos para tener la colección completa de los caballeros dorados exhibida en poco espacio.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Precio oferta: S/100 (antes S/150)"
+      ],
+      "image": "https://boomart.pe/assets/products/set-de-12-templos-mini-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/set-de-12-templos-mini-1.jpg",
+        "https://boomart.pe/assets/products/set-de-12-templos-mini-2.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#set-de-12-templos-mini",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Set%20de%2012%20Templos%20Mini%20%C2%B7%20Casas%20del%20Zodiaco"
+    },
+    {
+      "id": "set-12-cajas-de-pandora-con-pedestales",
+      "name": "Set de 12 Cajas de Pandora con Pedestales · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Cajas De Pandora",
+        "Saint Seiya"
+      ],
+      "description": "Las 12 Cajas de Pandora de los Caballeros Dorados, cada una con su pedestal estilo piedra. El set completo que corona cualquier colección de Saint Seiya.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 400,
+      "pricing": [
+        "Precio oferta: S/400 (antes S/440)"
+      ],
+      "image": "https://boomart.pe/assets/products/set-12-cajas-de-pandora-con-pedestales.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/set-12-cajas-de-pandora-con-pedestales.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#set-12-cajas-de-pandora-con-pedestales",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Set%20de%2012%20Cajas%20de%20Pandora%20con%20Pedestales%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "casco-de-pegaso-saint-seiya",
+      "name": "Casco de Pegaso · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Cascos",
+        "Saint Seiya"
+      ],
+      "description": "El casco de la Armadura de Pegaso, la que porta Seiya, en réplica decorativa para exhibición. Alas laterales, visor y volúmenes reproducidos fielmente.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 250,
+      "pricing": [
+        "Precio oferta: S/250 (antes S/275)"
+      ],
+      "image": "https://boomart.pe/assets/products/casco-de-pegaso-saint-seiya.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/casco-de-pegaso-saint-seiya.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#casco-de-pegaso-saint-seiya",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Casco%20de%20Pegaso%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "escultura-de-atena-saint-seiya",
+      "name": "Escultura de la Diosa Atena · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Atena",
+        "Esculturas",
+        "Saint Seiya"
+      ],
+      "description": "Escultura de Atena de cuerpo entero, la diosa de la sabiduría y la guerra justa, con espectacular acabado estilo piedra envejecida. Impresa en 3D y detallada a mano, hecha a pedido en Lima.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Precio oferta: S/100 (antes S/130)"
+      ],
+      "image": "https://boomart.pe/assets/products/escultura-de-atena-saint-seiya-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/escultura-de-atena-saint-seiya-1.jpg",
+        "https://boomart.pe/assets/products/escultura-de-atena-saint-seiya-2.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#escultura-de-atena-saint-seiya",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Escultura%20de%20la%20Diosa%20Atena%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "diorama-caballeros-de-bronce",
+      "name": "Diorama de los Caballeros de Bronce · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Dioramas",
+        "Saint Seiya"
+      ],
+      "description": "Diorama de exhibición de los Caballeros de Bronce —Seiya, Shiryu, Hyoga, Shun e Ikki— impreso en alta definición con el máximo nivel de detalle. La base perfecta para presentar tus figuras de Saint Seiya.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 150,
+      "pricing": [
+        "Precio oferta: S/150 (antes S/165)"
+      ],
+      "image": "https://boomart.pe/assets/products/diorama-caballeros-de-bronce.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/diorama-caballeros-de-bronce.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#diorama-caballeros-de-bronce",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Diorama%20de%20los%20Caballeros%20de%20Bronce%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "diorama-de-pegaso",
+      "name": "Diorama de Pegaso · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Dioramas",
+        "Saint Seiya"
+      ],
+      "description": "¡Dale a tu caballero el diorama que se merece! Base de exhibición temática de Pegaso con acabado realista, pensada para lucir tu figura de Saint Seiya.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 150,
+      "pricing": [
+        "Precio oferta: S/150 (antes S/165)"
+      ],
+      "image": "https://boomart.pe/assets/products/diorama-de-pegaso.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/diorama-de-pegaso.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#diorama-de-pegaso",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Diorama%20de%20Pegaso%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "altar-exhibidor-sagitario",
+      "name": "Altar Exhibidor · Edición Sagitario · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Dioramas",
+        "Saint Seiya"
+      ],
+      "description": "Altar Exhibidor · Edición Sagitario. Un pedestal temático que eleva cualquier figura de Saint Seiya al nivel de los dioses del Santuario.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 80,
+      "pricing": [
+        "Precio oferta: S/80 (antes S/88)"
+      ],
+      "image": "https://boomart.pe/assets/products/altar-exhibidor-sagitario-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/altar-exhibidor-sagitario-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-sagitario-2.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-sagitario-3.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-sagitario-4.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#altar-exhibidor-sagitario",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20Exhibidor%20%C2%B7%20Edici%C3%B3n%20Sagitario%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "castillo-de-hogwarts",
+      "name": "Castillo de Hogwarts · Harry Potter",
+      "category": "Harry Potter",
+      "tags": [
+        "Harry Potter"
+      ],
+      "description": "El castillo de Hogwarts en réplica decorativa impresa en 3D: torres, puentes y el Gran Comedor reconocibles al instante. Pieza imprescindible para todo fan del mundo mágico.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 80,
+      "pricing": [
+        "Precio oferta: S/80 (antes S/88)"
+      ],
+      "image": "https://boomart.pe/assets/products/castillo-de-hogwarts.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/castillo-de-hogwarts.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#castillo-de-hogwarts",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Castillo%20de%20Hogwarts%20%C2%B7%20Harry%20Potter"
+    },
+    {
+      "id": "ajedrez-de-hogwarts-4-casas",
+      "name": "Ajedrez de Hogwarts · 4 Casas · Harry Potter",
+      "category": "Harry Potter",
+      "tags": [
+        "Ajedrez",
+        "Harry Potter"
+      ],
+      "description": "Ajedrez de colección Hogwarts · 4 Casas. Un homenaje integral al colegio de magia.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 260,
+      "pricing": [
+        "Precio oferta: S/260 (antes S/286)"
+      ],
+      "image": "https://boomart.pe/assets/products/ajedrez-de-hogwarts-4-casas.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/ajedrez-de-hogwarts-4-casas.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#ajedrez-de-hogwarts-4-casas",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Ajedrez%20de%20Hogwarts%20%C2%B7%204%20Casas%20%C2%B7%20Harry%20Potter"
+    },
+    {
+      "id": "lampara-sombrero-seleccionador",
+      "name": "Lámpara Sombrero Seleccionador · Harry Potter",
+      "category": "Harry Potter",
+      "tags": [
+        "Harry Potter",
+        "Lamparas"
+      ],
+      "description": "Lámpara LED del Sombrero Seleccionador con iluminación integrada que resalta su emblemática expresión. El regalo perfecto para los verdaderos fans de Harry Potter.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 95,
+      "pricing": [
+        "Precio oferta: S/95 (antes S/105)"
+      ],
+      "image": "https://boomart.pe/assets/products/lampara-sombrero-seleccionador.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/lampara-sombrero-seleccionador.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#lampara-sombrero-seleccionador",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20L%C3%A1mpara%20Sombrero%20Seleccionador%20%C2%B7%20Harry%20Potter"
+    },
+    {
+      "id": "lampara-lunar-hogwarts",
+      "name": "Lámpara Lunar Hogwarts · Harry Potter",
+      "category": "Harry Potter",
+      "tags": [
+        "Harry Potter",
+        "Lamparas"
+      ],
+      "description": "Ilumina tu espacio con la magia de esta lámpara lunar de Hogwarts: un modelo exclusivo que combina el castillo con una luna retroiluminada.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 250,
+      "pricing": [
+        "Precio oferta: S/250 (antes S/275)"
+      ],
+      "image": "https://boomart.pe/assets/products/lampara-lunar-hogwarts.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/lampara-lunar-hogwarts.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#lampara-lunar-hogwarts",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20L%C3%A1mpara%20Lunar%20Hogwarts%20%C2%B7%20Harry%20Potter"
+    },
+    {
+      "id": "casco-de-wolverine-con-garras",
+      "name": "Casco de Wolverine + Garras · Marvel",
+      "category": "Marvel & DC",
+      "tags": [
+        "Cascos",
+        "Marvel"
+      ],
+      "description": "Casco decorativo de Wolverine acompañado de su set de garras. Dos piezas de exhibición para el fan de Marvel y los X-Men.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 200,
+      "pricing": [
+        "Precio oferta: S/200 (antes S/220)"
+      ],
+      "image": "https://boomart.pe/assets/products/casco-de-wolverine-con-garras.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/casco-de-wolverine-con-garras.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#casco-de-wolverine-con-garras",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Casco%20de%20Wolverine%20%2B%20Garras%20%C2%B7%20Marvel"
+    },
+    {
+      "id": "mascara-de-batwoman",
+      "name": "Máscara de Batwoman · DC",
+      "category": "Marvel & DC",
+      "tags": [
+        "DC",
+        "Mascaras"
+      ],
+      "description": "Máscara decorativa de Batwoman para exhibición: orejas afiladas y contorno marcado, impresa en 3D y detallada a mano.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Precio oferta: S/100 (antes S/110)"
+      ],
+      "image": "https://boomart.pe/assets/products/mascara-de-batwoman.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/mascara-de-batwoman.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#mascara-de-batwoman",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20de%20Batwoman%20%C2%B7%20DC"
+    },
+    {
+      "id": "palomera-cara-de-spiderman",
+      "name": "Palomera Cara de Spider-Man · Marvel",
+      "category": "Marvel & DC",
+      "tags": [
+        "Marvel",
+        "Palomeras"
+      ],
+      "description": "Espectacular palomera con forma de la cara de Spider-Man: ojos blancos, telaraña roja y azul. Ideal para tu noche de cine en casa o como pieza decorativa Marvel.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 70,
+      "pricing": [
+        "Precio oferta: S/70 (antes S/77)"
+      ],
+      "image": "https://boomart.pe/assets/products/palomera-cara-de-spiderman.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/palomera-cara-de-spiderman.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#palomera-cara-de-spiderman",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Palomera%20Cara%20de%20Spider-Man%20%C2%B7%20Marvel"
+    },
+    {
+      "id": "palomera-spiderman",
+      "name": "Palomera Spider-Man · Marvel",
+      "category": "Marvel & DC",
+      "tags": [
+        "Marvel",
+        "Palomeras"
+      ],
+      "description": "Palomera temática de Spider-Man para tu noche de películas: práctica, resistente y con el diseño arácnido que todo fan de Marvel reconoce.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 70,
+      "pricing": [
+        "Precio oferta: S/70 (antes S/77)"
+      ],
+      "image": "https://boomart.pe/assets/products/palomera-spiderman.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/palomera-spiderman.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#palomera-spiderman",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Palomera%20Spider-Man%20%C2%B7%20Marvel"
+    },
+    {
+      "id": "mascara-el-juego-del-calamar",
+      "name": "Máscara de El Juego del Calamar",
+      "category": "Series y Películas",
+      "tags": [
+        "Mascaras",
+        "Series"
+      ],
+      "description": "Máscara decorativa de El Juego del Calamar (círculo, triángulo o cuadrado), impresa en 3D. Perfecta para exhibición, cosplay o para completar tu disfraz.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 50,
+      "pricing": [
+        "Precio oferta: S/50 (antes S/55)"
+      ],
+      "image": "https://boomart.pe/assets/products/mascara-el-juego-del-calamar.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/mascara-el-juego-del-calamar.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#mascara-el-juego-del-calamar",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20de%20El%20Juego%20del%20Calamar"
+    },
+    {
+      "id": "casco-de-agamenon-la-odisea",
+      "name": "Casco de Agamenón · La Odisea",
+      "category": "Series y Películas",
+      "tags": [
+        "Cascos",
+        "Cine"
+      ],
+      "description": "Casco decorativo de Agamenón a tamaño real, inspirado en La Odisea y la Grecia de los héroes. Una pieza imponente de exhibición.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 398,
+      "pricing": [
+        "Precio oferta: S/398 (antes S/438)"
+      ],
+      "image": "https://boomart.pe/assets/products/casco-de-agamenon-la-odisea.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/casco-de-agamenon-la-odisea.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#casco-de-agamenon-la-odisea",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Casco%20de%20Agamen%C3%B3n%20%C2%B7%20La%20Odisea"
+    },
+    {
+      "id": "pato-lucas-kratos-god-of-war",
+      "name": "Pato Lucas Kratos · God of War",
+      "category": "Series y Películas",
+      "tags": [
+        "God of War",
+        "Videojuegos"
+      ],
+      "description": "El clásico y temperamental Pato Lucas se fusiona con la furia de Kratos de God of War: barba, tatuaje espartano y mirada de pocos amigos. Una figura decorativa única.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 120,
+      "pricing": [
+        "Precio oferta: S/120 (antes S/132)"
+      ],
+      "image": "https://boomart.pe/assets/products/pato-lucas-kratos-god-of-war.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/pato-lucas-kratos-god-of-war.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#pato-lucas-kratos-god-of-war",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Pato%20Lucas%20Kratos%20%C2%B7%20God%20of%20War"
+    },
+    {
+      "id": "maceta-pikachu",
+      "name": "Maceta de Pikachu · Pokémon",
+      "category": "Macetas Decorativas",
+      "tags": [
+        "Macetas",
+        "Pokemon",
+        "Videojuegos"
+      ],
+      "description": "Maceta decorativa de Pikachu (Pokémon), impresa en 3D con filamento de alta calidad. Perfecta para tus suculentas o cactus en el escritorio o la repisa.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 60,
+      "pricing": [
+        "Precio oferta: S/60 (antes S/66)"
+      ],
+      "image": "https://boomart.pe/assets/products/maceta-pikachu.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/maceta-pikachu.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#maceta-pikachu",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Maceta%20de%20Pikachu%20%C2%B7%20Pok%C3%A9mon"
+    },
+    {
+      "id": "replica-copa-del-mundo-tamano-real",
+      "name": "Réplica Premium Copa del Mundo · Tamaño real 1:1",
+      "category": "Mundial de Fútbol",
+      "tags": [
+        "Futbol",
+        "Mundial"
+      ],
+      "description": "Siente la pasión del mundial: réplica premium de la Copa del Mundo FIFA a tamaño real (escala 1:1), con acabado dorado y base tipo malaquita.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 150,
+      "pricing": [
+        "Precio oferta: S/150 (antes S/165)"
+      ],
+      "image": "https://boomart.pe/assets/products/replica-copa-del-mundo-tamano-real.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/replica-copa-del-mundo-tamano-real.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#replica-copa-del-mundo-tamano-real",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20R%C3%A9plica%20Premium%20Copa%20del%20Mundo%20%C2%B7%20Tama%C3%B1o%20real%201%3A1"
+    },
+    {
+      "id": "botin-de-oro-del-mundial",
+      "name": "Botín de Oro del Mundial",
+      "category": "Mundial de Fútbol",
+      "tags": [
+        "Futbol",
+        "Mundial"
+      ],
+      "description": "Diseño exclusivo de Boom Art: el Botín de Oro (Golden Boot) dorado incorpora un relieve de alta precisión con el mapamundi. Pieza de colección para el amante del fútbol.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 160,
+      "pricing": [
+        "Precio oferta: S/160 (antes S/176)"
+      ],
+      "image": "https://boomart.pe/assets/products/botin-de-oro-del-mundial.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/botin-de-oro-del-mundial.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#botin-de-oro-del-mundial",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Bot%C3%ADn%20de%20Oro%20del%20Mundial"
+    },
+    {
+      "id": "balon-de-oro-del-mundial",
+      "name": "Balón de Oro del Mundial",
+      "category": "Mundial de Fútbol",
+      "tags": [
+        "Futbol",
+        "Mundial"
+      ],
+      "description": "El Balón de Oro, máximo galardón individual del fútbol, en réplica decorativa con acabado dorado. El regalo ideal para el fanático que lo tiene casi todo.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 200,
+      "pricing": [
+        "Precio oferta: S/200 (antes S/220)"
+      ],
+      "image": "https://boomart.pe/assets/products/balon-de-oro-del-mundial.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/balon-de-oro-del-mundial.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#balon-de-oro-del-mundial",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Bal%C3%B3n%20de%20Oro%20del%20Mundial"
+    },
+    {
+      "id": "caja-organizadora-figuritas-panini-2026",
+      "name": "Caja Organizadora de Figuritas · Panini Mundial 2026",
+      "category": "Mundial de Fútbol",
+      "tags": [
+        "Futbol",
+        "Mundial"
+      ],
+      "description": "Organiza y protege tus figuritas repetidas del álbum Panini Mundial 2026 con esta caja coleccionadora impresa en 3D. Se acabó tenerlas sueltas.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 30,
+      "pricing": [
+        "Precio oferta: S/30 (antes S/33)"
+      ],
+      "image": "https://boomart.pe/assets/products/caja-organizadora-figuritas-panini-2026.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/caja-organizadora-figuritas-panini-2026.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#caja-organizadora-figuritas-panini-2026",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Caja%20Organizadora%20de%20Figuritas%20%C2%B7%20Panini%20Mundial%202026"
+    },
+    {
+      "id": "maceta-groot",
+      "name": "Maceta Groot · Guardianes de la Galaxia",
+      "category": "Macetas Decorativas",
+      "tags": [
+        "Macetas",
+        "Marvel"
+      ],
+      "description": "Maceta inspirada en Groot, con diseño detallado y colores naranja y verde que evocan su aspecto de árbol. Tamaño generoso para acomodar varias plantas. Ideal para los fans de los Guardianes de la Galaxia.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 77,
+      "pricing": [
+        "Precio oferta: S/77 (antes S/85)"
+      ],
+      "image": "https://boomart.pe/assets/products/maceta-groot.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/maceta-groot.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#maceta-groot",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Maceta%20Groot%20%C2%B7%20Guardianes%20de%20la%20Galaxia"
+    },
+    {
+      "id": "maceta-baby-groot",
+      "name": "Maceta Baby Groot",
+      "category": "Macetas Decorativas",
+      "tags": [
+        "Macetas",
+        "Marvel"
+      ],
+      "description": "Maceta de Baby Groot (Guardianes de la Galaxia), minimalista y con hermosos detalles en el rostro y las ramas. Ideal para escritorios, repisas y decoración de ambientes.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 44,
+      "pricing": [
+        "Precio oferta: S/44 (antes S/49)"
+      ],
+      "image": "https://boomart.pe/assets/products/maceta-baby-groot.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/maceta-baby-groot.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#maceta-baby-groot",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Maceta%20Baby%20Groot"
+    },
+    {
+      "id": "maceta-dedo-medio",
+      "name": "Maceta Dedo Medio",
+      "category": "Macetas Decorativas",
+      "tags": [
+        "Macetas"
+      ],
+      "description": "Una maceta pequeña y divertida con forma de dedo medio, en color neutro que combina con todos tus espacios: la sala, el escritorio de la oficina, donde quieras dar un mensaje sin decir nada.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 44,
+      "pricing": [
+        "Precio oferta: S/44 (antes S/49)"
+      ],
+      "image": "https://boomart.pe/assets/products/maceta-dedo-medio.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/maceta-dedo-medio.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#maceta-dedo-medio",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Maceta%20Dedo%20Medio"
+    },
+    {
+      "id": "maceta-darth-vader",
+      "name": "Maceta Darth Vader · Star Wars",
+      "category": "Macetas Decorativas",
+      "tags": [
+        "Macetas",
+        "Star Wars"
+      ],
+      "description": "Maceta de Darth Vader (Star Wars) en elegante color negro, capturando el casco del Lord Sith. El lado oscuro de la jardinería para tu escritorio.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 55,
+      "pricing": [
+        "Precio oferta: S/55 (antes S/61)"
+      ],
+      "image": "https://boomart.pe/assets/products/maceta-darth-vader.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/maceta-darth-vader.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#maceta-darth-vader",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Maceta%20Darth%20Vader%20%C2%B7%20Star%20Wars"
+    },
+    {
+      "id": "maceta-david",
+      "name": "Maceta David · Arte clásico",
+      "category": "Macetas Decorativas",
+      "tags": [
+        "Arte Clásico",
+        "Macetas"
+      ],
+      "description": "Maceta inspirada en el David de Miguel Ángel: elegancia y arte clásico en un diseño minimalista que eleva cualquier ambiente.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 66,
+      "pricing": [
+        "Precio oferta: S/66 (antes S/73)"
+      ],
+      "image": "https://boomart.pe/assets/products/maceta-david.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/maceta-david.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#maceta-david",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Maceta%20David%20%C2%B7%20Arte%20cl%C3%A1sico"
+    },
+    {
+      "id": "maceta-minimalista",
+      "name": "Maceta Minimalista",
+      "category": "Macetas Decorativas",
+      "tags": [
+        "Macetas"
+      ],
+      "description": "Optimiza tu espacio con una maceta minimalista de líneas limpias y textura sutil, ideal para escritorio, repisa o mesa de centro.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 44,
+      "pricing": [
+        "Precio oferta: S/44 (antes S/49)"
+      ],
+      "image": "https://boomart.pe/assets/products/maceta-minimalista.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/maceta-minimalista.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#maceta-minimalista",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Maceta%20Minimalista"
+    },
+    {
+      "id": "maceta-palmera",
+      "name": "Maceta Palmera",
+      "category": "Macetas Decorativas",
+      "tags": [
+        "Macetas"
+      ],
+      "description": "Maceta minimalista negra con textura de hojas de palmera: elegante y moderna, ideal para complementar una decoración tropical o contemporánea.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 44,
+      "pricing": [
+        "Precio oferta: S/44 (antes S/49)"
+      ],
+      "image": "https://boomart.pe/assets/products/maceta-palmera.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/maceta-palmera.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#maceta-palmera",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Maceta%20Palmera"
+    }
+  ]
+}

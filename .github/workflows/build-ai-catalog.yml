@@ -1,0 +1,41 @@
+name: Generar catalogo para IA y buscadores
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/products.json"
+      - "scripts/build-ai-catalog.mjs"
+      - ".github/workflows/build-ai-catalog.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Regenerar catalogo.html, catalogo.json, llms.txt y llms-full.txt
+        run: node scripts/build-ai-catalog.mjs
+
+      - name: Publicar los archivos regenerados (si hubo cambios)
+        run: |
+          if [ -n "$(git status --porcelain catalogo.html catalogo.json llms.txt llms-full.txt)" ]; then
+            git config user.name "boomart-bot"
+            git config user.email "boomart.3d@gmail.com"
+            git add catalogo.html catalogo.json llms.txt llms-full.txt
+            git commit -m "Regenera catalogo para IA y buscadores [skip ci]"
+            git push
+          else
+            echo "El catalogo generado ya estaba al dia."
+          fi
