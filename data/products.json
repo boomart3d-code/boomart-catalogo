@@ -414,14 +414,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 400,
+    "regularPrice": 440,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/set-12-cajas-de-pandora-con-pedestales.jpg",
     "gallery": [
       "assets/products/set-12-cajas-de-pandora-con-pedestales.jpg"
     ],
-    "description": "Las 12 Cajas de Pandora de los Caballeros Dorados, cada una con su pedestal estilo piedra. El set completo que corona cualquier colección de Saint Seiya."
+    "description": "Las 12 Cajas de Pandora de los Caballeros Dorados, cada una con su pedestal estilo piedra. El set completo que corona cualquier colección de Saint Seiya.",
+    "offerPrice": 400
   },
   {
     "id": "casco-de-pegaso-saint-seiya",
@@ -433,14 +434,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 250,
+    "regularPrice": 275,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/casco-de-pegaso-saint-seiya.jpg",
     "gallery": [
       "assets/products/casco-de-pegaso-saint-seiya.jpg"
     ],
-    "description": "El casco de la Armadura de Pegaso, la que porta Seiya, en réplica decorativa para exhibición. Alas laterales, visor y volúmenes reproducidos fielmente."
+    "description": "El casco de la Armadura de Pegaso, la que porta Seiya, en réplica decorativa para exhibición. Alas laterales, visor y volúmenes reproducidos fielmente.",
+    "offerPrice": 250
   },
   {
     "id": "escultura-de-atena-saint-seiya",
@@ -474,14 +476,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 150,
+    "regularPrice": 165,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/diorama-caballeros-de-bronce.jpg",
     "gallery": [
       "assets/products/diorama-caballeros-de-bronce.jpg"
     ],
-    "description": "Diorama de exhibición de los Caballeros de Bronce —Seiya, Shiryu, Hyoga, Shun e Ikki— impreso en alta definición con el máximo nivel de detalle. La base perfecta para presentar tus figuras de Saint Seiya."
+    "description": "Diorama de exhibición de los Caballeros de Bronce —Seiya, Shiryu, Hyoga, Shun e Ikki— impreso en alta definición con el máximo nivel de detalle. La base perfecta para presentar tus figuras de Saint Seiya.",
+    "offerPrice": 150
   },
   {
     "id": "diorama-de-pegaso",
@@ -493,14 +496,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 150,
+    "regularPrice": 165,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/diorama-de-pegaso.jpg",
     "gallery": [
       "assets/products/diorama-de-pegaso.jpg"
     ],
-    "description": "¡Dale a tu caballero el diorama que se merece! Base de exhibición temática de Pegaso con acabado realista, pensada para lucir tu figura de Saint Seiya."
+    "description": "¡Dale a tu caballero el diorama que se merece! Base de exhibición temática de Pegaso con acabado realista, pensada para lucir tu figura de Saint Seiya.",
+    "offerPrice": 150
   },
   {
     "id": "altar-exhibidor-sagitario",
@@ -512,9 +516,9 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 80,
+    "regularPrice": 88,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/altar-exhibidor-sagitario-1.jpg",
     "gallery": [
       "assets/products/altar-exhibidor-sagitario-1.jpg",
@@ -522,7 +526,8 @@
       "assets/products/altar-exhibidor-sagitario-3.jpg",
       "assets/products/altar-exhibidor-sagitario-4.jpg"
     ],
-    "description": "Altar Exhibidor · Edición Sagitario. Un pedestal temático que eleva cualquier figura de Saint Seiya al nivel de los dioses del Santuario."
+    "description": "Altar Exhibidor · Edición Sagitario. Un pedestal temático que eleva cualquier figura de Saint Seiya al nivel de los dioses del Santuario.",
+    "offerPrice": 80
   },
   {
     "id": "castillo-de-hogwarts",
@@ -533,14 +538,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 80,
+    "regularPrice": 88,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/castillo-de-hogwarts.jpg",
     "gallery": [
       "assets/products/castillo-de-hogwarts.jpg"
     ],
-    "description": "El castillo de Hogwarts en réplica decorativa impresa en 3D: torres, puentes y el Gran Comedor reconocibles al instante. Pieza imprescindible para todo fan del mundo mágico."
+    "description": "El castillo de Hogwarts en réplica decorativa impresa en 3D: torres, puentes y el Gran Comedor reconocibles al instante. Pieza imprescindible para todo fan del mundo mágico.",
+    "offerPrice": 80
   },
   {
     "id": "ajedrez-de-hogwarts-4-casas",
@@ -552,14 +558,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 260,
+    "regularPrice": 286,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/ajedrez-de-hogwarts-4-casas.jpg",
     "gallery": [
       "assets/products/ajedrez-de-hogwarts-4-casas.jpg"
     ],
-    "description": "Ajedrez de colección Hogwarts · 4 Casas. Un homenaje integral al colegio de magia."
+    "description": "Ajedrez de colección Hogwarts · 4 Casas. Un homenaje integral al colegio de magia.",
+    "offerPrice": 260
   },
   {
     "id": "lampara-sombrero-seleccionador",
@@ -571,14 +578,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 95,
+    "regularPrice": 105,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/lampara-sombrero-seleccionador.jpg",
     "gallery": [
       "assets/products/lampara-sombrero-seleccionador.jpg"
     ],
-    "description": "Lámpara LED del Sombrero Seleccionador con iluminación integrada que resalta su emblemática expresión. El regalo perfecto para los verdaderos fans de Harry Potter."
+    "description": "Lámpara LED del Sombrero Seleccionador con iluminación integrada que resalta su emblemática expresión. El regalo perfecto para los verdaderos fans de Harry Potter.",
+    "offerPrice": 95
   },
   {
     "id": "lampara-lunar-hogwarts",
@@ -590,14 +598,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 250,
+    "regularPrice": 275,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/lampara-lunar-hogwarts.jpg",
     "gallery": [
       "assets/products/lampara-lunar-hogwarts.jpg"
     ],
-    "description": "Ilumina tu espacio con la magia de esta lámpara lunar de Hogwarts: un modelo exclusivo que combina el castillo con una luna retroiluminada."
+    "description": "Ilumina tu espacio con la magia de esta lámpara lunar de Hogwarts: un modelo exclusivo que combina el castillo con una luna retroiluminada.",
+    "offerPrice": 250
   },
   {
     "id": "casco-de-wolverine-con-garras",
@@ -609,14 +618,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 200,
+    "regularPrice": 220,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/casco-de-wolverine-con-garras.jpg",
     "gallery": [
       "assets/products/casco-de-wolverine-con-garras.jpg"
     ],
-    "description": "Casco decorativo de Wolverine acompañado de su set de garras. Dos piezas de exhibición para el fan de Marvel y los X-Men."
+    "description": "Casco decorativo de Wolverine acompañado de su set de garras. Dos piezas de exhibición para el fan de Marvel y los X-Men.",
+    "offerPrice": 200
   },
   {
     "id": "mascara-de-batwoman",
@@ -628,14 +638,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 100,
+    "regularPrice": 110,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/mascara-de-batwoman.jpg",
     "gallery": [
       "assets/products/mascara-de-batwoman.jpg"
     ],
-    "description": "Máscara decorativa de Batwoman para exhibición: orejas afiladas y contorno marcado, impresa en 3D y detallada a mano."
+    "description": "Máscara decorativa de Batwoman para exhibición: orejas afiladas y contorno marcado, impresa en 3D y detallada a mano.",
+    "offerPrice": 100
   },
   {
     "id": "palomera-cara-de-spiderman",
@@ -647,14 +658,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 70,
+    "regularPrice": 77,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/palomera-cara-de-spiderman.jpg",
     "gallery": [
       "assets/products/palomera-cara-de-spiderman.jpg"
     ],
-    "description": "Espectacular palomera con forma de la cara de Spider-Man: ojos blancos, telaraña roja y azul. Ideal para tu noche de cine en casa o como pieza decorativa Marvel."
+    "description": "Espectacular palomera con forma de la cara de Spider-Man: ojos blancos, telaraña roja y azul. Ideal para tu noche de cine en casa o como pieza decorativa Marvel.",
+    "offerPrice": 70
   },
   {
     "id": "palomera-spiderman",
@@ -666,14 +678,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 70,
+    "regularPrice": 77,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/palomera-spiderman.jpg",
     "gallery": [
       "assets/products/palomera-spiderman.jpg"
     ],
-    "description": "Palomera temática de Spider-Man para tu noche de películas: práctica, resistente y con el diseño arácnido que todo fan de Marvel reconoce."
+    "description": "Palomera temática de Spider-Man para tu noche de películas: práctica, resistente y con el diseño arácnido que todo fan de Marvel reconoce.",
+    "offerPrice": 70
   },
   {
     "id": "mascara-el-juego-del-calamar",
@@ -685,14 +698,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 50,
+    "regularPrice": 55,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/mascara-el-juego-del-calamar.jpg",
     "gallery": [
       "assets/products/mascara-el-juego-del-calamar.jpg"
     ],
-    "description": "Máscara decorativa de El Juego del Calamar (círculo, triángulo o cuadrado), impresa en 3D. Perfecta para exhibición, cosplay o para completar tu disfraz."
+    "description": "Máscara decorativa de El Juego del Calamar (círculo, triángulo o cuadrado), impresa en 3D. Perfecta para exhibición, cosplay o para completar tu disfraz.",
+    "offerPrice": 50
   },
   {
     "id": "casco-de-agamenon-la-odisea",
@@ -704,14 +718,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 398,
+    "regularPrice": 438,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/casco-de-agamenon-la-odisea.jpg",
     "gallery": [
       "assets/products/casco-de-agamenon-la-odisea.jpg"
     ],
-    "description": "Casco decorativo de Agamenón a tamaño real, inspirado en La Odisea y la Grecia de los héroes. Una pieza imponente de exhibición."
+    "description": "Casco decorativo de Agamenón a tamaño real, inspirado en La Odisea y la Grecia de los héroes. Una pieza imponente de exhibición.",
+    "offerPrice": 398
   },
   {
     "id": "pato-lucas-kratos-god-of-war",
@@ -723,14 +738,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 120,
+    "regularPrice": 132,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/pato-lucas-kratos-god-of-war.jpg",
     "gallery": [
       "assets/products/pato-lucas-kratos-god-of-war.jpg"
     ],
-    "description": "El clásico y temperamental Pato Lucas se fusiona con la furia de Kratos de God of War: barba, tatuaje espartano y mirada de pocos amigos. Una figura decorativa única."
+    "description": "El clásico y temperamental Pato Lucas se fusiona con la furia de Kratos de God of War: barba, tatuaje espartano y mirada de pocos amigos. Una figura decorativa única.",
+    "offerPrice": 120
   },
   {
     "id": "maceta-pikachu",
@@ -743,14 +759,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 60,
+    "regularPrice": 66,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/maceta-pikachu.jpg",
     "gallery": [
       "assets/products/maceta-pikachu.jpg"
     ],
-    "description": "Maceta decorativa de Pikachu (Pokémon), impresa en 3D con filamento de alta calidad. Perfecta para tus suculentas o cactus en el escritorio o la repisa."
+    "description": "Maceta decorativa de Pikachu (Pokémon), impresa en 3D con filamento de alta calidad. Perfecta para tus suculentas o cactus en el escritorio o la repisa.",
+    "offerPrice": 60
   },
   {
     "id": "replica-copa-del-mundo-tamano-real",
@@ -762,14 +779,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 150,
+    "regularPrice": 165,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/replica-copa-del-mundo-tamano-real.jpg",
     "gallery": [
       "assets/products/replica-copa-del-mundo-tamano-real.jpg"
     ],
-    "description": "Siente la pasión del mundial: réplica premium de la Copa del Mundo FIFA a tamaño real (escala 1:1), con acabado dorado y base tipo malaquita."
+    "description": "Siente la pasión del mundial: réplica premium de la Copa del Mundo FIFA a tamaño real (escala 1:1), con acabado dorado y base tipo malaquita.",
+    "offerPrice": 150
   },
   {
     "id": "botin-de-oro-del-mundial",
@@ -781,14 +799,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 160,
+    "regularPrice": 176,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/botin-de-oro-del-mundial.jpg",
     "gallery": [
       "assets/products/botin-de-oro-del-mundial.jpg"
     ],
-    "description": "Diseño exclusivo de Boom Art: el Botín de Oro (Golden Boot) dorado incorpora un relieve de alta precisión con el mapamundi. Pieza de colección para el amante del fútbol."
+    "description": "Diseño exclusivo de Boom Art: el Botín de Oro (Golden Boot) dorado incorpora un relieve de alta precisión con el mapamundi. Pieza de colección para el amante del fútbol.",
+    "offerPrice": 160
   },
   {
     "id": "balon-de-oro-del-mundial",
@@ -800,14 +819,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 200,
+    "regularPrice": 220,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/balon-de-oro-del-mundial.jpg",
     "gallery": [
       "assets/products/balon-de-oro-del-mundial.jpg"
     ],
-    "description": "El Balón de Oro, máximo galardón individual del fútbol, en réplica decorativa con acabado dorado. El regalo ideal para el fanático que lo tiene casi todo."
+    "description": "El Balón de Oro, máximo galardón individual del fútbol, en réplica decorativa con acabado dorado. El regalo ideal para el fanático que lo tiene casi todo.",
+    "offerPrice": 200
   },
   {
     "id": "caja-organizadora-figuritas-panini-2026",
@@ -819,14 +839,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 30,
+    "regularPrice": 33,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/caja-organizadora-figuritas-panini-2026.jpg",
     "gallery": [
       "assets/products/caja-organizadora-figuritas-panini-2026.jpg"
     ],
-    "description": "Organiza y protege tus figuritas repetidas del álbum Panini Mundial 2026 con esta caja coleccionadora impresa en 3D. Se acabó tenerlas sueltas."
+    "description": "Organiza y protege tus figuritas repetidas del álbum Panini Mundial 2026 con esta caja coleccionadora impresa en 3D. Se acabó tenerlas sueltas.",
+    "offerPrice": 30
   },
   {
     "id": "maceta-groot",
@@ -838,14 +859,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 77,
+    "regularPrice": 85,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/maceta-groot.jpg",
     "gallery": [
       "assets/products/maceta-groot.jpg"
     ],
-    "description": "Maceta inspirada en Groot, con diseño detallado y colores naranja y verde que evocan su aspecto de árbol. Tamaño generoso para acomodar varias plantas. Ideal para los fans de los Guardianes de la Galaxia."
+    "description": "Maceta inspirada en Groot, con diseño detallado y colores naranja y verde que evocan su aspecto de árbol. Tamaño generoso para acomodar varias plantas. Ideal para los fans de los Guardianes de la Galaxia.",
+    "offerPrice": 77
   },
   {
     "id": "maceta-baby-groot",
@@ -857,14 +879,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 44,
+    "regularPrice": 49,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/maceta-baby-groot.jpg",
     "gallery": [
       "assets/products/maceta-baby-groot.jpg"
     ],
-    "description": "Maceta de Baby Groot (Guardianes de la Galaxia), minimalista y con hermosos detalles en el rostro y las ramas. Ideal para escritorios, repisas y decoración de ambientes."
+    "description": "Maceta de Baby Groot (Guardianes de la Galaxia), minimalista y con hermosos detalles en el rostro y las ramas. Ideal para escritorios, repisas y decoración de ambientes.",
+    "offerPrice": 44
   },
   {
     "id": "maceta-dedo-medio",
@@ -875,14 +898,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 44,
+    "regularPrice": 49,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/maceta-dedo-medio.jpg",
     "gallery": [
       "assets/products/maceta-dedo-medio.jpg"
     ],
-    "description": "Una maceta pequeña y divertida con forma de dedo medio, en color neutro que combina con todos tus espacios: la sala, el escritorio de la oficina, donde quieras dar un mensaje sin decir nada."
+    "description": "Una maceta pequeña y divertida con forma de dedo medio, en color neutro que combina con todos tus espacios: la sala, el escritorio de la oficina, donde quieras dar un mensaje sin decir nada.",
+    "offerPrice": 44
   },
   {
     "id": "maceta-darth-vader",
@@ -894,14 +918,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 55,
+    "regularPrice": 61,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/maceta-darth-vader.jpg",
     "gallery": [
       "assets/products/maceta-darth-vader.jpg"
     ],
-    "description": "Maceta de Darth Vader (Star Wars) en elegante color negro, capturando el casco del Lord Sith. El lado oscuro de la jardinería para tu escritorio."
+    "description": "Maceta de Darth Vader (Star Wars) en elegante color negro, capturando el casco del Lord Sith. El lado oscuro de la jardinería para tu escritorio.",
+    "offerPrice": 55
   },
   {
     "id": "maceta-david",
@@ -913,14 +938,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 66,
+    "regularPrice": 73,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/maceta-david.jpg",
     "gallery": [
       "assets/products/maceta-david.jpg"
     ],
-    "description": "Maceta inspirada en el David de Miguel Ángel: elegancia y arte clásico en un diseño minimalista que eleva cualquier ambiente."
+    "description": "Maceta inspirada en el David de Miguel Ángel: elegancia y arte clásico en un diseño minimalista que eleva cualquier ambiente.",
+    "offerPrice": 66
   },
   {
     "id": "maceta-minimalista",
@@ -931,14 +957,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 44,
+    "regularPrice": 49,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/maceta-minimalista.jpg",
     "gallery": [
       "assets/products/maceta-minimalista.jpg"
     ],
-    "description": "Optimiza tu espacio con una maceta minimalista de líneas limpias y textura sutil, ideal para escritorio, repisa o mesa de centro."
+    "description": "Optimiza tu espacio con una maceta minimalista de líneas limpias y textura sutil, ideal para escritorio, repisa o mesa de centro.",
+    "offerPrice": 44
   },
   {
     "id": "maceta-palmera",
@@ -949,13 +976,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 44,
+    "regularPrice": 49,
     "featured": true,
-    "offer": false,
+    "offer": true,
     "image": "assets/products/maceta-palmera.jpg",
     "gallery": [
       "assets/products/maceta-palmera.jpg"
     ],
-    "description": "Maceta minimalista negra con textura de hojas de palmera: elegante y moderna, ideal para complementar una decoración tropical o contemporánea."
+    "description": "Maceta minimalista negra con textura de hojas de palmera: elegante y moderna, ideal para complementar una decoración tropical o contemporánea.",
+    "offerPrice": 44
   }
 ]
