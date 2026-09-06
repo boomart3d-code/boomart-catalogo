@@ -286,6 +286,7 @@ const closeQuickCategories = () => {
 };
 quickCategoriesToggle.addEventListener("click", () => {
   const willOpen = quickCategoriesPanel.hidden;
+  closeQuickSearch();
   quickCategoriesPanel.hidden = !willOpen;
   quickCategoriesToggle.setAttribute("aria-expanded", String(willOpen));
 });
@@ -295,9 +296,31 @@ document.addEventListener("click", (event) => {
   closeQuickCategories();
 });
 
-document.querySelector("#quickSearchToggle").addEventListener("click", () => {
-  document.querySelector("#catalogo").scrollIntoView({ behavior: "smooth", block: "start" });
-  searchInput.focus();
+const quickSearchToggle = document.querySelector("#quickSearchToggle");
+const quickSearchBox = document.querySelector("#quickSearchBox");
+const quickSearchInput = document.querySelector("#quickSearchInput");
+const closeQuickSearch = () => {
+  quickSearchBox.hidden = true;
+  quickSearchToggle.setAttribute("aria-expanded", "false");
+};
+quickSearchToggle.addEventListener("click", () => {
+  const willOpen = quickSearchBox.hidden;
+  closeQuickCategories();
+  quickSearchBox.hidden = !willOpen;
+  quickSearchToggle.setAttribute("aria-expanded", String(willOpen));
+  if (willOpen) {
+    quickSearchInput.value = searchInput.value;
+    quickSearchInput.focus();
+  }
+});
+quickSearchInput.addEventListener("input", () => {
+  searchInput.value = quickSearchInput.value;
+  renderProducts();
+});
+document.addEventListener("click", (event) => {
+  if (quickSearchBox.hidden) return;
+  if (event.target.closest("#quickSearchBox") || event.target.closest("#quickSearchToggle")) return;
+  closeQuickSearch();
 });
 
 document.querySelector("#quickTopBtn").addEventListener("click", () => {
