@@ -7,6 +7,8 @@
 - [Catalogo completo (HTML, texto plano)](https://boomart.pe/catalogo.html): las 45 piezas con descripcion, material y precios.
 - [Catalogo en Markdown](https://boomart.pe/llms-full.txt): mismo contenido en un solo archivo de texto.
 - [Feed JSON](https://boomart.pe/catalogo.json): datos estructurados (precios, imagenes, categorias).
+- [Feed Google/Pinterest (XML)](https://boomart.pe/feed-google.xml): formato Google Merchant Center.
+- [Feed Meta (CSV)](https://boomart.pe/feed-meta.csv): catalogo para Instagram y Facebook.
 - [Datos del panel de administracion](https://boomart.pe/data/products.json): fuente original.
 
 ## Paginas

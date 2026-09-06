@@ -41,34 +41,54 @@ const abs = (p) => {
 const waLink = (name) =>
   `${WHATSAPP}?text=${encodeURIComponent(`Hola BoomArt, quiero consultar por: ${name}`)}`;
 
-/** Precio "desde" y detalle de precios de un producto, en soles (S/). */
+/**
+ * Precios de un producto, en soles (PEN). Devuelve:
+ *   from       precio de referencia ("desde")
+ *   lines      desglose legible para humanos
+ *   listPrice  precio de lista para los feeds (Google/Meta/Pinterest)
+ *   salePrice  precio rebajado, o null si no hay oferta
+ */
 function priceInfo(p) {
   if (p.templePricing) {
     const { temple, pandora, combo } = p.templePricing;
+    // El templo suelto es la unidad vendible de referencia (evita que el feed
+    // marque "precio no coincide" contra la ficha, que muestra las 3 opciones).
+    const base = typeof temple === "number" ? temple : combo ?? pandora ?? null;
     return {
-      // El precio de referencia es el del templo (la pieza principal); el
-      // desglose completo va en las lineas de abajo.
-      from: typeof temple === "number" ? temple : combo ?? pandora ?? null,
+      from: base,
       lines: [
         typeof temple === "number" ? `Templo solo: S/${temple}` : null,
         typeof pandora === "number" ? `Pandora Box + pedestal: S/${pandora}` : null,
         typeof combo === "number" ? `Combo (templo + Pandora Box + pedestal): S/${combo}` : null,
       ].filter(Boolean),
-      regular: null,
-      offer: typeof combo === "number" ? combo : null,
+      listPrice: base,
+      salePrice: null,
     };
   }
   const regular = typeof p.regularPrice === "number" ? p.regularPrice : null;
   const offer = typeof p.offerPrice === "number" ? p.offerPrice : null;
   const current = offer ?? regular;
+  const discounted = offer && regular && offer < regular;
   const lines = [];
-  if (offer && regular && offer !== regular) {
-    lines.push(`Precio oferta: S/${offer} (antes S/${regular})`);
-  } else if (current != null) {
-    lines.push(`Precio: S/${current}`);
-  }
-  return { from: current, lines, regular, offer: current };
+  if (discounted) lines.push(`Precio oferta: S/${offer} (antes S/${regular})`);
+  else if (current != null) lines.push(`Precio: S/${current}`);
+  return {
+    from: current,
+    lines,
+    listPrice: discounted ? regular : current,
+    salePrice: discounted ? offer : null,
+  };
 }
+
+const money = (n) => `${Number(n).toFixed(2)} PEN`;
+
+// Taxonomia de Google Shopping por categoria de BoomArt.
+const GOOGLE_CATEGORY = {
+  "Macetas Decorativas": "Home & Garden > Lawn & Garden > Gardening > Pots & Planters",
+};
+const GOOGLE_CATEGORY_DEFAULT =
+  "Arts & Entertainment > Hobbies & Creative Arts > Collectibles";
+const googleCategory = (p) => GOOGLE_CATEGORY[p.category] || GOOGLE_CATEGORY_DEFAULT;
 
 function loadProducts() {
   return readFile(path.join(ROOT, "data", "products.json"), "utf8").then(JSON.parse);
@@ -335,6 +355,8 @@ function buildLlms(products) {
 - [Catalogo completo (HTML, texto plano)](${SITE}/catalogo.html): las ${products.length} piezas con descripcion, material y precios.
 - [Catalogo en Markdown](${SITE}/llms-full.txt): mismo contenido en un solo archivo de texto.
 - [Feed JSON](${SITE}/catalogo.json): datos estructurados (precios, imagenes, categorias).
+- [Feed Google/Pinterest (XML)](${SITE}/feed-google.xml): formato Google Merchant Center.
+- [Feed Meta (CSV)](${SITE}/feed-meta.csv): catalogo para Instagram y Facebook.
 - [Datos del panel de administracion](${SITE}/data/products.json): fuente original.
 
 ## Paginas
@@ -398,6 +420,99 @@ ${body}
 `;
 }
 
+/* ---------------------------------------------------------------- feed-google.xml
+ * Formato Google Merchant Center (RSS 2.0 + namespace g:).
+ * Sirve tal cual para Google Shopping / listados gratuitos Y para Pinterest,
+ * que acepta el formato de Google como fuente de datos.
+ */
+function buildGoogleFeed(products) {
+  const items = products
+    .map((p) => {
+      const price = priceInfo(p);
+      const gallery = (p.gallery || []).filter(Boolean).map(abs);
+      const main = abs(p.image) || gallery[0];
+      const extra = gallery
+        .filter((g) => g !== main)
+        .slice(0, 10)
+        .map((g) => `      <g:additional_image_link>${esc(g)}</g:additional_image_link>`)
+        .join("\n");
+      const desc = `${p.description || p.name} Fabricado a pedido en impresion 3D (${p.material || "PLA"}), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.`;
+      return `    <item>
+      <g:id>${esc(p.id)}</g:id>
+      <g:title>${esc(p.name)}</g:title>
+      <g:description>${esc(desc)}</g:description>
+      <g:link>${SITE}/catalogo.html#${esc(p.id)}</g:link>
+      <g:image_link>${esc(main)}</g:image_link>
+${extra ? extra + "\n" : ""}      <g:availability>in_stock</g:availability>
+      <g:price>${money(price.listPrice)}</g:price>
+${price.salePrice != null ? `      <g:sale_price>${money(price.salePrice)}</g:sale_price>\n` : ""}      <g:condition>new</g:condition>
+      <g:brand>BoomArt</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>${esc(googleCategory(p))}</g:google_product_category>
+      <g:product_type>${esc(p.category)}</g:product_type>
+    </item>`;
+    })
+    .join("\n");
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>BoomArt - Catalogo de productos</title>
+    <link>${SITE}/</link>
+    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado ${NOW}.</description>
+${items}
+  </channel>
+</rss>
+`;
+}
+
+/* ---------------------------------------------------------------- feed-meta.csv
+ * Catalogo de Meta (Instagram / Facebook Shops). CSV con cabeceras estandar.
+ */
+function buildMetaFeed(products) {
+  const cols = [
+    "id",
+    "title",
+    "description",
+    "availability",
+    "condition",
+    "price",
+    "sale_price",
+    "link",
+    "image_link",
+    "additional_image_link",
+    "brand",
+    "google_product_category",
+    "product_type",
+  ];
+  const cell = (v) => `"${String(v ?? "").replace(/"/g, '""').replace(/\s+/g, " ").trim()}"`;
+  const rows = products.map((p) => {
+    const price = priceInfo(p);
+    const gallery = (p.gallery || []).filter(Boolean).map(abs);
+    const main = abs(p.image) || gallery[0];
+    const extra = gallery.filter((g) => g !== main).slice(0, 20).join(",");
+    const desc = `${p.description || p.name} Fabricado a pedido en impresion 3D (${p.material || "PLA"}). Produccion ~48 h utiles. Envios a todo el Peru.`;
+    return [
+      p.id,
+      p.name,
+      desc,
+      "available for order",
+      "new",
+      money(price.listPrice),
+      price.salePrice != null ? money(price.salePrice) : "",
+      `${SITE}/catalogo.html#${p.id}`,
+      main,
+      extra,
+      "BoomArt",
+      googleCategory(p),
+      p.category,
+    ]
+      .map(cell)
+      .join(",");
+  });
+  return [cols.join(","), ...rows].join("\n") + "\n";
+}
+
 /* ---------------------------------------------------------------- main */
 const products = await loadProducts();
 
@@ -406,9 +521,12 @@ await Promise.all([
   writeFile(path.join(ROOT, "catalogo.json"), buildJson(products) + "\n"),
   writeFile(path.join(ROOT, "llms.txt"), buildLlms(products)),
   writeFile(path.join(ROOT, "llms-full.txt"), buildLlmsFull(products)),
+  writeFile(path.join(ROOT, "feed-google.xml"), buildGoogleFeed(products)),
+  writeFile(path.join(ROOT, "feed-meta.csv"), buildMetaFeed(products)),
 ]);
 
 console.log(
   `OK - generado desde ${products.length} productos:\n` +
-    "  catalogo.html\n  catalogo.json\n  llms.txt\n  llms-full.txt",
+    "  catalogo.html\n  catalogo.json\n  llms.txt\n  llms-full.txt\n" +
+    "  feed-google.xml (Google Merchant + Pinterest)\n  feed-meta.csv (Instagram / Facebook)",
 );

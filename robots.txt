@@ -4,6 +4,8 @@
 #   https://boomart.pe/catalogo.json   (feed estructurado)
 #   https://boomart.pe/llms.txt         (resumen del sitio)
 #   https://boomart.pe/llms-full.txt    (catalogo completo en Markdown)
+#   https://boomart.pe/feed-google.xml  (feed Google Merchant / Pinterest)
+#   https://boomart.pe/feed-meta.csv    (feed Instagram / Facebook)
 
 User-agent: *
 Allow: /
