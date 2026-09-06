@@ -16,7 +16,6 @@ const modalCategory = document.querySelector("#modalCategory");
 const modalDescription = document.querySelector("#modalDescription");
 const modalDetails = document.querySelector("#modalDetails");
 const modalPricing = document.querySelector("#modalPricing");
-const modalWhatsapp = document.querySelector("#modalWhatsapp");
 const thumbRow = document.querySelector("#thumbRow");
 const prevImage = document.querySelector("#prevImage");
 const nextImage = document.querySelector("#nextImage");
@@ -37,13 +36,6 @@ const whatsappUrl = (message) =>
   config.whatsappLink
     ? `${config.whatsappLink}?text=${encodeURIComponent(message)}`
     : `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-const productMessage = (product) => {
-  const price = product.templePricing
-    ? `combo ${formatPrice(product.templePricing.combo)} o templo ${formatPrice(product.templePricing.temple)}`
-    : `oferta ${formatPrice(product.offerPrice || product.regularPrice)}`;
-  return `Hola BoomArt, estoy interesado en ${product.name} (${price}).`;
-};
 
 const placeholder = (product) => `
   <div class="image-placeholder" role="img" aria-label="Imagen pendiente para ${product.name}">
@@ -134,8 +126,7 @@ const productCard = (product) => `
       ${priceMarkup(product)}
       ${addToCartMarkup(product)}
       <div class="card-actions">
-        <button class="button dark" type="button" data-open="${product.id}">Ver producto</button>
-        <a class="button whatsapp" href="${whatsappUrl(productMessage(product))}" target="_blank" rel="noreferrer">WhatsApp</a>
+        <button class="button dark full" type="button" data-open="${product.id}">Ver producto</button>
       </div>
     </div>
   </article>
@@ -235,7 +226,6 @@ const openProduct = (productId) => {
     <div><span>Disponibilidad</span><strong>${activeProduct.availability}</strong></div>
   `;
   modalPricing.innerHTML = priceMarkup(activeProduct) + addToCartMarkup(activeProduct);
-  modalWhatsapp.href = whatsappUrl(productMessage(activeProduct));
   renderModalImage();
   modal.showModal();
 };
