@@ -35,7 +35,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=12">
+    <link rel="stylesheet" href="src/styles.css?v=13">
 
     <script type="application/ld+json">
     {
@@ -118,45 +118,27 @@
     </header>
 
     <main id="inicio">
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">Coleccionables • Decoración • Impresión 3D</p>
-          <img class="hero-logo" src="assets/boomart-logo.svg" alt="BoomArt">
+      <section class="intro">
+        <img class="intro-logo" src="assets/boomart-logo.svg" alt="">
+        <div class="intro-copy">
           <h1>BOOM ART</h1>
-          <p class="hero-text">Coleccionables y piezas decorativas impresas en 3D, listas para lucirse en tu vitrina, escritorio o set de colección.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="#catalogo">Ver catálogo</a>
-            <a class="button secondary" id="heroWhatsapp" target="_blank" rel="noreferrer">Consultar por WhatsApp</a>
-          </div>
+          <p class="intro-text">Figuras coleccionables y decoración impresa en 3D, hechas a pedido en Lima y Callao. Envíos a todo el Perú.</p>
         </div>
-        <div class="hero-showcase" aria-label="Productos destacados">
-          <div class="showcase-card tall" data-showcase="0"></div>
-          <div class="showcase-card" data-showcase="1"></div>
-          <div class="showcase-card" data-showcase="2"></div>
-        </div>
-      </section>
-
-      <section class="featured-section" aria-labelledby="featuredTitle">
-        <div class="section-heading">
-          <p class="eyebrow">Selección BoomArt</p>
-          <h2 id="featuredTitle">Piezas destacadas</h2>
-        </div>
-        <div class="featured-grid" id="featuredGrid"></div>
       </section>
 
       <section class="catalog-section" id="catalogo" aria-labelledby="catalogTitle">
         <div class="catalog-head">
           <div>
             <p class="eyebrow">Catálogo BoomArt</p>
-            <h2 id="catalogTitle">Elige tu próxima pieza</h2>
+            <h2 id="catalogTitle">Explora y arma tu pedido</h2>
           </div>
           <label class="search-box">
             <span>Buscar</span>
-            <input id="searchInput" type="search" placeholder="Atena, Aries, templo..." autocomplete="off">
+            <input id="searchInput" type="search" placeholder="Busca: Atena, Aries, templo, maceta..." autocomplete="off">
           </label>
         </div>
 
-        <div class="filter-row" id="filterRow" aria-label="Filtros de productos"></div>
+        <div class="filter-row" id="filterRow" aria-label="Categorías de productos"></div>
 
         <div class="result-meta">
           <span id="resultCount"></span>
@@ -370,7 +352,7 @@
     <script src="src/checkout-config.js?v=5"></script>
     <script src="src/cart.js?v=5"></script>
     <script src="src/products.js?v=5"></script>
-    <script src="src/app.js?v=10"></script>
+    <script src="src/app.js?v=11"></script>
     <script src="src/checkout.js?v=10"></script>
     <script src="src/products-loader.js?v=5"></script>
   </body>

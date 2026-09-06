@@ -2,7 +2,6 @@ let products = [];
 const config = window.BOOMART_CONFIG;
 
 const productGrid = document.querySelector("#productGrid");
-const featuredGrid = document.querySelector("#featuredGrid");
 const filterRow = document.querySelector("#filterRow");
 const searchInput = document.querySelector("#searchInput");
 const resultCount = document.querySelector("#resultCount");
@@ -167,33 +166,13 @@ const renderProducts = () => {
   emptyState.hidden = visible.length > 0;
 };
 
-const renderFeatured = () => {
-  featuredGrid.innerHTML = products
-    .filter((product) => product.featured)
-    .slice(0, 4)
-    .map(productCard)
-    .join("");
-};
-
-const renderShowcase = () => {
-  const showcaseProducts = products.filter((product) => product.image).slice(0, 3);
-  document.querySelectorAll("[data-showcase]").forEach((node) => {
-    const product = showcaseProducts[Number(node.dataset.showcase)];
-    if (!product) return;
-    node.innerHTML = `
-      ${productImage(product)}
-      <div>
-        <span>${product.category}</span>
-        <strong>${product.name}</strong>
-      </div>
-    `;
-  });
-};
-
 const setGlobalWhatsapp = () => {
-  document.querySelector("#heroWhatsapp").href = whatsappUrl(config.defaultMessage);
-  document.querySelector("#offersWhatsapp").href = whatsappUrl("Hola BoomArt, quiero consultar por las promociones disponibles del catálogo.");
-  document.querySelector("#footerWhatsapp").href = whatsappUrl(config.defaultMessage);
+  const setHref = (selector, message) => {
+    const node = document.querySelector(selector);
+    if (node) node.href = whatsappUrl(message);
+  };
+  setHref("#offersWhatsapp", "Hola BoomArt, quiero consultar por las promociones disponibles del catálogo.");
+  setHref("#footerWhatsapp", config.defaultMessage);
 };
 
 const renderModalImage = () => {
@@ -348,7 +327,5 @@ document.addEventListener("boomart:products-ready", () => {
   products = window.BOOMART_PRODUCTS || [];
   renderFilters();
   renderQuickCategories();
-  renderFeatured();
   renderProducts();
-  renderShowcase();
 });
