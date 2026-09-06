@@ -131,7 +131,10 @@ const productCard = (product) => `
   </article>
 `;
 
-const catalogCategories = () => ["Todos", "Destacados", "Ofertas", ...new Set(products.map((product) => product.category))];
+// La franja muestra solo las categorías reales. "Todos" es el estado por
+// defecto (sin categoría activa) y se vuelve a él tocando "Limpiar filtros" o
+// volviendo a tocar la categoría ya activa.
+const catalogCategories = () => [...new Set(products.map((product) => product.category))];
 
 const renderFilters = () => {
   filterRow.innerHTML = catalogCategories()
@@ -151,11 +154,7 @@ const matchesProduct = (product) => {
   const query = normalize(searchInput.value);
   const haystack = normalize([product.name, product.category, product.description, product.height, ...(product.tags || [])].join(" "));
   const matchesSearch = !query || haystack.includes(query);
-  const matchesFilter =
-    activeFilter === "Todos" ||
-    (activeFilter === "Destacados" && product.featured) ||
-    (activeFilter === "Ofertas" && product.offer) ||
-    product.category === activeFilter;
+  const matchesFilter = activeFilter === "Todos" || product.category === activeFilter;
   return matchesSearch && matchesFilter;
 };
 
@@ -224,7 +223,9 @@ document.addEventListener("click", (event) => {
   if (openButton) openProduct(openButton.dataset.open);
   if (filterButton) {
     const fromQuickPanel = Boolean(filterButton.closest("#quickCategoriesPanel"));
-    activeFilter = filterButton.dataset.filter;
+    const clicked = filterButton.dataset.filter;
+    // Tocar la categoría que ya está activa la desactiva (vuelve a "Todos").
+    activeFilter = clicked === activeFilter ? "Todos" : clicked;
     if (fromQuickPanel) {
       // Seleccionar una categoria desde el panel rapido es una navegacion nueva:
       // se limpia cualquier busqueda de texto que hubiera quedado activa para

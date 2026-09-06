@@ -10,11 +10,11 @@ Fuente estructurada: https://boomart.pe/catalogo.json
 
 ---
 
-## Templos del Zodiaco
+## Saint Seiya
 
 ### Templo de Aries
 
-- Categoria: Templos del Zodiaco
+- Categoria: Saint Seiya
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA
 - Disponibilidad: A pedido
@@ -26,7 +26,7 @@ La Casa de Aries del Santuario de Athena, en réplica decorativa para tu colecci
 
 ### Templo de Tauro
 
-- Categoria: Templos del Zodiaco
+- Categoria: Saint Seiya
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA
 - Disponibilidad: A pedido
@@ -38,7 +38,7 @@ La Casa de Tauro del Santuario de Athena, en réplica decorativa para tu colecci
 
 ### Templo de Géminis
 
-- Categoria: Templos del Zodiaco
+- Categoria: Saint Seiya
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA
 - Disponibilidad: A pedido
@@ -50,7 +50,7 @@ La Casa de Géminis del Santuario de Athena, en réplica decorativa para tu cole
 
 ### Templo de Cáncer
 
-- Categoria: Templos del Zodiaco
+- Categoria: Saint Seiya
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA
 - Disponibilidad: A pedido
@@ -62,7 +62,7 @@ La Casa de Cáncer del Santuario de Athena, en réplica decorativa para tu colec
 
 ### Templo de Leo
 
-- Categoria: Templos del Zodiaco
+- Categoria: Saint Seiya
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA
 - Disponibilidad: A pedido
@@ -74,7 +74,7 @@ La Casa de Leo del Santuario de Athena, en réplica decorativa para tu colecció
 
 ### Templo de Virgo
 
-- Categoria: Templos del Zodiaco
+- Categoria: Saint Seiya
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA
 - Disponibilidad: A pedido
@@ -86,7 +86,7 @@ La Casa de Virgo del Santuario de Athena, en réplica decorativa para tu colecci
 
 ### Templo de Libra
 
-- Categoria: Templos del Zodiaco
+- Categoria: Saint Seiya
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA
 - Disponibilidad: A pedido
@@ -98,7 +98,7 @@ La Casa de Libra del Santuario de Athena, en réplica decorativa para tu colecci
 
 ### Templo de Escorpio
 
-- Categoria: Templos del Zodiaco
+- Categoria: Saint Seiya
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA
 - Disponibilidad: A pedido
@@ -110,7 +110,7 @@ La Casa de Escorpio del Santuario de Athena, en réplica decorativa para tu cole
 
 ### Templo de Sagitario
 
-- Categoria: Templos del Zodiaco
+- Categoria: Saint Seiya
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA
 - Disponibilidad: A pedido
@@ -122,7 +122,7 @@ La Casa de Sagitario del Santuario de Athena, en réplica decorativa para tu col
 
 ### Templo de Capricornio
 
-- Categoria: Templos del Zodiaco
+- Categoria: Saint Seiya
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA
 - Disponibilidad: A pedido
@@ -134,7 +134,7 @@ La Casa de Capricornio del Santuario de Athena, en réplica decorativa para tu c
 
 ### Templo de Acuario
 
-- Categoria: Templos del Zodiaco
+- Categoria: Saint Seiya
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA
 - Disponibilidad: A pedido
@@ -146,7 +146,7 @@ La Casa de Acuario del Santuario de Athena, en réplica decorativa para tu colec
 
 ### Templo de Piscis
 
-- Categoria: Templos del Zodiaco
+- Categoria: Saint Seiya
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA
 - Disponibilidad: A pedido
@@ -155,8 +155,6 @@ La Casa de Acuario del Santuario de Athena, en réplica decorativa para tu colec
 - Ficha: https://boomart.pe/catalogo.html#templo-piscis
 
 La Casa de Piscis del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).
-
-## Saint Seiya
 
 ### Busto de Atena · 25 cm · Saint Seiya
 

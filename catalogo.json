@@ -13,7 +13,7 @@
     {
       "id": "templo-aries",
       "name": "Templo de Aries",
-      "category": "Templos del Zodiaco",
+      "category": "Saint Seiya",
       "tags": [
         "Saint Seiya",
         "Templo",
@@ -40,7 +40,7 @@
     {
       "id": "templo-tauro",
       "name": "Templo de Tauro",
-      "category": "Templos del Zodiaco",
+      "category": "Saint Seiya",
       "tags": [
         "Saint Seiya",
         "Templo",
@@ -68,7 +68,7 @@
     {
       "id": "templo-geminis",
       "name": "Templo de Géminis",
-      "category": "Templos del Zodiaco",
+      "category": "Saint Seiya",
       "tags": [
         "Saint Seiya",
         "Templo",
@@ -96,7 +96,7 @@
     {
       "id": "templo-cancer",
       "name": "Templo de Cáncer",
-      "category": "Templos del Zodiaco",
+      "category": "Saint Seiya",
       "tags": [
         "Saint Seiya",
         "Templo",
@@ -124,7 +124,7 @@
     {
       "id": "templo-leo",
       "name": "Templo de Leo",
-      "category": "Templos del Zodiaco",
+      "category": "Saint Seiya",
       "tags": [
         "Saint Seiya",
         "Templo",
@@ -151,7 +151,7 @@
     {
       "id": "templo-virgo",
       "name": "Templo de Virgo",
-      "category": "Templos del Zodiaco",
+      "category": "Saint Seiya",
       "tags": [
         "Saint Seiya",
         "Templo",
@@ -179,7 +179,7 @@
     {
       "id": "templo-libra",
       "name": "Templo de Libra",
-      "category": "Templos del Zodiaco",
+      "category": "Saint Seiya",
       "tags": [
         "Saint Seiya",
         "Templo",
@@ -206,7 +206,7 @@
     {
       "id": "templo-escorpio",
       "name": "Templo de Escorpio",
-      "category": "Templos del Zodiaco",
+      "category": "Saint Seiya",
       "tags": [
         "Saint Seiya",
         "Templo",
@@ -233,7 +233,7 @@
     {
       "id": "templo-sagitario",
       "name": "Templo de Sagitario",
-      "category": "Templos del Zodiaco",
+      "category": "Saint Seiya",
       "tags": [
         "Saint Seiya",
         "Templo",
@@ -260,7 +260,7 @@
     {
       "id": "templo-capricornio",
       "name": "Templo de Capricornio",
-      "category": "Templos del Zodiaco",
+      "category": "Saint Seiya",
       "tags": [
         "Saint Seiya",
         "Templo",
@@ -287,7 +287,7 @@
     {
       "id": "templo-acuario",
       "name": "Templo de Acuario",
-      "category": "Templos del Zodiaco",
+      "category": "Saint Seiya",
       "tags": [
         "Saint Seiya",
         "Templo",
@@ -314,7 +314,7 @@
     {
       "id": "templo-piscis",
       "name": "Templo de Piscis",
-      "category": "Templos del Zodiaco",
+      "category": "Saint Seiya",
       "tags": [
         "Saint Seiya",
         "Templo",
