@@ -190,7 +190,11 @@ input {
   display: flex;
   align-items: center;
   gap: 12px;
-  min-width: max-content;
+  min-width: 0;
+}
+
+.brand span {
+  min-width: 0;
 }
 
 .brand-logo {
@@ -214,6 +218,16 @@ input {
   text-transform: uppercase;
 }
 
+/* Descripción de la empresa junto al nombre en la cabecera: es una frase,
+   así que se lee mejor sin mayúsculas y con salto de línea controlado. */
+.brand small {
+  max-width: 46ch;
+  margin-top: 3px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-transform: none;
+}
+
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -227,40 +241,16 @@ main {
   position: relative;
 }
 
-/* Portada breve: logo + nombre + a qué nos dedicamos. Sin productos, sin
-   ocupar toda la pantalla; justo debajo empieza el catálogo. */
-.intro {
-  display: flex;
-  align-items: center;
-  gap: clamp(14px, 3vw, 24px);
-  padding: clamp(20px, 4vw, 34px) clamp(18px, 5vw, 72px);
-  border-bottom: 1px solid var(--line);
-}
-
-.intro-logo {
-  width: clamp(44px, 8vw, 64px);
-  height: auto;
-  flex: none;
-  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.4));
-}
-
-.intro-copy {
-  min-width: 0;
-}
-
-.intro h1 {
-  margin: 2px 0 4px;
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
-  line-height: 1;
-  letter-spacing: 0.02em;
-}
-
-.intro-text {
-  margin: 0;
-  max-width: 62ch;
-  color: #cfc7be;
-  font-size: clamp(0.9rem, 2.4vw, 1rem);
-  line-height: 1.5;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .card-actions {
@@ -1444,13 +1434,12 @@ h2 {
     justify-content: flex-start;
   }
 
-  .intro {
-    gap: 12px;
-    padding: 14px 18px;
+  .brand small {
+    max-width: none;
   }
 
   .catalog-section {
-    padding-top: 14px;
+    padding-top: 16px;
   }
 
   .catalog-head {

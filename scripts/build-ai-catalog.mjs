@@ -247,7 +247,7 @@ ${cards}
     <meta property="og:image" content="${SITE}/assets/products/promo-12-casas-mini.jpg">
     <meta property="og:locale" content="es_PE">
     <link rel="alternate" type="application/json" href="${SITE}/catalogo.json" title="Feed JSON del catalogo BoomArt">
-    <link rel="stylesheet" href="src/styles.css?v=13">
+    <link rel="stylesheet" href="src/styles.css?v=14">
     <style>
       .ai-catalog { max-width: 1040px; margin: 0 auto; padding: 32px 20px 80px; }
       .ai-catalog h1 { margin-bottom: 8px; }
