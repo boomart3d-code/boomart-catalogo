@@ -439,7 +439,6 @@
 
   function buildOrderMessage(state) {
     const methodLabel = ((CHECKOUT.paymentMethods || {})[selectedPaymentMethod] || {}).label || selectedPaymentMethod || "el metodo elegido";
-    const terms = (CHECKOUT.deliveryTerms || {})[customer.destination] || { balanceCondition: "" };
 
     const itemLines = state.lines
       .map((line) => {
@@ -455,12 +454,10 @@
       "",
       `Total de productos: ${money(state.totals.total)}`,
       `Adelanto del 50%: ${money(state.totals.advance)}`,
-      `He realizado el adelanto mediante ${methodLabel}, pendiente de su validación.`,
-      `Saldo de productos: ${money(state.totals.balance)}`,
+      `He realizado el adelanto mediante ${methodLabel}.`,
       `Destino: ${destinationLabel()}`,
-      "Envío: costo por coordinar, no incluido.",
-      terms.balanceCondition,
-      "Les envío a continuación mi comprobante para validar el adelanto e iniciar la fabricación."
+      "",
+      `Ahora les comparto el voucher de mi pago por ${methodLabel}.`
     ].join("\n");
   }
 
