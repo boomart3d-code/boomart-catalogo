@@ -786,7 +786,6 @@ h2 {
   position: absolute;
   top: -6px;
   right: -6px;
-  display: grid;
   min-width: 18px;
   height: 18px;
   padding: 0 4px;
@@ -797,6 +796,10 @@ h2 {
   font-weight: 900;
   place-items: center;
   line-height: 1;
+}
+
+.cart-count:not([hidden]) {
+  display: grid;
 }
 
 .cart-toast {
@@ -1536,7 +1539,6 @@ h2 {
   position: absolute;
   top: -4px;
   right: -4px;
-  display: grid;
   min-width: 20px;
   height: 20px;
   padding: 0 4px;
@@ -1547,6 +1549,10 @@ h2 {
   font-weight: 900;
   place-items: center;
   line-height: 1;
+}
+
+.cart-float-count:not([hidden]) {
+  display: grid;
 }
 
 @media (max-width: 720px) {
