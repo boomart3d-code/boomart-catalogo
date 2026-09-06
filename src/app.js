@@ -225,7 +225,7 @@ const openProduct = (productId) => {
   modalCategory.textContent = activeProduct.category;
   modalDescription.textContent = activeProduct.description;
   modalDetails.innerHTML = `
-    <div><span>Altura</span><strong>${activeProduct.height}</strong></div>
+    ${activeProduct.height ? `<div><span>Altura</span><strong>${activeProduct.height}</strong></div>` : ""}
     <div><span>Material</span><strong>${activeProduct.material}</strong></div>
     <div><span>Disponibilidad</span><strong>${activeProduct.availability}</strong></div>
   `;

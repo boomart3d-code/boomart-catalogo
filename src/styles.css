@@ -1414,3 +1414,205 @@ h2 {
     flex: 1 1 100%;
   }
 }
+
+/* Botón flotante de WhatsApp (todas las páginas) */
+.ba-wa {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 45;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.ba-wa__icon {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.28);
+  transition: transform 0.18s ease;
+}
+
+.ba-wa__icon::after {
+  content: "";
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  opacity: 0.55;
+  animation: ba-wa-pulse 2.4s ease-out infinite;
+  z-index: -1;
+}
+
+.ba-wa:hover .ba-wa__icon {
+  transform: scale(1.06);
+}
+
+.ba-wa__label {
+  background: #2b2b2b;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1;
+  padding: 9px 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  pointer-events: none;
+}
+
+.ba-wa:hover .ba-wa__label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes ba-wa-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  70% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .ba-wa__label {
+    display: none;
+  }
+  .ba-wa {
+    right: 14px;
+    bottom: 14px;
+  }
+  .ba-wa__icon,
+  .ba-wa__icon::after {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ba-wa__icon::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Enlaces de páginas legales en el footer */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-size: 0.86rem;
+  text-decoration: underline;
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+/* Páginas de contenido (Políticas, Nosotros) */
+.legal-page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: clamp(40px, 6vw, 76px) clamp(18px, 5vw, 72px) clamp(64px, 8vw, 96px);
+}
+
+.legal-page .eyebrow {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.legal-page h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1;
+}
+
+.legal-page .lead {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 0 0 36px;
+}
+
+.legal-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding: 16px 20px;
+  margin: 0 0 40px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  list-style: none;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.legal-toc a {
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+.legal-page section {
+  padding-top: 8px;
+  margin-top: 8px;
+  scroll-margin-top: 90px;
+}
+
+.legal-page section + section {
+  border-top: 1px solid var(--line);
+  padding-top: 36px;
+  margin-top: 36px;
+}
+
+.legal-page h2 {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  margin: 0 0 16px;
+}
+
+.legal-page h3 {
+  color: var(--gold);
+  font-size: 1.05rem;
+  margin: 22px 0 8px;
+}
+
+.legal-page p,
+.legal-page li {
+  color: #dfdad3;
+  line-height: 1.65;
+}
+
+.legal-page ul,
+.legal-page ol {
+  padding-left: 22px;
+}
+
+.legal-page a {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+.legal-page strong {
+  color: white;
+}
