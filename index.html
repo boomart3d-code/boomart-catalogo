@@ -32,7 +32,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=5">
+    <link rel="stylesheet" href="src/styles.css?v=6">
 
     <script type="application/ld+json">
     {
@@ -313,6 +313,15 @@
       </div>
     </dialog>
 
+    <button type="button" class="cart-float" id="cartFloatToggle" aria-haspopup="true" aria-controls="cartDrawer" aria-label="Ver carrito">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M3 3h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L20 8H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="9" cy="20" r="1.4" fill="currentColor"/>
+        <circle cx="17" cy="20" r="1.4" fill="currentColor"/>
+      </svg>
+      <span class="cart-float-count" id="cartCountFloat" hidden>0</span>
+    </button>
+
     <a class="ba-wa" href="https://wa.me/51925666542?text=Hola%20BoomArt%20%F0%9F%91%8B%20Tengo%20una%20consulta" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
       <span class="ba-wa__label">¿Dudas? Escríbenos</span>
       <span class="ba-wa__icon" aria-hidden="true">
@@ -326,7 +335,7 @@
     <script src="src/cart.js?v=5"></script>
     <script src="src/products.js?v=5"></script>
     <script src="src/app.js?v=6"></script>
-    <script src="src/checkout.js?v=5"></script>
+    <script src="src/checkout.js?v=6"></script>
     <script src="src/products-loader.js?v=5"></script>
   </body>
 </html>

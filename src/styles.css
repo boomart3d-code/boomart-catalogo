@@ -1512,6 +1512,49 @@ h2 {
   }
 }
 
+/* Botón flotante de carrito: solo en móvil, para que siempre se pueda
+   llegar al carrito aunque se haya scrolleado lejos del header. */
+.cart-float {
+  display: none;
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 45;
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--red);
+  color: white;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+}
+
+.cart-float-count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  display: grid;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 0.72rem;
+  font-weight: 900;
+  place-items: center;
+  line-height: 1;
+}
+
+@media (max-width: 720px) {
+  .cart-float {
+    display: flex;
+  }
+}
+
 /* Enlaces de páginas legales en el footer */
 .footer-links {
   display: flex;

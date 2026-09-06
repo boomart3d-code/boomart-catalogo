@@ -11,6 +11,8 @@
   const money = (value) => `S/${Number(value || 0).toFixed(2)}`;
 
   const cartToggle = document.querySelector("#cartToggle");
+  const cartFloatToggle = document.querySelector("#cartFloatToggle");
+  const cartCountFloatEl = document.querySelector("#cartCountFloat");
   const cartDrawer = document.querySelector("#cartDrawer");
   const cartBackdrop = document.querySelector("#cartBackdrop");
   const closeCartBtn = document.querySelector("#closeCart");
@@ -74,6 +76,8 @@
 
     cartCountEl.textContent = String(cartState.totals.itemCount);
     cartCountEl.hidden = cartState.totals.itemCount === 0;
+    cartCountFloatEl.textContent = String(cartState.totals.itemCount);
+    cartCountFloatEl.hidden = cartState.totals.itemCount === 0;
 
     if (!cartState.lines.length) {
       cartLinesEl.innerHTML = `<p class="cart-empty">Tu carrito está vacío. Agrega productos desde el catálogo.</p>`;
@@ -89,6 +93,7 @@
     cartDrawer.hidden = false;
     cartBackdrop.hidden = false;
     cartToggle.setAttribute("aria-expanded", "true");
+    cartFloatToggle.setAttribute("aria-expanded", "true");
     closeCartBtn.focus();
   };
 
@@ -96,6 +101,7 @@
     cartDrawer.hidden = true;
     cartBackdrop.hidden = true;
     cartToggle.setAttribute("aria-expanded", "false");
+    cartFloatToggle.setAttribute("aria-expanded", "false");
     cartToggle.focus();
   };
 
@@ -132,6 +138,10 @@
   });
 
   cartToggle.addEventListener("click", () => {
+    if (cartDrawer.hidden) openCart();
+    else closeCart();
+  });
+  cartFloatToggle.addEventListener("click", () => {
     if (cartDrawer.hidden) openCart();
     else closeCart();
   });
