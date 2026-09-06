@@ -496,7 +496,7 @@ function buildMetaFeed(products) {
       p.id,
       p.name,
       desc,
-      "available for order",
+      "in stock",
       "new",
       money(price.listPrice),
       price.salePrice != null ? money(price.salePrice) : "",
