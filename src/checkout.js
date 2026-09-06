@@ -371,9 +371,11 @@
         const label = method.label || methodKey;
         paymentDetailEl.innerHTML = `
           <div class="payment-qr">
-            <img src="${method.qrImage}" alt="Código QR de ${label} de BoomArt">
+            <a href="${method.qrImage}" target="_blank" rel="noreferrer" aria-label="Ver código QR de ${label} en tamaño completo">
+              <img src="${method.qrImage}" alt="Código QR de ${label} de BoomArt">
+            </a>
             <a class="button secondary" href="${method.qrImage}" download="${label}-BoomArt-QR.jpg">Descargar código QR</a>
-            <p class="payment-qr-hint">Si estás pagando desde el mismo celular, descarga o mantén presionada la imagen para guardarla, y ábrela desde ${label} para escanearla.</p>
+            <p class="payment-qr-hint">¿Pagas desde este mismo celular? Descarga el QR o mantenlo presionado para guardarlo, y ábrelo desde ${label}.</p>
             ${method.holder ? `<p class="payment-holder">Titular: <strong>${method.holder}</strong></p>` : ""}
             ${
               method.phone
@@ -409,13 +411,24 @@
     try {
       await navigator.clipboard.writeText(phone);
     } catch {
+      // Respaldo para navegadores sin Clipboard API (o sin permiso): selecciona
+      // el texto manualmente y usa el comando de copia clasico. El truco de
+      // posicionarlo fuera de pantalla (en vez de opacity:0) es necesario para
+      // que Safari/iOS permita seleccionarlo.
       const helper = document.createElement("textarea");
       helper.value = phone;
-      helper.style.position = "fixed";
-      helper.style.opacity = "0";
+      helper.setAttribute("readonly", "");
+      helper.style.position = "absolute";
+      helper.style.left = "-9999px";
       document.body.appendChild(helper);
-      helper.select();
+      const range = document.createRange();
+      range.selectNodeContents(helper);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      helper.setSelectionRange(0, phone.length);
       document.execCommand("copy");
+      selection.removeAllRanges();
       document.body.removeChild(helper);
     }
     copyBtn.textContent = "¡Copiado!";

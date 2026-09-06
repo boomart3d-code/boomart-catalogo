@@ -394,7 +394,8 @@ main {
 }
 
 #catalogo,
-#ofertas {
+#ofertas,
+#productGrid {
   scroll-margin-top: calc(var(--quicknav-h) + 74px);
 }
 
@@ -1549,6 +1550,32 @@ h2 {
 
   .checkout-shell {
     max-height: 100%;
+  }
+
+  .payment-qr {
+    gap: 6px;
+    padding: 12px;
+  }
+
+  .payment-qr img {
+    width: min(130px, 34vw);
+  }
+
+  .payment-qr-hint {
+    font-size: 0.74rem;
+  }
+
+  .payment-disclaimer {
+    margin-top: 8px;
+    font-size: 0.74rem;
+  }
+
+  .field-hint {
+    font-size: 0.82rem;
+  }
+
+  .payment-phone-box {
+    padding-top: 8px;
   }
 
   .payment-methods {

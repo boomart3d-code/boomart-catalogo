@@ -256,12 +256,19 @@ document.addEventListener("click", (event) => {
   if (filterButton) {
     const fromQuickPanel = Boolean(filterButton.closest("#quickCategoriesPanel"));
     activeFilter = filterButton.dataset.filter;
+    if (fromQuickPanel) {
+      // Seleccionar una categoria desde el panel rapido es una navegacion nueva:
+      // se limpia cualquier busqueda de texto que hubiera quedado activa para
+      // que no filtre en silencio los resultados de la categoria elegida.
+      searchInput.value = "";
+      quickSearchInput.value = "";
+    }
     renderFilters();
     renderQuickCategories();
     renderProducts();
     if (fromQuickPanel) {
       closeQuickCategories();
-      document.querySelector("#catalogo").scrollIntoView({ behavior: "smooth", block: "start" });
+      productGrid.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }
   if (thumbButton) {
@@ -316,6 +323,13 @@ quickSearchToggle.addEventListener("click", () => {
 quickSearchInput.addEventListener("input", () => {
   searchInput.value = quickSearchInput.value;
   renderProducts();
+});
+quickSearchInput.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter") return;
+  event.preventDefault();
+  quickSearchInput.blur();
+  closeQuickSearch();
+  productGrid.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 document.addEventListener("click", (event) => {
   if (quickSearchBox.hidden) return;
