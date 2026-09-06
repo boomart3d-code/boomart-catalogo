@@ -58,7 +58,7 @@ const productImage = (product, className = "") => {
   return `<img class="${className}" src="${product.image}" alt="${product.name}" loading="lazy">`;
 };
 
-const VARIANT_LABELS = { temple: "Templo", pandora: "Pandora Box + pedestal", combo: "Combo (templo + Pandora Box)" };
+const TEMPLE_BOX_LABELS = { temple: "Templo", pandora: "Pandora Box + pedestal", combo: "Combo" };
 
 // Controles para agregar al carrito. Cada tarjeta/modal tiene su propia instancia
 // independiente (no comparten estado entre si), identificada por data-product.
@@ -70,13 +70,14 @@ const DEFAULT_TEMPLE_VARIANT = "combo";
 const addToCartMarkup = (product) => {
   const variantPicker = product.templePricing
     ? `
-      <div class="variant-select" role="group" aria-label="Elige una opcion para ${product.name}">
+      <div class="temple-price-card" role="group" aria-label="Elige una opcion para ${product.name}">
         ${Object.keys(product.templePricing)
           .map((key) => {
             const selected = key === DEFAULT_TEMPLE_VARIANT;
             return `
-              <button type="button" class="variant-option${selected ? " is-selected" : ""}" data-variant-option="${key}" aria-pressed="${selected}">
-                ${VARIANT_LABELS[key]} · ${formatPrice(product.templePricing[key])}
+              <button type="button" class="temple-price-option${selected ? " is-selected" : ""}" data-variant-option="${key}" aria-pressed="${selected}">
+                <span>${TEMPLE_BOX_LABELS[key]}</span>
+                <strong>${formatPrice(product.templePricing[key])}</strong>
               </button>
             `;
           })
@@ -105,15 +106,10 @@ const addToCartMarkup = (product) => {
 };
 
 const priceMarkup = (product) => {
-  if (product.templePricing) {
-    return `
-      <div class="temple-price-card">
-        <div><span>Templo</span><strong>${formatPrice(product.templePricing.temple)}</strong></div>
-        <div><span>Pandora Box + pedestal</span><strong>${formatPrice(product.templePricing.pandora)}</strong></div>
-        <div class="combo"><span>Combo</span><strong>${formatPrice(product.templePricing.combo)}</strong></div>
-      </div>
-    `;
-  }
+  // Los templos ya muestran su precio dentro de addToCartMarkup(), como parte
+  // del propio selector de Templo/Pandora Box/Combo (evita repetir la misma
+  // informacion dos veces en la tarjeta).
+  if (product.templePricing) return "";
 
   return `
     <div class="simple-price">
@@ -145,9 +141,18 @@ const productCard = (product) => `
   </article>
 `;
 
+const catalogCategories = () => ["Todos", "Destacados", "Ofertas", ...new Set(products.map((product) => product.category))];
+
 const renderFilters = () => {
-  const categories = ["Todos", "Destacados", "Ofertas", ...new Set(products.map((product) => product.category))];
-  filterRow.innerHTML = categories
+  filterRow.innerHTML = catalogCategories()
+    .map((category) => `<button class="${category === activeFilter ? "active" : ""}" type="button" data-filter="${category}">${category}</button>`)
+    .join("");
+};
+
+const quickCategoriesPanel = document.querySelector("#quickCategoriesPanel");
+
+const renderQuickCategories = () => {
+  quickCategoriesPanel.innerHTML = catalogCategories()
     .map((category) => `<button class="${category === activeFilter ? "active" : ""}" type="button" data-filter="${category}">${category}</button>`)
     .join("");
 };
@@ -249,9 +254,15 @@ document.addEventListener("click", (event) => {
 
   if (openButton) openProduct(openButton.dataset.open);
   if (filterButton) {
+    const fromQuickPanel = Boolean(filterButton.closest("#quickCategoriesPanel"));
     activeFilter = filterButton.dataset.filter;
     renderFilters();
+    renderQuickCategories();
     renderProducts();
+    if (fromQuickPanel) {
+      closeQuickCategories();
+      document.querySelector("#catalogo").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   }
   if (thumbButton) {
     activeImageIndex = Number(thumbButton.dataset.thumb);
@@ -264,7 +275,33 @@ clearFilters.addEventListener("click", () => {
   activeFilter = "Todos";
   searchInput.value = "";
   renderFilters();
+  renderQuickCategories();
   renderProducts();
+});
+
+const quickCategoriesToggle = document.querySelector("#quickCategoriesToggle");
+const closeQuickCategories = () => {
+  quickCategoriesPanel.hidden = true;
+  quickCategoriesToggle.setAttribute("aria-expanded", "false");
+};
+quickCategoriesToggle.addEventListener("click", () => {
+  const willOpen = quickCategoriesPanel.hidden;
+  quickCategoriesPanel.hidden = !willOpen;
+  quickCategoriesToggle.setAttribute("aria-expanded", String(willOpen));
+});
+document.addEventListener("click", (event) => {
+  if (quickCategoriesPanel.hidden) return;
+  if (event.target.closest("#quickCategoriesPanel") || event.target.closest("#quickCategoriesToggle")) return;
+  closeQuickCategories();
+});
+
+document.querySelector("#quickSearchToggle").addEventListener("click", () => {
+  document.querySelector("#catalogo").scrollIntoView({ behavior: "smooth", block: "start" });
+  searchInput.focus();
+});
+
+document.querySelector("#quickTopBtn").addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 closeModal.addEventListener("click", () => modal.close());
 modal.addEventListener("click", (event) => {
@@ -283,6 +320,7 @@ setGlobalWhatsapp();
 document.addEventListener("boomart:products-ready", () => {
   products = window.BOOMART_PRODUCTS || [];
   renderFilters();
+  renderQuickCategories();
   renderFeatured();
   renderProducts();
   renderShowcase();

@@ -32,7 +32,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=7">
+    <link rel="stylesheet" href="src/styles.css?v=8">
 
     <script type="application/ld+json">
     {
@@ -62,6 +62,32 @@
     </script>
   </head>
   <body>
+    <div class="quick-nav" id="quickNav">
+      <a class="quick-nav-logo" href="#inicio" aria-label="BoomArt inicio">
+        <img src="assets/boomart-logo.svg" alt="">
+      </a>
+      <div class="quick-nav-actions">
+        <button type="button" class="quick-nav-btn" id="quickSearchToggle" aria-label="Buscar en el catálogo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/>
+            <path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button type="button" class="quick-nav-btn quick-nav-categories" id="quickCategoriesToggle" aria-haspopup="true" aria-expanded="false" aria-controls="quickCategoriesPanel">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <span>Categorías</span>
+        </button>
+        <button type="button" class="quick-nav-btn" id="quickTopBtn" aria-label="Volver arriba">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="quick-nav-panel" id="quickCategoriesPanel" hidden></div>
+    </div>
+
     <header class="site-header">
       <a class="brand" href="#inicio" aria-label="BoomArt inicio">
         <img class="brand-logo" src="assets/boomart-logo.svg" alt="BoomArt">
@@ -334,8 +360,8 @@
     <script src="src/checkout-config.js?v=5"></script>
     <script src="src/cart.js?v=5"></script>
     <script src="src/products.js?v=5"></script>
-    <script src="src/app.js?v=6"></script>
-    <script src="src/checkout.js?v=6"></script>
+    <script src="src/app.js?v=7"></script>
+    <script src="src/checkout.js?v=7"></script>
     <script src="src/products-loader.js?v=5"></script>
   </body>
 </html>

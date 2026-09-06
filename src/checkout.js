@@ -368,11 +368,26 @@
 
       const method = (CHECKOUT.paymentMethods || {})[methodKey] || {};
       if (method.available && method.qrImage) {
+        const label = method.label || methodKey;
         paymentDetailEl.innerHTML = `
           <div class="payment-qr">
-            <img src="${method.qrImage}" alt="Código QR de ${method.label || methodKey} de BoomArt">
+            <img src="${method.qrImage}" alt="Código QR de ${label} de BoomArt">
+            <a class="button secondary" href="${method.qrImage}" download="${label}-BoomArt-QR.jpg">Descargar código QR</a>
+            <p class="payment-qr-hint">Si estás pagando desde el mismo celular, descarga o mantén presionada la imagen para guardarla, y ábrela desde ${label} para escanearla.</p>
             ${method.holder ? `<p class="payment-holder">Titular: <strong>${method.holder}</strong></p>` : ""}
-            ${method.phone ? `<p class="payment-phone">También puedes buscar el número <strong>${method.phone}</strong> directamente en ${method.label || methodKey}.</p>` : ""}
+            ${
+              method.phone
+                ? `
+                  <div class="payment-phone-box">
+                    <p>O búscala directamente en ${label} con este número:</p>
+                    <div class="payment-phone-row">
+                      <strong class="payment-phone-number">${method.phone}</strong>
+                      <button type="button" class="button secondary" data-copy-phone="${method.phone}">Copiar número</button>
+                    </div>
+                  </div>
+                `
+                : ""
+            }
           </div>
         `;
       } else {
@@ -384,6 +399,29 @@
       }
       confirmWhatsappBtn.disabled = false;
     });
+  });
+
+  paymentDetailEl.addEventListener("click", async (event) => {
+    const copyBtn = event.target.closest("[data-copy-phone]");
+    if (!copyBtn) return;
+    const phone = copyBtn.dataset.copyPhone;
+    const originalLabel = copyBtn.textContent;
+    try {
+      await navigator.clipboard.writeText(phone);
+    } catch {
+      const helper = document.createElement("textarea");
+      helper.value = phone;
+      helper.style.position = "fixed";
+      helper.style.opacity = "0";
+      document.body.appendChild(helper);
+      helper.select();
+      document.execCommand("copy");
+      document.body.removeChild(helper);
+    }
+    copyBtn.textContent = "¡Copiado!";
+    setTimeout(() => {
+      copyBtn.textContent = originalLabel;
+    }, 1800);
   });
 
   function buildOrderMessage(state) {
