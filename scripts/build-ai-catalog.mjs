@@ -364,7 +364,7 @@ ${cards}
     <meta property="og:image:secure_url" content="${SITE}/assets/boomart-og.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:height" content="1200">
     <meta property="og:image:alt" content="BoomArt - Figuras coleccionables e impresion 3D en Peru">
     <meta property="og:locale" content="es_PE">
     <meta name="twitter:card" content="summary_large_image">
