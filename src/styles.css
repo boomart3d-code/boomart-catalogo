@@ -1138,6 +1138,28 @@ h2 {
   transform: none;
 }
 
+/* Confirmacion al agregar: el boton se pone verde con "Agregado ✓". */
+.add-to-cart-btn.is-added,
+.add-to-cart-btn.is-added:disabled {
+  background: #128c4a;
+  border-color: #128c4a;
+  color: #fff;
+  opacity: 1;
+  cursor: default;
+  animation: addedPop 260ms ease;
+}
+
+@keyframes addedPop {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+/* Respuesta tactil al presionar cualquier boton. */
+.button:active {
+  transform: scale(0.97);
+}
+
 /* Dialogo de checkout (pasos) */
 
 .checkout-dialog {

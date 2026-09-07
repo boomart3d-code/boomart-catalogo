@@ -121,13 +121,15 @@
       </span>
     `;
     cartToast.hidden = false;
+    // doble via para que aparezca aunque rAF este pausado (pestana en 2do plano).
     requestAnimationFrame(() => cartToast.classList.add("is-visible"));
+    setTimeout(() => cartToast.classList.add("is-visible"), 30);
     toastHideTimer = setTimeout(() => {
       cartToast.classList.remove("is-visible");
       toastCollapseTimer = setTimeout(() => {
         cartToast.hidden = true;
       }, 240);
-    }, 3600);
+    }, 4200);
   };
 
   const hideToast = () => {
@@ -197,7 +199,8 @@
       return;
     }
 
-    if (event.target.closest("[data-add-to-cart]")) {
+    const addBtn = event.target.closest("[data-add-to-cart]");
+    if (addBtn) {
       const variantKey = container.dataset.variant || null;
       const qty = Number(qtyValueEl.textContent) || 1;
       const state = window.BoomartCart.add(productId, variantKey, qty);
@@ -205,13 +208,32 @@
       const addedLine = state.lines.find(
         (line) => line.productId === productId && (line.variantKey || null) === variantKey
       );
-      if (addedLine) showAddedToast(qty, addedLine, state.totals.itemCount);
 
-      // Si se agrego desde la ficha del producto, cerrarla para que el cliente
-      // vuelva al catalogo donde estaba (app.js limpia el ?producto= de la URL).
+      const fromModal = Boolean(addBtn.closest("#productModal"));
+
+      // Feedback inmediato en el propio boton: "Agregado ✓" y bloqueo breve.
+      const originalLabel = addBtn.textContent.trim();
+      addBtn.classList.add("is-added");
+      addBtn.textContent = "Agregado ✓";
+      addBtn.disabled = true;
+      if (!fromModal) {
+        setTimeout(() => {
+          addBtn.classList.remove("is-added");
+          addBtn.textContent = originalLabel;
+          addBtn.disabled = false;
+        }, 1500);
+      }
+
       const productModal = document.querySelector("#productModal");
-      if (productModal && productModal.open && container.closest("#productModal")) {
-        document.dispatchEvent(new CustomEvent("boomart:dismiss-product"));
+      if (fromModal && productModal && productModal.open) {
+        // Se deja ver el "Agregado ✓" en la ficha, se cierra, y recién ahí
+        // aparece el aviso (si no, queda tapado por la ficha abierta).
+        setTimeout(() => {
+          document.dispatchEvent(new CustomEvent("boomart:dismiss-product"));
+          if (addedLine) showAddedToast(qty, addedLine, state.totals.itemCount);
+        }, 850);
+      } else if (addedLine) {
+        showAddedToast(qty, addedLine, state.totals.itemCount);
       }
     }
   });
