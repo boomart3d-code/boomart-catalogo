@@ -122,6 +122,27 @@
   document.addEventListener("boomart:reviews-ready", render);
   if (window.BOOMART_REVIEWS) render();
 
+  /* --------------------------------------------------- llegar bien a #opiniones
+   * El catalogo se dibuja con JS despues de cargar; ese salto de layout deja
+   * el scroll a media pagina si se entro con #opiniones (p.ej. desde
+   * boomart.pe/opinion). Re-centramos la seccion cuando el catalogo y las
+   * opiniones ya se dibujaron, y otra vez al terminar de cargar todo.
+   */
+  function honorOpinionesHash() {
+    if (location.hash !== "#opiniones") return;
+    var el = document.querySelector("#opiniones");
+    if (el) el.scrollIntoView({ block: "start", behavior: "smooth" });
+  }
+  document.addEventListener("boomart:products-ready", function () {
+    setTimeout(honorOpinionesHash, 80);
+  });
+  document.addEventListener("boomart:reviews-ready", function () {
+    setTimeout(honorOpinionesHash, 80);
+  });
+  window.addEventListener("load", function () {
+    setTimeout(honorOpinionesHash, 250);
+  });
+
   /* ---------------------------------------------------------------- formulario */
   if (!form) return;
 

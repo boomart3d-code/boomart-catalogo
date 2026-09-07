@@ -327,6 +327,7 @@ main {
 
 #catalogo,
 #ofertas,
+#opiniones,
 #productGrid {
   scroll-margin-top: calc(var(--quicknav-h) + 74px);
 }

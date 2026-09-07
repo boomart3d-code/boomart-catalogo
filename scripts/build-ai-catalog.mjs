@@ -370,7 +370,7 @@ ${cards}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="${SITE}/assets/products/promo-12-casas-mini.jpg">
     <link rel="alternate" type="application/json" href="${SITE}/catalogo.json" title="Feed JSON del catalogo BoomArt">
-    <link rel="stylesheet" href="src/styles.css?v=16">
+    <link rel="stylesheet" href="src/styles.css?v=17">
     <style>
       .ai-catalog { max-width: 1040px; margin: 0 auto; padding: 32px 20px 80px; }
       .ai-catalog h1 { margin-bottom: 8px; }
