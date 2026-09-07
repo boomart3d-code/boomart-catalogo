@@ -8,7 +8,7 @@
     "whatsapp": "https://wa.me/51925666542",
     "instagram": "https://www.instagram.com/boomart_3d"
   },
-  "count": 50,
+  "count": 51,
   "products": [
     {
       "id": "templo-aries",
@@ -896,6 +896,33 @@
       ],
       "url": "https://boomart.pe/catalogo.html#zkull-urban",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20ZKULL%20Urban%20%F0%9F%92%80%20%C2%B7%20Halloween"
+    },
+    {
+      "id": "mascara-krampus",
+      "name": "Máscara Krampus 😈 · Halloween",
+      "category": "🎃 Halloween",
+      "tags": [
+        "Mascaras",
+        "Krampus",
+        "Demonio",
+        "Disfraces",
+        "Cuernos"
+      ],
+      "description": "🎃 Edición Halloween. Lleva tu disfraz a un nivel mucho más oscuro con la Máscara Krampus: diseño demoníaco, cuernos de carnero y una expresión aterradora con colmillos. Impresa en 3D y pintada a mano, con acabado detallado. Perfecta para disfraces, fiestas temáticas, sesiones de fotos o para exhibirla como pieza de decoración oscura. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 200,
+      "pricing": [
+        "Precio oferta: S/200 (antes S/230)"
+      ],
+      "image": "https://boomart.pe/assets/products/mascara-krampus-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/mascara-krampus-1.jpg",
+        "https://boomart.pe/assets/products/mascara-krampus-2.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#mascara-krampus",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20Krampus%20%F0%9F%98%88%20%C2%B7%20Halloween"
     },
     {
       "id": "mascara-el-juego-del-calamar",

@@ -806,6 +806,30 @@
     "offerPrice": 50
   },
   {
+    "id": "mascara-krampus",
+    "name": "Máscara Krampus 😈 · Halloween",
+    "category": "🎃 Halloween",
+    "tags": [
+      "Mascaras",
+      "Krampus",
+      "Demonio",
+      "Disfraces",
+      "Cuernos"
+    ],
+    "material": "PLA",
+    "availability": "A pedido",
+    "regularPrice": 230,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/mascara-krampus-1.jpg",
+    "gallery": [
+      "assets/products/mascara-krampus-1.jpg",
+      "assets/products/mascara-krampus-2.jpg"
+    ],
+    "description": "🎃 Edición Halloween. Lleva tu disfraz a un nivel mucho más oscuro con la Máscara Krampus: diseño demoníaco, cuernos de carnero y una expresión aterradora con colmillos. Impresa en 3D y pintada a mano, con acabado detallado. Perfecta para disfraces, fiestas temáticas, sesiones de fotos o para exhibirla como pieza de decoración oscura. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú.",
+    "offerPrice": 200
+  },
+  {
     "id": "mascara-el-juego-del-calamar",
     "name": "Máscara de El Juego del Calamar",
     "category": "Series y Películas",
