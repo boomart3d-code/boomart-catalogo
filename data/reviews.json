@@ -15,5 +15,13 @@
     "date": "2026-09-07",
     "product": "Las 12 Casas del Zodiaco",
     "approved": true
+  },
+  {
+    "name": "Carina",
+    "city": "Lima",
+    "rating": 5,
+    "text": "Me encantó, es fiel a la foto y cumplieron con el tiempo de entrega 🙌",
+    "date": "2026-09-07",
+    "approved": true
   }
 ]
