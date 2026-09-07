@@ -2055,6 +2055,34 @@ h2 {
   text-decoration: underline;
 }
 
+.reviews-page {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.reviews-page .review-form-card {
+  margin-top: 20px;
+}
+
+.reviews-list-title {
+  margin: 40px 0 0;
+  font-size: 1.05rem;
+}
+
+.reviews-back {
+  margin: 32px 0 8px;
+}
+
+.reviews-back a {
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.reviews-back a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 640px) {
   .reviews-list {
     grid-template-columns: 1fr;

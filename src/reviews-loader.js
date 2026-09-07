@@ -32,7 +32,8 @@
     document.dispatchEvent(new CustomEvent("boomart:reviews-ready"));
   }
 
-  fetch("data/reviews.json", { cache: "no-cache" })
+  // Ruta absoluta: este loader corre en / y tambien en /opinion/.
+  fetch("/data/reviews.json", { cache: "no-cache" })
     .then(function (response) {
       if (!response.ok) throw new Error("No se pudo cargar data/reviews.json");
       return response.json();
