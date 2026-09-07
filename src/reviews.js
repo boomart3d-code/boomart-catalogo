@@ -126,7 +126,7 @@
   if (!form) return;
 
   var starInput = form.querySelector(".star-input");
-  var ratingField = form.querySelector('input[name="Puntuación"]');
+  var ratingField = form.querySelector('input[name="Estrellas"]');
   var statusEl = form.querySelector("#reviewFormStatus");
   var submitBtn = form.querySelector('button[type="submit"]');
   var currentRating = 0;
