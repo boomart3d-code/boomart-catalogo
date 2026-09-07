@@ -768,9 +768,8 @@
     {
       "id": "mario-billy-saw",
       "name": "Mario Billy 🎃 · Saw (El Juego del Miedo)",
-      "category": "Series y Películas",
+      "category": "🎃 Halloween",
       "tags": [
-        "Halloween",
         "Mario",
         "Saw",
         "Cine",
@@ -795,9 +794,8 @@
     {
       "id": "mascara-calabaza-calavera",
       "name": "Máscara Calabaza Calavera 🎃 · Halloween",
-      "category": "Series y Películas",
+      "category": "🎃 Halloween",
       "tags": [
-        "Halloween",
         "Mascaras",
         "Disfraces",
         "Calabaza"
@@ -820,9 +818,8 @@
     {
       "id": "candelabro-calavera",
       "name": "Candelabro Calavera 🎃 · Halloween",
-      "category": "Series y Películas",
+      "category": "🎃 Halloween",
       "tags": [
-        "Halloween",
         "Portavelas",
         "Decoración",
         "Calavera",
@@ -848,9 +845,8 @@
     {
       "id": "evil-mask",
       "name": "Evil Mask 😈 · Halloween",
-      "category": "Series y Películas",
+      "category": "🎃 Halloween",
       "tags": [
-        "Halloween",
         "Mascaras",
         "Disfraces",
         "Demonio",
@@ -945,7 +941,7 @@
     {
       "id": "maceta-pikachu",
       "name": "Maceta de Pikachu · Pokémon",
-      "category": "Macetas Decorativas",
+      "category": "Macetas",
       "tags": [
         "Macetas",
         "Pokemon",
@@ -1061,7 +1057,7 @@
     {
       "id": "maceta-groot",
       "name": "Maceta Groot · Guardianes de la Galaxia",
-      "category": "Macetas Decorativas",
+      "category": "Macetas",
       "tags": [
         "Macetas",
         "Marvel"
@@ -1084,7 +1080,7 @@
     {
       "id": "maceta-baby-groot",
       "name": "Maceta Baby Groot",
-      "category": "Macetas Decorativas",
+      "category": "Macetas",
       "tags": [
         "Macetas",
         "Marvel"
@@ -1107,7 +1103,7 @@
     {
       "id": "maceta-dedo-medio",
       "name": "Maceta Dedo Medio",
-      "category": "Macetas Decorativas",
+      "category": "Macetas",
       "tags": [
         "Macetas"
       ],
@@ -1129,7 +1125,7 @@
     {
       "id": "maceta-darth-vader",
       "name": "Maceta Darth Vader · Star Wars",
-      "category": "Macetas Decorativas",
+      "category": "Macetas",
       "tags": [
         "Macetas",
         "Star Wars"
@@ -1152,7 +1148,7 @@
     {
       "id": "maceta-david",
       "name": "Maceta David · Arte clásico",
-      "category": "Macetas Decorativas",
+      "category": "Macetas",
       "tags": [
         "Arte Clásico",
         "Macetas"
@@ -1175,7 +1171,7 @@
     {
       "id": "maceta-minimalista",
       "name": "Maceta Minimalista",
-      "category": "Macetas Decorativas",
+      "category": "Macetas",
       "tags": [
         "Macetas"
       ],
@@ -1197,7 +1193,7 @@
     {
       "id": "maceta-palmera",
       "name": "Maceta Palmera",
-      "category": "Macetas Decorativas",
+      "category": "Macetas",
       "tags": [
         "Macetas"
       ],

@@ -131,26 +131,19 @@ const productCard = (product) => `
   </article>
 `;
 
-// --- Campaña temporal (Halloween) --------------------------------------------
-// Colección curada: aparece como primera pastilla de la franja y agrupa todos
-// los productos con la etiqueta "Halloween", sin importar su categoría real.
-// Para terminar la campaña: poner CAMPAIGN_ACTIVE en false (o quitar la
-// etiqueta "Halloween" de los productos).
-const CAMPAIGN_ACTIVE = true;
-const CAMPAIGN_LABEL = "🎃 Halloween";
-const CAMPAIGN_TAG = "halloween";
+// Sección de temporada: si existe la categoría "🎃 Halloween" va primero en la
+// franja (y resaltada en naranja vía CSS). Para archivarla al terminar la
+// temporada, cambia la categoría de esos productos en el panel.
+const SEASON_LABEL = "🎃 Halloween";
 
-const hasCampaignProducts = () =>
-  products.some((p) => (p.tags || []).some((t) => normalize(t) === CAMPAIGN_TAG));
-
-const showCampaign = () => CAMPAIGN_ACTIVE && hasCampaignProducts();
-
-// La franja muestra solo las categorías reales (más la campaña si está activa).
-// "Todos" es el estado por defecto (sin categoría activa) y se vuelve a él
-// tocando "Limpiar filtros" o volviendo a tocar la categoría ya activa.
+// La franja muestra las categorías reales. "Todos" es el estado por defecto
+// (sin categoría activa) y se vuelve a él tocando "Limpiar filtros" o volviendo
+// a tocar la categoría ya activa.
 const catalogCategories = () => {
   const cats = [...new Set(products.map((product) => product.category))];
-  return showCampaign() ? [CAMPAIGN_LABEL, ...cats] : cats;
+  const i = cats.indexOf(SEASON_LABEL);
+  if (i > 0) cats.unshift(...cats.splice(i, 1));
+  return cats;
 };
 
 const renderFilters = () => {
@@ -171,11 +164,7 @@ const matchesProduct = (product) => {
   const query = normalize(searchInput.value);
   const haystack = normalize([product.name, product.category, product.description, product.height, ...(product.tags || [])].join(" "));
   const matchesSearch = !query || haystack.includes(query);
-  const matchesFilter =
-    activeFilter === "Todos" ||
-    (activeFilter === CAMPAIGN_LABEL &&
-      (product.tags || []).some((t) => normalize(t) === CAMPAIGN_TAG)) ||
-    product.category === activeFilter;
+  const matchesFilter = activeFilter === "Todos" || product.category === activeFilter;
   return matchesSearch && matchesFilter;
 };
 
