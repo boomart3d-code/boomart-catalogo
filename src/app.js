@@ -462,9 +462,9 @@ if (shareProductBtn) {
       shareFeedback.hidden = false;
       setTimeout(() => { shareFeedback.hidden = true; }, 2600);
     } else if (result === "failed" && shareFeedback) {
-      shareFeedback.textContent = "No se pudo copiar";
+      shareFeedback.textContent = "Usa el botón WhatsApp →";
       shareFeedback.hidden = false;
-      setTimeout(() => { shareFeedback.hidden = true; }, 2600);
+      setTimeout(() => { shareFeedback.hidden = true; }, 3200);
     }
   });
 }
@@ -476,16 +476,22 @@ document.addEventListener("click", async (event) => {
   const product = products.find((p) => p.id === shareBtn.dataset.share);
   if (!product) return;
   const result = await shareProduct(product);
-  if (result === "copied" || result === "failed") {
+  if (result === "failed") {
+    // Sin menu de compartir ni permiso de copiar: abrimos la ficha, que tiene
+    // el boton de WhatsApp.
+    openProduct(product.id);
+    return;
+  }
+  if (result === "copied") {
     const textNode = [...shareBtn.childNodes].find((n) => n.nodeType === 3 && n.textContent.trim());
     if (textNode) {
       const prevText = textNode.textContent;
       shareBtn.classList.add("is-copied");
-      textNode.textContent = result === "copied" ? " Enlace copiado ✓" : " No se pudo copiar";
+      textNode.textContent = " Enlace copiado ✓";
       setTimeout(() => {
         shareBtn.classList.remove("is-copied");
         textNode.textContent = prevText;
-      }, 2200);
+      }, 2400);
     }
   }
 });
