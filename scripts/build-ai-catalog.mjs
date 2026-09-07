@@ -24,6 +24,10 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://boomart.pe";
 const WHATSAPP = "https://wa.me/51925666542";
 const NOW = new Date().toISOString().slice(0, 10);
+// Vigencia de precios para el structured data (rueda ~120 dias hacia adelante).
+const PRICE_VALID_UNTIL = new Date(Date.now() + 120 * 864e5)
+  .toISOString()
+  .slice(0, 10);
 
 const esc = (s) =>
   String(s ?? "")
@@ -168,8 +172,17 @@ function buildJsonLd(products) {
           "@type": "Offer",
           priceCurrency: "PEN",
           price: price.from,
-          availability: "https://schema.org/MadeToOrder",
+          availability: "https://schema.org/InStock",
+          itemCondition: "https://schema.org/NewCondition",
+          priceValidUntil: PRICE_VALID_UNTIL,
           url: `${SITE}/catalogo.html#${p.id}`,
+          seller: { "@type": "Organization", name: "BoomArt" },
+          hasMerchantReturnPolicy: {
+            "@type": "MerchantReturnPolicy",
+            applicableCountry: "PE",
+            returnPolicyCategory:
+              "https://schema.org/MerchantReturnNotPermitted",
+          },
         };
       }
       return product;
