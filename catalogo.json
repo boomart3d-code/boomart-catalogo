@@ -8,7 +8,7 @@
     "whatsapp": "https://wa.me/51925666542",
     "instagram": "https://www.instagram.com/boomart_3d"
   },
-  "count": 47,
+  "count": 48,
   "products": [
     {
       "id": "templo-aries",
@@ -816,6 +816,34 @@
       ],
       "url": "https://boomart.pe/catalogo.html#mascara-calabaza-calavera",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20Calabaza%20Calavera%20%F0%9F%8E%83%20%C2%B7%20Halloween"
+    },
+    {
+      "id": "candelabro-calavera",
+      "name": "Candelabro Calavera 🎃 · Halloween",
+      "category": "Series y Películas",
+      "tags": [
+        "Halloween",
+        "Portavelas",
+        "Decoración",
+        "Calavera",
+        "Gótico"
+      ],
+      "description": "🎃 Edición Halloween. Dale a tu decoración un toque oscuro y fuera de lo común: un cráneo de aspecto envejecido con una columna vertebral que sostiene la vela, una pieza que llama la atención tanto encendida como apagada. Al prender la vela, la luz cálida resalta las formas del cráneo y crea una atmósfera intensa y misteriosa. Ideal para salas, escritorios, vitrinas, mesas temáticas o rincones góticos. Impreso en 3D y detallado a mano, con acabado tipo hueso envejecido. Compatible con velas de hasta 2 cm de diámetro (vela no incluida). Hecho a pedido, con envíos a todo el Perú.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Precio oferta: S/100 (antes S/120)"
+      ],
+      "image": "https://boomart.pe/assets/products/candelabro-calavera-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/candelabro-calavera-1.jpg",
+        "https://boomart.pe/assets/products/candelabro-calavera-2.jpg",
+        "https://boomart.pe/assets/products/candelabro-calavera-3.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#candelabro-calavera",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Candelabro%20Calavera%20%F0%9F%8E%83%20%C2%B7%20Halloween"
     },
     {
       "id": "mascara-el-juego-del-calamar",
