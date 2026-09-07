@@ -8,7 +8,7 @@
     "whatsapp": "https://wa.me/51925666542",
     "instagram": "https://www.instagram.com/boomart_3d"
   },
-  "count": 51,
+  "count": 52,
   "products": [
     {
       "id": "templo-aries",
@@ -438,6 +438,37 @@
       ],
       "url": "https://boomart.pe/catalogo.html#set-de-12-templos-mini",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Set%20de%2012%20Templos%20Mini%20%C2%B7%20Casas%20del%20Zodiaco"
+    },
+    {
+      "id": "set-santuario-15-piezas",
+      "name": "Set Completo del Santuario · 15 piezas · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Saint Seiya",
+        "Templos",
+        "Santuario",
+        "Set",
+        "Colección",
+        "Atena",
+        "Torre del Reloj",
+        "Patriarca"
+      ],
+      "description": "🏛️ Set Completo del Santuario: 15 piezas en una sola colección — los 12 templos de las Casas del Zodiaco, más el Templo del Patriarca, la estatua de Atena y la Torre del Reloj. Los templos miden de 6.5 a 8 cm de alto y la Torre del Reloj 12 cm, todos con acabado estilo piedra. Impresos en 3D y detallados a mano. Ideal para fans y coleccionistas de Saint Seiya (Caballeros del Zodiaco). Hecho a pedido, con envíos a todo el Perú.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 150,
+      "pricing": [
+        "Precio oferta: S/150 (antes S/200)"
+      ],
+      "image": "https://boomart.pe/assets/products/set-santuario-15-piezas-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/set-santuario-15-piezas-1.jpg",
+        "https://boomart.pe/assets/products/set-santuario-15-piezas-2.jpg",
+        "https://boomart.pe/assets/products/set-santuario-15-piezas-3.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#set-santuario-15-piezas",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Set%20Completo%20del%20Santuario%20%C2%B7%2015%20piezas%20%C2%B7%20Saint%20Seiya"
     },
     {
       "id": "set-12-cajas-de-pandora-con-pedestales",
