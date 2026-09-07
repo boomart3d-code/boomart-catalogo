@@ -98,6 +98,105 @@ function loadProducts() {
   return readFile(path.join(ROOT, "data", "products.json"), "utf8").then(JSON.parse);
 }
 
+// Costo de envio de referencia declarado a Google (Shopping / structured data).
+// El cobro real se confirma por WhatsApp segun destino; esto es el "desde".
+const SHIPPING_FROM = 15;
+
+function loadReviews() {
+  return readFile(path.join(ROOT, "data", "reviews.json"), "utf8")
+    .then(JSON.parse)
+    .then((list) =>
+      (Array.isArray(list) ? list : []).filter(
+        (r) => r && r.approved !== false && r.rating >= 1 && r.rating <= 5,
+      ),
+    )
+    .catch(() => []);
+}
+
+// aggregateRating + review[] para la ficha del negocio (schema.org/Store).
+// Devuelve null si todavia no hay opiniones aprobadas: en ese caso no se
+// inyecta nada y Search Console mantiene el aviso leve, que es lo correcto.
+function buildRatingLd(reviews) {
+  if (!reviews.length) return null;
+  const value =
+    Math.round(
+      (reviews.reduce((s, r) => s + Number(r.rating), 0) / reviews.length) * 10,
+    ) / 10;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "@id": `${SITE}/#store`,
+    name: "BoomArt",
+    url: `${SITE}/`,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: value.toFixed(1),
+      reviewCount: String(reviews.length),
+      bestRating: "5",
+      worstRating: "1",
+    },
+    review: reviews
+      .slice()
+      .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")))
+      .slice(0, 20)
+      .map((r) => ({
+        "@type": "Review",
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: String(r.rating),
+          bestRating: "5",
+        },
+        author: { "@type": "Person", name: r.name || "Cliente BoomArt" },
+        ...(r.date ? { datePublished: r.date } : {}),
+        reviewBody: r.text || "",
+      })),
+  };
+}
+
+// Reescribe la region marcada de index.html con el <script> de aggregateRating.
+async function injectRatingIntoIndex(ratingLd) {
+  const file = path.join(ROOT, "index.html");
+  const html = await readFile(file, "utf8");
+  const start = "<!-- BOOMART:RATING:START";
+  const end = "<!-- BOOMART:RATING:END -->";
+  const i = html.indexOf(start);
+  const j = html.indexOf(end);
+  if (i === -1 || j === -1) return false;
+  const iEnd = html.indexOf("-->", i) + 3;
+  const block = ratingLd
+    ? `\n    <script type="application/ld+json">${JSON.stringify(ratingLd)}</script>\n    `
+    : "\n    ";
+  const next = html.slice(0, iEnd) + block + html.slice(j);
+  if (next === html) return false;
+  await writeFile(file, next);
+  return true;
+}
+
+const SHIPPING_LD = {
+  "@type": "OfferShippingDetails",
+  shippingRate: {
+    "@type": "MonetaryAmount",
+    value: String(SHIPPING_FROM),
+    currency: "PEN",
+  },
+  shippingDestination: { "@type": "DefinedRegion", addressCountry: "PE" },
+  deliveryTime: {
+    "@type": "ShippingDeliveryTime",
+    handlingTime: {
+      "@type": "QuantitativeValue",
+      minValue: 2,
+      maxValue: 3,
+      unitCode: "DAY",
+    },
+    transitTime: {
+      "@type": "QuantitativeValue",
+      minValue: 1,
+      maxValue: 7,
+      unitCode: "DAY",
+    },
+  },
+};
+
 function groupByCategory(products) {
   const map = new Map();
   for (const p of products) {
@@ -183,6 +282,7 @@ function buildJsonLd(products) {
             returnPolicyCategory:
               "https://schema.org/MerchantReturnNotPermitted",
           },
+          shippingDetails: SHIPPING_LD,
         };
       }
       return product;
@@ -191,7 +291,7 @@ function buildJsonLd(products) {
 }
 
 /* ---------------------------------------------------------------- catalogo.html */
-function buildHtml(products) {
+function buildHtml(products, ratingLd) {
   const groups = groupByCategory(products);
   const totalFrom = products
     .map((p) => priceInfo(p).from)
@@ -242,6 +342,9 @@ ${cards}
     .join("\n\n");
 
   const jsonld = JSON.stringify(buildJsonLd(products));
+  const ratingScript = ratingLd
+    ? `\n    <script type="application/ld+json">${JSON.stringify(ratingLd)}</script>`
+    : "";
 
   return `<!doctype html>
 <html lang="es">
@@ -267,7 +370,7 @@ ${cards}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="${SITE}/assets/products/promo-12-casas-mini.jpg">
     <link rel="alternate" type="application/json" href="${SITE}/catalogo.json" title="Feed JSON del catalogo BoomArt">
-    <link rel="stylesheet" href="src/styles.css?v=15">
+    <link rel="stylesheet" href="src/styles.css?v=16">
     <style>
       .ai-catalog { max-width: 1040px; margin: 0 auto; padding: 32px 20px 80px; }
       .ai-catalog h1 { margin-bottom: 8px; }
@@ -284,7 +387,7 @@ ${cards}
       .ai-tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
       .ai-tags li { background: #f1f1f1; border-radius: 999px; padding: 2px 10px; font-size: .82rem; }
     </style>
-    <script type="application/ld+json">${jsonld}</script>
+    <script type="application/ld+json">${jsonld}</script>${ratingScript}
   </head>
   <body>
     <header class="site-header">
@@ -466,6 +569,10 @@ function buildGoogleFeed(products) {
 ${extra ? extra + "\n" : ""}      <g:availability>in_stock</g:availability>
       <g:price>${money(price.listPrice)}</g:price>
 ${price.salePrice != null ? `      <g:sale_price>${money(price.salePrice)}</g:sale_price>\n` : ""}      <g:condition>new</g:condition>
+      <g:shipping>
+        <g:country>PE</g:country>
+        <g:price>${money(SHIPPING_FROM)}</g:price>
+      </g:shipping>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>${esc(googleCategory(p))}</g:google_product_category>
@@ -534,19 +641,23 @@ function buildMetaFeed(products) {
 }
 
 /* ---------------------------------------------------------------- main */
-const products = await loadProducts();
+const [products, reviews] = await Promise.all([loadProducts(), loadReviews()]);
+const ratingLd = buildRatingLd(reviews);
 
 await Promise.all([
-  writeFile(path.join(ROOT, "catalogo.html"), buildHtml(products)),
+  writeFile(path.join(ROOT, "catalogo.html"), buildHtml(products, ratingLd)),
   writeFile(path.join(ROOT, "catalogo.json"), buildJson(products) + "\n"),
   writeFile(path.join(ROOT, "llms.txt"), buildLlms(products)),
   writeFile(path.join(ROOT, "llms-full.txt"), buildLlmsFull(products)),
   writeFile(path.join(ROOT, "feed-google.xml"), buildGoogleFeed(products)),
   writeFile(path.join(ROOT, "feed-meta.csv"), buildMetaFeed(products)),
+  injectRatingIntoIndex(ratingLd),
 ]);
 
 console.log(
-  `OK - generado desde ${products.length} productos:\n` +
+  `OK - generado desde ${products.length} productos` +
+    ` y ${reviews.length} opiniones aprobadas:\n` +
     "  catalogo.html\n  catalogo.json\n  llms.txt\n  llms-full.txt\n" +
-    "  feed-google.xml (Google Merchant + Pinterest)\n  feed-meta.csv (Instagram / Facebook)",
+    "  feed-google.xml (Google Merchant + Pinterest)\n  feed-meta.csv (Instagram / Facebook)\n" +
+    `  index.html (aggregateRating ${ratingLd ? "actualizado" : "sin cambios: aun sin opiniones"})`,
 );

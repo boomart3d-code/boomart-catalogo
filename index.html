@@ -41,12 +41,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=15">
+    <link rel="stylesheet" href="src/styles.css?v=16">
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Store",
+      "@id": "https://boomart.pe/#store",
       "name": "BoomArt",
       "url": "https://boomart.pe/",
       "image": "https://boomart.pe/assets/products/promo-12-casas-mini.jpg",
@@ -69,6 +70,8 @@
       ]
     }
     </script>
+    <!-- BOOMART:RATING:START (lo rellena scripts/build-ai-catalog.mjs con las opiniones aprobadas) -->
+    <!-- BOOMART:RATING:END -->
   </head>
   <body>
     <div class="quick-nav" id="quickNav">
@@ -161,12 +164,78 @@
         </div>
         <a class="button primary" id="offersWhatsapp" target="_blank" rel="noreferrer">Consultar promociones</a>
       </section>
+
+      <section class="reviews-section" id="opiniones" aria-labelledby="reviewsTitle">
+        <div class="reviews-head">
+          <p class="eyebrow">Opiniones</p>
+          <h2 id="reviewsTitle">Lo que dicen nuestros clientes</h2>
+          <div class="reviews-summary" id="reviewsSummary" hidden></div>
+        </div>
+
+        <div class="reviews-list-wrap" id="reviewsListWrap" hidden>
+          <ul class="reviews-list" id="reviewsList"></ul>
+        </div>
+
+        <div class="review-form-card">
+          <h3>Deja tu opinión</h3>
+          <p class="review-form-intro">Cuéntanos tu experiencia con BoomArt. Revisamos cada opinión antes de publicarla.</p>
+          <form id="reviewForm" novalidate>
+            <fieldset class="review-rating">
+              <legend>Tu puntuación</legend>
+              <div class="star-input" role="radiogroup" aria-label="Puntuación de 1 a 5 estrellas">
+                <button type="button" data-value="1" role="radio" aria-checked="false" aria-label="1 estrella">★</button>
+                <button type="button" data-value="2" role="radio" aria-checked="false" aria-label="2 estrellas">★</button>
+                <button type="button" data-value="3" role="radio" aria-checked="false" aria-label="3 estrellas">★</button>
+                <button type="button" data-value="4" role="radio" aria-checked="false" aria-label="4 estrellas">★</button>
+                <button type="button" data-value="5" role="radio" aria-checked="false" aria-label="5 estrellas">★</button>
+              </div>
+              <input type="hidden" name="Puntuación" value="">
+            </fieldset>
+
+            <div class="review-form-grid">
+              <label>Nombre
+                <input type="text" name="Nombre" autocomplete="name" required maxlength="60" placeholder="Ej: Adrián O.">
+              </label>
+              <label>Ciudad <span class="review-opt">(opcional)</span>
+                <input type="text" name="Ciudad" autocomplete="address-level2" maxlength="60" placeholder="Ej: Lima">
+              </label>
+              <label>Correo <span class="review-opt">(no se publica)</span>
+                <input type="email" name="Correo" autocomplete="email" maxlength="120" placeholder="tucorreo@ejemplo.com">
+              </label>
+              <label>¿Compraste con nosotros?
+                <select name="Compró con nosotros">
+                  <option value="Sí, ya compré">Sí, ya compré</option>
+                  <option value="Todavía no, solo visité la web">Todavía no, solo visité la web</option>
+                </select>
+              </label>
+            </div>
+
+            <label class="review-comment">Comentario
+              <textarea name="Comentario" rows="4" required maxlength="800" placeholder="¿Qué te pareció la pieza, el acabado, la atención?"></textarea>
+            </label>
+
+            <label class="review-hp" aria-hidden="true">
+              No llenes este campo si eres humano
+              <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+            </label>
+
+            <button type="submit" class="button primary">Enviar mi opinión</button>
+            <p class="review-form-status" id="reviewFormStatus" hidden></p>
+          </form>
+
+          <p class="review-google">
+            ¿Prefieres reseñarnos en Google?
+            <a href="https://share.google/1EB41G5DoHVk4GWhA" target="_blank" rel="noreferrer">Déjanos tu reseña en Google Maps</a>
+          </p>
+        </div>
+      </section>
     </main>
 
     <footer class="footer" id="contacto">
       <div>
         <strong>BOOM ART</strong>
         <p>Piezas hechas a pedido. Consulta disponibilidad, colores, acabados y tiempos de entrega por WhatsApp.</p>
+        <p>Envío a todo el Perú desde S/15 (referencial, se confirma por WhatsApp según destino).</p>
         <p><a href="https://share.google/1EB41G5DoHVk4GWhA" target="_blank" rel="noreferrer">📍 Ver ubicación en Google Maps</a></p>
         <ul class="footer-links">
           <li><a href="nosotros.html">Nosotros</a></li>
@@ -355,5 +424,7 @@
     <script src="src/app.js?v=14"></script>
     <script src="src/checkout.js?v=10"></script>
     <script src="src/products-loader.js?v=5"></script>
+    <script src="src/reviews.js?v=1"></script>
+    <script src="src/reviews-loader.js?v=1"></script>
   </body>
 </html>

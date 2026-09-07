@@ -1803,3 +1803,259 @@ h2 {
 .legal-page strong {
   color: white;
 }
+
+/* ------------------------------------------------------------------ Opiniones */
+.reviews-section {
+  padding: clamp(40px, 6vw, 80px) clamp(18px, 5vw, 72px);
+  border-top: 1px solid var(--line);
+  background: var(--ink);
+}
+
+.reviews-head h2 {
+  font-size: clamp(1.4rem, 4vw, 2.1rem);
+  line-height: 1.05;
+}
+
+.reviews-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.reviews-score {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.reviews-count {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 2px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.stars .star {
+  color: rgba(255, 255, 255, 0.22);
+}
+
+.stars .star.is-on {
+  color: var(--gold);
+}
+
+.stars .star.is-half {
+  background: linear-gradient(90deg, var(--gold) 50%, rgba(255, 255, 255, 0.22) 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.reviews-list {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.review-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 20px;
+  background: var(--panel);
+}
+
+.review-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.review-card-head strong {
+  font-size: 1rem;
+}
+
+.review-card-meta {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-transform: capitalize;
+}
+
+.review-card-text {
+  margin: 12px 0 0;
+  line-height: 1.6;
+  color: #e9e5df;
+}
+
+.review-card-product {
+  margin: 12px 0 0;
+  font-size: 0.82rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.review-form-card {
+  margin-top: 36px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: clamp(20px, 4vw, 32px);
+  background: var(--panel);
+  max-width: 720px;
+}
+
+.review-form-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.review-form-intro {
+  margin: 8px 0 20px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.review-rating {
+  border: 0;
+  margin: 0 0 18px;
+  padding: 0;
+}
+
+.review-rating legend {
+  font-weight: 600;
+  margin-bottom: 8px;
+  padding: 0;
+}
+
+.star-input {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.star-input button {
+  background: none;
+  border: 0;
+  padding: 2px;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.22);
+  transition: color 0.12s ease, transform 0.12s ease;
+}
+
+.star-input button:hover {
+  transform: scale(1.12);
+}
+
+.star-input button.is-on {
+  color: var(--gold);
+}
+
+.review-form-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.review-form-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.review-opt {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.review-form-card input,
+.review-form-card select,
+.review-form-card textarea {
+  font: inherit;
+  font-weight: 400;
+  padding: 11px 13px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--ink);
+  color: white;
+}
+
+.review-form-card input:focus,
+.review-form-card select:focus,
+.review-form-card textarea:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
+}
+
+.review-comment {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 16px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.review-comment textarea {
+  resize: vertical;
+  min-height: 96px;
+}
+
+.review-form-card button[type="submit"] {
+  margin-top: 20px;
+}
+
+.review-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.review-form-status {
+  margin: 14px 0 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.review-form-status.is-ok {
+  background: rgba(120, 200, 120, 0.14);
+  color: #bfe6bf;
+}
+
+.review-form-status.is-error {
+  background: rgba(225, 19, 47, 0.16);
+  color: #ffc9c9;
+}
+
+.review-google {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.review-google a {
+  color: var(--gold);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .reviews-list {
+    grid-template-columns: 1fr;
+  }
+}

@@ -14,6 +14,36 @@ publish_mode: simple
 locale: "es"
 
 collections:
+  - name: "reviews"
+    label: "Opiniones de clientes"
+    label_singular: "Opinión"
+    files:
+      - name: "reviews"
+        label: "Todas las opiniones"
+        file: "data/reviews.json"
+        description: "Solo se publican las opiniones REALES de clientes. Las que llegan por el formulario de la web te avisan por correo; súbelas aquí con approved en verdadero."
+        fields:
+          - name: "reviews"
+            label: "Opiniones"
+            label_singular: "Opinión"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.rating}}★"
+            fields:
+              - { label: "Nombre público (nombre + inicial, ej: Adrián O.)", name: "name", widget: "string" }
+              - { label: "Ciudad", name: "city", widget: "string", required: false }
+              - label: "Estrellas"
+                name: "rating"
+                widget: "select"
+                options: ["5", "4", "3", "2", "1"]
+                default: "5"
+              - { label: "Comentario", name: "text", widget: "text" }
+              - { label: "Fecha (AAAA-MM-DD)", name: "date", widget: "string", hint: "Ej: 2026-09-07" }
+              - { label: "Producto que compró", name: "product", widget: "string", required: false }
+              - label: "¿Aprobada para mostrarse en la web?"
+                name: "approved"
+                widget: "boolean"
+                default: true
+
   - name: "products"
     label: "Catálogo de productos"
     label_singular: "Producto"
