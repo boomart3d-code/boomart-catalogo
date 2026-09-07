@@ -3,12 +3,12 @@
   "url": "https://boomart.pe/",
   "description": "Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao, Peru. Envios a todo el pais.",
   "currency": "PEN",
-  "updated": "2026-09-06",
+  "updated": "2026-09-07",
   "contact": {
     "whatsapp": "https://wa.me/51925666542",
     "instagram": "https://www.instagram.com/boomart_3d"
   },
-  "count": 45,
+  "count": 46,
   "products": [
     {
       "id": "templo-aries",
@@ -764,6 +764,33 @@
       ],
       "url": "https://boomart.pe/catalogo.html#palomera-spiderman",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Palomera%20Spider-Man%20%C2%B7%20Marvel"
+    },
+    {
+      "id": "mario-billy-saw",
+      "name": "Mario Billy 🎃 · Saw (El Juego del Miedo)",
+      "category": "Series y Películas",
+      "tags": [
+        "Halloween",
+        "Mario",
+        "Saw",
+        "Cine",
+        "Videojuegos"
+      ],
+      "description": "🎃 Edición Halloween. El crossover más retorcido de tu colección: Mario convertido en Billy, el muñeco de Saw (El Juego del Miedo), con el rostro pálido, las espirales rojas en las mejillas, smoking con moño y su inconfundible triciclo rojo. Impresa en 3D y pintada a mano, sobre pedestal negro. El detalle perfecto para decorar en Halloween o para el fan del terror todo el año. Hecha a pedido, con envíos a todo el Perú.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 80,
+      "pricing": [
+        "Precio oferta: S/80 (antes S/100)"
+      ],
+      "image": "https://boomart.pe/assets/products/mario-billy-saw-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/mario-billy-saw-1.jpg",
+        "https://boomart.pe/assets/products/mario-billy-saw-2.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#mario-billy-saw",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Mario%20Billy%20%F0%9F%8E%83%20%C2%B7%20Saw%20(El%20Juego%20del%20Miedo)"
     },
     {
       "id": "mascara-el-juego-del-calamar",

@@ -573,6 +573,18 @@ h2 {
   color: white;
 }
 
+/* Pastilla de campaña (Halloween): destaca en naranja. */
+.filter-row button[data-filter^="🎃"] {
+  border-color: #f97316;
+  color: #c2410c;
+}
+
+.filter-row button[data-filter^="🎃"].active {
+  border-color: #f97316;
+  background: #f97316;
+  color: #fff;
+}
+
 .result-meta {
   display: flex;
   align-items: center;

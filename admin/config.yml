@@ -76,7 +76,7 @@ collections:
                 name: "tags"
                 widget: "list"
                 required: false
-                hint: "Ej: Saint Seiya, Oferta, Destacado"
+                hint: "Palabras para buscar y agrupar. Escribe \"Halloween\" para que el producto salga en la colección de campaña de Halloween. Ej: Saint Seiya, Mario, Halloween."
               - label: "¿Aparece en \"Piezas destacadas\" (inicio)?"
                 name: "featured"
                 widget: "boolean"

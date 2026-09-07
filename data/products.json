@@ -689,6 +689,30 @@
     "offerPrice": 70
   },
   {
+    "id": "mario-billy-saw",
+    "name": "Mario Billy 🎃 · Saw (El Juego del Miedo)",
+    "category": "Series y Películas",
+    "tags": [
+      "Halloween",
+      "Mario",
+      "Saw",
+      "Cine",
+      "Videojuegos"
+    ],
+    "material": "PLA",
+    "availability": "A pedido",
+    "regularPrice": 100,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/mario-billy-saw-1.jpg",
+    "gallery": [
+      "assets/products/mario-billy-saw-1.jpg",
+      "assets/products/mario-billy-saw-2.jpg"
+    ],
+    "description": "🎃 Edición Halloween. El crossover más retorcido de tu colección: Mario convertido en Billy, el muñeco de Saw (El Juego del Miedo), con el rostro pálido, las espirales rojas en las mejillas, smoking con moño y su inconfundible triciclo rojo. Impresa en 3D y pintada a mano, sobre pedestal negro. El detalle perfecto para decorar en Halloween o para el fan del terror todo el año. Hecha a pedido, con envíos a todo el Perú.",
+    "offerPrice": 80
+  },
+  {
     "id": "mascara-el-juego-del-calamar",
     "name": "Máscara de El Juego del Calamar",
     "category": "Series y Películas",

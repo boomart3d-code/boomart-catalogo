@@ -3,7 +3,7 @@
   <channel>
     <title>BoomArt - Catalogo de productos</title>
     <link>https://boomart.pe/</link>
-    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-09-06.</description>
+    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-09-07.</description>
     <item>
       <g:id>templo-aries</g:id>
       <g:title>Templo de Aries</g:title>
@@ -468,6 +468,22 @@
       <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
       <g:product_type>Marvel &amp; DC</g:product_type>
+    </item>
+    <item>
+      <g:id>mario-billy-saw</g:id>
+      <g:title>Mario Billy 🎃 · Saw (El Juego del Miedo)</g:title>
+      <g:description>🎃 Edición Halloween. El crossover más retorcido de tu colección: Mario convertido en Billy, el muñeco de Saw (El Juego del Miedo), con el rostro pálido, las espirales rojas en las mejillas, smoking con moño y su inconfundible triciclo rojo. Impresa en 3D y pintada a mano, sobre pedestal negro. El detalle perfecto para decorar en Halloween o para el fan del terror todo el año. Hecha a pedido, con envíos a todo el Perú. Fabricado a pedido en impresion 3D (PLA), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
+      <g:link>https://boomart.pe/catalogo.html#mario-billy-saw</g:link>
+      <g:image_link>https://boomart.pe/assets/products/mario-billy-saw-1.jpg</g:image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/mario-billy-saw-2.jpg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>100.00 PEN</g:price>
+      <g:sale_price>80.00 PEN</g:sale_price>
+      <g:condition>new</g:condition>
+      <g:brand>BoomArt</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
+      <g:product_type>Series y Películas</g:product_type>
     </item>
     <item>
       <g:id>mascara-el-juego-del-calamar</g:id>
