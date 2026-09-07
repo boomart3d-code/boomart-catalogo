@@ -167,13 +167,15 @@
 
     if (!currentRating) {
       showStatus("Elige cuántas estrellas le das (1 a 5).", "error");
+      if (starInput && starInput.scrollIntoView) {
+        starInput.scrollIntoView({ block: "center", behavior: "smooth" });
+      }
       return;
     }
 
+    // access_key / subject / from_name ya viajan como <input hidden> del form.
     var data = new FormData(form);
-    data.append("access_key", WEB3FORMS_KEY);
-    data.append("subject", "Nueva opinión en boomart.pe");
-    data.append("from_name", "Opiniones BoomArt");
+    if (!data.get("access_key")) data.append("access_key", WEB3FORMS_KEY);
 
     submitBtn.disabled = true;
     showStatus("Enviando...", "");

@@ -179,7 +179,10 @@
         <div class="review-form-card">
           <h3>Deja tu opinión</h3>
           <p class="review-form-intro">Cuéntanos tu experiencia con BoomArt. Revisamos cada opinión antes de publicarla.</p>
-          <form id="reviewForm" novalidate>
+          <form id="reviewForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="783f87b9-117e-4bf1-889c-094f12205cc5">
+            <input type="hidden" name="subject" value="Nueva opinion en boomart.pe">
+            <input type="hidden" name="from_name" value="Opiniones BoomArt">
             <fieldset class="review-rating">
               <legend>Tu puntuación</legend>
               <div class="star-input" role="radiogroup" aria-label="Puntuación de 1 a 5 estrellas">
@@ -424,7 +427,7 @@
     <script src="src/app.js?v=14"></script>
     <script src="src/checkout.js?v=10"></script>
     <script src="src/products-loader.js?v=5"></script>
-    <script src="src/reviews.js?v=2"></script>
+    <script src="src/reviews.js?v=3"></script>
     <script src="src/reviews-loader.js?v=1"></script>
   </body>
 </html>
