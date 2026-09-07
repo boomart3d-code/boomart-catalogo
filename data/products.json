@@ -760,6 +760,31 @@
     "offerPrice": 100
   },
   {
+    "id": "evil-mask",
+    "name": "Evil Mask 😈 · Halloween",
+    "category": "Series y Películas",
+    "tags": [
+      "Halloween",
+      "Mascaras",
+      "Disfraces",
+      "Demonio",
+      "Cuernos"
+    ],
+    "material": "PLA",
+    "availability": "A pedido",
+    "regularPrice": 250,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/evil-mask-1.jpg",
+    "gallery": [
+      "assets/products/evil-mask-1.jpg",
+      "assets/products/evil-mask-2.jpg",
+      "assets/products/evil-mask-3.jpg"
+    ],
+    "description": "🎃 Edición Halloween. Máscara demoníaca de gran presencia: cuernos imponentes, textura escamada y un acabado lleno de detalle. Disponible en rojo o azul. Perfecta para tu disfraz, una fiesta temática, sesión de fotos o para exhibirla como pieza de decoración. Impresa en 3D y pintada a mano. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú.",
+    "offerPrice": 220
+  },
+  {
     "id": "mascara-el-juego-del-calamar",
     "name": "Máscara de El Juego del Calamar",
     "category": "Series y Películas",

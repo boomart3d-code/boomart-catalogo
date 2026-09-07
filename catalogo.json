@@ -8,7 +8,7 @@
     "whatsapp": "https://wa.me/51925666542",
     "instagram": "https://www.instagram.com/boomart_3d"
   },
-  "count": 48,
+  "count": 49,
   "products": [
     {
       "id": "templo-aries",
@@ -844,6 +844,34 @@
       ],
       "url": "https://boomart.pe/catalogo.html#candelabro-calavera",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Candelabro%20Calavera%20%F0%9F%8E%83%20%C2%B7%20Halloween"
+    },
+    {
+      "id": "evil-mask",
+      "name": "Evil Mask 😈 · Halloween",
+      "category": "Series y Películas",
+      "tags": [
+        "Halloween",
+        "Mascaras",
+        "Disfraces",
+        "Demonio",
+        "Cuernos"
+      ],
+      "description": "🎃 Edición Halloween. Máscara demoníaca de gran presencia: cuernos imponentes, textura escamada y un acabado lleno de detalle. Disponible en rojo o azul. Perfecta para tu disfraz, una fiesta temática, sesión de fotos o para exhibirla como pieza de decoración. Impresa en 3D y pintada a mano. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 220,
+      "pricing": [
+        "Precio oferta: S/220 (antes S/250)"
+      ],
+      "image": "https://boomart.pe/assets/products/evil-mask-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/evil-mask-1.jpg",
+        "https://boomart.pe/assets/products/evil-mask-2.jpg",
+        "https://boomart.pe/assets/products/evil-mask-3.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#evil-mask",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Evil%20Mask%20%F0%9F%98%88%20%C2%B7%20Halloween"
     },
     {
       "id": "mascara-el-juego-del-calamar",
