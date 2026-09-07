@@ -328,6 +328,7 @@ main {
 #catalogo,
 #ofertas,
 #opiniones,
+#personalizado,
 #productGrid {
   scroll-margin-top: calc(var(--quicknav-h) + 74px);
 }
@@ -2114,6 +2115,38 @@ h2 {
   .reviews-list {
     grid-template-columns: 1fr;
   }
+}
+
+/* ------------------------------------------------------- Pedido a medida */
+.custom-order-section {
+  padding: clamp(40px, 6vw, 80px) clamp(18px, 5vw, 72px);
+  border-top: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.custom-order-head h2 {
+  font-size: clamp(1.4rem, 4vw, 2.1rem);
+  line-height: 1.1;
+}
+
+.custom-order-head p {
+  max-width: 640px;
+  margin: 12px 0 0;
+  color: #d7d0c8;
+  line-height: 1.6;
+}
+
+.custom-order-card {
+  margin-top: 28px;
+  max-width: 720px;
+  background: var(--ink);
+}
+
+.custom-order-hint {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
 
 /* --------------------------------------------------- Compartir / volver ficha */

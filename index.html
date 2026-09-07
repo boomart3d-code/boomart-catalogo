@@ -41,7 +41,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=19">
+    <link rel="stylesheet" href="src/styles.css?v=20">
 
     <script type="application/ld+json">
     {
@@ -114,8 +114,8 @@
       </a>
       <nav aria-label="Secciones del catálogo">
         <a href="#catalogo">Catálogo</a>
-        <a href="#ofertas">Ofertas</a>
-        <a href="#contacto">WhatsApp</a>
+        <a href="#opiniones">Reseñas</a>
+        <a href="#personalizado">Pedido a medida</a>
         <button type="button" class="icon-button cart-toggle" id="cartToggle" aria-haspopup="true" aria-controls="cartDrawer" aria-expanded="false" aria-label="Ver carrito">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M3 3h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L20 8H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -164,6 +164,47 @@
           <p>Consulta esculturas, colecciones mini y templos del Zodiaco con opción de Pandora Box + pedestal. Escríbenos por WhatsApp y te ayudamos a elegir la pieza o combo ideal.</p>
         </div>
         <a class="button primary" id="offersWhatsapp" target="_blank" rel="noreferrer">Consultar promociones</a>
+      </section>
+
+      <section class="custom-order-section" id="personalizado" aria-labelledby="customOrderTitle">
+        <div class="custom-order-head">
+          <p class="eyebrow">Pedido a medida</p>
+          <h2 id="customOrderTitle">¿Quieres una pieza que no está en el catálogo?</h2>
+          <p>También hacemos encargos personalizados: tu personaje favorito, una escultura a tu idea, un regalo único. Cuéntanos qué tienes en mente y te escribimos para coordinar los detalles y el precio.</p>
+        </div>
+
+        <div class="review-form-card custom-order-card">
+          <form id="customOrderForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="783f87b9-117e-4bf1-889c-094f12205cc5">
+            <input type="hidden" name="subject" value="Pedido a medida - boomart.pe">
+            <input type="hidden" name="from_name" value="Pedidos BoomArt">
+
+            <div class="review-form-grid">
+              <label>Nombre
+                <input type="text" name="Nombre" autocomplete="name" required maxlength="60" placeholder="Tu nombre">
+              </label>
+              <label>WhatsApp / Teléfono
+                <input type="tel" name="Telefono" autocomplete="tel" required maxlength="30" placeholder="Ej: 999 888 777">
+              </label>
+              <label>Correo <span class="review-opt">(opcional)</span>
+                <input type="email" name="Correo" autocomplete="email" maxlength="120" placeholder="tucorreo@ejemplo.com">
+              </label>
+            </div>
+
+            <label class="review-comment">Tu idea
+              <textarea name="Idea del proyecto" rows="5" required maxlength="1200" placeholder="Describe la pieza que quieres: personaje, tamaño aproximado, colores, para cuándo la necesitas, si tienes fotos de referencia..."></textarea>
+            </label>
+            <p class="custom-order-hint">¿Tienes imágenes de referencia? Menciónalo aquí y te las pedimos por WhatsApp al coordinar.</p>
+
+            <label class="review-hp" aria-hidden="true">
+              No llenes este campo si eres humano
+              <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+            </label>
+
+            <button type="submit" class="button primary">Enviar mi idea</button>
+            <p class="review-form-status" id="customOrderStatus" hidden></p>
+          </form>
+        </div>
       </section>
 
       <section class="reviews-section" id="opiniones" aria-labelledby="reviewsTitle">
@@ -442,5 +483,6 @@
     <script src="src/products-loader.js?v=5"></script>
     <script src="src/reviews.js?v=4"></script>
     <script src="src/reviews-loader.js?v=2"></script>
+    <script src="src/custom-order.js?v=1"></script>
   </body>
 </html>
