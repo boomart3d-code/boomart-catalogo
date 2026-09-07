@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "name": "Nathaly Ullauri",
+    "city": "Lima",
+    "rating": 5,
+    "text": "Excelente servicio. Me llegó puntual y el producto me encantó. Lo recomiendo.",
+    "date": "2026-09-07",
+    "approved": true
+  }
+]
