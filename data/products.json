@@ -781,6 +781,30 @@
     "offerPrice": 220
   },
   {
+    "id": "zkull-urban",
+    "name": "ZKULL Urban 💀 · Halloween",
+    "category": "🎃 Halloween",
+    "tags": [
+      "Skull",
+      "Streetwear",
+      "Art Toy",
+      "Urbano",
+      "Coleccionables"
+    ],
+    "material": "PLA",
+    "availability": "A pedido",
+    "regularPrice": 70,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/zkull-urban-1.jpg",
+    "gallery": [
+      "assets/products/zkull-urban-1.jpg",
+      "assets/products/zkull-urban-2.jpg"
+    ],
+    "description": "🎃 Edición Halloween. Actitud callejera con espíritu de temporada: una figura de calavera con look urbano —gorra, casaca inflada y zapatillas— y una presencia que no pasa desapercibida. Art toy de escritorio impreso en 3D y pintado a mano. Disponible en varias combinaciones de color (consulta las disponibles). Ideal para decoración, colección o regalo. Precio por figura. Hecho a pedido, con envíos a todo el Perú.",
+    "offerPrice": 50
+  },
+  {
     "id": "mascara-el-juego-del-calamar",
     "name": "Máscara de El Juego del Calamar",
     "category": "Series y Películas",

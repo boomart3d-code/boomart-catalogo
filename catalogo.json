@@ -8,7 +8,7 @@
     "whatsapp": "https://wa.me/51925666542",
     "instagram": "https://www.instagram.com/boomart_3d"
   },
-  "count": 49,
+  "count": 50,
   "products": [
     {
       "id": "templo-aries",
@@ -868,6 +868,33 @@
       ],
       "url": "https://boomart.pe/catalogo.html#evil-mask",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Evil%20Mask%20%F0%9F%98%88%20%C2%B7%20Halloween"
+    },
+    {
+      "id": "zkull-urban",
+      "name": "ZKULL Urban 💀 · Halloween",
+      "category": "🎃 Halloween",
+      "tags": [
+        "Skull",
+        "Streetwear",
+        "Art Toy",
+        "Urbano",
+        "Coleccionables"
+      ],
+      "description": "🎃 Edición Halloween. Actitud callejera con espíritu de temporada: una figura de calavera con look urbano —gorra, casaca inflada y zapatillas— y una presencia que no pasa desapercibida. Art toy de escritorio impreso en 3D y pintado a mano. Disponible en varias combinaciones de color (consulta las disponibles). Ideal para decoración, colección o regalo. Precio por figura. Hecho a pedido, con envíos a todo el Perú.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 50,
+      "pricing": [
+        "Precio oferta: S/50 (antes S/70)"
+      ],
+      "image": "https://boomart.pe/assets/products/zkull-urban-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/zkull-urban-1.jpg",
+        "https://boomart.pe/assets/products/zkull-urban-2.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#zkull-urban",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20ZKULL%20Urban%20%F0%9F%92%80%20%C2%B7%20Halloween"
     },
     {
       "id": "mascara-el-juego-del-calamar",
