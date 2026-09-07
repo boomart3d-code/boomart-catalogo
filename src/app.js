@@ -18,6 +18,10 @@ const modalPricing = document.querySelector("#modalPricing");
 const thumbRow = document.querySelector("#thumbRow");
 const prevImage = document.querySelector("#prevImage");
 const nextImage = document.querySelector("#nextImage");
+const modalBack = document.querySelector("#modalBack");
+const shareProductBtn = document.querySelector("#shareProduct");
+const shareProductWa = document.querySelector("#shareProductWa");
+const shareFeedback = document.querySelector("#shareFeedback");
 
 let activeFilter = "Todos";
 let activeProduct = null;
@@ -35,6 +39,77 @@ const whatsappUrl = (message) =>
   config.whatsappLink
     ? `${config.whatsappLink}?text=${encodeURIComponent(message)}`
     : `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+// --- Enlace directo a un producto: ?producto=<id> ---------------------------
+// Al abrir una ficha la URL pasa a boomart.pe/?producto=<id>; al compartir ese
+// enlace, la pagina carga normal y abre solo ese producto. No toca products.json
+// ni el resto de funciones: es historial del navegador + un parametro.
+const PRODUCT_PARAM = "producto";
+
+const priceLabel = (product) => {
+  if (product.templePricing) {
+    const v = product.templePricing.temple ?? product.templePricing.combo ?? product.templePricing.pandora;
+    return v ? `desde S/${v}` : "";
+  }
+  const now = product.offerPrice || product.regularPrice;
+  return now ? `S/${now}` : "";
+};
+
+const productShareUrl = (productId) => {
+  const url = new URL(window.location.origin + window.location.pathname);
+  url.searchParams.set(PRODUCT_PARAM, productId);
+  return url.toString();
+};
+
+const shareText = (product) => {
+  const price = priceLabel(product);
+  return `${product.name}${price ? ` — ${price}` : ""}`;
+};
+
+const shareProduct = async (product) => {
+  const url = productShareUrl(product.id);
+  if (navigator.share) {
+    try {
+      await navigator.share({ title: product.name, text: `${shareText(product)}\n${url}`, url });
+      if (window.gtag) gtag("event", "share", { method: "web_share", item_id: product.id });
+    } catch (err) {
+      /* el usuario cerro el menu de compartir: no es un error */
+    }
+    return "shared";
+  }
+  if (await copyText(url)) {
+    if (window.gtag) gtag("event", "share", { method: "copy", item_id: product.id });
+    return "copied";
+  }
+  return "failed";
+};
+
+// Copia texto al portapapeles con respaldo para navegadores sin permiso de
+// Clipboard API (mismo truco que usa checkout.js para el numero de Yape/Plin).
+const copyText = async (text) => {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (err) {
+    try {
+      const helper = document.createElement("textarea");
+      helper.value = text;
+      helper.setAttribute("readonly", "");
+      helper.style.position = "absolute";
+      helper.style.left = "-9999px";
+      document.body.appendChild(helper);
+      helper.select();
+      const ok = document.execCommand("copy");
+      document.body.removeChild(helper);
+      return ok;
+    } catch (err2) {
+      return false;
+    }
+  }
+};
+
+const whatsappShareUrl = (product) =>
+  `https://wa.me/?text=${encodeURIComponent(`${shareText(product)}\n${productShareUrl(product.id)}`)}`;
 
 const placeholder = (product) => `
   <div class="image-placeholder" role="img" aria-label="Imagen pendiente para ${product.name}">
@@ -126,6 +201,10 @@ const productCard = (product) => `
       ${addToCartMarkup(product)}
       <div class="card-actions">
         <button class="button dark full" type="button" data-open="${product.id}">Ver producto</button>
+        <button class="button ghost full card-share-btn" type="button" data-share="${product.id}" aria-label="Compartir ${product.name}">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 15V3m0 0L8 7m4-4 4 4M4 13v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Compartir
+        </button>
       </div>
     </div>
   </article>
@@ -200,7 +279,7 @@ const renderModalImage = () => {
   nextImage.hidden = !hasMultiple;
 };
 
-const openProduct = (productId) => {
+const openProduct = (productId, fromHistory = false) => {
   activeProduct = products.find((product) => product.id === productId);
   if (!activeProduct) return;
 
@@ -214,8 +293,40 @@ const openProduct = (productId) => {
     <div><span>Disponibilidad</span><strong>${activeProduct.availability}</strong></div>
   `;
   modalPricing.innerHTML = priceMarkup(activeProduct) + addToCartMarkup(activeProduct);
+  if (shareProductWa) shareProductWa.href = whatsappShareUrl(activeProduct);
+  if (shareFeedback) shareFeedback.hidden = true;
   renderModalImage();
-  modal.showModal();
+  if (!modal.open) modal.showModal();
+
+  // Refleja el producto en la URL para poder copiarla / compartirla.
+  const current = new URL(window.location.href).searchParams.get(PRODUCT_PARAM);
+  if (!fromHistory && current !== productId) {
+    history.pushState({ [PRODUCT_PARAM]: productId }, "", productShareUrl(productId));
+  }
+};
+
+const stripProductParam = () => {
+  const url = new URL(window.location.href);
+  if (url.searchParams.has(PRODUCT_PARAM)) {
+    url.searchParams.delete(PRODUCT_PARAM);
+    history.replaceState(history.state, "", url.pathname + url.search + url.hash);
+  }
+};
+
+const closeProductModal = () => {
+  if (modal.open) modal.close();
+  activeProduct = null;
+};
+
+// Cierra la ficha y limpia el ?producto= de la URL. Todas las vias de cierre
+// (boton X, "seguir viendo", fondo, agregar al carrito, Escape) pasan por aqui.
+const dismissProduct = () => {
+  if (history.state && history.state[PRODUCT_PARAM]) {
+    history.back(); // dispara popstate -> cierra la ficha y restaura la URL
+  } else {
+    closeProductModal();
+    stripProductParam();
+  }
 };
 
 const changeImage = (direction) => {
@@ -320,16 +431,73 @@ document.addEventListener("click", (event) => {
 document.querySelector("#quickTopBtn").addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
-closeModal.addEventListener("click", () => modal.close());
+closeModal.addEventListener("click", dismissProduct);
+if (modalBack) modalBack.addEventListener("click", dismissProduct);
 modal.addEventListener("click", (event) => {
-  if (event.target === modal) modal.close();
+  if (event.target === modal) dismissProduct();
 });
+// Escape: se cancela el cierre nativo del <dialog> y se pasa por dismissProduct
+// para que la URL quede limpia (?producto= fuera).
+modal.addEventListener("cancel", (event) => {
+  event.preventDefault();
+  dismissProduct();
+});
+// Cierre desde otro modulo (checkout.js al agregar al carrito).
+document.addEventListener("boomart:dismiss-product", dismissProduct);
 prevImage.addEventListener("click", () => changeImage(-1));
 nextImage.addEventListener("click", () => changeImage(1));
 document.addEventListener("keydown", (event) => {
   if (!modal.open) return;
   if (event.key === "ArrowLeft") changeImage(-1);
   if (event.key === "ArrowRight") changeImage(1);
+});
+
+// Boton "Compartir" del modal.
+if (shareProductBtn) {
+  shareProductBtn.addEventListener("click", async () => {
+    if (!activeProduct) return;
+    const result = await shareProduct(activeProduct);
+    if (result === "copied" && shareFeedback) {
+      shareFeedback.textContent = "Enlace copiado ✓";
+      shareFeedback.hidden = false;
+      setTimeout(() => { shareFeedback.hidden = true; }, 2600);
+    } else if (result === "failed" && shareFeedback) {
+      shareFeedback.textContent = "No se pudo copiar";
+      shareFeedback.hidden = false;
+      setTimeout(() => { shareFeedback.hidden = true; }, 2600);
+    }
+  });
+}
+
+// Boton "Compartir" en las tarjetas del catalogo.
+document.addEventListener("click", async (event) => {
+  const shareBtn = event.target.closest("[data-share]");
+  if (!shareBtn) return;
+  const product = products.find((p) => p.id === shareBtn.dataset.share);
+  if (!product) return;
+  const result = await shareProduct(product);
+  if (result === "copied" || result === "failed") {
+    const textNode = [...shareBtn.childNodes].find((n) => n.nodeType === 3 && n.textContent.trim());
+    if (textNode) {
+      const prevText = textNode.textContent;
+      shareBtn.classList.add("is-copied");
+      textNode.textContent = result === "copied" ? " Enlace copiado ✓" : " No se pudo copiar";
+      setTimeout(() => {
+        shareBtn.classList.remove("is-copied");
+        textNode.textContent = prevText;
+      }, 2200);
+    }
+  }
+});
+
+// Botones "atras" / "adelante" del navegador: abrir o cerrar la ficha segun la URL.
+window.addEventListener("popstate", () => {
+  const id = new URL(window.location.href).searchParams.get(PRODUCT_PARAM);
+  if (id && products.find((p) => p.id === id)) {
+    openProduct(id, true);
+  } else {
+    closeProductModal();
+  }
 });
 
 setGlobalWhatsapp();
@@ -339,4 +507,8 @@ document.addEventListener("boomart:products-ready", () => {
   renderFilters();
   renderQuickCategories();
   renderProducts();
+
+  // Si se entro con un enlace directo a un producto, abrir esa ficha.
+  const id = new URL(window.location.href).searchParams.get(PRODUCT_PARAM);
+  if (id && products.find((p) => p.id === id)) openProduct(id, true);
 });

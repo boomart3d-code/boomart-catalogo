@@ -115,7 +115,10 @@
     const variantPart = line.variantLabel ? ` (${line.variantLabel})` : "";
     cartToast.innerHTML = `
       <span>Agregado: <strong>${addedQty}x ${line.name}${variantPart}</strong> · ${itemCount} producto${itemCount === 1 ? "" : "s"} en el carrito</span>
-      <button type="button" class="cart-toast-view" data-toast-view-cart>Ver carrito</button>
+      <span class="cart-toast-actions">
+        <button type="button" class="cart-toast-keep" data-toast-keep>Seguir comprando</button>
+        <button type="button" class="cart-toast-view" data-toast-view-cart>Ver carrito</button>
+      </span>
     `;
     cartToast.hidden = false;
     requestAnimationFrame(() => cartToast.classList.add("is-visible"));
@@ -124,16 +127,22 @@
       toastCollapseTimer = setTimeout(() => {
         cartToast.hidden = true;
       }, 240);
-    }, 2600);
+    }, 3600);
+  };
+
+  const hideToast = () => {
+    clearTimeout(toastHideTimer);
+    clearTimeout(toastCollapseTimer);
+    cartToast.classList.remove("is-visible");
+    cartToast.hidden = true;
   };
 
   cartToast.addEventListener("click", (event) => {
     if (event.target.closest("[data-toast-view-cart]")) {
-      clearTimeout(toastHideTimer);
-      clearTimeout(toastCollapseTimer);
-      cartToast.classList.remove("is-visible");
-      cartToast.hidden = true;
+      hideToast();
       openCart();
+    } else if (event.target.closest("[data-toast-keep]")) {
+      hideToast();
     }
   });
 
@@ -197,6 +206,13 @@
         (line) => line.productId === productId && (line.variantKey || null) === variantKey
       );
       if (addedLine) showAddedToast(qty, addedLine, state.totals.itemCount);
+
+      // Si se agrego desde la ficha del producto, cerrarla para que el cliente
+      // vuelva al catalogo donde estaba (app.js limpia el ?producto= de la URL).
+      const productModal = document.querySelector("#productModal");
+      if (productModal && productModal.open && container.closest("#productModal")) {
+        document.dispatchEvent(new CustomEvent("boomart:dismiss-product"));
+      }
     }
   });
 

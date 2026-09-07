@@ -881,9 +881,10 @@ h2 {
   top: 86px;
   left: 50%;
   z-index: 60;
-  align-items: center;
-  gap: 14px;
-  max-width: min(420px, calc(100vw - 32px));
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  width: min(380px, calc(100vw - 32px));
   padding: 14px 18px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -891,7 +892,7 @@ h2 {
   color: white;
   box-shadow: var(--shadow);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   line-height: 1.4;
   opacity: 0;
   pointer-events: none;
@@ -901,6 +902,10 @@ h2 {
 
 .cart-toast:not([hidden]) {
   display: flex;
+}
+
+.cart-toast-actions {
+  justify-content: flex-end;
 }
 
 .cart-toast.is-visible {
@@ -2087,4 +2092,89 @@ h2 {
   .reviews-list {
     grid-template-columns: 1fr;
   }
+}
+
+/* --------------------------------------------------- Compartir / volver ficha */
+.button.ghost {
+  border-color: var(--line);
+  background: transparent;
+  color: white;
+  font-weight: 700;
+  gap: 8px;
+}
+
+.button.ghost:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.card-share-btn {
+  min-height: 40px;
+  font-size: 0.9rem;
+}
+
+.card-share-btn.is-copied {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.modal-back {
+  align-self: flex-start;
+  margin-bottom: -6px;
+  padding: 4px 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-back:hover {
+  color: white;
+}
+
+.modal-share {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-share .button {
+  min-height: 40px;
+  padding: 0 14px;
+  font-size: 0.9rem;
+}
+
+.share-wa {
+  text-decoration: none;
+}
+
+.share-feedback {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.cart-toast-actions {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cart-toast-keep {
+  flex: none;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: #d7d0c8;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.cart-toast-keep:hover {
+  color: white;
 }
