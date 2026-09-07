@@ -8,7 +8,7 @@
     "whatsapp": "https://wa.me/51925666542",
     "instagram": "https://www.instagram.com/boomart_3d"
   },
-  "count": 46,
+  "count": 47,
   "products": [
     {
       "id": "templo-aries",
@@ -791,6 +791,31 @@
       ],
       "url": "https://boomart.pe/catalogo.html#mario-billy-saw",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Mario%20Billy%20%F0%9F%8E%83%20%C2%B7%20Saw%20(El%20Juego%20del%20Miedo)"
+    },
+    {
+      "id": "mascara-calabaza-calavera",
+      "name": "Máscara Calabaza Calavera 🎃 · Halloween",
+      "category": "Series y Películas",
+      "tags": [
+        "Halloween",
+        "Mascaras",
+        "Disfraces",
+        "Calabaza"
+      ],
+      "description": "🎃 Edición Halloween. Máscara Calabaza Calavera: mitad jack-o'-lantern, mitad cráneo, con el ceño marcado, las cuencas huecas y una hilera de dientes de sierra en degradado hacia el blanco. Impresa en 3D y pintada a mano. Ideal para tu disfraz, sesión de fotos o para colgarla como decoración de temporada. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 120,
+      "pricing": [
+        "Precio oferta: S/120 (antes S/150)"
+      ],
+      "image": "https://boomart.pe/assets/products/mascara-calabaza-calavera-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/mascara-calabaza-calavera-1.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#mascara-calabaza-calavera",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20Calabaza%20Calavera%20%F0%9F%8E%83%20%C2%B7%20Halloween"
     },
     {
       "id": "mascara-el-juego-del-calamar",

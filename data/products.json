@@ -713,6 +713,28 @@
     "offerPrice": 80
   },
   {
+    "id": "mascara-calabaza-calavera",
+    "name": "Máscara Calabaza Calavera 🎃 · Halloween",
+    "category": "Series y Películas",
+    "tags": [
+      "Halloween",
+      "Mascaras",
+      "Disfraces",
+      "Calabaza"
+    ],
+    "material": "PLA",
+    "availability": "A pedido",
+    "regularPrice": 150,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/mascara-calabaza-calavera-1.jpg",
+    "gallery": [
+      "assets/products/mascara-calabaza-calavera-1.jpg"
+    ],
+    "description": "🎃 Edición Halloween. Máscara Calabaza Calavera: mitad jack-o'-lantern, mitad cráneo, con el ceño marcado, las cuencas huecas y una hilera de dientes de sierra en degradado hacia el blanco. Impresa en 3D y pintada a mano. Ideal para tu disfraz, sesión de fotos o para colgarla como decoración de temporada. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú.",
+    "offerPrice": 120
+  },
+  {
     "id": "mascara-el-juego-del-calamar",
     "name": "Máscara de El Juego del Calamar",
     "category": "Series y Películas",
