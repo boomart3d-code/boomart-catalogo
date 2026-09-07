@@ -245,7 +245,14 @@ ${cards}
     <meta property="og:description" content="Catalogo completo de BoomArt con ${products.length} piezas impresas en 3D. Precios desde S/${min}.">
     <meta property="og:url" content="${SITE}/catalogo.html">
     <meta property="og:image" content="${SITE}/assets/products/promo-12-casas-mini.jpg">
+    <meta property="og:image:secure_url" content="${SITE}/assets/products/promo-12-casas-mini.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1254">
+    <meta property="og:image:height" content="1254">
+    <meta property="og:image:alt" content="BoomArt - Las 12 Casas del Zodiaco de Saint Seiya impresas en 3D y pintadas a mano">
     <meta property="og:locale" content="es_PE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="${SITE}/assets/products/promo-12-casas-mini.jpg">
     <link rel="alternate" type="application/json" href="${SITE}/catalogo.json" title="Feed JSON del catalogo BoomArt">
     <link rel="stylesheet" href="src/styles.css?v=15">
     <style>
