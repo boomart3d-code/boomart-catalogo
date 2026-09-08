@@ -885,6 +885,33 @@
     "offerPrice": 140
   },
   {
+    "id": "mascara-hellboy-articulada",
+    "name": "Máscara Hellboy Articulada 👹 · Halloween",
+    "category": "🎃 Halloween",
+    "tags": [
+      "Mascaras",
+      "Hellboy",
+      "Articulada",
+      "Mandíbula móvil",
+      "Cosplay",
+      "Disfraces",
+      "Demonio"
+    ],
+    "material": "PLA",
+    "availability": "A pedido",
+    "regularPrice": 200,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/mascara-hellboy-articulada-1.jpg",
+    "gallery": [
+      "assets/products/mascara-hellboy-articulada-1.jpg",
+      "assets/products/mascara-hellboy-articulada-2.jpg",
+      "assets/products/mascara-hellboy-articulada-3.jpg"
+    ],
+    "description": "🎃 Edición Halloween. Máscara articulada inspirada en Hellboy, con acabado rojo y gran nivel de detalle. La mandíbula es articulada: al hablar, la boca se mueve contigo. Incluye un puro desmontable para completar el look. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y colección. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 🔥",
+    "offerPrice": 180
+  },
+  {
     "id": "mascara-el-juego-del-calamar",
     "name": "Máscara de El Juego del Calamar",
     "category": "Series y Películas",

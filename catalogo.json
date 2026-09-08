@@ -8,7 +8,7 @@
     "whatsapp": "https://wa.me/51925666542",
     "instagram": "https://www.instagram.com/boomart_3d"
   },
-  "count": 53,
+  "count": 54,
   "products": [
     {
       "id": "templo-aries",
@@ -983,6 +983,36 @@
       ],
       "url": "https://boomart.pe/catalogo.html#mascara-baphomet",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20Baphomet%20%F0%9F%98%88%20%C2%B7%20Halloween"
+    },
+    {
+      "id": "mascara-hellboy-articulada",
+      "name": "Máscara Hellboy Articulada 👹 · Halloween",
+      "category": "🎃 Halloween",
+      "tags": [
+        "Mascaras",
+        "Hellboy",
+        "Articulada",
+        "Mandíbula móvil",
+        "Cosplay",
+        "Disfraces",
+        "Demonio"
+      ],
+      "description": "🎃 Edición Halloween. Máscara articulada inspirada en Hellboy, con acabado rojo y gran nivel de detalle. La mandíbula es articulada: al hablar, la boca se mueve contigo. Incluye un puro desmontable para completar el look. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y colección. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 🔥",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 180,
+      "pricing": [
+        "Precio oferta: S/180 (antes S/200)"
+      ],
+      "image": "https://boomart.pe/assets/products/mascara-hellboy-articulada-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/mascara-hellboy-articulada-1.jpg",
+        "https://boomart.pe/assets/products/mascara-hellboy-articulada-2.jpg",
+        "https://boomart.pe/assets/products/mascara-hellboy-articulada-3.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#mascara-hellboy-articulada",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20Hellboy%20Articulada%20%F0%9F%91%B9%20%C2%B7%20Halloween"
     },
     {
       "id": "mascara-el-juego-del-calamar",
