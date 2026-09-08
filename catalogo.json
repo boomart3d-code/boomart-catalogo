@@ -3,12 +3,12 @@
   "url": "https://boomart.pe/",
   "description": "Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao, Peru. Envios a todo el pais.",
   "currency": "PEN",
-  "updated": "2026-09-07",
+  "updated": "2026-09-08",
   "contact": {
     "whatsapp": "https://wa.me/51925666542",
     "instagram": "https://www.instagram.com/boomart_3d"
   },
-  "count": 52,
+  "count": 53,
   "products": [
     {
       "id": "templo-aries",
@@ -954,6 +954,35 @@
       ],
       "url": "https://boomart.pe/catalogo.html#mascara-krampus",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20Krampus%20%F0%9F%98%88%20%C2%B7%20Halloween"
+    },
+    {
+      "id": "mascara-baphomet",
+      "name": "Máscara Baphomet 😈 · Halloween",
+      "category": "🎃 Halloween",
+      "tags": [
+        "Mascaras",
+        "Baphomet",
+        "Demonio",
+        "Pentagrama",
+        "Cuernos",
+        "Disfraces",
+        "Cosplay"
+      ],
+      "description": "🎃 Edición Halloween. Máscara de Baphomet en acabado negro con cuernos detallados y pentagrama rojo en la frente: diseño siniestro y llamativo, con alto nivel de detalle. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y decoración temática oscura. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 😈🔥",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 140,
+      "pricing": [
+        "Precio oferta: S/140 (antes S/160)"
+      ],
+      "image": "https://boomart.pe/assets/products/mascara-baphomet-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/mascara-baphomet-1.jpg",
+        "https://boomart.pe/assets/products/mascara-baphomet-2.jpg"
+      ],
+      "url": "https://boomart.pe/catalogo.html#mascara-baphomet",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20Baphomet%20%F0%9F%98%88%20%C2%B7%20Halloween"
     },
     {
       "id": "mascara-el-juego-del-calamar",

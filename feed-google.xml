@@ -3,7 +3,7 @@
   <channel>
     <title>BoomArt - Catalogo de productos</title>
     <link>https://boomart.pe/</link>
-    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-09-07.</description>
+    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-09-08.</description>
     <item>
       <g:id>templo-aries</g:id>
       <g:title>Templo de Aries</g:title>
@@ -722,6 +722,26 @@
       <g:availability>in_stock</g:availability>
       <g:price>230.00 PEN</g:price>
       <g:sale_price>200.00 PEN</g:sale_price>
+      <g:condition>new</g:condition>
+      <g:shipping>
+        <g:country>PE</g:country>
+        <g:price>15.00 PEN</g:price>
+      </g:shipping>
+      <g:brand>BoomArt</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
+      <g:product_type>🎃 Halloween</g:product_type>
+    </item>
+    <item>
+      <g:id>mascara-baphomet</g:id>
+      <g:title>Máscara Baphomet 😈 · Halloween</g:title>
+      <g:description>🎃 Edición Halloween. Máscara de Baphomet en acabado negro con cuernos detallados y pentagrama rojo en la frente: diseño siniestro y llamativo, con alto nivel de detalle. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y decoración temática oscura. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 😈🔥 Fabricado a pedido en impresion 3D (PLA), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
+      <g:link>https://boomart.pe/catalogo.html#mascara-baphomet</g:link>
+      <g:image_link>https://boomart.pe/assets/products/mascara-baphomet-1.jpg</g:image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/mascara-baphomet-2.jpg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>160.00 PEN</g:price>
+      <g:sale_price>140.00 PEN</g:sale_price>
       <g:condition>new</g:condition>
       <g:shipping>
         <g:country>PE</g:country>

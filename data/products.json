@@ -859,6 +859,32 @@
     "offerPrice": 200
   },
   {
+    "id": "mascara-baphomet",
+    "name": "Máscara Baphomet 😈 · Halloween",
+    "category": "🎃 Halloween",
+    "tags": [
+      "Mascaras",
+      "Baphomet",
+      "Demonio",
+      "Pentagrama",
+      "Cuernos",
+      "Disfraces",
+      "Cosplay"
+    ],
+    "material": "PLA",
+    "availability": "A pedido",
+    "regularPrice": 160,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/mascara-baphomet-1.jpg",
+    "gallery": [
+      "assets/products/mascara-baphomet-1.jpg",
+      "assets/products/mascara-baphomet-2.jpg"
+    ],
+    "description": "🎃 Edición Halloween. Máscara de Baphomet en acabado negro con cuernos detallados y pentagrama rojo en la frente: diseño siniestro y llamativo, con alto nivel de detalle. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y decoración temática oscura. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 😈🔥",
+    "offerPrice": 140
+  },
+  {
     "id": "mascara-el-juego-del-calamar",
     "name": "Máscara de El Juego del Calamar",
     "category": "Series y Películas",
