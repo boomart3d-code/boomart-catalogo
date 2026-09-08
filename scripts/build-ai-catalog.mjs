@@ -236,7 +236,7 @@ function buildJson(products) {
         "Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao, Peru. Envios a todo el pais.",
       currency: "PEN",
       updated: NOW,
-      contact: { whatsapp: WHATSAPP, instagram: "https://www.instagram.com/boomart_3d" },
+      contact: { whatsapp: WHATSAPP, email: "contacto@boomart.pe", instagram: "https://www.instagram.com/boomart_3d" },
       count: items.length,
       products: items,
     },
@@ -436,6 +436,7 @@ ${sections}
           WhatsApp: a domicilio en Lima y Callao, y por agencia Shalom a provincias.
         </p>
         <p><a href="${WHATSAPP}" target="_blank" rel="noreferrer">Escribir a BoomArt por WhatsApp</a> &middot;
+           <a href="mailto:contacto@boomart.pe">contacto@boomart.pe</a> &middot;
            <a href="https://www.instagram.com/boomart_3d" target="_blank" rel="noreferrer">Instagram @boomart_3d</a></p>
       </section>
     </main>
@@ -444,6 +445,7 @@ ${sections}
       <div>
         <strong>BOOM ART</strong>
         <p>Piezas hechas a pedido. Consulta disponibilidad, colores, acabados y tiempos de entrega por WhatsApp.</p>
+        <p><a href="mailto:contacto@boomart.pe">contacto@boomart.pe</a></p>
         <ul class="footer-links">
           <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="politicas.html">Politicas de compra, envio y privacidad</a></li>
@@ -495,6 +497,7 @@ ${cats}
 ## Contacto
 
 - WhatsApp: ${WHATSAPP}
+- Correo: contacto@boomart.pe
 - Instagram: https://www.instagram.com/boomart_3d
 - Ubicacion: Bellavista, Callao, Peru
 - Actualizado: ${NOW}
