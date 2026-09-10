@@ -9,7 +9,7 @@
     "email": "contacto@boomart.pe",
     "instagram": "https://www.instagram.com/boomart_3d"
   },
-  "count": 54,
+  "count": 65,
   "products": [
     {
       "id": "templo-aries",
@@ -543,6 +543,318 @@
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Escultura%20de%20la%20Diosa%20Atena%20%C2%B7%20Saint%20Seiya"
     },
     {
+      "id": "altar-exhibidor-aries",
+      "name": "Altar Exhibidor · Casa de Aries · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Altar Exhibidor",
+        "Aries",
+        "Saint Seiya",
+        "Myth Cloth"
+      ],
+      "description": "Altar exhibidor de la Casa de Aries, la 1ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Aries (Mu). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 80,
+      "pricing": [
+        "Precio oferta: S/80 (antes S/100)"
+      ],
+      "image": "https://boomart.pe/assets/products/altar-exhibidor-aries-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/altar-exhibidor-aries-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-aries-2.jpg"
+      ],
+      "url": "https://boomart.pe/producto/altar-exhibidor-aries/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20Exhibidor%20%C2%B7%20Casa%20de%20Aries%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "altar-exhibidor-tauro",
+      "name": "Altar Exhibidor · Casa de Tauro · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Altar Exhibidor",
+        "Tauro",
+        "Saint Seiya",
+        "Myth Cloth"
+      ],
+      "description": "Altar exhibidor de la Casa de Tauro, la 2ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Tauro (Aldebarán). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 80,
+      "pricing": [
+        "Precio oferta: S/80 (antes S/100)"
+      ],
+      "image": "https://boomart.pe/assets/products/altar-exhibidor-tauro-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/altar-exhibidor-tauro-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-tauro-2.jpg"
+      ],
+      "url": "https://boomart.pe/producto/altar-exhibidor-tauro/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20Exhibidor%20%C2%B7%20Casa%20de%20Tauro%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "altar-exhibidor-geminis",
+      "name": "Altar Exhibidor · Casa de Géminis · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Altar Exhibidor",
+        "Géminis",
+        "Saint Seiya",
+        "Myth Cloth"
+      ],
+      "description": "Altar exhibidor de la Casa de Géminis, la 3ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Géminis (Saga). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 80,
+      "pricing": [
+        "Precio oferta: S/80 (antes S/100)"
+      ],
+      "image": "https://boomart.pe/assets/products/altar-exhibidor-geminis-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/altar-exhibidor-geminis-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-geminis-2.jpg"
+      ],
+      "url": "https://boomart.pe/producto/altar-exhibidor-geminis/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20Exhibidor%20%C2%B7%20Casa%20de%20G%C3%A9minis%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "altar-exhibidor-cancer",
+      "name": "Altar Exhibidor · Casa de Cáncer · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Altar Exhibidor",
+        "Cáncer",
+        "Saint Seiya",
+        "Myth Cloth"
+      ],
+      "description": "Altar exhibidor de la Casa de Cáncer, la 4ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Cáncer (Máscara de Muerte). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 80,
+      "pricing": [
+        "Precio oferta: S/80 (antes S/100)"
+      ],
+      "image": "https://boomart.pe/assets/products/altar-exhibidor-cancer-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/altar-exhibidor-cancer-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-cancer-2.jpg"
+      ],
+      "url": "https://boomart.pe/producto/altar-exhibidor-cancer/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20Exhibidor%20%C2%B7%20Casa%20de%20C%C3%A1ncer%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "altar-exhibidor-leo",
+      "name": "Altar Exhibidor · Casa de Leo · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Altar Exhibidor",
+        "Leo",
+        "Saint Seiya",
+        "Myth Cloth"
+      ],
+      "description": "Altar exhibidor de la Casa de Leo, la 5ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Leo (Aioria). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 80,
+      "pricing": [
+        "Precio oferta: S/80 (antes S/100)"
+      ],
+      "image": "https://boomart.pe/assets/products/altar-exhibidor-leo-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/altar-exhibidor-leo-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-leo-2.jpg"
+      ],
+      "url": "https://boomart.pe/producto/altar-exhibidor-leo/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20Exhibidor%20%C2%B7%20Casa%20de%20Leo%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "altar-exhibidor-virgo",
+      "name": "Altar Exhibidor · Casa de Virgo · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Altar Exhibidor",
+        "Virgo",
+        "Saint Seiya",
+        "Myth Cloth"
+      ],
+      "description": "Altar exhibidor de la Casa de Virgo, la 6ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Virgo (Shaka). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 80,
+      "pricing": [
+        "Precio oferta: S/80 (antes S/100)"
+      ],
+      "image": "https://boomart.pe/assets/products/altar-exhibidor-virgo-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/altar-exhibidor-virgo-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-virgo-2.jpg"
+      ],
+      "url": "https://boomart.pe/producto/altar-exhibidor-virgo/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20Exhibidor%20%C2%B7%20Casa%20de%20Virgo%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "altar-exhibidor-libra",
+      "name": "Altar Exhibidor · Casa de Libra · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Altar Exhibidor",
+        "Libra",
+        "Saint Seiya",
+        "Myth Cloth"
+      ],
+      "description": "Altar exhibidor de la Casa de Libra, la 7ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Libra (Dohko). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 80,
+      "pricing": [
+        "Precio oferta: S/80 (antes S/100)"
+      ],
+      "image": "https://boomart.pe/assets/products/altar-exhibidor-libra-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/altar-exhibidor-libra-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-libra-2.jpg"
+      ],
+      "url": "https://boomart.pe/producto/altar-exhibidor-libra/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20Exhibidor%20%C2%B7%20Casa%20de%20Libra%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "altar-exhibidor-escorpio",
+      "name": "Altar Exhibidor · Casa de Escorpio · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Altar Exhibidor",
+        "Escorpio",
+        "Saint Seiya",
+        "Myth Cloth"
+      ],
+      "description": "Altar exhibidor de la Casa de Escorpio, la 8ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Escorpio (Milo). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 80,
+      "pricing": [
+        "Precio oferta: S/80 (antes S/100)"
+      ],
+      "image": "https://boomart.pe/assets/products/altar-exhibidor-escorpio-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/altar-exhibidor-escorpio-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-escorpio-2.jpg"
+      ],
+      "url": "https://boomart.pe/producto/altar-exhibidor-escorpio/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20Exhibidor%20%C2%B7%20Casa%20de%20Escorpio%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "altar-exhibidor-sagitario",
+      "name": "Altar Exhibidor · Casa de Sagitario · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Altar Exhibidor",
+        "Sagitario",
+        "Saint Seiya",
+        "Myth Cloth"
+      ],
+      "description": "Altar exhibidor de la Casa de Sagitario, la 9ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Sagitario (Aioros). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 80,
+      "pricing": [
+        "Precio oferta: S/80 (antes S/100)"
+      ],
+      "image": "https://boomart.pe/assets/products/altar-exhibidor-sagitario-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/altar-exhibidor-sagitario-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-sagitario-2.jpg"
+      ],
+      "url": "https://boomart.pe/producto/altar-exhibidor-sagitario/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20Exhibidor%20%C2%B7%20Casa%20de%20Sagitario%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "altar-exhibidor-capricornio",
+      "name": "Altar Exhibidor · Casa de Capricornio · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Altar Exhibidor",
+        "Capricornio",
+        "Saint Seiya",
+        "Myth Cloth"
+      ],
+      "description": "Altar exhibidor de la Casa de Capricornio, la 10ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Capricornio (Shura). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 80,
+      "pricing": [
+        "Precio oferta: S/80 (antes S/100)"
+      ],
+      "image": "https://boomart.pe/assets/products/altar-exhibidor-capricornio-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/altar-exhibidor-capricornio-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-capricornio-2.jpg"
+      ],
+      "url": "https://boomart.pe/producto/altar-exhibidor-capricornio/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20Exhibidor%20%C2%B7%20Casa%20de%20Capricornio%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "altar-exhibidor-acuario",
+      "name": "Altar Exhibidor · Casa de Acuario · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Altar Exhibidor",
+        "Acuario",
+        "Saint Seiya",
+        "Myth Cloth"
+      ],
+      "description": "Altar exhibidor de la Casa de Acuario, la 11ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Acuario (Camus). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 80,
+      "pricing": [
+        "Precio oferta: S/80 (antes S/100)"
+      ],
+      "image": "https://boomart.pe/assets/products/altar-exhibidor-acuario-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/altar-exhibidor-acuario-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-acuario-2.jpg"
+      ],
+      "url": "https://boomart.pe/producto/altar-exhibidor-acuario/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20Exhibidor%20%C2%B7%20Casa%20de%20Acuario%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "altar-exhibidor-piscis",
+      "name": "Altar Exhibidor · Casa de Piscis · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Altar Exhibidor",
+        "Piscis",
+        "Saint Seiya",
+        "Myth Cloth"
+      ],
+      "description": "Altar exhibidor de la Casa de Piscis, la 12ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Piscis (Afrodita). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 80,
+      "pricing": [
+        "Precio oferta: S/80 (antes S/100)"
+      ],
+      "image": "https://boomart.pe/assets/products/altar-exhibidor-piscis-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/altar-exhibidor-piscis-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-piscis-2.jpg"
+      ],
+      "url": "https://boomart.pe/producto/altar-exhibidor-piscis/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20Exhibidor%20%C2%B7%20Casa%20de%20Piscis%20%C2%B7%20Saint%20Seiya"
+    },
+    {
       "id": "diorama-caballeros-de-bronce",
       "name": "Diorama de los Caballeros de Bronce · Saint Seiya",
       "category": "Saint Seiya",
@@ -587,32 +899,6 @@
       ],
       "url": "https://boomart.pe/producto/diorama-de-pegaso/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Diorama%20de%20Pegaso%20%C2%B7%20Saint%20Seiya"
-    },
-    {
-      "id": "altar-exhibidor-sagitario",
-      "name": "Altar Exhibidor · Edición Sagitario · Saint Seiya",
-      "category": "Saint Seiya",
-      "tags": [
-        "Dioramas",
-        "Saint Seiya"
-      ],
-      "description": "Altar Exhibidor · Edición Sagitario. Un pedestal temático que eleva cualquier figura de Saint Seiya al nivel de los dioses del Santuario.",
-      "material": "PLA",
-      "availability": "A pedido",
-      "priceCurrency": "PEN",
-      "priceFrom": 80,
-      "pricing": [
-        "Precio oferta: S/80 (antes S/88)"
-      ],
-      "image": "https://boomart.pe/assets/products/altar-exhibidor-sagitario-1.jpg",
-      "gallery": [
-        "https://boomart.pe/assets/products/altar-exhibidor-sagitario-1.jpg",
-        "https://boomart.pe/assets/products/altar-exhibidor-sagitario-2.jpg",
-        "https://boomart.pe/assets/products/altar-exhibidor-sagitario-3.jpg",
-        "https://boomart.pe/assets/products/altar-exhibidor-sagitario-4.jpg"
-      ],
-      "url": "https://boomart.pe/producto/altar-exhibidor-sagitario/",
-      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20Exhibidor%20%C2%B7%20Edici%C3%B3n%20Sagitario%20%C2%B7%20Saint%20Seiya"
     },
     {
       "id": "castillo-de-hogwarts",
