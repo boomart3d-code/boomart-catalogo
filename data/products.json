@@ -356,9 +356,21 @@
     "regularPrice": 1560,
     "featured": true,
     "offer": true,
-    "image": "assets/products/templo-con-caja-de-pandora-y-pedestal.jpg",
+    "image": "assets/products/templo-con-caja-de-pandora-y-pedestal-1.jpg",
     "gallery": [
-      "assets/products/templo-con-caja-de-pandora-y-pedestal.jpg"
+      "assets/products/templo-con-caja-de-pandora-y-pedestal-1.jpg",
+      "assets/products/templo-con-caja-de-pandora-y-pedestal-2.jpg",
+      "assets/products/templo-con-caja-de-pandora-y-pedestal-3.jpg",
+      "assets/products/templo-con-caja-de-pandora-y-pedestal-4.jpg",
+      "assets/products/templo-con-caja-de-pandora-y-pedestal-5.jpg",
+      "assets/products/templo-con-caja-de-pandora-y-pedestal-6.jpg",
+      "assets/products/templo-con-caja-de-pandora-y-pedestal-7.jpg",
+      "assets/products/templo-con-caja-de-pandora-y-pedestal-8.jpg",
+      "assets/products/templo-con-caja-de-pandora-y-pedestal-9.jpg",
+      "assets/products/templo-con-caja-de-pandora-y-pedestal-10.jpg",
+      "assets/products/templo-con-caja-de-pandora-y-pedestal-11.jpg",
+      "assets/products/templo-con-caja-de-pandora-y-pedestal-12.jpg",
+      "assets/products/templo-con-caja-de-pandora-y-pedestal-13.jpg"
     ],
     "description": "La colección completa del Santuario de Athena: los 12 Templos de las Casas del Zodiaco (Aries a Piscis), cada uno con su Caja de Pandora dorada y su pedestal a juego. Acabado tipo piedra gris envejecida, detallado a mano.",
     "offerPrice": 1500
