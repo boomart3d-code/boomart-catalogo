@@ -11,7 +11,7 @@
   "use strict";
 
   var WEB3FORMS_KEY = "783f87b9-117e-4bf1-889c-094f12205cc5";
-  var GOOGLE_REVIEW_URL = "https://search.google.com/local/writereview?placeid=";
+  var GOOGLE_REVIEW_URL = "https://g.page/r/CXS1LtBEq3aOEAE/review";
   var GOOGLE_PROFILE_URL = "https://share.google/1EB41G5DoHVk4GWhA";
 
   var summaryEl = document.querySelector("#reviewsSummary");
