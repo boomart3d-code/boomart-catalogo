@@ -98,9 +98,9 @@ function loadProducts() {
   return readFile(path.join(ROOT, "data", "products.json"), "utf8").then(JSON.parse);
 }
 
-// Costo de envio de referencia declarado a Google (Shopping / structured data).
-// El cobro real se confirma por WhatsApp segun destino; esto es el "desde".
-const SHIPPING_FROM = 15;
+// El costo de envio NO se publica: se coordina por WhatsApp y se paga aparte,
+// directo al courier, al momento del despacho. No va en la web, ni en el
+// structured data, ni en los feeds.
 
 function loadReviews() {
   return readFile(path.join(ROOT, "data", "reviews.json"), "utf8")
@@ -171,31 +171,6 @@ async function injectRatingIntoIndex(ratingLd) {
   await writeFile(file, next);
   return true;
 }
-
-const SHIPPING_LD = {
-  "@type": "OfferShippingDetails",
-  shippingRate: {
-    "@type": "MonetaryAmount",
-    value: String(SHIPPING_FROM),
-    currency: "PEN",
-  },
-  shippingDestination: { "@type": "DefinedRegion", addressCountry: "PE" },
-  deliveryTime: {
-    "@type": "ShippingDeliveryTime",
-    handlingTime: {
-      "@type": "QuantitativeValue",
-      minValue: 2,
-      maxValue: 3,
-      unitCode: "DAY",
-    },
-    transitTime: {
-      "@type": "QuantitativeValue",
-      minValue: 1,
-      maxValue: 7,
-      unitCode: "DAY",
-    },
-  },
-};
 
 function groupByCategory(products) {
   const map = new Map();
@@ -282,7 +257,6 @@ function buildJsonLd(products) {
             returnPolicyCategory:
               "https://schema.org/MerchantReturnNotPermitted",
           },
-          shippingDetails: SHIPPING_LD,
         };
       }
       return product;
@@ -576,10 +550,6 @@ function buildGoogleFeed(products) {
 ${extra ? extra + "\n" : ""}      <g:availability>in_stock</g:availability>
       <g:price>${money(price.listPrice)}</g:price>
 ${price.salePrice != null ? `      <g:sale_price>${money(price.salePrice)}</g:sale_price>\n` : ""}      <g:condition>new</g:condition>
-      <g:shipping>
-        <g:country>PE</g:country>
-        <g:price>${money(SHIPPING_FROM)}</g:price>
-      </g:shipping>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>${esc(googleCategory(p))}</g:google_product_category>
@@ -709,7 +679,6 @@ function offerLd(p) {
       applicableCountry: "PE",
       returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
     },
-    shippingDetails: SHIPPING_LD,
   };
   if (p.templePricing) {
     const vals = [p.templePricing.temple, p.templePricing.pandora, p.templePricing.combo].filter(
@@ -941,7 +910,7 @@ function buildProductPage(p, all, ratingLd) {
             <div><span>Disponibilidad</span>${esc(p.availability || "A pedido")}</div>
             <div><span>Producción</span>~48 h útiles</div>
             <div><span>Categoría</span>${esc(catClean)}</div>
-            <div><span>Envío</span>A todo el Perú (desde S/15, aparte)</div>
+            <div><span>Envío</span>A todo el Perú · se coordina por WhatsApp</div>
           </div>
         </div>
       </div>
@@ -953,7 +922,7 @@ function buildProductPage(p, all, ratingLd) {
         <h2>Producción y tiempos</h2>
         <p>Cada pieza se produce a pedido. La fabricación toma aproximadamente <strong>48 horas útiles</strong> desde que confirmas tu compra. No trabajamos con stock: esto nos permite ajustar cada figura a lo que pides.</p>
         <h2>Envío y entrega</h2>
-        <p>Entregamos a domicilio en Lima y Callao coordinando por WhatsApp, y a provincias por la agencia Shalom. El costo de envío va aparte (desde S/15 referencial) y se paga directo al courier. <a href="${rel}politicas.html">Ver políticas de compra y envío</a>.</p>
+        <p>Entregamos a domicilio en Lima y Callao coordinando por WhatsApp, y a provincias por la agencia Shalom. El costo del envío se coordina por WhatsApp y se paga aparte, directo al courier, al momento del despacho. <a href="${rel}politicas.html">Ver políticas de compra y envío</a>.</p>
         <h2>Cómo comprar</h2>
         <p><a href="${esc(shop)}">Agrégala al carrito en la tienda BoomArt</a> o <a href="${esc(wa)}" target="_blank" rel="noreferrer nofollow">escríbenos por WhatsApp</a> para consultar disponibilidad y coordinar tu pedido.</p>
       </div>
