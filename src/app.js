@@ -41,10 +41,22 @@ const whatsappUrl = (message) =>
     : `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(message)}`;
 
 // --- Enlace directo a un producto: ?producto=<id> ---------------------------
-// Al abrir una ficha la URL pasa a boomart.pe/?producto=<id>; al compartir ese
-// enlace, la pagina carga normal y abre solo ese producto. No toca products.json
-// ni el resto de funciones: es historial del navegador + un parametro.
+// Al abrir una ficha la URL pasa a boomart.pe/?producto=<id>; asi el historial
+// del navegador abre/cierra la ficha. No toca products.json.
 const PRODUCT_PARAM = "producto";
+const SITE_ORIGIN = "https://boomart.pe";
+
+// Cada producto tiene una pagina estatica propia e indexable en
+// /producto/<id>/ (titulo, descripcion y OG propios). Esa es la URL que se
+// comparte y la que se declara como canonical mientras la ficha esta abierta,
+// para que Google indexe esa pagina y no boomart.pe/?producto=<id>.
+const productPageUrl = (productId) =>
+  `${SITE_ORIGIN}/producto/${encodeURIComponent(productId)}/`;
+
+const canonicalLink = document.querySelector('link[rel="canonical"]');
+const setCanonical = (href) => {
+  if (canonicalLink) canonicalLink.setAttribute("href", href);
+};
 
 const priceLabel = (product) => {
   if (product.templePricing) {
@@ -67,7 +79,7 @@ const shareText = (product) => {
 };
 
 const shareProduct = async (product) => {
-  const url = productShareUrl(product.id);
+  const url = productPageUrl(product.id);
   if (navigator.share) {
     try {
       await navigator.share({ title: product.name, text: `${shareText(product)}\n${url}`, url });
@@ -109,7 +121,7 @@ const copyText = async (text) => {
 };
 
 const whatsappShareUrl = (product) =>
-  `https://wa.me/?text=${encodeURIComponent(`${shareText(product)}\n${productShareUrl(product.id)}`)}`;
+  `https://wa.me/?text=${encodeURIComponent(`${shareText(product)}\n${productPageUrl(product.id)}`)}`;
 
 const placeholder = (product) => `
   <div class="image-placeholder" role="img" aria-label="Imagen pendiente para ${product.name}">
@@ -297,6 +309,7 @@ const openProduct = (productId, fromHistory = false) => {
   if (shareFeedback) shareFeedback.hidden = true;
   renderModalImage();
   if (!modal.open) modal.showModal();
+  setCanonical(productPageUrl(productId));
 
   // Refleja el producto en la URL para poder copiarla / compartirla.
   const current = new URL(window.location.href).searchParams.get(PRODUCT_PARAM);
@@ -316,6 +329,7 @@ const stripProductParam = () => {
 const closeProductModal = () => {
   if (modal.open) modal.close();
   activeProduct = null;
+  setCanonical(`${SITE_ORIGIN}/`);
 };
 
 // Cierra la ficha y limpia el ?producto= de la URL. Todas las vias de cierre

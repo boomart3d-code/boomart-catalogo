@@ -3,7 +3,7 @@
   "url": "https://boomart.pe/",
   "description": "Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao, Peru. Envios a todo el pais.",
   "currency": "PEN",
-  "updated": "2026-09-08",
+  "updated": "2026-09-10",
   "contact": {
     "whatsapp": "https://wa.me/51925666542",
     "email": "contacto@boomart.pe",
@@ -35,7 +35,7 @@
         "https://boomart.pe/assets/products/templo-aries.jpg",
         "https://boomart.pe/assets/products/templo-aries-pandora.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#templo-aries",
+      "url": "https://boomart.pe/producto/templo-aries/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Aries"
     },
     {
@@ -63,7 +63,7 @@
         "https://boomart.pe/assets/products/templo-tauro-2.jpg",
         "https://boomart.pe/assets/products/templo-tauro-pandora.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#templo-tauro",
+      "url": "https://boomart.pe/producto/templo-tauro/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Tauro"
     },
     {
@@ -91,7 +91,7 @@
         "https://boomart.pe/assets/products/templo-geminis-2.jpg",
         "https://boomart.pe/assets/products/templo-geminis-pandora.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#templo-geminis",
+      "url": "https://boomart.pe/producto/templo-geminis/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20G%C3%A9minis"
     },
     {
@@ -119,7 +119,7 @@
         "https://boomart.pe/assets/products/templo-cancer-2.jpg",
         "https://boomart.pe/assets/products/templo-cancer-pandora.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#templo-cancer",
+      "url": "https://boomart.pe/producto/templo-cancer/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20C%C3%A1ncer"
     },
     {
@@ -146,7 +146,7 @@
         "https://boomart.pe/assets/products/templo-leo.jpg",
         "https://boomart.pe/assets/products/templo-leo-pandora.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#templo-leo",
+      "url": "https://boomart.pe/producto/templo-leo/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Leo"
     },
     {
@@ -174,7 +174,7 @@
         "https://boomart.pe/assets/products/templo-virgo-2.jpg",
         "https://boomart.pe/assets/products/templo-virgo-pandora.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#templo-virgo",
+      "url": "https://boomart.pe/producto/templo-virgo/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Virgo"
     },
     {
@@ -201,7 +201,7 @@
         "https://boomart.pe/assets/products/templo-libra.jpg",
         "https://boomart.pe/assets/products/templo-libra-pandora.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#templo-libra",
+      "url": "https://boomart.pe/producto/templo-libra/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Libra"
     },
     {
@@ -228,7 +228,7 @@
         "https://boomart.pe/assets/products/templo-escorpio.jpg",
         "https://boomart.pe/assets/products/templo-escorpio-pandora.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#templo-escorpio",
+      "url": "https://boomart.pe/producto/templo-escorpio/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Escorpio"
     },
     {
@@ -255,7 +255,7 @@
         "https://boomart.pe/assets/products/templo-sagitario.jpg",
         "https://boomart.pe/assets/products/templo-sagitario-pandora.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#templo-sagitario",
+      "url": "https://boomart.pe/producto/templo-sagitario/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Sagitario"
     },
     {
@@ -282,7 +282,7 @@
         "https://boomart.pe/assets/products/templo-capricornio.jpg",
         "https://boomart.pe/assets/products/templo-capricornio-pandora.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#templo-capricornio",
+      "url": "https://boomart.pe/producto/templo-capricornio/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Capricornio"
     },
     {
@@ -309,7 +309,7 @@
         "https://boomart.pe/assets/products/templo-acuario.jpg",
         "https://boomart.pe/assets/products/templo-acuario-pandora.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#templo-acuario",
+      "url": "https://boomart.pe/producto/templo-acuario/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Acuario"
     },
     {
@@ -336,7 +336,7 @@
         "https://boomart.pe/assets/products/templo-piscis.jpg",
         "https://boomart.pe/assets/products/templo-piscis-pandora.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#templo-piscis",
+      "url": "https://boomart.pe/producto/templo-piscis/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Piscis"
     },
     {
@@ -365,7 +365,7 @@
         "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-5.jpg",
         "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-6.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#busto-de-atena-saint-seiya",
+      "url": "https://boomart.pe/producto/busto-de-atena-saint-seiya/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Busto%20de%20Atena%20%C2%B7%2025%20cm%20%C2%B7%20Saint%20Seiya"
     },
     {
@@ -390,7 +390,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/templo-con-caja-de-pandora-y-pedestal.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#templo-con-caja-de-pandora-y-pedestal",
+      "url": "https://boomart.pe/producto/templo-con-caja-de-pandora-y-pedestal/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Colecci%C3%B3n%20Completa%20%C2%B7%2012%20Templos%20%2B%2012%20Cajas%20de%20Pandora%20y%20Pedestales%20%C2%B7%20Saint%20Seiya"
     },
     {
@@ -413,7 +413,7 @@
         "https://boomart.pe/assets/products/torre-del-reloj-saint-seiya-1.jpg",
         "https://boomart.pe/assets/products/torre-del-reloj-saint-seiya-2.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#torre-del-reloj-saint-seiya",
+      "url": "https://boomart.pe/producto/torre-del-reloj-saint-seiya/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Torre%20del%20Reloj%20de%20Fuego%20%C2%B7%20Saint%20Seiya"
     },
     {
@@ -437,7 +437,7 @@
         "https://boomart.pe/assets/products/set-de-12-templos-mini-1.jpg",
         "https://boomart.pe/assets/products/set-de-12-templos-mini-2.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#set-de-12-templos-mini",
+      "url": "https://boomart.pe/producto/set-de-12-templos-mini/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Set%20de%2012%20Templos%20Mini%20%C2%B7%20Casas%20del%20Zodiaco"
     },
     {
@@ -468,7 +468,7 @@
         "https://boomart.pe/assets/products/set-santuario-15-piezas-2.jpg",
         "https://boomart.pe/assets/products/set-santuario-15-piezas-3.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#set-santuario-15-piezas",
+      "url": "https://boomart.pe/producto/set-santuario-15-piezas/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Set%20Completo%20del%20Santuario%20%C2%B7%2015%20piezas%20%C2%B7%20Saint%20Seiya"
     },
     {
@@ -491,7 +491,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/set-12-cajas-de-pandora-con-pedestales.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#set-12-cajas-de-pandora-con-pedestales",
+      "url": "https://boomart.pe/producto/set-12-cajas-de-pandora-con-pedestales/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Set%20de%2012%20Cajas%20de%20Pandora%20con%20Pedestales%20%C2%B7%20Saint%20Seiya"
     },
     {
@@ -514,7 +514,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/casco-de-pegaso-saint-seiya.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#casco-de-pegaso-saint-seiya",
+      "url": "https://boomart.pe/producto/casco-de-pegaso-saint-seiya/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Casco%20de%20Pegaso%20%C2%B7%20Saint%20Seiya"
     },
     {
@@ -539,7 +539,7 @@
         "https://boomart.pe/assets/products/escultura-de-atena-saint-seiya-1.jpg",
         "https://boomart.pe/assets/products/escultura-de-atena-saint-seiya-2.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#escultura-de-atena-saint-seiya",
+      "url": "https://boomart.pe/producto/escultura-de-atena-saint-seiya/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Escultura%20de%20la%20Diosa%20Atena%20%C2%B7%20Saint%20Seiya"
     },
     {
@@ -562,7 +562,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/diorama-caballeros-de-bronce.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#diorama-caballeros-de-bronce",
+      "url": "https://boomart.pe/producto/diorama-caballeros-de-bronce/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Diorama%20de%20los%20Caballeros%20de%20Bronce%20%C2%B7%20Saint%20Seiya"
     },
     {
@@ -585,7 +585,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/diorama-de-pegaso.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#diorama-de-pegaso",
+      "url": "https://boomart.pe/producto/diorama-de-pegaso/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Diorama%20de%20Pegaso%20%C2%B7%20Saint%20Seiya"
     },
     {
@@ -611,7 +611,7 @@
         "https://boomart.pe/assets/products/altar-exhibidor-sagitario-3.jpg",
         "https://boomart.pe/assets/products/altar-exhibidor-sagitario-4.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#altar-exhibidor-sagitario",
+      "url": "https://boomart.pe/producto/altar-exhibidor-sagitario/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20Exhibidor%20%C2%B7%20Edici%C3%B3n%20Sagitario%20%C2%B7%20Saint%20Seiya"
     },
     {
@@ -633,7 +633,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/castillo-de-hogwarts.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#castillo-de-hogwarts",
+      "url": "https://boomart.pe/producto/castillo-de-hogwarts/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Castillo%20de%20Hogwarts%20%C2%B7%20Harry%20Potter"
     },
     {
@@ -656,7 +656,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/ajedrez-de-hogwarts-4-casas.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#ajedrez-de-hogwarts-4-casas",
+      "url": "https://boomart.pe/producto/ajedrez-de-hogwarts-4-casas/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Ajedrez%20de%20Hogwarts%20%C2%B7%204%20Casas%20%C2%B7%20Harry%20Potter"
     },
     {
@@ -679,7 +679,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/lampara-sombrero-seleccionador.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#lampara-sombrero-seleccionador",
+      "url": "https://boomart.pe/producto/lampara-sombrero-seleccionador/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20L%C3%A1mpara%20Sombrero%20Seleccionador%20%C2%B7%20Harry%20Potter"
     },
     {
@@ -702,7 +702,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/lampara-lunar-hogwarts.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#lampara-lunar-hogwarts",
+      "url": "https://boomart.pe/producto/lampara-lunar-hogwarts/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20L%C3%A1mpara%20Lunar%20Hogwarts%20%C2%B7%20Harry%20Potter"
     },
     {
@@ -725,7 +725,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/casco-de-wolverine-con-garras.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#casco-de-wolverine-con-garras",
+      "url": "https://boomart.pe/producto/casco-de-wolverine-con-garras/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Casco%20de%20Wolverine%20%2B%20Garras%20%C2%B7%20Marvel"
     },
     {
@@ -748,7 +748,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/mascara-de-batwoman.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#mascara-de-batwoman",
+      "url": "https://boomart.pe/producto/mascara-de-batwoman/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20de%20Batwoman%20%C2%B7%20DC"
     },
     {
@@ -771,7 +771,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/palomera-cara-de-spiderman.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#palomera-cara-de-spiderman",
+      "url": "https://boomart.pe/producto/palomera-cara-de-spiderman/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Palomera%20Cara%20de%20Spider-Man%20%C2%B7%20Marvel"
     },
     {
@@ -794,7 +794,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/palomera-spiderman.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#palomera-spiderman",
+      "url": "https://boomart.pe/producto/palomera-spiderman/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Palomera%20Spider-Man%20%C2%B7%20Marvel"
     },
     {
@@ -820,7 +820,7 @@
         "https://boomart.pe/assets/products/mario-billy-saw-1.jpg",
         "https://boomart.pe/assets/products/mario-billy-saw-2.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#mario-billy-saw",
+      "url": "https://boomart.pe/producto/mario-billy-saw/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Mario%20Billy%20%F0%9F%8E%83%20%C2%B7%20Saw%20(El%20Juego%20del%20Miedo)"
     },
     {
@@ -845,7 +845,7 @@
         "https://boomart.pe/assets/products/mascara-calabaza-calavera-1.jpg",
         "https://boomart.pe/assets/products/mascara-calabaza-calavera-2.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#mascara-calabaza-calavera",
+      "url": "https://boomart.pe/producto/mascara-calabaza-calavera/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20Calabaza%20Calavera%20%F0%9F%8E%83%20%C2%B7%20Halloween"
     },
     {
@@ -872,7 +872,7 @@
         "https://boomart.pe/assets/products/candelabro-calavera-2.jpg",
         "https://boomart.pe/assets/products/candelabro-calavera-3.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#candelabro-calavera",
+      "url": "https://boomart.pe/producto/candelabro-calavera/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Candelabro%20Calavera%20%F0%9F%8E%83%20%C2%B7%20Halloween"
     },
     {
@@ -899,7 +899,7 @@
         "https://boomart.pe/assets/products/evil-mask-2.jpg",
         "https://boomart.pe/assets/products/evil-mask-3.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#evil-mask",
+      "url": "https://boomart.pe/producto/evil-mask/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Evil%20Mask%20%F0%9F%98%88%20%C2%B7%20Halloween"
     },
     {
@@ -926,7 +926,7 @@
         "https://boomart.pe/assets/products/zkull-urban-1.jpg",
         "https://boomart.pe/assets/products/zkull-urban-2.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#zkull-urban",
+      "url": "https://boomart.pe/producto/zkull-urban/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20ZKULL%20Urban%20%F0%9F%92%80%20%C2%B7%20Halloween"
     },
     {
@@ -953,7 +953,7 @@
         "https://boomart.pe/assets/products/mascara-krampus-1.jpg",
         "https://boomart.pe/assets/products/mascara-krampus-2.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#mascara-krampus",
+      "url": "https://boomart.pe/producto/mascara-krampus/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20Krampus%20%F0%9F%98%88%20%C2%B7%20Halloween"
     },
     {
@@ -982,7 +982,7 @@
         "https://boomart.pe/assets/products/mascara-baphomet-1.jpg",
         "https://boomart.pe/assets/products/mascara-baphomet-2.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#mascara-baphomet",
+      "url": "https://boomart.pe/producto/mascara-baphomet/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20Baphomet%20%F0%9F%98%88%20%C2%B7%20Halloween"
     },
     {
@@ -1012,7 +1012,7 @@
         "https://boomart.pe/assets/products/mascara-hellboy-articulada-2.jpg",
         "https://boomart.pe/assets/products/mascara-hellboy-articulada-3.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#mascara-hellboy-articulada",
+      "url": "https://boomart.pe/producto/mascara-hellboy-articulada/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20Hellboy%20Articulada%20%F0%9F%91%B9%20%C2%B7%20Halloween"
     },
     {
@@ -1035,7 +1035,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/mascara-el-juego-del-calamar.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#mascara-el-juego-del-calamar",
+      "url": "https://boomart.pe/producto/mascara-el-juego-del-calamar/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20de%20El%20Juego%20del%20Calamar"
     },
     {
@@ -1058,7 +1058,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/casco-de-agamenon-la-odisea.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#casco-de-agamenon-la-odisea",
+      "url": "https://boomart.pe/producto/casco-de-agamenon-la-odisea/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Casco%20de%20Agamen%C3%B3n%20%C2%B7%20La%20Odisea"
     },
     {
@@ -1081,7 +1081,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/pato-lucas-kratos-god-of-war.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#pato-lucas-kratos-god-of-war",
+      "url": "https://boomart.pe/producto/pato-lucas-kratos-god-of-war/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Pato%20Lucas%20Kratos%20%C2%B7%20God%20of%20War"
     },
     {
@@ -1105,7 +1105,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/maceta-pikachu.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#maceta-pikachu",
+      "url": "https://boomart.pe/producto/maceta-pikachu/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Maceta%20de%20Pikachu%20%C2%B7%20Pok%C3%A9mon"
     },
     {
@@ -1128,7 +1128,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/replica-copa-del-mundo-tamano-real.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#replica-copa-del-mundo-tamano-real",
+      "url": "https://boomart.pe/producto/replica-copa-del-mundo-tamano-real/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20R%C3%A9plica%20Premium%20Copa%20del%20Mundo%20%C2%B7%20Tama%C3%B1o%20real%201%3A1"
     },
     {
@@ -1151,7 +1151,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/botin-de-oro-del-mundial.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#botin-de-oro-del-mundial",
+      "url": "https://boomart.pe/producto/botin-de-oro-del-mundial/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Bot%C3%ADn%20de%20Oro%20del%20Mundial"
     },
     {
@@ -1174,7 +1174,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/balon-de-oro-del-mundial.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#balon-de-oro-del-mundial",
+      "url": "https://boomart.pe/producto/balon-de-oro-del-mundial/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Bal%C3%B3n%20de%20Oro%20del%20Mundial"
     },
     {
@@ -1197,7 +1197,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/caja-organizadora-figuritas-panini-2026.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#caja-organizadora-figuritas-panini-2026",
+      "url": "https://boomart.pe/producto/caja-organizadora-figuritas-panini-2026/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Caja%20Organizadora%20de%20Figuritas%20%C2%B7%20Panini%20Mundial%202026"
     },
     {
@@ -1220,7 +1220,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/maceta-groot.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#maceta-groot",
+      "url": "https://boomart.pe/producto/maceta-groot/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Maceta%20Groot%20%C2%B7%20Guardianes%20de%20la%20Galaxia"
     },
     {
@@ -1243,7 +1243,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/maceta-baby-groot.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#maceta-baby-groot",
+      "url": "https://boomart.pe/producto/maceta-baby-groot/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Maceta%20Baby%20Groot"
     },
     {
@@ -1265,7 +1265,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/maceta-dedo-medio.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#maceta-dedo-medio",
+      "url": "https://boomart.pe/producto/maceta-dedo-medio/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Maceta%20Dedo%20Medio"
     },
     {
@@ -1288,7 +1288,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/maceta-darth-vader.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#maceta-darth-vader",
+      "url": "https://boomart.pe/producto/maceta-darth-vader/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Maceta%20Darth%20Vader%20%C2%B7%20Star%20Wars"
     },
     {
@@ -1311,7 +1311,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/maceta-david.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#maceta-david",
+      "url": "https://boomart.pe/producto/maceta-david/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Maceta%20David%20%C2%B7%20Arte%20cl%C3%A1sico"
     },
     {
@@ -1333,7 +1333,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/maceta-minimalista.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#maceta-minimalista",
+      "url": "https://boomart.pe/producto/maceta-minimalista/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Maceta%20Minimalista"
     },
     {
@@ -1355,7 +1355,7 @@
       "gallery": [
         "https://boomart.pe/assets/products/maceta-palmera.jpg"
       ],
-      "url": "https://boomart.pe/catalogo.html#maceta-palmera",
+      "url": "https://boomart.pe/producto/maceta-palmera/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Maceta%20Palmera"
     }
   ]

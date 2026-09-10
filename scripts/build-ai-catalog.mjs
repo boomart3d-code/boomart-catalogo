@@ -16,7 +16,7 @@
  * No necesita dependencias: solo Node.js 18+.
  */
 
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
@@ -224,7 +224,7 @@ function buildJson(products) {
       pricing: price.lines,
       image: abs(p.image),
       gallery: (p.gallery || []).map(abs),
-      url: `${SITE}/catalogo.html#${p.id}`,
+      url: `${SITE}/producto/${p.id}/`,
       whatsapp: waLink(p.name),
     };
   });
@@ -261,7 +261,7 @@ function buildJsonLd(products) {
         name: p.name,
         category: p.category,
         description: p.description || "",
-        url: `${SITE}/catalogo.html#${p.id}`,
+        url: `${SITE}/producto/${p.id}/`,
         image: abs(p.image || (p.gallery && p.gallery[0])),
         brand: { "@type": "Brand", name: "BoomArt" },
       };
@@ -274,7 +274,7 @@ function buildJsonLd(products) {
           availability: "https://schema.org/InStock",
           itemCondition: "https://schema.org/NewCondition",
           priceValidUntil: PRICE_VALID_UNTIL,
-          url: `${SITE}/catalogo.html#${p.id}`,
+          url: `${SITE}/producto/${p.id}/`,
           seller: { "@type": "Organization", name: "BoomArt" },
           hasMerchantReturnPolicy: {
             "@type": "MerchantReturnPolicy",
@@ -318,7 +318,7 @@ function buildHtml(products, ratingLd) {
             )
             .join("\n          ");
           return `      <article class="ai-product" id="${esc(p.id)}">
-        <h3>${esc(p.name)}</h3>
+        <h3><a href="${SITE}/producto/${esc(p.id)}/">${esc(p.name)}</a></h3>
         <p class="ai-cat">Categoria: ${esc(p.category)}</p>
         <p>${esc(p.description)}</p>
         <div class="ai-gallery">
@@ -330,7 +330,8 @@ function buildHtml(products, ratingLd) {
           ${priceLines}
         </ul>
         ${tags ? `<ul class="ai-tags">${tags}</ul>` : ""}
-        <p><a href="${esc(waLink(p.name))}" rel="nofollow">Consultar "${esc(p.name)}" por WhatsApp</a></p>
+        <p><a href="${SITE}/producto/${esc(p.id)}/">Ver ficha de ${esc(p.name)}</a> &middot;
+           <a href="${esc(waLink(p.name))}" rel="nofollow">consultar por WhatsApp</a></p>
       </article>`;
         })
         .join("\n");
@@ -521,7 +522,7 @@ function buildLlmsFull(products) {
 - Material: ${p.material || "PLA"}
 - Disponibilidad: ${p.availability || "A pedido"}${tags ? `\n- Etiquetas: ${tags}` : ""}
 - Imagen: ${abs(p.image || (p.gallery && p.gallery[0]))}
-- Ficha: ${SITE}/catalogo.html#${p.id}
+- Ficha: ${SITE}/producto/${p.id}/
 
 ${p.description || ""}`;
         })
@@ -567,7 +568,7 @@ function buildGoogleFeed(products) {
       <g:id>${esc(p.id)}</g:id>
       <g:title>${esc(p.name)}</g:title>
       <g:description>${esc(desc)}</g:description>
-      <g:link>${SITE}/catalogo.html#${esc(p.id)}</g:link>
+      <g:link>${SITE}/producto/${esc(p.id)}/</g:link>
       <g:image_link>${esc(main)}</g:image_link>
 ${extra ? extra + "\n" : ""}      <g:availability>in_stock</g:availability>
       <g:price>${money(price.listPrice)}</g:price>
@@ -630,7 +631,7 @@ function buildMetaFeed(products) {
       "new",
       money(price.listPrice),
       price.salePrice != null ? money(price.salePrice) : "",
-      `${SITE}/catalogo.html#${p.id}`,
+      `${SITE}/producto/${p.id}/`,
       main,
       extra,
       "BoomArt",
@@ -643,13 +644,417 @@ function buildMetaFeed(products) {
   return [cols.join(","), ...rows].join("\n") + "\n";
 }
 
+/* ---------------------------------------------------------------- paginas de producto
+ * Una pagina estatica e indexable por producto en /producto/<id>/.
+ * Google rankea paginas: la tienda (SPA) y catalogo.html no dan una URL propia
+ * por pieza. Estas paginas son aditivas -- no tocan la tienda ni el checkout.
+ */
+
+// Contexto por categoria para dar contenido unico (no solo la descripcion corta).
+const CAT_CONTEXT = {
+  "Saint Seiya":
+    "pieza decorativa para coleccionistas de Saint Seiya (Caballeros del Zodiaco)",
+  "Harry Potter": "pieza decorativa para fans de Harry Potter y el mundo mágico",
+  "Marvel & DC": "figura de colección del universo Marvel y DC",
+  "Series y Peliculas": "figura de colección de cine y series",
+  "Series y Películas": "figura de colección de cine y series",
+  Macetas: "maceta decorativa impresa en 3D",
+  "Mundial de Futbol": "pieza de colección para fanáticos del fútbol",
+  "Mundial de Fútbol": "pieza de colección para fanáticos del fútbol",
+};
+const catContext = (p) =>
+  CAT_CONTEXT[p.category] || "figura de colección impresa en 3D";
+
+const stripEmoji = (s) =>
+  String(s ?? "")
+    .replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}️‍]/gu, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+function pageTitle(p) {
+  const cat = stripEmoji(p.category);
+  const hasCat = p.name.toLowerCase().includes(cat.toLowerCase());
+  const tail = hasCat ? "impresión 3D en Perú" : `${cat} · impresión 3D`;
+  return `${p.name} · ${tail} | BoomArt`;
+}
+
+function clampWords(str, max) {
+  const s = String(str).replace(/\s+/g, " ").trim();
+  if (s.length <= max) return s;
+  const cut = s.slice(0, max);
+  const lastSpace = cut.lastIndexOf(" ");
+  return (lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[\s,.;:!¡¿?-]+$/, "") + "...";
+}
+
+function pageDescription(p) {
+  const price = priceInfo(p);
+  const from = price.from != null ? ` Desde S/${price.from}.` : "";
+  const short = clampWords(p.description || p.name, 120);
+  return `${short}${from} Impresa en 3D a pedido en Lima y Callao, con envíos a todo el Perú. Cómprala por WhatsApp o en la tienda BoomArt.`;
+}
+
+function offerLd(p) {
+  const common = {
+    priceCurrency: "PEN",
+    availability: "https://schema.org/InStock",
+    itemCondition: "https://schema.org/NewCondition",
+    priceValidUntil: PRICE_VALID_UNTIL,
+    url: `${SITE}/producto/${p.id}/`,
+    seller: { "@type": "Organization", name: "BoomArt" },
+    hasMerchantReturnPolicy: {
+      "@type": "MerchantReturnPolicy",
+      applicableCountry: "PE",
+      returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+    },
+    shippingDetails: SHIPPING_LD,
+  };
+  if (p.templePricing) {
+    const vals = [p.templePricing.temple, p.templePricing.pandora, p.templePricing.combo].filter(
+      (n) => typeof n === "number",
+    );
+    return {
+      "@type": "AggregateOffer",
+      offerCount: vals.length,
+      lowPrice: Math.min(...vals),
+      highPrice: Math.max(...vals),
+      ...common,
+    };
+  }
+  const price = priceInfo(p).from;
+  return { "@type": "Offer", price: price != null ? price : 0, ...common };
+}
+
+function productLd(p) {
+  const imgs = (p.gallery && p.gallery.length ? p.gallery : [p.image])
+    .filter(Boolean)
+    .map(abs);
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: p.name,
+    description: String(p.description || p.name).replace(/\s+/g, " ").trim(),
+    image: imgs,
+    sku: p.id,
+    category: stripEmoji(p.category),
+    brand: { "@type": "Brand", name: "BoomArt" },
+    offers: offerLd(p),
+  };
+  if (p.material) ld.material = p.material;
+  return ld;
+}
+
+function breadcrumbLd(p) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE}/` },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: stripEmoji(p.category),
+        item: `${SITE}/catalogo.html#cat-${slug(p.category)}`,
+      },
+      { "@type": "ListItem", position: 3, name: p.name, item: `${SITE}/producto/${p.id}/` },
+    ],
+  };
+}
+
+const PRODUCT_PAGE_CSS = `
+    .pp{max-width:1080px;margin:0 auto;padding:clamp(18px,4vw,36px) clamp(16px,4vw,40px) clamp(56px,8vw,88px)}
+    .pp-crumbs{font-size:.82rem;color:var(--muted);margin:0 0 18px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+    .pp-crumbs a{text-decoration:none;color:inherit}
+    .pp-crumbs a:hover{text-decoration:underline}
+    .pp-top{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:start}
+    .pp-main-img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:#fff;display:block}
+    .pp-thumbs{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .pp-thumbs button{padding:0;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;width:62px;height:62px;overflow:hidden}
+    .pp-thumbs button[aria-current="true"]{border-color:var(--red);border-width:2px}
+    .pp-thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+    .pp-info h1{margin:2px 0 4px;font-size:clamp(1.55rem,4vw,2.35rem);line-height:1.1}
+    .pp-sub{color:var(--muted);margin:0 0 16px}
+    .pp-rating{font-size:.9rem;margin:0 0 16px}
+    .pp-rating a{text-decoration:none;font-weight:700}
+    .pp-price{border:1px solid var(--line);border-radius:12px;padding:15px 16px;margin:0 0 16px}
+    .pp-price .now{font-size:1.45rem;font-weight:800}
+    .pp-price .was{color:var(--muted);text-decoration:line-through;margin-left:8px;font-weight:600}
+    .pp-price ul{margin:8px 0 0;padding-left:18px}
+    .pp-price li{margin:3px 0}
+    .pp-cta{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 6px}
+    .pp-specs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0 0}
+    .pp-specs div{border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:.92rem}
+    .pp-specs span{display:block;font-size:.7rem;font-weight:800;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+    .pp-body{margin-top:34px;max-width:70ch;line-height:1.65}
+    .pp-body h2{font-size:1.15rem;margin:22px 0 8px}
+    .pp-body p{margin:0 0 12px}
+    .pp-related{margin-top:44px}
+    .pp-related h2{font-size:1.15rem;margin:0 0 14px}
+    .pp-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+    .pp-rel-grid a{text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:block}
+    .pp-rel-grid img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;display:block}
+    .pp-rel-grid span{display:block;padding:8px 10px;font-size:.85rem;font-weight:600}
+    @media(max-width:760px){.pp-top{grid-template-columns:1fr}}
+`;
+
+function priceBlockHtml(p) {
+  const price = priceInfo(p);
+  if (p.templePricing) {
+    const t = p.templePricing;
+    const vals = [t.temple, t.pandora, t.combo].filter((n) => typeof n === "number");
+    const rows = [
+      typeof t.temple === "number" ? `<li>Templo solo: <strong>S/${t.temple}</strong></li>` : "",
+      typeof t.pandora === "number"
+        ? `<li>Caja de Pandora + pedestal: <strong>S/${t.pandora}</strong></li>`
+        : "",
+      typeof t.combo === "number"
+        ? `<li>Combo completo (templo + Caja de Pandora + pedestal): <strong>S/${t.combo}</strong></li>`
+        : "",
+    ].join("");
+    return `<div class="pp-price"><span class="now">desde S/${Math.min(...vals)}</span><ul>${rows}</ul></div>`;
+  }
+  const now = price.salePrice != null ? price.salePrice : price.from;
+  const was = price.salePrice != null ? price.listPrice : null;
+  if (now == null) return `<div class="pp-price"><span class="now">Precio a consultar</span></div>`;
+  return `<div class="pp-price"><span class="now">S/${now}</span>${was ? `<span class="was">S/${was}</span>` : ""}</div>`;
+}
+
+function buildProductPage(p, all, ratingLd) {
+  const imgs = (p.gallery && p.gallery.length ? p.gallery : [p.image]).filter(Boolean);
+  const rel = "../../";
+  const url = `${SITE}/producto/${p.id}/`;
+  const title = pageTitle(p);
+  const desc = pageDescription(p);
+  const price = priceInfo(p);
+  const wa = waLink(p.name);
+  const shop = `${rel}index.html?producto=${encodeURIComponent(p.id)}`;
+  const catClean = stripEmoji(p.category);
+  const ctx = catContext(p);
+
+  const mainImgRel = `${rel}${String(imgs[0]).replace(/^\/+/, "")}`;
+  const thumbs = imgs
+    .map(
+      (img, i) =>
+        `<button type="button" data-src="${esc(`${rel}${String(img).replace(/^\/+/, "")}`)}" aria-current="${i === 0}"><img src="${esc(`${rel}${String(img).replace(/^\/+/, "")}`)}" alt="${esc(p.name)} - vista ${i + 1}" loading="lazy" width="62" height="62"></button>`,
+    )
+    .join("\n            ");
+
+  let related = all.filter((x) => x.category === p.category && x.id !== p.id);
+  if (related.length < 4) {
+    related = related.concat(
+      all.filter((x) => x.id !== p.id && x.category !== p.category && x.featured).slice(0, 4 - related.length),
+    );
+  }
+  related = related.slice(0, 4);
+  const relGrid = related
+    .map(
+      (r) =>
+        `<a href="../${esc(r.id)}/"><img src="${esc(`${rel}${String((r.gallery && r.gallery[0]) || r.image).replace(/^\/+/, "")}`)}" alt="${esc(r.name)}" loading="lazy" width="180" height="180"><span>${esc(r.name)}</span></a>`,
+    )
+    .join("\n          ");
+
+  const ratingStr = ratingLd && ratingLd.aggregateRating
+    ? `<p class="pp-rating">&#9733; ${ratingLd.aggregateRating.ratingValue} / 5 &middot; <a href="${rel}opinion/">${ratingLd.aggregateRating.reviewCount} opiniones de clientes</a></p>`
+    : "";
+
+  const priceMeta =
+    price.from != null
+      ? `\n    <meta property="product:price:amount" content="${price.salePrice != null ? price.salePrice : price.from}">\n    <meta property="product:price:currency" content="PEN">`
+      : "";
+
+  return `<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM5C8Q1394"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HM5C8Q1394');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>${esc(title)}</title>
+    <meta name="description" content="${esc(desc)}">
+    <link rel="canonical" href="${url}">
+    <link rel="icon" type="image/svg+xml" href="${rel}assets/boomart-logo.svg">
+    <meta property="og:type" content="product">
+    <meta property="og:site_name" content="BoomArt">
+    <meta property="og:title" content="${esc(p.name)} | BoomArt">
+    <meta property="og:description" content="${esc(desc)}">
+    <meta property="og:url" content="${url}">
+    <meta property="og:image" content="${esc(abs(imgs[0]))}">
+    <meta property="og:locale" content="es_PE">${priceMeta}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${esc(p.name)} | BoomArt">
+    <meta name="twitter:description" content="${esc(desc)}">
+    <meta name="twitter:image" content="${esc(abs(imgs[0]))}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=20">
+    <style>${PRODUCT_PAGE_CSS}</style>
+    <script type="application/ld+json">${JSON.stringify(productLd(p))}</script>
+    <script type="application/ld+json">${JSON.stringify(breadcrumbLd(p))}</script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="${rel}index.html" aria-label="BoomArt inicio">
+        <img class="brand-logo" src="${rel}assets/boomart-logo.svg" alt="BoomArt">
+        <span><strong>BOOM ART</strong><small>Figuras coleccionables e impresión 3D en Perú</small></span>
+      </a>
+      <nav aria-label="Secciones del sitio">
+        <a href="${rel}index.html#catalogo">Catálogo</a>
+        <a href="${rel}nosotros.html">Nosotros</a>
+        <a href="${esc(wa)}" target="_blank" rel="noreferrer">WhatsApp</a>
+      </nav>
+    </header>
+
+    <main class="pp">
+      <nav class="pp-crumbs" aria-label="Ruta de navegación">
+        <a href="${rel}index.html">Inicio</a> <span aria-hidden="true">&rsaquo;</span>
+        <a href="${rel}catalogo.html#cat-${slug(p.category)}">${esc(catClean)}</a> <span aria-hidden="true">&rsaquo;</span>
+        <span>${esc(p.name)}</span>
+      </nav>
+
+      <div class="pp-top">
+        <div class="pp-media">
+          <img class="pp-main-img" id="ppMain" src="${esc(mainImgRel)}" alt="${esc(p.name)} · figura impresa en 3D por BoomArt" width="640" height="640">
+          ${imgs.length > 1 ? `<div class="pp-thumbs" id="ppThumbs">\n            ${thumbs}\n          </div>` : ""}
+        </div>
+        <div class="pp-info">
+          <p class="eyebrow">${esc(catClean)}</p>
+          <h1>${esc(p.name)}</h1>
+          <p class="pp-sub">${esc(String(p.description || `${p.name}: ${ctx}.`).replace(/\s+/g, " ").trim())}</p>
+          ${ratingStr}
+          ${priceBlockHtml(p)}
+          <div class="pp-cta">
+            <a class="button primary" href="${esc(shop)}">Ver en la tienda y agregar al carrito</a>
+            <a class="button secondary" href="${esc(wa)}" target="_blank" rel="noreferrer nofollow">Consultar por WhatsApp</a>
+          </div>
+          <div class="pp-specs">
+            <div><span>Material</span>${esc(p.material || "PLA+")}</div>
+            <div><span>Formato</span>${esc(p.height || "Consultar medidas por WhatsApp")}</div>
+            <div><span>Disponibilidad</span>${esc(p.availability || "A pedido")}</div>
+            <div><span>Producción</span>~48 h útiles</div>
+            <div><span>Categoría</span>${esc(catClean)}</div>
+            <div><span>Envío</span>A todo el Perú (desde S/15, aparte)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pp-body">
+        <h2>Detalle de la pieza</h2>
+        <p>${esc(p.name)} es una ${esc(ctx)}, diseñada y fabricada por BoomArt en ${esc(p.height && /cm/i.test(p.height) ? p.height + ", " : "")}Perú. Se imprime en 3D en ${esc(p.material || "PLA+")}, con acabado y pintura a mano según la pieza, así que es un objeto hecho especialmente para tu pedido &mdash; puedes pedir un color, tamaño o detalle distinto y lo coordinamos por WhatsApp.</p>
+        ${p.tags && p.tags.length ? `<p>Relacionada con: ${p.tags.map((t) => esc(t)).join(", ")}.</p>` : ""}
+        <h2>Producción y tiempos</h2>
+        <p>Cada pieza se produce a pedido. La fabricación toma aproximadamente <strong>48 horas útiles</strong> desde que confirmas tu compra. No trabajamos con stock: esto nos permite ajustar cada figura a lo que pides.</p>
+        <h2>Envío y entrega</h2>
+        <p>Entregamos a domicilio en Lima y Callao coordinando por WhatsApp, y a provincias por la agencia Shalom. El costo de envío va aparte (desde S/15 referencial) y se paga directo al courier. <a href="${rel}politicas.html">Ver políticas de compra y envío</a>.</p>
+        <h2>Cómo comprar</h2>
+        <p><a href="${esc(shop)}">Agrégala al carrito en la tienda BoomArt</a> o <a href="${esc(wa)}" target="_blank" rel="noreferrer nofollow">escríbenos por WhatsApp</a> para consultar disponibilidad y coordinar tu pedido.</p>
+      </div>
+
+      ${
+        related.length
+          ? `<section class="pp-related">
+        <h2>También te puede interesar</h2>
+        <div class="pp-rel-grid">
+          ${relGrid}
+        </div>
+      </section>`
+          : ""
+      }
+    </main>
+
+    <footer class="footer">
+      <div>
+        <strong>BOOM ART</strong>
+        <p>Piezas hechas a pedido. Consulta disponibilidad, colores, acabados y tiempos de entrega por WhatsApp.</p>
+        <p><a href="mailto:contacto@boomart.pe">contacto@boomart.pe</a></p>
+        <ul class="footer-links">
+          <li><a href="${rel}catalogo.html">Catálogo completo</a></li>
+          <li><a href="${rel}nosotros.html">Nosotros</a></li>
+          <li><a href="${rel}politicas.html">Políticas de compra, envío y privacidad</a></li>
+        </ul>
+      </div>
+      <a class="button secondary" href="${esc(wa)}" target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+    </footer>
+
+    <a class="ba-wa" href="${esc(wa)}" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+      <span class="ba-wa__label">¿Dudas? Escríbenos</span>
+      <span class="ba-wa__icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff"><path d="M16.003 3.2C9.05 3.2 3.4 8.85 3.4 15.8c0 2.5.73 4.83 1.99 6.8L3.2 28.8l6.37-2.08a12.5 12.5 0 0 0 6.43 1.76h.01c6.95 0 12.6-5.65 12.6-12.6S22.95 3.2 16 3.2Zm0 22.9h-.01a10.4 10.4 0 0 1-5.29-1.45l-.38-.22-3.78 1.23 1.24-3.68-.25-.39a10.35 10.35 0 0 1-1.6-5.53c0-5.74 4.67-10.4 10.42-10.4 2.78 0 5.39 1.08 7.36 3.05a10.34 10.34 0 0 1 3.05 7.36c0 5.74-4.67 10.4-10.42 10.4Zm5.71-7.79c-.31-.16-1.85-.91-2.14-1.02-.29-.1-.5-.16-.71.16-.21.31-.82 1.02-1 1.24-.19.21-.37.24-.68.08-.31-.16-1.32-.49-2.51-1.55-.93-.83-1.55-1.85-1.74-2.16-.18-.31-.02-.48.14-.63.14-.14.31-.37.47-.55.16-.19.21-.32.31-.53.1-.21.05-.4-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.62-.52-.53-.71-.54l-.6-.01c-.21 0-.55.08-.84.4-.29.31-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.22 3.39 5.38 4.75.75.32 1.34.52 1.79.66.75.24 1.44.2 1.98.12.6-.09 1.85-.76 2.11-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.37Z"/></svg>
+      </span>
+    </a>
+
+    <script>
+      (function () {
+        var thumbs = document.getElementById("ppThumbs");
+        var main = document.getElementById("ppMain");
+        if (!thumbs || !main) return;
+        thumbs.addEventListener("click", function (e) {
+          var btn = e.target.closest("button[data-src]");
+          if (!btn) return;
+          main.src = btn.getAttribute("data-src");
+          thumbs.querySelectorAll("button").forEach(function (b) {
+            b.setAttribute("aria-current", b === btn);
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
+`;
+}
+
+async function writeProductPages(products, ratingLd) {
+  await Promise.all(
+    products.map(async (p) => {
+      const dir = path.join(ROOT, "producto", p.id);
+      await mkdir(dir, { recursive: true });
+      await writeFile(path.join(dir, "index.html"), buildProductPage(p, products, ratingLd));
+    }),
+  );
+  return products.length;
+}
+
+/* ---------------------------------------------------------------- sitemap.xml */
+function buildSitemap(products) {
+  const urls = [
+    { loc: `${SITE}/`, priority: "1.0", changefreq: "weekly" },
+    { loc: `${SITE}/catalogo.html`, priority: "0.9", changefreq: "weekly" },
+    ...products.map((p) => ({
+      loc: `${SITE}/producto/${p.id}/`,
+      priority: "0.8",
+      changefreq: "monthly",
+    })),
+    { loc: `${SITE}/nosotros.html`, priority: "0.5", changefreq: "monthly" },
+    { loc: `${SITE}/politicas.html`, priority: "0.3", changefreq: "yearly" },
+  ];
+  return (
+    `<?xml version="1.0" encoding="UTF-8"?>\n` +
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+    urls
+      .map(
+        (u) =>
+          `  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${NOW}</lastmod>\n` +
+          `    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`,
+      )
+      .join("\n") +
+    `\n</urlset>\n`
+  );
+}
+
 /* ---------------------------------------------------------------- main */
 const [products, reviews] = await Promise.all([loadProducts(), loadReviews()]);
 const ratingLd = buildRatingLd(reviews);
 
-await Promise.all([
+const [productPageCount] = await Promise.all([
+  writeProductPages(products, ratingLd),
   writeFile(path.join(ROOT, "catalogo.html"), buildHtml(products, ratingLd)),
   writeFile(path.join(ROOT, "catalogo.json"), buildJson(products) + "\n"),
+  writeFile(path.join(ROOT, "sitemap.xml"), buildSitemap(products)),
   writeFile(path.join(ROOT, "llms.txt"), buildLlms(products)),
   writeFile(path.join(ROOT, "llms-full.txt"), buildLlmsFull(products)),
   writeFile(path.join(ROOT, "feed-google.xml"), buildGoogleFeed(products)),
@@ -660,7 +1065,8 @@ await Promise.all([
 console.log(
   `OK - generado desde ${products.length} productos` +
     ` y ${reviews.length} opiniones aprobadas:\n` +
-    "  catalogo.html\n  catalogo.json\n  llms.txt\n  llms-full.txt\n" +
+    `  producto/<id>/index.html  (${productPageCount} paginas)\n` +
+    "  sitemap.xml\n  catalogo.html\n  catalogo.json\n  llms.txt\n  llms-full.txt\n" +
     "  feed-google.xml (Google Merchant + Pinterest)\n  feed-meta.csv (Instagram / Facebook)\n" +
     `  index.html (aggregateRating ${ratingLd ? "actualizado" : "sin cambios: aun sin opiniones"})`,
 );
