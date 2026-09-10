@@ -496,6 +496,41 @@
     "offerPrice": 100
   },
   {
+    "id": "set-12-altares-exhibidor",
+    "name": "Colección de 12 Altares Exhibidor · Casas del Zodiaco · Saint Seiya",
+    "category": "Saint Seiya",
+    "tags": [
+      "Altar Exhibidor",
+      "Set",
+      "Saint Seiya",
+      "Myth Cloth",
+      "Casas del Zodiaco"
+    ],
+    "material": "PLA",
+    "availability": "A pedido",
+    "regularPrice": 1200,
+    "offerPrice": 850,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/set-12-altares-exhibidor-1.jpg",
+    "gallery": [
+      "assets/products/set-12-altares-exhibidor-1.jpg",
+      "assets/products/altar-exhibidor-aries-1.jpg",
+      "assets/products/altar-exhibidor-tauro-1.jpg",
+      "assets/products/altar-exhibidor-geminis-1.jpg",
+      "assets/products/altar-exhibidor-cancer-1.jpg",
+      "assets/products/altar-exhibidor-leo-1.jpg",
+      "assets/products/altar-exhibidor-virgo-1.jpg",
+      "assets/products/altar-exhibidor-libra-1.jpg",
+      "assets/products/altar-exhibidor-escorpio-1.jpg",
+      "assets/products/altar-exhibidor-sagitario-1.jpg",
+      "assets/products/altar-exhibidor-capricornio-1.jpg",
+      "assets/products/altar-exhibidor-acuario-1.jpg",
+      "assets/products/altar-exhibidor-piscis-1.jpg"
+    ],
+    "description": "Arma el Santuario completo. Los 12 Altares Exhibidor de las Casas del Zodiaco, uno por cada Caballero Dorado, con acabado tipo piedra envejecida y el símbolo de cada signo en dorado. Pensados para lucir tus figuras Myth Cloth EX de Bandai como en el anime. Sueltos cuestan S/100 cada uno (S/1200 el juego); en oferta, S/80 cada uno. Llevando los 12 juntos: S/850, el Santuario entero con el mejor precio. Impresos en 3D a pedido en Perú, con envíos a todo el país."
+  },
+  {
     "id": "altar-exhibidor-aries",
     "name": "Altar Exhibidor · Casa de Aries · Saint Seiya",
     "category": "Saint Seiya",

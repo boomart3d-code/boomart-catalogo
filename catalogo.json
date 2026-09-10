@@ -9,7 +9,7 @@
     "email": "contacto@boomart.pe",
     "instagram": "https://www.instagram.com/boomart_3d"
   },
-  "count": 65,
+  "count": 66,
   "products": [
     {
       "id": "templo-aries",
@@ -541,6 +541,44 @@
       ],
       "url": "https://boomart.pe/producto/escultura-de-atena-saint-seiya/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Escultura%20de%20la%20Diosa%20Atena%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "set-12-altares-exhibidor",
+      "name": "Colección de 12 Altares Exhibidor · Casas del Zodiaco · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Altar Exhibidor",
+        "Set",
+        "Saint Seiya",
+        "Myth Cloth",
+        "Casas del Zodiaco"
+      ],
+      "description": "Arma el Santuario completo. Los 12 Altares Exhibidor de las Casas del Zodiaco, uno por cada Caballero Dorado, con acabado tipo piedra envejecida y el símbolo de cada signo en dorado. Pensados para lucir tus figuras Myth Cloth EX de Bandai como en el anime. Sueltos cuestan S/100 cada uno (S/1200 el juego); en oferta, S/80 cada uno. Llevando los 12 juntos: S/850, el Santuario entero con el mejor precio. Impresos en 3D a pedido en Perú, con envíos a todo el país.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 850,
+      "pricing": [
+        "Precio oferta: S/850 (antes S/1200)"
+      ],
+      "image": "https://boomart.pe/assets/products/set-12-altares-exhibidor-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/set-12-altares-exhibidor-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-aries-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-tauro-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-geminis-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-cancer-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-leo-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-virgo-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-libra-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-escorpio-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-sagitario-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-capricornio-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-acuario-1.jpg",
+        "https://boomart.pe/assets/products/altar-exhibidor-piscis-1.jpg"
+      ],
+      "url": "https://boomart.pe/producto/set-12-altares-exhibidor/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Colecci%C3%B3n%20de%2012%20Altares%20Exhibidor%20%C2%B7%20Casas%20del%20Zodiaco%20%C2%B7%20Saint%20Seiya"
     },
     {
       "id": "altar-exhibidor-aries",
