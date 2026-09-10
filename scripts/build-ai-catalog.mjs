@@ -300,7 +300,10 @@ function buildHtml(products, ratingLd) {
   const max = totalFrom.length ? Math.max(...totalFrom) : 0;
 
   const toc = groups
-    .map(([cat, list]) => `<li><a href="#cat-${slug(cat)}">${esc(cat)} (${list.length})</a></li>`)
+    .map(
+      ([cat, list]) =>
+        `<li><a href="${SITE}/categoria/${slug(cat)}/">${esc(cat)}</a> (${list.length}) &middot; <a href="#cat-${slug(cat)}">ver en esta pagina</a></li>`,
+    )
     .join("\n        ");
 
   const sections = groups
@@ -753,7 +756,7 @@ function breadcrumbLd(p) {
         "@type": "ListItem",
         position: 2,
         name: stripEmoji(p.category),
-        item: `${SITE}/catalogo.html#cat-${slug(p.category)}`,
+        item: `${SITE}/categoria/${slug(p.category)}/`,
       },
       { "@type": "ListItem", position: 3, name: p.name, item: `${SITE}/producto/${p.id}/` },
     ],
@@ -913,7 +916,7 @@ function buildProductPage(p, all, ratingLd) {
     <main class="pp">
       <nav class="pp-crumbs" aria-label="Ruta de navegación">
         <a href="${rel}index.html">Inicio</a> <span aria-hidden="true">&rsaquo;</span>
-        <a href="${rel}catalogo.html#cat-${slug(p.category)}">${esc(catClean)}</a> <span aria-hidden="true">&rsaquo;</span>
+        <a href="${rel}categoria/${slug(p.category)}/">${esc(catClean)}</a> <span aria-hidden="true">&rsaquo;</span>
         <span>${esc(p.name)}</span>
       </nav>
 
@@ -1019,11 +1022,277 @@ async function writeProductPages(products, ratingLd) {
   return products.length;
 }
 
+/* ---------------------------------------------------------------- paginas de categoria
+ * Una landing por categoria en /categoria/<slug>/ con texto propio + grilla de
+ * productos que enlaza a /producto/<id>/. Aditivas; la tienda (SPA) no cambia.
+ */
+const CATEGORY_META = {
+  "Saint Seiya": {
+    h1: "Figuras de Saint Seiya impresas en 3D",
+    title: "Figuras de Saint Seiya (Caballeros del Zodiaco) en 3D · Perú | BoomArt",
+    intro: [
+      "En BoomArt somos referentes en Perú en figuras y réplicas decorativas de Saint Seiya (Caballeros del Zodiaco). Aquí están los 12 templos de las Casas del Zodiaco del Santuario de Athena, las Cajas de Pandora con pedestal, cascos a escala, bustos y esculturas de Atena, dioramas de los caballeros de bronce y sets completos de colección.",
+      "Todas las piezas se imprimen en 3D y se detallan a mano, con acabado tipo piedra envejecida que resalta la arquitectura de cada templo. Se fabrican a pedido: eliges el signo y si quieres el templo solo, la Caja de Pandora o el combo completo.",
+      "Hechas en Lima y Callao, con envíos a todo el Perú. Escríbenos por WhatsApp para consultar disponibilidad, combos y tiempos de entrega.",
+    ],
+  },
+  "Harry Potter": {
+    h1: "Figuras y decoración de Harry Potter en 3D",
+    title: "Figuras de Harry Potter impresas en 3D · Perú | BoomArt",
+    intro: [
+      "Piezas decorativas del mundo mágico de Harry Potter, impresas en 3D y pensadas para fans y coleccionistas: el Castillo de Hogwarts, el ajedrez mágico con las cuatro casas, la lámpara del Sombrero Seleccionador y la lámpara lunar de Hogwarts.",
+      "Cada pieza se fabrica a pedido en PLA+ con acabado y pintura a mano. Puedes pedir un color o detalle distinto y lo coordinamos por WhatsApp.",
+      "Fabricadas en Perú, con envíos a todo el país.",
+    ],
+  },
+  "Marvel & DC": {
+    h1: "Figuras de Marvel y DC impresas en 3D",
+    title: "Figuras de Marvel y DC en 3D (Spider-Man, Wolverine, Batwoman) · Perú | BoomArt",
+    intro: [
+      "Figuras y accesorios de superhéroes de Marvel y DC impresos en 3D: el casco de Wolverine con garras, la máscara de Batwoman y las palomeras de Spider-Man para tu escritorio o tu colección.",
+      "Piezas hechas a pedido y detalladas a mano en Lima y Callao. Envíos a todo el Perú. Escríbenos por WhatsApp para consultar.",
+    ],
+  },
+  "🎃 Halloween": {
+    h1: "Figuras y máscaras de Halloween en 3D",
+    title: "Máscaras y decoración de Halloween impresas en 3D · Perú | BoomArt",
+    intro: [
+      "Colección de temporada de Halloween: máscaras, calaveras y piezas de terror para decorar tu casa o regalar. Incluye la máscara Calabaza Calavera, el candelabro calavera, Evil Mask, la máscara de Krampus, Mario Billy (Saw) y más.",
+      "Todas impresas en 3D y pintadas a mano, hechas a pedido. La disponibilidad depende de la temporada: consulta por WhatsApp con tiempo antes de tu evento.",
+      "Fabricadas en Perú, con envíos a todo el país.",
+    ],
+  },
+  "Series y Películas": {
+    h1: "Figuras de cine y series impresas en 3D",
+    title: "Figuras de películas y series en 3D · Perú | BoomArt",
+    intro: [
+      "Figuras de colección de cine, series y videojuegos impresas en 3D: el Casco de Agamenón inspirado en La Odisea, el Pato Lucas Kratos de God of War y la máscara de El Juego del Calamar.",
+      "Piezas hechas a pedido y detalladas a mano en Lima y Callao. ¿Buscas un personaje que no ves aquí? Escríbenos: también hacemos piezas personalizadas.",
+    ],
+  },
+  Macetas: {
+    h1: "Macetas decorativas impresas en 3D",
+    title: "Macetas decorativas impresas en 3D (Groot, Pikachu, minimalistas) · Perú | BoomArt",
+    intro: [
+      "Macetas decorativas impresas en 3D para tus suculentas, cactus y plantas pequeñas. Diseños de cultura pop —Groot, Baby Groot, Pikachu, Darth Vader— y también piezas minimalistas y clásicas como la maceta David o la de palmera.",
+      "Impresas en PLA a pedido, en el color que elijas. Fabricadas en Perú, con envíos a todo el país. Consulta por WhatsApp.",
+    ],
+  },
+  "Mundial de Fútbol": {
+    h1: "Piezas de colección del Mundial de Fútbol en 3D",
+    title: "Réplica Copa del Mundo, Balón y Botín de Oro en 3D · Perú | BoomArt",
+    intro: [
+      "Piezas de colección para fanáticos del fútbol: la réplica premium de la Copa del Mundo a tamaño real 1:1, el Botín de Oro, el Balón de Oro y la caja organizadora para tus figuritas del álbum Panini Mundial 2026.",
+      "Impresas en 3D y detalladas a mano, hechas a pedido en Lima y Callao. Envíos a todo el Perú. Escríbenos por WhatsApp.",
+    ],
+  },
+};
+
+const CATEGORY_PAGE_CSS = `
+    .cat{max-width:1100px;margin:0 auto;padding:clamp(18px,4vw,36px) clamp(16px,4vw,40px) clamp(56px,8vw,88px)}
+    .cat-crumbs{font-size:.82rem;color:var(--muted);margin:0 0 16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+    .cat-crumbs a{text-decoration:none;color:inherit}
+    .cat-crumbs a:hover{text-decoration:underline}
+    .cat h1{margin:2px 0 6px;font-size:clamp(1.7rem,4.4vw,2.6rem);line-height:1.08}
+    .cat-lead{color:var(--muted);max-width:70ch;margin:0 0 8px}
+    .cat-intro{max-width:70ch;line-height:1.65;margin:16px 0 8px}
+    .cat-intro p{margin:0 0 12px}
+    .cat-count{font-size:.85rem;color:var(--muted);font-weight:700;margin:20px 0 12px}
+    .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+    @media(min-width:560px){.cat-grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}}
+    .cat-card{border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:rgba(255,255,255,.02)}
+    .cat-card img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;display:block}
+    .cat-card .b{padding:10px 12px;display:flex;flex-direction:column;gap:4px}
+    .cat-card .n{font-weight:700;font-size:.92rem;line-height:1.25}
+    .cat-card .p{font-size:.9rem;color:var(--muted)}
+    .cat-more{margin-top:28px}
+`;
+
+function categorySlug(cat) {
+  return slug(cat);
+}
+
+function buildCategoryPage(cat, list, all, ratingLd) {
+  const meta = CATEGORY_META[cat] || {
+    h1: `${stripEmoji(cat)} impresas en 3D`,
+    title: `${stripEmoji(cat)} en impresión 3D · Perú | BoomArt`,
+    intro: [
+      `Figuras y piezas de ${stripEmoji(cat)} impresas en 3D, hechas a pedido en Lima y Callao con envíos a todo el Perú.`,
+    ],
+  };
+  const rel = "../../";
+  const s = categorySlug(cat);
+  const url = `${SITE}/categoria/${s}/`;
+  const clean = stripEmoji(cat);
+  const wa = `${WHATSAPP}?text=${encodeURIComponent(`Hola BoomArt, quiero consultar por el catálogo de ${clean}`)}`;
+  const ogImg = abs((list[0] && (list[0].gallery && list[0].gallery[0])) || (list[0] && list[0].image)) || `${SITE}/assets/boomart-og.jpg`;
+  const desc = clampWords(meta.intro[0], 155);
+
+  const cards = list
+    .map((p) => {
+      const price = priceInfo(p);
+      const pr =
+        price.salePrice != null
+          ? `S/${price.salePrice}`
+          : price.from != null
+            ? (p.templePricing ? `desde S/${price.from}` : `S/${price.from}`)
+            : "Consultar";
+      const img = `${rel}${String((p.gallery && p.gallery[0]) || p.image).replace(/^\/+/, "")}`;
+      return `        <a class="cat-card" href="${rel}producto/${esc(p.id)}/">
+          <img src="${esc(img)}" alt="${esc(p.name)}" loading="lazy" width="240" height="240">
+          <span class="b"><span class="n">${esc(p.name)}</span><span class="p">${esc(pr)}</span></span>
+        </a>`;
+    })
+    .join("\n");
+
+  const itemListLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: meta.h1,
+    url,
+    numberOfItems: list.length,
+    itemListElement: list.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `${SITE}/producto/${p.id}/`,
+      name: p.name,
+    })),
+  };
+  const crumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: clean, item: url },
+    ],
+  };
+  const catNav = Object.keys(CATEGORY_META)
+    .map((c) => `<li><a href="${rel}categoria/${categorySlug(c)}/">${esc(stripEmoji(c))}</a></li>`)
+    .join("\n          ");
+
+  return `<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM5C8Q1394"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HM5C8Q1394');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>${esc(meta.title)}</title>
+    <meta name="description" content="${esc(desc)}">
+    <link rel="canonical" href="${url}">
+    <link rel="icon" type="image/svg+xml" href="${rel}assets/boomart-logo.svg">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BoomArt">
+    <meta property="og:title" content="${esc(meta.h1)} | BoomArt">
+    <meta property="og:description" content="${esc(desc)}">
+    <meta property="og:url" content="${url}">
+    <meta property="og:image" content="${esc(ogImg)}">
+    <meta property="og:locale" content="es_PE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${esc(meta.h1)} | BoomArt">
+    <meta name="twitter:description" content="${esc(desc)}">
+    <meta name="twitter:image" content="${esc(ogImg)}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=20">
+    <style>${CATEGORY_PAGE_CSS}</style>
+    <script type="application/ld+json">${JSON.stringify(itemListLd)}</script>
+    <script type="application/ld+json">${JSON.stringify(crumbLd)}</script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="${rel}index.html" aria-label="BoomArt inicio">
+        <img class="brand-logo" src="${rel}assets/boomart-logo.svg" alt="BoomArt">
+        <span><strong>BOOM ART</strong><small>Figuras coleccionables e impresión 3D en Perú</small></span>
+      </a>
+      <nav aria-label="Secciones del sitio">
+        <a href="${rel}index.html#catalogo">Catálogo</a>
+        <a href="${rel}nosotros.html">Nosotros</a>
+        <a href="${esc(wa)}" target="_blank" rel="noreferrer">WhatsApp</a>
+      </nav>
+    </header>
+
+    <main class="cat">
+      <nav class="cat-crumbs" aria-label="Ruta de navegación">
+        <a href="${rel}index.html">Inicio</a> <span aria-hidden="true">&rsaquo;</span>
+        <span>${esc(clean)}</span>
+      </nav>
+
+      <p class="eyebrow">Catálogo BoomArt</p>
+      <h1>${esc(meta.h1)}</h1>
+      <div class="cat-intro">
+        ${meta.intro.map((t) => `<p>${esc(t)}</p>`).join("\n        ")}
+      </div>
+
+      <p class="cat-count">${list.length} ${list.length === 1 ? "pieza" : "piezas"} en ${esc(clean)}</p>
+      <div class="cat-grid">
+${cards}
+      </div>
+
+      <p class="cat-more"><a href="${rel}catalogo.html">Ver el catálogo completo</a> &middot; <a href="${esc(wa)}" target="_blank" rel="noreferrer nofollow">Consultar por WhatsApp</a></p>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <strong>BOOM ART</strong>
+        <p>Piezas hechas a pedido. Consulta disponibilidad, colores, acabados y tiempos de entrega por WhatsApp.</p>
+        <p><a href="mailto:contacto@boomart.pe">contacto@boomart.pe</a></p>
+        <ul class="footer-links">
+          ${catNav}
+        </ul>
+        <ul class="footer-links">
+          <li><a href="${rel}catalogo.html">Catálogo completo</a></li>
+          <li><a href="${rel}nosotros.html">Nosotros</a></li>
+          <li><a href="${rel}politicas.html">Políticas de compra, envío y privacidad</a></li>
+        </ul>
+      </div>
+      <a class="button secondary" href="${esc(wa)}" target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+    </footer>
+
+    <a class="ba-wa" href="${esc(wa)}" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+      <span class="ba-wa__label">¿Dudas? Escríbenos</span>
+      <span class="ba-wa__icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff"><path d="M16.003 3.2C9.05 3.2 3.4 8.85 3.4 15.8c0 2.5.73 4.83 1.99 6.8L3.2 28.8l6.37-2.08a12.5 12.5 0 0 0 6.43 1.76h.01c6.95 0 12.6-5.65 12.6-12.6S22.95 3.2 16 3.2Zm0 22.9h-.01a10.4 10.4 0 0 1-5.29-1.45l-.38-.22-3.78 1.23 1.24-3.68-.25-.39a10.35 10.35 0 0 1-1.6-5.53c0-5.74 4.67-10.4 10.42-10.4 2.78 0 5.39 1.08 7.36 3.05a10.34 10.34 0 0 1 3.05 7.36c0 5.74-4.67 10.4-10.42 10.4Zm5.71-7.79c-.31-.16-1.85-.91-2.14-1.02-.29-.1-.5-.16-.71.16-.21.31-.82 1.02-1 1.24-.19.21-.37.24-.68.08-.31-.16-1.32-.49-2.51-1.55-.93-.83-1.55-1.85-1.74-2.16-.18-.31-.02-.48.14-.63.14-.14.31-.37.47-.55.16-.19.21-.32.31-.53.1-.21.05-.4-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.62-.52-.53-.71-.54l-.6-.01c-.21 0-.55.08-.84.4-.29.31-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.22 3.39 5.38 4.75.75.32 1.34.52 1.79.66.75.24 1.44.2 1.98.12.6-.09 1.85-.76 2.11-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.37Z"/></svg>
+      </span>
+    </a>
+  </body>
+</html>
+`;
+}
+
+async function writeCategoryPages(products, ratingLd) {
+  const groups = groupByCategory(products);
+  await Promise.all(
+    groups.map(async ([cat, list]) => {
+      const dir = path.join(ROOT, "categoria", categorySlug(cat));
+      await mkdir(dir, { recursive: true });
+      await writeFile(
+        path.join(dir, "index.html"),
+        buildCategoryPage(cat, list, products, ratingLd),
+      );
+    }),
+  );
+  return groups.length;
+}
+
 /* ---------------------------------------------------------------- sitemap.xml */
 function buildSitemap(products) {
+  const cats = groupByCategory(products).map(([cat]) => cat);
   const urls = [
     { loc: `${SITE}/`, priority: "1.0", changefreq: "weekly" },
     { loc: `${SITE}/catalogo.html`, priority: "0.9", changefreq: "weekly" },
+    ...cats.map((c) => ({
+      loc: `${SITE}/categoria/${categorySlug(c)}/`,
+      priority: "0.7",
+      changefreq: "weekly",
+    })),
     ...products.map((p) => ({
       loc: `${SITE}/producto/${p.id}/`,
       priority: "0.8",
@@ -1050,8 +1319,9 @@ function buildSitemap(products) {
 const [products, reviews] = await Promise.all([loadProducts(), loadReviews()]);
 const ratingLd = buildRatingLd(reviews);
 
-const [productPageCount] = await Promise.all([
+const [productPageCount, categoryPageCount] = await Promise.all([
   writeProductPages(products, ratingLd),
+  writeCategoryPages(products, ratingLd),
   writeFile(path.join(ROOT, "catalogo.html"), buildHtml(products, ratingLd)),
   writeFile(path.join(ROOT, "catalogo.json"), buildJson(products) + "\n"),
   writeFile(path.join(ROOT, "sitemap.xml"), buildSitemap(products)),
@@ -1066,6 +1336,7 @@ console.log(
   `OK - generado desde ${products.length} productos` +
     ` y ${reviews.length} opiniones aprobadas:\n` +
     `  producto/<id>/index.html  (${productPageCount} paginas)\n` +
+    `  categoria/<slug>/index.html  (${categoryPageCount} paginas)\n` +
     "  sitemap.xml\n  catalogo.html\n  catalogo.json\n  llms.txt\n  llms-full.txt\n" +
     "  feed-google.xml (Google Merchant + Pinterest)\n  feed-meta.csv (Instagram / Facebook)\n" +
     `  index.html (aggregateRating ${ratingLd ? "actualizado" : "sin cambios: aun sin opiniones"})`,
