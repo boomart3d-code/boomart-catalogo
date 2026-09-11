@@ -489,6 +489,30 @@
     "height": "Tamaño real 1:1 (ajustable a pedido)"
   },
   {
+    "id": "tiara-de-pegaso-saint-seiya",
+    "name": "Tiara de Pegaso · Saint Seiya",
+    "category": "Saint Seiya",
+    "tags": [
+      "Cascos",
+      "Cosplay",
+      "Saint Seiya",
+      "Pegaso"
+    ],
+    "material": "PLA",
+    "availability": "A pedido",
+    "regularPrice": 120,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/tiara-de-pegaso-saint-seiya-hero.jpg",
+    "gallery": [
+      "assets/products/tiara-de-pegaso-saint-seiya-hero.jpg",
+      "assets/products/tiara-de-pegaso-saint-seiya-hero2.jpg"
+    ],
+    "description": "Tiara de cosplay de la Armadura de Pegaso, la que porta Seiya en Saint Seiya, en tamaño real 1:1. Diadema con las alas y el frontal del casco con sus cuernos dorados y visor rojo, lista para usar puesta como accesorio de cosplay o para exhibir junto a tu figura. Como se imprime a pedido, el calce se adapta a la talla de quien la va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Impresa en 3D en Perú, con envíos a todo el país.",
+    "offerPrice": 100,
+    "height": "Tamaño real 1:1 (ajustable a pedido)"
+  },
+  {
     "id": "escultura-de-atena-saint-seiya",
     "name": "Escultura de la Diosa Atena · Saint Seiya",
     "category": "Saint Seiya",
@@ -1529,29 +1553,5 @@
     ],
     "description": "Maceta minimalista negra con textura de hojas de palmera: elegante y moderna, ideal para complementar una decoración tropical o contemporánea.",
     "offerPrice": 44
-  },
-  {
-    "id": "tiara-de-pegaso-saint-seiya",
-    "name": "Tiara de Pegaso · Saint Seiya",
-    "category": "Saint Seiya",
-    "tags": [
-      "Cascos",
-      "Cosplay",
-      "Saint Seiya",
-      "Pegaso"
-    ],
-    "material": "PLA",
-    "availability": "A pedido",
-    "regularPrice": 120,
-    "featured": true,
-    "offer": true,
-    "image": "assets/products/tiara-de-pegaso-saint-seiya-hero.jpg",
-    "gallery": [
-      "assets/products/tiara-de-pegaso-saint-seiya-hero.jpg",
-      "assets/products/tiara-de-pegaso-saint-seiya-hero2.jpg"
-    ],
-    "description": "Tiara de cosplay de la Armadura de Pegaso, la que porta Seiya en Saint Seiya, en tamaño real 1:1. Diadema con las alas y el frontal del casco con sus cuernos dorados y visor rojo, lista para usar puesta como accesorio de cosplay o para exhibir junto a tu figura. Como se imprime a pedido, el calce se adapta a la talla de quien la va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Impresa en 3D en Perú, con envíos a todo el país.",
-    "offerPrice": 100,
-    "height": "Tamaño real 1:1 (ajustable a pedido)"
   }
 ]
