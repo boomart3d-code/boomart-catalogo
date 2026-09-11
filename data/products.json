@@ -855,22 +855,25 @@
   },
   {
     "id": "diorama-de-pegaso",
-    "name": "Diorama de Pegaso · Saint Seiya",
+    "name": "Altar de Pegaso · Saint Seiya",
     "category": "Saint Seiya",
     "tags": [
-      "Dioramas",
-      "Saint Seiya"
+      "Altar Exhibidor",
+      "Pegaso",
+      "Saint Seiya",
+      "Myth Cloth"
     ],
     "material": "PLA",
     "availability": "A pedido",
     "regularPrice": 165,
     "featured": true,
     "offer": true,
-    "image": "assets/products/diorama-de-pegaso.jpg",
+    "image": "assets/products/diorama-de-pegaso-hero.jpg",
     "gallery": [
-      "assets/products/diorama-de-pegaso.jpg"
+      "assets/products/diorama-de-pegaso-hero.jpg",
+      "assets/products/diorama-de-pegaso-hero2.jpg"
     ],
-    "description": "¡Dale a tu caballero el diorama que se merece! Base de exhibición temática de Pegaso con acabado realista, pensada para lucir tu figura de Saint Seiya.",
+    "description": "Altar exhibidor del Caballero de Bronce Pegaso (Seiya), con la placa tallada del emblema de Pegaso entre columnas y base tipo ruinas del Santuario. Hecho para montar tu figura Myth Cloth EX de Bandai de Seiya. Acabado realista tipo piedra envejecida, impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
     "offerPrice": 150
   },
   {
