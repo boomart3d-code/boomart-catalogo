@@ -832,22 +832,25 @@
   },
   {
     "id": "diorama-caballeros-de-bronce",
-    "name": "Diorama de los Caballeros de Bronce · Saint Seiya",
+    "name": "Altar Caballero del Dragón · Saint Seiya",
     "category": "Saint Seiya",
     "tags": [
-      "Dioramas",
-      "Saint Seiya"
+      "Altar Exhibidor",
+      "Dragón",
+      "Saint Seiya",
+      "Myth Cloth"
     ],
     "material": "PLA",
     "availability": "A pedido",
     "regularPrice": 165,
     "featured": true,
     "offer": true,
-    "image": "assets/products/diorama-caballeros-de-bronce.jpg",
+    "image": "assets/products/diorama-caballeros-de-bronce-hero.jpg",
     "gallery": [
-      "assets/products/diorama-caballeros-de-bronce.jpg"
+      "assets/products/diorama-caballeros-de-bronce-hero.jpg",
+      "assets/products/diorama-caballeros-de-bronce-2.jpg"
     ],
-    "description": "Diorama de exhibición de los Caballeros de Bronce —Seiya, Shiryu, Hyoga, Shun e Ikki— impreso en alta definición con el máximo nivel de detalle. La base perfecta para presentar tus figuras de Saint Seiya.",
+    "description": "Altar exhibidor del Caballero de Bronce del Dragón (Shiryu), con el emblema del dragón en relieve y dos guardianes tallados a los costados de la columna. Hecho para montar tu figura Myth Cloth EX de Bandai de Shiryu. Base circular estilo escama de dragón en verde con detalles dorados y acabado tipo piedra envejecida en la columna. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
     "offerPrice": 150
   },
   {
