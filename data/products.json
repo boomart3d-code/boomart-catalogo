@@ -316,32 +316,6 @@
     "description": "La Casa de Piscis del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco)."
   },
   {
-    "id": "busto-de-atena-saint-seiya",
-    "name": "Busto de Atena · 25 cm · Saint Seiya",
-    "category": "Saint Seiya",
-    "tags": [
-      "Atena",
-      "Esculturas",
-      "Saint Seiya"
-    ],
-    "material": "PLA",
-    "availability": "A pedido",
-    "regularPrice": 130,
-    "featured": true,
-    "offer": true,
-    "image": "assets/products/busto-de-atena-saint-seiya-hero.jpg",
-    "gallery": [
-      "assets/products/busto-de-atena-saint-seiya-hero.jpg",
-      "assets/products/busto-de-atena-saint-seiya-2.jpg",
-      "assets/products/busto-de-atena-saint-seiya-3.jpg",
-      "assets/products/busto-de-atena-saint-seiya-4.jpg",
-      "assets/products/busto-de-atena-saint-seiya-5.jpg",
-      "assets/products/busto-de-atena-saint-seiya-6.jpg"
-    ],
-    "description": "El busto de Atena, diosa protectora del Santuario, es la pieza central que toda colección de Saint Seiya (Caballeros del Zodiaco) merece. Rostro sereno, casco con detalle y armadura trabajada, con espectacular acabado estilo piedra envejecida.",
-    "offerPrice": 100
-  },
-  {
     "id": "templo-con-caja-de-pandora-y-pedestal",
     "name": "Colección Completa · 12 Templos + 12 Cajas de Pandora y Pedestales · Saint Seiya",
     "category": "Saint Seiya",
@@ -374,6 +348,54 @@
     ],
     "description": "La colección completa del Santuario de Athena: los 12 Templos de las Casas del Zodiaco (Aries a Piscis), cada uno con su Caja de Pandora dorada y su pedestal a juego. Acabado tipo piedra gris envejecida, detallado a mano.",
     "offerPrice": 1500
+  },
+  {
+    "id": "busto-de-atena-saint-seiya",
+    "name": "Busto de Atena · 25 cm · Saint Seiya",
+    "category": "Saint Seiya",
+    "tags": [
+      "Atena",
+      "Esculturas",
+      "Saint Seiya"
+    ],
+    "material": "PLA",
+    "availability": "A pedido",
+    "regularPrice": 130,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/busto-de-atena-saint-seiya-hero.jpg",
+    "gallery": [
+      "assets/products/busto-de-atena-saint-seiya-hero.jpg",
+      "assets/products/busto-de-atena-saint-seiya-2.jpg",
+      "assets/products/busto-de-atena-saint-seiya-3.jpg",
+      "assets/products/busto-de-atena-saint-seiya-4.jpg",
+      "assets/products/busto-de-atena-saint-seiya-5.jpg",
+      "assets/products/busto-de-atena-saint-seiya-6.jpg"
+    ],
+    "description": "El busto de Atena, diosa protectora del Santuario, es la pieza central que toda colección de Saint Seiya (Caballeros del Zodiaco) merece. Rostro sereno, casco con detalle y armadura trabajada, con espectacular acabado estilo piedra envejecida.",
+    "offerPrice": 100
+  },
+  {
+    "id": "escultura-de-atena-saint-seiya",
+    "name": "Escultura de la Diosa Atena · Saint Seiya",
+    "category": "Saint Seiya",
+    "tags": [
+      "Atena",
+      "Esculturas",
+      "Saint Seiya"
+    ],
+    "material": "PLA",
+    "availability": "A pedido",
+    "regularPrice": 130,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/escultura-de-atena-saint-seiya-hero2.jpg",
+    "gallery": [
+      "assets/products/escultura-de-atena-saint-seiya-hero2.jpg",
+      "assets/products/escultura-de-atena-saint-seiya-2.jpg"
+    ],
+    "description": "Escultura de Atena de cuerpo entero, la diosa de la sabiduría y la guerra justa, con espectacular acabado estilo piedra envejecida. Impresa en 3D y detallada a mano, hecha a pedido en Lima.",
+    "offerPrice": 100
   },
   {
     "id": "torre-del-reloj-saint-seiya",
@@ -511,28 +533,6 @@
     "description": "Tiara de cosplay de la Armadura de Pegaso, la que porta Seiya en Saint Seiya, en tamaño real 1:1. Diadema con las alas y el frontal del casco con sus cuernos dorados y visor rojo, lista para usar puesta como accesorio de cosplay o para exhibir junto a tu figura. Como se imprime a pedido, el calce se adapta a la talla de quien la va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Impresa en 3D en Perú, con envíos a todo el país.",
     "offerPrice": 100,
     "height": "Tamaño real 1:1 (ajustable a pedido)"
-  },
-  {
-    "id": "escultura-de-atena-saint-seiya",
-    "name": "Escultura de la Diosa Atena · Saint Seiya",
-    "category": "Saint Seiya",
-    "tags": [
-      "Atena",
-      "Esculturas",
-      "Saint Seiya"
-    ],
-    "material": "PLA",
-    "availability": "A pedido",
-    "regularPrice": 130,
-    "featured": true,
-    "offer": true,
-    "image": "assets/products/escultura-de-atena-saint-seiya-hero2.jpg",
-    "gallery": [
-      "assets/products/escultura-de-atena-saint-seiya-hero2.jpg",
-      "assets/products/escultura-de-atena-saint-seiya-2.jpg"
-    ],
-    "description": "Escultura de Atena de cuerpo entero, la diosa de la sabiduría y la guerra justa, con espectacular acabado estilo piedra envejecida. Impresa en 3D y detallada a mano, hecha a pedido en Lima.",
-    "offerPrice": 100
   },
   {
     "id": "set-12-altares-exhibidor",
