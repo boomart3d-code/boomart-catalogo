@@ -314,6 +314,22 @@
       <g:product_type>Saint Seiya</g:product_type>
     </item>
     <item>
+      <g:id>tiara-de-pegaso-saint-seiya</g:id>
+      <g:title>Tiara de Pegaso · Saint Seiya</g:title>
+      <g:description>Tiara de cosplay de la Armadura de Pegaso, la que porta Seiya en Saint Seiya, en tamaño real 1:1. Diadema con las alas y el frontal del casco con sus cuernos dorados y visor rojo, lista para usar puesta como accesorio de cosplay o para exhibir junto a tu figura. Como se imprime a pedido, el calce se adapta a la talla de quien la va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Impresa en 3D en Perú, con envíos a todo el país. Fabricado a pedido en impresion 3D (PLA), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
+      <g:link>https://boomart.pe/producto/tiara-de-pegaso-saint-seiya/</g:link>
+      <g:image_link>https://boomart.pe/assets/products/tiara-de-pegaso-saint-seiya-hero.jpg</g:image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/tiara-de-pegaso-saint-seiya-hero2.jpg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>120.00 PEN</g:price>
+      <g:sale_price>100.00 PEN</g:sale_price>
+      <g:condition>new</g:condition>
+      <g:brand>BoomArt</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
+      <g:product_type>Saint Seiya</g:product_type>
+    </item>
+    <item>
       <g:id>escultura-de-atena-saint-seiya</g:id>
       <g:title>Escultura de la Diosa Atena · Saint Seiya</g:title>
       <g:description>Escultura de Atena de cuerpo entero, la diosa de la sabiduría y la guerra justa, con espectacular acabado estilo piedra envejecida. Impresa en 3D y detallada a mano, hecha a pedido en Lima. Fabricado a pedido en impresion 3D (PLA), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
@@ -1065,22 +1081,6 @@
       <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
       <g:product_type>Macetas</g:product_type>
-    </item>
-    <item>
-      <g:id>tiara-de-pegaso-saint-seiya</g:id>
-      <g:title>Tiara de Pegaso · Saint Seiya</g:title>
-      <g:description>Tiara de cosplay de la Armadura de Pegaso, la que porta Seiya en Saint Seiya, en tamaño real 1:1. Diadema con las alas y el frontal del casco con sus cuernos dorados y visor rojo, lista para usar puesta como accesorio de cosplay o para exhibir junto a tu figura. Como se imprime a pedido, el calce se adapta a la talla de quien la va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Impresa en 3D en Perú, con envíos a todo el país. Fabricado a pedido en impresion 3D (PLA), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
-      <g:link>https://boomart.pe/producto/tiara-de-pegaso-saint-seiya/</g:link>
-      <g:image_link>https://boomart.pe/assets/products/tiara-de-pegaso-saint-seiya-hero.jpg</g:image_link>
-      <g:additional_image_link>https://boomart.pe/assets/products/tiara-de-pegaso-saint-seiya-hero2.jpg</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>120.00 PEN</g:price>
-      <g:sale_price>100.00 PEN</g:sale_price>
-      <g:condition>new</g:condition>
-      <g:brand>BoomArt</g:brand>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
-      <g:product_type>Saint Seiya</g:product_type>
     </item>
   </channel>
 </rss>
