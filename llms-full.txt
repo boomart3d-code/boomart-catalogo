@@ -5,7 +5,7 @@ Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion ~48 horas uti
 la validacion del adelanto (50%). Pedidos por WhatsApp: https://wa.me/51925666542
 
 Total de piezas: 66
-Actualizado: 2026-09-10
+Actualizado: 2026-09-11
 Fuente estructurada: https://boomart.pe/catalogo.json
 
 ---
