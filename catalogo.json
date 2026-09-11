@@ -918,13 +918,15 @@
     },
     {
       "id": "diorama-caballeros-de-bronce",
-      "name": "Diorama de los Caballeros de Bronce · Saint Seiya",
+      "name": "Altar Caballero del Dragón · Saint Seiya",
       "category": "Saint Seiya",
       "tags": [
-        "Dioramas",
-        "Saint Seiya"
+        "Altar Exhibidor",
+        "Dragón",
+        "Saint Seiya",
+        "Myth Cloth"
       ],
-      "description": "Diorama de exhibición de los Caballeros de Bronce —Seiya, Shiryu, Hyoga, Shun e Ikki— impreso en alta definición con el máximo nivel de detalle. La base perfecta para presentar tus figuras de Saint Seiya.",
+      "description": "Altar exhibidor del Caballero de Bronce del Dragón (Shiryu), con el emblema del dragón en relieve y dos guardianes tallados a los costados de la columna. Hecho para montar tu figura Myth Cloth EX de Bandai de Shiryu. Base circular estilo escama de dragón en verde con detalles dorados y acabado tipo piedra envejecida en la columna. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
       "material": "PLA",
       "availability": "A pedido",
       "priceCurrency": "PEN",
@@ -932,12 +934,13 @@
       "pricing": [
         "Precio oferta: S/150 (antes S/165)"
       ],
-      "image": "https://boomart.pe/assets/products/diorama-caballeros-de-bronce.jpg",
+      "image": "https://boomart.pe/assets/products/diorama-caballeros-de-bronce-hero.jpg",
       "gallery": [
-        "https://boomart.pe/assets/products/diorama-caballeros-de-bronce.jpg"
+        "https://boomart.pe/assets/products/diorama-caballeros-de-bronce-hero.jpg",
+        "https://boomart.pe/assets/products/diorama-caballeros-de-bronce-2.jpg"
       ],
       "url": "https://boomart.pe/producto/diorama-caballeros-de-bronce/",
-      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Diorama%20de%20los%20Caballeros%20de%20Bronce%20%C2%B7%20Saint%20Seiya"
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20Caballero%20del%20Drag%C3%B3n%20%C2%B7%20Saint%20Seiya"
     },
     {
       "id": "diorama-de-pegaso",
