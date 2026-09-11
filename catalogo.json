@@ -944,13 +944,15 @@
     },
     {
       "id": "diorama-de-pegaso",
-      "name": "Diorama de Pegaso · Saint Seiya",
+      "name": "Altar de Pegaso · Saint Seiya",
       "category": "Saint Seiya",
       "tags": [
-        "Dioramas",
-        "Saint Seiya"
+        "Altar Exhibidor",
+        "Pegaso",
+        "Saint Seiya",
+        "Myth Cloth"
       ],
-      "description": "¡Dale a tu caballero el diorama que se merece! Base de exhibición temática de Pegaso con acabado realista, pensada para lucir tu figura de Saint Seiya.",
+      "description": "Altar exhibidor del Caballero de Bronce Pegaso (Seiya), con la placa tallada del emblema de Pegaso entre columnas y base tipo ruinas del Santuario. Hecho para montar tu figura Myth Cloth EX de Bandai de Seiya. Acabado realista tipo piedra envejecida, impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
       "material": "PLA",
       "availability": "A pedido",
       "priceCurrency": "PEN",
@@ -958,12 +960,13 @@
       "pricing": [
         "Precio oferta: S/150 (antes S/165)"
       ],
-      "image": "https://boomart.pe/assets/products/diorama-de-pegaso.jpg",
+      "image": "https://boomart.pe/assets/products/diorama-de-pegaso-hero.jpg",
       "gallery": [
-        "https://boomart.pe/assets/products/diorama-de-pegaso.jpg"
+        "https://boomart.pe/assets/products/diorama-de-pegaso-hero.jpg",
+        "https://boomart.pe/assets/products/diorama-de-pegaso-hero2.jpg"
       ],
       "url": "https://boomart.pe/producto/diorama-de-pegaso/",
-      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Diorama%20de%20Pegaso%20%C2%B7%20Saint%20Seiya"
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20de%20Pegaso%20%C2%B7%20Saint%20Seiya"
     },
     {
       "id": "castillo-de-hogwarts",
