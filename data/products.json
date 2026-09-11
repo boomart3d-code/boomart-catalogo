@@ -467,10 +467,11 @@
   },
   {
     "id": "casco-de-pegaso-saint-seiya",
-    "name": "Casco de Pegaso · Saint Seiya",
+    "name": "Casco de Pegaso V1 · Saint Seiya",
     "category": "Saint Seiya",
     "tags": [
       "Cascos",
+      "Cosplay",
       "Saint Seiya"
     ],
     "material": "PLA",
@@ -478,12 +479,14 @@
     "regularPrice": 275,
     "featured": true,
     "offer": true,
-    "image": "assets/products/casco-de-pegaso-saint-seiya.jpg",
+    "image": "assets/products/casco-de-pegaso-saint-seiya-hero.jpg",
     "gallery": [
-      "assets/products/casco-de-pegaso-saint-seiya.jpg"
+      "assets/products/casco-de-pegaso-saint-seiya-hero.jpg",
+      "assets/products/casco-de-pegaso-saint-seiya-hero2.jpg"
     ],
-    "description": "El casco de la Armadura de Pegaso, la que porta Seiya, en réplica decorativa para exhibición. Alas laterales, visor y volúmenes reproducidos fielmente.",
-    "offerPrice": 250
+    "description": "Casco funcional de cosplay de la Armadura de Pegaso V1, la que porta Seiya en la versión clásica de Saint Seiya, en tamaño real 1:1. Se puede usar puesto: alas laterales, visor y volúmenes reproducidos fielmente en un acabado tipo metal cepillado. Como se imprime a pedido, el calce se adapta a la talla de quien lo va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Impreso en 3D en Perú, con envíos a todo el país.",
+    "offerPrice": 250,
+    "height": "Tamaño real 1:1 (ajustable a pedido)"
   },
   {
     "id": "escultura-de-atena-saint-seiya",
