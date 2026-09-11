@@ -340,35 +340,6 @@
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Piscis"
     },
     {
-      "id": "busto-de-atena-saint-seiya",
-      "name": "Busto de Atena · 25 cm · Saint Seiya",
-      "category": "Saint Seiya",
-      "tags": [
-        "Atena",
-        "Esculturas",
-        "Saint Seiya"
-      ],
-      "description": "El busto de Atena, diosa protectora del Santuario, es la pieza central que toda colección de Saint Seiya (Caballeros del Zodiaco) merece. Rostro sereno, casco con detalle y armadura trabajada, con espectacular acabado estilo piedra envejecida.",
-      "material": "PLA",
-      "availability": "A pedido",
-      "priceCurrency": "PEN",
-      "priceFrom": 100,
-      "pricing": [
-        "Precio oferta: S/100 (antes S/130)"
-      ],
-      "image": "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-hero.jpg",
-      "gallery": [
-        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-hero.jpg",
-        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-2.jpg",
-        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-3.jpg",
-        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-4.jpg",
-        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-5.jpg",
-        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-6.jpg"
-      ],
-      "url": "https://boomart.pe/producto/busto-de-atena-saint-seiya/",
-      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Busto%20de%20Atena%20%C2%B7%2025%20cm%20%C2%B7%20Saint%20Seiya"
-    },
-    {
       "id": "templo-con-caja-de-pandora-y-pedestal",
       "name": "Colección Completa · 12 Templos + 12 Cajas de Pandora y Pedestales · Saint Seiya",
       "category": "Saint Seiya",
@@ -404,6 +375,60 @@
       ],
       "url": "https://boomart.pe/producto/templo-con-caja-de-pandora-y-pedestal/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Colecci%C3%B3n%20Completa%20%C2%B7%2012%20Templos%20%2B%2012%20Cajas%20de%20Pandora%20y%20Pedestales%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "busto-de-atena-saint-seiya",
+      "name": "Busto de Atena · 25 cm · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Atena",
+        "Esculturas",
+        "Saint Seiya"
+      ],
+      "description": "El busto de Atena, diosa protectora del Santuario, es la pieza central que toda colección de Saint Seiya (Caballeros del Zodiaco) merece. Rostro sereno, casco con detalle y armadura trabajada, con espectacular acabado estilo piedra envejecida.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Precio oferta: S/100 (antes S/130)"
+      ],
+      "image": "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-hero.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-hero.jpg",
+        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-2.jpg",
+        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-3.jpg",
+        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-4.jpg",
+        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-5.jpg",
+        "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-6.jpg"
+      ],
+      "url": "https://boomart.pe/producto/busto-de-atena-saint-seiya/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Busto%20de%20Atena%20%C2%B7%2025%20cm%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "escultura-de-atena-saint-seiya",
+      "name": "Escultura de la Diosa Atena · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Atena",
+        "Esculturas",
+        "Saint Seiya"
+      ],
+      "description": "Escultura de Atena de cuerpo entero, la diosa de la sabiduría y la guerra justa, con espectacular acabado estilo piedra envejecida. Impresa en 3D y detallada a mano, hecha a pedido en Lima.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Precio oferta: S/100 (antes S/130)"
+      ],
+      "image": "https://boomart.pe/assets/products/escultura-de-atena-saint-seiya-hero2.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/escultura-de-atena-saint-seiya-hero2.jpg",
+        "https://boomart.pe/assets/products/escultura-de-atena-saint-seiya-2.jpg"
+      ],
+      "url": "https://boomart.pe/producto/escultura-de-atena-saint-seiya/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Escultura%20de%20la%20Diosa%20Atena%20%C2%B7%20Saint%20Seiya"
     },
     {
       "id": "torre-del-reloj-saint-seiya",
@@ -556,31 +581,6 @@
       ],
       "url": "https://boomart.pe/producto/tiara-de-pegaso-saint-seiya/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Tiara%20de%20Pegaso%20%C2%B7%20Saint%20Seiya"
-    },
-    {
-      "id": "escultura-de-atena-saint-seiya",
-      "name": "Escultura de la Diosa Atena · Saint Seiya",
-      "category": "Saint Seiya",
-      "tags": [
-        "Atena",
-        "Esculturas",
-        "Saint Seiya"
-      ],
-      "description": "Escultura de Atena de cuerpo entero, la diosa de la sabiduría y la guerra justa, con espectacular acabado estilo piedra envejecida. Impresa en 3D y detallada a mano, hecha a pedido en Lima.",
-      "material": "PLA",
-      "availability": "A pedido",
-      "priceCurrency": "PEN",
-      "priceFrom": 100,
-      "pricing": [
-        "Precio oferta: S/100 (antes S/130)"
-      ],
-      "image": "https://boomart.pe/assets/products/escultura-de-atena-saint-seiya-hero2.jpg",
-      "gallery": [
-        "https://boomart.pe/assets/products/escultura-de-atena-saint-seiya-hero2.jpg",
-        "https://boomart.pe/assets/products/escultura-de-atena-saint-seiya-2.jpg"
-      ],
-      "url": "https://boomart.pe/producto/escultura-de-atena-saint-seiya/",
-      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Escultura%20de%20la%20Diosa%20Atena%20%C2%B7%20Saint%20Seiya"
     },
     {
       "id": "set-12-altares-exhibidor",
