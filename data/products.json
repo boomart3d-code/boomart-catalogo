@@ -18,9 +18,9 @@
     },
     "featured": true,
     "offer": true,
-    "image": "assets/products/templo-aries.jpg",
+    "image": "assets/products/templo-aries-hero.jpg",
     "gallery": [
-      "assets/products/templo-aries.jpg",
+      "assets/products/templo-aries-hero.jpg",
       "assets/products/templo-aries-pandora.jpg"
     ],
     "description": "La Casa de Aries del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco)."
@@ -44,9 +44,9 @@
     },
     "featured": true,
     "offer": true,
-    "image": "assets/products/templo-tauro-1.jpg",
+    "image": "assets/products/templo-tauro-hero.jpg",
     "gallery": [
-      "assets/products/templo-tauro-1.jpg",
+      "assets/products/templo-tauro-hero.jpg",
       "assets/products/templo-tauro-2.jpg",
       "assets/products/templo-tauro-pandora.jpg"
     ],
@@ -71,9 +71,9 @@
     },
     "featured": true,
     "offer": true,
-    "image": "assets/products/templo-geminis-1.jpg",
+    "image": "assets/products/templo-geminis-hero.jpg",
     "gallery": [
-      "assets/products/templo-geminis-1.jpg",
+      "assets/products/templo-geminis-hero.jpg",
       "assets/products/templo-geminis-2.jpg",
       "assets/products/templo-geminis-pandora.jpg"
     ],
@@ -98,9 +98,9 @@
     },
     "featured": true,
     "offer": true,
-    "image": "assets/products/templo-cancer-1.jpg",
+    "image": "assets/products/templo-cancer-hero.jpg",
     "gallery": [
-      "assets/products/templo-cancer-1.jpg",
+      "assets/products/templo-cancer-hero.jpg",
       "assets/products/templo-cancer-2.jpg",
       "assets/products/templo-cancer-pandora.jpg"
     ],
@@ -125,9 +125,9 @@
     },
     "featured": true,
     "offer": true,
-    "image": "assets/products/templo-leo.jpg",
+    "image": "assets/products/templo-leo-hero.jpg",
     "gallery": [
-      "assets/products/templo-leo.jpg",
+      "assets/products/templo-leo-hero.jpg",
       "assets/products/templo-leo-pandora.jpg"
     ],
     "description": "La Casa de Leo del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco)."
@@ -151,9 +151,9 @@
     },
     "featured": true,
     "offer": true,
-    "image": "assets/products/templo-virgo-1.jpg",
+    "image": "assets/products/templo-virgo-hero.jpg",
     "gallery": [
-      "assets/products/templo-virgo-1.jpg",
+      "assets/products/templo-virgo-hero.jpg",
       "assets/products/templo-virgo-2.jpg",
       "assets/products/templo-virgo-pandora.jpg"
     ],
@@ -178,9 +178,9 @@
     },
     "featured": true,
     "offer": true,
-    "image": "assets/products/templo-libra.jpg",
+    "image": "assets/products/templo-libra-hero.jpg",
     "gallery": [
-      "assets/products/templo-libra.jpg",
+      "assets/products/templo-libra-hero.jpg",
       "assets/products/templo-libra-pandora.jpg"
     ],
     "description": "La Casa de Libra del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco)."
@@ -204,9 +204,9 @@
     },
     "featured": true,
     "offer": true,
-    "image": "assets/products/templo-escorpio.jpg",
+    "image": "assets/products/templo-escorpio-hero.jpg",
     "gallery": [
-      "assets/products/templo-escorpio.jpg",
+      "assets/products/templo-escorpio-hero.jpg",
       "assets/products/templo-escorpio-pandora.jpg"
     ],
     "description": "La Casa de Escorpio del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco)."
@@ -230,9 +230,9 @@
     },
     "featured": true,
     "offer": true,
-    "image": "assets/products/templo-sagitario.jpg",
+    "image": "assets/products/templo-sagitario-hero.jpg",
     "gallery": [
-      "assets/products/templo-sagitario.jpg",
+      "assets/products/templo-sagitario-hero.jpg",
       "assets/products/templo-sagitario-pandora.jpg"
     ],
     "description": "La Casa de Sagitario del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco)."
@@ -256,9 +256,9 @@
     },
     "featured": true,
     "offer": true,
-    "image": "assets/products/templo-capricornio.jpg",
+    "image": "assets/products/templo-capricornio-hero.jpg",
     "gallery": [
-      "assets/products/templo-capricornio.jpg",
+      "assets/products/templo-capricornio-hero.jpg",
       "assets/products/templo-capricornio-pandora.jpg"
     ],
     "description": "La Casa de Capricornio del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco)."
@@ -282,9 +282,9 @@
     },
     "featured": true,
     "offer": true,
-    "image": "assets/products/templo-acuario.jpg",
+    "image": "assets/products/templo-acuario-hero.jpg",
     "gallery": [
-      "assets/products/templo-acuario.jpg",
+      "assets/products/templo-acuario-hero.jpg",
       "assets/products/templo-acuario-pandora.jpg"
     ],
     "description": "La Casa de Acuario del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco)."
@@ -308,9 +308,9 @@
     },
     "featured": true,
     "offer": true,
-    "image": "assets/products/templo-piscis.jpg",
+    "image": "assets/products/templo-piscis-hero.jpg",
     "gallery": [
-      "assets/products/templo-piscis.jpg",
+      "assets/products/templo-piscis-hero.jpg",
       "assets/products/templo-piscis-pandora.jpg"
     ],
     "description": "La Casa de Piscis del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco)."
@@ -329,9 +329,9 @@
     "regularPrice": 130,
     "featured": true,
     "offer": true,
-    "image": "assets/products/busto-de-atena-saint-seiya-1.jpg",
+    "image": "assets/products/busto-de-atena-saint-seiya-hero.jpg",
     "gallery": [
-      "assets/products/busto-de-atena-saint-seiya-1.jpg",
+      "assets/products/busto-de-atena-saint-seiya-hero.jpg",
       "assets/products/busto-de-atena-saint-seiya-2.jpg",
       "assets/products/busto-de-atena-saint-seiya-3.jpg",
       "assets/products/busto-de-atena-saint-seiya-4.jpg",
@@ -387,9 +387,9 @@
     "regularPrice": 130,
     "featured": true,
     "offer": true,
-    "image": "assets/products/torre-del-reloj-saint-seiya-1.jpg",
+    "image": "assets/products/torre-del-reloj-saint-seiya-hero.jpg",
     "gallery": [
-      "assets/products/torre-del-reloj-saint-seiya-1.jpg",
+      "assets/products/torre-del-reloj-saint-seiya-hero.jpg",
       "assets/products/torre-del-reloj-saint-seiya-2.jpg"
     ],
     "description": "La icónica Torre del Reloj del Santuario de Athena, con sus doce llamas encendidas marcando la cuenta regresiva. Réplica decorativa de 32 cm de alto, acabado tipo piedra envejecida, impresa en 3D en PLA+/PETG y detallada a mano. Hecha a pedido en Lima.",
@@ -498,9 +498,9 @@
     "regularPrice": 130,
     "featured": true,
     "offer": true,
-    "image": "assets/products/escultura-de-atena-saint-seiya-1.jpg",
+    "image": "assets/products/escultura-de-atena-saint-seiya-hero.jpg",
     "gallery": [
-      "assets/products/escultura-de-atena-saint-seiya-1.jpg",
+      "assets/products/escultura-de-atena-saint-seiya-hero.jpg",
       "assets/products/escultura-de-atena-saint-seiya-2.jpg"
     ],
     "description": "Escultura de Atena de cuerpo entero, la diosa de la sabiduría y la guerra justa, con espectacular acabado estilo piedra envejecida. Impresa en 3D y detallada a mano, hecha a pedido en Lima.",

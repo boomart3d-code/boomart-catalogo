@@ -19,7 +19,7 @@ Fuente estructurada: https://boomart.pe/catalogo.json
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Saint Seiya, Templo, Combo
-- Imagen: https://boomart.pe/assets/products/templo-aries.jpg
+- Imagen: https://boomart.pe/assets/products/templo-aries-hero.jpg
 - Ficha: https://boomart.pe/producto/templo-aries/
 
 La Casa de Aries del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).
@@ -31,7 +31,7 @@ La Casa de Aries del Santuario de Athena, en réplica decorativa para tu colecci
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Saint Seiya, Templo, Combo
-- Imagen: https://boomart.pe/assets/products/templo-tauro-1.jpg
+- Imagen: https://boomart.pe/assets/products/templo-tauro-hero.jpg
 - Ficha: https://boomart.pe/producto/templo-tauro/
 
 La Casa de Tauro del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).
@@ -43,7 +43,7 @@ La Casa de Tauro del Santuario de Athena, en réplica decorativa para tu colecci
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Saint Seiya, Templo, Combo
-- Imagen: https://boomart.pe/assets/products/templo-geminis-1.jpg
+- Imagen: https://boomart.pe/assets/products/templo-geminis-hero.jpg
 - Ficha: https://boomart.pe/producto/templo-geminis/
 
 La Casa de Géminis del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).
@@ -55,7 +55,7 @@ La Casa de Géminis del Santuario de Athena, en réplica decorativa para tu cole
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Saint Seiya, Templo, Combo
-- Imagen: https://boomart.pe/assets/products/templo-cancer-1.jpg
+- Imagen: https://boomart.pe/assets/products/templo-cancer-hero.jpg
 - Ficha: https://boomart.pe/producto/templo-cancer/
 
 La Casa de Cáncer del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).
@@ -67,7 +67,7 @@ La Casa de Cáncer del Santuario de Athena, en réplica decorativa para tu colec
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Saint Seiya, Templo, Combo
-- Imagen: https://boomart.pe/assets/products/templo-leo.jpg
+- Imagen: https://boomart.pe/assets/products/templo-leo-hero.jpg
 - Ficha: https://boomart.pe/producto/templo-leo/
 
 La Casa de Leo del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).
@@ -79,7 +79,7 @@ La Casa de Leo del Santuario de Athena, en réplica decorativa para tu colecció
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Saint Seiya, Templo, Combo
-- Imagen: https://boomart.pe/assets/products/templo-virgo-1.jpg
+- Imagen: https://boomart.pe/assets/products/templo-virgo-hero.jpg
 - Ficha: https://boomart.pe/producto/templo-virgo/
 
 La Casa de Virgo del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).
@@ -91,7 +91,7 @@ La Casa de Virgo del Santuario de Athena, en réplica decorativa para tu colecci
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Saint Seiya, Templo, Combo
-- Imagen: https://boomart.pe/assets/products/templo-libra.jpg
+- Imagen: https://boomart.pe/assets/products/templo-libra-hero.jpg
 - Ficha: https://boomart.pe/producto/templo-libra/
 
 La Casa de Libra del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).
@@ -103,7 +103,7 @@ La Casa de Libra del Santuario de Athena, en réplica decorativa para tu colecci
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Saint Seiya, Templo, Combo
-- Imagen: https://boomart.pe/assets/products/templo-escorpio.jpg
+- Imagen: https://boomart.pe/assets/products/templo-escorpio-hero.jpg
 - Ficha: https://boomart.pe/producto/templo-escorpio/
 
 La Casa de Escorpio del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).
@@ -115,7 +115,7 @@ La Casa de Escorpio del Santuario de Athena, en réplica decorativa para tu cole
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Saint Seiya, Templo, Combo
-- Imagen: https://boomart.pe/assets/products/templo-sagitario.jpg
+- Imagen: https://boomart.pe/assets/products/templo-sagitario-hero.jpg
 - Ficha: https://boomart.pe/producto/templo-sagitario/
 
 La Casa de Sagitario del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).
@@ -127,7 +127,7 @@ La Casa de Sagitario del Santuario de Athena, en réplica decorativa para tu col
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Saint Seiya, Templo, Combo
-- Imagen: https://boomart.pe/assets/products/templo-capricornio.jpg
+- Imagen: https://boomart.pe/assets/products/templo-capricornio-hero.jpg
 - Ficha: https://boomart.pe/producto/templo-capricornio/
 
 La Casa de Capricornio del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).
@@ -139,7 +139,7 @@ La Casa de Capricornio del Santuario de Athena, en réplica decorativa para tu c
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Saint Seiya, Templo, Combo
-- Imagen: https://boomart.pe/assets/products/templo-acuario.jpg
+- Imagen: https://boomart.pe/assets/products/templo-acuario-hero.jpg
 - Ficha: https://boomart.pe/producto/templo-acuario/
 
 La Casa de Acuario del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).
@@ -151,7 +151,7 @@ La Casa de Acuario del Santuario de Athena, en réplica decorativa para tu colec
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Saint Seiya, Templo, Combo
-- Imagen: https://boomart.pe/assets/products/templo-piscis.jpg
+- Imagen: https://boomart.pe/assets/products/templo-piscis-hero.jpg
 - Ficha: https://boomart.pe/producto/templo-piscis/
 
 La Casa de Piscis del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).
@@ -163,7 +163,7 @@ La Casa de Piscis del Santuario de Athena, en réplica decorativa para tu colecc
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Atena, Esculturas, Saint Seiya
-- Imagen: https://boomart.pe/assets/products/busto-de-atena-saint-seiya-1.jpg
+- Imagen: https://boomart.pe/assets/products/busto-de-atena-saint-seiya-hero.jpg
 - Ficha: https://boomart.pe/producto/busto-de-atena-saint-seiya/
 
 El busto de Atena, diosa protectora del Santuario, es la pieza central que toda colección de Saint Seiya (Caballeros del Zodiaco) merece. Rostro sereno, casco con detalle y armadura trabajada, con espectacular acabado estilo piedra envejecida.
@@ -187,7 +187,7 @@ La colección completa del Santuario de Athena: los 12 Templos de las Casas del 
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Saint Seiya
-- Imagen: https://boomart.pe/assets/products/torre-del-reloj-saint-seiya-1.jpg
+- Imagen: https://boomart.pe/assets/products/torre-del-reloj-saint-seiya-hero.jpg
 - Ficha: https://boomart.pe/producto/torre-del-reloj-saint-seiya/
 
 La icónica Torre del Reloj del Santuario de Athena, con sus doce llamas encendidas marcando la cuenta regresiva. Réplica decorativa de 32 cm de alto, acabado tipo piedra envejecida, impresa en 3D en PLA+/PETG y detallada a mano. Hecha a pedido en Lima.
@@ -247,7 +247,7 @@ El casco de la Armadura de Pegaso, la que porta Seiya, en réplica decorativa pa
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Atena, Esculturas, Saint Seiya
-- Imagen: https://boomart.pe/assets/products/escultura-de-atena-saint-seiya-1.jpg
+- Imagen: https://boomart.pe/assets/products/escultura-de-atena-saint-seiya-hero.jpg
 - Ficha: https://boomart.pe/producto/escultura-de-atena-saint-seiya/
 
 Escultura de Atena de cuerpo entero, la diosa de la sabiduría y la guerra justa, con espectacular acabado estilo piedra envejecida. Impresa en 3D y detallada a mano, hecha a pedido en Lima.
