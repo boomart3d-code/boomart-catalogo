@@ -47,5 +47,14 @@
     "text": "Excelente atención, excelente producto muy buena calidad.",
     "date": "2026-09-08",
     "approved": true
+  },
+  {
+    "name": "Susan M.",
+    "city": "Lima",
+    "rating": 5,
+    "text": "La vi por TikTok y sé que mi novio es fan de la saga de Géminis. BoomArt no me puso trabas, al contrario, me ayudó mucho y recreó la casa de Géminis. Excelente trabajo y muy buena calidad.",
+    "date": "2026-09-10",
+    "product": "Templo de Géminis",
+    "approved": true
   }
 ]
