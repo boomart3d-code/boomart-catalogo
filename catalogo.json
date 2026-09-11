@@ -508,13 +508,14 @@
     },
     {
       "id": "casco-de-pegaso-saint-seiya",
-      "name": "Casco de Pegaso · Saint Seiya",
+      "name": "Casco de Pegaso V1 · Saint Seiya",
       "category": "Saint Seiya",
       "tags": [
         "Cascos",
+        "Cosplay",
         "Saint Seiya"
       ],
-      "description": "El casco de la Armadura de Pegaso, la que porta Seiya, en réplica decorativa para exhibición. Alas laterales, visor y volúmenes reproducidos fielmente.",
+      "description": "Casco funcional de cosplay de la Armadura de Pegaso V1, la que porta Seiya en la versión clásica de Saint Seiya, en tamaño real 1:1. Se puede usar puesto: alas laterales, visor y volúmenes reproducidos fielmente en un acabado tipo metal cepillado. Como se imprime a pedido, el calce se adapta a la talla de quien lo va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Impreso en 3D en Perú, con envíos a todo el país.",
       "material": "PLA",
       "availability": "A pedido",
       "priceCurrency": "PEN",
@@ -522,12 +523,13 @@
       "pricing": [
         "Precio oferta: S/250 (antes S/275)"
       ],
-      "image": "https://boomart.pe/assets/products/casco-de-pegaso-saint-seiya.jpg",
+      "image": "https://boomart.pe/assets/products/casco-de-pegaso-saint-seiya-hero.jpg",
       "gallery": [
-        "https://boomart.pe/assets/products/casco-de-pegaso-saint-seiya.jpg"
+        "https://boomart.pe/assets/products/casco-de-pegaso-saint-seiya-hero.jpg",
+        "https://boomart.pe/assets/products/casco-de-pegaso-saint-seiya-hero2.jpg"
       ],
       "url": "https://boomart.pe/producto/casco-de-pegaso-saint-seiya/",
-      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Casco%20de%20Pegaso%20%C2%B7%20Saint%20Seiya"
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Casco%20de%20Pegaso%20V1%20%C2%B7%20Saint%20Seiya"
     },
     {
       "id": "escultura-de-atena-saint-seiya",
