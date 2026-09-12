@@ -15,22 +15,48 @@ window.BOOMART_CHECKOUT = {
   // Origen del taller (solo referencia general, no una direccion exacta de recojo).
   businessOrigin: "San José, Bellavista, Callao",
 
-  // Metodos de pago del adelanto. Completa "holder" y "qrImage" y pon available:true
-  // cuando la imagen del QR real este lista en assets/payments/. Mientras available
-  // sea false, la web muestra ese metodo como "No disponible" y no inventa datos.
+  // Metodos de pago del adelanto. Hay dos tipos:
+  //  - type: "qr"      -> Yape/Plin: muestra el QR, boton de descarga, titular y
+  //                       numero (con boton Copiar). Pon available:true cuando la
+  //                       imagen del QR real este lista en assets/payments/.
+  //  - type: "account" -> Interbank/BCP: muestra titular, numero de cuenta (con
+  //                       boton Copiar) y, si completas "cci", tambien el CCI con
+  //                       su propio boton Copiar. Deja cci: "" mientras no lo tengas
+  //                       -- esa fila simplemente no se muestra.
+  // El titular ("holder") sale siempre igual en las 4 opciones: cambialo aqui una
+  // sola vez si hiciera falta. Mientras available sea false (o falte el numero),
+  // la web muestra ese metodo como "No disponible" y no inventa datos.
   paymentMethods: {
     yape: {
+      type: "qr",
       label: "Yape",
-      holder: "Monica Carina Molina Escalona",
+      holder: "Mónica Karina Molina Escalona",
       qrImage: "assets/payments/yape-qr.jpeg",
       phone: "928026092",
       available: true
     },
     plin: {
+      type: "qr",
       label: "Plin",
-      holder: "Monica Molina",
+      holder: "Mónica Karina Molina Escalona",
       qrImage: "assets/payments/plin-qr.jpeg",
       phone: "928026092",
+      available: true
+    },
+    interbank: {
+      type: "account",
+      label: "Interbank",
+      holder: "Mónica Karina Molina Escalona",
+      accountNumber: "2893430503921",
+      cci: "00328901343050392163",
+      available: true
+    },
+    bcp: {
+      type: "account",
+      label: "BCP",
+      holder: "Mónica Karina Molina Escalona",
+      accountNumber: "19194306650040",
+      cci: "00219119430665004056",
       available: true
     }
   },

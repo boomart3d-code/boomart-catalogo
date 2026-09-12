@@ -405,8 +405,28 @@
       });
 
       const method = (CHECKOUT.paymentMethods || {})[methodKey] || {};
-      if (method.available && method.qrImage) {
-        const label = method.label || methodKey;
+      const label = method.label || methodKey;
+      const holderHtml = method.holder ? `<p class="payment-holder">Titular: <strong>${method.holder}</strong></p>` : "";
+
+      const copyRow = (rowLabel, value, copyLabel) => `
+        <div class="payment-phone-box">
+          <p>${rowLabel}</p>
+          <div class="payment-phone-row">
+            <strong class="payment-phone-number">${value}</strong>
+            <button type="button" class="button secondary" data-copy-value="${value}">${copyLabel}</button>
+          </div>
+        </div>
+      `;
+
+      if (method.type === "account" && method.available && method.accountNumber) {
+        paymentDetailEl.innerHTML = `
+          <div class="payment-qr payment-account">
+            ${holderHtml}
+            ${copyRow(`Número de cuenta ${label}:`, method.accountNumber, "Copiar cuenta")}
+            ${method.cci ? copyRow("CCI (transferencia interbancaria):", method.cci, "Copiar CCI") : ""}
+          </div>
+        `;
+      } else if (method.type !== "account" && method.available && method.qrImage) {
         paymentDetailEl.innerHTML = `
           <div class="payment-qr">
             <a href="${method.qrImage}" target="_blank" rel="noreferrer" aria-label="Ver código QR de ${label} en tamaño completo">
@@ -414,26 +434,15 @@
             </a>
             <a class="button secondary" href="${method.qrImage}" download="${label}-BoomArt-QR.jpg">Descargar código QR</a>
             <p class="payment-qr-hint">¿Pagas desde este mismo celular? Descarga el QR o mantenlo presionado para guardarlo, y ábrelo desde ${label}.</p>
-            ${method.holder ? `<p class="payment-holder">Titular: <strong>${method.holder}</strong></p>` : ""}
-            ${
-              method.phone
-                ? `
-                  <div class="payment-phone-box">
-                    <p>O búscala directamente en ${label} con este número:</p>
-                    <div class="payment-phone-row">
-                      <strong class="payment-phone-number">${method.phone}</strong>
-                      <button type="button" class="button secondary" data-copy-phone="${method.phone}">Copiar número</button>
-                    </div>
-                  </div>
-                `
-                : ""
-            }
+            ${holderHtml}
+            ${method.phone ? copyRow(`O búscala directamente en ${label} con este número:`, method.phone, "Copiar número") : ""}
           </div>
         `;
       } else {
+        const missingWhat = method.type === "account" ? `El número de cuenta ${label}` : `El QR de ${label}`;
         paymentDetailEl.innerHTML = `
           <div class="payment-qr payment-qr-missing">
-            <p>El QR de ${method.label || methodKey} todavía no está disponible en la web. Continúa y coordina el pago de tu adelanto directamente por WhatsApp.</p>
+            <p>${missingWhat} todavía no está disponible en la web. Continúa y coordina el pago de tu adelanto directamente por WhatsApp.</p>
           </div>
         `;
       }
@@ -442,19 +451,19 @@
   });
 
   paymentDetailEl.addEventListener("click", async (event) => {
-    const copyBtn = event.target.closest("[data-copy-phone]");
+    const copyBtn = event.target.closest("[data-copy-value]");
     if (!copyBtn) return;
-    const phone = copyBtn.dataset.copyPhone;
+    const value = copyBtn.dataset.copyValue;
     const originalLabel = copyBtn.textContent;
     try {
-      await navigator.clipboard.writeText(phone);
+      await navigator.clipboard.writeText(value);
     } catch {
       // Respaldo para navegadores sin Clipboard API (o sin permiso): selecciona
       // el texto manualmente y usa el comando de copia clasico. El truco de
       // posicionarlo fuera de pantalla (en vez de opacity:0) es necesario para
       // que Safari/iOS permita seleccionarlo.
       const helper = document.createElement("textarea");
-      helper.value = phone;
+      helper.value = value;
       helper.setAttribute("readonly", "");
       helper.style.position = "absolute";
       helper.style.left = "-9999px";
@@ -464,7 +473,7 @@
       const selection = window.getSelection();
       selection.removeAllRanges();
       selection.addRange(range);
-      helper.setSelectionRange(0, phone.length);
+      helper.setSelectionRange(0, value.length);
       document.execCommand("copy");
       selection.removeAllRanges();
       document.body.removeChild(helper);
