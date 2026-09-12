@@ -30,7 +30,7 @@ window.BOOMART_CHECKOUT = {
     yape: {
       type: "qr",
       label: "Yape",
-      holder: "Mónica Karina Molina Escalona",
+      holder: "Mónica Carina Molina Escalona",
       qrImage: "assets/payments/yape-qr.jpeg",
       phone: "928026092",
       available: true
@@ -38,7 +38,7 @@ window.BOOMART_CHECKOUT = {
     plin: {
       type: "qr",
       label: "Plin",
-      holder: "Mónica Karina Molina Escalona",
+      holder: "Mónica Carina Molina Escalona",
       qrImage: "assets/payments/plin-qr.jpeg",
       phone: "928026092",
       available: true
@@ -46,7 +46,7 @@ window.BOOMART_CHECKOUT = {
     interbank: {
       type: "account",
       label: "Interbank",
-      holder: "Mónica Karina Molina Escalona",
+      holder: "Mónica Carina Molina Escalona",
       accountNumber: "2893430503921",
       cci: "00328901343050392163",
       available: true
@@ -54,7 +54,7 @@ window.BOOMART_CHECKOUT = {
     bcp: {
       type: "account",
       label: "BCP",
-      holder: "Mónica Karina Molina Escalona",
+      holder: "Mónica Carina Molina Escalona",
       accountNumber: "19194306650040",
       cci: "00219119430665004056",
       available: true
