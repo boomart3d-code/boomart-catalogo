@@ -10,6 +10,47 @@
   const CHECKOUT = window.BOOMART_CHECKOUT || {};
   const money = (value) => `S/${Number(value || 0).toFixed(2)}`;
 
+  // Recuerda nombre y destino del cliente en este mismo navegador/dispositivo
+  // (localStorage), para autocompletar el formulario en su proxima visita. No
+  // sincroniza entre dispositivos distintos: eso requeriria cuentas de usuario
+  // y un servidor, que esta web no tiene.
+  const CUSTOMER_STORAGE_KEY = "boomart_customer_v1";
+
+  function safeCustomerStorage() {
+    try {
+      const testKey = "__boomart_storage_test__";
+      window.localStorage.setItem(testKey, "1");
+      window.localStorage.removeItem(testKey);
+      return window.localStorage;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  const customerStorage = safeCustomerStorage();
+
+  function loadSavedCustomer() {
+    if (!customerStorage) return null;
+    try {
+      const raw = customerStorage.getItem(CUSTOMER_STORAGE_KEY);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      return parsed && typeof parsed === "object" ? parsed : null;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function saveCustomer(data) {
+    if (!customerStorage) return;
+    try {
+      customerStorage.setItem(CUSTOMER_STORAGE_KEY, JSON.stringify(data));
+    } catch (err) {
+      // almacenamiento no disponible (modo privado, cuota llena, etc.) -- el
+      // formulario sigue funcionando, solo no se recuerda para la proxima visita.
+    }
+  }
+
   const cartToggle = document.querySelector("#cartToggle");
   const cartFloatToggle = document.querySelector("#cartFloatToggle");
   const cartCountFloatEl = document.querySelector("#cartCountFloat");
@@ -275,13 +316,39 @@
     });
   };
 
+  function prefillCustomerForm() {
+    const saved = loadSavedCustomer();
+    if (!saved) return;
+
+    if (saved.name && !customerNameInput.value.trim()) {
+      customerNameInput.value = saved.name;
+    }
+
+    const noDestinationSelected = !document.querySelector("[data-destination].is-selected");
+    if (noDestinationSelected && (saved.destination === "lima" || saved.destination === "provincias")) {
+      const destinationBtn = document.querySelector(`[data-destination="${saved.destination}"]`);
+      if (destinationBtn) destinationBtn.click();
+
+      if (saved.destination === "lima" && saved.limaDistrict && !limaDistrictInput.value.trim()) {
+        limaDistrictInput.value = saved.limaDistrict;
+      }
+      if (saved.destination === "provincias") {
+        if (saved.provDepartment && !provDepartmentInput.value.trim()) provDepartmentInput.value = saved.provDepartment;
+        if (saved.provProvince && !provProvinceInput.value.trim()) provProvinceInput.value = saved.provProvince;
+        if (saved.provDistrict && !provDistrictInput.value.trim()) provDistrictInput.value = saved.provDistrict;
+      }
+    }
+  }
+
   const openCheckout = () => {
     if (window.BoomartCart.getState().lines.length === 0) return;
     closeCart();
     customerFormError.hidden = true;
     showStep("customer");
     checkoutDialog.showModal();
+    prefillCustomerForm();
     customerNameInput.focus();
+    customerNameInput.select();
   };
 
   startCheckoutBtn.addEventListener("click", openCheckout);
@@ -340,6 +407,14 @@
 
     customer.name = name;
     customerFormError.hidden = true;
+    saveCustomer({
+      name: customer.name,
+      destination: customer.destination,
+      limaDistrict: customer.limaDistrict,
+      provDepartment: customer.provDepartment,
+      provProvince: customer.provProvince,
+      provDistrict: customer.provDistrict
+    });
     renderSummaryStep();
     showStep("summary");
   });
