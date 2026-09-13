@@ -67,6 +67,42 @@
     safeSetLocal(CART_LINK_KEY, JSON.stringify({ userId, carritoId }));
   }
 
+  // ---------- Puente con el checkout: la cuenta ya sabe el nombre (y a
+  // veces el destino) del cliente -- se lo pasamos al formulario del
+  // checkout usando la MISMA llave de localStorage que checkout.js ya lee
+  // (funcion prefillCustomerForm), asi no hace falta tocar esa logica. ----------
+  const CUSTOMER_STORAGE_KEY = "boomart_customer_v1";
+
+  function mergeCustomerLocal(patch) {
+    let current = {};
+    try {
+      const raw = window.localStorage.getItem(CUSTOMER_STORAGE_KEY);
+      if (raw) current = JSON.parse(raw) || {};
+    } catch (err) {
+      current = {};
+    }
+    try {
+      window.localStorage.setItem(CUSTOMER_STORAGE_KEY, JSON.stringify({ ...current, ...patch }));
+    } catch (err) {
+      // almacenamiento no disponible -- el checkout simplemente le
+      // volvera a pedir los datos, sin romper nada.
+    }
+  }
+
+  // Pasa nombre/apellido y (si ya los tiene) destino/distrito de la cuenta
+  // al checkout, para que no se los vuelva a preguntar.
+  function syncCustomerProfileToCheckout(cliente) {
+    const patch = {};
+    const fullName = [cliente.nombre, cliente.apellido].filter(Boolean).join(" ");
+    if (fullName) patch.name = fullName;
+    if (cliente.destino) patch.destination = cliente.destino;
+    if (cliente.lima_distrito) patch.limaDistrict = cliente.lima_distrito;
+    if (cliente.prov_departamento) patch.provDepartment = cliente.prov_departamento;
+    if (cliente.prov_provincia) patch.provProvince = cliente.prov_provincia;
+    if (cliente.prov_distrito) patch.provDistrict = cliente.prov_distrito;
+    mergeCustomerLocal(patch);
+  }
+
   function cartLinesToItems(lines) {
     return lines.map((line) => ({ productId: line.productId, variant: line.variantKey || null, quantity: line.quantity }));
   }
@@ -260,15 +296,16 @@
         return;
       }
       syncOrRestoreCart(user);
-      renderWelcomeAndClose(nombre);
+      renderWelcomeAndClose(nombre, apellido);
     });
   }
 
   // Confirmacion breve tras completar el registro: no lo deja atrapado en el
   // dialogo -- actualiza el boton del header y lo devuelve solo al catalogo
   // para que siga comprando.
-  function renderWelcomeAndClose(nombre) {
+  function renderWelcomeAndClose(nombre, apellido) {
     accountLabel.textContent = nombre;
+    mergeCustomerLocal({ name: [nombre, apellido].filter(Boolean).join(" ") });
     accountBody.innerHTML = `
       <p class="eyebrow">Mi cuenta</p>
       <h2>¡Listo, ${nombre}!</h2>
@@ -324,11 +361,16 @@
       renderLoggedOut();
       return;
     }
-    const { data: cliente } = await sb.from("clientes").select("nombre, apellido, correo").eq("id", user.id).maybeSingle();
+    const { data: cliente } = await sb
+      .from("clientes")
+      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, prov_distrito")
+      .eq("id", user.id)
+      .maybeSingle();
     if (!cliente || !cliente.nombre) {
       renderNeedsName(user);
       return;
     }
+    syncCustomerProfileToCheckout(cliente);
     const history = await loadCartHistory(user.id);
     renderProfile(cliente, user, history);
   }
@@ -344,9 +386,16 @@
   // dispositivo esta vacio (sin tener que abrir el dialogo "Mi cuenta").
   sb.auth.getSession().then(({ data: { session } }) => {
     if (!session || !session.user) return;
-    sb.from("clientes").select("nombre").eq("id", session.user.id).maybeSingle().then(({ data }) => {
-      if (data && data.nombre) accountLabel.textContent = data.nombre;
-    });
+    sb
+      .from("clientes")
+      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, prov_distrito")
+      .eq("id", session.user.id)
+      .maybeSingle()
+      .then(({ data }) => {
+        if (!data || !data.nombre) return;
+        accountLabel.textContent = data.nombre;
+        syncCustomerProfileToCheckout(data);
+      });
     syncOrRestoreCart(session.user);
   });
 
@@ -367,6 +416,25 @@
   window.BoomartCart.subscribe(async () => {
     const { data: { session } } = await sb.auth.getSession();
     if (session && session.user) syncActiveCart(session.user);
+  });
+
+  // checkout.js avisa con este evento cuando el cliente completa el paso de
+  // destino/distrito -- si esta logueado, lo guardamos en su cuenta para
+  // que no se lo vuelva a preguntar, ni siquiera desde otro dispositivo.
+  document.addEventListener("boomart:customer-destination-saved", async (event) => {
+    const { data: { session } } = await sb.auth.getSession();
+    if (!session || !session.user) return;
+    const d = event.detail || {};
+    await sb
+      .from("clientes")
+      .update({
+        destino: d.destination || null,
+        lima_distrito: d.limaDistrict || null,
+        prov_departamento: d.provDepartment || null,
+        prov_provincia: d.provProvince || null,
+        prov_distrito: d.provDistrict || null
+      })
+      .eq("id", session.user.id);
   });
 
   // checkout.js avisa con este evento cuando el pedido ya se mando por

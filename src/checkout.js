@@ -415,6 +415,19 @@
       provProvince: customer.provProvince,
       provDistrict: customer.provDistrict
     });
+    // account.js (si el cliente esta logueado) guarda esto tambien en su
+    // cuenta, para que no se lo vuelva a preguntar en otro dispositivo.
+    document.dispatchEvent(
+      new CustomEvent("boomart:customer-destination-saved", {
+        detail: {
+          destination: customer.destination,
+          limaDistrict: customer.limaDistrict,
+          provDepartment: customer.provDepartment,
+          provProvince: customer.provProvince,
+          provDistrict: customer.provDistrict
+        }
+      })
+    );
     renderSummaryStep();
     showStep("summary");
   });
