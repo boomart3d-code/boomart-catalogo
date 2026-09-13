@@ -144,6 +144,21 @@
     setLinkedCarritoId(user.id, data.id);
   }
 
+  // Al iniciar sesion: si ya tenia productos en el carrito de este navegador
+  // (los agrego como invitado antes de registrarse), los sube a su cuenta.
+  // Si el carrito de este navegador esta vacio, trae el ultimo que tenia
+  // guardado (por ejemplo, entrando desde otro dispositivo).
+  function syncOrRestoreCart(user) {
+    whenProductsReady(() => {
+      const state = window.BoomartCart.getState();
+      if (state.lines.length) {
+        syncActiveCart(user);
+      } else {
+        restoreCartIfEmpty(user);
+      }
+    });
+  }
+
   async function loadCartHistory(userId) {
     const { data } = await sb
       .from("carritos")
@@ -244,8 +259,22 @@
         submitBtn.disabled = false;
         return;
       }
-      refreshAccountUI();
+      syncOrRestoreCart(user);
+      renderWelcomeAndClose(nombre);
     });
+  }
+
+  // Confirmacion breve tras completar el registro: no lo deja atrapado en el
+  // dialogo -- actualiza el boton del header y lo devuelve solo al catalogo
+  // para que siga comprando.
+  function renderWelcomeAndClose(nombre) {
+    accountLabel.textContent = nombre;
+    accountBody.innerHTML = `
+      <p class="eyebrow">Mi cuenta</p>
+      <h2>¡Listo, ${nombre}!</h2>
+      <p class="field-hint">Ya puedes seguir viendo el catálogo.</p>
+    `;
+    setTimeout(() => accountDialog.close(), 1300);
   }
 
   function renderProfile(cliente, user, history) {
@@ -275,9 +304,11 @@
       <p class="field-hint">${user.email}</p>
       ${historyHtml}
       <div class="checkout-actions">
+        <button type="button" class="button primary full" id="accountKeepShoppingBtn">Seguir comprando</button>
         <button type="button" class="button secondary full" id="accountSignOutBtn">Cerrar sesión</button>
       </div>
     `;
+    document.querySelector("#accountKeepShoppingBtn").addEventListener("click", () => accountDialog.close());
     document.querySelector("#accountSignOutBtn").addEventListener("click", async () => {
       await sb.auth.signOut();
       accountLabel.textContent = "Mi cuenta";
@@ -316,7 +347,7 @@
     sb.from("clientes").select("nombre").eq("id", session.user.id).maybeSingle().then(({ data }) => {
       if (data && data.nombre) accountLabel.textContent = data.nombre;
     });
-    whenProductsReady(() => restoreCartIfEmpty(session.user));
+    syncOrRestoreCart(session.user);
   });
 
   // Cuando vuelve del enlace magico (o cambia la sesion en otra pestaña),
@@ -326,7 +357,7 @@
     if (event === "SIGNED_IN") {
       refreshAccountUI();
       if (!accountDialog.open) accountDialog.showModal();
-      if (session && session.user) whenProductsReady(() => restoreCartIfEmpty(session.user));
+      if (session && session.user) syncOrRestoreCart(session.user);
     }
   });
 
