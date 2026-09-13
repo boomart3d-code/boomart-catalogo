@@ -494,7 +494,7 @@
     const saved = loadSavedCustomer();
     if (saved && saved.isAccountCustomer) {
       documentFieldsEl.hidden = false;
-      customerDocTypeInput.value = saved.docType || "";
+      customerDocTypeInput.value = saved.docType || "dni";
       customerDocNumberInput.value = saved.docNumber || "";
     } else {
       documentFieldsEl.hidden = true;
