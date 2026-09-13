@@ -225,6 +225,30 @@
     return "En curso";
   }
 
+  // Si la consulta a Supabase falla (por ejemplo, la sesion necesita
+  // refrescarse) NO hay que mostrar el formulario vacio como si el cliente
+  // no hubiera guardado nada -- eso invita a que vuelva a escribir todo y
+  // se genere un duplicado. Se avisa el problema y se deja reintentar.
+  function renderLoadError(user) {
+    accountBody.innerHTML = `
+      <p class="eyebrow">Mi cuenta</p>
+      <h2>No pudimos cargar tus datos</h2>
+      <p class="field-hint">Correo: <strong>${user.email}</strong></p>
+      <p class="form-error">Hubo un problema de conexión. Intenta de nuevo.</p>
+      <div class="checkout-actions">
+        <button type="button" class="button primary full" id="accountRetryBtn">Reintentar</button>
+        <button type="button" class="button secondary full" id="accountSignOutBtnError">Cerrar sesión</button>
+      </div>
+    `;
+    document.querySelector("#accountRetryBtn").addEventListener("click", refreshAccountUI);
+    document.querySelector("#accountSignOutBtnError").addEventListener("click", async () => {
+      await sb.auth.signOut();
+      accountLabel.textContent = "Mi cuenta";
+      mergeCustomerLocal({ isAccountCustomer: false });
+      refreshAccountUI();
+    });
+  }
+
   function renderLoggedOut() {
     accountBody.innerHTML = `
       <p class="eyebrow">Mi cuenta</p>
@@ -289,7 +313,9 @@
     const nombre = (cliente && cliente.nombre) || "";
     const apellido = (cliente && cliente.apellido) || "";
     const telefono = (cliente && cliente.telefono) || "";
-    const docType = (cliente && cliente.tipo_documento) || "";
+    // Si no hay tipo de documento guardado, sugerimos "DNI" (el mas comun)
+    // en vez de dejar seleccionado "Prefiero no decir" por defecto.
+    const docType = (cliente && cliente.tipo_documento) || "dni";
     const docNumber = (cliente && cliente.dni) || "";
 
     if (nombre) accountLabel.textContent = nombre;
@@ -424,11 +450,18 @@
       renderLoggedOut();
       return;
     }
-    const { data: cliente } = await sb
+    const { data: cliente, error } = await sb
       .from("clientes")
       .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, direccion_detalle, dni, tipo_documento, telefono")
       .eq("id", user.id)
       .maybeSingle();
+    if (error) {
+      // Queda en la consola para poder diagnosticar si vuelve a pasar
+      // (revisa la pestaña Console de las herramientas de desarrollador).
+      console.error("BoomArt: no se pudo cargar el perfil de la cuenta", error);
+      renderLoadError(user);
+      return;
+    }
     if (cliente && cliente.nombre) syncCustomerProfileToCheckout(cliente);
     const history = cliente ? await loadCartHistory(user.id) : [];
     renderAccountPanel(cliente, user, history);
