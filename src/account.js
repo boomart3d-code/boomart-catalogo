@@ -102,7 +102,6 @@
     if (cliente.lima_distrito) patch.limaDistrict = cliente.lima_distrito;
     if (cliente.prov_departamento) patch.provDepartment = cliente.prov_departamento;
     if (cliente.prov_provincia) patch.provProvince = cliente.prov_provincia;
-    if (cliente.prov_distrito) patch.provDistrict = cliente.prov_distrito;
     if (cliente.direccion_detalle) patch.addressDetail = cliente.direccion_detalle;
     if (cliente.tipo_documento) patch.docType = cliente.tipo_documento;
     if (cliente.dni) patch.docNumber = cliente.dni;
@@ -377,7 +376,7 @@
     }
     const { data: cliente } = await sb
       .from("clientes")
-      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, prov_distrito, direccion_detalle, dni, tipo_documento, telefono")
+      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, direccion_detalle, dni, tipo_documento, telefono")
       .eq("id", user.id)
       .maybeSingle();
     if (!cliente || !cliente.nombre || !cliente.telefono) {
@@ -402,7 +401,7 @@
     if (!session || !session.user) return;
     sb
       .from("clientes")
-      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, prov_distrito, direccion_detalle, dni, tipo_documento, telefono")
+      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, direccion_detalle, dni, tipo_documento, telefono")
       .eq("id", session.user.id)
       .maybeSingle()
       .then(({ data }) => {
@@ -446,7 +445,6 @@
         lima_distrito: d.limaDistrict || null,
         prov_departamento: d.provDepartment || null,
         prov_provincia: d.provProvince || null,
-        prov_distrito: d.provDistrict || null,
         direccion_detalle: d.addressDetail || null
       })
       .eq("id", session.user.id);

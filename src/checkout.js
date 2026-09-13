@@ -78,7 +78,6 @@
   const limaDistrictInput = document.querySelector("#limaDistrict");
   const provDepartmentInput = document.querySelector("#provDepartment");
   const provProvinceInput = document.querySelector("#provProvince");
-  const provDistrictInput = document.querySelector("#provDistrict");
   const addressDetailInput = document.querySelector("#addressDetail");
   const addressDetailLabel = document.querySelector("#addressDetailLabel");
   const summaryLinesEl = document.querySelector("#summaryLines");
@@ -94,7 +93,7 @@
   const customerDocTypeInput = document.querySelector("#customerDocType");
   const customerDocNumberInput = document.querySelector("#customerDocNumber");
 
-  const customer = { name: "", destination: null, limaDistrict: "", provDepartment: "", provProvince: "", provDistrict: "", addressDetail: "" };
+  const customer = { name: "", destination: null, limaDistrict: "", provDepartment: "", provProvince: "", addressDetail: "" };
   let selectedPaymentMethod = null;
 
   // ---------- Carrito: badge + panel lateral ----------
@@ -344,7 +343,6 @@
       if (saved.destination === "provincias") {
         if (saved.provDepartment && !provDepartmentInput.value.trim()) provDepartmentInput.value = saved.provDepartment;
         if (saved.provProvince && !provProvinceInput.value.trim()) provProvinceInput.value = saved.provProvince;
-        if (saved.provDistrict && !provDistrictInput.value.trim()) provDistrictInput.value = saved.provDistrict;
       }
     }
 
@@ -397,8 +395,8 @@
       destinationFieldsLima.hidden = value !== "lima";
       destinationFieldsProv.hidden = value !== "provincias";
       if (value === "provincias") {
-        addressDetailLabel.textContent = "Dirección de la agencia Shalom (opcional)";
-        addressDetailInput.placeholder = "Si ya la conoces, así evitamos coordinarla por WhatsApp";
+        addressDetailLabel.textContent = "Dirección del Shalom destino";
+        addressDetailInput.placeholder = "Ej: Shalom Puerto Palmeras";
       } else {
         addressDetailLabel.textContent = "Dirección exacta (opcional)";
         addressDetailInput.placeholder = "Calle, número, referencia";
@@ -413,20 +411,23 @@
     if (!name) return showFormError("Ingresa tu nombre.");
     if (!customer.destination) return showFormError("Elige tu destino: Lima y Callao o Provincias.");
 
+    customer.addressDetail = addressDetailInput.value.trim();
+
     if (customer.destination === "lima") {
       customer.limaDistrict = limaDistrictInput.value.trim();
       if (!customer.limaDistrict) return showFormError("Ingresa tu distrito.");
     } else {
       customer.provDepartment = provDepartmentInput.value.trim();
       customer.provProvince = provProvinceInput.value.trim();
-      customer.provDistrict = provDistrictInput.value.trim();
-      if (!customer.provDepartment || !customer.provProvince || !customer.provDistrict) {
-        return showFormError("Ingresa departamento, provincia y distrito.");
+      if (!customer.provDepartment || !customer.provProvince) {
+        return showFormError("Ingresa departamento y provincia.");
+      }
+      if (!customer.addressDetail) {
+        return showFormError("Ingresa la dirección del Shalom destino.");
       }
     }
 
     customer.name = name;
-    customer.addressDetail = addressDetailInput.value.trim();
     customerFormError.hidden = true;
     saveCustomer({
       name: customer.name,
@@ -434,7 +435,6 @@
       limaDistrict: customer.limaDistrict,
       provDepartment: customer.provDepartment,
       provProvince: customer.provProvince,
-      provDistrict: customer.provDistrict,
       addressDetail: customer.addressDetail
     });
     // account.js (si el cliente esta logueado) guarda esto tambien en su
@@ -446,7 +446,6 @@
           limaDistrict: customer.limaDistrict,
           provDepartment: customer.provDepartment,
           provProvince: customer.provProvince,
-          provDistrict: customer.provDistrict,
           addressDetail: customer.addressDetail
         }
       })
@@ -464,7 +463,7 @@
     const base =
       customer.destination === "lima"
         ? `Lima y Callao — Distrito: ${customer.limaDistrict}`
-        : `Provincias — ${customer.provDepartment} / ${customer.provProvince} / ${customer.provDistrict}`;
+        : `Provincias — ${customer.provDepartment} / ${customer.provProvince}`;
     return customer.addressDetail ? `${base} — ${customer.addressDetail}` : base;
   }
 
