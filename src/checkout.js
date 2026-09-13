@@ -594,6 +594,7 @@
 
     reopenWhatsappLink.href = url;
     window.open(url, "_blank", "noopener");
+    document.dispatchEvent(new CustomEvent("boomart:order-sent"));
     showStep("done");
   });
 })();
