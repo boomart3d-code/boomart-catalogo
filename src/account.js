@@ -362,6 +362,7 @@
       await sb.auth.signOut();
       accountLabel.textContent = "Mi cuenta";
       activeCarritoId = null;
+      lastKnownUserId = null;
       mergeCustomerLocal({ isAccountCustomer: false });
       refreshAccountUI();
     });
@@ -394,11 +395,19 @@
   });
   closeAccountBtn.addEventListener("click", () => accountDialog.close());
 
+  // Supabase dispara "SIGNED_IN" no solo al iniciar sesion de verdad, sino
+  // tambien cada vez que revalida el token al volver a esta pestana (por
+  // ejemplo, tras cambiar de pestana o de ventana). Sin este control, el
+  // dialogo de "Mi cuenta" se abria solo cada vez que volvias a la pestana.
+  // Solo lo tratamos como un inicio de sesion nuevo si el usuario cambia.
+  let lastKnownUserId = null;
+
   // Si el cliente ya tiene sesion guardada (visita anterior), refleja su
   // nombre en el boton del header y trae su carrito guardado si el de este
   // dispositivo esta vacio (sin tener que abrir el dialogo "Mi cuenta").
   sb.auth.getSession().then(({ data: { session } }) => {
     if (!session || !session.user) return;
+    lastKnownUserId = session.user.id;
     sb
       .from("clientes")
       .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, direccion_detalle, dni, tipo_documento, telefono")
@@ -412,15 +421,17 @@
     syncOrRestoreCart(session.user);
   });
 
-  // Cuando vuelve del enlace magico (o cambia la sesion en otra pestaña),
-  // actualiza el dialogo y lo abre automaticamente para que complete su
-  // nombre sin tener que buscar el boton "Mi cuenta".
+  // Cuando vuelve del enlace magico (o realmente cambia de usuario en otra
+  // pestaña), actualiza el dialogo y lo abre automaticamente para que
+  // complete su nombre sin tener que buscar el boton "Mi cuenta".
   sb.auth.onAuthStateChange((event, session) => {
-    if (event === "SIGNED_IN") {
-      refreshAccountUI();
-      if (!accountDialog.open) accountDialog.showModal();
-      if (session && session.user) syncOrRestoreCart(session.user);
-    }
+    if (event !== "SIGNED_IN") return;
+    const userId = session && session.user && session.user.id;
+    if (!userId || userId === lastKnownUserId) return;
+    lastKnownUserId = userId;
+    refreshAccountUI();
+    if (!accountDialog.open) accountDialog.showModal();
+    syncOrRestoreCart(session.user);
   });
 
   // Cada vez que el carrito local cambia, si hay sesion activa, se guarda
