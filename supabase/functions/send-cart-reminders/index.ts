@@ -22,6 +22,7 @@ const SERVICE_ROLE_KEY = Deno.env.get("SB_SERVICE_ROLE_KEY")!;
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY")!;
 const CATALOG_URL = "https://boomart.pe/data/products.json";
 const SITE_URL = "https://boomart.pe/";
+const ASSETS_BASE = "https://boomart.pe/";
 
 const sb = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
@@ -37,38 +38,82 @@ const TIERS: ReminderTier[] = [
   {
     tipo: "recordatorio_1h",
     horas: 1,
-    asunto: "¿Se te quedó algo en el carrito?",
-    titulo: "Tu carrito te está esperando",
+    asunto: "Se te quedó algo en el carrito 👀",
+    titulo: "¡Tu pedido casi está listo!",
     mensaje:
-      "Notamos que dejaste estos productos en tu carrito hace un rato. Si tienes alguna duda para completar tu pedido, escríbenos por WhatsApp o vuelve a boomart.pe cuando quieras.",
+      "Dejaste estas piezas increíbles en tu carrito. No las dejes ir -- termina tu compra en un par de clics.",
   },
   {
     tipo: "recordatorio_24h",
     horas: 24,
-    asunto: "Tu carrito en BoomArt sigue esperándote",
-    titulo: "Todavía tienes tu carrito guardado",
+    asunto: "Sigue esperándote tu pedido en BoomArt",
+    titulo: "Tus piezas favoritas siguen reservadas",
     mensaje:
-      "Ha pasado un día desde que armaste tu pedido en BoomArt y aún no lo completas. Tus productos siguen guardados -- entra a boomart.pe para continuar cuando quieras.",
+      "Ya casi son tuyas. Estos productos siguen guardados en tu carrito -- complétalo antes de que se agoten.",
   },
   {
     tipo: "recordatorio_48h",
     horas: 48,
-    asunto: "Último recordatorio: tu pedido en BoomArt",
-    titulo: "¿Seguimos con tu pedido?",
+    asunto: "Último recordatorio: no pierdas tu pedido",
+    titulo: "Última oportunidad para completar tu pedido",
     mensaje:
-      "Han pasado 2 días desde que armaste tu pedido y todavía no lo completas. Si tienes alguna consulta o necesitas ayuda para terminar tu compra, escríbenos por WhatsApp -- con gusto te ayudamos.",
+      "Han pasado 2 días y tu carrito sigue intacto. Si tienes alguna duda, escríbenos por WhatsApp -- queremos ayudarte a tener esta pieza en tus manos.",
   },
 ];
 
-function itemsToHtml(items: any[], catalog: Map<string, any>): string {
-  return items
-    .map((item) => {
-      const product = catalog.get(item.productId);
-      const name = product ? product.name : item.productId;
-      const qty = item.quantity || 1;
-      return `<li>${qty}x ${name}</li>`;
-    })
-    .join("");
+const VARIANT_LABELS: Record<string, string> = {
+  temple: "Templo",
+  pandora: "Pandora Box + pedestal",
+  combo: "Combo (templo + Pandora Box)",
+};
+
+function formatPrice(value: number): string {
+  return Number.isInteger(value) ? `S/ ${value}` : `S/ ${value.toFixed(2)}`;
+}
+
+function resolveLine(item: any, catalog: Map<string, any>) {
+  const product = catalog.get(item.productId);
+  const qty = item.quantity || 1;
+  if (!product) {
+    return { name: item.productId, variantLabel: null, image: null, unitPrice: 0, qty };
+  }
+  let unitPrice = 0;
+  let variantLabel: string | null = null;
+  if (product.templePricing && item.variant && product.templePricing[item.variant] != null) {
+    unitPrice = Number(product.templePricing[item.variant]);
+    variantLabel = VARIANT_LABELS[item.variant] || null;
+  } else {
+    unitPrice = Number(product.offerPrice != null ? product.offerPrice : product.regularPrice) || 0;
+  }
+  const image = product.image ? `${ASSETS_BASE}${product.image}` : null;
+  return { name: product.name || item.productId, variantLabel, image, unitPrice, qty };
+}
+
+function itemsToHtml(items: any[], catalog: Map<string, any>): { html: string; total: number } {
+  let total = 0;
+  const rows = items.map((item) => {
+    const line = resolveLine(item, catalog);
+    total += line.unitPrice * line.qty;
+    const imageCell = line.image
+      ? `<td style="width:96px;padding:0;">
+          <img src="${line.image}" width="96" height="96" alt="${line.name}" style="display:block;width:96px;height:96px;object-fit:cover;border-radius:8px 0 0 8px;" />
+        </td>`
+      : "";
+    return `
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 14px 0;border:1px solid #eee;border-radius:8px;overflow:hidden;">
+        <tr>
+          ${imageCell}
+          <td style="padding:14px 16px;vertical-align:middle;">
+            <div style="font-size:16px;font-weight:700;color:#222;">${line.name}</div>
+            ${line.variantLabel ? `<div style="font-size:13px;color:#888;margin-top:2px;">${line.variantLabel}</div>` : ""}
+            <div style="font-size:15px;color:#e1132f;font-weight:700;margin-top:6px;">
+              ${line.qty > 1 ? `${line.qty} x ` : ""}${formatPrice(line.unitPrice)}
+            </div>
+          </td>
+        </tr>
+      </table>`;
+  });
+  return { html: rows.join(""), total };
 }
 
 async function loadCatalog(): Promise<Map<string, any>> {
@@ -92,15 +137,30 @@ async function sendReminderEmail(
   nombre: string,
   tier: ReminderTier,
   itemsHtml: string,
+  total: number,
 ) {
   const html = `
-    <div style="font-family:Arial,sans-serif;max-width:520px;margin:0 auto;">
-      <h2 style="color:#e1132f;">${tier.titulo}</h2>
-      <p>Hola ${nombre || ""},</p>
-      <p>${tier.mensaje}</p>
-      <ul>${itemsHtml}</ul>
-      <p><a href="${SITE_URL}" style="background:#e1132f;color:#fff;padding:12px 20px;border-radius:6px;text-decoration:none;display:inline-block;">Continuar mi compra</a></p>
-      <p style="color:#888;font-size:12px;">BoomArt · boomart.pe</p>
+    <div style="font-family:Arial,sans-serif;max-width:540px;margin:0 auto;background:#fff;">
+      <div style="background:#e1132f;padding:22px 24px;border-radius:10px 10px 0 0;">
+        <h1 style="margin:0;color:#fff;font-size:24px;line-height:1.3;">${tier.titulo}</h1>
+      </div>
+      <div style="padding:24px;">
+        <p style="font-size:16px;color:#333;margin-top:0;">Hola ${nombre || ""},</p>
+        <p style="font-size:16px;color:#333;line-height:1.5;">${tier.mensaje}</p>
+        <div style="margin:20px 0;">${itemsHtml}</div>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:22px;">
+          <tr>
+            <td style="font-size:15px;color:#555;">Total estimado</td>
+            <td style="font-size:18px;color:#222;font-weight:700;text-align:right;">${formatPrice(total)}</td>
+          </tr>
+        </table>
+        <div style="text-align:center;">
+          <a href="${SITE_URL}" style="background:#e1132f;color:#fff;padding:16px 32px;border-radius:8px;text-decoration:none;display:inline-block;font-size:17px;font-weight:700;">
+            Completar mi compra
+          </a>
+        </div>
+        <p style="color:#999;font-size:12px;text-align:center;margin-top:28px;">BoomArt · boomart.pe</p>
+      </div>
     </div>
   `;
   const resp = await fetch("https://api.resend.com/emails", {
@@ -172,12 +232,8 @@ Deno.serve(async (_req) => {
       if (existing) continue;
 
       try {
-        await sendReminderEmail(
-          cliente.correo,
-          cliente.nombre,
-          tier,
-          itemsToHtml(items, catalog),
-        );
+        const { html: itemsHtml, total } = itemsToHtml(items, catalog);
+        await sendReminderEmail(cliente.correo, cliente.nombre, tier, itemsHtml, total);
         await sb
           .from("recordatorios_carrito")
           .insert({ carrito_id: carrito.id, tipo: tier.tipo });
