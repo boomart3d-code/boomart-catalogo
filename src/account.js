@@ -13,6 +13,15 @@
   const supabaseLib = window.supabase;
   if (!config || !supabaseLib || typeof supabaseLib.createClient !== "function") return;
 
+  // Si el cliente acaba de hacer clic en el enlace magico de su correo, la
+  // URL trae el token de acceso en el hash (#access_token=...) ANTES de que
+  // Supabase lo consuma. Es la unica situacion en la que abrimos "Mi cuenta"
+  // solos: el cliente acaba de pedir entrar, a proposito. Una simple visita
+  // a la web (con sesion ya guardada de antes) NUNCA debe abrir nada solo --
+  // se navega libre, como cualquier tienda online, y la cuenta se ofrece
+  // recien cuando el cliente la busca (boton "Mi cuenta") o va a pagar.
+  const arrivedViaMagicLink = /[#&](access_token|refresh_token)=/.test(window.location.hash);
+
   const sb = supabaseLib.createClient(config.url, config.publishableKey);
 
   const accountToggle = document.querySelector("#accountToggle");
@@ -362,7 +371,6 @@
       await sb.auth.signOut();
       accountLabel.textContent = "Mi cuenta";
       activeCarritoId = null;
-      lastKnownUserId = null;
       mergeCustomerLocal({ isAccountCustomer: false });
       refreshAccountUI();
     });
@@ -395,19 +403,12 @@
   });
   closeAccountBtn.addEventListener("click", () => accountDialog.close());
 
-  // Supabase dispara "SIGNED_IN" no solo al iniciar sesion de verdad, sino
-  // tambien cada vez que revalida el token al volver a esta pestana (por
-  // ejemplo, tras cambiar de pestana o de ventana). Sin este control, el
-  // dialogo de "Mi cuenta" se abria solo cada vez que volvias a la pestana.
-  // Solo lo tratamos como un inicio de sesion nuevo si el usuario cambia.
-  let lastKnownUserId = null;
-
   // Si el cliente ya tiene sesion guardada (visita anterior), refleja su
   // nombre en el boton del header y trae su carrito guardado si el de este
-  // dispositivo esta vacio (sin tener que abrir el dialogo "Mi cuenta").
+  // dispositivo esta vacio -- SIN abrir ni tocar nada mas: navegar la web
+  // nunca debe interrumpirse con un dialogo, tenga cuenta o no.
   sb.auth.getSession().then(({ data: { session } }) => {
     if (!session || !session.user) return;
-    lastKnownUserId = session.user.id;
     sb
       .from("clientes")
       .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, direccion_detalle, dni, tipo_documento, telefono")
@@ -421,14 +422,17 @@
     syncOrRestoreCart(session.user);
   });
 
-  // Cuando vuelve del enlace magico (o realmente cambia de usuario en otra
-  // pestaña), actualiza el dialogo y lo abre automaticamente para que
-  // complete su nombre sin tener que buscar el boton "Mi cuenta".
+  // Supabase dispara "SIGNED_IN" no solo cuando el cliente hace clic en el
+  // enlace magico, sino tambien cada vez que revalida la sesion guardada
+  // (por ejemplo, al cargar la pagina o al volver de otra pestana). Abrir
+  // "Mi cuenta" solo en el PRIMER caso -- se detecta porque la URL trae el
+  // token en el hash (ver "arrivedViaMagicLink" arriba) -- evita que el
+  // dialogo aparezca solo mientras el cliente navega sin pedirlo.
+  let magicLinkHandled = false;
   sb.auth.onAuthStateChange((event, session) => {
-    if (event !== "SIGNED_IN") return;
-    const userId = session && session.user && session.user.id;
-    if (!userId || userId === lastKnownUserId) return;
-    lastKnownUserId = userId;
+    if (event !== "SIGNED_IN" || !arrivedViaMagicLink || magicLinkHandled) return;
+    if (!session || !session.user) return;
+    magicLinkHandled = true;
     refreshAccountUI();
     if (!accountDialog.open) accountDialog.showModal();
     syncOrRestoreCart(session.user);
