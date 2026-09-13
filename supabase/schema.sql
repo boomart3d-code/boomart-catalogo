@@ -59,14 +59,16 @@ comment on table carritos is 'Historial de carritos por cliente. estado se actua
 
 -- ---------------------------------------------------------------------------
 -- Recordatorios de carrito abandonado
--- Registra que aviso ya se envio para no repetirlo. La logica de "cuando
--- enviar" (a los X dias, con o sin descuento) se arma en una fase futura;
--- esta tabla solo deja el rastro de lo que ya se mando.
+-- Registra que aviso ya se envio para no repetirlo. Fase 4: recordatorios
+-- simples (sin descuento) a 1h/24h/48h desde la ultima actividad del
+-- carrito, cada uno solo si el carrito sigue "activo" (no se compro).
+-- codigo_descuento queda reservado para cuando Adrian pida activar una
+-- oferta en el recordatorio de 48h.
 -- ---------------------------------------------------------------------------
 create table if not exists recordatorios_carrito (
   id uuid primary key default gen_random_uuid(),
   carrito_id uuid not null references carritos (id) on delete cascade,
-  tipo text not null check (tipo in ('recordatorio_1', 'recordatorio_7dias', 'oferta_14dias')),
+  tipo text not null check (tipo in ('recordatorio_1h', 'recordatorio_24h', 'recordatorio_48h')),
   codigo_descuento text,
   enviado_en timestamptz not null default now(),
   unique (carrito_id, tipo)
@@ -130,3 +132,9 @@ grant select, insert, update, delete on carritos to authenticated;
 -- clientes nuevos y marcarlos como importados. Igual que con "authenticated"
 -- arriba, el GRANT no es automatico solo porque la tabla se creo por SQL.
 grant select, update on clientes to service_role;
+
+-- La funcion de recordatorio de carrito abandonado (Fase 4) tambien corre
+-- con la service_role key: lee carritos activos + su cliente, y registra
+-- que recordatorio ya se mando.
+grant select on carritos to service_role;
+grant select, insert on recordatorios_carrito to service_role;
