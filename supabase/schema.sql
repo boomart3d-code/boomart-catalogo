@@ -27,6 +27,11 @@ create table if not exists clientes (
   prov_departamento text,
   prov_provincia text,
   prov_distrito text,
+  -- Direccion exacta (calle, numero, referencia), opcional. Se pide en el
+  -- checkout (no es obligatoria: por defecto la direccion exacta se sigue
+  -- coordinando por WhatsApp), pero si el cliente la da queda guardada para
+  -- que Boomart Studio la traiga completa al importar el cliente.
+  direccion_detalle text,
   creado_en timestamptz not null default now(),
   -- Marca cuando Boomart Studio ya importo a este cliente a su base local
   -- (con la service_role key, que ignora RLS). Null = todavia no importado.
