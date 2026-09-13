@@ -80,6 +80,7 @@
   const provProvinceInput = document.querySelector("#provProvince");
   const provDistrictInput = document.querySelector("#provDistrict");
   const addressDetailInput = document.querySelector("#addressDetail");
+  const addressDetailLabel = document.querySelector("#addressDetailLabel");
   const summaryLinesEl = document.querySelector("#summaryLines");
   const summaryTotalEl = document.querySelector("#summaryTotal");
   const summaryAdvanceEl = document.querySelector("#summaryAdvance");
@@ -395,6 +396,13 @@
       });
       destinationFieldsLima.hidden = value !== "lima";
       destinationFieldsProv.hidden = value !== "provincias";
+      if (value === "provincias") {
+        addressDetailLabel.textContent = "Dirección de la agencia Shalom (opcional)";
+        addressDetailInput.placeholder = "Si ya la conoces, así evitamos coordinarla por WhatsApp";
+      } else {
+        addressDetailLabel.textContent = "Dirección exacta (opcional)";
+        addressDetailInput.placeholder = "Calle, número, referencia";
+      }
     });
   });
 
