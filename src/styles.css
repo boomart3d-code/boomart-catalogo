@@ -857,6 +857,21 @@ h2 {
   position: relative;
 }
 
+.account-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  height: 42px;
+  padding: 0 14px;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.account-toggle svg {
+  flex-shrink: 0;
+}
+
 .cart-count {
   position: absolute;
   top: -6px;
@@ -1484,6 +1499,16 @@ h2 {
 
   .brand small {
     max-width: none;
+  }
+
+  .account-label {
+    display: none;
+  }
+
+  .account-toggle {
+    width: 42px;
+    padding: 0;
+    justify-content: center;
   }
 
   .catalog-section {

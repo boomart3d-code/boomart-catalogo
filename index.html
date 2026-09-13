@@ -117,6 +117,13 @@
         <a href="#catalogo">Catálogo</a>
         <a href="#opiniones">Reseñas</a>
         <a href="#personalizado">Pedido a medida</a>
+        <button type="button" class="icon-button account-toggle" id="accountToggle" aria-haspopup="dialog" aria-label="Mi cuenta">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M4.8 19.2c1.4-3.2 4.1-4.8 7.2-4.8s5.8 1.6 7.2 4.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <span class="account-label" id="accountLabel">Mi cuenta</span>
+        </button>
         <button type="button" class="icon-button cart-toggle" id="cartToggle" aria-haspopup="true" aria-controls="cartDrawer" aria-expanded="false" aria-label="Ver carrito">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M3 3h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L20 8H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -470,6 +477,13 @@
       </div>
     </dialog>
 
+    <dialog class="checkout-dialog account-dialog" id="accountDialog" aria-label="Mi cuenta">
+      <div class="checkout-shell">
+        <button class="icon-button close-modal" id="closeAccount" type="button" aria-label="Cerrar">×</button>
+        <div id="accountBody"><!-- Contenido dinamico: lo arma src/account.js segun el estado de sesion --></div>
+      </div>
+    </dialog>
+
     <button type="button" class="cart-float" id="cartFloatToggle" aria-haspopup="true" aria-controls="cartDrawer" aria-label="Ver carrito">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M3 3h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L20 8H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -497,5 +511,12 @@
     <script src="src/reviews.js?v=5"></script>
     <script src="src/reviews-loader.js?v=2"></script>
     <script src="src/custom-order.js?v=1"></script>
+
+    <!-- Cuenta de cliente (Fase 1): SDK de Supabase + config + login. No depende
+         del carrito/checkout ni es requerido por ellos -- si Supabase fallara en
+         cargar, el resto de la web sigue funcionando igual. -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+    <script src="src/supabase-config.js?v=1"></script>
+    <script src="src/account.js?v=2"></script>
   </body>
 </html>
