@@ -18,6 +18,7 @@ create table if not exists clientes (
   apellido text,
   correo text not null unique,
   dni text,
+  tipo_documento text check (tipo_documento in ('dni', 'ce', 'pasaporte')),
   telefono text,
   -- Direccion de envio: mismo formato que ya usa el checkout de la web
   -- (destino "lima" o "provincias" + los campos de esa opcion).

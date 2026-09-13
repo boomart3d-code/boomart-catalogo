@@ -44,7 +44,11 @@
   function saveCustomer(data) {
     if (!customerStorage) return;
     try {
-      customerStorage.setItem(CUSTOMER_STORAGE_KEY, JSON.stringify(data));
+      // Fusiona en vez de reemplazar: account.js guarda aqui mismo datos que
+      // este formulario no conoce (isAccountCustomer, docType, docNumber) --
+      // sobrescribir todo el objeto los borraria sin querer.
+      const existing = loadSavedCustomer() || {};
+      customerStorage.setItem(CUSTOMER_STORAGE_KEY, JSON.stringify({ ...existing, ...data }));
     } catch (err) {
       // almacenamiento no disponible (modo privado, cuota llena, etc.) -- el
       // formulario sigue funcionando, solo no se recuerda para la proxima visita.
@@ -84,6 +88,9 @@
   const paymentDetailEl = document.querySelector("#paymentDetail");
   const confirmWhatsappBtn = document.querySelector("#confirmWhatsapp");
   const reopenWhatsappLink = document.querySelector("#reopenWhatsapp");
+  const documentFieldsEl = document.querySelector("#documentFields");
+  const customerDocTypeInput = document.querySelector("#customerDocType");
+  const customerDocNumberInput = document.querySelector("#customerDocNumber");
 
   const customer = { name: "", destination: null, limaDistrict: "", provDepartment: "", provProvince: "", provDistrict: "" };
   let selectedPaymentMethod = null;
@@ -480,6 +487,18 @@
       btn.setAttribute("aria-pressed", "false");
     });
     paymentDetailEl.innerHTML = "";
+
+    // El documento para boleta es opcional y solo se pide a clientes con
+    // cuenta (account.js marca "isAccountCustomer" en el mismo perfil local
+    // que ya usamos para el nombre/destino).
+    const saved = loadSavedCustomer();
+    if (saved && saved.isAccountCustomer) {
+      documentFieldsEl.hidden = false;
+      customerDocTypeInput.value = saved.docType || "";
+      customerDocNumberInput.value = saved.docNumber || "";
+    } else {
+      documentFieldsEl.hidden = true;
+    }
   }
 
   document.querySelectorAll("[data-payment-method]").forEach((button) => {
@@ -572,6 +591,8 @@
     }, 1800);
   });
 
+  const DOC_TYPE_LABELS = { dni: "DNI", ce: "Carnet de Extranjería", pasaporte: "Pasaporte" };
+
   function buildOrderMessage(state) {
     const methodLabel = ((CHECKOUT.paymentMethods || {})[selectedPaymentMethod] || {}).label || selectedPaymentMethod || "el metodo elegido";
 
@@ -582,6 +603,10 @@
       })
       .join("\n");
 
+    const docType = customerDocTypeInput && customerDocTypeInput.value;
+    const docNumber = customerDocNumberInput && customerDocNumberInput.value.trim();
+    const docLine = docType && docNumber ? [`Documento para boleta: ${DOC_TYPE_LABELS[docType] || docType} ${docNumber}`] : [];
+
     return [
       `Hola, BoomArt. Soy ${customer.name} y quiero realizar este pedido:`,
       "",
@@ -591,6 +616,7 @@
       `Adelanto del 50%: ${money(state.totals.advance)}`,
       `He realizado el adelanto mediante ${methodLabel}.`,
       `Destino: ${destinationLabel()}`,
+      ...docLine,
       "",
       `Ahora les comparto el voucher de mi pago por ${methodLabel}.`
     ].join("\n");
@@ -604,6 +630,15 @@
     const message = buildOrderMessage(state);
     const number = CHECKOUT.whatsappNumber || "";
     const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+
+    if (!documentFieldsEl.hidden) {
+      const docType = customerDocTypeInput.value;
+      const docNumber = customerDocNumberInput.value.trim();
+      if (docType && docNumber) {
+        saveCustomer({ ...(loadSavedCustomer() || {}), docType, docNumber });
+        document.dispatchEvent(new CustomEvent("boomart:customer-document-saved", { detail: { docType, docNumber } }));
+      }
+    }
 
     reopenWhatsappLink.href = url;
     window.open(url, "_blank", "noopener");

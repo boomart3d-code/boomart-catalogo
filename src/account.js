@@ -89,10 +89,13 @@
     }
   }
 
-  // Pasa nombre/apellido y (si ya los tiene) destino/distrito de la cuenta
-  // al checkout, para que no se los vuelva a preguntar.
+  // Pasa nombre/apellido y (si ya los tiene) destino/distrito/documento de
+  // la cuenta al checkout, para que no se los vuelva a preguntar. Tambien
+  // marca "isAccountCustomer" -- el checkout usa esa marca para decidir si
+  // muestra el campo (opcional) de documento para la boleta, que solo se
+  // pide a clientes con cuenta, no a invitados.
   function syncCustomerProfileToCheckout(cliente) {
-    const patch = {};
+    const patch = { isAccountCustomer: true };
     const fullName = [cliente.nombre, cliente.apellido].filter(Boolean).join(" ");
     if (fullName) patch.name = fullName;
     if (cliente.destino) patch.destination = cliente.destino;
@@ -100,6 +103,8 @@
     if (cliente.prov_departamento) patch.provDepartment = cliente.prov_departamento;
     if (cliente.prov_provincia) patch.provProvince = cliente.prov_provincia;
     if (cliente.prov_distrito) patch.provDistrict = cliente.prov_distrito;
+    if (cliente.tipo_documento) patch.docType = cliente.tipo_documento;
+    if (cliente.dni) patch.docNumber = cliente.dni;
     mergeCustomerLocal(patch);
   }
 
@@ -350,6 +355,7 @@
       await sb.auth.signOut();
       accountLabel.textContent = "Mi cuenta";
       activeCarritoId = null;
+      mergeCustomerLocal({ isAccountCustomer: false });
       refreshAccountUI();
     });
   }
@@ -363,7 +369,7 @@
     }
     const { data: cliente } = await sb
       .from("clientes")
-      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, prov_distrito")
+      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, prov_distrito, dni, tipo_documento")
       .eq("id", user.id)
       .maybeSingle();
     if (!cliente || !cliente.nombre) {
@@ -388,7 +394,7 @@
     if (!session || !session.user) return;
     sb
       .from("clientes")
-      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, prov_distrito")
+      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, prov_distrito, dni, tipo_documento")
       .eq("id", session.user.id)
       .maybeSingle()
       .then(({ data }) => {
@@ -435,6 +441,16 @@
         prov_distrito: d.provDistrict || null
       })
       .eq("id", session.user.id);
+  });
+
+  // checkout.js avisa con este evento cuando el cliente (logueado) deja su
+  // documento opcional para la boleta -- se guarda en su cuenta.
+  document.addEventListener("boomart:customer-document-saved", async (event) => {
+    const { data: { session } } = await sb.auth.getSession();
+    if (!session || !session.user) return;
+    const d = event.detail || {};
+    if (!d.docType || !d.docNumber) return;
+    await sb.from("clientes").update({ tipo_documento: d.docType, dni: d.docNumber }).eq("id", session.user.id);
   });
 
   // checkout.js avisa con este evento cuando el pedido ya se mando por
