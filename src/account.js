@@ -297,8 +297,10 @@
     `;
   }
 
+  // Sin opcion "Prefiero no decir": el campo sigue siendo opcional (no se
+  // exige llenar el numero para guardar), pero si se elige un tipo, DNI es
+  // la sugerencia por defecto en vez de dejar una salida vacia en el menu.
   const DOC_TYPE_OPTIONS = [
-    { value: "", label: "Prefiero no decir" },
     { value: "dni", label: "DNI" },
     { value: "ce", label: "Carné de extranjería" },
     { value: "pasaporte", label: "Pasaporte" }
