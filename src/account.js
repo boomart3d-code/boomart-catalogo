@@ -183,9 +183,12 @@
       if (!email) return;
       const submitBtn = form.querySelector("button[type=submit]");
       submitBtn.disabled = true;
+      // Fijo a boomart.pe a proposito (no window.location.origin): asi el
+      // enlace del correo siempre entra al sitio real, sin importar si la
+      // solicitud se hizo desde una copia local de pruebas.
       const { error } = await sb.auth.signInWithOtp({
         email,
-        options: { emailRedirectTo: window.location.origin + window.location.pathname }
+        options: { emailRedirectTo: "https://boomart.pe/" }
       });
       if (error) {
         errorEl.textContent = "No se pudo enviar el enlace. Intenta de nuevo en unos minutos.";
