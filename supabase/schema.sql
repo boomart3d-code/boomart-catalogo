@@ -27,7 +27,10 @@ create table if not exists clientes (
   prov_departamento text,
   prov_provincia text,
   prov_distrito text,
-  creado_en timestamptz not null default now()
+  creado_en timestamptz not null default now(),
+  -- Marca cuando Boomart Studio ya importo a este cliente a su base local
+  -- (con la service_role key, que ignora RLS). Null = todavia no importado.
+  importado_en timestamptz
 );
 
 comment on table clientes is 'Cuentas de cliente registradas en boomart.pe. id = mismo id que auth.users.';
