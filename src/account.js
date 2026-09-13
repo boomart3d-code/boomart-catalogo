@@ -273,71 +273,27 @@
     `;
   }
 
-  function renderNeedsName(user, cliente) {
-    const faltaSoloTelefono = cliente && cliente.nombre && cliente.apellido && !cliente.telefono;
-    accountBody.innerHTML = `
-      <p class="eyebrow">Ya casi · Mi cuenta</p>
-      <h2>${faltaSoloTelefono ? "Nos falta tu teléfono" : "¿Cómo te llamas?"}</h2>
-      <p class="field-hint">Con esto completamos tu registro. Correo: <strong>${user.email}</strong></p>
-      <form id="accountNameForm" novalidate>
-        <label class="field">
-          <span>Nombre</span>
-          <input type="text" id="accountNameInput" autocomplete="given-name" value="${(cliente && cliente.nombre) || ""}" required>
-        </label>
-        <label class="field">
-          <span>Apellido</span>
-          <input type="text" id="accountLastNameInput" autocomplete="family-name" value="${(cliente && cliente.apellido) || ""}" required>
-        </label>
-        <label class="field">
-          <span>Teléfono / WhatsApp</span>
-          <input type="tel" id="accountPhoneInput" autocomplete="tel" placeholder="999 999 999" required>
-        </label>
-        <p class="form-error" id="accountFormError" hidden></p>
-        <button type="submit" class="button primary full">Guardar</button>
-      </form>
-    `;
-    const form = document.querySelector("#accountNameForm");
-    const nameInput = document.querySelector("#accountNameInput");
-    const lastNameInput = document.querySelector("#accountLastNameInput");
-    const phoneInput = document.querySelector("#accountPhoneInput");
-    const errorEl = document.querySelector("#accountFormError");
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      const nombre = nameInput.value.trim();
-      const apellido = lastNameInput.value.trim();
-      const telefono = phoneInput.value.trim();
-      if (!nombre || !apellido || !telefono) return;
-      const submitBtn = form.querySelector("button[type=submit]");
-      submitBtn.disabled = true;
-      const { error } = await sb.from("clientes").upsert({ id: user.id, nombre, apellido, correo: user.email, telefono });
-      if (error) {
-        errorEl.textContent = "No se pudo guardar. Intenta de nuevo.";
-        errorEl.hidden = false;
-        submitBtn.disabled = false;
-        return;
-      }
-      syncOrRestoreCart(user);
-      renderWelcomeAndClose(nombre, apellido);
-    });
-  }
+  const DOC_TYPE_OPTIONS = [
+    { value: "", label: "Prefiero no decir" },
+    { value: "dni", label: "DNI" },
+    { value: "ce", label: "Carné de extranjería" },
+    { value: "pasaporte", label: "Pasaporte" }
+  ];
 
-  // Confirmacion breve tras completar el registro: no lo deja atrapado en el
-  // dialogo -- actualiza el boton del header y lo devuelve solo al catalogo
-  // para que siga comprando.
-  function renderWelcomeAndClose(nombre, apellido) {
-    accountLabel.textContent = nombre;
-    mergeCustomerLocal({ name: [nombre, apellido].filter(Boolean).join(" ") });
-    accountBody.innerHTML = `
-      <p class="eyebrow">Mi cuenta</p>
-      <h2>¡Listo, ${nombre}!</h2>
-      <p class="field-hint">Ya puedes seguir viendo el catálogo.</p>
-    `;
-    setTimeout(() => accountDialog.close(), 1300);
-  }
+  // Panel unico de "Mi cuenta": muestra siempre lo que ya se sabe del
+  // cliente (vacio si nunca lo lleno) y lo deja editar y guardar cambios,
+  // en vez de un formulario de "registro" que reaparecia como si nada
+  // estuviera guardado. Sirve tanto para el primer registro como para
+  // corregir datos despues -- es el mismo panel siempre.
+  function renderAccountPanel(cliente, user, history) {
+    const nombre = (cliente && cliente.nombre) || "";
+    const apellido = (cliente && cliente.apellido) || "";
+    const telefono = (cliente && cliente.telefono) || "";
+    const docType = (cliente && cliente.tipo_documento) || "";
+    const docNumber = (cliente && cliente.dni) || "";
 
-  function renderProfile(cliente, user, history) {
-    const nombreCompleto = [cliente.nombre, cliente.apellido].filter(Boolean).join(" ");
-    accountLabel.textContent = cliente.nombre;
+    if (nombre) accountLabel.textContent = nombre;
+
     const historyHtml = history.length
       ? `
         <div class="account-history">
@@ -356,16 +312,101 @@
         </div>
       `
       : "";
+
     accountBody.innerHTML = `
       <p class="eyebrow">Mi cuenta</p>
-      <h2>Hola, ${nombreCompleto}</h2>
-      <p class="field-hint">${user.email}</p>
+      <h2>Tus datos</h2>
+      <p class="field-hint">Correo: <strong>${user.email}</strong></p>
+      <form id="accountProfileForm" novalidate>
+        <label class="field">
+          <span>Nombre</span>
+          <input type="text" id="accountNameInput" autocomplete="given-name" value="${nombre}" required>
+        </label>
+        <label class="field">
+          <span>Apellido</span>
+          <input type="text" id="accountLastNameInput" autocomplete="family-name" value="${apellido}" required>
+        </label>
+        <label class="field">
+          <span>Teléfono / WhatsApp</span>
+          <input type="tel" id="accountPhoneInput" autocomplete="tel" placeholder="999 999 999" value="${telefono}" required>
+        </label>
+        <div class="document-fields-row">
+          <label class="field">
+            <span>Tipo de documento</span>
+            <select id="accountDocType">
+              ${DOC_TYPE_OPTIONS.map(
+                (opt) => `<option value="${opt.value}"${opt.value === docType ? " selected" : ""}>${opt.label}</option>`
+              ).join("")}
+            </select>
+          </label>
+          <label class="field">
+            <span>Número de documento</span>
+            <input type="text" id="accountDocNumber" value="${docNumber}">
+          </label>
+        </div>
+        <p class="form-error" id="accountFormError" hidden></p>
+        <button type="submit" class="button primary full" id="accountSaveBtn">Guardar cambios</button>
+      </form>
       ${historyHtml}
       <div class="checkout-actions">
-        <button type="button" class="button primary full" id="accountKeepShoppingBtn">Seguir comprando</button>
+        <button type="button" class="button secondary full" id="accountKeepShoppingBtn">Seguir comprando</button>
         <button type="button" class="button secondary full" id="accountSignOutBtn">Cerrar sesión</button>
       </div>
     `;
+
+    const form = document.querySelector("#accountProfileForm");
+    const nameInput = document.querySelector("#accountNameInput");
+    const lastNameInput = document.querySelector("#accountLastNameInput");
+    const phoneInput = document.querySelector("#accountPhoneInput");
+    const docTypeInput = document.querySelector("#accountDocType");
+    const docNumberInput = document.querySelector("#accountDocNumber");
+    const errorEl = document.querySelector("#accountFormError");
+    const saveBtn = document.querySelector("#accountSaveBtn");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const newNombre = nameInput.value.trim();
+      const newApellido = lastNameInput.value.trim();
+      const newTelefono = phoneInput.value.trim();
+      if (!newNombre || !newApellido || !newTelefono) {
+        errorEl.textContent = "Nombre, apellido y teléfono son obligatorios.";
+        errorEl.hidden = false;
+        return;
+      }
+      errorEl.hidden = true;
+      saveBtn.disabled = true;
+      const newDocType = docTypeInput.value;
+      const newDocNumber = docNumberInput.value.trim();
+      const { error } = await sb.from("clientes").upsert({
+        id: user.id,
+        nombre: newNombre,
+        apellido: newApellido,
+        correo: user.email,
+        telefono: newTelefono,
+        tipo_documento: newDocType || null,
+        dni: newDocNumber || null
+      });
+      saveBtn.disabled = false;
+      if (error) {
+        errorEl.textContent = "No se pudo guardar. Intenta de nuevo.";
+        errorEl.hidden = false;
+        return;
+      }
+      accountLabel.textContent = newNombre;
+      mergeCustomerLocal({
+        name: [newNombre, newApellido].filter(Boolean).join(" "),
+        isAccountCustomer: true,
+        docType: newDocType || undefined,
+        docNumber: newDocNumber || undefined
+      });
+      syncOrRestoreCart(user);
+      const original = saveBtn.textContent;
+      saveBtn.textContent = "¡Guardado!";
+      setTimeout(() => {
+        saveBtn.textContent = original;
+      }, 1500);
+    });
+
     document.querySelector("#accountKeepShoppingBtn").addEventListener("click", () => accountDialog.close());
     document.querySelector("#accountSignOutBtn").addEventListener("click", async () => {
       await sb.auth.signOut();
@@ -388,13 +429,9 @@
       .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, direccion_detalle, dni, tipo_documento, telefono")
       .eq("id", user.id)
       .maybeSingle();
-    if (!cliente || !cliente.nombre || !cliente.telefono) {
-      renderNeedsName(user, cliente);
-      return;
-    }
-    syncCustomerProfileToCheckout(cliente);
-    const history = await loadCartHistory(user.id);
-    renderProfile(cliente, user, history);
+    if (cliente && cliente.nombre) syncCustomerProfileToCheckout(cliente);
+    const history = cliente ? await loadCartHistory(user.id) : [];
+    renderAccountPanel(cliente, user, history);
   }
 
   accountToggle.addEventListener("click", () => {
