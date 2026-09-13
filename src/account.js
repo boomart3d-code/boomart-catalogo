@@ -264,19 +264,24 @@
     `;
   }
 
-  function renderNeedsName(user) {
+  function renderNeedsName(user, cliente) {
+    const faltaSoloTelefono = cliente && cliente.nombre && cliente.apellido && !cliente.telefono;
     accountBody.innerHTML = `
       <p class="eyebrow">Ya casi · Mi cuenta</p>
-      <h2>¿Cómo te llamas?</h2>
+      <h2>${faltaSoloTelefono ? "Nos falta tu teléfono" : "¿Cómo te llamas?"}</h2>
       <p class="field-hint">Con esto completamos tu registro. Correo: <strong>${user.email}</strong></p>
       <form id="accountNameForm" novalidate>
         <label class="field">
           <span>Nombre</span>
-          <input type="text" id="accountNameInput" autocomplete="given-name" required>
+          <input type="text" id="accountNameInput" autocomplete="given-name" value="${(cliente && cliente.nombre) || ""}" required>
         </label>
         <label class="field">
           <span>Apellido</span>
-          <input type="text" id="accountLastNameInput" autocomplete="family-name" required>
+          <input type="text" id="accountLastNameInput" autocomplete="family-name" value="${(cliente && cliente.apellido) || ""}" required>
+        </label>
+        <label class="field">
+          <span>Teléfono / WhatsApp</span>
+          <input type="tel" id="accountPhoneInput" autocomplete="tel" placeholder="999 999 999" required>
         </label>
         <p class="form-error" id="accountFormError" hidden></p>
         <button type="submit" class="button primary full">Guardar</button>
@@ -285,15 +290,17 @@
     const form = document.querySelector("#accountNameForm");
     const nameInput = document.querySelector("#accountNameInput");
     const lastNameInput = document.querySelector("#accountLastNameInput");
+    const phoneInput = document.querySelector("#accountPhoneInput");
     const errorEl = document.querySelector("#accountFormError");
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       const nombre = nameInput.value.trim();
       const apellido = lastNameInput.value.trim();
-      if (!nombre || !apellido) return;
+      const telefono = phoneInput.value.trim();
+      if (!nombre || !apellido || !telefono) return;
       const submitBtn = form.querySelector("button[type=submit]");
       submitBtn.disabled = true;
-      const { error } = await sb.from("clientes").upsert({ id: user.id, nombre, apellido, correo: user.email });
+      const { error } = await sb.from("clientes").upsert({ id: user.id, nombre, apellido, correo: user.email, telefono });
       if (error) {
         errorEl.textContent = "No se pudo guardar. Intenta de nuevo.";
         errorEl.hidden = false;
@@ -369,11 +376,11 @@
     }
     const { data: cliente } = await sb
       .from("clientes")
-      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, prov_distrito, dni, tipo_documento")
+      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, prov_distrito, dni, tipo_documento, telefono")
       .eq("id", user.id)
       .maybeSingle();
-    if (!cliente || !cliente.nombre) {
-      renderNeedsName(user);
+    if (!cliente || !cliente.nombre || !cliente.telefono) {
+      renderNeedsName(user, cliente);
       return;
     }
     syncCustomerProfileToCheckout(cliente);
@@ -394,7 +401,7 @@
     if (!session || !session.user) return;
     sb
       .from("clientes")
-      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, prov_distrito, dni, tipo_documento")
+      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, prov_distrito, dni, tipo_documento, telefono")
       .eq("id", session.user.id)
       .maybeSingle()
       .then(({ data }) => {
