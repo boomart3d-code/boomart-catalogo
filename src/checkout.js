@@ -79,6 +79,7 @@
   const provDepartmentInput = document.querySelector("#provDepartment");
   const provProvinceInput = document.querySelector("#provProvince");
   const provDistrictInput = document.querySelector("#provDistrict");
+  const addressDetailInput = document.querySelector("#addressDetail");
   const summaryLinesEl = document.querySelector("#summaryLines");
   const summaryTotalEl = document.querySelector("#summaryTotal");
   const summaryAdvanceEl = document.querySelector("#summaryAdvance");
@@ -92,7 +93,7 @@
   const customerDocTypeInput = document.querySelector("#customerDocType");
   const customerDocNumberInput = document.querySelector("#customerDocNumber");
 
-  const customer = { name: "", destination: null, limaDistrict: "", provDepartment: "", provProvince: "", provDistrict: "" };
+  const customer = { name: "", destination: null, limaDistrict: "", provDepartment: "", provProvince: "", provDistrict: "", addressDetail: "" };
   let selectedPaymentMethod = null;
 
   // ---------- Carrito: badge + panel lateral ----------
@@ -345,6 +346,10 @@
         if (saved.provDistrict && !provDistrictInput.value.trim()) provDistrictInput.value = saved.provDistrict;
       }
     }
+
+    if (saved.addressDetail && !addressDetailInput.value.trim()) {
+      addressDetailInput.value = saved.addressDetail;
+    }
   }
 
   const openCheckout = () => {
@@ -413,6 +418,7 @@
     }
 
     customer.name = name;
+    customer.addressDetail = addressDetailInput.value.trim();
     customerFormError.hidden = true;
     saveCustomer({
       name: customer.name,
@@ -420,7 +426,8 @@
       limaDistrict: customer.limaDistrict,
       provDepartment: customer.provDepartment,
       provProvince: customer.provProvince,
-      provDistrict: customer.provDistrict
+      provDistrict: customer.provDistrict,
+      addressDetail: customer.addressDetail
     });
     // account.js (si el cliente esta logueado) guarda esto tambien en su
     // cuenta, para que no se lo vuelva a preguntar en otro dispositivo.
@@ -431,7 +438,8 @@
           limaDistrict: customer.limaDistrict,
           provDepartment: customer.provDepartment,
           provProvince: customer.provProvince,
-          provDistrict: customer.provDistrict
+          provDistrict: customer.provDistrict,
+          addressDetail: customer.addressDetail
         }
       })
     );
@@ -445,10 +453,11 @@
   }
 
   function destinationLabel() {
-    if (customer.destination === "lima") {
-      return `Lima y Callao — Distrito: ${customer.limaDistrict}`;
-    }
-    return `Provincias — ${customer.provDepartment} / ${customer.provProvince} / ${customer.provDistrict}`;
+    const base =
+      customer.destination === "lima"
+        ? `Lima y Callao — Distrito: ${customer.limaDistrict}`
+        : `Provincias — ${customer.provDepartment} / ${customer.provProvince} / ${customer.provDistrict}`;
+    return customer.addressDetail ? `${base} — ${customer.addressDetail}` : base;
   }
 
   function renderSummaryStep() {

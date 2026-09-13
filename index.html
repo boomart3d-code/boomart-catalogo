@@ -403,7 +403,12 @@
               </label>
             </div>
 
-            <p class="field-hint">La dirección exacta, referencias y agencia Shalom se coordinan por WhatsApp.</p>
+            <label class="field">
+              <span>Dirección exacta (opcional)</span>
+              <input type="text" id="addressDetail" autocomplete="street-address" placeholder="Calle, número, referencia">
+            </label>
+
+            <p class="field-hint">Si prefieres, coordinamos la dirección exacta y la agencia Shalom por WhatsApp después de tu pedido.</p>
             <p class="form-error" id="customerFormError" role="alert" hidden></p>
 
             <div class="checkout-actions">
@@ -525,7 +530,7 @@
     <script src="src/cart.js?v=5"></script>
     <script src="src/products.js?v=5"></script>
     <script src="src/app.js?v=17"></script>
-    <script src="src/checkout.js?v=18"></script>
+    <script src="src/checkout.js?v=19"></script>
     <script src="src/products-loader.js?v=5"></script>
     <script src="src/reviews.js?v=5"></script>
     <script src="src/reviews-loader.js?v=2"></script>
@@ -536,6 +541,6 @@
          cargar, el resto de la web sigue funcionando igual. -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
     <script src="src/supabase-config.js?v=1"></script>
-    <script src="src/account.js?v=8"></script>
+    <script src="src/account.js?v=9"></script>
   </body>
 </html>
