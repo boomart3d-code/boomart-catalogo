@@ -120,3 +120,8 @@ create policy "cliente gestiona sus propios carritos"
 -- ---------------------------------------------------------------------------
 grant select, insert, update on clientes to authenticated;
 grant select, insert, update, delete on carritos to authenticated;
+
+-- Boomart Studio usa la service_role key (ignora RLS por diseno) para leer
+-- clientes nuevos y marcarlos como importados. Igual que con "authenticated"
+-- arriba, el GRANT no es automatico solo porque la tabla se creo por SQL.
+grant select, update on clientes to service_role;
