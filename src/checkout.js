@@ -72,6 +72,9 @@
   const closeCheckoutBtn = document.querySelector("#closeCheckout");
   const customerForm = document.querySelector("#customerForm");
   const customerNameInput = document.querySelector("#customerName");
+  const customerLastNameInput = document.querySelector("#customerLastName");
+  const customerPhoneInput = document.querySelector("#customerPhone");
+  const customerEmailInput = document.querySelector("#customerEmail");
   const customerFormError = document.querySelector("#customerFormError");
   const destinationFieldsLima = document.querySelector('[data-destination-fields="lima"]');
   const destinationFieldsProv = document.querySelector('[data-destination-fields="provincias"]');
@@ -93,7 +96,18 @@
   const customerDocTypeInput = document.querySelector("#customerDocType");
   const customerDocNumberInput = document.querySelector("#customerDocNumber");
 
-  const customer = { name: "", destination: null, limaDistrict: "", provDepartment: "", provProvince: "", addressDetail: "" };
+  const customer = {
+    name: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    destination: null,
+    limaDistrict: "",
+    provDepartment: "",
+    provProvince: "",
+    addressDetail: ""
+  };
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   let selectedPaymentMethod = null;
 
   // ---------- Carrito: badge + panel lateral ----------
@@ -331,6 +345,15 @@
     if (saved.name && !customerNameInput.value.trim()) {
       customerNameInput.value = saved.name;
     }
+    if (saved.lastName && !customerLastNameInput.value.trim()) {
+      customerLastNameInput.value = saved.lastName;
+    }
+    if (saved.phone && !customerPhoneInput.value.trim()) {
+      customerPhoneInput.value = saved.phone;
+    }
+    if (saved.email && !customerEmailInput.value.trim()) {
+      customerEmailInput.value = saved.email;
+    }
 
     const noDestinationSelected = !document.querySelector("[data-destination].is-selected");
     if (noDestinationSelected && (saved.destination === "lima" || saved.destination === "provincias")) {
@@ -407,8 +430,14 @@
   customerForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const name = customerNameInput.value.trim();
+    const lastName = customerLastNameInput.value.trim();
+    const phone = customerPhoneInput.value.trim();
+    const email = customerEmailInput.value.trim();
 
     if (!name) return showFormError("Ingresa tu nombre.");
+    if (!lastName) return showFormError("Ingresa tu apellido.");
+    if (phone.replace(/\D/g, "").length < 6) return showFormError("Ingresa un teléfono válido.");
+    if (!EMAIL_RE.test(email)) return showFormError("Ingresa un correo válido.");
     if (!customer.destination) return showFormError("Elige tu destino: Lima y Callao o Provincias.");
 
     customer.addressDetail = addressDetailInput.value.trim();
@@ -428,9 +457,15 @@
     }
 
     customer.name = name;
+    customer.lastName = lastName;
+    customer.phone = phone;
+    customer.email = email;
     customerFormError.hidden = true;
     saveCustomer({
       name: customer.name,
+      lastName: customer.lastName,
+      phone: customer.phone,
+      email: customer.email,
       destination: customer.destination,
       limaDistrict: customer.limaDistrict,
       provDepartment: customer.provDepartment,
@@ -438,10 +473,14 @@
       addressDetail: customer.addressDetail
     });
     // account.js (si el cliente esta logueado) guarda esto tambien en su
-    // cuenta, para que no se lo vuelva a preguntar en otro dispositivo.
+    // cuenta, para que no se lo vuelva a preguntar en otro dispositivo (menos
+    // el correo: ese queda ligado a su inicio de sesion, no se reescribe aqui).
     document.dispatchEvent(
       new CustomEvent("boomart:customer-destination-saved", {
         detail: {
+          name: customer.name,
+          lastName: customer.lastName,
+          phone: customer.phone,
           destination: customer.destination,
           limaDistrict: customer.limaDistrict,
           provDepartment: customer.provDepartment,
@@ -624,7 +663,7 @@
     const docLine = docType && docNumber ? [`Documento para boleta: ${DOC_TYPE_LABELS[docType] || docType} ${docNumber}`] : [];
 
     return [
-      `Hola, BoomArt. Soy ${customer.name} y quiero realizar este pedido:`,
+      `Hola, BoomArt. Soy ${customer.name} ${customer.lastName} y quiero realizar este pedido:`,
       "",
       itemLines,
       "",
@@ -632,6 +671,8 @@
       `Adelanto del 50%: ${money(state.totals.advance)}`,
       `He realizado el adelanto mediante ${methodLabel}.`,
       `Destino: ${destinationLabel()}`,
+      `Teléfono: ${customer.phone}`,
+      `Correo: ${customer.email}`,
       ...docLine,
       "",
       `Ahora les comparto el voucher de mi pago por ${methodLabel}.`

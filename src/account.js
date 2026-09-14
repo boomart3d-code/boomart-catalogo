@@ -105,8 +105,10 @@
   // pide a clientes con cuenta, no a invitados.
   function syncCustomerProfileToCheckout(cliente) {
     const patch = { isAccountCustomer: true };
-    const fullName = [cliente.nombre, cliente.apellido].filter(Boolean).join(" ");
-    if (fullName) patch.name = fullName;
+    if (cliente.nombre) patch.name = cliente.nombre;
+    if (cliente.apellido) patch.lastName = cliente.apellido;
+    if (cliente.telefono) patch.phone = cliente.telefono;
+    if (cliente.correo) patch.email = cliente.correo;
     if (cliente.destino) patch.destination = cliente.destino;
     if (cliente.lima_distrito) patch.limaDistrict = cliente.lima_distrito;
     if (cliente.prov_departamento) patch.provDepartment = cliente.prov_departamento;
@@ -528,6 +530,9 @@
     await sb
       .from("clientes")
       .update({
+        nombre: d.name || null,
+        apellido: d.lastName || null,
+        telefono: d.phone || null,
         destino: d.destination || null,
         lima_distrito: d.limaDistrict || null,
         prov_departamento: d.provDepartment || null,

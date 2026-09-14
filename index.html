@@ -370,7 +370,22 @@
           <form id="customerForm" novalidate>
             <label class="field">
               <span>Nombre</span>
-              <input type="text" id="customerName" autocomplete="name" required>
+              <input type="text" id="customerName" autocomplete="given-name" required>
+            </label>
+
+            <label class="field">
+              <span>Apellido</span>
+              <input type="text" id="customerLastName" autocomplete="family-name" required>
+            </label>
+
+            <label class="field">
+              <span>Teléfono</span>
+              <input type="tel" id="customerPhone" autocomplete="tel" placeholder="999 999 999" required>
+            </label>
+
+            <label class="field">
+              <span>Correo</span>
+              <input type="email" id="customerEmail" autocomplete="email" placeholder="tucorreo@ejemplo.com" required>
             </label>
 
             <div class="field-group">
