@@ -671,7 +671,6 @@
       `Adelanto del 50%: ${money(state.totals.advance)}`,
       `He realizado el adelanto mediante ${methodLabel}.`,
       `Destino: ${destinationLabel()}`,
-      `Teléfono: ${customer.phone}`,
       `Correo: ${customer.email}`,
       ...docLine,
       "",
