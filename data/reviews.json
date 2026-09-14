@@ -56,5 +56,13 @@
     "date": "2026-09-10",
     "product": "Templo de Géminis",
     "approved": true
+  },
+  {
+    "name": "Ana Paola",
+    "rating": 5,
+    "text": "Gracias al joven Adrián que me atendió muy amablemente. Feliz con mi templo de Aries :)",
+    "date": "2026-09-13",
+    "product": "Templo de Aries",
+    "approved": true
   }
 ]
