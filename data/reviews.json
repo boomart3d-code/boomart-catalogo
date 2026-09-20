@@ -64,5 +64,13 @@
     "date": "2026-09-13",
     "product": "Templo de Aries",
     "approved": true
+  },
+  {
+    "name": "Jhonatan Zapata",
+    "city": "Lima",
+    "rating": 5,
+    "text": "La empresa es completamente seria con su trabajo, totalmente puntual, el acabado del producto es excelente y tal cual las fotos referenciales, completamente recomendado!!!!",
+    "date": "2026-09-20",
+    "approved": true
   }
 ]
