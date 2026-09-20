@@ -10,6 +10,11 @@
   const CHECKOUT = window.BOOMART_CHECKOUT || {};
   const money = (value) => `S/${Number(value || 0).toFixed(2)}`;
 
+  // Mismo criterio que app.js: en pantalla se pide el .webp (mas liviano); el
+  // .jpg original queda intacto para og:image. Ver scripts/optimize-images.mjs.
+  const webpSrc = (src) =>
+    src && src.startsWith("assets/products/") ? src.replace(/\.(jpe?g|png)$/i, ".webp") : src;
+
   // Recuerda nombre y destino del cliente en este mismo navegador/dispositivo
   // (localStorage), para autocompletar el formulario en su proxima visita. No
   // sincroniza entre dispositivos distintos: eso requeriria cuentas de usuario
@@ -115,7 +120,7 @@
   const cartLineMarkup = (line) => `
     <div class="cart-line" data-line-product="${line.productId}" data-line-variant="${line.variantKey || ""}">
       <div class="cart-line-media">
-        ${line.image ? `<img src="${line.image}" alt="${line.name}" loading="lazy">` : ""}
+        ${line.image ? `<img src="${webpSrc(line.image)}" alt="${line.name}" loading="lazy" decoding="async">` : ""}
       </div>
       <div class="cart-line-info">
         <p class="cart-line-name">${line.name}</p>

@@ -42,6 +42,13 @@ const abs = (p) => {
   return `${SITE}/${String(p).replace(/^\/+/, "")}`;
 };
 
+// Los <img> que se VEN en pantalla (galerias, miniaturas, tarjetas) piden el
+// .webp generado por scripts/optimize-images.mjs -- mas liviano. El .jpg
+// original NO se toca: sigue siendo el que usan og:image/twitter:image y el
+// array "image" del JSON-LD de cada producto (WhatsApp/Facebook no leen bien
+// .webp en la vista previa de un link). No confundir ambos usos.
+const toWebp = (p) => String(p || "").replace(/(assets\/products\/[^/?"]+)\.(jpe?g|png)/i, "$1.webp");
+
 const waLink = (name) =>
   `${WHATSAPP}?text=${encodeURIComponent(`Hola BoomArt, quiero consultar por: ${name}`)}`;
 
@@ -153,23 +160,105 @@ function buildRatingLd(reviews) {
   };
 }
 
-// Reescribe la region marcada de index.html con el <script> de aggregateRating.
-async function injectRatingIntoIndex(ratingLd) {
-  const file = path.join(ROOT, "index.html");
+// Reescribe TODO lo que hay entre "<!-- BOOMART:<marker>:START" y
+// "<!-- BOOMART:<marker>:END -->" de un archivo (markers puestos a mano en el
+// HTML fuente). Usado para el <script> de aggregateRating y para el resumen +
+// lista de opiniones pre-renderizados (ver mas abajo). Devuelve false si el
+// archivo no tiene esos markers o si el contenido no cambio.
+async function replaceMarkedBlock(file, marker, blockHtml) {
   const html = await readFile(file, "utf8");
-  const start = "<!-- BOOMART:RATING:START";
-  const end = "<!-- BOOMART:RATING:END -->";
+  const start = `<!-- BOOMART:${marker}:START`;
+  const end = `<!-- BOOMART:${marker}:END -->`;
   const i = html.indexOf(start);
   const j = html.indexOf(end);
   if (i === -1 || j === -1) return false;
   const iEnd = html.indexOf("-->", i) + 3;
-  const block = ratingLd
-    ? `\n    <script type="application/ld+json">${JSON.stringify(ratingLd)}</script>\n    `
-    : "\n    ";
-  const next = html.slice(0, iEnd) + block + html.slice(j);
+  const next = html.slice(0, iEnd) + blockHtml + html.slice(j);
   if (next === html) return false;
   await writeFile(file, next);
   return true;
+}
+
+async function injectRatingIntoIndex(ratingLd) {
+  const block = ratingLd
+    ? `\n    <script type="application/ld+json">${JSON.stringify(ratingLd)}</script>\n    `
+    : "\n    ";
+  return replaceMarkedBlock(path.join(ROOT, "index.html"), "RATING", block);
+}
+
+/* ------------------------------------------------- opiniones pre-renderizadas
+ * Las mismas opiniones aprobadas que ya alimentan el JSON-LD (arriba) se
+ * escriben tambien como HTML de verdad dentro de #reviewsSummary/#reviewsList,
+ * replicando exactamente el markup que dibuja src/reviews.js en el navegador
+ * (mismas clases CSS). Asi un rastreador que no ejecuta JavaScript (o una IA
+ * que solo lee el HTML crudo) ve el texto real de las opiniones, no un
+ * contenedor vacio. src/reviews.js sigue corriendo igual para los visitantes
+ * reales: sobre-escribe este mismo HTML con el mismo resultado (no hay
+ * conflicto, es idempotente).
+ */
+function starRowHtml(rating) {
+  const value = Number(rating) || 0;
+  const full = Math.floor(value);
+  const half = value - full >= 0.3 && value - full < 0.8;
+  let out = "";
+  for (let i = 1; i <= 5; i++) {
+    const cls = i <= full ? " is-on" : i === full + 1 && half ? " is-half" : "";
+    out += `<span class="star${cls}">★</span>`;
+  }
+  return `<span class="stars" aria-hidden="true">${out}</span>`;
+}
+
+function fmtReviewDate(value) {
+  if (!value) return "";
+  const d = new Date(`${value}T00:00:00`);
+  if (Number.isNaN(d.getTime())) return "";
+  return new Intl.DateTimeFormat("es-PE", { year: "numeric", month: "long" }).format(d);
+}
+
+function reviewsSummaryBlock(reviews) {
+  if (!reviews.length) return `\n          <div class="reviews-summary" id="reviewsSummary" hidden></div>\n          `;
+  const avg = reviews.reduce((s, r) => s + Number(r.rating), 0) / reviews.length;
+  const rounded = Math.round(avg * 10) / 10;
+  const inner =
+    `<span class="reviews-score">${esc(rounded.toFixed(1).replace(".", ","))}</span>` +
+    starRowHtml(avg) +
+    `<span class="reviews-count">${reviews.length}${reviews.length === 1 ? " opinion" : " opiniones"}</span>`;
+  return `\n          <div class="reviews-summary" id="reviewsSummary">${inner}</div>\n          `;
+}
+
+function reviewsListBlock(reviews, { titleHtml = "" } = {}) {
+  if (!reviews.length) {
+    return `\n        <div class="reviews-list-wrap" id="reviewsListWrap" hidden>\n          ${titleHtml}<ul class="reviews-list" id="reviewsList"></ul>\n        </div>\n        `;
+  }
+  const sorted = reviews.slice().sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+  const items = sorted
+    .map((r) => {
+      const meta = [r.city, fmtReviewDate(r.date)].filter(Boolean).join(" · ");
+      return (
+        `<li class="review-card">` +
+        `<div class="review-card-head"><strong>${esc(r.name || "Cliente BoomArt")}</strong>${starRowHtml(r.rating)}</div>` +
+        (meta ? `<p class="review-card-meta">${esc(meta)}</p>` : "") +
+        `<p class="review-card-text">${esc(r.text || "")}</p>` +
+        (r.product ? `<p class="review-card-product">Compró: ${esc(r.product)}</p>` : "") +
+        `</li>`
+      );
+    })
+    .join("");
+  return `\n        <div class="reviews-list-wrap" id="reviewsListWrap">\n          ${titleHtml}<ul class="reviews-list" id="reviewsList">${items}</ul>\n        </div>\n        `;
+}
+
+async function injectReviewsBlocks(reviews) {
+  const targets = [
+    { file: path.join(ROOT, "index.html"), titleHtml: "" },
+    { file: path.join(ROOT, "opinion", "index.html"), titleHtml: '<h3 class="reviews-list-title">Opiniones de otros clientes</h3>\n          ' },
+  ];
+  let count = 0;
+  for (const t of targets) {
+    const okSummary = await replaceMarkedBlock(t.file, "REVIEWS_SUMMARY", reviewsSummaryBlock(reviews));
+    const okList = await replaceMarkedBlock(t.file, "REVIEWS_LIST", reviewsListBlock(reviews, { titleHtml: t.titleHtml }));
+    if (okSummary || okList) count += 1;
+  }
+  return count;
 }
 
 function groupByCategory(products) {
@@ -265,7 +354,36 @@ function buildJsonLd(products) {
 }
 
 /* ---------------------------------------------------------------- catalogo.html */
-function buildHtml(products, ratingLd) {
+function reviewsSectionHtml(reviews) {
+  if (!reviews.length) return "";
+  const avg = reviews.reduce((s, r) => s + Number(r.rating), 0) / reviews.length;
+  const rounded = (Math.round(avg * 10) / 10).toFixed(1);
+  const items = reviews
+    .slice()
+    .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")))
+    .map((r) => {
+      const meta = [r.city, r.date].filter(Boolean).join(" · ");
+      return `        <li class="ai-review">
+          <p class="ai-review-head"><strong>${esc(r.name || "Cliente BoomArt")}</strong> &middot; ${esc(String(r.rating))}/5${meta ? ` &middot; ${esc(meta)}` : ""}</p>
+          <p>${esc(r.text || "")}</p>
+          ${r.product ? `<p class="ai-review-product">Compró: ${esc(r.product)}</p>` : ""}
+        </li>`;
+    })
+    .join("\n");
+  return `    <section id="opiniones">
+      <h2>Opiniones de clientes</h2>
+      <p>Calificación promedio ${rounded} / 5 sobre ${reviews.length} ${reviews.length === 1 ? "opinión" : "opiniones"} publicadas.
+         Todas las opiniones se revisan antes de publicarse; puedes dejar la tuya en
+         <a href="${SITE}/opinion/">boomart.pe/opinion</a>.</p>
+      <ul class="ai-reviews">
+${items}
+      </ul>
+    </section>
+
+`;
+}
+
+function buildHtml(products, ratingLd, reviews) {
   const groups = groupByCategory(products);
   const totalFrom = products
     .map((p) => priceInfo(p).from)
@@ -291,7 +409,7 @@ function buildHtml(products, ratingLd) {
             .filter(Boolean)
             .map(
               (img) =>
-                `<img src="${esc(abs(img))}" alt="${esc(p.name)}" width="320" height="320" loading="lazy">`,
+                `<img src="${esc(toWebp(abs(img)))}" alt="${esc(p.name)}" width="320" height="320" loading="lazy" decoding="async">`,
             )
             .join("\n          ");
           return `      <article class="ai-product" id="${esc(p.id)}">
@@ -364,6 +482,10 @@ ${cards}
       .ai-meta, .ai-tags { padding-left: 18px; margin: 8px 0; }
       .ai-tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
       .ai-tags li { background: #f1f1f1; border-radius: 999px; padding: 2px 10px; font-size: .82rem; }
+      .ai-reviews { list-style: none; padding: 0; display: grid; gap: 14px; }
+      .ai-review { border: 1px solid #eee; border-radius: 10px; padding: 12px 14px; }
+      .ai-review-head { margin: 0 0 6px; font-size: .92rem; }
+      .ai-review-product { color: #777; font-size: .85rem; margin: 6px 0 0; }
     </style>
     <script type="application/ld+json">${jsonld}</script>${ratingScript}
   </head>
@@ -405,7 +527,7 @@ ${cards}
 
 ${sections}
 
-      <section id="contacto-final">
+${reviewsSectionHtml(reviews)}      <section id="contacto-final">
         <h2>Como comprar</h2>
         <p>
           Todas las piezas se fabrican a pedido en impresion 3D (PLA+/PETG),
@@ -445,7 +567,27 @@ function slug(s) {
 }
 
 /* ---------------------------------------------------------------- llms.txt */
-function buildLlms(products) {
+function reviewsSummaryMarkdown(reviews) {
+  if (!reviews.length) return "";
+  const avg = reviews.reduce((s, r) => s + Number(r.rating), 0) / reviews.length;
+  const rounded = (Math.round(avg * 10) / 10).toFixed(1);
+  const top = reviews
+    .slice()
+    .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")))
+    .slice(0, 5)
+    .map((r) => `  - "${String(r.text || "").replace(/"/g, "'")}" — ${r.name || "Cliente BoomArt"}${r.date ? `, ${r.date}` : ""}`)
+    .join("\n");
+  return `## Opiniones de clientes
+
+- Calificacion promedio: ${rounded} / 5 sobre ${reviews.length} ${reviews.length === 1 ? "opinion" : "opiniones"} publicadas (revisadas antes de publicarse).
+- Ver todas: ${SITE}/opinion/
+- Ejemplos recientes:
+${top}
+
+`;
+}
+
+function buildLlms(products, reviews = []) {
   const cats = groupByCategory(products)
     .map(([cat, list]) => `- ${cat}: ${list.length} piezas`)
     .join("\n");
@@ -472,7 +614,7 @@ function buildLlms(products) {
 
 ${cats}
 
-## Contacto
+${reviewsSummaryMarkdown(reviews)}## Contacto
 
 - WhatsApp: ${WHATSAPP}
 - Correo: contacto@boomart.pe
@@ -806,7 +948,7 @@ function buildProductPage(p, all, ratingLd) {
   const thumbs = imgs
     .map(
       (img, i) =>
-        `<button type="button" data-src="${esc(`${rel}${String(img).replace(/^\/+/, "")}`)}" aria-current="${i === 0}"><img src="${esc(`${rel}${String(img).replace(/^\/+/, "")}`)}" alt="${esc(p.name)} - vista ${i + 1}" loading="lazy" width="62" height="62"></button>`,
+        `<button type="button" data-src="${esc(toWebp(`${rel}${String(img).replace(/^\/+/, "")}`))}" aria-current="${i === 0}"><img src="${esc(toWebp(`${rel}${String(img).replace(/^\/+/, "")}`))}" alt="${esc(p.name)} - vista ${i + 1}" loading="lazy" decoding="async" width="62" height="62"></button>`,
     )
     .join("\n            ");
 
@@ -820,7 +962,7 @@ function buildProductPage(p, all, ratingLd) {
   const relGrid = related
     .map(
       (r) =>
-        `<a href="../${esc(r.id)}/"><img src="${esc(`${rel}${String((r.gallery && r.gallery[0]) || r.image).replace(/^\/+/, "")}`)}" alt="${esc(r.name)}" loading="lazy" width="180" height="180"><span>${esc(r.name)}</span></a>`,
+        `<a href="../${esc(r.id)}/"><img src="${esc(toWebp(`${rel}${String((r.gallery && r.gallery[0]) || r.image).replace(/^\/+/, "")}`))}" alt="${esc(r.name)}" loading="lazy" decoding="async" width="180" height="180"><span>${esc(r.name)}</span></a>`,
     )
     .join("\n          ");
 
@@ -891,7 +1033,7 @@ function buildProductPage(p, all, ratingLd) {
 
       <div class="pp-top">
         <div class="pp-media">
-          <img class="pp-main-img" id="ppMain" src="${esc(mainImgRel)}" alt="${esc(p.name)} · figura impresa en 3D por BoomArt" width="640" height="640">
+          <img class="pp-main-img" id="ppMain" src="${esc(toWebp(mainImgRel))}" alt="${esc(p.name)} · figura impresa en 3D por BoomArt" width="640" height="640" decoding="async">
           ${imgs.length > 1 ? `<div class="pp-thumbs" id="ppThumbs">\n            ${thumbs}\n          </div>` : ""}
         </div>
         <div class="pp-info">
@@ -1108,7 +1250,7 @@ function buildCategoryPage(cat, list, all, ratingLd) {
             : "Consultar";
       const img = `${rel}${String((p.gallery && p.gallery[0]) || p.image).replace(/^\/+/, "")}`;
       return `        <a class="cat-card" href="${rel}producto/${esc(p.id)}/">
-          <img src="${esc(img)}" alt="${esc(p.name)}" loading="lazy" width="240" height="240">
+          <img src="${esc(toWebp(img))}" alt="${esc(p.name)}" loading="lazy" decoding="async" width="240" height="240">
           <span class="b"><span class="n">${esc(p.name)}</span><span class="p">${esc(pr)}</span></span>
         </a>`;
     })
@@ -1291,15 +1433,20 @@ const ratingLd = buildRatingLd(reviews);
 const [productPageCount, categoryPageCount] = await Promise.all([
   writeProductPages(products, ratingLd),
   writeCategoryPages(products, ratingLd),
-  writeFile(path.join(ROOT, "catalogo.html"), buildHtml(products, ratingLd)),
+  writeFile(path.join(ROOT, "catalogo.html"), buildHtml(products, ratingLd, reviews)),
   writeFile(path.join(ROOT, "catalogo.json"), buildJson(products) + "\n"),
   writeFile(path.join(ROOT, "sitemap.xml"), buildSitemap(products)),
-  writeFile(path.join(ROOT, "llms.txt"), buildLlms(products)),
+  writeFile(path.join(ROOT, "llms.txt"), buildLlms(products, reviews)),
   writeFile(path.join(ROOT, "llms-full.txt"), buildLlmsFull(products)),
   writeFile(path.join(ROOT, "feed-google.xml"), buildGoogleFeed(products)),
   writeFile(path.join(ROOT, "feed-meta.csv"), buildMetaFeed(products)),
-  injectRatingIntoIndex(ratingLd),
 ]);
+
+// Secuencial (no Promise.all): ambas leen y reescriben index.html/opinion,
+// asi que si corrieran en paralelo la segunda podria pisar el cambio de la
+// primera (cada una parte de su propia lectura del archivo).
+const ratingUpdated = await injectRatingIntoIndex(ratingLd);
+const reviewsBlocksUpdated = await injectReviewsBlocks(reviews);
 
 console.log(
   `OK - generado desde ${products.length} productos` +
@@ -1308,5 +1455,6 @@ console.log(
     `  categoria/<slug>/index.html  (${categoryPageCount} paginas)\n` +
     "  sitemap.xml\n  catalogo.html\n  catalogo.json\n  llms.txt\n  llms-full.txt\n" +
     "  feed-google.xml (Google Merchant + Pinterest)\n  feed-meta.csv (Instagram / Facebook)\n" +
-    `  index.html (aggregateRating ${ratingLd ? "actualizado" : "sin cambios: aun sin opiniones"})`,
+    `  index.html (aggregateRating ${ratingUpdated ? "actualizado" : "sin cambios"})\n` +
+    `  index.html + opinion/index.html (opiniones en texto plano ${reviewsBlocksUpdated ? "actualizadas" : "sin cambios"})`,
 );

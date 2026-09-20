@@ -29,6 +29,14 @@ let activeImageIndex = 0;
 
 const formatPrice = (value) => `S/${value}`;
 
+// La tienda muestra .webp (mas liviano); el .jpg original se conserva tal
+// cual para que og:image (WhatsApp/Facebook) siga funcionando -- ver
+// scripts/optimize-images.mjs. Si algun producto todavia no tiene su .webp
+// generado, esto simplemente pediria un archivo que no existe: por eso solo
+// se aplica a assets/products/, donde ya se genero para todas las fotos.
+const webpSrc = (src) =>
+  src && src.startsWith("assets/products/") ? src.replace(/\.(jpe?g|png)$/i, ".webp") : src;
+
 const normalize = (text) =>
   String(text || "")
     .normalize("NFD")
@@ -133,7 +141,7 @@ const placeholder = (product) => `
 
 const productImage = (product, className = "") => {
   if (!product.image) return placeholder(product);
-  return `<img class="${className}" src="${product.image}" alt="${product.name}" loading="lazy">`;
+  return `<img class="${className}" src="${webpSrc(product.image)}" alt="${product.name}" loading="lazy" decoding="async">`;
 };
 
 const TEMPLE_BOX_LABELS = { temple: "Templo", pandora: "Pandora Box + pedestal", combo: "Combo" };
@@ -279,11 +287,11 @@ const renderModalImage = () => {
   const gallery = activeProduct.gallery.length ? activeProduct.gallery : [activeProduct.image].filter(Boolean);
   const current = gallery[activeImageIndex];
   modalImageWrap.innerHTML = current
-    ? `<img src="${current}" alt="${activeProduct.name} imagen ${activeImageIndex + 1}">`
+    ? `<img src="${webpSrc(current)}" alt="${activeProduct.name} imagen ${activeImageIndex + 1}" decoding="async">`
     : placeholder(activeProduct);
 
   thumbRow.innerHTML = gallery
-    .map((image, index) => `<button class="${index === activeImageIndex ? "active" : ""}" type="button" data-thumb="${index}"><img src="${image}" alt=""></button>`)
+    .map((image, index) => `<button class="${index === activeImageIndex ? "active" : ""}" type="button" data-thumb="${index}"><img src="${webpSrc(image)}" alt="" loading="lazy" decoding="async"></button>`)
     .join("");
 
   const hasMultiple = gallery.length > 1;
