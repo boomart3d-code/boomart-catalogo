@@ -66,6 +66,12 @@ function campoPublico(row: Record<string, unknown>) {
     productos: row.productos ?? [],
     metodo_envio: row.metodo_envio,
     actualizado_en: row.actualizado_en,
+    // A pedido explicito de Adrian (2026-09-23): nombre del cliente y
+    // direccion de envio (o agencia Shalom) SI se muestran. DNI, correo,
+    // telefono y dinero (abonos/saldos) siguen sin exponerse -- Studio
+    // nunca los manda en el payload de "crear"/"actualizar_etapa".
+    nombre_cliente: row.nombre_cliente ?? "",
+    direccion_envio: row.direccion_envio ?? "",
   };
 }
 
@@ -100,6 +106,8 @@ async function handleCrear(body: Record<string, unknown>) {
     etapa: body.etapa || "tomado",
     productos: body.productos || [],
     metodo_envio: body.metodo_envio || "local",
+    nombre_cliente: body.nombre_cliente || "",
+    direccion_envio: body.direccion_envio || "",
     activo: true,
   }).select().single();
   if (error) return json({ error: error.message }, 500);
@@ -117,6 +125,8 @@ async function handleActualizarEtapa(body: Record<string, unknown>) {
   const { error } = await sb.from(TABLE).update({
     etapa,
     productos: body.productos ?? existente.productos,
+    nombre_cliente: body.nombre_cliente ?? existente.nombre_cliente,
+    direccion_envio: body.direccion_envio ?? existente.direccion_envio,
     actualizado_en: new Date().toISOString(),
   }).eq("id", existente.id);
   if (error) return json({ error: error.message }, 500);

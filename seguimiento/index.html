@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
     <title>Seguimiento de tu pedido | BoomArt</title>
-    <meta name="description" content="Consulta el avance de tu pedido BoomArt: fabricación, postproducción, pintado, empaquetado y envío.">
+    <meta name="description" content="Consulta el avance de tu pedido de BoomArt aquí.">
     <link rel="icon" type="image/svg+xml" href="../assets/boomart-logo.svg">
+
+    <!-- Vista previa al compartir el enlace (WhatsApp, etc.) -- a proposito
+         corta y sin listar las etapas, tal como pidio Adrian. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BoomArt">
+    <meta property="og:title" content="Seguimiento de tu pedido | BoomArt">
+    <meta property="og:description" content="Consulta el avance de tu pedido de BoomArt aquí.">
+    <meta property="og:image" content="https://boomart.pe/assets/boomart-og.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,10 +53,59 @@
         margin: 6px 0 4px;
         line-height: 1.2;
       }
+      .tracker-saludo {
+        color: var(--paper);
+        font-size: 15px;
+        margin: 0 0 2px;
+      }
       .tracker-updated {
         color: var(--muted);
         font-size: 14px;
         margin: 0 0 24px;
+      }
+      .tracker-direccion {
+        margin-top: 24px;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+      }
+      .tracker-direccion h2 {
+        font-size: 16px;
+        margin: 0 0 8px;
+      }
+      .tracker-direccion p {
+        color: var(--paper);
+        font-size: 14px;
+        margin: 0;
+        white-space: pre-line;
+      }
+      .tracker-products__item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .tracker-products__item:last-child {
+        border-bottom: none;
+      }
+      .tracker-products__img {
+        width: 56px;
+        height: 56px;
+        border-radius: 8px;
+        object-fit: cover;
+        flex: 0 0 auto;
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .tracker-products__info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+      }
+      .tracker-products__nombre {
+        font-size: 14px;
+        color: white;
+        font-weight: 600;
       }
       .tracker-steps {
         list-style: none;
@@ -65,8 +122,8 @@
       .tracker-step::before {
         content: "";
         position: absolute;
-        left: 7px;
-        top: 22px;
+        left: 14px;
+        top: 30px;
         bottom: -2px;
         width: 2px;
         background: var(--line);
@@ -76,17 +133,25 @@
       }
       .tracker-step__dot {
         flex: 0 0 auto;
-        width: 16px;
-        height: 16px;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
         border: 2px solid var(--line);
         background: var(--black);
-        margin-top: 2px;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        justify-content: center;
         z-index: 1;
       }
+      .tracker-step__dot svg {
+        width: 16px;
+        height: 16px;
+      }
       .tracker-step.is-done .tracker-step__dot {
-        background: var(--red);
-        border-color: var(--red);
+        background: #1f8a3b;
+        border-color: #1f8a3b;
+        color: white;
       }
       .tracker-step.is-done::before {
         background: var(--red);
@@ -94,6 +159,7 @@
       .tracker-step.is-current .tracker-step__dot {
         background: var(--black);
         border-color: var(--red);
+        color: var(--red);
         box-shadow: 0 0 0 4px rgba(225, 19, 47, 0.25);
       }
       .tracker-step__label {
@@ -139,20 +205,9 @@
         flex-direction: column;
         gap: 8px;
       }
-      .tracker-products li {
-        display: flex;
-        justify-content: space-between;
-        gap: 12px;
-        font-size: 14px;
-        padding: 8px 0;
-        border-bottom: 1px solid var(--line);
-      }
-      .tracker-products li:last-child {
-        border-bottom: none;
-      }
       .tracker-products__etapa {
         color: var(--muted);
-        text-align: right;
+        font-size: 13px;
       }
     </style>
   </head>
@@ -182,6 +237,7 @@
 
         <div id="trackerContent" class="tracker-card" hidden>
           <p class="eyebrow">Seguimiento de tu pedido</p>
+          <p id="trackerSaludo" class="tracker-saludo" hidden></p>
           <h1 id="trackerHeadline">—</h1>
           <p id="trackerUpdated" class="tracker-updated"></p>
 
@@ -191,8 +247,13 @@
             Tu pedido ya salió por Shalom rumbo a tu agencia. El seguimiento del transporte y la clave de recojo te los compartimos directo por WhatsApp.
           </div>
 
+          <div id="trackerDireccion" class="tracker-direccion" hidden>
+            <h2>Envío</h2>
+            <p id="trackerDireccionTexto"></p>
+          </div>
+
           <div id="trackerProducts" class="tracker-products" hidden>
-            <h2>Detalle por producto</h2>
+            <h2>Tu pedido</h2>
             <ul id="trackerProductsList"></ul>
           </div>
         </div>

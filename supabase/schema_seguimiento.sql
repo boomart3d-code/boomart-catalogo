@@ -25,6 +25,12 @@ create table if not exists seguimiento_pedidos (
   -- etapas distintas. Vacio si el pedido es de un solo producto.
   productos jsonb not null default '[]'::jsonb,
   metodo_envio text not null check (metodo_envio in ('local', 'recojo', 'shalom')),
+  -- A pedido explicito de Adrian (2026-09-23): nombre del cliente y
+  -- direccion de envio (o agencia Shalom, ya resuelta por Studio) SI se
+  -- muestran en la pagina publica. DNI, correo, telefono y dinero
+  -- (abonos/saldos) siguen sin guardarse aca -- Studio nunca los manda.
+  nombre_cliente text not null default '',
+  direccion_envio text not null default '',
   activo boolean not null default true,
   creado_en timestamptz not null default now(),
   actualizado_en timestamptz not null default now()
