@@ -61,6 +61,10 @@
   const direccionTextoEl = document.querySelector("#trackerDireccionTexto");
   const productsWrapEl = document.querySelector("#trackerProducts");
   const productsListEl = document.querySelector("#trackerProductsList");
+  const pagoWrapEl = document.querySelector("#trackerPago");
+  const pagoTotalEl = document.querySelector("#trackerPagoTotal");
+  const pagoAbonadoEl = document.querySelector("#trackerPagoAbonado");
+  const pagoPendienteEl = document.querySelector("#trackerPagoPendiente");
 
   function showNotFound() {
     loadingEl.hidden = true;
@@ -76,6 +80,10 @@
     } catch (err) {
       return "";
     }
+  }
+
+  function money(value) {
+    return `S/ ${Number(value || 0).toFixed(2)}`;
   }
 
   function renderSteps(metodo, etapaActual, pintadoAplica) {
@@ -186,6 +194,16 @@
     renderSteps(data.metodo_envio, data.etapa, data.pintado_aplica !== false);
     renderProducts(data.productos);
     shalomNoteEl.hidden = data.etapa !== "enviado_shalom";
+
+    const precioTotal = Number(data.precio_total || 0);
+    if (precioTotal > 0) {
+      pagoTotalEl.textContent = money(data.precio_total);
+      pagoAbonadoEl.textContent = money(data.precio_abonado);
+      pagoPendienteEl.textContent = money(data.precio_pendiente);
+      pagoWrapEl.hidden = false;
+    } else {
+      pagoWrapEl.hidden = true;
+    }
 
     const direccionEnvio = (data.direccion_envio || "").trim();
     direccionTextoEl.textContent = direccionEnvio;

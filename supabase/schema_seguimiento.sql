@@ -35,6 +35,13 @@ create table if not exists seguimiento_pedidos (
   -- lleva pintura (marcado en Taller), la pagina publica oculta el paso "En
   -- pintado" por completo en vez de mostrar un texto confuso.
   pintado_aplica boolean not null default true,
+  -- A pedido explicito de Adrian (2026-09-23): precio del pedido, lo ya
+  -- abonado y el saldo pendiente SI se muestran -- el considera que no es
+  -- informacion sensible y sirve de recordatorio claro al cliente. Nunca
+  -- incluye medio de pago ni ningun otro dato de la transaccion.
+  precio_total numeric not null default 0,
+  precio_abonado numeric not null default 0,
+  precio_pendiente numeric not null default 0,
   activo boolean not null default true,
   creado_en timestamptz not null default now(),
   actualizado_en timestamptz not null default now()

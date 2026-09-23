@@ -76,6 +76,12 @@ function campoPublico(row: Record<string, unknown>) {
     // pedido lleva pintura, el frontend oculta el paso "En pintado" del
     // todo en vez de un texto confuso ("solo si tu pieza lleva pintado").
     pintado_aplica: row.pintado_aplica ?? true,
+    // A pedido explicito de Adrian (2026-09-23): precio, abonado y
+    // pendiente SI se muestran -- el los considera no sensibles y sirven de
+    // recordatorio de saldo al cliente.
+    precio_total: row.precio_total ?? 0,
+    precio_abonado: row.precio_abonado ?? 0,
+    precio_pendiente: row.precio_pendiente ?? 0,
   };
 }
 
@@ -113,6 +119,9 @@ async function handleCrear(body: Record<string, unknown>) {
     nombre_cliente: body.nombre_cliente || "",
     direccion_envio: body.direccion_envio || "",
     pintado_aplica: body.pintado_aplica ?? true,
+    precio_total: body.precio_total ?? 0,
+    precio_abonado: body.precio_abonado ?? 0,
+    precio_pendiente: body.precio_pendiente ?? 0,
     activo: true,
   }).select().single();
   if (error) return json({ error: error.message }, 500);
@@ -133,6 +142,9 @@ async function handleActualizarEtapa(body: Record<string, unknown>) {
     nombre_cliente: body.nombre_cliente ?? existente.nombre_cliente,
     direccion_envio: body.direccion_envio ?? existente.direccion_envio,
     pintado_aplica: body.pintado_aplica ?? existente.pintado_aplica,
+    precio_total: body.precio_total ?? existente.precio_total,
+    precio_abonado: body.precio_abonado ?? existente.precio_abonado,
+    precio_pendiente: body.precio_pendiente ?? existente.precio_pendiente,
     actualizado_en: new Date().toISOString(),
   }).eq("id", existente.id);
   if (error) return json({ error: error.message }, 500);
