@@ -24,6 +24,15 @@
     <style>
       /* Solo para esta pagina -- mismo criterio que nosotros.html (CSS
          puntual inline en vez de agrandar el styles.css compartido). */
+      /* .site-header es "sticky" en styles.css pensando en el "quick-nav"
+         que llevan las paginas del catalogo (esta pagina no lo tiene) -- en
+         escritorio quedaba flotando encima del contenido al hacer scroll,
+         tapando la parte de arriba de la tarjeta (reportado por Adrian,
+         2026-09-24; en celular no pasaba porque ese mismo archivo ya vuelve
+         "static" el header en pantallas chicas). Estatico siempre aca. */
+      .site-header {
+        position: static;
+      }
       .tracker-wrap {
         max-width: 640px;
         margin: 0 auto;
