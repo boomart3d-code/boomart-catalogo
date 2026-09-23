@@ -72,6 +72,10 @@ function campoPublico(row: Record<string, unknown>) {
     // nunca los manda en el payload de "crear"/"actualizar_etapa".
     nombre_cliente: row.nombre_cliente ?? "",
     direccion_envio: row.direccion_envio ?? "",
+    // A pedido explicito de Adrian (2026-09-23): si ninguna linea del
+    // pedido lleva pintura, el frontend oculta el paso "En pintado" del
+    // todo en vez de un texto confuso ("solo si tu pieza lleva pintado").
+    pintado_aplica: row.pintado_aplica ?? true,
   };
 }
 
@@ -108,6 +112,7 @@ async function handleCrear(body: Record<string, unknown>) {
     metodo_envio: body.metodo_envio || "local",
     nombre_cliente: body.nombre_cliente || "",
     direccion_envio: body.direccion_envio || "",
+    pintado_aplica: body.pintado_aplica ?? true,
     activo: true,
   }).select().single();
   if (error) return json({ error: error.message }, 500);
@@ -127,6 +132,7 @@ async function handleActualizarEtapa(body: Record<string, unknown>) {
     productos: body.productos ?? existente.productos,
     nombre_cliente: body.nombre_cliente ?? existente.nombre_cliente,
     direccion_envio: body.direccion_envio ?? existente.direccion_envio,
+    pintado_aplica: body.pintado_aplica ?? existente.pintado_aplica,
     actualizado_en: new Date().toISOString(),
   }).eq("id", existente.id);
   if (error) return json({ error: error.message }, 500);

@@ -63,6 +63,18 @@
         font-size: 14px;
         margin: 0 0 24px;
       }
+      .tracker-intro {
+        color: var(--paper);
+        font-size: 15px;
+        margin: 0 0 14px;
+      }
+      .tracker-scroll-hint {
+        text-align: center;
+        color: var(--muted);
+        font-size: 20px;
+        line-height: 1;
+        margin: 2px 0 22px;
+      }
       .tracker-direccion {
         margin-top: 24px;
         padding-top: 20px;
@@ -173,13 +185,6 @@
       .tracker-step.is-done .tracker-step__label {
         color: var(--paper);
       }
-      .tracker-step__label small {
-        display: block;
-        color: var(--muted);
-        font-weight: 400;
-        font-size: 12px;
-        margin-top: 2px;
-      }
       .tracker-note {
         margin-top: 8px;
         padding: 14px 16px;
@@ -189,13 +194,7 @@
         font-size: 14px;
       }
       .tracker-products {
-        margin-top: 24px;
-        padding-top: 20px;
-        border-top: 1px solid var(--line);
-      }
-      .tracker-products h2 {
-        font-size: 16px;
-        margin: 0 0 12px;
+        margin: 0 0 4px;
       }
       .tracker-products ul {
         list-style: none;
@@ -238,6 +237,14 @@
         <div id="trackerContent" class="tracker-card" hidden>
           <p class="eyebrow">Seguimiento de tu pedido</p>
           <p id="trackerSaludo" class="tracker-saludo" hidden></p>
+          <p class="tracker-intro">Aquí te mostramos en qué estado se encuentra tu pedido:</p>
+
+          <div id="trackerProducts" class="tracker-products" hidden>
+            <ul id="trackerProductsList"></ul>
+          </div>
+
+          <div class="tracker-scroll-hint" aria-hidden="true">↓</div>
+
           <h1 id="trackerHeadline">—</h1>
           <p id="trackerUpdated" class="tracker-updated"></p>
 
@@ -250,11 +257,6 @@
           <div id="trackerDireccion" class="tracker-direccion" hidden>
             <h2>Envío</h2>
             <p id="trackerDireccionTexto"></p>
-          </div>
-
-          <div id="trackerProducts" class="tracker-products" hidden>
-            <h2>Tu pedido</h2>
-            <ul id="trackerProductsList"></ul>
           </div>
         </div>
       </section>

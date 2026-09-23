@@ -78,17 +78,19 @@
     }
   }
 
-  function renderSteps(metodo, etapaActual) {
-    const steps = STEPS_BY_METODO[metodo] || STEPS_BY_METODO.local;
+  function renderSteps(metodo, etapaActual, pintadoAplica) {
+    let steps = STEPS_BY_METODO[metodo] || STEPS_BY_METODO.local;
+    // Si ninguna pieza del pedido lleva pintura, el paso "En pintado" se
+    // omite del todo en vez de mostrar un texto de excepcion confuso.
+    if (pintadoAplica === false) steps = steps.filter((code) => code !== "pintado");
     const currentIndex = steps.indexOf(etapaActual);
     stepsEl.innerHTML = "";
     steps.forEach((code, index) => {
       const li = document.createElement("li");
       li.className = "tracker-step";
-      if (currentIndex >= 0 && index < currentIndex) li.classList.add("is-done");
-      if (index === currentIndex) li.classList.add("is-current");
-
       const done = currentIndex >= 0 && index < currentIndex;
+      if (done) li.classList.add("is-done");
+      if (index === currentIndex) li.classList.add("is-current");
 
       const dot = document.createElement("span");
       dot.className = "tracker-step__dot";
@@ -98,11 +100,6 @@
       const label = document.createElement("span");
       label.className = "tracker-step__label";
       label.textContent = ETAPAS[code] || code;
-      if (code === "pintado") {
-        const hint = document.createElement("small");
-        hint.textContent = "Solo si tu pieza lleva pintado.";
-        label.appendChild(hint);
-      }
 
       li.appendChild(dot);
       li.appendChild(label);
@@ -186,7 +183,7 @@
     updatedEl.textContent = data.actualizado_en
       ? `Última actualización: ${formatUpdated(data.actualizado_en)}`
       : "";
-    renderSteps(data.metodo_envio, data.etapa);
+    renderSteps(data.metodo_envio, data.etapa, data.pintado_aplica !== false);
     renderProducts(data.productos);
     shalomNoteEl.hidden = data.etapa !== "enviado_shalom";
 

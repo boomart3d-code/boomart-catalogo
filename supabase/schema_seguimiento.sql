@@ -31,6 +31,10 @@ create table if not exists seguimiento_pedidos (
   -- (abonos/saldos) siguen sin guardarse aca -- Studio nunca los manda.
   nombre_cliente text not null default '',
   direccion_envio text not null default '',
+  -- A pedido explicito de Adrian (2026-09-23): si ninguna linea del pedido
+  -- lleva pintura (marcado en Taller), la pagina publica oculta el paso "En
+  -- pintado" por completo en vez de mostrar un texto confuso.
+  pintado_aplica boolean not null default true,
   activo boolean not null default true,
   creado_en timestamptz not null default now(),
   actualizado_en timestamptz not null default now()
