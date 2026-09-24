@@ -183,9 +183,12 @@
       return;
     }
 
+    // Solo el nombre de pila en el saludo -- el nombre completo se ve
+    // formal/impersonal aqui, a pedido explicito de Adrian (2026-09-24).
     const nombreCliente = (data.nombre_cliente || "").trim();
-    saludoEl.textContent = nombreCliente ? `Hola ${nombreCliente},` : "";
-    saludoEl.hidden = !nombreCliente;
+    const primerNombre = nombreCliente.split(/\s+/)[0] || "";
+    saludoEl.textContent = primerNombre ? `Hola ${primerNombre},` : "";
+    saludoEl.hidden = !primerNombre;
 
     headlineEl.textContent = ETAPAS[data.etapa] || "Tu pedido está en proceso";
     updatedEl.textContent = data.actualizado_en
