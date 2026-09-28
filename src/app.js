@@ -86,16 +86,33 @@ const shareText = (product) => {
   return `${product.name}${price ? ` — ${price}` : ""}`;
 };
 
+// En escritorio copiamos directamente: el menu de Windows no garantiza que
+// su opcion "Copiar enlace" escriba en el portapapeles. En tactil mantenemos
+// el menu nativo para elegir una app de destino.
+const useNativeShare = () =>
+  typeof navigator.share === "function" &&
+  window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+
+const shareButtonLabel = () => useNativeShare() ? "Compartir" : "Copiar enlace";
+
+if (shareProductBtn) {
+  const label = [...shareProductBtn.childNodes].find((node) =>
+    node.nodeType === 3 && node.textContent.trim());
+  if (label) label.textContent = ` ${shareButtonLabel()} `;
+  shareProductBtn.setAttribute("aria-label", `${shareButtonLabel()} de este producto`);
+}
+
 const shareProduct = async (product) => {
   const url = productPageUrl(product.id);
-  if (navigator.share) {
+  if (useNativeShare()) {
     try {
-      await navigator.share({ title: product.name, text: `${shareText(product)}\n${url}`, url });
+      await navigator.share({ title: product.name, text: shareText(product), url });
       if (window.gtag) gtag("event", "share", { method: "web_share", item_id: product.id });
+      return "shared";
     } catch (err) {
-      /* el usuario cerro el menu de compartir: no es un error */
+      if (err.name === "AbortError") return "cancelled";
+      // Si el navegador no permite compartir, intentar la copia directa.
     }
-    return "shared";
   }
   if (await copyText(url)) {
     if (window.gtag) gtag("event", "share", { method: "copy", item_id: product.id });
@@ -111,19 +128,30 @@ const copyText = async (text) => {
     await navigator.clipboard.writeText(text);
     return true;
   } catch (err) {
+    const previousFocus = document.activeElement;
+    const helper = document.createElement("textarea");
     try {
-      const helper = document.createElement("textarea");
       helper.value = text;
       helper.setAttribute("readonly", "");
-      helper.style.position = "absolute";
-      helper.style.left = "-9999px";
-      document.body.appendChild(helper);
+      helper.style.position = "fixed";
+      helper.style.top = "0";
+      helper.style.left = "0";
+      helper.style.width = "1px";
+      helper.style.height = "1px";
+      helper.style.opacity = "0";
+      // Un dialogo modal vuelve inerte el body: el campo temporal debe estar
+      // dentro del dialogo para que realmente pueda recibir foco y seleccion.
+      const host = previousFocus?.closest("dialog[open]") || document.body;
+      host.appendChild(helper);
+      helper.focus({ preventScroll: true });
       helper.select();
-      const ok = document.execCommand("copy");
-      document.body.removeChild(helper);
-      return ok;
+      helper.setSelectionRange(0, text.length);
+      return document.activeElement === helper && document.execCommand("copy");
     } catch (err2) {
       return false;
+    } finally {
+      helper.remove();
+      if (previousFocus?.isConnected) previousFocus.focus({ preventScroll: true });
     }
   }
 };
@@ -221,9 +249,9 @@ const productCard = (product) => `
       ${addToCartMarkup(product)}
       <div class="card-actions">
         <button class="button dark full" type="button" data-open="${product.id}">Ver producto</button>
-        <button class="button ghost full card-share-btn" type="button" data-share="${product.id}" aria-label="Compartir ${product.name}">
+        <button class="button ghost full card-share-btn" type="button" data-share="${product.id}" aria-label="${shareButtonLabel()} de ${product.name}">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 15V3m0 0L8 7m4-4 4 4M4 13v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Compartir
+          ${shareButtonLabel()}
         </button>
       </div>
     </div>
