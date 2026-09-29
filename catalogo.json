@@ -3,7 +3,7 @@
   "url": "https://boomart.pe/",
   "description": "Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao, Peru. Envios a todo el pais.",
   "currency": "PEN",
-  "updated": "2026-09-20",
+  "updated": "2026-09-29",
   "contact": {
     "whatsapp": "https://wa.me/51925666542",
     "email": "contacto@boomart.pe",
@@ -294,7 +294,7 @@
         "Templo",
         "Combo"
       ],
-      "description": "La Casa de Acuario del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).",
+      "description": "La Casa de Acuario del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco). El templo mide 21 cm de alto.",
       "material": "PLA",
       "availability": "A pedido",
       "priceCurrency": "PEN",
@@ -307,7 +307,8 @@
       "image": "https://boomart.pe/assets/products/templo-acuario-hero.jpg",
       "gallery": [
         "https://boomart.pe/assets/products/templo-acuario-hero.jpg",
-        "https://boomart.pe/assets/products/templo-acuario-pandora.jpg"
+        "https://boomart.pe/assets/products/templo-acuario-pandora.jpg",
+        "https://boomart.pe/assets/products/templo-acuario-tamano-real.jpg"
       ],
       "url": "https://boomart.pe/producto/templo-acuario/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Acuario"

@@ -5,7 +5,7 @@ Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion ~48 horas uti
 la validacion del adelanto (50%). Pedidos por WhatsApp: https://wa.me/51925666542
 
 Total de piezas: 67
-Actualizado: 2026-09-20
+Actualizado: 2026-09-29
 Fuente estructurada: https://boomart.pe/catalogo.json
 
 ---
@@ -142,7 +142,7 @@ La Casa de Capricornio del Santuario de Athena, en réplica decorativa para tu c
 - Imagen: https://boomart.pe/assets/products/templo-acuario-hero.jpg
 - Ficha: https://boomart.pe/producto/templo-acuario/
 
-La Casa de Acuario del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco).
+La Casa de Acuario del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco). El templo mide 21 cm de alto.
 
 ### Templo de Piscis
 

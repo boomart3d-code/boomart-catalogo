@@ -285,9 +285,10 @@
     "image": "assets/products/templo-acuario-hero.jpg",
     "gallery": [
       "assets/products/templo-acuario-hero.jpg",
-      "assets/products/templo-acuario-pandora.jpg"
+      "assets/products/templo-acuario-pandora.jpg",
+      "assets/products/templo-acuario-tamano-real.jpg"
     ],
-    "description": "La Casa de Acuario del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco)."
+    "description": "La Casa de Acuario del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco). El templo mide 21 cm de alto."
   },
   {
     "id": "templo-piscis",

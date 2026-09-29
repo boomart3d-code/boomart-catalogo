@@ -3,7 +3,7 @@
   <channel>
     <title>BoomArt - Catalogo de productos</title>
     <link>https://boomart.pe/</link>
-    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-09-20.</description>
+    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-09-29.</description>
     <item>
       <g:id>templo-aries</g:id>
       <g:title>Templo de Aries</g:title>
@@ -161,10 +161,11 @@
     <item>
       <g:id>templo-acuario</g:id>
       <g:title>Templo de Acuario</g:title>
-      <g:description>La Casa de Acuario del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco). Fabricado a pedido en impresion 3D (PLA), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
+      <g:description>La Casa de Acuario del Santuario de Athena, en réplica decorativa para tu colección de Saint Seiya (Caballeros del Zodiaco). El templo mide 21 cm de alto. Fabricado a pedido en impresion 3D (PLA), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
       <g:link>https://boomart.pe/producto/templo-acuario/</g:link>
       <g:image_link>https://boomart.pe/assets/products/templo-acuario-hero.jpg</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/templo-acuario-pandora.jpg</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/templo-acuario-tamano-real.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>100.00 PEN</g:price>
       <g:condition>new</g:condition>
