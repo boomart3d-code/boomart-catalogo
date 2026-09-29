@@ -233,27 +233,34 @@ const priceMarkup = (product) => {
   `;
 };
 
+// Tarjeta de la grilla (pedido de Adrian, 2026-09-29): solo foto, nombre y
+// precio -- para que entren mas productos de un vistazo. Descripcion,
+// categoria, selector de opciones (Templo/Pandora/Combo), cantidad y
+// "Agregar al carrito" quedan para la ficha del producto (ver openProduct()
+// y modalPricing mas abajo, que ya reusan priceMarkup()/addToCartMarkup()).
+// Toda la tarjeta abre la ficha al tocarla, no solo la foto o el nombre.
+const gridPriceMarkup = (product) => {
+  if (product.templePricing) {
+    // "Desde" muestra el templo solo (la pieza principal), no la opcion mas
+    // barata de las 3 (Pandora Box sola es un accesorio, no el producto).
+    return `
+      <div class="simple-price">
+        <strong>Desde ${formatPrice(product.templePricing.temple)}</strong>
+      </div>
+    `;
+  }
+  return priceMarkup(product);
+};
+
 const productCard = (product) => `
-  <article class="product-card">
+  <article class="product-card" data-open="${product.id}">
     <button class="card-media" type="button" data-open="${product.id}" aria-label="Ver ${product.name}">
       ${product.offer ? '<span class="badge">Oferta</span>' : ""}
       ${productImage(product)}
     </button>
     <div class="card-body">
-      <div>
-        <p class="product-category">${product.category}</p>
-        <h3>${product.name}</h3>
-        <p>${product.description}</p>
-      </div>
-      ${priceMarkup(product)}
-      ${addToCartMarkup(product)}
-      <div class="card-actions">
-        <button class="button dark full" type="button" data-open="${product.id}">Ver producto</button>
-        <button class="button ghost full card-share-btn" type="button" data-share="${product.id}" aria-label="${shareButtonLabel()} de ${product.name}">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 15V3m0 0L8 7m4-4 4 4M4 13v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          ${shareButtonLabel()}
-        </button>
-      </div>
+      <h3>${product.name}</h3>
+      ${gridPriceMarkup(product)}
     </div>
   </article>
 `;

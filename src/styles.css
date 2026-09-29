@@ -316,6 +316,7 @@ main {
   border-radius: 8px;
   background: #141414;
   box-shadow: var(--shadow);
+  cursor: pointer;
 }
 
 .catalog-section,
@@ -1607,13 +1608,36 @@ h2 {
     min-height: 36px;
   }
 
-  .product-grid,
   .detail-list {
     grid-template-columns: 1fr;
   }
 
-  .card-actions .button {
-    flex: 1 1 160px;
+  /* Dos columnas en movil (pedido de Adrian, 2026-09-29): mas productos de
+     un vistazo -- solo foto, nombre y precio; todo lo demas (descripcion,
+     opciones de compra, agregar al carrito) queda para la ficha del
+     producto al tocar la tarjeta. */
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .product-grid .card-body {
+    padding: 10px;
+    gap: 6px;
+  }
+
+  .product-grid .card-body h3 {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.25;
+  }
+
+  .product-grid .simple-price strong {
+    font-size: 1.15rem;
+  }
+
+  .product-grid .simple-price del {
+    font-size: 0.8rem;
   }
 
   .modal-info {
