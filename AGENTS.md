@@ -32,6 +32,14 @@ Studio (es un tablero compartido entre los dos proyectos).
 - El panel de administración del sitio está roto — no se usa. Los cambios al
   catálogo se hacen editando `products.json` directamente a pedido de
   Adrián, en lenguaje natural.
+- **Cambio simple** (texto/precio suelto/visual/catálogo puntual): directo
+  a producción (commit + push), rápido y con validación mínima. Nunca debería
+  consumir buena parte de la ventana de contexto de Adrián.
+- **Cambio grande** (checkout, cuentas, pagos, estructura del sitio, o algo
+  que requiera revisión extensa): antes de arrancarlo, avisarle a Adrián
+  explícitamente que es grande/delicado y que va a tomar tiempo, y esperar
+  su autorización antes de empezar — no arrancarlo solo porque "parece
+  delicado" (pedido explícito de Adrián, 2026-09-29; ver bitácora).
 
 ## El enlace público de seguimiento (`/seguimiento/`)
 
