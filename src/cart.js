@@ -9,6 +9,13 @@
   "use strict";
 
   const STORAGE_KEY = "boomart_cart_v1";
+  // Cupon de bienvenida (pedido de Adrian, 2026-09-29): 10% para clientes
+  // logueados que todavia no lo usaron. La elegibilidad real vive en
+  // Supabase; account.js la refleja aqui via localStorage (misma llave
+  // "boomart_customer_v1" que ya usa checkout.js) para que este archivo no
+  // dependa de Supabase ni de account.js directamente.
+  const CUSTOMER_STORAGE_KEY = "boomart_customer_v1";
+  const WELCOME_COUPON_RATE = 0.1;
   const listeners = new Set();
 
   function safeStorage() {
@@ -102,6 +109,18 @@
     return `${productId}::${variantKey || "-"}`;
   }
 
+  function readCouponEligible() {
+    if (!storage) return false;
+    try {
+      const raw = storage.getItem(CUSTOMER_STORAGE_KEY);
+      if (!raw) return false;
+      const parsed = JSON.parse(raw);
+      return Boolean(parsed && parsed.couponEligible);
+    } catch (err) {
+      return false;
+    }
+  }
+
   // Devuelve las lineas del carrito ya resueltas contra el catalogo vigente,
   // descartando silenciosamente productos/variantes que ya no existan.
   function getResolvedLines() {
@@ -130,12 +149,18 @@
 
   function getTotals(lines) {
     const resolvedLines = lines || getResolvedLines();
-    const totalCents = resolvedLines.reduce((sum, line) => sum + toCents(line.unitPrice) * line.quantity, 0);
+    const subtotalCents = resolvedLines.reduce((sum, line) => sum + toCents(line.unitPrice) * line.quantity, 0);
+    const couponApplied = resolvedLines.length > 0 && readCouponEligible();
+    const discountCents = couponApplied ? Math.round(subtotalCents * WELCOME_COUPON_RATE) : 0;
+    const totalCents = subtotalCents - discountCents;
     const rate = Number((window.BOOMART_CHECKOUT && window.BOOMART_CHECKOUT.advanceRate) || 0.5);
     const advanceCents = Math.round(totalCents * rate);
     const balanceCents = totalCents - advanceCents;
     return {
       itemCount: resolvedLines.reduce((sum, line) => sum + line.quantity, 0),
+      subtotal: fromCents(subtotalCents),
+      couponApplied,
+      discount: fromCents(discountCents),
       total: fromCents(totalCents),
       advance: fromCents(advanceCents),
       balance: fromCents(balanceCents),
@@ -201,6 +226,14 @@
     return () => listeners.delete(fn);
   }
 
+  // Fuerza a los suscriptores a repintar con el estado actual, sin cambiar
+  // nada del carrito -- lo usa account.js cuando cambia la elegibilidad del
+  // cupon de bienvenida (login/registro) para que un carrito ya abierto en
+  // pantalla actualice sus totales sin esperar a que se agregue/quite algo.
+  function refresh() {
+    notify();
+  }
+
   window.BoomartCart = {
     getState,
     getTotals,
@@ -209,6 +242,7 @@
     remove,
     clear,
     subscribe,
+    refresh,
     // utilidades expuestas para checkout.js (mensaje de WhatsApp, formularios, etc.)
     toCents,
     fromCents

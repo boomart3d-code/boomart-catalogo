@@ -565,6 +565,24 @@ window.addEventListener("popstate", () => {
 
 setGlobalWhatsapp();
 
+// Banner "Registrate y gana un cupon de descuento sorpresa" (pedido de
+// Adrian, 2026-09-29): marca que la persona entro por esta via (account.js
+// usa esa marca para exigir el DNI en ESE registro puntual) y abre "Mi
+// cuenta" reusando su boton de siempre -- no duplica logica de apertura.
+const couponBanner = document.querySelector("#couponBanner");
+if (couponBanner) {
+  couponBanner.addEventListener("click", () => {
+    try {
+      window.localStorage.setItem("boomart_coupon_intent", "1");
+    } catch (err) {
+      // almacenamiento no disponible -- el registro sigue funcionando, solo
+      // no se exigira el DNI (el cupon igual se otorga al completar el perfil).
+    }
+    const accountToggle = document.querySelector("#accountToggle");
+    if (accountToggle) accountToggle.click();
+  });
+}
+
 document.addEventListener("boomart:products-ready", () => {
   products = window.BOOMART_PRODUCTS || [];
   renderFilters();

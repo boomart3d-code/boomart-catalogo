@@ -62,6 +62,23 @@
     } catch (err) {}
   }
 
+  // ---------- Cupon de bienvenida (pedido de Adrian, 2026-09-29): 10% en la
+  // primera compra por la web para quien se registra. Elegibilidad real vive
+  // en Supabase (clientes.cupon_bienvenida_usado); esta bandera local solo
+  // recuerda que la persona entro por el banner "Registrate y gana un cupon
+  // de descuento sorpresa", para exigirle el DNI en ESE registro puntual
+  // (fuera de esa via, el documento sigue siendo opcional como siempre). Se
+  // guarda en localStorage (no sessionStorage) porque el enlace magico del
+  // correo casi siempre abre en una pestana nueva. ----------
+  const COUPON_INTENT_KEY = "boomart_coupon_intent";
+
+  function hasCouponIntent() {
+    return safeGetLocal(COUPON_INTENT_KEY) === "1";
+  }
+  function clearCouponIntent() {
+    safeRemoveLocal(COUPON_INTENT_KEY);
+  }
+
   function getLinkedCarritoId(userId) {
     const raw = safeGetLocal(CART_LINK_KEY);
     if (!raw) return null;
@@ -96,6 +113,12 @@
       // almacenamiento no disponible -- el checkout simplemente le
       // volvera a pedir los datos, sin romper nada.
     }
+    // Si el carrito ya esta pintado en pantalla (ej. el cliente lo dejo
+    // abierto mientras iniciaba sesion), esto lo hace recalcular sus totales
+    // ya con/sin el cupon de bienvenida, sin esperar a que agregue/quite algo.
+    if (window.BoomartCart && typeof window.BoomartCart.refresh === "function") {
+      window.BoomartCart.refresh();
+    }
   }
 
   // Pasa nombre/apellido y (si ya los tiene) destino/distrito/documento de
@@ -104,7 +127,7 @@
   // muestra el campo (opcional) de documento para la boleta, que solo se
   // pide a clientes con cuenta, no a invitados.
   function syncCustomerProfileToCheckout(cliente) {
-    const patch = { isAccountCustomer: true };
+    const patch = { isAccountCustomer: true, couponEligible: cliente.cupon_bienvenida_usado !== true };
     if (cliente.nombre) patch.name = cliente.nombre;
     if (cliente.apellido) patch.lastName = cliente.apellido;
     if (cliente.telefono) patch.phone = cliente.telefono;
@@ -321,6 +344,13 @@
     // en vez de dejar seleccionado "Prefiero no decir" por defecto.
     const docType = (cliente && cliente.tipo_documento) || "dni";
     const docNumber = (cliente && cliente.dni) || "";
+    // Sin fila todavia (primer registro) = elegible; el default de la
+    // columna es false (no usado) para cualquier fila nueva o ya existente.
+    const couponEligible = !cliente || cliente.cupon_bienvenida_usado !== true;
+    // Solo exige DNI cuando la persona entro por el banner del cupon Y
+    // todavia no lo ha usado -- si ya gasto su cupon, este registro es una
+    // edicion normal de perfil y el documento vuelve a ser opcional.
+    const requireDocForCoupon = hasCouponIntent() && couponEligible;
 
     if (nombre) accountLabel.textContent = nombre;
 
@@ -347,6 +377,11 @@
       <p class="eyebrow">Mi cuenta</p>
       <h2>Tus datos</h2>
       <p class="field-hint">Correo: <strong>${user.email}</strong></p>
+      ${
+        requireDocForCoupon
+          ? `<p class="field-hint coupon-hint">🎁 Para tu cupón de descuento sorpresa necesitamos también tu documento de identidad.</p>`
+          : ""
+      }
       <form id="accountProfileForm" novalidate>
         <label class="field">
           <span>Nombre</span>
@@ -370,11 +405,12 @@
             </select>
           </label>
           <label class="field">
-            <span>Número de documento</span>
-            <input type="text" id="accountDocNumber" value="${docNumber}">
+            <span>Número de documento${requireDocForCoupon ? " *" : ""}</span>
+            <input type="text" id="accountDocNumber" value="${docNumber}"${requireDocForCoupon ? " required" : ""}>
           </label>
         </div>
         <p class="form-error" id="accountFormError" hidden></p>
+        <p class="form-success" id="accountCouponMsg" hidden></p>
         <button type="submit" class="button primary full" id="accountSaveBtn">Guardar cambios</button>
       </form>
       ${historyHtml}
@@ -391,6 +427,7 @@
     const docTypeInput = document.querySelector("#accountDocType");
     const docNumberInput = document.querySelector("#accountDocNumber");
     const errorEl = document.querySelector("#accountFormError");
+    const couponMsgEl = document.querySelector("#accountCouponMsg");
     const saveBtn = document.querySelector("#accountSaveBtn");
 
     form.addEventListener("submit", async (event) => {
@@ -398,15 +435,20 @@
       const newNombre = nameInput.value.trim();
       const newApellido = lastNameInput.value.trim();
       const newTelefono = phoneInput.value.trim();
+      const newDocNumber = docNumberInput.value.trim();
       if (!newNombre || !newApellido || !newTelefono) {
         errorEl.textContent = "Nombre, apellido y teléfono son obligatorios.";
+        errorEl.hidden = false;
+        return;
+      }
+      if (requireDocForCoupon && !newDocNumber) {
+        errorEl.textContent = "Tu documento de identidad es obligatorio para recibir el cupón de descuento.";
         errorEl.hidden = false;
         return;
       }
       errorEl.hidden = true;
       saveBtn.disabled = true;
       const newDocType = docTypeInput.value;
-      const newDocNumber = docNumberInput.value.trim();
       const { error } = await sb.from("clientes").upsert({
         id: user.id,
         nombre: newNombre,
@@ -427,9 +469,18 @@
         name: [newNombre, newApellido].filter(Boolean).join(" "),
         isAccountCustomer: true,
         docType: newDocType || undefined,
-        docNumber: newDocNumber || undefined
+        docNumber: newDocNumber || undefined,
+        couponEligible
       });
       syncOrRestoreCart(user);
+      // El aviso del cupon solo aparece la vez que se registra por el banner
+      // (y todavia no lo ha usado) -- una edicion normal del perfil no lo
+      // repite cada vez que guarde cambios.
+      if (hasCouponIntent() && couponEligible) {
+        couponMsgEl.textContent = "🎉 ¡Listo! Tienes un cupón de descuento del 10% para tu próxima compra hecha por boomart.pe (válido una sola vez).";
+        couponMsgEl.hidden = false;
+      }
+      clearCouponIntent();
       const original = saveBtn.textContent;
       saveBtn.textContent = "¡Guardado!";
       setTimeout(() => {
@@ -456,7 +507,7 @@
     }
     const { data: cliente, error } = await sb
       .from("clientes")
-      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, direccion_detalle, dni, tipo_documento, telefono")
+      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, direccion_detalle, dni, tipo_documento, telefono, cupon_bienvenida_usado")
       .eq("id", user.id)
       .maybeSingle();
     if (error) {
@@ -485,7 +536,7 @@
     if (!session || !session.user) return;
     sb
       .from("clientes")
-      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, direccion_detalle, dni, tipo_documento, telefono")
+      .select("nombre, apellido, correo, destino, lima_distrito, prov_departamento, prov_provincia, direccion_detalle, dni, tipo_documento, telefono, cupon_bienvenida_usado")
       .eq("id", session.user.id)
       .maybeSingle()
       .then(({ data }) => {
@@ -554,14 +605,23 @@
 
   // checkout.js avisa con este evento cuando el pedido ya se mando por
   // WhatsApp -- marca ese carrito como historial y libera el enlace para
-  // que el proximo carrito (si arma uno nuevo) cree una fila aparte.
-  document.addEventListener("boomart:order-sent", async () => {
+  // que el proximo carrito (si arma uno nuevo) cree una fila aparte. Si el
+  // pedido llevaba el cupon de bienvenida aplicado (event.detail.couponApplied,
+  // calculado por cart.js contra el mismo dato que esta funcion escribe),
+  // se marca usado de una vez -- no se puede volver a aplicar despues.
+  document.addEventListener("boomart:order-sent", async (event) => {
     const { data: { session } } = await sb.auth.getSession();
     if (!session || !session.user) return;
     const carritoId = activeCarritoId || getLinkedCarritoId(session.user.id);
-    if (!carritoId) return;
-    await sb.from("carritos").update({ estado: "completado", actualizado_en: new Date().toISOString() }).eq("id", carritoId);
-    activeCarritoId = null;
-    safeRemoveLocal(CART_LINK_KEY);
+    if (carritoId) {
+      await sb.from("carritos").update({ estado: "completado", actualizado_en: new Date().toISOString() }).eq("id", carritoId);
+      activeCarritoId = null;
+      safeRemoveLocal(CART_LINK_KEY);
+    }
+    const detail = (event && event.detail) || {};
+    if (detail.couponApplied) {
+      await sb.from("clientes").update({ cupon_bienvenida_usado: true }).eq("id", session.user.id);
+      mergeCustomerLocal({ couponEligible: false });
+    }
   });
 })();

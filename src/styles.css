@@ -64,6 +64,24 @@ input {
   backdrop-filter: blur(16px);
 }
 
+.coupon-banner {
+  display: block;
+  width: 100%;
+  padding: 12px clamp(18px, 4vw, 56px);
+  border: 0;
+  background: linear-gradient(90deg, var(--red-dark), var(--red));
+  color: white;
+  font-weight: 800;
+  font-size: clamp(0.88rem, 2.2vw, 1.05rem);
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+}
+
+.coupon-banner:hover {
+  filter: brightness(1.08);
+}
+
 .quick-nav {
   position: sticky;
   top: 0;
@@ -1149,6 +1167,21 @@ h2 {
   font-size: 1.15rem;
 }
 
+.coupon-row[hidden] {
+  display: none;
+}
+
+.cart-total-row.coupon-row {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+
+.cart-total-row.coupon-discount,
+.cart-total-row.coupon-discount strong {
+  color: #7be8a0;
+}
+
 .cart-note {
   margin: 0 0 14px;
   color: var(--muted);
@@ -1342,6 +1375,23 @@ h2 {
   font-weight: 700;
 }
 
+.form-success {
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border: 1px solid rgba(37, 211, 102, 0.5);
+  border-radius: 6px;
+  background: rgba(37, 211, 102, 0.12);
+  color: #9df0bb;
+  font-weight: 700;
+}
+
+.coupon-hint {
+  padding: 8px 12px;
+  border: 1px dashed rgba(225, 19, 47, 0.5);
+  border-radius: 6px;
+  color: #ffd7dc;
+}
+
 .checkout-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1392,6 +1442,18 @@ h2 {
 .summary-row.advance strong {
   font-size: 1.3rem;
   color: white;
+}
+
+.summary-row.coupon-row {
+  background: transparent;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.summary-row.coupon-discount,
+.summary-row.coupon-discount strong {
+  color: #7be8a0;
 }
 
 .summary-row.shipping {

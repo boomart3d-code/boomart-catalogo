@@ -67,6 +67,10 @@
   const cartBackdrop = document.querySelector("#cartBackdrop");
   const closeCartBtn = document.querySelector("#closeCart");
   const cartLinesEl = document.querySelector("#cartLines");
+  const cartCouponRow = document.querySelector("#cartCouponRow");
+  const cartSubtotalDisplay = document.querySelector("#cartSubtotalDisplay");
+  const cartDiscountRow = document.querySelector("#cartDiscountRow");
+  const cartDiscountDisplay = document.querySelector("#cartDiscountDisplay");
   const cartTotalDisplay = document.querySelector("#cartTotalDisplay");
   const cartCountEl = document.querySelector("#cartCount");
   const startCheckoutBtn = document.querySelector("#startCheckout");
@@ -89,6 +93,10 @@
   const addressDetailInput = document.querySelector("#addressDetail");
   const addressDetailLabel = document.querySelector("#addressDetailLabel");
   const summaryLinesEl = document.querySelector("#summaryLines");
+  const summaryCouponRow = document.querySelector("#summaryCouponRow");
+  const summarySubtotalEl = document.querySelector("#summarySubtotal");
+  const summaryDiscountRow = document.querySelector("#summaryDiscountRow");
+  const summaryDiscountEl = document.querySelector("#summaryDiscount");
   const summaryTotalEl = document.querySelector("#summaryTotal");
   const summaryAdvanceEl = document.querySelector("#summaryAdvance");
   const summaryBalanceEl = document.querySelector("#summaryBalance");
@@ -153,6 +161,13 @@
       cartLinesEl.innerHTML = cartState.lines.map(cartLineMarkup).join("");
     }
 
+    const couponApplied = Boolean(cartState.totals.couponApplied);
+    cartCouponRow.hidden = !couponApplied;
+    cartDiscountRow.hidden = !couponApplied;
+    if (couponApplied) {
+      cartSubtotalDisplay.textContent = money(cartState.totals.subtotal);
+      cartDiscountDisplay.textContent = `-${money(cartState.totals.discount)}`;
+    }
     cartTotalDisplay.textContent = money(cartState.totals.total);
     startCheckoutBtn.disabled = cartState.lines.length === 0;
   };
@@ -523,6 +538,13 @@
         `
       )
       .join("");
+    const couponApplied = Boolean(state.totals.couponApplied);
+    summaryCouponRow.hidden = !couponApplied;
+    summaryDiscountRow.hidden = !couponApplied;
+    if (couponApplied) {
+      summarySubtotalEl.textContent = money(state.totals.subtotal);
+      summaryDiscountEl.textContent = `-${money(state.totals.discount)}`;
+    }
     summaryTotalEl.textContent = money(state.totals.total);
     summaryAdvanceEl.textContent = money(state.totals.advance);
     summaryBalanceEl.textContent = money(state.totals.balance);
@@ -666,12 +688,19 @@
     const docType = customerDocTypeInput && customerDocTypeInput.value;
     const docNumber = customerDocNumberInput && customerDocNumberInput.value.trim();
     const docLine = docType && docNumber ? [`Documento para boleta: ${DOC_TYPE_LABELS[docType] || docType} ${docNumber}`] : [];
+    const couponLines = state.totals.couponApplied
+      ? [
+          `Subtotal: ${money(state.totals.subtotal)}`,
+          `Cupón de bienvenida (-10%): -${money(state.totals.discount)}`
+        ]
+      : [];
 
     return [
       `Hola, BoomArt. Soy ${customer.name} ${customer.lastName} y quiero realizar este pedido:`,
       "",
       itemLines,
       "",
+      ...couponLines,
       `Total de productos: ${money(state.totals.total)}`,
       `Adelanto del 50%: ${money(state.totals.advance)}`,
       `He realizado el adelanto mediante ${methodLabel}.`,
@@ -703,7 +732,9 @@
 
     reopenWhatsappLink.href = url;
     window.open(url, "_blank", "noopener");
-    document.dispatchEvent(new CustomEvent("boomart:order-sent"));
+    document.dispatchEvent(
+      new CustomEvent("boomart:order-sent", { detail: { couponApplied: Boolean(state.totals.couponApplied) } })
+    );
     showStep("done");
   });
 })();

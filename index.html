@@ -41,7 +41,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=24">
+    <link rel="stylesheet" href="src/styles.css?v=25">
 
     <script type="application/ld+json">
     {
@@ -134,6 +134,10 @@
         </button>
       </nav>
     </header>
+
+    <button type="button" class="coupon-banner" id="couponBanner">
+      🎁 Regístrate y gana un cupón de descuento sorpresa
+    </button>
 
     <main id="inicio">
       <h1 class="sr-only">BoomArt · Figuras coleccionables e impresión 3D en Perú</h1>
@@ -354,6 +358,14 @@
       </div>
       <div class="cart-drawer-body" id="cartLines"></div>
       <div class="cart-drawer-footer">
+        <div class="cart-total-row coupon-row" id="cartCouponRow" hidden>
+          <span>Subtotal</span>
+          <strong id="cartSubtotalDisplay">S/0.00</strong>
+        </div>
+        <div class="cart-total-row coupon-row coupon-discount" id="cartDiscountRow" hidden>
+          <span>🎁 Cupón de bienvenida (-10%)</span>
+          <strong id="cartDiscountDisplay">-S/0.00</strong>
+        </div>
         <div class="cart-total-row">
           <span>Total de productos</span>
           <strong id="cartTotalDisplay">S/0.00</strong>
@@ -439,6 +451,14 @@
           <h2>Resumen y adelanto</h2>
           <div class="summary-lines" id="summaryLines"></div>
           <div class="summary-totals">
+            <div class="summary-row coupon-row" id="summaryCouponRow" hidden>
+              <span>Subtotal</span>
+              <strong id="summarySubtotal"></strong>
+            </div>
+            <div class="summary-row coupon-row coupon-discount" id="summaryDiscountRow" hidden>
+              <span>🎁 Cupón de bienvenida (-10%)</span>
+              <strong id="summaryDiscount"></strong>
+            </div>
             <div class="summary-row">
               <span>Total de productos</span>
               <strong id="summaryTotal"></strong>
@@ -543,10 +563,10 @@
     </a>
 
     <script src="src/checkout-config.js?v=7"></script>
-    <script src="src/cart.js?v=5"></script>
+    <script src="src/cart.js?v=6"></script>
     <script src="src/products.js?v=5"></script>
-    <script src="src/app.js?v=19"></script>
-    <script src="src/checkout.js?v=21"></script>
+    <script src="src/app.js?v=20"></script>
+    <script src="src/checkout.js?v=22"></script>
     <script src="src/products-loader.js?v=5"></script>
     <script src="src/reviews.js?v=5"></script>
     <script src="src/reviews-loader.js?v=2"></script>
@@ -557,6 +577,6 @@
          cargar, el resto de la web sigue funcionando igual. -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
     <script src="src/supabase-config.js?v=1"></script>
-    <script src="src/account.js?v=15"></script>
+    <script src="src/account.js?v=16"></script>
   </body>
 </html>

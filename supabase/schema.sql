@@ -35,7 +35,13 @@ create table if not exists clientes (
   creado_en timestamptz not null default now(),
   -- Marca cuando Boomart Studio ya importo a este cliente a su base local
   -- (con la service_role key, que ignora RLS). Null = todavia no importado.
-  importado_en timestamptz
+  importado_en timestamptz,
+  -- Cupon de bienvenida (10% en la primera compra por la web, pedido de
+  -- Adrian 2026-09-29): una sola bandera booleana. Elegibilidad = no usado
+  -- todavia (false), sin importar si la cuenta es nueva o ya existia -- los
+  -- clientes ya registrados quedan elegibles automaticamente con el default.
+  -- Se marca al enviar un pedido por WhatsApp con el cupon aplicado.
+  cupon_bienvenida_usado boolean not null default false
 );
 
 comment on table clientes is 'Cuentas de cliente registradas en boomart.pe. id = mismo id que auth.users.';
