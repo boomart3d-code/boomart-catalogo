@@ -347,6 +347,10 @@
     // Sin fila todavia (primer registro) = elegible; el default de la
     // columna es false (no usado) para cualquier fila nueva o ya existente.
     const couponEligible = !cliente || cliente.cupon_bienvenida_usado !== true;
+    // Mismo criterio para el aviso interno por correo (pedido de Adrian,
+    // 2026-09-29): solo la primera vez que se crea la fila, no en cada
+    // edicion posterior del perfil.
+    const isFirstRegistration = !cliente;
 
     if (nombre) accountLabel.textContent = nombre;
 
@@ -459,6 +463,35 @@
         couponEligible
       });
       syncOrRestoreCart(user);
+      // Aviso interno a boomart.3d@gmail.com (pedido de Adrian, 2026-09-29):
+      // solo en el registro nuevo, nunca en una edicion posterior. El
+      // cliente no se entera de esto ni ve ningun aviso -- si falla, no se
+      // le muestra ningun error (no es su problema, es solo informativo).
+      if (isFirstRegistration) {
+        const cartState = window.BoomartCart ? window.BoomartCart.getState() : { lines: [] };
+        sb.functions
+          .invoke("notify-new-customer", {
+            body: {
+              nombre: newNombre,
+              apellido: newApellido,
+              correo: user.email,
+              telefono: newTelefono,
+              tipoDocumento: newDocType || "",
+              numeroDocumento: newDocNumber || "",
+              carrito: cartState.lines.map((line) => ({
+                name: line.name,
+                variantLabel: line.variantLabel,
+                quantity: line.quantity,
+                unitPrice: line.unitPrice,
+                subtotal: line.subtotal
+              }))
+            }
+          })
+          .catch(() => {
+            // Sin conexion o la funcion fallo -- Adrian simplemente no recibe
+            // ese aviso puntual; no afecta el registro del cliente.
+          });
+      }
       // El aviso del cupon solo aparece la vez que se registra por el banner
       // (y todavia no lo ha usado) -- una edicion normal del perfil no lo
       // repite cada vez que guarde cambios.
