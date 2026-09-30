@@ -54,6 +54,20 @@ const whatsappUrl = (message) =>
 const PRODUCT_PARAM = "producto";
 const SITE_ORIGIN = "https://boomart.pe";
 
+// --- Enlace corto de campana: ?categoria=<slug> (ej. boomart.pe/saintseiya,
+// que redirige a /?categoria=saint-seiya#catalogo) -- pedido de Adrian,
+// 2026-09-29, para el video de octubre. Mismo slug que usan las paginas
+// estaticas /categoria/<slug>/ generadas por build-ai-catalog.mjs (ver
+// funcion "slug" ahi): sin tildes, minusculas, no-alfanumerico a guion.
+const CATEGORY_PARAM = "categoria";
+const slugifyCategory = (value) =>
+  String(value || "")
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
 // Cada producto tiene una pagina estatica propia e indexable en
 // /producto/<id>/ (titulo, descripcion y OG propios). Esa es la URL que se
 // comparte y la que se declara como canonical mientras la ficha esta abierta,
@@ -591,6 +605,16 @@ if (couponBanner) {
 
 document.addEventListener("boomart:products-ready", () => {
   products = window.BOOMART_PRODUCTS || [];
+
+  // Enlace corto de campana (?categoria=saint-seiya): preselecciona esa
+  // categoria antes de pintar, para que el catalogo cargue ya filtrado.
+  // Slug desconocido o ausente = "Todos", sin romper nada.
+  const categoriaParam = new URL(window.location.href).searchParams.get(CATEGORY_PARAM);
+  if (categoriaParam) {
+    const match = catalogCategories().find((cat) => slugifyCategory(cat) === slugifyCategory(categoriaParam));
+    if (match) activeFilter = match;
+  }
+
   renderFilters();
   renderQuickCategories();
   renderProducts();
