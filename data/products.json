@@ -174,7 +174,7 @@
       "Templo",
       "Combo"
     ],
-    "height": "Templo: 16–20 cm · Pandora Box: 6.5 × 5 × 5 cm · Pedestal: 8 × 7.5 × 7.5 cm",
+    "height": "Templo: 17.5 × 20 × 22 cm (alto × fondo × ancho) · Pandora Box: 6.5 × 5 × 5 cm · Pedestal: 8 × 7.5 × 7.5 cm",
     "material": "PLA+ reforzado y PLA Silk dorado",
     "availability": "A pedido",
     "templePricing": {
@@ -187,9 +187,10 @@
     "image": "assets/products/templo-libra-hero.jpg",
     "gallery": [
       "assets/products/templo-libra-hero.jpg",
-      "assets/products/templo-libra-pandora.jpg"
+      "assets/products/templo-libra-pandora.jpg",
+      "assets/products/templo-libra-medidas.jpg"
     ],
-    "description": "Combo de la Casa de Libra: templo grande de aproximadamente 16 a 20 cm de alto, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado."
+    "description": "Combo de la Casa de Libra: templo de 17.5 cm de alto × 20 cm de fondo × 22 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado."
   },
   {
     "id": "templo-escorpio",
