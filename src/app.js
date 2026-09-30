@@ -605,9 +605,27 @@ if (couponBanner) {
   couponBanner.addEventListener("click", openCouponRegistration);
 }
 
-// Emergente que solo aparece al entrar por un enlace corto de campana
-// (?categoria=<slug>, ej. boomart.pe/saintseiya): se muestra unos segundos
-// y "vuela" hacia el banner de arriba, que ya tiene el mismo mensaje.
+// Emergente del cupon: siempre al entrar por un enlace corto de campana
+// (?categoria=<slug>) y, ademas, una vez por visitante en los accesos
+// principales (boomart.pe/, sin enlace de producto) -- pedido de Adrian,
+// 2026-09-30. Se muestra unos segundos y "vuela" hacia el banner de arriba,
+// que ya tiene el mismo mensaje.
+const COUPON_POPUP_SEEN_KEY = "boomart_coupon_popup_seen";
+function hasSeenCouponPopup() {
+  try {
+    return window.localStorage.getItem(COUPON_POPUP_SEEN_KEY) === "1";
+  } catch (err) {
+    return false;
+  }
+}
+function markCouponPopupSeen() {
+  try {
+    window.localStorage.setItem(COUPON_POPUP_SEEN_KEY, "1");
+  } catch (err) {
+    // almacenamiento no disponible -- en ese navegador se mostrara siempre,
+    // sin romper nada (el emergente sigue siendo solo informativo).
+  }
+}
 const couponPopup = document.querySelector("#couponPopup");
 const couponPopupBtn = document.querySelector("#couponPopupBtn");
 function showCouponPopup() {
@@ -640,11 +658,12 @@ document.addEventListener("boomart:products-ready", () => {
   // categoria antes de pintar, para que el catalogo cargue ya filtrado.
   // Slug desconocido o ausente = "Todos", sin romper nada.
   const categoriaParam = new URL(window.location.href).searchParams.get(CATEGORY_PARAM);
+  let matchedCategoryLink = false;
   if (categoriaParam) {
     const match = catalogCategories().find((cat) => slugifyCategory(cat) === slugifyCategory(categoriaParam));
     if (match) {
       activeFilter = match;
-      showCouponPopup();
+      matchedCategoryLink = true;
     }
   }
 
@@ -652,7 +671,19 @@ document.addEventListener("boomart:products-ready", () => {
   renderQuickCategories();
   renderProducts();
 
-  // Si se entro con un enlace directo a un producto, abrir esa ficha.
+  // Si se entro con un enlace directo a un producto, abrir esa ficha. El
+  // emergente del cupon no aplica aqui: quien comparte/abre un producto
+  // puntual no es "un acceso principal" y ya tiene su propia ficha abierta.
   const id = new URL(window.location.href).searchParams.get(PRODUCT_PARAM);
-  if (id && products.find((p) => p.id === id)) openProduct(id, true);
+  if (id && products.find((p) => p.id === id)) {
+    openProduct(id, true);
+  } else if (matchedCategoryLink) {
+    // Enlace de campana: siempre se muestra, cada vez que se use el enlace.
+    showCouponPopup();
+  } else if (!hasSeenCouponPopup()) {
+    // Acceso principal normal (boomart.pe/, buscadores, bio de redes, etc.):
+    // una sola vez por visitante, para no repetirlo en cada visita.
+    showCouponPopup();
+    markCouponPopupSeen();
+  }
 });
