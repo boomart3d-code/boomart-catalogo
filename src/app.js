@@ -632,7 +632,9 @@ function showCouponPopup() {
   if (!couponPopup) return;
   couponPopup.hidden = false;
   requestAnimationFrame(() => couponPopup.classList.add("is-visible"));
-  const flyTimer = setTimeout(() => flyCouponPopup(), 2600);
+  // 1300 ms quieto en pantalla (antes 2600; Adrian lo pidio a la mitad,
+  // 2026-09-30) -- el vuelo de 700 ms hacia el banner no cambia.
+  const flyTimer = setTimeout(() => flyCouponPopup(), 1300);
   couponPopup.dataset.flyTimer = String(flyTimer);
 }
 function flyCouponPopup() {
