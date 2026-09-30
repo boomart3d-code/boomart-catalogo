@@ -356,11 +356,10 @@ const openProduct = (productId, fromHistory = false) => {
   modalTitle.textContent = activeProduct.name;
   modalCategory.textContent = activeProduct.category;
   modalDescription.textContent = activeProduct.description;
-  modalDetails.innerHTML = `
-    ${activeProduct.height ? `<div><span>Altura</span><strong>${activeProduct.height}</strong></div>` : ""}
-    <div><span>Material</span><strong>${activeProduct.material}</strong></div>
-    <div><span>Disponibilidad</span><strong>${activeProduct.availability}</strong></div>
-  `;
+  modalDetails.textContent = [
+    activeProduct.height ? `Tamaño: ${activeProduct.height}` : "",
+    activeProduct.material ? `Material: ${activeProduct.material}` : "",
+  ].filter(Boolean).join(" · ");
   modalPricing.innerHTML = priceMarkup(activeProduct) + addToCartMarkup(activeProduct);
   if (shareProductWa) shareProductWa.href = whatsappShareUrl(activeProduct);
   if (shareFeedback) shareFeedback.hidden = true;

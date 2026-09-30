@@ -31,7 +31,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../src/styles.css?v=27">
+    <link rel="stylesheet" href="../../src/styles.css?v=28">
     <style>
     .pp{max-width:1080px;margin:0 auto;padding:clamp(18px,4vw,36px) clamp(16px,4vw,40px) clamp(56px,8vw,88px)}
     .pp-crumbs{font-size:.82rem;color:var(--muted);margin:0 0 18px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
@@ -53,9 +53,7 @@
     .pp-price ul{margin:8px 0 0;padding-left:18px}
     .pp-price li{margin:3px 0}
     .pp-cta{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 6px}
-    .pp-specs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0 0}
-    .pp-specs div{border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:.92rem}
-    .pp-specs span{display:block;font-size:.7rem;font-weight:800;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+    .pp-facts{font-size:.88rem;font-weight:600;line-height:1.45;color:var(--muted);margin:0 0 14px}
     .pp-body{margin-top:34px;max-width:70ch;line-height:1.65}
     .pp-body h2{font-size:1.15rem;margin:22px 0 8px}
     .pp-body p{margin:0 0 12px}
@@ -65,7 +63,22 @@
     .pp-rel-grid a{text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:block}
     .pp-rel-grid img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;display:block}
     .pp-rel-grid span{display:block;padding:8px 10px;font-size:.85rem;font-weight:600}
-    @media(max-width:760px){.pp-top{grid-template-columns:1fr}}
+    @media(max-width:760px){
+      .pp{padding:12px 14px 44px}
+      .pp-crumbs{margin-bottom:12px}
+      .pp-top{grid-template-columns:1fr;gap:14px}
+      .pp-main-img{border-radius:10px}
+      .pp-thumbs{flex-wrap:nowrap;gap:6px;margin-top:8px;overflow-x:auto}
+      .pp-thumbs button{width:52px;height:52px;flex:0 0 52px}
+      .pp-info h1{font-size:1.55rem}
+      .pp-sub{line-height:1.5;margin-bottom:10px}
+      .pp-facts{font-size:.82rem;margin-bottom:10px}
+      .pp-rating{margin-bottom:10px}
+      .pp-price{padding:12px 14px;margin-bottom:12px}
+      .pp-cta{gap:8px}
+      .pp-cta .button{width:100%;justify-content:center;text-align:center}
+      .pp-body{margin-top:24px;line-height:1.55}
+    }
 </style>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Maceta Palmera","description":"Maceta minimalista negra con textura de hojas de palmera: elegante y moderna, ideal para complementar una decoración tropical o contemporánea.","image":["https://boomart.pe/assets/products/maceta-palmera.jpg"],"sku":"maceta-palmera","category":"Macetas","brand":{"@type":"Brand","name":"BoomArt"},"offers":{"@type":"Offer","price":44,"priceCurrency":"PEN","availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition","priceValidUntil":"2027-01-28","url":"https://boomart.pe/producto/maceta-palmera/","seller":{"@type":"Organization","name":"BoomArt"},"hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","applicableCountry":"PE","returnPolicyCategory":"https://schema.org/MerchantReturnNotPermitted"}},"material":"PLA"}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://boomart.pe/"},{"@type":"ListItem","position":2,"name":"Macetas","item":"https://boomart.pe/categoria/macetas/"},{"@type":"ListItem","position":3,"name":"Maceta Palmera","item":"https://boomart.pe/producto/maceta-palmera/"}]}</script>
@@ -99,19 +112,12 @@
           <p class="eyebrow">Macetas</p>
           <h1>Maceta Palmera</h1>
           <p class="pp-sub">Maceta minimalista negra con textura de hojas de palmera: elegante y moderna, ideal para complementar una decoración tropical o contemporánea.</p>
+          <p class="pp-facts">Material: PLA</p>
           <p class="pp-rating">&#9733; 5.0 / 5 &middot; <a href="../../opinion/">9 opiniones de clientes</a></p>
           <div class="pp-price"><span class="now">S/44</span><span class="was">S/49</span></div>
           <div class="pp-cta">
             <a class="button primary" href="../../index.html?producto=maceta-palmera">Ver en la tienda y agregar al carrito</a>
             <a class="button secondary" href="https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Maceta%20Palmera" target="_blank" rel="noreferrer nofollow">Consultar por WhatsApp</a>
-          </div>
-          <div class="pp-specs">
-            <div><span>Material</span>PLA</div>
-            <div><span>Formato</span>Consultar medidas por WhatsApp</div>
-            <div><span>Disponibilidad</span>A pedido</div>
-            <div><span>Producción</span>~48 h útiles</div>
-            <div><span>Categoría</span>Macetas</div>
-            <div><span>Envío</span>A todo el Perú · se coordina por WhatsApp</div>
           </div>
         </div>
       </div>
