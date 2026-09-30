@@ -379,7 +379,7 @@
       <p class="field-hint">Correo: <strong>${user.email}</strong></p>
       ${
         requireDocForCoupon
-          ? `<p class="field-hint coupon-hint">🎁 Para tu cupón de descuento sorpresa necesitamos también tu documento de identidad.</p>`
+          ? `<p class="field-hint coupon-hint">🎁 Para hacer efectivo tu cupón de descuento, completa tu compra por esta misma página web.</p>`
           : ""
       }
       <form id="accountProfileForm" novalidate>
