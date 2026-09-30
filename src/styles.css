@@ -65,21 +65,93 @@ input {
 }
 
 .coupon-banner {
-  display: block;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px clamp(10px, 3vw, 22px);
   width: 100%;
-  padding: 12px clamp(18px, 4vw, 56px);
+  padding: 16px clamp(18px, 4vw, 56px);
   border: 0;
-  background: linear-gradient(90deg, var(--red-dark), var(--red));
-  color: white;
-  font-weight: 800;
-  font-size: clamp(0.88rem, 2.2vw, 1.05rem);
-  text-align: center;
+  overflow: hidden;
   cursor: pointer;
-  letter-spacing: 0.01em;
+  background: var(--red-dark);
+  background-image: repeating-conic-gradient(from 0deg, rgba(255, 255, 255, 0.06) 0deg 9deg, transparent 9deg 18deg);
 }
 
 .coupon-banner:hover {
   filter: brightness(1.08);
+}
+
+.coupon-banner-star {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.55);
+  pointer-events: none;
+}
+
+.star-1 {
+  top: 14%;
+  left: 6%;
+  font-size: 0.85rem;
+}
+
+.star-2 {
+  top: 62%;
+  left: 15%;
+  font-size: 1.25rem;
+}
+
+.star-3 {
+  top: 16%;
+  right: 9%;
+  font-size: 1.3rem;
+}
+
+.star-4 {
+  top: 66%;
+  right: 4%;
+  font-size: 0.8rem;
+}
+
+.coupon-banner-kicker {
+  color: white;
+  font-weight: 900;
+  font-size: clamp(0.92rem, 2.3vw, 1.15rem);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.coupon-ticket {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 7px 20px;
+  background: var(--gold);
+  border: 2px dashed var(--black);
+  border-radius: 8px;
+  transform: rotate(-3deg);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.coupon-ticket-label {
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--red-dark);
+}
+
+.coupon-ticket-title {
+  font-size: clamp(0.95rem, 2.6vw, 1.25rem);
+  font-weight: 900;
+  color: var(--black);
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .quick-nav {

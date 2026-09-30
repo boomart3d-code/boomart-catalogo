@@ -578,8 +578,14 @@ if (couponBanner) {
       // almacenamiento no disponible -- el registro sigue funcionando, solo
       // no se exigira el DNI (el cupon igual se otorga al completar el perfil).
     }
-    const accountToggle = document.querySelector("#accountToggle");
-    if (accountToggle) accountToggle.click();
+    // setTimeout (no una llamada directa): un dialog.showModal() disparado
+    // por un .click() anidado DENTRO del mismo evento de clic real a veces
+    // no llega a abrirse (visto en pruebas) -- diferirlo al siguiente tick
+    // lo hace confiable sin cambiar accountToggle ni account.js.
+    setTimeout(() => {
+      const accountToggle = document.querySelector("#accountToggle");
+      if (accountToggle) accountToggle.click();
+    }, 0);
   });
 }
 
