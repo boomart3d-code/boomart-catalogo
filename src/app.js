@@ -579,27 +579,57 @@ window.addEventListener("popstate", () => {
 
 setGlobalWhatsapp();
 
-// Banner "Registrate y gana un cupon de descuento sorpresa" (pedido de
-// Adrian, 2026-09-29): marca que la persona entro por esta via (account.js
-// usa esa marca para exigir el DNI en ESE registro puntual) y abre "Mi
-// cuenta" reusando su boton de siempre -- no duplica logica de apertura.
+// Banner y emergente "Registrate y gana un cupon de descuento sorpresa"
+// (pedido de Adrian, 2026-09-29): marca que la persona vino por esta via
+// (account.js guardaba ahi una exigencia de DNI que luego se retracto; la
+// marca se deja igual por si se reactiva algo similar mas adelante) y abre
+// "Mi cuenta" reusando su boton de siempre -- no duplica logica de apertura.
+function openCouponRegistration() {
+  try {
+    window.localStorage.setItem("boomart_coupon_intent", "1");
+  } catch (err) {
+    // almacenamiento no disponible -- el registro sigue funcionando igual.
+  }
+  // setTimeout (no una llamada directa): un dialog.showModal() disparado
+  // por un .click() anidado DENTRO del mismo evento de clic real a veces
+  // no llega a abrirse (visto en pruebas) -- diferirlo al siguiente tick
+  // lo hace confiable sin cambiar accountToggle ni account.js.
+  setTimeout(() => {
+    const accountToggle = document.querySelector("#accountToggle");
+    if (accountToggle) accountToggle.click();
+  }, 0);
+}
+
 const couponBanner = document.querySelector("#couponBanner");
 if (couponBanner) {
-  couponBanner.addEventListener("click", () => {
-    try {
-      window.localStorage.setItem("boomart_coupon_intent", "1");
-    } catch (err) {
-      // almacenamiento no disponible -- el registro sigue funcionando, solo
-      // no se exigira el DNI (el cupon igual se otorga al completar el perfil).
-    }
-    // setTimeout (no una llamada directa): un dialog.showModal() disparado
-    // por un .click() anidado DENTRO del mismo evento de clic real a veces
-    // no llega a abrirse (visto en pruebas) -- diferirlo al siguiente tick
-    // lo hace confiable sin cambiar accountToggle ni account.js.
-    setTimeout(() => {
-      const accountToggle = document.querySelector("#accountToggle");
-      if (accountToggle) accountToggle.click();
-    }, 0);
+  couponBanner.addEventListener("click", openCouponRegistration);
+}
+
+// Emergente que solo aparece al entrar por un enlace corto de campana
+// (?categoria=<slug>, ej. boomart.pe/saintseiya): se muestra unos segundos
+// y "vuela" hacia el banner de arriba, que ya tiene el mismo mensaje.
+const couponPopup = document.querySelector("#couponPopup");
+const couponPopupBtn = document.querySelector("#couponPopupBtn");
+function showCouponPopup() {
+  if (!couponPopup) return;
+  couponPopup.hidden = false;
+  requestAnimationFrame(() => couponPopup.classList.add("is-visible"));
+  const flyTimer = setTimeout(() => flyCouponPopup(), 2600);
+  couponPopup.dataset.flyTimer = String(flyTimer);
+}
+function flyCouponPopup() {
+  if (!couponPopup || couponPopup.hidden) return;
+  couponPopup.classList.add("is-flying");
+  setTimeout(() => {
+    couponPopup.hidden = true;
+    couponPopup.classList.remove("is-visible", "is-flying");
+  }, 700);
+}
+if (couponPopupBtn) {
+  couponPopupBtn.addEventListener("click", () => {
+    clearTimeout(Number(couponPopup.dataset.flyTimer));
+    flyCouponPopup();
+    openCouponRegistration();
   });
 }
 
@@ -612,7 +642,10 @@ document.addEventListener("boomart:products-ready", () => {
   const categoriaParam = new URL(window.location.href).searchParams.get(CATEGORY_PARAM);
   if (categoriaParam) {
     const match = catalogCategories().find((cat) => slugifyCategory(cat) === slugifyCategory(categoriaParam));
-    if (match) activeFilter = match;
+    if (match) {
+      activeFilter = match;
+      showCouponPopup();
+    }
   }
 
   renderFilters();

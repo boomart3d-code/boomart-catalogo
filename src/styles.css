@@ -154,6 +154,60 @@ input {
   text-align: center;
 }
 
+/* Emergente de campana (pedido de Adrian, 2026-09-29): solo aparece al
+   entrar via un enlace corto ?categoria=<slug> (ej. boomart.pe/saintseiya).
+   Se muestra unos segundos y "vuela" hacia el banner de arriba, donde ya
+   esta el mismo mensaje del cupon, antes de desaparecer. */
+.coupon-popup[hidden] {
+  display: none;
+}
+
+.coupon-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  transition: background 320ms ease;
+}
+
+.coupon-popup.is-visible {
+  background: rgba(0, 0, 0, 0.55);
+  pointer-events: auto;
+}
+
+.coupon-popup-card {
+  max-width: 320px;
+  padding: 22px 26px;
+  border: 3px dashed var(--black);
+  border-radius: 14px;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.35;
+  cursor: pointer;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transform: translateY(24px) scale(0.85);
+  transition: opacity 380ms ease, transform 380ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.coupon-popup.is-visible .coupon-popup-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.coupon-popup.is-flying .coupon-popup-card {
+  opacity: 0;
+  transform: translateY(-46vh) scale(0.2);
+  transition: opacity 650ms ease-in, transform 650ms cubic-bezier(0.6, -0.28, 0.74, 0.05);
+}
+
 .quick-nav {
   position: sticky;
   top: 0;
