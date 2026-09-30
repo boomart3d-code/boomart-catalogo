@@ -146,7 +146,7 @@
       "Templo",
       "Combo"
     ],
-    "height": "Templo: 16–20 cm · Pandora Box: 6.5 × 5 × 5 cm · Pedestal: 8 × 7.5 × 7.5 cm",
+    "height": "Templo: 16 × 15 × 24.5 cm (alto × fondo × ancho) · Pandora Box: 6.5 × 5 × 5 cm · Pedestal: 8 × 7.5 × 7.5 cm",
     "material": "PLA+ reforzado y PLA Silk dorado",
     "availability": "A pedido",
     "templePricing": {
@@ -160,9 +160,10 @@
     "gallery": [
       "assets/products/templo-virgo-hero.jpg",
       "assets/products/templo-virgo-2.jpg",
-      "assets/products/templo-virgo-pandora.jpg"
+      "assets/products/templo-virgo-pandora.jpg",
+      "assets/products/templo-virgo-medidas.jpg"
     ],
-    "description": "Combo de la Casa de Virgo: templo grande de aproximadamente 16 a 20 cm de alto, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado."
+    "description": "Combo de la Casa de Virgo: templo de 16 cm de alto × 15 cm de fondo × 24.5 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado."
   },
   {
     "id": "templo-libra",
