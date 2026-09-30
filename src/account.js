@@ -347,10 +347,6 @@
     // Sin fila todavia (primer registro) = elegible; el default de la
     // columna es false (no usado) para cualquier fila nueva o ya existente.
     const couponEligible = !cliente || cliente.cupon_bienvenida_usado !== true;
-    // Solo exige DNI cuando la persona entro por el banner del cupon Y
-    // todavia no lo ha usado -- si ya gasto su cupon, este registro es una
-    // edicion normal de perfil y el documento vuelve a ser opcional.
-    const requireDocForCoupon = hasCouponIntent() && couponEligible;
 
     if (nombre) accountLabel.textContent = nombre;
 
@@ -377,22 +373,17 @@
       <p class="eyebrow">Mi cuenta</p>
       <h2>Tus datos</h2>
       <p class="field-hint">Correo: <strong>${user.email}</strong></p>
-      ${
-        requireDocForCoupon
-          ? `<p class="field-hint coupon-hint">🎁 Para hacer efectivo tu cupón de descuento, completa tu compra por esta misma página web.</p>`
-          : ""
-      }
       <form id="accountProfileForm" novalidate>
         <label class="field">
-          <span>Nombre</span>
+          <span>Nombre *</span>
           <input type="text" id="accountNameInput" autocomplete="given-name" value="${nombre}" required>
         </label>
         <label class="field">
           <span>Apellido</span>
-          <input type="text" id="accountLastNameInput" autocomplete="family-name" value="${apellido}" required>
+          <input type="text" id="accountLastNameInput" autocomplete="family-name" value="${apellido}">
         </label>
         <label class="field">
-          <span>Teléfono / WhatsApp</span>
+          <span>Teléfono / WhatsApp *</span>
           <input type="tel" id="accountPhoneInput" autocomplete="tel" placeholder="999 999 999" value="${telefono}" required>
         </label>
         <div class="document-fields-row">
@@ -405,8 +396,8 @@
             </select>
           </label>
           <label class="field">
-            <span>Número de documento${requireDocForCoupon ? " *" : ""}</span>
-            <input type="text" id="accountDocNumber" value="${docNumber}"${requireDocForCoupon ? " required" : ""}>
+            <span>Número de documento</span>
+            <input type="text" id="accountDocNumber" value="${docNumber}">
           </label>
         </div>
         <p class="form-error" id="accountFormError" hidden></p>
@@ -436,13 +427,8 @@
       const newApellido = lastNameInput.value.trim();
       const newTelefono = phoneInput.value.trim();
       const newDocNumber = docNumberInput.value.trim();
-      if (!newNombre || !newApellido || !newTelefono) {
-        errorEl.textContent = "Nombre, apellido y teléfono son obligatorios.";
-        errorEl.hidden = false;
-        return;
-      }
-      if (requireDocForCoupon && !newDocNumber) {
-        errorEl.textContent = "Tu documento de identidad es obligatorio para recibir el cupón de descuento.";
+      if (!newNombre || !newTelefono) {
+        errorEl.textContent = "Nombre y teléfono son obligatorios.";
         errorEl.hidden = false;
         return;
       }
