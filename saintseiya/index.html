@@ -8,15 +8,18 @@
          octubre para Instagram/Facebook): boomart.pe/saintseiya redirige al
          catalogo principal ya filtrado en Saint Seiya, para que se vea el
          banner del cupon de bienvenida arriba de todo y debajo solo esas
-         piezas. Sin indexar (no es contenido propio, es solo un redirect). -->
+         piezas. Sin indexar (no es contenido propio, es solo un redirect).
+         SIN #catalogo en la URL destino: un ancla en el enlace hace que el
+         navegador salte solo a esa seccion apenas carga, tapando el banner
+         que queda mas arriba (Adrian lo detecto en pantalla, 2026-09-29). -->
     <meta name="robots" content="noindex, follow">
-    <meta http-equiv="refresh" content="0; url=https://boomart.pe/?categoria=saint-seiya#catalogo">
+    <meta http-equiv="refresh" content="0; url=https://boomart.pe/?categoria=saint-seiya">
     <link rel="canonical" href="https://boomart.pe/categoria/saint-seiya/">
     <script>
-      location.replace("https://boomart.pe/?categoria=saint-seiya#catalogo");
+      location.replace("https://boomart.pe/?categoria=saint-seiya");
     </script>
   </head>
   <body>
-    <p>Redirigiendo a <a href="https://boomart.pe/?categoria=saint-seiya#catalogo">el catálogo de Saint Seiya en BoomArt</a>…</p>
+    <p>Redirigiendo a <a href="https://boomart.pe/?categoria=saint-seiya">el catálogo de Saint Seiya en BoomArt</a>…</p>
   </body>
 </html>
