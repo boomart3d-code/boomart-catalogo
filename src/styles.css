@@ -2581,3 +2581,30 @@ h2 {
 .cart-toast-keep:hover {
   color: white;
 }
+
+/* Elegir cuanto pagar ahora (reserva 50% / total) y aviso de tarjeta */
+.payment-amount-options {
+  margin: 8px 0 12px;
+}
+
+.payment-amount-options .payment-method {
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.payment-amount-options .payment-method strong {
+  font-size: 1.15rem;
+}
+
+.payment-coupon-note {
+  padding: 10px 12px;
+  border: 1px dashed var(--red);
+  border-radius: 8px;
+  background: rgba(225, 19, 47, 0.1);
+}
+
+@media (max-width: 640px) {
+  .payment-amount-options {
+    flex-direction: row;
+  }
+}

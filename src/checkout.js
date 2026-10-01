@@ -122,6 +122,7 @@
   };
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   let selectedPaymentMethod = null;
+  let payMode = "advance"; // "advance" (reserva 50%) | "full" (pago total 100%)
 
   // ---------- Carrito: badge + panel lateral ----------
 
@@ -559,10 +560,54 @@
       : "";
   }
 
+  const paymentDisclaimerEl = document.querySelector("#paymentDisclaimer");
+  const doneTextEl = document.querySelector("#doneText");
+  const DISCLAIMER_DEFAULT = paymentDisclaimerEl ? paymentDisclaimerEl.textContent : "";
+  const CONFIRM_LABEL_DEFAULT = confirmWhatsappBtn.textContent;
+  const DONE_TEXT_DEFAULT = doneTextEl ? doneTextEl.innerHTML : "";
+
+  const selectedMethodConfig = () => (CHECKOUT.paymentMethods || {})[selectedPaymentMethod] || {};
+  const isCardPayment = () => selectedMethodConfig().type === "link";
+
+  // Monto segun el metodo y la modalidad elegidos. El cupon de bienvenida solo
+  // rige para Yape/Plin/transferencia: con tarjeta (enlace de pago, que tiene
+  // comision) se cobra el subtotal sin descuento.
+  function paymentPlan(state) {
+    const t = state.totals;
+    const card = isCardPayment();
+    const baseCents = Math.round((card ? t.subtotal : t.total) * 100);
+    const advanceCents = Math.round(baseCents * t.advanceRate);
+    return {
+      card,
+      couponApplied: Boolean(t.couponApplied) && !card,
+      couponSkipped: Boolean(t.couponApplied) && card,
+      base: baseCents / 100,
+      advance: advanceCents / 100,
+      full: baseCents / 100,
+      pay: (payMode === "full" ? baseCents : advanceCents) / 100,
+      balance: (payMode === "full" ? 0 : baseCents - advanceCents) / 100
+    };
+  }
+
+  function refreshPaymentAmounts() {
+    const plan = paymentPlan(window.BoomartCart.getState());
+    paymentAdvanceAmountEl.textContent = money(plan.pay);
+    document.querySelectorAll("[data-pay-mode-amount]").forEach((el) => {
+      el.textContent = money(el.dataset.payModeAmount === "full" ? plan.full : plan.advance);
+    });
+  }
+
   function renderPaymentStep() {
-    const state = window.BoomartCart.getState();
-    paymentAdvanceAmountEl.textContent = money(state.totals.advance);
     selectedPaymentMethod = null;
+    payMode = "advance";
+    document.querySelectorAll("[data-pay-mode]").forEach((btn) => {
+      const on = btn.dataset.payMode === "advance";
+      btn.classList.toggle("is-selected", on);
+      btn.setAttribute("aria-pressed", String(on));
+    });
+    refreshPaymentAmounts();
+    paymentDisclaimerEl.textContent = DISCLAIMER_DEFAULT;
+    confirmWhatsappBtn.textContent = CONFIRM_LABEL_DEFAULT;
     confirmWhatsappBtn.disabled = true;
     document.querySelectorAll("[data-payment-method]").forEach((btn) => {
       btn.classList.remove("is-selected");
@@ -585,14 +630,33 @@
 
   document.querySelectorAll("[data-payment-method]").forEach((button) => {
     button.addEventListener("click", () => {
-      const methodKey = button.dataset.paymentMethod;
-      selectedPaymentMethod = methodKey;
+      selectedPaymentMethod = button.dataset.paymentMethod;
       document.querySelectorAll("[data-payment-method]").forEach((btn) => {
         const selected = btn === button;
         btn.classList.toggle("is-selected", selected);
         btn.setAttribute("aria-pressed", String(selected));
       });
+      renderPaymentDetail();
+    });
+  });
 
+  document.querySelectorAll("[data-pay-mode]").forEach((button) => {
+    button.addEventListener("click", () => {
+      payMode = button.dataset.payMode === "full" ? "full" : "advance";
+      document.querySelectorAll("[data-pay-mode]").forEach((btn) => {
+        const selected = btn === button;
+        btn.classList.toggle("is-selected", selected);
+        btn.setAttribute("aria-pressed", String(selected));
+      });
+      if (selectedPaymentMethod) renderPaymentDetail();
+      else refreshPaymentAmounts();
+    });
+  });
+
+  function renderPaymentDetail() {
+      refreshPaymentAmounts();
+      const plan = paymentPlan(window.BoomartCart.getState());
+      const methodKey = selectedPaymentMethod;
       const method = (CHECKOUT.paymentMethods || {})[methodKey] || {};
       const label = method.label || methodKey;
       const holderHtml = method.holder ? `<p class="payment-holder">Titular: <strong>${method.holder}</strong></p>` : "";
@@ -607,7 +671,24 @@
         </div>
       `;
 
-      if (method.type === "account" && method.available && method.accountNumber) {
+      paymentDisclaimerEl.textContent = DISCLAIMER_DEFAULT;
+      confirmWhatsappBtn.textContent = CONFIRM_LABEL_DEFAULT;
+
+      if (method.type === "link" && method.available) {
+        const gateway = method.gateway || "nuestra pasarela de pago";
+        const couponNote = plan.couponSkipped
+          ? `<p class="payment-coupon-note">🎁 El cupón de bienvenida (-10%) se aplica únicamente a pagos por Yape, Plin o transferencia bancaria. Con tarjeta se paga el precio sin descuento. Tu cupón sigue disponible para otra compra.</p>`
+          : "";
+        paymentDetailEl.innerHTML = `
+          <div class="payment-qr payment-card-link">
+            <p><strong>Pago seguro con tarjeta de crédito o débito</strong> a través de <strong>${gateway}</strong>.</p>
+            <p>Pagarás <strong>${money(plan.pay)}</strong> (${payMode === "full" ? "pago total" : "reserva del 50%"}). Te enviaremos por WhatsApp un enlace de pago de ${gateway} por ese monto exacto. Ingresas los datos de tu tarjeta solo en la página de ${gateway}: BoomArt nunca ve ni guarda los datos de tu tarjeta.</p>
+            ${couponNote}
+          </div>
+        `;
+        paymentDisclaimerEl.textContent = `Tu pedido queda pendiente hasta que se confirme el pago realizado en el enlace de ${gateway}.`;
+        confirmWhatsappBtn.textContent = "Solicitar enlace de pago por WhatsApp";
+      } else if (method.type === "account" && method.available && method.accountNumber) {
         paymentDetailEl.innerHTML = `
           <div class="payment-qr payment-account">
             ${holderHtml}
@@ -628,7 +709,7 @@
           </div>
         `;
       } else {
-        const missingWhat = method.type === "account" ? `El número de cuenta ${label}` : `El QR de ${label}`;
+        const missingWhat = method.type === "account" ? `El número de cuenta ${label}` : method.type === "link" ? "El pago con tarjeta" : `El QR de ${label}`;
         paymentDetailEl.innerHTML = `
           <div class="payment-qr payment-qr-missing">
             <p>${missingWhat} todavía no está disponible en la web. Continúa y coordina el pago de tu adelanto directamente por WhatsApp.</p>
@@ -636,8 +717,7 @@
         `;
       }
       confirmWhatsappBtn.disabled = false;
-    });
-  });
+  }
 
   paymentDetailEl.addEventListener("click", async (event) => {
     const copyBtn = event.target.closest("[data-copy-value]");
@@ -675,7 +755,30 @@
 
   const DOC_TYPE_LABELS = { dni: "DNI", ce: "Carnet de Extranjería", pasaporte: "Pasaporte" };
 
+  function buildCardMessage(state, plan) {
+    const items = state.lines
+      .map((line) => {
+        const variantPart = line.variantLabel ? ` (${line.variantLabel})` : "";
+        return `- ${line.quantity}x ${line.name}${variantPart} — ${money(line.unitPrice)} c/u — Subtotal ${money(line.subtotal)}`;
+      })
+      .join("\n");
+    const values = {
+      nombre: customer.name,
+      apellido: customer.lastName,
+      pedido: `${items}\nTotal de productos: ${money(plan.base)}`,
+      modalidad: payMode === "full" ? "pago total (100%)" : "reserva del 50%",
+      monto: money(plan.pay),
+      pasarela: selectedMethodConfig().gateway || "la pasarela de pago",
+      destino: destinationLabel(),
+      correo: customer.email
+    };
+    const template = Array.isArray(CHECKOUT.cardPaymentMessage) ? CHECKOUT.cardPaymentMessage : [];
+    return template.join("\n").replace(/\{(\w+)\}/g, (m, key) => (key in values ? values[key] : m));
+  }
+
   function buildOrderMessage(state) {
+    const plan = paymentPlan(state);
+    if (plan.card) return buildCardMessage(state, plan);
     const methodLabel = ((CHECKOUT.paymentMethods || {})[selectedPaymentMethod] || {}).label || selectedPaymentMethod || "el metodo elegido";
 
     const itemLines = state.lines
@@ -702,8 +805,12 @@
       "",
       ...couponLines,
       `Total de productos: ${money(state.totals.total)}`,
-      `Adelanto del 50%: ${money(state.totals.advance)}`,
-      `He realizado el adelanto mediante ${methodLabel}.`,
+      payMode === "full"
+        ? `Pago total (100%): ${money(plan.pay)}`
+        : `Adelanto del 50%: ${money(plan.pay)}`,
+      payMode === "full"
+        ? `He realizado el pago total mediante ${methodLabel}.`
+        : `He realizado el adelanto mediante ${methodLabel}.`,
       `Destino: ${destinationLabel()}`,
       `Correo: ${customer.email}`,
       ...docLine,
@@ -730,10 +837,16 @@
       }
     }
 
+    const plan = paymentPlan(state);
+    if (doneTextEl) {
+      doneTextEl.innerHTML = plan.card
+        ? `Se abrió WhatsApp con tu solicitud ya redactada. Revisa el mensaje y pulsa <strong>Enviar</strong>. Te responderemos con tu enlace de pago de ${selectedMethodConfig().gateway || "la pasarela"} por ${money(plan.pay)}. Tu pedido queda pendiente hasta que se confirme el pago.`
+        : DONE_TEXT_DEFAULT;
+    }
     reopenWhatsappLink.href = url;
     window.open(url, "_blank", "noopener");
     document.dispatchEvent(
-      new CustomEvent("boomart:order-sent", { detail: { couponApplied: Boolean(state.totals.couponApplied) } })
+      new CustomEvent("boomart:order-sent", { detail: { couponApplied: plan.couponApplied } })
     );
     showStep("done");
   });

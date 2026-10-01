@@ -58,8 +58,35 @@ window.BOOMART_CHECKOUT = {
       accountNumber: "19194306650040",
       cci: "00219119430665004056",
       available: true
+    },
+    // type: "link" -> pago con tarjeta mediante ENLACE DE PAGO: no se muestra
+    // ningun dato de cuenta; la web solo resume el monto y abre WhatsApp pidiendo
+    // el enlace, que BoomArt crea a mano en la pasarela. "gateway" es el nombre
+    // que ve el cliente (da confianza antes de ingresar su tarjeta). Pon
+    // available:false para ocultarlo/desactivarlo hasta que la cuenta este validada.
+    tarjeta: {
+      type: "link",
+      label: "Tarjeta de crédito/débito",
+      gateway: "SumUp",
+      available: true
     }
   },
+
+  // Texto del mensaje de WhatsApp cuando el cliente elige pagar con tarjeta.
+  // Marcadores: {nombre} {apellido} {pedido} {modalidad} {monto} {pasarela}
+  // {destino} {correo}. Una linea en blanco = "" en la lista.
+  cardPaymentMessage: [
+    "Hola, BoomArt. Soy {nombre} {apellido} y quiero pagar mi compra con tarjeta de crédito/débito.",
+    "",
+    "{pedido}",
+    "",
+    "Modalidad: {modalidad}",
+    "Monto a pagar con tarjeta: {monto}",
+    "Destino: {destino}",
+    "Correo: {correo}",
+    "",
+    "Por favor, envíenme el enlace de pago de {pasarela} por {monto}."
+  ],
 
   // Condiciones de entrega y cobro del saldo, mostradas antes del pago y usadas
   // tambien en el mensaje de WhatsApp. destinationKey: "lima" | "provincias".

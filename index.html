@@ -41,7 +41,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=29">
+    <link rel="stylesheet" href="src/styles.css?v=30">
 
     <script type="application/ld+json">
     {
@@ -462,7 +462,7 @@
 
         <section class="checkout-step" data-step="summary" hidden>
           <p class="eyebrow">Paso 2 de 3 · Resumen</p>
-          <h2>Resumen y adelanto</h2>
+          <h2>Resumen de tu pedido</h2>
           <div class="summary-lines" id="summaryLines"></div>
           <div class="summary-totals">
             <div class="summary-row coupon-row" id="summaryCouponRow" hidden>
@@ -478,11 +478,11 @@
               <strong id="summaryTotal"></strong>
             </div>
             <div class="summary-row advance">
-              <span>Adelanto a pagar ahora (50%)</span>
+              <span>Reserva del 50% (opcional)</span>
               <strong id="summaryAdvance"></strong>
             </div>
             <div class="summary-row">
-              <span>Saldo pendiente de productos</span>
+              <span>Saldo si pagas la reserva</span>
               <strong id="summaryBalance"></strong>
             </div>
             <div class="summary-row shipping">
@@ -491,7 +491,7 @@
             </div>
           </div>
           <div class="delivery-terms" id="deliveryTerms"></div>
-          <p class="field-hint">Fabricación: 48 horas útiles desde la validación de tu adelanto.</p>
+          <p class="field-hint">Fabricación: 48 horas útiles desde la validación de tu pago.</p>
           <div class="checkout-actions">
             <button type="button" class="button secondary" data-back-to="customer">Atrás</button>
             <button type="button" class="button primary" data-go-to="payment">Continuar al pago</button>
@@ -499,20 +499,26 @@
         </section>
 
         <section class="checkout-step" data-step="payment" hidden>
-          <p class="eyebrow">Paso 3 de 3 · Pago del adelanto</p>
-          <h2>Paga tu adelanto</h2>
-          <p class="field-hint">Elige un método, escanea el código y paga exactamente <strong id="paymentAdvanceAmount"></strong>. Luego vuelve a esta página para continuar.</p>
+          <p class="eyebrow">Paso 3 de 3 · Pago</p>
+          <h2>Elige cómo pagar</h2>
+          <p class="field-hint">¿Cuánto quieres pagar ahora?</p>
+          <div class="payment-methods payment-amount-options" role="group" aria-label="Monto a pagar ahora">
+            <button type="button" class="payment-method is-selected" data-pay-mode="advance" aria-pressed="true">Reserva 50%<br><strong data-pay-mode-amount="advance"></strong></button>
+            <button type="button" class="payment-method" data-pay-mode="full" aria-pressed="false">Pago total 100%<br><strong data-pay-mode-amount="full"></strong></button>
+          </div>
+          <p class="field-hint" id="paymentAmountHint">Pagarás ahora exactamente <strong id="paymentAdvanceAmount"></strong>. Elige tu método de pago:</p>
 
           <div class="payment-methods" role="group" aria-label="Método de pago">
             <button type="button" class="payment-method" data-payment-method="yape" aria-pressed="false">Yape</button>
             <button type="button" class="payment-method" data-payment-method="plin" aria-pressed="false">Plin</button>
             <button type="button" class="payment-method" data-payment-method="interbank" aria-pressed="false">Cuenta Interbank</button>
             <button type="button" class="payment-method" data-payment-method="bcp" aria-pressed="false">Cuenta BCP</button>
+            <button type="button" class="payment-method" data-payment-method="tarjeta" aria-pressed="false">Tarjeta crédito/débito</button>
           </div>
 
           <div class="payment-detail" id="paymentDetail"></div>
 
-          <p class="payment-disclaimer">Este código QR no confirma tu pago automáticamente. BoomArt valida cada adelanto de forma manual antes de iniciar la fabricación.</p>
+          <p class="payment-disclaimer" id="paymentDisclaimer">Este código QR no confirma tu pago automáticamente. BoomArt valida cada pago de forma manual antes de iniciar la fabricación.</p>
 
           <div class="field-group" id="documentFields" hidden>
             <p class="field-hint">Para enviarte tu boleta por correo, cuéntanos tu documento (opcional):</p>
@@ -535,14 +541,14 @@
 
           <div class="checkout-actions">
             <button type="button" class="button secondary" data-back-to="summary">Atrás</button>
-            <button type="button" class="button whatsapp full" id="confirmWhatsapp" disabled>Ya pagué mi adelanto: continuar por WhatsApp</button>
+            <button type="button" class="button whatsapp full" id="confirmWhatsapp" disabled>Ya pagué: continuar por WhatsApp</button>
           </div>
         </section>
 
         <section class="checkout-step" data-step="done" hidden>
           <p class="eyebrow">Pedido enviado a WhatsApp</p>
           <h2>Revisa y envía tu mensaje</h2>
-          <p>Se abrió WhatsApp con tu pedido ya redactado. Revisa el mensaje, pulsa <strong>Enviar</strong> dentro de WhatsApp y adjunta la foto de tu comprobante de pago. Tu pedido queda pendiente de validación por BoomArt.</p>
+          <p id="doneText">Se abrió WhatsApp con tu pedido ya redactado. Revisa el mensaje, pulsa <strong>Enviar</strong> dentro de WhatsApp y adjunta la foto de tu comprobante de pago. Tu pedido queda pendiente de validación por BoomArt.</p>
           <a class="button whatsapp full" id="reopenWhatsapp" target="_blank" rel="noreferrer">Abrir WhatsApp de nuevo</a>
           <div class="checkout-actions">
             <button type="button" class="button secondary full" data-close-checkout>Cerrar</button>
@@ -576,11 +582,11 @@
       </span>
     </a>
 
-    <script src="src/checkout-config.js?v=7"></script>
+    <script src="src/checkout-config.js?v=8"></script>
     <script src="src/cart.js?v=6"></script>
     <script src="src/products.js?v=5"></script>
     <script src="src/app.js?v=26"></script>
-    <script src="src/checkout.js?v=22"></script>
+    <script src="src/checkout.js?v=23"></script>
     <script src="src/products-loader.js?v=5"></script>
     <script src="src/reviews.js?v=5"></script>
     <script src="src/reviews-loader.js?v=2"></script>
