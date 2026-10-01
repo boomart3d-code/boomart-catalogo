@@ -456,7 +456,10 @@
       }
       accountLabel.textContent = newNombre;
       mergeCustomerLocal({
-        name: [newNombre, newApellido].filter(Boolean).join(" "),
+        name: newNombre,
+        lastName: newApellido,
+        phone: newTelefono,
+        email: user.email,
         isAccountCustomer: true,
         docType: newDocType || undefined,
         docNumber: newDocNumber || undefined,
