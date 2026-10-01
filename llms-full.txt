@@ -5,7 +5,7 @@ Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion ~48 horas uti
 la validacion del adelanto (50%). Pedidos por WhatsApp: https://wa.me/51925666542
 
 Total de piezas: 67
-Actualizado: 2026-09-30
+Actualizado: 2026-10-01
 Fuente estructurada: https://boomart.pe/catalogo.json
 
 ---
@@ -106,7 +106,7 @@ Combo de la Casa de Libra: templo de 17.5 cm de alto × 20 cm de fondo × 22 cm 
 - Imagen: https://boomart.pe/assets/products/templo-escorpio-hero.jpg
 - Ficha: https://boomart.pe/producto/templo-escorpio/
 
-Combo de la Casa de Escorpio: templo grande de aproximadamente 16 a 20 cm de alto, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado.
+Combo de la Casa de Escorpio: templo de 17 cm de alto × 19 cm de fondo × 21 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado.
 
 ### Templo de Sagitario
 
