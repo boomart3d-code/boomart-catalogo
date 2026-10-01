@@ -1812,10 +1812,27 @@ h2 {
     max-height: 100dvh;
     border: 0;
     border-radius: 0;
+    /* Toda la ficha es UNA sola superficie con scroll (foto + detalles
+       bajan juntos). Antes el scroll era solo del panel de abajo, anidado
+       dentro de un contenedor cortado: en iPhone quedaba "pegado" y la foto
+       era zona muerta. */
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
 
   .modal-shell {
-    max-height: 100dvh;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .modal-info {
+    overflow: visible;
+  }
+
+  /* La X queda fija arriba aunque la ficha este scrolleada. */
+  .product-modal .close-modal {
+    position: fixed;
   }
 
   .modal-gallery {
