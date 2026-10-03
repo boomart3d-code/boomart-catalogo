@@ -1,0 +1,2 @@
+# Libreria de terceros fijada del portal de socios: sin conversion de saltos de linea (su huella SHA-256 esta en socios/vendor/LEEME.txt)
+socios/vendor/*.js -text
