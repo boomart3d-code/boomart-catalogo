@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#080808">
+  <!-- Politica de contenido estricta: solo scripts propios (sin codigo en linea), conexion solo a la API del portal, imagenes de boomart.pe.
+       La direccion de la API se mantiene aqui y en config.js; si cambia una, cambia la otra. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' https://boomart.pe https://www.boomart.pe data:; connect-src https://ugywzvnokdsikiczvwdx.supabase.co; base-uri 'none'; form-action 'none'">
+  <title>Portal de socios · BoomArt</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+  <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+
+  <!-- Entrar -->
+  <main id="view-login" class="login" hidden>
+    <img class="login__logo" src="assets/logo.svg" alt="BoomArt" width="96" height="96">
+    <h1>Portal de socios</h1>
+    <p class="muted">Ingresa con el usuario y la clave que te dio BoomArt.</p>
+    <form id="login-form" class="stack" autocomplete="on" novalidate>
+      <label class="field">
+        <span>Usuario</span>
+        <input id="login-user" name="username" type="text" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" inputmode="email" required>
+      </label>
+      <label class="field">
+        <span>Clave</span>
+        <input id="login-pass" name="password" type="password" autocomplete="current-password" required>
+      </label>
+      <p id="login-error" class="error" role="alert" hidden></p>
+      <button id="login-submit" class="btn btn--primary btn--big" type="submit">Entrar</button>
+    </form>
+    <p class="fine">¿Problemas para entrar? Escríbele a BoomArt.</p>
+  </main>
+
+  <!-- Aplicacion -->
+  <div id="view-app" hidden>
+    <header class="topbar">
+      <img src="assets/logo.svg" alt="" width="36" height="36">
+      <div class="topbar__title">
+        <strong id="partner-name">Mi local</strong>
+        <span class="muted" id="partner-sub">Portal de socios</span>
+      </div>
+      <button id="btn-logout" class="btn btn--ghost" type="button">Salir</button>
+    </header>
+    <div id="pending-banner" class="banner" hidden></div>
+    <div id="offline-banner" class="banner banner--warn" hidden>Sin conexión. Lo que ves puede estar desactualizado.</div>
+
+    <main class="content">
+      <section id="tab-inicio" class="tab" aria-labelledby="t-inicio"></section>
+      <section id="tab-productos" class="tab" aria-labelledby="t-productos" hidden></section>
+      <section id="tab-historial" class="tab" aria-labelledby="t-historial" hidden></section>
+      <section id="tab-entregas" class="tab" aria-labelledby="t-entregas" hidden></section>
+    </main>
+
+    <nav class="tabbar" aria-label="Secciones">
+      <button id="t-inicio" class="tabbar__btn is-active" data-tab="inicio" type="button">Inicio</button>
+      <button id="t-productos" class="tabbar__btn" data-tab="productos" type="button">Productos</button>
+      <button id="t-historial" class="tabbar__btn" data-tab="historial" type="button">Historial</button>
+      <button id="t-entregas" class="tabbar__btn" data-tab="entregas" type="button">Entregas</button>
+    </nav>
+  </div>
+
+  <!-- Registrar venta -->
+  <dialog id="dlg-sale" class="sheet" aria-labelledby="dlg-sale-title">
+    <form id="sale-form" class="stack" method="dialog" novalidate>
+      <h2 id="dlg-sale-title">Registrar venta</h2>
+      <label class="field">
+        <span>Producto</span>
+        <select id="sale-product" required></select>
+      </label>
+      <div class="field">
+        <span>Cantidad <small id="sale-avail" class="muted"></small></span>
+        <div class="stepper">
+          <button id="sale-minus" class="btn btn--round" type="button" aria-label="Una menos">−</button>
+          <input id="sale-qty" type="text" inputmode="numeric" pattern="[0-9]*" value="1" aria-label="Cantidad">
+          <button id="sale-plus" class="btn btn--round" type="button" aria-label="Una más">+</button>
+        </div>
+      </div>
+      <label class="field">
+        <span>Precio de venta por unidad (S/)</span>
+        <input id="sale-price" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off">
+        <small id="sale-price-hint" class="muted"></small>
+      </label>
+      <label class="field">
+        <span>Fecha de la venta</span>
+        <input id="sale-date" type="date">
+        <small class="muted">Hoy por defecto. Puedes elegir hasta 30 días atrás.</small>
+      </label>
+      <div class="summary" id="sale-summary" aria-live="polite"></div>
+      <p id="sale-error" class="error" role="alert" hidden></p>
+      <div class="row">
+        <button id="sale-cancel" class="btn btn--ghost" type="button">Cancelar</button>
+        <button id="sale-submit" class="btn btn--primary btn--grow" type="submit">Confirmar venta</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Pedir correccion -->
+  <dialog id="dlg-adjust" class="sheet" aria-labelledby="dlg-adjust-title">
+    <form id="adjust-form" class="stack" method="dialog" novalidate>
+      <h2 id="dlg-adjust-title">Pedir una corrección</h2>
+      <p id="adjust-sale" class="muted"></p>
+      <fieldset class="choices">
+        <legend>¿Qué quieres corregir?</legend>
+        <label><input type="radio" name="adjust-kind" value="anular" checked> Anular la venta completa</label>
+        <label><input type="radio" name="adjust-kind" value="corregir_cantidad"> Bajar la cantidad vendida</label>
+        <label><input type="radio" name="adjust-kind" value="corregir_precio"> Corregir el precio de venta</label>
+      </fieldset>
+      <label class="field" id="adjust-qty-field" hidden>
+        <span>Cantidad correcta (menor que la registrada)</span>
+        <input id="adjust-qty" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
+      </label>
+      <label class="field" id="adjust-price-field" hidden>
+        <span>Precio correcto por unidad (S/)</span>
+        <input id="adjust-price" type="text" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="field">
+        <span>Motivo (5 a 500 letras)</span>
+        <textarea id="adjust-reason" rows="3" maxlength="500"></textarea>
+      </label>
+      <p class="muted">BoomArt revisa tu pedido y lo aprueba o lo rechaza. Mientras tanto la venta sigue como está.</p>
+      <p id="adjust-error" class="error" role="alert" hidden></p>
+      <div class="row">
+        <button id="adjust-cancel" class="btn btn--ghost" type="button">Cancelar</button>
+        <button id="adjust-submit" class="btn btn--primary btn--grow" type="submit">Enviar pedido</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Resultado de una venta -->
+  <dialog id="dlg-done" class="sheet" aria-labelledby="dlg-done-title">
+    <div class="stack">
+      <h2 id="dlg-done-title">Venta registrada</h2>
+      <div id="done-body" class="summary"></div>
+      <p class="muted" id="done-undo-note"></p>
+      <div class="row">
+        <button id="done-undo" class="btn btn--ghost" type="button">Deshacer</button>
+        <button id="done-close" class="btn btn--primary btn--grow" type="button">Listo</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="vendor/supabase-js-2.117.2.umd.js"></script>
+  <script src="config.js?v=1"></script>
+  <script src="util.js?v=1"></script>
+  <script src="app.js?v=1"></script>
+</body>
+</html>
