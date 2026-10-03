@@ -199,7 +199,7 @@
   }
 
   function settlementStatus(status) {
-    return ({ abierta: "Abierta", en_revision: "En revisión", cuadrada: "Cuadrada", cobrada: "Cobrada", importada: "Importada" })[status] || status;
+    return ({ abierta: "Abierta", en_revision: "En revisión", cuadrada: "Cuadrada", cobrada: "Cobrada", importada: "Importada", anulada: "Anulada" })[status] || status;
   }
 
   function paymentLabel(method) {
@@ -224,6 +224,7 @@
           if (!current) actions.push(h("button", { class: "btn btn--primary btn--small", type: "button", onclick: () => openSettlement(preview), text: "Crear cuadre" }));
           else if (current.status === "abierta") actions.push(h("button", { class: "btn btn--primary btn--small", type: "button", onclick: () => transitionSettlement(current, "review"), text: "Pasar a revisión" }));
           else if (current.status === "en_revision") actions.push(h("button", { class: "btn btn--primary btn--small", type: "button", onclick: () => transitionSettlement(current, "square"), text: "Cuadrar y congelar" }));
+          if (current) actions.push(h("button", { class: "btn btn--ghost btn--small", type: "button", onclick: () => openCancelSettlement(current), text: "Anular cuadre" }));
           actions.push(h("button", { class: "btn btn--ghost btn--small", type: "button", onclick: () => openSettlementAdjustment(preview), text: "Agregar ajuste" }));
         }
         return h("article", { class: "admin-row" },
@@ -245,7 +246,10 @@
           h("div", { class: "admin-row__head" }, h("div", {}, h("div", { class: "admin-row__title", text: `${row.settlement_number} · ${row.partner_name}` }),
             h("div", { class: "admin-row__meta", text: `${U.formatDay(row.period_start)} a ${U.formatDay(row.period_end)}` })),
             badge(settlementStatus(row.status), row.status === "cobrada" || row.status === "importada" ? "ok" : row.status === "en_revision" ? "warn" : "off")),
-          h("div", { class: "admin-row__metrics" }, metric(row.total_qty, "unidades"), metric(U.formatMoney(row.total_boomart), "BoomArt"), metric(U.formatMoney(row.total_partner_gain), "ganancia local")),
+          // abierta / en revision / anulada no tienen importes congelados: mostrar ceros haria creer que el cuadre vale S/ 0.00
+          ["abierta", "en_revision", "anulada"].includes(row.status)
+            ? h("div", { class: "admin-row__meta", text: row.status === "anulada" ? `Anulada el ${U.formatDateTime(row.cancelled_at)}` : "Los importes se calculan y se congelan al cuadrar (arriba ves la vista previa)." })
+            : h("div", { class: "admin-row__metrics" }, metric(row.total_qty, "unidades"), metric(U.formatMoney(row.total_boomart), "BoomArt"), metric(U.formatMoney(row.total_partner_gain), "ganancia local")),
           row.status === "cobrada" || row.status === "importada" ? h("div", { class: "admin-row__meta", text: `Cobrado ${U.formatDay(row.paid_on)} · ${paymentLabel(row.payment_method)}${row.payment_reference ? ` · ${row.payment_reference}` : ""}` }) : null,
           lines.length ? h("div", { class: "settlement-lines" }, lines.slice(0, 20).map((line) => h("div", { class: "settlement-line" },
             h("span", { text: `${line.qty} × ${line.product_name}` }), h("span", { text: `BoomArt ${U.formatMoney(line.total_boomart)}` })))) : null,
@@ -419,6 +423,31 @@
     } finally { button.disabled = false; }
   }
 
+  function openCancelSettlement(row) {
+    state.cancelDraft = row;
+    $("cancel-settlement-summary").textContent = `${row.settlement_number} · ${row.partner_name} · ${settlementStatus(row.status)}`;
+    $("cancel-settlement-reason").value = "";
+    $("cancel-settlement-error").hidden = true;
+    $("dlg-cancel-settlement").showModal();
+  }
+
+  async function submitCancelSettlement(event) {
+    event.preventDefault();
+    if (!state.cancelDraft) return;
+    const error = $("cancel-settlement-error"); error.hidden = true;
+    const reason = $("cancel-settlement-reason").value.trim();
+    if (reason.length < 5) { error.textContent = "Explica el motivo (mínimo 5 caracteres)."; error.hidden = false; return; }
+    const button = $("cancel-settlement-submit"); button.disabled = true;
+    try {
+      await callAdmin("/settlements/cancel", { settlement_id: state.cancelDraft.settlement_id, reason });
+      $("dlg-cancel-settlement").close(); state.cancelDraft = null;
+      toast("Cuadre anulado. Ya puedes crear otro para ese local."); await loadData(true);
+    } catch (err) {
+      if (err.status === 401) return handleExpired();
+      error.textContent = U.friendlyError(err); error.hidden = false;
+    } finally { button.disabled = false; }
+  }
+
   async function handleExpired() {
     await sb.auth.signOut();
     state.staff = null;
@@ -488,6 +517,8 @@
   $("collect-cancel").addEventListener("click", () => $("dlg-collect").close());
   $("settlement-adjust-form").addEventListener("submit", submitSettlementAdjustment);
   $("settlement-adjust-cancel").addEventListener("click", () => $("dlg-settlement-adjust").close());
+  $("cancel-settlement-form").addEventListener("submit", submitCancelSettlement);
+  $("cancel-settlement-cancel").addEventListener("click", () => $("dlg-cancel-settlement").close());
   window.addEventListener("online", () => { $("offline-banner").hidden = true; if (state.staff) loadData(true).catch(() => {}); });
   window.addEventListener("offline", () => { $("offline-banner").hidden = false; });
   for (const name of ["pointerdown", "keydown"]) window.addEventListener(name, touchActivity, { passive: true });

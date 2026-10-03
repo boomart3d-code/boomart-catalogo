@@ -117,9 +117,20 @@
     </form>
   </dialog>
 
+  <dialog id="dlg-cancel-settlement" class="sheet" aria-labelledby="cancel-settlement-title">
+    <form id="cancel-settlement-form" class="stack" method="dialog" novalidate>
+      <h2 id="cancel-settlement-title">Anular cuadre</h2>
+      <p id="cancel-settlement-summary" class="muted"></p>
+      <label class="field"><span>Motivo (mínimo 5 caracteres)</span><textarea id="cancel-settlement-reason" rows="3" minlength="5" maxlength="300" required></textarea></label>
+      <p class="muted">Solo se anula un cuadre abierto o en revisión: no cambia ventas ni importes. Uno ya cuadrado no se puede anular; se corrige con un ajuste.</p>
+      <p id="cancel-settlement-error" class="error" role="alert" hidden></p>
+      <div class="row"><button id="cancel-settlement-cancel" class="btn btn--ghost" type="button">Volver</button><button id="cancel-settlement-submit" class="btn btn--primary btn--grow" type="submit">Anular cuadre</button></div>
+    </form>
+  </dialog>
+
   <script src="../vendor/supabase-js-2.117.2.umd.js"></script>
   <script src="../config.js?v=1"></script>
   <script src="../util.js?v=1"></script>
-  <script src="app.js?v=2"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>

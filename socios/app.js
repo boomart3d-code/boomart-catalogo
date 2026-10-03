@@ -285,11 +285,12 @@
   }
 
   function settlementStatus(status) {
-    return ({ abierta: "Abierta", en_revision: "En revisión", cuadrada: "Cuadrada", cobrada: "Cobrada", importada: "Importada en Studio" })[status] || status;
+    return ({ abierta: "Abierta", en_revision: "En revisión", cuadrada: "Cuadrada", cobrada: "Cobrada", importada: "Importada en Studio", anulada: "Anulada" })[status] || status;
   }
 
   function settlementItem(settlement) {
     const lines = state.settlementLines.filter((line) => line.settlement_id === settlement.settlement_id);
+    const reviewing = settlement.status === "en_revision";
     const paid = settlement.status === "cobrada" || settlement.status === "importada";
     const period = `${U.formatDay(settlement.period_start)} al ${U.formatDay(settlement.period_end)}`;
     return h("div", { class: "item" },
@@ -297,26 +298,31 @@
         h("span", { class: "item__title", text: settlement.settlement_number }),
         h("span", { class: `badge ${paid ? "badge--ok" : settlement.status === "cuadrada" ? "badge--warn" : ""}`, text: settlementStatus(settlement.status) })),
       h("div", { class: "item__sub", text: `Periodo: ${period}` }),
-      h("div", { class: "cards" },
-        stat("Ventas", String(settlement.total_qty || 0), "unidades"),
-        stat("Total vendido", U.formatMoney(settlement.total_public || 0), "precio al público"),
-        stat("A pagar a BoomArt", U.formatMoney(settlement.total_boomart || 0), paid ? "pago registrado" : "monto del cuadre"),
-        stat("Tu ganancia", U.formatMoney(settlement.total_partner_gain || 0), "en este periodo", true)),
+      // mientras BoomArt revisa, los importes todavia no existen: mostrar S/ 0.00 haria creer que no se debe nada
+      reviewing
+        ? h("p", { class: "note", text: "BoomArt está revisando este cuadre. Los importes se calculan y se congelan cuando lo cierre; mientras tanto tus ventas siguen contando en «Inicio»." })
+        : h("div", { class: "cards" },
+          stat("Ventas", String(settlement.total_qty || 0), "unidades"),
+          stat("Total vendido", U.formatMoney(settlement.total_public || 0), "precio al público"),
+          stat("A pagar a BoomArt", U.formatMoney(settlement.total_boomart || 0), paid ? "pago registrado" : "monto del cuadre"),
+          stat("Tu ganancia", U.formatMoney(settlement.total_partner_gain || 0), "en este periodo", true)),
       paid ? h("div", { class: "item__sub", text: `Cobrado el ${U.formatDay(settlement.paid_on)}${settlement.payment_reference ? ` · Ref. ${settlement.payment_reference}` : ""}` }) : null,
-      lines.length ? h("ul", { class: "lines" }, lines.map((line) =>
+      reviewing ? null : (lines.length ? h("ul", { class: "lines" }, lines.map((line) =>
         h("li", {}, h("span", { text: `${line.qty} × ${line.product_name}` }), h("span", { text: U.formatMoney(line.total_public) })))) :
-        h("p", { class: "empty", text: settlement.status === "abierta" || settlement.status === "en_revision" ? "El detalle quedará congelado cuando BoomArt cierre el cuadre." : "Este cuadre no tiene ventas." }));
+        h("p", { class: "empty", text: "Este cuadre no tiene ventas." })));
   }
 
   function renderLiquidaciones() {
     const root = $("tab-liquidaciones");
     root.replaceChildren(h("h2", { text: "Cuadres y pagos" }),
       h("p", { class: "note", text: "Aquí ves cuánto debes a BoomArt y cuánto ganaste en cada periodo. Los cuadres cerrados ya no cambian." }));
-    if (!state.settlements.length) {
+    // el borrador de BoomArt (abierta) y un cuadre anulado no son del socio: solo ve lo que ya esta en revision, cuadrado o cobrado
+    const visible = state.settlements.filter((row) => ["en_revision", "cuadrada", "cobrada", "importada"].includes(row.status));
+    if (!visible.length) {
       root.append(h("div", { class: "empty", text: "Todavía no hay cuadres registrados." }));
       return;
     }
-    root.append(h("div", { class: "list" }, state.settlements.map(settlementItem)));
+    root.append(h("div", { class: "list" }, visible.map(settlementItem)));
   }
 
   async function openGuide(doc, button) {
