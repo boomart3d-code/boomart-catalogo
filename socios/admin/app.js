@@ -12,7 +12,9 @@
   const REFRESH_MS = 60 * 1000;
   const ACTIVE_KEY = "socios_admin_last_active_v1";
   const $ = (id) => document.getElementById(id);
-  const state = { staff: null, partners: [], stock: [], sales: [], adjustments: [], tab: "inicio", resolve: null, loadedAt: 0 };
+  const state = { staff: null, partners: [], stock: [], sales: [], adjustments: [], settlements: [], settlementLines: [],
+    settlementPreviews: [], settlementAdjustments: [], tab: "inicio", resolve: null, settlementDraft: null, collectDraft: null,
+    settlementAdjustmentDraft: null, loadedAt: 0 };
 
   function h(tag, attrs, ...children) {
     const el = document.createElement(tag);
@@ -82,11 +84,16 @@
       sb.from("v_admin_partners").select("*").order("name"),
       sb.from("v_admin_stock").select("*").order("partner_name").order("product_name"),
       sb.from("v_sales_history").select("*").order("created_at", { ascending: false }).limit(1000),
-      sb.from("v_admin_adjustments").select("*").order("requested_at", { ascending: false }).limit(500)
+      sb.from("v_admin_adjustments").select("*").order("requested_at", { ascending: false }).limit(500),
+      sb.from("v_settlements").select("*").order("opened_at", { ascending: false }).limit(500),
+      sb.from("v_settlement_lines").select("*").order("sale_created_at", { ascending: false }).limit(2000),
+      sb.from("v_settlement_previews").select("*").order("partner_name"),
+      sb.from("v_settlement_adjustments").select("*").order("created_at", { ascending: false }).limit(500)
     ]);
     const failed = results.find((result) => result.error);
     if (failed) throw failed.error;
-    [state.partners, state.stock, state.sales, state.adjustments] = results.map((result) => result.data || []);
+    [state.partners, state.stock, state.sales, state.adjustments, state.settlements, state.settlementLines,
+      state.settlementPreviews, state.settlementAdjustments] = results.map((result) => result.data || []);
     state.loadedAt = Date.now();
     fillPartnerFilter();
     renderAll();
@@ -113,6 +120,14 @@
     for (const row of stock.filter((item) => Number(item.available_qty) === 0)) alerts.push({ red: true, title: `${row.partner_name}: ${row.product_name} agotado`, detail: `SKU ${row.sku}` });
     for (const row of stock.filter((item) => Number(item.available_qty) > 0 && Number(item.idle_days) >= 30)) {
       alerts.push({ red: Number(row.idle_days) >= 90, title: `${row.partner_name}: ${row.product_name} lleva ${row.idle_days} días sin vender`, detail: `Disponibles: ${row.available_qty} · SKU ${row.sku}` });
+    }
+    const dueDays = { semanal: 7, quincenal: 15, mensual: 30 };
+    for (const row of state.settlementPreviews.filter(matchesPartner)) {
+      const threshold = dueDays[row.settlement_frequency];
+      if (!threshold || !row.oldest_pending_on || row.active_settlement_id) continue;
+      const age = Math.floor((Date.now() - new Date(`${row.oldest_pending_on}T00:00:00`).getTime()) / 86400000);
+      if (age >= threshold) alerts.push({ red: age >= threshold * 2, title: `${row.partner_name}: cuadre pendiente`,
+        detail: `${age} días desde la venta pendiente más antigua · frecuencia ${row.settlement_frequency}` });
     }
     root.replaceChildren(
       sectionTitle("Resumen en tiempo real"),
@@ -183,7 +198,63 @@
     })) : h("p", { class: "empty", text: "No hay solicitudes que coincidan con el filtro." }));
   }
 
-  function renderAll() { renderHome(); renderPartners(); renderStock(); renderSales(); renderAdjustments(); }
+  function settlementStatus(status) {
+    return ({ abierta: "Abierta", en_revision: "En revisión", cuadrada: "Cuadrada", cobrada: "Cobrada", importada: "Importada" })[status] || status;
+  }
+
+  function paymentLabel(method) {
+    return ({ efectivo: "Efectivo", yape: "Yape", plin: "Plin", transferencia_bcp: "Transferencia BCP",
+      transferencia_interbank: "Transferencia Interbank", tarjeta: "Tarjeta", otro: "Otro" })[method] || method || "";
+  }
+
+  function renderSettlements() {
+    const previews = state.settlementPreviews.filter(matchesPartner);
+    const history = state.settlements.filter((row) => matchesPartner(row)
+      && matchesText(row.partner_name, row.settlement_number, settlementStatus(row.status), row.payment_reference));
+    const root = $("tab-liquidaciones");
+    const pendingCards = previews.filter((row) => row.active_settlement_id || Number(row.sale_count_pending) || Number(row.adjustment_count_pending));
+    root.replaceChildren(
+      sectionTitle("Preparar y cerrar cuadres", pendingCards.length),
+      pendingCards.length ? h("div", { class: "admin-list" }, pendingCards.map((preview) => {
+        const current = preview.active_settlement_id ? state.settlements.find((row) => row.settlement_id === preview.active_settlement_id) : null;
+        const pendingBoomart = Number(preview.boomart_pending || 0) + Number(preview.boomart_adjustment_pending || 0);
+        const pendingPublic = Number(preview.public_pending || 0) + Number(preview.public_adjustment_pending || 0);
+        const actions = [];
+        if (state.staff?.role === "admin") {
+          if (!current) actions.push(h("button", { class: "btn btn--primary btn--small", type: "button", onclick: () => openSettlement(preview), text: "Crear cuadre" }));
+          else if (current.status === "abierta") actions.push(h("button", { class: "btn btn--primary btn--small", type: "button", onclick: () => transitionSettlement(current, "review"), text: "Pasar a revisión" }));
+          else if (current.status === "en_revision") actions.push(h("button", { class: "btn btn--primary btn--small", type: "button", onclick: () => transitionSettlement(current, "square"), text: "Cuadrar y congelar" }));
+          actions.push(h("button", { class: "btn btn--ghost btn--small", type: "button", onclick: () => openSettlementAdjustment(preview), text: "Agregar ajuste" }));
+        }
+        return h("article", { class: "admin-row" },
+          h("div", { class: "admin-row__head" }, h("div", {}, h("div", { class: "admin-row__title", text: preview.partner_name }),
+            h("div", { class: "admin-row__meta", text: current ? `${current.settlement_number} · ${settlementStatus(current.status)} · ${U.formatDay(current.period_start)} a ${U.formatDay(current.period_end)}` : "Sin cuadre activo" })),
+            current ? badge(settlementStatus(current.status), current.status === "en_revision" ? "warn" : "ok") : badge("Pendiente", "warn")),
+          h("div", { class: "admin-row__metrics" }, metric(preview.qty_pending, "unidades"), metric(U.formatMoney(pendingBoomart), "deuda"), metric(U.formatMoney(pendingPublic - pendingBoomart), "ganancia local")),
+          Number(preview.adjustment_count_pending) ? h("div", { class: "badges" }, badge(`${preview.adjustment_count_pending} ajuste pendiente`, "warn")) : null,
+          h("div", { class: "settlement-actions" }, actions));
+      })) : h("p", { class: "empty empty--compact", text: "No hay ventas ni ajustes pendientes de cuadre." }),
+      sectionTitle("Historial de liquidaciones", history.length),
+      history.length ? h("div", { class: "admin-list" }, history.map((row) => {
+        const lines = state.settlementLines.filter((line) => line.settlement_id === row.settlement_id);
+        const actions = [];
+        if (state.staff?.role === "admin" && row.status === "cuadrada") {
+          actions.push(h("button", { class: "btn btn--primary btn--small", type: "button", onclick: () => openCollect(row), text: "Marcar cobrada" }));
+        }
+        return h("article", { class: "admin-row" },
+          h("div", { class: "admin-row__head" }, h("div", {}, h("div", { class: "admin-row__title", text: `${row.settlement_number} · ${row.partner_name}` }),
+            h("div", { class: "admin-row__meta", text: `${U.formatDay(row.period_start)} a ${U.formatDay(row.period_end)}` })),
+            badge(settlementStatus(row.status), row.status === "cobrada" || row.status === "importada" ? "ok" : row.status === "en_revision" ? "warn" : "off")),
+          h("div", { class: "admin-row__metrics" }, metric(row.total_qty, "unidades"), metric(U.formatMoney(row.total_boomart), "BoomArt"), metric(U.formatMoney(row.total_partner_gain), "ganancia local")),
+          row.status === "cobrada" || row.status === "importada" ? h("div", { class: "admin-row__meta", text: `Cobrado ${U.formatDay(row.paid_on)} · ${paymentLabel(row.payment_method)}${row.payment_reference ? ` · ${row.payment_reference}` : ""}` }) : null,
+          lines.length ? h("div", { class: "settlement-lines" }, lines.slice(0, 20).map((line) => h("div", { class: "settlement-line" },
+            h("span", { text: `${line.qty} × ${line.product_name}` }), h("span", { text: `BoomArt ${U.formatMoney(line.total_boomart)}` })))) : null,
+          h("div", { class: "settlement-actions" }, actions));
+      })) : h("p", { class: "empty", text: "Todavía no hay liquidaciones." })
+    );
+  }
+
+  function renderAll() { renderHome(); renderPartners(); renderStock(); renderSales(); renderAdjustments(); renderSettlements(); }
 
   function showTab(tab) {
     state.tab = tab;
@@ -225,6 +296,127 @@
       if (err.status === 401) return handleExpired();
       error.textContent = U.friendlyError(err); error.hidden = false;
     } finally { submit.disabled = false; }
+  }
+
+  function openSettlement(preview) {
+    state.settlementDraft = { id: U.newId(), preview };
+    const today = U.localDay(new Date(), 0);
+    $("settlement-partner").textContent = `${preview.partner_name} · ${preview.qty_pending} unidades pendientes`;
+    $("settlement-start").value = preview.oldest_pending_on || today;
+    $("settlement-end").value = today;
+    $("settlement-note").value = "";
+    $("settlement-error").hidden = true;
+    $("dlg-settlement").showModal();
+  }
+
+  async function submitSettlement(event) {
+    event.preventDefault();
+    if (!state.settlementDraft) return;
+    const error = $("settlement-error");
+    error.hidden = true;
+    const start = $("settlement-start").value;
+    const end = $("settlement-end").value;
+    if (!start || !end || start > end) { error.textContent = "Revisa las fechas del periodo."; error.hidden = false; return; }
+    const button = $("settlement-submit"); button.disabled = true;
+    try {
+      await callAdmin("/settlements/create", { id: state.settlementDraft.id, partner_id: state.settlementDraft.preview.partner_id,
+        period_start: start, period_end: end, note: $("settlement-note").value.trim() });
+      $("dlg-settlement").close(); state.settlementDraft = null;
+      toast("Cuadre creado. Revísalo antes de congelar las ventas."); await loadData(true);
+    } catch (err) {
+      if (err.status === 401) return handleExpired();
+      error.textContent = U.friendlyError(err); error.hidden = false;
+    } finally { button.disabled = false; }
+  }
+
+  async function transitionSettlement(row, action) {
+    const square = action === "square";
+    const message = square
+      ? `¿Cuadrar ${row.settlement_number}? Las ventas e importes quedarán congelados y cualquier corrección posterior irá al siguiente cuadre.`
+      : `¿Pasar ${row.settlement_number} a revisión? Se fijará el corte; las ventas nuevas posteriores quedarán para el siguiente cuadre.`;
+    if (!window.confirm(message)) return;
+    try {
+      await callAdmin(square ? "/settlements/square" : "/settlements/review", { settlement_id: row.settlement_id });
+      toast(square ? "Liquidación cuadrada y congelada." : "Corte de revisión fijado."); await loadData(true);
+    } catch (err) {
+      if (err.status === 401) return handleExpired();
+      toast(U.friendlyError(err), "error");
+    }
+  }
+
+  function openCollect(row) {
+    state.collectDraft = row;
+    $("collect-summary").replaceChildren(h("div", { class: "summary__row" }, h("span", { text: row.settlement_number }), h("b", { text: row.partner_name })),
+      h("div", { class: "summary__row" }, h("span", { text: "Monto para BoomArt" }), h("b", { text: U.formatMoney(row.total_boomart) })));
+    $("collect-method").value = "yape";
+    $("collect-date").value = U.localDay(new Date(), 0);
+    $("collect-reference").value = "";
+    $("collect-error").hidden = true;
+    $("dlg-collect").showModal();
+  }
+
+  async function submitCollect(event) {
+    event.preventDefault();
+    if (!state.collectDraft) return;
+    const error = $("collect-error"); error.hidden = true;
+    if (!$("collect-date").value) { error.textContent = "Elige la fecha de cobro."; error.hidden = false; return; }
+    const button = $("collect-submit"); button.disabled = true;
+    try {
+      await callAdmin("/settlements/collect", { settlement_id: state.collectDraft.settlement_id,
+        payment_method: $("collect-method").value, paid_on: $("collect-date").value,
+        payment_reference: $("collect-reference").value.trim() });
+      $("dlg-collect").close(); state.collectDraft = null;
+      toast("Cobro registrado. Queda pendiente de importar a Studio en la Etapa 7."); await loadData(true);
+    } catch (err) {
+      if (err.status === 401) return handleExpired();
+      error.textContent = U.friendlyError(err); error.hidden = false;
+    } finally { button.disabled = false; }
+  }
+
+  function parseSignedMoney(text) {
+    const clean = String(text || "").trim().replace(",", ".");
+    if (!/^-?\d+(?:\.\d{1,2})?$/.test(clean)) return null;
+    const value = Number(clean);
+    return Number.isFinite(value) && Math.abs(value) <= 1000000 ? value : null;
+  }
+
+  function openSettlementAdjustment(preview) {
+    state.settlementAdjustmentDraft = { id: U.newId(), preview };
+    $("settlement-adjust-partner").textContent = preview.partner_name;
+    const rows = state.settlements.filter((row) => row.partner_id === preview.partner_id && ["cuadrada", "cobrada", "importada"].includes(row.status));
+    $("settlement-adjust-source").replaceChildren(h("option", { value: "", text: "Sin liquidación de origen" }),
+      ...rows.map((row) => h("option", { value: row.settlement_id, text: `${row.settlement_number} · ${settlementStatus(row.status)}` })));
+    $("settlement-adjust-public").value = "0.00";
+    $("settlement-adjust-boomart").value = "0.00";
+    $("settlement-adjust-reason").value = "";
+    $("settlement-adjust-error").hidden = true;
+    $("dlg-settlement-adjust").showModal();
+  }
+
+  async function submitSettlementAdjustment(event) {
+    event.preventDefault();
+    if (!state.settlementAdjustmentDraft) return;
+    const error = $("settlement-adjust-error"); error.hidden = true;
+    const publicDelta = parseSignedMoney($("settlement-adjust-public").value);
+    const boomartDelta = parseSignedMoney($("settlement-adjust-boomart").value);
+    const reason = $("settlement-adjust-reason").value.trim();
+    if (publicDelta === null || boomartDelta === null || (publicDelta === 0 && boomartDelta === 0)) {
+      error.textContent = "Escribe al menos un ajuste distinto de cero, con hasta dos decimales."; error.hidden = false; return;
+    }
+    if (reason.length < 5) { error.textContent = "Explica el motivo (mínimo 5 caracteres)."; error.hidden = false; return; }
+    const source = $("settlement-adjust-source").value;
+    const body = { id: state.settlementAdjustmentDraft.id, partner_id: state.settlementAdjustmentDraft.preview.partner_id,
+      public_delta: publicDelta, boomart_delta: boomartDelta, reason };
+    if (source) body.source_settlement_id = source;
+    const button = $("settlement-adjust-submit"); button.disabled = true;
+    try {
+      await callAdmin("/settlements/adjustments/create", body);
+      $("dlg-settlement-adjust").close(); state.settlementAdjustmentDraft = null;
+      toast("Ajuste guardado para el próximo cuadre."); await loadData(true);
+    } catch (err) {
+      if (err.status === 401) return handleExpired();
+      error.textContent = U.friendlyError(err); error.hidden = false;
+    } finally { button.disabled = false; }
   }
 
   async function handleExpired() {
@@ -290,6 +482,12 @@
   $("resolve-form").addEventListener("submit", submitResolve);
   $("resolve-cancel").addEventListener("click", () => $("dlg-resolve").close());
   for (const radio of document.querySelectorAll("input[name='decision']")) radio.addEventListener("change", updateResolveHint);
+  $("settlement-form").addEventListener("submit", submitSettlement);
+  $("settlement-cancel").addEventListener("click", () => $("dlg-settlement").close());
+  $("collect-form").addEventListener("submit", submitCollect);
+  $("collect-cancel").addEventListener("click", () => $("dlg-collect").close());
+  $("settlement-adjust-form").addEventListener("submit", submitSettlementAdjustment);
+  $("settlement-adjust-cancel").addEventListener("click", () => $("dlg-settlement-adjust").close());
   window.addEventListener("online", () => { $("offline-banner").hidden = true; if (state.staff) loadData(true).catch(() => {}); });
   window.addEventListener("offline", () => { $("offline-banner").hidden = false; });
   for (const name of ["pointerdown", "keydown"]) window.addEventListener(name, touchActivity, { passive: true });

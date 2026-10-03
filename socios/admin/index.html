@@ -9,8 +9,8 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://ugywzvnokdsikiczvwdx.supabase.co; base-uri 'none'; form-action 'none'">
   <title>Administración de socios · BoomArt</title>
   <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../styles.css?v=1">
-  <link rel="stylesheet" href="styles.css?v=1">
+  <link rel="stylesheet" href="../styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
   <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
@@ -46,14 +46,16 @@
       <section id="tab-inventario" class="tab" hidden></section>
       <section id="tab-ventas" class="tab" hidden></section>
       <section id="tab-correcciones" class="tab" hidden></section>
+      <section id="tab-liquidaciones" class="tab" hidden></section>
     </main>
 
-    <nav class="tabbar tabbar--five" aria-label="Secciones">
+    <nav class="tabbar tabbar--six" aria-label="Secciones">
       <button class="tabbar__btn is-active" data-tab="inicio" type="button">Inicio</button>
       <button class="tabbar__btn" data-tab="locales" type="button">Locales</button>
       <button class="tabbar__btn" data-tab="inventario" type="button">Stock</button>
       <button class="tabbar__btn" data-tab="ventas" type="button">Ventas</button>
       <button class="tabbar__btn" data-tab="correcciones" type="button">Correcciones</button>
+      <button class="tabbar__btn" data-tab="liquidaciones" type="button">Cuadres</button>
     </nav>
   </div>
 
@@ -72,9 +74,52 @@
     </form>
   </dialog>
 
+  <dialog id="dlg-settlement" class="sheet" aria-labelledby="settlement-title">
+    <form id="settlement-form" class="stack" method="dialog" novalidate>
+      <h2 id="settlement-title">Crear cuadre</h2>
+      <p id="settlement-partner" class="muted"></p>
+      <label class="field"><span>Desde</span><input id="settlement-start" type="date" required></label>
+      <label class="field"><span>Hasta</span><input id="settlement-end" type="date" required></label>
+      <label class="field"><span>Nota interna (opcional)</span><textarea id="settlement-note" rows="2" maxlength="500"></textarea></label>
+      <p class="muted">Crear no congela nada. El corte se fija al pasar a revisión y los importes se congelan al cuadrar.</p>
+      <p id="settlement-error" class="error" role="alert" hidden></p>
+      <div class="row"><button id="settlement-cancel" class="btn btn--ghost" type="button">Cancelar</button><button id="settlement-submit" class="btn btn--primary btn--grow" type="submit">Crear cuadre</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="dlg-collect" class="sheet" aria-labelledby="collect-title">
+    <form id="collect-form" class="stack" method="dialog" novalidate>
+      <h2 id="collect-title">Registrar cobro</h2>
+      <div id="collect-summary" class="summary"></div>
+      <label class="field"><span>Medio de pago</span><select id="collect-method" required>
+        <option value="yape">Yape</option><option value="plin">Plin</option><option value="transferencia_bcp">Transferencia BCP</option>
+        <option value="transferencia_interbank">Transferencia Interbank</option><option value="efectivo">Efectivo</option>
+        <option value="tarjeta">Tarjeta</option><option value="otro">Otro</option>
+      </select></label>
+      <label class="field"><span>Fecha de cobro</span><input id="collect-date" type="date" required></label>
+      <label class="field"><span>Referencia (opcional)</span><input id="collect-reference" type="text" maxlength="160" autocomplete="off"></label>
+      <p class="muted">Esto confirma el cobro en el portal. El ingreso se registrará en Studio recién al importar en la Etapa 7.</p>
+      <p id="collect-error" class="error" role="alert" hidden></p>
+      <div class="row"><button id="collect-cancel" class="btn btn--ghost" type="button">Cancelar</button><button id="collect-submit" class="btn btn--primary btn--grow" type="submit">Confirmar cobro</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="dlg-settlement-adjust" class="sheet" aria-labelledby="settlement-adjust-title">
+    <form id="settlement-adjust-form" class="stack" method="dialog" novalidate>
+      <h2 id="settlement-adjust-title">Registrar ajuste para el próximo cuadre</h2>
+      <p id="settlement-adjust-partner" class="muted"></p>
+      <label class="field"><span>Liquidación de origen (opcional)</span><select id="settlement-adjust-source"><option value="">Sin liquidación de origen</option></select></label>
+      <label class="field"><span>Ajuste a venta pública (S/)</span><input id="settlement-adjust-public" type="text" inputmode="decimal" value="0.00" autocomplete="off"><small class="muted">Usa negativo para descontar.</small></label>
+      <label class="field"><span>Ajuste a deuda con BoomArt (S/)</span><input id="settlement-adjust-boomart" type="text" inputmode="decimal" value="0.00" autocomplete="off"><small class="muted">Usa negativo para descontar.</small></label>
+      <label class="field"><span>Motivo</span><textarea id="settlement-adjust-reason" rows="3" minlength="5" maxlength="500" required></textarea></label>
+      <p id="settlement-adjust-error" class="error" role="alert" hidden></p>
+      <div class="row"><button id="settlement-adjust-cancel" class="btn btn--ghost" type="button">Cancelar</button><button id="settlement-adjust-submit" class="btn btn--primary btn--grow" type="submit">Guardar ajuste</button></div>
+    </form>
+  </dialog>
+
   <script src="../vendor/supabase-js-2.117.2.umd.js"></script>
   <script src="../config.js?v=1"></script>
   <script src="../util.js?v=1"></script>
-  <script src="app.js?v=1"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>

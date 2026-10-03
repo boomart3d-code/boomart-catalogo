@@ -21,7 +21,7 @@
     db: { schema: "socios" },
   });
 
-  const state = { user: null, cards: [], summary: null, history: [], deliveries: [], loadedAt: 0, loadedPerf: 0, tab: "inicio" };
+  const state = { user: null, cards: [], summary: null, history: [], deliveries: [], settlements: [], settlementLines: [], loadedAt: 0, loadedPerf: 0, tab: "inicio" };
   let saleDraft = null;      // { id, productId }
   let adjustDraft = null;    // { id, sale }
   let busy = false;
@@ -104,14 +104,16 @@
 
   // ---------------------------------------------------------------- carga de datos
   async function loadAll() {
-    const [cards, summary, history, deliveries] = await Promise.all([
+    const [cards, summary, history, deliveries, settlements, settlementLines] = await Promise.all([
       sb.from("v_product_cards").select("*").order("name"),
       sb.from("v_partner_summary").select("*"),
       sb.from("v_sales_history").select("*").order("created_at", { ascending: false }).limit(200),
       sb.from("deliveries").select("id, guide_number, delivery_date, received_at, total_value_boomart, delivery_lines(product_name, sku, qty_received, unit_price_boomart), delivery_documents(id, kind, variant, version, storage_path)")
         .order("received_at", { ascending: false }).limit(60),
+      sb.from("v_settlements").select("*").order("opened_at", { ascending: false }).limit(120),
+      sb.from("v_settlement_lines").select("*").order("sold_on", { ascending: false }).limit(1000),
     ]);
-    for (const result of [cards, summary, history, deliveries]) {
+    for (const result of [cards, summary, history, deliveries, settlements, settlementLines]) {
       if (result.error) {
         if (result.status === 401 || result.error.code === "PGRST301" || /JWT/i.test(result.error.message || "")) throw { status: 401 };
         throw { network: !result.status, status: result.status || 0, detail: result.error.message };
@@ -122,6 +124,8 @@
     state.summaryCount = summary.data.length;
     state.history = history.data;
     state.deliveries = deliveries.data;
+    state.settlements = settlements.data;
+    state.settlementLines = settlementLines.data;
     state.loadedAt = Date.now();
     state.loadedPerf = performance.now();
   }
@@ -146,6 +150,7 @@
     renderProductos();
     renderHistorial();
     renderEntregas();
+    renderLiquidaciones();
   }
 
   function renderHeader() {
@@ -277,6 +282,41 @@
       return;
     }
     root.append(h("div", { class: "list" }, state.deliveries.map(deliveryItem)));
+  }
+
+  function settlementStatus(status) {
+    return ({ abierta: "Abierta", en_revision: "En revisión", cuadrada: "Cuadrada", cobrada: "Cobrada", importada: "Importada en Studio" })[status] || status;
+  }
+
+  function settlementItem(settlement) {
+    const lines = state.settlementLines.filter((line) => line.settlement_id === settlement.settlement_id);
+    const paid = settlement.status === "cobrada" || settlement.status === "importada";
+    const period = `${U.formatDay(settlement.period_start)} al ${U.formatDay(settlement.period_end)}`;
+    return h("div", { class: "item" },
+      h("div", { class: "item__top" },
+        h("span", { class: "item__title", text: settlement.settlement_number }),
+        h("span", { class: `badge ${paid ? "badge--ok" : settlement.status === "cuadrada" ? "badge--warn" : ""}`, text: settlementStatus(settlement.status) })),
+      h("div", { class: "item__sub", text: `Periodo: ${period}` }),
+      h("div", { class: "cards" },
+        stat("Ventas", String(settlement.total_qty || 0), "unidades"),
+        stat("Total vendido", U.formatMoney(settlement.total_public || 0), "precio al público"),
+        stat("A pagar a BoomArt", U.formatMoney(settlement.total_boomart || 0), paid ? "pago registrado" : "monto del cuadre"),
+        stat("Tu ganancia", U.formatMoney(settlement.total_partner_gain || 0), "en este periodo", true)),
+      paid ? h("div", { class: "item__sub", text: `Cobrado el ${U.formatDay(settlement.paid_on)}${settlement.payment_reference ? ` · Ref. ${settlement.payment_reference}` : ""}` }) : null,
+      lines.length ? h("ul", { class: "lines" }, lines.map((line) =>
+        h("li", {}, h("span", { text: `${line.qty} × ${line.product_name}` }), h("span", { text: U.formatMoney(line.total_public) })))) :
+        h("p", { class: "empty", text: settlement.status === "abierta" || settlement.status === "en_revision" ? "El detalle quedará congelado cuando BoomArt cierre el cuadre." : "Este cuadre no tiene ventas." }));
+  }
+
+  function renderLiquidaciones() {
+    const root = $("tab-liquidaciones");
+    root.replaceChildren(h("h2", { text: "Cuadres y pagos" }),
+      h("p", { class: "note", text: "Aquí ves cuánto debes a BoomArt y cuánto ganaste en cada periodo. Los cuadres cerrados ya no cambian." }));
+    if (!state.settlements.length) {
+      root.append(h("div", { class: "empty", text: "Todavía no hay cuadres registrados." }));
+      return;
+    }
+    root.append(h("div", { class: "list" }, state.settlements.map(settlementItem)));
   }
 
   async function openGuide(doc, button) {
@@ -586,7 +626,7 @@
 
   async function logout() {
     state.user = null;
-    state.cards = []; state.history = []; state.deliveries = []; state.summary = null;
+    state.cards = []; state.history = []; state.deliveries = []; state.settlements = []; state.settlementLines = []; state.summary = null;
     writeJson(ACTIVE_KEY, null);
     try { await sb.auth.signOut(); } catch { /* aunque falle la red, la sesion local se borra */ }
     show("login");
