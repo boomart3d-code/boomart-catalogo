@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#080808">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://ugywzvnokdsikiczvwdx.supabase.co; base-uri 'none'; form-action 'none'">
+  <title>Administración de socios · BoomArt</title>
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css?v=1">
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+  <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+
+  <main id="view-login" class="login" hidden>
+    <img class="login__logo" src="../assets/logo.svg" alt="BoomArt" width="96" height="96">
+    <h1>Administración de socios</h1>
+    <p class="muted">Acceso privado de BoomArt.</p>
+    <form id="login-form" class="stack" autocomplete="on" novalidate>
+      <label class="field"><span>Usuario</span><input id="login-user" name="username" type="text" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" required></label>
+      <label class="field"><span>Clave</span><input id="login-pass" name="password" type="password" autocomplete="current-password" required></label>
+      <p id="login-error" class="error" role="alert" hidden></p>
+      <button id="login-submit" class="btn btn--primary btn--big" type="submit">Entrar</button>
+    </form>
+  </main>
+
+  <div id="view-app" hidden>
+    <header class="topbar">
+      <img src="../assets/logo.svg" alt="" width="36" height="36">
+      <div class="topbar__title"><strong>Consignaciones</strong><span id="staff-name" class="muted">Administración BoomArt</span></div>
+      <button id="btn-refresh" class="btn btn--ghost btn--small" type="button">Actualizar</button>
+      <button id="btn-logout" class="btn btn--ghost btn--small" type="button">Salir</button>
+    </header>
+    <div id="offline-banner" class="banner banner--warn" hidden>Sin conexión. La información puede estar desactualizada.</div>
+    <div class="admin-filter">
+      <label class="field"><span>Local</span><select id="partner-filter"><option value="">Todos los locales</option></select></label>
+      <label class="field"><span>Buscar</span><input id="search-filter" type="text" placeholder="Producto, SKU o local" autocomplete="off"></label>
+    </div>
+
+    <main class="content admin-content">
+      <section id="tab-inicio" class="tab"></section>
+      <section id="tab-locales" class="tab" hidden></section>
+      <section id="tab-inventario" class="tab" hidden></section>
+      <section id="tab-ventas" class="tab" hidden></section>
+      <section id="tab-correcciones" class="tab" hidden></section>
+    </main>
+
+    <nav class="tabbar tabbar--five" aria-label="Secciones">
+      <button class="tabbar__btn is-active" data-tab="inicio" type="button">Inicio</button>
+      <button class="tabbar__btn" data-tab="locales" type="button">Locales</button>
+      <button class="tabbar__btn" data-tab="inventario" type="button">Stock</button>
+      <button class="tabbar__btn" data-tab="ventas" type="button">Ventas</button>
+      <button class="tabbar__btn" data-tab="correcciones" type="button">Correcciones</button>
+    </nav>
+  </div>
+
+  <dialog id="dlg-resolve" class="sheet" aria-labelledby="resolve-title">
+    <form id="resolve-form" class="stack" method="dialog" novalidate>
+      <h2 id="resolve-title">Resolver corrección</h2>
+      <div id="resolve-summary" class="summary"></div>
+      <fieldset class="choices">
+        <legend>Decisión</legend>
+        <label><input type="radio" name="decision" value="aprobar" checked> Aprobar la corrección solicitada</label>
+        <label><input type="radio" name="decision" value="rechazar"> Rechazarla</label>
+      </fieldset>
+      <label class="field"><span>Nota para el local</span><textarea id="resolve-note" rows="3" maxlength="500"></textarea><small id="resolve-hint" class="muted">Opcional al aprobar.</small></label>
+      <p id="resolve-error" class="error" role="alert" hidden></p>
+      <div class="row"><button id="resolve-cancel" class="btn btn--ghost" type="button">Cancelar</button><button id="resolve-submit" class="btn btn--primary btn--grow" type="submit">Confirmar</button></div>
+    </form>
+  </dialog>
+
+  <script src="../vendor/supabase-js-2.117.2.umd.js"></script>
+  <script src="../config.js?v=1"></script>
+  <script src="../util.js?v=1"></script>
+  <script src="app.js?v=1"></script>
+</body>
+</html>

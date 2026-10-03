@@ -1,0 +1,33 @@
+.tabbar--five { grid-template-columns: repeat(5, 1fr); }
+.tabbar--five .tabbar__btn { font-size: 0.72rem; padding: 0 2px; }
+.admin-content { max-width: 1050px; }
+.admin-filter {
+  max-width: 1050px; margin: 0 auto; padding: 12px 16px 0;
+  display: grid; grid-template-columns: minmax(180px, 1fr) minmax(180px, 2fr); gap: 10px;
+}
+.admin-filter .field > span { font-size: 0.78rem; color: var(--muted); }
+.admin-filter input, .admin-filter select { min-height: 42px; padding-top: 9px; padding-bottom: 9px; }
+.admin-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.admin-list { display: grid; gap: 10px; }
+.admin-row { display: grid; gap: 5px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; }
+.admin-row__head { display: flex; justify-content: space-between; align-items: start; gap: 10px; }
+.admin-row__title { font-weight: 750; }
+.admin-row__amount { color: var(--gold); font-weight: 800; white-space: nowrap; }
+.admin-row__meta { color: var(--muted); font-size: 0.84rem; }
+.admin-row__metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 5px; }
+.metric { background: var(--ink); border-radius: 9px; padding: 7px; text-align: center; }
+.metric b { display: block; font-size: 1.05rem; }
+.metric span { color: var(--muted); font-size: 0.7rem; }
+.alert-list { display: grid; gap: 8px; }
+.alert-card { border-left: 4px solid var(--warn); background: var(--panel); border-radius: 10px; padding: 10px 12px; }
+.alert-card--red { border-left-color: var(--red); }
+.toolbar { display: flex; gap: 8px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.counter { color: var(--muted); font-size: 0.85rem; }
+.empty--compact { padding: 16px 10px; }
+@media (min-width: 760px) { .tabbar--five { max-width: 1050px; } }
+@media (max-width: 620px) {
+  .admin-filter { grid-template-columns: 1fr; }
+  .admin-grid { grid-template-columns: 1fr; }
+  .topbar { flex-wrap: wrap; }
+  .topbar__title { min-width: 150px; }
+}
