@@ -11,7 +11,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' https://boomart.pe https://www.boomart.pe data:; connect-src https://ugywzvnokdsikiczvwdx.supabase.co; base-uri 'none'; form-action 'none'">
   <title>Portal de socios · BoomArt</title>
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
   <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
@@ -54,14 +54,16 @@
       <section id="tab-productos" class="tab" aria-labelledby="t-productos" hidden></section>
       <section id="tab-historial" class="tab" aria-labelledby="t-historial" hidden></section>
       <section id="tab-entregas" class="tab" aria-labelledby="t-entregas" hidden></section>
+      <section id="tab-retiros" class="tab" aria-labelledby="t-retiros" hidden></section>
       <section id="tab-liquidaciones" class="tab" aria-labelledby="t-liquidaciones" hidden></section>
     </main>
 
-    <nav class="tabbar tabbar--five" aria-label="Secciones">
+    <nav class="tabbar tabbar--six" aria-label="Secciones">
       <button id="t-inicio" class="tabbar__btn is-active" data-tab="inicio" type="button">Inicio</button>
       <button id="t-productos" class="tabbar__btn" data-tab="productos" type="button">Productos</button>
       <button id="t-historial" class="tabbar__btn" data-tab="historial" type="button">Historial</button>
       <button id="t-entregas" class="tabbar__btn" data-tab="entregas" type="button">Entregas</button>
+      <button id="t-retiros" class="tabbar__btn" data-tab="retiros" type="button">Retiros</button>
       <button id="t-liquidaciones" class="tabbar__btn" data-tab="liquidaciones" type="button">Cuadres</button>
     </nav>
   </div>
@@ -192,6 +194,6 @@
   <script src="vendor/supabase-js-2.117.2.umd.js"></script>
   <script src="config.js?v=1"></script>
   <script src="util.js?v=2"></script>
-  <script src="app.js?v=5"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>

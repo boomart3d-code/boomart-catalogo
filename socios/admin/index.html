@@ -10,7 +10,7 @@
   <title>Administración de socios · BoomArt</title>
   <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css?v=3">
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
   <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
@@ -46,15 +46,17 @@
       <section id="tab-inventario" class="tab" hidden></section>
       <section id="tab-ventas" class="tab" hidden></section>
       <section id="tab-correcciones" class="tab" hidden></section>
+      <section id="tab-devoluciones" class="tab" hidden></section>
       <section id="tab-liquidaciones" class="tab" hidden></section>
     </main>
 
-    <nav class="tabbar tabbar--six" aria-label="Secciones">
+    <nav class="tabbar tabbar--seven" aria-label="Secciones">
       <button class="tabbar__btn is-active" data-tab="inicio" type="button">Inicio</button>
       <button class="tabbar__btn" data-tab="locales" type="button">Locales</button>
       <button class="tabbar__btn" data-tab="inventario" type="button">Stock</button>
       <button class="tabbar__btn" data-tab="ventas" type="button">Ventas</button>
       <button class="tabbar__btn" data-tab="correcciones" type="button">Correcciones</button>
+      <button class="tabbar__btn" data-tab="devoluciones" type="button">Devoluciones</button>
       <button class="tabbar__btn" data-tab="liquidaciones" type="button">Cuadres</button>
     </nav>
   </div>
@@ -131,6 +133,6 @@
   <script src="../vendor/supabase-js-2.117.2.umd.js"></script>
   <script src="../config.js?v=1"></script>
   <script src="../util.js?v=1"></script>
-  <script src="app.js?v=5"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>

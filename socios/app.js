@@ -21,7 +21,7 @@
     db: { schema: "socios" },
   });
 
-  const state = { user: null, priceDrafts: {}, cards: [], summary: null, history: [], deliveries: [], settlements: [], settlementLines: [], loadedAt: 0, loadedPerf: 0, tab: "inicio" };
+  const state = { user: null, priceDrafts: {}, cards: [], summary: null, history: [], deliveries: [], returns: [], returnLines: [], returnDocuments: [], settlements: [], settlementLines: [], loadedAt: 0, loadedPerf: 0, tab: "inicio" };
   let saleDraft = null;      // { id, productId }
   let adjustDraft = null;    // { id, sale }
   let comboDraft = null;     // { id }
@@ -105,16 +105,19 @@
 
   // ---------------------------------------------------------------- carga de datos
   async function loadAll() {
-    const [cards, summary, history, deliveries, settlements, settlementLines] = await Promise.all([
+    const [cards, summary, history, deliveries, returns, returnLines, returnDocuments, settlements, settlementLines] = await Promise.all([
       sb.from("v_product_cards").select("*").order("name"),
       sb.from("v_partner_summary").select("*"),
       sb.from("v_sales_history").select("*").order("created_at", { ascending: false }).limit(200),
       sb.from("deliveries").select("id, guide_number, delivery_date, received_at, total_value_boomart, delivery_lines(product_name, sku, qty_received, unit_price_boomart), delivery_documents(id, kind, variant, version, storage_path)")
         .order("received_at", { ascending: false }).limit(60),
+      sb.from("v_returns").select("*").order("occurred_on", { ascending: false }).limit(120),
+      sb.from("v_return_lines").select("*").order("occurred_on", { ascending: false }).limit(1000),
+      sb.from("return_documents").select("id, return_id, kind, storage_path, created_at").eq("superseded", false).order("created_at", { ascending: false }).limit(240),
       sb.from("v_settlements").select("*").order("opened_at", { ascending: false }).limit(120),
       sb.from("v_settlement_lines").select("*").order("sold_on", { ascending: false }).limit(1000),
     ]);
-    for (const result of [cards, summary, history, deliveries, settlements, settlementLines]) {
+    for (const result of [cards, summary, history, deliveries, returns, returnLines, returnDocuments, settlements, settlementLines]) {
       if (result.error) {
         if (result.status === 401 || result.error.code === "PGRST301" || /JWT/i.test(result.error.message || "")) throw { status: 401 };
         throw { network: !result.status, status: result.status || 0, detail: result.error.message };
@@ -125,6 +128,9 @@
     state.summaryCount = summary.data.length;
     state.history = U.groupSales(history.data);        // un combo (que el servidor puede guardar en 2 filas) se ve como UNA venta
     state.deliveries = deliveries.data;
+    state.returns = returns.data;
+    state.returnLines = returnLines.data;
+    state.returnDocuments = returnDocuments.data;
     state.settlements = settlements.data;
     state.settlementLines = settlementLines.data;
     state.loadedAt = Date.now();
@@ -151,6 +157,7 @@
     renderProductos();
     renderHistorial();
     renderEntregas();
+    renderRetiros();
     renderLiquidaciones();
   }
 
@@ -231,7 +238,7 @@
       h("div", { class: "product__body" },
         h("div", { class: "product__name", text: card.name }),
         h("div", { class: "product__sku", text: card.sku }),
-        h("div", { class: "product__meta" }, h("b", { text: String(available) }), ` disponibles · recibidos ${card.delivered_qty} · vendidos ${card.sold_qty}`),
+        h("div", { class: "product__meta" }, h("b", { text: String(available) }), ` disponibles · recibidos ${card.delivered_qty} · vendidos ${card.sold_qty} · retirados ${card.returned_qty || 0} · bajas ${card.written_off_qty || 0}`),
         h("div", { class: "product__meta" }, "Te cuesta (precio BoomArt): ", h("b", { text: U.formatMoney(card.boomart_price) }), " c/u"),
         h("div", { class: "product__price" }, h("span", { class: "product__label", text: "Tu precio de venta (c/u)" }), h("div", { class: "row" }, input, save)),
         profit,
@@ -339,6 +346,37 @@
       return;
     }
     root.append(h("div", { class: "list" }, state.deliveries.map(deliveryItem)));
+  }
+
+  function returnReason(reason) {
+    return ({ retiro: "Retiro al taller", rotacion: "Retiro por rotación", danio: "Baja por daño", perdida: "Baja por pérdida" })[reason] || reason;
+  }
+
+  function returnItem(item) {
+    const lines = state.returnLines.filter((line) => line.return_id === item.return_id);
+    const document = state.returnDocuments.find((doc) => doc.return_id === item.return_id && doc.kind === "constancia");
+    return h("div", { class: "item" },
+      h("div", { class: "item__top" },
+        h("span", { class: "item__title", text: item.return_number }),
+        h("span", { class: "badge badge--ok", text: "Confirmada" })),
+      h("div", { class: "item__sub", text: `Visita del ${U.formatDay(item.occurred_on)} · ${item.total_qty} unidad(es)` }),
+      h("ul", { class: "lines" }, lines.map((line) =>
+        h("li", {}, h("span", { text: `${line.qty} × ${line.product_name} · ${returnReason(line.reason)}` }),
+          h("span", { text: line.responsible === "local" ? "Responsable: local" : "Responsable: BoomArt" })))),
+      Number(item.total_charge) > 0 ? h("p", { class: "note", text: `Cargo al próximo cuadre: ${U.formatMoney(item.total_charge)}` }) : null,
+      document ? h("div", { class: "item__actions" }, h("button", { class: "btn btn--small", type: "button",
+        onclick: (event) => openGuide(document, event.currentTarget), text: "Ver constancia (PDF)" })) : null);
+  }
+
+  function renderRetiros() {
+    const root = $("tab-retiros");
+    root.replaceChildren(h("h2", { text: "Retiros y bajas" }),
+      h("p", { class: "note", text: "Aquí quedan las visitas confirmadas por BoomArt: productos retirados, rotados, dañados o perdidos." }));
+    if (!state.returns.length) {
+      root.append(h("div", { class: "empty", text: "Todavía no hay retiros ni bajas registrados." }));
+      return;
+    }
+    root.append(h("div", { class: "list" }, state.returns.map(returnItem)));
   }
 
   function settlementStatus(status) {

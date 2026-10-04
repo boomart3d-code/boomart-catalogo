@@ -1,5 +1,7 @@
 .tabbar--six { grid-template-columns: repeat(6, 1fr); }
 .tabbar--six .tabbar__btn { font-size: 0.68rem; padding: 0 1px; }
+.tabbar--seven { grid-template-columns: repeat(7, 1fr); }
+.tabbar--seven .tabbar__btn { font-size: 0.61rem; padding: 0 1px; }
 .admin-content { max-width: 1050px; }
 .admin-filter {
   max-width: 1050px; margin: 0 auto; padding: 12px 16px 0;
@@ -28,10 +30,12 @@
 .settlement-lines { display: grid; gap: 3px; padding-top: 6px; border-top: 1px solid var(--line); }
 .settlement-line { display: flex; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 0.8rem; }
 @media (min-width: 760px) { .tabbar--six { max-width: 1050px; } }
+@media (min-width: 760px) { .tabbar--seven { max-width: 1180px; } }
 @media (max-width: 620px) {
   .admin-filter { grid-template-columns: 1fr; }
   .admin-grid { grid-template-columns: 1fr; }
   .topbar { flex-wrap: wrap; }
   .topbar__title { min-width: 150px; }
   .tabbar--six .tabbar__btn { font-size: 0.62rem; }
+  .tabbar--seven .tabbar__btn { font-size: 0.56rem; }
 }

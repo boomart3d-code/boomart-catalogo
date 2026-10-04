@@ -118,6 +118,8 @@ select { appearance: none; background-image: linear-gradient(45deg, transparent 
   border-top: 1px solid var(--line);
 }
 .tabbar--five { grid-template-columns: repeat(5, 1fr); }
+.tabbar--six { grid-template-columns: repeat(6, 1fr); }
+.tabbar--six .tabbar__btn { font-size: .68rem; padding-inline: 2px; }
 .tabbar__btn {
   appearance: none; border: 0; background: none; color: var(--muted);
   font: inherit; font-size: 0.82rem; font-weight: 600; cursor: pointer;

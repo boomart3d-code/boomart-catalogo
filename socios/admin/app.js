@@ -12,7 +12,7 @@
   const REFRESH_MS = 60 * 1000;
   const ACTIVE_KEY = "socios_admin_last_active_v1";
   const $ = (id) => document.getElementById(id);
-  const state = { staff: null, partners: [], stock: [], sales: [], adjustments: [], settlements: [], settlementLines: [],
+  const state = { staff: null, partners: [], stock: [], sales: [], adjustments: [], returns: [], returnLines: [], settlements: [], settlementLines: [],
     settlementPreviews: [], settlementAdjustments: [], tab: "inicio", resolve: null, settlementDraft: null, collectDraft: null,
     settlementAdjustmentDraft: null, loadedAt: 0 };
 
@@ -85,6 +85,8 @@
       sb.from("v_admin_stock").select("*").order("partner_name").order("product_name"),
       sb.from("v_sales_history").select("*").order("created_at", { ascending: false }).limit(1000),
       sb.from("v_admin_adjustments").select("*").order("requested_at", { ascending: false }).limit(500),
+      sb.from("v_returns").select("*").order("occurred_on", { ascending: false }).limit(500),
+      sb.from("v_return_lines").select("*").order("occurred_on", { ascending: false }).limit(2000),
       sb.from("v_settlements").select("*").order("opened_at", { ascending: false }).limit(500),
       sb.from("v_settlement_lines").select("*").order("sale_created_at", { ascending: false }).limit(2000),
       sb.from("v_settlement_previews").select("*").order("partner_name"),
@@ -92,7 +94,7 @@
     ]);
     const failed = results.find((result) => result.error);
     if (failed) throw failed.error;
-    [state.partners, state.stock, state.sales, state.adjustments, state.settlements, state.settlementLines,
+    [state.partners, state.stock, state.sales, state.adjustments, state.returns, state.returnLines, state.settlements, state.settlementLines,
       state.settlementPreviews, state.settlementAdjustments] = results.map((result) => result.data || []);
     state.loadedAt = Date.now();
     fillPartnerFilter();
@@ -149,7 +151,7 @@
       h("article", { class: "admin-row" },
         h("div", { class: "admin-row__head" }, h("div", { class: "admin-row__title", text: row.name }), h("div", { class: "badges" }, row.is_test ? badge("PRUEBA", "warn") : null, row.active ? badge("Activo", "ok") : badge("Inactivo", "off"))),
         h("div", { class: "admin-row__meta", text: `${row.settlement_frequency || "Frecuencia sin definir"}${row.last_sale_at ? ` · última venta ${U.formatDateTime(row.last_sale_at)}` : " · sin ventas"}` }),
-        h("div", { class: "admin-row__metrics" }, metric(row.available_qty, "disponibles"), metric(row.sold_qty_pending, "por cuadrar"), metric(U.formatMoney(row.boomart_debt_pending), "debe")),
+        h("div", { class: "admin-row__metrics" }, metric(row.available_qty, "disponibles"), metric(row.sold_qty_pending, "por cuadrar"), metric(row.returned_qty || 0, "retiradas"), metric(row.written_off_qty || 0, "bajas"), metric(U.formatMoney(row.boomart_debt_pending), "debe")),
         Number(row.pending_adjustments) ? h("div", { class: "badges" }, badge(`${row.pending_adjustments} corrección pendiente`, "red")) : null
       ))) : h("p", { class: "empty", text: "No hay locales que coincidan con el filtro." }));
   }
@@ -159,8 +161,31 @@
     $("tab-inventario").replaceChildren(sectionTitle("Inventario por local", rows.length), rows.length ? h("div", { class: "admin-list" }, rows.map((row) =>
       h("article", { class: "admin-row" },
         h("div", { class: "admin-row__head" }, h("div", {}, h("div", { class: "admin-row__title", text: row.product_name }), h("div", { class: "admin-row__meta", text: `${row.partner_name} · SKU ${row.sku}` })), h("div", { class: "badges" }, Number(row.available_qty) === 0 ? badge("Agotado", "red") : badge(`${row.available_qty} disponibles`, "ok"), Number(row.idle_days) >= 30 ? badge(`${row.idle_days} días`, Number(row.idle_days) >= 90 ? "red" : "warn") : null)),
-        h("div", { class: "admin-row__metrics" }, metric(row.delivered_qty, "recibidas"), metric(row.sold_qty, "vendidas"), metric(row.available_qty, "disponibles"))
+        h("div", { class: "admin-row__metrics" }, metric(row.delivered_qty, "recibidas"), metric(row.sold_qty, "vendidas"), metric(row.returned_qty || 0, "retiradas"), metric(row.written_off_qty || 0, "bajas"), metric(row.available_qty, "disponibles"))
       ))) : h("p", { class: "empty", text: "No hay productos que coincidan con el filtro." }));
+  }
+
+  function returnReason(reason) {
+    return ({ retiro: "Retiro al taller", rotacion: "Retiro por rotación", danio: "Baja por daño", perdida: "Baja por pérdida" })[reason] || reason;
+  }
+
+  function renderReturns() {
+    const rows = state.returns.filter((row) => matchesPartner(row)
+      && matchesText(row.partner_name, row.return_number, row.occurred_on));
+    $("tab-devoluciones").replaceChildren(sectionTitle("Devoluciones, retiros y bajas", rows.length),
+      rows.length ? h("div", { class: "admin-list" }, rows.map((row) => {
+        const lines = state.returnLines.filter((line) => line.return_id === row.return_id);
+        const detail = lines.map((line) => h("div", { class: "settlement-line" },
+          h("span", { text: `${line.qty} × ${line.product_name} · ${returnReason(line.reason)}` }),
+          h("span", { text: line.responsible === "local" ? `Local · ${U.formatMoney(line.charge_amount)}` : "BoomArt" })));
+        return h("article", { class: "admin-row" },
+          h("div", { class: "admin-row__head" },
+            h("div", {}, h("div", { class: "admin-row__title", text: `${row.return_number} · ${row.partner_name}` }),
+              h("div", { class: "admin-row__meta", text: `Visita ${U.formatDay(row.occurred_on)} · ${row.total_qty} unidad(es)` })),
+            badge("Confirmada", "ok")),
+          h("div", { class: "admin-row__metrics" }, metric(row.total_qty, "unidades"), metric(U.formatMoney(row.total_charge), "cargo al cuadre")),
+          h("div", { class: "settlement-lines" }, detail));
+      })) : h("p", { class: "empty", text: "Todavía no hay devoluciones, retiros ni bajas." }));
   }
 
   function renderSales() {
@@ -258,7 +283,7 @@
     );
   }
 
-  function renderAll() { renderHome(); renderPartners(); renderStock(); renderSales(); renderAdjustments(); renderSettlements(); }
+  function renderAll() { renderHome(); renderPartners(); renderStock(); renderSales(); renderAdjustments(); renderReturns(); renderSettlements(); }
 
   function showTab(tab) {
     state.tab = tab;
