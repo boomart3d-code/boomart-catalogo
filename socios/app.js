@@ -155,7 +155,7 @@
 
   function renderHeader() {
     $("partner-name").textContent = state.summary ? state.summary.name : "Portal de socios";
-    $("partner-sub").textContent = state.summary ? "Portal de socios BoomArt" : "";
+    $("partner-sub").textContent = state.summary ? (state.summary.is_test ? "LOCAL DE PRUEBA · no cuenta como real" : "Portal de socios BoomArt") : "";
   }
 
   function stat(label, value, hint, gold) {

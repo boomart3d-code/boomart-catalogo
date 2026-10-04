@@ -147,7 +147,7 @@
     const rows = state.partners.filter((row) => matchesPartner(row) && matchesText(row.name));
     $("tab-locales").replaceChildren(sectionTitle("Locales", rows.length), rows.length ? h("div", { class: "admin-grid" }, rows.map((row) =>
       h("article", { class: "admin-row" },
-        h("div", { class: "admin-row__head" }, h("div", { class: "admin-row__title", text: row.name }), row.active ? badge("Activo", "ok") : badge("Inactivo", "off")),
+        h("div", { class: "admin-row__head" }, h("div", { class: "admin-row__title", text: row.name }), h("div", { class: "badges" }, row.is_test ? badge("PRUEBA", "warn") : null, row.active ? badge("Activo", "ok") : badge("Inactivo", "off"))),
         h("div", { class: "admin-row__meta", text: `${row.settlement_frequency || "Frecuencia sin definir"}${row.last_sale_at ? ` · última venta ${U.formatDateTime(row.last_sale_at)}` : " · sin ventas"}` }),
         h("div", { class: "admin-row__metrics" }, metric(row.available_qty, "disponibles"), metric(row.sold_qty_pending, "por cuadrar"), metric(U.formatMoney(row.boomart_debt_pending), "debe")),
         Number(row.pending_adjustments) ? h("div", { class: "badges" }, badge(`${row.pending_adjustments} corrección pendiente`, "red")) : null
@@ -228,7 +228,7 @@
           actions.push(h("button", { class: "btn btn--ghost btn--small", type: "button", onclick: () => openSettlementAdjustment(preview), text: "Agregar ajuste" }));
         }
         return h("article", { class: "admin-row" },
-          h("div", { class: "admin-row__head" }, h("div", {}, h("div", { class: "admin-row__title", text: preview.partner_name }),
+          h("div", { class: "admin-row__head" }, h("div", {}, h("div", { class: "admin-row__title", text: `${preview.partner_name}${state.partners.some((row) => row.partner_id === preview.partner_id && row.is_test) ? " · PRUEBA" : ""}` }),
             h("div", { class: "admin-row__meta", text: current ? `${current.settlement_number} · ${settlementStatus(current.status)} · ${U.formatDay(current.period_start)} a ${U.formatDay(current.period_end)}` : "Sin cuadre activo" })),
             current ? badge(settlementStatus(current.status), current.status === "en_revision" ? "warn" : "ok") : badge("Pendiente", "warn")),
           h("div", { class: "admin-row__metrics" }, metric(preview.qty_pending, "unidades"), metric(U.formatMoney(pendingBoomart), "deuda"), metric(U.formatMoney(pendingPublic - pendingBoomart), "ganancia local")),
