@@ -21,9 +21,10 @@
     db: { schema: "socios" },
   });
 
-  const state = { user: null, cards: [], summary: null, history: [], deliveries: [], settlements: [], settlementLines: [], loadedAt: 0, loadedPerf: 0, tab: "inicio" };
+  const state = { user: null, priceDrafts: {}, cards: [], summary: null, history: [], deliveries: [], settlements: [], settlementLines: [], loadedAt: 0, loadedPerf: 0, tab: "inicio" };
   let saleDraft = null;      // { id, productId }
   let adjustDraft = null;    // { id, sale }
+  let comboDraft = null;     // { id }
   let busy = false;
 
   // ---------------------------------------------------------------- utilidades de interfaz
@@ -122,7 +123,7 @@
     state.cards = cards.data;
     state.summary = summary.data.length === 1 ? summary.data[0] : null;
     state.summaryCount = summary.data.length;
-    state.history = history.data;
+    state.history = U.groupSales(history.data);        // un combo (que el servidor puede guardar en 2 filas) se ve como UNA venta
     state.deliveries = deliveries.data;
     state.settlements = settlements.data;
     state.settlementLines = settlementLines.data;
@@ -185,10 +186,23 @@
         stat("Debes a BoomArt", U.formatMoney(s.boomart_debt_pending), "de lo vendido sin cuadrar"),
         stat("Tu ganancia", U.formatMoney(s.gain_pending), "de lo vendido sin cuadrar", true)),
       h("p", { class: "note", text: frequencyText(s) }),
-      h("button", { class: "btn btn--primary btn--big btn--block", type: "button", onclick: () => openSale(null), text: "Registrar venta" }));
+      h("button", { class: "btn btn--primary btn--big btn--block", type: "button", onclick: () => openSale(null), text: "Registrar venta" }),
+      h("button", { class: "btn btn--ghost btn--block", type: "button", onclick: () => openCombo(null), text: "Vender en combo (precio especial)" }));
     const recent = state.history.filter((sale) => sale.status === "registrada").slice(0, 3);
     root.append(h("div", { class: "panel" }, h("h3", { text: "Últimas ventas" }),
       recent.length ? h("div", { class: "list" }, recent.map(saleItem)) : h("p", { class: "empty", text: "Todavía no registraste ventas." })));
+  }
+
+  // ---------------------------------------------------------------- productos: lo que te cuesta, tu precio de venta y tu ganancia
+  function savedPrice(card) {
+    return card.public_price !== null && card.public_price !== undefined ? Number(card.public_price) : null;
+  }
+
+  function profitInfo(price, cost) {
+    if (price === null) return { text: "Escribe tu precio de venta para ver cuánto ganas por unidad.", cls: "" };
+    const cents = U.toCents(price) - U.toCents(cost);
+    if (cents < 0) return { text: `Con ese precio pierdes ${U.formatMoney(-cents / 100)} por unidad.`, cls: " profit--neg" };
+    return { text: `Ganas ${U.formatMoney(cents / 100)} por unidad.`, cls: " profit--pos" };
   }
 
   function productCard(card) {
@@ -197,27 +211,66 @@
       : h("div", { class: "product__photo product__photo--empty", text: "Sin foto" });
     photo.addEventListener("error", () => photo.replaceWith(h("div", { class: "product__photo product__photo--empty", text: "Sin foto" })));
     const available = Number(card.available_qty);
+    const saved = savedPrice(card);
+    const draft = Object.prototype.hasOwnProperty.call(state.priceDrafts, card.product_id) ? state.priceDrafts[card.product_id] : null;
+    const input = h("input", { class: "price-input", type: "text", inputmode: "decimal", placeholder: "0.00", autocomplete: "off",
+      value: draft !== null ? draft : (saved !== null ? saved.toFixed(2) : ""), "aria-label": `Tu precio de venta de ${card.name}` });
+    const save = h("button", { class: "btn btn--small", type: "button", text: "Guardar" });
+    const profit = h("div", { class: "profit" });
+    const refreshLine = () => {
+      const typed = U.parseMoney(input.value);
+      const info = profitInfo(typed !== null ? Number(typed) : saved, card.boomart_price);
+      profit.textContent = info.text;
+      profit.className = `profit${info.cls}`;
+      save.disabled = typed === null || Number(typed) <= 0 || (saved !== null && Number(typed) === saved);
+    };
+    input.addEventListener("input", () => { state.priceDrafts[card.product_id] = input.value; refreshLine(); });
+    save.addEventListener("click", () => savePrice(card, input, save));
+    refreshLine();
     return h("div", { class: "product" }, photo,
       h("div", { class: "product__body" },
         h("div", { class: "product__name", text: card.name }),
         h("div", { class: "product__sku", text: card.sku }),
         h("div", { class: "product__meta" }, h("b", { text: String(available) }), ` disponibles · recibidos ${card.delivered_qty} · vendidos ${card.sold_qty}`),
-        h("div", { class: "product__meta" }, "Precio BoomArt: ", h("b", { text: U.formatMoney(card.boomart_price) })),
-        card.public_price !== null && card.public_price !== undefined
-          ? h("div", { class: "product__meta" }, "Tu último precio: ", h("b", { text: U.formatMoney(card.public_price) })) : null,
-        h("div", { class: "row" },
+        h("div", { class: "product__meta" }, "Te cuesta (precio BoomArt): ", h("b", { text: U.formatMoney(card.boomart_price) }), " c/u"),
+        h("div", { class: "product__price" }, h("span", { class: "product__label", text: "Tu precio de venta (c/u)" }), h("div", { class: "row" }, input, save)),
+        profit,
+        h("div", { class: "product__actions" },
           available > 0 ? h("button", { class: "btn btn--primary btn--small", type: "button", onclick: () => openSale(card.product_id), text: "Vender" })
-            : h("span", { class: "badge badge--off", text: "Agotado" }))));
+            : h("span", { class: "badge badge--off", text: "Agotado" }),
+          available >= 2 ? h("button", { class: "btn btn--small", type: "button", onclick: () => openCombo(card.product_id), text: "Combo" }) : null)));
+  }
+
+  async function savePrice(card, input, button) {
+    if (busy) return;
+    const price = U.parseMoney(input.value);
+    if (price === null || Number(price) <= 0) { toast("Escribe un precio mayor que 0, por ejemplo 8 o 8.50.", "warn"); return; }
+    setBusy(button, true, "Guardando…");
+    try {
+      await callPortal("/prices", { product_id: card.product_id, public_price: price });
+      delete state.priceDrafts[card.product_id];
+      input.blur();                      // si el campo sigue con el foco (p. ej. en el celular) la lista no se redibujaria con el precio ya guardado
+      toast(`Precio de venta guardado: ${U.formatMoney(price)}`);
+      await refresh(true);
+    } catch (err) {
+      if (err.status === 401) return handleExpired();
+      toast(U.friendlyError(err), "error");
+    } finally {
+      setBusy(button, false, "Guardar");
+    }
   }
 
   function renderProductos() {
     const root = $("tab-productos");
+    const active = document.activeElement;
+    if (active && active.classList && active.classList.contains("price-input") && root.contains(active)) return;   // no se borra lo que se esta escribiendo
     root.replaceChildren(h("h2", { text: "Tus productos" }));
     if (!state.cards.length) {
       root.append(h("div", { class: "empty", text: "Todavía no tienes productos. Cuando BoomArt te entregue mercadería aparecerá aquí." }));
       return;
     }
-    root.append(h("div", { class: "products" }, state.cards.map(productCard)));
+    root.append(h("p", { class: "note", text: "Fija tu precio de venta de cada producto una sola vez; al vender, el portal calcula lo que debes a BoomArt y tu ganancia." }),
+      h("div", { class: "products" }, state.cards.map(productCard)));
   }
 
   function saleBadges(sale) {
@@ -236,13 +289,17 @@
     const secondsLeft = undoSecondsLeft(sale);
     if (secondsLeft > 0) {
       actions.push(h("button", { class: "btn btn--small", type: "button", "data-sale": sale.sale_id, onclick: () => undoSale(sale), "data-undo": String(secondsLeft) },
-        "Deshacer (", h("span", { "data-count": "1", text: U.countdown(secondsLeft) }), ")"));
+        sale.isCombo ? "Deshacer combo (" : "Deshacer (", h("span", { "data-count": "1", text: U.countdown(secondsLeft) }), ")"));
     } else if (sale.status === "registrada" && !sale.settlement_id && sale.adjustment_status !== "solicitada") {
       actions.push(h("button", { class: "btn btn--small", type: "button", onclick: () => openAdjust(sale), text: "Pedir corrección" }));
     }
+    const soldOn = sale.sold_on && sale.sold_on !== U.localDay(new Date(sale.created_at), 0) ? ` · vendida el ${U.formatDay(sale.sold_on)}` : "";
+    const sub = sale.isCombo
+      ? `${U.formatDateTime(sale.created_at)} · combo a ${U.formatMoney(sale.total_public)} (precio normal ${U.formatMoney(sale.list_total)} · descuento ${U.formatMoney(sale.discount)})${soldOn}`
+      : `${U.formatDateTime(sale.created_at)} · a ${U.formatMoney(sale.public_unit_price)} c/u${soldOn}`;
     return h("div", { class: `item${sale.status === "anulada" ? " item--void" : ""}` },
-      h("div", { class: "item__top" }, h("span", { class: "item__title", text: `${sale.qty} × ${sale.product_name}` }), h("span", { class: "item__total", text: U.formatMoney(sale.total_public) })),
-      h("div", { class: "item__sub", text: `${U.formatDateTime(sale.created_at)} · a ${U.formatMoney(sale.public_unit_price)} c/u${sale.sold_on && sale.sold_on !== U.localDay(new Date(sale.created_at), 0) ? ` · vendida el ${U.formatDay(sale.sold_on)}` : ""}` }),
+      h("div", { class: "item__top" }, h("span", { class: "item__title", text: `${sale.isCombo ? "Combo: " : ""}${sale.qty} × ${sale.product_name}` }), h("span", { class: "item__total", text: U.formatMoney(sale.total_public) })),
+      h("div", { class: "item__sub", text: sub }),
       sale.status === "registrada" ? h("div", { class: "item__sub", text: `Debes a BoomArt ${U.formatMoney(sale.total_boomart)} · Tu ganancia ${U.formatMoney(sale.gain)}` }) : null,
       saleBadges(sale),
       actions.length ? h("div", { class: "item__actions" }, actions) : null);
@@ -388,6 +445,7 @@
     $("sale-date").max = U.localDay(new Date(), 0);
     $("sale-date").value = U.localDay(new Date(), 0);
     $("sale-date").dataset.touched = "";
+    $("sale-save-price").checked = true;
     $("sale-error").hidden = true;
     saleDraft = { id: U.newId() };
     onSaleProductChange();
@@ -398,10 +456,14 @@
   function onSaleProductChange() {
     const card = selectedCard();
     if (!card) return;
+    const saved = savedPrice(card);
     $("sale-avail").textContent = `(disponibles: ${card.available_qty})`;
-    $("sale-price").value = card.public_price !== null && card.public_price !== undefined ? Number(card.public_price).toFixed(2) : "";
-    $("sale-price-hint").textContent = card.public_price !== null && card.public_price !== undefined
-      ? "Usamos el último precio que pusiste. Puedes cambiarlo." : "Escribe el precio al que vendes al público.";
+    $("sale-cost").textContent = `Te cuesta ${U.formatMoney(card.boomart_price)} cada una (precio BoomArt).`;
+    $("sale-price").value = saved !== null ? saved.toFixed(2) : "";
+    $("sale-price-hint").textContent = saved !== null
+      ? "Es tu precio de venta guardado. Si lo cambias aquí, vale solo para esta venta."
+      : "Todavía no fijaste tu precio de venta: escríbelo aquí.";
+    $("sale-save-wrap").hidden = saved !== null;
     clampQty();
     updateSaleSummary();
   }
@@ -411,6 +473,10 @@
     const max = card ? Number(card.available_qty) : 1;
     const qty = U.parseQty($("sale-qty").value, max);
     if (qty === null) { const raw = Number($("sale-qty").value); $("sale-qty").value = String(raw > max ? max : 1); }
+  }
+
+  function summaryRow(label, value, extra) {
+    return h("div", { class: `summary__row${extra ? ` ${extra}` : ""}` }, h("span", { text: label }), h("span", { text: value }));
   }
 
   function updateSaleSummary() {
@@ -423,10 +489,15 @@
       box.append(h("div", { class: "summary__row" }, h("span", { class: "muted", text: "Completa la cantidad y el precio para ver el total." })));
       return;
     }
-    const total = U.totalCents(qty, price) / 100;
+    const total = U.totalCents(qty, price);
+    const debt = U.fifoCostCents(card.boomart_lots, qty);
     box.append(
-      h("div", { class: "summary__row" }, h("span", { text: `${qty} × ${card.name}` }), h("span", { text: U.formatMoney(price) })),
-      h("div", { class: "summary__row summary__row--total" }, h("span", { text: "Total de la venta" }), h("span", { text: U.formatMoney(total) })));
+      summaryRow(`${qty} × ${card.name}`, U.formatMoney(price)),
+      summaryRow("Total de la venta", U.formatMoney(total / 100), "summary__row--total"));
+    if (debt !== null) {
+      box.append(summaryRow("Debes a BoomArt", U.formatMoney(debt / 100)),
+        summaryRow("Tu ganancia", U.formatMoney((total - debt) / 100), total - debt < 0 ? "summary__row--neg" : ""));
+    }
   }
 
   function saleSummaryRows(result, name) {
@@ -438,6 +509,25 @@
     ];
   }
 
+  function comboSummaryRows(result, name) {
+    return [
+      h("div", { class: "summary__row" }, h("span", { text: `Combo: ${result.qty} × ${name}` }), h("span", { text: U.formatMoney(result.total_public) })),
+      h("div", { class: "summary__row" }, h("span", { text: "Al precio normal serían" }), h("span", { text: U.formatMoney(result.list_total) })),
+      h("div", { class: "summary__row summary__row--total" }, h("span", { text: "Descuento por combo" }), h("span", { text: U.formatMoney(result.discount) })),
+      h("div", { class: "summary__row" }, h("span", { text: "Debes a BoomArt" }), h("span", { text: U.formatMoney(result.total_boomart) })),
+      h("div", { class: "summary__row" }, h("span", { text: "Tu ganancia" }), h("span", { text: U.formatMoney(result.gain) })),
+    ];
+  }
+
+  async function saveSalePrice(body) {
+    try {
+      await callPortal("/prices", { product_id: body.product_id, public_price: body.public_unit_price });
+      toast("Guardamos ese precio como tu precio de venta.");
+    } catch {
+      /* la venta ya quedo registrada; el precio se puede guardar despues en Productos */
+    }
+  }
+
   async function submitSale(event) {
     event.preventDefault();
     if (busy) return;
@@ -446,8 +536,10 @@
     error.hidden = true;
     const pending = pendingSale();
     let body;
+    let savePriceAfter = false;
     if (pending) {
       body = pending.body;             // un envio sin confirmar manda: se reintenta EXACTAMENTE el mismo (mismo id), nunca uno nuevo
+      savePriceAfter = pending.savePrice === true;
     } else {
       const card = selectedCard();
       const qty = card ? U.parseQty($("sale-qty").value, Number(card.available_qty)) : null;
@@ -458,13 +550,15 @@
       body = { id: saleDraft.id, product_id: card.product_id, qty, public_unit_price: price };
       const day = $("sale-date").value;
       if ($("sale-date").dataset.touched && day && day !== U.localDay(new Date(), 0)) body.sold_on = day;
-      writeJson(PENDING_KEY, { userId: state.user.id, body, at: Date.now() });
+      savePriceAfter = !$("sale-save-wrap").hidden && $("sale-save-price").checked && Number(price) > 0;
+      writeJson(PENDING_KEY, { userId: state.user.id, route: "/sales", body, at: Date.now(), savePrice: savePriceAfter });
     }
     setBusy(submit, true, "Registrando…");
     try {
       const result = await callPortal("/sales", body);
       writeJson(PENDING_KEY, null);
       $("dlg-sale").close();
+      if (savePriceAfter) await saveSalePrice(body);
       await refresh(true);
       showDone(result, body);
     } catch (err) {
@@ -478,13 +572,130 @@
     function fail(message) { error.textContent = message; error.hidden = false; }
   }
 
+  // ---------------------------------------------------------------- vender en combo (precio especial, un solo producto)
+  function selectedComboCard() {
+    return state.cards.find((c) => c.product_id === $("combo-product").value) || null;
+  }
+
+  function openCombo(productId) {
+    const options = state.cards.filter((c) => Number(c.available_qty) >= 2);
+    if (!options.length) { toast("Para armar un combo necesitas al menos 2 unidades de un producto.", "warn"); return; }
+    if (pendingSale()) { toast("Primero confirma la venta pendiente.", "warn"); return; }
+    const select = $("combo-product");
+    select.replaceChildren(...options.map((c) => h("option", { value: c.product_id, text: `${c.name} (${c.available_qty})` })));
+    select.value = options.some((c) => c.product_id === productId) ? productId : options[0].product_id;
+    $("combo-qty").value = "2";
+    $("combo-price").value = "";
+    $("combo-date").min = U.localDay(new Date(), -30);
+    $("combo-date").max = U.localDay(new Date(), 0);
+    $("combo-date").value = U.localDay(new Date(), 0);
+    $("combo-date").dataset.touched = "";
+    $("combo-error").hidden = true;
+    comboDraft = { id: U.newId() };
+    onComboProductChange();
+    $("dlg-combo").showModal();
+    $("combo-price").focus();
+  }
+
+  function onComboProductChange() {
+    const card = selectedComboCard();
+    if (!card) return;
+    const saved = savedPrice(card);
+    $("combo-avail").textContent = `(disponibles: ${card.available_qty})`;
+    $("combo-cost").textContent = `Te cuesta ${U.formatMoney(card.boomart_price)} cada una (precio BoomArt).`;
+    $("combo-hint").textContent = saved === null
+      ? "Primero guarda tu precio de venta de este producto en la pestaña Productos."
+      : `Tu precio normal es ${U.formatMoney(saved)} c/u: el combo debe costar menos que la suma.`;
+    clampComboQty();
+    updateComboSummary();
+  }
+
+  function clampComboQty() {
+    const card = selectedComboCard();
+    const max = card ? Number(card.available_qty) : 2;
+    const qty = U.parseQty($("combo-qty").value, max);
+    if (qty === null || qty < 2) { const raw = Number($("combo-qty").value); $("combo-qty").value = String(raw > max ? max : 2); }
+  }
+
+  function updateComboSummary() {
+    const card = selectedComboCard();
+    const box = $("combo-summary");
+    box.replaceChildren();
+    const saved = card ? savedPrice(card) : null;
+    const qty = card ? U.parseQty($("combo-qty").value, Number(card.available_qty)) : null;
+    const total = U.parseMoney($("combo-price").value);
+    $("combo-submit").disabled = saved === null;
+    if (!card || saved === null || qty === null || qty < 2 || total === null) {
+      box.append(h("div", { class: "summary__row" }, h("span", { class: "muted", text: "Completa la cantidad y el precio del combo para ver los números." })));
+      return;
+    }
+    const p = U.comboPreview(qty, saved, total, card.boomart_lots);
+    box.append(
+      summaryRow(`${qty} × ${card.name} al precio normal`, U.formatMoney(p.listCents / 100)),
+      summaryRow("Precio del combo", U.formatMoney(p.totalCents / 100), "summary__row--total"),
+      summaryRow("Descuento", `${U.formatMoney(p.discountCents / 100)} (${p.discountPct}%)`, p.valid ? "" : "summary__row--neg"));
+    if (!p.valid) {
+      box.append(h("div", { class: "summary__row summary__row--neg" }, h("span", { text: p.totalCents >= p.listCents ? `El combo debe costar menos que ${U.formatMoney(p.listCents / 100)}.` : "Escribe un precio mayor que 0." })));
+      return;
+    }
+    if (p.debtCents !== null) {
+      box.append(summaryRow("Debes a BoomArt", U.formatMoney(p.debtCents / 100)),
+        summaryRow("Tu ganancia", U.formatMoney(p.gainCents / 100), p.gainCents < 0 ? "summary__row--neg" : ""));
+    }
+  }
+
+  async function submitCombo(event) {
+    event.preventDefault();
+    if (busy) return;
+    const submit = $("combo-submit");
+    const error = $("combo-error");
+    error.hidden = true;
+    const pending = pendingSale();
+    let body;
+    if (pending && pending.route === "/combos") {
+      body = pending.body;            // se reintenta EXACTAMENTE el mismo combo (mismo id)
+    } else {
+      const card = selectedComboCard();
+      const qty = card ? U.parseQty($("combo-qty").value, Number(card.available_qty)) : null;
+      const total = U.parseMoney($("combo-price").value);
+      const saved = card ? savedPrice(card) : null;
+      if (!card) return fail("Elige un producto.");
+      if (saved === null) return fail("Primero guarda tu precio de venta de este producto en la pestaña Productos.");
+      if (qty === null || qty < 2) return fail(`La cantidad debe ser un número entre 2 y ${card.available_qty}.`);
+      if (total === null || Number(total) <= 0) return fail("Escribe el precio total del combo, por ejemplo 35 o 35.50.");
+      if (U.toCents(total) >= qty * U.toCents(saved)) return fail(`El combo debe costar menos que ${U.formatMoney((qty * U.toCents(saved)) / 100)} (${qty} × tu precio de venta).`);
+      body = { id: comboDraft.id, product_id: card.product_id, qty, total_price: total };
+      const day = $("combo-date").value;
+      if ($("combo-date").dataset.touched && day && day !== U.localDay(new Date(), 0)) body.sold_on = day;
+      writeJson(PENDING_KEY, { userId: state.user.id, route: "/combos", body, at: Date.now() });
+    }
+    setBusy(submit, true, "Registrando…");
+    try {
+      const result = await callPortal("/combos", body);
+      writeJson(PENDING_KEY, null);
+      $("dlg-combo").close();
+      await refresh(true);
+      showDone(result, body);
+    } catch (err) {
+      if (!isUncertain(err)) { writeJson(PENDING_KEY, null); comboDraft = { id: U.newId() }; }
+      if (err.status === 401) { $("dlg-combo").close(); return handleExpired(); }
+      fail(U.friendlyError(err));
+      renderPendingBanner();
+    } finally {
+      setBusy(submit, false, "Confirmar combo");
+      updateComboSummary();
+    }
+    function fail(message) { error.textContent = message; error.hidden = false; }
+  }
+
   async function retryPending() {
     const pending = pendingSale();
     if (!pending || busy) return;
     busy = true;
     try {
-      const result = await callPortal("/sales", pending.body);
+      const result = await callPortal(pending.route || "/sales", pending.body);
       writeJson(PENDING_KEY, null);
+      if (pending.savePrice === true) await saveSalePrice(pending.body);
       await refresh(true);
       showDone(result, pending.body);
     } catch (err) {
@@ -501,21 +712,24 @@
   function showDone(result, body) {
     const card = state.cards.find((c) => c.product_id === body.product_id);
     const name = card ? card.name : "producto";
+    const combo = Boolean(result.combo_id);
     lastDone = result;
-    $("dlg-done-title").textContent = result.result === "repetido" ? "Esa venta ya estaba registrada" : "Venta registrada";
-    $("done-body").replaceChildren(...saleSummaryRows(result, name));
-    $("done-undo-note").textContent = "Si te equivocaste, puedes deshacerla durante 15 minutos (aquí o en el Historial).";
+    $("dlg-done-title").textContent = result.result === "repetido" ? (combo ? "Ese combo ya estaba registrado" : "Esa venta ya estaba registrada") : (combo ? "Combo registrado" : "Venta registrada");
+    $("done-body").replaceChildren(...(combo ? comboSummaryRows(result, name) : saleSummaryRows(result, name)));
+    $("done-undo-note").textContent = combo
+      ? "Si te equivocaste, puedes deshacer el combo durante 15 minutos (aquí o en el Historial)."
+      : "Si te equivocaste, puedes deshacerla durante 15 minutos (aquí o en el Historial).";
     $("done-undo").hidden = result.result === "repetido";
     $("dlg-done").showModal();
   }
 
   async function undoSale(sale) {
     if (busy) return;
-    if (!window.confirm(`¿Deshacer la venta de ${sale.qty} × ${sale.product_name}? Las unidades vuelven a tu stock.`)) return;
+    if (!window.confirm(`¿Deshacer ${sale.isCombo ? "el combo" : "la venta"} de ${sale.qty} × ${sale.product_name}? Las unidades vuelven a tu stock.`)) return;
     busy = true;
     try {
       const result = await callPortal("/sales/void", { sale_id: sale.sale_id });
-      toast(result.result === "repetido" ? "Esa venta ya estaba deshecha." : "Venta deshecha. Las unidades volvieron a tu stock.");
+      toast(result.result === "repetido" ? "Esa venta ya estaba deshecha." : `${sale.isCombo ? "Combo deshecho" : "Venta deshecha"}. Las unidades volvieron a tu stock.`);
       await refresh(true);
     } catch (err) {
       if (err.status === 401) return handleExpired();
@@ -540,7 +754,13 @@
 
   function openAdjust(sale) {
     adjustDraft = { id: U.newId(), sale };
-    $("adjust-sale").textContent = `${sale.qty} × ${sale.product_name} · ${U.formatMoney(sale.total_public)} · ${U.formatDateTime(sale.created_at)}`;
+    $("adjust-sale").textContent = `${sale.isCombo ? "Combo: " : ""}${sale.qty} × ${sale.product_name} · ${U.formatMoney(sale.total_public)} · ${U.formatDateTime(sale.created_at)}`;
+    for (const radio of document.querySelectorAll("input[name='adjust-kind']")) {
+      const label = radio.closest("label");
+      if (label) label.hidden = sale.isCombo === true && radio.value !== "anular";      // un combo solo se pide anular completo
+    }
+    $("adjust-anular-text").textContent = sale.isCombo ? "Anular el combo completo" : "Anular la venta completa";
+    $("adjust-combo-note").hidden = sale.isCombo !== true;
     document.querySelector("input[name='adjust-kind'][value='anular']").checked = true;
     $("adjust-qty").value = "";
     $("adjust-price").value = "";
@@ -632,7 +852,7 @@
 
   async function logout() {
     state.user = null;
-    state.cards = []; state.history = []; state.deliveries = []; state.settlements = []; state.settlementLines = []; state.summary = null;
+    state.priceDrafts = {}; state.cards = []; state.history = []; state.deliveries = []; state.settlements = []; state.settlementLines = []; state.summary = null;
     writeJson(ACTIVE_KEY, null);
     try { await sb.auth.signOut(); } catch { /* aunque falle la red, la sesion local se borra */ }
     show("login");
@@ -689,6 +909,21 @@
     updateSaleSummary();
   });
   $("sale-cancel").addEventListener("click", () => $("dlg-sale").close());
+  $("combo-form").addEventListener("submit", submitCombo);
+  $("combo-product").addEventListener("change", onComboProductChange);
+  $("combo-qty").addEventListener("input", updateComboSummary);
+  $("combo-qty").addEventListener("blur", () => { clampComboQty(); updateComboSummary(); });
+  $("combo-price").addEventListener("input", updateComboSummary);
+  $("combo-date").addEventListener("change", () => { $("combo-date").dataset.touched = "1"; });
+  $("combo-minus").addEventListener("click", () => { const q = U.parseQty($("combo-qty").value) || 2; $("combo-qty").value = String(Math.max(2, q - 1)); updateComboSummary(); });
+  $("combo-plus").addEventListener("click", () => {
+    const card = selectedComboCard();
+    const max = card ? Number(card.available_qty) : 2;
+    const q = U.parseQty($("combo-qty").value) || 1;
+    $("combo-qty").value = String(Math.min(max, q + 1));
+    updateComboSummary();
+  });
+  $("combo-cancel").addEventListener("click", () => $("dlg-combo").close());
   $("adjust-form").addEventListener("submit", submitAdjust);
   $("adjust-cancel").addEventListener("click", () => $("dlg-adjust").close());
   for (const radio of document.querySelectorAll("input[name='adjust-kind']")) radio.addEventListener("change", onAdjustKindChange);
@@ -699,7 +934,7 @@
     try {
       const result = await callPortal("/sales/void", { sale_id: lastDone.sale_id });
       $("dlg-done").close();
-      toast(result.result === "repetido" ? "Esa venta ya estaba deshecha." : "Venta deshecha. Las unidades volvieron a tu stock.");
+      toast(result.result === "repetido" ? "Esa venta ya estaba deshecha." : `${lastDone.combo_id ? "Combo deshecho" : "Venta deshecha"}. Las unidades volvieron a tu stock.`);
       await refresh(true);
     } catch (err) {
       if (err.status === 401) { $("dlg-done").close(); return handleExpired(); }

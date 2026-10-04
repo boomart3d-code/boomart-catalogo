@@ -151,6 +151,16 @@ select { appearance: none; background-image: linear-gradient(45deg, transparent 
 .product__sku { color: var(--muted); font-size: 0.78rem; }
 .product__meta { font-size: 0.88rem; color: var(--muted); }
 .product__meta b { color: var(--paper); }
+.product__price { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; }
+.product__label { color: var(--muted); font-size: 0.82rem; }
+.price-input { max-width: 130px; min-height: 40px !important; padding: 8px 12px !important; font-weight: 700 !important; text-align: right; }
+.profit { font-size: 0.86rem; color: var(--muted); }
+.profit--pos { color: var(--ok); }
+.profit--neg { color: #ff8a98; font-weight: 600; }
+.product__actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.check { display: flex; gap: 10px; align-items: center; font-weight: 600; min-height: 36px; }
+.check input { width: 20px; height: 20px; accent-color: var(--red); }
+.summary__row--neg { color: #ff8a98; }
 .badge { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 0.75rem; font-weight: 700; background: var(--panel-2); color: var(--paper); }
 .badge--ok { background: rgba(79, 191, 127, 0.18); color: var(--ok); }
 .badge--warn { background: rgba(224, 164, 58, 0.18); color: var(--warn); }

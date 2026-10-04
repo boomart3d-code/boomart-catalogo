@@ -11,7 +11,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' https://boomart.pe https://www.boomart.pe data:; connect-src https://ugywzvnokdsikiczvwdx.supabase.co; base-uri 'none'; form-action 'none'">
   <title>Portal de socios · BoomArt</title>
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
   <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
@@ -73,6 +73,7 @@
       <label class="field">
         <span>Producto</span>
         <select id="sale-product" required></select>
+        <small id="sale-cost" class="muted"></small>
       </label>
       <div class="field">
         <span>Cantidad <small id="sale-avail" class="muted"></small></span>
@@ -86,6 +87,10 @@
         <span>Precio de venta por unidad (S/)</span>
         <input id="sale-price" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off">
         <small id="sale-price-hint" class="muted"></small>
+      </label>
+      <label class="check" id="sale-save-wrap" hidden>
+        <input id="sale-save-price" type="checkbox" checked>
+        <span>Guardar este precio como mi precio de venta</span>
       </label>
       <label class="field">
         <span>Fecha de la venta</span>
@@ -101,14 +106,52 @@
     </form>
   </dialog>
 
+  <!-- Armar un combo -->
+  <dialog id="dlg-combo" class="sheet" aria-labelledby="dlg-combo-title">
+    <form id="combo-form" class="stack" method="dialog" novalidate>
+      <h2 id="dlg-combo-title">Vender en combo</h2>
+      <p class="muted">Es un precio especial: varias unidades de un mismo producto por un total menor que tu precio normal. Lo habitual es vender de a una unidad.</p>
+      <label class="field">
+        <span>Producto</span>
+        <select id="combo-product" required></select>
+        <small id="combo-cost" class="muted"></small>
+      </label>
+      <div class="field">
+        <span>Cantidad (mínimo 2) <small id="combo-avail" class="muted"></small></span>
+        <div class="stepper">
+          <button id="combo-minus" class="btn btn--round" type="button" aria-label="Una menos">−</button>
+          <input id="combo-qty" type="text" inputmode="numeric" pattern="[0-9]*" value="2" aria-label="Cantidad del combo">
+          <button id="combo-plus" class="btn btn--round" type="button" aria-label="Una más">+</button>
+        </div>
+      </div>
+      <label class="field">
+        <span>Precio total del combo (S/)</span>
+        <input id="combo-price" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off">
+        <small id="combo-hint" class="muted"></small>
+      </label>
+      <label class="field">
+        <span>Fecha de la venta</span>
+        <input id="combo-date" type="date">
+        <small class="muted">Hoy por defecto. Puedes elegir hasta 30 días atrás.</small>
+      </label>
+      <div class="summary" id="combo-summary" aria-live="polite"></div>
+      <p id="combo-error" class="error" role="alert" hidden></p>
+      <div class="row">
+        <button id="combo-cancel" class="btn btn--ghost" type="button">Cancelar</button>
+        <button id="combo-submit" class="btn btn--primary btn--grow" type="submit">Confirmar combo</button>
+      </div>
+    </form>
+  </dialog>
+
   <!-- Pedir correccion -->
   <dialog id="dlg-adjust" class="sheet" aria-labelledby="dlg-adjust-title">
     <form id="adjust-form" class="stack" method="dialog" novalidate>
       <h2 id="dlg-adjust-title">Pedir una corrección</h2>
       <p id="adjust-sale" class="muted"></p>
+      <p id="adjust-combo-note" class="muted" hidden>Un combo no se corrige por partes: si hay un error, pide anularlo completo y registra la venta de nuevo.</p>
       <fieldset class="choices">
         <legend>¿Qué quieres corregir?</legend>
-        <label><input type="radio" name="adjust-kind" value="anular" checked> Anular la venta completa</label>
+        <label><input type="radio" name="adjust-kind" value="anular" checked> <span id="adjust-anular-text">Anular la venta completa</span></label>
         <label><input type="radio" name="adjust-kind" value="corregir_cantidad"> Bajar la cantidad vendida</label>
         <label><input type="radio" name="adjust-kind" value="corregir_precio"> Corregir el precio de venta</label>
       </fieldset>
@@ -148,7 +191,7 @@
 
   <script src="vendor/supabase-js-2.117.2.umd.js"></script>
   <script src="config.js?v=1"></script>
-  <script src="util.js?v=1"></script>
-  <script src="app.js?v=4"></script>
+  <script src="util.js?v=2"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>

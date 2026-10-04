@@ -119,5 +119,74 @@
     return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
   }
 
-  return { MAX_QTY, MAX_PRICE, parseMoney, parseQty, totalCents, formatMoney, formatDay, formatDateTime, countdown, localDay, friendlyError, pickGuide, loginEmail, newId };
+  /** 7.5 | "7.50" -> 750 (centavos enteros). */
+  function toCents(value) {
+    return Math.round(Number(value) * 100);
+  }
+
+  /** Deuda BoomArt exacta de `qty` unidades segun los lotes que quedan por vender (orden FIFO) [{qty, price}]: centavos, o null si no alcanzan. */
+  function fifoCostCents(lots, qty) {
+    let remaining = qty;
+    let total = 0;
+    for (const lot of Array.isArray(lots) ? lots : []) {
+      if (remaining <= 0) break;
+      const take = Math.min(remaining, Number(lot.qty));
+      total += take * toCents(lot.price);
+      remaining -= take;
+    }
+    return remaining > 0 ? null : total;
+  }
+
+  /** Vista previa de un combo (solo informativa; el servidor calcula el oficial). Todo en centavos; null si faltan datos. */
+  function comboPreview(qty, pvp, total, lots) {
+    if (!Number.isInteger(qty) || qty < 2 || pvp === null || pvp === undefined || total === null || total === undefined) return null;
+    const list = qty * toCents(pvp);
+    const price = toCents(total);
+    const debt = fifoCostCents(lots, qty);
+    return {
+      listCents: list, totalCents: price, discountCents: list - price,
+      discountPct: list > 0 ? Math.round(((list - price) / list) * 1000) / 10 : 0,
+      valid: price > 0 && price < list,
+      debtCents: debt, gainCents: debt === null ? null : price - debt,
+    };
+  }
+
+  /** Une las filas de un mismo combo (por los centavos el servidor puede partirlo en 2 filas) en UNA sola entrada del historial. */
+  function groupSales(rows) {
+    const out = [];
+    const combos = new Map();
+    const rank = { solicitada: 3, aprobada: 2, rechazada: 1 };
+    for (const row of rows || []) {
+      if (!row.combo_id) { out.push({ ...row, isCombo: false }); continue; }
+      let group = combos.get(row.combo_id);
+      if (!group) {
+        group = { ...row, sale_id: row.combo_id, isCombo: true, qty: 0, _total: 0, _boomart: 0, _list: 0, undo_seconds: 0, can_undo: false };
+        combos.set(row.combo_id, group);
+        out.push(group);
+      }
+      group.qty += Number(row.qty);
+      group._total += toCents(row.total_public);
+      group._boomart += toCents(row.total_boomart);
+      group._list += Number(row.qty) * toCents(row.list_unit_price);
+      group.can_undo = group.can_undo || row.can_undo === true;
+      group.undo_seconds = Math.max(group.undo_seconds, Number(row.undo_seconds) || 0);
+      if ((rank[row.adjustment_status] || 0) > (rank[group.adjustment_status] || 0)) {
+        group.adjustment_status = row.adjustment_status;
+        group.adjustment_kind = row.adjustment_kind;
+        group.adjustment_note = row.adjustment_note;
+      }
+    }
+    for (const group of combos.values()) {
+      group.total_public = group._total / 100;
+      group.total_boomart = group._boomart / 100;
+      group.gain = (group._total - group._boomart) / 100;
+      group.list_total = group._list / 100;
+      group.discount = (group._list - group._total) / 100;
+      group.public_unit_price = group.qty > 0 ? Math.round(group._total / group.qty) / 100 : 0;
+      for (const key of ["_total", "_boomart", "_list"]) delete group[key];
+    }
+    return out;
+  }
+
+  return { MAX_QTY, MAX_PRICE, parseMoney, parseQty, totalCents, toCents, fifoCostCents, comboPreview, groupSales, formatMoney, formatDay, formatDateTime, countdown, localDay, friendlyError, pickGuide, loginEmail, newId };
 });

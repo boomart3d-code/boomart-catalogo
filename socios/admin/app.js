@@ -169,12 +169,12 @@
       h("article", { class: `admin-row${row.status === "anulada" ? " item--void" : ""}` },
         h("div", { class: "admin-row__head" }, h("div", {}, h("div", { class: "admin-row__title", text: `${row.qty} × ${row.product_name}` }), h("div", { class: "admin-row__meta", text: `${partnerName(row.partner_id)} · ${U.formatDateTime(row.created_at)} · SKU ${row.sku}` })), h("div", { class: "admin-row__amount", text: U.formatMoney(row.total_public) })),
         h("div", { class: "admin-row__meta", text: `Debe a BoomArt ${U.formatMoney(row.total_boomart)} · ganancia del local ${U.formatMoney(row.gain)}` }),
-        h("div", { class: "badges" }, row.status === "anulada" ? badge("Anulada", "off") : badge("Registrada", "ok"), row.settlement_id ? badge("En cuadre", "ok") : badge("Por cuadrar", "warn"), row.adjustment_status === "solicitada" ? badge("Corrección pendiente", "red") : null)
+        h("div", { class: "badges" }, row.status === "anulada" ? badge("Anulada", "off") : badge("Registrada", "ok"), row.settlement_id ? badge("En cuadre", "ok") : badge("Por cuadrar", "warn"), row.adjustment_status === "solicitada" ? badge("Corrección pendiente", "red") : null, row.combo_id ? badge("Combo", "warn") : null)
       ))) : h("p", { class: "empty", text: "No hay ventas que coincidan con el filtro." }));
   }
 
   function adjustmentLabel(row) {
-    if (row.kind === "anular") return "Anular la venta";
+    if (row.kind === "anular") return row.combo_id ? "Anular el combo completo (todas sus unidades)" : "Anular la venta";
     if (row.kind === "corregir_cantidad") return `Cambiar cantidad de ${row.sale_qty} a ${row.new_qty}`;
     return `Cambiar precio de ${U.formatMoney(row.sale_price)} a ${U.formatMoney(row.new_price)}`;
   }
