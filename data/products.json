@@ -1330,7 +1330,11 @@
     "offer": true,
     "image": "assets/products/casco-de-agamenon-la-odisea.jpg",
     "gallery": [
-      "assets/products/casco-de-agamenon-la-odisea.jpg"
+      "assets/products/casco-de-agamenon-la-odisea.jpg",
+      "assets/products/casco-de-agamenon-la-odisea-2.jpg",
+      "assets/products/casco-de-agamenon-la-odisea-3.jpg",
+      "assets/products/casco-de-agamenon-la-odisea-4.jpg",
+      "assets/products/casco-de-agamenon-la-odisea-5.jpg"
     ],
     "description": "Casco decorativo de Agamenón a tamaño real, inspirado en La Odisea y la Grecia de los héroes. Una pieza imponente de exhibición.",
     "offerPrice": 398
