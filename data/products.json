@@ -327,6 +327,30 @@
     "description": "Combo de la Casa de Piscis: templo de 17 cm de alto × 16.5 cm de fondo × 19.5 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado."
   },
   {
+    "id": "templo-del-patriarca",
+    "name": "Templo del Patriarca",
+    "category": "Saint Seiya",
+    "tags": [
+      "Saint Seiya",
+      "Templo",
+      "Patriarca",
+      "Santuario"
+    ],
+    "height": "25 × 24 × 13 cm (alto × profundidad × ancho)",
+    "material": "PLA+ pintado a mano",
+    "availability": "A pedido",
+    "regularPrice": 200,
+    "featured": true,
+    "image": "assets/products/templo-del-patriarca-hero.png",
+    "gallery": [
+      "assets/products/templo-del-patriarca-hero.png",
+      "assets/products/templo-del-patriarca-2.jpg",
+      "assets/products/templo-del-patriarca-3.jpg",
+      "assets/products/templo-del-patriarca-4.jpg"
+    ],
+    "description": "El imponente Templo del Patriarca llega para completar el Santuario de Saint Seiya. Fabricado en PLA+ y pintado a mano con acabado de piedra envejecida. Mide 25 cm de alto, 24 cm de profundidad y 13 cm de ancho."
+  },
+  {
     "id": "templo-con-caja-de-pandora-y-pedestal",
     "name": "Colección Completa · 12 Templos + 12 Cajas de Pandora y Pedestales · Saint Seiya",
     "category": "Saint Seiya",

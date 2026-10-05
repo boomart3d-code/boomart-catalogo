@@ -4,8 +4,8 @@ Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Cal
 Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion ~48 horas utiles desde
 la validacion del adelanto (50%). Pedidos por WhatsApp: https://wa.me/51925666542
 
-Total de piezas: 67
-Actualizado: 2026-10-01
+Total de piezas: 68
+Actualizado: 2026-10-05
 Fuente estructurada: https://boomart.pe/catalogo.json
 
 ---
@@ -155,6 +155,18 @@ Combo de la Casa de Acuario: templo de 20 cm de alto × 22 cm de fondo × 19 cm 
 - Ficha: https://boomart.pe/producto/templo-piscis/
 
 Combo de la Casa de Piscis: templo de 17 cm de alto × 16.5 cm de fondo × 19.5 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado.
+
+### Templo del Patriarca
+
+- Categoria: Saint Seiya
+- Precio: S/200
+- Material: PLA+ pintado a mano
+- Disponibilidad: A pedido
+- Etiquetas: Saint Seiya, Templo, Patriarca, Santuario
+- Imagen: https://boomart.pe/assets/products/templo-del-patriarca-hero.png
+- Ficha: https://boomart.pe/producto/templo-del-patriarca/
+
+El imponente Templo del Patriarca llega para completar el Santuario de Saint Seiya. Fabricado en PLA+ y pintado a mano con acabado de piedra envejecida. Mide 25 cm de alto, 24 cm de profundidad y 13 cm de ancho.
 
 ### Colección Completa · 12 Templos + 12 Cajas de Pandora y Pedestales · Saint Seiya
 

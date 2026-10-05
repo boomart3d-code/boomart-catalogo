@@ -3,13 +3,13 @@
   "url": "https://boomart.pe/",
   "description": "Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao, Peru. Envios a todo el pais.",
   "currency": "PEN",
-  "updated": "2026-10-01",
+  "updated": "2026-10-05",
   "contact": {
     "whatsapp": "https://wa.me/51925666542",
     "email": "contacto@boomart.pe",
     "instagram": "https://www.instagram.com/boomart_3d"
   },
-  "count": 67,
+  "count": 68,
   "products": [
     {
       "id": "templo-aries",
@@ -349,6 +349,34 @@
       ],
       "url": "https://boomart.pe/producto/templo-piscis/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20de%20Piscis"
+    },
+    {
+      "id": "templo-del-patriarca",
+      "name": "Templo del Patriarca",
+      "category": "Saint Seiya",
+      "tags": [
+        "Saint Seiya",
+        "Templo",
+        "Patriarca",
+        "Santuario"
+      ],
+      "description": "El imponente Templo del Patriarca llega para completar el Santuario de Saint Seiya. Fabricado en PLA+ y pintado a mano con acabado de piedra envejecida. Mide 25 cm de alto, 24 cm de profundidad y 13 cm de ancho.",
+      "material": "PLA+ pintado a mano",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 200,
+      "pricing": [
+        "Precio: S/200"
+      ],
+      "image": "https://boomart.pe/assets/products/templo-del-patriarca-hero.png",
+      "gallery": [
+        "https://boomart.pe/assets/products/templo-del-patriarca-hero.png",
+        "https://boomart.pe/assets/products/templo-del-patriarca-2.jpg",
+        "https://boomart.pe/assets/products/templo-del-patriarca-3.jpg",
+        "https://boomart.pe/assets/products/templo-del-patriarca-4.jpg"
+      ],
+      "url": "https://boomart.pe/producto/templo-del-patriarca/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Templo%20del%20Patriarca"
     },
     {
       "id": "templo-con-caja-de-pandora-y-pedestal",

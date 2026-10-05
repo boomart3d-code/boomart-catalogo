@@ -3,7 +3,7 @@
   <channel>
     <title>BoomArt - Catalogo de productos</title>
     <link>https://boomart.pe/</link>
-    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-10-01.</description>
+    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-10-05.</description>
     <item>
       <g:id>templo-aries</g:id>
       <g:title>Templo de Aries</g:title>
@@ -193,6 +193,23 @@
       <g:additional_image_link>https://boomart.pe/assets/products/templo-piscis-medidas.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>100.00 PEN</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>BoomArt</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
+      <g:product_type>Saint Seiya</g:product_type>
+    </item>
+    <item>
+      <g:id>templo-del-patriarca</g:id>
+      <g:title>Templo del Patriarca</g:title>
+      <g:description>El imponente Templo del Patriarca llega para completar el Santuario de Saint Seiya. Fabricado en PLA+ y pintado a mano con acabado de piedra envejecida. Mide 25 cm de alto, 24 cm de profundidad y 13 cm de ancho. Fabricado a pedido en impresion 3D (PLA+ pintado a mano), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
+      <g:link>https://boomart.pe/producto/templo-del-patriarca/</g:link>
+      <g:image_link>https://boomart.pe/assets/products/templo-del-patriarca-hero.png</g:image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/templo-del-patriarca-2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/templo-del-patriarca-3.jpg</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/templo-del-patriarca-4.jpg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>200.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
