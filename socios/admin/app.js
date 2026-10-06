@@ -502,6 +502,7 @@
     event.preventDefault();
     const error = $("login-error");
     error.hidden = true;
+    U.setPasswordVisible($("login-pass"), $("login-eye"), false);       // al enviar, la clave vuelve a ocultarse
     const email = U.loginEmail($("login-user").value, C.loginDomain);
     if (!email) { error.textContent = "Escribe un usuario válido."; error.hidden = false; return; }
     const submit = $("login-submit"); submit.disabled = true;
@@ -528,6 +529,10 @@
   }
 
   $("login-form").addEventListener("submit", onLogin);
+  $("login-eye").addEventListener("click", () => {
+    const pass = $("login-pass");
+    U.setPasswordVisible(pass, $("login-eye"), pass.type === "password");
+  });
   $("btn-logout").addEventListener("click", logout);
   $("btn-refresh").addEventListener("click", () => loadData(false).catch(() => toast("No se pudo actualizar.", "error")));
   $("partner-filter").addEventListener("change", renderAll);

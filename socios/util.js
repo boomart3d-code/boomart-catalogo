@@ -188,5 +188,16 @@
     return out;
   }
 
-  return { MAX_QTY, MAX_PRICE, parseMoney, parseQty, totalCents, toCents, fifoCostCents, comboPreview, groupSales, formatMoney, formatDay, formatDateTime, countdown, localDay, friendlyError, pickGuide, loginEmail, newId };
+  // «Ojo» de la clave: alterna entre puntos y texto. Recibe el campo y el boton (cualquier objeto con esas propiedades; asi se prueba en Node).
+  function setPasswordVisible(input, button, visible) {
+    const show = visible === true;
+    input.type = show ? "text" : "password";
+    const label = show ? "Ocultar clave" : "Mostrar clave";
+    button.setAttribute("aria-pressed", show ? "true" : "false");
+    button.setAttribute("aria-label", label);
+    button.title = label;
+    return show;
+  }
+
+  return { MAX_QTY, MAX_PRICE, parseMoney, parseQty, totalCents, toCents, fifoCostCents, comboPreview, groupSales, formatMoney, formatDay, formatDateTime, countdown, localDay, friendlyError, pickGuide, loginEmail, newId, setPasswordVisible };
 });

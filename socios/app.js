@@ -865,6 +865,7 @@
     event.preventDefault();
     if (busy) return;
     showLoginError("");
+    U.setPasswordVisible($("login-pass"), $("login-eye"), false);       // al enviar, la clave vuelve a ocultarse
     const email = U.loginEmail($("login-user").value, CFG.loginDomain);
     const password = $("login-pass").value;
     if (!email || password.length < 1) return showLoginError("Usuario o clave incorrectos.");
@@ -930,6 +931,10 @@
 
   // ---------------------------------------------------------------- conexiones de la interfaz
   $("login-form").addEventListener("submit", onLogin);
+  $("login-eye").addEventListener("click", () => {
+    const pass = $("login-pass");
+    U.setPasswordVisible(pass, $("login-eye"), pass.type === "password");
+  });
   $("btn-logout").addEventListener("click", logout);
   for (const button of document.querySelectorAll(".tabbar__btn")) button.addEventListener("click", () => showTab(button.dataset.tab));
   $("sale-form").addEventListener("submit", submitSale);
