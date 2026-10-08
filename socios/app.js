@@ -21,7 +21,7 @@
     db: { schema: "socios" },
   });
 
-  const state = { user: null, priceDrafts: {}, cards: [], summary: null, history: [], deliveries: [], returns: [], returnLines: [], returnDocuments: [], settlements: [], settlementLines: [], loadedAt: 0, loadedPerf: 0, tab: "inicio" };
+  const state = { user: null, priceDrafts: {}, cards: [], summary: null, history: [], pendingAssignments: [], deliveries: [], returns: [], returnLines: [], returnDocuments: [], settlements: [], settlementLines: [], loadedAt: 0, loadedPerf: 0, tab: "inicio" };
   let saleDraft = null;      // { id, productId }
   let adjustDraft = null;    // { id, sale }
   let comboDraft = null;     // { id }
@@ -105,10 +105,11 @@
 
   // ---------------------------------------------------------------- carga de datos
   async function loadAll() {
-    const [cards, summary, history, deliveries, returns, returnLines, returnDocuments, settlements, settlementLines] = await Promise.all([
+    const [cards, summary, history, pendingAssignments, deliveries, returns, returnLines, returnDocuments, settlements, settlementLines] = await Promise.all([
       sb.from("v_product_cards").select("*").order("name"),
       sb.from("v_partner_summary").select("*"),
       sb.from("v_sales_history").select("*").order("created_at", { ascending: false }).limit(200),
+      sb.from("v_pending_assignments").select("*").order("delivery_date", { ascending: false }).limit(500),
       sb.from("deliveries").select("id, guide_number, delivery_date, received_at, total_value_boomart, delivery_lines(product_name, sku, qty_received, unit_price_boomart), delivery_documents(id, kind, variant, version, storage_path)")
         .order("received_at", { ascending: false }).limit(60),
       sb.from("v_returns").select("*").order("occurred_on", { ascending: false }).limit(120),
@@ -117,7 +118,7 @@
       sb.from("v_settlements").select("*").order("opened_at", { ascending: false }).limit(120),
       sb.from("v_settlement_lines").select("*").order("sold_on", { ascending: false }).limit(1000),
     ]);
-    for (const result of [cards, summary, history, deliveries, returns, returnLines, returnDocuments, settlements, settlementLines]) {
+    for (const result of [cards, summary, history, pendingAssignments, deliveries, returns, returnLines, returnDocuments, settlements, settlementLines]) {
       if (result.error) {
         if (result.status === 401 || result.error.code === "PGRST301" || /JWT/i.test(result.error.message || "")) throw { status: 401 };
         throw { network: !result.status, status: result.status || 0, detail: result.error.message };
@@ -127,6 +128,7 @@
     state.summary = summary.data.length === 1 ? summary.data[0] : null;
     state.summaryCount = summary.data.length;
     state.history = U.groupSales(history.data);        // un combo (que el servidor puede guardar en 2 filas) se ve como UNA venta
+    state.pendingAssignments = pendingAssignments.data;
     state.deliveries = deliveries.data;
     state.returns = returns.data;
     state.returnLines = returnLines.data;
@@ -338,14 +340,35 @@
       guide ? h("div", { class: "item__actions" }, h("button", { class: "btn btn--small", type: "button", onclick: (event) => openGuide(guide, event.currentTarget), text: "Ver guía (PDF)" })) : null);
   }
 
+  function pendingAssignmentItems() {
+    const grouped = new Map();
+    for (const line of state.pendingAssignments) {
+      if (!grouped.has(line.assignment_id)) grouped.set(line.assignment_id, { ...line, lines: [] });
+      grouped.get(line.assignment_id).lines.push(line);
+    }
+    return [...grouped.values()].map((assignment) => h("div", { class: "item" },
+      h("div", { class: "item__top" },
+        h("span", { class: "item__title", text: assignment.guide_number }),
+        h("span", { class: "badge badge--warn", text: "Por recibir" })),
+      h("div", { class: "item__sub", text: `Entrega prevista: ${U.formatDay(assignment.delivery_date)}` }),
+      h("p", { class: "note", text: "BoomArt ya separó estas piezas para ti. Aún no cuentan como stock y no se pueden vender desde el portal." }),
+      h("ul", { class: "lines" }, assignment.lines.map((line) =>
+        h("li", {}, h("span", { text: `${line.qty_assigned} × ${line.product_name}` }),
+          h("span", { text: U.formatMoney(line.unit_price_boomart) })))))
+    );
+  }
+
   function renderEntregas() {
     const root = $("tab-entregas");
-    root.replaceChildren(h("h2", { text: "Entregas recibidas" }));
-    if (!state.deliveries.length) {
+    root.replaceChildren(h("h2", { text: "Entregas" }));
+    const pending = pendingAssignmentItems();
+    if (pending.length) root.append(h("h3", { text: "Por recibir" }), h("div", { class: "list" }, pending));
+    if (state.deliveries.length) {
+      root.append(h("h3", { text: "Recibidas · disponibles para vender" }),
+        h("div", { class: "list" }, state.deliveries.map(deliveryItem)));
+    } else if (!pending.length) {
       root.append(h("div", { class: "empty", text: "Todavía no hay entregas registradas." }));
-      return;
     }
-    root.append(h("div", { class: "list" }, state.deliveries.map(deliveryItem)));
   }
 
   function returnReason(reason) {
@@ -891,7 +914,7 @@
 
   async function logout() {
     state.user = null;
-    state.priceDrafts = {}; state.cards = []; state.history = []; state.deliveries = []; state.settlements = []; state.settlementLines = []; state.summary = null;
+    state.priceDrafts = {}; state.cards = []; state.history = []; state.pendingAssignments = []; state.deliveries = []; state.settlements = []; state.settlementLines = []; state.summary = null;
     writeJson(ACTIVE_KEY, null);
     try { await sb.auth.signOut(); } catch { /* aunque falle la red, la sesion local se borra */ }
     show("login");
