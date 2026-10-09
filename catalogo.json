@@ -9,7 +9,7 @@
     "email": "contacto@boomart.pe",
     "instagram": "https://www.instagram.com/boomart_3d"
   },
-  "count": 70,
+  "count": 71,
   "products": [
     {
       "id": "templo-aries",
@@ -1479,7 +1479,7 @@
         "Cosplay"
       ],
       "description": "🎃 Edición Halloween. Corona de Elfo de fantasía: una diadema con ramas y hojas curvas que se elevan como llamas, con una pieza central en forma de gota sobre la frente. Impresa en 3D y pintada a mano con acabado dorado envejecido. Ideal para Halloween, cosplay, sesiones de fotos y disfraces de fantasía. Disponible para adulto (hombre o mujer) y también para niño. Se hace a pedido, a la medida de quien la va a usar: solo necesitamos la medida de su cabeza. Hecha a pedido, con envíos a todo el Perú.",
-      "material": "PLA",
+      "material": "PLA+",
       "availability": "A pedido",
       "priceCurrency": "PEN",
       "priceFrom": 60,
@@ -1495,6 +1495,38 @@
       ],
       "url": "https://boomart.pe/producto/corona-de-elfo/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Corona%20de%20Elfo%20%F0%9F%A7%9D%20%C2%B7%20Halloween"
+    },
+    {
+      "id": "cuernos-de-fauno",
+      "name": "Cuernos de Fauno 🐐 · Halloween",
+      "category": "🎃 Halloween",
+      "tags": [
+        "Cuernos",
+        "Fauno",
+        "Diadema",
+        "Bincha",
+        "Disfraces",
+        "Cosplay",
+        "Accesorios"
+      ],
+      "description": "🎃 Edición Halloween. Cuernos de Fauno: un excelente accesorio para este Halloween. Dos cuernos curvos con anillos marcados, montados sobre una diadema (bincha) adaptable y cómoda de usar, para adulto, hombre o mujer. Impresos en 3D en PLA+, pintados a mano o en color puro, según tu gusto (consulta los colores disponibles). Ideales para disfraces, cosplay, fiestas temáticas y sesiones de fotos. Hechos a pedido, con envíos a todo el Perú.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 60,
+      "pricing": [
+        "Precio oferta: S/60 (antes S/100)"
+      ],
+      "image": "https://boomart.pe/assets/products/cuernos-de-fauno-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/cuernos-de-fauno-1.jpg",
+        "https://boomart.pe/assets/products/cuernos-de-fauno-2.jpg",
+        "https://boomart.pe/assets/products/cuernos-de-fauno-3.jpg",
+        "https://boomart.pe/assets/products/cuernos-de-fauno-4.jpg",
+        "https://boomart.pe/assets/products/cuernos-de-fauno-5.jpg"
+      ],
+      "url": "https://boomart.pe/producto/cuernos-de-fauno/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Cuernos%20de%20Fauno%20%F0%9F%90%90%20%C2%B7%20Halloween"
     },
     {
       "id": "mascara-el-juego-del-calamar",

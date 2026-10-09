@@ -290,6 +290,7 @@ const SEASON_LABEL = "🎃 Halloween";
 // accesorios, y deja decoracion/figuras al final. Mantener sincronizado con
 // HALLOWEEN_CAMPAIGN_PRODUCT_IDS en scripts/build-ai-catalog.mjs.
 const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
+  "cuernos-de-fauno",
   "corona-de-elfo",
   "casco-gladiador-maximo",
   "mascara-calabaza-calavera",

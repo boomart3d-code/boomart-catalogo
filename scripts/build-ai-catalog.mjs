@@ -1213,6 +1213,7 @@ const CATEGORY_META = {
 // en el enlace corto que se comparte en publicidad y WhatsApp.
 const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
   // Disfraces y cosplay: el producto nuevo abre la coleccion.
+  "cuernos-de-fauno",
   "corona-de-elfo",
   "casco-gladiador-maximo",
   "mascara-calabaza-calavera",

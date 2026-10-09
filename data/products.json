@@ -1334,7 +1334,7 @@
       "Cosplay"
     ],
     "height": "A la medida de tu cabeza · Adulto (hombre o mujer) o niño",
-    "material": "PLA",
+    "material": "PLA+",
     "availability": "A pedido",
     "regularPrice": 100,
     "featured": true,
@@ -1347,6 +1347,36 @@
       "assets/products/corona-de-elfo-4.jpg"
     ],
     "description": "🎃 Edición Halloween. Corona de Elfo de fantasía: una diadema con ramas y hojas curvas que se elevan como llamas, con una pieza central en forma de gota sobre la frente. Impresa en 3D y pintada a mano con acabado dorado envejecido. Ideal para Halloween, cosplay, sesiones de fotos y disfraces de fantasía. Disponible para adulto (hombre o mujer) y también para niño. Se hace a pedido, a la medida de quien la va a usar: solo necesitamos la medida de su cabeza. Hecha a pedido, con envíos a todo el Perú.",
+    "offerPrice": 60
+  },
+  {
+    "id": "cuernos-de-fauno",
+    "name": "Cuernos de Fauno 🐐 · Halloween",
+    "category": "🎃 Halloween",
+    "tags": [
+      "Cuernos",
+      "Fauno",
+      "Diadema",
+      "Bincha",
+      "Disfraces",
+      "Cosplay",
+      "Accesorios"
+    ],
+    "height": "Diadema (bincha) adaptable · Para adulto, hombre o mujer",
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 100,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/cuernos-de-fauno-1.jpg",
+    "gallery": [
+      "assets/products/cuernos-de-fauno-1.jpg",
+      "assets/products/cuernos-de-fauno-2.jpg",
+      "assets/products/cuernos-de-fauno-3.jpg",
+      "assets/products/cuernos-de-fauno-4.jpg",
+      "assets/products/cuernos-de-fauno-5.jpg"
+    ],
+    "description": "🎃 Edición Halloween. Cuernos de Fauno: un excelente accesorio para este Halloween. Dos cuernos curvos con anillos marcados, montados sobre una diadema (bincha) adaptable y cómoda de usar, para adulto, hombre o mujer. Impresos en 3D en PLA+, pintados a mano o en color puro, según tu gusto (consulta los colores disponibles). Ideales para disfraces, cosplay, fiestas temáticas y sesiones de fotos. Hechos a pedido, con envíos a todo el Perú.",
     "offerPrice": 60
   },
   {

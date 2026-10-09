@@ -4,7 +4,7 @@ Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Cal
 Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion ~48 horas utiles desde
 la validacion del adelanto (50%). Pedidos por WhatsApp: https://wa.me/51925666542
 
-Total de piezas: 70
+Total de piezas: 71
 Actualizado: 2026-10-09
 Fuente estructurada: https://boomart.pe/catalogo.json
 
@@ -670,13 +670,25 @@ Palomera temática de Spider-Man para tu noche de películas: práctica, resiste
 
 - Categoria: 🎃 Halloween
 - Precio oferta: S/60 (antes S/100)
-- Material: PLA
+- Material: PLA+
 - Disponibilidad: A pedido
 - Etiquetas: Coronas, Elfo, Fantasía, Disfraces, Cosplay
 - Imagen: https://boomart.pe/assets/products/corona-de-elfo-1.jpg
 - Ficha: https://boomart.pe/producto/corona-de-elfo/
 
 🎃 Edición Halloween. Corona de Elfo de fantasía: una diadema con ramas y hojas curvas que se elevan como llamas, con una pieza central en forma de gota sobre la frente. Impresa en 3D y pintada a mano con acabado dorado envejecido. Ideal para Halloween, cosplay, sesiones de fotos y disfraces de fantasía. Disponible para adulto (hombre o mujer) y también para niño. Se hace a pedido, a la medida de quien la va a usar: solo necesitamos la medida de su cabeza. Hecha a pedido, con envíos a todo el Perú.
+
+### Cuernos de Fauno 🐐 · Halloween
+
+- Categoria: 🎃 Halloween
+- Precio oferta: S/60 (antes S/100)
+- Material: PLA+
+- Disponibilidad: A pedido
+- Etiquetas: Cuernos, Fauno, Diadema, Bincha, Disfraces, Cosplay, Accesorios
+- Imagen: https://boomart.pe/assets/products/cuernos-de-fauno-1.jpg
+- Ficha: https://boomart.pe/producto/cuernos-de-fauno/
+
+🎃 Edición Halloween. Cuernos de Fauno: un excelente accesorio para este Halloween. Dos cuernos curvos con anillos marcados, montados sobre una diadema (bincha) adaptable y cómoda de usar, para adulto, hombre o mujer. Impresos en 3D en PLA+, pintados a mano o en color puro, según tu gusto (consulta los colores disponibles). Ideales para disfraces, cosplay, fiestas temáticas y sesiones de fotos. Hechos a pedido, con envíos a todo el Perú.
 
 ## Series y Películas
 
