@@ -109,7 +109,11 @@
     else { fu = "directo"; me = "ninguno"; ca = ""; }
 
     const cat = clean(p.get("categoria"));
-    const land = (window.location.pathname + (cat ? `?categoria=${cat}` : "")).slice(0, 160);
+    const prod = clean(p.get("producto"));
+    const partes = [];
+    if (cat) partes.push(`categoria=${cat}`);
+    if (prod) partes.push(`producto=${prod}`);
+    const land = (window.location.pathname + (partes.length ? `?${partes.join("&")}` : "")).slice(0, 160);
     return { fu, me, ca, ref: refHost.slice(0, 80), land };
   };
 

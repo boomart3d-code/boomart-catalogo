@@ -191,7 +191,7 @@
       let nombres = {};
       fetch("../data/products.json").then((r) => r.json()).then((arr) => {
         (Array.isArray(arr) ? arr : []).forEach((p) => { nombres[p.id] = p.name; });
-        if (lastData) render(lastData);
+        if (lastData) render(lastData, lastEntradas);
       }).catch(() => {});
       const nombreProducto = (id) => nombres[id] || id;
 
@@ -241,6 +241,29 @@
         categoria: "Páginas de categoría", medida: "Pedido a medida", menu: "Menú superior", otro: "Otros enlaces",
       };
 
+      const CAT_NOMBRES = {
+        "saint-seiya": "Saint Seiya", "harry-potter": "Harry Potter", "marvel-dc": "Marvel & DC",
+        "series-y-peliculas": "Series y Películas", "macetas": "Macetas", "mundial-de-futbol": "Mundial de Fútbol", "halloween": "Halloween",
+      };
+      const entradaLabel = (land) => {
+        land = String(land || "/");
+        let m;
+        if (land === "/") return { t: "Página de inicio", s: "boomart.pe (incluye anuncios y enlaces sin página específica)" };
+        m = land.match(/^\/\?categoria=([^&]+)/);
+        if (m) return { t: `Catálogo ${CAT_NOMBRES[m[1]] || m[1]}`, s: m[1] === "saint-seiya" ? "boomart.pe/saintseiya" : `boomart.pe/?categoria=${m[1]}` };
+        m = land.match(/^\/\?producto=([^&]+)/);
+        if (m) return { t: `Enlace a producto: ${nombreProducto(m[1])}`, s: `boomart.pe/?producto=${m[1]}` };
+        if (/^\/halloween\/?$/i.test(land)) return { t: "Página Halloween", s: "boomart.pe/Halloween/" };
+        m = land.match(/^\/producto\/([^/?]+)/);
+        if (m) return { t: `Página del producto: ${nombreProducto(m[1])}`, s: land };
+        m = land.match(/^\/categoria\/([^/?]+)/);
+        if (m) return { t: `Página de categoría: ${CAT_NOMBRES[m[1]] || m[1]}`, s: land };
+        if (land.startsWith("/nosotros")) return { t: "Nosotros", s: land };
+        if (land.startsWith("/politicas")) return { t: "Políticas de compra", s: land };
+        if (land.startsWith("/opinion")) return { t: "Página de reseñas", s: land };
+        return { t: land, s: "" };
+      };
+
       // ---------- Dibujo ----------
       const barRow = (label, n, base, cls, extra) => {
         const w = base > 0 ? Math.max(0, Math.min(100, (n / base) * 100)) : 0;
@@ -258,8 +281,10 @@
       };
 
       let lastData = null;
-      const render = (d) => {
+      let lastEntradas = [];
+      const render = (d, entradas) => {
         lastData = d;
+        if (Array.isArray(entradas)) lastEntradas = entradas;
         const k = d.kpi || {}; const e = d.embudo || {}; const c = d.clases || {}; const t = d.tiempo || {};
         const base = e.entraron || 0;
         const hayDatos = base > 0;
@@ -324,6 +349,20 @@
         html += `</tbody></table></div>
           <p class="note">Para medir un enlace nuevo agrégale <strong>?src=nombre</strong> (por ejemplo boomart.pe/Halloween/?src=ig-historia). Los clics desde anuncios de Meta se reconocen solos.</p>`;
 
+        // Paginas de entrada
+        const en = lastEntradas || [];
+        html += `<h2>Por página de entrada <small>la primera página que vieron: inicio, catálogo, Halloween, un producto…</small></h2><div class="tbl-wrap"><table>
+          <thead><tr><th>Página o enlace de entrada</th><th>Entradas</th><th>Interacción</th><th>Tiempo</th><th>Vieron prod.</th><th>Carrito</th><th>WhatsApp</th><th>Pedido</th><th>Intención real</th></tr></thead><tbody>`;
+        en.forEach((r) => {
+          const L = entradaLabel(r.landing);
+          html += `<tr><td><strong>${esc(L.t)}</strong>${L.s ? `<span class="sub">${esc(L.s)}</span>` : ""}</td>
+            <td><strong>${fmt(r.sesiones)}</strong></td><td>${fmtPct(r.interaccion, r.sesiones)}</td><td>${fmtSeg(r.seg_promedio)}</td>
+            <td>${fmt(r.vieron)}</td><td>${fmt(r.agregaron)}</td><td>${fmt(r.wa)}</td><td>${fmt(r.pedido)}</td><td>${fmt(r.intencion)} <span class="sub">${fmtPct(r.intencion, r.sesiones)}</span></td></tr>`;
+        });
+        if (!en.length) html += `<tr><td colspan="9" style="text-align:center;color:var(--muted)">Sin datos</td></tr>`;
+        html += `</tbody></table></div>
+          <p class="note">Hasta la tarde del 9 de octubre los enlaces directos a un producto (?producto=…) se contaban dentro de «Página de inicio»; desde entonces aparecen por separado.</p>`;
+
         // Productos
         const pr = d.productos || [];
         html += `<h2>Por producto <small>en cuántas visitas pasó cada cosa</small></h2><div class="tbl-wrap"><table>
@@ -385,14 +424,16 @@
         incluyeHoy = r.incluyeHoy;
         $("#estado").textContent = "Cargando…";
         try {
-          const { data, error } = await sb.rpc("panel_resumen", {
-            p_desde: r.desde, p_hasta: r.hasta, p_solo_peru: $("#chkPeru").checked,
-          });
-          if (error) {
-            if (String(error.message).includes("No autorizado")) { mostrarSinAcceso(); return; }
-            throw error;
+          const args = { p_desde: r.desde, p_hasta: r.hasta, p_solo_peru: $("#chkPeru").checked };
+          const [resumen, entradas] = await Promise.all([
+            sb.rpc("panel_resumen", args),
+            sb.rpc("panel_entradas", args),
+          ]);
+          if (resumen.error) {
+            if (String(resumen.error.message).includes("No autorizado")) { mostrarSinAcceso(); return; }
+            throw resumen.error;
           }
-          render(data);
+          render(resumen.data, entradas.error ? [] : entradas.data);
           const ahora = new Date().toLocaleTimeString("es-PE", { hour: "2-digit", minute: "2-digit", second: "2-digit", timeZone: "America/Lima" });
           $("#estado").textContent = `${r.etiqueta} · actualizado a las ${ahora} (hora de Lima)`;
         } catch (err) {
