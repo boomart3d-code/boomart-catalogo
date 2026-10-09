@@ -43,10 +43,14 @@ const normalize = (text) =>
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
 
+// Siempre con el numero directo: el enlace corto wa.me/message/... descarta el
+// parametro ?text= (WhatsApp lo ignora y el chat se abre vacio).
 const whatsappUrl = (message) =>
-  config.whatsappLink
-    ? `${config.whatsappLink}?text=${encodeURIComponent(message)}`
-    : `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(message)}`;
+  `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+// Mensaje corto del cliente hacia BoomArt consultando por un producto. Mismo
+// texto que usan las paginas /producto/<id>/ (waLink en build-ai-catalog.mjs).
+const inquiryMessage = (product) => `Hola BoomArt, quiero consultar por: ${product.name}`;
 
 // --- Enlace directo a un producto: ?producto=<id> ---------------------------
 // Al abrir una ficha la URL pasa a boomart.pe/?producto=<id>; asi el historial
@@ -169,9 +173,6 @@ const copyText = async (text) => {
     }
   }
 };
-
-const whatsappShareUrl = (product) =>
-  `https://wa.me/?text=${encodeURIComponent(`${shareText(product)}\n${productPageUrl(product.id)}`)}`;
 
 const placeholder = (product) => `
   <div class="image-placeholder" role="img" aria-label="Imagen pendiente para ${product.name}">
@@ -397,7 +398,7 @@ const openProduct = (productId, fromHistory = false) => {
     activeProduct.material ? `Material: ${activeProduct.material}` : "",
   ].filter(Boolean).join(" · ");
   modalPricing.innerHTML = priceMarkup(activeProduct) + addToCartMarkup(activeProduct);
-  if (shareProductWa) shareProductWa.href = whatsappShareUrl(activeProduct);
+  if (shareProductWa) shareProductWa.href = whatsappUrl(inquiryMessage(activeProduct));
   if (shareFeedback) shareFeedback.hidden = true;
   renderModalImage();
   if (!modal.open) modal.showModal();
@@ -568,7 +569,7 @@ if (shareProductBtn) {
       shareFeedback.hidden = false;
       setTimeout(() => { shareFeedback.hidden = true; }, 2600);
     } else if (result === "failed" && shareFeedback) {
-      shareFeedback.textContent = "Usa el botón WhatsApp →";
+      shareFeedback.textContent = "No se pudo copiar el enlace";
       shareFeedback.hidden = false;
       setTimeout(() => { shareFeedback.hidden = true; }, 3200);
     }
@@ -584,7 +585,7 @@ document.addEventListener("click", async (event) => {
   const result = await shareProduct(product);
   if (result === "failed") {
     // Sin menu de compartir ni permiso de copiar: abrimos la ficha, que tiene
-    // el boton de WhatsApp.
+    // su propio boton de compartir y el de consultar por WhatsApp.
     openProduct(product.id);
     return;
   }
