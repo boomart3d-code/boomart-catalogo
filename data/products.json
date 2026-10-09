@@ -1323,6 +1323,33 @@
     "offerPrice": 200
   },
   {
+    "id": "corona-de-elfo",
+    "name": "Corona de Elfo 🧝 · Halloween",
+    "category": "🎃 Halloween",
+    "tags": [
+      "Coronas",
+      "Elfo",
+      "Fantasía",
+      "Disfraces",
+      "Cosplay"
+    ],
+    "height": "A la medida de tu cabeza · Adulto (hombre o mujer) o niño",
+    "material": "PLA",
+    "availability": "A pedido",
+    "regularPrice": 100,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/corona-de-elfo-1.jpg",
+    "gallery": [
+      "assets/products/corona-de-elfo-1.jpg",
+      "assets/products/corona-de-elfo-2.jpg",
+      "assets/products/corona-de-elfo-3.jpg",
+      "assets/products/corona-de-elfo-4.jpg"
+    ],
+    "description": "🎃 Edición Halloween. Corona de Elfo de fantasía: una diadema con ramas y hojas curvas que se elevan como llamas, con una pieza central en forma de gota sobre la frente. Impresa en 3D y pintada a mano con acabado dorado envejecido. Ideal para Halloween, cosplay, sesiones de fotos y disfraces de fantasía. Disponible para adulto (hombre o mujer) y también para niño. Se hace a pedido, a la medida de quien la va a usar: solo necesitamos la medida de su cabeza. Hecha a pedido, con envíos a todo el Perú.",
+    "offerPrice": 60
+  },
+  {
     "id": "mascara-el-juego-del-calamar",
     "name": "Máscara de El Juego del Calamar",
     "category": "Series y Películas",

@@ -9,7 +9,7 @@
     "email": "contacto@boomart.pe",
     "instagram": "https://www.instagram.com/boomart_3d"
   },
-  "count": 69,
+  "count": 70,
   "products": [
     {
       "id": "templo-aries",
@@ -1466,6 +1466,35 @@
       ],
       "url": "https://boomart.pe/producto/casco-gladiador-maximo/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Casco%20de%20Gladiador%20M%C3%A1ximo%20%F0%9F%8E%83%20%C2%B7%20Halloween"
+    },
+    {
+      "id": "corona-de-elfo",
+      "name": "Corona de Elfo 🧝 · Halloween",
+      "category": "🎃 Halloween",
+      "tags": [
+        "Coronas",
+        "Elfo",
+        "Fantasía",
+        "Disfraces",
+        "Cosplay"
+      ],
+      "description": "🎃 Edición Halloween. Corona de Elfo de fantasía: una diadema con ramas y hojas curvas que se elevan como llamas, con una pieza central en forma de gota sobre la frente. Impresa en 3D y pintada a mano con acabado dorado envejecido. Ideal para Halloween, cosplay, sesiones de fotos y disfraces de fantasía. Disponible para adulto (hombre o mujer) y también para niño. Se hace a pedido, a la medida de quien la va a usar: solo necesitamos la medida de su cabeza. Hecha a pedido, con envíos a todo el Perú.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 60,
+      "pricing": [
+        "Precio oferta: S/60 (antes S/100)"
+      ],
+      "image": "https://boomart.pe/assets/products/corona-de-elfo-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/corona-de-elfo-1.jpg",
+        "https://boomart.pe/assets/products/corona-de-elfo-2.jpg",
+        "https://boomart.pe/assets/products/corona-de-elfo-3.jpg",
+        "https://boomart.pe/assets/products/corona-de-elfo-4.jpg"
+      ],
+      "url": "https://boomart.pe/producto/corona-de-elfo/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Corona%20de%20Elfo%20%F0%9F%A7%9D%20%C2%B7%20Halloween"
     },
     {
       "id": "mascara-el-juego-del-calamar",
