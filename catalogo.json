@@ -9,7 +9,7 @@
     "email": "contacto@boomart.pe",
     "instagram": "https://www.instagram.com/boomart_3d"
   },
-  "count": 68,
+  "count": 69,
   "products": [
     {
       "id": "templo-aries",
@@ -1437,6 +1437,35 @@
       ],
       "url": "https://boomart.pe/producto/mascara-hellboy-articulada/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20Hellboy%20Articulada%20%F0%9F%91%B9%20%C2%B7%20Halloween"
+    },
+    {
+      "id": "casco-gladiador-maximo",
+      "name": "Casco de Gladiador Máximo 🎃 · Halloween",
+      "category": "🎃 Halloween",
+      "tags": [
+        "Cascos",
+        "Gladiador",
+        "Máximo",
+        "Disfraces",
+        "Cosplay",
+        "Tamaño real"
+      ],
+      "description": "🎃 Edición Halloween. Casco de Gladiador Máximo a tamaño real 1:1, especial para completar disfraces y cosplay. Impreso en 3D y pintado a mano con acabado metálico envejecido. Talla única para adulto. Hecho a pedido, con envíos a todo el Perú.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 200,
+      "pricing": [
+        "Precio oferta: S/200 (antes S/250)"
+      ],
+      "image": "https://boomart.pe/assets/products/casco-gladiador-maximo-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/casco-gladiador-maximo-1.jpg",
+        "https://boomart.pe/assets/products/casco-gladiador-maximo-2.jpg",
+        "https://boomart.pe/assets/products/casco-gladiador-maximo-3.jpg"
+      ],
+      "url": "https://boomart.pe/producto/casco-gladiador-maximo/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Casco%20de%20Gladiador%20M%C3%A1ximo%20%F0%9F%8E%83%20%C2%B7%20Halloween"
     },
     {
       "id": "mascara-el-juego-del-calamar",

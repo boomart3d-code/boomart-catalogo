@@ -1296,6 +1296,33 @@
     "offerPrice": 180
   },
   {
+    "id": "casco-gladiador-maximo",
+    "name": "Casco de Gladiador Máximo 🎃 · Halloween",
+    "category": "🎃 Halloween",
+    "tags": [
+      "Cascos",
+      "Gladiador",
+      "Máximo",
+      "Disfraces",
+      "Cosplay",
+      "Tamaño real"
+    ],
+    "height": "Tamaño real 1:1 · Talla única para adulto",
+    "material": "PLA",
+    "availability": "A pedido",
+    "regularPrice": 250,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/casco-gladiador-maximo-1.jpg",
+    "gallery": [
+      "assets/products/casco-gladiador-maximo-1.jpg",
+      "assets/products/casco-gladiador-maximo-2.jpg",
+      "assets/products/casco-gladiador-maximo-3.jpg"
+    ],
+    "description": "🎃 Edición Halloween. Casco de Gladiador Máximo a tamaño real 1:1, especial para completar disfraces y cosplay. Impreso en 3D y pintado a mano con acabado metálico envejecido. Talla única para adulto. Hecho a pedido, con envíos a todo el Perú.",
+    "offerPrice": 200
+  },
+  {
     "id": "mascara-el-juego-del-calamar",
     "name": "Máscara de El Juego del Calamar",
     "category": "Series y Películas",

@@ -1221,6 +1221,7 @@ const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
   "mascara-krampus",
   "mascara-baphomet",
   "mascara-hellboy-articulada",
+  "casco-gladiador-maximo",
   // Accesorios de otras categorias que tambien sirven para Halloween.
   "casco-de-wolverine-con-garras",
   "mascara-de-batwoman",
@@ -1531,7 +1532,7 @@ console.log(
     ` y ${reviews.length} opiniones aprobadas:\n` +
     `  producto/<id>/index.html  (${productPageCount} paginas)\n` +
     `  categoria/<slug>/index.html  (${categoryPageCount} paginas)\n` +
-    "  Halloween/index.html (campaña de 14 productos)\n" +
+    `  Halloween/index.html (campaña de ${HALLOWEEN_CAMPAIGN_PRODUCT_IDS.length} productos)\n` +
     "  sitemap.xml\n  catalogo.html\n  catalogo.json\n  llms.txt\n  llms-full.txt\n" +
     "  feed-google.xml (Google Merchant + Pinterest)\n  feed-meta.csv (Instagram / Facebook)\n" +
     `  index.html (aggregateRating ${ratingUpdated ? "actualizado" : "sin cambios"})\n` +
