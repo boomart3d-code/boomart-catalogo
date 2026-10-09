@@ -1208,6 +1208,38 @@ const CATEGORY_META = {
   },
 };
 
+// Coleccion transversal para la campana de Halloween. Mantiene la categoria
+// principal de cada producto (Marvel, Saint Seiya, etc.) y los reune tambien
+// en el enlace corto que se comparte en publicidad y WhatsApp.
+const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
+  // Los ocho productos que ya pertenecen a Halloween, en su orden actual.
+  "mario-billy-saw",
+  "mascara-calabaza-calavera",
+  "candelabro-calavera",
+  "evil-mask",
+  "zkull-urban",
+  "mascara-krampus",
+  "mascara-baphomet",
+  "mascara-hellboy-articulada",
+  // Accesorios de otras categorias que tambien sirven para Halloween.
+  "casco-de-wolverine-con-garras",
+  "mascara-de-batwoman",
+  "mascara-el-juego-del-calamar",
+  "casco-de-agamenon-la-odisea",
+  "casco-de-pegaso-saint-seiya",
+  "tiara-de-pegaso-saint-seiya",
+];
+
+const HALLOWEEN_CAMPAIGN_META = {
+  h1: "Halloween en BoomArt: máscaras, cascos y decoración 3D",
+  title: "Halloween: máscaras, cascos y decoración 3D · Perú | BoomArt",
+  intro: [
+    "Prepárate para Halloween con máscaras, cascos, accesorios de cosplay, calaveras y decoración impresos en 3D. Esta selección reúne piezas de terror y accesorios de tus personajes favoritos en un solo lugar.",
+    "Todas las piezas se fabrican a pedido y se detallan a mano. Consulta disponibilidad, medidas y tiempos de entrega por WhatsApp antes de tu evento.",
+    "Fabricadas en Perú, con envíos a todo el país.",
+  ],
+};
+
 const CATEGORY_PAGE_CSS = `
     .cat{max-width:1100px;margin:0 auto;padding:clamp(18px,4vw,36px) clamp(16px,4vw,40px) clamp(56px,8vw,88px)}
     .cat-crumbs{font-size:.82rem;color:var(--muted);margin:0 0 16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
@@ -1232,20 +1264,30 @@ function categorySlug(cat) {
   return slug(cat);
 }
 
-function buildCategoryPage(cat, list, all, ratingLd) {
-  const meta = CATEGORY_META[cat] || {
+function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
+  const meta = options.meta || CATEGORY_META[cat] || {
     h1: `${stripEmoji(cat)} impresas en 3D`,
     title: `${stripEmoji(cat)} en impresión 3D · Perú | BoomArt`,
     intro: [
       `Figuras y piezas de ${stripEmoji(cat)} impresas en 3D, hechas a pedido en Lima y Callao con envíos a todo el Perú.`,
     ],
   };
-  const rel = "../../";
+  const rel = options.rel || "../../";
   const s = categorySlug(cat);
-  const url = `${SITE}/categoria/${s}/`;
-  const clean = stripEmoji(cat);
+  const url = options.url || `${SITE}/categoria/${s}/`;
+  const clean = options.clean || stripEmoji(cat);
   const wa = `${WHATSAPP}?text=${encodeURIComponent(`Hola BoomArt, quiero consultar por el catálogo de ${clean}`)}`;
-  const ogImg = abs((list[0] && (list[0].gallery && list[0].gallery[0])) || (list[0] && list[0].image)) || `${SITE}/assets/boomart-og.jpg`;
+  const ogImg = options.ogImg || abs((list[0] && (list[0].gallery && list[0].gallery[0])) || (list[0] && list[0].image)) || `${SITE}/assets/boomart-og.jpg`;
+  const ogAlt = options.ogAlt || `${meta.h1} | BoomArt`;
+  const ogSize = options.ogWidth && options.ogHeight
+    ? `\n    <meta property="og:image:width" content="${options.ogWidth}">\n    <meta property="og:image:height" content="${options.ogHeight}">`
+    : "";
+  const ogExtra = options.ogImg
+    ? `\n    <meta property="og:image:secure_url" content="${esc(ogImg)}">\n    <meta property="og:image:type" content="image/jpeg">${ogSize}\n    <meta property="og:image:alt" content="${esc(ogAlt)}">`
+    : "";
+  const twitterImageAlt = options.ogImg
+    ? `\n    <meta name="twitter:image:alt" content="${esc(ogAlt)}">`
+    : "";
   const desc = clampWords(meta.intro[0], 155);
 
   const cards = list
@@ -1312,12 +1354,12 @@ function buildCategoryPage(cat, list, all, ratingLd) {
     <meta property="og:title" content="${esc(meta.h1)} | BoomArt">
     <meta property="og:description" content="${esc(desc)}">
     <meta property="og:url" content="${url}">
-    <meta property="og:image" content="${esc(ogImg)}">
+    <meta property="og:image" content="${esc(ogImg)}">${ogExtra}
     <meta property="og:locale" content="es_PE">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${esc(meta.h1)} | BoomArt">
     <meta name="twitter:description" content="${esc(desc)}">
-    <meta name="twitter:image" content="${esc(ogImg)}">
+    <meta name="twitter:image" content="${esc(ogImg)}">${twitterImageAlt}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -1402,12 +1444,38 @@ async function writeCategoryPages(products, ratingLd) {
   return groups.length;
 }
 
+async function writeHalloweenCampaignPage(products, ratingLd) {
+  const byId = new Map(products.map((p) => [p.id, p]));
+  const missing = HALLOWEEN_CAMPAIGN_PRODUCT_IDS.filter((id) => !byId.has(id));
+  if (missing.length) {
+    throw new Error(`Productos de la campaña Halloween no encontrados: ${missing.join(", ")}`);
+  }
+  const list = HALLOWEEN_CAMPAIGN_PRODUCT_IDS.map((id) => byId.get(id));
+  const dir = path.join(ROOT, "Halloween");
+  await mkdir(dir, { recursive: true });
+  await writeFile(
+    path.join(dir, "index.html"),
+    buildCategoryPage("🎃 Halloween", list, products, ratingLd, {
+      meta: HALLOWEEN_CAMPAIGN_META,
+      rel: "../",
+      clean: "Halloween",
+      url: `${SITE}/Halloween/`,
+      ogImg: `${SITE}/assets/boomart-halloween.jpg`,
+      ogAlt: "Halloween en BoomArt: máscaras, cascos y decoración 3D",
+      ogWidth: 1200,
+      ogHeight: 630,
+    }),
+  );
+  return list.length;
+}
+
 /* ---------------------------------------------------------------- sitemap.xml */
 function buildSitemap(products) {
   const cats = groupByCategory(products).map(([cat]) => cat);
   const urls = [
     { loc: `${SITE}/`, priority: "1.0", changefreq: "weekly" },
     { loc: `${SITE}/catalogo.html`, priority: "0.9", changefreq: "weekly" },
+    { loc: `${SITE}/Halloween/`, priority: "0.9", changefreq: "weekly" },
     ...cats.map((c) => ({
       loc: `${SITE}/categoria/${categorySlug(c)}/`,
       priority: "0.7",
@@ -1442,6 +1510,7 @@ const ratingLd = buildRatingLd(reviews);
 const [productPageCount, categoryPageCount] = await Promise.all([
   writeProductPages(products, ratingLd),
   writeCategoryPages(products, ratingLd),
+  writeHalloweenCampaignPage(products, ratingLd),
   writeFile(path.join(ROOT, "catalogo.html"), buildHtml(products, ratingLd, reviews)),
   writeFile(path.join(ROOT, "catalogo.json"), buildJson(products) + "\n"),
   writeFile(path.join(ROOT, "sitemap.xml"), buildSitemap(products)),
@@ -1462,6 +1531,7 @@ console.log(
     ` y ${reviews.length} opiniones aprobadas:\n` +
     `  producto/<id>/index.html  (${productPageCount} paginas)\n` +
     `  categoria/<slug>/index.html  (${categoryPageCount} paginas)\n` +
+    "  Halloween/index.html (campaña de 14 productos)\n" +
     "  sitemap.xml\n  catalogo.html\n  catalogo.json\n  llms.txt\n  llms-full.txt\n" +
     "  feed-google.xml (Google Merchant + Pinterest)\n  feed-meta.csv (Instagram / Facebook)\n" +
     `  index.html (aggregateRating ${ratingUpdated ? "actualizado" : "sin cambios"})\n` +
