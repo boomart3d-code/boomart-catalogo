@@ -1212,23 +1212,24 @@ const CATEGORY_META = {
 // principal de cada producto (Marvel, Saint Seiya, etc.) y los reune tambien
 // en el enlace corto que se comparte en publicidad y WhatsApp.
 const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
-  // Los ocho productos que ya pertenecen a Halloween, en su orden actual.
-  "mario-billy-saw",
-  "mascara-calabaza-calavera",
-  "candelabro-calavera",
-  "evil-mask",
-  "zkull-urban",
-  "mascara-krampus",
-  "mascara-baphomet",
-  "mascara-hellboy-articulada",
+  // Disfraces y cosplay: el producto nuevo abre la coleccion.
   "casco-gladiador-maximo",
-  // Accesorios de otras categorias que tambien sirven para Halloween.
-  "casco-de-wolverine-con-garras",
+  "mascara-calabaza-calavera",
+  "evil-mask",
+  "mascara-hellboy-articulada",
+  "mascara-baphomet",
+  "mascara-krampus",
   "mascara-de-batwoman",
   "mascara-el-juego-del-calamar",
+  // Cascos y accesorios de otras categorias que tambien sirven para Halloween.
+  "casco-de-wolverine-con-garras",
   "casco-de-agamenon-la-odisea",
   "casco-de-pegaso-saint-seiya",
   "tiara-de-pegaso-saint-seiya",
+  // Decoracion y figuras.
+  "candelabro-calavera",
+  "mario-billy-saw",
+  "zkull-urban",
 ];
 
 const HALLOWEEN_CAMPAIGN_META = {

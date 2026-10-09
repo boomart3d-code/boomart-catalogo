@@ -284,6 +284,32 @@ const productCard = (product) => `
 // temporada, cambia la categoría de esos productos en el panel.
 const SEASON_LABEL = "🎃 Halloween";
 
+// El filtro Halloween del catalogo principal es una coleccion transversal:
+// incluye tambien productos cuya categoria principal es Marvel, Saint Seiya o
+// Series y Peliculas. El orden prioriza disfraces/cosplay, luego cascos y
+// accesorios, y deja decoracion/figuras al final. Mantener sincronizado con
+// HALLOWEEN_CAMPAIGN_PRODUCT_IDS en scripts/build-ai-catalog.mjs.
+const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
+  "casco-gladiador-maximo",
+  "mascara-calabaza-calavera",
+  "evil-mask",
+  "mascara-hellboy-articulada",
+  "mascara-baphomet",
+  "mascara-krampus",
+  "mascara-de-batwoman",
+  "mascara-el-juego-del-calamar",
+  "casco-de-wolverine-con-garras",
+  "casco-de-agamenon-la-odisea",
+  "casco-de-pegaso-saint-seiya",
+  "tiara-de-pegaso-saint-seiya",
+  "candelabro-calavera",
+  "mario-billy-saw",
+  "zkull-urban",
+];
+const HALLOWEEN_CAMPAIGN_ORDER = new Map(
+  HALLOWEEN_CAMPAIGN_PRODUCT_IDS.map((id, index) => [id, index]),
+);
+
 // La franja muestra las categorías reales. "Todos" es el estado por defecto
 // (sin categoría activa) y se vuelve a él tocando "Limpiar filtros" o volviendo
 // a tocar la categoría ya activa.
@@ -312,12 +338,20 @@ const matchesProduct = (product) => {
   const query = normalize(searchInput.value);
   const haystack = normalize([product.name, product.category, product.description, product.height, ...(product.tags || [])].join(" "));
   const matchesSearch = !query || haystack.includes(query);
-  const matchesFilter = activeFilter === "Todos" || product.category === activeFilter;
+  const matchesFilter = activeFilter === "Todos" ||
+    (activeFilter === SEASON_LABEL
+      ? HALLOWEEN_CAMPAIGN_ORDER.has(product.id)
+      : product.category === activeFilter);
   return matchesSearch && matchesFilter;
 };
 
 const renderProducts = () => {
   const visible = products.filter(matchesProduct);
+  if (activeFilter === SEASON_LABEL) {
+    visible.sort(
+      (a, b) => HALLOWEEN_CAMPAIGN_ORDER.get(a.id) - HALLOWEEN_CAMPAIGN_ORDER.get(b.id),
+    );
+  }
   productGrid.innerHTML = visible.map(productCard).join("");
   resultCount.textContent = `${visible.length} producto${visible.length === 1 ? "" : "s"} visible${visible.length === 1 ? "" : "s"}`;
   emptyState.hidden = visible.length > 0;
