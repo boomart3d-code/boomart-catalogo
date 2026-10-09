@@ -43,6 +43,13 @@ const normalize = (text) =>
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
 
+// Medicion propia (src/track.js). Siempre opcional: si no cargo, no pasa nada.
+const trackEvt = (name, props) => {
+  try {
+    if (window.BoomartTrack) window.BoomartTrack.event(name, props);
+  } catch (e) { /* medir nunca debe romper la tienda */ }
+};
+
 // Siempre con el numero directo: el enlace corto wa.me/message/... descarta el
 // parametro ?text= (WhatsApp lo ignora y el chat se abre vacio).
 const whatsappUrl = (message) =>
@@ -126,6 +133,7 @@ const shareProduct = async (product) => {
     try {
       await navigator.share({ title: product.name, text: shareText(product), url });
       if (window.gtag) gtag("event", "share", { method: "web_share", item_id: product.id });
+      trackEvt("compartir", { p: product.id, o: "menu" });
       return "shared";
     } catch (err) {
       if (err.name === "AbortError") return "cancelled";
@@ -134,6 +142,7 @@ const shareProduct = async (product) => {
   }
   if (await copyText(url)) {
     if (window.gtag) gtag("event", "share", { method: "copy", item_id: product.id });
+    trackEvt("compartir", { p: product.id, o: "copiar" });
     return "copied";
   }
   return "failed";
@@ -399,7 +408,11 @@ const openProduct = (productId, fromHistory = false) => {
     activeProduct.material ? `Material: ${activeProduct.material}` : "",
   ].filter(Boolean).join(" · ");
   modalPricing.innerHTML = priceMarkup(activeProduct) + addToCartMarkup(activeProduct);
-  if (shareProductWa) shareProductWa.href = whatsappUrl(inquiryMessage(activeProduct));
+  if (shareProductWa) {
+    shareProductWa.href = whatsappUrl(inquiryMessage(activeProduct));
+    shareProductWa.dataset.product = productId;
+  }
+  if (!fromHistory) trackEvt("ver_producto", { p: productId, o: "tienda" });
   if (shareFeedback) shareFeedback.hidden = true;
   renderModalImage();
   if (!modal.open) modal.showModal();
@@ -455,6 +468,7 @@ document.addEventListener("click", (event) => {
     const clicked = filterButton.dataset.filter;
     // Tocar la categoría que ya está activa la desactiva (vuelve a "Todos").
     activeFilter = clicked === activeFilter ? "Todos" : clicked;
+    if (activeFilter !== "Todos") trackEvt("filtrar", { d: { categoria: activeFilter } });
     if (fromQuickPanel) {
       // Seleccionar una categoria desde el panel rapido es una navegacion nueva:
       // se limpia cualquier busqueda de texto que hubiera quedado activa para
@@ -477,6 +491,14 @@ document.addEventListener("click", (event) => {
 });
 
 searchInput.addEventListener("input", renderProducts);
+let searchTrackTimer = null;
+searchInput.addEventListener("input", () => {
+  clearTimeout(searchTrackTimer);
+  searchTrackTimer = setTimeout(() => {
+    const q = searchInput.value.trim();
+    if (q.length >= 2) trackEvt("buscar", { d: { q: q.slice(0, 40) } });
+  }, 900);
+});
 clearFilters.addEventListener("click", () => {
   activeFilter = "Todos";
   searchInput.value = "";

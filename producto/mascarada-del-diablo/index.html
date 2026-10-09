@@ -200,6 +200,9 @@
         }
         function track(method) {
           if (window.gtag) gtag("event", "share", { method: method, item_id: id });
+          try {
+            if (window.BoomartTrack) window.BoomartTrack.event("compartir", { p: id, o: method === "copy" ? "copiar" : "menu" });
+          } catch (e) {}
         }
         function fallbackCopy(t) {
           var el = document.createElement("textarea");
@@ -258,5 +261,6 @@
         });
       })();
     </script>
+    <script src="../../src/track.js?v=1" defer></script>
   </body>
 </html>

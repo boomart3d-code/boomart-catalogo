@@ -13,7 +13,10 @@
          navegador salte solo a esa seccion apenas carga, tapando el banner
          que queda mas arriba (Adrian lo detecto en pantalla, 2026-09-29). -->
     <meta name="robots" content="noindex, follow">
-    <meta http-equiv="refresh" content="0; url=https://boomart.pe/?categoria=saint-seiya">
+    <!-- Respaldo sin JS: espera 3 s para que el script de abajo (que conserva las
+         marcas del enlace, p. ej. ?utm_source=... o ?src=..., y el fbclid de Meta)
+         redirija primero. Con 0 s el refresh ganaba y borraba esas marcas. -->
+    <meta http-equiv="refresh" content="3; url=https://boomart.pe/?categoria=saint-seiya">
     <link rel="canonical" href="https://boomart.pe/categoria/saint-seiya/">
     <!-- Vista previa al compartir el enlace (WhatsApp, Facebook, Instagram, X): los
          rastreadores NO ejecutan el JS ni siguen el refresh de arriba, leen solo
@@ -39,7 +42,11 @@
     <meta name="twitter:image" content="https://boomart.pe/assets/og-saintseiya.jpg">
     <meta name="twitter:image:alt" content="BoomArt · Saint Seiya: los 12 templos del Zodiaco con sus cajas de Pandora, impresos en 3D">
     <script>
-      location.replace("https://boomart.pe/?categoria=saint-seiya");
+      (function () {
+        var q = new URLSearchParams(location.search);
+        q.set("categoria", "saint-seiya");
+        location.replace("https://boomart.pe/?" + q.toString() + location.hash);
+      })();
     </script>
   </head>
   <body>

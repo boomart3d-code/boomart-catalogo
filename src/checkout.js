@@ -10,6 +10,19 @@
   const CHECKOUT = window.BOOMART_CHECKOUT || {};
   const money = (value) => `S/${Number(value || 0).toFixed(2)}`;
 
+  // Medicion propia (src/track.js). Siempre opcional: nunca debe romper el carrito.
+  const trackEvt = (name, props) => {
+    try {
+      if (window.BoomartTrack) window.BoomartTrack.event(name, props);
+    } catch (e) { /* nada */ }
+  };
+  const trackCart = (name, extra) => {
+    try {
+      const totals = window.BoomartCart.getState().totals;
+      trackEvt(name, Object.assign({ c: totals.itemCount, v: totals.total }, extra || {}));
+    } catch (e) { /* nada */ }
+  };
+
   // Mismo criterio que app.js: en pantalla se pide el .webp (mas liviano); el
   // .jpg original queda intacto para og:image. Ver scripts/optimize-images.mjs.
   const webpSrc = (src) =>
@@ -226,6 +239,7 @@
   cartToast.addEventListener("click", (event) => {
     if (event.target.closest("[data-toast-view-cart]")) {
       hideToast();
+      trackCart("abrir_carrito", { o: "aviso" });
       openCart();
     } else if (event.target.closest("[data-toast-keep]")) {
       hideToast();
@@ -233,12 +247,16 @@
   });
 
   cartToggle.addEventListener("click", () => {
-    if (cartDrawer.hidden) openCart();
-    else closeCart();
+    if (cartDrawer.hidden) {
+      trackCart("abrir_carrito", { o: "encabezado" });
+      openCart();
+    } else closeCart();
   });
   cartFloatToggle.addEventListener("click", () => {
-    if (cartDrawer.hidden) openCart();
-    else closeCart();
+    if (cartDrawer.hidden) {
+      trackCart("abrir_carrito", { o: "flotante" });
+      openCart();
+    } else closeCart();
   });
   closeCartBtn.addEventListener("click", closeCart);
   cartBackdrop.addEventListener("click", closeCart);
@@ -294,6 +312,13 @@
       );
 
       const fromModal = Boolean(addBtn.closest("#productModal"));
+      trackEvt("agregar_carrito", {
+        p: productId,
+        c: qty,
+        v: addedLine ? Number(addedLine.unitPrice) * qty : 0,
+        o: fromModal ? "ficha" : "tarjeta",
+        d: variantKey ? { variante: variantKey } : undefined,
+      });
 
       // Feedback inmediato en el propio boton: "Agregado ✓" y bloqueo breve.
       const originalLabel = addBtn.textContent.trim();
@@ -397,6 +422,7 @@
 
   const openCheckout = () => {
     if (window.BoomartCart.getState().lines.length === 0) return;
+    trackCart("iniciar_compra");
     closeCart();
     customerFormError.hidden = true;
     showStep("customer");
@@ -845,6 +871,11 @@
     }
     reopenWhatsappLink.href = url;
     window.open(url, "_blank", "noopener");
+    trackEvt("pedido_whatsapp", {
+      c: state.totals.itemCount,
+      v: state.totals.total,
+      d: { metodo: selectedPaymentMethod, cupon: plan.couponApplied ? "si" : "no" },
+    });
     document.dispatchEvent(
       new CustomEvent("boomart:order-sent", { detail: { couponApplied: plan.couponApplied } })
     );
