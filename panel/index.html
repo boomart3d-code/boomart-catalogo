@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Panel de visitas · BoomArt</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/boomart-logo.svg">
+  <style>
+    :root {
+      --bg: #0b0b0c; --card: #151517; --card2: #1b1b1e; --line: #2a2a2f;
+      --text: #f2eee8; --muted: #a29b92; --accent: #e11d48; --gold: #e0b252;
+      --ok: #34d399; --warn: #f59e0b; --bad: #f87171; --blue: #60a5fa;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 15px/1.45 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    a { color: var(--gold); }
+    header.top {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 14px 16px; border-bottom: 1px solid var(--line); position: sticky; top: 0;
+      background: rgba(11, 11, 12, .94); backdrop-filter: blur(6px); z-index: 5;
+    }
+    header.top h1 { margin: 0; font-size: 1.05rem; letter-spacing: .02em; }
+    header.top small { color: var(--muted); font-weight: 400; }
+    main { max-width: 1100px; margin: 0 auto; padding: 16px 16px 60px; }
+    .btn {
+      appearance: none; border: 1px solid var(--line); background: var(--card2); color: var(--text);
+      font: inherit; font-weight: 600; padding: 9px 14px; border-radius: 10px; cursor: pointer;
+    }
+    .btn:hover { border-color: #3a3a40; }
+    .btn.primary { background: var(--accent); border-color: var(--accent); }
+    .btn.on { background: var(--gold); border-color: var(--gold); color: #1a1405; }
+    .btn.small { padding: 6px 10px; font-size: .85rem; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+    .login { max-width: 420px; margin: 8vh auto 0; }
+    .login input[type=email], .custom input[type=date] {
+      width: 100%; padding: 11px 12px; border-radius: 10px; border: 1px solid var(--line);
+      background: var(--bg); color: var(--text); font: inherit;
+    }
+    .msg { margin: 10px 0 0; color: var(--muted); }
+    .msg.err { color: var(--bad); }
+    .msg.ok { color: var(--ok); }
+    .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 14px; }
+    .controls .sp { flex: 1; }
+    .controls label.chk { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: .88rem; }
+    .custom { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: -4px 0 14px; }
+    .custom input { width: auto; }
+    h2 { font-size: 1.05rem; margin: 26px 0 10px; }
+    h2 small { color: var(--muted); font-weight: 400; font-size: .82rem; margin-left: 6px; }
+    .grid { display: grid; gap: 10px; }
+    .kpis { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+    .kpi .v { font-size: 1.9rem; font-weight: 800; line-height: 1.1; }
+    .kpi .l { color: var(--muted); font-size: .84rem; margin-top: 2px; }
+    .kpi .s { color: var(--muted); font-size: .8rem; margin-top: 6px; }
+    .note { color: var(--muted); font-size: .84rem; }
+    .row-bar { display: grid; grid-template-columns: minmax(120px, 230px) 1fr 120px; gap: 10px; align-items: center; margin: 7px 0; }
+    .row-bar .lab { font-size: .9rem; }
+    .row-bar .num { text-align: right; font-variant-numeric: tabular-nums; font-size: .9rem; }
+    .row-bar .num small { color: var(--muted); }
+    .track { background: var(--card2); border-radius: 8px; height: 22px; overflow: hidden; }
+    .fill { height: 100%; background: linear-gradient(90deg, var(--accent), #fb7185); border-radius: 8px; min-width: 2px; }
+    .fill.g { background: linear-gradient(90deg, #059669, var(--ok)); }
+    .fill.y { background: linear-gradient(90deg, #b45309, var(--warn)); }
+    .fill.b { background: linear-gradient(90deg, #2563eb, var(--blue)); }
+    .classes { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+    .classes .card .t { font-weight: 700; }
+    .classes .card .v { font-size: 1.7rem; font-weight: 800; margin: 4px 0; }
+    .classes .card p { margin: 0; color: var(--muted); font-size: .82rem; }
+    .tbl-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
+    table { border-collapse: collapse; width: 100%; font-size: .88rem; min-width: 640px; }
+    th, td { padding: 9px 10px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+    th:first-child, td:first-child { text-align: left; white-space: normal; min-width: 180px; }
+    th { color: var(--muted); font-weight: 600; font-size: .78rem; background: var(--card2); }
+    tr:last-child td { border-bottom: 0; }
+    td .sub { display: block; color: var(--muted); font-size: .76rem; }
+    .hours { display: flex; align-items: flex-end; gap: 3px; height: 120px; padding-top: 6px; }
+    .hours .h { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; }
+    .hours .bar { width: 100%; background: linear-gradient(180deg, var(--blue), #2563eb); border-radius: 4px 4px 0 0; min-height: 2px; }
+    .hours .t { font-size: .62rem; color: var(--muted); margin-top: 3px; }
+    .two { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    ul.plain { list-style: none; padding: 0; margin: 0; }
+    ul.plain li { display: flex; justify-content: space-between; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+    ul.plain li:last-child { border-bottom: 0; }
+    ul.plain li span:last-child { color: var(--muted); font-variant-numeric: tabular-nums; }
+    details { margin-top: 26px; }
+    details summary { cursor: pointer; font-weight: 700; }
+    details p, details li { color: var(--muted); font-size: .88rem; }
+    .pill { display: inline-block; padding: 1px 8px; border-radius: 99px; font-size: .72rem; background: var(--card2); border: 1px solid var(--line); color: var(--muted); }
+    [hidden] { display: none !important; }
+    @media (max-width: 600px) {
+      .row-bar { grid-template-columns: 1fr 88px; }
+      .row-bar .track { grid-column: 1 / -1; order: 3; }
+      .kpi .v { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <h1>BOOM ART <small>· Panel de visitas</small></h1>
+    <div id="topActions" hidden>
+      <button class="btn small" id="btnSalir" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="vistaCargando" class="card login"><p class="msg">Cargando…</p></section>
+
+    <section id="vistaLogin" class="card login" hidden>
+      <h2 style="margin-top:0">Entrar al panel</h2>
+      <p class="note">Panel privado. Te enviamos un enlace de acceso al correo del administrador (sin contraseña).</p>
+      <form id="formLogin">
+        <p><input id="inEmail" type="email" autocomplete="email" value="boomart.3d@gmail.com" required></p>
+        <button class="btn primary" type="submit" id="btnEnviar" style="width:100%">Enviarme el enlace de acceso</button>
+      </form>
+      <p class="msg" id="msgLogin"></p>
+      <p class="note">Abre el enlace en <strong>este mismo navegador</strong>. Si te lleva a la tienda, vuelve a <strong>boomart.pe/panel/</strong> y ya estarás dentro.</p>
+    </section>
+
+    <section id="vistaSinAcceso" class="card login" hidden>
+      <h2 style="margin-top:0">Sin acceso</h2>
+      <p class="msg err">La cuenta <strong id="sinAccesoEmail"></strong> no tiene permiso para ver este panel.</p>
+      <p><button class="btn" id="btnSalir2" type="button">Cerrar sesión</button></p>
+    </section>
+
+    <section id="vistaPanel" hidden>
+      <div class="controls">
+        <button class="btn small" data-rango="hoy" type="button">Hoy</button>
+        <button class="btn small" data-rango="ayer" type="button">Ayer</button>
+        <button class="btn small" data-rango="7d" type="button">7 días</button>
+        <button class="btn small" data-rango="30d" type="button">30 días</button>
+        <button class="btn small" data-rango="custom" type="button">Elegir fechas</button>
+        <span class="sp"></span>
+        <label class="chk"><input type="checkbox" id="chkPeru" checked> Solo visitas desde Perú</label>
+        <button class="btn small" id="btnActualizar" type="button">Actualizar</button>
+      </div>
+      <div class="custom" id="boxCustom" hidden>
+        <label>Desde <input type="date" id="inDesde"></label>
+        <label>Hasta <input type="date" id="inHasta"></label>
+        <button class="btn small primary" id="btnAplicar" type="button">Ver</button>
+      </div>
+      <p class="note" id="estado"></p>
+      <div id="contenido"></div>
+      <p class="note" style="margin-top:26px">
+        <label class="chk" style="display:inline-flex;align-items:center;gap:6px">
+          <input type="checkbox" id="chkExcluir" checked> No contar mis visitas desde este dispositivo
+        </label><br>
+        Para tu celular u otro equipo, abre una vez <strong>boomart.pe/?excluir=1</strong> (y <strong>?excluir=0</strong> para volver a contar).
+      </p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="../src/supabase-config.js?v=1"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      const ADMIN_EMAIL = "boomart.3d@gmail.com";
+      const cfg = window.BOOMART_SUPABASE;
+      const $ = (s) => document.querySelector(s);
+      const $$ = (s) => Array.from(document.querySelectorAll(s));
+
+      const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => (
+        { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+      const fmt = (n) => Number(n || 0).toLocaleString("es-PE");
+      const pctNum = (a, b) => (b > 0 ? (a / b) * 100 : 0);
+      const fmtPct = (a, b) => (b > 0 ? `${(Math.round(pctNum(a, b) * 10) / 10).toString().replace(".", ",")}%` : "—");
+      const fmtSeg = (s) => {
+        s = Math.round(Number(s) || 0);
+        return s >= 60 ? `${Math.floor(s / 60)} min ${s % 60} s` : `${s} s`;
+      };
+
+      // ---------- Vistas ----------
+      const vistas = { cargando: $("#vistaCargando"), login: $("#vistaLogin"), sin: $("#vistaSinAcceso"), panel: $("#vistaPanel") };
+      const show = (name) => {
+        Object.entries(vistas).forEach(([k, el]) => { el.hidden = k !== name; });
+        $("#topActions").hidden = !(name === "panel" || name === "sin");
+      };
+
+      if (!cfg || !window.supabase || typeof window.supabase.createClient !== "function") {
+        vistas.cargando.innerHTML = '<p class="msg err">No se pudo cargar el sistema de acceso (Supabase). Revisa tu conexión e inténtalo de nuevo.</p>';
+        return;
+      }
+      const sb = window.supabase.createClient(cfg.url, cfg.publishableKey);
+
+      // ---------- Nombres de productos ----------
+      let nombres = {};
+      fetch("../data/products.json").then((r) => r.json()).then((arr) => {
+        (Array.isArray(arr) ? arr : []).forEach((p) => { nombres[p.id] = p.name; });
+        if (lastData) render(lastData);
+      }).catch(() => {});
+      const nombreProducto = (id) => nombres[id] || id;
+
+      // ---------- Fechas (hora de Lima, UTC-5 fijo) ----------
+      const LIMA_MS = 5 * 3600 * 1000;
+      const ymd = (d) => `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}-${String(d.getUTCDate()).padStart(2, "0")}`;
+      const limaHoy = () => new Date(Date.now() - LIMA_MS);
+      const sumaDias = (d, n) => new Date(d.getTime() + n * 86400000);
+      const inicioLima = (fecha) => new Date(`${fecha}T00:00:00-05:00`).toISOString();
+
+      let rango = "hoy";
+      const calcularRango = () => {
+        const hoy = limaHoy();
+        const h = ymd(hoy);
+        const manana = ymd(sumaDias(hoy, 1));
+        if (rango === "ayer") return { desde: inicioLima(ymd(sumaDias(hoy, -1))), hasta: inicioLima(h), etiqueta: "Ayer", incluyeHoy: false };
+        if (rango === "7d") return { desde: inicioLima(ymd(sumaDias(hoy, -6))), hasta: inicioLima(manana), etiqueta: "Últimos 7 días (con hoy)", incluyeHoy: true };
+        if (rango === "30d") return { desde: inicioLima(ymd(sumaDias(hoy, -29))), hasta: inicioLima(manana), etiqueta: "Últimos 30 días (con hoy)", incluyeHoy: true };
+        if (rango === "custom") {
+          const d = $("#inDesde").value || h;
+          const a = $("#inHasta").value || d;
+          const finExcl = ymd(sumaDias(new Date(`${a}T00:00:00Z`), 1));
+          return { desde: inicioLima(d), hasta: inicioLima(finExcl), etiqueta: `Del ${d} al ${a}`, incluyeHoy: a >= h };
+        }
+        return { desde: inicioLima(h), hasta: inicioLima(manana), etiqueta: "Hoy hasta ahora", incluyeHoy: true };
+      };
+
+      // ---------- Etiquetas legibles ----------
+      const META = new Set(["fb", "facebook", "ig", "instagram", "meta"]);
+      const PAGO = new Set(["paid", "anuncio", "cpc", "paid_social"]);
+      const fuenteLabel = (f, m, c) => {
+        f = (f || "directo").toLowerCase(); m = (m || "").toLowerCase();
+        if (META.has(f) && PAGO.has(m)) return { t: `Anuncio de Meta (${f === "ig" || f === "instagram" ? "Instagram" : f === "meta" ? "Facebook/Instagram" : "Facebook"})`, s: c ? `campaña ${c}` : "" };
+        if (f === "meta" && m === "anuncio") return { t: "Anuncio de Meta (detectado por el clic)", s: "sin marca en el enlace" };
+        if (f === "instagram" && m === "bio") return { t: "Instagram · enlace de la bio", s: c || "" };
+        if (f === "whatsapp" && m === "mensaje") return { t: "WhatsApp · enlace corto /wa", s: c || "" };
+        if (f === "whatsapp" && m === "post-venta") return { t: "WhatsApp · post-venta (reseñas)", s: c || "" };
+        if (f === "directo") return { t: "Directo (sin origen)", s: "escribió la web, favoritos o app sin referencia" };
+        if (f === "google" && m === "organico") return { t: "Google (búsqueda)", s: "" };
+        if (f === "ia") return { t: `Asistente de IA`, s: m };
+        if ((f === "facebook" || f === "instagram") && m === "referido") return { t: `${f === "facebook" ? "Facebook" : "Instagram"} (orgánico / enlace)`, s: "" };
+        return { t: `${f}${m ? " · " + m : ""}`, s: c || "" };
+      };
+      const BOTONES = {
+        flotante: "Botón verde flotante", ficha: "Ficha del producto (tienda)", producto: "Página del producto · botón",
+        producto_texto: "Página del producto · enlace del texto", pie: "Pie de página", ofertas: "Franja de ofertas",
+        categoria: "Páginas de categoría", medida: "Pedido a medida", menu: "Menú superior", otro: "Otros enlaces",
+      };
+
+      // ---------- Dibujo ----------
+      const barRow = (label, n, base, cls, extra) => {
+        const w = base > 0 ? Math.max(0, Math.min(100, (n / base) * 100)) : 0;
+        return `<div class="row-bar"><div class="lab">${label}</div>
+          <div class="track"><div class="fill ${cls || ""}" style="width:${w}%"></div></div>
+          <div class="num"><strong>${fmt(n)}</strong> <small>${extra != null ? extra : fmtPct(n, base)}</small></div></div>`;
+      };
+
+      const kpi = (valor, etiqueta, sub) =>
+        `<div class="card kpi"><div class="v">${valor}</div><div class="l">${etiqueta}</div><div class="s">${sub || ""}</div></div>`;
+
+      const fechaCorta = (s) => {
+        const [y, m, d] = s.split("-").map(Number);
+        return new Date(y, m - 1, d).toLocaleDateString("es-PE", { weekday: "short", day: "numeric", month: "short" });
+      };
+
+      let lastData = null;
+      const render = (d) => {
+        lastData = d;
+        const k = d.kpi || {}; const e = d.embudo || {}; const c = d.clases || {}; const t = d.tiempo || {};
+        const base = e.entraron || 0;
+        const hayDatos = base > 0;
+        let html = "";
+
+        if (!hayDatos) {
+          html += `<div class="card"><p class="msg">Todavía no hay visitas registradas en este período${d.solo_peru && d.fuera_peru ? ` (hay ${fmt(d.fuera_peru)} fuera de Perú ocultas)` : ""}.</p>
+            <p class="note">El contador propio empezó a registrar el 9 de octubre de 2026 (tarde). Antes de eso solo hay datos en Google Analytics.</p></div>`;
+        }
+
+        html += `<div class="grid kpis">
+          ${kpi(fmt(k.sesiones), "Entraron", `${fmt(k.visitantes)} visitantes distintos`)}
+          ${kpi(fmt(k.con_interaccion), "Interactuaron", `${fmtPct(k.con_interaccion, k.sesiones)} tocaron, deslizaron o escribieron`)}
+          ${kpi(fmtSeg(k.seg_promedio), "Tiempo promedio", `de los que interactuaron · mediana ${fmtSeg(k.seg_mediana)}`)}
+          ${kpi(fmt(c.intencion || 0), "Con intención real", `${fmtPct(c.intencion || 0, k.sesiones)} agregaron, iniciaron compra o escribieron por un producto`)}
+          ${kpi(fmt(k.nuevos), "Visitantes nuevos", `${fmt(Math.max(0, (k.visitantes || 0) - (k.nuevos || 0)))} ya habían venido antes`)}
+          ${d.solo_peru ? kpi(fmt(d.fuera_peru), "Ocultas (fuera de Perú)", "probables robots; quita el filtro para verlas") : ""}
+        </div>`;
+
+        // Embudo
+        html += `<h2>Embudo de compra <small>cuántos llegan a cada paso</small></h2><div class="card">`;
+        html += barRow("Entraron a la web", e.entraron, base, "");
+        html += barRow("Interactuaron con la página", e.interaccion, base, "");
+        html += barRow("Abrieron el detalle de un producto", e.vieron_producto, base, "");
+        html += barRow("Agregaron un producto al carrito", e.agregaron, base, "y");
+        html += barRow("Iniciaron la compra (datos del pedido)", e.iniciaron, base, "y");
+        html += barRow("Enviaron el pedido por WhatsApp", e.pedido, base, "g");
+        html += `<hr style="border:0;border-top:1px solid var(--line);margin:12px 0">`;
+        html += barRow("Hicieron clic en algún botón de WhatsApp", e.wa_clic, base, "g");
+        html += barRow("…en el WhatsApp de un producto concreto", e.wa_producto, base, "g");
+        html += `</div>`;
+
+        // Calidad
+        html += `<h2>¿Curiosos o con intención de compra? <small>cada visita en una sola categoría</small></h2><div class="grid classes">
+          <div class="card"><div class="t">🚪 Se fueron enseguida</div><div class="v">${fmt(c.rebote || 0)}</div><p>${fmtPct(c.rebote || 0, k.sesiones)} · menos de 10 s y sin abrir ningún producto.</p></div>
+          <div class="card"><div class="t">👀 Curiosos</div><div class="v">${fmt(c.curioso || 0)}</div><p>${fmtPct(c.curioso || 0, k.sesiones)} · miraron un producto o se quedaron, pero no agregaron ni escribieron.</p></div>
+          <div class="card"><div class="t">🤔 Interesados</div><div class="v">${fmt(c.interesado || 0)}</div><p>${fmtPct(c.interesado || 0, k.sesiones)} · abrieron 2 o más productos, compartieron o tocaron WhatsApp general.</p></div>
+          <div class="card"><div class="t">🔥 Intención real</div><div class="v">${fmt(c.intencion || 0)}</div><p>${fmtPct(c.intencion || 0, k.sesiones)} · agregaron al carrito, iniciaron compra o escribieron por un producto.</p></div>
+        </div>`;
+
+        // Tiempo
+        const tmax = Math.max(1, t.menos10 || 0, t.de10a30 || 0, t.de30a60 || 0, t.de1a3 || 0, t.mas3 || 0);
+        html += `<h2>Cuánto tiempo se quedan <small>tiempo activo, sin contar pestañas abiertas sin usar</small></h2><div class="card">
+          ${barRow("Menos de 10 segundos", t.menos10 || 0, tmax, "", fmtPct(t.menos10 || 0, k.sesiones))}
+          ${barRow("10 a 30 segundos", t.de10a30 || 0, tmax, "b", fmtPct(t.de10a30 || 0, k.sesiones))}
+          ${barRow("30 a 60 segundos", t.de30a60 || 0, tmax, "b", fmtPct(t.de30a60 || 0, k.sesiones))}
+          ${barRow("1 a 3 minutos", t.de1a3 || 0, tmax, "g", fmtPct(t.de1a3 || 0, k.sesiones))}
+          ${barRow("Más de 3 minutos", t.mas3 || 0, tmax, "g", fmtPct(t.mas3 || 0, k.sesiones))}
+        </div>`;
+
+        // Fuentes
+        const fu = d.fuentes || [];
+        html += `<h2>Por enlace o campaña <small>de dónde llegan y qué hacen</small></h2><div class="tbl-wrap"><table>
+          <thead><tr><th>Origen</th><th>Entradas</th><th>Interacción</th><th>Tiempo</th><th>Vieron prod.</th><th>Carrito</th><th>WhatsApp</th><th>Pedido</th><th>Intención real</th></tr></thead><tbody>`;
+        fu.forEach((r) => {
+          const L = fuenteLabel(r.fuente, r.medio, r.campana);
+          html += `<tr><td><strong>${esc(L.t)}</strong>${L.s ? `<span class="sub">${esc(L.s)}</span>` : ""}<span class="sub">${esc(r.fuente)}${r.medio ? " / " + esc(r.medio) : ""}</span></td>
+            <td><strong>${fmt(r.sesiones)}</strong></td><td>${fmtPct(r.interaccion, r.sesiones)}</td><td>${fmtSeg(r.seg_promedio)}</td>
+            <td>${fmt(r.vieron)}</td><td>${fmt(r.agregaron)}</td><td>${fmt(r.wa)}</td><td>${fmt(r.pedido)}</td><td>${fmt(r.intencion)} <span class="sub">${fmtPct(r.intencion, r.sesiones)}</span></td></tr>`;
+        });
+        if (!fu.length) html += `<tr><td colspan="9" style="text-align:center;color:var(--muted)">Sin datos</td></tr>`;
+        html += `</tbody></table></div>
+          <p class="note">Para medir un enlace nuevo agrégale <strong>?src=nombre</strong> (por ejemplo boomart.pe/Halloween/?src=ig-historia). Los clics desde anuncios de Meta se reconocen solos.</p>`;
+
+        // Productos
+        const pr = d.productos || [];
+        html += `<h2>Por producto <small>en cuántas visitas pasó cada cosa</small></h2><div class="tbl-wrap"><table>
+          <thead><tr><th>Producto</th><th>Abrieron detalle</th><th>Agregaron al carrito</th><th>Ver → carrito</th><th>Clic WhatsApp</th><th>Compartieron</th></tr></thead><tbody>`;
+        pr.forEach((r) => {
+          html += `<tr><td>${esc(nombreProducto(r.producto))}</td><td><strong>${fmt(r.vistas)}</strong></td><td>${fmt(r.agregados)}${r.unidades ? ` <span class="sub">${fmt(r.unidades)} u.</span>` : ""}</td>
+            <td>${r.vistas ? fmtPct(r.agregados, r.vistas) : "—"}</td><td>${fmt(r.wa)}</td><td>${fmt(r.compartidos)}</td></tr>`;
+        });
+        if (!pr.length) html += `<tr><td colspan="6" style="text-align:center;color:var(--muted)">Todavía nadie abrió un producto en este período</td></tr>`;
+        html += `</tbody></table></div>`;
+
+        // Dias y horas
+        const dias = d.dias || [];
+        const dmax = Math.max(1, ...dias.map((x) => x.sesiones));
+        html += `<h2>Por día y por hora <small>hora de Lima</small></h2><div class="grid two"><div class="card"><div class="note" style="margin-bottom:6px">Entradas por día</div>`;
+        dias.forEach((x) => { html += barRow(esc(fechaCorta(x.dia)), x.sesiones, dmax, "b", `· ${fmt(x.intencion)} 🔥`); });
+        if (!dias.length) html += `<p class="note">Sin datos</p>`;
+        html += `</div><div class="card"><div class="note">Entradas por hora del día</div><div class="hours">`;
+        const horas = {}; (d.horas || []).forEach((x) => { horas[x.hora] = x.sesiones; });
+        const hmax = Math.max(1, ...Object.values(horas));
+        for (let h = 0; h < 24; h += 1) {
+          const v = horas[h] || 0;
+          html += `<div class="h" title="${h}:00 · ${v} entradas"><div class="bar" style="height:${(v / hmax) * 100}%"></div><div class="t">${h % 3 === 0 ? h : ""}</div></div>`;
+        }
+        html += `</div></div></div>`;
+
+        // WhatsApp / busquedas / categorias / dispositivos
+        const wb = d.whatsapp_botones || [];
+        const disp = d.dispositivos || {};
+        const dtot = Object.values(disp).reduce((a, b) => a + b, 0);
+        html += `<h2>Detalles</h2><div class="grid two">
+          <div class="card"><div class="t"><strong>Clics en WhatsApp por botón</strong></div><ul class="plain">${wb.length ? wb.map((b) => `<li><span>${esc(BOTONES[b.boton] || b.boton)}</span><span>${fmt(b.clics)} clics · ${fmt(b.sesiones)} visitas</span></li>`).join("") : '<li><span>Sin clics todavía</span><span></span></li>'}</ul></div>
+          <div class="card"><div class="t"><strong>Qué buscan en la tienda</strong></div><ul class="plain">${(d.busquedas || []).length ? d.busquedas.map((b) => `<li><span>${esc(b.texto)}</span><span>${fmt(b.veces)}</span></li>`).join("") : '<li><span>Sin búsquedas</span><span></span></li>'}</ul></div>
+          <div class="card"><div class="t"><strong>Categorías que abren</strong></div><ul class="plain">${(d.categorias || []).length ? d.categorias.map((b) => `<li><span>${esc(b.categoria)}</span><span>${fmt(b.veces)}</span></li>`).join("") : '<li><span>Sin datos</span><span></span></li>'}</ul></div>
+          <div class="card"><div class="t"><strong>Dispositivo</strong></div><ul class="plain">${Object.entries(disp).map(([n, v]) => `<li><span>${esc(n === "movil" ? "Celular" : n === "pc" ? "Computadora" : n === "tablet" ? "Tablet" : n)}</span><span>${fmt(v)} · ${fmtPct(v, dtot)}</span></li>`).join("") || '<li><span>Sin datos</span><span></span></li>'}</ul></div>
+        </div>`;
+
+        html += `<details><summary>¿Cómo se calcula cada número?</summary>
+          <ul>
+            <li><strong>Entraron</strong>: cada visita (sesión). Una sesión termina tras 30 minutos sin actividad.</li>
+            <li><strong>Interactuaron</strong>: la persona tocó, deslizó o escribió algo en la página (los robots casi nunca lo hacen).</li>
+            <li><strong>Tiempo</strong>: solo cuenta mientras la pestaña está visible y la persona la usa; se deja de contar tras 30 s sin tocar nada.</li>
+            <li><strong>Intención real</strong>: agregó al carrito, inició la compra, envió el pedido o escribió por WhatsApp desde un producto.</li>
+            <li><strong>Desde Perú</strong>: se usa la zona horaria del equipo (Lima). Los robots de Meta y de Google suelen venir de otros países.</li>
+            <li>Estos números no coinciden exactamente con Google Analytics: cada sistema filtra robots y cuenta sesiones a su manera. Aquí importa el comportamiento (carritos, clics, tiempo), que Analytics no mide.</li>
+            <li>No se guardan nombres, correos, teléfonos ni IP; solo códigos aleatorios del navegador.</li>
+          </ul></details>`;
+
+        $("#contenido").innerHTML = html;
+      };
+
+      // ---------- Carga de datos ----------
+      let cargando = false;
+      let incluyeHoy = true;
+      const cargar = async () => {
+        if (cargando) return;
+        cargando = true;
+        const r = calcularRango();
+        incluyeHoy = r.incluyeHoy;
+        $("#estado").textContent = "Cargando…";
+        try {
+          const { data, error } = await sb.rpc("panel_resumen", {
+            p_desde: r.desde, p_hasta: r.hasta, p_solo_peru: $("#chkPeru").checked,
+          });
+          if (error) {
+            if (String(error.message).includes("No autorizado")) { mostrarSinAcceso(); return; }
+            throw error;
+          }
+          render(data);
+          const ahora = new Date().toLocaleTimeString("es-PE", { hour: "2-digit", minute: "2-digit", second: "2-digit", timeZone: "America/Lima" });
+          $("#estado").textContent = `${r.etiqueta} · actualizado a las ${ahora} (hora de Lima)`;
+        } catch (err) {
+          $("#estado").innerHTML = `<span class="msg err">No se pudo cargar: ${esc(err.message || err)}</span>`;
+        } finally {
+          cargando = false;
+        }
+      };
+
+      const marcarRango = () => {
+        $$(".controls [data-rango]").forEach((b) => b.classList.toggle("on", b.dataset.rango === rango));
+        $("#boxCustom").hidden = rango !== "custom";
+      };
+      $$(".controls [data-rango]").forEach((b) => b.addEventListener("click", () => {
+        rango = b.dataset.rango;
+        marcarRango();
+        if (rango === "custom") {
+          const h = ymd(limaHoy());
+          if (!$("#inDesde").value) $("#inDesde").value = ymd(sumaDias(limaHoy(), -6));
+          if (!$("#inHasta").value) $("#inHasta").value = h;
+        } else cargar();
+      }));
+      $("#btnAplicar").addEventListener("click", cargar);
+      $("#btnActualizar").addEventListener("click", cargar);
+      $("#chkPeru").addEventListener("change", cargar);
+      setInterval(() => { if (!$("#vistaPanel").hidden && incluyeHoy && document.visibilityState === "visible") cargar(); }, 60000);
+
+      // ---------- Excluir este dispositivo del conteo ----------
+      const K_EXC = "boomart_excluir";
+      const exclSet = (on) => { try { if (on) localStorage.setItem(K_EXC, "1"); else localStorage.removeItem(K_EXC); } catch (e) { /* nada */ } };
+      $("#chkExcluir").addEventListener("change", (ev) => exclSet(ev.target.checked));
+
+      // ---------- Acceso ----------
+      let entrando = false;
+      let dentro = false;
+      const mostrarSinAcceso = async () => {
+        const { data } = await sb.auth.getSession();
+        $("#sinAccesoEmail").textContent = (data.session && data.session.user.email) || "";
+        show("sin");
+      };
+      const entrar = async (session) => {
+        if (entrando || dentro) return;
+        entrando = true;
+        try {
+          const { data: esAdmin, error } = await sb.rpc("panel_es_admin");
+          if (error) throw error;
+          if (esAdmin !== true) { $("#sinAccesoEmail").textContent = (session.user && session.user.email) || ""; show("sin"); return; }
+          let ya = null;
+          try { ya = localStorage.getItem(K_EXC); } catch (e) { ya = null; }
+          if (ya === null) exclSet(true);
+          $("#chkExcluir").checked = (function () { try { return localStorage.getItem(K_EXC) === "1"; } catch (e) { return false; } })();
+          dentro = true;
+          show("panel");
+          marcarRango();
+          await cargar();
+        } catch (err) {
+          vistas.cargando.hidden = false; show("cargando");
+          vistas.cargando.innerHTML = `<p class="msg err">No se pudo verificar el acceso: ${esc(err.message || err)}</p><p><button class="btn" onclick="location.reload()">Reintentar</button></p>`;
+        } finally {
+          entrando = false;
+        }
+      };
+      const salir = async () => { await sb.auth.signOut(); location.href = "./"; };
+      $("#btnSalir").addEventListener("click", salir);
+      $("#btnSalir2").addEventListener("click", salir);
+
+      $("#formLogin").addEventListener("submit", async (ev) => {
+        ev.preventDefault();
+        const email = $("#inEmail").value.trim().toLowerCase();
+        const msg = $("#msgLogin");
+        msg.className = "msg";
+        if (email !== ADMIN_EMAIL) { msg.className = "msg err"; msg.textContent = "Este panel es privado."; return; }
+        $("#btnEnviar").disabled = true;
+        msg.textContent = "Enviando…";
+        const { error } = await sb.auth.signInWithOtp({ email, options: { emailRedirectTo: `${location.origin}/panel/` } });
+        $("#btnEnviar").disabled = false;
+        if (error) { msg.className = "msg err"; msg.textContent = "No se pudo enviar el enlace. Espera un minuto e inténtalo de nuevo."; return; }
+        msg.className = "msg ok";
+        msg.textContent = "Listo. Revisa tu correo y abre el enlace en este navegador.";
+      });
+
+      sb.auth.onAuthStateChange((evento, session) => {
+        if (evento === "SIGNED_IN" && session) entrar(session);
+        if (evento === "SIGNED_OUT") { dentro = false; show("login"); }
+      });
+      sb.auth.getSession().then(({ data }) => {
+        if (data.session) entrar(data.session);
+        else show("login");
+      });
+
+      window.PanelBoomart = { render }; // solo para pruebas locales
+    })();
+  </script>
+</body>
+</html>

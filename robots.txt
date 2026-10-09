@@ -10,6 +10,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
+Disallow: /panel/
 
 # Asistentes de IA y sus rastreadores: acceso permitido a todo el sitio.
 User-agent: GPTBot
