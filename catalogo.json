@@ -9,7 +9,7 @@
     "email": "contacto@boomart.pe",
     "instagram": "https://www.instagram.com/boomart_3d"
   },
-  "count": 71,
+  "count": 72,
   "products": [
     {
       "id": "templo-aries",
@@ -1527,6 +1527,38 @@
       ],
       "url": "https://boomart.pe/producto/cuernos-de-fauno/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Cuernos%20de%20Fauno%20%F0%9F%90%90%20%C2%B7%20Halloween"
+    },
+    {
+      "id": "mascarada-del-diablo",
+      "name": "La Mascarada del Diablo 😈 · Halloween",
+      "category": "🎃 Halloween",
+      "tags": [
+        "Mascaras",
+        "Mascarada",
+        "Diablo",
+        "Demonio",
+        "Cuernos",
+        "Disfraces",
+        "Cosplay"
+      ],
+      "description": "🎃 Edición Halloween. La Mascarada del Diablo: media máscara roja de aspecto demoníaco, con relieves marcados en la frente, contorno de ojos pronunciado y dos cuernos curvos con textura. Impresa en 3D en PLA+ y pintada a mano, con acabado envejecido y detalles en negro. Medida estándar para adulto, hombre o mujer. Incluye elástico opcional para sujetarla. Ideal para disfraces, fiestas temáticas, mascaradas y sesiones de fotos. Hecha a pedido, con envíos a todo el Perú.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 60,
+      "pricing": [
+        "Precio oferta: S/60 (antes S/80)"
+      ],
+      "image": "https://boomart.pe/assets/products/mascarada-del-diablo-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/mascarada-del-diablo-1.jpg",
+        "https://boomart.pe/assets/products/mascarada-del-diablo-2.jpg",
+        "https://boomart.pe/assets/products/mascarada-del-diablo-3.jpg",
+        "https://boomart.pe/assets/products/mascarada-del-diablo-4.jpg",
+        "https://boomart.pe/assets/products/mascarada-del-diablo-5.jpg"
+      ],
+      "url": "https://boomart.pe/producto/mascarada-del-diablo/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20La%20Mascarada%20del%20Diablo%20%F0%9F%98%88%20%C2%B7%20Halloween"
     },
     {
       "id": "mascara-el-juego-del-calamar",
