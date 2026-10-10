@@ -72,5 +72,13 @@
     "text": "La empresa es completamente seria con su trabajo, totalmente puntual, el acabado del producto es excelente y tal cual las fotos referenciales, completamente recomendado!!!!",
     "date": "2026-09-20",
     "approved": true
+  },
+  {
+    "name": "Williams Vasquez",
+    "city": "Trujillo",
+    "rating": 5,
+    "text": "Excelente atención. Rápidos en responder y producto llegó en la fecha indicada. Como sugerencia podrían empacar los artículos con plásticos de burbujas.",
+    "date": "2026-10-10",
+    "approved": true
   }
 ]
