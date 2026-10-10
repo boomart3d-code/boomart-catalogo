@@ -1038,6 +1038,7 @@
       "Harry Potter",
       "Lamparas"
     ],
+    "height": "Dimensiones (largo x ancho x alto): 254 x 254 x 115 mm",
     "material": "PLA",
     "availability": "A pedido",
     "regularPrice": 275,
@@ -1045,9 +1046,12 @@
     "offer": true,
     "image": "assets/products/lampara-lunar-hogwarts.jpg",
     "gallery": [
-      "assets/products/lampara-lunar-hogwarts.jpg"
+      "assets/products/lampara-lunar-hogwarts.jpg",
+      "assets/products/lampara-lunar-hogwarts-2.jpg",
+      "assets/products/lampara-lunar-hogwarts-3.jpg",
+      "assets/products/lampara-lunar-hogwarts-4.jpg"
     ],
-    "description": "Ilumina tu espacio con la magia de esta lámpara lunar de Hogwarts: un modelo exclusivo que combina el castillo con una luna retroiluminada.",
+    "description": "Ilumina tu espacio con la magia de esta lámpara lunar de Hogwarts: un modelo exclusivo que combina el castillo con una luna retroiluminada. Dimensiones (largo x ancho x alto): 254 x 254 x 115 mm.",
     "offerPrice": 250
   },
   {
