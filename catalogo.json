@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 72,
+  "count": 73,
   "products": [
     {
       "id": "templo-aries",
@@ -1038,6 +1038,37 @@
       ],
       "url": "https://boomart.pe/producto/diorama-de-pegaso/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Altar%20de%20Pegaso%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "fawkes-fenix-de-dumbledore",
+      "name": "Fawkes · Fénix de Dumbledore · Harry Potter",
+      "category": "Harry Potter",
+      "tags": [
+        "Harry Potter",
+        "Fawkes",
+        "Fénix",
+        "Dumbledore",
+        "Figuras",
+        "Coleccionables"
+      ],
+      "description": "Fawkes es el fiel fénix de Albus Dumbledore: una criatura mágica conocida por su plumaje rojo y dorado, su lealtad, sus lágrimas curativas y su capacidad de renacer de las cenizas. Esta pieza decorativa inspirada en el mundo de Harry Potter está impresa en 3D y pintada a mano, con una base de exhibición dorada que realza su presencia. Fabricada en PLA+, con detalles en PLA Silk dorado y PLA Silk plata en las patas. Mide aproximadamente entre 40 y 45 cm desde la cola hasta la cresta. Hecha a pedido, con envíos a todo el Perú.",
+      "material": "PLA+ con detalles en PLA Silk dorado y PLA Silk plata",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 180,
+      "pricing": [
+        "Precio oferta: S/180 (antes S/200)"
+      ],
+      "image": "https://boomart.pe/assets/products/fawkes-fenix-de-dumbledore-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/fawkes-fenix-de-dumbledore-1.jpg",
+        "https://boomart.pe/assets/products/fawkes-fenix-de-dumbledore-2.jpg",
+        "https://boomart.pe/assets/products/fawkes-fenix-de-dumbledore-3.jpg",
+        "https://boomart.pe/assets/products/fawkes-fenix-de-dumbledore-4.jpg",
+        "https://boomart.pe/assets/products/fawkes-fenix-de-dumbledore-5.jpg"
+      ],
+      "url": "https://boomart.pe/producto/fawkes-fenix-de-dumbledore/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Fawkes%20%C2%B7%20F%C3%A9nix%20de%20Dumbledore%20%C2%B7%20Harry%20Potter"
     },
     {
       "id": "castillo-de-hogwarts",

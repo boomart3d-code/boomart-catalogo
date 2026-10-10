@@ -943,6 +943,35 @@
     "offerPrice": 150
   },
   {
+    "id": "fawkes-fenix-de-dumbledore",
+    "name": "Fawkes · Fénix de Dumbledore · Harry Potter",
+    "category": "Harry Potter",
+    "tags": [
+      "Harry Potter",
+      "Fawkes",
+      "Fénix",
+      "Dumbledore",
+      "Figuras",
+      "Coleccionables"
+    ],
+    "height": "Aprox. 40–45 cm desde la cola hasta la cresta",
+    "material": "PLA+ con detalles en PLA Silk dorado y PLA Silk plata",
+    "availability": "A pedido",
+    "regularPrice": 200,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/fawkes-fenix-de-dumbledore-1.jpg",
+    "gallery": [
+      "assets/products/fawkes-fenix-de-dumbledore-1.jpg",
+      "assets/products/fawkes-fenix-de-dumbledore-2.jpg",
+      "assets/products/fawkes-fenix-de-dumbledore-3.jpg",
+      "assets/products/fawkes-fenix-de-dumbledore-4.jpg",
+      "assets/products/fawkes-fenix-de-dumbledore-5.jpg"
+    ],
+    "description": "Fawkes es el fiel fénix de Albus Dumbledore: una criatura mágica conocida por su plumaje rojo y dorado, su lealtad, sus lágrimas curativas y su capacidad de renacer de las cenizas. Esta pieza decorativa inspirada en el mundo de Harry Potter está impresa en 3D y pintada a mano, con una base de exhibición dorada que realza su presencia. Fabricada en PLA+, con detalles en PLA Silk dorado y PLA Silk plata en las patas. Mide aproximadamente entre 40 y 45 cm desde la cola hasta la cresta. Hecha a pedido, con envíos a todo el Perú.",
+    "offerPrice": 180
+  },
+  {
     "id": "castillo-de-hogwarts",
     "name": "Castillo de Hogwarts · Harry Potter",
     "category": "Harry Potter",
