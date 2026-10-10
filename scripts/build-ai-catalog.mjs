@@ -19,6 +19,7 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import { SOCIAL_URLS, socialBandHtml, socialFooterHtml } from "./social-links.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://boomart.pe";
@@ -300,7 +301,7 @@ function buildJson(products) {
         "Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao, Peru. Envios a todo el pais.",
       currency: "PEN",
       updated: NOW,
-      contact: { whatsapp: WHATSAPP, email: "contacto@boomart.pe", instagram: "https://www.instagram.com/boomart_3d" },
+      contact: { whatsapp: WHATSAPP, email: "contacto@boomart.pe", instagram: SOCIAL_URLS.instagram, facebook: SOCIAL_URLS.facebook, tiktok: SOCIAL_URLS.tiktok },
       count: items.length,
       products: items,
     },
@@ -466,7 +467,7 @@ ${cards}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="${SITE}/assets/boomart-og.jpg">
     <link rel="alternate" type="application/json" href="${SITE}/catalogo.json" title="Feed JSON del catalogo BoomArt">
-    <link rel="stylesheet" href="src/styles.css?v=27">
+    <link rel="stylesheet" href="src/styles.css?v=31">
     <style>
       .ai-catalog { max-width: 1040px; margin: 0 auto; padding: 32px 20px 80px; }
       .ai-catalog h1 { margin-bottom: 8px; }
@@ -537,7 +538,9 @@ ${reviewsSectionHtml(reviews)}      <section id="contacto-final">
         </p>
         <p><a href="${WHATSAPP}" target="_blank" rel="noreferrer">Escribir a BoomArt por WhatsApp</a> &middot;
            <a href="mailto:contacto@boomart.pe">contacto@boomart.pe</a> &middot;
-           <a href="https://www.instagram.com/boomart_3d" target="_blank" rel="noreferrer">Instagram @boomart_3d</a></p>
+           <a href="${SOCIAL_URLS.instagram}" target="_blank" rel="noreferrer">Instagram @boomart_3d</a> &middot;
+           <a href="${SOCIAL_URLS.facebook}" target="_blank" rel="noreferrer">Facebook</a> &middot;
+           <a href="${SOCIAL_URLS.tiktok}" target="_blank" rel="noreferrer">TikTok @boomart.3d</a></p>
       </section>
     </main>
 
@@ -546,13 +549,14 @@ ${reviewsSectionHtml(reviews)}      <section id="contacto-final">
         <strong>BOOM ART</strong>
         <p>Piezas hechas a pedido. Consulta disponibilidad, colores, acabados y tiempos de entrega por WhatsApp.</p>
         <p><a href="mailto:contacto@boomart.pe">contacto@boomart.pe</a></p>
+${socialFooterHtml()}
         <ul class="footer-links">
           <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="politicas.html">Politicas de compra, envio y privacidad</a></li>
         </ul>
       </div>
     </footer>
-    <script src="src/track.js?v=2" defer></script>
+    <script src="src/track.js?v=3" defer></script>
   </body>
 </html>
 `;
@@ -619,7 +623,9 @@ ${reviewsSummaryMarkdown(reviews)}## Contacto
 
 - WhatsApp: ${WHATSAPP}
 - Correo: contacto@boomart.pe
-- Instagram: https://www.instagram.com/boomart_3d
+- Instagram: ${SOCIAL_URLS.instagram}
+- Facebook: ${SOCIAL_URLS.facebook}
+- TikTok: ${SOCIAL_URLS.tiktok}
 - Ubicacion: Bellavista, Callao, Peru
 - Actualizado: ${NOW}
 `;
@@ -1020,7 +1026,7 @@ function buildProductPage(p, all, ratingLd) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=28">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=31">
     <style>${PRODUCT_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(productLd(p))}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbLd(p))}</script>
@@ -1101,6 +1107,7 @@ function buildProductPage(p, all, ratingLd) {
         <strong>BOOM ART</strong>
         <p>Piezas hechas a pedido. Consulta disponibilidad, colores, acabados y tiempos de entrega por WhatsApp.</p>
         <p><a href="mailto:contacto@boomart.pe">contacto@boomart.pe</a></p>
+${socialFooterHtml()}
         <ul class="footer-links">
           <li><a href="${rel}catalogo.html">Catálogo completo</a></li>
           <li><a href="${rel}nosotros.html">Nosotros</a></li>
@@ -1201,7 +1208,7 @@ function buildProductPage(p, all, ratingLd) {
         });
       })();
     </script>
-    <script src="${rel}src/track.js?v=2" defer></script>
+    <script src="${rel}src/track.js?v=3" defer></script>
   </body>
 </html>
 `;
@@ -1444,7 +1451,7 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=27">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=31">
     <style>${CATEGORY_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(itemListLd)}</script>
     <script type="application/ld+json">${JSON.stringify(crumbLd)}</script>
@@ -1487,6 +1494,7 @@ ${cards}
         <strong>BOOM ART</strong>
         <p>Piezas hechas a pedido. Consulta disponibilidad, colores, acabados y tiempos de entrega por WhatsApp.</p>
         <p><a href="mailto:contacto@boomart.pe">contacto@boomart.pe</a></p>
+${socialFooterHtml()}
         <ul class="footer-links">
           ${catNav}
         </ul>
@@ -1505,7 +1513,7 @@ ${cards}
         <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff"><path d="M16.003 3.2C9.05 3.2 3.4 8.85 3.4 15.8c0 2.5.73 4.83 1.99 6.8L3.2 28.8l6.37-2.08a12.5 12.5 0 0 0 6.43 1.76h.01c6.95 0 12.6-5.65 12.6-12.6S22.95 3.2 16 3.2Zm0 22.9h-.01a10.4 10.4 0 0 1-5.29-1.45l-.38-.22-3.78 1.23 1.24-3.68-.25-.39a10.35 10.35 0 0 1-1.6-5.53c0-5.74 4.67-10.4 10.42-10.4 2.78 0 5.39 1.08 7.36 3.05a10.34 10.34 0 0 1 3.05 7.36c0 5.74-4.67 10.4-10.42 10.4Zm5.71-7.79c-.31-.16-1.85-.91-2.14-1.02-.29-.1-.5-.16-.71.16-.21.31-.82 1.02-1 1.24-.19.21-.37.24-.68.08-.31-.16-1.32-.49-2.51-1.55-.93-.83-1.55-1.85-1.74-2.16-.18-.31-.02-.48.14-.63.14-.14.31-.37.47-.55.16-.19.21-.32.31-.53.1-.21.05-.4-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.62-.52-.53-.71-.54l-.6-.01c-.21 0-.55.08-.84.4-.29.31-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.22 3.39 5.38 4.75.75.32 1.34.52 1.79.66.75.24 1.44.2 1.98.12.6-.09 1.85-.76 2.11-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.37Z"/></svg>
       </span>
     </a>
-    <script src="${rel}src/track.js?v=2" defer></script>
+    <script src="${rel}src/track.js?v=3" defer></script>
   </body>
 </html>
 `;
@@ -1585,6 +1593,38 @@ function buildSitemap(products) {
   );
 }
 
+/* ------------------------------------------------- redes sociales (estaticas) */
+// Reescribe, entre marcadores, el bloque "Siguenos" de las paginas HTML escritas a
+// mano. La fuente unica de los enlaces es scripts/social-links.mjs.
+async function syncSocialBlocks() {
+  const targets = [
+    ["index.html", [
+      ["BOOMART:SOCIAL_FOOTER", socialFooterHtml(), "        "],
+      ["BOOMART:SOCIAL_BAND", socialBandHtml(), "      "],
+    ]],
+    ["nosotros.html", [["BOOMART:SOCIAL_FOOTER", socialFooterHtml(), "        "]]],
+    ["politicas.html", [["BOOMART:SOCIAL_FOOTER", socialFooterHtml(), "        "]]],
+  ];
+  let changed = false;
+  for (const [file, blocks] of targets) {
+    const full = path.join(ROOT, file);
+    const original = await readFile(full, "utf8");
+    const eol = original.includes("\r\n") ? "\r\n" : "\n";
+    let html = original;
+    for (const [name, content, indent] of blocks) {
+      const re = new RegExp(`<!-- ${name}:START -->[\\s\\S]*?<!-- ${name}:END -->`);
+      if (!re.test(html)) throw new Error(`${file}: faltan los marcadores ${name}`);
+      const body = content.replace(/\n/g, eol);
+      html = html.replace(re, () => `<!-- ${name}:START -->${eol}${body}${eol}${indent}<!-- ${name}:END -->`);
+    }
+    if (html !== original) {
+      await writeFile(full, html);
+      changed = true;
+    }
+  }
+  return changed;
+}
+
 /* ---------------------------------------------------------------- main */
 const [products, reviews] = await Promise.all([loadProducts(), loadReviews()]);
 const ratingLd = buildRatingLd(reviews);
@@ -1607,6 +1647,7 @@ const [productPageCount, categoryPageCount] = await Promise.all([
 // primera (cada una parte de su propia lectura del archivo).
 const ratingUpdated = await injectRatingIntoIndex(ratingLd);
 const reviewsBlocksUpdated = await injectReviewsBlocks(reviews);
+const socialBlocksUpdated = await syncSocialBlocks();
 
 console.log(
   `OK - generado desde ${products.length} productos` +
@@ -1617,5 +1658,6 @@ console.log(
     "  sitemap.xml\n  catalogo.html\n  catalogo.json\n  llms.txt\n  llms-full.txt\n" +
     "  feed-google.xml (Google Merchant + Pinterest)\n  feed-meta.csv (Instagram / Facebook)\n" +
     `  index.html (aggregateRating ${ratingUpdated ? "actualizado" : "sin cambios"})\n` +
-    `  index.html + opinion/index.html (opiniones en texto plano ${reviewsBlocksUpdated ? "actualizadas" : "sin cambios"})`,
+    `  index.html + opinion/index.html (opiniones en texto plano ${reviewsBlocksUpdated ? "actualizadas" : "sin cambios"})\n` +
+    `  redes sociales en index/nosotros/politicas (${socialBlocksUpdated ? "actualizadas" : "sin cambios"})`,
 );

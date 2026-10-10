@@ -311,6 +311,7 @@
   };
   const buttonName = (a) => {
     if (a.closest(".ba-wa")) return "flotante";
+    if (a.closest("#redes")) return "redes";
     if (a.id === "shareProductWa") return "ficha";
     if (a.id === "offersWhatsapp") return "ofertas";
     if (a.id === "footerWhatsapp" || a.closest("footer")) return "pie";
