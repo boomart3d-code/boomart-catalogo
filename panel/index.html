@@ -44,6 +44,9 @@
     .msg { margin: 10px 0 0; color: var(--muted); }
     .msg.err { color: var(--bad); }
     .msg.ok { color: var(--ok); }
+    .datos { margin-bottom: 14px; padding: 12px 16px; font-size: .92rem; line-height: 1.5; }
+    .datos strong { color: var(--gold); }
+    .datos small { display: block; color: var(--muted); font-size: .8rem; margin-top: 2px; }
     .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 14px; }
     .controls .sp { flex: 1; }
     .controls label.chk { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: .88rem; }
@@ -127,11 +130,13 @@
     </section>
 
     <section id="vistaPanel" hidden>
+      <div class="card datos" id="datosDesde" hidden></div>
       <div class="controls">
         <button class="btn small" data-rango="hoy" type="button">Hoy</button>
         <button class="btn small" data-rango="ayer" type="button">Ayer</button>
         <button class="btn small" data-rango="7d" type="button">7 días</button>
         <button class="btn small" data-rango="30d" type="button">30 días</button>
+        <button class="btn small" data-rango="todo" type="button">Histórico</button>
         <button class="btn small" data-rango="custom" type="button">Elegir fechas</button>
         <span class="sp"></span>
         <label class="chk"><input type="checkbox" id="chkPeru" checked> Solo visitas desde Perú</label>
@@ -210,6 +215,8 @@
         if (rango === "ayer") return { desde: inicioLima(ymd(sumaDias(hoy, -1))), hasta: inicioLima(h), etiqueta: "Ayer", incluyeHoy: false };
         if (rango === "7d") return { desde: inicioLima(ymd(sumaDias(hoy, -6))), hasta: inicioLima(manana), etiqueta: "Últimos 7 días (con hoy)", incluyeHoy: true };
         if (rango === "30d") return { desde: inicioLima(ymd(sumaDias(hoy, -29))), hasta: inicioLima(manana), etiqueta: "Últimos 30 días (con hoy)", incluyeHoy: true };
+        // Histórico: desde antes de que empezara la medición (9-oct-2026) hasta ahora.
+        if (rango === "todo") return { desde: inicioLima("2026-10-01"), hasta: inicioLima(manana), etiqueta: "Histórico completo (desde que empezó la medición hasta ahora)", incluyeHoy: true };
         if (rango === "custom") {
           const d = $("#inDesde").value || h;
           const a = $("#inHasta").value || d;
@@ -280,6 +287,46 @@
         return new Date(y, m - 1, d).toLocaleDateString("es-PE", { weekday: "short", day: "numeric", month: "short" });
       };
 
+      // Fecha y hora completas en hora de Lima, p. ej. "9 oct 2026, 3:38 p. m."
+      const fechaHora = (iso) => new Date(iso).toLocaleString("es-PE", {
+        timeZone: "America/Lima", day: "numeric", month: "short", year: "numeric", hour: "numeric", minute: "2-digit",
+      });
+      const duracion = (desdeIso, hastaIso) => {
+        const min = Math.max(0, Math.round((new Date(hastaIso) - new Date(desdeIso)) / 60000));
+        const dd = Math.floor(min / 1440), hh = Math.floor((min % 1440) / 60);
+        return dd ? `${dd} ${dd === 1 ? "día" : "días"} ${hh} h` : `${hh} h ${min % 60} min`;
+      };
+
+      // Barra de arriba: desde cuándo existen datos propios (primer evento guardado) y hasta cuándo.
+      const dibujarDatosDesde = (d) => {
+        const box = $("#datosDesde");
+        if (!d.desde_datos) { box.hidden = true; return; }
+        const ahora = d.generado || new Date().toISOString();
+        box.innerHTML = `📅 Datos propios desde <strong>${esc(fechaHora(d.desde_datos))}</strong> hasta ahora <strong>${esc(fechaHora(ahora))}</strong> <span class="pill">hora de Lima</span> · lleva ${esc(duracion(d.desde_datos, ahora))} midiendo
+          <small>${d.geo_desde
+            ? `El país exacto (por IP) se guarda desde ${esc(fechaHora(d.geo_desde))}; antes se estima por la zona horaria del equipo.`
+            : "El país se estima por la zona horaria del equipo (≈); todavía no se guarda el país exacto de cada visita."}</small>`;
+        box.hidden = false;
+      };
+
+      // Países y lugares
+      const nombresPais = (() => { try { return new Intl.DisplayNames(["es"], { type: "region" }); } catch (e) { return null; } })();
+      const paisNombre = (c) => {
+        if (!c) return "Sin dato";
+        try { return (nombresPais && nombresPais.of(c)) || c; } catch (e) { return c; }
+      };
+      const agruparLugares = (arr) => {
+        const m = new Map();
+        arr.forEach((l) => {
+          const k = l.region || "(sin región)";
+          const g = m.get(k) || { region: k, sesiones: 0, interaccion: 0, intencion: 0, ciudades: [] };
+          g.sesiones += l.sesiones; g.interaccion += l.interaccion; g.intencion += l.intencion;
+          if (l.ciudad) g.ciudades.push(l);
+          m.set(k, g);
+        });
+        return Array.from(m.values()).sort((a, b) => b.sesiones - a.sesiones);
+      };
+
       let lastData = null;
       let lastEntradas = [];
       const render = (d, entradas) => {
@@ -289,10 +336,11 @@
         const base = e.entraron || 0;
         const hayDatos = base > 0;
         let html = "";
+        dibujarDatosDesde(d);
 
         if (!hayDatos) {
           html += `<div class="card"><p class="msg">Todavía no hay visitas registradas en este período${d.solo_peru && d.fuera_peru ? ` (hay ${fmt(d.fuera_peru)} fuera de Perú ocultas)` : ""}.</p>
-            <p class="note">El contador propio empezó a registrar el 9 de octubre de 2026 (tarde). Antes de eso solo hay datos en Google Analytics.</p></div>`;
+            <p class="note">El contador propio ${d.desde_datos ? `empezó a registrar el ${esc(fechaHora(d.desde_datos))} (hora de Lima)` : "todavía no tiene visitas guardadas"}. Antes de eso solo hay datos en Google Analytics.</p></div>`;
         }
 
         html += `<div class="grid kpis">
@@ -301,7 +349,7 @@
           ${kpi(fmtSeg(k.seg_promedio), "Tiempo promedio", `de los que interactuaron · mediana ${fmtSeg(k.seg_mediana)}`)}
           ${kpi(fmt(c.intencion || 0), "Con intención real", `${fmtPct(c.intencion || 0, k.sesiones)} agregaron, iniciaron compra o escribieron por un producto`)}
           ${kpi(fmt(k.nuevos), "Visitantes nuevos", `${fmt(Math.max(0, (k.visitantes || 0) - (k.nuevos || 0)))} ya habían venido antes`)}
-          ${d.solo_peru ? kpi(fmt(d.fuera_peru), "Ocultas (fuera de Perú)", "probables robots; quita el filtro para verlas") : ""}
+          ${d.solo_peru ? kpi(fmt(d.fuera_peru), "Ocultas (fuera de Perú)", "de otros países (míralas abajo en «¿De dónde nos ven?»); quita el filtro para sumarlas") : ""}
         </div>`;
 
         // Embudo
@@ -325,8 +373,54 @@
           <div class="card"><div class="t">🔥 Intención real</div><div class="v">${fmt(c.intencion || 0)}</div><p>${fmtPct(c.intencion || 0, k.sesiones)} · agregaron al carrito, iniciaron compra o escribieron por un producto.</p></div>
         </div>`;
 
+        // De dónde nos ven (todos los países; no depende del filtro «Solo Perú»)
+        const pa = d.paises || [];
+        const ptot = pa.reduce((a, r) => a + (r.sesiones || 0), 0);
+        const hayAprox = pa.some((r) => (r.exactas || 0) < (r.sesiones || 0));
+        html += `<h2>¿De dónde nos ven? <small>todos los países, aunque «Solo Perú» esté marcado</small></h2><div class="tbl-wrap"><table>
+          <thead><tr><th>País</th><th>Entradas</th><th>% del total</th><th>Interactuaron</th><th>Interesados</th><th>Intención real</th><th>Tiempo</th></tr></thead><tbody>`;
+        pa.forEach((r) => {
+          const aprox = (r.exactas || 0) < (r.sesiones || 0);
+          html += `<tr><td><strong>${esc(paisNombre(r.pais))}</strong>${r.pais ? ` <span class="pill">${esc(r.pais)}</span>` : ""}${aprox ? `<span class="sub">${r.exactas ? `${fmt(r.exactas)} con país exacto · ` : ""}${r.pais ? `${fmt(r.sesiones - r.exactas)} ${r.sesiones - r.exactas === 1 ? "estimada" : "estimadas"} por zona horaria (≈)` : "zona horaria no reconocida"}</span>` : ""}</td>
+            <td><strong>${fmt(r.sesiones)}</strong></td><td>${fmtPct(r.sesiones, ptot)}</td>
+            <td>${fmt(r.interaccion)} <span class="sub">${fmtPct(r.interaccion, r.sesiones)}</span></td>
+            <td>${fmt(r.interesados)}</td><td>${fmt(r.intencion)}</td><td>${fmtSeg(r.seg_promedio)}</td></tr>`;
+        });
+        if (!pa.length) html += `<tr><td colspan="7" style="text-align:center;color:var(--muted)">Sin datos en este período</td></tr>`;
+        html += `</tbody></table></div>
+          <p class="note">${hayAprox ? "≈ = país estimado por la zona horaria del equipo (no es exacto: un peruano de viaje o con VPN puede salir en otro país). " : ""}Si una fila tiene muchas entradas pero casi nadie «interactuó», suelen ser robots (por ejemplo, de Meta o Google), no personas.</p>`;
+
+        const lug = d.lugares || [];
+        if (!lug.length) {
+          html += `<p class="note">Región y ciudad: todavía no se guardan (hoy solo se conoce el país, y estimado).</p>`;
+        } else {
+          const peru = agruparLugares(lug.filter((l) => l.pais === "PE"));
+          const ptotPe = peru.reduce((a, g) => a + g.sesiones, 0);
+          html += `<h2>Perú: por región y ciudad <small>según la IP de la visita; ${d.sin_geo ? `${fmt(d.sin_geo)} visitas anteriores no tienen este dato` : "todas las visitas del período lo tienen"}</small></h2><div class="tbl-wrap"><table>
+            <thead><tr><th>Región</th><th>Entradas</th><th>% de Perú</th><th>Interactuaron</th><th>Intención real</th></tr></thead><tbody>`;
+          peru.forEach((g) => {
+            const top = g.ciudades.slice().sort((a, b) => b.sesiones - a.sesiones).slice(0, 5).map((c) => `${esc(c.ciudad)} ${fmt(c.sesiones)}`).join(" · ");
+            html += `<tr><td><strong>${esc(g.region)}</strong>${top ? `<span class="sub">${top}</span>` : ""}</td>
+              <td><strong>${fmt(g.sesiones)}</strong></td><td>${fmtPct(g.sesiones, ptotPe)}</td>
+              <td>${fmt(g.interaccion)} <span class="sub">${fmtPct(g.interaccion, g.sesiones)}</span></td><td>${fmt(g.intencion)}</td></tr>`;
+          });
+          if (!peru.length) html += `<tr><td colspan="5" style="text-align:center;color:var(--muted)">Todavía sin visitas de Perú con región</td></tr>`;
+          html += `</tbody></table></div>
+            <p class="note">La ubicación por IP es aproximada: en celulares, las operadoras suelen mostrar Lima aunque la persona esté en provincia.</p>`;
+          const otros = lug.filter((l) => l.pais !== "PE").sort((a, b) => b.sesiones - a.sesiones).slice(0, 15);
+          if (otros.length) {
+            html += `<h2>Otros países: región y ciudad <small>las 15 con más entradas</small></h2><div class="tbl-wrap"><table>
+              <thead><tr><th>Lugar</th><th>Entradas</th><th>Interactuaron</th><th>Intención real</th></tr></thead><tbody>`;
+            otros.forEach((l) => {
+              html += `<tr><td><strong>${esc([l.ciudad, l.region].filter(Boolean).join(", ") || "(sin región)")}</strong><span class="sub">${esc(paisNombre(l.pais))}</span></td>
+                <td><strong>${fmt(l.sesiones)}</strong></td><td>${fmt(l.interaccion)}</td><td>${fmt(l.intencion)}</td></tr>`;
+            });
+            html += `</tbody></table></div>`;
+          }
+        }
+
         // Tiempo
-        const tmax = Math.max(1, t.menos10 || 0, t.de10a30 || 0, t.de30a60 || 0, t.de1a3 || 0, t.mas3 || 0);
+        const tmax =Math.max(1, t.menos10 || 0, t.de10a30 || 0, t.de30a60 || 0, t.de1a3 || 0, t.mas3 || 0);
         html += `<h2>Cuánto tiempo se quedan <small>tiempo activo, sin contar pestañas abiertas sin usar</small></h2><div class="card">
           ${barRow("Menos de 10 segundos", t.menos10 || 0, tmax, "", fmtPct(t.menos10 || 0, k.sesiones))}
           ${barRow("10 a 30 segundos", t.de10a30 || 0, tmax, "b", fmtPct(t.de10a30 || 0, k.sesiones))}
@@ -406,7 +500,8 @@
             <li><strong>Interactuaron</strong>: la persona tocó, deslizó o escribió algo en la página (los robots casi nunca lo hacen).</li>
             <li><strong>Tiempo</strong>: solo cuenta mientras la pestaña está visible y la persona la usa; se deja de contar tras 30 s sin tocar nada.</li>
             <li><strong>Intención real</strong>: agregó al carrito, inició la compra, envió el pedido o escribió por WhatsApp desde un producto.</li>
-            <li><strong>Desde Perú</strong>: se usa la zona horaria del equipo (Lima). Los robots de Meta y de Google suelen venir de otros países.</li>
+            <li><strong>Desde Perú</strong>: una visita cuenta como peruana si su país por IP es Perú; si todavía no hay país exacto, se usa la zona horaria del equipo (Lima). Las «ocultas» no son siempre robots: pueden ser personas de otros países (por ejemplo, desde TikTok); la tabla «¿De dónde nos ven?» las muestra todas.</li>
+            <li><strong>Histórico</strong>: desde el primer evento guardado hasta este momento. La barra de arriba dice cuándo empezó la medición.</li>
             <li>Estos números no coinciden exactamente con Google Analytics: cada sistema filtra robots y cuenta sesiones a su manera. Aquí importa el comportamiento (carritos, clics, tiempo), que Analytics no mide.</li>
             <li>No se guardan nombres, correos, teléfonos ni IP; solo códigos aleatorios del navegador.</li>
           </ul></details>`;
