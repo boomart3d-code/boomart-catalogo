@@ -342,9 +342,11 @@ input {
 }
 
 .brand-logo {
-  width: 42px;
+  width: 86px;
   height: 42px;
-  object-fit: contain;
+  flex: 0 0 86px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .brand strong,

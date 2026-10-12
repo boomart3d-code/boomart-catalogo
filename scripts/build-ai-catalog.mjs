@@ -451,7 +451,9 @@ ${cards}
     <title>Catalogo completo BoomArt | Figuras coleccionables e impresion 3D en Peru</title>
     <meta name="description" content="Catalogo completo de BoomArt: ${products.length} piezas de figuras coleccionables, Saint Seiya, Harry Potter, Marvel, DC, macetas y decoracion impresas en 3D. Precios en soles, hechas a pedido en Lima y Callao con envios a todo el Peru.">
     <link rel="canonical" href="${SITE}/catalogo.html">
-    <link rel="icon" type="image/svg+xml" href="assets/boomart-logo.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/boomart-mark.svg">
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="assets/boomart-mark-32.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="assets/boomart-mark-192.png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="BoomArt">
     <meta property="og:title" content="Catalogo completo BoomArt">
@@ -467,7 +469,7 @@ ${cards}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="${SITE}/assets/boomart-og.jpg">
     <link rel="alternate" type="application/json" href="${SITE}/catalogo.json" title="Feed JSON del catalogo BoomArt">
-    <link rel="stylesheet" href="src/styles.css?v=31">
+    <link rel="stylesheet" href="src/styles.css?v=34">
     <style>
       .ai-catalog { max-width: 1040px; margin: 0 auto; padding: 32px 20px 80px; }
       .ai-catalog h1 { margin-bottom: 8px; }
@@ -1016,7 +1018,9 @@ function buildProductPage(p, all, ratingLd) {
     <title>${esc(title)}</title>
     <meta name="description" content="${esc(desc)}">
     <link rel="canonical" href="${url}">
-    <link rel="icon" type="image/svg+xml" href="${rel}assets/boomart-logo.svg">
+    <link rel="icon" type="image/svg+xml" href="${rel}assets/boomart-mark.svg">
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="${rel}assets/boomart-mark-32.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="${rel}assets/boomart-mark-192.png">
     <meta property="og:type" content="product">
     <meta property="og:site_name" content="BoomArt">
     <meta property="og:title" content="${esc(p.name)} | BoomArt">
@@ -1031,7 +1035,7 @@ function buildProductPage(p, all, ratingLd) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=31">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=34">
     <style>${PRODUCT_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(productLd(p))}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbLd(p))}</script>
@@ -1441,7 +1445,9 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
     <title>${esc(meta.title)}</title>
     <meta name="description" content="${esc(desc)}">
     <link rel="canonical" href="${url}">
-    <link rel="icon" type="image/svg+xml" href="${rel}assets/boomart-logo.svg">
+    <link rel="icon" type="image/svg+xml" href="${rel}assets/boomart-mark.svg">
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="${rel}assets/boomart-mark-32.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="${rel}assets/boomart-mark-192.png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="BoomArt">
     <meta property="og:title" content="${esc(meta.h1)} | BoomArt">
@@ -1456,7 +1462,7 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=31">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=34">
     <style>${CATEGORY_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(itemListLd)}</script>
     <script type="application/ld+json">${JSON.stringify(crumbLd)}</script>
