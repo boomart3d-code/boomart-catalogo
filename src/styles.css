@@ -57,8 +57,8 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 16px clamp(18px, 4vw, 56px);
+  gap: 20px;
+  padding: 16px clamp(18px, 3vw, 48px);
   border-bottom: 1px solid var(--line);
   background: rgba(8, 8, 8, 0.88);
   backdrop-filter: blur(16px);
@@ -406,6 +406,7 @@ input {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex: 1 1 auto;
   min-width: 0;
 }
 
@@ -439,7 +440,7 @@ input {
 /* Descripción de la empresa junto al nombre en la cabecera: es una frase,
    así que se lee mejor sin mayúsculas y con salto de línea controlado. */
 .brand small {
-  max-width: 46ch;
+  max-width: 40ch;
   margin-top: 3px;
   font-weight: 600;
   line-height: 1.35;
@@ -449,15 +450,29 @@ input {
 nav {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: flex-end;
-  gap: 8px 20px;
+  gap: 8px 16px;
   color: #dfdad3;
   font-size: 0.94rem;
 }
 
+.site-header nav {
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+}
+
+.site-header nav > a {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  padding: 0 2px;
+  line-height: 1.15;
+}
+
 .site-header .nav-corporate {
-  margin: -7px -5px;
-  padding: 7px 11px;
+  min-height: 42px;
+  padding: 0 14px;
   border: 1px solid rgba(225, 19, 47, 0.55);
   border-radius: 999px;
   background: rgba(225, 19, 47, 0.12);
@@ -468,6 +483,52 @@ nav {
 .site-header .nav-corporate:hover,
 .site-header .nav-corporate:focus-visible {
   background: var(--red);
+}
+
+.site-header nav > a:focus-visible {
+  border-radius: 6px;
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* En portátiles y ventanas medianas, la descripción de marca cede espacio,
+   pero el logotipo y toda la navegación permanecen alineados en una fila. */
+@media (max-width: 1280px) and (min-width: 721px) {
+  .site-header {
+    gap: 16px;
+    padding: 12px 18px;
+  }
+
+  .site-header .brand {
+    flex: 0 0 auto;
+  }
+
+  .site-header .brand span {
+    display: none;
+  }
+
+  .site-header .brand-logo {
+    width: 76px;
+    height: 38px;
+    flex-basis: 76px;
+  }
+
+  .site-header nav {
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    gap: 8px 12px;
+    font-size: 0.88rem;
+  }
+
+  .site-header .account-label {
+    display: none;
+  }
+
+  .site-header .account-toggle {
+    width: 42px;
+    padding: 0;
+    justify-content: center;
+  }
 }
 
 main {
