@@ -1,19 +1,9 @@
-// Fase 4: recordatorio de carrito abandonado.
+// Recordatorio unico de registro incompleto.
 //
-// Se dispara periodicamente por un Cron Job de Supabase (ver panel:
-// Database > Cron Jobs, o Edge Functions > Schedules). Revisa los carritos
-// "activos" y, segun cuanto tiempo paso desde su ultima actividad
-// (actualizado_en), manda un correo (via Resend) a 1h / 24h / 48h -- cada
-// uno una sola vez (recordatorios_carrito evita repetirlo). Sin descuento
-// por ahora (Adrian lo pedira mas adelante cuando quiera activarlo).
-//
-// Si el cliente ya completo la compra, el carrito pasa a estado
-// "completado" (checkout.js dispara "boomart:order-sent") y este job lo
-// ignora automaticamente porque solo mira estado = 'activo'.
-//
-// Secrets que necesita este proyecto (Edge Functions > Secrets):
-//   RESEND_API_KEY     -> clave de Resend (sending access)
-//   SB_SERVICE_ROLE_KEY -> la misma service_role key que usa Boomart Studio
+// El cron existente invoca esta funcion cada 15 minutos. Solo contacta a una
+// persona cuando pasaron al menos 24 horas desde su registro, no existe ningun
+// carrito completado y nunca recibio antes un correo de 24 horas. Conservamos
+// tambien el historial del sistema anterior para no duplicar mensajes.
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
@@ -23,147 +13,84 @@ const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY")!;
 const CATALOG_URL = "https://boomart.pe/data/products.json";
 const SITE_URL = "https://boomart.pe/";
 const ASSETS_BASE = "https://boomart.pe/";
+const GENERIC_IMAGE = `${ASSETS_BASE}assets/boomart-og.jpg`;
+const ADMIN_BCC = "boomart.3d@gmail.com";
 
 const sb = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
-type ReminderTier = {
-  tipo: string;
-  horas: number;
-  asunto: string;
-  titulo: string;
-  mensaje: string;
-};
-
-const TIERS: ReminderTier[] = [
-  {
-    tipo: "recordatorio_1h",
-    horas: 1,
-    asunto: "Se te quedó algo en el carrito 👀",
-    titulo: "¡Tu pedido casi está listo!",
-    mensaje:
-      "Dejaste estas piezas increíbles en tu carrito. No las dejes ir -- termina tu compra en un par de clics.",
-  },
-  {
-    tipo: "recordatorio_24h",
-    horas: 24,
-    asunto: "Sigue esperándote tu pedido en BoomArt",
-    titulo: "Tus piezas favoritas siguen reservadas",
-    mensaje:
-      "Ya casi son tuyas. Estos productos siguen guardados en tu carrito -- complétalo antes de que se agoten.",
-  },
-  {
-    tipo: "recordatorio_48h",
-    horas: 48,
-    asunto: "Último recordatorio: no pierdas tu pedido",
-    titulo: "Última oportunidad para completar tu pedido",
-    mensaje:
-      "Han pasado 2 días y tu carrito sigue intacto. Si tienes alguna duda, escríbenos por WhatsApp -- queremos ayudarte a tener esta pieza en tus manos.",
-  },
-];
-
-const VARIANT_LABELS: Record<string, string> = {
-  temple: "Templo",
-  pandora: "Pandora Box + pedestal",
-  combo: "Combo (templo + Pandora Box)",
-};
-
-function formatPrice(value: number): string {
-  return Number.isInteger(value) ? `S/ ${value}` : `S/ ${value.toFixed(2)}`;
-}
-
-function resolveLine(item: any, catalog: Map<string, any>) {
-  const product = catalog.get(item.productId);
-  const qty = item.quantity || 1;
-  if (!product) {
-    return { name: item.productId, variantLabel: null, image: null, unitPrice: 0, qty };
-  }
-  let unitPrice = 0;
-  let variantLabel: string | null = null;
-  if (product.templePricing && item.variant && product.templePricing[item.variant] != null) {
-    unitPrice = Number(product.templePricing[item.variant]);
-    variantLabel = VARIANT_LABELS[item.variant] || null;
-  } else {
-    unitPrice = Number(product.offerPrice != null ? product.offerPrice : product.regularPrice) || 0;
-  }
-  const image = product.image ? `${ASSETS_BASE}${product.image}` : null;
-  return { name: product.name || item.productId, variantLabel, image, unitPrice, qty };
-}
-
-function itemsToHtml(items: any[], catalog: Map<string, any>): { html: string; total: number } {
-  let total = 0;
-  const rows = items.map((item) => {
-    const line = resolveLine(item, catalog);
-    total += line.unitPrice * line.qty;
-    const imageCell = line.image
-      ? `<td style="width:96px;padding:0;">
-          <img src="${line.image}" width="96" height="96" alt="${line.name}" style="display:block;width:96px;height:96px;object-fit:cover;border-radius:8px 0 0 8px;" />
-        </td>`
-      : "";
-    return `
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 14px 0;border:1px solid #eee;border-radius:8px;overflow:hidden;">
-        <tr>
-          ${imageCell}
-          <td style="padding:14px 16px;vertical-align:middle;">
-            <div style="font-size:16px;font-weight:700;color:#222;">${line.name}</div>
-            ${line.variantLabel ? `<div style="font-size:13px;color:#888;margin-top:2px;">${line.variantLabel}</div>` : ""}
-            <div style="font-size:15px;color:#e1132f;font-weight:700;margin-top:6px;">
-              ${line.qty > 1 ? `${line.qty} x ` : ""}${formatPrice(line.unitPrice)}
-            </div>
-          </td>
-        </tr>
-      </table>`;
-  });
-  return { html: rows.join(""), total };
+function esc(value: unknown): string {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
 
 async function loadCatalog(): Promise<Map<string, any>> {
-  const map = new Map<string, any>();
+  const catalog = new Map<string, any>();
   try {
-    const resp = await fetch(CATALOG_URL);
-    if (!resp.ok) return map;
-    const products = await resp.json();
+    const response = await fetch(CATALOG_URL);
+    if (!response.ok) return catalog;
+    const products = await response.json();
     if (Array.isArray(products)) {
-      for (const p of products) map.set(p.id, p);
+      for (const product of products) catalog.set(product.id, product);
     }
-  } catch (_err) {
-    // Sin catalogo disponible: igual mandamos el correo, solo que con los
-    // ids de producto crudos en vez del nombre bonito.
+  } catch (_error) {
+    // La imagen institucional permite enviar un correo util aunque el catalogo
+    // no este disponible durante esta ejecucion.
   }
-  return map;
+  return catalog;
 }
 
-async function sendReminderEmail(
-  to: string,
-  nombre: string,
-  tier: ReminderTier,
-  itemsHtml: string,
-  total: number,
-) {
-  const html = `
-    <div style="font-family:Arial,sans-serif;max-width:540px;margin:0 auto;background:#fff;">
-      <div style="background:#e1132f;padding:22px 24px;border-radius:10px 10px 0 0;">
-        <h1 style="margin:0;color:#fff;font-size:24px;line-height:1.3;">${tier.titulo}</h1>
-      </div>
-      <div style="padding:24px;">
-        <p style="font-size:16px;color:#333;margin-top:0;">Hola ${nombre || ""},</p>
-        <p style="font-size:16px;color:#333;line-height:1.5;">${tier.mensaje}</p>
-        <div style="margin:20px 0;">${itemsHtml}</div>
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:22px;">
-          <tr>
-            <td style="font-size:15px;color:#555;">Total estimado</td>
-            <td style="font-size:18px;color:#222;font-weight:700;text-align:right;">${formatPrice(total)}</td>
-          </tr>
-        </table>
-        <div style="text-align:center;">
-          <a href="${SITE_URL}" style="background:#e1132f;color:#fff;padding:16px 32px;border-radius:8px;text-decoration:none;display:inline-block;font-size:17px;font-weight:700;">
-            Completar mi compra
-          </a>
+function emailContext(items: any[], catalog: Map<string, any>) {
+  const firstItem = Array.isArray(items) ? items[0] : null;
+  const productId = String(firstItem?.productId || "");
+  const product = productId ? catalog.get(productId) : null;
+  if (!product) {
+    return {
+      image: GENERIC_IMAGE,
+      imageAlt: "Productos de BoomArt",
+      destination: SITE_URL,
+      productName: "",
+    };
+  }
+  return {
+    image: product.image ? `${ASSETS_BASE}${product.image}` : GENERIC_IMAGE,
+    imageAlt: product.name || "Producto de BoomArt",
+    destination: `${SITE_URL}producto/${encodeURIComponent(productId)}/`,
+    productName: String(product.name || ""),
+  };
+}
+
+function buildHtml(nombre: string, context: ReturnType<typeof emailContext>) {
+  const remembered = context.productName
+    ? `<p style="margin:0 0 18px;color:#555;font-size:15px;line-height:1.55;">La pieza que estabas revisando, <strong>${esc(context.productName)}</strong>, sigue disponible para que continúes cuando estés listo.</p>`
+    : `<p style="margin:0 0 18px;color:#555;font-size:15px;line-height:1.55;">Puedes volver a explorar nuestras piezas y continuar tu compra cuando estés listo.</p>`;
+
+  return `
+    <div style="background:#f5f5f5;padding:24px 12px;font-family:Arial,sans-serif;">
+      <div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #ececec;">
+        <div style="background:#171717;padding:18px 24px;text-align:center;">
+          <img src="${ASSETS_BASE}assets/boomart-logo-1.png" width="150" alt="BoomArt" style="display:inline-block;max-width:150px;height:auto;" />
         </div>
-        <p style="color:#999;font-size:12px;text-align:center;margin-top:28px;">BoomArt · boomart.pe</p>
+        <img src="${esc(context.image)}" width="560" alt="${esc(context.imageAlt)}" style="display:block;width:100%;max-height:310px;object-fit:cover;" />
+        <div style="padding:26px 26px 22px;">
+          <h1 style="margin:0 0 14px;color:#222;font-size:23px;line-height:1.3;">¿Encontraste lo que buscabas?</h1>
+          <p style="margin:0 0 14px;color:#333;font-size:16px;line-height:1.55;">Hola${nombre ? ` ${esc(nombre)}` : ""}, gracias por registrarte en BoomArt.</p>
+          ${remembered}
+          <p style="margin:0 0 22px;color:#555;font-size:15px;line-height:1.55;">Si tienes alguna consulta sobre medidas, disponibilidad o entrega, estamos para ayudarte.</p>
+          <div style="text-align:center;">
+            <a href="${esc(context.destination)}" style="background:#e1132f;color:#fff;padding:14px 26px;border-radius:8px;text-decoration:none;display:inline-block;font-size:16px;font-weight:700;">Continuar viendo productos</a>
+          </div>
+          <p style="margin:24px 0 0;color:#999;font-size:12px;line-height:1.5;text-align:center;">Recibes este correo porque creaste una cuenta en boomart.pe. Este recordatorio se envía una sola vez.</p>
+        </div>
       </div>
-    </div>
-  `;
-  const resp = await fetch("https://api.resend.com/emails", {
+    </div>`;
+}
+
+async function sendEmail(to: string, nombre: string, context: ReturnType<typeof emailContext>) {
+  const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${RESEND_API_KEY}`,
@@ -172,76 +99,108 @@ async function sendReminderEmail(
     body: JSON.stringify({
       from: "BoomArt <contacto@boomart.pe>",
       to,
-      subject: tier.asunto,
-      html,
+      bcc: ADMIN_BCC,
+      subject: "¿Encontraste lo que buscabas en BoomArt?",
+      html: buildHtml(nombre, context),
     }),
   });
-  if (!resp.ok) {
-    const text = await resp.text();
-    throw new Error(`Resend error ${resp.status}: ${text}`);
+  if (!response.ok) {
+    throw new Error(`Resend error ${response.status}: ${await response.text()}`);
   }
 }
 
-Deno.serve(async (_req) => {
-  const now = Date.now();
+Deno.serve(async (request) => {
+  let dryRun = false;
+  try {
+    const body = await request.json();
+    dryRun = body?.dry_run === true;
+  } catch (_error) {
+    // Las llamadas del cron pueden no incluir un cuerpo JSON valido.
+  }
+
+  const cutoff = new Date(Date.now() - 24 * 3600000).toISOString();
   const catalog = await loadCatalog();
+  const { data: customers, error: customerError } = await sb
+    .from("clientes")
+    .select("id, nombre, correo, creado_en")
+    .lte("creado_en", cutoff)
+    .order("creado_en", { ascending: true });
 
-  const { data: carritos, error: carritosError } = await sb
-    .from("carritos")
-    .select("id, items, actualizado_en, cliente_id, clientes(correo, nombre)")
-    .eq("estado", "activo");
-
-  if (carritosError) {
-    return new Response(JSON.stringify({ error: carritosError.message }), {
+  if (customerError) {
+    return new Response(JSON.stringify({ error: customerError.message }), {
       status: 500,
       headers: { "Content-Type": "application/json" },
     });
   }
 
-  const results: Record<string, number> = {
-    recordatorio_1h: 0,
-    recordatorio_24h: 0,
-    recordatorio_48h: 0,
-    omitidos: 0,
+  const results = {
+    dry_run: dryRun,
+    revisados: customers?.length || 0,
+    elegibles: 0,
+    enviados: 0,
+    ya_contactados: 0,
+    con_compra: 0,
     errores: 0,
   };
 
-  for (const carrito of carritos || []) {
-    const cliente = (carrito as any).clientes;
-    if (!cliente || !cliente.correo) {
-      results.omitidos++;
+  for (const customer of customers || []) {
+    const { data: carts, error: cartError } = await sb
+      .from("carritos")
+      .select("id, items, estado, actualizado_en")
+      .eq("cliente_id", customer.id)
+      .order("actualizado_en", { ascending: false });
+    if (cartError) {
+      results.errores++;
       continue;
     }
-    const items = Array.isArray(carrito.items) ? carrito.items : [];
-    if (!items.length) {
-      results.omitidos++;
+
+    if ((carts || []).some((cart: any) => cart.estado === "completado")) {
+      results.con_compra++;
       continue;
     }
-    const elapsedHours =
-      (now - new Date(carrito.actualizado_en).getTime()) / 3600000;
 
-    for (const tier of TIERS) {
-      if (elapsedHours < tier.horas) continue;
+    const { data: registrationReminder } = await sb
+      .from("recordatorios_registro")
+      .select("id")
+      .eq("cliente_id", customer.id)
+      .eq("tipo", "registro_24h")
+      .maybeSingle();
 
-      const { data: existing } = await sb
+    const cartIds = (carts || []).map((cart: any) => cart.id);
+    let oldReminder = null;
+    if (cartIds.length) {
+      const previous = await sb
         .from("recordatorios_carrito")
         .select("id")
-        .eq("carrito_id", carrito.id)
-        .eq("tipo", tier.tipo)
+        .in("carrito_id", cartIds)
+        .eq("tipo", "recordatorio_24h")
+        .limit(1)
         .maybeSingle();
-      if (existing) continue;
+      oldReminder = previous.data;
+    }
 
-      try {
-        const { html: itemsHtml, total } = itemsToHtml(items, catalog);
-        await sendReminderEmail(cliente.correo, cliente.nombre, tier, itemsHtml, total);
-        await sb
-          .from("recordatorios_carrito")
-          .insert({ carrito_id: carrito.id, tipo: tier.tipo });
-        results[tier.tipo]++;
-      } catch (err) {
-        console.error("Error enviando recordatorio", carrito.id, tier.tipo, err);
-        results.errores++;
-      }
+    if (registrationReminder || oldReminder) {
+      results.ya_contactados++;
+      continue;
+    }
+
+    results.elegibles++;
+    if (dryRun) continue;
+
+    const activeCart = (carts || []).find(
+      (cart: any) => cart.estado === "activo" && Array.isArray(cart.items) && cart.items.length,
+    );
+    const context = emailContext(activeCart?.items || [], catalog);
+    try {
+      await sendEmail(customer.correo, customer.nombre, context);
+      const { error: insertError } = await sb
+        .from("recordatorios_registro")
+        .insert({ cliente_id: customer.id, tipo: "registro_24h" });
+      if (insertError) throw insertError;
+      results.enviados++;
+    } catch (error) {
+      console.error("No se pudo enviar recordatorio de registro", customer.id, error);
+      results.errores++;
     }
   }
 

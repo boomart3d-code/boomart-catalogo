@@ -83,6 +83,22 @@ create table if not exists recordatorios_carrito (
 comment on table recordatorios_carrito is 'Evita mandar el mismo recordatorio dos veces al mismo carrito.';
 
 -- ---------------------------------------------------------------------------
+-- Recordatorio unico 24 horas despues del registro
+-- Incluye tambien a quien creo su cuenta sin guardar productos. La funcion
+-- conserva el historial antiguo de recordatorios de carrito para no duplicar
+-- correos a clientes ya contactados.
+-- ---------------------------------------------------------------------------
+create table if not exists recordatorios_registro (
+  id uuid primary key default gen_random_uuid(),
+  cliente_id uuid not null references clientes (id) on delete cascade,
+  tipo text not null default 'registro_24h' check (tipo = 'registro_24h'),
+  enviado_en timestamptz not null default now(),
+  unique (cliente_id, tipo)
+);
+
+comment on table recordatorios_registro is 'Evita repetir el correo sutil enviado 24 horas despues del registro.';
+
+-- ---------------------------------------------------------------------------
 -- Seguridad (Row Level Security)
 -- Sin esto, cualquiera con la anon key podria leer/editar los datos de
 -- TODOS los clientes. Con RLS activado, cada cliente logueado solo puede
@@ -92,6 +108,7 @@ comment on table recordatorios_carrito is 'Evita mandar el mismo recordatorio do
 alter table clientes enable row level security;
 alter table carritos enable row level security;
 alter table recordatorios_carrito enable row level security;
+alter table recordatorios_registro enable row level security;
 
 drop policy if exists "cliente ve su propia fila" on clientes;
 create policy "cliente ve su propia fila"
@@ -144,3 +161,4 @@ grant select, update on clientes to service_role;
 -- que recordatorio ya se mando.
 grant select on carritos to service_role;
 grant select, insert on recordatorios_carrito to service_role;
+grant select, insert on recordatorios_registro to service_role;
