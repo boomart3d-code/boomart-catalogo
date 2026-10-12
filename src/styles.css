@@ -2466,6 +2466,88 @@ h2 {
 }
 
 /* ------------------------------------------------------- Pedido a medida */
+.discover-section {
+  padding: clamp(40px, 6vw, 80px) clamp(18px, 5vw, 72px);
+  background: var(--ink);
+}
+
+.discover-head {
+  max-width: 840px;
+}
+
+.discover-head h2 {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  line-height: 1.05;
+}
+
+.discover-head > p:last-child {
+  max-width: 720px;
+  margin: 14px 0 0;
+  color: #d7d0c8;
+  line-height: 1.65;
+}
+
+.discover-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.discover-card {
+  display: flex;
+  min-height: 250px;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: white;
+  text-decoration: none;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.discover-card:hover {
+  border-color: var(--red);
+  transform: translateY(-3px);
+}
+
+.discover-kicker {
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.discover-card h3 {
+  margin: 12px 0 10px;
+  font-size: 1.35rem;
+}
+
+.discover-card p {
+  margin: 0;
+  color: #cfc7be;
+  line-height: 1.55;
+}
+
+.discover-link {
+  margin-top: auto;
+  padding-top: 24px;
+  color: white;
+  font-weight: 900;
+}
+
+@media (max-width: 840px) {
+  .discover-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .discover-card {
+    min-height: 0;
+  }
+}
+
 .custom-order-section {
   padding: clamp(40px, 6vw, 80px) clamp(18px, 5vw, 72px);
   border-top: 1px solid var(--line);

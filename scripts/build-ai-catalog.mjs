@@ -612,6 +612,10 @@ function buildLlms(products, reviews = []) {
 ## Paginas
 
 - [Inicio / tienda interactiva](${SITE}/): catalogo con carrito y checkout.
+- [Impresion 3D personalizada](${SITE}/impresion-3d-personalizada/): encargos de personajes, esculturas, regalos y piezas decorativas a partir de una idea o referencias.
+- [Cascos, mascaras y cosplay](${SITE}/cosplay/): accesorios impresos en 3D para disfraces, eventos, sesiones de fotos y exhibicion.
+- [Saint Seiya](${SITE}/categoria/saint-seiya/): templos del Zodiaco, Cajas de Pandora, altares, dioramas, cascos y colecciones.
+- [Halloween](${SITE}/Halloween/): mascaras, cascos y decoracion tematica.
 - [Nosotros](${SITE}/nosotros.html): quienes somos y como trabajamos.
 - [Politicas](${SITE}/politicas.html): compra, envio y privacidad.
 
@@ -1565,6 +1569,8 @@ function buildSitemap(products) {
   const urls = [
     { loc: `${SITE}/`, priority: "1.0", changefreq: "weekly" },
     { loc: `${SITE}/catalogo.html`, priority: "0.9", changefreq: "weekly" },
+    { loc: `${SITE}/impresion-3d-personalizada/`, priority: "0.9", changefreq: "monthly" },
+    { loc: `${SITE}/cosplay/`, priority: "0.9", changefreq: "weekly" },
     { loc: `${SITE}/Halloween/`, priority: "0.9", changefreq: "weekly" },
     ...cats.map((c) => ({
       loc: `${SITE}/categoria/${categorySlug(c)}/`,

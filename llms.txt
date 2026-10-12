@@ -14,6 +14,10 @@
 ## Paginas
 
 - [Inicio / tienda interactiva](https://boomart.pe/): catalogo con carrito y checkout.
+- [Impresion 3D personalizada](https://boomart.pe/impresion-3d-personalizada/): encargos de personajes, esculturas, regalos y piezas decorativas a partir de una idea o referencias.
+- [Cascos, mascaras y cosplay](https://boomart.pe/cosplay/): accesorios impresos en 3D para disfraces, eventos, sesiones de fotos y exhibicion.
+- [Saint Seiya](https://boomart.pe/categoria/saint-seiya/): templos del Zodiaco, Cajas de Pandora, altares, dioramas, cascos y colecciones.
+- [Halloween](https://boomart.pe/Halloween/): mascaras, cascos y decoracion tematica.
 - [Nosotros](https://boomart.pe/nosotros.html): quienes somos y como trabajamos.
 - [Politicas](https://boomart.pe/politicas.html): compra, envio y privacidad.
 
