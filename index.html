@@ -43,7 +43,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=34">
+    <link rel="stylesheet" href="src/styles.css?v=35">
 
     <script type="application/ld+json">
     {
@@ -94,11 +94,11 @@
             <path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
           </svg>
         </button>
-        <button type="button" class="quick-nav-btn quick-nav-categories" id="quickCategoriesToggle" aria-haspopup="true" aria-expanded="false" aria-controls="quickCategoriesPanel">
+        <button type="button" class="quick-nav-btn quick-nav-categories" id="quickCategoriesToggle" aria-haspopup="true" aria-expanded="false" aria-controls="quickCategoriesPanel" aria-label="Explorar productos y servicios BoomArt">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
           </svg>
-          <span>Categorías</span>
+          <span>Explorar</span>
         </button>
         <button type="button" class="quick-nav-btn" id="quickTopBtn" aria-label="Volver arriba">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -106,7 +106,24 @@
           </svg>
         </button>
       </div>
-      <div class="quick-nav-panel" id="quickCategoriesPanel" hidden></div>
+      <div class="quick-nav-panel" id="quickCategoriesPanel" hidden>
+        <p class="quick-nav-panel-title">Productos</p>
+        <div class="quick-nav-list" id="quickCategoriesList"></div>
+        <div class="quick-nav-panel-divider" aria-hidden="true"></div>
+        <p class="quick-nav-panel-title">Servicios BoomArt</p>
+        <a class="quick-nav-service quick-nav-service-featured" href="merchandising-corporativo/">
+          <span class="quick-nav-service-icon" aria-hidden="true">🏢</span>
+          <span><strong>Para empresas</strong><small>Merchandising, figuras y trofeos corporativos</small></span>
+        </a>
+        <a class="quick-nav-service" href="impresion-3d-personalizada/">
+          <span class="quick-nav-service-icon" aria-hidden="true">✨</span>
+          <span><strong>Impresión 3D personalizada</strong><small>Convertimos tu idea o referencia en una pieza</small></span>
+        </a>
+        <a class="quick-nav-service" href="cosplay/">
+          <span class="quick-nav-service-icon" aria-hidden="true">🎭</span>
+          <span><strong>Cascos, máscaras y cosplay</strong><small>Accesorios a medida para disfraces y eventos</small></span>
+        </a>
+      </div>
     </div>
 
     <header class="site-header">
@@ -119,6 +136,7 @@
       </a>
       <nav aria-label="Secciones del catálogo">
         <a href="#catalogo">Catálogo</a>
+        <a class="nav-corporate" href="merchandising-corporativo/">Para empresas</a>
         <a href="impresion-3d-personalizada/">Personalizados</a>
         <a href="#opiniones">Reseñas</a>
         <a href="#personalizado">Pedido a medida</a>
@@ -649,7 +667,7 @@
     <script src="src/track.js?v=3"></script>
     <script src="src/cart.js?v=6"></script>
     <script src="src/products.js?v=5"></script>
-    <script src="src/app.js?v=32"></script>
+    <script src="src/app.js?v=33"></script>
     <script src="src/checkout.js?v=24"></script>
     <script src="src/products-loader.js?v=5"></script>
     <script src="src/reviews.js?v=5"></script>

@@ -340,9 +340,10 @@ const renderFilters = () => {
 };
 
 const quickCategoriesPanel = document.querySelector("#quickCategoriesPanel");
+const quickCategoriesList = document.querySelector("#quickCategoriesList");
 
 const renderQuickCategories = () => {
-  quickCategoriesPanel.innerHTML = catalogCategories()
+  quickCategoriesList.innerHTML = catalogCategories()
     .map((category) => `<button class="${category === activeFilter ? "active" : ""}" type="button" data-filter="${category}">${category}</button>`)
     .join("");
 };
