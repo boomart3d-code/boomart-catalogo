@@ -1,9 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
   <title id="title">Boom Art</title>
-  <desc id="desc">Monograma BA de Boom Art en blanco, rojo y negro.</desc>
+  <desc id="desc">Monograma BA de Boom Art con la B blanca completa y la A roja encastrada.</desc>
   <rect width="64" height="64" rx="13" fill="#090909"/>
   <rect x="2" y="2" width="60" height="60" rx="11" fill="none" stroke="#2b2b2b" stroke-width="2"/>
-  <path fill="#fff" fill-rule="evenodd" d="M8 9h15c9 0 14 4 14 12 0 5-2 8-6 10 5 2 8 6 8 11 0 9-6 13-16 13H8V9Zm9 8v10h5c4 0 6-2 6-5s-2-5-6-5h-5Zm0 18v12h6c5 0 7-2 7-6s-2-6-7-6h-6Z"/>
-  <path fill="#ff3131" fill-rule="evenodd" d="M38 55 49 9h7l8 33v13h-7l-2-10H44l-2 10h-4Zm8-18h7l-3-15h-1l-3 15Z"/>
-  <path d="M4 58h56" stroke="#ff3131" stroke-width="3" stroke-linecap="round"/>
+  <defs>
+    <path id="b" transform="translate(9.05 54) scale(1.166) rotate(90)" d="M-37.71875-1.671875V-11.90625C-37.71875-14.65625-37.039062-16.648438-35.6875-17.890625-34.34375-19.128906-32.148438-19.75-29.109375-19.75H-27.4375C-23.84375-19.75-21.691406-18.460938-20.984375-15.890625-20.578125-17.472656-19.625-18.585938-18.125-19.234375-16.632812-19.878906-14.660156-20.203125-12.203125-20.203125-8.191406-20.203125-5.15625-19.597656-3.09375-18.390625-1.03125-17.191406 0-15.03125 0-11.90625V-1.671875ZM-23.53125-10.578125C-23.53125-11.222656-23.769531-11.660156-24.25-11.890625-24.738281-12.128906-25.421875-12.25-26.296875-12.25H-30.078125C-31.304688-12.25-31.921875-11.707031-31.921875-10.625V-9.046875H-23.53125ZM-6.625-9.796875C-6.625-11.753906-7.5625-12.734375-9.4375-12.734375H-14.140625C-15.273438-12.734375-16.132812-12.5625-16.71875-12.21875-17.3125-11.882812-17.609375-11.296875-17.609375-10.453125V-9.046875H-6.671875Z"/>
+    <path id="a" transform="translate(29.2 54) scale(.3773)" d="M2.03125 0 13.296875-116.609375H52.8125L63.9375 0H41.8125L40.1875-18.875H26.0625L24.703125 0ZM27.828125-37.46875H38.421875L33.265625-96.796875H32.171875Z"/>
+  </defs>
+  <use xlink:href="#a" fill="#ff3131"/>
+  <use xlink:href="#b" fill="#fff"/>
 </svg>
