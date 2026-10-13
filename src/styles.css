@@ -1867,6 +1867,18 @@ h2 {
 
   .site-header {
     position: static;
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .site-header nav {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
   }
 
   nav {
@@ -2472,27 +2484,113 @@ h2 {
   .shopping-assistant-panel {
     left: 50%;
     right: auto;
-    bottom: max(12px, env(safe-area-inset-bottom));
-    width: min(320px, calc(100% - 24px));
-    max-width: calc(100% - 24px);
-    max-height: min(78vh, 680px);
-    max-height: min(78dvh, 680px);
+    bottom: max(14px, env(safe-area-inset-bottom));
+    width: min(286px, calc(100% - 32px));
+    max-width: calc(100% - 32px);
+    max-height: min(68vh, 560px);
+    max-height: min(68dvh, 560px);
     overflow-x: hidden;
     border-width: 1px;
-    border-radius: 16px;
+    border-radius: 14px;
     transform: translateX(-50%);
   }
 
   .shopping-assistant-header {
-    padding: 16px 16px 14px;
+    gap: 10px;
+    padding: 12px 12px 11px;
+  }
+
+  .shopping-assistant-kicker {
+    margin-bottom: 3px;
+    font-size: 0.61rem;
+    letter-spacing: 0.1em;
+  }
+
+  .shopping-assistant-header h2 {
+    font-size: 1rem;
+  }
+
+  .shopping-assistant-close {
+    width: 32px;
+    height: 32px;
+    font-size: 1.3rem;
   }
 
   .shopping-assistant-body {
-    padding: 16px 16px calc(18px + env(safe-area-inset-bottom));
+    padding: 12px 12px calc(14px + env(safe-area-inset-bottom));
+  }
+
+  .shopping-assistant-body h3 {
+    margin: 2px 0 11px;
+    font-size: 0.98rem;
+  }
+
+  .shopping-assistant-intro,
+  .shopping-assistant-loading {
+    margin-bottom: 12px;
+    font-size: 0.81rem;
+    line-height: 1.42;
   }
 
   .shopping-assistant-chips {
     grid-template-columns: 1fr;
+  }
+
+  .shopping-assistant-options,
+  .shopping-assistant-chips {
+    gap: 7px;
+  }
+
+  .shopping-assistant-option {
+    min-height: 44px;
+    gap: 3px;
+    padding: 9px 10px;
+    border-radius: 9px;
+    font-size: 0.8rem;
+  }
+
+  .shopping-assistant-option small {
+    font-size: 0.68rem;
+  }
+
+  .shopping-assistant-back,
+  .shopping-assistant-link,
+  .shopping-assistant-selection {
+    font-size: 0.72rem;
+  }
+
+  .shopping-assistant-results {
+    gap: 8px;
+  }
+
+  .shopping-assistant-product {
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 9px;
+    padding: 8px;
+    border-radius: 9px;
+  }
+
+  .shopping-assistant-product > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 7px;
+  }
+
+  .shopping-assistant-product h4,
+  .shopping-assistant-product strong {
+    font-size: 0.76rem;
+  }
+
+  .shopping-assistant-product-actions {
+    gap: 5px;
+  }
+
+  .shopping-assistant-product-actions > button,
+  .shopping-assistant-product-actions > a,
+  .shopping-assistant-add > button {
+    min-height: 30px;
+    padding: 5px 7px;
+    font-size: 0.64rem;
   }
 
   .shopping-assistant-option,
