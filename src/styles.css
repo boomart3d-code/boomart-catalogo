@@ -2470,16 +2470,17 @@ h2 {
   }
 
   .shopping-assistant-panel {
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    max-width: 100%;
-    max-height: min(82vh, 720px);
-    max-height: min(82dvh, 720px);
+    left: 50%;
+    right: auto;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    width: min(320px, calc(100% - 24px));
+    max-width: calc(100% - 24px);
+    max-height: min(78vh, 680px);
+    max-height: min(78dvh, 680px);
     overflow-x: hidden;
-    border-width: 1px 0 0;
-    border-radius: 18px 18px 0 0;
+    border-width: 1px;
+    border-radius: 16px;
+    transform: translateX(-50%);
   }
 
   .shopping-assistant-header {
