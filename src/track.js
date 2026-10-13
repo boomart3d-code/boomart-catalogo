@@ -2,7 +2,8 @@
  * Medicion propia de boomart.pe (anonima). Registra que hace la gente en la
  * web -- visitas, producto visto, carrito, clics a WhatsApp, tiempo activo --
  * y lo manda a la Edge Function `track` (Supabase) para el panel privado, y
- * en paralelo a Google Analytics (gtag) con los nombres estandar de GA4.
+ * en paralelo a Google Analytics (gtag) y al pixel de Meta con los nombres
+ * estandar de cada plataforma.
  *
  * PRIVACIDAD: no guarda nombre, correo, telefono ni IP. Solo dos codigos
  * aleatorios en el navegador (vid = visitante, sid = sesion de 30 min).
@@ -22,6 +23,7 @@
   "use strict";
 
   const ENDPOINT = "https://sasqusmvysbvqiggdmuj.supabase.co/functions/v1/track";
+  const META_PIXEL_ID = "2940378396299063";
   const PROD_HOSTS = { "boomart.pe": 1, "www.boomart.pe": 1 };
   const K_VID = "boomart_vid";
   const K_SES = "boomart_ses";
@@ -57,6 +59,37 @@
     window.BoomartTrack = noop;
     return;
   }
+
+  // ---------- Pixel de Meta ----------
+  // Se carga solo en produccion y sin datos personales. El checkout termina en
+  // WhatsApp, por eso ese paso se registra como Lead y nunca como Purchase:
+  // una conversacion iniciada todavia no equivale a una venta confirmada.
+  const loadMetaPixel = () => {
+    if (!isProd || typeof window.fbq === "function") return;
+    try {
+      const fbq = function () {
+        if (fbq.callMethod) fbq.callMethod.apply(fbq, arguments);
+        else fbq.queue.push(arguments);
+      };
+      window.fbq = fbq;
+      window._fbq = fbq;
+      fbq.push = fbq;
+      fbq.loaded = true;
+      fbq.version = "2.0";
+      fbq.queue = [];
+
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "https://connect.facebook.net/en_US/fbevents.js";
+      const firstScript = document.getElementsByTagName("script")[0];
+      if (firstScript && firstScript.parentNode) firstScript.parentNode.insertBefore(script, firstScript);
+      else document.head.appendChild(script);
+
+      fbq("init", META_PIXEL_ID);
+      fbq("track", "PageView");
+    } catch (err) { /* Meta bloqueado: la tienda sigue funcionando */ }
+  };
+  loadMetaPixel();
 
   const rid = (bytes) => {
     const a = new Uint8Array(bytes);
@@ -253,6 +286,56 @@
     } catch (err) { /* GA bloqueado: no importa */ }
   };
 
+  const metaProductValue = (e) => {
+    if (e.v != null && Number.isFinite(Number(e.v))) return Number(e.v);
+    try {
+      const catalog = window.BOOMART_PRODUCTS || [];
+      const product = catalog.find((item) => item && item.id === e.p);
+      if (product) {
+        const price = product.offerPrice != null ? product.offerPrice : product.regularPrice;
+        if (Number.isFinite(Number(price))) return Number(price);
+      }
+      const priceMeta = document.querySelector('meta[property="product:price:amount"]');
+      if (priceMeta && Number.isFinite(Number(priceMeta.content))) return Number(priceMeta.content);
+    } catch (err) { /* precio opcional */ }
+    return 0;
+  };
+  const META = {
+    ver_producto: (e) => ["ViewContent", {
+      content_ids: e.p ? [e.p] : [],
+      content_type: "product",
+      currency: "PEN",
+      value: metaProductValue(e),
+    }],
+    agregar_carrito: (e) => ["AddToCart", {
+      content_ids: e.p ? [e.p] : [],
+      content_type: "product",
+      contents: e.p ? [{ id: e.p, quantity: e.c || 1 }] : [],
+      currency: "PEN",
+      value: metaProductValue(e),
+    }],
+    iniciar_compra: (e) => ["InitiateCheckout", {
+      currency: "PEN",
+      value: e.v || 0,
+      num_items: e.c || 0,
+    }],
+    pedido_whatsapp: (e) => ["Lead", {
+      currency: "PEN",
+      value: e.v || 0,
+      content_name: "Pedido por WhatsApp",
+    }],
+  };
+  const mirrorToMeta = (e) => {
+    try {
+      if (typeof window.fbq !== "function" || !META[e.t]) return;
+      const [name, params] = META[e.t](e);
+      window.fbq("track", name, params);
+      if (e.t === "pedido_whatsapp") {
+        window.fbq("trackCustom", "PedidoWhatsApp", params);
+      }
+    } catch (err) { /* Meta bloqueado: no importa */ }
+  };
+
   const track = (name, props, immediate) => {
     try {
       const p = props || {};
@@ -267,6 +350,7 @@
       if (p.d && typeof p.d === "object") e.d = p.d;
       queue.push(e);
       mirrorToGA(e);
+      mirrorToMeta(e);
       touch();
       if (immediate || queue.length >= 15) flush();
       else if (!timer) timer = setTimeout(flush, 3000);
