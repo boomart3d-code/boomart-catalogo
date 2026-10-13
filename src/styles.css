@@ -2162,12 +2162,18 @@ h2 {
 
 .shopping-assistant-header {
   display: flex;
+  flex: 0 0 auto;
+  min-width: 0;
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
   padding: 19px 20px 17px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.11);
   background: linear-gradient(135deg, rgba(225, 19, 47, 0.18), rgba(244, 197, 66, 0.06));
+}
+
+.shopping-assistant-header > div {
+  min-width: 0;
 }
 
 .shopping-assistant-kicker {
@@ -2183,6 +2189,7 @@ h2 {
   margin: 0;
   font-size: 1.22rem;
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .shopping-assistant-close {
@@ -2199,9 +2206,14 @@ h2 {
 }
 
 .shopping-assistant-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 20px;
   overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .shopping-assistant-body h3 {
@@ -2225,6 +2237,7 @@ h2 {
 .shopping-assistant-options,
 .shopping-assistant-chips {
   display: grid;
+  min-width: 0;
   gap: 9px;
 }
 
@@ -2234,6 +2247,7 @@ h2 {
 
 .shopping-assistant-option {
   display: flex;
+  min-width: 0;
   min-height: 50px;
   flex-direction: column;
   align-items: flex-start;
@@ -2250,6 +2264,8 @@ h2 {
   font-weight: 800;
   line-height: 1.25;
   text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
   cursor: pointer;
   transition: border-color 150ms ease, background 150ms ease;
 }
@@ -2458,9 +2474,35 @@ h2 {
     right: 0;
     bottom: 0;
     width: 100%;
+    max-width: 100%;
+    max-height: min(82vh, 720px);
     max-height: min(82dvh, 720px);
+    overflow-x: hidden;
     border-width: 1px 0 0;
     border-radius: 18px 18px 0 0;
+  }
+
+  .shopping-assistant-header {
+    padding: 16px 16px 14px;
+  }
+
+  .shopping-assistant-body {
+    padding: 16px 16px calc(18px + env(safe-area-inset-bottom));
+  }
+
+  .shopping-assistant-chips {
+    grid-template-columns: 1fr;
+  }
+
+  .shopping-assistant-option,
+  .shopping-assistant-product,
+  .shopping-assistant-footer-actions {
+    max-width: 100%;
+  }
+
+  .shopping-assistant-footer-actions {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
@@ -2475,9 +2517,6 @@ h2 {
     padding: 0;
   }
 
-  .shopping-assistant-chips {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
