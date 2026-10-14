@@ -57,3 +57,18 @@ de otros clientes ni credenciales.
 - Las credenciales de Supabase (Edge Functions, service role key) viven en la
   configuración del proyecto Supabase, nunca en un archivo versionado en este
   repo — verificado que no hay ninguno trackeado hoy (2026-09-24).
+
+## Logo oficial de BoomArt — regla estricta
+
+- El logo oficial es el bloque vertical **BOOM / ART** ya guardado en
+  `assets/boomart-logo-1.png`, `assets/boomart-logo-2.png`,
+  `assets/boomart-logo-3.png` y `assets/boomart-logo.svg`. Nunca inventar,
+  reinterpretar, redibujar con IA ni sustituirlo por letras, infinito u otro
+  símbolo parecido.
+- El isotipo oficial para favicon y app es la bomba circular **BA** entregada
+  por Adrián el 14/10/2026 y conservada en `assets/brand/`. Sus versiones
+  derivadas solo pueden cambiar fondo, transparencia, tamaño o formato; nunca
+  la geometría, proporciones ni composición.
+- Si hace falta un formato adicional, derivarlo mecánicamente desde esos
+  originales. Si la aplicación exige cambiar el dibujo, detenerse y pedir la
+  aprobación expresa de Adrián.
