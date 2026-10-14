@@ -10,7 +10,7 @@
   <title>Administración de socios · BoomArt</title>
   <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css?v=5">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
   <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
@@ -19,6 +19,14 @@
     <img class="login__logo" src="../assets/logo.svg" alt="BoomArt" width="96" height="96">
     <h1>Administración de socios</h1>
     <p class="muted">Acceso privado de BoomArt.</p>
+    <p id="login-error" class="error" role="alert" hidden></p>
+    <div id="magic-box" class="stack">
+      <button id="magic-send" class="btn btn--primary btn--big" type="button">Enviarme el enlace de acceso</button>
+      <p class="muted">Te enviamos un enlace de un solo uso a <strong>boomart.3d@gmail.com</strong>. No necesitas contraseña.</p>
+      <p id="magic-msg" class="magic-msg" role="status" hidden></p>
+    </div>
+    <details class="alt-login">
+    <summary>Entrar con usuario y clave</summary>
     <form id="login-form" class="stack" autocomplete="on" novalidate>
       <label class="field"><span>Usuario</span><input id="login-user" name="username" type="text" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" required></label>
       <div class="field">
@@ -28,9 +36,9 @@
           <button id="login-eye" class="pass__eye" type="button" aria-label="Mostrar clave" aria-pressed="false" title="Mostrar clave"><svg class="eye-on" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg><svg class="eye-off" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></button>
         </div>
       </div>
-      <p id="login-error" class="error" role="alert" hidden></p>
       <button id="login-submit" class="btn btn--primary btn--big" type="submit">Entrar</button>
     </form>
+    </details>
   </main>
 
   <div id="view-app" hidden>
@@ -139,6 +147,6 @@
   <script src="../vendor/supabase-js-2.117.2.umd.js"></script>
   <script src="../config.js?v=1"></script>
   <script src="../util.js?v=3"></script>
-  <script src="app.js?v=7"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>

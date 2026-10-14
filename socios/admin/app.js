@@ -11,6 +11,7 @@
   const IDLE_MS = 8 * 60 * 60 * 1000;
   const REFRESH_MS = 60 * 1000;
   const ACTIVE_KEY = "socios_admin_last_active_v1";
+  const ADMIN_EMAIL = "boomart.3d@gmail.com";        // el enlace magico siempre va a este correo
   const $ = (id) => document.getElementById(id);
   const state = { staff: null, partners: [], stock: [], sales: [], adjustments: [], returns: [], returnLines: [], settlements: [], settlementLines: [],
     settlementPreviews: [], settlementAdjustments: [], tab: "inicio", resolve: null, settlementDraft: null, collectDraft: null,
@@ -513,9 +514,52 @@
     await acceptSession(result.data.session);
   }
 
+  function showLoginError(text) { const error = $("login-error"); error.textContent = text; error.hidden = false; }
+
+  // Enlace magico: pide el correo con el enlace de un solo uso (solo a la cuenta administradora; la base no crea cuentas nuevas).
+  async function sendMagicLink() {
+    const button = $("magic-send"), message = $("magic-msg");
+    $("login-error").hidden = true; message.hidden = true; button.disabled = true;
+    const { error } = await sb.auth.signInWithOtp({
+      email: ADMIN_EMAIL,
+      options: { shouldCreateUser: false, emailRedirectTo: new URL("./", window.location.href).href }
+    });
+    if (error) {
+      showLoginError(error.status === 429
+        ? "Ya pediste un enlace hace poco. Espera unos minutos y revisa tu correo."
+        : "No se pudo enviar el enlace. Intenta de nuevo en un minuto.");
+      button.disabled = false;
+      return;
+    }
+    message.textContent = `Listo. Revisa tu correo (${ADMIN_EMAIL}) y abre el enlace en este mismo dispositivo.`;
+    message.hidden = false;
+    window.setTimeout(() => { button.disabled = false; }, 60000);      // para pedir otro, se espera un minuto
+  }
+
+  // Al volver del correo, Supabase deja la sesion en el fragmento de la direccion (#access_token=...).
+  // Se toma, se borra de la barra de direcciones y se valida igual que un ingreso normal (hay que ser staff activo).
+  async function consumeMagicLinkFromUrl() {
+    const params = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+    const failure = params.get("error") || params.get("error_code") || params.get("error_description");
+    const access = params.get("access_token"), refresh = params.get("refresh_token");
+    if (!failure && !(access && refresh)) return null;
+    window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    if (failure || !access || !refresh) return { error: "expired" };
+    const { data, error } = await sb.auth.setSession({ access_token: access, refresh_token: refresh });
+    if (error || !data.session) return { error: "invalid" };
+    return { session: data.session };
+  }
+
   async function logout() { writeJson(ACTIVE_KEY, null); await sb.auth.signOut(); state.staff = null; show("login"); }
 
   async function boot() {
+    const link = await consumeMagicLinkFromUrl();
+    if (link?.error) {
+      show("login");
+      showLoginError(link.error === "expired" ? "El enlace venció o ya se usó. Pide otro." : "El enlace no es válido. Pide otro.");
+      return;
+    }
+    if (link?.session) { await acceptSession(link.session); return; }
     const lastActive = readJson(ACTIVE_KEY);
     const { data } = await sb.auth.getSession();
     if (data.session && lastActive && Date.now() - lastActive > IDLE_MS) {
@@ -529,6 +573,7 @@
   }
 
   $("login-form").addEventListener("submit", onLogin);
+  $("magic-send").addEventListener("click", () => { sendMagicLink().catch(() => { showLoginError("No se pudo enviar el enlace. Intenta de nuevo en un minuto."); $("magic-send").disabled = false; }); });
   $("login-eye").addEventListener("click", () => {
     const pass = $("login-pass");
     U.setPasswordVisible(pass, $("login-eye"), pass.type === "password");

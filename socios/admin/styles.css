@@ -39,3 +39,9 @@
   .tabbar--six .tabbar__btn { font-size: 0.62rem; }
   .tabbar--seven .tabbar__btn { font-size: 0.56rem; }
 }
+
+/* Entrada con enlace magico (2026-10-14): boton principal y, debajo, el acceso con usuario y clave */
+.magic-msg { margin: 0; padding: 10px 12px; border-radius: 10px; background: #e8f5ec; color: #14532d; font-weight: 600; }
+.alt-login { margin-top: 6px; text-align: left; }
+.alt-login > summary { cursor: pointer; color: var(--muted); padding: 8px 0; }
+.alt-login[open] > summary { margin-bottom: 8px; }
