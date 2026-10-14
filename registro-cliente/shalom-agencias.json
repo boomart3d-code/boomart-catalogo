@@ -1,0 +1,4934 @@
+[
+  {
+    "departamento": "Amazonas",
+    "provincia": "Chachapoyas",
+    "distrito": "Chachapoyas",
+    "nombre": "Chachapoyas Co Dos De Mayo",
+    "direccion": "Jr. Dos De Mayo Cdra. 15 S/N Chachapoyas, Referencia: Junto A Terminal De Combis Etsa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Amazonas",
+    "provincia": "Chachapoyas",
+    "distrito": "Chachapoyas",
+    "nombre": "Chachapoyas Jr Grau",
+    "direccion": "Jr. Grau 270, Ref. Junto A La Agencia De Viajes Monteverde",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Amazonas",
+    "provincia": "Bagua",
+    "distrito": "Bagua",
+    "nombre": "Bagua Capital",
+    "direccion": "Jr. Amazonas C-9 Mz. 126 Lt. 25, Bagua - Bagua - Amazonas, Ref. Frente Al Parque Jerusalen Y/O Costado De Avicola Yaceg",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Amazonas",
+    "provincia": "Bongara",
+    "distrito": "Jazan",
+    "nombre": "Pedro Ruiz",
+    "direccion": "Av. Sacsahuaman N° 513 - Pedro Ruiz, Ref. A Media Cuadra De La Ugel",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Amazonas",
+    "provincia": "Luya",
+    "distrito": "Luya",
+    "nombre": "Luya",
+    "direccion": "Jr. Ramón Castilla 1247 Luya - Amazonas, Ref. Entre El Colegio Secundario Ramón Castilla Y El Jr. José Gálvez, A Media Cdra. Del Agente De Venta De Pasajes De Civa, Móvil Y Transporte Chiclayo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Amazonas",
+    "provincia": "Utcubamba",
+    "distrito": "Bagua Grande",
+    "nombre": "Bagua Grande",
+    "direccion": "Av. Chachapoyas 1094 Sector Gonchillo, Ref. A 2 Cuadras De La Clínica Señor De Los Milagros",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Áncash",
+    "provincia": "Huaraz",
+    "distrito": "Huaraz",
+    "nombre": "Huaraz Co",
+    "direccion": "Av. 27 De Noviembre Cdra. 20 S/N - Villon Bajo, Referencia: Al Costado Del Grifo Primax",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Áncash",
+    "provincia": "Carhuaz",
+    "distrito": "Carhuaz",
+    "nombre": "Carhuaz",
+    "direccion": "Carretera Central 00S/N Cent Carhuaz - Carhuaz - Áncash, Ref. Media Cuadra Antes De Llegar Al Estadio Municipal Capitan Carlos Mejia",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Áncash",
+    "provincia": "Casma",
+    "distrito": "Casma",
+    "nombre": "Casma",
+    "direccion": "Av. Miguel Grau Mz. D 4 Lt. 1 Casma - Ancash, Ref. Frente Al Jardín De Infancia",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Áncash",
+    "provincia": "Huarmey",
+    "distrito": "Huarmey",
+    "nombre": "Huarmey",
+    "direccion": "Carr. Panamericana Norte N° Km 293 Sect. Panamericana Huarmey – Ancash, Ref. A 4 Cdras. Del Terminal Terrestre De Sur A Norte",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Áncash",
+    "provincia": "Huaylas",
+    "distrito": "Caraz",
+    "nombre": "Caraz",
+    "direccion": "Av. 9 De Octubre N° 259 - Huaylas, Referencia: Al Costado De La Empresa Móvil Tours",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Áncash",
+    "provincia": "Santa",
+    "distrito": "Chimbote",
+    "nombre": "Av Enrique Meiggs",
+    "direccion": "Av. Enrique Meiggs N° 2457.",
+    "telefono": "01 5007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Áncash",
+    "provincia": "Santa",
+    "distrito": "Chimbote",
+    "nombre": "Av Jose Galvez",
+    "direccion": "Av. José Gálvez 791, Chimbote - Santa - Ancash, Ref. A 1 Cdra. Antes De Llegar Al Puente Gálvez",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Áncash",
+    "provincia": "Santa",
+    "distrito": "Chimbote",
+    "nombre": "Av. Los Pescadores Co",
+    "direccion": "Par. Parcela N° 16757 - E Sector La Perla Tres Cabezas - Ancash, Ref. Frente Al Estadio Centenario",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Áncash",
+    "provincia": "Santa",
+    "distrito": "Santa",
+    "nombre": "Santa",
+    "direccion": "Panamericana Norte Km 442 - B, Santa, Ref. Al Lado De La Ferreteria La Llave",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Áncash",
+    "provincia": "Santa",
+    "distrito": "Nuevo Chimbote",
+    "nombre": "Ovalo De La Familia",
+    "direccion": "Urbanización José Carlos Mariategui (Ex Unicreto) Mz R 3 Lt 3 Ref. A Una Cuadra Del Óvalo La Familia",
+    "telefono": "01 5007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Áncash",
+    "provincia": "Santa",
+    "distrito": "Nuevo Chimbote",
+    "nombre": "Tres De Octubre",
+    "direccion": "Av. José Pardo Mz. K, Lt. 17 - Tres De Octubre, Referencia: Frente Al Óvalo Las Américas",
+    "telefono": "01 5007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Áncash",
+    "provincia": "Santa",
+    "distrito": "Nuevo Chimbote",
+    "nombre": "Garatea",
+    "direccion": "Urb. Nicolas Garatea Mz. 100 Lt. 24 - Nuevo Chimbote - Santa - Ancash, Ref. Frente Al Paradero Autos N.- Garatea",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Áncash",
+    "provincia": "Santa",
+    "distrito": "Nuevo Chimbote",
+    "nombre": "Av. Pacífico Belen",
+    "direccion": "Aa.Hh. Belen Mz O Lt 28 - Nuevo Chimbote - Santa - Ancash, Ref. Frente Al Grifo Doxa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Áncash",
+    "provincia": "Yungay",
+    "distrito": "Yungay",
+    "nombre": "Yungay",
+    "direccion": "Jr. Industrial, Lte. 14 - Yungay, Ref. Al Costado Del Terminal Terrestre Y La Tapiceria Fredy",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Apurímac",
+    "provincia": "Abancay",
+    "distrito": "Abancay",
+    "nombre": "Abancay",
+    "direccion": "Av. Panamericana S/N - Abancay - Apurímac, Ref. A 100 Metros De La Comisaría De Bellavista, Al Costado De Maderera Vega",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Apurímac",
+    "provincia": "Andahuaylas",
+    "distrito": "Andahuaylas",
+    "nombre": "Andahuaylas",
+    "direccion": "Av. Malinas 1355 Pochccota, Andahuaylas - Andahuaylas - Apurímac, Ref. Al Costado De La Ex Cancha El Centenario O Altura De La Universidad Unsaac",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Apurímac",
+    "provincia": "Cotabambas",
+    "distrito": "Challhuahuacho",
+    "nombre": "Challhuahuacho",
+    "direccion": "Barrio Wichaypampa Lt. 13 - 15 - 16, Challhuahuacho - Cotabambas - Apurímac, Ref. A Dos Cdras Del Terminal Terrestre De Challhuahuacho / A Espaldas Del Taller E&L",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Arequipa",
+    "nombre": "Av Parra 379",
+    "direccion": "Av. Parra 379 - Arequipa",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Arequipa",
+    "nombre": "Aeropuerto Arequipa",
+    "direccion": "Aeropuerto Internacional Alfredo Rodríguez",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Arequipa",
+    "nombre": "Mall Lambramani",
+    "direccion": "Av. Lambramani 325, Arequipa - Arequipa- Arequipa, Ref. Dentro Del Mall Lambramani (Sotano Piso -4)",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Alto Selva Alegre",
+    "nombre": "Av Lima",
+    "direccion": "Av. Lima N° 406 – Alto Selva Alegre - Arequipa, Ref. Esquina Con Av. Obrera Cuadra 20",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Alto Selva Alegre",
+    "nombre": "Av Augusto Salazar Bondy",
+    "direccion": "Augusto Salazar Bondy Mz J Lt 4 Alto Selva Alegre - Arequipa, Ref. A Media Cdra. De La Iglesia Guadalupe",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Cayma",
+    "nombre": "Plaza La Tomilla",
+    "direccion": "Av. Ramón Castilla N° 1000 - B La Tomilla Cayma - Referencia: En La Misma Plaza Tomilla",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Cayma",
+    "nombre": "Av Charcani",
+    "direccion": "Av. Charcani 401 Asoc. Jose Olaya, Ref. Frente Al Colegio Mendel",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Cerro Colorado",
+    "nombre": "Ciudad Municipal",
+    "direccion": "Mz. A, Sub Lt. 2 A, Asentamiento Poblacional Asociación Centro Industrial Las Canteras, Cerro Colorado - Arequipa, Ref. Al Costado Del Grifo Primax",
+    "telefono": "01 5007878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Cerro Colorado",
+    "nombre": "Asoc Las Flores - Av 54",
+    "direccion": "Asoc. Vivienda Interes Social Aldo Moro Mz. C Lt. 21, Cerro Colorado - Arequipa - Arequipa, Ref. Al Lado Del Sistema Eléctrico El Profe",
+    "telefono": "01 5007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Cerro Colorado",
+    "nombre": "Av Pumacahua",
+    "direccion": "Urb. San Felipe Av Pumacahua Lt 14, Cerro Colorado Arequipa, Ref. A Dos Cdras. Antes De Llegar Al Metro Cencosud / Ex Notaria Concha Revilla.",
+    "telefono": "(01) 500 - 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Cerro Colorado",
+    "nombre": "Zamacola",
+    "direccion": "Calle Yavarí 507 B - Zamacola - Cerro Colorado – Arequipa, Ref. A Una Cuadra De La Posta De Zamacola (Marcisa Campos)",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Cerro Colorado",
+    "nombre": "Av Los Incas",
+    "direccion": "Av. Los Incas N° 604 Semirural Pachacutec – Cerro Colorado - Arequipa, Ref. Esquina Con Calle San Martin Semirural Pachacutec",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Cerro Colorado",
+    "nombre": "Autopista La Joya",
+    "direccion": "Asoc. Urbanizadora Peruarbo Sector Peru Zona I Mz. B4 Lt. 4 - Autopista La Joya - Arequipa, Ref. Autopista Arequipa - La Joya, A Dos Cdras. Del Sauna Candamo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Cerro Colorado",
+    "nombre": "Asoc. Nuevo Horizonte - Av. 54",
+    "direccion": "Nuevo Horizonte Mz.H Lote 12 - Cerro Colorado - Arequipa, Ref. Con Av.54 A Cuatro Cdras. De Inkafarma",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Jacobo Hunter",
+    "nombre": "Jacobo Hunter",
+    "direccion": "Calle Argentina # 405 - A, Jacobo Hunter - Arequipa, Ref. Frente Al Cajero De Caja Arequipa Y Esquina Con El Banco Caja Arequipa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "La Joya",
+    "nombre": "El Cruce La Joya",
+    "direccion": "Lateral 12 C Lt. 32, El Cruce La Joya - Arequipa, Ref. Al Costado Del Grifo Primax De La Joya",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Mariano Melgar",
+    "nombre": "Mariano Melgar",
+    "direccion": "Calle Ancash N° 202 - Mariano Melgar, Ref. A La Altura Del Coliseo Del Niño",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Miraflores",
+    "nombre": "Miraflores Arequipa",
+    "direccion": "Urb. Residencial Felipe Santiago Salaverry - Calle Teniente Rodríguez Mz. H Lt. 11, Miraflores - Arequipa - Arequipa, Ref. A Media Cdra. De La Compañia De Bombero De Miraflores",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Paucarpata",
+    "nombre": "Urb Manuel Prado",
+    "direccion": "Calle Belén N°100 - A Urb. Manuel Prado - Paucarpata Referencia: A Espaldas Del Cc. Mall Aventura Porongoche",
+    "telefono": "01 5007878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Paucarpata",
+    "nombre": "Av Jesus",
+    "direccion": "Av. Jesús N° 1100 Paucarpata – Arequipa, Ref. Con Esquina Arturo Villegas N° 101.",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Sachaca",
+    "nombre": "Variante Uchumayo Co",
+    "direccion": "Variante De Uchumayo Km 4.5 Valle Chili Sector Alto Cural, Parcela 662, Sachaca - Arequipa - Arequipa, Ref. A 50 Mts. Del Óvalo Volvo Variante Uchumayo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Socabaya",
+    "nombre": "Av Socabaya - Los Toritos",
+    "direccion": "Av. Socabaya 301 - Urb. San Martín De Socabaya, Ref. Al Frente Del Parque Victor Barriga",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Socabaya",
+    "nombre": "Av. Horacio Zevallos",
+    "direccion": "Asentamiento Urbano Municipal Horacio Zeballos Gamez Sector E Mz. 1 Lt. 18 Socabaya - Arequipa, Ref. Al Costado Del Colegio Joule Y/O 2 Cdras. Del Penal De Socabaya",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Uchumayo",
+    "nombre": "Congata",
+    "direccion": "Urb. El Carmen M. E. Lt. 1 Congata Del Distrito Uchumayo - Arequipa, Ref. A Dos Cdras. De La Comisaria Congata",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Arequipa",
+    "distrito": "Yura",
+    "nombre": "Yura",
+    "direccion": "Mz. O Lt. 4 Zna 2 Ciudad De Dios - Yura - Arequipa, Ref. Carretera Yura",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Camana",
+    "distrito": "Camana",
+    "nombre": "Camana",
+    "direccion": "Calle Agustín Gamarra N° 451, Cercado Camaná, Referencia: Al Frente Del Delivey Caseritos",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Caraveli",
+    "distrito": "Chala",
+    "nombre": "Chala",
+    "direccion": "Av. Emancipacion Nro. S/N Mz. 78 Lt. 10. Ref. A Media Cdra. Del Parque Del Niño Chalino",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Castilla",
+    "distrito": "Aplao",
+    "nombre": "Aplao",
+    "direccion": "Ubica En La Manzana X1, Lote 07, De La Calle 8 De Setiembre, Aplao - Castilla - Arequipa, Ref. A Una Cdra. De Ministerial Público Fiscalía",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Caylloma",
+    "distrito": "Majes",
+    "nombre": "Calle Yarabamba",
+    "direccion": "Calle Yarabamba, Mz. Y Lt 7. Villa El Pedregal, Majes - Caylloma - Arequipa, Ref. A Media Cdra. De La Notaria Terán Bejar",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Caylloma",
+    "distrito": "Majes",
+    "nombre": "Av Colonizadores Co",
+    "direccion": "Av. Lote Colonizadores. 4 Parcela 180, Majes - Caylloma - Arequipa, Ref. A Media Cdra. Del Grifo El Eje",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Islay",
+    "distrito": "Mollendo",
+    "nombre": "Mollendo Co",
+    "direccion": "Mariscal Castilla 472 –A, Arequipa - Islay - Mollendo, Ref. Al Costado De Cei “Mi Carrusel”",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Islay",
+    "distrito": "Mollendo",
+    "nombre": "Cercado Mollendo",
+    "direccion": "Calle Dean Valdivia 388 Cercado, Referencia: Esquina Con Blondel",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Islay",
+    "distrito": "Cocachacra",
+    "nombre": "Cocachacra",
+    "direccion": "Centro Poblado Cocachacra Mz. N5 Sub-Lote 5B Calle Dean Valdivia, Cocachacra - Islay - Arequipa, Ref. Del Parque San Francisco Una Cdra. Hacia Abajo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Arequipa",
+    "provincia": "Islay",
+    "distrito": "Islay",
+    "nombre": "Matarani",
+    "direccion": "Asentamiento Humano. Puerto Nuevo Mz. I Lt. 18 Av. Bello Horizonte, Islay - Islay - Arequipa, Ref. Frente Al Parque Ecológico",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Ayacucho",
+    "provincia": "Huamanga",
+    "distrito": "Ayacucho",
+    "nombre": "Ayacucho Co",
+    "direccion": "Aa.Hh Complejo Artesanal T1 Lt1 - Ayacucho - Referencia : A Una Cuadra De La Puerta 2 Del Terminal Terrestre Libertadores De América",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Ayacucho",
+    "provincia": "Huamanga",
+    "distrito": "Ayacucho",
+    "nombre": "Aeropuerto Ayacucho",
+    "direccion": "Aeropuerto Internacional Alfredo Mendívil Duarte De Ayacucho",
+    "telefono": "",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Ayacucho",
+    "provincia": "Huamanga",
+    "distrito": "Carmen Alto",
+    "nombre": "Carmen Alto",
+    "direccion": "Asentamiento Humano Carmen Alto Mz B1 Lote 9 Zona Ii Acuchimay Carmen Alto – Huamanga- Ayacucho, Ref. A 1 Cuadra De La Municipalidad De Carmen Alto",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Ayacucho",
+    "provincia": "Huamanga",
+    "distrito": "San Juan Bautista",
+    "nombre": "San Juan Bautista",
+    "direccion": "Av. Venezuela N° 431 – Urb. Aprovisa, San Juan Bautista - Huamanga - Ayacucho, Ref. Altura Del Hostal La Oriental, Cerca Al Seguro De Essalud",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Ayacucho",
+    "provincia": "Huamanga",
+    "distrito": "Jesus Nazareno",
+    "nombre": "Jesus Nazareno",
+    "direccion": "Jr. José María Eguren 451 - Jesus Nazareno - Huamanga - Ayacucho, Ref. Cruce Con Jr. Mariano Melgar",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Ayacucho",
+    "provincia": "Huanta",
+    "distrito": "Huanta",
+    "nombre": "Huanta",
+    "direccion": "Jr. Gervasio Santillana N°976 - Huanta - Ayacucho. Ref, Cruce Con Jr. Revolución",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "Cajamarca",
+    "distrito": "Cajamarca",
+    "nombre": "Cajamarca Co",
+    "direccion": "Av. Independencia N° 787 Barrio Santa Elena",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "Cajamarca",
+    "distrito": "Cajamarca",
+    "nombre": "Cajamarca Horacio Zevallos",
+    "direccion": "Jr. Emilio Barrantes Mz X Lote 3 Urb. Horacio Zevallos - Cajamarca. Referencia A Una Cuadra De La Universidad Privada Del Norte (Upn) Y Vía De Evitamiento Norte Cuadra 13.",
+    "telefono": "01 5007878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "Cajamarca",
+    "distrito": "Cajamarca",
+    "nombre": "Barrio San Jose",
+    "direccion": "Jr. Chanchamayo N° 1162 - Barrio San José Cajamarca, Referencia: Paralela Con Jr. Huancavelica Y Jr. Sara Macdougall.",
+    "telefono": "01 5007878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "Cajamarca",
+    "distrito": "Cajamarca",
+    "nombre": "Aeropuerto Cajamarca",
+    "direccion": "Aeropuerto Mayor General Fap Armando Revoredo Iglesias",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "Cajamarca",
+    "distrito": "Cajamarca",
+    "nombre": "Huambocancha Baja",
+    "direccion": "Mz. A Lote S/N – Barrio Huambocancha Baja – Cajamarca, Ref. A Una Cdra. Del Paradero De La P13/Al Costado Del Campo Deportivo El Patriarca",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "Cajamarca",
+    "distrito": "Cajamarca",
+    "nombre": "Barrio San Martín",
+    "direccion": "Jirón Los Gladiolos N° 336 Barrio San Martín, Cajamarca – Cajamarca – Cajamarca, Ref. A La Altura De La Cdra. 13 De La Vía De Evitamiento Sur /A Una Cdra. De La Universidad Nacional De Cajamarca",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "Cajamarca",
+    "distrito": "Jesus",
+    "nombre": "Huaraclla",
+    "direccion": "Mz. A Lote S/N Cp Huaraclla - Jesus - Cajamarca, Ref. A Una Cdra. De La I.E. José Olaya Balandra.",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "Cajamarca",
+    "distrito": "Los Banos Del Inca",
+    "nombre": "Baños Del Inca",
+    "direccion": "Jr. Cahuide N° 242 – Lotiz. Hurtado Miller – Baños Del Inca – Cajamarca, Ref. A Espaldas De Senati Y A Una Cdra. De La Base De Serenazgo De Baños Del Inca",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "Cajabamba",
+    "distrito": "Cajabamba",
+    "nombre": "Cajabamba",
+    "direccion": "Jr. Lara N° 100 ,Cajabamba - Cajabamba - Cajamarca, Ref. A Una Cdra. Del Complejo Deportivo “Santa Ana”",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "Celendin",
+    "distrito": "Celendin",
+    "nombre": "Celendin",
+    "direccion": "Jr. Pedro Ortiz Montoya 148, Referencia: Esquina Con Av. Amazonas",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "Chota",
+    "distrito": "Chota",
+    "nombre": "Chota",
+    "direccion": "Av. Fray José Arana N 805 - Referencia : Frente Al Terminal Angel Divino",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "Contumaza",
+    "distrito": "Chilete",
+    "nombre": "Chilete - Agente",
+    "direccion": "Jr. Santa Rosa N° 121, Chilete – Contumazá – Cajamarca, Ref. A Una Cdra. Del Terrapuerto Y A 100 Mts. Del Puente De Ingreso A Chilete",
+    "telefono": "(01) 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "Contumaza",
+    "distrito": "Yonan",
+    "nombre": "Tembladera Cajamarca",
+    "direccion": "Jr. Bolognesi S/N – Tembladera - Yonan - Contumazá - Cajamarca, Ref. Al Frente Del Parque Víctor Raúl Haya De La Torre",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "Cutervo",
+    "distrito": "Cutervo",
+    "nombre": "Cutervo",
+    "direccion": "Av. Salomón Vilchez Murga S/N. Cdra 9 Referencia : Frente A La Clínica Cutervo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "Hualgayoc",
+    "distrito": "Bambamarca",
+    "nombre": "Bambamarca",
+    "direccion": "Av. Tupac Amaru 1105, Referencia: Al Costado Del Paradero Al Cumbe",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "Jaen",
+    "distrito": "Jaen",
+    "nombre": "Jaen Co",
+    "direccion": "Av. Pakammuros Cuadra 6 S/N - Referencia: Esquina Con Calle Libertad N° 490",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "San Ignacio",
+    "distrito": "San Ignacio",
+    "nombre": "San Ignacio",
+    "direccion": "Pasaje Tres N° 113 Urb Santa Rosa, Cajamarca - San Ignacio, Ref. Frente Al Estado Municipal",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "San Marcos",
+    "distrito": "Pedro Galvez",
+    "nombre": "San Marcos",
+    "direccion": "Jr. Adolfo Amorin Bueno N° 140 San Marcos – Cajamarca, Ref. Al Frente De La Plaza Agropecuaria",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "San Miguel",
+    "distrito": "San Miguel",
+    "nombre": "San Miguel Cajamarca",
+    "direccion": "Jr. Bolognesi N° 717 – San Miguel – Cajamarca - Cajamarca, Ref. Al Costado Del Coliseo Y El Paradero De Llapa Y Cochán.",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Cajamarca",
+    "provincia": "San Pablo",
+    "distrito": "San Pablo",
+    "nombre": "San Pablo Cajamarca",
+    "direccion": "Jr. Tnt. Lorenzo Iglesia N° 910 - San Pablo – Cajamarca - Cajamarca, Ref. A Media Cdra. Del Hospital San Pablo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Callao",
+    "provincia": "Callao",
+    "distrito": "Callao",
+    "nombre": "Callao Faucett",
+    "direccion": "Av. Elmer Faucett N° 492",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Callao",
+    "provincia": "Callao",
+    "distrito": "Callao",
+    "nombre": "Av Quilca",
+    "direccion": "Unidad Inmobiliaria N° 1, Av. Quilca Mz. G Sub Lt. 11C, Urb. Aeropuerto – Segundo Sector - Callao, Ref. Cruce Con Calle 1, Frente A La Iglesia De Testigos De Jehová",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Callao",
+    "provincia": "Callao",
+    "distrito": "Callao",
+    "nombre": "Aeropuerto Callao",
+    "direccion": "Aeropuerto Internacional Jorge Chavez",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Callao",
+    "provincia": "Callao",
+    "distrito": "Callao",
+    "nombre": "Av Bertello Callao",
+    "direccion": "Av. Alejandro Bertello Bollati Mz. B Lt. 20 Y 21 – Urb. Progresiva Bahía Blanca – Callao - Callao - Callao, Ref. Frente Al Mercado Costa Azul",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Callao",
+    "provincia": "Callao",
+    "distrito": "Callao",
+    "nombre": "Av Saenz Peña",
+    "direccion": "Av. Saenz Peña N° 414 - 416 - Callao - Callao, Ref. Cruce Con Av. Marco Polo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Callao",
+    "provincia": "Callao",
+    "distrito": "Bellavista",
+    "nombre": "Bellavista Callao",
+    "direccion": "Av. Elmer Faucett 1641 - Urb. Jardines Virú Mz. B Lt 46, Bellavista - Callao, Ref. A 2 Cuadras Del Cruce De Av. Faucett Con Av. Venezuela",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Callao",
+    "provincia": "Callao",
+    "distrito": "La Perla",
+    "nombre": "Ovalo La Perla",
+    "direccion": "Av. La Marina 530, Urb. Benjamin Doigg Lossio, La Perla, Callao, Ref. A 3 Cuadras Del Óvalo De La Perla",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Callao",
+    "provincia": "Callao",
+    "distrito": "Ventanilla",
+    "nombre": "Parad. Los Licenciados",
+    "direccion": "Calle 19, Mz. J Lt. 26 Zn - Urb. Coop. De La Marina, Referencia: Al Costado De Lubricentro Pablito Romero",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Callao",
+    "provincia": "Callao",
+    "distrito": "Ventanilla",
+    "nombre": "Pachacutec Pdro Chinitas",
+    "direccion": "Av. 225 Mz. H Sub Lt. T. 11 - Asoc Proy. Esp. Ciudad Pachacutec, Ref. A 1 Cdra. Del Cruce Con Av. Los Proyectistas, Ventanilla - Lima - Lima",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Callao",
+    "provincia": "Callao",
+    "distrito": "Ventanilla",
+    "nombre": "Pachacutec Pdro Vc",
+    "direccion": "Av. 225 Mz F Lote 2 Sector A Grupo Residencial A2 - Proyecto Piloto Nuevo Pachacutec, Ventanilla - Callao - Callao, Ref. Frente Al Centro De Salud 3 De Febrero",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Callao",
+    "provincia": "Callao",
+    "distrito": "Ventanilla",
+    "nombre": "Pachacutec Av 150",
+    "direccion": "Av. 150 Izquierda Mz. W2 Lt. 01 Proyecto Piloto Nuevo Pachacutec, Ventanilla - Callao - Callao, Ref. A 1 Cdra. Del Cruce Av. Camino Del Inca",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Callao",
+    "provincia": "Callao",
+    "distrito": "Mi Peru",
+    "nombre": "Mi Peru",
+    "direccion": "V. Victor Raul Haya De La Torre Mz. A Lt. 02 Asentamiento Humano Confraternidad - Iii Sector - Mi Peru – Callao - Callao, Ref. Cruce Con Av. Arequipa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Cusco",
+    "distrito": "Cusco",
+    "nombre": "Aeropuerto Cusco",
+    "direccion": "Aeropuerto Internacional Alejandro Velasco Astete",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Cusco",
+    "distrito": "Cusco",
+    "nombre": "Tica Tica",
+    "direccion": "Arco Ticatica Pustipata, Lt. N° A - 11 - 2, Cusco, Ref. En La Av. Principal A 3 Cdras. Del Mercado Tica Tica",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Cusco",
+    "distrito": "San Jeronimo",
+    "nombre": "San Jeronimo",
+    "direccion": "Calle Ciro Alegría 226 - 224, Ref. Una Cuadra Antes Del Paradero Penal En El Carril De Bajada",
+    "telefono": "01 5007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Cusco",
+    "distrito": "San Sebastian",
+    "nombre": "Cachimayo - San Sebastian",
+    "direccion": "Urb. Cachimayo A-37 Av. La Cultura – San Sebastian – Cusco, Ref. Entre Paradero Enaco Y Parque Cachimayo, A 2 Cuadra De La Universidad Andina.",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Cusco",
+    "distrito": "San Sebastian",
+    "nombre": "Via Expresa Sur",
+    "direccion": "Urb. Tupac Amaru B-1-2 San Sebastian – Cusco, Ref. Terminando La Via Expresa Zona Sur",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Cusco",
+    "distrito": "San Sebastian",
+    "nombre": "Cusco Co Via Evitamiento",
+    "direccion": "Av. Evitamiento S/N Ups Chacahuayco, San Sebastian - Cusco - Cusco, Ref. Vía Evitamiento En El Paradero Horacio",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Cusco",
+    "distrito": "Santiago",
+    "nombre": "Av Antonio Lorena",
+    "direccion": "Prolongación Av. Antonio Lorena # 140 - Santiago, Cusco, Referencia: Al Frente Del Cementerio Almudena",
+    "telefono": "015007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Cusco",
+    "distrito": "Santiago",
+    "nombre": "Urb. Bancopata Av. Industrial",
+    "direccion": "Av. Industrial Urb. Bancopata J-20, Santiago - Cusco, Ref. A 2 Cdras. Del Ovalo Pachacutec, Frente A La Empresa Coca Cola",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Cusco",
+    "distrito": "Santiago",
+    "nombre": "Huancaro",
+    "direccion": "Urb. Villa Union F-1-B Huancaro, Santiago - Cusco - Cusco, Ref. Frente A La Iglesia De Los Mormones/ A Una Cdra. Del Mercado Huancaro",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Cusco",
+    "distrito": "Wanchaq",
+    "nombre": "Cusco Parque Industrial",
+    "direccion": "Av. Las Americas Mz. E Lt. 20, 2Da Etapa, Urb. Parque Industrial, Wanchaq - Cusco, Ref. Al Frente De Talleres Pfuro, Al Frente De Mederera Urpi, Paralela A La Av Via Expresa.",
+    "telefono": "015007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Cusco",
+    "distrito": "Wanchaq",
+    "nombre": "Av Pachacutec",
+    "direccion": "Av. Pachacutec 429 - Wanchaq, Ref. A 100 Mtrs. De La Piscina Wanchaq",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Cusco",
+    "distrito": "Wanchaq",
+    "nombre": "Velasco Astete",
+    "direccion": "Velasco Astete D3 - Wanchaq, Referencia: A 2 Cdras. Del Aereopuerto",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Anta",
+    "distrito": "Anta",
+    "nombre": "Anta Izcuchaca",
+    "direccion": "Parque Del Carmen Lt. 1 Mz. B 2, Anta - Anta - Cusco, Ref. Paradero Carmen, Pista Principal Izcuchaca",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Calca",
+    "distrito": "Calca",
+    "nombre": "Cusco Calca",
+    "direccion": "Av. Vilcanota Mz. A Lt 4 Calca - Cusco, Ref. Frente Al Grifo Petro Perú O El Óvalo Puma - Entrada De Calca",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Calca",
+    "distrito": "Pisac",
+    "nombre": "Pisac",
+    "direccion": "Av Vilcanota S/N, Pisac - Calca - Cusco, Ref. A Media Cdra. Del Puente De Pisac / Carretera A Taray",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Canchis",
+    "distrito": "Sicuani",
+    "nombre": "Sicuani Co Ovalo San Andres",
+    "direccion": "Prolong. Av. Arequipa 1010 S/N, Ref: Al Costado Del Grifo Guadalupe En El Óvalo San Andrés",
+    "telefono": "015007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Canchis",
+    "distrito": "Sicuani",
+    "nombre": "Sicuani Av Manuel Callo",
+    "direccion": "Jr. Inambari Nro. 208, Sicuani - Canchis - Cusco, Ref. Al Frente Del Bcp Y De Caja Piura",
+    "telefono": "015007878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Canchis",
+    "distrito": "Combapata",
+    "nombre": "Combapata",
+    "direccion": "Av. Señor De Huanca S/N - Combapata - Canchis - Cusco, Ref. Al Costado Del Grifo Señor De Qoylluriti - A Orillas De La Misma Carretera A Sicuani",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Chumbivilcas",
+    "distrito": "Santo Tomas",
+    "nombre": "Santo Tomas",
+    "direccion": "Calle Bolognesi Mz. 02 Lt. 25, Santo Tomas - Chumbivilcas - Cusco, Ref. A Espaldas De La Polleria Pico Dorado Y A Media Cdra. De La Av Santa Barbara",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Espinar",
+    "distrito": "Yauri ( Espinar )",
+    "nombre": "Espinar",
+    "direccion": "Calle San Jose N° 703 Barrio Progreso, Yauri (Espinar) - Espinar - Cusco, Ref. A Media Cdra. Del Grifo San Jose / A Media Cdra. De La Av. Tintaya",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "La Convencion",
+    "distrito": "Santa Ana",
+    "nombre": "Quillabamba",
+    "direccion": "Jr. Puno Lt. 10 Y 11 Mz. G Urb. Santa Ana, Cusco - La Convencion - Santa Ana, Ref. A Media Cdra.L Del Estadio Municipal De Quillabamba / Cruce Con Prolongacion Jr. Martin Pio Concha",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "La Convencion",
+    "distrito": "Pichari",
+    "nombre": "Pichari",
+    "direccion": "Asoc. Gral. Juan Velasco A. Mz. B Lt. 2 , Pichari - La Convencion – Cusco, Ref. Al Costado De Techo Propio",
+    "telefono": "01 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Quispicanchi",
+    "distrito": "Urcos",
+    "nombre": "Urcos",
+    "direccion": "Mayupata S/N Paucarbamba, Urcos - Quispicanchi - Cusco Referencia: Al Frende Del Estadio Municipal De Urcos / Al Frente Del Terminal Terrestre De Urcos",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Quispicanchi",
+    "distrito": "Ocongate",
+    "nombre": "Ocongate",
+    "direccion": "Sect. Mayo Ucjo S/N, Ocongate - Quispicanchi - Cusco, Ref. A La Espalda Del Terminal De Buses De Ocongate / A Orillas De La Carreta A Mazuko",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Quispicanchi",
+    "distrito": "Oropesa",
+    "nombre": "Oropesa",
+    "direccion": "Mz. C Lt. 3 Del Predio Denominado Fracción \"B\" Quispicanchis – Puna Punabamba, Ref. Al Costado De Panificadora Los Marqueses, A Orillas De La Ctra. A Paucartambo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Urubamba",
+    "distrito": "Urubamba",
+    "nombre": "Cusco Urubamba",
+    "direccion": "Lt. E-3 Fracción -1, Sector Patahuasi, Urubamba – Urubamba - Cusco, Ref. A Una Cdra. De La Carretera A Ollantaytambo / A Media Cdra. Del Parque Teresita",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Cusco",
+    "provincia": "Urubamba",
+    "distrito": "Chinchero",
+    "nombre": "Chinchero",
+    "direccion": "Av. Mateo Pumacahua S/N, Chinchero - Urubamba - Cusco, Ref Al Costado De La Caja Cusco / En La Misma Carretera A Urubamba",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Huancavelica",
+    "provincia": "Huancavelica",
+    "distrito": "Huancavelica",
+    "nombre": "Barrio Sta Ana Co",
+    "direccion": "Av. Universitaria 1003 - Huancavelica, Ref. A 1 Cdra. De La Escuela Santa Ana Y A 3 Cdras. Del Puente Del Ejército (Barrio Santa Ana)",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Huancavelica",
+    "provincia": "Huancavelica",
+    "distrito": "Huancavelica",
+    "nombre": "Barrio Yananaco",
+    "direccion": "Av. Andrés A. Cáceres N° 198, Huancavelica – Huancavelica – Huancavelica, Ref. A Media Cdra. De La Plazoleta \"Tupac Amaru\" Y En La Esquina Con Calle Oropeza (Barrio Yananaco)",
+    "telefono": "01 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Huánuco",
+    "provincia": "Huanuco",
+    "distrito": "Huanuco",
+    "nombre": "Jr Aguilar",
+    "direccion": "Jr. Mayro N° 344, Ref. A Una Cdra. Del Parque San Pedro",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Huánuco",
+    "provincia": "Huanuco",
+    "distrito": "Amarilis",
+    "nombre": "Amarilis Co",
+    "direccion": "Jr. Los Pinos Lote 3 -D2 Urb Los Pinos - Amarilis - Huánuco, Ref. A La Espalda De Toyota Huánuco",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Huánuco",
+    "provincia": "Ambo",
+    "distrito": "Ambo",
+    "nombre": "Ambo",
+    "direccion": "Av. Las Americas 501, Ref. Al Frente Del Colegio Juan José Crespo Y Castillo",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Huánuco",
+    "provincia": "Leoncio Prado",
+    "distrito": "Rupa Rupa",
+    "nombre": "Tingo Maria Co Buenos Aires",
+    "direccion": "Calle Rosario Central, Referencia: Segunda Entrada De Buenos Aires, En La Misma Esquina",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Huánuco",
+    "provincia": "Leoncio Prado",
+    "distrito": "Rupa Rupa",
+    "nombre": "Tingo María - Leoncio Prado",
+    "direccion": "Av. Tito Jaime 914, Rupa Rupa- Leoncio Prado - Huanuco, Ref. A Dos Cdras. De La Plaza De Armas Leoncio Pardo",
+    "telefono": "",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Huánuco",
+    "provincia": "Leoncio Prado",
+    "distrito": "Jose Crespo Y Castil",
+    "nombre": "Aucayacu",
+    "direccion": "Jr. Chiclayo 247 0C-02 Cent Aucayu, Leoncio Prado, Huánuco, Ref. Atrás Del Estadio Municipal",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Ica",
+    "distrito": "Ica",
+    "nombre": "Ica San Joaquin",
+    "direccion": "Pasaje Grau N° 101 San Joaquin - Ica Referencia : A 1 Cdra De Petro Peru",
+    "telefono": "01 5007878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Ica",
+    "distrito": "Ica",
+    "nombre": "Ica Av. Jj Elias",
+    "direccion": "Manzana B, Sub-Lote 02 Del Fundo La Palma Ica, Ref. Cruce De Av. Cutervo Con Av. J.J Elias",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Ica",
+    "distrito": "Ica",
+    "nombre": "Ica Urb. Manzanilla",
+    "direccion": "Av. Manuel Santana Chiri N°359 A1 – Ica, Ref. Cruce Con Calle Baltazar Caravedo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Ica",
+    "distrito": "La Tinguina",
+    "nombre": "La Tinguiña",
+    "direccion": "Calle Francisco Sales Sotelo N° 298 Sub Lote 3, La Tinguiña - Ica – Ica, Ref. Cruce De La Av.Frncisco Sales Sotelo Y Av. Jose Carlos Mariategui",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Ica",
+    "distrito": "Parcona",
+    "nombre": "Parcona",
+    "direccion": "Cp. De Parcona -Cercado (Primera Etapa) Mz. B Lote 16 Parcona - Ica, Ref. Av. 18 De Febrero Y Cruce De Av. Natividad Paco",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Ica",
+    "distrito": "Salas",
+    "nombre": "Salas Ica",
+    "direccion": "Sub Lote 01 Zona Panamericana Sur Km. 293.350, Salas Guadalupe - Ica - Ica, Ref. Frente Al Estadio De Salas Guadalupe",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Ica",
+    "distrito": "Santiago",
+    "nombre": "Ica Santiago",
+    "direccion": "Centro Poblado Santiago Mz. E, Lt. 01 Sector Ii Santiago - Ica - Ica, Ref. Frente A La Comisaria De Santiago",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Ica",
+    "distrito": "Subtanjalla",
+    "nombre": "Ica Subtanjalla Co",
+    "direccion": "C.P - Sector Macacona /Predio Parcela 214 Lote 2, Subtanjalla - Ica - Ica, Ref. Panamericana Sur Frente A La Entrada Del Arrabal",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Chincha",
+    "distrito": "Chincha Alta",
+    "nombre": "Prolong Luis Massaro",
+    "direccion": "Prolongacion Luis Massaro N°247 - Chincha Alta",
+    "telefono": "01 5007878",
+    "tamano": "Micro E/R"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Chincha",
+    "distrito": "Chincha Alta",
+    "nombre": "Calle Los Angeles",
+    "direccion": "Calle Los Ángeles N° Casa 217 01 - A Sin Barriio Cercado, Chincha Alta - Chincha - Ica, Ref. A 2 Cdras. De La Plaza De Armas De Chncha Pasando Electrodunas",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro E/R"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Chincha",
+    "distrito": "Pueblo Nuevo",
+    "nombre": "Chincha Pueblo Nuevo",
+    "direccion": "Aa. Hh. Los Alamos, Calle Los Laureles Mz. 17 Lt. 11- A, Ref. A 2 Cdras. De La Posta Los Álamos",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro E/R"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Chincha",
+    "distrito": "Sunampe",
+    "nombre": "Sunampe Co",
+    "direccion": "Carr. Panamericana Sur Nro. 198 -B , Sin Barrio Cercado Sunampe, Sunampe - Chincha - Ica, Ref. Antigua Panamericana Sur Frente A La Entrada De Grocio Prado.",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Nazca",
+    "distrito": "Nazca",
+    "nombre": "Av Circunvalacion Nazca",
+    "direccion": "En La Esquina De La Av. Circunvalación Con Calle S/N, Hoy Calle Las Mercedes S/N Nasca - Referencia: Al Lado De La Iep Jean Piaget",
+    "telefono": "01 5007878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Nazca",
+    "distrito": "El Ingenio",
+    "nombre": "El Ingenio",
+    "direccion": "Av. Principal Tulin 204, El Ingenio - Nazca - Ica, Ref. Fremte A A La Plaza De Tulin",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Nazca",
+    "distrito": "Marcona",
+    "nombre": "San Juan De Marcona",
+    "direccion": "A. H. San Martín De Porres E-28 San Juan De Marcona - Nazca - Ica, Ref. Entre El Hotel San Martin Y El Minimarket Lana",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Nazca",
+    "distrito": "Vista Alegre",
+    "nombre": "Vista Alegre Co",
+    "direccion": "Carretera Panamericana Sur N\\U00B0 906, Vista Alegre - Nazca -\\U00A0Ica, Ref. Frente Al Aeropuerto De Vista Alegre",
+    "telefono": "",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Pisco",
+    "distrito": "Pisco",
+    "nombre": "Av Abraham Valdelomar Co",
+    "direccion": "Av. Abraham Valdelomar Nro. Puerta 965 Pisco - Pisco - Ica, Ref. A Una Cdra. Por La Posta San Martin",
+    "telefono": "",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Pisco",
+    "distrito": "Pisco",
+    "nombre": "La Villa Cruce Pisco",
+    "direccion": "C. P. Oblacion Villa Los Angeles Mz.A Lt 13 B La Villa Pisco-Pisco-Ica, Ref. A 100 Metros Con Dirección Al Sur Dedl Cruce Panamericana Antigua C/N Av. Fermín Tangüis",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Ica",
+    "provincia": "Pisco",
+    "distrito": "San Clemente",
+    "nombre": "San Clemente",
+    "direccion": "Av. Los Libertadores Grupo Número 1 Mz,91 Lote 7ª San Clemente - Pisco - Ica, Ref. Libertadores Sexta Cuadra,Frente Del Grifo Santa Rosa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Huancayo",
+    "distrito": "Huancayo",
+    "nombre": "Huancayo Jr. Ica",
+    "direccion": "Jr. Ica Nº 1143 - Huancayo, Referencia: Entre El Jr. Ica Y El Jr. Tacna",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Huancayo",
+    "distrito": "Huancayo",
+    "nombre": "Terminal De Bus",
+    "direccion": "Av. Evitamiento S/N - Counter N°13",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Huancayo",
+    "distrito": "Huancayo",
+    "nombre": "Terminal Los Andes",
+    "direccion": "Av. Ferrocarril S/N - Huancayo - Counter N° 14, Ref. Terminal Terrestre Los Andes, Frente Al Open Plaza",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Huancayo",
+    "distrito": "Huancayo",
+    "nombre": "San Carlos Huancayo",
+    "direccion": "Pj. San Fernando 209 Huancayo - Huancayo - Junin, Ref. Esquina Del Jr. San Fernando Y Mártires Del Periodismo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Huancayo",
+    "distrito": "Chilca",
+    "nombre": "Chilca Huancayo",
+    "direccion": "Jr. 28 De Julio N° 935, Ref. Esquina 28 De Julio Y Santos Chocano",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Huancayo",
+    "distrito": "Chilca",
+    "nombre": "Chilca Leoncio Prado",
+    "direccion": "Jr. Leonico Prado 656, Chilca – Huancayo - Junín Referencia: Esquina Con Jiron Jose Olaya",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Huancayo",
+    "distrito": "El Tambo",
+    "nombre": "Av Mariscal Castilla Co Parque Industrial",
+    "direccion": "Av Mariscal Castilla 2769 Referencia : Frente Al Colegio Andres Bello",
+    "telefono": "(01) 500 - 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Huancayo",
+    "distrito": "El Tambo",
+    "nombre": "Pio Pata",
+    "direccion": "Av. Huancavelica 1201, El Tambo - Huancayo - Junín, Ref. Esquina Con El Jr. La Victoria",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Huancayo",
+    "distrito": "El Tambo",
+    "nombre": "Av Circunvalación Cruce Con Mariategui",
+    "direccion": "Av. Circunvalación 480 T-1, El Tambo - Huancayo - Junin, Ref. Esquina Con Prolongación Mariategui",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Huancayo",
+    "distrito": "El Tambo",
+    "nombre": "Ciudad Universitaria",
+    "direccion": "Jr Tarma Nro. 37 - 24, El Tambo - Huancayo - Junín Ref. Al Costado De La Facultad De Ingeniería Metalúrgica Uncp",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Huancayo",
+    "distrito": "Pilcomayo",
+    "nombre": "Pilcomayo",
+    "direccion": "Plaza Independencia 131, Pilcomayo - Huancayo - Junín, Ref. Plaza Principal De Pilcomayo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Huancayo",
+    "distrito": "San Agustin",
+    "nombre": "San Agustin De Cajas",
+    "direccion": "Carretera Central Km 7.5 S/N San Agustin – Huancayo – Junín, Ref. Frente A La Envasadora Solgas",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Huancayo",
+    "distrito": "Sapallanga",
+    "nombre": "Sapallanga",
+    "direccion": "Ca. Coronel Cisneros 598, Sapallanga – Huancayo – Junin, Ref. Esquina Con Av. Mariscal Caceres",
+    "telefono": "01 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Concepcion",
+    "distrito": "Concepcion",
+    "nombre": "Concepcion",
+    "direccion": "Carretera Central Lt. 7 - Mz. E5, Concepción - Concepción - Junín, Ref. Esquina Con Tupac Amaru",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Chanchamayo",
+    "distrito": "La Merced",
+    "nombre": "La Merced",
+    "direccion": "Av. Peru 931 Sector Pampa Del Carmen, La Merced -Chanchamayo - Junín, Ref. Frente A La Cooperativa Chanchamayo",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Chanchamayo",
+    "distrito": "Perene",
+    "nombre": "Perene",
+    "direccion": "Av. Marginal S/N Aa.Vv San Jacinto - Perene - Chanchamayo - Junin, Ref. Antes Del Ultimo Rompemuelle De San Jacinto",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Chanchamayo",
+    "distrito": "Bajo Pichanaqui",
+    "nombre": "Pichanaki",
+    "direccion": "Av. Venus Lt. 20 Ciudad Satélite - Ref. ( A 1 Cuadra Y Media Del Parque De Satélite)",
+    "telefono": "015007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Chanchamayo",
+    "distrito": "San Ramon",
+    "nombre": "San Ramón",
+    "direccion": "Jr. Ucayali 102 - San Ramón, Referencia: Frente A La Caja Huancayo Y El Parque El Avión",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Jauja",
+    "distrito": "Jauja",
+    "nombre": "Jauja",
+    "direccion": "Jr. Estanislao Marquez 286, Yauyos - Jauja - Junín, Ref. Esquina Con Jr. 4 De Enero",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Jauja",
+    "distrito": "Jauja",
+    "nombre": "Terminal Jauja",
+    "direccion": "Jr.Luis Bardales S/N, Jauja – Jauja – Junín, Ref. Terminal Terrestre Hatun Xauxa",
+    "telefono": "01 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Satipo",
+    "distrito": "Satipo",
+    "nombre": "Satipo",
+    "direccion": "Jr. Francisco Irazola 1077 - Junín , Ref. Fábrica La Satipeña",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Satipo",
+    "distrito": "Mazamari",
+    "nombre": "Mazamari",
+    "direccion": "Jr. Jorge Chavez Nro 144 Lt. 8A Junín - Satipo– Mazamari, Ref. Cerca A La Vía Principal, Al Costado Del Hospedaje Luján 1Er Piso",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Satipo",
+    "distrito": "Pangoa",
+    "nombre": "Pangoa",
+    "direccion": "Av. Marginal S/N Número Villa Chavini Pangoa - Satipo - Junín, Ref. Al Costado De La Tienda Honda Inversiones Arauco San Martín De Pangoa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Tarma",
+    "distrito": "Tarma",
+    "nombre": "Tarma",
+    "direccion": "Jr. Amazonas Nro. 1164 Tarma - Junín, Ref. Entre Jr. Amazonas Con Av. Vienrich",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Yauli",
+    "distrito": "La Oroya",
+    "nombre": "La Oroya",
+    "direccion": "Av. Arévalo S/N (Carretera Central) - Anexo El Tambo - Santa Rosa De Sacco",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Junín",
+    "provincia": "Chupaca",
+    "distrito": "Chupaca",
+    "nombre": "Chupaca",
+    "direccion": "Jr. Ramon Castilla 201, Chupaca - Chupaca - Junin, Ref. A Una Cdra. De La Plaza Principal De Chupaca",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "Trujillo",
+    "nombre": "Calle Liverpool",
+    "direccion": "Calle Liverpool N° 329 / Urb. Santa Isabel - Trujillo. Referencia : A Una Cuadra Antes De La Iglesia De Mansiche",
+    "telefono": "(01) 500 - 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "Trujillo",
+    "nombre": "Trujillo La Perla",
+    "direccion": "Av. La Perla Mz. E Lote 05 Urb. Ingenieria – Trujillo – La Libertad, Ref. A 1 Cdra. Del Colegio Bruning",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "Trujillo",
+    "nombre": "Atahualpa",
+    "direccion": "Calle Atahualpa 481 – Trujillo – La Libertad, Ref. A 1/2 Cdra De La Av Los Incas",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "Trujillo",
+    "nombre": "Aperopuerto Trujillo",
+    "direccion": "Aeropuerto Internacional Capitán Fap Carlos Martinez De Pinillos",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "Trujillo",
+    "nombre": "Calle Santa Cruz - America Sur",
+    "direccion": "Calle Santa Cruz N° 389 Chicago - Trujillo - La Libertad, Ref. A Media Cdra. De La Av. America Sur/A Media Cuadra Del Estadio Chan Chan.",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "Trujillo",
+    "nombre": "Av Hnos Uceda - America Norte",
+    "direccion": "Av. Hermanos Uceda Meza N° 269 Urb Miraflores Ii Etapa - Trujillo - Trujillo - La Libertad, Ref. A Una Cdra. De Av. America Norte. / Entre Av. Miraflores Y Av. Salvador Lara",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "Trujillo",
+    "nombre": "Ovalo Papal",
+    "direccion": "Urb. Vista Hermosa Mz. F Lt. 11 Piso °1 Trujillo - Trujillo - La Libertad, Ref. A Espaldas Del Metro Del Ovalo Papal",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "El Porvenir",
+    "nombre": "Av Hermanos Angulo",
+    "direccion": "Av. Hermanos Angulo 628, Trujillo, Ref. A Espaldas De La Municipalidad El Porvenir",
+    "telefono": "",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "El Porvenir",
+    "nombre": "Alto Trujillo",
+    "direccion": "Av. Prolongación 12 De Noviembre, Mz. Q, Lt. 25, Referencia: A Media Cdra. De La Comisaría Alto Trujillo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "El Porvenir",
+    "nombre": "Av. Las Magnolias",
+    "direccion": "Av. Las Magnolias Mz. 25 Lt. 2A Nuevo Porvenir, El Porvenir - Trujillo - La Libertad, Ref. A Una Cdra. Del Poder Judicial Cisaj Sede El Porvenir",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "El Porvenir",
+    "nombre": "Jr. Cahuide",
+    "direccion": "Jr. Cahuide N° 342 Aa.Hh La Merced - El Porvenir - Trujillo - La Libertad, Ref. A Una Cdra. Del Arco Del Porvenir / A Una Cdra. De La Parroquia El Buen Pastor",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "El Porvenir",
+    "nombre": "Av. 12 De Noviembre",
+    "direccion": "Av. 12 De Noviembre M. W Lote 19 Mz. 3A, El Porvenir - Trujillo - La Libertad, Ref. Al Frente Del Completo Deportivo José Caipo",
+    "telefono": "01 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "Huanchaco",
+    "nombre": "Ovalo Huanchaco Co",
+    "direccion": "Carretera Via De Evitamiento 576.2 Huanchaquito Alto - Trujillo - La Libertad, Ref. A 1 Cdra. De Ovalo Huanchaco / Al Costado De Condominio Las Brisas",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "Huanchaco",
+    "nombre": "El Milagro",
+    "direccion": "Av. Industrial Mz 23 Lt. 13 Sector Ii – El Milagro, Huanchaco - Trujillo - La Libertad, Ref. A 2 Cdras. De La Plaza De Armas De El Milagro",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "La Esperanza",
+    "nombre": "Av Tahuantinsuyo",
+    "direccion": "Av. Tahuantinsuyo N° 739, La Esperanza – Trujillo – La Libertad, Ref. Diagonal A Grifo El Amigo. / Entre Pasaje Santa Ana Y Av. Los Laureles",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "La Esperanza",
+    "nombre": "Wichanzao",
+    "direccion": "Mz. 1 Lt. 23 Aa.Hh Wichanzao – La Esperanza – Trujillo – La Libertad, Ref. Al Costado Del Almacén Sunat. / Diagonal Al Hospital De Alta Complejidad Virgen De La Puerta",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "Moche",
+    "nombre": "Moche",
+    "direccion": "Av. La Marina Lote 25 - B – Moche – Trujillo - La Libertad, Ref. A Media Cdra De La Comisaría De Moche",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Trujillo",
+    "distrito": "Victor Larco Herrera",
+    "nombre": "Av Larco",
+    "direccion": "Av. Larco 865, Trujillo - Trujillo - La Libertad, Ref. Mz X Lt 28 Cui San Andres V Etapa Tercer Sector",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Ascope",
+    "distrito": "Paijan",
+    "nombre": "Paijan",
+    "direccion": "Av. Panamericana Nro. 2321 La Libertad - Ascope - Paijan, Ref. A 1 Cdra. Del Estadio Municipal De Paiján",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Ascope",
+    "distrito": "Casa Grande",
+    "nombre": "Casa Grande",
+    "direccion": "Calle Luis Sánchez N° 152 Sector Parte Alta. Casa Grande - Ascope - La Libertad, Ref. Cruce Con Av. Estadio",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Chepen",
+    "distrito": "Chepen",
+    "nombre": "Chepen",
+    "direccion": "Prolongacion Ezequiel Gonzales Caceda 193 - Sec. Chepen, Frente Al Coliseo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Chepen",
+    "distrito": "Pacanga",
+    "nombre": "Pacanguilla",
+    "direccion": "Carretera Panamericana # 835 - Urb. Pacanguilla - Distrito Pacanga, Referencia: En La Misma Panamericana",
+    "telefono": "01 5007878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Otuzco",
+    "distrito": "Otuzco",
+    "nombre": "Otuzco",
+    "direccion": "Av. Alfredo Gutiérrez N° 120 - Otuzco - Otuzco - La Libertad.",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Pacasmayo",
+    "distrito": "San Pedro De Lloc",
+    "nombre": "San Pedro De Lloc",
+    "direccion": "Av. Vía De Evitamiento N° 407, San Pedro De Lloc - Pacasmayo - La Libertad, Ref. A Media Cdra. De La Calle Libertad/ A Media Cdra. Del Paradero De La Via De Evitamiento",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Pacasmayo",
+    "distrito": "Guadalupe",
+    "nombre": "Ciudad De Dios",
+    "direccion": "Mz. A Lt. 01 Cpm Ciudad De Dios - Sec. Los Ángeles – Guadalupe – La Libertad, Ref. Al Costado Del Molino Samán Y A Dos Cuadras Del Cruce A Cajamarca",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Pacasmayo",
+    "distrito": "Guadalupe",
+    "nombre": "Guadalupe La Libertad",
+    "direccion": "Av. Nilla Cerruty N° 299 - Guadalupe – Pacasmayo – La Libertad, Ref. Al Costado Del Grifo Repsol - Neotech",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Pacasmayo",
+    "distrito": "Pacasmayo",
+    "nombre": "Pacasmayo Las Palmeras",
+    "direccion": "Ctra. Panamericana Norte N° Mz. P Lt. 4A - A.H. Las Palmeras, Referencia: Entre Av. Sucre Y Av. Leoncio Prado",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Pacasmayo",
+    "distrito": "Pacasmayo",
+    "nombre": "Pacasmayo Centro",
+    "direccion": "Av. Gonzalo Ugaz Salcedo S/N - Pacasmayo - La Libertad, Ref. Al Costado Del Estadio Municipal De Pacasmayo / A Media Cdra. Del Supermercado Tottus",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Sanchez Carrion",
+    "distrito": "Huamachuco",
+    "nombre": "Huamachuco",
+    "direccion": "Jr. Simon Bolivar 763, Huamachuco Sanchez Carrion - La Libertad, Ref. Entre Jr. Independecia Y Jr. Alfonso Ugarte",
+    "telefono": "",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Viru",
+    "distrito": "Viru",
+    "nombre": "Puente Viru",
+    "direccion": "Panamericana Norte N° 933 Puente Virú - Virú - La Libertad, Ref. A Media Cdra. Del Grifo Zona Etna/Media Cdra. Del Semaforo Zona Etna",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Viru",
+    "distrito": "Viru",
+    "nombre": "Viru Centro",
+    "direccion": "Calle Puno N° 125 - Mz. 32 Lt. 7A - Virú - La Libertad, Ref. A Media Cdra. Del Cruce De La Av. Viru Con La Calle Jorge Chavez / A Media Cdra. De La Plazuela Maria Parado De Bellido",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "La Libertad",
+    "provincia": "Viru",
+    "distrito": "Chao",
+    "nombre": "Chao",
+    "direccion": "Av. Victor Raul Haya De La Torre 575 Chao - Viru, Ref. A Media Cdra. De La Comisaría De Chao",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Chiclayo",
+    "distrito": "Chiclayo",
+    "nombre": "Miraflores Chiclayo",
+    "direccion": "Av. Panamericana 975 Pp Jj Luis Alberto Sanchez, Chiclayo - Chiclayo - Lambayeque, Ref. A Media Cdra. Del Ovalo Señor De Sipan / Al Frente De Derco Center",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Chiclayo",
+    "distrito": "Chiclayo",
+    "nombre": "Calle Tacna",
+    "direccion": "Calle. Tacna N° 1095 -Chiclayo- Chiclayo - Lambayeque, Ref. Intersección Con Av. Jose Quiñones / A Espaldas Del Supermercado Makro Chiclayo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Chiclayo",
+    "distrito": "Chiclayo",
+    "nombre": "Aeropuertochiclayo",
+    "direccion": "Aeropuerto Internacional Capitán Fap José Abelardo Quiñones Gonzáles",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Chiclayo",
+    "distrito": "Chiclayo",
+    "nombre": "Av Las Americas",
+    "direccion": "Av. Las Américas Lt. 42 Mz. D, Urb. Monterrico - I Etapa, Chiclayo - Chiclayo - Lambayeque, Ref. A Media Cdra. Entre La Av. Colectora Y Av. Las Americas Y A Media Cdra. Del Grifo Sr. De Sipán",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Chiclayo",
+    "distrito": "Chongoyape",
+    "nombre": "Chongoyape",
+    "direccion": "Av. Atahualpa N° 1200 - Chongoyape - Chiclayo - Lambayeque, Ref. Interseccion Con Calle Iquitos / A 2 Cdras. De La Interseccion Con La Av. Chiclayo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Chiclayo",
+    "distrito": "Jose Leonardo Ortiz",
+    "nombre": "Calle Tahuantinsuyo",
+    "direccion": "Calle Tahuantinsuyo 995 - Urb. San Lorenzo - Jose Leonardo Ortiz - Chiclayo - Lambayeque, Ref. Entre La Cdra. 2 De Av. América Y La Calle Tahuantinsuyo/A Media Cdra. De La Iglesia Los Mormones",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Chiclayo",
+    "distrito": "Jose Leonardo Ortiz",
+    "nombre": "Av Balta Cdra. 36",
+    "direccion": "Av. Jose Balta N° 3653 C.P.M. Primero De Mayo Jose Leonardo Ortiz -Chiclayo -Lambayeque, Ref. Entre La Av. Balta Y Néstor Barsallo / A 2 Cuadras De La Av. Chiclayo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Chiclayo",
+    "distrito": "La Victoria",
+    "nombre": "Av Victor R. Haya Co",
+    "direccion": "Av. Víctor Raul Haya De La Torre 2470 La Victoria - Chiclayo Referencia : Entre La Via Evitamiento Y Panamericana",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Chiclayo",
+    "distrito": "Monsefu",
+    "nombre": "Monsefu",
+    "direccion": "Av. Venezuela N° 221, Monsefú - Chiclayo - Lambayeque, Ref. Ref 01: A Media Cdra. De La Calle Diego Ferre Y A Cdra. Y Media Del Parque Artesanal De Monsefú",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Chiclayo",
+    "distrito": "Pimentel",
+    "nombre": "Pimentel",
+    "direccion": "Calle Miguel Grau Mz B Lote 3 - Pimentel - Chiclayo - Lambayeque, Ref. Al Costado De La Comisaria De Pimentel",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Chiclayo",
+    "distrito": "Reque",
+    "nombre": "Reque",
+    "direccion": "Av. Mariscal Ramon Castilla Mz. 4 Lote 14, Reque - Chiclayo - Lambayeque, Ref. A Media Cdra. De La Interseccion Con Calle San Martin / A Unos Mtrs De Alborada Eventos Y Recepciones",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Chiclayo",
+    "distrito": "Patapo",
+    "nombre": "Patapo",
+    "direccion": "Av. Chongoyape N° S/N Sector Cerro Mirador, Patapo - Chiclayo - Lambayeque, Ref. A Una Cdra. Y Media De La Intersección Con Av Trapiche / Al Frente Del Polideportivo Del Cerro Mirador",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Chiclayo",
+    "distrito": "Pomalca",
+    "nombre": "Pomalca",
+    "direccion": "Calle 25 Mz. I Lt. 6 Sect. 6 San Juan, Pomalca - Chiclayo - Lambayeque, Ref. A Una Cdra. Y Media De La Intersección Con Av. San Martin/ Al Frente De La Iglesia Mormon",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Chiclayo",
+    "distrito": "Tuman",
+    "nombre": "Tuman",
+    "direccion": "Av. Chota N° 288 Sector Acapulco, Tuman - Chiclayo - Lambayeque, Ref. Al Costado Del Restaurant Manos Chotanas",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Ferrenafe",
+    "distrito": "Ferrenafe",
+    "nombre": "Ferreñafe",
+    "direccion": "Av. Andrés A. Cáceres N°550A, Referencia: Al Costado Del Grifo Primax",
+    "telefono": "01 5007878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Lambayeque",
+    "distrito": "Lambayeque",
+    "nombre": "Lambayeque Panamericana",
+    "direccion": "Calle Paraguay Mz. D Lt 2A Unidad Vecinal Indoamérica - Lambayeque, Ref. Al Costado De La Fábrica De Kinkones Bruning / A 01 Cuadra Del Puente Lambayeque",
+    "telefono": "O1 5007878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Lambayeque",
+    "distrito": "Lambayeque",
+    "nombre": "Lambayeque Centro",
+    "direccion": "Av. Federico Villarreal N° 491, Lambayeque - Lambayeque - Lambayeque, Ref. A Media Cdra. De La Interseccion De La Av. Federico Villarreal Con Calle Emiliano Niño",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Lambayeque",
+    "distrito": "Jayanca",
+    "nombre": "Jayanca",
+    "direccion": "Calle Diego Ferre N°1321 - Jayanca - Lambayeque, Ref. Al Frente Del Centro De Salud De Jayanca / A Media Cdra. Del Grifo Asia",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Lambayeque",
+    "distrito": "Morrope",
+    "nombre": "Morrope",
+    "direccion": "Calle Tahuantinsuyo N° 821, Morrope - Lambayeque, Ref. Frente Al Parque Infantil De Morrope",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Lambayeque",
+    "distrito": "Motupe",
+    "nombre": "Motupe",
+    "direccion": "Av. El Maestro N° 447 - Motupe - Lambayeque- Lambayeque, Ref. En La Carretera Fernando Belaunde Terry (Panamericana Norte) / Al Frente Del Grifo Ava",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Lambayeque",
+    "distrito": "Olmos",
+    "nombre": "Olmos",
+    "direccion": "Av. Augusto B. Leguía Mz. 87 Lt. 32 - Olmos - Lambayeque, Ref. Al Frente De La Comisaria De Olmos.",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Lambayeque",
+    "provincia": "Lambayeque",
+    "distrito": "Tucume",
+    "nombre": "Tucume",
+    "direccion": "Av. Federico Villarreal N° 982 (Ctra. Fernando Belaunde Terry), Referencia: A Media Cdra. Del Cementerio Jardines De La Paz",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Cercado Lima",
+    "nombre": "Malvinas - Jr. Ricardo Treneman",
+    "direccion": "Jr. Ricardo Treneman N° 920, Referencia: Dentro Del Local Farenet",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Cercado Lima",
+    "nombre": "Malvinas - Jr. Garcia Villón",
+    "direccion": "Jr. Presbítero García Villon Nro. 560 Cercado Lima - Lima, Ref. A La Altura De La Cdra. 5 De Av. Oscar R. Benavides (Ex Av. Colonial), En Medio De Las Av. Guillermo Dansey Y Av. Oscar R. Benavides",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Cercado Lima",
+    "nombre": "Lima Av Tingo María",
+    "direccion": "Av. Tingo María N°1252-A - Cercado De Lima - Lima, Ref. A Media Cdra. Del Cruce Con Jr. Gral. Orbegoso",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Cercado Lima",
+    "nombre": "Av Nicolas Dueñas Cdra. 5",
+    "direccion": "Av. Nicolas Dueñas 584 Mz. C Lt. 4 – Aahh Primero De Setiembre, Cercado De Lima – Lima - Lima, Ref. A Media Cdra. Del Cruce Con Jr. Pedro Garezon",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Ancon",
+    "nombre": "Ancon",
+    "direccion": "Carretera Serpentín De Pasamayo Mz. G Lt. 3 Sublt. B - Asoc. De Prop. Casa Huerta Ind. Pecuarias San Pedro Zona 4, Ancón - Lima-Lima, Ref. A 1 Cdra. Del Ovalo De Ancón",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Ate-Vitarte",
+    "nombre": "Huaycan Entrada",
+    "direccion": "Av. Andrés Avelino Cáceres Mz G Lt. 14, 1Er Piso Prog De Viv. Philadelfia De Ate Iv Etapa, Ate Vitarte - Lima - Lima, Ref. A Una Cdra. De La Ctra. Central, Paradero El Lavadero",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Ate-Vitarte",
+    "nombre": "Av Marco Puente",
+    "direccion": "Av. Marco Puente Llanos 309, Mz. A, Lt. 03",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Ate-Vitarte",
+    "nombre": "Puente Santa Anita",
+    "direccion": "Av. Nicolás Ayllón N° 3080 - Ate Vitarte",
+    "telefono": "01 5007878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Ate-Vitarte",
+    "nombre": "Huaycan Av Jose C Mariategui",
+    "direccion": "Av. José Carlos Mariátegui Z. E Lt. 23 Ucv 5 (Zona Comercio) - Pueblo Joven \"Proyecto Especial Huaycán\" Ate Vitarte - Lima, Ref. A Dos Cdras. Del Cruce Con Av. 15 De Julio",
+    "telefono": "01 5007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Ate-Vitarte",
+    "nombre": "Los Sauces",
+    "direccion": "Av. Santa Rosa N°773 Manzana “A” Lote 6 Urb Los Sauces - Ate - Referencia: Cruce Con La Av Separadora Industrial",
+    "telefono": "01 5007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Ate-Vitarte",
+    "nombre": "Santa Clara",
+    "direccion": "Av. Pedro Ruíz Gallo Mz. H Lt. 3. Asoc. Viv. Villa San Luis, Santa Clara - Ate Vitarte - Limaref: Entre El Real Plaza Y La Utp Santa Clara",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Ate-Vitarte",
+    "nombre": "Av Esperanza",
+    "direccion": "Av. Esperanza Mz. K Lt. 06 Las Americas - Ate Vitarte - Lima, Ref. Pasando Mercado Raucana",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Ate-Vitarte",
+    "nombre": "Av El Sol",
+    "direccion": "Av. El Sol Mz. S Lt. 2 Zona 03 - Asoc. Parque Industrial El Asesor, Sector 010 Zona 03 - Ate, Ref. A Una Cuadra Y Media De La Carretera Central",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Ate-Vitarte",
+    "nombre": "Huaycan El Descanso",
+    "direccion": "Av. Jose Carlos Mariategui Mza. B Lte 06, Residencial Pariachi Sec. 031 Zon. 05, Ate - Lima - Lima, Ref. Cruce Con La Av. Los Incas",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Ate-Vitarte",
+    "nombre": "Urb Santa Elvira",
+    "direccion": "Av. Ferrocarril Mz. C Lt. 19 Parcela 3, Urb. Santa Elvira Sec. 018 Zona 3, Ref. A Media Cdra. Del Cruce Con Av. De La Cultura",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Ate-Vitarte",
+    "nombre": "Huaycan Av Horacio Zevallos",
+    "direccion": "Av. Horacio Zeballos Mz. V Lt. 12 Prog. Viv. Residencial Pariachi (Sec. 031) Zona 5, Ate - Lima - Lima, Ref. Frente Al Circuito De Manejo Garcilaso De La Vega",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Ate-Vitarte",
+    "nombre": "Los Virreyes - Ate (Por Definir)",
+    "direccion": "Av. Los Virreyes Mz. A Lt. 21 Urb. Tilda Sec. 010 Zn. 03, Ref. A 2 Cdras. Del Innova Schools De Ate Vitarte",
+    "telefono": "01 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Brena",
+    "nombre": "Av Venezuela",
+    "direccion": "Av. Venezuela 1670 - Breña, Referencia: Al Costado Del Policlínico De Breña",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Brena",
+    "nombre": "Jr. Huaraz - Breña",
+    "direccion": "Jr. Huaraz 1633, Breña -Lima, Ref. En Medio Del Cruce De Jr. Gral Orbegoso Y Jr. Centenario Con Jr. Huaraz",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Carabayllo",
+    "nombre": "Carabayllo Establo",
+    "direccion": "Av. Tupac Amaru N? 441 - 443, Mz. O2 Lt. 35, Referencia: Paradero Establo, A Una Cuadra De La Urb. Santa Isabel",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Carabayllo",
+    "nombre": "Tungasuca",
+    "direccion": "Av. Trapiche Mz. P Lt. 48, Urb. Tungasuca Referencia: Aux. Av. Chimpu Ocllo Con Aux. Chillón Trapiche, A 1 Cuadra Del Mercado Qatuna",
+    "telefono": "01 5007878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Carabayllo",
+    "nombre": "Av Tupac Amaru Km. 19",
+    "direccion": "Jr. Los Sauces Mz. E Lote 9 Del Aa. Hh. Villa Manuel Escorza, Ref. Entre Prolongacion Av. Primavera Y Jr. Los Sauces Altura De Av. Tupac Amaru Km. 19",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Carabayllo",
+    "nombre": "Av. Tupac Amaru Km. 23.5",
+    "direccion": "Av. Túpac Amaru Km. 23.5 - Carabayllo, Ref. Frente A La Iglesia De Mormones - A Una Cdra. Del Último Paradero Del Rápido",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Carabayllo",
+    "nombre": "Av Jose Saco Rojas",
+    "direccion": "Av. José Saco Rojas Mz. A Lt. 15 Programa De Vivienda El Pino, San Antonio - Carabayllo, Ref. Frente Al Chifa Hong Fu Y A 3 Cuadras Del Gran Mercado El Pino",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Carabayllo",
+    "nombre": "Santo Domingo",
+    "direccion": "Av. A Mz. L2 Lt. 20 Urb. Santo Domingo – Vi Etapa Carabayllo - Lima, Ref. En El Cruce De Las Av. Chillon Trapiche Y Av. Camino Real",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Carabayllo",
+    "nombre": "El Progreso Km 22",
+    "direccion": "Av. Tupac Amaru 3493 – P.J. El Progreso (Parte Baja) Mz. K Lt. 11B Zona Ii, Carabayllo - Lima, Ref. A Una Cdra. Del Cruce Con La Av. Manuel Prado",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Chorrillos",
+    "nombre": "Chorrillos Co",
+    "direccion": "Av. Santa Anita N.° 580, Chorrillos - Lima, Ref. Al Costado Del Mercado Santa Anita, Cruce Con San Genaro",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Chorrillos",
+    "nombre": "Chorrillos Los Faisanes",
+    "direccion": "Av. Los Faisanes 420, Referencia: Al Costado De La Tienda John Holden",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Chorrillos",
+    "nombre": "Las Delicias De Villa",
+    "direccion": "Av. 12 De Octubre Mz. A - 03, Lt. 02, Urb. Aria - Las Delicias De Villa, Ref. A Dos Cuadras De La Av. Defensores Del Morro (Ex Av. Huaylas)",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Cieneguilla",
+    "nombre": "Cieneguilla Km. 14.5",
+    "direccion": "Av. Arterial Huarochiri D Mz. B Lt. 19, Asoc. De Viviendas Las Cumbres De Cieneguilla, Lima, Ref. Al Costado De La Tienda Mass",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Cieneguilla",
+    "nombre": "Reparto San Luis",
+    "direccion": "San Luis",
+    "telefono": "(01) 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Comas",
+    "nombre": "Av Univ. Retablo",
+    "direccion": "Av. Universitaria N° 7241, Referencia: Ex Boulevard De Retablo / A 2 Cdras Del Metro De Belaunde",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Comas",
+    "nombre": "Av. Trapiche",
+    "direccion": "Av. Trapiche 886 A 16 2P 2 - Urb. Pinar, Referencia: Frente Al Complejo Deportivo Walon",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Comas",
+    "nombre": "Año Nuevo",
+    "direccion": "Av. Tupac Amaru N° 7837- 7839 Mz. C Lt. 010 Urb. Popular San Juan Bautista I Etapa, Comas - Lima, Ref. A Una Cdra. De La Entrada De Collique",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Comas",
+    "nombre": "Av Tupac Amaru Cdra. 57",
+    "direccion": "Av. Tupac Amaru 5725-5727 - Urb. Huaquillay I Etapa, Comas - Lima - Lima, Ref. A Media Cdra. Del Banco De La Nación",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Comas",
+    "nombre": "Av. Univ. Parque Sinchi Roca",
+    "direccion": "Av. Universitaria Norte Mzn. Q1 Lte. 030 Urb. Primavera,Comas-Lima - Lima, Ref. A Media Cdra. Del Ingreso Al Parque Zona Sinchi Roca",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Comas",
+    "nombre": "Urb. Repartición",
+    "direccion": "Av. Tupac Amaru 3184 Urb. Reparticion, Comas - Lima - Lima, Ref. A Media Cdra. De Av. Victor Andres Belaunde Y/O Frente A Dollarcity",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "El Agustino",
+    "nombre": "Puente Nuevo",
+    "direccion": "Av 1° De Mayo 3071 - Urb Huancayo Referencia : Frente Al Grifo Repsol",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "El Agustino",
+    "nombre": "Jiron Ancash",
+    "direccion": "Jr. Ancash Mz. B Lt. 11 Aahh Ancieta Alta, El Agustino - Lima - Lima, Ref. Frente Al Ingreso De Agustino Plaza",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Independencia",
+    "nombre": "La Cincuenta",
+    "direccion": "Av. Tupac Amaru N° 4708 - 4710, Ref. A Una Cdra. Del Paradero Estación Naranjal",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Independencia",
+    "nombre": "Plaza Norte S. Express",
+    "direccion": "Av. Gerardo Unger Nro. 6917 Int. Lb 19",
+    "telefono": "",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Independencia",
+    "nombre": "Plaza Norte Entregas",
+    "direccion": "Av. Gerardo Unger Nro. 6917 Int. Lb 19",
+    "telefono": "",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Independencia",
+    "nombre": "Calle A Con Av Industrial",
+    "direccion": "Calle A, Mz. D Lt. 26 Urbanización Panamericana (Primer Piso) Independencia - Lima - Lima, Ref. A 1 Cdra. Del Cruce Con Av. Industrial (Lateral De Megaplaza)",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Jesus Maria",
+    "nombre": "Av. San Felipe",
+    "direccion": "Av. San Felipe 1195 - Jesús María",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Jesus Maria",
+    "nombre": "Av. Arenales",
+    "direccion": "Av. Arenales 391, Referencia: A 2 Cdras. De Av. 28 De Julio A La Espalda De La Utp",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Jesus Maria",
+    "nombre": "Jesus Maria",
+    "direccion": "Av. Mariscal Luzuriaga 584-586 Jesús María - Lima, Ref. A Cuadra Y Media Del Parque San José, Paralelo A La Av. Mello Franco",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "La Molina",
+    "nombre": "Av La Fontana",
+    "direccion": "Av La Fontana 440 - La Molina (Cc La Rotonda Ii Local 1018)",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "La Molina",
+    "nombre": "Los Fresnos",
+    "direccion": "Av. Los Fresnos 1305 Tienda 2 - Urb. Portada Del Sol I Etapa - La Molina - Lima, Ref. A 3 Cdras. Del Óvalo De Los Cóndores",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "La Molina",
+    "nombre": "Av. La Molina Cdra. 35",
+    "direccion": "Av. La Molina (Exav. La Universidad) #3551 Tda -7 Mz. H Sublote 1C, Urb. El Sol De La Molina I Etapa La Molina - Lima, Ref. A Media Cdra. Del Cruce Con Av. El Sol",
+    "telefono": "",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "La Molina",
+    "nombre": "Av Flora Tristan",
+    "direccion": "Av. Flora Tristán N° 885, Urb. Santa Patricia Iii Etapa, La Molina - Lima, Ref. A Media Cdra. De Molisalud",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "La Molina",
+    "nombre": "Av Alameda Del Corregidor",
+    "direccion": "Av. Alameda Del Corregidor Mz. U Lt. 19 Ui 1 - Urb La Capilla, La Molina - Lima - Lima, Ref. A 2 Cdras. Del Cruce Con Alameda De Los Cóndores",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "La Victoria",
+    "nombre": "Av Mexico Co",
+    "direccion": "Av. Mexico 1125, La Victoria - Lima",
+    "telefono": "(01) 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "La Victoria",
+    "nombre": "Jr. Luna Pizarro",
+    "direccion": "Jr. Luna Pizarro N° 701 - La Victoria, Referencia: Esquina Hipólito Unanue",
+    "telefono": "01 500 7878",
+    "tamano": "Solo Envíos"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "La Victoria",
+    "nombre": "Jr. Raymondi",
+    "direccion": "Jr. Antonio Raymondi Nro. 113",
+    "telefono": "015007878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "La Victoria",
+    "nombre": "Av. Canada",
+    "direccion": "Av. Canadá 1603, Referencia: Entre Av. Canadá Con Av. Aviación",
+    "telefono": "01 5007878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "La Victoria",
+    "nombre": "Area Shalom Empresas",
+    "direccion": "Direccion",
+    "telefono": "01 5007878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "La Victoria",
+    "nombre": "Caja Transporte Mexico",
+    "direccion": "Cargando",
+    "telefono": "(01) 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Lince",
+    "nombre": "Jr Casanova Con Petit Thouars",
+    "direccion": "Jr. Domingo Casanova N°318 Lince - Lima, Ref. Cruce Con Petit Thouars",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Lince",
+    "nombre": "Av Jose Leal Cdra 6",
+    "direccion": "Av. Coronel José Leal 648, Urb. Fundo Lobatón, Lince - Lince, Ref. Paralela A La Cdra. 6 De La Av. Canevaro",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Los Olivos",
+    "nombre": "Av. Las Palmeras",
+    "direccion": "Av. Las Palmeras N° 5236 Urb. Villa Norte - Los Olivos",
+    "telefono": "01 5007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Los Olivos",
+    "nombre": "Pro",
+    "direccion": "Av. Los Próceres Mz. Pp2 Lt.21, Urb. Puertas De Pro - Los Olivos",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Los Olivos",
+    "nombre": "Av. Angelica Gamarra",
+    "direccion": "Av. Angelica Gamarra De Leon Valverde N° 621 Urb El Trebol, Los Olivos - Lima, Ref. A La Altura Del Kfc / Cruce Con Av. Alfa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Los Olivos",
+    "nombre": "Av Huandoy Con Marañon",
+    "direccion": "Av. Próceres, Mz. 3, Lt. 23 A.H. Laura Caller - Los Olivos, Referencia: Cruce Entre Av. Huandoy Y Marañón",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Los Olivos",
+    "nombre": "Av. Dos De Octubre",
+    "direccion": "Av. 2 De Octubre Mz. H Lt. 2 - Los Olivos - Pro, Ref. Av. 2 De Octubre Con Av. Canta Callao, Al Costado Del Centro De Salud Pro",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Los Olivos",
+    "nombre": "Av. Carlos Izaguirre Cdra. 14",
+    "direccion": "Calle David Alva Manzana H Lote 4 Urb. Cajabamba Los Olivos - Lima, Ref. Entre La Av. Carlos Izaguirre Con La Av. Universitaria (Frente Al Colegio Pamer)",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Los Olivos",
+    "nombre": "Av. Los Platinos",
+    "direccion": "Av. Los Platinos N°. 259, Mz. A - Lt. 17, Urb. Lotización Industrial Infantas Los Olivos - Lima, Ref. A Dos Cdras. Y Media De La Av. Alfredo Mendiola Y/O Panamericana Norte (Altura Del Paradero Caseta)",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Los Olivos",
+    "nombre": "Av Huandoy Con Av Central",
+    "direccion": "Av. Huandoy Mza. 72 Lte. 54 P.J. P.M.V. “Confraternidad” - Aahh. Enrique Milla Ochoa Los Olivos - Lima, Ref. A Una Cdra. Del Cruce Con Av. Central",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Los Olivos",
+    "nombre": "Segunda De Pro",
+    "direccion": "Av. Alfredo Mendiola 8161 Urb. Pro, Los Olivos - Lima - Lima, Ref. A Una Cdra. Del Colegio José María Arguedas",
+    "telefono": "01 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Lurigancho",
+    "nombre": "Cd. Talleres-Huachipa",
+    "direccion": "V",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Lurigancho",
+    "nombre": "Chosica",
+    "direccion": "El Sol 124 (Parque Echenique) Lurigancho - Chosica",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Lurigancho",
+    "nombre": "Huachipa Co",
+    "direccion": "Huachipa Este - Manzana A18 Lote 1, 2, 3 Calle B, Calle 08, Calle A, Ref. Al Costado De Industrias Eléctricas Kba",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Lurigancho",
+    "nombre": "Santa María De Huachipa",
+    "direccion": "Av. Circunvalación Mz. A Lt. 1 - D C - P Santa María De Huachipa - Lurigancho - Chosica, Ref. Entre La Av. Circunvalación Y La Av. Huachipa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Lurigancho",
+    "nombre": "Huachipa Co 2",
+    "direccion": "Huachipa Este - Manzana A18 Lote 1, 2, 3 Calle B, Calle 08, Calle A, Ref. Al Costado De Industrias Eléctricas Kba",
+    "telefono": "(01) 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Lurigancho",
+    "nombre": "Av Las Torres",
+    "direccion": "Av. Las Torres Sub. Lt. 18A - 1D, Fundo Huachipa, Parcela Media, Lurigancho - Lima - Lima, Ref. Al Frente Del Cruce Con Av. Media Luna",
+    "telefono": "01 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Lurin",
+    "nombre": "Nuevo Lurin",
+    "direccion": "Av. Antigua Panamericana Sur Km 37 Mz C Lt 17 - Fundo Las Salinas - Referencia A Cuadra Y Media Del Mercado Virgen De Las Mercedes.",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Lurin",
+    "nombre": "Puente Lurin",
+    "direccion": "Antigua Panamericana Sur, Lote 2, Mz. B, Primer Piso Lurín - Lima, Ref. A Cdra. Y Media Del Cruce Con Av. Santa Cruz",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Magdalena Del Mar",
+    "nombre": "Magdalena Del Mar",
+    "direccion": "Jr. Ayacucho N° 756, Referencia: A Una Cdra. Del Mercado Modelo De Magdalesy A 3 Cdras. De La Iglesia Cúpula De Sucre",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Pueblo Libre",
+    "nombre": "Av. La Marina",
+    "direccion": "Av. La Marina 1640 - Referencia : A Una Cuadra Del Centro Comercial Plaza San Miguel",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Pueblo Libre",
+    "nombre": "Av Bolivar",
+    "direccion": "Av. Bolivar 1097, Pueblo Libre - Lima, Ref. A Media Cdra. Del Cruce Av. Gral. José María Egusquiza",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Miraflores",
+    "nombre": "Av. Jose Pardo",
+    "direccion": "Av. Jose Pardo N?533",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Miraflores",
+    "nombre": "Calle Berlin",
+    "direccion": "Calle Berlín 219 - Miraflores",
+    "telefono": "015007878",
+    "tamano": "Agente"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Miraflores",
+    "nombre": "Av. Roosevelt",
+    "direccion": "Av. Roosevelt 6297 (Antes Rep. Panamá) - Miraflores",
+    "telefono": "(01) 500 7878",
+    "tamano": "Agente"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Miraflores",
+    "nombre": "Av. Alfredo Benavides",
+    "direccion": "Av. Alfredo Benavides 1851 - Miraflores, Ref. Al Costado Del Bembos Aurora Benavides",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Miraflores",
+    "nombre": "Av. Comandante Espinar",
+    "direccion": "Av. Comandante Espinar 330-Miraflores, Ref. Entre El Cruce De Calle Enrique Palacios Y La Av. Comandante Espinar",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Pachacamac",
+    "nombre": "La Curva De Manchay",
+    "direccion": "Av. Prolongación De La Av. La Molina Mz. E Lote 21. Ah Paul Poblet Lind, Pachacamac - Lima, Ref. A Media Cdra. De Mi Banco",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Pachacamac",
+    "nombre": "Manchay Tres Marias",
+    "direccion": "Av. Victor Malasquez Mz. B11 Sub-Lote 06-A - Aahh Centro Poblado Rural Los Huertos De Manchay Sector B Pachacamac - Lima, Ref. A Media Cdra. Del Paradero",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Pachacamac",
+    "nombre": "Av Manuel Valle",
+    "direccion": "Av. Manuel Valle Sub - Lote 2 - 1, Número De Parcela J, Proyecto Huertos De Pachacamac, Valle Lurín - Pachacamac - Lima, Ref. Frente Al Estudio De Canal 4 (America Televisión)",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Pachacamac",
+    "nombre": "El Retamal",
+    "direccion": "Av. Victor Malasquez Mz. B Lt. 16 – Asociación De Vivienda “El Sol De San Fernando” Zona 5 – Quebrada De Manchay, Pachacámac - Lima - Lima, Ref. A 2 Cdras. Del Cruce Con Av. Unión",
+    "telefono": "01 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Puente Piedra",
+    "nombre": "Puente Arica",
+    "direccion": "Panamericana Norte Km 32.5 , A 1/2 Cuadra Del Puente Arica - Al Costado Del Grifo Repsol",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Puente Piedra",
+    "nombre": "Zapallal",
+    "direccion": "Av. Ancón 678, Ref. A La Espalda Del Precio Uno De Fundicion",
+    "telefono": "01 5007878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Puente Piedra",
+    "nombre": "Av. San Lorenzo",
+    "direccion": "Av. San Lorenzo Mz C Lt 20 - Adp Virgen De Copacabana, Puente Piedra - Lima. Ref, A Media Cuadra Del Parque Virgen De Copacabana",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Puente Piedra",
+    "nombre": "Ovalo Puente Piedra",
+    "direccion": "Av. Miguel Grauâ Mz. A Lt. 07 Y 08 Urb. San Martin De Porres, Cercado Puente Piedra - Lima, Ref. Espaldas De Tottus De Puente Piedra",
+    "telefono": "",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Puente Piedra",
+    "nombre": "Av Buenos Aires",
+    "direccion": "Av. Buenos Aires Mz. D, Sub-Lote 188E1 Asociación De Pobladoresmicaela Bastidas, Puente Piedra - Lima - Lima, Ref. A 2 Cdras. De La Demuna De Puente Piedra",
+    "telefono": "",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Punta Hermosa",
+    "nombre": "Almacenes Bsf",
+    "direccion": "Car. Autopista Panamericana Sur N° 2001 (Km. 38) Interior H02A - Punta Hermosa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Punta Hermosa",
+    "nombre": "Punta Hermosa",
+    "direccion": "Av. Garcia Rada Mz.B Lt.04, Aahh Asociacion De Vivienda Y Desarrollo Integral Nueva Generacion, Punta Hermosa - Lima, Ref. A Una Cdra. Del Paradero Peatonal De Punta Hermosa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Rimac",
+    "nombre": "Rimac Av. Amancaes",
+    "direccion": "Av. Amancaes Nro. 644 Urb. Ciudad Y Campo - Rimac",
+    "telefono": "01 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Rimac",
+    "nombre": "Rimac Guardia Republicana Cdra. 9",
+    "direccion": "Sección Inmobiliaria N°2 – Primer Piso Lt. 11 De La Mz. 2, Urb. Villacampa Rimac, Ref. A Una Cdra. Del Cruce Con Av. Felipe Arancibia",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Borja",
+    "nombre": "Av. Javier Prado",
+    "direccion": "Av. Javier Prado Este N? 1810 - Est. 05 Mz. A - 1 Lt. 04",
+    "telefono": "(01) 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Borja",
+    "nombre": "Aviacion 2819",
+    "direccion": "Av. Aviación 2819, Urb. San Borja Sur, Referencia: Al Frente De Bembos",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Borja",
+    "nombre": "Aviacion 2999",
+    "direccion": "Av. Aviación 2999, Referencia: A 1 Cdra. De La Estación Del Tren San Borja Sur",
+    "telefono": "(01) 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Borja",
+    "nombre": "Av. Angamos",
+    "direccion": "Av. Angamos Este 2521 (Ex Av. Primavera) - Conjunto Habitacional Limatambo - San Borja. Ref. Cerca Al Cruce De Av. Angamos Este Con Av. Principal",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Isidro",
+    "nombre": "Riv. Navarrete",
+    "direccion": "Av. Rivera Navarrete 465, Referencia: Cruce De Javier Prado Con Rivera Navarrete",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Isidro",
+    "nombre": "Corpac",
+    "direccion": "Calle 21 785, Referencia: Al Costado Del Ministerio Del Interior",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Isidro",
+    "nombre": "Calle Las Begonias",
+    "direccion": "Calle Las Begonias 774 - San Isidro",
+    "telefono": "(01) 500 7878",
+    "tamano": "Agente"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Isidro",
+    "nombre": "Calle Miguel Dasso",
+    "direccion": "Calle Miguel Dasso 126 - San Isidro, Ref. En El Cruce De Calle Leonidas Yerovi Y Calle Miguel Dasso",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "nombre": "Av Santa Rosa Urb Los Alamos",
+    "direccion": "Av. Santa Rosa Mz. D1 Lote 1 Urb. Los Alamos 2Da Etapa - Referencia Altura De La Cuadra 13 Del Paradero Canto Grande",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "nombre": "Av. 13 De Enero",
+    "direccion": "Av. 13 De Enero Nº2057, Urb. San Hilarión, Referencia: Cerca A La Estación Los Postes",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "nombre": "Cruz De Motupe",
+    "direccion": "Av. Fernando Wiesse Mz. Q Lote 1 Aa.Hh. Cruz De Motupe",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "nombre": "Sjl- Las Flores",
+    "direccion": "Av. Canto Grande N°. 2570 - Urb. Ganimedes, Referencia: A 3 Cdras. De Plaza Vea",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "nombre": "Sjl-Av.Proceres",
+    "direccion": "Av. Próceres De La Independencia Nro. 1295 - 1299 Referencia: Al Costado Del Banco De La Nación De Av. Los Tusilagos Oeste",
+    "telefono": "01 5007878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "nombre": "Canto Grande",
+    "direccion": "Calle San Martin Con Av. Comercial Norte 189 - San Juan De Lurigancho, Ref. A 1/2 Cuadra De La Av 6 De Canto Grande - Al Costado Del Play Park (Parque Bolognesi)",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "nombre": "Los Pinos",
+    "direccion": "Mz. B1 Lt. 25 Urbanización Los Pinos San Juan De Lurigancho, Ref. Av. Fernando Wiesse - Cerca A La Estación San Martín",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "nombre": "Bayovar",
+    "direccion": "Av. Fernando Wiesse Mz. E8. Lote 38B, Mariscal Cáceres Bayovar - San Juan De Lurigancho - Lima, Ref. Auxiliar Próceres De La Independencia, Al Frente De La Universidad San Marcos – Agroindustrial",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "nombre": "Campoy",
+    "direccion": "Av. Malecón Checa Mz. B Lt. 7, Urb. Campoy, San Juan De Lurigancho, Ref. A 1 Cdra. Del Cruce De Av. Malecón Checa Con Av. San Martín",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "nombre": "Av. Del Mercado",
+    "direccion": "Programa Ciudad Mrcal. Caceres, Sector Iii Mz. Q8 Lt. 11 San Juan De Lurigancho - Lima, Ref. A Media Cdra. Del Cruce De Av. Del Mercado Con Av. Ampliacion Oeste",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "nombre": "Jr Chinchaysuyo Cdra 4",
+    "direccion": "Jr. Chinchaysuyo 468 Zarate, San Juan De Lurigancho - Lima, Ref. A 1 Cdra. De Tiendas 3 A",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "nombre": "Av Central Sjl",
+    "direccion": "Av. Central Mz R9 Lote 3 Programa Ciudad Mrcal. Caceres, Sector Ii, Barrio 3, Grupo Residencial R - San Juan De Lurigancho, Ref. En Medio Del Cruce Con Las Av. El Muro Y Ampliacion Este",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "nombre": "Av. Santa Rosa Cruce Av. El Sol",
+    "direccion": "Av. Santa Rosa De Lima Mz. D Lt. 4 - Aahh 2 De Setiembre - San Juan De Lurigancho, Ref. A Tres Cdras. Del Cruce Con Av. El Sol",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "nombre": "Av Malecon Checa Cdra. 1",
+    "direccion": "Av. Malecón Miguel Checa Eguiguren N° 167 Y 169 De La Urb. Zárate, Sjl - Lima, Ref. Esquina Con Av. Gran Chimú",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Lurigancho",
+    "nombre": "Av Circunvalacion Sjl",
+    "direccion": "Av. Circunvalación Mz. B-5 Lt. 20 Aa. Hh. Sargento Fernando Lores Tenazoa Comuna 20, San Juan De Lurigancho - Lima, Ref. A Dos Cdras. Del Colegio Ramiro Priale",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Miraflores",
+    "nombre": "Atocongo",
+    "direccion": "Av. De Los Héroes N° 228 - San Juan De Miraflores - (Estación Atocongo)",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Miraflores",
+    "nombre": "Maria Auxiliadora",
+    "direccion": "Av. Los Héroes 1140 - Sjm, Referencia: Una Cdra. Antes Del Hospital María Auxiliadora",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Miraflores",
+    "nombre": "Av. Canevaro",
+    "direccion": "Av. Canevaro 336 - A, Ref. A 2 Cuadras De La Av. Vargas Machuga Y A Una Cuadra De La Fiscalía Provincial Penal De S.J.M.",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Miraflores",
+    "nombre": "Av Miguel Grau Pamplona Alta",
+    "direccion": "Av. Almirante Miguel Grau Mz. Y3 Lt. 29,Pamplona Alta - San Juan De Miraflores - Lima, Ref. A Media Cdra. Del Mercado Ollantay Pamplonaalta",
+    "telefono": "",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Miraflores",
+    "nombre": "Av San Juan Pamplona Alta",
+    "direccion": "Av. San Juan Mz. 24 Lt. 1, Sect. Nuevo Horizonte, Pp. Jj Pamplona Alta - San Juan De Miraflores, Ref. A 3 Cdras. Del Cruce Con Av. Salvador Allende",
+    "telefono": "",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Juan De Miraflores",
+    "nombre": "Av Los Precursores / Las Americas",
+    "direccion": "Av. Los Precursores Mz. B Lt. 17 Aa.Hh El Inti, San Juan De Miraflores - Lima - Lima, Ref. A 1 Cdra. Del Cruce Con Av. Los Próceres",
+    "telefono": "01 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Luis",
+    "nombre": "Pruebaaposucursal",
+    "direccion": "Calle Rio Marañon 189",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "nombre": "Fiori",
+    "direccion": "Av. Miguel Angel N° 235 - Urb. Fiori 4Ta Etapa Mz. N-1 Lt. 04 U.I N°6, San Martín De Porres - Lima, Ref. A 1 Cdra. Del Cruce Con Av. Marco Polo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "nombre": "Av. Canta Callao Con Alisos",
+    "direccion": "Av. Canta Callao, Mz. A Lt. 3 Urb. Arizona - 2Da Etapa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "nombre": "Smp Av Bertello",
+    "direccion": "Av. Alejandro Bertello Bollati Mz. H Lt. 2-A - Asoc. De Viv. San Remo Ii Etapa, San Martín De Porres - Lima - Lima, Ref. A Media Cdra. Del Cruce Con Av. Canta Callao",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "nombre": "Smp-Av. Proceres",
+    "direccion": "Av. Próceres N° 588 Urb. Covicem, Ref. A 2 Cdras. De Tomás Valle",
+    "telefono": "01 5007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "nombre": "Av. Peru 15",
+    "direccion": "Av. Perú 1589, San Martin De Porres - Lima. Referencia: A Dos Cuadras Del Cruce Con La Av. Canadá.",
+    "telefono": "01 5007878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "nombre": "Av. Lima Cdra 38",
+    "direccion": "Av. Lima 3899 - Smp, Ref. A 3 Cdras. Del Tottus De Quilca Con Av. Lima",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "nombre": "Av. Carlos Izaguirre Cuadra 23",
+    "direccion": "Av. Carlos Izaguirre Sub Lt. 8, Mz. C - Asoc. De Viv. Los Nisperos, Referencia: Entre Av. 12 De Octubre Y Av. Santa Rosa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "nombre": "Av. Gerardo Unger Cdra 64",
+    "direccion": "Av. Gerardo Unger 6475, Urb. Santa Luisa, 1Ra Etapa, S.M.P., Ref. Esquina Con Av. 22 De Agosto, Límite Con Comas / A Una Cdra. Y Media De La Comisaria Santa Luzmila",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "nombre": "Germán Aguirre",
+    "direccion": "Av. German Aguirre Ugarte 649 Urb. San German - San Martin De Porres, Ref. A La Altura De La Cuadra 6 De La Av. German Aguirre Y A 3 Cuadras De Av. Tomas Valle",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "nombre": "Av Jose Granda Cdra 38",
+    "direccion": "Av. José Granda 3826 De La Urb. Condevilla Señor Y Valdivieso Mz. M7 Lt 20, 2 Etapa, 2 Sector - S.M.P. , Ref. Entre Av. Condevilla Y Av. Los Próceres",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "nombre": "Av. Dominicos Cdra 14",
+    "direccion": "Av. Los Dominicos 1460 - Urb. Los Cipreses Mz. Z Lt. 4 - San Martín De Porres, Ref. A Una Cdra. Del Cruce Con Av. Santa Rosa Al Lado Del Mercado Los Cipreses",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "nombre": "Av Jose Granda Cdra. 25",
+    "direccion": "Av. Jose Granda 2546 - San Martin De Porres -Lima - Lima, Ref. A Una Cdra. Del Óvalo Jose Granda Y Av. Universitaria",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "nombre": "Av. Canta Callao Con Izaguirre",
+    "direccion": "Av. Canta Callao Mz. A Lt. 3 Asoc. Brisas Santa Rosa 1Ra Etapa, Ref. A Media Cdra. Del Colegio Amistad Y/O A Cuatro Cdras. De La Av. Carlos Izaguirre",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "nombre": "Av. Universitaria Cdra. 16",
+    "direccion": "Av. Universitaria 1619 - Urb. Maria Gracia De Antares Mz. B Lt. 25 – San Martin De Porres - Lima, Ref. Frente Al Plaza Vea De Universitaria Con Tomas Valle",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "nombre": "Av Central Smp",
+    "direccion": "Av. Central Mz. A Lt. 07, Urb. Programa De Vivienda Lucerito De Naranjal, San Martín De Porres - Lima - Lima, Ref. A 5 Cdras. Del Cruce Con Av. Tantamayo",
+    "telefono": "01 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "nombre": "Av Universitaria Con Izaguirre",
+    "direccion": "Av. Universitaria Mz. D Lt. 01 Asociación De Vivienda San Juan De Dios, San Martín De Porres - Lima - Lima, Ref. A 1 Cdra. Del Cruce Con Av. Carlos Izaguirre",
+    "telefono": "01 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Martin De Porres",
+    "nombre": "Smp Av Pacasmayo",
+    "direccion": "Av. Pacasmayo Mz. A Lt. 03 – Urb. Santa Fe De Naranjal, San Martín De Porres - Lima - Lima, Ref. A 3 Cdras. Del Cruce Con Av. El Sol De Naranjal",
+    "telefono": "01 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Santa Anita",
+    "nombre": "Av. Huarochirí",
+    "direccion": "Av. Huarochirí Mz. E1 Lt. 03 - Urb. Los Cedros Santa Anita, Ref. Cruce De Av. Huarochirí Con Av. Santa Ana",
+    "telefono": "",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Santa Anita",
+    "nombre": "Av Santa Rosa - Sta Anita",
+    "direccion": "Av. Santa Rosa #147 – Urb. Santa Anita Mz. B1 Lt. 08 Unidad Inmobiliaria N° 1 - Santa Anita - Lima, Ref. A Una Cdra. De La Carretera Central",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Santa Anita",
+    "nombre": "Av Huarochiri Envios",
+    "direccion": "Av. Huarochiri Mz. D8 Lt. 13, Urb. Los Cedros, Santa Anita - Lima, Ref. A Media Cdra. Del Cruce Con Av. Santa Rosa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Solo Envíos"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Santa Anita",
+    "nombre": "Urb Universal",
+    "direccion": "Jr. Cesar Vallejo 302 Mz. B1 Lt. 02 Urb Universal, Santa Anita- Lima-Lima, Ref. A 1 Cdra. Del Cruce Con Av. Tupac Amaru",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Santa Anita",
+    "nombre": "Av. Ferrocarril - Santa Anita (Por Definir)",
+    "direccion": "Av. El Ferrocarril 530 Cooperativa. Los Chancas De Andahuaylas Mz. F1 Lt. 06, Ref. A 2 Cdras. Del Innova Schools De Ate Vitarte",
+    "telefono": "01 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Santa Rosa",
+    "nombre": "Santa Rosa",
+    "direccion": "Mz. L 23 Urb. Coovitiomar, - Santa Rosa - Lima, Ref. Cruce De Ingreso A Santa Rosa Y/O Al Costado De Imagen De Santa Rosa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Santiago De Surco",
+    "nombre": "Higuereta",
+    "direccion": "Calle Barlovento N° 134 Referencia: A 3 Cdras De Polvos Rosados, Cerca Al Óvalo Higuereta, Surco",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Santiago De Surco",
+    "nombre": "Av. Primavera 120",
+    "direccion": "Av. Primavera Nº 120 Tda. A-21 – Urb. Tambo De Monterrico",
+    "telefono": "01 5007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Santiago De Surco",
+    "nombre": "Av. Primavera 1314",
+    "direccion": "Av. Primavera N° 1314, Urb. C.C. Monterrico - Surco, Referencia: Cruce Jr. El Polo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Agente"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Santiago De Surco",
+    "nombre": "Av. Primavera 264",
+    "direccion": "Av. Primavera 264 Tda 187 C.C. Chacarilla – Santiago De Surco - Lima - Lima, Ref. C.C. Chacarilla Primer Piso (Puerta Principal Del Centro Comercial)",
+    "telefono": "(01) 500 7878",
+    "tamano": "Agente"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Santiago De Surco",
+    "nombre": "Surco Mateo Pumacahua",
+    "direccion": "Av. San Juan Mz A Lote 01 Mateo Pumacahua - Surco, Ref. A 2 Cuadras De La Av. Tupac Amaru Entre El Límite De Chorrillos Y Surco",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Santiago De Surco",
+    "nombre": "Av. Tomás Marsano",
+    "direccion": "Av. Tomás Marsano 3767 - Santiago De Surco, Ref. A Media Cuadra De La Estación De Tren Ayacucho",
+    "telefono": "(01) 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Santiago De Surco",
+    "nombre": "Av Tomas Marsano - La Bolichera",
+    "direccion": "Av. Santiago De Surco Nº 4348, Urbanización La Virreyna, Santiago De Surco - Lima, Ref. Al Lado De Inteci Sede Surco",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Surquillo",
+    "nombre": "Rep. De Panama",
+    "direccion": "Av República De Panamá N° 5115, Referencia: Costado Del Grifo Repsol.",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Surquillo",
+    "nombre": "Av. Aramburu",
+    "direccion": "Av. Aramburú 808, Referencia: A 2 Cdras. De La Av. Panamá",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Surquillo",
+    "nombre": "Av. Principal",
+    "direccion": "Lt. 12 Mz. G, Av. Principal 995 (Ex Av. Uno) Urb. Los Sauces 2Da Etapa, Surquillo, Ref. Cruce Con A. Manuel Villarán",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mini-Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Villa El Salvador",
+    "nombre": "Av. Cesar Vallejo",
+    "direccion": "Av. Cesar Vallejo, Mz. F Lt. 1 - Sect. 2, Referencia: Frente A Essalud, Al Costado Del Mercado Villa Sur",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Villa El Salvador",
+    "nombre": "Av. Pastor Sevilla",
+    "direccion": "Mz. B Lt. 3 Barrio 3 Sector 2 - 4Ta Etapa - Ves, Referencia: Por El Óvalo Cerro Lomas, Frente Al Colegio Virgen Del Rosario",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Villa El Salvador",
+    "nombre": "Óvalo Mariátegui",
+    "direccion": "Av. Pastor Sevilla Sect. 6 - Gp 7 - Mz. A - Lote 05 - V.E.S., Ref. A 2 Cuadras Del Óvalo Mariátegui Con 3 De Octubre",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Villa El Salvador",
+    "nombre": "01 De Mayo",
+    "direccion": "Av. 01De Mayo 1 Sect Gp 23 - A Mz N Lote 13 - V.E.S., Ref. Av. Pastor Sevilla Con Av. 1 De Mayo A 2 Cuadras Del Hospital De La Solidaridad Por La Ruta C",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Villa El Salvador",
+    "nombre": "Prueba Sistemas",
+    "direccion": "Av Pruebas.",
+    "telefono": "963569570",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Villa El Salvador",
+    "nombre": "Av Revolución",
+    "direccion": "Av. Revolución Mz. J Lt. 19, Sector Tercero, Grupo Residencial 9, Pueblo Joven Villa El Salvador, Villa El Salvador - Lima - Lima, Ref. Cerca Al Cruce Con Av. Jose Carlos Mariategui",
+    "telefono": "01 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Villa Maria Del Triunfo",
+    "nombre": "Las Conchitas",
+    "direccion": "Av. Pachacutec 6779, Mz. N, Lt. 20, Villa Maria Del Triunfo - Referencia: A Una Cdra. Del Grifo Repsol Las Conchitas",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Villa Maria Del Triunfo",
+    "nombre": "Pesquero",
+    "direccion": "Av. Pachacutec N° 3548, Referencia: Frente A Real Plaza, A 1 Cdra. De Mayorsa",
+    "telefono": "01 5007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Villa Maria Del Triunfo",
+    "nombre": "Av. Lima - Vmt",
+    "direccion": "Av. Lima 2208 José Gálvez- Villa María Del Triunfo, Referencia: A Dos Cdras. De La Curva José Gálvez",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Villa Maria Del Triunfo",
+    "nombre": "Av. Villa Maria",
+    "direccion": "Av Villa Maria Mz. G12 Lt. 9 - B Ps 1 Sect. Villa Maria Del Triunfo, Ref. Av. Villa Maria A 2 Cuadras De La Municipalidad De Vmt Y Al Costado De Essalud",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Villa Maria Del Triunfo",
+    "nombre": "Nueva Esperanza Vmt",
+    "direccion": "Av. 26 De Noviembre, 1728B - 1728C Mz. 90 Sub Lote. 19B Pueblo Joven Nueva Esperanza, Villa Maria Del Triunfo - Lima, Ref. A 3 Cdras. Del Mercado Virgen De Lourdes",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Villa Maria Del Triunfo",
+    "nombre": "La Tablada Zona Nueva",
+    "direccion": "Av. Pachacútec N° 4465, Mz. 36, Lt. 18 Zona Nueva Esperanza - P.J. César Vallejo - Villa María Del Triunfo - Lima - Lima, Ref. Al Frente Del Cruce Con Av. 01 De Mayo",
+    "telefono": "01 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Barranca",
+    "distrito": "Barranca",
+    "nombre": "Barranca",
+    "direccion": "Jr. Andres Reyes Buitron 416. Barranca - Barranca – Lima, Ref. A 2 Cdrs. Del Parque El Olvivar / A Mtrs. De La Casa Del Maestro",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Barranca",
+    "distrito": "Paramonga",
+    "nombre": "Paramonga",
+    "direccion": "Av. Central N° 305 Mz. N1 Lt. 17, Ref. Urb. Miguel Grau",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Barranca",
+    "distrito": "Supe",
+    "nombre": "Supe",
+    "direccion": "Av. Francisco Vidal 1120, Supe - Barranca - Lima, Ref. Al Costado De Lubricentro Ciriaco Y Media Cdra. De La Cruz Misionera",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Cañete",
+    "distrito": "San Vicente De Canet",
+    "nombre": "Cañete San Vicente",
+    "direccion": "Aa.Hh. Víctor Andrés Belaunde Mz. B Lt. 12, San Vicente De Cañete - Cañete - Lima",
+    "telefono": "01 5007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Cañete",
+    "distrito": "San Vicente De Canet",
+    "nombre": "Jr. Santa Rita - Cañete (Por Definir)",
+    "direccion": "Jr. Santa Rita 399, Ref. Cruce Con Av. Libertadores",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Cañete",
+    "distrito": "Chilca",
+    "nombre": "Ant Panam Sur Cdra 11",
+    "direccion": "Antigua Panamericana Sur Cdra. 11 Mz. 46, Lt. 08. Chilca - Cañete - Lima, Ref. A Media Cdra. Del Hotel El Pacífico",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Cañete",
+    "distrito": "Imperial",
+    "nombre": "Cañete Imperial",
+    "direccion": "Jr. Augusto B. Leguía N.º 457, Mz E, Centro Poblado Imperial, Imperial - Cañete - Lima, Ref. Cevichería Brisas Del Mar",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Cañete",
+    "distrito": "Mala",
+    "nombre": "Mala",
+    "direccion": "Av. Marchand # 250, Distrito De Mala . Referencia: A Unas Casas Frente A La Distribuidora Primax Gas",
+    "telefono": "01 5007878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Cañete",
+    "distrito": "Nuevo Imperial",
+    "nombre": "Nuevo Imperial Co",
+    "direccion": "Fundo Santa Adela, Mz. A, Lotes 8 Y 9 – Carretera Cañete A Yauyos Nuevo Imperial - Cañete - Lima, Ref. Al Costado Del Restaurant La Ruta Brava",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Huaral",
+    "distrito": "Huaral",
+    "nombre": "Huaral",
+    "direccion": "Habilitación Urbana Fundo Esquivel P-21, Mz. C, Lt. 5, 6, 8 Y 9 De La Urb. Resid. El Olivar, Con Int. En Av. Chancay, Ref. A 1 M. Del Estadio Unión Huaral, A 3 Cdras. De Los 3 Arcos Ingreso A Huaral",
+    "telefono": "",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Huaral",
+    "distrito": "Chancay",
+    "nombre": "Chancay",
+    "direccion": "Prolongación San Martín N°403 Chancay - Referencia: A Una Cdra. De La Av. Panamericana Norte",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Huarochiri",
+    "distrito": "San Antonio",
+    "nombre": "Jicamarca",
+    "direccion": "Av. Sinchi Roca Mz. P Lt. 16A P Lote 16A, Aahh Las Praderas De Jicamarca – Sector El Cercado – Anexo 22 Jicamarca – Huarochiri, Ref. Cerca Al Arco Porton De Jicamarca",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Huaura",
+    "distrito": "Huacho",
+    "nombre": "Salaverry Huacho Co",
+    "direccion": "Prolongación Salaverry N° 764 Huacho - Referencia : Cruce Con La Av La Paz",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Huaura",
+    "distrito": "Huacho",
+    "nombre": "Huacho Av Indacochea",
+    "direccion": "Av. Mercedes Indacochea 1276 Huacho - Huaura - Lima, Ref. Intersección Con Pedro Ruiz Gallo, A 2 Cdras. De La Universidad Nacional José Faustino Sánchez Carrión",
+    "telefono": "",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Huaura",
+    "distrito": "Huaura",
+    "nombre": "Huaura",
+    "direccion": "Av. Las Malvinas Mz. C Lote 16 Urb. El Rosario Sur Huaura, Ref. A Espaldas De La Plaza De Armas, A 1 Cdra. De La Calle Los Alamos",
+    "telefono": "",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Huaura",
+    "distrito": "Sayan",
+    "nombre": "Sayan",
+    "direccion": "Calle Naranjo N° 211.Sayan - Huaura - Lima, Ref. A Media Cdra. De La Plaza De Armas Y De La Municipalidad",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Lima",
+    "provincia": "Oyon",
+    "distrito": "Churin",
+    "nombre": "Churín",
+    "direccion": "Av. Vía De Evitamiento N° N/S Churín - Oyón - Lima, Ref. A Media Cdra. De La Plaza De Armas Y De La Municipalidad",
+    "telefono": "(01) 500 7878",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Loreto",
+    "provincia": "Maynas",
+    "distrito": "Iquitos",
+    "nombre": "Iquitos Jr Pablo Rossel",
+    "direccion": "Jr Pablo Rossel 590 Con Nanay, Ref. Frente Al Cetpro American Computer",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Loreto",
+    "provincia": "Maynas",
+    "distrito": "Iquitos",
+    "nombre": "Puerto Iquitos",
+    "direccion": ".......",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Loreto",
+    "provincia": "Maynas",
+    "distrito": "Iquitos",
+    "nombre": "Iquitos Co Jr. Bolognesi",
+    "direccion": "Jr. Francisco Bolognesi #941 Con Jr. Bermúdez, Iquitos - Maynas - Loreto, Ref. Frente A La Universidad Nacional De La Amazonia Peruana",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Loreto",
+    "provincia": "Maynas",
+    "distrito": "Iquitos",
+    "nombre": "Aeropuerto Iquitos",
+    "direccion": "Aeropuerto Coronel Francisco Secada Vignetta",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Loreto",
+    "provincia": "Maynas",
+    "distrito": "Iquitos",
+    "nombre": "Iquitos Av Tupac Amaru",
+    "direccion": "Av. Tupac Amaru Con - Calle Lourdes De León #479 Iquitos Maynas - Loreto, Ref. Frente A La Botica Thiagofama",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Loreto",
+    "provincia": "Maynas",
+    "distrito": "Punchana",
+    "nombre": "Punchana",
+    "direccion": "Calle Borja N°648 Punchana - Maynas - Loreto, Ref. Al Costado De La Farmacia San Carlos Centro Médico",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Loreto",
+    "provincia": "Maynas",
+    "distrito": "Iquitos San Juan Bautista",
+    "nombre": "Av Participacion Parcela",
+    "direccion": "Av. Participación Parcela 9-A San Juan Bautista - Maynas - Loreto, Ref. Frente Al Lavadero Osito Y A Media Cdra. Del Parque 1 De Enero",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Loreto",
+    "provincia": "Maynas",
+    "distrito": "Iquitos San Juan Bautista",
+    "nombre": "Av Jose A. Quiñones",
+    "direccion": "Av. José Abelardo Quiñones # 2475 San Juan Bautista - Maynas - Loreto, Ref. Frente A La Universidad Científica Del Perú (Ucp)",
+    "telefono": "(01) 500 7878",
+    "tamano": "Punto Pro"
+  },
+  {
+    "departamento": "Loreto",
+    "provincia": "Maynas",
+    "distrito": "Iquitos San Juan Bautista",
+    "nombre": "Ctra Iquitos Nauta",
+    "direccion": "Carretera Iquitos Nauta, S/N Mz. K - Lt. 20, San Juan Bautista - Maynas - Loreto, Ref. Al Costado De La Distribuidora Amazon Gas.",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Loreto",
+    "provincia": "Alto Amazonas",
+    "distrito": "Yurimaguas",
+    "nombre": "Yurimaguas",
+    "direccion": "Calle Jorge Chávez N° 300, Referencia: Esquina Con Progreso, Al Costado De Enapu",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Loreto",
+    "provincia": "Alto Amazonas",
+    "distrito": "Yurimaguas",
+    "nombre": "Puerto Yurimaguas",
+    "direccion": "Shalom",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Madre de Dios",
+    "provincia": "Tambopata",
+    "distrito": "Tambopata",
+    "nombre": "Tambopata Av Ucayali Co",
+    "direccion": "Av. Ucayali N° 473 - Tambopata - Tambopata - Madre De Dios, Ref. Al Costado De Motos Ssenda. Al Frente Del Colegio Santa Fe",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Madre de Dios",
+    "provincia": "Tambopata",
+    "distrito": "Tambopata",
+    "nombre": "Aeropuerto Puerto Maldonado",
+    "direccion": "Aeropuerto Internacional Padre Aldamiz",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Madre de Dios",
+    "provincia": "Tambopata",
+    "distrito": "Tambopata",
+    "nombre": "Av 15 De Agosto",
+    "direccion": "Av. 15 De Agosto N° 529, Tambopata - Tambopata - Madre De Dios, Ref. A Espaldas Del Colegio Carlos Fermin Fitzcarrald / Cruce Con Jr. Ica",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Madre de Dios",
+    "provincia": "Tambopata",
+    "distrito": "Tambopata",
+    "nombre": "Tambopata Av Circunvalacion",
+    "direccion": "Av. Circunvalacion Mz. C Lt. 01, Tambopata - Tambopata - Madre De Dios, Ref. A Dos Cdras. De La Carretera Interoceanica Sur / Cruce Con Jr. Las Mercedes Cabello",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Madre de Dios",
+    "provincia": "Tambopata",
+    "distrito": "Inambari",
+    "nombre": "Mazuko",
+    "direccion": "Av. Los Pioneros, Lt. 2 Y 3, Inambari – Tambopata - Madre De Dios, Ref. Al Costado Del Terminal Terrestre De Mazuko / Al Pie De La Carretera Al Rio Inambari",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Madre de Dios",
+    "provincia": "Tambopata",
+    "distrito": "Las Piedras",
+    "nombre": "El Triunfo",
+    "direccion": "Av. Interoceanica Km. 1 , Las Piedras - Tambopata - Madre De Dios, Ref. Al Costado Del Grifo Virgen Natividad",
+    "telefono": "01 5007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Madre de Dios",
+    "provincia": "Tahuamanu",
+    "distrito": "Iberia",
+    "nombre": "Iberia",
+    "direccion": "Av. Jorge Chavez Mz. H1 Sub Lote 11-B, Iberia - Tahuamanu - Madre De Dios, Ref. A Una Cdra. De La Empresa Real Dorado / A Una Cdra. Y Media De La Av Jose Aldamiz",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Moquegua",
+    "provincia": "Mariscal Nieto",
+    "distrito": "Moquegua",
+    "nombre": "San Antonio",
+    "direccion": "Av. Santa Fortunata Mz. N5 Lt. 10 Asoc. Villa Moquegua San Antonio. Referencia : A Una Cuadra De La Casa De La Mujer",
+    "telefono": "01 5007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Moquegua",
+    "provincia": "Mariscal Nieto",
+    "distrito": "Moquegua",
+    "nombre": "Calle Lima",
+    "direccion": "Calle Lima 190 - Mariscal Nieto - Moquegua, Ref. A Dos Cuadras Del Parque Los Héroes/Alameda",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Moquegua",
+    "provincia": "Mariscal Nieto",
+    "distrito": "Moquegua",
+    "nombre": "Quebrada Las Lechuzas Co",
+    "direccion": "Sector Quebrada Las Lechuzas Moquegua Calle N°1 Mz H Lt. 04, Moquegua - Mariscal Nieto - Moquegua, Ref. Quebrada De Lechuzas",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Moquegua",
+    "provincia": "Mariscal Nieto",
+    "distrito": "Moquegua",
+    "nombre": "Chen Chen",
+    "direccion": "Mz. C Lt. 24 – Asociación César Vizcarra – Centro Poblado Chen Chen , Moquegua –Mariscal Nieto – Moquegua, Ref. Al Costado Del Ovalo Chen Chen",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Moquegua",
+    "provincia": "Ilo",
+    "distrito": "Ilo",
+    "nombre": "Ilo Co Pampa Inalambrica",
+    "direccion": "Urb. Ciudad Del Pescador, Mz. J Lt. 18-19, Referencia: A Dos Cuadras Del Poder Judicial",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Moquegua",
+    "provincia": "Ilo",
+    "distrito": "Ilo",
+    "nombre": "Ilo Puerto",
+    "direccion": "Jr. Callao Prolongación Mz. N, Lt. 19 - A, Referencia: A Media Cdra. De La Cooperativa Cuajone",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Moquegua",
+    "provincia": "Ilo",
+    "distrito": "Pacocha",
+    "nombre": "Ilo Pacocha",
+    "direccion": "Agrupación De Familias Pueblo Nuevo M.Z E2 Lt. Com2A Sect. Ii – Ilo - Moquegua, Ref. Al Costado Del Banco Bcp",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Pasco",
+    "provincia": "Pasco",
+    "distrito": "Chaupimarca",
+    "nombre": "Cerro De Pasco",
+    "direccion": "Jr. Huaricapcha S/N A.H. Tupac Amaru Chaupimarca, Referencia: Frente Al Nuevo Terminal",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Pasco",
+    "provincia": "Pasco",
+    "distrito": "Huayllay",
+    "nombre": "Huayllay",
+    "direccion": "Calle Lima S/N Barrio Arenales Huayllay Pasco - Referencia: Al Costado Del Colegio Cesar Vallejo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Pasco",
+    "provincia": "Oxapampa",
+    "distrito": "Oxapampa",
+    "nombre": "Oxapampa",
+    "direccion": "Mz. 239 Sub Lote H – 1 Oxapampa - Oxapampa - Pasco, Ref. Entre Av. Angélica Frey Y Jr. Lima",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Pasco",
+    "provincia": "Oxapampa",
+    "distrito": "Villa Rica",
+    "nombre": "Villa Rica",
+    "direccion": "Av. Leopoldo Krausse N° 442 Villa Rica - Oxapampa - Pasco, Ref. Entre El Jr. Pozuzo Y Jr. Cooperativa, Al Costado De La Notaría Guerra Y A 20 Metros De La Plaza Principal",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Piura",
+    "distrito": "Piura",
+    "nombre": "Av. Luis Eguiguren",
+    "direccion": "Av. Málaga Mz. A Lt.20 Int. 105 Piura, Ref. A Media Cuadra De Honda Del Peru S.A. En El Cruce De Av. Luis Eguiguren Con Sullana Norte",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Piura",
+    "distrito": "Piura",
+    "nombre": "Av. Grau",
+    "direccion": "Av. Grau Manzana N, Lote 33 - Urbanización La Alborada. Ref. Grau Con Marcavelica",
+    "telefono": "015007878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Piura",
+    "distrito": "Piura",
+    "nombre": "Aeropuerto Piura",
+    "direccion": "Aeropuerto Internacional Guillermo Concha Ibérico",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Piura",
+    "distrito": "Piura",
+    "nombre": "Av Raul Mata La Cruz- Dos Grifos",
+    "direccion": "Av. Raúl Mata La Cruz Lt. 11 Mz. C Urb. Los Jardines - Corpiura, - Piura - Piura - Piura, Ref. A Una Cdra. De Los 2 Grifos En Toda La Av. Raúl Mata La Cruz",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Piura",
+    "distrito": "Castilla",
+    "nombre": "Av Tacna",
+    "direccion": "Av. Tacna 503 Castilla - Piura, Referencia: Frente A Ugel De Castilla",
+    "telefono": "",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Piura",
+    "distrito": "Castilla",
+    "nombre": "Tacala",
+    "direccion": "Carr. Panamericana A-2 Ah. Almirante Miguel Grau I Etapa, Castilla - Piura - Piura, Ref. Al Costado De Cerámicas San Lorenzo",
+    "telefono": "",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Piura",
+    "distrito": "Catacaos",
+    "nombre": "Catacaos",
+    "direccion": "Av. Francisco Bolognesi Mz. 60 Lt. 37 Catacaos - Piura - Piura, Ref. Al Lado Del Ex Pronei",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Piura",
+    "distrito": "La Union",
+    "nombre": "La Union",
+    "direccion": "Av. Lima N° 590 Referencia : Frente A Tiendas Chancafe",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Piura",
+    "distrito": "Las Lomas",
+    "nombre": "Las Lomas",
+    "direccion": "Jr. Miguel Grau Mz. H Lt. 7, Las Lomas - Piura, Ref. Al Costado De Caja Huancayo Y Al Costado De Comisaria Las Lomas",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Piura",
+    "distrito": "Tambo Grande",
+    "nombre": "Tambo Grande",
+    "direccion": "Aa. Hh. El Huerto Mz. E Lt. 08 Tambo Grande – Piura - Piura, Ref. Atrás Del Colegio Ina 54 Agropecuario, A La Altura Del Campo Campestre Rivera Del Río",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Piura",
+    "distrito": "26 De Octubre",
+    "nombre": "Calle Emaús",
+    "direccion": "Calle Tres N° 102, Sublote N° 1D Mz. Y - Zona Industrial Ii, Distrito 26 De Octubre - Referencia: Al Costado De Senati",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Piura",
+    "distrito": "26 De Octubre",
+    "nombre": "Parque Industrial Co Piura Futura",
+    "direccion": "Urb. Parque Industrial Piura Futura Mz. G, Lt. 1A. 26 De Octubre - Piura, Referencia: Al Frente Del Grifo Petro Perú",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Piura",
+    "distrito": "26 De Octubre",
+    "nombre": "Av. Gullman",
+    "direccion": "A.A.H.H. Consuelo De Velasco 1 Etapa Sector B Mz Lt.18 26 De Octubre – Piura, Ref. Cruce Av. Circunvalación Con Av. Gullman Al Costado De La Ferreteria Los Reyes",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Piura",
+    "distrito": "26 De Octubre",
+    "nombre": "Aahh Santa Rosa Piura",
+    "direccion": "Urb. Santa Rosa Mz. D Lt. 7, Sect. 7, 26 De Octubre - Piura. Ref. Av. Raul Mata La Cruz Con Circunvalación Al Frente De Repuestos Frank|",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Ayabaca",
+    "distrito": "Ayabaca",
+    "nombre": "Ayabaca",
+    "direccion": "Calle Bolognesi N° 136, Ref. A 2 Cuadras De La Plaza De Armas De Ayabaca",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Ayabaca",
+    "distrito": "Paimas",
+    "nombre": "Paimas",
+    "direccion": "Av. Sullana S/N, Ref. Frente Al Complejo Educativo Juan Velasco Alvarado",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Huancabamba",
+    "distrito": "Huancabamba",
+    "nombre": "Huancabamba",
+    "direccion": "Av. Ramon Castilla 0351 Huancabamba - Piura, Ref. A 1 Cuadra De La Capilla Ramon Castilla",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Morropon",
+    "distrito": "Chulucanas",
+    "nombre": "Chulucanas",
+    "direccion": "Jr. Huancavelica N° 548 Referencia : Al Lado Del Terminal De Ronco",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Morropon",
+    "distrito": "Morropon",
+    "nombre": "Morropon",
+    "direccion": "Jr. Adrianzén N° 099, Morropon - Morropon - Piura, Ref, A Espaldas De Del Terminal Terrestre De Trampsa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Paita",
+    "distrito": "Paita",
+    "nombre": "Paita",
+    "direccion": "Mz. H Lt. 14 Urb. Sol Y Mar - Paita, Referencia: Al Costado De La Empresa San Miguel",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Sullana",
+    "distrito": "Sullana",
+    "nombre": "Sullana Santa Rosa",
+    "direccion": "Carretera Panamericana Norte Nº 790 Sullana Referencia : Frente Al Colegio Chiquititos",
+    "telefono": "01 5007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Sullana",
+    "distrito": "Sullana",
+    "nombre": "Sullana Co Zona Industrial",
+    "direccion": "Ctra. Sullana Nº S/N Mz. K, Lt. 06 - Zona Industrial Municipal, Referencia: Al Costado Del Hotel Coco Suite",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Sullana",
+    "distrito": "Bellavista",
+    "nombre": "Bellavista Sullana",
+    "direccion": "Calle Moquegua 381, Bellavista, Ref. Rest. Parrilladas Chavelos",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Sullana",
+    "distrito": "Ignacio Escudero",
+    "nombre": "Ignacio Escudero",
+    "direccion": "Av. Panamericana Calle 26 Lote 3, Ignacio Escudero - Sullana - Piura, Ref. Frente A La Institución Educativa Ignacio Escudero",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Talara",
+    "distrito": "Parinas",
+    "nombre": "Talara Co Asoc California",
+    "direccion": "Asociación California C - 03 Frente A Carretera Negritos, Talara - Pariñas, Referencia: Al Costado Del Restaurante Mi Torete",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Talara",
+    "distrito": "Parinas",
+    "nombre": "Talara Alta 9 De Octubre",
+    "direccion": "Mz. N-10 Aa.Hh 9 De Octubre Talara Alta, Pariñas - Talara - Piura, Ref. A 1 Cdra. Antes De Amecfa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Talara",
+    "distrito": "Parinas",
+    "nombre": "Talara Baja Parque 22",
+    "direccion": "Parque 22 – 03 Lateral. Talara Baja, Pariñas - Talara - Piura. Ref. Frente A Minsa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Talara",
+    "distrito": "El Alto",
+    "nombre": "El Alto",
+    "direccion": "Av. Bolognesi O-37 Centro El Alto, Referencia: A Espaldas De La Municipalidad De El Alto",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Talara",
+    "distrito": "Los Organos",
+    "nombre": "Los Organos",
+    "direccion": "Av. Panamericana Norte P-29 - Urb. Cercado Zona Urbana, Referencia Al Frente De Grifo De Troncos O Grifo San Pedro",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Talara",
+    "distrito": "Mancora",
+    "nombre": "Máncora",
+    "direccion": "Av. Grau Nro. 432 Máncora - Talara - Piura, Ref. Frente Al Paradero De Autos De Los Órganos En Toda La Panamericana Norte.",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Piura",
+    "provincia": "Sechura",
+    "distrito": "Sechura",
+    "nombre": "Sechura",
+    "direccion": "Mz. B Lt. 23 A. H. Los Jardines Sur Este, Sechura - Sechura - Piura, Ref. Al Costado De La Empresa Fundicion Coronado Srl",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Puno",
+    "provincia": "Puno",
+    "distrito": "Puno",
+    "nombre": "Av Costanera",
+    "direccion": "Av. Costanera N° 211 Con Jr. Los Incas - Puno",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Puno",
+    "provincia": "Puno",
+    "distrito": "Puno",
+    "nombre": "Salcedo",
+    "direccion": "Urb. Aziruni Tepro I Etapa Mz. 18 Lt. 52 Jr Los Rosales – Salcedo Puno, Ref. A Una Cdra. De La Av. Estudiante / A Dos Cdras. De Senati Puno",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Puno",
+    "provincia": "Puno",
+    "distrito": "Puno",
+    "nombre": "Alto Puno",
+    "direccion": "Urb. San Pedro-Alto Puno, Av La Cultura N° 160, Puno - Puno - Puno, Ref. A Tres Cdras. De La Av. Que Va A Juliaca / A Dos Cdras. Del Grifo Bronco",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Puno",
+    "provincia": "Puno",
+    "distrito": "Puno",
+    "nombre": "Av 4 De Noviembre Co",
+    "direccion": "Av. 4 De Noviembre N° 474-B Y 486-B Barrio Santa Rosa, Puno - Puno – Puno, Ref. A Una Cdra. De Sunafil",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Puno",
+    "provincia": "Azangaro",
+    "distrito": "Azangaro",
+    "nombre": "Azangaro",
+    "direccion": "Av. Próceres S/N, Azángaro - Puno, Ref. A Dos Cdras. Del Parque De La Madre / A Orillas De La Misma Av. Proceres",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Puno",
+    "provincia": "Chucuito",
+    "distrito": "Desaguadero",
+    "nombre": "Desaguadero",
+    "direccion": "Av. Panamericana N° 1158 - 1160, Desaguadero - Chucuito - Puno, Ref. Al Costado Del Grifo Bartolomé",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Puno",
+    "provincia": "El Collao",
+    "distrito": "Ilave",
+    "nombre": "Ilave",
+    "direccion": "Jr. Bolognesi Nro. 866 Barrio Cruzani, El Collao - Puno, Ref. A Una Cuadra Del Coliseo Y Del Cementerio De Ilave",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Puno",
+    "provincia": "Melgar",
+    "distrito": "Ayaviri",
+    "nombre": "Ayaviri",
+    "direccion": "Jr. Santa Rosa Prolongación S/N Magisterial - Puno - Melgar - Ayaviri, Ref. A 50 Metros Del Óvalo, Salida A Juliaca",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Puno",
+    "provincia": "San Roman",
+    "distrito": "Juliaca",
+    "nombre": "Jr. Mama Ocllo",
+    "direccion": "Jr. Mama Ocllo 915 - B ( Cruce Con Jr Azángaro )",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Puno",
+    "provincia": "San Roman",
+    "distrito": "Juliaca",
+    "nombre": "Av. Huancane Cdra. 9",
+    "direccion": "Jr. Sillustani N° 202, San Roman - Juliaca, Ref. A 3 Cdras. Del Hospital Carlos Monge Medrano",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Puno",
+    "provincia": "San Roman",
+    "distrito": "Juliaca",
+    "nombre": "Las Mercedes",
+    "direccion": "Jr. Porvenir N° 228 Urb. Las Mercedes, San Roman - Puno, Ref. A Una Cdra. De La Av. Circunvalacion Oeste - A Una Cdra. Del Terminal Las Mercedes",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Puno",
+    "provincia": "San Roman",
+    "distrito": "Juliaca",
+    "nombre": "Aeropuerto Juliaca",
+    "direccion": "Aeropuerto Internacional Inca Manco Capac",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Puno",
+    "provincia": "San Roman",
+    "distrito": "Juliaca",
+    "nombre": "Av. Lampa",
+    "direccion": "Av. Lampa Mz. B2 Lt. 3 Urb. Santa Adriana, Juliaca - San Román - Puno, Ref. A Media Cdra. De La Posta De Salud De La Urb. Santa Adriana",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Puno",
+    "provincia": "San Roman",
+    "distrito": "Juliaca",
+    "nombre": "Av. Modesto Borda",
+    "direccion": "Av. Modesto Borda Mz. A Lt. 04 Urb. Arrabal Don Julio, Juliaca - San Roman - Puno, Ref. Dos Cdras. Antes Del Grifo Blanco / A Dos Cdras. Del Salon De Eventos Paraiso Azul",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Puno",
+    "provincia": "San Roman",
+    "distrito": "Juliaca",
+    "nombre": "Av Independencia",
+    "direccion": "Av. Independencia Nro. 1538 Mz. A1 Lt. 04 Urb. Horacio Zeballos Gamez, Juliaca - San Román - Puno, Al Frente Del Grifo San Carlos / Cruce Con Jr 21 De Eneroref.",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Puno",
+    "provincia": "San Roman",
+    "distrito": "Juliaca",
+    "nombre": "Jr Agustin Gamarra",
+    "direccion": "Jr. Agustin Gamarra Mz. R1 Lt. 09 Urb. Huancane, Juliaca - San Román - Puno, Ref. A Una Cdra. De La Av. Huancane / Cruce Con Jr. Alberto Cuentas Zabala",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Puno",
+    "provincia": "San Roman",
+    "distrito": "Juliaca",
+    "nombre": "Av Heroes Del Pacifico Co",
+    "direccion": "Av. Héroes De La Guerra Del Pacifico Km 3.5, Juliaca - San Román - Puno, Ref. Al Frente Del Grifo Leon Service",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "Moyobamba",
+    "distrito": "Moyobamba",
+    "nombre": "Moyobamba Co",
+    "direccion": "Jr. 20 De Abril 2138 - Referencia : Altura De La Pampa Del Hambre",
+    "telefono": "01 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "Moyobamba",
+    "distrito": "Moyobamba",
+    "nombre": "Moyobamba Centro",
+    "direccion": "Jr. Serafín Filomeno N°279, Moyobamba - Moyobamba - San Martín, Ref. A Una Cuadra Imedia Del Cumo (Centro Cultural De Moyobamba)",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "Moyobamba",
+    "distrito": "Soritor",
+    "nombre": "Soritor",
+    "direccion": "Jr. Miguel Grau Cdra 7 N°741 Mz.05 Lte.16B, Soritor - Moyobamba - San Martín, Ref. A Media Cdra. De La Iglesia Asambleas De Dios",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "Bellavista",
+    "distrito": "Bellavista",
+    "nombre": "San Martin Bellavista",
+    "direccion": "Av. Lima S/N C-4 Mz 71 – Lote A – Tercer Piso, Bellavista- Bellavista- San Martin, Ref. Espaldas De Ferretería El Iman",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "El Dorado",
+    "distrito": "San Jose De Sisa",
+    "nombre": "San Jose De Sisa",
+    "direccion": "Jr. Bolognesi Cdra 6, San Jose De Sisa - El Dorado - San Martin, Ref. Altura De Jr Lamas Y Jr Eladio Tapullima",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "Huallaga",
+    "distrito": "Saposoa",
+    "nombre": "Saposoa",
+    "direccion": "Av. Loreto S/N - Saposoa - El Huallaga - San Martin, Ref. En El Hostal El Gato, A Una Cdra. Y Media De La Plaza De Armas",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "Lamas",
+    "distrito": "Lamas",
+    "nombre": "Lamas",
+    "direccion": "Jr. 16 De Octubre N°1137, Referencia: A La Espalda Del Grifo Vargas Tello",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "Mariscal Caceres",
+    "distrito": "Juanjui",
+    "nombre": "Juanjuí Fernando Belaunde Terry Co",
+    "direccion": "Carretera Fernando Terry Km. 1 S/N Referencia: Al Costado De Paradero De Autos Huallaga Express",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "Mariscal Caceres",
+    "distrito": "Juanjui",
+    "nombre": "Juanjui Centro",
+    "direccion": "Jr. Sargento Lorez N° 568, Juanjui - Mariscal Cáceres - San Martin, Ref. A Una Cdra. De Del Jr. Huallaga Cdra. 11 Y A Una Cdra. De Importaciones Patricia",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "Picota",
+    "distrito": "Picota",
+    "nombre": "Picota",
+    "direccion": "Av. Fernando Belaunde Terry Lote 2B Picota - Picota - San Martin. Ref, A Una Cdra. De La Comisaria De Picota Salida A Bellavista",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "Rioja",
+    "distrito": "Rioja",
+    "nombre": "Rioja",
+    "direccion": "Ctra. Fernando Belaúnde Terry N° 415, Referencia: Al Costado De La Clínica Chilcon Hope",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "Rioja",
+    "distrito": "Elias Soplin Vargas",
+    "nombre": "Segunda Jerusalen",
+    "direccion": "Jr. Lima Mz. 43 Lt. 08 , Elias Soplin Vargas - Rioja - San Martin, Ref. Al Costado De Tienda Chingay",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "Rioja",
+    "distrito": "Nueva Cajamarca",
+    "nombre": "Nueva Cajamarca",
+    "direccion": "Av. Cajamarca Norte Mz. 51 Lt. 15, Referencia: Al Costado De Essalud",
+    "telefono": "015007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "Rioja",
+    "distrito": "Pardo Miguel",
+    "nombre": "Pardo Miguel Naranjos",
+    "direccion": "Jr. Miguel Grau 101 Mz. 34 Lt. 6, Pardo Miguel - Rioja - San Martin, Ref. Av. Marginal Cdra 5",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "San Martin",
+    "distrito": "Tarapoto",
+    "nombre": "Tarapoto Co Jr Alfonso Ugarte",
+    "direccion": "Jr. Alfonso Ugarte N°2283 - Tarapoto - San Martin - San Martin, Ref. Frente A La Cancha Sintético El Golazo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "San Martin",
+    "distrito": "Tarapoto",
+    "nombre": "Jr Leoncio Prado",
+    "direccion": "Jr. Leoncio Prado N° 1175, Referencia: A Una Cuadra Del Instituto María Parado De Bellido",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "San Martin",
+    "distrito": "Tarapoto",
+    "nombre": "Aeropuerto Tarapoto",
+    "direccion": "Aeropuerto Guillermo Del Castillo Paredes",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "San Martin",
+    "distrito": "Tarapoto",
+    "nombre": "Jr. Tahuantinsuyo",
+    "direccion": "Jr. Tahuantinsuyo N° 158 - Tarapoto - San Martín, Ref. Al Costado Del Grifo San Martín",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "San Martin",
+    "distrito": "Tarapoto",
+    "nombre": "Jr. Ramón Castilla",
+    "direccion": "Jr. Ramon Castilla N°1362 Tarapoto - San Martin, Ref. A Media Cdra. De Mannucci Motor S.A.",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "San Martin",
+    "distrito": "La Banda De Shilcayo",
+    "nombre": "Tarapoto La Banda De Shilcayo",
+    "direccion": "Jr. Perú N°186, Referencia: A 2 Cdrs. De La Plaza De La Banda De Shilcayo",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "San Martin",
+    "distrito": "Morales",
+    "nombre": "Tarapoto Jr. Sargento Lorez",
+    "direccion": "Jr. Sargento Lorez N° 264, Morales - San Martin, Ref. A Una Cdra. Y Media De La Plaza De Morales, Frente A Vulcano Gas",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "Tocache",
+    "distrito": "Tocache",
+    "nombre": "Av Fernando Belaunde",
+    "direccion": "Av. Fernando Belaunde C-09 Mz H6 (21), Lt. 04, Cercado De Tocache, Ref. Frente Al Mercadillo De Tocache",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "Tocache",
+    "distrito": "Tocache",
+    "nombre": "Jr Fredy Aliaga Co",
+    "direccion": "Jr. Fredy Aliaga N°3046 -Tocache - Tocache - San Martin, Ref. Al Costado Del Recreo Campestre Estragos",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "San Martín",
+    "provincia": "Tocache",
+    "distrito": "Uchiza",
+    "nombre": "Uchiza",
+    "direccion": "Av. Leoncio Prado N°524 - Uchiza - Tocache - San Martin, Ref. A Media Cdra. De La Plaza Central / Frente A Coopact",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Tacna",
+    "provincia": "Tacna",
+    "distrito": "Tacna",
+    "nombre": "Tacna Co Av. Jorge Basadre",
+    "direccion": "Av. Jorge Basadre Grohmann Oeste N° 366 - Tacna",
+    "telefono": "01 5007878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Tacna",
+    "provincia": "Tacna",
+    "distrito": "Tacna",
+    "nombre": "Av Vigil",
+    "direccion": "Av. Vigil 1636, Referencia: A Una Cdra. De La Plaza Grau",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Tacna",
+    "provincia": "Tacna",
+    "distrito": "Tacna",
+    "nombre": "Aeropuerto Tacna",
+    "direccion": "Aeropuerto Internacional Coronel Carlos Ciriani Santa Rosa",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Tacna",
+    "provincia": "Tacna",
+    "distrito": "Tacna",
+    "nombre": "Av. Arias Araguez",
+    "direccion": "Calle Arias Araguez N° 836 Tacna, Ref. A Una Cdra. Antes De Llegar Al Coliseo Perú",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Tacna",
+    "provincia": "Tacna",
+    "distrito": "Tacna",
+    "nombre": "Av Ejercito",
+    "direccion": "Av. Litoral Nro. 306 – Para Chico (Anterior Av. Ejército Prolongación 306 Tacna), Tacna - Tacna - Tacna, Ref. Dentro Del Establecimiento Del Grifo Primax",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Tacna",
+    "provincia": "Tacna",
+    "distrito": "Tacna",
+    "nombre": "Pocollay",
+    "direccion": "Pueblo Tradicional Pocollay Mz. T Lote 01 , Pocollay - Tacna - Tacna, Ref. A Una Cdra. Del Centro De Salud Pocollay",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Tacna",
+    "provincia": "Tacna",
+    "distrito": "Ciudad Nueva",
+    "nombre": "Tacna Ciudad Nueva",
+    "direccion": "Ciudad Nueva Mz 46 Lt 12 Comité 10 Ciudad Nueva - Tacna, Ref. A Una Cdra. De La Plaza José Olaya De Ciudad Nueva",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Tacna",
+    "provincia": "Tacna",
+    "distrito": "Coronel Gregorio Albarracin Lanchipa",
+    "nombre": "Villa San Francisco",
+    "direccion": "Asoc. Villa San Francisco Mz. 94 Lt. 22, Referencia: Cerca A Caja Cusco",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Tacna",
+    "provincia": "Tacna",
+    "distrito": "Coronel Gregorio Albarracin Lanchipa",
+    "nombre": "Av. Municipal",
+    "direccion": "Asociación Las Vilcas Mz. E Lt. 16, Gregorio Albarracín Lanchipa - Tacna Ref. Frente Al Mercado Héroes Del Cenepa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Tacna",
+    "provincia": "Tacna",
+    "distrito": "Coronel Gregorio Albarracin Lanchipa",
+    "nombre": "Viñanis",
+    "direccion": "Promuvi Viñani, Amp. I Etapa, Mz. 574, Lt. 09 – Coronel Gregorio Albarracín Lanchipa – Tacna - Tacna, Ref. A Media Cdra. Del Óvalo Los Molles",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Tumbes",
+    "provincia": "Tumbes",
+    "distrito": "Tumbes",
+    "nombre": "Tumbes - Av Arica",
+    "direccion": "Av. Arica N° 227 - Tumbes.",
+    "telefono": "01 5007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Tumbes",
+    "provincia": "Tumbes",
+    "distrito": "Tumbes",
+    "nombre": "Tumbes Puyango",
+    "direccion": "Urb. Andrés Araujo Morán Mz. 28-A Lote 03 Calle Jacinto Seminario, Ref. Al Costado Del Mercado Puyango",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Tumbes",
+    "provincia": "Tumbes",
+    "distrito": "Tumbes",
+    "nombre": "Tumbes Co - Panamericana Norte Km 2360",
+    "direccion": "Av. Panamericana Norte S/N Villa Primavera - Tumbes. Ref. Pasando Senati Frente A Agripac",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Tumbes",
+    "provincia": "Tumbes",
+    "distrito": "Tumbes",
+    "nombre": "Aeropuerto Tumbes",
+    "direccion": "Aeropuerto Internacional Pedro Canga Rodríguez",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Tumbes",
+    "provincia": "Tumbes",
+    "distrito": "Tumbes",
+    "nombre": "Pampa Grande Tumbes",
+    "direccion": "Mz. 0U Lt. 00A Aa.Hh. Pampa Grande, Tumbes, Ref. Frente A La Av. Universitaria, Y Al Frente A La Iglesia Mormones Y Al Lado De Un Lavadero De Autos.",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Tumbes",
+    "provincia": "Tumbes",
+    "distrito": "Corrales",
+    "nombre": "Corrales",
+    "direccion": "Av. Huáscar Nº 311 Int. 01 Centro, Corrales - Tumbes, Ref. A Espaldas De La Plaza De Armas",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Tumbes",
+    "provincia": "Tumbes",
+    "distrito": "La Cruz",
+    "nombre": "La Cruz Tumbes",
+    "direccion": "Jr. Piura 105 Caleta La Cruz, La Cruz - Tumbes, Ref. Frente A Ctr. Panamericana Norte Y Al Frente De Motorepuestos Y Multiservicios Lujan",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Tumbes",
+    "provincia": "Contralmirante Villa",
+    "distrito": "Zorritos",
+    "nombre": "Zorritos",
+    "direccion": "Av. 28 De Julio N° 205 Mz. 14 Lt. 04 Los Pinos Tumbes, Contralmiraante Villar - Zorritos - Tumbes",
+    "telefono": "01 5007878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Tumbes",
+    "provincia": "Zarumilla",
+    "distrito": "Zarumilla",
+    "nombre": "Zarumilla",
+    "direccion": "Jiron Independencia 309 Zarumilla, Ref. Atrás De La Plaza De Armas Y Frente Al Dorado Pasando 5 Casas",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Tumbes",
+    "provincia": "Zarumilla",
+    "distrito": "Aguas Verdes",
+    "nombre": "Aguas Verdes",
+    "direccion": "Av Tumbes S/N Lote 09 Mz 17 , A.H Tomas Arizola Olaya , Sector Ii - Referencia : A Una Cuadra Del Parque Tomas Arizola.",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Ucayali",
+    "provincia": "Coronel Portillo",
+    "distrito": "Pucallpa Calleria",
+    "nombre": "Calleria Jr Jose Galvez",
+    "direccion": "Jr. Jose Galvez 147 Calleria - Coronel Portillo - Ucayali. Referencia : A Media Cuadra De La Av. Centenario",
+    "telefono": "01 5007878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Ucayali",
+    "provincia": "Coronel Portillo",
+    "distrito": "Pucallpa Calleria",
+    "nombre": "Aeropuerto Pucallpa",
+    "direccion": "Aeropuerto David Abensur Rengifo",
+    "telefono": "",
+    "tamano": "Terminal"
+  },
+  {
+    "departamento": "Ucayali",
+    "provincia": "Coronel Portillo",
+    "distrito": "Pucallpa Calleria",
+    "nombre": "Calleria Av Saenz Peña",
+    "direccion": "Av. Saenz Peña 229, Calleria - Coronel Portillo - Ucayali, Ref. A Dos Cuadras Del Ovalo De Federico Basadre Y Saenz Peña",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Ucayali",
+    "provincia": "Coronel Portillo",
+    "distrito": "Pucallpa Yarinacocha",
+    "nombre": "Pucallpa Co Federico Basadre",
+    "direccion": "Carretera Federico Basadre Km 6.800 Yarinacocha - Coronel Portillo - Ucayali, Ref. Entrada Del Asentamiento Humano Alan Sisley/Al Costado De La Empresa Jvj Service Oriente Sac",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  },
+  {
+    "departamento": "Ucayali",
+    "provincia": "Coronel Portillo",
+    "distrito": "Pucallpa Yarinacocha",
+    "nombre": "Yarinacocha Centro",
+    "direccion": "Jr. Tupac Amaru, Mz. 50, Lt. 07, Referencia: A Espalda De Maestranza De Yarinacocha",
+    "telefono": "(01) 500 7878",
+    "tamano": "Pequeña"
+  },
+  {
+    "departamento": "Ucayali",
+    "provincia": "Coronel Portillo",
+    "distrito": "Pucallpa Yarinacocha",
+    "nombre": "Yarinacocha Av Universitaria",
+    "direccion": "Av. Universitaria Mza A Lote 6, Yarinacocha - Coronel Portillo - Ucayali, Ref. A Media Cdra. Del Local Rokalpa",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Ucayali",
+    "provincia": "Coronel Portillo",
+    "distrito": "Pucallpa Manantay",
+    "nombre": "Manantay Av Aguaytia",
+    "direccion": "Av. Aguaytia Mz., 26 Lt. 20 Manantay - Coronel Portillo - Ucayali, Ref. A Media Cdra. Del Nuevo Mercado De San Fernando",
+    "telefono": "(01) 500 7878",
+    "tamano": "Mediana"
+  },
+  {
+    "departamento": "Ucayali",
+    "provincia": "Coronel Portillo",
+    "distrito": "Pucallpa Manantay",
+    "nombre": "Manantay Av Tupac Amaru",
+    "direccion": "Av. Tupac Amaru 2315 Manantay - Coronel Portillo - Ucayali, Ref. A Media Cdra. De La Polleria Emanuel",
+    "telefono": "(01) 500 7878",
+    "tamano": "Micro"
+  },
+  {
+    "departamento": "Ucayali",
+    "provincia": "Padre Abad",
+    "distrito": "Aguaytia",
+    "nombre": "Aguaytía",
+    "direccion": "U. Vecinal Barrio Unido Mz. 1 Lt. 2, Padre Abad - Ucayali, Ref. Al Costado Del Terminal Terrestre De Aguaytia",
+    "telefono": "(01) 500 7878",
+    "tamano": "Grande / Co"
+  }
+]
