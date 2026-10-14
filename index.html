@@ -19,6 +19,7 @@
     <link rel="icon" type="image/svg+xml" href="assets/boomart-mark.svg?v=7">
     <link rel="alternate icon" type="image/png" sizes="32x32" href="assets/boomart-mark-32.png">
     <link rel="apple-touch-icon" sizes="192x192" href="assets/boomart-mark-192.png">
+    <link rel="manifest" href="site.webmanifest">
     <link rel="alternate" type="text/html" href="https://boomart.pe/catalogo.html" title="Catálogo completo en texto plano">
     <link rel="alternate" type="application/json" href="https://boomart.pe/catalogo.json" title="Feed JSON del catálogo BoomArt">
 
@@ -43,7 +44,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=40">
+    <link rel="stylesheet" href="src/styles.css?v=41">
 
     <script type="application/ld+json">
     {
@@ -82,7 +83,7 @@
   <body>
     <div class="quick-nav" id="quickNav">
       <a class="quick-nav-logo" href="#inicio" aria-label="BoomArt inicio">
-        <img src="assets/boomart-logo.svg" alt="">
+        <img src="assets/boomart-mark.svg?v=7" alt="">
       </a>
       <div class="quick-nav-search" id="quickSearchBox" hidden>
         <input type="search" id="quickSearchInput" placeholder="Buscar productos..." autocomplete="off">
@@ -378,7 +379,7 @@
 
     <footer class="footer" id="contacto">
       <div>
-        <strong>BOOM ART</strong>
+        <div class="footer-brand"><img class="ba-mark" src="assets/boomart-mark.svg?v=7" alt=""><strong>BOOM ART</strong></div>
         <p>Piezas hechas a pedido. Consulta disponibilidad, colores, acabados y tiempos de entrega por WhatsApp.</p>
         <p>Envío a todo el Perú. El costo se coordina por WhatsApp y se paga aparte al courier.</p>
         <p><a href="https://share.google/1EB41G5DoHVk4GWhA" target="_blank" rel="noreferrer">📍 Ver ubicación en Google Maps</a></p>
@@ -448,7 +449,10 @@
     <div class="cart-backdrop" id="cartBackdrop" hidden></div>
     <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compra" hidden>
       <div class="cart-drawer-header">
-        <h2>Tu carrito</h2>
+        <div class="brand-context">
+          <img class="ba-mark" src="assets/boomart-mark.svg?v=7" alt="">
+          <div><span>COMPRA EN BOOMART</span><h2>Tu carrito</h2></div>
+        </div>
         <button type="button" class="icon-button" id="closeCart" aria-label="Cerrar carrito">×</button>
       </div>
       <div class="cart-drawer-body" id="cartLines"></div>
@@ -474,6 +478,10 @@
     <dialog class="checkout-dialog" id="checkoutDialog" aria-label="Completar pedido">
       <div class="checkout-shell">
         <button class="icon-button close-modal" id="closeCheckout" type="button" aria-label="Cerrar">×</button>
+        <div class="checkout-brand" aria-label="Compra en BoomArt">
+          <img class="ba-mark" src="assets/boomart-mark.svg?v=7" alt="">
+          <span>COMPRA EN BOOMART</span>
+        </div>
 
         <section class="checkout-step" data-step="customer">
           <p class="eyebrow">Paso 1 de 3 · Tus datos</p>
@@ -641,6 +649,10 @@
     <dialog class="checkout-dialog account-dialog" id="accountDialog" aria-label="Mi cuenta">
       <div class="checkout-shell">
         <button class="icon-button close-modal" id="closeAccount" type="button" aria-label="Cerrar">×</button>
+        <div class="checkout-brand" aria-label="Cuenta BoomArt">
+          <img class="ba-mark" src="assets/boomart-mark.svg?v=7" alt="">
+          <span>CUENTA BOOMART</span>
+        </div>
         <div id="accountBody"><!-- Contenido dinamico: lo arma src/account.js segun el estado de sesion --></div>
       </div>
     </dialog>
@@ -673,7 +685,7 @@
     <script src="src/reviews.js?v=5"></script>
     <script src="src/reviews-loader.js?v=2"></script>
     <script src="src/custom-order.js?v=1"></script>
-    <script src="src/shopping-assistant.js?v=1"></script>
+    <script src="src/shopping-assistant.js?v=2"></script>
 
     <!-- Cuenta de cliente (Fase 1): SDK de Supabase + config + login. No depende
          del carrito/checkout ni es requerido por ellos -- si Supabase fallara en

@@ -74,12 +74,13 @@
   shell.className = "shopping-assistant";
   shell.innerHTML = `
     <button class="shopping-assistant-toggle" type="button" aria-haspopup="dialog" aria-controls="shoppingAssistantPanel" aria-expanded="false">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 4.5h7A4.5 4.5 0 0 1 20 9v3a4.5 4.5 0 0 1-4.5 4.5H12l-4.2 3v-3H8.5A4.5 4.5 0 0 1 4 12V9a4.5 4.5 0 0 1 4.5-4.5Z"/><path d="M8 9h8M8 12h5"/></svg>
+      <img class="shopping-assistant-mark" src="/assets/boomart-mark.svg?v=7" alt="">
       <span>Te ayudo a elegir</span>
     </button>
     <aside class="shopping-assistant-panel" id="shoppingAssistantPanel" role="dialog" aria-modal="false" aria-labelledby="shoppingAssistantTitle" hidden>
       <header class="shopping-assistant-header">
-        <div><span class="shopping-assistant-kicker">ASISTENTE BOOMART</span><h2 id="shoppingAssistantTitle">Encuentra o crea tu pieza</h2></div>
+        <img class="shopping-assistant-header-mark" src="/assets/boomart-mark.svg?v=7" alt="">
+        <div class="shopping-assistant-heading"><span class="shopping-assistant-kicker">ASISTENTE BOOMART</span><h2 id="shoppingAssistantTitle">Encuentra o crea tu pieza</h2></div>
         <button type="button" class="shopping-assistant-close" aria-label="Cerrar asistente">×</button>
       </header>
       <div class="shopping-assistant-body" aria-live="polite"></div>
@@ -155,7 +156,7 @@
 
   const renderCatalogCategories = async () => {
     state.screen = "catalog-category";
-    body.innerHTML = `<p class="shopping-assistant-loading">Cargando el catálogo…</p>`;
+    body.innerHTML = `<p class="shopping-assistant-loading"><img src="/assets/boomart-mark.svg?v=7" alt="">Cargando el catálogo…</p>`;
     const products = await loadProducts();
     if (state.screen !== "catalog-category") return;
     const available = new Set(products.map((product) => product.category).filter(Boolean));

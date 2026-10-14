@@ -173,6 +173,24 @@ para aplicaciones que no admiten SVG.
 - Mantener una zona libre aproximada del 8 % alrededor del contenido cuando se
   aplique fuera de un contenedor cuadrado.
 
+#### Jerarquía digital del isotipo
+
+El logotipo vertical BOOM / ART sigue siendo la firma principal en cabeceras de
+escritorio, portadas, documentos y piezas con espacio suficiente. El isotipo BA
+identifica el sistema BoomArt en espacios compactos o funcionales:
+
+- cabecera móvil, favicon, acceso directo e icono de aplicación;
+- identidad del Asistente BoomArt y sus estados de carga;
+- carrito, checkout, cuenta, registro y seguimiento de pedidos;
+- confirmaciones y estados emitidos por el sistema;
+- firma secundaria del pie de página.
+
+Los iconos funcionales universales conservan su significado: BA no sustituye
+búsqueda, carrito, usuario, cerrar ni el símbolo oficial de WhatsApp. No se usa
+como viñeta decorativa, no se repite en cada producto y no se superpone sobre
+fotografías. En móvil puede reemplazar visualmente al logotipo completo cuando
+este perdería legibilidad; en escritorio se mantiene el logotipo completo.
+
 #### Regla específica para la pestaña del navegador
 
 El favicon de la pestaña debe usar la versión **universal autocontenida** con
