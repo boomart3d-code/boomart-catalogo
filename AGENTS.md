@@ -60,6 +60,9 @@ de otros clientes ni credenciales.
 
 ## Logo oficial de BoomArt — regla estricta
 
+- Antes de crear o modificar cualquier pieza visual, leer y aplicar
+  `docs/IDENTIDAD_VISUAL_BOOMART.md`. La web es la referencia viva y el resto
+  de materiales debe sentirse parte del mismo sistema, no solo llevar un logo.
 - El logo oficial es el bloque vertical **BOOM / ART** ya guardado en
   `assets/boomart-logo-1.png`, `assets/boomart-logo-2.png`,
   `assets/boomart-logo-3.png` y `assets/boomart-logo.svg`. Nunca inventar,
