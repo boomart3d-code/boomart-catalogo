@@ -4,7 +4,10 @@
 // eventos como texto plano JSON (text/plain evita el preflight de CORS). La
 // funcion los valida con una lista cerrada de campos y los inserta en
 // public.web_eventos con la service role. No guarda IP, ni nombres, ni
-// correos: solo los codigos aleatorios vid/sid que genera el navegador.
+// correos: solo los codigos aleatorios vid/sid que genera el navegador, mas la
+// ubicacion aproximada (pais y, en Peru, region y ciudad). Esa ubicacion se
+// busca con la IP en las tablas geo_ip_* (DB-IP Lite, CC BY 4.0, db-ip.com);
+// la IP solo se usa en memoria para la busqueda y NO se guarda ni se registra.
 //
 // DESPLIEGUE: verificacion de JWT DESACTIVADA (la llama cualquier visitante).
 // Se protege con: origen permitido, lista cerrada de eventos, limites de
@@ -58,6 +61,60 @@ const decimal = (v: unknown, min: number, max: number): number | null => {
   return Math.min(max, Math.max(min, Math.round(n * 100) / 100));
 };
 
+// IP -> claves numericas para buscar en geo_ip_*: IPv4 como entero de 32 bits; IPv6 con
+// sus primeros 48 bits (paises) y 64 bits (Peru). Devuelve null si no se entiende la IP.
+const claveIp = (txt: string): { fam: number; k48: number; k64: string } | null => {
+  let ip = (txt ?? "").trim();
+  if (!ip) return null;
+  const m4 = ip.match(/^(?:::ffff:)?(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/i);
+  if (m4) {
+    const o = m4.slice(1).map(Number);
+    if (o.some((n) => n > 255)) return null;
+    const n = ((o[0] * 256 + o[1]) * 256 + o[2]) * 256 + o[3];
+    return { fam: 4, k48: n, k64: String(n) };
+  }
+  if (!ip.includes(":")) return null;
+  ip = ip.replace(/%.*$/, "");
+  const dobles = ip.split("::");
+  if (dobles.length > 2) return null;
+  const izq = dobles[0] ? dobles[0].split(":") : [];
+  const der = dobles.length === 2 && dobles[1] ? dobles[1].split(":") : [];
+  let partes: string[];
+  if (dobles.length === 2) {
+    const faltan = 8 - izq.length - der.length;
+    if (faltan < 1) return null;
+    partes = [...izq, ...Array(faltan).fill("0"), ...der];
+  } else {
+    partes = izq;
+  }
+  if (partes.length !== 8 || partes.some((g) => !/^[0-9a-f]{1,4}$/i.test(g))) return null;
+  const g = partes.map((x) => parseInt(x, 16));
+  const k48 = (BigInt(g[0]) << 32n) | (BigInt(g[1]) << 16n) | BigInt(g[2]);
+  const k64 = (k48 << 16n) | BigInt(g[3]);
+  return { fam: 6, k48: Number(k48), k64: k64.toString() };
+};
+
+// Pais / region / ciudad de la visita. Si algo falla, la visita se guarda igual sin ubicacion.
+const ubicacion = async (req: Request) => {
+  const vacio = { pais: null as string | null, region: null as string | null, ciudad: null as string | null };
+  try {
+    const ip = req.headers.get("cf-connecting-ip") ?? (req.headers.get("x-forwarded-for") ?? "").split(",")[0];
+    const k = claveIp(ip);
+    if (!k) return vacio;
+    const { data, error } = await sb.rpc("geo_ip", { p_fam: k.fam, p_k48: k.k48, p_k64: k.k64 });
+    if (error || !data || typeof data !== "object") return vacio;
+    const d = data as Record<string, unknown>;
+    const pais = texto(d.pais, 2);
+    return {
+      pais: pais && /^[A-Za-z]{2}$/.test(pais) ? pais.toUpperCase() : null,
+      region: texto(d.region, 60),
+      ciudad: texto(d.ciudad, 60),
+    };
+  } catch {
+    return vacio;
+  }
+};
+
 Deno.serve(async (req) => {
   const origin = req.headers.get("origin") ?? "";
   const headers = cors(origin);
@@ -97,6 +154,9 @@ Deno.serve(async (req) => {
     .eq("sid", sid);
   if ((count ?? 0) >= MAX_EVENTOS_POR_SESION) return new Response(null, { status: 204, headers });
 
+  // Ubicacion aproximada por IP (la IP no se guarda).
+  const geo = await ubicacion(req);
+
   // Campos de sesion (iguales para todo el lote).
   const base = {
     vid,
@@ -113,6 +173,7 @@ Deno.serve(async (req) => {
     idioma: texto(cuerpo.lang, 20),
     humano: cuerpo.hum === true,
     nuevo: cuerpo.nuevo === true,
+    ...geo,
   };
 
   const filas = [];

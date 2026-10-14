@@ -157,6 +157,7 @@
         </label><br>
         Para tu celular u otro equipo, abre una vez <strong>boomart.pe/?excluir=1</strong> (y <strong>?excluir=0</strong> para volver a contar).
       </p>
+      <p class="note">Ubicación por IP: <a href="https://db-ip.com" target="_blank" rel="noopener">IP Geolocation by DB-IP</a> (licencia CC BY 4.0). La IP no se guarda.</p>
     </section>
   </main>
 
@@ -317,13 +318,21 @@
         if (!c) return "Sin dato";
         try { return (nombresPais && nombresPais.of(c)) || c; } catch (e) { return c; }
       };
+      // DB-IP nombra las regiones en inglés y reparte la zona de Lima entre «Lima Province» y «Lima region»
+      // (en la práctica es la misma zona), así que se juntan en «Lima». Callao queda aparte.
+      const REGION_ES = { "Lima Province": "Lima", "Lima": "Lima", "Junin": "Junín", "Cuzco": "Cusco" };
+      const regionLabel = (r) => {
+        if (!r) return "(sin región)";
+        const base = String(r).replace(/ (Department|Region)$/i, "").trim();
+        return REGION_ES[base] || base;
+      };
       const agruparLugares = (arr) => {
         const m = new Map();
         arr.forEach((l) => {
-          const k = l.region || "(sin región)";
-          const g = m.get(k) || { region: k, sesiones: 0, interaccion: 0, intencion: 0, ciudades: [] };
+          const k = regionLabel(l.region);
+          const g = m.get(k) || { region: k, sesiones: 0, interaccion: 0, intencion: 0, ciudades: new Map() };
           g.sesiones += l.sesiones; g.interaccion += l.interaccion; g.intencion += l.intencion;
-          if (l.ciudad) g.ciudades.push(l);
+          if (l.ciudad) g.ciudades.set(l.ciudad, (g.ciudades.get(l.ciudad) || 0) + l.sesiones);
           m.set(k, g);
         });
         return Array.from(m.values()).sort((a, b) => b.sesiones - a.sesiones);
@@ -394,14 +403,14 @@
 
         const lug = d.lugares || [];
         if (!lug.length) {
-          html += `<p class="note">Región y ciudad: todavía no se guardan (hoy solo se conoce el país, y estimado).</p>`;
+          html += `<p class="note">Región y ciudad: aún no hay visitas con este dato. Se guarda en las visitas nuevas (por IP); las anteriores solo tienen el país estimado.</p>`;
         } else {
           const peru = agruparLugares(lug.filter((l) => l.pais === "PE"));
           const ptotPe = peru.reduce((a, g) => a + g.sesiones, 0);
           html += `<h2>Perú: por región y ciudad <small>según la IP de la visita; ${d.sin_geo ? `${fmt(d.sin_geo)} visitas anteriores no tienen este dato` : "todas las visitas del período lo tienen"}</small></h2><div class="tbl-wrap"><table>
             <thead><tr><th>Región</th><th>Entradas</th><th>% de Perú</th><th>Interactuaron</th><th>Intención real</th></tr></thead><tbody>`;
           peru.forEach((g) => {
-            const top = g.ciudades.slice().sort((a, b) => b.sesiones - a.sesiones).slice(0, 5).map((c) => `${esc(c.ciudad)} ${fmt(c.sesiones)}`).join(" · ");
+            const top = Array.from(g.ciudades.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([c, n]) => `${esc(c)} ${fmt(n)}`).join(" · ");
             html += `<tr><td><strong>${esc(g.region)}</strong>${top ? `<span class="sub">${top}</span>` : ""}</td>
               <td><strong>${fmt(g.sesiones)}</strong></td><td>${fmtPct(g.sesiones, ptotPe)}</td>
               <td>${fmt(g.interaccion)} <span class="sub">${fmtPct(g.interaccion, g.sesiones)}</span></td><td>${fmt(g.intencion)}</td></tr>`;
@@ -409,16 +418,6 @@
           if (!peru.length) html += `<tr><td colspan="5" style="text-align:center;color:var(--muted)">Todavía sin visitas de Perú con región</td></tr>`;
           html += `</tbody></table></div>
             <p class="note">La ubicación por IP es aproximada: en celulares, las operadoras suelen mostrar Lima aunque la persona esté en provincia.</p>`;
-          const otros = lug.filter((l) => l.pais !== "PE").sort((a, b) => b.sesiones - a.sesiones).slice(0, 15);
-          if (otros.length) {
-            html += `<h2>Otros países: región y ciudad <small>las 15 con más entradas</small></h2><div class="tbl-wrap"><table>
-              <thead><tr><th>Lugar</th><th>Entradas</th><th>Interactuaron</th><th>Intención real</th></tr></thead><tbody>`;
-            otros.forEach((l) => {
-              html += `<tr><td><strong>${esc([l.ciudad, l.region].filter(Boolean).join(", ") || "(sin región)")}</strong><span class="sub">${esc(paisNombre(l.pais))}</span></td>
-                <td><strong>${fmt(l.sesiones)}</strong></td><td>${fmt(l.interaccion)}</td><td>${fmt(l.intencion)}</td></tr>`;
-            });
-            html += `</tbody></table></div>`;
-          }
         }
 
         // Tiempo
