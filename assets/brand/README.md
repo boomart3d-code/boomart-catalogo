@@ -29,7 +29,7 @@ retícula precisa y producto real como protagonista.
 - `boomart-favicon-claro-para-fondo-oscuro-4096.png`: PNG maestro transparente blanco/rojo.
 
 `../boomart-mark.svg` y `boomart-favicon-universal.svg` usan una placa blanca
-oficial con esquinas redondeadas (radio aproximado del 16 %), bomba negra y A
+oficial tipo *squircle* (ni cuadrado ni círculo; radio aproximado del 28 %), bomba negra y A
 roja. Esta versión autocontenida se utiliza en la
 pestaña porque el navegador no permite detectar de forma fiable si cada pestaña
 activa tiene fondo blanco o negro. Los PNG 16/32/48/180/192/512/1024 y
