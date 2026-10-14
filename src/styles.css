@@ -228,8 +228,8 @@ input {
 }
 
 .quick-nav-logo img {
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   object-fit: contain;
 }
 
@@ -1920,14 +1920,6 @@ h2 {
     min-width: 0;
     max-width: 100%;
     overflow-x: clip;
-  }
-
-  .site-header .brand-logo {
-    content: url("../assets/boomart-mark.svg?v=7");
-    width: 42px;
-    height: 42px;
-    flex: 0 0 42px;
-    object-fit: contain;
   }
 
   .site-header nav {

@@ -179,7 +179,7 @@ El logotipo vertical BOOM / ART sigue siendo la firma principal en cabeceras de
 escritorio, portadas, documentos y piezas con espacio suficiente. El isotipo BA
 identifica el sistema BoomArt en espacios compactos o funcionales:
 
-- cabecera móvil, favicon, acceso directo e icono de aplicación;
+- favicon, acceso directo e icono de aplicación;
 - identidad del Asistente BoomArt y sus estados de carga;
 - carrito, checkout, cuenta, registro y seguimiento de pedidos;
 - confirmaciones y estados emitidos por el sistema;
@@ -188,8 +188,9 @@ identifica el sistema BoomArt en espacios compactos o funcionales:
 Los iconos funcionales universales conservan su significado: BA no sustituye
 búsqueda, carrito, usuario, cerrar ni el símbolo oficial de WhatsApp. No se usa
 como viñeta decorativa, no se repite en cada producto y no se superpone sobre
-fotografías. En móvil puede reemplazar visualmente al logotipo completo cuando
-este perdería legibilidad; en escritorio se mantiene el logotipo completo.
+fotografías. El isotipo BA nunca reemplaza al logotipo BOOM / ART ya instalado
+en una cabecera o firma principal, tampoco en móvil: solo se añade en espacios
+compactos nuevos donde el logotipo completo no había sido la marca existente.
 
 #### Regla específica para la pestaña del navegador
 
