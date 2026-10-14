@@ -185,6 +185,11 @@ el color real de cada pestaña. La placa blanca oficial mantiene la bomba y las
 dos letras legibles en ambos casos. Las versiones transparentes clara y oscura
 se reservan para fondos cuyo color sí controla BoomArt.
 
+El centrado oficial es **óptico respecto del cuerpo esférico de la bomba**. La
+mecha no participa en el cálculo: la esfera se centra exactamente en la placa y
+el isotipo completo se desplaza aproximadamente un 5 % hacia arriba. No volver
+a centrar el conjunto usando sus límites totales, porque eso baja visualmente la esfera.
+
 ### Continuidad entre web y todas las piezas BoomArt
 
 La web de BoomArt es la referencia viva de la marca. Toda creación visual

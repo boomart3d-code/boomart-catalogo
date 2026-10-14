@@ -34,3 +34,6 @@ roja. Esta versión autocontenida se utiliza en la
 pestaña porque el navegador no permite detectar de forma fiable si cada pestaña
 activa tiene fondo blanco o negro. Los PNG 16/32/48/180/192/512/1024 y
 `../favicon.ico` son exportaciones sin deformación del mismo isotipo.
+
+El cuerpo esférico —no el conjunto incluyendo la mecha— define el centro óptico.
+Por eso los vectores universales desplazan el símbolo 55 unidades hacia arriba.
