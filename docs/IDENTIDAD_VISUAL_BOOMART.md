@@ -149,7 +149,7 @@ Los originales y derivados aprobados están versionados en `assets/brand/`:
 - `boomart-icon.svg`: vector principal negro/rojo para fondos claros.
 - `boomart-icon-dark.svg`: vector blanco/rojo para fondos oscuros.
 - `boomart-favicon-universal.svg`: versión autocontenida para pestañas del
-  navegador, con fondo blanco oficial, bomba negra y A roja.
+  navegador, con placa blanca de esquinas redondeadas, bomba negra y A roja.
 - `boomart-favicon-transparente-4096.png`: PNG maestro transparente.
 - `boomart-favicon-claro-para-fondo-oscuro-4096.png`: PNG maestro de alto contraste.
 - `boomart-icon-light-background.png` y
@@ -176,7 +176,8 @@ para aplicaciones que no admiten SVG.
 #### Regla específica para la pestaña del navegador
 
 El favicon de la pestaña debe usar la versión **universal autocontenida** con
-fondo blanco, bomba negra y A roja. No debe alternarse mediante
+placa blanca de esquinas suavemente redondeadas, bomba negra y A roja. El radio
+oficial de la placa es aproximadamente el 16 % del lado. No debe alternarse mediante
 `prefers-color-scheme`: el navegador puede mostrar una pestaña activa blanca y
 otras negras aunque el sistema continúe en modo oscuro, y esa señal no informa
 el color real de cada pestaña. La placa blanca oficial mantiene la bomba y las
