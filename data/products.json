@@ -1179,8 +1179,9 @@
     "regularPrice": 150,
     "featured": true,
     "offer": true,
-    "image": "assets/products/mascara-calabaza-calavera-1.jpg",
+    "image": "assets/products/mascara-calabaza-calavera-hero-v2.png",
     "gallery": [
+      "assets/products/mascara-calabaza-calavera-hero-v2.png",
       "assets/products/mascara-calabaza-calavera-1.jpg",
       "assets/products/mascara-calabaza-calavera-2.jpg"
     ],
@@ -1227,8 +1228,9 @@
     "regularPrice": 250,
     "featured": true,
     "offer": true,
-    "image": "assets/products/evil-mask-1.jpg",
+    "image": "assets/products/evil-mask-hero-v2.png",
     "gallery": [
+      "assets/products/evil-mask-hero-v2.png",
       "assets/products/evil-mask-1.jpg",
       "assets/products/evil-mask-2.jpg",
       "assets/products/evil-mask-3.jpg"
@@ -1252,8 +1254,9 @@
     "regularPrice": 70,
     "featured": true,
     "offer": true,
-    "image": "assets/products/zkull-urban-1.jpg",
+    "image": "assets/products/zkull-urban-hero-v2.png",
     "gallery": [
+      "assets/products/zkull-urban-hero-v2.png",
       "assets/products/zkull-urban-1.jpg",
       "assets/products/zkull-urban-2.jpg"
     ],
@@ -1276,8 +1279,9 @@
     "regularPrice": 230,
     "featured": true,
     "offer": true,
-    "image": "assets/products/mascara-krampus-1.jpg",
+    "image": "assets/products/mascara-krampus-hero-v2.png",
     "gallery": [
+      "assets/products/mascara-krampus-hero-v2.png",
       "assets/products/mascara-krampus-1.jpg",
       "assets/products/mascara-krampus-2.jpg"
     ],
@@ -1302,8 +1306,9 @@
     "regularPrice": 160,
     "featured": true,
     "offer": true,
-    "image": "assets/products/mascara-baphomet-1.jpg",
+    "image": "assets/products/mascara-baphomet-hero-v2.png",
     "gallery": [
+      "assets/products/mascara-baphomet-hero-v2.png",
       "assets/products/mascara-baphomet-1.jpg",
       "assets/products/mascara-baphomet-2.jpg"
     ],
@@ -1355,8 +1360,9 @@
     "regularPrice": 250,
     "featured": true,
     "offer": true,
-    "image": "assets/products/casco-gladiador-maximo-1.jpg",
+    "image": "assets/products/casco-gladiador-maximo-hero-v2.png",
     "gallery": [
+      "assets/products/casco-gladiador-maximo-hero-v2.png",
       "assets/products/casco-gladiador-maximo-1.jpg",
       "assets/products/casco-gladiador-maximo-2.jpg",
       "assets/products/casco-gladiador-maximo-3.jpg"
@@ -1381,8 +1387,9 @@
     "regularPrice": 100,
     "featured": true,
     "offer": true,
-    "image": "assets/products/corona-de-elfo-1.jpg",
+    "image": "assets/products/corona-de-elfo-hero-v2.png",
     "gallery": [
+      "assets/products/corona-de-elfo-hero-v2.png",
       "assets/products/corona-de-elfo-1.jpg",
       "assets/products/corona-de-elfo-2.jpg",
       "assets/products/corona-de-elfo-3.jpg",
@@ -1410,8 +1417,9 @@
     "regularPrice": 100,
     "featured": true,
     "offer": true,
-    "image": "assets/products/cuernos-de-fauno-1.jpg",
+    "image": "assets/products/cuernos-de-fauno-hero-v2.png",
     "gallery": [
+      "assets/products/cuernos-de-fauno-hero-v2.png",
       "assets/products/cuernos-de-fauno-1.jpg",
       "assets/products/cuernos-de-fauno-2.jpg",
       "assets/products/cuernos-de-fauno-3.jpg",
@@ -1440,8 +1448,9 @@
     "regularPrice": 80,
     "featured": true,
     "offer": true,
-    "image": "assets/products/mascarada-del-diablo-1.jpg",
+    "image": "assets/products/mascarada-del-diablo-hero-v2.png",
     "gallery": [
+      "assets/products/mascarada-del-diablo-hero-v2.png",
       "assets/products/mascarada-del-diablo-1.jpg",
       "assets/products/mascarada-del-diablo-2.jpg",
       "assets/products/mascarada-del-diablo-3.jpg",
