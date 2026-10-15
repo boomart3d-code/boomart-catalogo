@@ -1573,8 +1573,9 @@
     "regularPrice": 176,
     "featured": true,
     "offer": true,
-    "image": "assets/products/botin-de-oro-del-mundial.jpg",
+    "image": "assets/products/botin-de-oro-del-mundial-hero-v2.png",
     "gallery": [
+      "assets/products/botin-de-oro-del-mundial-hero-v2.png",
       "assets/products/botin-de-oro-del-mundial.jpg"
     ],
     "description": "Diseño exclusivo de Boom Art: el Botín de Oro (Golden Boot) dorado incorpora un relieve de alta precisión con el mapamundi. Pieza de colección para el amante del fútbol.",
@@ -1593,8 +1594,9 @@
     "regularPrice": 220,
     "featured": true,
     "offer": true,
-    "image": "assets/products/balon-de-oro-del-mundial.jpg",
+    "image": "assets/products/balon-de-oro-del-mundial-hero-v2.png",
     "gallery": [
+      "assets/products/balon-de-oro-del-mundial-hero-v2.png",
       "assets/products/balon-de-oro-del-mundial.jpg"
     ],
     "description": "El Balón de Oro, máximo galardón individual del fútbol, en réplica decorativa con acabado dorado. El regalo ideal para el fanático que lo tiene casi todo.",
