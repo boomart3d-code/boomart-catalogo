@@ -470,7 +470,10 @@ ${cards}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="${SITE}/assets/boomart-og.jpg">
     <link rel="alternate" type="application/json" href="${SITE}/catalogo.json" title="Feed JSON del catalogo BoomArt">
-    <link rel="stylesheet" href="src/styles.css?v=48">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles.css?v=49">
     <style>
       .ai-catalog { max-width: 1040px; margin: 0 auto; padding: 32px 20px 80px; }
       .ai-catalog h1 { margin-bottom: 8px; }
@@ -1037,8 +1040,8 @@ function buildProductPage(p, all, ratingLd) {
     <meta name="twitter:image" content="${esc(abs(imgs[0]))}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=48">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=49">
     <style>${PRODUCT_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(productLd(p))}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbLd(p))}</script>
@@ -1466,8 +1469,8 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
     <meta name="twitter:image" content="${esc(ogImg)}">${twitterImageAlt}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=48">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=49">
     <style>${CATEGORY_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(itemListLd)}</script>
     <script type="application/ld+json">${JSON.stringify(crumbLd)}</script>

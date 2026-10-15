@@ -837,57 +837,88 @@ const couponPopup = document.querySelector("#couponPopup");
 const couponPopupBtn = document.querySelector("#couponPopupBtn");
 const couponReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+// Tiempos del emergente (pedido de Adrián, 2026-10-15): antes se leía apenas
+// 0,3 s y desaparecía; ahora se queda lo suficiente para leerlo, viaja de forma
+// visible hasta el botón de registro y ese botón queda resaltado unos segundos,
+// para que se entienda dónde se reclama el cupón.
+const COUPON_READ_MS = 2600;
+const COUPON_FLY_MS = 950;
+const COUPON_HIGHLIGHT_MS = 2600;
+
 function pulseCouponTarget() {
   if (!couponBanner) return;
+  clearTimeout(Number(couponBanner.dataset.pulseTimer));
   couponBanner.classList.remove("coupon-received");
-  // Reinicia el pulso incluso si el enlace de campana vuelve a mostrar el cupón.
+  // Reinicia el resaltado incluso si el enlace de campaña vuelve a mostrar el cupón.
   void couponBanner.offsetWidth;
   couponBanner.classList.add("coupon-received");
-  setTimeout(() => couponBanner.classList.remove("coupon-received"), 650);
+  const pulseTimer = setTimeout(() => couponBanner.classList.remove("coupon-received"), COUPON_HIGHLIGHT_MS);
+  couponBanner.dataset.pulseTimer = String(pulseTimer);
+}
+
+function scheduleCouponFly(delay) {
+  if (!couponPopup) return;
+  clearTimeout(Number(couponPopup.dataset.flyTimer));
+  const flyTimer = setTimeout(() => flyCouponPopup(), delay);
+  couponPopup.dataset.flyTimer = String(flyTimer);
 }
 
 function showCouponPopup() {
   if (!couponPopup) return;
   clearTimeout(Number(couponPopup.dataset.flyTimer));
   clearTimeout(Number(couponPopup.dataset.hideTimer));
-  couponPopup.classList.remove("is-visible", "is-flying");
+  couponPopup.classList.remove("is-visible", "is-flying", "is-settled", "is-held");
+  couponPopup.style.setProperty("--coupon-read-ms", `${COUPON_READ_MS}ms`);
   couponPopup.hidden = false;
   couponPopup.setAttribute("aria-hidden", "false");
   requestAnimationFrame(() => requestAnimationFrame(() => couponPopup.classList.add("is-visible")));
 
-  // 420 ms de entrada + 300 ms para leer + 430 ms de recorrido: la aparición
-  // completa dura cerca de 1,15 s y no interrumpe la exploración de la tienda.
-  const flyTimer = setTimeout(() => flyCouponPopup(), couponReducedMotion.matches ? 620 : 720);
-  couponPopup.dataset.flyTimer = String(flyTimer);
+  // Entrada (420 ms) + lectura con una línea roja que se completa + viaje
+  // visible al botón: unos 3,5 s en total, sin bloquear la página (el fondo
+  // no captura clics).
+  scheduleCouponFly(COUPON_READ_MS);
 }
 
 function flyCouponPopup() {
   if (!couponPopup || couponPopup.hidden) return;
+  clearTimeout(Number(couponPopup.dataset.flyTimer));
 
   if (couponReducedMotion.matches) {
     couponPopup.hidden = true;
     couponPopup.setAttribute("aria-hidden", "true");
-    couponPopup.classList.remove("is-visible", "is-flying");
+    couponPopup.classList.remove("is-visible", "is-flying", "is-settled", "is-held");
     pulseCouponTarget();
     return;
   }
 
+  couponPopup.classList.add("is-settled");
+  void couponPopupBtn?.offsetWidth;
+
+  // Destino: la etiqueta "Reclama 10% de bienvenida" dentro del botón
+  // permanente; la tarjeta se encoge hasta su tamaño para que se lea como
+  // "el cupón se guardó aquí".
+  const target = couponBanner?.querySelector(".coupon-ticket") || couponBanner;
   const cardRect = couponPopupBtn?.getBoundingClientRect();
-  const targetRect = couponBanner?.getBoundingClientRect();
-  if (cardRect && targetRect) {
+  const targetRect = target?.getBoundingClientRect();
+  if (cardRect && targetRect && cardRect.width) {
+    // Si el botón quedó fuera de la pantalla (página ya desplazada), la tarjeta
+    // sube hacia el borde superior, que es donde está.
+    const targetY = targetRect.bottom > 0 ? targetRect.top + (targetRect.height / 2) : 0;
     const flyX = targetRect.left + (targetRect.width / 2) - (cardRect.left + (cardRect.width / 2));
-    const flyY = targetRect.top + (targetRect.height / 2) - (cardRect.top + (cardRect.height / 2));
+    const flyY = targetY - (cardRect.top + (cardRect.height / 2));
+    const scale = Math.min(0.6, Math.max(0.18, targetRect.width / cardRect.width));
     couponPopup.style.setProperty("--coupon-fly-x", `${Math.round(flyX)}px`);
     couponPopup.style.setProperty("--coupon-fly-y", `${Math.round(flyY)}px`);
+    couponPopup.style.setProperty("--coupon-fly-scale", scale.toFixed(3));
   }
 
   couponPopup.classList.add("is-flying");
   const hideTimer = setTimeout(() => {
     couponPopup.hidden = true;
     couponPopup.setAttribute("aria-hidden", "true");
-    couponPopup.classList.remove("is-visible", "is-flying");
+    couponPopup.classList.remove("is-visible", "is-flying", "is-settled", "is-held");
     pulseCouponTarget();
-  }, 440);
+  }, COUPON_FLY_MS + 30);
   couponPopup.dataset.hideTimer = String(hideTimer);
 }
 
@@ -897,6 +928,22 @@ if (couponPopupBtn) {
     flyCouponPopup();
     setTimeout(openCouponRegistration, couponReducedMotion.matches ? 0 : 260);
   });
+  // Si la persona está leyendo (cursor encima o foco de teclado), la tarjeta
+  // espera; al salir, se va hacia el botón poco después.
+  const holdCoupon = () => {
+    if (couponPopup.classList.contains("is-flying")) return;
+    clearTimeout(Number(couponPopup.dataset.flyTimer));
+    couponPopup.classList.add("is-held");
+  };
+  const releaseCoupon = () => {
+    if (couponPopup.hidden || couponPopup.classList.contains("is-flying")) return;
+    couponPopup.classList.remove("is-held");
+    scheduleCouponFly(900);
+  };
+  couponPopupBtn.addEventListener("mouseenter", holdCoupon);
+  couponPopupBtn.addEventListener("focus", holdCoupon);
+  couponPopupBtn.addEventListener("mouseleave", releaseCoupon);
+  couponPopupBtn.addEventListener("blur", releaseCoupon);
 }
 
 document.addEventListener("boomart:products-ready", () => {

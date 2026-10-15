@@ -6,11 +6,27 @@ Esta normativa define la firma visual de BoomArt para documentos, pantallas, pá
 
 La identidad combina precisión técnica, acabado artesanal y energía creativa. Debe sentirse profesional y contemporánea, nunca fría; audaz, pero no estridente; especializada, sin parecer complicada.
 
+## Cómo leer esta normativa: dos capas
+
+El sistema tiene **dos capas** que comparten concepto, logo, voz y reglas de
+fotografía, pero no los mismos valores de color y tipografía:
+
+| Capa | Dónde se aplica | Fondo | Rojo | Tipografía |
+|---|---|---|---|---|
+| **Base de marca** | Cotizaciones, notas de venta, PDF, BoomArt Studio, correos, redes | Blanco `#FFFFFF` | Rojo BoomArt `#FF3030` | Una sola familia (Inter o sustituto) |
+| **Galería de Autor** | Solo la web `boomart.pe` | Marfil `#F4F0E8` + carbón `#0B0B0B` | Rojo de interfaz `#E1132F` | Barlow Condensed (titulares) + Inter |
+
+Cada pieza usa **una sola capa**: nunca se mezclan los dos rojos ni los dos
+fondos en una misma pieza. Cuando una regla general menciona "blanco", "rojo"
+o "una familia", en la web se lee como su equivalente de Galería de Autor. Las
+excepciones de la web están escritas en su sección; todo lo demás aplica igual
+a las dos capas.
+
 ## Firma reconocible
 
 Toda pieza de BoomArt debe reunir al menos cuatro de estos seis rasgos:
 
-1. Fondo blanco o muy claro con espacio generoso.
+1. Fondo claro con espacio generoso: blanco en la capa base, marfil en la web.
 2. Negro carbón para estructura, títulos y texto principal.
 3. Rojo BoomArt usado como acento breve, no como fondo dominante.
 4. Títulos compactos y firmes, con jerarquía tipográfica muy marcada.
@@ -21,7 +37,8 @@ La repetición consistente de estos rasgos construye reconocimiento sin depender
 
 ## Dirección visual vigente: Galería de Autor
 
-La web adopta la dirección **Galería de Autor** como expresión digital principal.
+La web adopta la dirección **Galería de Autor** como expresión digital principal
+(segunda capa del sistema; ver «Cómo leer esta normativa»).
 Debe comunicar arte, exclusividad y valor contemporáneo sin caer en una estética
 lujosa genérica. El carácter explosivo de BoomArt se expresa mediante escala,
 contraste, composición asimétrica y una incisión roja breve; nunca mediante
@@ -44,7 +61,12 @@ su forma respire.
 | Rojo de interfaz | `#E1132F` | Acción, incisión gráfica y énfasis puntual |
 
 El rojo integrado en el logotipo oficial no se recolorea. El rojo de interfaz
-es un token independiente, calibrado para botones y texto digital.
+es un token independiente, calibrado para botones y texto digital; en la web
+sustituye al Rojo BoomArt `#FF3030` (no conviven en la misma pantalla).
+
+En la web el carbón sí puede ocupar superficies amplias, pero solo como
+escenario de producto, cabecera, pie y tarjetas destacadas; el texto de lectura
+y el catálogo se mantienen sobre marfil.
 
 ### Tipografía digital
 
@@ -53,6 +75,9 @@ es un token independiente, calibrado para botones y texto digital.
 - **Inter**: navegación, descripciones, precios, formularios y textos de lectura.
 - Los titulares pueden ser grandes y compactos; los párrafos mantienen caja
   normal y ancho de lectura moderado.
+- Esta combinación de dos familias es una excepción exclusiva de la web. Ambas
+  se cargan con un `<link>` en el `<head>` de cada página (no con `@import`
+  dentro del CSS, que retrasa la carga y hace parpadear los titulares).
 
 La frase expresiva oficial es **«Arte que toma forma.»**. **«Piezas de autor»**
 funciona como firma secundaria para trabajos originales, personalizados o de
@@ -76,6 +101,29 @@ nombre legible, un precio visible y una acción inequívoca. Si existe conflicto
 entre una composición decorativa y la facilidad de compra, prevalece la
 facilidad de compra.
 
+### Lectura para Google y asistentes de IA
+
+La estética nunca puede quitarle a la página lo que Google y los asistentes de
+IA necesitan leer:
+
+- El **título principal (H1)** de cada página dice qué vende BoomArt con las
+  palabras que la gente busca (por ejemplo, «Figuras coleccionables · Impresión
+  3D en Perú»). Los lemas expresivos como «Arte que toma forma.» se muestran
+  grandes, pero como texto visual, no como único título.
+- No se usa texto oculto para meter palabras clave: todo lo que lee Google
+  también lo ve la persona.
+- Nombres, precios, descripciones y medidas de cada producto se escriben como
+  texto real en la página, nunca solo dentro de una imagen.
+- Las fotos llevan texto alternativo descriptivo.
+
+### Fotos completas en la web
+
+Ninguna foto de producto se recorta ni se amplía para llenar un recuadro: se
+muestra completa (`object-fit: contain`) y el espacio sobrante se rellena con
+carbón o marfil, como el escenario de una galería. Esto incluye carruseles,
+portadas y tarjetas. Si un recuadro deja demasiado espacio vacío, se cambia la
+foto o el recuadro, no se corta el producto.
+
 ## Principios
 
 ### El producto es el protagonista
@@ -94,7 +142,10 @@ Las alineaciones, columnas, márgenes y ritmos de espacio deben sentirse deliber
 
 La web, BoomArt Studio, las cotizaciones, las notas de venta, los correos y las publicaciones deben compartir la misma jerarquía y vocabulario visual.
 
-## Paleta oficial
+## Paleta oficial (capa base)
+
+Se usa en documentos, BoomArt Studio, correos y redes. La web usa la paleta
+Galería de Autor descrita más arriba.
 
 | Token | Valor | Uso principal |
 |---|---:|---|
@@ -114,7 +165,7 @@ No se permiten degradados de marca, rojos alternativos sin función, sombras neg
 
 ### Familia
 
-Usar una sans serif geométrica o neo grotesca. Prioridad digital: la familia utilizada por boomart.pe; sustitutos seguros: Inter, Helvetica, Arial o Segoe UI. No mezclar más de una familia en una misma pieza salvo que sea estrictamente técnico.
+Usar una sans serif geométrica o neo grotesca. Capa base: Inter; sustitutos seguros: Helvetica, Arial o Segoe UI. No mezclar más de una familia en una misma pieza salvo que sea estrictamente técnico. La web es la única excepción (Barlow Condensed + Inter, ver «Tipografía digital»).
 
 ### Jerarquía
 
@@ -271,9 +322,11 @@ a centrar el conjunto usando sus límites totales, porque eso baja visualmente l
 La web de BoomArt es la referencia viva de la marca. Toda creación visual
 presente o futura —documento, pantalla de Studio, landing, cotización, etiqueta,
 publicación, arte comercial o interfaz— debe heredar el mismo concepto y la
-misma identidad: blanco como espacio principal, negro estructural, rojo BoomArt
+misma identidad: fondo claro como espacio principal, negro estructural, un rojo
 como acento, tipografía fuerte, precisión de retícula, fotografía real y una
-energía visual de **arte explosivo**. No basta con colocar el logo; la pieza
+energía visual de **arte explosivo**. Lo que se hereda es el concepto; los
+valores exactos de color y tipografía salen de la capa que corresponda a cada
+pieza (base o Galería de Autor). No basta con colocar el logo; la pieza
 completa debe sentirse parte del mismo sistema que `boomart.pe`.
 
 ## Fotografía de producto
@@ -283,6 +336,9 @@ completa debe sentirse parte del mismo sistema que `boomart.pe`.
 - Preferir fondos neutros, oscuros o contextuales con baja distracción.
 - Mantener continuidad de temperatura de color y contraste dentro de una serie.
 - No añadir texto dentro de la fotografía para catálogos o documentos.
+  Única excepción: las **fotos de medidas** de la galería de cada producto en
+  la web (producto con flechas y cotas). Nunca son la foto principal, y las
+  mismas medidas también se escriben como texto en la ficha.
 - No recortar puntas, base ni elementos que formen parte del producto.
 - En documentos, colocar las fotografías en páginas posteriores para que cierren la lectura sin interrumpir datos y precios.
 - Usar una fotografía grande por página, completa y sin recorte, identificada con “Foto referencial” y el nombre del producto.
@@ -335,7 +391,7 @@ Primario rojo con texto blanco; secundario gris claro o blanco con borde carbón
 
 ### Web
 
-Fondo claro, navegación negra, botones rojos, tarjetas limpias, fotografías amplias y llamadas a la acción concretas. Mantener lectura cómoda en móvil sin desbordamiento horizontal.
+Aplica la capa Galería de Autor: fondo marfil, navegación y escenarios carbón, botones con el rojo de interfaz, tarjetas limpias, fotografías amplias y completas, y llamadas a la acción concretas. Mantener lectura cómoda en móvil sin desbordamiento horizontal.
 
 ### BoomArt Studio
 
@@ -352,8 +408,9 @@ El producto ocupa la mayor parte del cuadro. El rojo aparece en una etiqueta o e
 ## No hacer
 
 - No usar el logo dentro de un cuadrado blanco o con transparencia mal recortada.
-- No cubrir páginas enteras con negro o rojo.
-- No usar más de un rojo de marca.
+- No cubrir páginas enteras con rojo, ni con negro en documentos (en la web el
+  carbón solo como escenario, cabecera y pie).
+- No usar más de un rojo de marca en la misma pieza.
 - No centrar todos los textos; datos y lectura larga se alinean a la izquierda.
 - No usar tablas con cada celda encerrada por bordes gruesos.
 - No deformar fotografías ni inventar características del producto.
@@ -371,9 +428,12 @@ El producto ocupa la mayor parte del cuadro. El rojo aparece en una etiqueta o e
 - ¿Las fotos son reales y no alteran el producto?
 - ¿Los enlaces funcionan y la URL sigue siendo legible al imprimir?
 - ¿La versión móvil o A4 está libre de cortes, desbordes y texto diminuto?
+- En la web: ¿el H1 dice qué se vende y las fotos de producto se ven completas?
 
 ## Gobernanza
 
 Esta es la fuente de verdad visual para BoomArt. Todo componente nuevo debe reutilizar los tokens y patrones aquí definidos antes de crear una excepción. Las excepciones deben documentarse, justificarse por necesidad funcional y conservar la firma reconocible.
 
-Versión 1.0 - octubre de 2026.
+Versión 1.1 - 15 de octubre de 2026 (ordena las dos capas, base y Galería de
+Autor, sin cambiar la identidad; agrega las reglas de lectura para Google/IA y
+de fotos completas).
