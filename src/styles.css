@@ -5686,3 +5686,26 @@ body .pp-rating a {
     height: 3px;
   }
 }
+
+/* «Explora por colección» con la misma armonía que la portada (2026-10-15):
+   producto recortado sin fondo (assets/hero/*.webp) sobre el escenario de
+   marca dibujado en CSS — carbón, foco cálido, retícula tenue y sombra de
+   apoyo — completo (contain) y con aire alrededor. */
+.collections-grid .collection-tile img {
+  box-sizing: border-box;
+  padding: 12% 10% 14%;
+  object-fit: contain;
+  object-position: center bottom;
+  background:
+    radial-gradient(ellipse 34% 5% at 50% 89%, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 100%),
+    radial-gradient(ellipse 70% 55% at 50% 48%, rgba(255, 244, 228, 0.15), rgba(255, 244, 228, 0) 70%),
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(180deg, #151413 0%, #0b0b0b 62%, #070707 100%);
+}
+
+.collections-grid .collection-tile-corporate img {
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  height: auto;
+}
