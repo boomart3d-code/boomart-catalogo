@@ -4916,6 +4916,72 @@ h3,
   box-shadow: none;
 }
 
+/* Legibilidad en superficies claras: estos bloques nacieron sobre carbón y
+   heredaban grises demasiado pálidos al pasar a marfil. */
+.custom-order-section .eyebrow,
+.reviews-section .eyebrow {
+  color: #5f5952;
+}
+
+.custom-order-head p,
+.review-form-intro,
+.custom-order-hint,
+.review-opt,
+.review-google {
+  color: #514c46;
+}
+
+.custom-order-head p,
+.review-form-intro {
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.review-opt {
+  font-weight: 600;
+}
+
+.custom-order-hint,
+.review-google {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.review-google a {
+  color: #9a271f;
+  text-underline-offset: 3px;
+}
+
+.review-form-card input::placeholder,
+.review-form-card textarea::placeholder {
+  color: #c4bdb4;
+  opacity: 1;
+}
+
+.review-form-card .star-input {
+  gap: 2px;
+}
+
+.review-form-card .star-input button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  color: #5f5952;
+  font-size: 2rem;
+}
+
+.review-form-card .star-input button.is-on {
+  color: var(--red-dark);
+}
+
+.review-form-card .star-input button:focus-visible {
+  border-radius: 3px;
+  outline: 2px solid var(--gallery-carbon);
+  outline-offset: 2px;
+}
+
 .social-section,
 .footer {
   background: #090909;

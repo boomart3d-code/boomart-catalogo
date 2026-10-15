@@ -155,12 +155,15 @@
   function paintStars(value) {
     var btns = starInput.querySelectorAll("button");
     btns.forEach(function (b, i) {
-      b.classList.toggle("is-on", i < value);
+      var isOn = i < value;
+      b.classList.toggle("is-on", isOn);
+      b.textContent = isOn ? "★" : "☆";
       b.setAttribute("aria-checked", String(i + 1 === value));
     });
   }
 
   if (starInput) {
+    paintStars(0);
     starInput.addEventListener("click", function (event) {
       var btn = event.target.closest("button");
       if (!btn) return;
