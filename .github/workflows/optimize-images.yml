@@ -39,7 +39,11 @@ jobs:
             git commit -m "Optimiza automaticamente fotos de productos [skip ci]"
             # Otro robot (catalogo) puede haber guardado justo antes:
             # ponerse al dia y reintentar en vez de fallar.
-            for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
+            # --autostash: el build deja otros archivos modificados (p. ej. paginas de
+            # campana) que no se publican aqui; sin esto el pull fallaba en silencio.
+            ok=0
+            for i in 1 2 3; do git pull --rebase --autostash && git push && { ok=1; break; }; sleep 5; done
+            [ "$ok" = 1 ] || { echo "No se pudo publicar tras 3 intentos"; exit 1; }
           else
             echo "Ninguna foto necesitaba optimizarse."
           fi
