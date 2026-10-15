@@ -1401,15 +1401,26 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
   const url = options.url || `${SITE}/categoria/${s}/`;
   const clean = options.clean || stripEmoji(cat);
   const wa = `${WHATSAPP}?text=${encodeURIComponent(`Hola BoomArt, quiero consultar por el catálogo de ${clean}`)}`;
-  const ogImg = options.ogImg || abs((list[0] && (list[0].gallery && list[0].gallery[0])) || (list[0] && list[0].image)) || `${SITE}/assets/boomart-og.jpg`;
+  // Sin imagen propia, la categoría usa la miniatura liviana (assets/og/) de su
+  // primer producto: las fotos principales pueden ser PNG de más de 1 MB que
+  // WhatsApp no muestra.
+  const firstSrc = list[0] && ((list[0].gallery && list[0].gallery[0]) || list[0].image);
+  const firstOg = !options.ogImg && list[0] && OG_MANIFEST[list[0].id] && OG_MANIFEST[list[0].id].source === firstSrc
+    ? OG_MANIFEST[list[0].id]
+    : null;
+  const ogImg = options.ogImg
+    || (firstOg ? `${SITE}/assets/og/${list[0].id}.jpg?v=${firstOg.hash.slice(0, 8)}` : abs(firstSrc))
+    || `${SITE}/assets/boomart-og.jpg`;
   const ogAlt = options.ogAlt || `${meta.h1} | BoomArt`;
-  const ogSize = options.ogWidth && options.ogHeight
-    ? `\n    <meta property="og:image:width" content="${options.ogWidth}">\n    <meta property="og:image:height" content="${options.ogHeight}">`
+  const ogW = options.ogWidth || (firstOg && firstOg.width);
+  const ogH = options.ogHeight || (firstOg && firstOg.height);
+  const ogSize = ogW && ogH
+    ? `\n    <meta property="og:image:width" content="${ogW}">\n    <meta property="og:image:height" content="${ogH}">`
     : "";
-  const ogExtra = options.ogImg
+  const ogExtra = options.ogImg || firstOg
     ? `\n    <meta property="og:image:secure_url" content="${esc(ogImg)}">\n    <meta property="og:image:type" content="image/jpeg">${ogSize}\n    <meta property="og:image:alt" content="${esc(ogAlt)}">`
     : "";
-  const twitterImageAlt = options.ogImg
+  const twitterImageAlt = options.ogImg || firstOg
     ? `\n    <meta name="twitter:image:alt" content="${esc(ogAlt)}">`
     : "";
   const desc = clampWords(meta.intro[0], 155);
