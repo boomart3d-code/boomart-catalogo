@@ -58,6 +58,24 @@ La frase expresiva oficial es **«Arte que toma forma.»**. **«Piezas de autor�
 funciona como firma secundaria para trabajos originales, personalizados o de
 edición cuidada; no se usa como una promesa indiscriminada en cada producto.
 
+### Principio comercial irrenunciable
+
+`boomart.pe` es ante todo una **tienda**. La estética Galería de Autor debe
+aumentar el valor percibido y facilitar la elección; nunca puede ocultar el
+catálogo, los precios, las variantes, la disponibilidad, el carrito o el camino
+hacia la compra. Cada decisión visual se evalúa también por su capacidad de:
+
+1. ayudar al visitante a entender rápidamente qué vende BoomArt;
+2. permitir explorar, buscar, filtrar y comparar productos sin esfuerzo;
+3. mostrar precio, condiciones y acción principal con claridad;
+4. mantener siempre accesibles el carrito, WhatsApp y el pedido a medida;
+5. reducir pasos y dudas hasta completar la compra o iniciar una consulta.
+
+La fotografía puede sentirse editorial, pero cada producto debe conservar un
+nombre legible, un precio visible y una acción inequívoca. Si existe conflicto
+entre una composición decorativa y la facilidad de compra, prevalece la
+facilidad de compra.
+
 ## Principios
 
 ### El producto es el protagonista
