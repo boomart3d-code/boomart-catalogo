@@ -1674,8 +1674,9 @@
     "regularPrice": 49,
     "featured": true,
     "offer": true,
-    "image": "assets/products/maceta-dedo-medio.jpg",
+    "image": "assets/products/maceta-dedo-medio-hero-v2.png",
     "gallery": [
+      "assets/products/maceta-dedo-medio-hero-v2.png",
       "assets/products/maceta-dedo-medio.jpg"
     ],
     "description": "Una maceta pequeña y divertida con forma de dedo medio, en color neutro que combina con todos tus espacios: la sala, el escritorio de la oficina, donde quieras dar un mensaje sin decir nada.",
@@ -1714,8 +1715,9 @@
     "regularPrice": 73,
     "featured": true,
     "offer": true,
-    "image": "assets/products/maceta-david.jpg",
+    "image": "assets/products/maceta-david-hero-v2.png",
     "gallery": [
+      "assets/products/maceta-david-hero-v2.png",
       "assets/products/maceta-david.jpg"
     ],
     "description": "Maceta inspirada en el David de Miguel Ángel: elegancia y arte clásico en un diseño minimalista que eleva cualquier ambiente.",
@@ -1753,8 +1755,9 @@
     "regularPrice": 49,
     "featured": true,
     "offer": true,
-    "image": "assets/products/maceta-palmera.jpg",
+    "image": "assets/products/maceta-palmera-hero-v2.png",
     "gallery": [
+      "assets/products/maceta-palmera-hero-v2.png",
       "assets/products/maceta-palmera.jpg"
     ],
     "description": "Maceta minimalista negra con textura de hojas de palmera: elegante y moderna, ideal para complementar una decoración tropical o contemporánea.",
