@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 73,
+  "count": 74,
   "products": [
     {
       "id": "templo-aries",
@@ -625,6 +625,37 @@
       ],
       "url": "https://boomart.pe/producto/tiara-de-pegaso-saint-seiya/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Tiara%20de%20Pegaso%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "tiara-de-ikki-de-fenix-saint-seiya",
+      "name": "Tiara de Ikki de Fénix · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Cascos",
+        "Cosplay",
+        "Saint Seiya",
+        "Fénix",
+        "Ikki",
+        "Disfraces",
+        "Halloween"
+      ],
+      "description": "Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en tamaño real 1:1. Diadema con sus grandes cuernos dorados, el frontal plateado y la gema roja al centro, lista para usar en tu cosplay o disfraz de Halloween, o para exhibir junto a tu figura. Acabado dorado y plateado pintado a mano. Como se fabrica a pedido, el calce se adapta a la talla de quien la va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Hecha en Perú, con envíos a todo el país.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Precio oferta: S/100 (antes S/120)"
+      ],
+      "image": "https://boomart.pe/assets/products/tiara-de-ikki-de-fenix-saint-seiya-hero.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/tiara-de-ikki-de-fenix-saint-seiya-hero.jpg",
+        "https://boomart.pe/assets/products/tiara-de-ikki-de-fenix-saint-seiya-2.jpg",
+        "https://boomart.pe/assets/products/tiara-de-ikki-de-fenix-saint-seiya-3.jpg",
+        "https://boomart.pe/assets/products/tiara-de-ikki-de-fenix-saint-seiya-4.jpg"
+      ],
+      "url": "https://boomart.pe/producto/tiara-de-ikki-de-fenix-saint-seiya/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Tiara%20de%20Ikki%20de%20F%C3%A9nix%20%C2%B7%20Saint%20Seiya"
     },
     {
       "id": "set-12-altares-exhibidor",
