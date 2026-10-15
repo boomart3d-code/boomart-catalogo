@@ -44,7 +44,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=46">
+    <link rel="stylesheet" href="src/styles.css?v=47">
 
     <script type="application/ld+json">
     {
@@ -168,21 +168,28 @@
       </nav>
     </header>
 
-    <button type="button" class="coupon-banner" id="couponBanner" aria-label="Regístrate y gana un cupón de descuento sorpresa">
+    <button type="button" class="coupon-banner" id="couponBanner" aria-label="Regístrate aquí y reclama tu cupón de bienvenida del 10%">
       <span class="coupon-banner-star star-1" aria-hidden="true">✦</span>
       <span class="coupon-banner-star star-2" aria-hidden="true">✦</span>
       <span class="coupon-banner-star star-3" aria-hidden="true">✦</span>
       <span class="coupon-banner-star star-4" aria-hidden="true">✦</span>
-      <span class="coupon-banner-kicker">¡Regístrate y gana!</span>
+      <span class="coupon-banner-kicker">Regístrate aquí</span>
       <span class="coupon-ticket">
         <span class="coupon-ticket-label">Cupón</span>
-        <span class="coupon-ticket-title">Descuento sorpresa</span>
+        <span class="coupon-ticket-title">Reclama 10% de bienvenida</span>
       </span>
     </button>
 
     <div class="coupon-popup" id="couponPopup" hidden aria-hidden="true">
-      <button type="button" class="coupon-popup-card" id="couponPopupBtn">
-        🎁 ¡Obtén tu cupón de descuento registrándote aquí!
+      <button type="button" class="coupon-popup-card" id="couponPopupBtn" aria-label="Regístrate para reclamar tu cupón de bienvenida del 10%">
+        <span class="coupon-popup-brand" aria-hidden="true">
+          <img src="assets/boomart-logo-3.png" alt="" width="512" height="512">
+        </span>
+        <span class="coupon-popup-content">
+          <span class="coupon-popup-eyebrow">Beneficio de bienvenida</span>
+          <span class="coupon-popup-title"><strong>10%</strong> para tu primera compra</span>
+          <span class="coupon-popup-action">Regístrate para reclamarlo</span>
+        </span>
       </button>
     </div>
 
@@ -767,7 +774,7 @@
     <script src="src/track.js?v=4"></script>
     <script src="src/cart.js?v=6"></script>
     <script src="src/products.js?v=5"></script>
-    <script src="src/app.js?v=36"></script>
+    <script src="src/app.js?v=37"></script>
     <script src="src/checkout.js?v=25"></script>
     <script src="src/products-loader.js?v=5"></script>
     <script src="src/reviews.js?v=5"></script>

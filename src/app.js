@@ -815,9 +815,8 @@ if (couponBanner) {
 
 // Emergente del cupon: siempre al entrar por un enlace corto de campana
 // (?categoria=<slug>) y, ademas, una vez por visitante en los accesos
-// principales (boomart.pe/, sin enlace de producto) -- pedido de Adrian,
-// 2026-09-30. Se muestra unos segundos y "vuela" hacia el banner de arriba,
-// que ya tiene el mismo mensaje.
+// principales. La pieza aparece, crece y se recoge en el boton permanente de
+// registro; la trayectoria usa la posicion real del boton en cada pantalla.
 const COUPON_POPUP_SEEN_KEY = "boomart_coupon_popup_seen";
 function hasSeenCouponPopup() {
   try {
@@ -836,28 +835,67 @@ function markCouponPopupSeen() {
 }
 const couponPopup = document.querySelector("#couponPopup");
 const couponPopupBtn = document.querySelector("#couponPopupBtn");
+const couponReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+function pulseCouponTarget() {
+  if (!couponBanner) return;
+  couponBanner.classList.remove("coupon-received");
+  // Reinicia el pulso incluso si el enlace de campana vuelve a mostrar el cupón.
+  void couponBanner.offsetWidth;
+  couponBanner.classList.add("coupon-received");
+  setTimeout(() => couponBanner.classList.remove("coupon-received"), 650);
+}
+
 function showCouponPopup() {
   if (!couponPopup) return;
+  clearTimeout(Number(couponPopup.dataset.flyTimer));
+  clearTimeout(Number(couponPopup.dataset.hideTimer));
+  couponPopup.classList.remove("is-visible", "is-flying");
   couponPopup.hidden = false;
-  requestAnimationFrame(() => couponPopup.classList.add("is-visible"));
-  // 1300 ms quieto en pantalla (antes 2600; Adrian lo pidio a la mitad,
-  // 2026-09-30) -- el vuelo de 700 ms hacia el banner no cambia.
-  const flyTimer = setTimeout(() => flyCouponPopup(), 1300);
+  couponPopup.setAttribute("aria-hidden", "false");
+  requestAnimationFrame(() => requestAnimationFrame(() => couponPopup.classList.add("is-visible")));
+
+  // 420 ms de entrada + 300 ms para leer + 430 ms de recorrido: la aparición
+  // completa dura cerca de 1,15 s y no interrumpe la exploración de la tienda.
+  const flyTimer = setTimeout(() => flyCouponPopup(), couponReducedMotion.matches ? 620 : 720);
   couponPopup.dataset.flyTimer = String(flyTimer);
 }
+
 function flyCouponPopup() {
   if (!couponPopup || couponPopup.hidden) return;
-  couponPopup.classList.add("is-flying");
-  setTimeout(() => {
+
+  if (couponReducedMotion.matches) {
     couponPopup.hidden = true;
+    couponPopup.setAttribute("aria-hidden", "true");
     couponPopup.classList.remove("is-visible", "is-flying");
-  }, 700);
+    pulseCouponTarget();
+    return;
+  }
+
+  const cardRect = couponPopupBtn?.getBoundingClientRect();
+  const targetRect = couponBanner?.getBoundingClientRect();
+  if (cardRect && targetRect) {
+    const flyX = targetRect.left + (targetRect.width / 2) - (cardRect.left + (cardRect.width / 2));
+    const flyY = targetRect.top + (targetRect.height / 2) - (cardRect.top + (cardRect.height / 2));
+    couponPopup.style.setProperty("--coupon-fly-x", `${Math.round(flyX)}px`);
+    couponPopup.style.setProperty("--coupon-fly-y", `${Math.round(flyY)}px`);
+  }
+
+  couponPopup.classList.add("is-flying");
+  const hideTimer = setTimeout(() => {
+    couponPopup.hidden = true;
+    couponPopup.setAttribute("aria-hidden", "true");
+    couponPopup.classList.remove("is-visible", "is-flying");
+    pulseCouponTarget();
+  }, 440);
+  couponPopup.dataset.hideTimer = String(hideTimer);
 }
+
 if (couponPopupBtn) {
   couponPopupBtn.addEventListener("click", () => {
     clearTimeout(Number(couponPopup.dataset.flyTimer));
     flyCouponPopup();
-    openCouponRegistration();
+    setTimeout(openCouponRegistration, couponReducedMotion.matches ? 0 : 260);
   });
 }
 

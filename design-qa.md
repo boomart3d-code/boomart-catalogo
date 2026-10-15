@@ -1,48 +1,42 @@
-# Design QA · Portada con carrete editorial
+# Design QA · Cupón de bienvenida BoomArt
+
+## Objetivo
+
+Convertir el aviso inicial del cupón en una aparición breve, reconocible como
+BoomArt y claramente conectada con el botón permanente donde se reclama.
 
 ## Evidencia
 
-- Referencia anotada por el usuario: `docs/design-reference-portada-carrete-mobile.jpg`
-- Implementación móvil, primera foto: `docs/design-qa-portada-carrete-mobile.png`
-- Implementación móvil, foto alterna: `docs/design-qa-portada-carrete-mobile-slide2.png`
-- Implementación escritorio: `docs/design-qa-portada-carrete-desktop.png`
-- Comparación antes/después: `docs/design-qa-comparison-portada-carrete-mobile.jpg`
+- Vista móvil durante la aparición: `docs/design-qa-cupon-boomart-mobile.png`.
+- Vista de escritorio revisada en el navegador local a 1440 × 1024 px.
+- Referencia de marca: `docs/IDENTIDAD_VISUAL_BOOMART.md`.
 
-## Entorno revisado
+## Comparación y decisiones
 
-- Móvil: viewport CSS 390 × 844 px, densidad 1.
-- Escritorio: viewport CSS 1440 × 1024 px, densidad 1.
-- Contenido real: cuatro fotografías del catálogo y enlaces a sus fichas.
+El aviso anterior era una tarjeta dorada con emoji, borde punteado y una salida
+genérica hacia arriba. La nueva pieza usa el logotipo oficial, carbón, marfil y
+rojo BoomArt; elimina emoji, dorado y decoración ajena al sistema Galería de
+Autor. El mensaje se entiende en una lectura: beneficio, porcentaje y acción.
 
-## Comparación visual
+La trayectoria ya no supone una coordenada fija. JavaScript calcula los centros
+de la tarjeta y del botón `couponBanner`, por lo que el cupón termina exactamente
+en su destino tanto en móvil como en escritorio. Al llegar, el botón recibe un
+pulso rojo corto que confirma dónde quedó guardado.
 
-El problema señalado queda resuelto: la imagen ya no está contenida dentro de
-un rectángulo negro con grandes márgenes. Cada fotografía ocupa a sangre todo
-el panel derecho mediante un encuadre centrado y uniforme. El panel crece en
-móvil de 116 × 250 px a una columna proporcional de 310 px de alto. La portada
-mantiene el titular, la prueba social y “Ver catálogo” en el primer pantallazo,
-por lo que la mejora visual no perjudica la función de tienda.
+## Comportamiento verificado
 
-## Interacción y accesibilidad
-
-- Cambio automático cada 5,6 segundos con fundido de 900 ms.
-- Cuatro selectores manuales con nombre accesible y estado `aria-pressed`.
-- Cada fotografía abre la ficha del producto mostrado.
-- Pausa al pasar el cursor o entrar con teclado.
-- Navegación con flechas izquierda/derecha.
-- Sin animación automática cuando `prefers-reduced-motion` está activo.
-- La rotación se detiene cuando la pestaña no está visible.
-
-## Historial de iteraciones
-
-1. Referencia original: producto pequeño, bandas negras y encuadre poco útil.
-2. Primera implementación: carrete con fotografías reales a sangre, controles
-   y transición automática.
-3. Ajuste final: mayor proporción para la fotografía en móvil, recorte centrado,
-   controles discretos sobre una placa translúcida y captions solo en escritorio.
-4. Verificación: cuatro slides, cambio automático, selección manual, 390 px sin
-   desbordamiento global y consola sin errores o advertencias.
+- Entrada: 420 ms, con crecimiento breve y estabilización.
+- Lectura: 300 ms.
+- Recorrido hasta el botón: 430 ms.
+- Duración completa aproximada: 1,15 s.
+- El fondo se oscurece solo 28 % y no bloquea el resto de la página.
+- El clic en la tarjeta completa el vuelo y abre `accountDialog`.
+- El botón de destino dice “Regístrate aquí · Reclama 10% de bienvenida”.
+- `prefers-reduced-motion` elimina crecimiento, vuelo y pulso.
+- Móvil 390 × 844: sin desbordamiento horizontal (`375 = 375`).
+- Escritorio 1440 × 1024: sin desbordamiento horizontal (`1425 = 1425`).
+- Consola: sin errores ni advertencias.
 
 ## Resultado final
 
-passed
+final result: passed

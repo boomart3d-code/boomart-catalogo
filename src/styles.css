@@ -162,10 +162,9 @@ input {
   text-align: center;
 }
 
-/* Emergente de campana (pedido de Adrian, 2026-09-29): solo aparece al
-   entrar via un enlace corto ?categoria=<slug> (ej. boomart.pe/saintseiya).
-   Se muestra unos segundos y "vuela" hacia el banner de arriba, donde ya
-   esta el mismo mensaje del cupon, antes de desaparecer. */
+/* Cupón de bienvenida: una aparición editorial breve que se recoge en el
+   botón permanente de registro. La trayectoria se calcula en JS para llegar
+   exactamente al botón tanto en escritorio como en móvil. */
 .coupon-popup[hidden] {
   display: none;
 }
@@ -179,41 +178,186 @@ input {
   justify-content: center;
   background: rgba(0, 0, 0, 0);
   pointer-events: none;
-  transition: background 320ms ease;
+  transition: background 180ms ease;
 }
 
 .coupon-popup.is-visible {
-  background: rgba(0, 0, 0, 0.55);
-  pointer-events: auto;
+  background: rgba(11, 11, 11, 0.28);
 }
 
 .coupon-popup-card {
-  max-width: 320px;
-  padding: 22px 26px;
-  border: 3px dashed var(--black);
-  border-radius: 14px;
-  background: var(--gold);
-  color: var(--black);
-  font-size: 1.1rem;
-  font-weight: 900;
-  text-align: center;
-  line-height: 1.35;
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  align-items: stretch;
+  width: min(390px, calc(100vw - 36px));
+  min-height: 142px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--gallery-carbon);
+  color: white;
+  text-align: left;
   cursor: pointer;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  pointer-events: auto;
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.38);
   opacity: 0;
-  transform: translateY(24px) scale(0.85);
-  transition: opacity 380ms ease, transform 380ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: translate3d(0, 12px, 0) scale(0.56);
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.coupon-popup-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 38%;
+  height: 4px;
+  background: var(--red);
+}
+
+.coupon-popup-brand {
+  display: grid;
+  place-items: center;
+  padding: 15px 10px;
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+  background: #151515;
+}
+
+.coupon-popup-brand img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  object-position: center;
+  transform: scale(1.5);
+}
+
+.coupon-popup-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+  padding: 19px 20px 18px;
+}
+
+.coupon-popup-eyebrow {
+  color: #c9c2b8;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+}
+
+.coupon-popup-title {
+  max-width: 13ch;
+  font-family: var(--display-font);
+  font-size: clamp(1.65rem, 5vw, 2.15rem);
+  font-weight: 800;
+  line-height: 0.93;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+}
+
+.coupon-popup-title strong {
+  color: var(--red);
+  font-size: 1.18em;
+  font-weight: 900;
+}
+
+.coupon-popup-action {
+  width: fit-content;
+  margin-top: 7px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--red);
+  color: #f4f0e8;
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .coupon-popup.is-visible .coupon-popup-card {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  animation: coupon-arrive 420ms cubic-bezier(0.2, 0.84, 0.28, 1.24) both;
 }
 
 .coupon-popup.is-flying .coupon-popup-card {
   opacity: 0;
-  transform: translateY(-46vh) scale(0.2);
-  transition: opacity 650ms ease-in, transform 650ms cubic-bezier(0.6, -0.28, 0.74, 0.05);
+  animation: none;
+  transform: translate3d(var(--coupon-fly-x, 0), var(--coupon-fly-y, -40vh), 0) scale(0.12);
+  transition:
+    opacity 410ms cubic-bezier(0.55, 0, 1, 0.45),
+    transform 430ms cubic-bezier(0.55, 0, 1, 0.45);
+}
+
+.coupon-banner.coupon-received {
+  animation: coupon-target-pulse 620ms ease-out;
+}
+
+@keyframes coupon-arrive {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0) scale(0.56);
+  }
+  66% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes coupon-target-pulse {
+  0%, 100% {
+    box-shadow: none;
+  }
+  36% {
+    box-shadow: inset 0 0 0 2px var(--red), 0 0 0 5px rgba(225, 19, 47, 0.12);
+  }
+}
+
+@media (max-width: 480px) {
+  .coupon-popup-card {
+    grid-template-columns: 62px minmax(0, 1fr);
+    width: calc(100vw - 28px);
+    min-height: 126px;
+  }
+
+  .coupon-popup-brand {
+    padding: 12px 7px;
+  }
+
+  .coupon-popup-brand img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .coupon-popup-content {
+    padding: 16px 15px;
+  }
+
+  .coupon-popup-title {
+    font-size: 1.62rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coupon-popup.is-visible .coupon-popup-card,
+  .coupon-popup.is-flying .coupon-popup-card,
+  .coupon-banner.coupon-received {
+    animation: none;
+    transition: none;
+  }
+
+  .coupon-popup.is-visible .coupon-popup-card {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .quick-nav {
