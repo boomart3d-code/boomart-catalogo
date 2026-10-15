@@ -92,19 +92,6 @@
 
   const checkoutDialog = document.querySelector("#checkoutDialog");
   const closeCheckoutBtn = document.querySelector("#closeCheckout");
-  const customerForm = document.querySelector("#customerForm");
-  const customerNameInput = document.querySelector("#customerName");
-  const customerLastNameInput = document.querySelector("#customerLastName");
-  const customerPhoneInput = document.querySelector("#customerPhone");
-  const customerEmailInput = document.querySelector("#customerEmail");
-  const customerFormError = document.querySelector("#customerFormError");
-  const destinationFieldsLima = document.querySelector('[data-destination-fields="lima"]');
-  const destinationFieldsProv = document.querySelector('[data-destination-fields="provincias"]');
-  const limaDistrictInput = document.querySelector("#limaDistrict");
-  const provDepartmentInput = document.querySelector("#provDepartment");
-  const provProvinceInput = document.querySelector("#provProvince");
-  const addressDetailInput = document.querySelector("#addressDetail");
-  const addressDetailLabel = document.querySelector("#addressDetailLabel");
   const summaryLinesEl = document.querySelector("#summaryLines");
   const summaryCouponRow = document.querySelector("#summaryCouponRow");
   const summarySubtotalEl = document.querySelector("#summarySubtotal");
@@ -133,7 +120,6 @@
     provProvince: "",
     addressDetail: ""
   };
-  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   let selectedPaymentMethod = null;
   let payMode = "advance"; // "advance" (reserva 50%) | "full" (pago total 100%)
 
@@ -390,52 +376,75 @@
     });
   };
 
-  function prefillCustomerForm() {
-    const saved = loadSavedCustomer();
-    if (!saved) return;
+  // ---------- Paso 1: registro del cliente (obligatorio para comprar) ----------
+  // Pedido de Adrián (2026-10-15): el paso 1 es el formulario de registro de
+  // src/registro-web.js (mismos datos que /registro-cliente/, con el buscador de
+  // agencias Shalom). Si ya se registró en este navegador, aparece prellenado
+  // para confirmar o corregir. Al guardar, el servidor genera el código para
+  // Studio y envía los correos; aquí solo se pasan los datos al resumen.
+  const checkoutRegTitle = document.querySelector("#checkoutRegTitle");
+  const checkoutRegHint = document.querySelector("#checkoutRegHint");
+  const checkoutRegistroEl = document.querySelector("#checkoutRegistro");
 
-    if (saved.name && !customerNameInput.value.trim()) {
-      customerNameInput.value = saved.name;
-    }
-    if (saved.lastName && !customerLastNameInput.value.trim()) {
-      customerLastNameInput.value = saved.lastName;
-    }
-    if (saved.phone && !customerPhoneInput.value.trim()) {
-      customerPhoneInput.value = saved.phone;
-    }
-    if (saved.email && !customerEmailInput.value.trim()) {
-      customerEmailInput.value = saved.email;
-    }
-
-    const noDestinationSelected = !document.querySelector("[data-destination].is-selected");
-    if (noDestinationSelected && (saved.destination === "lima" || saved.destination === "provincias")) {
-      const destinationBtn = document.querySelector(`[data-destination="${saved.destination}"]`);
-      if (destinationBtn) destinationBtn.click();
-
-      if (saved.destination === "lima" && saved.limaDistrict && !limaDistrictInput.value.trim()) {
-        limaDistrictInput.value = saved.limaDistrict;
-      }
-      if (saved.destination === "provincias") {
-        if (saved.provDepartment && !provDepartmentInput.value.trim()) provDepartmentInput.value = saved.provDepartment;
-        if (saved.provProvince && !provProvinceInput.value.trim()) provProvinceInput.value = saved.provProvince;
-      }
-    }
-
-    if (saved.addressDetail && !addressDetailInput.value.trim()) {
-      addressDetailInput.value = saved.addressDetail;
-    }
+  function applyRegistration(perfil) {
+    const reg = window.BoomartRegistro;
+    const d = reg ? reg.deliveryFromProfile(perfil) : {};
+    customer.name = perfil.full_name || "";
+    customer.lastName = "";
+    customer.phone = perfil.phone || "";
+    customer.email = perfil.email || "";
+    customer.destination = d.destination || null;
+    customer.limaDistrict = d.limaDistrict || "";
+    customer.provDepartment = d.provDepartment || "";
+    customer.provProvince = d.provProvince || "";
+    customer.addressDetail = d.addressDetail || "";
+    customer.deliveryLabel = d.label || "";
+    customer.docType = perfil.document_type || "";
+    customer.docNumber = perfil.document_number || "";
   }
 
-  const openCheckout = () => {
+  function renderCustomerStep() {
+    const reg = window.BoomartRegistro;
+    if (!reg || !checkoutRegistroEl) {
+      checkoutRegistroEl.innerHTML = `<p class="form-error">No pudimos cargar el registro en este momento. Revisa tu conexión o escríbenos por WhatsApp al 925 666 542 y te ayudamos con tu pedido.</p>`;
+      return;
+    }
+    const registered = Boolean(reg.profile());
+    checkoutRegTitle.textContent = registered ? "Confirma tus datos" : "Regístrate para confirmar tu pedido";
+    checkoutRegHint.textContent = registered
+      ? "Revisa que tus datos estén correctos y continúa."
+      : "Solo te lo pedimos una vez: así registramos tu pedido y activamos tu 10 % de bienvenida.";
+    reg.render(checkoutRegistroEl, {
+      context: "checkout",
+      requireDelivery: true,
+      submitLabel: "Continuar con mi pedido",
+      onSaved: (result) => {
+        applyRegistration(result.perfil || reg.profile() || {});
+        renderSummaryStep();
+        showStep("summary");
+        const shell = checkoutDialog.querySelector(".checkout-shell");
+        if (shell) shell.scrollTop = 0;
+      }
+    });
+  }
+
+  const openCheckout = async () => {
     if (window.BoomartCart.getState().lines.length === 0) return;
     trackCart("iniciar_compra");
     closeCart();
-    customerFormError.hidden = true;
     showStep("customer");
-    checkoutDialog.showModal();
-    prefillCustomerForm();
-    customerNameInput.focus();
-    customerNameInput.select();
+    if (window.BoomartRegistro && !window.BoomartRegistro.isLoaded()) {
+      checkoutRegistroEl.innerHTML = `<p class="field-hint">Cargando…</p>`;
+      checkoutDialog.showModal();
+      await window.BoomartRegistro.loadProfile();
+    } else if (window.BoomartRegistro) {
+      // Refresca el cupón desde el servidor (pudo usarse en otro dispositivo).
+      window.BoomartRegistro.loadProfile();
+    }
+    renderCustomerStep();
+    if (!checkoutDialog.open) checkoutDialog.showModal();
+    const first = checkoutRegistroEl.querySelector("input");
+    if (first) first.focus();
   };
 
   startCheckoutBtn.addEventListener("click", openCheckout);
@@ -458,100 +467,9 @@
     }
   });
 
-  // Destino (Lima/Callao vs Provincias)
-  document.querySelectorAll("[data-destination]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const value = button.dataset.destination;
-      customer.destination = value;
-      document.querySelectorAll("[data-destination]").forEach((btn) => {
-        const selected = btn.dataset.destination === value;
-        btn.classList.toggle("is-selected", selected);
-        btn.setAttribute("aria-pressed", String(selected));
-      });
-      destinationFieldsLima.hidden = value !== "lima";
-      destinationFieldsProv.hidden = value !== "provincias";
-      if (value === "provincias") {
-        addressDetailLabel.textContent = "Dirección del Shalom destino";
-        addressDetailInput.placeholder = "Ej: Shalom Puerto Palmeras";
-      } else {
-        addressDetailLabel.textContent = "Dirección exacta (opcional)";
-        addressDetailInput.placeholder = "Calle, número, referencia";
-      }
-    });
-  });
-
-  customerForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const name = customerNameInput.value.trim();
-    const lastName = customerLastNameInput.value.trim();
-    const phone = customerPhoneInput.value.trim();
-    const email = customerEmailInput.value.trim();
-
-    if (!name) return showFormError("Ingresa tu nombre.");
-    if (!lastName) return showFormError("Ingresa tu apellido.");
-    if (phone.replace(/\D/g, "").length < 6) return showFormError("Ingresa un teléfono válido.");
-    if (!EMAIL_RE.test(email)) return showFormError("Ingresa un correo válido.");
-    if (!customer.destination) return showFormError("Elige tu destino: Lima y Callao o Provincias.");
-
-    customer.addressDetail = addressDetailInput.value.trim();
-
-    if (customer.destination === "lima") {
-      customer.limaDistrict = limaDistrictInput.value.trim();
-      if (!customer.limaDistrict) return showFormError("Ingresa tu distrito.");
-    } else {
-      customer.provDepartment = provDepartmentInput.value.trim();
-      customer.provProvince = provProvinceInput.value.trim();
-      if (!customer.provDepartment || !customer.provProvince) {
-        return showFormError("Ingresa departamento y provincia.");
-      }
-      if (!customer.addressDetail) {
-        return showFormError("Ingresa la dirección del Shalom destino.");
-      }
-    }
-
-    customer.name = name;
-    customer.lastName = lastName;
-    customer.phone = phone;
-    customer.email = email;
-    customerFormError.hidden = true;
-    saveCustomer({
-      name: customer.name,
-      lastName: customer.lastName,
-      phone: customer.phone,
-      email: customer.email,
-      destination: customer.destination,
-      limaDistrict: customer.limaDistrict,
-      provDepartment: customer.provDepartment,
-      provProvince: customer.provProvince,
-      addressDetail: customer.addressDetail
-    });
-    // account.js (si el cliente esta logueado) guarda esto tambien en su
-    // cuenta, para que no se lo vuelva a preguntar en otro dispositivo (menos
-    // el correo: ese queda ligado a su inicio de sesion, no se reescribe aqui).
-    document.dispatchEvent(
-      new CustomEvent("boomart:customer-destination-saved", {
-        detail: {
-          name: customer.name,
-          lastName: customer.lastName,
-          phone: customer.phone,
-          destination: customer.destination,
-          limaDistrict: customer.limaDistrict,
-          provDepartment: customer.provDepartment,
-          provProvince: customer.provProvince,
-          addressDetail: customer.addressDetail
-        }
-      })
-    );
-    renderSummaryStep();
-    showStep("summary");
-  });
-
-  function showFormError(message) {
-    customerFormError.textContent = message;
-    customerFormError.hidden = false;
-  }
-
   function destinationLabel() {
+    if (customer.deliveryLabel) return customer.deliveryLabel;
+    if (!customer.destination) return "Por coordinar por WhatsApp";
     const base =
       customer.destination === "lima"
         ? `Lima y Callao — Distrito: ${customer.limaDistrict}`
@@ -647,17 +565,8 @@
     });
     paymentDetailEl.innerHTML = "";
 
-    // El documento para boleta es opcional y solo se pide a clientes con
-    // cuenta (account.js marca "isAccountCustomer" en el mismo perfil local
-    // que ya usamos para el nombre/destino).
-    const saved = loadSavedCustomer();
-    if (saved && saved.isAccountCustomer) {
-      documentFieldsEl.hidden = false;
-      customerDocTypeInput.value = saved.docType || "dni";
-      customerDocNumberInput.value = saved.docNumber || "";
-    } else {
-      documentFieldsEl.hidden = true;
-    }
+    // El documento ya viene del registro (obligatorio): no se vuelve a pedir.
+    if (documentFieldsEl) documentFieldsEl.hidden = true;
   }
 
   document.querySelectorAll("[data-payment-method]").forEach((button) => {
@@ -820,8 +729,8 @@
       })
       .join("\n");
 
-    const docType = customerDocTypeInput && customerDocTypeInput.value;
-    const docNumber = customerDocNumberInput && customerDocNumberInput.value.trim();
+    const docType = customer.docType;
+    const docNumber = customer.docNumber;
     const docLine = docType && docNumber ? [`Documento para boleta: ${DOC_TYPE_LABELS[docType] || docType} ${docNumber}`] : [];
     const couponLines = state.totals.couponApplied
       ? [
@@ -831,7 +740,7 @@
       : [];
 
     return [
-      `Hola, BoomArt. Soy ${customer.name} ${customer.lastName} y quiero realizar este pedido:`,
+      `Hola, BoomArt. Soy ${`${customer.name} ${customer.lastName}`.trim()} y quiero realizar este pedido:`,
       "",
       itemLines,
       "",
@@ -844,6 +753,7 @@
         ? `He realizado el pago total mediante ${methodLabel}.`
         : `He realizado el adelanto mediante ${methodLabel}.`,
       `Destino: ${destinationLabel()}`,
+      `WhatsApp: ${customer.phone}`,
       `Correo: ${customer.email}`,
       ...docLine,
       "",
@@ -859,15 +769,6 @@
     const message = buildOrderMessage(state);
     const number = CHECKOUT.whatsappNumber || "";
     const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
-
-    if (!documentFieldsEl.hidden) {
-      const docType = customerDocTypeInput.value;
-      const docNumber = customerDocNumberInput.value.trim();
-      if (docType && docNumber) {
-        saveCustomer({ ...(loadSavedCustomer() || {}), docType, docNumber });
-        document.dispatchEvent(new CustomEvent("boomart:customer-document-saved", { detail: { docType, docNumber } }));
-      }
-    }
 
     const plan = paymentPlan(state);
     if (doneTextEl) {

@@ -44,7 +44,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=53">
+    <link rel="stylesheet" href="src/styles.css?v=54">
 
     <script type="application/ld+json">
     {
@@ -620,68 +620,14 @@
 
         <section class="checkout-step" data-step="customer">
           <p class="eyebrow">Paso 1 de 3 · Tus datos</p>
-          <h2>Datos del cliente y destino</h2>
-          <p class="field-hint">Con estos datos podemos registrar tu pedido y avisarte sobre él.</p>
-          <form id="customerForm" novalidate>
-            <label class="field">
-              <span>Nombre</span>
-              <input type="text" id="customerName" autocomplete="given-name" required>
-            </label>
-
-            <label class="field">
-              <span>Apellido</span>
-              <input type="text" id="customerLastName" autocomplete="family-name" required>
-            </label>
-
-            <label class="field">
-              <span>Teléfono</span>
-              <input type="tel" id="customerPhone" autocomplete="tel" placeholder="999 999 999" required>
-            </label>
-
-            <label class="field">
-              <span>Correo</span>
-              <input type="email" id="customerEmail" autocomplete="email" placeholder="tucorreo@ejemplo.com" required>
-            </label>
-
-            <div class="field-group">
-              <span class="field-group-label">Destino</span>
-              <div class="segmented" role="group" aria-label="Destino del pedido">
-                <button type="button" class="segmented-option" data-destination="lima" aria-pressed="false">Lima y Callao</button>
-                <button type="button" class="segmented-option" data-destination="provincias" aria-pressed="false">Provincias</button>
-              </div>
-            </div>
-
-            <div class="destination-fields" data-destination-fields="lima" hidden>
-              <label class="field">
-                <span>Distrito</span>
-                <input type="text" id="limaDistrict" autocomplete="address-level3">
-              </label>
-            </div>
-
-            <div class="destination-fields" data-destination-fields="provincias" hidden>
-              <label class="field">
-                <span>Departamento</span>
-                <input type="text" id="provDepartment">
-              </label>
-              <label class="field">
-                <span>Provincia</span>
-                <input type="text" id="provProvince">
-              </label>
-            </div>
-
-            <label class="field">
-              <span id="addressDetailLabel">Dirección exacta (opcional)</span>
-              <input type="text" id="addressDetail" autocomplete="street-address" placeholder="Calle, número, referencia">
-            </label>
-
-            <p class="field-hint">Si prefieres, coordinamos la dirección exacta y la agencia Shalom por WhatsApp después de tu pedido.</p>
-            <p class="form-error" id="customerFormError" role="alert" hidden></p>
-
-            <div class="checkout-actions">
-              <button type="button" class="button secondary" data-back-to-cart>Volver al carrito</button>
-              <button type="submit" class="button primary">Continuar</button>
-            </div>
-          </form>
+          <h2 id="checkoutRegTitle">Regístrate para confirmar tu pedido</h2>
+          <p class="field-hint" id="checkoutRegHint">Solo te lo pedimos una vez: así registramos tu pedido y activamos tu 10 % de bienvenida.</p>
+          <!-- Registro obligatorio para comprar (2026-10-15): el formulario lo pinta
+               src/registro-web.js (mismos datos que /registro-cliente/). -->
+          <div id="checkoutRegistro"></div>
+          <div class="checkout-actions">
+            <button type="button" class="button secondary" data-back-to-cart>Volver al carrito</button>
+          </div>
         </section>
 
         <section class="checkout-step" data-step="summary" hidden>
@@ -806,7 +752,7 @@
     <script src="src/cart.js?v=6"></script>
     <script src="src/products.js?v=5"></script>
     <script src="src/app.js?v=40"></script>
-    <script src="src/checkout.js?v=25"></script>
+    <script src="src/checkout.js?v=26"></script>
     <script src="src/products-loader.js?v=5"></script>
     <script src="src/reviews.js?v=6"></script>
     <script src="src/reviews-loader.js?v=2"></script>
@@ -818,6 +764,6 @@
          cargar, el resto de la web sigue funcionando igual. -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
     <script src="src/supabase-config.js?v=1"></script>
-    <script src="src/account.js?v=20"></script>
+    <script src="src/registro-web.js?v=1"></script>
   </body>
 </html>

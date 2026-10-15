@@ -5709,3 +5709,234 @@ body .pp-rating a {
   width: 100%;
   height: auto;
 }
+
+/* Registro de clientes dentro de la página (2026-10-15, src/registro-web.js).
+   Vive en las ventanas oscuras del checkout y de "Mi cuenta"; mismos datos que
+   /registro-cliente/, con el buscador de agencias Shalom. */
+.reg-form {
+  display: grid;
+  gap: 4px;
+}
+
+.reg-section {
+  margin: 0 0 14px;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.reg-section legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 0;
+  font-family: var(--display-font);
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.reg-section legend::before {
+  content: "";
+  width: 22px;
+  height: 3px;
+  background: var(--red);
+}
+
+.reg-two {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 12px;
+}
+
+.reg-form .field {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.reg-email-hint,
+.reg-hint {
+  margin: -4px 0 14px;
+  color: #c9c2b8;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.reg-email-hint::before {
+  content: "✓ ";
+  color: var(--red);
+  font-weight: 800;
+}
+
+.reg-hint {
+  margin: 0 0 12px;
+}
+
+.reg-choices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.reg-choice {
+  position: relative;
+  display: grid;
+  gap: 3px;
+  padding: 12px 12px 11px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.reg-choice input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.reg-choice b {
+  font-size: 0.92rem;
+}
+
+.reg-choice small {
+  color: #c9c2b8;
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+.reg-choice:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.reg-choice.is-selected {
+  border-color: var(--red);
+  background: rgba(225, 19, 47, 0.14);
+  box-shadow: inset 0 0 0 1px var(--red);
+}
+
+.reg-choice:focus-within {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.reg-agency-results {
+  display: grid;
+  gap: 6px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.reg-agency-results:empty {
+  display: none;
+}
+
+.reg-agency-option {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.04);
+  color: white;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.reg-agency-option:hover,
+.reg-agency-option:focus-visible {
+  border-color: var(--red);
+  outline: none;
+}
+
+.reg-agency-option small,
+.reg-agency-chosen small,
+.reg-agency-empty {
+  color: #c9c2b8;
+  font-size: 0.78rem;
+}
+
+.reg-agency-chosen {
+  display: grid;
+  gap: 3px;
+  padding: 12px 14px;
+  border-left: 4px solid var(--red);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.reg-agency-change {
+  justify-self: start;
+  margin-top: 6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #ff8a97;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.reg-pickup {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-left: 4px solid var(--red);
+  background: rgba(255, 255, 255, 0.06);
+  color: #e9e5df;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.reg-privacy {
+  margin: 0 0 12px;
+  color: #a9a29a;
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+.reg-coupon {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border-left: 4px solid var(--red);
+  background: rgba(225, 19, 47, 0.12);
+  color: #f4f0e8;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.reg-done {
+  text-align: center;
+}
+
+.reg-done-mark {
+  width: 56px;
+  height: 56px;
+  margin: 4px auto 12px;
+}
+
+.reg-done p {
+  color: #e9e5df;
+  line-height: 1.55;
+}
+
+.reg-done .reg-coupon {
+  text-align: left;
+}
+
+@media (max-width: 520px) {
+  .reg-two,
+  .reg-choices {
+    grid-template-columns: 1fr;
+  }
+
+  .reg-choice {
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    gap: 2px 10px;
+  }
+}

@@ -1,112 +1,131 @@
-// Recordatorio unico de registro incompleto.
+// Remarketing del registro web (pedido de Adrián, 2026-10-15).
 //
-// El cron existente invoca esta funcion cada 15 minutos. Solo contacta a una
-// persona cuando pasaron al menos 24 horas desde su registro, no existe ningun
-// carrito completado y nunca recibio antes un correo de 24 horas. Conservamos
-// tambien el historial del sistema anterior para no duplicar mensajes.
+// Clientes registrados en boomart.pe (tabla clientes_web) que todavía NO
+// enviaron un pedido desde la web reciben hasta 3 correos, contados desde su
+// registro: a las 2 horas, a las 24 horas y a las 48 horas. Cada uno se envía
+// una sola vez (clientes_web_correos) y solo dentro de su franja — si un tramo
+// se pasó (p. ej. la función estuvo caída), no se manda tarde ni de golpe.
+// Sin descuento extra: solo recuerda su cupón de bienvenida del 10 % si aún lo
+// tiene disponible. Reemplaza al recordatorio único de 24 h de las cuentas con
+// inicio de sesión (que ya no existen en la web).
+//
+// También reintenta los correos de bienvenida/aviso que hayan quedado
+// pendientes (llama a registro-web-correos).
+//
+// El cron existente (`send-cart-reminders`, cada 15 minutos) la invoca; se
+// conserva el nombre para no tocar el cron. Acepta {"dry_run": true}.
+// Secrets: SB_SERVICE_ROLE_KEY, RESEND_API_KEY.
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SERVICE_ROLE_KEY = Deno.env.get("SB_SERVICE_ROLE_KEY")!;
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY")!;
-const CATALOG_URL = "https://boomart.pe/data/products.json";
-const SITE_URL = "https://boomart.pe/";
-const ASSETS_BASE = "https://boomart.pe/";
-const GENERIC_IMAGE = `${ASSETS_BASE}assets/boomart-og.jpg`;
+const SITE = "https://boomart.pe";
+const CATALOG_URL = `${SITE}/data/products.json`;
 const ADMIN_BCC = "boomart.3d@gmail.com";
+const EPOCH = "1970-01-01T00:00:00+00:00";
+const HOUR = 3600000;
 
 const sb = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
+// Franjas: [tipo, desde (h), hasta (h)].
+const TIERS: [string, number, number][] = [
+  ["remarketing_2h", 2, 24],
+  ["remarketing_24h", 24, 48],
+  ["remarketing_48h", 48, 72],
+];
+
+const COPY: Record<string, { subject: string; title: string; intro: string; button: string }> = {
+  remarketing_2h: {
+    subject: "¿Te ayudamos a completar tu pedido en BoomArt?",
+    title: "Tu pieza te está esperando",
+    intro: "Vimos que te registraste en BoomArt. Si te quedó alguna duda sobre medidas, materiales o entrega, escríbenos y te ayudamos a elegir.",
+    button: "Continuar mi compra",
+  },
+  remarketing_24h: {
+    subject: "Tu 10 % de bienvenida sigue disponible en BoomArt",
+    title: "¿Lo pensaste mejor?",
+    intro: "Cada pieza se fabrica a pedido en Lima y Callao, con envíos a todo el Perú. Tu registro ya está listo: solo te falta finalizar tu compra.",
+    button: "Ver mi carrito",
+  },
+  remarketing_48h: {
+    subject: "Último recordatorio de BoomArt",
+    title: "Te guardamos tu lugar",
+    intro: "Este es nuestro último recordatorio. Si quieres tu pieza, finaliza tu pedido en boomart.pe o escríbenos por WhatsApp y lo coordinamos contigo.",
+    button: "Finalizar mi pedido",
+  },
+};
+
 function esc(value: unknown): string {
-  return String(value ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+  return String(value ?? "").replace(
+    /[&<>"']/g,
+    (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" } as Record<string, string>)[c],
+  );
 }
 
 async function loadCatalog(): Promise<Map<string, any>> {
   const catalog = new Map<string, any>();
   try {
     const response = await fetch(CATALOG_URL);
-    if (!response.ok) return catalog;
-    const products = await response.json();
-    if (Array.isArray(products)) {
-      for (const product of products) catalog.set(product.id, product);
+    if (response.ok) {
+      const products = await response.json();
+      if (Array.isArray(products)) for (const p of products) catalog.set(p.id, p);
     }
-  } catch (_error) {
-    // La imagen institucional permite enviar un correo util aunque el catalogo
-    // no este disponible durante esta ejecucion.
+  } catch (_err) {
+    // sin catálogo se envía igual, con la imagen institucional
   }
   return catalog;
 }
 
-function emailContext(items: any[], catalog: Map<string, any>) {
-  const firstItem = Array.isArray(items) ? items[0] : null;
-  const productId = String(firstItem?.productId || "");
-  const product = productId ? catalog.get(productId) : null;
-  if (!product) {
-    return {
-      image: GENERIC_IMAGE,
-      imageAlt: "Productos de BoomArt",
-      destination: SITE_URL,
-      productName: "",
-    };
+function productFor(items: any[], catalog: Map<string, any>) {
+  for (const item of Array.isArray(items) ? items : []) {
+    const p = catalog.get(String(item?.productId || ""));
+    if (p) return p;
   }
-  return {
-    image: product.image ? `${ASSETS_BASE}${product.image}` : GENERIC_IMAGE,
-    imageAlt: product.name || "Producto de BoomArt",
-    destination: `${SITE_URL}producto/${encodeURIComponent(productId)}/`,
-    productName: String(product.name || ""),
-  };
+  return null;
 }
 
-function buildHtml(nombre: string, context: ReturnType<typeof emailContext>) {
-  const remembered = context.productName
-    ? `<p style="margin:0 0 18px;color:#555;font-size:15px;line-height:1.55;">La pieza que estabas revisando, <strong>${esc(context.productName)}</strong>, sigue disponible para que continúes cuando estés listo.</p>`
-    : `<p style="margin:0 0 18px;color:#555;font-size:15px;line-height:1.55;">Puedes volver a explorar nuestras piezas y continuar tu compra cuando estés listo.</p>`;
-
+function buildHtml(tipo: string, c: any, product: any) {
+  const copy = COPY[tipo];
+  const name = esc(String(c.full_name || "").trim().split(/\s+/)[0] || "");
+  // Miniatura liviana (assets/og/<id>.jpg, < 250 KB) en vez de la foto grande.
+  const image = product ? `${SITE}/assets/og/${encodeURIComponent(product.id)}.jpg` : `${SITE}/assets/boomart-og.jpg`;
+  const link = product ? `${SITE}/producto/${encodeURIComponent(product.id)}/?src=remarketing` : `${SITE}/?src=remarketing`;
+  const productLine = product
+    ? `<p style="margin:0 0 16px;color:#514c46;font-size:15px;line-height:1.55;">La pieza que estabas viendo, <strong>${esc(product.name)}</strong>, sigue disponible.</p>`
+    : "";
+  const coupon = c.cupon_usado_en
+    ? ""
+    : `<p style="margin:0 0 18px;padding:12px 14px;background:#f4f0e8;border-left:4px solid #e1132f;color:#2e2b28;font-size:14px;line-height:1.5;">Recuerda: tienes <strong>10 % de descuento</strong> en tu primera compra pagando con Yape, Plin o transferencia, finalizando en boomart.pe.</p>`;
   return `
-    <div style="background:#f5f5f5;padding:24px 12px;font-family:Arial,sans-serif;">
-      <div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #ececec;">
-        <div style="background:#171717;padding:18px 24px;text-align:center;">
-          <img src="${ASSETS_BASE}assets/boomart-logo-1.png" width="150" alt="BoomArt" style="display:inline-block;max-width:150px;height:auto;" />
-        </div>
-        <img src="${esc(context.image)}" width="560" alt="${esc(context.imageAlt)}" style="display:block;width:100%;max-height:310px;object-fit:cover;" />
-        <div style="padding:26px 26px 22px;">
-          <h1 style="margin:0 0 14px;color:#222;font-size:23px;line-height:1.3;">¿Encontraste lo que buscabas?</h1>
-          <p style="margin:0 0 14px;color:#333;font-size:16px;line-height:1.55;">Hola${nombre ? ` ${esc(nombre)}` : ""}, gracias por registrarte en BoomArt.</p>
-          ${remembered}
-          <p style="margin:0 0 22px;color:#555;font-size:15px;line-height:1.55;">Si tienes alguna consulta sobre medidas, disponibilidad o entrega, estamos para ayudarte.</p>
-          <div style="text-align:center;">
-            <a href="${esc(context.destination)}" style="background:#e1132f;color:#fff;padding:14px 26px;border-radius:8px;text-decoration:none;display:inline-block;font-size:16px;font-weight:700;">Continuar viendo productos</a>
-          </div>
-          <p style="margin:24px 0 0;color:#999;font-size:12px;line-height:1.5;text-align:center;">Recibes este correo porque creaste una cuenta en boomart.pe. Este recordatorio se envía una sola vez.</p>
-        </div>
+  <div style="background:#f4f0e8;padding:24px 12px;font-family:Arial,Helvetica,sans-serif;">
+    <div style="max-width:560px;margin:0 auto;background:#ffffff;border:1px solid #d8d2c9;">
+      <div style="background:#0b0b0b;padding:18px 24px;border-bottom:4px solid #e1132f;">
+        <img src="${SITE}/assets/boomart-logo-1.png" width="140" alt="BoomArt" style="display:block;max-width:140px;height:auto;">
       </div>
-    </div>`;
+      <img src="${esc(image)}" width="560" alt="${esc(product?.name || "Piezas de BoomArt")}" style="display:block;width:100%;height:auto;">
+      <div style="padding:26px 26px 22px;">
+        <h1 style="margin:0 0 14px;color:#0b0b0b;font-size:22px;line-height:1.3;">${copy.title}</h1>
+        <p style="margin:0 0 14px;color:#2e2b28;font-size:16px;line-height:1.55;">Hola${name ? ` ${name}` : ""}, ${copy.intro}</p>
+        ${productLine}
+        ${coupon}
+        <div style="text-align:center;margin:6px 0 4px;">
+          <a href="${esc(link)}" style="background:#e1132f;color:#ffffff;padding:14px 26px;text-decoration:none;display:inline-block;font-size:16px;font-weight:700;">${copy.button}</a>
+        </div>
+        <p style="margin:22px 0 0;color:#6f6961;font-size:12px;line-height:1.5;text-align:center;">Recibes este correo porque te registraste en boomart.pe. Si no deseas más recordatorios, respóndenos este correo.</p>
+      </div>
+    </div>
+  </div>`;
 }
 
-async function sendEmail(to: string, nombre: string, context: ReturnType<typeof emailContext>) {
+async function sendEmail(to: string, subject: string, html: string) {
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
-    headers: {
-      Authorization: `Bearer ${RESEND_API_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: "BoomArt <contacto@boomart.pe>",
-      to,
-      bcc: ADMIN_BCC,
-      subject: "¿Encontraste lo que buscabas en BoomArt?",
-      html: buildHtml(nombre, context),
-    }),
+    headers: { Authorization: `Bearer ${RESEND_API_KEY}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ from: "BoomArt <contacto@boomart.pe>", to, bcc: ADMIN_BCC, reply_to: "contacto@boomart.pe", subject, html }),
   });
-  if (!response.ok) {
-    throw new Error(`Resend error ${response.status}: ${await response.text()}`);
-  }
+  if (!response.ok) throw new Error(`Resend ${response.status}: ${await response.text()}`);
 }
 
 Deno.serve(async (request) => {
@@ -114,97 +133,69 @@ Deno.serve(async (request) => {
   try {
     const body = await request.json();
     dryRun = body?.dry_run === true;
-  } catch (_error) {
-    // Las llamadas del cron pueden no incluir un cuerpo JSON valido.
+  } catch (_err) {
+    // el cron puede no enviar cuerpo
   }
 
-  const cutoff = new Date(Date.now() - 24 * 3600000).toISOString();
-  const catalog = await loadCatalog();
-  const { data: customers, error: customerError } = await sb
-    .from("clientes")
-    .select("id, nombre, correo, creado_en")
-    .lte("creado_en", cutoff)
-    .order("creado_en", { ascending: true });
-
-  if (customerError) {
-    return new Response(JSON.stringify({ error: customerError.message }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
+  // 1) Reintentar bienvenidas/avisos pendientes (más de 2 minutos sin salir).
+  let reintentos = 0;
+  if (!dryRun) {
+    const { count } = await sb
+      .from("clientes_web_correos")
+      .select("id", { count: "exact", head: true })
+      .eq("enviado_en", EPOCH);
+    if (count) {
+      reintentos = count;
+      await fetch(`${SUPABASE_URL}/functions/v1/registro-web-correos`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: "{}",
+      }).catch(() => {});
+    }
   }
 
-  const results = {
-    dry_run: dryRun,
-    revisados: customers?.length || 0,
-    elegibles: 0,
-    enviados: 0,
-    ya_contactados: 0,
-    con_compra: 0,
-    errores: 0,
-  };
+  // 2) Remarketing: registrados hace 2 a 72 horas, sin pedido enviado desde la web.
+  const now = Date.now();
+  const { data: clientes, error } = await sb
+    .from("clientes_web")
+    .select("id, full_name, email, creado_en, cupon_usado_en, carrito, ultimo_pedido_en")
+    .is("ultimo_pedido_en", null)
+    .lte("creado_en", new Date(now - 2 * HOUR).toISOString())
+    .gte("creado_en", new Date(now - 72 * HOUR).toISOString());
+  if (error) {
+    return new Response(JSON.stringify({ error: error.message }), { status: 500, headers: { "Content-Type": "application/json" } });
+  }
 
-  for (const customer of customers || []) {
-    const { data: carts, error: cartError } = await sb
-      .from("carritos")
-      .select("id, items, estado, actualizado_en")
-      .eq("cliente_id", customer.id)
-      .order("actualizado_en", { ascending: false });
-    if (cartError) {
-      results.errores++;
-      continue;
-    }
+  const results = { dry_run: dryRun, reintentos_pendientes: reintentos, revisados: clientes?.length || 0, elegibles: 0, enviados: 0, errores: 0 };
+  const catalog = clientes?.length ? await loadCatalog() : new Map();
 
-    if ((carts || []).some((cart: any) => cart.estado === "completado")) {
-      results.con_compra++;
-      continue;
-    }
+  for (const c of clientes || []) {
+    const age = (now - new Date(c.creado_en).getTime()) / HOUR;
+    const tier = TIERS.find(([, from, to]) => age >= from && age < to);
+    if (!tier) continue;
+    const tipo = tier[0];
 
-    const { data: registrationReminder } = await sb
-      .from("recordatorios_registro")
-      .select("id")
-      .eq("cliente_id", customer.id)
-      .eq("tipo", "registro_24h")
-      .maybeSingle();
-
-    const cartIds = (carts || []).map((cart: any) => cart.id);
-    let oldReminder = null;
-    if (cartIds.length) {
-      const previous = await sb
-        .from("recordatorios_carrito")
-        .select("id")
-        .in("carrito_id", cartIds)
-        .eq("tipo", "recordatorio_24h")
-        .limit(1)
-        .maybeSingle();
-      oldReminder = previous.data;
-    }
-
-    if (registrationReminder || oldReminder) {
-      results.ya_contactados++;
-      continue;
-    }
+    const { data: sent } = await sb.from("clientes_web_correos").select("tipo").eq("cliente_id", c.id).like("tipo", "remarketing_%");
+    const sentTypes = new Set((sent || []).map((r: any) => r.tipo));
+    const tierIndex = TIERS.findIndex(([t]) => t === tipo);
+    // Ya recibió este tramo o uno posterior: nada que hacer.
+    if (TIERS.slice(tierIndex).some(([t]) => sentTypes.has(t))) continue;
 
     results.elegibles++;
     if (dryRun) continue;
 
-    const activeCart = (carts || []).find(
-      (cart: any) => cart.estado === "activo" && Array.isArray(cart.items) && cart.items.length,
-    );
-    const context = emailContext(activeCart?.items || [], catalog);
+    // Reclamar antes de enviar (unique cliente+tipo): evita dobles envíos si dos ejecuciones se cruzan.
+    const { error: claimError } = await sb.from("clientes_web_correos").insert({ cliente_id: c.id, tipo, ref: "" });
+    if (claimError) continue;
     try {
-      await sendEmail(customer.correo, customer.nombre, context);
-      const { error: insertError } = await sb
-        .from("recordatorios_registro")
-        .insert({ cliente_id: customer.id, tipo: "registro_24h" });
-      if (insertError) throw insertError;
+      await sendEmail(c.email, COPY[tipo].subject, buildHtml(tipo, c, productFor(c.carrito, catalog)));
       results.enviados++;
-    } catch (error) {
-      console.error("No se pudo enviar recordatorio de registro", customer.id, error);
+    } catch (err) {
+      await sb.from("clientes_web_correos").delete().eq("cliente_id", c.id).eq("tipo", tipo);
+      console.error("No se pudo enviar remarketing", tipo, c.id, err);
       results.errores++;
     }
   }
 
-  return new Response(JSON.stringify(results), {
-    headers: { "Content-Type": "application/json" },
-  });
+  return new Response(JSON.stringify(results), { headers: { "Content-Type": "application/json" } });
 });
