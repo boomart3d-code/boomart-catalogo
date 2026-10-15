@@ -267,17 +267,17 @@
   },
   "castillo-de-hogwarts": {
     "source": "assets/products/castillo-de-hogwarts-gallery-01.png",
-    "hash": "bb081bf2c0c51daa",
+    "hash": "801de2454266a904",
     "width": 900,
     "height": 1200,
-    "bytes": 110495
+    "bytes": 111605
   },
   "ajedrez-de-hogwarts-4-casas": {
-    "source": "assets/products/ajedrez-de-hogwarts-4-casas-hero.jpg",
-    "hash": "38b656d6516f4081",
+    "source": "assets/products/ajedrez-de-hogwarts-4-casas-hero-v2.webp",
+    "hash": "8cc5a49d8cd0f2a1",
     "width": 960,
     "height": 1200,
-    "bytes": 192192
+    "bytes": 199495
   },
   "lampara-sombrero-seleccionador": {
     "source": "assets/products/lampara-sombrero-seleccionador-hero-v2.png",
@@ -294,11 +294,11 @@
     "bytes": 130813
   },
   "casco-de-wolverine-con-garras": {
-    "source": "assets/products/casco-de-wolverine-con-garras.jpg",
-    "hash": "f6228ffc977882bd",
-    "width": 1080,
-    "height": 1080,
-    "bytes": 112357
+    "source": "assets/products/casco-de-wolverine-con-garras-hero-v2.webp",
+    "hash": "7b3349e81f40f566",
+    "width": 960,
+    "height": 1200,
+    "bytes": 94521
   },
   "mascara-de-batwoman": {
     "source": "assets/products/mascara-de-batwoman-hero-v2.png",
@@ -308,25 +308,25 @@
     "bytes": 93555
   },
   "palomera-cara-de-spiderman": {
-    "source": "assets/products/palomera-cara-de-spiderman.jpg",
-    "hash": "e242a89bd491d55d",
-    "width": 1000,
-    "height": 1000,
-    "bytes": 91547
+    "source": "assets/products/palomera-cara-de-spiderman-hero-v2.webp",
+    "hash": "1eb210414263d7c3",
+    "width": 960,
+    "height": 1200,
+    "bytes": 66515
   },
   "palomera-spiderman": {
-    "source": "assets/products/palomera-spiderman.jpg",
-    "hash": "b6f0b7d68ed93cc4",
-    "width": 808,
-    "height": 606,
-    "bytes": 71354
+    "source": "assets/products/palomera-spiderman-hero-v2.webp",
+    "hash": "b559679ae3955956",
+    "width": 960,
+    "height": 1200,
+    "bytes": 100631
   },
   "mario-billy-saw": {
-    "source": "assets/products/mario-billy-saw-1.jpg",
-    "hash": "59d68934b58d7269",
-    "width": 914,
+    "source": "assets/products/mario-billy-saw-hero-v2.webp",
+    "hash": "b2872ce92c31e491",
+    "width": 960,
     "height": 1200,
-    "bytes": 61071
+    "bytes": 54691
   },
   "mascara-calabaza-calavera": {
     "source": "assets/products/mascara-calabaza-calavera-hero-v2.png",
@@ -371,11 +371,11 @@
     "bytes": 176428
   },
   "mascara-hellboy-articulada": {
-    "source": "assets/products/mascara-hellboy-articulada-1.jpg",
-    "hash": "aeeb7c0fbe87ae73",
+    "source": "assets/products/mascara-hellboy-articulada-hero-v2.webp",
+    "hash": "bd8dda3101faa4e7",
     "width": 960,
     "height": 1200,
-    "bytes": 134312
+    "bytes": 96347
   },
   "casco-gladiador-maximo": {
     "source": "assets/products/casco-gladiador-maximo-hero-v2.png",
@@ -427,11 +427,11 @@
     "bytes": 141442
   },
   "maceta-pikachu": {
-    "source": "assets/products/maceta-pikachu.jpg",
-    "hash": "93037ca7e71b1e54",
-    "width": 1080,
-    "height": 1080,
-    "bytes": 92727
+    "source": "assets/products/maceta-pikachu-hero-v2.webp",
+    "hash": "5a1880699ceb027b",
+    "width": 960,
+    "height": 1200,
+    "bytes": 48018
   },
   "replica-copa-del-mundo-tamano-real": {
     "source": "assets/products/replica-copa-del-mundo-tamano-real-hero-v2.png",
@@ -455,25 +455,25 @@
     "bytes": 145410
   },
   "caja-organizadora-figuritas-panini-2026": {
-    "source": "assets/products/caja-organizadora-figuritas-panini-2026.jpg",
-    "hash": "79e6f1f24bcbf149",
-    "width": 900,
+    "source": "assets/products/caja-organizadora-figuritas-panini-2026-hero-v2.webp",
+    "hash": "b7d80f9697a87901",
+    "width": 960,
     "height": 1200,
-    "bytes": 153600
+    "bytes": 141298
   },
   "maceta-groot": {
-    "source": "assets/products/maceta-groot.jpg",
-    "hash": "504320b45ad2863c",
-    "width": 900,
+    "source": "assets/products/maceta-groot-hero-v2.webp",
+    "hash": "5b3a34164e46cf3e",
+    "width": 960,
     "height": 1200,
-    "bytes": 127742
+    "bytes": 59860
   },
   "maceta-baby-groot": {
-    "source": "assets/products/maceta-baby-groot.jpg",
-    "hash": "a52cc5eefa6436a0",
-    "width": 900,
+    "source": "assets/products/maceta-baby-groot-hero-v2.webp",
+    "hash": "be8d107f5a9cbca2",
+    "width": 960,
     "height": 1200,
-    "bytes": 88719
+    "bytes": 63310
   },
   "maceta-dedo-medio": {
     "source": "assets/products/maceta-dedo-medio-hero-v2.png",
@@ -483,11 +483,11 @@
     "bytes": 146508
   },
   "maceta-darth-vader": {
-    "source": "assets/products/maceta-darth-vader.jpg",
-    "hash": "b1f682a7144f9207",
-    "width": 900,
+    "source": "assets/products/maceta-darth-vader-hero-v2.webp",
+    "hash": "55343847aaa97223",
+    "width": 960,
     "height": 1200,
-    "bytes": 106523
+    "bytes": 91212
   },
   "maceta-david": {
     "source": "assets/products/maceta-david-hero-v2.png",
