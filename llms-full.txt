@@ -19,7 +19,7 @@ Fuente estructurada: https://boomart.pe/catalogo.json
 - Material: PLA+ reforzado y PLA Silk dorado
 - Disponibilidad: A pedido
 - Etiquetas: Saint Seiya, Templo, Combo
-- Imagen: https://boomart.pe/assets/products/templo-aries-hero.jpg
+- Imagen: https://boomart.pe/assets/products/templo-aries-hero-v2.png
 - Ficha: https://boomart.pe/producto/templo-aries/
 
 Combo de la Casa de Aries: templo de 16 cm de alto × 17 cm de fondo × 23 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado.
@@ -465,7 +465,7 @@ Altar exhibidor del Caballero de Bronce Pegaso (Seiya), con la placa tallada del
 - Material: PLA+ con detalles en PLA Silk dorado y PLA Silk plata
 - Disponibilidad: A pedido
 - Etiquetas: Harry Potter, Fawkes, Fénix, Dumbledore, Figuras, Coleccionables
-- Imagen: https://boomart.pe/assets/products/fawkes-fenix-de-dumbledore-1.jpg
+- Imagen: https://boomart.pe/assets/products/fawkes-fenix-de-dumbledore-hero-v2.png
 - Ficha: https://boomart.pe/producto/fawkes-fenix-de-dumbledore/
 
 Fawkes es el fiel fénix de Albus Dumbledore: una criatura mágica conocida por su plumaje rojo y dorado, su lealtad, sus lágrimas curativas y su capacidad de renacer de las cenizas. Esta pieza decorativa inspirada en el mundo de Harry Potter está impresa en 3D y pintada a mano, con una base de exhibición dorada que realza su presencia. Fabricada en PLA+, con detalles en PLA Silk dorado y PLA Silk plata en las patas. Mide aproximadamente entre 40 y 45 cm desde la cola hasta la cresta. Hecha a pedido, con envíos a todo el Perú.
@@ -601,7 +601,7 @@ Palomera temática de Spider-Man para tu noche de películas: práctica, resiste
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Portavelas, Decoración, Calavera, Gótico
-- Imagen: https://boomart.pe/assets/products/candelabro-calavera-1.jpg
+- Imagen: https://boomart.pe/assets/products/candelabro-calavera-hero-v2.png
 - Ficha: https://boomart.pe/producto/candelabro-calavera/
 
 🎃 Edición Halloween. Dale a tu decoración un toque oscuro y fuera de lo común: un cráneo de aspecto envejecido con una columna vertebral que sostiene la vela, una pieza que llama la atención tanto encendida como apagada. Al prender la vela, la luz cálida resalta las formas del cráneo y crea una atmósfera intensa y misteriosa. Ideal para salas, escritorios, vitrinas, mesas temáticas o rincones góticos. Impreso en 3D y detallado a mano, con acabado tipo hueso envejecido. Compatible con velas de hasta 2 cm de diámetro (vela no incluida). Hecho a pedido, con envíos a todo el Perú.
@@ -735,7 +735,7 @@ Máscara decorativa de El Juego del Calamar (círculo, triángulo o cuadrado), i
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Cascos, Cine
-- Imagen: https://boomart.pe/assets/products/casco-de-agamenon-la-odisea.jpg
+- Imagen: https://boomart.pe/assets/products/casco-de-agamenon-la-odisea-hero-v2.png
 - Ficha: https://boomart.pe/producto/casco-de-agamenon-la-odisea/
 
 Casco decorativo de Agamenón a tamaño real, inspirado en La Odisea y la Grecia de los héroes. Una pieza imponente de exhibición.
@@ -833,7 +833,7 @@ Maceta inspirada en el David de Miguel Ángel: elegancia y arte clásico en un d
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Macetas
-- Imagen: https://boomart.pe/assets/products/maceta-minimalista.jpg
+- Imagen: https://boomart.pe/assets/products/maceta-minimalista-hero-v2.png
 - Ficha: https://boomart.pe/producto/maceta-minimalista/
 
 Optimiza tu espacio con una maceta minimalista de líneas limpias y textura sutil, ideal para escritorio, repisa o mesa de centro.
@@ -859,7 +859,7 @@ Maceta minimalista negra con textura de hojas de palmera: elegante y moderna, id
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Futbol, Mundial
-- Imagen: https://boomart.pe/assets/products/replica-copa-del-mundo-tamano-real.jpg
+- Imagen: https://boomart.pe/assets/products/replica-copa-del-mundo-tamano-real-hero-v2.png
 - Ficha: https://boomart.pe/producto/replica-copa-del-mundo-tamano-real/
 
 Siente la pasión del mundial: réplica premium de la Copa del Mundo FIFA a tamaño real (escala 1:1), con acabado dorado y base tipo malaquita.

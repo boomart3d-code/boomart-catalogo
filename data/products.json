@@ -18,8 +18,9 @@
     },
     "featured": true,
     "offer": true,
-    "image": "assets/products/templo-aries-hero.jpg",
+    "image": "assets/products/templo-aries-hero-v2.png",
     "gallery": [
+      "assets/products/templo-aries-hero-v2.png",
       "assets/products/templo-aries-hero.jpg",
       "assets/products/templo-aries-pandora.jpg",
       "assets/products/templo-aries-medidas.jpg"
@@ -960,8 +961,9 @@
     "regularPrice": 200,
     "featured": true,
     "offer": true,
-    "image": "assets/products/fawkes-fenix-de-dumbledore-1.jpg",
+    "image": "assets/products/fawkes-fenix-de-dumbledore-hero-v2.png",
     "gallery": [
+      "assets/products/fawkes-fenix-de-dumbledore-hero-v2.png",
       "assets/products/fawkes-fenix-de-dumbledore-1.jpg",
       "assets/products/fawkes-fenix-de-dumbledore-2.jpg",
       "assets/products/fawkes-fenix-de-dumbledore-3.jpg",
@@ -1197,8 +1199,9 @@
     "regularPrice": 120,
     "featured": true,
     "offer": true,
-    "image": "assets/products/candelabro-calavera-1.jpg",
+    "image": "assets/products/candelabro-calavera-hero-v2.png",
     "gallery": [
+      "assets/products/candelabro-calavera-hero-v2.png",
       "assets/products/candelabro-calavera-1.jpg",
       "assets/products/candelabro-calavera-2.jpg",
       "assets/products/candelabro-calavera-3.jpg"
@@ -1478,8 +1481,9 @@
     "regularPrice": 438,
     "featured": true,
     "offer": true,
-    "image": "assets/products/casco-de-agamenon-la-odisea.jpg",
+    "image": "assets/products/casco-de-agamenon-la-odisea-hero-v2.png",
     "gallery": [
+      "assets/products/casco-de-agamenon-la-odisea-hero-v2.png",
       "assets/products/casco-de-agamenon-la-odisea.jpg",
       "assets/products/casco-de-agamenon-la-odisea-2.jpg",
       "assets/products/casco-de-agamenon-la-odisea-3.jpg",
@@ -1543,8 +1547,9 @@
     "regularPrice": 165,
     "featured": true,
     "offer": true,
-    "image": "assets/products/replica-copa-del-mundo-tamano-real.jpg",
+    "image": "assets/products/replica-copa-del-mundo-tamano-real-hero-v2.png",
     "gallery": [
+      "assets/products/replica-copa-del-mundo-tamano-real-hero-v2.png",
       "assets/products/replica-copa-del-mundo-tamano-real.jpg"
     ],
     "description": "Siente la pasión del mundial: réplica premium de la Copa del Mundo FIFA a tamaño real (escala 1:1), con acabado dorado y base tipo malaquita.",
@@ -1721,8 +1726,9 @@
     "regularPrice": 49,
     "featured": true,
     "offer": true,
-    "image": "assets/products/maceta-minimalista.jpg",
+    "image": "assets/products/maceta-minimalista-hero-v2.png",
     "gallery": [
+      "assets/products/maceta-minimalista-hero-v2.png",
       "assets/products/maceta-minimalista.jpg"
     ],
     "description": "Optimiza tu espacio con una maceta minimalista de líneas limpias y textura sutil, ideal para escritorio, repisa o mesa de centro.",
