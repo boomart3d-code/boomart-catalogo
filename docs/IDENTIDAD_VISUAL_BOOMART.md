@@ -331,6 +331,11 @@ completa debe sentirse parte del mismo sistema que `boomart.pe`.
 
 ## Fotografía de producto
 
+El rediseño y sustitución de primeras fotografías de la tienda se rige además
+por `docs/SISTEMA_FOTOGRAFICO_PORTADAS_BOOMART.md`, que define familias de
+escenarios, encuadres, fidelidad, archivos, control de calidad y publicación.
+La fotografía original se conserva como segunda vista; nunca se sobrescribe.
+
 - Mostrar el producto real; no modificar su forma, piezas, acabado ni proporciones.
 - Corregir únicamente iluminación, balance de color, encuadre y fondo.
 - Preferir fondos neutros, oscuros o contextuales con baja distracción.
