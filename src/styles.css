@@ -4196,6 +4196,30 @@ a.trust-item:hover strong {
   line-height: 1.4;
 }
 
+.collection-tile-corporate {
+  border-left: 4px solid var(--red);
+}
+
+.collection-tile-corporate-copy {
+  display: grid;
+  gap: 3px;
+  padding: 12px 14px 14px;
+}
+
+.collection-tile-corporate-copy strong {
+  font-family: var(--display-font);
+  font-size: 1.22rem;
+  letter-spacing: 0.035em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.collection-tile-corporate-copy small {
+  color: #d3cdc2;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
 /* Tarjeta de colección (templos / altares del Zodiaco) */
 .collection-count {
   position: absolute;
