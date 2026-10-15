@@ -18,7 +18,7 @@
     <link rel="canonical" href="https://boomart.pe/">
     <link rel="icon" type="image/svg+xml" href="assets/boomart-mark.svg?v=7">
     <link rel="alternate icon" type="image/png" sizes="32x32" href="assets/boomart-mark-32.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="assets/boomart-mark-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/app-icon-180.png">
     <link rel="manifest" href="site.webmanifest">
     <link rel="alternate" type="text/html" href="https://boomart.pe/catalogo.html" title="Catálogo completo en texto plano">
     <link rel="alternate" type="application/json" href="https://boomart.pe/catalogo.json" title="Feed JSON del catálogo BoomArt">
@@ -44,7 +44,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=49">
+    <link rel="stylesheet" href="src/styles.css?v=50">
 
     <script type="application/ld+json">
     {
@@ -213,28 +213,59 @@
             <button type="button" class="hero-assistant" id="heroAssistant">Te ayudo a elegir</button>
           </div>
         </div>
+        <!-- Carrete de portada (2026-10-15): 8 fotos completas (contain) sobre la misma
+             foto desenfocada como fondo, sin descarga extra. Desde la 3.ª foto la
+             imagen se carga recién antes de mostrarse (data-src, ver src/app.js). -->
         <div class="hero-media hero-reel" id="heroReel" aria-label="Productos destacados de BoomArt" aria-roledescription="carrusel">
           <a class="hero-reel-slide is-active" href="producto/templo-con-caja-de-pandora-y-pedestal/" aria-hidden="false" tabindex="0">
-            <img src="assets/products/templo-con-caja-de-pandora-y-pedestal-hero.webp" alt="Colección de los 12 templos del Zodiaco con Cajas de Pandora" width="1200" height="900" fetchpriority="high" decoding="async">
+            <img class="hero-reel-backdrop" src="assets/products/templo-con-caja-de-pandora-y-pedestal-hero.webp" alt="" aria-hidden="true" width="1200" height="900" decoding="async">
+            <img class="hero-reel-photo" src="assets/products/templo-con-caja-de-pandora-y-pedestal-hero.webp" alt="Colección de los 12 templos del Zodiaco con Cajas de Pandora" width="1200" height="900" fetchpriority="high" decoding="async">
             <span class="hero-reel-caption"><small>Colección destacada</small><strong>El Santuario completo</strong></span>
           </a>
+          <a class="hero-reel-slide" href="producto/templo-aries/" aria-hidden="true" tabindex="-1">
+            <img class="hero-reel-backdrop" src="assets/products/templo-aries-hero.webp" alt="" aria-hidden="true" width="1086" height="1448" decoding="async" loading="lazy">
+            <img class="hero-reel-photo" src="assets/products/templo-aries-hero.webp" alt="Templo de Aries de Saint Seiya con su Pandora Box y pedestal" width="1086" height="1448" loading="lazy" decoding="async">
+            <span class="hero-reel-caption"><small>Saint Seiya</small><strong>Templo de Aries</strong></span>
+          </a>
           <a class="hero-reel-slide" href="producto/casco-de-pegaso-saint-seiya/" aria-hidden="true" tabindex="-1">
-            <img src="assets/products/casco-de-pegaso-saint-seiya-hero.webp" alt="Casco de Pegaso de Saint Seiya impreso en 3D" width="994" height="1200" loading="lazy" decoding="async">
+            <img class="hero-reel-backdrop" data-src="assets/products/casco-de-pegaso-saint-seiya-hero.webp" alt="" aria-hidden="true" width="994" height="1200" decoding="async">
+            <img class="hero-reel-photo" data-src="assets/products/casco-de-pegaso-saint-seiya-hero.webp" alt="Casco de Pegaso de Saint Seiya impreso en 3D" width="994" height="1200" decoding="async">
             <span class="hero-reel-caption"><small>Escala real</small><strong>Casco de Pegaso</strong></span>
           </a>
-          <a class="hero-reel-slide" href="producto/mascara-hellboy-articulada/" aria-hidden="true" tabindex="-1">
-            <img src="assets/products/mascara-hellboy-articulada-1.webp" alt="Máscara Hellboy articulada fabricada por BoomArt" width="640" height="640" loading="lazy" decoding="async">
-            <span class="hero-reel-caption"><small>Acabado artesanal</small><strong>Máscara Hellboy articulada</strong></span>
+          <a class="hero-reel-slide" href="producto/castillo-de-hogwarts/" aria-hidden="true" tabindex="-1">
+            <img class="hero-reel-backdrop" data-src="assets/products/castillo-de-hogwarts.webp" alt="" aria-hidden="true" width="1200" height="1600" decoding="async">
+            <img class="hero-reel-photo" data-src="assets/products/castillo-de-hogwarts.webp" alt="Castillo de Hogwarts de Harry Potter fabricado por BoomArt" width="1200" height="1600" decoding="async">
+            <span class="hero-reel-caption"><small>Harry Potter</small><strong>Castillo de Hogwarts</strong></span>
           </a>
           <a class="hero-reel-slide" href="producto/fawkes-fenix-de-dumbledore/" aria-hidden="true" tabindex="-1">
-            <img src="assets/products/fawkes-fenix-de-dumbledore-1.webp" alt="Fawkes, el fénix de Dumbledore, fabricado por BoomArt" width="640" height="640" loading="lazy" decoding="async">
+            <img class="hero-reel-backdrop" data-src="assets/products/fawkes-fenix-de-dumbledore-1.webp" alt="" aria-hidden="true" width="1254" height="1254" decoding="async">
+            <img class="hero-reel-photo" data-src="assets/products/fawkes-fenix-de-dumbledore-1.webp" alt="Fawkes, el fénix de Dumbledore, fabricado por BoomArt" width="1254" height="1254" decoding="async">
             <span class="hero-reel-caption"><small>Pieza de colección</small><strong>Fawkes · Harry Potter</strong></span>
+          </a>
+          <a class="hero-reel-slide" href="producto/mascara-hellboy-articulada/" aria-hidden="true" tabindex="-1">
+            <img class="hero-reel-backdrop" data-src="assets/products/mascara-hellboy-articulada-1.webp" alt="" aria-hidden="true" width="1122" height="1402" decoding="async">
+            <img class="hero-reel-photo" data-src="assets/products/mascara-hellboy-articulada-1.webp" alt="Máscara Hellboy articulada fabricada por BoomArt" width="1122" height="1402" decoding="async">
+            <span class="hero-reel-caption"><small>Acabado artesanal</small><strong>Máscara Hellboy articulada</strong></span>
+          </a>
+          <a class="hero-reel-slide" href="producto/mascara-krampus/" aria-hidden="true" tabindex="-1">
+            <img class="hero-reel-backdrop" data-src="assets/products/mascara-krampus-1.webp" alt="" aria-hidden="true" width="1099" height="1374" decoding="async">
+            <img class="hero-reel-photo" data-src="assets/products/mascara-krampus-1.webp" alt="Máscara Krampus de Halloween fabricada por BoomArt" width="1099" height="1374" decoding="async">
+            <span class="hero-reel-caption"><small>Halloween</small><strong>Máscara Krampus</strong></span>
+          </a>
+          <a class="hero-reel-slide" href="producto/diorama-de-pegaso/" aria-hidden="true" tabindex="-1">
+            <img class="hero-reel-backdrop" data-src="assets/products/diorama-de-pegaso-hero.webp" alt="" aria-hidden="true" width="960" height="1200" decoding="async">
+            <img class="hero-reel-photo" data-src="assets/products/diorama-de-pegaso-hero.webp" alt="Altar de Pegaso de Saint Seiya fabricado por BoomArt" width="960" height="1200" decoding="async">
+            <span class="hero-reel-caption"><small>Saint Seiya</small><strong>Altar de Pegaso</strong></span>
           </a>
           <div class="hero-reel-controls" role="group" aria-label="Elegir fotografía">
             <button class="hero-reel-dot is-active" type="button" data-hero-slide="0" aria-label="Ver colección del Santuario" aria-pressed="true"></button>
-            <button class="hero-reel-dot" type="button" data-hero-slide="1" aria-label="Ver Casco de Pegaso" aria-pressed="false"></button>
-            <button class="hero-reel-dot" type="button" data-hero-slide="2" aria-label="Ver Máscara Hellboy" aria-pressed="false"></button>
-            <button class="hero-reel-dot" type="button" data-hero-slide="3" aria-label="Ver Fawkes" aria-pressed="false"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="1" aria-label="Ver Templo de Aries" aria-pressed="false"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="2" aria-label="Ver Casco de Pegaso" aria-pressed="false"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="3" aria-label="Ver Castillo de Hogwarts" aria-pressed="false"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="4" aria-label="Ver Fawkes" aria-pressed="false"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="5" aria-label="Ver Máscara Hellboy" aria-pressed="false"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="6" aria-label="Ver Máscara Krampus" aria-pressed="false"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="7" aria-label="Ver Altar de Pegaso" aria-pressed="false"></button>
           </div>
         </div>
       </section>
@@ -777,7 +808,7 @@
     <script src="src/track.js?v=4"></script>
     <script src="src/cart.js?v=6"></script>
     <script src="src/products.js?v=5"></script>
-    <script src="src/app.js?v=38"></script>
+    <script src="src/app.js?v=39"></script>
     <script src="src/checkout.js?v=25"></script>
     <script src="src/products-loader.js?v=5"></script>
     <script src="src/reviews.js?v=6"></script>

@@ -1015,8 +1015,20 @@ if (heroReel) {
   let activeSlide = 0;
   let reelTimer = null;
 
+  // Desde la 3.ª foto, las imágenes llevan data-src: se cargan cuando su foto
+  // está por mostrarse (la actual y la siguiente), no todas al abrir la página.
+  const loadHeroSlide = (index) => {
+    const slide = slides[(index + slides.length) % slides.length];
+    slide?.querySelectorAll("img[data-src]").forEach((img) => {
+      img.src = img.dataset.src;
+      img.removeAttribute("data-src");
+    });
+  };
+
   const showHeroSlide = (nextIndex, manual = false) => {
     activeSlide = (nextIndex + slides.length) % slides.length;
+    loadHeroSlide(activeSlide);
+    loadHeroSlide(activeSlide + 1);
     slides.forEach((slide, index) => {
       const active = index === activeSlide;
       slide.classList.toggle("is-active", active);
@@ -1063,6 +1075,24 @@ if (heroReel) {
   document.addEventListener("visibilitychange", startHeroReel);
   reduceMotion.addEventListener?.("change", startHeroReel);
   startHeroReel();
+}
+
+// 2b) Brillo de las colecciones destacadas (2026-10-15): una sola pasada, en
+// cascada, cuando la sección aparece en pantalla. La animación es CSS
+// (.is-shining); aquí solo se decide cuándo, sin escuchar el scroll.
+const shineTiles = [...document.querySelectorAll(".collection-tile")]
+  .filter((tile) => ["Saint Seiya", "Halloween", "Harry Potter"].some((name) => (tile.dataset.filter || "").includes(name)));
+if (shineTiles.length && "IntersectionObserver" in window) {
+  const shineObserver = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    shineObserver.disconnect();
+    shineTiles.forEach((tile, index) => {
+      tile.style.setProperty("--shine-delay", `${index * 0.18}s`);
+      tile.classList.add("is-shining");
+      tile.addEventListener("animationend", () => tile.classList.remove("is-shining"), { once: true });
+    });
+  }, { threshold: 0.45 });
+  shineObserver.observe(shineTiles[0]);
 }
 
 // 3) «Te ayudo a elegir» en la portada y en la fila de filtros (celular) abre el
