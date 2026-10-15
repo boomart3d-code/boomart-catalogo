@@ -985,8 +985,9 @@
     "regularPrice": 88,
     "featured": true,
     "offer": true,
-    "image": "assets/products/castillo-de-hogwarts.jpg",
+    "image": "assets/products/castillo-de-hogwarts-hero-v2.png",
     "gallery": [
+      "assets/products/castillo-de-hogwarts-hero-v2.png",
       "assets/products/castillo-de-hogwarts.jpg"
     ],
     "description": "El castillo de Hogwarts en réplica decorativa impresa en 3D: torres, puentes y el Gran Comedor reconocibles al instante. Pieza imprescindible para todo fan del mundo mágico.",
@@ -1025,8 +1026,9 @@
     "regularPrice": 105,
     "featured": true,
     "offer": true,
-    "image": "assets/products/lampara-sombrero-seleccionador.jpg",
+    "image": "assets/products/lampara-sombrero-seleccionador-hero-v2.png",
     "gallery": [
+      "assets/products/lampara-sombrero-seleccionador-hero-v2.png",
       "assets/products/lampara-sombrero-seleccionador.jpg"
     ],
     "description": "Lámpara LED del Sombrero Seleccionador con iluminación integrada que resalta su emblemática expresión. El regalo perfecto para los verdaderos fans de Harry Potter.",
@@ -1046,8 +1048,9 @@
     "regularPrice": 275,
     "featured": true,
     "offer": true,
-    "image": "assets/products/lampara-lunar-hogwarts.jpg",
+    "image": "assets/products/lampara-lunar-hogwarts-hero-v2.png",
     "gallery": [
+      "assets/products/lampara-lunar-hogwarts-hero-v2.png",
       "assets/products/lampara-lunar-hogwarts.jpg",
       "assets/products/lampara-lunar-hogwarts-2.jpg",
       "assets/products/lampara-lunar-hogwarts-3.jpg",
@@ -1461,8 +1464,9 @@
     "regularPrice": 55,
     "featured": true,
     "offer": true,
-    "image": "assets/products/mascara-el-juego-del-calamar.jpg",
+    "image": "assets/products/mascara-el-juego-del-calamar-hero-v2.png",
     "gallery": [
+      "assets/products/mascara-el-juego-del-calamar-hero-v2.png",
       "assets/products/mascara-el-juego-del-calamar.jpg"
     ],
     "description": "Máscara decorativa de El Juego del Calamar (círculo, triángulo o cuadrado), impresa en 3D. Perfecta para exhibición, cosplay o para completar tu disfraz.",
@@ -1506,8 +1510,9 @@
     "regularPrice": 132,
     "featured": true,
     "offer": true,
-    "image": "assets/products/pato-lucas-kratos-god-of-war.jpg",
+    "image": "assets/products/pato-lucas-kratos-god-of-war-hero-v2.png",
     "gallery": [
+      "assets/products/pato-lucas-kratos-god-of-war-hero-v2.png",
       "assets/products/pato-lucas-kratos-god-of-war.jpg"
     ],
     "description": "El clásico y temperamental Pato Lucas se fusiona con la furia de Kratos de God of War: barba, tatuaje espartano y mirada de pocos amigos. Una figura decorativa única.",
