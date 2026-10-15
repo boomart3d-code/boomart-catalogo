@@ -188,7 +188,8 @@
 
   const recommendedProducts = () => {
     const products = loadedProducts.filter((product) => {
-      const categoryMatches = state.category === "Todos" || product.category === state.category;
+      const categoryMatches = state.category === "Todos" || product.category === state.category ||
+        (product.extraCategories || []).includes(state.category);
       const price = productPrice(product);
       const budgetMatches = !state.budget || (price > 0 && price <= state.budget);
       return categoryMatches && budgetMatches && price > 0;

@@ -575,6 +575,38 @@
     "height": "Tamaño real 1:1 (ajustable a pedido)"
   },
   {
+    "id": "tiara-de-ikki-de-fenix-saint-seiya",
+    "name": "Tiara de Ikki de Fénix · Saint Seiya",
+    "category": "Saint Seiya",
+    "extraCategories": [
+      "🎃 Halloween"
+    ],
+    "tags": [
+      "Cascos",
+      "Cosplay",
+      "Saint Seiya",
+      "Fénix",
+      "Ikki",
+      "Disfraces",
+      "Halloween"
+    ],
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 120,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/tiara-de-ikki-de-fenix-saint-seiya-hero.jpg",
+    "gallery": [
+      "assets/products/tiara-de-ikki-de-fenix-saint-seiya-hero.jpg",
+      "assets/products/tiara-de-ikki-de-fenix-saint-seiya-2.jpg",
+      "assets/products/tiara-de-ikki-de-fenix-saint-seiya-3.jpg",
+      "assets/products/tiara-de-ikki-de-fenix-saint-seiya-4.jpg"
+    ],
+    "description": "Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en tamaño real 1:1. Diadema con sus grandes cuernos dorados, el frontal plateado y la gema roja al centro, lista para usar en tu cosplay o disfraz de Halloween, o para exhibir junto a tu figura. Acabado dorado y plateado pintado a mano. Como se fabrica a pedido, el calce se adapta a la talla de quien la va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Hecha en Perú, con envíos a todo el país.",
+    "offerPrice": 100,
+    "height": "Tamaño real 1:1 (ajustable a pedido)"
+  },
+  {
     "id": "set-12-altares-exhibidor",
     "name": "Colección de 12 Altares Exhibidor · Casas del Zodiaco · Saint Seiya",
     "category": "Saint Seiya",

@@ -394,6 +394,7 @@ const SEASON_LABEL = "🎃 Halloween";
 // accesorios, y deja decoracion/figuras al final. Mantener sincronizado con
 // HALLOWEEN_CAMPAIGN_PRODUCT_IDS en scripts/build-ai-catalog.mjs.
 const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
+  "tiara-de-ikki-de-fenix-saint-seiya",
   "mascarada-del-diablo",
   "cuernos-de-fauno",
   "corona-de-elfo",
@@ -454,7 +455,7 @@ const matchesProduct = (product) => {
   const matchesFilter = activeFilter === "Todos" ||
     (activeFilter === SEASON_LABEL
       ? HALLOWEEN_CAMPAIGN_ORDER.has(product.id)
-      : product.category === activeFilter);
+      : product.category === activeFilter || (product.extraCategories || []).includes(activeFilter));
   const matchesCollection = !activeCollection || activeCollection.ids.includes(product.id);
   return matchesSearch && matchesFilter && matchesCollection;
 };

@@ -272,12 +272,15 @@ async function injectReviewsBlocks(reviews) {
   return count;
 }
 
+// Un producto puede figurar tambien en otras categorias (campo opcional
+// "extraCategories", p. ej. la Tiara de Ikki: Saint Seiya + Halloween).
 function groupByCategory(products) {
   const map = new Map();
   for (const p of products) {
-    const key = p.category || "Otros";
-    if (!map.has(key)) map.set(key, []);
-    map.get(key).push(p);
+    for (const key of [p.category || "Otros", ...(p.extraCategories || [])]) {
+      if (!map.has(key)) map.set(key, []);
+      if (!map.get(key).includes(p)) map.get(key).push(p);
+    }
   }
   return [...map.entries()];
 }
@@ -1332,6 +1335,7 @@ const CATEGORY_META = {
 // en el enlace corto que se comparte en publicidad y WhatsApp.
 const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
   // Disfraces y cosplay: el producto nuevo abre la coleccion.
+  "tiara-de-ikki-de-fenix-saint-seiya",
   "mascarada-del-diablo",
   "cuernos-de-fauno",
   "corona-de-elfo",
