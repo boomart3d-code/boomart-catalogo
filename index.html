@@ -213,48 +213,42 @@
             <button type="button" class="hero-assistant" id="heroAssistant">Te ayudo a elegir</button>
           </div>
         </div>
-        <!-- Carrete de portada (2026-10-15): 8 fotos completas (contain) sobre la misma
-             foto desenfocada como fondo, sin descarga extra. Desde la 3.ª foto la
-             imagen se carga recién antes de mostrarse (data-src, ver src/app.js). -->
+        <!-- Carrete de portada (2026-10-15): 8 productos recortados sin fondo
+             (assets/hero/*.webp, PNG→WebP con transparencia; fondo quitado con Adobe
+             Photoshop y luz mejorada) sobre el escenario de marca dibujado en CSS.
+             Desde la 3.ª foto la imagen se carga recién antes de mostrarse
+             (data-src, ver src/app.js). -->
         <div class="hero-media hero-reel" id="heroReel" aria-label="Productos destacados de BoomArt" aria-roledescription="carrusel">
           <a class="hero-reel-slide is-active" href="producto/templo-con-caja-de-pandora-y-pedestal/" aria-hidden="false" tabindex="0">
-            <img class="hero-reel-backdrop" src="assets/products/templo-con-caja-de-pandora-y-pedestal-hero.webp" alt="" aria-hidden="true" width="1200" height="900" decoding="async">
-            <img class="hero-reel-photo" src="assets/products/templo-con-caja-de-pandora-y-pedestal-hero.webp" alt="Colección de los 12 templos del Zodiaco con Cajas de Pandora" width="1200" height="900" fetchpriority="high" decoding="async">
+            <img class="hero-reel-photo" src="assets/hero/santuario.webp" alt="Colección de los 12 templos del Zodiaco con Cajas de Pandora" width="1000" height="641" fetchpriority="high" decoding="async">
             <span class="hero-reel-caption"><small>Colección destacada</small><strong>El Santuario completo</strong></span>
           </a>
           <a class="hero-reel-slide" href="producto/templo-aries/" aria-hidden="true" tabindex="-1">
-            <img class="hero-reel-backdrop" src="assets/products/templo-aries-hero.webp" alt="" aria-hidden="true" width="1086" height="1448" decoding="async" loading="lazy">
-            <img class="hero-reel-photo" src="assets/products/templo-aries-hero.webp" alt="Templo de Aries de Saint Seiya con su Pandora Box y pedestal" width="1086" height="1448" loading="lazy" decoding="async">
+            <img class="hero-reel-photo" src="assets/hero/templo-aries.webp" alt="Templo de Aries de Saint Seiya con su Pandora Box y pedestal" width="1000" height="628" loading="lazy" decoding="async">
             <span class="hero-reel-caption"><small>Saint Seiya</small><strong>Templo de Aries</strong></span>
           </a>
           <a class="hero-reel-slide" href="producto/casco-de-pegaso-saint-seiya/" aria-hidden="true" tabindex="-1">
-            <img class="hero-reel-backdrop" data-src="assets/products/casco-de-pegaso-saint-seiya-hero.webp" alt="" aria-hidden="true" width="994" height="1200" decoding="async">
-            <img class="hero-reel-photo" data-src="assets/products/casco-de-pegaso-saint-seiya-hero.webp" alt="Casco de Pegaso de Saint Seiya impreso en 3D" width="994" height="1200" decoding="async">
+            <img class="hero-reel-photo" data-src="assets/hero/casco-de-pegaso.webp" alt="Casco de Pegaso de Saint Seiya impreso en 3D" width="917" height="653" decoding="async">
             <span class="hero-reel-caption"><small>Escala real</small><strong>Casco de Pegaso</strong></span>
           </a>
           <a class="hero-reel-slide" href="producto/castillo-de-hogwarts/" aria-hidden="true" tabindex="-1">
-            <img class="hero-reel-backdrop" data-src="assets/products/castillo-de-hogwarts.webp" alt="" aria-hidden="true" width="1200" height="1600" decoding="async">
-            <img class="hero-reel-photo" data-src="assets/products/castillo-de-hogwarts.webp" alt="Castillo de Hogwarts de Harry Potter fabricado por BoomArt" width="1200" height="1600" decoding="async">
+            <img class="hero-reel-photo" data-src="assets/hero/castillo-de-hogwarts.webp" alt="Castillo de Hogwarts de Harry Potter fabricado por BoomArt" width="706" height="1000" decoding="async">
             <span class="hero-reel-caption"><small>Harry Potter</small><strong>Castillo de Hogwarts</strong></span>
           </a>
           <a class="hero-reel-slide" href="producto/fawkes-fenix-de-dumbledore/" aria-hidden="true" tabindex="-1">
-            <img class="hero-reel-backdrop" data-src="assets/products/fawkes-fenix-de-dumbledore-1.webp" alt="" aria-hidden="true" width="1254" height="1254" decoding="async">
-            <img class="hero-reel-photo" data-src="assets/products/fawkes-fenix-de-dumbledore-1.webp" alt="Fawkes, el fénix de Dumbledore, fabricado por BoomArt" width="1254" height="1254" decoding="async">
+            <img class="hero-reel-photo" data-src="assets/hero/fawkes.webp" alt="Fawkes, el fénix de Dumbledore, fabricado por BoomArt" width="418" height="1000" decoding="async">
             <span class="hero-reel-caption"><small>Pieza de colección</small><strong>Fawkes · Harry Potter</strong></span>
           </a>
           <a class="hero-reel-slide" href="producto/mascara-hellboy-articulada/" aria-hidden="true" tabindex="-1">
-            <img class="hero-reel-backdrop" data-src="assets/products/mascara-hellboy-articulada-1.webp" alt="" aria-hidden="true" width="1122" height="1402" decoding="async">
-            <img class="hero-reel-photo" data-src="assets/products/mascara-hellboy-articulada-1.webp" alt="Máscara Hellboy articulada fabricada por BoomArt" width="1122" height="1402" decoding="async">
+            <img class="hero-reel-photo" data-src="assets/hero/mascara-hellboy.webp" alt="Máscara Hellboy articulada fabricada por BoomArt" width="860" height="1000" decoding="async">
             <span class="hero-reel-caption"><small>Acabado artesanal</small><strong>Máscara Hellboy articulada</strong></span>
           </a>
           <a class="hero-reel-slide" href="producto/mascara-krampus/" aria-hidden="true" tabindex="-1">
-            <img class="hero-reel-backdrop" data-src="assets/products/mascara-krampus-1.webp" alt="" aria-hidden="true" width="1099" height="1374" decoding="async">
-            <img class="hero-reel-photo" data-src="assets/products/mascara-krampus-1.webp" alt="Máscara Krampus de Halloween fabricada por BoomArt" width="1099" height="1374" decoding="async">
+            <img class="hero-reel-photo" data-src="assets/hero/mascara-krampus.webp" alt="Máscara Krampus de Halloween fabricada por BoomArt" width="894" height="1000" decoding="async">
             <span class="hero-reel-caption"><small>Halloween</small><strong>Máscara Krampus</strong></span>
           </a>
           <a class="hero-reel-slide" href="producto/diorama-de-pegaso/" aria-hidden="true" tabindex="-1">
-            <img class="hero-reel-backdrop" data-src="assets/products/diorama-de-pegaso-hero.webp" alt="" aria-hidden="true" width="960" height="1200" decoding="async">
-            <img class="hero-reel-photo" data-src="assets/products/diorama-de-pegaso-hero.webp" alt="Altar de Pegaso de Saint Seiya fabricado por BoomArt" width="960" height="1200" decoding="async">
+            <img class="hero-reel-photo" data-src="assets/hero/altar-de-pegaso.webp" alt="Altar de Pegaso de Saint Seiya fabricado por BoomArt" width="861" height="817" decoding="async">
             <span class="hero-reel-caption"><small>Saint Seiya</small><strong>Altar de Pegaso</strong></span>
           </a>
           <div class="hero-reel-controls" role="group" aria-label="Elegir fotografía">
