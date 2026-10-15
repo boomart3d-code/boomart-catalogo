@@ -1089,8 +1089,9 @@
     "regularPrice": 110,
     "featured": true,
     "offer": true,
-    "image": "assets/products/mascara-de-batwoman.jpg",
+    "image": "assets/products/mascara-de-batwoman-hero-v2.png",
     "gallery": [
+      "assets/products/mascara-de-batwoman-hero-v2.png",
       "assets/products/mascara-de-batwoman.jpg"
     ],
     "description": "Máscara decorativa de Batwoman para exhibición: orejas afiladas y contorno marcado, impresa en 3D y detallada a mano.",
