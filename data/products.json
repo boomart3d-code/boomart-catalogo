@@ -1006,8 +1006,9 @@
     "regularPrice": 286,
     "featured": true,
     "offer": true,
-    "image": "assets/products/ajedrez-de-hogwarts-4-casas.jpg",
+    "image": "assets/products/ajedrez-de-hogwarts-4-casas-hero.jpg",
     "gallery": [
+      "assets/products/ajedrez-de-hogwarts-4-casas-hero.jpg",
       "assets/products/ajedrez-de-hogwarts-4-casas.jpg"
     ],
     "description": "Ajedrez de colección Hogwarts · 4 Casas. Un homenaje integral al colegio de magia.",
