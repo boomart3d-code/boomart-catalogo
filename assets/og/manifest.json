@@ -1,0 +1,513 @@
+{
+  "templo-aries": {
+    "source": "assets/products/templo-aries-hero-v2.png",
+    "hash": "9a24539ccd7cf163",
+    "width": 900,
+    "height": 1200,
+    "bytes": 185056
+  },
+  "templo-tauro": {
+    "source": "assets/products/templo-tauro-hero.jpg",
+    "hash": "0b6b5873d53a7d02",
+    "width": 1200,
+    "height": 1097,
+    "bytes": 223242
+  },
+  "templo-geminis": {
+    "source": "assets/products/templo-geminis-hero.jpg",
+    "hash": "722bbb6046ed6c9f",
+    "width": 1200,
+    "height": 1097,
+    "bytes": 216440
+  },
+  "templo-cancer": {
+    "source": "assets/products/templo-cancer-hero.jpg",
+    "hash": "2f84b3bcbb0a941c",
+    "width": 1200,
+    "height": 1097,
+    "bytes": 242211
+  },
+  "templo-leo": {
+    "source": "assets/products/templo-leo-hero.jpg",
+    "hash": "bf071790f80057de",
+    "width": 1200,
+    "height": 1097,
+    "bytes": 244861
+  },
+  "templo-virgo": {
+    "source": "assets/products/templo-virgo-hero.jpg",
+    "hash": "63d5bfc643bef77f",
+    "width": 1200,
+    "height": 1097,
+    "bytes": 237444
+  },
+  "templo-libra": {
+    "source": "assets/products/templo-libra-hero.jpg",
+    "hash": "9861e6f78bed50bb",
+    "width": 1200,
+    "height": 1097,
+    "bytes": 238393
+  },
+  "templo-escorpio": {
+    "source": "assets/products/templo-escorpio-hero.jpg",
+    "hash": "b040bdb8597ceb0c",
+    "width": 1200,
+    "height": 1097,
+    "bytes": 235403
+  },
+  "templo-sagitario": {
+    "source": "assets/products/templo-sagitario-hero.jpg",
+    "hash": "8511ba9888afdd80",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 242714
+  },
+  "templo-capricornio": {
+    "source": "assets/products/templo-capricornio-hero.jpg",
+    "hash": "0cfafd4f922580dd",
+    "width": 960,
+    "height": 1200,
+    "bytes": 198812
+  },
+  "templo-acuario": {
+    "source": "assets/products/templo-acuario-hero.jpg",
+    "hash": "db10528b895657c0",
+    "width": 960,
+    "height": 1200,
+    "bytes": 198720
+  },
+  "templo-piscis": {
+    "source": "assets/products/templo-piscis-hero.jpg",
+    "hash": "92a61253fdcd3f2f",
+    "width": 960,
+    "height": 1200,
+    "bytes": 217427
+  },
+  "templo-del-patriarca": {
+    "source": "assets/products/templo-del-patriarca-hero.png",
+    "hash": "0895276917b6640e",
+    "width": 900,
+    "height": 1200,
+    "bytes": 216473
+  },
+  "templo-con-caja-de-pandora-y-pedestal": {
+    "source": "assets/products/templo-con-caja-de-pandora-y-pedestal-hero.jpg",
+    "hash": "8b2e6af9ef12b528",
+    "width": 1200,
+    "height": 900,
+    "bytes": 208528
+  },
+  "busto-de-atena-saint-seiya": {
+    "source": "assets/products/busto-de-atena-saint-seiya-hero.jpg",
+    "hash": "49022fecdfa158b2",
+    "width": 900,
+    "height": 1200,
+    "bytes": 176786
+  },
+  "escultura-de-atena-saint-seiya": {
+    "source": "assets/products/escultura-de-atena-saint-seiya-hero2.jpg",
+    "hash": "ed266331f7707955",
+    "width": 900,
+    "height": 1200,
+    "bytes": 147760
+  },
+  "torre-del-reloj-saint-seiya": {
+    "source": "assets/products/torre-del-reloj-saint-seiya-hero.jpg",
+    "hash": "96debcb6e6ccda91",
+    "width": 900,
+    "height": 1200,
+    "bytes": 188228
+  },
+  "set-de-12-templos-mini": {
+    "source": "assets/products/set-de-12-templos-mini-hero.jpg",
+    "hash": "dc314dd722689d8c",
+    "width": 900,
+    "height": 1200,
+    "bytes": 202535
+  },
+  "set-santuario-15-piezas": {
+    "source": "assets/products/set-santuario-15-piezas-hero2.jpg",
+    "hash": "af824dc0fbebc20c",
+    "width": 900,
+    "height": 1200,
+    "bytes": 220921
+  },
+  "set-12-cajas-de-pandora-con-pedestales": {
+    "source": "assets/products/set-12-cajas-de-pandora-con-pedestales-hero.jpg",
+    "hash": "f45d6b331dda8442",
+    "width": 1200,
+    "height": 900,
+    "bytes": 190086
+  },
+  "casco-de-pegaso-saint-seiya": {
+    "source": "assets/products/casco-de-pegaso-saint-seiya-hero.jpg",
+    "hash": "c85197424f76a1c0",
+    "width": 994,
+    "height": 1200,
+    "bytes": 155424
+  },
+  "tiara-de-pegaso-saint-seiya": {
+    "source": "assets/products/tiara-de-pegaso-saint-seiya-hero.jpg",
+    "hash": "b1f40bfef29a12c8",
+    "width": 900,
+    "height": 1200,
+    "bytes": 162546
+  },
+  "set-12-altares-exhibidor": {
+    "source": "assets/products/set-12-altares-exhibidor-1.jpg",
+    "hash": "bd7f53d2cc04039d",
+    "width": 1200,
+    "height": 900,
+    "bytes": 238020
+  },
+  "altar-exhibidor-aries": {
+    "source": "assets/products/altar-exhibidor-aries-1.jpg",
+    "hash": "a3c973476b7bdc54",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 198652
+  },
+  "altar-exhibidor-tauro": {
+    "source": "assets/products/altar-exhibidor-tauro-1.jpg",
+    "hash": "2d8412d8acc70104",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 203097
+  },
+  "altar-exhibidor-geminis": {
+    "source": "assets/products/altar-exhibidor-geminis-1.jpg",
+    "hash": "5a729723318f8776",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 232014
+  },
+  "altar-exhibidor-cancer": {
+    "source": "assets/products/altar-exhibidor-cancer-1.jpg",
+    "hash": "d5f7e46613e519e5",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 219322
+  },
+  "altar-exhibidor-leo": {
+    "source": "assets/products/altar-exhibidor-leo-1.jpg",
+    "hash": "5233e4ef30b7d6e7",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 200525
+  },
+  "altar-exhibidor-virgo": {
+    "source": "assets/products/altar-exhibidor-virgo-1.jpg",
+    "hash": "9ac8f64ff479056d",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 184818
+  },
+  "altar-exhibidor-libra": {
+    "source": "assets/products/altar-exhibidor-libra-1.jpg",
+    "hash": "9713b460bbc3b90d",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 203425
+  },
+  "altar-exhibidor-escorpio": {
+    "source": "assets/products/altar-exhibidor-escorpio-1.jpg",
+    "hash": "8adaa079f960295d",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 211331
+  },
+  "altar-exhibidor-sagitario": {
+    "source": "assets/products/altar-exhibidor-sagitario-1.jpg",
+    "hash": "97ad81eda9ba93f2",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 222378
+  },
+  "altar-exhibidor-capricornio": {
+    "source": "assets/products/altar-exhibidor-capricornio-1.jpg",
+    "hash": "5fc6c56c8b2f1635",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 202007
+  },
+  "altar-exhibidor-acuario": {
+    "source": "assets/products/altar-exhibidor-acuario-1.jpg",
+    "hash": "5e12f39baa6e1f0c",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 211596
+  },
+  "altar-exhibidor-piscis": {
+    "source": "assets/products/altar-exhibidor-piscis-1.jpg",
+    "hash": "d688fa8a11bc61df",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 215832
+  },
+  "diorama-caballeros-de-bronce": {
+    "source": "assets/products/diorama-caballeros-de-bronce-hero.jpg",
+    "hash": "74c767347ab011cd",
+    "width": 994,
+    "height": 1200,
+    "bytes": 225439
+  },
+  "diorama-de-pegaso": {
+    "source": "assets/products/diorama-de-pegaso-hero.jpg",
+    "hash": "76e4f22940704293",
+    "width": 960,
+    "height": 1200,
+    "bytes": 216493
+  },
+  "fawkes-fenix-de-dumbledore": {
+    "source": "assets/products/fawkes-fenix-de-dumbledore-hero-v2.png",
+    "hash": "00558c5678f43da5",
+    "width": 960,
+    "height": 1200,
+    "bytes": 125628
+  },
+  "castillo-de-hogwarts": {
+    "source": "assets/products/castillo-de-hogwarts-hero-v2.png",
+    "hash": "c3c8ae8a9412c0a2",
+    "width": 900,
+    "height": 1200,
+    "bytes": 118447
+  },
+  "ajedrez-de-hogwarts-4-casas": {
+    "source": "assets/products/ajedrez-de-hogwarts-4-casas-hero.jpg",
+    "hash": "38b656d6516f4081",
+    "width": 960,
+    "height": 1200,
+    "bytes": 192192
+  },
+  "lampara-sombrero-seleccionador": {
+    "source": "assets/products/lampara-sombrero-seleccionador-hero-v2.png",
+    "hash": "b658765e2a3c581b",
+    "width": 900,
+    "height": 1200,
+    "bytes": 93697
+  },
+  "lampara-lunar-hogwarts": {
+    "source": "assets/products/lampara-lunar-hogwarts-hero-v2.png",
+    "hash": "b4c846e524951691",
+    "width": 960,
+    "height": 1200,
+    "bytes": 130813
+  },
+  "casco-de-wolverine-con-garras": {
+    "source": "assets/products/casco-de-wolverine-con-garras.jpg",
+    "hash": "f6228ffc977882bd",
+    "width": 1080,
+    "height": 1080,
+    "bytes": 112357
+  },
+  "mascara-de-batwoman": {
+    "source": "assets/products/mascara-de-batwoman-hero-v2.png",
+    "hash": "a3b01595cfc041f9",
+    "width": 960,
+    "height": 1200,
+    "bytes": 93555
+  },
+  "palomera-cara-de-spiderman": {
+    "source": "assets/products/palomera-cara-de-spiderman.jpg",
+    "hash": "e242a89bd491d55d",
+    "width": 1000,
+    "height": 1000,
+    "bytes": 91547
+  },
+  "palomera-spiderman": {
+    "source": "assets/products/palomera-spiderman.jpg",
+    "hash": "b6f0b7d68ed93cc4",
+    "width": 808,
+    "height": 606,
+    "bytes": 71354
+  },
+  "mario-billy-saw": {
+    "source": "assets/products/mario-billy-saw-1.jpg",
+    "hash": "59d68934b58d7269",
+    "width": 914,
+    "height": 1200,
+    "bytes": 61071
+  },
+  "mascara-calabaza-calavera": {
+    "source": "assets/products/mascara-calabaza-calavera-hero-v2.png",
+    "hash": "8d944e95c8a32642",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 142981
+  },
+  "candelabro-calavera": {
+    "source": "assets/products/candelabro-calavera-hero-v2.png",
+    "hash": "f6628d725e2c2365",
+    "width": 960,
+    "height": 1200,
+    "bytes": 108135
+  },
+  "evil-mask": {
+    "source": "assets/products/evil-mask-hero-v2.png",
+    "hash": "ea5702ab13709ebd",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 170743
+  },
+  "zkull-urban": {
+    "source": "assets/products/zkull-urban-hero-v2.png",
+    "hash": "2575438816458531",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 127931
+  },
+  "mascara-krampus": {
+    "source": "assets/products/mascara-krampus-hero-v2.png",
+    "hash": "232da1ca42d82798",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 166838
+  },
+  "mascara-baphomet": {
+    "source": "assets/products/mascara-baphomet-hero-v2.png",
+    "hash": "d473aa75d9df7394",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 176428
+  },
+  "mascara-hellboy-articulada": {
+    "source": "assets/products/mascara-hellboy-articulada-1.jpg",
+    "hash": "aeeb7c0fbe87ae73",
+    "width": 960,
+    "height": 1200,
+    "bytes": 134312
+  },
+  "casco-gladiador-maximo": {
+    "source": "assets/products/casco-gladiador-maximo-hero-v2.png",
+    "hash": "408951871f2c7a54",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 182353
+  },
+  "corona-de-elfo": {
+    "source": "assets/products/corona-de-elfo-hero-v2.png",
+    "hash": "0e8b850e3d6ddbbd",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 116797
+  },
+  "cuernos-de-fauno": {
+    "source": "assets/products/cuernos-de-fauno-hero-v2.png",
+    "hash": "73bfa9e72af74b49",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 246924
+  },
+  "mascarada-del-diablo": {
+    "source": "assets/products/mascarada-del-diablo-hero-v2.png",
+    "hash": "75b566ebe70a0398",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 137360
+  },
+  "mascara-el-juego-del-calamar": {
+    "source": "assets/products/mascara-el-juego-del-calamar-hero-v2.png",
+    "hash": "e29cf98d373f70ec",
+    "width": 960,
+    "height": 1200,
+    "bytes": 108418
+  },
+  "casco-de-agamenon-la-odisea": {
+    "source": "assets/products/casco-de-agamenon-la-odisea-hero-v2.png",
+    "hash": "bc7d5e9ac7652eb4",
+    "width": 900,
+    "height": 1200,
+    "bytes": 130834
+  },
+  "pato-lucas-kratos-god-of-war": {
+    "source": "assets/products/pato-lucas-kratos-god-of-war-hero-v2.png",
+    "hash": "0da52e9a60def4fa",
+    "width": 960,
+    "height": 1200,
+    "bytes": 141442
+  },
+  "maceta-pikachu": {
+    "source": "assets/products/maceta-pikachu.jpg",
+    "hash": "93037ca7e71b1e54",
+    "width": 1080,
+    "height": 1080,
+    "bytes": 92727
+  },
+  "replica-copa-del-mundo-tamano-real": {
+    "source": "assets/products/replica-copa-del-mundo-tamano-real-hero-v2.png",
+    "hash": "ddb1ed4686d2d0a8",
+    "width": 900,
+    "height": 1200,
+    "bytes": 119417
+  },
+  "botin-de-oro-del-mundial": {
+    "source": "assets/products/botin-de-oro-del-mundial-hero-v2.png",
+    "hash": "350089f308f578b5",
+    "width": 900,
+    "height": 1200,
+    "bytes": 149274
+  },
+  "balon-de-oro-del-mundial": {
+    "source": "assets/products/balon-de-oro-del-mundial-hero-v2.png",
+    "hash": "afed29b449956f74",
+    "width": 900,
+    "height": 1200,
+    "bytes": 145410
+  },
+  "caja-organizadora-figuritas-panini-2026": {
+    "source": "assets/products/caja-organizadora-figuritas-panini-2026.jpg",
+    "hash": "79e6f1f24bcbf149",
+    "width": 900,
+    "height": 1200,
+    "bytes": 153600
+  },
+  "maceta-groot": {
+    "source": "assets/products/maceta-groot.jpg",
+    "hash": "504320b45ad2863c",
+    "width": 900,
+    "height": 1200,
+    "bytes": 127742
+  },
+  "maceta-baby-groot": {
+    "source": "assets/products/maceta-baby-groot.jpg",
+    "hash": "a52cc5eefa6436a0",
+    "width": 900,
+    "height": 1200,
+    "bytes": 88719
+  },
+  "maceta-dedo-medio": {
+    "source": "assets/products/maceta-dedo-medio-hero-v2.png",
+    "hash": "68d1ee95130a5ee2",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 146508
+  },
+  "maceta-darth-vader": {
+    "source": "assets/products/maceta-darth-vader.jpg",
+    "hash": "b1f682a7144f9207",
+    "width": 900,
+    "height": 1200,
+    "bytes": 106523
+  },
+  "maceta-david": {
+    "source": "assets/products/maceta-david-hero-v2.png",
+    "hash": "e15c441486e71a80",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 121241
+  },
+  "maceta-minimalista": {
+    "source": "assets/products/maceta-minimalista-hero-v2.png",
+    "hash": "7c107c902f81dd6a",
+    "width": 900,
+    "height": 1200,
+    "bytes": 99991
+  },
+  "maceta-palmera": {
+    "source": "assets/products/maceta-palmera-hero-v2.png",
+    "hash": "4c0c180bf7cdf4fc",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 140547
+  }
+}

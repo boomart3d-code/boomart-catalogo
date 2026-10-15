@@ -23,6 +23,16 @@ import { SOCIAL_URLS, socialBandHtml, socialFooterHtml } from "./social-links.mj
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://boomart.pe";
+
+// Miniaturas livianas para compartir (WhatsApp no muestra og:image pesadas).
+// Las genera .github/scripts/build-og-images.mjs en assets/og/ antes de este
+// script; si falta la de un producto, se usa su primera foto como antes.
+let OG_MANIFEST = {};
+try {
+  OG_MANIFEST = JSON.parse(await readFile(path.join(ROOT, "assets", "og", "manifest.json"), "utf8"));
+} catch {
+  OG_MANIFEST = {};
+}
 const WHATSAPP = "https://wa.me/51925666542";
 const NOW = new Date().toISOString().slice(0, 10);
 // Vigencia de precios para el structured data (rueda ~120 dias hacia adelante).
@@ -966,6 +976,16 @@ function priceBlockHtml(p) {
 
 function buildProductPage(p, all, ratingLd) {
   const imgs = (p.gallery && p.gallery.length ? p.gallery : [p.image]).filter(Boolean);
+  const og = OG_MANIFEST[p.id] && OG_MANIFEST[p.id].source === imgs[0] ? OG_MANIFEST[p.id] : null;
+  const ogImg = og ? `${SITE}/assets/og/${p.id}.jpg?v=${og.hash.slice(0, 8)}` : abs(imgs[0]);
+  const ogMeta = og
+    ? `
+    <meta property="og:image:secure_url" content="${esc(ogImg)}">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="${og.width}">
+    <meta property="og:image:height" content="${og.height}">
+    <meta property="og:image:alt" content="${esc(p.name)}">`
+    : "";
   const rel = "../../";
   const url = `${SITE}/producto/${p.id}/`;
   const title = pageTitle(p);
@@ -1032,12 +1052,12 @@ function buildProductPage(p, all, ratingLd) {
     <meta property="og:title" content="${esc(p.name)} | BoomArt">
     <meta property="og:description" content="${esc(desc)}">
     <meta property="og:url" content="${url}">
-    <meta property="og:image" content="${esc(abs(imgs[0]))}">
+    <meta property="og:image" content="${esc(ogImg)}">${ogMeta}
     <meta property="og:locale" content="es_PE">${priceMeta}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${esc(p.name)} | BoomArt">
     <meta name="twitter:description" content="${esc(desc)}">
-    <meta name="twitter:image" content="${esc(abs(imgs[0]))}">
+    <meta name="twitter:image" content="${esc(ogImg)}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">

@@ -37,7 +37,9 @@ jobs:
             git config user.email "boomart.3d@gmail.com"
             git add assets/products
             git commit -m "Optimiza automaticamente fotos de productos [skip ci]"
-            git push
+            # Otro robot (catalogo) puede haber guardado justo antes:
+            # ponerse al dia y reintentar en vez de fallar.
+            for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
           else
             echo "Ninguna foto necesitaba optimizarse."
           fi
