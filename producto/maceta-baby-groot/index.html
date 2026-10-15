@@ -34,18 +34,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../src/styles.css?v=42">
+    <link rel="stylesheet" href="../../src/styles.css?v=44">
     <style>
     .pp{max-width:1080px;margin:0 auto;padding:clamp(18px,4vw,36px) clamp(16px,4vw,40px) clamp(56px,8vw,88px)}
     .pp-crumbs{font-size:.82rem;color:var(--muted);margin:0 0 18px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
     .pp-crumbs a{text-decoration:none;color:inherit}
     .pp-crumbs a:hover{text-decoration:underline}
     .pp-top{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:start}
-    .pp-main-img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:#fff;display:block}
+    .pp-main-img{width:100%;height:auto;aspect-ratio:4/5;max-height:80vh;object-fit:contain;border-radius:14px;border:1px solid var(--line);background:#101010;display:block}
     .pp-thumbs{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .pp-thumbs button{padding:0;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;width:62px;height:62px;overflow:hidden}
+    .pp-thumbs button{padding:0;border:1px solid var(--line);border-radius:8px;background:#101010;cursor:pointer;width:62px;height:62px;overflow:hidden}
     .pp-thumbs button[aria-current="true"]{border-color:var(--red);border-width:2px}
-    .pp-thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+    .pp-thumbs img{width:100%;height:100%;object-fit:contain;display:block}
     .pp-info h1{margin:2px 0 4px;font-size:clamp(1.55rem,4vw,2.35rem);line-height:1.1}
     .pp-sub{color:var(--muted);margin:0 0 16px}
     .pp-rating{font-size:.9rem;margin:0 0 16px}
@@ -64,7 +64,7 @@
     .pp-related h2{font-size:1.15rem;margin:0 0 14px}
     .pp-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
     .pp-rel-grid a{text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:block}
-    .pp-rel-grid img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;display:block}
+    .pp-rel-grid img{width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;background:#101010;display:block}
     .pp-rel-grid span{display:block;padding:8px 10px;font-size:.85rem;font-weight:600}
     @media(max-width:760px){
       .pp{padding:12px 14px 44px}

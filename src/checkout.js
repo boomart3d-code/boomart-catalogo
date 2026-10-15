@@ -287,7 +287,13 @@
         btn.setAttribute("aria-pressed", String(selected));
       });
       const addBtn = container.querySelector("[data-add-to-cart]");
-      if (addBtn) addBtn.disabled = false;
+      if (addBtn) {
+        addBtn.disabled = false;
+        // Mantiene al dia el resumen "Opcion · precio" del boton (ver app.js).
+        const optionName = variantOption.querySelector("span")?.textContent.trim();
+        const optionPrice = variantOption.querySelector("strong")?.textContent.trim();
+        if (optionName && optionPrice) addBtn.dataset.priceLabel = `${optionName} · ${optionPrice}`;
+      }
       return;
     }
 

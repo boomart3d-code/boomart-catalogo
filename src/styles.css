@@ -139,7 +139,7 @@ input {
 }
 
 .coupon-ticket-label {
-  font-size: 0.66rem;
+  font-size: 0.75rem;
   font-weight: 900;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -326,7 +326,7 @@ input {
 .quick-nav-panel-title {
   margin: 4px 12px 3px;
   color: var(--muted);
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 900;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -406,7 +406,7 @@ input {
 .quick-nav-service small {
   margin-top: 3px;
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   line-height: 1.35;
 }
 
@@ -709,7 +709,7 @@ h2 {
   border-radius: 4px;
   background: var(--red);
   color: white;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -1104,7 +1104,8 @@ h2 {
 .thumb-row img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  background: #050505;
+  object-fit: contain;
 }
 
 .modal-info {
@@ -1209,7 +1210,7 @@ h2 {
   border-radius: 999px;
   background: var(--red);
   color: white;
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 900;
   place-items: center;
   line-height: 1;
@@ -1342,7 +1343,7 @@ h2 {
 .checkout-brand span {
   display: block;
   color: var(--red);
-  font-size: 0.66rem;
+  font-size: 0.75rem;
   font-weight: 900;
   letter-spacing: 0.13em;
 }
@@ -2120,12 +2121,12 @@ h2 {
   }
 
   .payment-qr-hint {
-    font-size: 0.74rem;
+    font-size: 0.75rem;
   }
 
   .payment-disclaimer {
     margin-top: 8px;
-    font-size: 0.74rem;
+    font-size: 0.75rem;
   }
 
   .field-hint {
@@ -2356,7 +2357,7 @@ h2 {
 
 .shopping-assistant-option small {
   color: #aaa29a;
-  font-size: 0.74rem;
+  font-size: 0.75rem;
   font-weight: 600;
   line-height: 1.35;
 }
@@ -2413,7 +2414,7 @@ h2 {
   width: 64px;
   height: 64px;
   border-radius: 8px;
-  object-fit: cover;
+  object-fit: contain;
   background: #252525;
 }
 
@@ -2496,7 +2497,7 @@ h2 {
   display: block;
   margin-bottom: 5px;
   color: var(--gold);
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 900;
   letter-spacing: 0.08em;
 }
@@ -2576,7 +2577,7 @@ h2 {
 
   .shopping-assistant-kicker {
     margin-bottom: 3px;
-    font-size: 0.61rem;
+    font-size: 0.75rem;
     letter-spacing: 0.1em;
   }
 
@@ -2624,13 +2625,13 @@ h2 {
   }
 
   .shopping-assistant-option small {
-    font-size: 0.68rem;
+    font-size: 0.75rem;
   }
 
   .shopping-assistant-back,
   .shopping-assistant-link,
   .shopping-assistant-selection {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
   }
 
   .shopping-assistant-results {
@@ -2664,7 +2665,7 @@ h2 {
   .shopping-assistant-add > button {
     min-height: 30px;
     padding: 5px 7px;
-    font-size: 0.64rem;
+    font-size: 0.75rem;
   }
 
   .shopping-assistant-option,
@@ -2826,7 +2827,7 @@ h2 {
   border-radius: 999px;
   background: var(--gold);
   color: var(--black);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 900;
   place-items: center;
   line-height: 1;
@@ -3540,4 +3541,687 @@ h2 {
   min-height: 46px;
   padding: 0 20px 0 16px;
   font-size: 0.98rem;
+}
+
+/* ==========================================================================
+   Tanda 1 de mejoras de diseño (2026-10-14, aprobada por Adrián)
+   Análisis y propuestas: lienzo "Mejoras de diseño boomart.pe".
+   Solo celular (hasta 720 px). Para revertir: borrar este bloque (los tamaños
+   mínimos de letra de 12 px están cambiados en su lugar original) y volver a
+   subir la versión de styles.css.
+   ========================================================================== */
+@media (max-width: 720px) {
+  /* 02 · Cabecera más corta: el nombre BOOM ART ya está en el logo. */
+  .site-header {
+    gap: 8px;
+    padding: 10px 18px;
+  }
+
+  .site-header .brand strong {
+    display: none;
+  }
+
+  .site-header .brand small {
+    margin-top: 0;
+    font-size: 0.78rem;
+  }
+
+  /* 02 · Cupón en una sola franja (antes ocupaba unos 110 px). */
+  .coupon-banner {
+    min-height: 44px;
+    padding: 6px 12px;
+    gap: 4px 10px;
+  }
+
+  .coupon-banner-star,
+  .coupon-ticket-label {
+    display: none;
+  }
+
+  .coupon-banner-kicker {
+    font-size: 0.8rem;
+  }
+
+  .coupon-ticket {
+    padding: 3px 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .coupon-ticket-title {
+    font-size: 0.78rem;
+  }
+
+  /* 02 · Título y buscador sin rótulos que repiten lo obvio (el rótulo
+     «Buscar» sigue disponible para lectores de pantalla). */
+  .catalog-head .eyebrow {
+    display: none;
+  }
+
+  .search-box {
+    position: relative;
+    gap: 0;
+  }
+
+  .search-box > span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  /* 03 · El carrito sube a la barra de arriba (ya no flota abajo y no se
+     monta con el botón del asistente ni tapa las fotos). */
+  .quick-nav-actions .cart-float {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    z-index: auto;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 999px;
+    background: transparent;
+    box-shadow: none;
+    color: #dfdad3;
+  }
+
+  .quick-nav-actions .cart-float:hover,
+  .quick-nav-actions .cart-float:focus-visible {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+  }
+
+  .quick-nav-actions .cart-float-count {
+    top: 4px;
+    right: 2px;
+  }
+
+  /* 03 · Sin el carrito flotando, el asistente baja a la esquina y queda a la
+     altura del botón de WhatsApp (antes subía para no taparse con el carrito). */
+  .shopping-assistant-toggle {
+    bottom: 14px;
+  }
+
+  /* 08 · Zonas táctiles más cómodas (44 px donde caben). */
+  .quick-nav-btn {
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .quick-nav-logo {
+    min-width: 44px;
+    min-height: 44px;
+    margin-left: -9px;
+    justify-content: center;
+  }
+
+  .filter-row button {
+    min-height: 40px;
+  }
+
+  .result-meta .link-button {
+    min-height: 44px;
+    padding: 0 4px;
+  }
+
+  /* 02 · Menos aire entre filtros y primera fila de productos. */
+  .result-meta {
+    margin-top: 2px;
+  }
+
+  .product-grid {
+    margin-top: 8px;
+  }
+
+  .star-input button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .review-google a,
+  .footer p a,
+  .footer-links a {
+    display: inline-block;
+    padding: 12px 0;
+  }
+
+  /* 07 · Ficha del producto: la barra de compra (cantidad + «Agregar al
+     carrito») queda siempre a la vista abajo, sin tener que bajar la ficha. */
+  .product-modal .add-to-cart-row {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 8;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--line);
+    background: #151515;
+    box-shadow: 0 -10px 24px rgba(0, 0, 0, 0.45);
+  }
+
+  .product-modal .modal-info {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom));
+  }
+
+  .product-modal .qty-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.15rem;
+  }
+
+  /* El botón repite qué se agrega (opción · precio), porque la barra fija
+     tapa las opciones de más arriba. */
+  .product-modal .add-to-cart-btn[data-price-label] {
+    flex-direction: column;
+    gap: 1px;
+    text-align: center;
+  }
+
+  .product-modal .add-to-cart-btn:not(.is-added)[data-price-label]::after {
+    content: attr(data-price-label);
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.2;
+    opacity: 0.92;
+  }
+}
+
+/* ==========================================================================
+   Tanda 2 de mejoras de diseño (2026-10-14): portada, franja de confianza,
+   colecciones y tarjetas agrupadas de templos y altares.
+   Para revertir: borrar este bloque y volver a subir la versión de styles.css.
+   ========================================================================== */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 48px;
+  align-items: center;
+  min-height: 480px;
+  padding: 48px clamp(18px, 5vw, 72px);
+  overflow: hidden;
+  background: var(--black);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-eyebrow {
+  margin: 0;
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  max-width: 13ch;
+  font-size: clamp(2.5rem, 5.4vw, 4.7rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.hero-lead {
+  max-width: 520px;
+  margin: 0;
+  color: #d3cdc2;
+  font-size: 1.12rem;
+  line-height: 1.55;
+}
+
+.hero-proof {
+  display: none;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.hero-actions .button {
+  min-height: 52px;
+  padding: 0 26px;
+  font-size: 1rem;
+}
+
+.hero-secondary {
+  border-color: rgba(255, 255, 255, 0.85);
+  background: transparent;
+  color: white;
+}
+
+.hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-assistant {
+  min-height: 44px;
+  padding: 0 8px;
+  border: 0;
+  background: transparent;
+  color: var(--gold);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+.hero-media {
+  position: relative;
+  height: 410px;
+}
+
+.hero-photo {
+  position: absolute;
+  width: 48%;
+  max-width: 280px;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #050505;
+  box-shadow: var(--shadow);
+}
+
+.hero-photo-a {
+  top: 0;
+  left: 2%;
+}
+
+.hero-photo-b {
+  top: 30px;
+  left: 52%;
+}
+
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  padding: 18px clamp(18px, 5vw, 72px);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--ink);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: white;
+}
+
+.trust-item svg {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  stroke: var(--gold);
+}
+
+.trust-item strong,
+.trust-item small {
+  display: block;
+}
+
+.trust-item strong {
+  font-size: 0.95rem;
+}
+
+.trust-item small {
+  color: #cfc8bd;
+  font-size: 0.82rem;
+}
+
+a.trust-item:hover strong {
+  text-decoration: underline;
+}
+
+.collections {
+  padding: 52px clamp(18px, 5vw, 72px) 0;
+  background: var(--paper);
+  color: var(--black);
+}
+
+.collections-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.collections h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.05;
+}
+
+.collections-all {
+  color: var(--red-dark);
+  font-weight: 800;
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.collection-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 12px;
+  background: var(--ink);
+  color: white;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.collection-tile[hidden] {
+  display: none;
+}
+
+/* La foto se ve COMPLETA (object-fit: contain), sin recortar el producto. */
+.collection-tile img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  padding: 8px;
+  background: #101010;
+  object-fit: contain;
+  transition: transform 300ms ease;
+}
+
+.collection-tile > span,
+.collection-tile > strong {
+  padding: 12px 14px 14px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.collection-tile:hover img {
+  transform: scale(1.03);
+}
+
+.collection-tile:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.collection-tile-text {
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+  padding: 14px;
+}
+
+.collection-tile-text > strong {
+  padding: 0;
+  font-size: 1.35rem;
+}
+
+.collection-tile-text small {
+  color: #d3cdc2;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+/* Tarjeta de colección (templos / altares del Zodiaco) */
+.collection-count {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  padding: 6px 9px;
+  border-radius: 4px;
+  background: var(--ink);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.collection-card .badge {
+  right: 12px;
+  left: auto;
+}
+
+.collection-kicker {
+  margin: 0;
+  color: #5c564e;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.collection-signs {
+  display: none;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.collection-signs button {
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--black);
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.collection-signs button:hover {
+  border-color: var(--black);
+}
+
+.assistant-chip {
+  display: none;
+}
+
+.result-meta {
+  scroll-margin-top: 160px;
+}
+
+@media (min-width: 721px) {
+  .collection-signs {
+    display: flex;
+  }
+}
+
+@media (max-width: 1100px) {
+  .collections-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) and (min-width: 721px) {
+  .hero {
+    gap: 24px;
+    min-height: 0;
+  }
+
+  .hero-media {
+    height: 330px;
+  }
+
+  .hero-photo {
+    width: 47%;
+  }
+
+  .hero-photo-b {
+    top: 22px;
+  }
+
+  .trust-item small {
+    display: none;
+  }
+}
+
+/* Celular: portada compacta. La foto va en un recuadro al lado del título y se
+   ve COMPLETA (nunca recortada), y se quitan la franja y las colecciones de
+   arriba porque la fila de filtros ya cumple ese papel. */
+@media (max-width: 720px) {
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 88px;
+    gap: 8px 14px;
+    align-items: start;
+    min-height: 0;
+    padding: 18px 18px 20px;
+  }
+
+  /* El texto y los botones pasan a ser celdas de la propia portada. */
+  .hero-copy {
+    display: contents;
+  }
+
+  .hero-media {
+    position: static;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    width: 88px;
+    height: 117px;
+  }
+
+  .hero-photo-a {
+    position: static;
+    width: 88px;
+    max-width: none;
+    height: 117px;
+    aspect-ratio: auto;
+    border-radius: 10px;
+    box-shadow: none;
+    object-fit: contain;
+  }
+
+  .hero-photo-b,
+  .hero-eyebrow,
+  .hero-lead,
+  .hero-assistant {
+    display: none;
+  }
+
+  .hero h1 {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: none;
+    font-size: 1.55rem;
+    line-height: 1.08;
+  }
+
+  .hero-proof {
+    display: block;
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0;
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .hero-proof a {
+    text-decoration: underline;
+  }
+
+  .hero-proof-extra {
+    display: none;
+  }
+
+  .hero-actions {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .hero-actions .button {
+    flex: 1 1 auto;
+    min-height: 46px;
+    padding: 0 14px;
+    font-size: 0.92rem;
+  }
+
+  .trust-strip,
+  .collections {
+    display: none;
+  }
+
+  /* El título de la sección queda para lectores de pantalla: el de la portada
+     ya explica la página y así el catálogo empieza antes. */
+  .catalog-head h2 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .assistant-chip {
+    display: inline-flex;
+    align-items: center;
+    padding-left: 38px;
+    border-color: var(--black);
+    background: #fff url("../assets/boomart-mark.svg?v=7") no-repeat 9px center / 22px 22px;
+  }
+
+  .result-meta {
+    scroll-margin-top: 130px;
+  }
+
+  body.has-hero .shopping-assistant-toggle {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Corrección (2026-10-14, pedido de Adrián): en la ficha del celular la foto se
+   cortaba abajo (el recuadro cuadrado no contenía a las fotos verticales). Ahora
+   el recuadro es 3:4 con una altura máxima y la foto se ve COMPLETA sobre el
+   fondo oscuro de la galería. Para revertir: borrar este bloque.
+   ========================================================================== */
+@media (max-width: 720px) {
+  .product-modal .modal-image-wrap {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    max-height: 68vh;
+    max-height: 68dvh;
+    background: #050505;
+  }
+
+  .product-modal .modal-image-wrap img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
+  }
 }

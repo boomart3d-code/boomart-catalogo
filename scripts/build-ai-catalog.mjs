@@ -470,7 +470,7 @@ ${cards}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="${SITE}/assets/boomart-og.jpg">
     <link rel="alternate" type="application/json" href="${SITE}/catalogo.json" title="Feed JSON del catalogo BoomArt">
-    <link rel="stylesheet" href="src/styles.css?v=42">
+    <link rel="stylesheet" href="src/styles.css?v=44">
     <style>
       .ai-catalog { max-width: 1040px; margin: 0 auto; padding: 32px 20px 80px; }
       .ai-catalog h1 { margin-bottom: 8px; }
@@ -482,7 +482,7 @@ ${cards}
       .ai-product h3 { margin: 0 0 4px; }
       .ai-cat { margin: 0 0 8px; color: #777; font-size: .9rem; }
       .ai-gallery { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; }
-      .ai-gallery img { width: 160px; height: 160px; object-fit: cover; border-radius: 10px; }
+      .ai-gallery img { width: 160px; height: 160px; object-fit: contain; background: #f2f0ec; border-radius: 10px; }
       .ai-meta, .ai-tags { padding-left: 18px; margin: 8px 0; }
       .ai-tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
       .ai-tags li { background: #f1f1f1; border-radius: 999px; padding: 2px 10px; font-size: .82rem; }
@@ -896,11 +896,11 @@ const PRODUCT_PAGE_CSS = `
     .pp-crumbs a{text-decoration:none;color:inherit}
     .pp-crumbs a:hover{text-decoration:underline}
     .pp-top{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:start}
-    .pp-main-img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:#fff;display:block}
+    .pp-main-img{width:100%;height:auto;aspect-ratio:4/5;max-height:80vh;object-fit:contain;border-radius:14px;border:1px solid var(--line);background:#101010;display:block}
     .pp-thumbs{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .pp-thumbs button{padding:0;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;width:62px;height:62px;overflow:hidden}
+    .pp-thumbs button{padding:0;border:1px solid var(--line);border-radius:8px;background:#101010;cursor:pointer;width:62px;height:62px;overflow:hidden}
     .pp-thumbs button[aria-current="true"]{border-color:var(--red);border-width:2px}
-    .pp-thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+    .pp-thumbs img{width:100%;height:100%;object-fit:contain;display:block}
     .pp-info h1{margin:2px 0 4px;font-size:clamp(1.55rem,4vw,2.35rem);line-height:1.1}
     .pp-sub{color:var(--muted);margin:0 0 16px}
     .pp-rating{font-size:.9rem;margin:0 0 16px}
@@ -919,7 +919,7 @@ const PRODUCT_PAGE_CSS = `
     .pp-related h2{font-size:1.15rem;margin:0 0 14px}
     .pp-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
     .pp-rel-grid a{text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:block}
-    .pp-rel-grid img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;display:block}
+    .pp-rel-grid img{width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;background:#101010;display:block}
     .pp-rel-grid span{display:block;padding:8px 10px;font-size:.85rem;font-weight:600}
     @media(max-width:760px){
       .pp{padding:12px 14px 44px}
@@ -1038,7 +1038,7 @@ function buildProductPage(p, all, ratingLd) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=42">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=44">
     <style>${PRODUCT_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(productLd(p))}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbLd(p))}</script>
@@ -1354,7 +1354,7 @@ const CATEGORY_PAGE_CSS = `
     .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
     @media(min-width:560px){.cat-grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}}
     .cat-card{border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:rgba(255,255,255,.02)}
-    .cat-card img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;display:block}
+    .cat-card img{width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;background:#101010;display:block}
     .cat-card .b{padding:10px 12px;display:flex;flex-direction:column;gap:4px}
     .cat-card .n{font-weight:700;font-size:.92rem;line-height:1.25}
     .cat-card .p{font-size:.9rem;color:var(--muted)}
@@ -1467,7 +1467,7 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=42">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=44">
     <style>${CATEGORY_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(itemListLd)}</script>
     <script type="application/ld+json">${JSON.stringify(crumbLd)}</script>

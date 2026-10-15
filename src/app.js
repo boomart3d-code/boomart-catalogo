@@ -226,6 +226,13 @@ const addToCartMarkup = (product) => {
 
   const initialVariant = product.templePricing ? DEFAULT_TEMPLE_VARIANT : "";
 
+  // Resumen de lo que se va a agregar (opcion + precio). En el celular la barra
+  // de compra queda fija abajo y tapa las opciones, asi que el boton lo repite
+  // (se muestra con CSS en la ficha movil y se actualiza al cambiar de opcion).
+  const initialPriceLabel = product.templePricing
+    ? `${TEMPLE_BOX_LABELS[DEFAULT_TEMPLE_VARIANT]} · ${formatPrice(product.templePricing[DEFAULT_TEMPLE_VARIANT])}`
+    : formatPrice(product.offerPrice || product.regularPrice);
+
   return `
     <div class="add-to-cart" data-product="${product.id}" data-variant="${initialVariant}">
       ${variantPicker}
@@ -235,7 +242,7 @@ const addToCartMarkup = (product) => {
           <span class="qty-value" data-qty-value>1</span>
           <button type="button" class="qty-btn" data-qty-increase aria-label="Agregar una unidad">+</button>
         </div>
-        <button type="button" class="button primary add-to-cart-btn" data-add-to-cart>
+        <button type="button" class="button primary add-to-cart-btn" data-add-to-cart data-price-label="${initialPriceLabel}">
           Agregar al carrito
         </button>
       </div>
@@ -276,10 +283,90 @@ const gridPriceMarkup = (product) => {
   return priceMarkup(product);
 };
 
+// Etiqueta de la tarjeta (mejora de diseño 2026-10-14): solo aparece cuando el
+// descuento se ve de verdad (precio anterior mayor que el actual) y muestra el
+// porcentaje en vez de un "Oferta" genérico. Si el producto no tiene precio
+// anterior (por ejemplo los templos, que van por opciones), no lleva etiqueta.
+const discountPercent = (product) => {
+  const regular = Number(product.regularPrice);
+  const offer = Number(product.offerPrice);
+  if (!product.offer || !(regular > 0) || !(offer > 0) || offer >= regular) return 0;
+  return Math.round((1 - offer / regular) * 100);
+};
+
+const cardBadge = (product) => {
+  const percent = discountPercent(product);
+  return percent >= 1
+    ? `<span class="badge" aria-label="Oferta, ${percent}% de descuento">−${percent}%</span>`
+    : "";
+};
+
+// Colecciones (mejora de diseño, Tanda 2, 2026-10-14): en la vista "Todos" sin
+// búsqueda, los 12 templos y los 12 altares del Zodiaco se muestran como UNA
+// tarjeta cada uno (antes eran 24 tarjetas casi iguales). Los productos siguen
+// siendo individuales en products.json, el carrito y las páginas de producto:
+// solo cambia cómo se agrupan en la grilla. Al tocar la tarjeta se ve la colección
+// completa (cada pieza por separado); con búsqueda o categoría activa tampoco se agrupa.
+const ZODIAC_SIGNS = [
+  ["aries", "Aries"], ["tauro", "Tauro"], ["geminis", "Géminis"], ["cancer", "Cáncer"],
+  ["leo", "Leo"], ["virgo", "Virgo"], ["libra", "Libra"], ["escorpio", "Escorpio"],
+  ["sagitario", "Sagitario"], ["capricornio", "Capricornio"], ["acuario", "Acuario"], ["piscis", "Piscis"],
+];
+const COLLECTIONS = [
+  { key: "templos-zodiaco", title: "Templos del Zodiaco", kicker: "Saint Seiya", idPrefix: "templo-" },
+  { key: "altares-zodiaco", title: "Altares del Zodiaco", kicker: "Saint Seiya", idPrefix: "altar-exhibidor-" },
+].map((collection) => ({
+  ...collection,
+  ids: ZODIAC_SIGNS.map(([sign]) => `${collection.idPrefix}${sign}`),
+}));
+let activeCollection = null;
+
+const collectionItems = (collection) =>
+  collection.ids.map((id) => products.find((product) => product.id === id)).filter(Boolean);
+
+const currentPrice = (product) =>
+  product.templePricing
+    ? Number(product.templePricing.temple)
+    : Number(product.offerPrice || product.regularPrice);
+
+const collectionCard = (collection, items) => {
+  const first = items[0];
+  const lowest = Math.min(...items.map(currentPrice));
+  // Etiqueta de descuento solo si TODAS las piezas tienen el mismo descuento real.
+  const percents = items.map(discountPercent);
+  const sameDiscount = percents[0] >= 1 && percents.every((percent) => percent === percents[0]);
+  const badge = sameDiscount
+    ? `<span class="badge" aria-label="Oferta, ${percents[0]}% de descuento">−${percents[0]}%</span>`
+    : "";
+  const labels = Object.fromEntries(ZODIAC_SIGNS.map(([sign, label]) => [`${collection.idPrefix}${sign}`, label]));
+  const signChips = items
+    .slice(0, 3)
+    .map((item) => `<button type="button" data-open="${item.id}">${labels[item.id]}</button>`)
+    .join("");
+  const more = items.length > 3
+    ? `<button type="button" data-collection="${collection.key}" aria-label="Ver los ${items.length} signos">+${items.length - 3}</button>`
+    : "";
+  return `
+  <article class="product-card collection-card" data-collection="${collection.key}">
+    <button class="card-media" type="button" data-collection="${collection.key}" aria-label="Ver los ${items.length} signos: ${collection.title}">
+      ${badge}
+      <span class="collection-count">${items.length} signos</span>
+      <img src="${webpSrc(first.image)}" alt="" loading="lazy" decoding="async">
+    </button>
+    <div class="card-body">
+      <p class="collection-kicker">${collection.kicker}</p>
+      <h3>${collection.title}</h3>
+      <div class="simple-price"><strong>Desde ${formatPrice(lowest)}</strong></div>
+      <div class="collection-signs">${signChips}${more}</div>
+    </div>
+  </article>
+`;
+};
+
 const productCard = (product) => `
   <article class="product-card" data-open="${product.id}">
     <button class="card-media" type="button" data-open="${product.id}" aria-label="Ver ${product.name}">
-      ${product.offer ? '<span class="badge">Oferta</span>' : ""}
+      ${cardBadge(product)}
       ${productImage(product)}
     </button>
     <div class="card-body">
@@ -334,7 +421,12 @@ const catalogCategories = () => {
 };
 
 const renderFilters = () => {
-  filterRow.innerHTML = catalogCategories()
+  // "Todos" queda marcado de verdad cuando no hay filtro (antes ninguna pastilla lo
+  // indicaba). "Te ayudo a elegir" (solo celular, ver CSS) abre el asistente: ya
+  // no flota sobre las fotos en las páginas que tienen portada.
+  const assistantChip = `<button class="assistant-chip" type="button" id="filterAssistant">Te ayudo a elegir</button>`;
+  const allChip = `<button class="${activeFilter === "Todos" && !activeCollection ? "active" : ""}" type="button" data-filter="Todos">Todos</button>`;
+  filterRow.innerHTML = assistantChip + allChip + catalogCategories()
     .map((category) => `<button class="${category === activeFilter ? "active" : ""}" type="button" data-filter="${category}">${category}</button>`)
     .join("");
 };
@@ -356,19 +448,48 @@ const matchesProduct = (product) => {
     (activeFilter === SEASON_LABEL
       ? HALLOWEEN_CAMPAIGN_ORDER.has(product.id)
       : product.category === activeFilter);
-  return matchesSearch && matchesFilter;
+  const matchesCollection = !activeCollection || activeCollection.ids.includes(product.id);
+  return matchesSearch && matchesFilter && matchesCollection;
 };
 
 const renderProducts = () => {
+  // La búsqueda es global: si se escribe algo, se sale de la colección abierta.
+  if (searchInput.value.trim()) activeCollection = null;
   const visible = products.filter(matchesProduct);
   if (activeFilter === SEASON_LABEL) {
     visible.sort(
       (a, b) => HALLOWEEN_CAMPAIGN_ORDER.get(a.id) - HALLOWEEN_CAMPAIGN_ORDER.get(b.id),
     );
   }
-  productGrid.innerHTML = visible.map(productCard).join("");
-  resultCount.textContent = `${visible.length} producto${visible.length === 1 ? "" : "s"} visible${visible.length === 1 ? "" : "s"}`;
+
+  const grouped = activeFilter === "Todos" && !activeCollection && !searchInput.value.trim();
+  if (grouped) {
+    const shown = new Set();
+    productGrid.innerHTML = visible
+      .map((product) => {
+        const collection = COLLECTIONS.find((candidate) => candidate.ids.includes(product.id));
+        const items = collection ? collectionItems(collection) : [];
+        if (!collection || items.length < 3) return productCard(product);
+        if (shown.has(collection.key)) return "";
+        shown.add(collection.key);
+        return collectionCard(collection, items);
+      })
+      .join("");
+  } else {
+    productGrid.innerHTML = visible.map(productCard).join("");
+  }
+
+  resultCount.textContent = activeCollection
+    ? `${activeCollection.title} · ${visible.length} productos`
+    : `${visible.length} producto${visible.length === 1 ? "" : "s"} visible${visible.length === 1 ? "" : "s"}`;
+  clearFilters.textContent = activeCollection ? "← Ver todo el catálogo" : "Limpiar filtros";
   emptyState.hidden = visible.length > 0;
+};
+
+// Lleva al inicio de los resultados (útil en el celular, donde la colección
+// o categoría elegida arriba queda lejos de la grilla).
+const scrollToResults = () => {
+  document.querySelector(".result-meta")?.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
 const setGlobalWhatsapp = () => {
@@ -388,7 +509,7 @@ const renderModalImage = () => {
     : placeholder(activeProduct);
 
   thumbRow.innerHTML = gallery
-    .map((image, index) => `<button class="${index === activeImageIndex ? "active" : ""}" type="button" data-thumb="${index}"><img src="${webpSrc(image)}" alt="" loading="lazy" decoding="async"></button>`)
+    .map((image, index) => `<button class="${index === activeImageIndex ? "active" : ""}" type="button" data-thumb="${index}" aria-label="Ver foto ${index + 1} de ${gallery.length} de ${activeProduct.name}"><img src="${webpSrc(image)}" alt="" loading="lazy" decoding="async"></button>`)
     .join("");
 
   const hasMultiple = gallery.length > 1;
@@ -462,14 +583,38 @@ document.addEventListener("click", (event) => {
   const openButton = event.target.closest("[data-open]");
   const filterButton = event.target.closest("[data-filter]");
   const thumbButton = event.target.closest("[data-thumb]");
+  // Una pastilla de signo dentro de una tarjeta de colección abre esa pieza (data-open
+  // gana); el resto de la tarjeta abre la colección completa.
+  const collectionButton = openButton ? null : event.target.closest("[data-collection]");
 
   if (openButton) openProduct(openButton.dataset.open);
+  if (collectionButton) {
+    const collection = COLLECTIONS.find((candidate) => candidate.key === collectionButton.dataset.collection);
+    if (collection) {
+      activeCollection = collection;
+      activeFilter = "Todos";
+      searchInput.value = "";
+      quickSearchInput.value = "";
+      trackEvt("filtrar", { d: { categoria: collection.title } });
+      renderFilters();
+      renderQuickCategories();
+      renderProducts();
+      scrollToResults();
+    }
+  }
   if (filterButton) {
     const fromQuickPanel = Boolean(filterButton.closest("#quickCategoriesPanel"));
+    // Las colecciones de la portada (data-scroll) eligen su categoría sin alternar.
+    const fromTile = filterButton.hasAttribute("data-scroll");
     const clicked = filterButton.dataset.filter;
+    activeCollection = null;
     // Tocar la categoría que ya está activa la desactiva (vuelve a "Todos").
-    activeFilter = clicked === activeFilter ? "Todos" : clicked;
+    activeFilter = !fromTile && clicked === activeFilter ? "Todos" : clicked;
     if (activeFilter !== "Todos") trackEvt("filtrar", { d: { categoria: activeFilter } });
+    if (fromTile) {
+      searchInput.value = "";
+      quickSearchInput.value = "";
+    }
     if (fromQuickPanel) {
       // Seleccionar una categoria desde el panel rapido es una navegacion nueva:
       // se limpia cualquier busqueda de texto que hubiera quedado activa para
@@ -483,6 +628,8 @@ document.addEventListener("click", (event) => {
     if (fromQuickPanel) {
       closeQuickCategories();
       productGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else if (fromTile) {
+      scrollToResults();
     }
   }
   if (thumbButton) {
@@ -502,6 +649,7 @@ searchInput.addEventListener("input", () => {
 });
 clearFilters.addEventListener("click", () => {
   activeFilter = "Todos";
+  activeCollection = null;
   searchInput.value = "";
   renderFilters();
   renderQuickCategories();
@@ -716,6 +864,12 @@ if (couponPopupBtn) {
 document.addEventListener("boomart:products-ready", () => {
   products = window.BOOMART_PRODUCTS || [];
 
+  // Si una categoría de las colecciones de la portada ya no existe en el catálogo,
+  // su tarjeta se oculta (en vez de llevar a una lista vacía).
+  document.querySelectorAll(".collection-tile[data-filter]").forEach((tile) => {
+    tile.hidden = !catalogCategories().includes(tile.dataset.filter);
+  });
+
   // Enlace corto de campana (?categoria=saint-seiya): preselecciona esa
   // categoria antes de pintar, para que el catalogo cargue ya filtrado.
   // Slug desconocido o ausente = "Todos", sin romper nada.
@@ -748,4 +902,27 @@ document.addEventListener("boomart:products-ready", () => {
     showCouponPopup();
     markCouponPopupSeen();
   }
+});
+
+// Portada (mejora de diseño, Tanda 2, 2026-10-14).
+// 1) Las cifras de reseñas de la portada se copian de la sección #opiniones (que
+//    ya se mantiene al día con data/reviews.json), así nunca quedan desactualizadas.
+const syncReviewHighlights = () => {
+  const score = document.querySelector("#reviewsSummary .reviews-score")?.textContent.trim();
+  const count = document.querySelector("#reviewsSummary .reviews-count")?.textContent.trim();
+  if (score) document.querySelectorAll(".js-review-score").forEach((node) => { node.textContent = score; });
+  if (count) document.querySelectorAll(".js-review-count").forEach((node) => { node.textContent = count; });
+};
+syncReviewHighlights();
+const reviewsSummaryNode = document.querySelector("#reviewsSummary");
+if (reviewsSummaryNode && "MutationObserver" in window) {
+  new MutationObserver(syncReviewHighlights).observe(reviewsSummaryNode, { childList: true, subtree: true, characterData: true });
+}
+
+// 2) «Te ayudo a elegir» en la portada y en la fila de filtros (celular) abre el
+//    mismo asistente que el botón flotante (que en el celular se oculta cuando
+//    la página tiene portada, para que no tape las fotos).
+document.addEventListener("click", (event) => {
+  if (!event.target.closest("#heroAssistant, #filterAssistant")) return;
+  document.querySelector(".shopping-assistant-toggle")?.click();
 });

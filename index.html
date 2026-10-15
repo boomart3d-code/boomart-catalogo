@@ -44,7 +44,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=42">
+    <link rel="stylesheet" href="src/styles.css?v=44">
 
     <script type="application/ld+json">
     {
@@ -80,7 +80,7 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","@id":"https://boomart.pe/#store","name":"BoomArt","url":"https://boomart.pe/","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"10","bestRating":"5","worstRating":"1"},"review":[{"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Williams Vasquez"},"datePublished":"2026-10-10","reviewBody":"Excelente atención. Rápidos en responder y producto llegó en la fecha indicada. Como sugerencia podrían empacar los artículos con plásticos de burbujas."},{"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Jhonatan Zapata"},"datePublished":"2026-09-20","reviewBody":"La empresa es completamente seria con su trabajo, totalmente puntual, el acabado del producto es excelente y tal cual las fotos referenciales, completamente recomendado!!!!"},{"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Ana Paola"},"datePublished":"2026-09-13","reviewBody":"Gracias al joven Adrián que me atendió muy amablemente. Feliz con mi templo de Aries :)"},{"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Susan M."},"datePublished":"2026-09-10","reviewBody":"La vi por TikTok y sé que mi novio es fan de la saga de Géminis. BoomArt no me puso trabas, al contrario, me ayudó mucho y recreó la casa de Géminis. Excelente trabajo y muy buena calidad."},{"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Jhonathan P."},"datePublished":"2026-09-08","reviewBody":"Excelente trabajo, lo recomiendo a todos los fanáticos de Saint Seiya."},{"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Maria J."},"datePublished":"2026-09-08","reviewBody":"En calidad y precios son los mejores, excelente atención. Los recomiendo full."},{"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Ariannys Durán"},"datePublished":"2026-09-08","reviewBody":"Excelente atención, excelente producto muy buena calidad."},{"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Nathaly Ullauri"},"datePublished":"2026-09-07","reviewBody":"Excelente servicio. Me llegó puntual y el producto me encantó. Lo recomiendo."},{"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Ramiro Díaz"},"datePublished":"2026-09-07","reviewBody":"Compré las 12 casas, quedó pero brutal."},{"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Carina"},"datePublished":"2026-09-07","reviewBody":"Me encantó, es fiel a la foto y cumplieron con el tiempo de entrega 🙌"}]}</script>
     <!-- BOOMART:RATING:END -->
   </head>
-  <body>
+  <body class="has-hero">
     <div class="quick-nav" id="quickNav">
       <a class="quick-nav-logo" href="#inicio" aria-label="BoomArt inicio">
         <img src="assets/boomart-logo.svg" alt="">
@@ -100,6 +100,15 @@
             <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
           </svg>
           <span>Explorar</span>
+        </button>
+        <!-- Carrito del celular: vive en la barra superior (antes flotaba abajo y tapaba las fotos). Solo se ve en móvil; en escritorio está en la cabecera. -->
+        <button type="button" class="cart-float" id="cartFloatToggle" aria-haspopup="true" aria-controls="cartDrawer" aria-label="Ver carrito">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 3h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L20 8H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="20" r="1.4" fill="currentColor"/>
+            <circle cx="17" cy="20" r="1.4" fill="currentColor"/>
+          </svg>
+          <span class="cart-float-count" id="cartCountFloat" hidden>0</span>
         </button>
         <button type="button" class="quick-nav-btn" id="quickTopBtn" aria-label="Volver arriba">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -178,7 +187,74 @@
     </div>
 
     <main id="inicio">
-      <h1 class="sr-only">BoomArt · Figuras coleccionables e impresión 3D en Perú</h1>
+      <!-- Portada (mejora de diseño, Tanda 2, 2026-10-14). El título principal (H1)
+           ahora es visible. Las cifras de reseñas (.js-review-*) se sincronizan con
+           la sección #opiniones desde src/app.js, así no quedan desactualizadas. -->
+      <section class="hero" id="portada" aria-labelledby="heroTitle">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Figuras coleccionables · Impresión 3D a pedido</p>
+          <h1 id="heroTitle">Figuras coleccionables hechas a pedido<span class="sr-only"> · Impresión 3D en Perú</span></h1>
+          <p class="hero-lead">Templos de Saint Seiya, Harry Potter, Marvel y más. Fabricadas en Lima y Callao, con envíos a todo el Perú.</p>
+          <p class="hero-proof"><span aria-hidden="true">★</span> <span class="js-review-score">5,0</span> · <a href="#opiniones"><span class="js-review-count">10 opiniones</span></a><span class="hero-proof-extra"> · Envíos a todo el Perú</span></p>
+          <div class="hero-actions">
+            <a class="button primary" href="#catalogo">Ver catálogo</a>
+            <a class="button hero-secondary" href="#personalizado">Pedir a medida</a>
+            <button type="button" class="hero-assistant" id="heroAssistant">Te ayudo a elegir</button>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img class="hero-photo hero-photo-a" src="assets/products/templo-aries-hero.webp" alt="Templo de Aries de Saint Seiya con su Pandora Box y pedestal" width="1086" height="1448" fetchpriority="high" decoding="async">
+          <img class="hero-photo hero-photo-b" src="assets/products/templo-del-patriarca-hero.webp" alt="Templo del Patriarca de Saint Seiya" width="1086" height="1448" loading="lazy" decoding="async">
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="Por qué comprar en BoomArt">
+        <a class="trust-item" href="#opiniones">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3z"/></svg>
+          <span><strong><span class="js-review-score">5,0</span> en reseñas</strong><small><span class="js-review-count">10 opiniones</span> de clientes en Perú</small></span>
+        </a>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>
+          <span><strong>Hecho a pedido</strong><small>Fabricado en Lima y Callao</small></span>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6h11v9H2zM13 9h4l3 3v3h-7z"/><circle cx="6" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg>
+          <span><strong>Envíos a todo el Perú</strong><small>Se coordinan por WhatsApp</small></span>
+        </div>
+      </section>
+
+      <section class="collections" aria-labelledby="collectionsTitle">
+        <div class="collections-head">
+          <h2 id="collectionsTitle">Explora por colección</h2>
+          <a class="collections-all" href="#catalogo">Ver todo el catálogo →</a>
+        </div>
+        <div class="collections-grid">
+          <button type="button" class="collection-tile" data-filter="Saint Seiya" data-scroll>
+            <img src="assets/products/templo-aries-hero.webp" alt="" width="1086" height="1448" loading="lazy" decoding="async">
+            <span>Saint Seiya</span>
+          </button>
+          <button type="button" class="collection-tile" data-filter="🎃 Halloween" data-scroll>
+            <img src="assets/products/mascara-krampus-1.webp" alt="" loading="lazy" decoding="async">
+            <span>Halloween</span>
+          </button>
+          <button type="button" class="collection-tile" data-filter="Harry Potter" data-scroll>
+            <img src="assets/products/castillo-de-hogwarts.webp" alt="" loading="lazy" decoding="async">
+            <span>Harry Potter</span>
+          </button>
+          <button type="button" class="collection-tile" data-filter="Marvel &amp; DC" data-scroll>
+            <img src="assets/products/casco-de-wolverine-con-garras.webp" alt="" loading="lazy" decoding="async">
+            <span>Marvel y DC</span>
+          </button>
+          <button type="button" class="collection-tile" data-filter="Mundial de Fútbol" data-scroll>
+            <img src="assets/products/balon-de-oro-del-mundial.webp" alt="" loading="lazy" decoding="async">
+            <span>Mundial de Fútbol</span>
+          </button>
+          <a class="collection-tile collection-tile-text" href="merchandising-corporativo/">
+            <strong>Para empresas</strong>
+            <small>Merchandising corporativo y regalos con tu marca</small>
+          </a>
+        </div>
+      </section>
 
       <section class="catalog-section" id="catalogo" aria-labelledby="catalogTitle">
         <div class="catalog-head">
@@ -657,15 +733,6 @@
       </div>
     </dialog>
 
-    <button type="button" class="cart-float" id="cartFloatToggle" aria-haspopup="true" aria-controls="cartDrawer" aria-label="Ver carrito">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 3h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L20 8H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="9" cy="20" r="1.4" fill="currentColor"/>
-        <circle cx="17" cy="20" r="1.4" fill="currentColor"/>
-      </svg>
-      <span class="cart-float-count" id="cartCountFloat" hidden>0</span>
-    </button>
-
     <a class="ba-wa" href="https://wa.me/51925666542?text=Hola%20BoomArt%20%F0%9F%91%8B%20Tengo%20una%20consulta" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
       <span class="ba-wa__label">¿Dudas? Escríbenos</span>
       <span class="ba-wa__icon" aria-hidden="true">
@@ -679,8 +746,8 @@
     <script src="src/track.js?v=4"></script>
     <script src="src/cart.js?v=6"></script>
     <script src="src/products.js?v=5"></script>
-    <script src="src/app.js?v=33"></script>
-    <script src="src/checkout.js?v=24"></script>
+    <script src="src/app.js?v=35"></script>
+    <script src="src/checkout.js?v=25"></script>
     <script src="src/products-loader.js?v=5"></script>
     <script src="src/reviews.js?v=5"></script>
     <script src="src/reviews-loader.js?v=2"></script>
