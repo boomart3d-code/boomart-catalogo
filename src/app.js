@@ -127,8 +127,15 @@ if (shareProductBtn) {
   shareProductBtn.setAttribute("aria-label", `${shareButtonLabel()} de este producto`);
 }
 
+// Enlace para compartir: la página del producto + ?src=compartir. Además de
+// medir las visitas que llegan por enlaces compartidos (src/track.js), evita
+// que WhatsApp reuse una vista previa vieja guardada para el enlace "pelado"
+// (antes del 2026-10-15 la miniatura era un PNG pesado que no mostraba).
+// La dirección canónica para Google sigue siendo /producto/<id>/.
+const SHARE_SRC = "compartir";
+
 const shareProduct = async (product) => {
-  const url = productPageUrl(product.id);
+  const url = `${productPageUrl(product.id)}?src=${SHARE_SRC}`;
   if (useNativeShare()) {
     try {
       await navigator.share({ title: product.name, text: shareText(product), url });

@@ -5,7 +5,7 @@ const assert = require("node:assert/strict");
 const { chromium } = require("playwright");
 
 const base = process.env.BOOMART_TEST_BASE_URL || "http://127.0.0.1:8767";
-const expected = "https://boomart.pe/producto/templo-aries/";
+const expected = "https://boomart.pe/producto/templo-aries/?src=compartir";
 const executablePath = process.env.BOOMART_TEST_CHROME ||
   (process.platform === "win32" ? "C:/Program Files/Google/Chrome/Application/chrome.exe" : undefined);
 

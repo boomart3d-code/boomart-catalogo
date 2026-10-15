@@ -1104,7 +1104,7 @@ function buildProductPage(p, all, ratingLd) {
           <div class="pp-cta">
             <a class="button primary" href="${esc(shop)}">Ver en la tienda y agregar al carrito</a>
             <a class="button secondary" href="${esc(wa)}" target="_blank" rel="noreferrer nofollow">Consultar por WhatsApp</a>
-            <button type="button" class="button ghost" id="ppShare" data-url="${esc(url)}" data-title="${esc(p.name)}" data-id="${esc(p.id)}" style="display:none">
+            <button type="button" class="button ghost" id="ppShare" data-url="${esc(url)}?src=compartir" data-title="${esc(p.name)}" data-id="${esc(p.id)}" style="display:none">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 15V3m0 0L8 7m4-4 4 4M4 13v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <span class="pp-share-label">Compartir</span>
             </button>
