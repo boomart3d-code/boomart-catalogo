@@ -267,10 +267,10 @@
   },
   "castillo-de-hogwarts": {
     "source": "assets/products/castillo-de-hogwarts-gallery-01.png",
-    "hash": "400db6b4406fcc63",
-    "width": 960,
+    "hash": "bb081bf2c0c51daa",
+    "width": 900,
     "height": 1200,
-    "bytes": 89138
+    "bytes": 110495
   },
   "ajedrez-de-hogwarts-4-casas": {
     "source": "assets/products/ajedrez-de-hogwarts-4-casas-hero.jpg",
