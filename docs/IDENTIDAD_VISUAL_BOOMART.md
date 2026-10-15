@@ -19,6 +19,45 @@ Toda pieza de BoomArt debe reunir al menos cuatro de estos seis rasgos:
 
 La repetición consistente de estos rasgos construye reconocimiento sin depender del logo.
 
+## Dirección visual vigente: Galería de Autor
+
+La web adopta la dirección **Galería de Autor** como expresión digital principal.
+Debe comunicar arte, exclusividad y valor contemporáneo sin caer en una estética
+lujosa genérica. El carácter explosivo de BoomArt se expresa mediante escala,
+contraste, composición asimétrica y una incisión roja breve; nunca mediante
+llamas, salpicaduras, texturas estridentes o efectos de cómic.
+
+La proporción orientativa en pantalla es 50 % marfil, 38 % carbón, 7 % tonos
+neutros y hasta 5 % rojo. El producto real ocupa el lugar de una obra de galería:
+fotografía amplia, fondo limpio, información breve y espacio suficiente para que
+su forma respire.
+
+### Paleta digital Galería de Autor
+
+| Token | Valor | Uso principal |
+|---|---:|---|
+| Marfil editorial | `#F4F0E8` | Superficie principal y secciones de catálogo |
+| Marfil suave | `#FAF8F3` | Alternancia de secciones y formularios |
+| Carbón galería | `#0B0B0B` | Escenarios de producto, cabecera y pie |
+| Piedra | `#6F6961` | Metadatos y texto secundario |
+| Línea editorial | `#D8D2C9` | Divisores y retícula |
+| Rojo de interfaz | `#E1132F` | Acción, incisión gráfica y énfasis puntual |
+
+El rojo integrado en el logotipo oficial no se recolorea. El rojo de interfaz
+es un token independiente, calibrado para botones y texto digital.
+
+### Tipografía digital
+
+- **Barlow Condensed**, pesos 600 a 900: titulares expresivos, nombres de
+  colección y cifras protagonistas.
+- **Inter**: navegación, descripciones, precios, formularios y textos de lectura.
+- Los titulares pueden ser grandes y compactos; los párrafos mantienen caja
+  normal y ancho de lectura moderado.
+
+La frase expresiva oficial es **«Arte que toma forma.»**. **«Piezas de autor»**
+funciona como firma secundaria para trabajos originales, personalizados o de
+edición cuidada; no se usa como una promesa indiscriminada en cada producto.
+
 ## Principios
 
 ### El producto es el protagonista
