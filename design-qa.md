@@ -1,41 +1,47 @@
-# Design QA · Galería de Autor
+# Design QA · Portada con carrete editorial
 
 ## Evidencia
 
-- Referencia aprobada: `docs/design-reference-galeria-de-autor.png`
-- Implementación escritorio: `docs/design-qa-galeria-desktop.png`
-- Implementación móvil: `docs/design-qa-galeria-mobile.png`
-- Ficha de producto móvil: `docs/design-qa-product-mobile.png`
-- Categoría móvil: `docs/design-qa-category-mobile.png`
-- Comparación directa: `docs/design-qa-comparison-desktop.jpg`
+- Referencia anotada por el usuario: `docs/design-reference-portada-carrete-mobile.jpg`
+- Implementación móvil, primera foto: `docs/design-qa-portada-carrete-mobile.png`
+- Implementación móvil, foto alterna: `docs/design-qa-portada-carrete-mobile-slide2.png`
+- Implementación escritorio: `docs/design-qa-portada-carrete-desktop.png`
+- Comparación antes/después: `docs/design-qa-comparison-portada-carrete-mobile.jpg`
 
 ## Entorno revisado
 
-- Portada escritorio: viewport CSS 1440 × 1024 px, densidad 1.
-- Portada, categoría y producto móvil: viewport CSS 390 × 844 px, densidad 1.
-- Estado: contenido real, catálogo de 73 productos cargado, sin formularios enviados.
+- Móvil: viewport CSS 390 × 844 px, densidad 1.
+- Escritorio: viewport CSS 1440 × 1024 px, densidad 1.
+- Contenido real: cuatro fotografías del catálogo y enlaces a sus fichas.
 
 ## Comparación visual
 
-La implementación conserva la gramática principal de la referencia: superficie
-marfil, escenario carbón, corte rojo vertical, titular condensado a gran escala,
-producto real como protagonista y metadatos técnicos secundarios. El logotipo
-oficial permanece sin redibujo ni sustitución. La interfaz comercial existente
-—navegación, cupón, catálogo, carrito y asistente— fue integrada en esa retícula
-sin copiar literalmente una pieza editorial que no era interactiva.
+El problema señalado queda resuelto: la imagen ya no está contenida dentro de
+un rectángulo negro con grandes márgenes. Cada fotografía ocupa a sangre todo
+el panel derecho mediante un encuadre centrado y uniforme. El panel crece en
+móvil de 116 × 250 px a una columna proporcional de 310 px de alto. La portada
+mantiene el titular, la prueba social y “Ver catálogo” en el primer pantallazo,
+por lo que la mejora visual no perjudica la función de tienda.
+
+## Interacción y accesibilidad
+
+- Cambio automático cada 5,6 segundos con fundido de 900 ms.
+- Cuatro selectores manuales con nombre accesible y estado `aria-pressed`.
+- Cada fotografía abre la ficha del producto mostrado.
+- Pausa al pasar el cursor o entrar con teclado.
+- Navegación con flechas izquierda/derecha.
+- Sin animación automática cuando `prefers-reduced-motion` está activo.
+- La rotación se detiene cuando la pestaña no está visible.
 
 ## Historial de iteraciones
 
-1. Primera captura: la portada coincidía en jerarquía y paleta, pero las barras
-   nativas de desplazamiento de navegación y filtros quedaban visibles en móvil.
-2. Corrección: se ocultaron las barras conservando el desplazamiento táctil. Se
-   verificó un ancho de documento menor o igual al viewport, sin desborde global.
-3. Revisión de continuidad: las páginas de categoría y producto aún conservaban
-   el fondo negro heredado. Se trasladaron a superficie marfil, manteniendo la
-   fotografía en escenario carbón y aplicando tipografía, líneas y botones del
-   sistema Galería de Autor.
-4. Verificación final: menús, asistente y contenido dinámico cargan; no se
-   detectaron errores ni advertencias en consola durante la prueba final.
+1. Referencia original: producto pequeño, bandas negras y encuadre poco útil.
+2. Primera implementación: carrete con fotografías reales a sangre, controles
+   y transición automática.
+3. Ajuste final: mayor proporción para la fotografía en móvil, recorte centrado,
+   controles discretos sobre una placa translúcida y captions solo en escritorio.
+4. Verificación: cuatro slides, cambio automático, selección manual, 390 px sin
+   desbordamiento global y consola sin errores o advertencias.
 
 ## Resultado final
 

@@ -5033,3 +5033,169 @@ body .pp-rating a {
     font-size: 1.1rem;
   }
 }
+
+/* Portada · carrete editorial de productos reales (2026-10-14) */
+.hero-reel {
+  isolation: isolate;
+  background: var(--gallery-ivory);
+}
+
+.hero-reel-slide {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  overflow: hidden;
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 900ms ease;
+}
+
+.hero-reel-slide.is-active {
+  z-index: 1;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero-reel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.018);
+  transition: transform 7s ease-out;
+}
+
+.hero-reel-slide.is-active img {
+  transform: scale(1);
+}
+
+.hero-reel-slide:nth-child(1) img {
+  object-position: center 47%;
+}
+
+.hero-reel-slide:nth-child(2) img {
+  object-position: center 42%;
+}
+
+.hero-reel-slide:focus-visible {
+  outline: 3px solid white;
+  outline-offset: -7px;
+}
+
+.hero-reel-caption {
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  z-index: 2;
+  display: grid;
+  gap: 4px;
+  max-width: 280px;
+  padding: 14px 18px 14px 21px;
+  border-left: 4px solid var(--red);
+  background: rgba(11, 11, 11, 0.82);
+  backdrop-filter: blur(8px);
+}
+
+.hero-reel-caption small {
+  color: #d5cec3;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.hero-reel-caption strong {
+  font-family: var(--display-font);
+  font-size: 1.28rem;
+  letter-spacing: 0.025em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.hero-reel-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 28px;
+  z-index: 4;
+  display: flex;
+  gap: 9px;
+  padding: 8px 10px;
+  background: rgba(11, 11, 11, 0.76);
+  backdrop-filter: blur(8px);
+}
+
+.hero-reel-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hero-reel-dot.is-active {
+  border-color: var(--red);
+  background: var(--red);
+}
+
+.hero-reel-dot:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.08fr) minmax(150px, 0.92fr);
+    min-height: 310px;
+  }
+
+  .hero-copy {
+    min-height: 310px;
+    padding: 25px 13px 21px 18px;
+  }
+
+  .hero h1 {
+    max-width: 6.4ch;
+    font-size: clamp(2.25rem, 11.2vw, 2.85rem);
+  }
+
+  .hero-media,
+  .hero-reel {
+    width: 100%;
+    height: 310px;
+    background: var(--gallery-ivory);
+  }
+
+  .hero-reel-slide img,
+  .hero-reel-slide:nth-child(1) img,
+  .hero-reel-slide:nth-child(2) img {
+    object-position: center;
+  }
+
+  .hero-reel-caption {
+    display: none;
+  }
+
+  .hero-reel-controls {
+    bottom: 12px;
+    left: 50%;
+    gap: 8px;
+    padding: 7px 9px;
+    transform: translateX(-50%);
+  }
+
+  .hero-reel-dot {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-reel-slide,
+  .hero-reel-slide img {
+    transition: none;
+  }
+}

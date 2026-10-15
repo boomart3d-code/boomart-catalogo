@@ -44,7 +44,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=45">
+    <link rel="stylesheet" href="src/styles.css?v=46">
 
     <script type="application/ld+json">
     {
@@ -203,12 +203,28 @@
             <button type="button" class="hero-assistant" id="heroAssistant">Te ayudo a elegir</button>
           </div>
         </div>
-        <div class="hero-media">
-          <img class="hero-photo hero-photo-a" src="assets/products/templo-aries-hero.webp" alt="Templo de Aries de Saint Seiya con su Pandora Box y pedestal" width="1086" height="1448" fetchpriority="high" decoding="async">
-          <img class="hero-photo hero-photo-b" src="assets/products/templo-del-patriarca-hero.webp" alt="Templo del Patriarca de Saint Seiya" width="1086" height="1448" loading="lazy" decoding="async">
-          <div class="hero-object-data" aria-hidden="true">
-            <span>EDICIÓN · MATERIAL · ACABADO</span>
-            <strong>Diseñado y fabricado en Perú</strong>
+        <div class="hero-media hero-reel" id="heroReel" aria-label="Productos destacados de BoomArt" aria-roledescription="carrusel">
+          <a class="hero-reel-slide is-active" href="producto/templo-con-caja-de-pandora-y-pedestal/" aria-hidden="false" tabindex="0">
+            <img src="assets/products/templo-con-caja-de-pandora-y-pedestal-hero.webp" alt="Colección de los 12 templos del Zodiaco con Cajas de Pandora" width="1200" height="900" fetchpriority="high" decoding="async">
+            <span class="hero-reel-caption"><small>Colección destacada</small><strong>El Santuario completo</strong></span>
+          </a>
+          <a class="hero-reel-slide" href="producto/casco-de-pegaso-saint-seiya/" aria-hidden="true" tabindex="-1">
+            <img src="assets/products/casco-de-pegaso-saint-seiya-hero.webp" alt="Casco de Pegaso de Saint Seiya impreso en 3D" width="994" height="1200" loading="lazy" decoding="async">
+            <span class="hero-reel-caption"><small>Escala real</small><strong>Casco de Pegaso</strong></span>
+          </a>
+          <a class="hero-reel-slide" href="producto/mascara-hellboy-articulada/" aria-hidden="true" tabindex="-1">
+            <img src="assets/products/mascara-hellboy-articulada-1.webp" alt="Máscara Hellboy articulada fabricada por BoomArt" width="640" height="640" loading="lazy" decoding="async">
+            <span class="hero-reel-caption"><small>Acabado artesanal</small><strong>Máscara Hellboy articulada</strong></span>
+          </a>
+          <a class="hero-reel-slide" href="producto/fawkes-fenix-de-dumbledore/" aria-hidden="true" tabindex="-1">
+            <img src="assets/products/fawkes-fenix-de-dumbledore-1.webp" alt="Fawkes, el fénix de Dumbledore, fabricado por BoomArt" width="640" height="640" loading="lazy" decoding="async">
+            <span class="hero-reel-caption"><small>Pieza de colección</small><strong>Fawkes · Harry Potter</strong></span>
+          </a>
+          <div class="hero-reel-controls" role="group" aria-label="Elegir fotografía">
+            <button class="hero-reel-dot is-active" type="button" data-hero-slide="0" aria-label="Ver colección del Santuario" aria-pressed="true"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="1" aria-label="Ver Casco de Pegaso" aria-pressed="false"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="2" aria-label="Ver Máscara Hellboy" aria-pressed="false"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="3" aria-label="Ver Fawkes" aria-pressed="false"></button>
           </div>
         </div>
       </section>
@@ -751,7 +767,7 @@
     <script src="src/track.js?v=4"></script>
     <script src="src/cart.js?v=6"></script>
     <script src="src/products.js?v=5"></script>
-    <script src="src/app.js?v=35"></script>
+    <script src="src/app.js?v=36"></script>
     <script src="src/checkout.js?v=25"></script>
     <script src="src/products-loader.js?v=5"></script>
     <script src="src/reviews.js?v=5"></script>

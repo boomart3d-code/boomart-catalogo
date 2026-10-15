@@ -919,7 +919,68 @@ if (reviewsSummaryNode && "MutationObserver" in window) {
   new MutationObserver(syncReviewHighlights).observe(reviewsSummaryNode, { childList: true, subtree: true, characterData: true });
 }
 
-// 2) «Te ayudo a elegir» en la portada y en la fila de filtros (celular) abre el
+// 2) Carrete editorial de la portada. Las fotos son productos reales del
+// catálogo: cambian con un fundido breve, se pueden elegir manualmente y dejan
+// de animarse cuando el sistema pide reducir movimiento o la pestaña no se ve.
+const heroReel = document.querySelector("#heroReel");
+if (heroReel) {
+  const slides = [...heroReel.querySelectorAll(".hero-reel-slide")];
+  const dots = [...heroReel.querySelectorAll(".hero-reel-dot")];
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let activeSlide = 0;
+  let reelTimer = null;
+
+  const showHeroSlide = (nextIndex, manual = false) => {
+    activeSlide = (nextIndex + slides.length) % slides.length;
+    slides.forEach((slide, index) => {
+      const active = index === activeSlide;
+      slide.classList.toggle("is-active", active);
+      slide.setAttribute("aria-hidden", String(!active));
+      slide.tabIndex = active ? 0 : -1;
+    });
+    dots.forEach((dot, index) => {
+      const active = index === activeSlide;
+      dot.classList.toggle("is-active", active);
+      dot.setAttribute("aria-pressed", String(active));
+    });
+    if (manual) restartHeroReel();
+  };
+
+  const stopHeroReel = () => {
+    if (reelTimer) window.clearInterval(reelTimer);
+    reelTimer = null;
+  };
+
+  const startHeroReel = () => {
+    stopHeroReel();
+    if (reduceMotion.matches || document.hidden || slides.length < 2) return;
+    reelTimer = window.setInterval(() => showHeroSlide(activeSlide + 1), 5600);
+  };
+
+  function restartHeroReel() {
+    stopHeroReel();
+    startHeroReel();
+  }
+
+  dots.forEach((dot, index) => dot.addEventListener("click", () => showHeroSlide(index, true)));
+  heroReel.addEventListener("mouseenter", stopHeroReel);
+  heroReel.addEventListener("mouseleave", startHeroReel);
+  heroReel.addEventListener("focusin", stopHeroReel);
+  heroReel.addEventListener("focusout", (event) => {
+    if (!heroReel.contains(event.relatedTarget)) startHeroReel();
+  });
+  heroReel.addEventListener("keydown", (event) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    showHeroSlide(activeSlide + (event.key === "ArrowRight" ? 1 : -1), true);
+    dots[activeSlide]?.focus();
+  });
+  document.addEventListener("visibilitychange", startHeroReel);
+  reduceMotion.addEventListener?.("change", startHeroReel);
+  startHeroReel();
+}
+
+// 3) «Te ayudo a elegir» en la portada y en la fila de filtros (celular) abre el
 //    mismo asistente que el botón flotante (que en el celular se oculta cuando
 //    la página tiene portada, para que no tape las fotos).
 document.addEventListener("click", (event) => {
