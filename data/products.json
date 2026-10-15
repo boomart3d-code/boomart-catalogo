@@ -1009,8 +1009,9 @@
     "regularPrice": 286,
     "featured": true,
     "offer": true,
-    "image": "assets/products/ajedrez-de-hogwarts-4-casas-hero.jpg",
+    "image": "assets/products/ajedrez-de-hogwarts-4-casas-hero-v2.webp",
     "gallery": [
+      "assets/products/ajedrez-de-hogwarts-4-casas-hero-v2.webp",
       "assets/products/ajedrez-de-hogwarts-4-casas-hero.jpg",
       "assets/products/ajedrez-de-hogwarts-4-casas.jpg",
       "assets/products/ajedrez-de-hogwarts-4-casas-2.jpg",
@@ -1081,8 +1082,9 @@
     "regularPrice": 220,
     "featured": true,
     "offer": true,
-    "image": "assets/products/casco-de-wolverine-con-garras.jpg",
+    "image": "assets/products/casco-de-wolverine-con-garras-hero-v2.webp",
     "gallery": [
+      "assets/products/casco-de-wolverine-con-garras-hero-v2.webp",
       "assets/products/casco-de-wolverine-con-garras.jpg",
       "assets/products/casco-de-wolverine-con-garras-2.jpg",
       "assets/products/casco-de-wolverine-con-garras-3.jpg"
@@ -1124,8 +1126,9 @@
     "regularPrice": 77,
     "featured": true,
     "offer": true,
-    "image": "assets/products/palomera-cara-de-spiderman.jpg",
+    "image": "assets/products/palomera-cara-de-spiderman-hero-v2.webp",
     "gallery": [
+      "assets/products/palomera-cara-de-spiderman-hero-v2.webp",
       "assets/products/palomera-cara-de-spiderman.jpg"
     ],
     "description": "Espectacular palomera con forma de la cara de Spider-Man: ojos blancos, telaraña roja y azul. Ideal para tu noche de cine en casa o como pieza decorativa Marvel.",
@@ -1144,8 +1147,9 @@
     "regularPrice": 77,
     "featured": true,
     "offer": true,
-    "image": "assets/products/palomera-spiderman.jpg",
+    "image": "assets/products/palomera-spiderman-hero-v2.webp",
     "gallery": [
+      "assets/products/palomera-spiderman-hero-v2.webp",
       "assets/products/palomera-spiderman.jpg"
     ],
     "description": "Palomera temática de Spider-Man para tu noche de películas: práctica, resistente y con el diseño arácnido que todo fan de Marvel reconoce.",
@@ -1166,8 +1170,9 @@
     "regularPrice": 100,
     "featured": true,
     "offer": true,
-    "image": "assets/products/mario-billy-saw-1.jpg",
+    "image": "assets/products/mario-billy-saw-hero-v2.webp",
     "gallery": [
+      "assets/products/mario-billy-saw-hero-v2.webp",
       "assets/products/mario-billy-saw-1.jpg",
       "assets/products/mario-billy-saw-2.jpg"
     ],
@@ -1342,8 +1347,9 @@
     "regularPrice": 220,
     "featured": true,
     "offer": true,
-    "image": "assets/products/mascara-hellboy-articulada-1.jpg",
+    "image": "assets/products/mascara-hellboy-articulada-hero-v2.webp",
     "gallery": [
+      "assets/products/mascara-hellboy-articulada-hero-v2.webp",
       "assets/products/mascara-hellboy-articulada-1.jpg",
       "assets/products/mascara-hellboy-articulada-2.jpg",
       "assets/products/mascara-hellboy-articulada-3.jpg"
@@ -1550,8 +1556,9 @@
     "regularPrice": 66,
     "featured": true,
     "offer": true,
-    "image": "assets/products/maceta-pikachu.jpg",
+    "image": "assets/products/maceta-pikachu-hero-v2.webp",
     "gallery": [
+      "assets/products/maceta-pikachu-hero-v2.webp",
       "assets/products/maceta-pikachu.jpg"
     ],
     "description": "Maceta decorativa de Pikachu (Pokémon), impresa en 3D con filamento de alta calidad. Perfecta para tus suculentas o cactus en el escritorio o la repisa.",
@@ -1633,8 +1640,9 @@
     "regularPrice": 33,
     "featured": true,
     "offer": true,
-    "image": "assets/products/caja-organizadora-figuritas-panini-2026.jpg",
+    "image": "assets/products/caja-organizadora-figuritas-panini-2026-hero-v2.webp",
     "gallery": [
+      "assets/products/caja-organizadora-figuritas-panini-2026-hero-v2.webp",
       "assets/products/caja-organizadora-figuritas-panini-2026.jpg"
     ],
     "description": "Organiza y protege tus figuritas repetidas del álbum Panini Mundial 2026 con esta caja coleccionadora impresa en 3D. Se acabó tenerlas sueltas.",
@@ -1653,8 +1661,9 @@
     "regularPrice": 85,
     "featured": true,
     "offer": true,
-    "image": "assets/products/maceta-groot.jpg",
+    "image": "assets/products/maceta-groot-hero-v2.webp",
     "gallery": [
+      "assets/products/maceta-groot-hero-v2.webp",
       "assets/products/maceta-groot.jpg"
     ],
     "description": "Maceta inspirada en Groot, con diseño detallado y colores naranja y verde que evocan su aspecto de árbol. Tamaño generoso para acomodar varias plantas. Ideal para los fans de los Guardianes de la Galaxia.",
@@ -1673,8 +1682,9 @@
     "regularPrice": 49,
     "featured": true,
     "offer": true,
-    "image": "assets/products/maceta-baby-groot.jpg",
+    "image": "assets/products/maceta-baby-groot-hero-v2.webp",
     "gallery": [
+      "assets/products/maceta-baby-groot-hero-v2.webp",
       "assets/products/maceta-baby-groot.jpg"
     ],
     "description": "Maceta de Baby Groot (Guardianes de la Galaxia), minimalista y con hermosos detalles en el rostro y las ramas. Ideal para escritorios, repisas y decoración de ambientes.",
@@ -1713,8 +1723,9 @@
     "regularPrice": 61,
     "featured": true,
     "offer": true,
-    "image": "assets/products/maceta-darth-vader.jpg",
+    "image": "assets/products/maceta-darth-vader-hero-v2.webp",
     "gallery": [
+      "assets/products/maceta-darth-vader-hero-v2.webp",
       "assets/products/maceta-darth-vader.jpg"
     ],
     "description": "Maceta de Darth Vader (Star Wars) en elegante color negro, capturando el casco del Lord Sith. El lado oscuro de la jardinería para tu escritorio.",
