@@ -1636,67 +1636,80 @@ const HALLOWEEN_HERO_SLIDES = [
   { id: "casco-de-pegaso-saint-seiya", img: "assets/hero/casco-de-pegaso.webp", w: 917, h: 653, small: "Escala real", name: "Casco de Pegaso", alt: "Casco de Pegaso de Saint Seiya impreso en 3D" },
 ];
 
+// Carrete de la portada de /saintseiya/.
+const SAINT_SEIYA_HERO_SLIDES = [
+  { id: "busto-de-atena-saint-seiya", img: "assets/hero/busto-de-atena.webp", w: 494, h: 1000, small: "Saint Seiya", name: "Busto de Atena", alt: "Busto de Atena de Saint Seiya con acabado tipo piedra" },
+  { id: "templo-aries", img: "assets/hero/templo-aries.webp", w: 1000, h: 628, small: "12 templos", name: "Templo de Aries", alt: "Templo de Aries de Saint Seiya con su Pandora Box y pedestal" },
+  { id: "torre-del-reloj-saint-seiya", img: "assets/hero/torre-del-reloj.webp", w: 358, h: 1000, small: "Santuario", name: "Torre del Reloj", alt: "Torre del Reloj de Fuego del Santuario de Saint Seiya" },
+  { id: "diorama-de-pegaso", img: "assets/hero/altar-de-pegaso.webp", w: 861, h: 817, small: "Diorama", name: "Altar de Pegaso", alt: "Altar de Pegaso de Saint Seiya fabricado por BoomArt" },
+  { id: "tiara-de-ikki-de-fenix-saint-seiya", img: "assets/hero/tiara-de-ikki.webp", w: 596, h: 898, small: "Cosplay", name: "Tiara de Ikki de Fénix", alt: "Tiara de Ikki de Fénix de Saint Seiya en tamaño real" },
+  { id: "casco-de-pegaso-saint-seiya", img: "assets/hero/casco-de-pegaso.webp", w: 917, h: 653, small: "Escala real", name: "Casco de Pegaso", alt: "Casco de Pegaso de Saint Seiya impreso en 3D" },
+  { id: "set-santuario-15-piezas", img: "assets/hero/santuario.webp", w: 1000, h: 641, small: "Colección completa", name: "Santuario · 15 piezas", alt: "Set Santuario de Saint Seiya con los 12 templos, la Torre del Reloj y Atena" },
+];
+
 function replaceOnce(html, re, replacement, label) {
-  if (!re.test(html)) throw new Error(`Halloween/index.html: no encontré «${label}» en index.html`);
+  if (!re.test(html)) throw new Error(`Página de campaña: no encontré «${label}» en index.html`);
   return html.replace(re, () => replacement);
 }
 
 const htmlEscape = (value) =>
   String(value ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-// /Halloween/ (2026-10-16, pedido de Adrián): la MISMA portada de boomart.pe (encabezado,
-// carrusel, tarjetas con «Agregar», carrito, cupón) pero con portada de Halloween y el
-// catálogo ya filtrado en la campaña. Se genera desde index.html con <base href="/">
-// (así todas las rutas relativas siguen funcionando) y su propio título, descripción,
-// canonical y vista previa para compartir. Se ejecuta DESPUÉS de actualizar index.html.
-async function writeHalloweenCampaignPage(products) {
+// Página de campaña (2026-10-16, pedido de Adrián): la MISMA portada de boomart.pe
+// (encabezado, carrusel, tarjetas con «Agregar», carrito, cupón) pero con portada propia
+// y el catálogo ya filtrado (window.BOOMART_FORCE_CATEGORY). Sin «Explora por colección»:
+// solo se ven los productos de la campaña. Se genera desde index.html con <base href="/">
+// (las rutas relativas siguen funcionando) y su propio título, descripción, canonical y
+// vista previa para compartir. Se ejecuta DESPUÉS de actualizar index.html.
+async function writeCampaignLanding(products, cfg) {
   const byId = new Map(products.map((p) => [p.id, p]));
-  const missing = [...HALLOWEEN_CAMPAIGN_PRODUCT_IDS, ...HALLOWEEN_HERO_SLIDES.map((s) => s.id)].filter((id) => !byId.has(id));
+  const missing = [...cfg.listIds, ...cfg.slides.map((s) => s.id)].filter((id) => !byId.has(id));
   if (missing.length) {
-    throw new Error(`Productos de la campaña Halloween no encontrados: ${missing.join(", ")}`);
+    throw new Error(`Productos de la campaña ${cfg.dir} no encontrados: ${missing.join(", ")}`);
   }
-  const list = HALLOWEEN_CAMPAIGN_PRODUCT_IDS.map((id) => byId.get(id));
-  const meta = HALLOWEEN_CAMPAIGN_META;
-  const url = `${SITE}/Halloween/`;
-  const ogImg = `${SITE}/assets/boomart-halloween-og-cuadrada.jpg`;
-  const ogAlt = "Halloween en BoomArt: máscaras, cascos y decoración 3D";
-  const desc = "Máscaras, cascos y accesorios de cosplay para Halloween, impresos en 3D y hechos a pedido en Perú. Stormtrooper, Mandaloriano, Krampus, Hellboy y más, con envíos a todo el país.";
+  const list = cfg.listIds.map((id) => byId.get(id));
   const a = htmlEscape;
 
   let html = await readFile(path.join(ROOT, "index.html"), "utf8");
   const eol = html.includes("\r\n") ? "\r\n" : "\n";
-  html = replaceOnce(html, /<head>\r?\n/, `<head>${eol}    <base href="/">${eol}    <script>window.BOOMART_FORCE_CATEGORY = "halloween";</script>${eol}`, "<head>");
-  html = replaceOnce(html, /<meta name="description" content="[^"]*">/, `<meta name="description" content="${a(desc)}">`, "meta description");
-  html = replaceOnce(html, /<title>[^<]*<\/title>/, `<title>${a(meta.title)}</title>`, "title");
-  html = replaceOnce(html, /<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${url}">`, "canonical");
+  const headExtra = [
+    `    <base href="/">`,
+    `    <script>window.BOOMART_FORCE_CATEGORY = "${cfg.forceCategory}";</script>`,
+    cfg.robots ? `    <meta name="robots" content="${cfg.robots}">` : "",
+    `    <style>.collections{display:none}</style>`,
+  ].filter(Boolean).join(eol);
+  html = replaceOnce(html, /<head>\r?\n/, `<head>${eol}${headExtra}${eol}`, "<head>");
+  html = replaceOnce(html, /<meta name="description" content="[^"]*">/, `<meta name="description" content="${a(cfg.desc)}">`, "meta description");
+  html = replaceOnce(html, /<title>[^<]*<\/title>/, `<title>${a(cfg.title)}</title>`, "title");
+  html = replaceOnce(html, /<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${cfg.canonical}">`, "canonical");
   const metaSet = [
-    [/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${a(meta.title)}">`],
-    [/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${a(desc)}">`],
-    [/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${url}">`],
-    [/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${ogImg}">`],
-    [/<meta property="og:image:secure_url" content="[^"]*">/, `<meta property="og:image:secure_url" content="${ogImg}">`],
+    [/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${a(cfg.title)}">`],
+    [/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${a(cfg.desc)}">`],
+    [/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${cfg.url}">`],
+    [/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${cfg.ogImg}">`],
+    [/<meta property="og:image:secure_url" content="[^"]*">/, `<meta property="og:image:secure_url" content="${cfg.ogImg}">`],
     [/<meta property="og:image:width" content="[^"]*">/, `<meta property="og:image:width" content="1200">`],
     [/<meta property="og:image:height" content="[^"]*">/, `<meta property="og:image:height" content="1200">`],
-    [/<meta property="og:image:alt" content="[^"]*">/, `<meta property="og:image:alt" content="${a(ogAlt)}">`],
-    [/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${a(meta.title)}">`],
-    [/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${a(desc)}">`],
-    [/<meta name="twitter:image" content="[^"]*">/, `<meta name="twitter:image" content="${ogImg}">`],
-    [/<meta name="twitter:image:alt" content="[^"]*">/, `<meta name="twitter:image:alt" content="${a(ogAlt)}">`],
+    [/<meta property="og:image:alt" content="[^"]*">/, `<meta property="og:image:alt" content="${a(cfg.ogAlt)}">`],
+    [/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${a(cfg.title)}">`],
+    [/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${a(cfg.desc)}">`],
+    [/<meta name="twitter:image" content="[^"]*">/, `<meta name="twitter:image" content="${cfg.ogImg}">`],
+    [/<meta name="twitter:image:alt" content="[^"]*">/, `<meta name="twitter:image:alt" content="${a(cfg.ogAlt)}">`],
   ];
   for (const [re, rep] of metaSet) html = replaceOnce(html, re, rep, re.source.slice(0, 40));
 
   // Portada de campaña (mismo diseño): H1 con las palabras que busca la gente.
   html = replaceOnce(html, /<h1 class="hero-eyebrow" id="heroTitle">[^<]*<\/h1>/,
-    `<h1 class="hero-eyebrow" id="heroTitle">${a(meta.h1)}</h1>`, "H1 de la portada");
+    `<h1 class="hero-eyebrow" id="heroTitle">${a(cfg.h1)}</h1>`, "H1 de la portada");
   html = replaceOnce(html, /<p class="hero-title">[\s\S]*?<\/p>/,
-    `<p class="hero-title is-campaign">Halloween <span>toma forma.</span></p>`, "lema de la portada");
+    `<p class="hero-title is-campaign">${a(cfg.lema)} <span>toma forma.</span></p>`, "lema de la portada");
   html = replaceOnce(html, /<p class="hero-signature">[^<]*<\/p>/,
-    `<p class="hero-signature">Campaña Halloween</p>`, "firma de la portada");
+    `<p class="hero-signature">${a(cfg.signature)}</p>`, "firma de la portada");
   html = replaceOnce(html, /<p class="hero-lead">[^<]*<\/p>/,
-    `<p class="hero-lead">${a(meta.intro[0])}</p>`, "texto de la portada");
+    `<p class="hero-lead">${a(cfg.lead)}</p>`, "texto de la portada");
 
   const pad = "          ";
-  const slides = HALLOWEEN_HERO_SLIDES.map((sl, i) => {
+  const slides = cfg.slides.map((sl, i) => {
     const imgAttr = i < 2
       ? `src="${sl.img}"${i === 0 ? ' fetchpriority="high"' : ' loading="lazy"'}`
       : `data-src="${sl.img}"`;
@@ -1705,11 +1718,11 @@ async function writeHalloweenCampaignPage(products) {
       `${pad}  <span class="hero-reel-caption"><small>${a(sl.small)}</small><strong>${a(sl.name)}</strong></span>${eol}` +
       `${pad}</a>`;
   }).join(eol);
-  const dots = HALLOWEEN_HERO_SLIDES.map((sl, i) =>
+  const dots = cfg.slides.map((sl, i) =>
     `${pad}  <button class="hero-reel-dot${i === 0 ? " is-active" : ""}" type="button" data-hero-slide="${i}" aria-label="Ver ${a(sl.name)}" aria-pressed="${i === 0}"></button>`).join(eol);
   html = replaceOnce(html,
     /<div class="hero-media hero-reel" id="heroReel"[^>]*>[\s\S]*?<div class="hero-reel-controls"[\s\S]*?<\/div>\s*<\/div>\s*<\/section>/,
-    `<div class="hero-media hero-reel" id="heroReel" aria-label="Productos de Halloween de BoomArt" aria-roledescription="carrusel">${eol}${slides}${eol}` +
+    `<div class="hero-media hero-reel" id="heroReel" aria-label="${a(cfg.reelLabel)}" aria-roledescription="carrusel">${eol}${slides}${eol}` +
       `${pad}<div class="hero-reel-controls" role="group" aria-label="Elegir fotografía">${eol}${dots}${eol}${pad}</div>${eol}        </div>${eol}      </section>`,
     "carrete de la portada");
 
@@ -1717,9 +1730,9 @@ async function writeHalloweenCampaignPage(products) {
   const itemList = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: meta.h1,
-    url,
-    description: desc,
+    name: cfg.h1,
+    url: cfg.url,
+    description: cfg.desc,
     mainEntity: {
       "@type": "ItemList",
       numberOfItems: list.length,
@@ -1739,10 +1752,59 @@ async function writeHalloweenCampaignPage(products) {
   const anchorFix = `<script>document.addEventListener("click",function(e){var l=e.target.closest&&e.target.closest('a[href^="#"]');if(!l)return;var id=l.getAttribute("href").slice(1);e.preventDefault();var t=id?document.getElementById(id):null;if(t){t.scrollIntoView({behavior:"smooth",block:"start"});}else{window.scrollTo({top:0,behavior:"smooth"});}if(id){history.replaceState(history.state,"",location.pathname+location.search+"#"+id);}},true);</script>`;
   html = replaceOnce(html, /<\/body>/, `    ${anchorFix}${eol}  </body>`, "</body>");
 
-  const dir = path.join(ROOT, "Halloween");
+  const dir = path.join(ROOT, cfg.dir);
   await mkdir(dir, { recursive: true });
   await writeFile(path.join(dir, "index.html"), html);
   return list.length;
+}
+
+async function writeHalloweenCampaignPage(products) {
+  const meta = HALLOWEEN_CAMPAIGN_META;
+  return writeCampaignLanding(products, {
+    dir: "Halloween",
+    forceCategory: "halloween",
+    listIds: HALLOWEEN_CAMPAIGN_PRODUCT_IDS,
+    slides: HALLOWEEN_HERO_SLIDES,
+    url: `${SITE}/Halloween/`,
+    canonical: `${SITE}/Halloween/`,
+    title: meta.title,
+    desc: "Máscaras, cascos y accesorios de cosplay para Halloween, impresos en 3D y hechos a pedido en Perú. Stormtrooper, Mandaloriano, Krampus, Hellboy y más, con envíos a todo el país.",
+    ogImg: `${SITE}/assets/boomart-halloween-og-cuadrada.jpg`,
+    ogAlt: "Halloween en BoomArt: máscaras, cascos y decoración 3D",
+    h1: meta.h1,
+    lema: "Halloween",
+    signature: "Campaña Halloween",
+    lead: meta.intro[0],
+    reelLabel: "Productos de Halloween de BoomArt",
+  });
+}
+
+// boomart.pe/saintseiya (enlace de campaña, 2026-10-16): antes redirigía a
+// /?categoria=saint-seiya y se veía la portada general; ahora es su propia portada
+// con solo productos de Saint Seiya. Sin indexar (el contenido indexable de la
+// categoría vive en /categoria/saint-seiya/).
+async function writeSaintSeiyaCampaignPage(products) {
+  const listIds = products
+    .filter((p) => p.category === "Saint Seiya" || (p.extraCategories || []).includes("Saint Seiya"))
+    .map((p) => p.id);
+  return writeCampaignLanding(products, {
+    dir: "saintseiya",
+    forceCategory: "saint-seiya",
+    robots: "noindex, follow",
+    listIds,
+    slides: SAINT_SEIYA_HERO_SLIDES,
+    url: `${SITE}/saintseiya/`,
+    canonical: `${SITE}/categoria/saint-seiya/`,
+    title: "Saint Seiya · Templos del Zodiaco impresos en 3D | BoomArt",
+    desc: "Los 12 templos del Zodiaco con sus cajas de Pandora, altares, el busto de Atena y más piezas de Saint Seiya impresas en 3D. Hechas a pedido en Perú, con envíos a todo el país.",
+    ogImg: `${SITE}/assets/og-saintseiya-cuadrada.jpg`,
+    ogAlt: "BoomArt · Saint Seiya: los 12 templos del Zodiaco, Atena y cascos impresos en 3D",
+    h1: "Catálogo exclusivo de Saint Seiya · Templos del Zodiaco en 3D",
+    lema: "Saint Seiya",
+    signature: "Catálogo exclusivo",
+    lead: "Los 12 templos del Zodiaco con sus cajas de Pandora, altares, el busto de Atena, cascos y más piezas del Santuario. Hechas a pedido en Perú, con envíos a todo el país.",
+    reelLabel: "Productos de Saint Seiya de BoomArt",
+  });
 }
 
 /* ---------------------------------------------------------------- sitemap.xml */
@@ -1838,6 +1900,7 @@ const reviewsBlocksUpdated = await injectReviewsBlocks(reviews);
 const socialBlocksUpdated = await syncSocialBlocks();
 // Despues de actualizar index.html: /Halloween/ es una copia de la portada.
 await writeHalloweenCampaignPage(products);
+await writeSaintSeiyaCampaignPage(products);
 
 console.log(
   `OK - generado desde ${products.length} productos` +
