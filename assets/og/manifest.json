@@ -384,6 +384,13 @@
     "height": 1200,
     "bytes": 134312
   },
+  "casco-del-mandaloriano": {
+    "source": "assets/products/casco-del-mandaloriano-hero.jpg",
+    "hash": "e71d6debdf521227",
+    "width": 960,
+    "height": 1200,
+    "bytes": 135366
+  },
   "casco-gladiador-maximo": {
     "source": "assets/products/casco-gladiador-maximo-hero-v2.png",
     "hash": "408951871f2c7a54",
