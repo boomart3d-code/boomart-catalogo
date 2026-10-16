@@ -1,6 +1,29 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Registros de clientes · BoomArt</title><link rel="icon" type="image/svg+xml" href="../../assets/boomart-mark.svg?v=7"><link rel="alternate icon" type="image/png" sizes="32x32" href="../../assets/boomart-mark-32.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png"><link rel="stylesheet" href="styles.css?v=2"></head><body>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Registros de clientes · BoomArt</title><link rel="icon" type="image/svg+xml" href="../../assets/boomart-mark.svg?v=7"><link rel="alternate icon" type="image/png" sizes="32x32" href="../../assets/boomart-mark-32.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png"><link rel="stylesheet" href="styles.css?v=3"></head><body>
 <header><b>BOOM<span>ART</span></b><div><strong>Registros de clientes</strong><small>Bandeja privada</small></div><button id="logout" hidden>Cerrar sesión</button></header><main>
 <section id="loading" class="box">Cargando…</section><section id="login" class="box login" hidden><span>ACCESO PRIVADO</span><h1>Entra con tu correo</h1><p>Te enviaremos un enlace mágico. No necesitas contraseña.</p><form id="loginForm"><input id="email" type="email" value="boomart.3d@gmail.com" autocomplete="email" required><button>Enviarme el enlace de acceso</button></form><p id="loginMsg"></p></section>
 <section id="denied" class="box login" hidden><h1>Sin acceso</h1><p>Esta cuenta no está autorizada.</p></section>
 <section id="portal" hidden><div class="summary"><div><b id="total">0</b><small>Registros visibles</small></div><div><b id="drafts">0</b><small>Borradores</small></div><div><b id="pending">0</b><small>Pendientes</small></div><div><b id="imported">0</b><small>Importados</small></div></div><div class="filters"><input id="query" placeholder="Nombre, teléfono, DNI, código…"><select id="status"><option value="">Todos los estados</option><option value="draft">Borradores</option><option value="complete">Completos</option><option value="whatsapp_opened">WhatsApp abierto</option><option value="imported">Importados</option><option value="expired">Vencidos</option><option value="revoked">Revocados</option></select><button id="refresh">Actualizar</button></div><p id="state"></p><div id="list"></div></section>
-</main><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/dist/umd/supabase.js" integrity="sha384-BWcjm9OdFth9TbhCxZPdm+gAOUMAzQy9nmTs12ioXdCcbVnJaPMn+fMUoQCLt60R" crossorigin="anonymous"></script><script src="../../src/supabase-config.js?v=1"></script><script src="app.js?v=2"></script></body></html>
+<p id="paymentsConnection" role="status" aria-live="polite"></p>
+<dialog id="paymentDialog" aria-labelledby="paymentTitle">
+  <form id="paymentForm">
+    <h2 id="paymentTitle">Pago confirmado</h2>
+    <p id="paymentCustomer"></p>
+    <p>Registra aquí el abono que ya verificaste en tu cuenta. Usa el número del pedido creado en Studio.</p>
+    <label>Pedido / nota de venta de Studio<input id="paymentOrder" maxlength="60" placeholder="Ej.: NV-2026-00125" required autocomplete="off"></label>
+    <div id="paymentLines"></div>
+    <button id="paymentAddLine" type="button">Añadir producto</button>
+    <p class="paymentTotal">Total de productos: <strong id="paymentTotal">S/ 0,00</strong></p>
+    <p>Revisa el precio final de cada pieza, incluido su descuento. El envío se coordina y se paga aparte con el courier.</p>
+    <div class="paymentFields">
+      <label>Abono verificado (S/)<input id="paymentAmount" type="text" inputmode="decimal" placeholder="50,00" required></label>
+      <label>Medio de pago<select id="paymentMethod" required><option value="">Selecciona</option><option value="yape">Yape</option><option value="plin">Plin</option><option value="interbank">Interbank</option><option value="bcp">BCP</option><option value="efectivo">Efectivo</option><option value="otro">Otro</option></select></label>
+      <label>Referencia del abono<input id="paymentReference" minlength="3" maxlength="100" placeholder="N.º de operación o referencia interna" required autocomplete="off"></label>
+    </div>
+    <label class="paymentCheck"><input id="paymentVerified" type="checkbox" required>Verifiqué el ingreso en mi cuenta y el pedido está registrado en Studio.</label>
+    <p>Una compra se informa por el total de los productos al aceptar el primer abono. Los pagos del saldo se gestionan en Studio; no vuelvas a registrar este pedido.</p>
+    <p>Meta recibirá los productos, el total y huellas SHA-256 del correo y teléfono para medir la venta. Esta confirmación no crea un ticket ni un abono contable en Studio.</p>
+    <p id="paymentMessage" role="status" aria-live="polite"></p>
+    <div class="actions"><button id="paymentCancel" type="button">Cancelar</button><button id="paymentSubmit" type="submit">Confirmar abono y registrar compra</button></div>
+  </form>
+</dialog>
+</main><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/dist/umd/supabase.js" integrity="sha384-BWcjm9OdFth9TbhCxZPdm+gAOUMAzQy9nmTs12ioXdCcbVnJaPMn+fMUoQCLt60R" crossorigin="anonymous"></script><script src="../../src/supabase-config.js?v=1"></script><script type="module" src="payments.js?v=1"></script><script src="app.js?v=3"></script></body></html>
