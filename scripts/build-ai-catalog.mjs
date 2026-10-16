@@ -565,7 +565,7 @@ ${reviewsSectionHtml(reviews)}      <section id="contacto-final">
 
     <footer class="footer">
       <div>
-        <div class="footer-brand"><img class="ba-mark" src="assets/boomart-mark.svg?v=7" alt=""><strong>BOOM ART</strong></div>
+        <div class="footer-brand"><img class="ba-mark" src="assets/brand/boomart-icon-asistente.png?v=1" alt=""><strong>BOOM ART</strong></div>
         <p>Piezas hechas a pedido. Consulta disponibilidad, colores, acabados y tiempos de entrega por WhatsApp.</p>
         <p><a href="mailto:contacto@boomart.pe">contacto@boomart.pe</a></p>
 ${socialFooterHtml()}
@@ -576,7 +576,7 @@ ${socialFooterHtml()}
       </div>
     </footer>
     <script src="src/track.js?v=4" defer></script>
-    <script src="src/shopping-assistant.js?v=4" defer></script>
+    <script src="src/shopping-assistant.js?v=5" defer></script>
   </body>
 </html>
 `;
@@ -1165,7 +1165,7 @@ function buildProductPage(p, all, ratingLd) {
 
     <footer class="footer">
       <div>
-        <div class="footer-brand"><img class="ba-mark" src="${rel}assets/boomart-mark.svg?v=7" alt=""><strong>BOOM ART</strong></div>
+        <div class="footer-brand"><img class="ba-mark" src="${rel}assets/brand/boomart-icon-asistente.png?v=1" alt=""><strong>BOOM ART</strong></div>
         <p>Piezas hechas a pedido. Consulta disponibilidad, colores, acabados y tiempos de entrega por WhatsApp.</p>
         <p><a href="mailto:contacto@boomart.pe">contacto@boomart.pe</a></p>
 ${socialFooterHtml()}
@@ -1280,7 +1280,7 @@ ${socialFooterHtml()}
       })();
     </script>
     <script src="${rel}src/track.js?v=4" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=4" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=5" defer></script>
   </body>
 </html>
 `;
@@ -1578,7 +1578,7 @@ ${cards}
 
     <footer class="footer">
       <div>
-        <div class="footer-brand"><img class="ba-mark" src="${rel}assets/boomart-mark.svg?v=7" alt=""><strong>BOOM ART</strong></div>
+        <div class="footer-brand"><img class="ba-mark" src="${rel}assets/brand/boomart-icon-asistente.png?v=1" alt=""><strong>BOOM ART</strong></div>
         <p>Piezas hechas a pedido. Consulta disponibilidad, colores, acabados y tiempos de entrega por WhatsApp.</p>
         <p><a href="mailto:contacto@boomart.pe">contacto@boomart.pe</a></p>
 ${socialFooterHtml()}
@@ -1601,7 +1601,7 @@ ${socialFooterHtml()}
       </span>
     </a>
     <script src="${rel}src/track.js?v=4" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=4" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=5" defer></script>
   </body>
 </html>
 `;

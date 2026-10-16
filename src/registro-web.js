@@ -491,7 +491,7 @@
     const cartHasItems = window.BoomartCart && window.BoomartCart.getState().lines.length > 0;
     accountBody.innerHTML = `
       <div class="reg-done">
-        <img class="reg-done-mark" src="assets/boomart-mark.svg?v=7" alt="">
+        <img class="reg-done-mark" src="assets/brand/boomart-icon-asistente.png?v=1" alt="">
         <p class="eyebrow">${result.nuevo ? "Registro completado" : "Datos actualizados"}</p>
         <h2>${result.nuevo ? `¡Listo, ${esc(firstName(p.full_name))}!` : "¡Guardado!"}</h2>
         ${result.nuevo ? `<p>Tu registro en BoomArt quedó hecho. Te enviamos un correo a <strong>${esc(p.email)}</strong> para que confirmes tu registro.</p>` : `<p>Tus datos quedaron actualizados.</p>`}
@@ -552,7 +552,7 @@
     if (!accountDialog || !accountBody) return;
     accountBody.innerHTML = `
       <div class="reg-done">
-        <img class="reg-done-mark" src="assets/boomart-mark.svg?v=7" alt="">
+        <img class="reg-done-mark" src="assets/brand/boomart-icon-asistente.png?v=1" alt="">
         <h2>${esc(title)}</h2>
         <p>${esc(text)}</p>
         <div class="checkout-actions"><button type="button" class="button primary full" data-reg-go="close">Ir a la tienda</button></div>

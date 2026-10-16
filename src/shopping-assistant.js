@@ -79,7 +79,7 @@
     </button>
     <aside class="shopping-assistant-panel" id="shoppingAssistantPanel" role="dialog" aria-modal="false" aria-labelledby="shoppingAssistantTitle" hidden>
       <header class="shopping-assistant-header">
-        <img class="shopping-assistant-header-mark" src="/assets/boomart-mark.svg?v=7" alt="">
+        <img class="shopping-assistant-header-mark" src="/assets/brand/boomart-icon-asistente.png?v=1" alt="">
         <div class="shopping-assistant-heading"><span class="shopping-assistant-kicker">ASISTENTE BOOMART</span><h2 id="shoppingAssistantTitle">Encuentra o crea tu pieza</h2></div>
         <button type="button" class="shopping-assistant-close" aria-label="Cerrar asistente">×</button>
       </header>
@@ -156,7 +156,7 @@
 
   const renderCatalogCategories = async () => {
     state.screen = "catalog-category";
-    body.innerHTML = `<p class="shopping-assistant-loading"><img src="/assets/boomart-mark.svg?v=7" alt="">Cargando el catálogo…</p>`;
+    body.innerHTML = `<p class="shopping-assistant-loading"><img src="/assets/brand/boomart-icon-asistente.png?v=1" alt="">Cargando el catálogo…</p>`;
     const products = await loadProducts();
     if (state.screen !== "catalog-category") return;
     const available = new Set(products.map((product) => product.category).filter(Boolean));
