@@ -1049,16 +1049,39 @@ if (heroReel) {
     });
   };
 
-  const showHeroSlide = (nextIndex, manual = false) => {
-    activeSlide = (nextIndex + slides.length) % slides.length;
-    loadHeroSlide(activeSlide);
-    loadHeroSlide(activeSlide + 1);
+  // Carrusel (pedido de Adrián, 2026-10-15): las fotos corren de derecha a
+  // izquierda y a los lados asoma un pedazo del producto anterior y del
+  // siguiente. Cada foto se ubica por su distancia circular a la activa
+  // (--reel-d: -1 izquierda, 0 centro, 1 derecha; ±2 fuera de vista). Las que
+  // dan la vuelta por fuera de la vista saltan sin animación.
+  const n = slides.length;
+  const offsetOf = (index, active) => {
+    let d = (index - active) % n;
+    if (d > n / 2) d -= n;
+    if (d < -n / 2) d += n;
+    return d;
+  };
+  const placeSlides = (active, previous) => {
     slides.forEach((slide, index) => {
-      const active = index === activeSlide;
-      slide.classList.toggle("is-active", active);
-      slide.setAttribute("aria-hidden", String(!active));
-      slide.tabIndex = active ? 0 : -1;
+      const d = offsetOf(index, active);
+      const was = previous == null ? d : offsetOf(index, previous);
+      const clamped = Math.max(-2, Math.min(2, d));
+      // Saltar sin animación si cruza por detrás (de un extremo al otro).
+      slide.classList.toggle("is-jumping", Math.abs(was) >= 2 && Math.abs(d) >= 2 || Math.sign(was) * Math.sign(d) < 0 && Math.abs(was - d) > 2);
+      slide.style.setProperty("--reel-d", String(clamped));
+      slide.classList.toggle("is-active", d === 0);
+      slide.classList.toggle("is-side", Math.abs(d) === 1);
+      slide.setAttribute("aria-hidden", String(d !== 0));
+      slide.tabIndex = d === 0 ? 0 : -1;
     });
+  };
+
+  const showHeroSlide = (nextIndex, manual = false) => {
+    const previous = activeSlide;
+    activeSlide = (nextIndex + slides.length) % slides.length;
+    // La activa, sus vecinas visibles y la que entra después.
+    [-1, 0, 1, 2].forEach((k) => loadHeroSlide(activeSlide + k));
+    placeSlides(activeSlide, previous);
     dots.forEach((dot, index) => {
       const active = index === activeSlide;
       dot.classList.toggle("is-active", active);
@@ -1096,6 +1119,28 @@ if (heroReel) {
     showHeroSlide(activeSlide + (event.key === "ArrowRight" ? 1 : -1), true);
     dots[activeSlide]?.focus();
   });
+  // Deslizar con el dedo en el celular.
+  let touchX = null;
+  heroReel.addEventListener("touchstart", (event) => {
+    touchX = event.touches[0].clientX;
+  }, { passive: true });
+  heroReel.addEventListener("touchend", (event) => {
+    if (touchX == null) return;
+    const dx = event.changedTouches[0].clientX - touchX;
+    touchX = null;
+    if (Math.abs(dx) > 40) showHeroSlide(activeSlide + (dx < 0 ? 1 : -1), true);
+  }, { passive: true });
+  // Tocar un producto de los costados lo trae al centro (en vez de abrirlo).
+  heroReel.addEventListener("click", (event) => {
+    const side = event.target.closest(".hero-reel-slide.is-side");
+    if (!side) return;
+    event.preventDefault();
+    showHeroSlide(slides.indexOf(side), true);
+  });
+
+  heroReel.classList.add("is-carousel");
+  placeSlides(activeSlide, null);
+  [-1, 1, 2].forEach((k) => loadHeroSlide(activeSlide + k));
   document.addEventListener("visibilitychange", startHeroReel);
   reduceMotion.addEventListener?.("change", startHeroReel);
   startHeroReel();

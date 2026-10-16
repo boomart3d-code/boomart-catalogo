@@ -5973,3 +5973,65 @@ body .pp-rating a {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
   pointer-events: none;
 }
+
+/* Carrusel de la portada (2026-10-15): las fotos corren de derecha a izquierda
+   y a los lados asoma el producto anterior y el siguiente, más pequeños y
+   tenues. Solo se anima transform/opacity (fluido, sin repintar la página). */
+.hero-reel.is-carousel {
+  --reel-w: 62%;
+  /* Desplazamiento de cada vecino, en % del ancho de la foto: menos de 100 %
+     para que el producto de al lado asome por el borde. */
+  --reel-step: 84%;
+}
+
+.hero-reel.is-carousel .hero-reel-slide {
+  left: calc(50% - var(--reel-w) / 2);
+  right: auto;
+  width: var(--reel-w);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(calc(var(--reel-d, 0) * var(--reel-step))) scale(0.8);
+  transition: transform 850ms cubic-bezier(0.65, 0, 0.35, 1), opacity 850ms ease;
+}
+
+.hero-reel.is-carousel .hero-reel-slide.is-active {
+  z-index: 2;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) scale(1);
+}
+
+.hero-reel.is-carousel .hero-reel-slide.is-side {
+  z-index: 1;
+  opacity: 0.42;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.hero-reel.is-carousel .hero-reel-slide.is-jumping {
+  transition: none;
+}
+
+/* Solo el producto central muestra su nombre y su sombra de apoyo. */
+.hero-reel.is-carousel .hero-reel-slide:not(.is-active) .hero-reel-caption,
+.hero-reel.is-carousel .hero-reel-slide:not(.is-active)::before {
+  opacity: 0;
+}
+
+.hero-reel.is-carousel .hero-reel-caption {
+  right: 0;
+  transition: opacity 400ms ease;
+}
+
+@media (max-width: 720px) {
+  .hero-reel.is-carousel {
+    --reel-w: 70%;
+    --reel-step: 88%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-reel.is-carousel .hero-reel-slide {
+    transition: none;
+  }
+}
