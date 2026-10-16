@@ -219,13 +219,21 @@
              Desde la 3.ª foto la imagen se carga recién antes de mostrarse
              (data-src, ver src/app.js). -->
         <div class="hero-media hero-reel" id="heroReel" aria-label="Productos destacados de BoomArt" aria-roledescription="carrusel">
-          <a class="hero-reel-slide is-active" href="producto/templo-con-caja-de-pandora-y-pedestal/" aria-hidden="false" tabindex="0">
-            <img class="hero-reel-photo" src="assets/hero/santuario.webp" alt="Colección de los 12 templos del Zodiaco con Cajas de Pandora" width="1000" height="641" fetchpriority="high" decoding="async">
-            <span class="hero-reel-caption"><small>Colección destacada</small><strong>El Santuario completo</strong></span>
+          <a class="hero-reel-slide is-active" href="producto/busto-de-atena-saint-seiya/" aria-hidden="false" tabindex="0">
+            <img class="hero-reel-photo" src="assets/hero/busto-de-atena.webp" alt="Busto de Atena de Saint Seiya con acabado tipo piedra" width="494" height="1000" fetchpriority="high" decoding="async">
+            <span class="hero-reel-caption"><small>Saint Seiya</small><strong>Busto de Atena</strong></span>
           </a>
           <a class="hero-reel-slide" href="producto/templo-aries/" aria-hidden="true" tabindex="-1">
             <img class="hero-reel-photo" src="assets/hero/templo-aries.webp" alt="Templo de Aries de Saint Seiya con su Pandora Box y pedestal" width="1000" height="628" loading="lazy" decoding="async">
             <span class="hero-reel-caption"><small>Saint Seiya</small><strong>Templo de Aries</strong></span>
+          </a>
+          <a class="hero-reel-slide" href="producto/torre-del-reloj-saint-seiya/" aria-hidden="true" tabindex="-1">
+            <img class="hero-reel-photo" data-src="assets/hero/torre-del-reloj.webp" alt="Torre del Reloj de Fuego del Santuario de Saint Seiya" width="358" height="1000" decoding="async">
+            <span class="hero-reel-caption"><small>Saint Seiya</small><strong>Torre del Reloj</strong></span>
+          </a>
+          <a class="hero-reel-slide" href="producto/tiara-de-ikki-de-fenix-saint-seiya/" aria-hidden="true" tabindex="-1">
+            <img class="hero-reel-photo" data-src="assets/hero/tiara-de-ikki.webp" alt="Tiara de Ikki de Fénix de Saint Seiya en tamaño real" width="596" height="898" decoding="async">
+            <span class="hero-reel-caption"><small>Novedad</small><strong>Tiara de Ikki de Fénix</strong></span>
           </a>
           <a class="hero-reel-slide" href="producto/casco-de-pegaso-saint-seiya/" aria-hidden="true" tabindex="-1">
             <img class="hero-reel-photo" data-src="assets/hero/casco-de-pegaso.webp" alt="Casco de Pegaso de Saint Seiya impreso en 3D" width="917" height="653" decoding="async">
@@ -248,18 +256,20 @@
             <span class="hero-reel-caption"><small>Halloween</small><strong>Máscara Krampus</strong></span>
           </a>
           <a class="hero-reel-slide" href="producto/diorama-de-pegaso/" aria-hidden="true" tabindex="-1">
-            <img class="hero-reel-photo" data-src="assets/hero/altar-de-pegaso.webp" alt="Altar de Pegaso de Saint Seiya fabricado por BoomArt" width="861" height="817" decoding="async">
+            <img class="hero-reel-photo" src="assets/hero/altar-de-pegaso.webp" alt="Altar de Pegaso de Saint Seiya fabricado por BoomArt" width="861" height="817" loading="lazy" decoding="async">
             <span class="hero-reel-caption"><small>Saint Seiya</small><strong>Altar de Pegaso</strong></span>
           </a>
           <div class="hero-reel-controls" role="group" aria-label="Elegir fotografía">
-            <button class="hero-reel-dot is-active" type="button" data-hero-slide="0" aria-label="Ver colección del Santuario" aria-pressed="true"></button>
+            <button class="hero-reel-dot is-active" type="button" data-hero-slide="0" aria-label="Ver Busto de Atena" aria-pressed="true"></button>
             <button class="hero-reel-dot" type="button" data-hero-slide="1" aria-label="Ver Templo de Aries" aria-pressed="false"></button>
-            <button class="hero-reel-dot" type="button" data-hero-slide="2" aria-label="Ver Casco de Pegaso" aria-pressed="false"></button>
-            <button class="hero-reel-dot" type="button" data-hero-slide="3" aria-label="Ver Castillo de Hogwarts" aria-pressed="false"></button>
-            <button class="hero-reel-dot" type="button" data-hero-slide="4" aria-label="Ver Fawkes" aria-pressed="false"></button>
-            <button class="hero-reel-dot" type="button" data-hero-slide="5" aria-label="Ver Máscara Hellboy" aria-pressed="false"></button>
-            <button class="hero-reel-dot" type="button" data-hero-slide="6" aria-label="Ver Máscara Krampus" aria-pressed="false"></button>
-            <button class="hero-reel-dot" type="button" data-hero-slide="7" aria-label="Ver Altar de Pegaso" aria-pressed="false"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="2" aria-label="Ver Torre del Reloj" aria-pressed="false"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="3" aria-label="Ver Tiara de Ikki" aria-pressed="false"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="4" aria-label="Ver Casco de Pegaso" aria-pressed="false"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="5" aria-label="Ver Castillo de Hogwarts" aria-pressed="false"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="6" aria-label="Ver Fawkes" aria-pressed="false"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="7" aria-label="Ver Máscara Hellboy" aria-pressed="false"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="8" aria-label="Ver Máscara Krampus" aria-pressed="false"></button>
+            <button class="hero-reel-dot" type="button" data-hero-slide="9" aria-label="Ver Altar de Pegaso" aria-pressed="false"></button>
           </div>
         </div>
       </section>
