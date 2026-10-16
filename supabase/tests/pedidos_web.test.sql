@@ -1,5 +1,5 @@
 -- Pruebas de registro_web_pedido_enviar / pedidos_web (correr dentro de begin ... rollback,
--- después de las migraciones 202610150001 y 202610160001).
+-- después de las migraciones 202610150001 y 202610160002).
 do $$
 declare
   t1 text := repeat('p', 64);
