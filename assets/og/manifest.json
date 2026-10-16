@@ -386,10 +386,10 @@
   },
   "casco-de-stormtrooper": {
     "source": "assets/products/casco-de-stormtrooper-hero.jpg",
-    "hash": "6cb1b2c9c5a4958f",
+    "hash": "57914bb4c2260d4a",
     "width": 960,
     "height": 1200,
-    "bytes": 130109
+    "bytes": 130430
   },
   "casco-del-mandaloriano": {
     "source": "assets/products/casco-del-mandaloriano-hero.jpg",
