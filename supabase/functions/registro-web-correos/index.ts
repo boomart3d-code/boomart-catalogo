@@ -6,6 +6,9 @@
 //    botón "Confirmar mi registro" (no bloquea nada; marca el correo confirmado).
 //  * "aviso_registro" / "aviso_actualizacion" -> a BoomArt, con los datos y el
 //    CÓDIGO para importarlo en BoomArt Studio (Clientes web > Importar por código).
+//  * "aviso_pedido" (2026-10-16) -> a BoomArt cuando el cliente envía un pedido
+//    desde la web (ref = código W-XXXXX): productos, total, pago y entrega. El
+//    pedido queda "por validar" en la bandeja de Studio; NO es una venta todavía.
 //
 // La dispara la función SQL registro_web_guardar (pg_net) con {cliente_id}; el
 // cron de remarketing la vuelve a llamar sin cuerpo para reintentar lo que haya
@@ -123,6 +126,50 @@ function adminHtml(c: any, code: string, isUpdate: boolean) {
   );
 }
 
+function money(n: unknown): string {
+  return `S/ ${Number(n || 0).toFixed(2)}`;
+}
+
+function orderHtml(c: any, p: any) {
+  const items = (Array.isArray(p.items) ? p.items : []).map((it: any) => `
+    <tr>
+      <td style="padding:6px 10px;font-size:14px;color:#0b0b0b;">${esc(it.cantidad)} × ${esc(it.nombre)}${it.variante ? ` <span style="color:#6f6961;">(${esc(it.variante)})</span>` : ""}</td>
+      <td style="padding:6px 10px;font-size:14px;color:#0b0b0b;text-align:right;white-space:nowrap;">${esc(money(it.subtotal))}</td>
+    </tr>`).join("");
+  const totals: [string, string][] = [["Subtotal", money(p.subtotal)]];
+  if (p.cupon) totals.push(["Cupón 10 %", `- ${money(p.descuento)}`]);
+  totals.push(["Total", money(p.total)]);
+  const pago = p.pago_con_tarjeta
+    ? `Tarjeta (${esc(p.metodo_pago_label || "pasarela")}) — por confirmar`
+    : `${esc(p.metodo_pago_label || p.metodo_pago || "—")} · ${p.modalidad === "adelanto" ? "adelanto" : "pago total"} de ${esc(money(p.monto_a_pagar))}`;
+  const rows: [string, string][] = [
+    ["Cliente", c.full_name],
+    ["WhatsApp", c.phone],
+    ["Documento", `${DOC_LABELS[c.document_type] || c.document_type} ${c.document_number}`],
+    ["Entrega", p.destino || deliveryText(c)],
+  ];
+  const rowsHtml = rows.map(([label, value]) => `
+    <tr>
+      <td style="padding:6px 10px;color:#6f6961;font-size:14px;white-space:nowrap;vertical-align:top;">${esc(label)}</td>
+      <td style="padding:6px 10px;color:#0b0b0b;font-size:14px;font-weight:700;">${esc(value)}</td>
+    </tr>`).join("");
+  const alerts = (Array.isArray(p.alertas) ? p.alertas : []).map((a: string) =>
+    `<p style="margin:0 0 6px;padding:8px 10px;background:#fff4e5;border-left:4px solid #e08a00;color:#5a3a00;font-size:13px;">⚠ ${esc(a)}</p>`).join("");
+  return shell(
+    "Nuevo pedido web por validar",
+    `<p style="margin:0 0 6px;color:#514c46;font-size:14px;">Código del pedido:</p>
+     <p style="margin:0 0 16px;font-family:Consolas,monospace;font-size:28px;font-weight:700;letter-spacing:2px;color:#e1132f;">${esc(p.codigo)}</p>
+     ${alerts}
+     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #d8d2c9;">${items}</table>
+     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #d8d2c9;margin-bottom:10px;">
+       ${totals.map(([l, v]) => `<tr><td style="padding:4px 10px;font-size:14px;color:#514c46;">${esc(l)}</td><td style="padding:4px 10px;font-size:14px;font-weight:700;text-align:right;">${esc(v)}</td></tr>`).join("")}
+     </table>
+     <p style="margin:0 0 12px;font-size:14px;color:#0b0b0b;"><strong>Pago:</strong> ${pago}</p>
+     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #d8d2c9;">${rowsHtml}</table>
+     <p style="margin:18px 0 0;color:#6f6961;font-size:12px;line-height:1.5;">Aún NO es una venta: revisa el pago y valídalo en BoomArt Studio → Pedidos web por validar. Aviso interno: el cliente no recibe este correo.</p>`,
+  );
+}
+
 async function sendEmail(to: string, subject: string, html: string) {
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -148,6 +195,14 @@ async function processRow(row: any) {
   try {
     if (row.tipo === "bienvenida") {
       await sendEmail(c.email, "Tu registro en BoomArt está listo · 10 % en tu primera compra", welcomeHtml(c, row.ref));
+    } else if (row.tipo === "aviso_pedido") {
+      const { data: p } = await sb.from("pedidos_web").select("*").eq("codigo", row.ref).maybeSingle();
+      if (!p) throw new Error(`pedido ${row.ref} no encontrado`);
+      await sendEmail(
+        ADMIN_TO,
+        `Nuevo pedido web ${p.codigo}: ${c.full_name} · ${money(p.total)} · ${p.metodo_pago_label || p.metodo_pago}`,
+        orderHtml(c, p),
+      );
     } else {
       const isUpdate = row.tipo === "aviso_actualizacion";
       await sendEmail(
@@ -179,7 +234,7 @@ Deno.serve(async (req) => {
     .from("clientes_web_correos")
     .select("id, cliente_id, tipo, ref")
     .eq("enviado_en", EPOCH)
-    .in("tipo", ["bienvenida", "aviso_registro", "aviso_actualizacion"])
+    .in("tipo", ["bienvenida", "aviso_registro", "aviso_actualizacion", "aviso_pedido"])
     .limit(50);
   if (clienteId) {
     if (!/^[0-9a-f-]{36}$/i.test(clienteId)) return json({ error: "cliente_id no valido" }, 400);

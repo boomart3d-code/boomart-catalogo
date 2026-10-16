@@ -6035,3 +6035,19 @@ body .pp-rating a {
     transition: none;
   }
 }
+
+/* Código del pedido web (W-XXXXX) en la pantalla final del checkout (2026-10-16) */
+.order-code {
+  display: block;
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border-left: 4px solid var(--red);
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 1rem;
+}
+.order-code strong {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  color: #fff;
+}

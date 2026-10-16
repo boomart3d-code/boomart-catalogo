@@ -696,6 +696,43 @@
 
   const DOC_TYPE_LABELS = { dni: "DNI", ce: "Carnet de Extranjería", pasaporte: "Pasaporte" };
 
+  // Código del pedido web (W-XXXXX). Se genera AQUÍ, en el mismo clic, porque
+  // WhatsApp tiene que abrirse sin esperar al servidor (si no, el navegador
+  // bloquea la ventana). Sin I/O/0/1 para que se lea y dicte sin errores; el
+  // servidor lo valida y no permite repetidos.
+  const ORDER_CODE_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  function newOrderCode() {
+    const bytes = new Uint32Array(5);
+    if (window.crypto && window.crypto.getRandomValues) {
+      window.crypto.getRandomValues(bytes);
+    } else {
+      for (let i = 0; i < bytes.length; i += 1) bytes[i] = Math.floor(Math.random() * 1e9);
+    }
+    return "W-" + Array.from(bytes, (n) => ORDER_CODE_ALPHABET[n % ORDER_CODE_ALPHABET.length]).join("");
+  }
+
+  function orderPayload(state, plan, code) {
+    const method = selectedMethodConfig();
+    return {
+      codigo: code,
+      metodo: selectedPaymentMethod || "",
+      metodo_label: (method && (method.label || method.gateway)) || selectedPaymentMethod || "",
+      modalidad: payMode === "full" ? "total" : "adelanto",
+      tarjeta: Boolean(plan.card),
+      destino: destinationLabel(),
+      total: plan.card ? state.totals.subtotal : state.totals.total,
+      monto_a_pagar: plan.pay,
+      items: state.lines.map((line) => ({
+        id: line.productId,
+        nombre: line.name,
+        variante: line.variantLabel || "",
+        variante_clave: line.variantKey || "",
+        cantidad: line.quantity,
+        precio: line.unitPrice
+      }))
+    };
+  }
+
   function buildCardMessage(state, plan) {
     const items = state.lines
       .map((line) => {
@@ -717,9 +754,11 @@
     return template.join("\n").replace(/\{(\w+)\}/g, (m, key) => (key in values ? values[key] : m));
   }
 
-  function buildOrderMessage(state) {
+  function buildOrderMessage(state, code) {
     const plan = paymentPlan(state);
-    if (plan.card) return buildCardMessage(state, plan);
+    if (plan.card) return `${buildCardMessage(state, plan)}
+
+Código de pedido: ${code}`;
     const methodLabel = ((CHECKOUT.paymentMethods || {})[selectedPaymentMethod] || {}).label || selectedPaymentMethod || "el metodo elegido";
 
     const itemLines = state.lines
@@ -741,6 +780,7 @@
 
     return [
       `Hola, BoomArt. Soy ${`${customer.name} ${customer.lastName}`.trim()} y quiero realizar este pedido:`,
+      `Código de pedido: ${code}`,
       "",
       itemLines,
       "",
@@ -766,15 +806,17 @@
     const state = window.BoomartCart.getState();
     if (!state.lines.length) return;
 
-    const message = buildOrderMessage(state);
+    const code = newOrderCode();
+    const message = buildOrderMessage(state, code);
     const number = CHECKOUT.whatsappNumber || "";
     const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 
     const plan = paymentPlan(state);
     if (doneTextEl) {
-      doneTextEl.innerHTML = plan.card
+      const codeHtml = `<span class="order-code">Tu código de pedido: <strong>${code}</strong></span>`;
+      doneTextEl.innerHTML = codeHtml + (plan.card
         ? `Se abrió WhatsApp con tu solicitud ya redactada. Revisa el mensaje y pulsa <strong>Enviar</strong>. Te responderemos con tu enlace de pago de ${selectedMethodConfig().gateway || "la pasarela"} por ${money(plan.pay)}. Tu pedido queda pendiente hasta que se confirme el pago.`
-        : DONE_TEXT_DEFAULT;
+        : DONE_TEXT_DEFAULT);
     }
     reopenWhatsappLink.href = url;
     window.open(url, "_blank", "noopener");
@@ -784,7 +826,9 @@
       d: { metodo: selectedPaymentMethod, cupon: plan.couponApplied ? "si" : "no" },
     });
     document.dispatchEvent(
-      new CustomEvent("boomart:order-sent", { detail: { couponApplied: plan.couponApplied } })
+      new CustomEvent("boomart:order-sent", {
+        detail: { couponApplied: plan.couponApplied, pedido: orderPayload(state, plan, code) }
+      })
     );
     showStep("done");
   });

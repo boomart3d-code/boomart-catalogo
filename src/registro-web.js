@@ -598,12 +598,32 @@
 
   // checkout.js avisa cuando se envió el pedido: detiene el remarketing y, si
   // llevaba el cupón, lo consume en el servidor (una sola vez por documento).
+  // Desde 2026-10-16 además GUARDA el pedido (código W-XXXXX) para que BoomArt
+  // Studio lo muestre en "Pedidos web por validar" — no es una venta hasta que
+  // BoomArt lo valida. Si la función nueva no respondiera, se usa la anterior
+  // para que al menos se detenga el remarketing y se consuma el cupón.
   document.addEventListener("boomart:order-sent", async (event) => {
     if (!sb) return;
     const detail = (event && event.detail) || {};
-    try {
-      await sb.rpc("registro_web_pedido", { p_token: token(), p_cupon: Boolean(detail.couponApplied) });
-    } catch (err) {}
+    const cupon = Boolean(detail.couponApplied);
+    let saved = false;
+    if (detail.pedido) {
+      for (let attempt = 0; attempt < 3 && !saved; attempt += 1) {
+        try {
+          const { data, error } = await sb.rpc("registro_web_pedido_enviar", {
+            p_token: token(), p_cupon: cupon, p_pedido: detail.pedido
+          });
+          if (!error && data && data.ok) saved = true;
+          else if (!error && data && data.error && data.error !== "interno") break;
+        } catch (err) {}
+        if (!saved) await new Promise((resolve) => setTimeout(resolve, 1500 * (attempt + 1)));
+      }
+    }
+    if (!saved) {
+      try {
+        await sb.rpc("registro_web_pedido", { p_token: token(), p_cupon: cupon });
+      } catch (err) {}
+    }
     loadProfile();
   });
 
