@@ -316,24 +316,24 @@
   },
   "palomera-cara-de-spiderman": {
     "source": "assets/products/palomera-cara-de-spiderman-hero-v2.webp",
-    "hash": "1eb210414263d7c3",
+    "hash": "35f5a0d4510e49d7",
     "width": 960,
     "height": 1200,
-    "bytes": 66515
+    "bytes": 142014
   },
   "palomera-spiderman": {
     "source": "assets/products/palomera-spiderman-hero-v2.webp",
-    "hash": "b559679ae3955956",
+    "hash": "ca025c9ee7284316",
     "width": 960,
     "height": 1200,
-    "bytes": 100631
+    "bytes": 160435
   },
   "mario-billy-saw": {
     "source": "assets/products/mario-billy-saw-hero-v2.webp",
-    "hash": "b2872ce92c31e491",
+    "hash": "e76ed0858a658ca2",
     "width": 960,
     "height": 1200,
-    "bytes": 54691
+    "bytes": 138736
   },
   "mascara-calabaza-calavera": {
     "source": "assets/products/mascara-calabaza-calavera-hero-v2.png",
@@ -435,10 +435,10 @@
   },
   "maceta-pikachu": {
     "source": "assets/products/maceta-pikachu-hero-v2.webp",
-    "hash": "5a1880699ceb027b",
+    "hash": "afebe1eda88d509f",
     "width": 960,
     "height": 1200,
-    "bytes": 48018
+    "bytes": 127118
   },
   "replica-copa-del-mundo-tamano-real": {
     "source": "assets/products/replica-copa-del-mundo-tamano-real-hero-v2.png",
@@ -463,24 +463,24 @@
   },
   "caja-organizadora-figuritas-panini-2026": {
     "source": "assets/products/caja-organizadora-figuritas-panini-2026-hero-v2.webp",
-    "hash": "b7d80f9697a87901",
+    "hash": "e9935a58cf53e2cd",
     "width": 960,
     "height": 1200,
-    "bytes": 141298
+    "bytes": 196067
   },
   "maceta-groot": {
     "source": "assets/products/maceta-groot-hero-v2.webp",
-    "hash": "5b3a34164e46cf3e",
+    "hash": "51c6b63693777d99",
     "width": 960,
     "height": 1200,
-    "bytes": 59860
+    "bytes": 143158
   },
   "maceta-baby-groot": {
     "source": "assets/products/maceta-baby-groot-hero-v2.webp",
-    "hash": "be8d107f5a9cbca2",
+    "hash": "4fb59d7da1c668b7",
     "width": 960,
     "height": 1200,
-    "bytes": 63310
+    "bytes": 145686
   },
   "maceta-dedo-medio": {
     "source": "assets/products/maceta-dedo-medio-hero-v2.png",
