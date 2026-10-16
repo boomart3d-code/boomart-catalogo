@@ -1393,6 +1393,38 @@
     "offerPrice": 200
   },
   {
+    "id": "casco-del-mandaloriano",
+    "name": "Casco del Mandaloriano 🎃 · Halloween",
+    "category": "🎃 Halloween",
+    "extraCategories": [
+      "Series y Películas"
+    ],
+    "tags": [
+      "Cascos",
+      "Mandaloriano",
+      "Star Wars",
+      "Cosplay",
+      "Disfraces",
+      "Tamaño real",
+      "Halloween"
+    ],
+    "height": "Tamaño real 1:1",
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 240,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/casco-del-mandaloriano-hero.jpg",
+    "gallery": [
+      "assets/products/casco-del-mandaloriano-hero.jpg",
+      "assets/products/casco-del-mandaloriano-2.jpg",
+      "assets/products/casco-del-mandaloriano-3.jpg",
+      "assets/products/casco-del-mandaloriano-4.jpg"
+    ],
+    "description": "🎃 Edición Halloween. Casco del Mandaloriano de Star Wars a tamaño real 1:1, especial para cosplay. Acabado cromado y fabricado en PLA+ para mayor resistencia y durabilidad: listo para lucirlo en tu disfraz o exhibirlo en tu colección. Hecho a pedido, con envíos a todo el Perú.",
+    "offerPrice": 200
+  },
+  {
     "id": "casco-gladiador-maximo",
     "name": "Casco de Gladiador Máximo 🎃 · Halloween",
     "category": "🎃 Halloween",

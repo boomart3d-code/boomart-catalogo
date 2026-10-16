@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 74,
+  "count": 75,
   "products": [
     {
       "id": "templo-aries",
@@ -1531,6 +1531,37 @@
       ],
       "url": "https://boomart.pe/producto/mascara-hellboy-articulada/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20Hellboy%20Articulada%20%F0%9F%91%B9%20%C2%B7%20Halloween"
+    },
+    {
+      "id": "casco-del-mandaloriano",
+      "name": "Casco del Mandaloriano 🎃 · Halloween",
+      "category": "🎃 Halloween",
+      "tags": [
+        "Cascos",
+        "Mandaloriano",
+        "Star Wars",
+        "Cosplay",
+        "Disfraces",
+        "Tamaño real",
+        "Halloween"
+      ],
+      "description": "🎃 Edición Halloween. Casco del Mandaloriano de Star Wars a tamaño real 1:1, especial para cosplay. Acabado cromado y fabricado en PLA+ para mayor resistencia y durabilidad: listo para lucirlo en tu disfraz o exhibirlo en tu colección. Hecho a pedido, con envíos a todo el Perú.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 200,
+      "pricing": [
+        "Precio oferta: S/200 (antes S/240)"
+      ],
+      "image": "https://boomart.pe/assets/products/casco-del-mandaloriano-hero.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/casco-del-mandaloriano-hero.jpg",
+        "https://boomart.pe/assets/products/casco-del-mandaloriano-2.jpg",
+        "https://boomart.pe/assets/products/casco-del-mandaloriano-3.jpg",
+        "https://boomart.pe/assets/products/casco-del-mandaloriano-4.jpg"
+      ],
+      "url": "https://boomart.pe/producto/casco-del-mandaloriano/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Casco%20del%20Mandaloriano%20%F0%9F%8E%83%20%C2%B7%20Halloween"
     },
     {
       "id": "casco-gladiador-maximo",
