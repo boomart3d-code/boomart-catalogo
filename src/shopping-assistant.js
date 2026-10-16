@@ -74,7 +74,7 @@
   shell.className = "shopping-assistant";
   shell.innerHTML = `
     <button class="shopping-assistant-toggle" type="button" aria-haspopup="dialog" aria-controls="shoppingAssistantPanel" aria-expanded="false">
-      <img class="shopping-assistant-mark" src="/assets/boomart-mark.svg?v=7" alt="">
+      <img class="shopping-assistant-mark" src="/assets/brand/boomart-icon-asistente.png?v=1" alt="" width="30" height="30">
       <span>Te ayudo a elegir</span>
     </button>
     <aside class="shopping-assistant-panel" id="shoppingAssistantPanel" role="dialog" aria-modal="false" aria-labelledby="shoppingAssistantTitle" hidden>

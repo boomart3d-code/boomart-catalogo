@@ -576,7 +576,7 @@ ${socialFooterHtml()}
       </div>
     </footer>
     <script src="src/track.js?v=4" defer></script>
-    <script src="src/shopping-assistant.js?v=3" defer></script>
+    <script src="src/shopping-assistant.js?v=4" defer></script>
   </body>
 </html>
 `;
@@ -1280,7 +1280,7 @@ ${socialFooterHtml()}
       })();
     </script>
     <script src="${rel}src/track.js?v=4" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=3" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=4" defer></script>
   </body>
 </html>
 `;
@@ -1601,7 +1601,7 @@ ${socialFooterHtml()}
       </span>
     </a>
     <script src="${rel}src/track.js?v=4" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=3" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=4" defer></script>
   </body>
 </html>
 `;
