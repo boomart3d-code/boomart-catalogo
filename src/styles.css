@@ -6051,3 +6051,51 @@ body .pp-rating a {
   letter-spacing: 0.08em;
   color: #fff;
 }
+
+/* Portada en celular (2026-10-16): antes texto y carrusel iban lado a lado y la
+   columna de fotos medía ~180 px, así que las piezas anchas (altar, lámpara,
+   tiara, templo) se veían diminutas. Ahora se apilan: texto compacto arriba y el
+   escenario a todo el ancho debajo, con el producto a buen tamaño. */
+@media (max-width: 720px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    min-height: 0;
+  }
+
+  .hero-copy {
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 0;
+    padding: 22px 18px 20px;
+  }
+
+  .hero .hero-title {
+    max-width: none;
+    font-size: clamp(2.7rem, 13vw, 3.6rem);
+  }
+
+  .hero .hero-reel {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: min(92vw, 420px);
+    min-height: 0;
+    border-left: 0;
+  }
+
+  .hero-reel.is-carousel {
+    --reel-w: 66%;
+    --reel-step: 86%;
+  }
+
+  .hero-reel-slide img {
+    inset: 6% 3% 14%;
+    width: 94%;
+    height: 80%;
+  }
+
+  .hero-reel-slide::before {
+    bottom: 18%;
+  }
+}
