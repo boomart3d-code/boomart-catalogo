@@ -1658,7 +1658,7 @@ async function writeHalloweenCampaignPage(products) {
   const list = HALLOWEEN_CAMPAIGN_PRODUCT_IDS.map((id) => byId.get(id));
   const meta = HALLOWEEN_CAMPAIGN_META;
   const url = `${SITE}/Halloween/`;
-  const ogImg = `${SITE}/assets/boomart-halloween.jpg`;
+  const ogImg = `${SITE}/assets/boomart-halloween-og.jpg`;
   const ogAlt = "Halloween en BoomArt: máscaras, cascos y decoración 3D";
   const desc = "Máscaras, cascos y accesorios de cosplay para Halloween, impresos en 3D y hechos a pedido en Perú. Stormtrooper, Mandaloriano, Krampus, Hellboy y más, con envíos a todo el país.";
   const a = htmlEscape;
