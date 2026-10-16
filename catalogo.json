@@ -3,7 +3,7 @@
   "url": "https://boomart.pe/",
   "description": "Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao, Peru. Envios a todo el pais.",
   "currency": "PEN",
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "contact": {
     "whatsapp": "https://wa.me/51925666542",
     "email": "contacto@boomart.pe",
@@ -1226,10 +1226,9 @@
       "pricing": [
         "Precio oferta: S/200 (antes S/220)"
       ],
-      "image": "https://boomart.pe/assets/products/casco-de-wolverine-con-garras-hero-v2.webp",
+      "image": "https://boomart.pe/assets/products/casco-de-wolverine-con-garras-hero-v3.jpg",
       "gallery": [
-        "https://boomart.pe/assets/products/casco-de-wolverine-con-garras-hero-v2.webp",
-        "https://boomart.pe/assets/products/casco-de-wolverine-con-garras.jpg",
+        "https://boomart.pe/assets/products/casco-de-wolverine-con-garras-hero-v3.jpg",
         "https://boomart.pe/assets/products/casco-de-wolverine-con-garras-2.jpg",
         "https://boomart.pe/assets/products/casco-de-wolverine-con-garras-3.jpg"
       ],

@@ -5,7 +5,7 @@ Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion ~48 horas uti
 la validacion del adelanto (50%). Pedidos por WhatsApp: https://wa.me/51925666542
 
 Total de piezas: 74
-Actualizado: 2026-10-15
+Actualizado: 2026-10-16
 Fuente estructurada: https://boomart.pe/catalogo.json
 
 ---
@@ -697,7 +697,7 @@ Ilumina tu espacio con la magia de esta lámpara lunar de Hogwarts: un modelo ex
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Cascos, Marvel
-- Imagen: https://boomart.pe/assets/products/casco-de-wolverine-con-garras-hero-v2.webp
+- Imagen: https://boomart.pe/assets/products/casco-de-wolverine-con-garras-hero-v3.jpg
 - Ficha: https://boomart.pe/producto/casco-de-wolverine-con-garras/
 
 Casco decorativo de Wolverine acompañado de su set de garras. Dos piezas de exhibición para el fan de Marvel y los X-Men.
