@@ -1393,6 +1393,37 @@
     "offerPrice": 200
   },
   {
+    "id": "casco-de-stormtrooper",
+    "name": "Casco de Stormtrooper 🎃 · Halloween",
+    "category": "🎃 Halloween",
+    "extraCategories": [
+      "Series y Películas"
+    ],
+    "tags": [
+      "Cascos",
+      "Stormtrooper",
+      "Star Wars",
+      "Cosplay",
+      "Disfraces",
+      "Tamaño real",
+      "Halloween"
+    ],
+    "height": "Tamaño real 1:1",
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 240,
+    "featured": true,
+    "offer": true,
+    "image": "assets/products/casco-de-stormtrooper-hero.jpg",
+    "gallery": [
+      "assets/products/casco-de-stormtrooper-hero.jpg",
+      "assets/products/casco-de-stormtrooper-2.jpg",
+      "assets/products/casco-de-stormtrooper-3.jpg"
+    ],
+    "description": "🎃 Edición Halloween. Casco de Stormtrooper de Star Wars a tamaño real 1:1, especial para cosplay. Acabado blanco con detalles en negro, fiel al clásico soldado imperial. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
+    "offerPrice": 200
+  },
+  {
     "id": "casco-del-mandaloriano",
     "name": "Casco del Mandaloriano 🎃 · Halloween",
     "category": "🎃 Halloween",

@@ -384,12 +384,19 @@
     "height": 1200,
     "bytes": 134312
   },
-  "casco-del-mandaloriano": {
-    "source": "assets/products/casco-del-mandaloriano-hero.jpg",
-    "hash": "e71d6debdf521227",
+  "casco-de-stormtrooper": {
+    "source": "assets/products/casco-de-stormtrooper-hero.jpg",
+    "hash": "6cb1b2c9c5a4958f",
     "width": 960,
     "height": 1200,
-    "bytes": 135366
+    "bytes": 130109
+  },
+  "casco-del-mandaloriano": {
+    "source": "assets/products/casco-del-mandaloriano-hero.jpg",
+    "hash": "e590b49795de7f7f",
+    "width": 960,
+    "height": 1200,
+    "bytes": 133523
   },
   "casco-gladiador-maximo": {
     "source": "assets/products/casco-gladiador-maximo-hero-v2.png",
