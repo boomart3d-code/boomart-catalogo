@@ -1658,7 +1658,7 @@ async function writeHalloweenCampaignPage(products) {
   const list = HALLOWEEN_CAMPAIGN_PRODUCT_IDS.map((id) => byId.get(id));
   const meta = HALLOWEEN_CAMPAIGN_META;
   const url = `${SITE}/Halloween/`;
-  const ogImg = `${SITE}/assets/boomart-halloween-og.jpg`;
+  const ogImg = `${SITE}/assets/boomart-halloween-og-cuadrada.jpg`;
   const ogAlt = "Halloween en BoomArt: máscaras, cascos y decoración 3D";
   const desc = "Máscaras, cascos y accesorios de cosplay para Halloween, impresos en 3D y hechos a pedido en Perú. Stormtrooper, Mandaloriano, Krampus, Hellboy y más, con envíos a todo el país.";
   const a = htmlEscape;
@@ -1676,7 +1676,7 @@ async function writeHalloweenCampaignPage(products) {
     [/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${ogImg}">`],
     [/<meta property="og:image:secure_url" content="[^"]*">/, `<meta property="og:image:secure_url" content="${ogImg}">`],
     [/<meta property="og:image:width" content="[^"]*">/, `<meta property="og:image:width" content="1200">`],
-    [/<meta property="og:image:height" content="[^"]*">/, `<meta property="og:image:height" content="630">`],
+    [/<meta property="og:image:height" content="[^"]*">/, `<meta property="og:image:height" content="1200">`],
     [/<meta property="og:image:alt" content="[^"]*">/, `<meta property="og:image:alt" content="${a(ogAlt)}">`],
     [/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${a(meta.title)}">`],
     [/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${a(desc)}">`],
