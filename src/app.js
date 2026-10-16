@@ -984,7 +984,10 @@ document.addEventListener("boomart:products-ready", () => {
   // Enlace corto de campana (?categoria=saint-seiya): preselecciona esa
   // categoria antes de pintar, para que el catalogo cargue ya filtrado.
   // Slug desconocido o ausente = "Todos", sin romper nada.
-  const categoriaParam = new URL(window.location.href).searchParams.get(CATEGORY_PARAM);
+  // /Halloween/ es la misma portada con la campaña fija (window.BOOMART_FORCE_CATEGORY,
+  // lo pone scripts/build-ai-catalog.mjs al generar esa página).
+  const categoriaParam = new URL(window.location.href).searchParams.get(CATEGORY_PARAM) ||
+    window.BOOMART_FORCE_CATEGORY || "";
   let matchedCategoryLink = false;
   if (categoriaParam) {
     const match = catalogCategories().find((cat) => slugifyCategory(cat) === slugifyCategory(categoriaParam));

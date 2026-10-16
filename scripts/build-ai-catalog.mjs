@@ -486,7 +486,7 @@ ${cards}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=58">
+    <link rel="stylesheet" href="src/styles.css?v=59">
     <style>
       .ai-catalog { max-width: 1040px; margin: 0 auto; padding: 32px 20px 80px; }
       .ai-catalog h1 { margin-bottom: 8px; }
@@ -1086,7 +1086,7 @@ function buildProductPage(p, all, ratingLd) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=58">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=59">
     <style>${PRODUCT_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(productLd(p))}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbLd(p))}</script>
@@ -1540,7 +1540,7 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=58">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=59">
     <style>${CATEGORY_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(itemListLd)}</script>
     <script type="application/ld+json">${JSON.stringify(crumbLd)}</script>
@@ -1624,28 +1624,124 @@ async function writeCategoryPages(products, ratingLd) {
   return groups.length;
 }
 
-async function writeHalloweenCampaignPage(products, ratingLd) {
+// Carrete de la portada de /Halloween/ (recortes sin fondo en assets/hero/).
+const HALLOWEEN_HERO_SLIDES = [
+  { id: "casco-de-stormtrooper", img: "assets/hero/casco-de-stormtrooper.webp", w: 854, h: 883, small: "Novedad", name: "Casco de Stormtrooper", alt: "Casco de Stormtrooper de Star Wars a tamaño real para cosplay" },
+  { id: "casco-del-mandaloriano", img: "assets/hero/casco-del-mandaloriano.webp", w: 723, h: 1000, small: "Novedad", name: "Casco del Mandaloriano", alt: "Casco del Mandaloriano con acabado cromado a tamaño real" },
+  { id: "tiara-de-ikki-de-fenix-saint-seiya", img: "assets/hero/tiara-de-ikki.webp", w: 596, h: 898, small: "Cosplay", name: "Tiara de Ikki de Fénix", alt: "Tiara de Ikki de Fénix de Saint Seiya en tamaño real" },
+  { id: "mascara-krampus", img: "assets/hero/mascara-krampus.webp", w: 894, h: 1000, small: "Terror", name: "Máscara Krampus", alt: "Máscara Krampus de Halloween fabricada por BoomArt" },
+  { id: "casco-gladiador-maximo", img: "assets/hero/casco-gladiador-maximo.webp", w: 567, h: 1000, small: "Tamaño real", name: "Casco de Gladiador Máximo", alt: "Casco de Gladiador Máximo con acabado metálico envejecido" },
+  { id: "mascara-hellboy-articulada", img: "assets/hero/mascara-hellboy.webp", w: 860, h: 1000, small: "Acabado artesanal", name: "Máscara Hellboy articulada", alt: "Máscara Hellboy articulada fabricada por BoomArt" },
+  { id: "casco-de-wolverine-con-garras", img: "assets/hero/casco-de-wolverine.webp", w: 729, h: 868, small: "Marvel", name: "Casco de Wolverine + garras", alt: "Casco de Wolverine con garras impreso en 3D" },
+  { id: "casco-de-pegaso-saint-seiya", img: "assets/hero/casco-de-pegaso.webp", w: 917, h: 653, small: "Escala real", name: "Casco de Pegaso", alt: "Casco de Pegaso de Saint Seiya impreso en 3D" },
+];
+
+function replaceOnce(html, re, replacement, label) {
+  if (!re.test(html)) throw new Error(`Halloween/index.html: no encontré «${label}» en index.html`);
+  return html.replace(re, () => replacement);
+}
+
+const htmlEscape = (value) =>
+  String(value ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+// /Halloween/ (2026-10-16, pedido de Adrián): la MISMA portada de boomart.pe (encabezado,
+// carrusel, tarjetas con «Agregar», carrito, cupón) pero con portada de Halloween y el
+// catálogo ya filtrado en la campaña. Se genera desde index.html con <base href="/">
+// (así todas las rutas relativas siguen funcionando) y su propio título, descripción,
+// canonical y vista previa para compartir. Se ejecuta DESPUÉS de actualizar index.html.
+async function writeHalloweenCampaignPage(products) {
   const byId = new Map(products.map((p) => [p.id, p]));
-  const missing = HALLOWEEN_CAMPAIGN_PRODUCT_IDS.filter((id) => !byId.has(id));
+  const missing = [...HALLOWEEN_CAMPAIGN_PRODUCT_IDS, ...HALLOWEEN_HERO_SLIDES.map((s) => s.id)].filter((id) => !byId.has(id));
   if (missing.length) {
     throw new Error(`Productos de la campaña Halloween no encontrados: ${missing.join(", ")}`);
   }
   const list = HALLOWEEN_CAMPAIGN_PRODUCT_IDS.map((id) => byId.get(id));
+  const meta = HALLOWEEN_CAMPAIGN_META;
+  const url = `${SITE}/Halloween/`;
+  const ogImg = `${SITE}/assets/boomart-halloween.jpg`;
+  const ogAlt = "Halloween en BoomArt: máscaras, cascos y decoración 3D";
+  const desc = "Máscaras, cascos y accesorios de cosplay para Halloween, impresos en 3D y hechos a pedido en Perú. Stormtrooper, Mandaloriano, Krampus, Hellboy y más, con envíos a todo el país.";
+  const a = htmlEscape;
+
+  let html = await readFile(path.join(ROOT, "index.html"), "utf8");
+  const eol = html.includes("\r\n") ? "\r\n" : "\n";
+  html = replaceOnce(html, /<head>\r?\n/, `<head>${eol}    <base href="/">${eol}    <script>window.BOOMART_FORCE_CATEGORY = "halloween";</script>${eol}`, "<head>");
+  html = replaceOnce(html, /<meta name="description" content="[^"]*">/, `<meta name="description" content="${a(desc)}">`, "meta description");
+  html = replaceOnce(html, /<title>[^<]*<\/title>/, `<title>${a(meta.title)}</title>`, "title");
+  html = replaceOnce(html, /<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${url}">`, "canonical");
+  const metaSet = [
+    [/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${a(meta.title)}">`],
+    [/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${a(desc)}">`],
+    [/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${url}">`],
+    [/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${ogImg}">`],
+    [/<meta property="og:image:secure_url" content="[^"]*">/, `<meta property="og:image:secure_url" content="${ogImg}">`],
+    [/<meta property="og:image:width" content="[^"]*">/, `<meta property="og:image:width" content="1200">`],
+    [/<meta property="og:image:height" content="[^"]*">/, `<meta property="og:image:height" content="630">`],
+    [/<meta property="og:image:alt" content="[^"]*">/, `<meta property="og:image:alt" content="${a(ogAlt)}">`],
+    [/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${a(meta.title)}">`],
+    [/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${a(desc)}">`],
+    [/<meta name="twitter:image" content="[^"]*">/, `<meta name="twitter:image" content="${ogImg}">`],
+    [/<meta name="twitter:image:alt" content="[^"]*">/, `<meta name="twitter:image:alt" content="${a(ogAlt)}">`],
+  ];
+  for (const [re, rep] of metaSet) html = replaceOnce(html, re, rep, re.source.slice(0, 40));
+
+  // Portada de campaña (mismo diseño): H1 con las palabras que busca la gente.
+  html = replaceOnce(html, /<h1 class="hero-eyebrow" id="heroTitle">[^<]*<\/h1>/,
+    `<h1 class="hero-eyebrow" id="heroTitle">${a(meta.h1)}</h1>`, "H1 de la portada");
+  html = replaceOnce(html, /<p class="hero-title">[\s\S]*?<\/p>/,
+    `<p class="hero-title is-campaign">Halloween <span>toma forma.</span></p>`, "lema de la portada");
+  html = replaceOnce(html, /<p class="hero-signature">[^<]*<\/p>/,
+    `<p class="hero-signature">Campaña Halloween</p>`, "firma de la portada");
+  html = replaceOnce(html, /<p class="hero-lead">[^<]*<\/p>/,
+    `<p class="hero-lead">${a(meta.intro[0])}</p>`, "texto de la portada");
+
+  const pad = "          ";
+  const slides = HALLOWEEN_HERO_SLIDES.map((sl, i) => {
+    const imgAttr = i < 2
+      ? `src="${sl.img}"${i === 0 ? ' fetchpriority="high"' : ' loading="lazy"'}`
+      : `data-src="${sl.img}"`;
+    return `${pad}<a class="hero-reel-slide${i === 0 ? " is-active" : ""}" href="producto/${sl.id}/" aria-hidden="${i === 0 ? "false" : "true"}" tabindex="${i === 0 ? "0" : "-1"}">${eol}` +
+      `${pad}  <img class="hero-reel-photo" ${imgAttr} alt="${a(sl.alt)}" width="${sl.w}" height="${sl.h}" decoding="async">${eol}` +
+      `${pad}  <span class="hero-reel-caption"><small>${a(sl.small)}</small><strong>${a(sl.name)}</strong></span>${eol}` +
+      `${pad}</a>`;
+  }).join(eol);
+  const dots = HALLOWEEN_HERO_SLIDES.map((sl, i) =>
+    `${pad}  <button class="hero-reel-dot${i === 0 ? " is-active" : ""}" type="button" data-hero-slide="${i}" aria-label="Ver ${a(sl.name)}" aria-pressed="${i === 0}"></button>`).join(eol);
+  html = replaceOnce(html,
+    /<div class="hero-media hero-reel" id="heroReel"[^>]*>[\s\S]*?<div class="hero-reel-controls"[\s\S]*?<\/div>\s*<\/div>\s*<\/section>/,
+    `<div class="hero-media hero-reel" id="heroReel" aria-label="Productos de Halloween de BoomArt" aria-roledescription="carrusel">${eol}${slides}${eol}` +
+      `${pad}<div class="hero-reel-controls" role="group" aria-label="Elegir fotografía">${eol}${dots}${eol}${pad}</div>${eol}        </div>${eol}      </section>`,
+    "carrete de la portada");
+
+  // Lista de la campaña para buscadores e IA (las tarjetas las dibuja app.js).
+  const itemList = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: meta.h1,
+    url,
+    description: desc,
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: list.length,
+      itemListElement: list.map((p, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `${SITE}/producto/${p.id}/`,
+        name: p.name.replace(/[^\p{L}\p{N}\s·.,:&+()'/-]/gu, "").replace(/\s+/g, " ").trim(),
+      })),
+    },
+  };
+  html = replaceOnce(html, /<\/head>/,
+    `    <script type="application/ld+json">${JSON.stringify(itemList)}</script>${eol}  </head>`, "</head>");
+
+  // Con <base href="/"> un enlace "#seccion" iría a la portada principal: aquí se
+  // queda en esta página y solo se desplaza.
+  const anchorFix = `<script>document.addEventListener("click",function(e){var l=e.target.closest&&e.target.closest('a[href^="#"]');if(!l)return;var id=l.getAttribute("href").slice(1);e.preventDefault();var t=id?document.getElementById(id):null;if(t){t.scrollIntoView({behavior:"smooth",block:"start"});}else{window.scrollTo({top:0,behavior:"smooth"});}if(id){history.replaceState(history.state,"",location.pathname+location.search+"#"+id);}},true);</script>`;
+  html = replaceOnce(html, /<\/body>/, `    ${anchorFix}${eol}  </body>`, "</body>");
+
   const dir = path.join(ROOT, "Halloween");
   await mkdir(dir, { recursive: true });
-  await writeFile(
-    path.join(dir, "index.html"),
-    buildCategoryPage("🎃 Halloween", list, products, ratingLd, {
-      meta: HALLOWEEN_CAMPAIGN_META,
-      rel: "../",
-      clean: "Halloween",
-      url: `${SITE}/Halloween/`,
-      ogImg: `${SITE}/assets/boomart-halloween.jpg`,
-      ogAlt: "Halloween en BoomArt: máscaras, cascos y decoración 3D",
-      ogWidth: 1200,
-      ogHeight: 630,
-    }),
-  );
+  await writeFile(path.join(dir, "index.html"), html);
   return list.length;
 }
 
@@ -1725,7 +1821,6 @@ const ratingLd = buildRatingLd(reviews);
 const [productPageCount, categoryPageCount] = await Promise.all([
   writeProductPages(products, ratingLd),
   writeCategoryPages(products, ratingLd),
-  writeHalloweenCampaignPage(products, ratingLd),
   writeFile(path.join(ROOT, "catalogo.html"), buildHtml(products, ratingLd, reviews)),
   writeFile(path.join(ROOT, "catalogo.json"), buildJson(products) + "\n"),
   writeFile(path.join(ROOT, "sitemap.xml"), buildSitemap(products)),
@@ -1741,6 +1836,8 @@ const [productPageCount, categoryPageCount] = await Promise.all([
 const ratingUpdated = await injectRatingIntoIndex(ratingLd);
 const reviewsBlocksUpdated = await injectReviewsBlocks(reviews);
 const socialBlocksUpdated = await syncSocialBlocks();
+// Despues de actualizar index.html: /Halloween/ es una copia de la portada.
+await writeHalloweenCampaignPage(products);
 
 console.log(
   `OK - generado desde ${products.length} productos` +

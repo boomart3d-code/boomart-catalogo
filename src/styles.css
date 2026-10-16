@@ -6099,3 +6099,16 @@ body .pp-rating a {
     bottom: 18%;
   }
 }
+
+/* Portada de /Halloween/ (2026-10-16): «HALLOWEEN» es más largo que «ARTE QUE»;
+   un punto menos de tamaño para que nunca se corte. */
+.hero .hero-title.is-campaign {
+  max-width: none;
+  font-size: clamp(3rem, 5.6vw, 5.6rem);
+}
+
+@media (max-width: 720px) {
+  .hero .hero-title.is-campaign {
+    font-size: clamp(2.5rem, 12.5vw, 3.4rem);
+  }
+}
