@@ -486,7 +486,7 @@ ${cards}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=54">
+    <link rel="stylesheet" href="src/styles.css?v=55">
     <style>
       .ai-catalog { max-width: 1040px; margin: 0 auto; padding: 32px 20px 80px; }
       .ai-catalog h1 { margin-bottom: 8px; }
@@ -576,7 +576,7 @@ ${socialFooterHtml()}
       </div>
     </footer>
     <script src="src/track.js?v=4" defer></script>
-    <script src="src/shopping-assistant.js?v=2" defer></script>
+    <script src="src/shopping-assistant.js?v=3" defer></script>
   </body>
 </html>
 `;
@@ -886,6 +886,18 @@ function productLd(p) {
     offers: offerLd(p),
   };
   if (p.material) ld.material = p.material;
+  // Video corto del producto (campo opcional "video"): Google puede mostrarlo
+  // en sus resultados de video.
+  if (p.video && p.video.src) {
+    ld.subjectOf = {
+      "@type": "VideoObject",
+      name: `${p.name} en video`,
+      description: `Video de ${p.name}, fabricado a pedido por BoomArt en Perú.`,
+      thumbnailUrl: abs(p.video.poster || imgs[0]),
+      contentUrl: abs(p.video.src),
+      uploadDate: p.video.uploadDate || "2026-10-15",
+    };
+  }
   return ld;
 }
 
@@ -917,6 +929,9 @@ const PRODUCT_PAGE_CSS = `
     .pp-thumbs button{padding:0;border:1px solid var(--line);border-radius:8px;background:#101010;cursor:pointer;width:62px;height:62px;overflow:hidden}
     .pp-thumbs button[aria-current="true"]{border-color:var(--red);border-width:2px}
     .pp-thumbs img{width:100%;height:100%;object-fit:contain;display:block}
+    .pp-thumbs .pp-thumb-video{position:relative}
+    .pp-thumbs .pp-thumb-video span{position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.35);color:#fff;font-size:1rem;pointer-events:none}
+    .pp-main-img[hidden]{display:none}
     .pp-info h1{margin:2px 0 4px;font-size:clamp(1.55rem,4vw,2.35rem);line-height:1.1}
     .pp-sub{color:var(--muted);margin:0 0 16px}
     .pp-rating{font-size:.9rem;margin:0 0 16px}
@@ -1006,6 +1021,13 @@ function buildProductPage(p, all, ratingLd) {
         `<button type="button" data-src="${esc(toWebp(`${rel}${String(img).replace(/^\/+/, "")}`))}" aria-current="${i === 0}"><img src="${esc(toWebp(`${rel}${String(img).replace(/^\/+/, "")}`))}" alt="${esc(p.name)} - vista ${i + 1}" loading="lazy" decoding="async" width="62" height="62"></button>`,
     )
     .join("\n            ");
+  // Video corto (opcional): miniatura con ▶ en segundo lugar; se carga al elegirla.
+  const videoThumb = p.video && p.video.src
+    ? `<button type="button" class="pp-thumb-video" data-video="${esc(`${rel}${p.video.src}`)}" aria-current="false" aria-label="Ver video de ${esc(p.name)}"><img src="${esc(`${rel}${p.video.poster || ""}`)}" alt="" loading="lazy" decoding="async" width="62" height="62"><span aria-hidden="true">▶</span></button>`
+    : "";
+  const thumbsHtml = videoThumb
+    ? thumbs.replace("</button>", `</button>\n            ${videoThumb}`)
+    : thumbs;
 
   let related = all.filter((x) => x.category === p.category && x.id !== p.id);
   if (related.length < 4) {
@@ -1064,7 +1086,7 @@ function buildProductPage(p, all, ratingLd) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=54">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=55">
     <style>${PRODUCT_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(productLd(p))}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbLd(p))}</script>
@@ -1092,7 +1114,8 @@ function buildProductPage(p, all, ratingLd) {
       <div class="pp-top">
         <div class="pp-media">
           <img class="pp-main-img" id="ppMain" src="${esc(toWebp(mainImgRel))}" alt="${esc(p.name)} · figura impresa en 3D por BoomArt" width="640" height="640" decoding="async">
-          ${imgs.length > 1 ? `<div class="pp-thumbs" id="ppThumbs">\n            ${thumbs}\n          </div>` : ""}
+          ${videoThumb ? `<video class="pp-main-img" id="ppVideo" muted loop playsinline preload="none" hidden aria-label="Video de ${esc(p.name)}"></video>` : ""}
+          ${imgs.length > 1 || videoThumb ? `<div class="pp-thumbs" id="ppThumbs">\n            ${thumbsHtml}\n          </div>` : ""}
         </div>
         <div class="pp-info">
           <p class="eyebrow">${esc(catClean)}</p>
@@ -1235,11 +1258,21 @@ ${socialFooterHtml()}
       (function () {
         var thumbs = document.getElementById("ppThumbs");
         var main = document.getElementById("ppMain");
+        var video = document.getElementById("ppVideo");
         if (!thumbs || !main) return;
         thumbs.addEventListener("click", function (e) {
-          var btn = e.target.closest("button[data-src]");
+          var btn = e.target.closest("button[data-src], button[data-video]");
           if (!btn) return;
-          main.src = btn.getAttribute("data-src");
+          if (btn.hasAttribute("data-video") && video) {
+            if (!video.getAttribute("src")) video.src = btn.getAttribute("data-video");
+            main.hidden = true;
+            video.hidden = false;
+            video.play().catch(function () {});
+          } else {
+            if (video) { video.pause(); video.hidden = true; }
+            main.hidden = false;
+            main.src = btn.getAttribute("data-src");
+          }
           thumbs.querySelectorAll("button").forEach(function (b) {
             b.setAttribute("aria-current", b === btn);
           });
@@ -1247,7 +1280,7 @@ ${socialFooterHtml()}
       })();
     </script>
     <script src="${rel}src/track.js?v=4" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=2" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=3" defer></script>
   </body>
 </html>
 `;
@@ -1505,7 +1538,7 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=54">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=55">
     <style>${CATEGORY_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(itemListLd)}</script>
     <script type="application/ld+json">${JSON.stringify(crumbLd)}</script>
@@ -1568,7 +1601,7 @@ ${socialFooterHtml()}
       </span>
     </a>
     <script src="${rel}src/track.js?v=4" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=2" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=3" defer></script>
   </body>
 </html>
 `;

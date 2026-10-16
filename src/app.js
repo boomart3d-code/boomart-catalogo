@@ -509,15 +509,31 @@ const setGlobalWhatsapp = () => {
   setHref("#footerWhatsapp", config.defaultMessage);
 };
 
+// Galería de la ficha: fotos + (opcional) un video corto del producto, que va
+// segundo para que la foto principal siga siendo la portada. El video se pinta
+// solo cuando se elige (no se descarga antes), sin sonido y en bucle (2026-10-15).
+const galleryItems = (product) => {
+  const photos = (product.gallery.length ? product.gallery : [product.image].filter(Boolean))
+    .map((src) => ({ type: "image", src }));
+  if (product.video && product.video.src) {
+    photos.splice(Math.min(1, photos.length), 0, { type: "video", src: product.video.src, poster: product.video.poster || "" });
+  }
+  return photos;
+};
+
 const renderModalImage = () => {
-  const gallery = activeProduct.gallery.length ? activeProduct.gallery : [activeProduct.image].filter(Boolean);
+  const gallery = galleryItems(activeProduct);
   const current = gallery[activeImageIndex];
-  modalImageWrap.innerHTML = current
-    ? `<img src="${webpSrc(current)}" alt="${activeProduct.name} imagen ${activeImageIndex + 1}" decoding="async">`
-    : placeholder(activeProduct);
+  modalImageWrap.innerHTML = !current
+    ? placeholder(activeProduct)
+    : current.type === "video"
+      ? `<video class="modal-video" src="${current.src}"${current.poster ? ` poster="${current.poster}"` : ""} autoplay muted loop playsinline preload="auto" aria-label="Video de ${activeProduct.name}"></video>`
+      : `<img src="${webpSrc(current.src)}" alt="${activeProduct.name} imagen ${activeImageIndex + 1}" decoding="async">`;
 
   thumbRow.innerHTML = gallery
-    .map((image, index) => `<button class="${index === activeImageIndex ? "active" : ""}" type="button" data-thumb="${index}" aria-label="Ver foto ${index + 1} de ${gallery.length} de ${activeProduct.name}"><img src="${webpSrc(image)}" alt="" loading="lazy" decoding="async"></button>`)
+    .map((item, index) => item.type === "video"
+      ? `<button class="thumb-video${index === activeImageIndex ? " active" : ""}" type="button" data-thumb="${index}" aria-label="Ver video de ${activeProduct.name}"><img src="${item.poster || webpSrc(activeProduct.image)}" alt="" loading="lazy" decoding="async"><span aria-hidden="true">▶</span></button>`
+      : `<button class="${index === activeImageIndex ? "active" : ""}" type="button" data-thumb="${index}" aria-label="Ver foto ${index + 1} de ${gallery.length} de ${activeProduct.name}"><img src="${webpSrc(item.src)}" alt="" loading="lazy" decoding="async"></button>`)
     .join("");
 
   const hasMultiple = gallery.length > 1;
@@ -581,7 +597,7 @@ const dismissProduct = () => {
 };
 
 const changeImage = (direction) => {
-  const gallery = activeProduct.gallery.length ? activeProduct.gallery : [activeProduct.image].filter(Boolean);
+  const gallery = galleryItems(activeProduct);
   if (gallery.length < 2) return;
   activeImageIndex = (activeImageIndex + direction + gallery.length) % gallery.length;
   renderModalImage();

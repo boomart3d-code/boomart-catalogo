@@ -1121,7 +1121,12 @@
       "assets/products/casco-de-wolverine-con-garras-3.jpg"
     ],
     "description": "Casco decorativo de Wolverine acompañado de su set de garras. Dos piezas de exhibición para el fan de Marvel y los X-Men.",
-    "offerPrice": 200
+    "offerPrice": 200,
+    "video": {
+      "src": "assets/products/videos/casco-de-wolverine-con-garras.mp4",
+      "poster": "assets/products/videos/casco-de-wolverine-con-garras.jpg",
+      "uploadDate": "2026-10-15"
+    }
   },
   {
     "id": "mascara-de-batwoman",

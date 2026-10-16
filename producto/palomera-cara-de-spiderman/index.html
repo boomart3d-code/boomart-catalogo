@@ -39,7 +39,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../src/styles.css?v=54">
+    <link rel="stylesheet" href="../../src/styles.css?v=55">
     <style>
     .pp{max-width:1080px;margin:0 auto;padding:clamp(18px,4vw,36px) clamp(16px,4vw,40px) clamp(56px,8vw,88px)}
     .pp-crumbs{font-size:.82rem;color:var(--muted);margin:0 0 18px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
@@ -51,6 +51,9 @@
     .pp-thumbs button{padding:0;border:1px solid var(--line);border-radius:8px;background:#101010;cursor:pointer;width:62px;height:62px;overflow:hidden}
     .pp-thumbs button[aria-current="true"]{border-color:var(--red);border-width:2px}
     .pp-thumbs img{width:100%;height:100%;object-fit:contain;display:block}
+    .pp-thumbs .pp-thumb-video{position:relative}
+    .pp-thumbs .pp-thumb-video span{position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.35);color:#fff;font-size:1rem;pointer-events:none}
+    .pp-main-img[hidden]{display:none}
     .pp-info h1{margin:2px 0 4px;font-size:clamp(1.55rem,4vw,2.35rem);line-height:1.1}
     .pp-sub{color:var(--muted);margin:0 0 16px}
     .pp-rating{font-size:.9rem;margin:0 0 16px}
@@ -114,6 +117,7 @@
       <div class="pp-top">
         <div class="pp-media">
           <img class="pp-main-img" id="ppMain" src="../../assets/products/palomera-cara-de-spiderman-hero-v2.webp" alt="Palomera Cara de Spider-Man · Marvel · figura impresa en 3D por BoomArt" width="640" height="640" decoding="async">
+          
           <div class="pp-thumbs" id="ppThumbs">
             <button type="button" data-src="../../assets/products/palomera-cara-de-spiderman-hero-v2.webp" aria-current="true"><img src="../../assets/products/palomera-cara-de-spiderman-hero-v2.webp" alt="Palomera Cara de Spider-Man · Marvel - vista 1" loading="lazy" decoding="async" width="62" height="62"></button>
             <button type="button" data-src="../../assets/products/palomera-cara-de-spiderman.webp" aria-current="false"><img src="../../assets/products/palomera-cara-de-spiderman.webp" alt="Palomera Cara de Spider-Man · Marvel - vista 2" loading="lazy" decoding="async" width="62" height="62"></button>
@@ -264,11 +268,21 @@
       (function () {
         var thumbs = document.getElementById("ppThumbs");
         var main = document.getElementById("ppMain");
+        var video = document.getElementById("ppVideo");
         if (!thumbs || !main) return;
         thumbs.addEventListener("click", function (e) {
-          var btn = e.target.closest("button[data-src]");
+          var btn = e.target.closest("button[data-src], button[data-video]");
           if (!btn) return;
-          main.src = btn.getAttribute("data-src");
+          if (btn.hasAttribute("data-video") && video) {
+            if (!video.getAttribute("src")) video.src = btn.getAttribute("data-video");
+            main.hidden = true;
+            video.hidden = false;
+            video.play().catch(function () {});
+          } else {
+            if (video) { video.pause(); video.hidden = true; }
+            main.hidden = false;
+            main.src = btn.getAttribute("data-src");
+          }
           thumbs.querySelectorAll("button").forEach(function (b) {
             b.setAttribute("aria-current", b === btn);
           });
@@ -276,6 +290,6 @@
       })();
     </script>
     <script src="../../src/track.js?v=4" defer></script>
-    <script src="../../src/shopping-assistant.js?v=2" defer></script>
+    <script src="../../src/shopping-assistant.js?v=3" defer></script>
   </body>
 </html>
