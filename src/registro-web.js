@@ -258,6 +258,7 @@
    */
   function render(container, options) {
     const opts = options || {};
+    const checkout = opts.context === "checkout";
     const p = profile || {};
     const draft = (() => {
       try {
@@ -279,7 +280,7 @@
     container.innerHTML = `
       <form class="reg-form" novalidate>
         <fieldset class="reg-section">
-          <legend>Tus datos</legend>
+          <legend>${checkout ? "Contacto" : "Tus datos"}</legend>
           <label class="field">
             <span>Nombre completo</span>
             <input name="full_name" autocomplete="name" maxlength="160" required value="${esc(v.full_name)}">
@@ -294,7 +295,12 @@
               <input name="email" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" maxlength="180" required value="${esc(v.email)}">
             </label>
           </div>
-          <p class="reg-email-hint">Verifica que tu correo esté bien escrito: ahí te enviaremos la confirmación de tu registro.</p>
+          <p class="reg-email-hint">${checkout ? "Usaremos tu correo para las confirmaciones de tu pedido. Revisa que esté bien escrito." : "Verifica que tu correo esté bien escrito: ahí te enviaremos la confirmación de tu registro."}</p>
+        </fieldset>
+
+        <fieldset class="reg-section">
+          <legend>${checkout ? "Comprobante y entrega" : "Documento y entrega"}</legend>
+          <p class="reg-hint" id="reg-document-hint-${esc(opts.context || "cuenta")}">Necesitamos tu documento para identificar tu pedido y preparar tu comprobante.</p>
           <div class="reg-two">
             <label class="field">
               <span>Tipo de documento</span>
@@ -304,15 +310,12 @@
             </label>
             <label class="field">
               <span>Número de documento</span>
-              <input name="document_number" autocomplete="off" maxlength="30" required value="${esc(v.document_number)}">
+              <input name="document_number" autocomplete="off" maxlength="30" required aria-describedby="reg-document-hint-${esc(opts.context || "cuenta")}" value="${esc(v.document_number)}">
             </label>
           </div>
-        </fieldset>
-
-        <fieldset class="reg-section">
-          <legend>¿Cómo recibirás tu pedido?</legend>
+          <p class="reg-delivery-title" id="reg-delivery-title-${esc(opts.context || "cuenta")}">¿Cómo recibirás tu pedido?</p>
           <p class="reg-hint">${deliveryHint}</p>
-          <div class="reg-choices" role="radiogroup">
+          <div class="reg-choices" role="radiogroup" aria-labelledby="reg-delivery-title-${esc(opts.context || "cuenta")}">
             <label class="reg-choice"><input type="radio" name="delivery_method" value="indriver"${method === "indriver" ? " checked" : ""}><b>Envío local</b><small>Lima y Callao · InDrive</small></label>
             <label class="reg-choice"><input type="radio" name="delivery_method" value="shalom"${method === "shalom" ? " checked" : ""}><b>Envío por Shalom</b><small>A una agencia en provincias</small></label>
             <label class="reg-choice"><input type="radio" name="delivery_method" value="pickup"${method === "pickup" ? " checked" : ""}><b>Recojo</b><small>Coordinado con BoomArt</small></label>
@@ -334,7 +337,7 @@
           <p class="reg-delivery reg-pickup" data-delivery="pickup" hidden><b>Recojo en taller privado:</b> ${PICKUP_TEXT}</p>
         </fieldset>
 
-        <p class="reg-privacy">Al registrarte autorizas a BoomArt a usar estos datos únicamente para registrar, coordinar y entregar tus pedidos.</p>
+        <p class="reg-privacy">${checkout ? "Al continuar" : "Al registrarte"} autorizas a BoomArt a usar estos datos únicamente para registrar, coordinar y entregar tus pedidos.</p>
         <p class="form-error reg-error" role="alert" hidden></p>
         <button type="submit" class="button primary full reg-submit">${esc(opts.submitLabel || "Registrarme")}</button>
       </form>

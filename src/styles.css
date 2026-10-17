@@ -1746,6 +1746,7 @@ h2 {
   width: min(560px, calc(100vw - 28px));
   max-height: calc(100vh - 28px);
   padding: 0;
+  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #111;
@@ -1788,6 +1789,58 @@ h2 {
 .checkout-step h2 {
   margin: 4px 0 20px;
   font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.checkout-progress {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+  color: #c9c2b8;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.checkout-progress[hidden] { display: none; }
+
+.checkout-progress li {
+  padding-top: 9px;
+  border-top: 2px solid #6f6961;
+}
+
+.checkout-progress .is-active {
+  border-color: var(--red);
+  color: white;
+  font-weight: 800;
+}
+
+.checkout-progress .is-complete { border-color: white; }
+
+.checkout-cart-context,
+.checkout-customer-review {
+  margin: 0 0 22px;
+  padding: 12px 14px;
+  border: 1px solid #6f6961;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #e9e5df;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.checkout-customer-review h3 { margin: 0 0 6px; }
+.checkout-customer-review p { margin: 0 0 10px; }
+.checkout-customer-review .link-button { color: #ff8a97; }
+.checkout-payment-title { margin-top: 28px; }
+.reg-delivery-title { margin: 18px 0 10px; font-weight: 800; }
+
+/* Solo la caja interior se desplaza; evita barras de scroll duplicadas. */
+#checkoutDialog .checkout-shell { max-height: calc(100dvh - 32px); }
+@media (max-width: 720px) {
+  #checkoutDialog .checkout-shell { max-height: calc(100dvh - 2px); }
 }
 
 .field {

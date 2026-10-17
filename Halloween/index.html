@@ -47,7 +47,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=60">
+    <link rel="stylesheet" href="src/styles.css?v=61">
 
     <script type="application/ld+json">
     {
@@ -621,11 +621,16 @@
           <img class="ba-mark" src="assets/brand/boomart-icon-asistente.png?v=1" alt="">
           <span>COMPRA EN BOOMART</span>
         </div>
+        <ol class="checkout-progress" aria-label="Pasos de tu pedido">
+          <li data-checkout-progress="customer" class="is-active" aria-current="step">1. Datos del pedido</li>
+          <li data-checkout-progress="payment">2. Resumen y pago</li>
+        </ol>
 
         <section class="checkout-step" data-step="customer">
-          <p class="eyebrow">Paso 1 de 3 · Tus datos</p>
-          <h2 id="checkoutRegTitle">Regístrate para confirmar tu pedido</h2>
-          <p class="field-hint" id="checkoutRegHint">Solo te lo pedimos una vez: así registramos tu pedido y activamos tu 10 % de bienvenida.</p>
+          <p class="eyebrow">Paso 1 de 2 · Datos del pedido</p>
+          <h2 id="checkoutRegTitle" tabindex="-1">Completa los datos de tu pedido</h2>
+          <p class="field-hint" id="checkoutRegHint">Los necesitamos para registrar tu pedido, preparar tu comprobante y coordinar la entrega. No necesitas crear una contraseña.</p>
+          <p class="checkout-cart-context" id="checkoutCartContext"></p>
           <!-- Registro obligatorio para comprar (2026-10-15): el formulario lo pinta
                src/registro-web.js (mismos datos que /registro-cliente/). -->
           <div id="checkoutRegistro"></div>
@@ -634,9 +639,15 @@
           </div>
         </section>
 
-        <section class="checkout-step" data-step="summary" hidden>
-          <p class="eyebrow">Paso 2 de 3 · Resumen</p>
-          <h2>Resumen de tu pedido</h2>
+        <section class="checkout-step" data-step="payment" hidden>
+          <p class="eyebrow">Paso 2 de 2 · Resumen y pago</p>
+          <h2 tabindex="-1">Revisa tu pedido y elige cómo pagar</h2>
+          <div class="checkout-customer-review">
+            <h3>Tus datos</h3>
+            <p id="summaryCustomer"></p>
+            <button type="button" class="link-button" data-back-to="customer">Editar datos y entrega</button>
+          </div>
+          <h3>Tu pedido</h3>
           <div class="summary-lines" id="summaryLines"></div>
           <div class="summary-totals">
             <div class="summary-row coupon-row" id="summaryCouponRow" hidden>
@@ -652,29 +663,21 @@
               <strong id="summaryTotal"></strong>
             </div>
             <div class="summary-row advance">
-              <span>Reserva del 50% (opcional)</span>
+              <span>Pagas ahora</span>
               <strong id="summaryAdvance"></strong>
             </div>
             <div class="summary-row">
-              <span>Saldo si pagas la reserva</span>
+              <span>Saldo pendiente</span>
               <strong id="summaryBalance"></strong>
             </div>
             <div class="summary-row shipping">
-              <span>Envío</span>
-              <strong>Costo por coordinar, no incluido</strong>
+              <span id="summaryShippingLabel">Envío</span>
+              <strong id="summaryShippingValue">Costo por coordinar, no incluido</strong>
             </div>
           </div>
           <div class="delivery-terms" id="deliveryTerms"></div>
           <p class="field-hint">Fabricación: 48 horas útiles desde la validación de tu pago.</p>
-          <div class="checkout-actions">
-            <button type="button" class="button secondary" data-back-to="customer">Atrás</button>
-            <button type="button" class="button primary" data-go-to="payment">Continuar al pago</button>
-          </div>
-        </section>
-
-        <section class="checkout-step" data-step="payment" hidden>
-          <p class="eyebrow">Paso 3 de 3 · Pago</p>
-          <h2>Elige cómo pagar</h2>
+          <h3 class="checkout-payment-title">Elige cómo pagar</h3>
           <p class="field-hint">¿Cuánto quieres pagar ahora?</p>
           <div class="payment-methods payment-amount-options" role="group" aria-label="Monto a pagar ahora">
             <button type="button" class="payment-method is-selected" data-pay-mode="advance" aria-pressed="true">Reserva 50%<br><strong data-pay-mode-amount="advance"></strong></button>
@@ -694,34 +697,15 @@
 
           <p class="payment-disclaimer" id="paymentDisclaimer">Este código QR no confirma tu pago automáticamente. BoomArt valida cada pago de forma manual antes de iniciar la fabricación.</p>
 
-          <div class="field-group" id="documentFields" hidden>
-            <p class="field-hint">Para enviarte tu boleta por correo, cuéntanos tu documento (opcional):</p>
-            <div class="document-fields-row">
-              <label class="field">
-                <span>Tipo de documento</span>
-                <select id="customerDocType">
-                  <option value="dni" selected>DNI</option>
-                  <option value="ce">Carnet de Extranjería</option>
-                  <option value="pasaporte">Pasaporte</option>
-                  <option value="">Prefiero no decir</option>
-                </select>
-              </label>
-              <label class="field">
-                <span>Número de documento</span>
-                <input type="text" id="customerDocNumber" autocomplete="off">
-              </label>
-            </div>
-          </div>
-
           <div class="checkout-actions">
-            <button type="button" class="button secondary" data-back-to="summary">Atrás</button>
+            <button type="button" class="button secondary" data-back-to="customer">Editar mis datos</button>
             <button type="button" class="button whatsapp full" id="confirmWhatsapp" disabled>Ya pagué: continuar por WhatsApp</button>
           </div>
         </section>
 
         <section class="checkout-step" data-step="done" hidden>
           <p class="eyebrow">Pedido enviado a WhatsApp</p>
-          <h2>Revisa y envía tu mensaje</h2>
+          <h2 tabindex="-1">Revisa y envía tu mensaje</h2>
           <p id="doneText">Se abrió WhatsApp con tu pedido ya redactado. Revisa el mensaje, pulsa <strong>Enviar</strong> dentro de WhatsApp y adjunta la foto de tu comprobante de pago. Tu pedido queda pendiente de validación por BoomArt.</p>
           <a class="button whatsapp full" id="reopenWhatsapp" target="_blank" rel="noreferrer">Abrir WhatsApp de nuevo</a>
           <div class="checkout-actions">
@@ -756,7 +740,7 @@
     <script src="src/cart.js?v=7"></script>
     <script src="src/products.js?v=5"></script>
     <script src="src/app.js?v=45"></script>
-    <script src="src/checkout.js?v=27"></script>
+    <script src="src/checkout.js?v=28"></script>
     <script src="src/products-loader.js?v=5"></script>
     <script src="src/reviews.js?v=6"></script>
     <script src="src/reviews-loader.js?v=2"></script>
@@ -768,7 +752,7 @@
          cargar, el resto de la web sigue funcionando igual. -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
     <script src="src/supabase-config.js?v=1"></script>
-    <script src="src/registro-web.js?v=3"></script>
+    <script src="src/registro-web.js?v=4"></script>
       <script>document.addEventListener("click",function(e){var l=e.target.closest&&e.target.closest('a[href^="#"]');if(!l)return;var id=l.getAttribute("href").slice(1);e.preventDefault();var t=id?document.getElementById(id):null;if(t){t.scrollIntoView({behavior:"smooth",block:"start"});}else{window.scrollTo({top:0,behavior:"smooth"});}if(id){history.replaceState(history.state,"",location.pathname+location.search+"#"+id);}},true);</script>
   </body>
 </html>

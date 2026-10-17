@@ -1,6 +1,6 @@
 /*
- * Interfaz del carrito y del recorrido de pedido (carrito -> datos -> resumen ->
- * pago -> WhatsApp). Depende de window.BoomartCart (cart.js) y window.BOOMART_CHECKOUT
+ * Interfaz del carrito y del recorrido de pedido (datos -> resumen y pago ->
+ * WhatsApp). Depende de window.BoomartCart (cart.js) y window.BOOMART_CHECKOUT
  * (checkout-config.js), ya cargados antes de este archivo. No modifica products.js/app.js
  * mas alla de los enganches ya agregados ahi (data-add-to-cart, etc.).
  */
@@ -9,6 +9,8 @@
 
   const CHECKOUT = window.BOOMART_CHECKOUT || {};
   const money = (value) => `S/${Number(value || 0).toFixed(2)}`;
+  const esc = (value) => String(value ?? "").replace(/[&<>"']/g,
+    (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
   // Medicion propia (src/track.js). Siempre opcional: nunca debe romper el carrito.
   const trackEvt = (name, props) => {
@@ -100,14 +102,14 @@
   const summaryTotalEl = document.querySelector("#summaryTotal");
   const summaryAdvanceEl = document.querySelector("#summaryAdvance");
   const summaryBalanceEl = document.querySelector("#summaryBalance");
+  const summaryCustomerEl = document.querySelector("#summaryCustomer");
+  const summaryShippingLabel = document.querySelector("#summaryShippingLabel");
+  const summaryShippingValue = document.querySelector("#summaryShippingValue");
   const deliveryTermsEl = document.querySelector("#deliveryTerms");
   const paymentAdvanceAmountEl = document.querySelector("#paymentAdvanceAmount");
   const paymentDetailEl = document.querySelector("#paymentDetail");
   const confirmWhatsappBtn = document.querySelector("#confirmWhatsapp");
   const reopenWhatsappLink = document.querySelector("#reopenWhatsapp");
-  const documentFieldsEl = document.querySelector("#documentFields");
-  const customerDocTypeInput = document.querySelector("#customerDocType");
-  const customerDocNumberInput = document.querySelector("#customerDocNumber");
 
   const customer = {
     name: "",
@@ -374,9 +376,24 @@
     steps.forEach((section) => {
       section.hidden = section.dataset.step !== name;
     });
+    const progress = checkoutDialog.querySelector(".checkout-progress");
+    if (progress) {
+      progress.hidden = name === "done";
+      progress.querySelectorAll("[data-checkout-progress]").forEach((item) => {
+        const active = item.dataset.checkoutProgress === name;
+        item.classList.toggle("is-active", active);
+        item.classList.toggle("is-complete", name === "payment" && item.dataset.checkoutProgress === "customer");
+        if (active) item.setAttribute("aria-current", "step");
+        else item.removeAttribute("aria-current");
+      });
+    }
+    const shell = checkoutDialog.querySelector(".checkout-shell");
+    if (shell) shell.scrollTop = 0;
+    const heading = checkoutDialog.querySelector(`.checkout-step[data-step="${name}"] h2`);
+    if (checkoutDialog.open && heading) heading.focus();
   };
 
-  // ---------- Paso 1: registro del cliente (obligatorio para comprar) ----------
+  // ---------- Paso 1: datos del pedido (registro operativo conservado) ----------
   // Pedido de Adrián (2026-10-15): el paso 1 es el formulario de registro de
   // src/registro-web.js (mismos datos que /registro-cliente/, con el buscador de
   // agencias Shalom). Si ya se registró en este navegador, aparece prellenado
@@ -399,31 +416,36 @@
     customer.provProvince = d.provProvince || "";
     customer.addressDetail = d.addressDetail || "";
     customer.deliveryLabel = d.label || "";
+    customer.deliveryMethod = d.method || "";
     customer.docType = perfil.document_type || "";
     customer.docNumber = perfil.document_number || "";
   }
 
   function renderCustomerStep() {
     const reg = window.BoomartRegistro;
-    if (!reg || !checkoutRegistroEl) {
+    if (!checkoutRegistroEl) return;
+    if (!reg) {
       checkoutRegistroEl.innerHTML = `<p class="form-error">No pudimos cargar el registro en este momento. Revisa tu conexión o escríbenos por WhatsApp al 925 666 542 y te ayudamos con tu pedido.</p>`;
       return;
     }
     const registered = Boolean(reg.profile());
-    checkoutRegTitle.textContent = registered ? "Confirma tus datos" : "Regístrate para confirmar tu pedido";
+    checkoutRegTitle.textContent = registered ? "Revisa los datos de tu pedido" : "Completa los datos de tu pedido";
     checkoutRegHint.textContent = registered
-      ? "Revisa que tus datos estén correctos y continúa."
-      : "Solo te lo pedimos una vez: así registramos tu pedido y activamos tu 10 % de bienvenida.";
+      ? "Ya completamos tus datos guardados. Puedes corregirlos antes de revisar el pago."
+      : "Los necesitamos para registrar tu pedido, preparar tu comprobante y coordinar la entrega. No necesitas crear una contraseña.";
+    const cartContext = document.querySelector("#checkoutCartContext");
+    if (cartContext) {
+      const totals = window.BoomartCart.getState().totals;
+      cartContext.textContent = `${totals.itemCount} producto${totals.itemCount === 1 ? "" : "s"} · Total de productos: ${money(totals.total)} · En el siguiente paso verás el pago y tu cupón, si corresponde.`;
+    }
     reg.render(checkoutRegistroEl, {
       context: "checkout",
       requireDelivery: true,
-      submitLabel: "Continuar con mi pedido",
+      submitLabel: "Revisar pedido y pago",
       onSaved: (result) => {
         applyRegistration(result.perfil || reg.profile() || {});
-        renderSummaryStep();
-        showStep("summary");
-        const shell = checkoutDialog.querySelector(".checkout-shell");
-        if (shell) shell.scrollTop = 0;
+        renderPaymentStep();
+        showStep("payment");
       }
     });
   }
@@ -460,11 +482,6 @@
     }
     const backTo = event.target.closest("[data-back-to]");
     if (backTo) showStep(backTo.dataset.backTo);
-    const goTo = event.target.closest("[data-go-to]");
-    if (goTo && goTo.dataset.goTo === "payment") {
-      renderPaymentStep();
-      showStep("payment");
-    }
   });
 
   function destinationLabel() {
@@ -479,33 +496,42 @@
 
   function renderSummaryStep() {
     const state = window.BoomartCart.getState();
+    const plan = paymentPlan(state);
     summaryLinesEl.innerHTML = state.lines
       .map(
         (line) => `
           <div class="summary-line">
-            <span>${line.quantity}x ${line.name}${line.variantLabel ? ` (${line.variantLabel})` : ""}</span>
+            <span>${line.quantity}x ${esc(line.name)}${line.variantLabel ? ` (${esc(line.variantLabel)})` : ""}</span>
             <strong>${money(line.subtotal)}</strong>
           </div>
         `
       )
       .join("");
-    const couponApplied = Boolean(state.totals.couponApplied);
+    const couponApplied = plan.couponApplied;
     summaryCouponRow.hidden = !couponApplied;
     summaryDiscountRow.hidden = !couponApplied;
     if (couponApplied) {
       summarySubtotalEl.textContent = money(state.totals.subtotal);
       summaryDiscountEl.textContent = `-${money(state.totals.discount)}`;
     }
-    summaryTotalEl.textContent = money(state.totals.total);
-    summaryAdvanceEl.textContent = money(state.totals.advance);
-    summaryBalanceEl.textContent = money(state.totals.balance);
+    summaryTotalEl.textContent = money(plan.base);
+    summaryAdvanceEl.textContent = money(plan.pay);
+    summaryBalanceEl.textContent = money(plan.balance);
+    if (summaryCustomerEl) {
+      summaryCustomerEl.textContent = [customer.name, `WhatsApp: ${customer.phone}`, `Correo: ${customer.email}`].join(" · ");
+    }
+    const pickup = customer.deliveryMethod === "pickup";
+    if (summaryShippingLabel) summaryShippingLabel.textContent = pickup ? "Recojo" : "Envío";
+    if (summaryShippingValue) summaryShippingValue.textContent = pickup ? "Previa coordinación" : "Costo por coordinar, no incluido";
 
     const terms = (CHECKOUT.deliveryTerms || {})[customer.destination];
-    deliveryTermsEl.innerHTML = terms
+    deliveryTermsEl.innerHTML = pickup
+      ? `<p class="delivery-terms-title">${esc(destinationLabel())}</p><p>Coordinaremos por WhatsApp la fecha y el horario de recojo.</p>`
+      : terms
       ? `
-        <p class="delivery-terms-title">${destinationLabel()}</p>
-        <p>${terms.summary}</p>
-        <p>${terms.balanceCondition}</p>
+        <p class="delivery-terms-title">${esc(destinationLabel())}</p>
+        <p>${esc(terms.summary)}</p>
+        <p>${esc(terms.balanceCondition)}</p>
       `
       : "";
   }
@@ -545,6 +571,7 @@
     document.querySelectorAll("[data-pay-mode-amount]").forEach((el) => {
       el.textContent = money(el.dataset.payModeAmount === "full" ? plan.full : plan.advance);
     });
+    renderSummaryStep();
   }
 
   function renderPaymentStep() {
@@ -565,8 +592,6 @@
     });
     paymentDetailEl.innerHTML = "";
 
-    // El documento ya viene del registro (obligatorio): no se vuelve a pedir.
-    if (documentFieldsEl) documentFieldsEl.hidden = true;
   }
 
   document.querySelectorAll("[data-payment-method]").forEach((button) => {
