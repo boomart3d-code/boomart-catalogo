@@ -1297,6 +1297,36 @@
     "description": "🎃 Edición Halloween. Máscara articulada inspirada en Hellboy, con acabado rojo y gran nivel de detalle. La mandíbula es articulada: al hablar, la boca se mueve contigo. Incluye un puro desmontable para completar el look. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y colección. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 🔥"
   },
   {
+    "id": "mascara-red-hood",
+    "name": "Máscara de Red Hood 🎃 · Halloween",
+    "category": "🎃 Halloween",
+    "extraCategories": [
+      "Marvel & DC"
+    ],
+    "tags": [
+      "Máscaras",
+      "Red Hood",
+      "DC",
+      "Batman",
+      "Cosplay",
+      "Disfraces",
+      "Tamaño real",
+      "Halloween"
+    ],
+    "height": "Tamaño real 1:1",
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 200,
+    "featured": true,
+    "image": "assets/products/mascara-red-hood-hero.jpg",
+    "gallery": [
+      "assets/products/mascara-red-hood-hero.jpg",
+      "assets/products/mascara-red-hood-2.jpg",
+      "assets/products/mascara-red-hood-3.jpg"
+    ],
+    "description": "🎃 Edición Halloween. Máscara de Red Hood (DC) a tamaño real 1:1, especial para cosplay y disfraz. Fabricada en PLA+ para mayor resistencia y durabilidad. Hecha a pedido, con envíos a todo el Perú."
+  },
+  {
     "id": "mascara-dr-doom",
     "name": "Máscara de Dr. Doom 🎃 · Halloween",
     "category": "🎃 Halloween",

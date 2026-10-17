@@ -384,12 +384,19 @@
     "height": 1200,
     "bytes": 134312
   },
-  "mascara-dr-doom": {
-    "source": "assets/products/mascara-dr-doom-hero.jpg",
-    "hash": "a9ed456a226c740f",
+  "mascara-red-hood": {
+    "source": "assets/products/mascara-red-hood-hero.jpg",
+    "hash": "b827788e40e43eaf",
     "width": 960,
     "height": 1200,
-    "bytes": 149763
+    "bytes": 95862
+  },
+  "mascara-dr-doom": {
+    "source": "assets/products/mascara-dr-doom-hero.jpg",
+    "hash": "b27a863ae1aea826",
+    "width": 960,
+    "height": 1200,
+    "bytes": 148462
   },
   "casco-de-batman": {
     "source": "assets/products/casco-de-batman-hero.jpg",
