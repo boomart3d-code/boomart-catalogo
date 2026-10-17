@@ -292,7 +292,7 @@
       const catalog = window.BOOMART_PRODUCTS || [];
       const product = catalog.find((item) => item && item.id === e.p);
       if (product) {
-        const price = product.offerPrice != null ? product.offerPrice : product.regularPrice;
+        const price = product.regularPrice;
         if (Number.isFinite(Number(price))) return Number(price);
       }
       const priceMeta = document.querySelector('meta[property="product:price:amount"]');

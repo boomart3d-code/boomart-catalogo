@@ -67,8 +67,7 @@ const waLink = (name) =>
  * Precios de un producto, en soles (PEN). Devuelve:
  *   from       precio de referencia ("desde")
  *   lines      desglose legible para humanos
- *   listPrice  precio de lista para los feeds (Google/Meta/Pinterest)
- *   salePrice  precio rebajado, o null si no hay oferta
+ *   listPrice  único precio oficial para los feeds (Google/Meta/Pinterest)
  */
 function priceInfo(p) {
   if (p.templePricing) {
@@ -84,21 +83,13 @@ function priceInfo(p) {
         typeof combo === "number" ? `Combo (templo + Pandora Box + pedestal): S/${combo}` : null,
       ].filter(Boolean),
       listPrice: base,
-      salePrice: null,
     };
   }
-  const regular = typeof p.regularPrice === "number" ? p.regularPrice : null;
-  const offer = typeof p.offerPrice === "number" ? p.offerPrice : null;
-  const current = offer ?? regular;
-  const discounted = offer && regular && offer < regular;
-  const lines = [];
-  if (discounted) lines.push(`Precio oferta: S/${offer} (antes S/${regular})`);
-  else if (current != null) lines.push(`Precio: S/${current}`);
+  const current = typeof p.regularPrice === "number" ? p.regularPrice : null;
   return {
     from: current,
-    lines,
-    listPrice: discounted ? regular : current,
-    salePrice: discounted ? offer : null,
+    lines: current != null ? [`Precio: S/${current}`] : [],
+    listPrice: current,
   };
 }
 
@@ -486,7 +477,7 @@ ${cards}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=59">
+    <link rel="stylesheet" href="src/styles.css?v=60">
     <style>
       .ai-catalog { max-width: 1040px; margin: 0 auto; padding: 32px 20px 80px; }
       .ai-catalog h1 { margin-bottom: 8px; }
@@ -575,8 +566,8 @@ ${socialFooterHtml()}
         </ul>
       </div>
     </footer>
-    <script src="src/track.js?v=4" defer></script>
-    <script src="src/shopping-assistant.js?v=5" defer></script>
+    <script src="src/track.js?v=5" defer></script>
+    <script src="src/shopping-assistant.js?v=6" defer></script>
   </body>
 </html>
 `;
@@ -723,7 +714,7 @@ function buildGoogleFeed(products) {
       <g:image_link>${esc(main)}</g:image_link>
 ${extra ? extra + "\n" : ""}      <g:availability>in_stock</g:availability>
       <g:price>${money(price.listPrice)}</g:price>
-${price.salePrice != null ? `      <g:sale_price>${money(price.salePrice)}</g:sale_price>\n` : ""}      <g:condition>new</g:condition>
+      <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>${esc(googleCategory(p))}</g:google_product_category>
@@ -755,7 +746,6 @@ function buildMetaFeed(products) {
     "availability",
     "condition",
     "price",
-    "sale_price",
     "link",
     "image_link",
     "additional_image_link",
@@ -777,7 +767,6 @@ function buildMetaFeed(products) {
       "in stock",
       "new",
       money(price.listPrice),
-      price.salePrice != null ? money(price.salePrice) : "",
       `${SITE}/producto/${p.id}/`,
       main,
       extra,
@@ -986,10 +975,9 @@ function priceBlockHtml(p) {
     ].join("");
     return `<div class="pp-price"><span class="now">desde S/${Math.min(...vals)}</span><ul>${rows}</ul></div>`;
   }
-  const now = price.salePrice != null ? price.salePrice : price.from;
-  const was = price.salePrice != null ? price.listPrice : null;
+  const now = price.from;
   if (now == null) return `<div class="pp-price"><span class="now">Precio a consultar</span></div>`;
-  return `<div class="pp-price"><span class="now">S/${now}</span>${was ? `<span class="was">S/${was}</span>` : ""}</div>`;
+  return `<div class="pp-price"><span class="now">S/${now}</span></div>`;
 }
 
 function buildProductPage(p, all, ratingLd) {
@@ -1049,7 +1037,7 @@ function buildProductPage(p, all, ratingLd) {
 
   const priceMeta =
     price.from != null
-      ? `\n    <meta property="product:price:amount" content="${price.salePrice != null ? price.salePrice : price.from}">\n    <meta property="product:price:currency" content="PEN">`
+      ? `\n    <meta property="product:price:amount" content="${price.from}">\n    <meta property="product:price:currency" content="PEN">`
       : "";
 
   return `<!doctype html>
@@ -1086,7 +1074,7 @@ function buildProductPage(p, all, ratingLd) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=59">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=60">
     <style>${PRODUCT_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(productLd(p))}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbLd(p))}</script>
@@ -1279,8 +1267,8 @@ ${socialFooterHtml()}
         });
       })();
     </script>
-    <script src="${rel}src/track.js?v=4" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=5" defer></script>
+    <script src="${rel}src/track.js?v=5" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=6" defer></script>
   </body>
 </html>
 `;
@@ -1468,11 +1456,9 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
     .map((p) => {
       const price = priceInfo(p);
       const pr =
-        price.salePrice != null
-          ? `S/${price.salePrice}`
-          : price.from != null
-            ? (p.templePricing ? `desde S/${price.from}` : `S/${price.from}`)
-            : "Consultar";
+        price.from != null
+          ? (p.templePricing ? `desde S/${price.from}` : `S/${price.from}`)
+          : "Consultar";
       const img = `${rel}${String((p.gallery && p.gallery[0]) || p.image).replace(/^\/+/, "")}`;
       return `        <a class="cat-card" href="${rel}producto/${esc(p.id)}/">
           <img src="${esc(toWebp(img))}" alt="${esc(p.name)}" loading="lazy" decoding="async" width="240" height="240">
@@ -1540,7 +1526,7 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=59">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=60">
     <style>${CATEGORY_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(itemListLd)}</script>
     <script type="application/ld+json">${JSON.stringify(crumbLd)}</script>
@@ -1602,8 +1588,8 @@ ${socialFooterHtml()}
         <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff"><path d="M16.003 3.2C9.05 3.2 3.4 8.85 3.4 15.8c0 2.5.73 4.83 1.99 6.8L3.2 28.8l6.37-2.08a12.5 12.5 0 0 0 6.43 1.76h.01c6.95 0 12.6-5.65 12.6-12.6S22.95 3.2 16 3.2Zm0 22.9h-.01a10.4 10.4 0 0 1-5.29-1.45l-.38-.22-3.78 1.23 1.24-3.68-.25-.39a10.35 10.35 0 0 1-1.6-5.53c0-5.74 4.67-10.4 10.42-10.4 2.78 0 5.39 1.08 7.36 3.05a10.34 10.34 0 0 1 3.05 7.36c0 5.74-4.67 10.4-10.42 10.4Zm5.71-7.79c-.31-.16-1.85-.91-2.14-1.02-.29-.1-.5-.16-.71.16-.21.31-.82 1.02-1 1.24-.19.21-.37.24-.68.08-.31-.16-1.32-.49-2.51-1.55-.93-.83-1.55-1.85-1.74-2.16-.18-.31-.02-.48.14-.63.14-.14.31-.37.47-.55.16-.19.21-.32.31-.53.1-.21.05-.4-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.62-.52-.53-.71-.54l-.6-.01c-.21 0-.55.08-.84.4-.29.31-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.22 3.39 5.38 4.75.75.32 1.34.52 1.79.66.75.24 1.44.2 1.98.12.6-.09 1.85-.76 2.11-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.37Z"/></svg>
       </span>
     </a>
-    <script src="${rel}src/track.js?v=4" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=5" defer></script>
+    <script src="${rel}src/track.js?v=5" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=6" defer></script>
   </body>
 </html>
 `;

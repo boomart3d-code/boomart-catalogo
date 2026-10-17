@@ -96,7 +96,7 @@ const priceLabel = (product) => {
     const v = product.templePricing.temple ?? product.templePricing.combo ?? product.templePricing.pandora;
     return v ? `desde S/${v}` : "";
   }
-  const now = product.offerPrice || product.regularPrice;
+  const now = product.regularPrice;
   return now ? `S/${now}` : "";
 };
 
@@ -238,7 +238,7 @@ const addToCartMarkup = (product) => {
   // (se muestra con CSS en la ficha movil y se actualiza al cambiar de opcion).
   const initialPriceLabel = product.templePricing
     ? `${TEMPLE_BOX_LABELS[DEFAULT_TEMPLE_VARIANT]} · ${formatPrice(product.templePricing[DEFAULT_TEMPLE_VARIANT])}`
-    : formatPrice(product.offerPrice || product.regularPrice);
+    : formatPrice(product.regularPrice);
 
   return `
     <div class="add-to-cart" data-product="${product.id}" data-variant="${initialVariant}">
@@ -265,8 +265,7 @@ const priceMarkup = (product) => {
 
   return `
     <div class="simple-price">
-      ${product.regularPrice ? `<del>${formatPrice(product.regularPrice)}</del>` : ""}
-      <strong>${formatPrice(product.offerPrice || product.regularPrice)}</strong>
+      <strong>${formatPrice(product.regularPrice)}</strong>
     </div>
   `;
 };
@@ -288,24 +287,6 @@ const gridPriceMarkup = (product) => {
     `;
   }
   return priceMarkup(product);
-};
-
-// Etiqueta de la tarjeta (mejora de diseño 2026-10-14): solo aparece cuando el
-// descuento se ve de verdad (precio anterior mayor que el actual) y muestra el
-// porcentaje en vez de un "Oferta" genérico. Si el producto no tiene precio
-// anterior (por ejemplo los templos, que van por opciones), no lleva etiqueta.
-const discountPercent = (product) => {
-  const regular = Number(product.regularPrice);
-  const offer = Number(product.offerPrice);
-  if (!product.offer || !(regular > 0) || !(offer > 0) || offer >= regular) return 0;
-  return Math.round((1 - offer / regular) * 100);
-};
-
-const cardBadge = (product) => {
-  const percent = discountPercent(product);
-  return percent >= 1
-    ? `<span class="badge" aria-label="Oferta, ${percent}% de descuento">−${percent}%</span>`
-    : "";
 };
 
 // Colecciones (mejora de diseño, Tanda 2, 2026-10-14): en la vista "Todos" sin
@@ -334,17 +315,11 @@ const collectionItems = (collection) =>
 const currentPrice = (product) =>
   product.templePricing
     ? Number(product.templePricing.temple)
-    : Number(product.offerPrice || product.regularPrice);
+    : Number(product.regularPrice);
 
 const collectionCard = (collection, items) => {
   const first = items[0];
   const lowest = Math.min(...items.map(currentPrice));
-  // Etiqueta de descuento solo si TODAS las piezas tienen el mismo descuento real.
-  const percents = items.map(discountPercent);
-  const sameDiscount = percents[0] >= 1 && percents.every((percent) => percent === percents[0]);
-  const badge = sameDiscount
-    ? `<span class="badge" aria-label="Oferta, ${percents[0]}% de descuento">−${percents[0]}%</span>`
-    : "";
   const labels = Object.fromEntries(ZODIAC_SIGNS.map(([sign, label]) => [`${collection.idPrefix}${sign}`, label]));
   const signChips = items
     .slice(0, 3)
@@ -356,7 +331,6 @@ const collectionCard = (collection, items) => {
   return `
   <article class="product-card collection-card" data-collection="${collection.key}">
     <button class="card-media" type="button" data-collection="${collection.key}" aria-label="Ver los ${items.length} signos: ${collection.title}">
-      ${badge}
       <span class="collection-count">${items.length} signos</span>
       <img src="${webpSrc(first.image)}" alt="" loading="lazy" decoding="async">
     </button>
@@ -373,7 +347,6 @@ const collectionCard = (collection, items) => {
 const productCard = (product) => `
   <article class="product-card" data-open="${product.id}">
     <button class="card-media" type="button" data-open="${product.id}" aria-label="Ver ${product.name}">
-      ${cardBadge(product)}
       ${productImage(product)}
     </button>
     <div class="card-body">
@@ -507,7 +480,7 @@ const setGlobalWhatsapp = () => {
     const node = document.querySelector(selector);
     if (node) node.href = whatsappUrl(message);
   };
-  setHref("#offersWhatsapp", "Hola BoomArt, quiero consultar por las promociones disponibles del catálogo.");
+  setHref("#offersWhatsapp", "Hola BoomArt, quiero consultar por las colecciones de Saint Seiya.");
   setHref("#footerWhatsapp", config.defaultMessage);
 };
 

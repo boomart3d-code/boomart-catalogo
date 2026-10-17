@@ -113,22 +113,12 @@ collections:
                 name: "featured"
                 widget: "boolean"
                 default: false
-              - label: "¿Tiene etiqueta de OFERTA?"
-                name: "offer"
-                widget: "boolean"
-                default: false
-              - label: "Precio regular (S/)"
+              - label: "Precio oficial (S/)"
                 name: "regularPrice"
                 widget: "number"
                 value_type: "float"
                 required: false
                 hint: "Déjalo vacío si este producto usa precios de Templo/Pandora Box/Combo más abajo."
-              - label: "Precio de oferta (S/)"
-                name: "offerPrice"
-                widget: "number"
-                value_type: "float"
-                required: false
-                hint: "Si tiene descuento, este es el precio final que se muestra tachando el regular."
               - label: "Precios de Templo del Zodiaco (solo para esos 12 productos)"
                 name: "templePricing"
                 widget: "object"

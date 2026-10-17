@@ -3,7 +3,7 @@
   "url": "https://boomart.pe/",
   "description": "Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao, Peru. Envios a todo el pais.",
   "currency": "PEN",
-  "updated": "2026-10-16",
+  "updated": "2026-10-17",
   "contact": {
     "whatsapp": "https://wa.me/51925666542",
     "email": "contacto@boomart.pe",
@@ -397,7 +397,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 1500,
       "pricing": [
-        "Precio oferta: S/1500 (antes S/1560)"
+        "Precio: S/1500"
       ],
       "image": "https://boomart.pe/assets/products/templo-con-caja-de-pandora-y-pedestal-hero.jpg",
       "gallery": [
@@ -434,7 +434,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
-        "Precio oferta: S/100 (antes S/130)"
+        "Precio: S/100"
       ],
       "image": "https://boomart.pe/assets/products/busto-de-atena-saint-seiya-hero.jpg",
       "gallery": [
@@ -463,7 +463,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
-        "Precio oferta: S/100 (antes S/130)"
+        "Precio: S/100"
       ],
       "image": "https://boomart.pe/assets/products/escultura-de-atena-saint-seiya-hero2.jpg",
       "gallery": [
@@ -486,7 +486,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
-        "Precio oferta: S/100 (antes S/130)"
+        "Precio: S/100"
       ],
       "image": "https://boomart.pe/assets/products/torre-del-reloj-saint-seiya-hero.jpg",
       "gallery": [
@@ -510,7 +510,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
-        "Precio oferta: S/100 (antes S/150)"
+        "Precio: S/100"
       ],
       "image": "https://boomart.pe/assets/products/set-de-12-templos-mini-hero.jpg",
       "gallery": [
@@ -541,7 +541,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 150,
       "pricing": [
-        "Precio oferta: S/150 (antes S/200)"
+        "Precio: S/150"
       ],
       "image": "https://boomart.pe/assets/products/set-santuario-15-piezas-hero2.jpg",
       "gallery": [
@@ -565,7 +565,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 400,
       "pricing": [
-        "Precio oferta: S/400 (antes S/440)"
+        "Precio: S/400"
       ],
       "image": "https://boomart.pe/assets/products/set-12-cajas-de-pandora-con-pedestales-hero.jpg",
       "gallery": [
@@ -590,7 +590,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 250,
       "pricing": [
-        "Precio oferta: S/250 (antes S/275)"
+        "Precio: S/250"
       ],
       "image": "https://boomart.pe/assets/products/casco-de-pegaso-saint-seiya-hero.jpg",
       "gallery": [
@@ -616,7 +616,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
-        "Precio oferta: S/100 (antes S/120)"
+        "Precio: S/100"
       ],
       "image": "https://boomart.pe/assets/products/tiara-de-pegaso-saint-seiya-hero.jpg",
       "gallery": [
@@ -645,7 +645,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
-        "Precio oferta: S/100 (antes S/120)"
+        "Precio: S/100"
       ],
       "image": "https://boomart.pe/assets/products/tiara-de-ikki-de-fenix-saint-seiya-hero.jpg",
       "gallery": [
@@ -668,13 +668,13 @@
         "Myth Cloth",
         "Casas del Zodiaco"
       ],
-      "description": "Arma el Santuario completo. Los 12 Altares Exhibidor de las Casas del Zodiaco, uno por cada Caballero Dorado, con acabado tipo piedra envejecida y el símbolo de cada signo en dorado. Pensados para lucir tus figuras Myth Cloth EX de Bandai como en el anime. Sueltos cuestan S/100 cada uno (S/1200 el juego); en oferta, S/80 cada uno. Llevando los 12 juntos: S/850, el Santuario entero con el mejor precio. Impresos en 3D a pedido en Perú, con envíos a todo el país. Las figuras Myth Cloth de la foto son de Bandai y no están incluidas: el producto son los 12 altares.",
+      "description": "Arma el Santuario completo. Los 12 Altares Exhibidor de las Casas del Zodiaco, uno por cada Caballero Dorado, con acabado tipo piedra envejecida y el símbolo de cada signo en dorado. Pensados para lucir tus figuras Myth Cloth EX de Bandai como en el anime. Precio por altar individual: S/80. El conjunto de los 12 altares tiene un precio oficial de S/850. Impresos en 3D a pedido en Perú, con envíos a todo el país. Las figuras Myth Cloth de la foto son de Bandai y no están incluidas: el producto son los 12 altares.",
       "material": "PLA",
       "availability": "A pedido",
       "priceCurrency": "PEN",
       "priceFrom": 850,
       "pricing": [
-        "Precio oferta: S/850 (antes S/1200)"
+        "Precio: S/850"
       ],
       "image": "https://boomart.pe/assets/products/set-12-altares-exhibidor-1.jpg",
       "gallery": [
@@ -711,7 +711,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
-        "Precio oferta: S/80 (antes S/100)"
+        "Precio: S/80"
       ],
       "image": "https://boomart.pe/assets/products/altar-exhibidor-aries-1.jpg",
       "gallery": [
@@ -738,7 +738,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
-        "Precio oferta: S/80 (antes S/100)"
+        "Precio: S/80"
       ],
       "image": "https://boomart.pe/assets/products/altar-exhibidor-tauro-1.jpg",
       "gallery": [
@@ -765,7 +765,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
-        "Precio oferta: S/80 (antes S/100)"
+        "Precio: S/80"
       ],
       "image": "https://boomart.pe/assets/products/altar-exhibidor-geminis-1.jpg",
       "gallery": [
@@ -792,7 +792,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
-        "Precio oferta: S/80 (antes S/100)"
+        "Precio: S/80"
       ],
       "image": "https://boomart.pe/assets/products/altar-exhibidor-cancer-1.jpg",
       "gallery": [
@@ -819,7 +819,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
-        "Precio oferta: S/80 (antes S/100)"
+        "Precio: S/80"
       ],
       "image": "https://boomart.pe/assets/products/altar-exhibidor-leo-1.jpg",
       "gallery": [
@@ -846,7 +846,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
-        "Precio oferta: S/80 (antes S/100)"
+        "Precio: S/80"
       ],
       "image": "https://boomart.pe/assets/products/altar-exhibidor-virgo-1.jpg",
       "gallery": [
@@ -873,7 +873,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
-        "Precio oferta: S/80 (antes S/100)"
+        "Precio: S/80"
       ],
       "image": "https://boomart.pe/assets/products/altar-exhibidor-libra-1.jpg",
       "gallery": [
@@ -900,7 +900,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
-        "Precio oferta: S/80 (antes S/100)"
+        "Precio: S/80"
       ],
       "image": "https://boomart.pe/assets/products/altar-exhibidor-escorpio-1.jpg",
       "gallery": [
@@ -927,7 +927,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
-        "Precio oferta: S/80 (antes S/100)"
+        "Precio: S/80"
       ],
       "image": "https://boomart.pe/assets/products/altar-exhibidor-sagitario-1.jpg",
       "gallery": [
@@ -954,7 +954,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
-        "Precio oferta: S/80 (antes S/100)"
+        "Precio: S/80"
       ],
       "image": "https://boomart.pe/assets/products/altar-exhibidor-capricornio-1.jpg",
       "gallery": [
@@ -981,7 +981,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
-        "Precio oferta: S/80 (antes S/100)"
+        "Precio: S/80"
       ],
       "image": "https://boomart.pe/assets/products/altar-exhibidor-acuario-1.jpg",
       "gallery": [
@@ -1008,7 +1008,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
-        "Precio oferta: S/80 (antes S/100)"
+        "Precio: S/80"
       ],
       "image": "https://boomart.pe/assets/products/altar-exhibidor-piscis-1.jpg",
       "gallery": [
@@ -1035,7 +1035,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 150,
       "pricing": [
-        "Precio oferta: S/150 (antes S/165)"
+        "Precio: S/150"
       ],
       "image": "https://boomart.pe/assets/products/diorama-caballeros-de-bronce-hero.jpg",
       "gallery": [
@@ -1061,7 +1061,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 150,
       "pricing": [
-        "Precio oferta: S/150 (antes S/165)"
+        "Precio: S/150"
       ],
       "image": "https://boomart.pe/assets/products/diorama-de-pegaso-hero.jpg",
       "gallery": [
@@ -1089,7 +1089,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 180,
       "pricing": [
-        "Precio oferta: S/180 (antes S/200)"
+        "Precio: S/180"
       ],
       "image": "https://boomart.pe/assets/products/fawkes-fenix-de-dumbledore-hero-v2.png",
       "gallery": [
@@ -1116,7 +1116,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
-        "Precio oferta: S/80 (antes S/88)"
+        "Precio: S/80"
       ],
       "image": "https://boomart.pe/assets/products/castillo-de-hogwarts-gallery-01.png",
       "gallery": [
@@ -1143,7 +1143,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 260,
       "pricing": [
-        "Precio oferta: S/260 (antes S/286)"
+        "Precio: S/260"
       ],
       "image": "https://boomart.pe/assets/products/ajedrez-de-hogwarts-4-casas-hero-v2.webp",
       "gallery": [
@@ -1173,7 +1173,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 95,
       "pricing": [
-        "Precio oferta: S/95 (antes S/105)"
+        "Precio: S/95"
       ],
       "image": "https://boomart.pe/assets/products/lampara-sombrero-seleccionador-hero-v2.png",
       "gallery": [
@@ -1197,7 +1197,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 250,
       "pricing": [
-        "Precio oferta: S/250 (antes S/275)"
+        "Precio: S/250"
       ],
       "image": "https://boomart.pe/assets/products/lampara-lunar-hogwarts-hero-v2.png",
       "gallery": [
@@ -1224,7 +1224,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 200,
       "pricing": [
-        "Precio oferta: S/200 (antes S/220)"
+        "Precio: S/200"
       ],
       "image": "https://boomart.pe/assets/products/casco-de-wolverine-con-garras-hero-v3.jpg",
       "gallery": [
@@ -1249,7 +1249,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
-        "Precio oferta: S/100 (antes S/110)"
+        "Precio: S/100"
       ],
       "image": "https://boomart.pe/assets/products/mascara-de-batwoman-hero-v2.png",
       "gallery": [
@@ -1273,7 +1273,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 70,
       "pricing": [
-        "Precio oferta: S/70 (antes S/77)"
+        "Precio: S/70"
       ],
       "image": "https://boomart.pe/assets/products/palomera-cara-de-spiderman-hero-v2.webp",
       "gallery": [
@@ -1297,7 +1297,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 70,
       "pricing": [
-        "Precio oferta: S/70 (antes S/77)"
+        "Precio: S/70"
       ],
       "image": "https://boomart.pe/assets/products/palomera-spiderman-hero-v2.webp",
       "gallery": [
@@ -1323,7 +1323,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
-        "Precio oferta: S/80 (antes S/100)"
+        "Precio: S/80"
       ],
       "image": "https://boomart.pe/assets/products/mario-billy-saw-hero-v2.webp",
       "gallery": [
@@ -1349,7 +1349,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 120,
       "pricing": [
-        "Precio oferta: S/120 (antes S/150)"
+        "Precio: S/120"
       ],
       "image": "https://boomart.pe/assets/products/mascara-calabaza-calavera-hero-v2.png",
       "gallery": [
@@ -1376,7 +1376,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
-        "Precio oferta: S/100 (antes S/120)"
+        "Precio: S/100"
       ],
       "image": "https://boomart.pe/assets/products/candelabro-calavera-hero-v2.png",
       "gallery": [
@@ -1404,7 +1404,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 220,
       "pricing": [
-        "Precio oferta: S/220 (antes S/250)"
+        "Precio: S/220"
       ],
       "image": "https://boomart.pe/assets/products/evil-mask-hero-v2.png",
       "gallery": [
@@ -1433,7 +1433,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 50,
       "pricing": [
-        "Precio oferta: S/50 (antes S/70)"
+        "Precio: S/50"
       ],
       "image": "https://boomart.pe/assets/products/zkull-urban-hero-v2.png",
       "gallery": [
@@ -1461,7 +1461,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 200,
       "pricing": [
-        "Precio oferta: S/200 (antes S/230)"
+        "Precio: S/200"
       ],
       "image": "https://boomart.pe/assets/products/mascara-krampus-hero-v2.png",
       "gallery": [
@@ -1491,7 +1491,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 140,
       "pricing": [
-        "Precio oferta: S/140 (antes S/160)"
+        "Precio: S/140"
       ],
       "image": "https://boomart.pe/assets/products/mascara-baphomet-hero-v2.png",
       "gallery": [
@@ -1521,7 +1521,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 200,
       "pricing": [
-        "Precio oferta: S/200 (antes S/220)"
+        "Precio: S/200"
       ],
       "image": "https://boomart.pe/assets/products/mascara-hellboy-articulada-1.jpg",
       "gallery": [
@@ -1551,7 +1551,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 200,
       "pricing": [
-        "Precio oferta: S/200 (antes S/240)"
+        "Precio: S/200"
       ],
       "image": "https://boomart.pe/assets/products/casco-de-stormtrooper-hero.jpg",
       "gallery": [
@@ -1581,7 +1581,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 200,
       "pricing": [
-        "Precio oferta: S/200 (antes S/240)"
+        "Precio: S/200"
       ],
       "image": "https://boomart.pe/assets/products/casco-del-mandaloriano-hero.jpg",
       "gallery": [
@@ -1611,7 +1611,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 200,
       "pricing": [
-        "Precio oferta: S/200 (antes S/250)"
+        "Precio: S/200"
       ],
       "image": "https://boomart.pe/assets/products/casco-gladiador-maximo-hero-v2.png",
       "gallery": [
@@ -1640,7 +1640,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 60,
       "pricing": [
-        "Precio oferta: S/60 (antes S/100)"
+        "Precio: S/60"
       ],
       "image": "https://boomart.pe/assets/products/corona-de-elfo-hero-v2.png",
       "gallery": [
@@ -1672,7 +1672,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 60,
       "pricing": [
-        "Precio oferta: S/60 (antes S/100)"
+        "Precio: S/60"
       ],
       "image": "https://boomart.pe/assets/products/cuernos-de-fauno-hero-v2.png",
       "gallery": [
@@ -1705,7 +1705,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 60,
       "pricing": [
-        "Precio oferta: S/60 (antes S/80)"
+        "Precio: S/60"
       ],
       "image": "https://boomart.pe/assets/products/mascarada-del-diablo-hero-v2.png",
       "gallery": [
@@ -1733,7 +1733,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 50,
       "pricing": [
-        "Precio oferta: S/50 (antes S/55)"
+        "Precio: S/50"
       ],
       "image": "https://boomart.pe/assets/products/mascara-el-juego-del-calamar-hero-v2.png",
       "gallery": [
@@ -1757,7 +1757,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 398,
       "pricing": [
-        "Precio oferta: S/398 (antes S/438)"
+        "Precio: S/398"
       ],
       "image": "https://boomart.pe/assets/products/casco-de-agamenon-la-odisea-hero-v2.png",
       "gallery": [
@@ -1785,7 +1785,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 120,
       "pricing": [
-        "Precio oferta: S/120 (antes S/132)"
+        "Precio: S/120"
       ],
       "image": "https://boomart.pe/assets/products/pato-lucas-kratos-god-of-war-hero-v2.png",
       "gallery": [
@@ -1810,7 +1810,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 60,
       "pricing": [
-        "Precio oferta: S/60 (antes S/66)"
+        "Precio: S/60"
       ],
       "image": "https://boomart.pe/assets/products/maceta-pikachu-hero-v2.webp",
       "gallery": [
@@ -1834,7 +1834,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 150,
       "pricing": [
-        "Precio oferta: S/150 (antes S/165)"
+        "Precio: S/150"
       ],
       "image": "https://boomart.pe/assets/products/replica-copa-del-mundo-tamano-real-hero-v2.png",
       "gallery": [
@@ -1858,7 +1858,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 160,
       "pricing": [
-        "Precio oferta: S/160 (antes S/176)"
+        "Precio: S/160"
       ],
       "image": "https://boomart.pe/assets/products/botin-de-oro-del-mundial-hero-v2.png",
       "gallery": [
@@ -1882,7 +1882,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 200,
       "pricing": [
-        "Precio oferta: S/200 (antes S/220)"
+        "Precio: S/200"
       ],
       "image": "https://boomart.pe/assets/products/balon-de-oro-del-mundial-hero-v2.png",
       "gallery": [
@@ -1906,7 +1906,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 30,
       "pricing": [
-        "Precio oferta: S/30 (antes S/33)"
+        "Precio: S/30"
       ],
       "image": "https://boomart.pe/assets/products/caja-organizadora-figuritas-panini-2026-hero-v2.webp",
       "gallery": [
@@ -1930,7 +1930,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 77,
       "pricing": [
-        "Precio oferta: S/77 (antes S/85)"
+        "Precio: S/77"
       ],
       "image": "https://boomart.pe/assets/products/maceta-groot-hero-v2.webp",
       "gallery": [
@@ -1954,7 +1954,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 44,
       "pricing": [
-        "Precio oferta: S/44 (antes S/49)"
+        "Precio: S/44"
       ],
       "image": "https://boomart.pe/assets/products/maceta-baby-groot-hero-v2.webp",
       "gallery": [
@@ -1977,7 +1977,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 44,
       "pricing": [
-        "Precio oferta: S/44 (antes S/49)"
+        "Precio: S/44"
       ],
       "image": "https://boomart.pe/assets/products/maceta-dedo-medio-hero-v2.png",
       "gallery": [
@@ -2001,7 +2001,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 55,
       "pricing": [
-        "Precio oferta: S/55 (antes S/61)"
+        "Precio: S/55"
       ],
       "image": "https://boomart.pe/assets/products/maceta-darth-vader-hero-v2.webp",
       "gallery": [
@@ -2025,7 +2025,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 66,
       "pricing": [
-        "Precio oferta: S/66 (antes S/73)"
+        "Precio: S/66"
       ],
       "image": "https://boomart.pe/assets/products/maceta-david-hero-v2.png",
       "gallery": [
@@ -2048,7 +2048,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 44,
       "pricing": [
-        "Precio oferta: S/44 (antes S/49)"
+        "Precio: S/44"
       ],
       "image": "https://boomart.pe/assets/products/maceta-minimalista-hero-v2.png",
       "gallery": [
@@ -2071,7 +2071,7 @@
       "priceCurrency": "PEN",
       "priceFrom": 44,
       "pricing": [
-        "Precio oferta: S/44 (antes S/49)"
+        "Precio: S/44"
       ],
       "image": "https://boomart.pe/assets/products/maceta-palmera-hero-v2.png",
       "gallery": [

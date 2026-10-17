@@ -4640,6 +4640,26 @@ h3,
   line-height: 1.65;
 }
 
+/* Las landings comparten la portada marfil, no los textos claros de sus
+   secciones carbón. Mantener el contraste también en el CTA secundario. */
+.landing .hero .lead,
+.landing .hero .eyebrow {
+  color: #514c46;
+}
+
+.landing .hero .button.secondary {
+  border-color: #514c46;
+  background: transparent;
+  color: var(--gallery-carbon);
+}
+
+.landing .hero .button.secondary:hover,
+.landing .hero .button.secondary:focus-visible {
+  border-color: var(--gallery-carbon);
+  background: var(--gallery-carbon);
+  color: white;
+}
+
 .hero-actions {
   margin-top: 12px;
 }

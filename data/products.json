@@ -17,7 +17,6 @@
       "combo": 130
     },
     "featured": true,
-    "offer": true,
     "image": "assets/products/templo-aries-hero-v2.png",
     "gallery": [
       "assets/products/templo-aries-hero-v2.png",
@@ -45,7 +44,6 @@
       "combo": 130
     },
     "featured": true,
-    "offer": true,
     "image": "assets/products/templo-tauro-hero.jpg",
     "gallery": [
       "assets/products/templo-tauro-hero.jpg",
@@ -73,7 +71,6 @@
       "combo": 130
     },
     "featured": true,
-    "offer": true,
     "image": "assets/products/templo-geminis-hero.jpg",
     "gallery": [
       "assets/products/templo-geminis-hero.jpg",
@@ -101,7 +98,6 @@
       "combo": 130
     },
     "featured": true,
-    "offer": true,
     "image": "assets/products/templo-cancer-hero.jpg",
     "gallery": [
       "assets/products/templo-cancer-hero.jpg",
@@ -128,7 +124,6 @@
       "combo": 130
     },
     "featured": true,
-    "offer": true,
     "image": "assets/products/templo-leo-hero.jpg",
     "gallery": [
       "assets/products/templo-leo-hero.jpg",
@@ -155,7 +150,6 @@
       "combo": 130
     },
     "featured": true,
-    "offer": true,
     "image": "assets/products/templo-virgo-hero.jpg",
     "gallery": [
       "assets/products/templo-virgo-hero.jpg",
@@ -182,7 +176,6 @@
       "combo": 130
     },
     "featured": true,
-    "offer": true,
     "image": "assets/products/templo-libra-hero.jpg",
     "gallery": [
       "assets/products/templo-libra-hero.jpg",
@@ -209,7 +202,6 @@
       "combo": 130
     },
     "featured": true,
-    "offer": true,
     "image": "assets/products/templo-escorpio-hero.jpg",
     "gallery": [
       "assets/products/templo-escorpio-hero.jpg",
@@ -236,7 +228,6 @@
       "combo": 130
     },
     "featured": true,
-    "offer": true,
     "image": "assets/products/templo-sagitario-hero.jpg",
     "gallery": [
       "assets/products/templo-sagitario-hero.jpg",
@@ -263,7 +254,6 @@
       "combo": 130
     },
     "featured": true,
-    "offer": true,
     "image": "assets/products/templo-capricornio-hero.jpg",
     "gallery": [
       "assets/products/templo-capricornio-hero.jpg",
@@ -290,7 +280,6 @@
       "combo": 130
     },
     "featured": true,
-    "offer": true,
     "image": "assets/products/templo-acuario-hero.jpg",
     "gallery": [
       "assets/products/templo-acuario-hero.jpg",
@@ -318,7 +307,6 @@
       "combo": 130
     },
     "featured": true,
-    "offer": true,
     "image": "assets/products/templo-piscis-hero.jpg",
     "gallery": [
       "assets/products/templo-piscis-hero.jpg",
@@ -364,9 +352,8 @@
     "height": "Templos: 16–20 cm de alto · 19–24.5 cm de ancho · 14–22 cm de fondo (según el signo) · Pandora Box: 6.5 × 5 × 5 cm · Pedestal: 8 × 7.5 × 7.5 cm",
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 1560,
+    "regularPrice": 1500,
     "featured": true,
-    "offer": true,
     "image": "assets/products/templo-con-caja-de-pandora-y-pedestal-hero.jpg",
     "gallery": [
       "assets/products/templo-con-caja-de-pandora-y-pedestal-hero.jpg",
@@ -384,8 +371,7 @@
       "assets/products/templo-con-caja-de-pandora-y-pedestal-12.jpg",
       "assets/products/templo-con-caja-de-pandora-y-pedestal-13.jpg"
     ],
-    "description": "La colección completa del Santuario de Athena: los 12 Templos de las Casas del Zodiaco (Aries a Piscis), cada uno con su Caja de Pandora dorada y su pedestal a juego. Acabado tipo piedra gris envejecida, detallado a mano.",
-    "offerPrice": 1500
+    "description": "La colección completa del Santuario de Athena: los 12 Templos de las Casas del Zodiaco (Aries a Piscis), cada uno con su Caja de Pandora dorada y su pedestal a juego. Acabado tipo piedra gris envejecida, detallado a mano."
   },
   {
     "id": "busto-de-atena-saint-seiya",
@@ -398,9 +384,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 130,
+    "regularPrice": 100,
     "featured": true,
-    "offer": true,
     "image": "assets/products/busto-de-atena-saint-seiya-hero.jpg",
     "gallery": [
       "assets/products/busto-de-atena-saint-seiya-hero.jpg",
@@ -410,8 +395,7 @@
       "assets/products/busto-de-atena-saint-seiya-5.jpg",
       "assets/products/busto-de-atena-saint-seiya-6.jpg"
     ],
-    "description": "El busto de Atena, diosa protectora del Santuario, es la pieza central que toda colección de Saint Seiya (Caballeros del Zodiaco) merece. Rostro sereno, casco con detalle y armadura trabajada, con espectacular acabado estilo piedra envejecida.",
-    "offerPrice": 100
+    "description": "El busto de Atena, diosa protectora del Santuario, es la pieza central que toda colección de Saint Seiya (Caballeros del Zodiaco) merece. Rostro sereno, casco con detalle y armadura trabajada, con espectacular acabado estilo piedra envejecida."
   },
   {
     "id": "escultura-de-atena-saint-seiya",
@@ -424,16 +408,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 130,
+    "regularPrice": 100,
     "featured": true,
-    "offer": true,
     "image": "assets/products/escultura-de-atena-saint-seiya-hero2.jpg",
     "gallery": [
       "assets/products/escultura-de-atena-saint-seiya-hero2.jpg",
       "assets/products/escultura-de-atena-saint-seiya-2.jpg"
     ],
-    "description": "Escultura de Atena de cuerpo entero, la diosa de la sabiduría y la guerra justa, con espectacular acabado estilo piedra envejecida. Impresa en 3D y detallada a mano, hecha a pedido en Lima.",
-    "offerPrice": 100
+    "description": "Escultura de Atena de cuerpo entero, la diosa de la sabiduría y la guerra justa, con espectacular acabado estilo piedra envejecida. Impresa en 3D y detallada a mano, hecha a pedido en Lima."
   },
   {
     "id": "torre-del-reloj-saint-seiya",
@@ -444,16 +426,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 130,
+    "regularPrice": 100,
     "featured": true,
-    "offer": true,
     "image": "assets/products/torre-del-reloj-saint-seiya-hero.jpg",
     "gallery": [
       "assets/products/torre-del-reloj-saint-seiya-hero.jpg",
       "assets/products/torre-del-reloj-saint-seiya-2.jpg"
     ],
-    "description": "La icónica Torre del Reloj del Santuario de Athena, con sus doce llamas encendidas marcando la cuenta regresiva. Réplica decorativa de 32 cm de alto, acabado tipo piedra envejecida, impresa en 3D en PLA+/PETG y detallada a mano. Hecha a pedido en Lima.",
-    "offerPrice": 100
+    "description": "La icónica Torre del Reloj del Santuario de Athena, con sus doce llamas encendidas marcando la cuenta regresiva. Réplica decorativa de 32 cm de alto, acabado tipo piedra envejecida, impresa en 3D en PLA+/PETG y detallada a mano. Hecha a pedido en Lima."
   },
   {
     "id": "set-de-12-templos-mini",
@@ -466,17 +446,15 @@
     "height": "Cada templo: 6.5–8 cm de alto · aprox. 8 cm de ancho",
     "material": "PLA+",
     "availability": "A pedido",
-    "regularPrice": 150,
+    "regularPrice": 100,
     "featured": true,
-    "offer": true,
     "image": "assets/products/set-de-12-templos-mini-hero.jpg",
     "gallery": [
       "assets/products/set-de-12-templos-mini-hero.jpg",
       "assets/products/set-de-12-templos-mini-2.jpg",
       "assets/products/set-de-12-templos-mini-cliente-3.jpg"
     ],
-    "description": "Set de 12 Casas del Zodiaco en miniatura. Cada templo mide entre 6.5 y 8 cm de alto y aproximadamente 8 cm de ancho. Fabricados en PLA+ resistente, con acabado de piedra envejecida pintado a mano y parte posterior plana. Producción de 24 a 48 horas útiles. No incluye figuras, estante ni maqueta de montaña.",
-    "offerPrice": 100
+    "description": "Set de 12 Casas del Zodiaco en miniatura. Cada templo mide entre 6.5 y 8 cm de alto y aproximadamente 8 cm de ancho. Fabricados en PLA+ resistente, con acabado de piedra envejecida pintado a mano y parte posterior plana. Producción de 24 a 48 horas útiles. No incluye figuras, estante ni maqueta de montaña."
   },
   {
     "id": "set-santuario-15-piezas",
@@ -495,16 +473,14 @@
     "height": "Templos 6.5–8 cm · Patriarca 9 cm · Atena 12 cm · Torre 15 cm",
     "material": "PLA+",
     "availability": "A pedido",
-    "regularPrice": 200,
+    "regularPrice": 150,
     "featured": true,
-    "offer": true,
     "image": "assets/products/set-santuario-15-piezas-hero2.jpg",
     "gallery": [
       "assets/products/set-santuario-15-piezas-hero2.jpg",
       "assets/products/set-santuario-15-piezas-2.jpg"
     ],
-    "description": "Colección de 15 piezas: 12 templos mini de 6.5 a 8 cm, Templo del Patriarca de 9 cm, Escultura de Atena de 12 cm y Torre del Reloj de 15 cm. Fabricada en PLA+ resistente, con acabado de piedra envejecida pintado a mano. Producción de 24 a 48 horas útiles. No incluye figuras, estante ni maqueta de montaña.",
-    "offerPrice": 150
+    "description": "Colección de 15 piezas: 12 templos mini de 6.5 a 8 cm, Templo del Patriarca de 9 cm, Escultura de Atena de 12 cm y Torre del Reloj de 15 cm. Fabricada en PLA+ resistente, con acabado de piedra envejecida pintado a mano. Producción de 24 a 48 horas útiles. No incluye figuras, estante ni maqueta de montaña."
   },
   {
     "id": "set-12-cajas-de-pandora-con-pedestales",
@@ -516,16 +492,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 440,
+    "regularPrice": 400,
     "featured": true,
-    "offer": true,
     "image": "assets/products/set-12-cajas-de-pandora-con-pedestales-hero.jpg",
     "gallery": [
       "assets/products/set-12-cajas-de-pandora-con-pedestales-hero.jpg",
       "assets/products/set-12-cajas-de-pandora-con-pedestales-2.jpg"
     ],
-    "description": "Las 12 Cajas de Pandora de los Caballeros Dorados, cada una con su pedestal estilo piedra. El set completo que corona cualquier colección de Saint Seiya.",
-    "offerPrice": 400
+    "description": "Las 12 Cajas de Pandora de los Caballeros Dorados, cada una con su pedestal estilo piedra. El set completo que corona cualquier colección de Saint Seiya."
   },
   {
     "id": "casco-de-pegaso-saint-seiya",
@@ -538,16 +512,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 275,
+    "regularPrice": 250,
     "featured": true,
-    "offer": true,
     "image": "assets/products/casco-de-pegaso-saint-seiya-hero.jpg",
     "gallery": [
       "assets/products/casco-de-pegaso-saint-seiya-hero.jpg",
       "assets/products/casco-de-pegaso-saint-seiya-hero2.jpg"
     ],
     "description": "Casco funcional de cosplay de la Armadura de Pegaso V1, la que porta Seiya en la versión clásica de Saint Seiya, en tamaño real 1:1. Se puede usar puesto: alas laterales, visor y volúmenes reproducidos fielmente en un acabado tipo metal cepillado. Como se imprime a pedido, el calce se adapta a la talla de quien lo va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Impreso en 3D en Perú, con envíos a todo el país.",
-    "offerPrice": 250,
     "height": "Tamaño real 1:1 (ajustable a pedido)"
   },
   {
@@ -562,16 +534,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 120,
+    "regularPrice": 100,
     "featured": true,
-    "offer": true,
     "image": "assets/products/tiara-de-pegaso-saint-seiya-hero.jpg",
     "gallery": [
       "assets/products/tiara-de-pegaso-saint-seiya-hero.jpg",
       "assets/products/tiara-de-pegaso-saint-seiya-hero2.jpg"
     ],
     "description": "Tiara de cosplay de la Armadura de Pegaso, la que porta Seiya en Saint Seiya, en tamaño real 1:1. Diadema con las alas y el frontal del casco con sus cuernos dorados y visor rojo, lista para usar puesta como accesorio de cosplay o para exhibir junto a tu figura. Como se imprime a pedido, el calce se adapta a la talla de quien la va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Impresa en 3D en Perú, con envíos a todo el país.",
-    "offerPrice": 100,
     "height": "Tamaño real 1:1 (ajustable a pedido)"
   },
   {
@@ -592,9 +562,8 @@
     ],
     "material": "PLA+",
     "availability": "A pedido",
-    "regularPrice": 120,
+    "regularPrice": 100,
     "featured": true,
-    "offer": true,
     "image": "assets/products/tiara-de-ikki-de-fenix-saint-seiya-hero.jpg",
     "gallery": [
       "assets/products/tiara-de-ikki-de-fenix-saint-seiya-hero.jpg",
@@ -603,7 +572,6 @@
       "assets/products/tiara-de-ikki-de-fenix-saint-seiya-4.jpg"
     ],
     "description": "Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en tamaño real 1:1. Diadema con sus grandes cuernos dorados, el frontal plateado y la gema roja al centro, lista para usar en tu cosplay o disfraz de Halloween, o para exhibir junto a tu figura. Acabado dorado y plateado pintado a mano. Como se fabrica a pedido, el calce se adapta a la talla de quien la va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Hecha en Perú, con envíos a todo el país.",
-    "offerPrice": 100,
     "height": "Tamaño real 1:1 (ajustable a pedido)"
   },
   {
@@ -619,10 +587,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 1200,
-    "offerPrice": 850,
+    "regularPrice": 850,
     "featured": true,
-    "offer": true,
     "image": "assets/products/set-12-altares-exhibidor-1.jpg",
     "gallery": [
       "assets/products/set-12-altares-exhibidor-1.jpg",
@@ -639,7 +605,7 @@
       "assets/products/altar-exhibidor-acuario-2.jpg",
       "assets/products/altar-exhibidor-piscis-2.jpg"
     ],
-    "description": "Arma el Santuario completo. Los 12 Altares Exhibidor de las Casas del Zodiaco, uno por cada Caballero Dorado, con acabado tipo piedra envejecida y el símbolo de cada signo en dorado. Pensados para lucir tus figuras Myth Cloth EX de Bandai como en el anime. Sueltos cuestan S/100 cada uno (S/1200 el juego); en oferta, S/80 cada uno. Llevando los 12 juntos: S/850, el Santuario entero con el mejor precio. Impresos en 3D a pedido en Perú, con envíos a todo el país. Las figuras Myth Cloth de la foto son de Bandai y no están incluidas: el producto son los 12 altares."
+    "description": "Arma el Santuario completo. Los 12 Altares Exhibidor de las Casas del Zodiaco, uno por cada Caballero Dorado, con acabado tipo piedra envejecida y el símbolo de cada signo en dorado. Pensados para lucir tus figuras Myth Cloth EX de Bandai como en el anime. Precio por altar individual: S/80. El conjunto de los 12 altares tiene un precio oficial de S/850. Impresos en 3D a pedido en Perú, con envíos a todo el país. Las figuras Myth Cloth de la foto son de Bandai y no están incluidas: el producto son los 12 altares."
   },
   {
     "id": "altar-exhibidor-aries",
@@ -653,10 +619,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 100,
-    "offerPrice": 80,
+    "regularPrice": 80,
     "featured": true,
-    "offer": true,
     "image": "assets/products/altar-exhibidor-aries-1.jpg",
     "gallery": [
       "assets/products/altar-exhibidor-aries-1.jpg",
@@ -677,10 +641,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 100,
-    "offerPrice": 80,
+    "regularPrice": 80,
     "featured": true,
-    "offer": true,
     "image": "assets/products/altar-exhibidor-tauro-1.jpg",
     "gallery": [
       "assets/products/altar-exhibidor-tauro-1.jpg",
@@ -701,10 +663,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 100,
-    "offerPrice": 80,
+    "regularPrice": 80,
     "featured": true,
-    "offer": true,
     "image": "assets/products/altar-exhibidor-geminis-1.jpg",
     "gallery": [
       "assets/products/altar-exhibidor-geminis-1.jpg",
@@ -725,10 +685,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 100,
-    "offerPrice": 80,
+    "regularPrice": 80,
     "featured": true,
-    "offer": true,
     "image": "assets/products/altar-exhibidor-cancer-1.jpg",
     "gallery": [
       "assets/products/altar-exhibidor-cancer-1.jpg",
@@ -749,10 +707,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 100,
-    "offerPrice": 80,
+    "regularPrice": 80,
     "featured": true,
-    "offer": true,
     "image": "assets/products/altar-exhibidor-leo-1.jpg",
     "gallery": [
       "assets/products/altar-exhibidor-leo-1.jpg",
@@ -773,10 +729,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 100,
-    "offerPrice": 80,
+    "regularPrice": 80,
     "featured": true,
-    "offer": true,
     "image": "assets/products/altar-exhibidor-virgo-1.jpg",
     "gallery": [
       "assets/products/altar-exhibidor-virgo-1.jpg",
@@ -797,10 +751,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 100,
-    "offerPrice": 80,
+    "regularPrice": 80,
     "featured": true,
-    "offer": true,
     "image": "assets/products/altar-exhibidor-libra-1.jpg",
     "gallery": [
       "assets/products/altar-exhibidor-libra-1.jpg",
@@ -821,10 +773,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 100,
-    "offerPrice": 80,
+    "regularPrice": 80,
     "featured": true,
-    "offer": true,
     "image": "assets/products/altar-exhibidor-escorpio-1.jpg",
     "gallery": [
       "assets/products/altar-exhibidor-escorpio-1.jpg",
@@ -845,10 +795,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 100,
-    "offerPrice": 80,
+    "regularPrice": 80,
     "featured": true,
-    "offer": true,
     "image": "assets/products/altar-exhibidor-sagitario-1.jpg",
     "gallery": [
       "assets/products/altar-exhibidor-sagitario-1.jpg",
@@ -869,10 +817,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 100,
-    "offerPrice": 80,
+    "regularPrice": 80,
     "featured": true,
-    "offer": true,
     "image": "assets/products/altar-exhibidor-capricornio-1.jpg",
     "gallery": [
       "assets/products/altar-exhibidor-capricornio-1.jpg",
@@ -893,10 +839,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 100,
-    "offerPrice": 80,
+    "regularPrice": 80,
     "featured": true,
-    "offer": true,
     "image": "assets/products/altar-exhibidor-acuario-1.jpg",
     "gallery": [
       "assets/products/altar-exhibidor-acuario-1.jpg",
@@ -917,10 +861,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 100,
-    "offerPrice": 80,
+    "regularPrice": 80,
     "featured": true,
-    "offer": true,
     "image": "assets/products/altar-exhibidor-piscis-1.jpg",
     "gallery": [
       "assets/products/altar-exhibidor-piscis-1.jpg",
@@ -941,16 +883,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 165,
+    "regularPrice": 150,
     "featured": true,
-    "offer": true,
     "image": "assets/products/diorama-caballeros-de-bronce-hero.jpg",
     "gallery": [
       "assets/products/diorama-caballeros-de-bronce-hero.jpg",
       "assets/products/diorama-caballeros-de-bronce-2.jpg"
     ],
-    "description": "Altar exhibidor del Caballero de Bronce del Dragón (Shiryu), con el emblema del dragón en relieve y dos guardianes tallados a los costados de la columna. Hecho para montar tu figura Myth Cloth EX de Bandai de Shiryu. Base circular estilo escama de dragón en verde con detalles dorados y acabado tipo piedra envejecida en la columna. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
-    "offerPrice": 150
+    "description": "Altar exhibidor del Caballero de Bronce del Dragón (Shiryu), con el emblema del dragón en relieve y dos guardianes tallados a los costados de la columna. Hecho para montar tu figura Myth Cloth EX de Bandai de Shiryu. Base circular estilo escama de dragón en verde con detalles dorados y acabado tipo piedra envejecida en la columna. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D."
   },
   {
     "id": "diorama-de-pegaso",
@@ -964,16 +904,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 165,
+    "regularPrice": 150,
     "featured": true,
-    "offer": true,
     "image": "assets/products/diorama-de-pegaso-hero.jpg",
     "gallery": [
       "assets/products/diorama-de-pegaso-hero.jpg",
       "assets/products/diorama-de-pegaso-hero2.jpg"
     ],
-    "description": "Altar exhibidor del Caballero de Bronce Pegaso (Seiya), con la placa tallada del emblema de Pegaso entre columnas y base tipo ruinas del Santuario. Hecho para montar tu figura Myth Cloth EX de Bandai de Seiya. Acabado realista tipo piedra envejecida, impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
-    "offerPrice": 150
+    "description": "Altar exhibidor del Caballero de Bronce Pegaso (Seiya), con la placa tallada del emblema de Pegaso entre columnas y base tipo ruinas del Santuario. Hecho para montar tu figura Myth Cloth EX de Bandai de Seiya. Acabado realista tipo piedra envejecida, impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D."
   },
   {
     "id": "fawkes-fenix-de-dumbledore",
@@ -990,9 +928,8 @@
     "height": "Aprox. 40–45 cm desde la cola hasta la cresta",
     "material": "PLA+ con detalles en PLA Silk dorado y PLA Silk plata",
     "availability": "A pedido",
-    "regularPrice": 200,
+    "regularPrice": 180,
     "featured": true,
-    "offer": true,
     "image": "assets/products/fawkes-fenix-de-dumbledore-hero-v2.png",
     "gallery": [
       "assets/products/fawkes-fenix-de-dumbledore-hero-v2.png",
@@ -1002,8 +939,7 @@
       "assets/products/fawkes-fenix-de-dumbledore-4.jpg",
       "assets/products/fawkes-fenix-de-dumbledore-5.jpg"
     ],
-    "description": "Fawkes es el fiel fénix de Albus Dumbledore: una criatura mágica conocida por su plumaje rojo y dorado, su lealtad, sus lágrimas curativas y su capacidad de renacer de las cenizas. Esta pieza decorativa inspirada en el mundo de Harry Potter está impresa en 3D y pintada a mano, con una base de exhibición dorada que realza su presencia. Fabricada en PLA+, con detalles en PLA Silk dorado y PLA Silk plata en las patas. Mide aproximadamente entre 40 y 45 cm desde la cola hasta la cresta. Hecha a pedido, con envíos a todo el Perú.",
-    "offerPrice": 180
+    "description": "Fawkes es el fiel fénix de Albus Dumbledore: una criatura mágica conocida por su plumaje rojo y dorado, su lealtad, sus lágrimas curativas y su capacidad de renacer de las cenizas. Esta pieza decorativa inspirada en el mundo de Harry Potter está impresa en 3D y pintada a mano, con una base de exhibición dorada que realza su presencia. Fabricada en PLA+, con detalles en PLA Silk dorado y PLA Silk plata en las patas. Mide aproximadamente entre 40 y 45 cm desde la cola hasta la cresta. Hecha a pedido, con envíos a todo el Perú."
   },
   {
     "id": "castillo-de-hogwarts",
@@ -1014,9 +950,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 88,
+    "regularPrice": 80,
     "featured": true,
-    "offer": true,
     "image": "assets/products/castillo-de-hogwarts-gallery-01.png",
     "gallery": [
       "assets/products/castillo-de-hogwarts-gallery-01.png",
@@ -1025,8 +960,7 @@
       "assets/products/castillo-de-hogwarts-gallery-04.png",
       "assets/products/castillo-de-hogwarts-gallery-05.png"
     ],
-    "description": "El castillo de Hogwarts en réplica decorativa impresa en 3D: torres, puentes y el Gran Comedor reconocibles al instante. Pieza imprescindible para todo fan del mundo mágico.",
-    "offerPrice": 80
+    "description": "El castillo de Hogwarts en réplica decorativa impresa en 3D: torres, puentes y el Gran Comedor reconocibles al instante. Pieza imprescindible para todo fan del mundo mágico."
   },
   {
     "id": "ajedrez-de-hogwarts-4-casas",
@@ -1038,9 +972,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 286,
+    "regularPrice": 260,
     "featured": true,
-    "offer": true,
     "image": "assets/products/ajedrez-de-hogwarts-4-casas-hero-v2.webp",
     "gallery": [
       "assets/products/ajedrez-de-hogwarts-4-casas-hero-v2.webp",
@@ -1052,8 +985,7 @@
       "assets/products/ajedrez-de-hogwarts-4-casas-5.jpg",
       "assets/products/ajedrez-de-hogwarts-4-casas-6.jpg"
     ],
-    "description": "Ajedrez de colección Hogwarts · 4 Casas. Un homenaje integral al colegio de magia.",
-    "offerPrice": 260
+    "description": "Ajedrez de colección Hogwarts · 4 Casas. Un homenaje integral al colegio de magia."
   },
   {
     "id": "lampara-sombrero-seleccionador",
@@ -1065,16 +997,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 105,
+    "regularPrice": 95,
     "featured": true,
-    "offer": true,
     "image": "assets/products/lampara-sombrero-seleccionador-hero-v2.png",
     "gallery": [
       "assets/products/lampara-sombrero-seleccionador-hero-v2.png",
       "assets/products/lampara-sombrero-seleccionador.jpg"
     ],
-    "description": "Lámpara LED del Sombrero Seleccionador con iluminación integrada que resalta su emblemática expresión. El regalo perfecto para los verdaderos fans de Harry Potter.",
-    "offerPrice": 95
+    "description": "Lámpara LED del Sombrero Seleccionador con iluminación integrada que resalta su emblemática expresión. El regalo perfecto para los verdaderos fans de Harry Potter."
   },
   {
     "id": "lampara-lunar-hogwarts",
@@ -1087,9 +1017,8 @@
     "height": "Dimensiones (largo x ancho x alto): 254 x 254 x 115 mm",
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 275,
+    "regularPrice": 250,
     "featured": true,
-    "offer": true,
     "image": "assets/products/lampara-lunar-hogwarts-hero-v2.png",
     "gallery": [
       "assets/products/lampara-lunar-hogwarts-hero-v2.png",
@@ -1098,8 +1027,7 @@
       "assets/products/lampara-lunar-hogwarts-3.jpg",
       "assets/products/lampara-lunar-hogwarts-4.jpg"
     ],
-    "description": "Ilumina tu espacio con la magia de esta lámpara lunar de Hogwarts: un modelo exclusivo que combina el castillo con una luna retroiluminada. Dimensiones (largo x ancho x alto): 254 x 254 x 115 mm.",
-    "offerPrice": 250
+    "description": "Ilumina tu espacio con la magia de esta lámpara lunar de Hogwarts: un modelo exclusivo que combina el castillo con una luna retroiluminada. Dimensiones (largo x ancho x alto): 254 x 254 x 115 mm."
   },
   {
     "id": "casco-de-wolverine-con-garras",
@@ -1111,9 +1039,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 220,
+    "regularPrice": 200,
     "featured": true,
-    "offer": true,
     "image": "assets/products/casco-de-wolverine-con-garras-hero-v3.jpg",
     "gallery": [
       "assets/products/casco-de-wolverine-con-garras-hero-v3.jpg",
@@ -1121,7 +1048,6 @@
       "assets/products/casco-de-wolverine-con-garras-3.jpg"
     ],
     "description": "Casco decorativo de Wolverine acompañado de su set de garras. Dos piezas de exhibición para el fan de Marvel y los X-Men.",
-    "offerPrice": 200,
     "video": {
       "src": "assets/products/videos/casco-de-wolverine-con-garras.mp4",
       "poster": "assets/products/videos/casco-de-wolverine-con-garras.jpg",
@@ -1138,16 +1064,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 110,
+    "regularPrice": 100,
     "featured": true,
-    "offer": true,
     "image": "assets/products/mascara-de-batwoman-hero-v2.png",
     "gallery": [
       "assets/products/mascara-de-batwoman-hero-v2.png",
       "assets/products/mascara-de-batwoman.jpg"
     ],
-    "description": "Máscara decorativa de Batwoman para exhibición: orejas afiladas y contorno marcado, impresa en 3D y detallada a mano.",
-    "offerPrice": 100
+    "description": "Máscara decorativa de Batwoman para exhibición: orejas afiladas y contorno marcado, impresa en 3D y detallada a mano."
   },
   {
     "id": "palomera-cara-de-spiderman",
@@ -1159,16 +1083,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 77,
+    "regularPrice": 70,
     "featured": true,
-    "offer": true,
     "image": "assets/products/palomera-cara-de-spiderman-hero-v2.webp",
     "gallery": [
       "assets/products/palomera-cara-de-spiderman-hero-v2.webp",
       "assets/products/palomera-cara-de-spiderman.jpg"
     ],
-    "description": "Espectacular palomera con forma de la cara de Spider-Man: ojos blancos, telaraña roja y azul. Ideal para tu noche de cine en casa o como pieza decorativa Marvel.",
-    "offerPrice": 70
+    "description": "Espectacular palomera con forma de la cara de Spider-Man: ojos blancos, telaraña roja y azul. Ideal para tu noche de cine en casa o como pieza decorativa Marvel."
   },
   {
     "id": "palomera-spiderman",
@@ -1180,16 +1102,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 77,
+    "regularPrice": 70,
     "featured": true,
-    "offer": true,
     "image": "assets/products/palomera-spiderman-hero-v2.webp",
     "gallery": [
       "assets/products/palomera-spiderman-hero-v2.webp",
       "assets/products/palomera-spiderman.jpg"
     ],
-    "description": "Palomera temática de Spider-Man para tu noche de películas: práctica, resistente y con el diseño arácnido que todo fan de Marvel reconoce.",
-    "offerPrice": 70
+    "description": "Palomera temática de Spider-Man para tu noche de películas: práctica, resistente y con el diseño arácnido que todo fan de Marvel reconoce."
   },
   {
     "id": "mario-billy-saw",
@@ -1203,17 +1123,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 100,
+    "regularPrice": 80,
     "featured": true,
-    "offer": true,
     "image": "assets/products/mario-billy-saw-hero-v2.webp",
     "gallery": [
       "assets/products/mario-billy-saw-hero-v2.webp",
       "assets/products/mario-billy-saw-1.jpg",
       "assets/products/mario-billy-saw-2.jpg"
     ],
-    "description": "🎃 Edición Halloween. El crossover más retorcido de tu colección: Mario convertido en Billy, el muñeco de Saw (El Juego del Miedo), con el rostro pálido, las espirales rojas en las mejillas, smoking con moño y su inconfundible triciclo rojo. Impresa en 3D y pintada a mano, sobre pedestal negro. El detalle perfecto para decorar en Halloween o para el fan del terror todo el año. Hecha a pedido, con envíos a todo el Perú.",
-    "offerPrice": 80
+    "description": "🎃 Edición Halloween. El crossover más retorcido de tu colección: Mario convertido en Billy, el muñeco de Saw (El Juego del Miedo), con el rostro pálido, las espirales rojas en las mejillas, smoking con moño y su inconfundible triciclo rojo. Impresa en 3D y pintada a mano, sobre pedestal negro. El detalle perfecto para decorar en Halloween o para el fan del terror todo el año. Hecha a pedido, con envíos a todo el Perú."
   },
   {
     "id": "mascara-calabaza-calavera",
@@ -1226,17 +1144,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 150,
+    "regularPrice": 120,
     "featured": true,
-    "offer": true,
     "image": "assets/products/mascara-calabaza-calavera-hero-v2.png",
     "gallery": [
       "assets/products/mascara-calabaza-calavera-hero-v2.png",
       "assets/products/mascara-calabaza-calavera-1.jpg",
       "assets/products/mascara-calabaza-calavera-2.jpg"
     ],
-    "description": "🎃 Edición Halloween. Máscara Calabaza Calavera: mitad jack-o'-lantern, mitad cráneo, con el ceño marcado, las cuencas huecas y una hilera de dientes de sierra en degradado hacia el blanco. Impresa en 3D y pintada a mano. Ideal para tu disfraz, sesión de fotos o para colgarla como decoración de temporada. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú.",
-    "offerPrice": 120
+    "description": "🎃 Edición Halloween. Máscara Calabaza Calavera: mitad jack-o'-lantern, mitad cráneo, con el ceño marcado, las cuencas huecas y una hilera de dientes de sierra en degradado hacia el blanco. Impresa en 3D y pintada a mano. Ideal para tu disfraz, sesión de fotos o para colgarla como decoración de temporada. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú."
   },
   {
     "id": "candelabro-calavera",
@@ -1250,9 +1166,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 120,
+    "regularPrice": 100,
     "featured": true,
-    "offer": true,
     "image": "assets/products/candelabro-calavera-hero-v2.png",
     "gallery": [
       "assets/products/candelabro-calavera-hero-v2.png",
@@ -1260,8 +1175,7 @@
       "assets/products/candelabro-calavera-2.jpg",
       "assets/products/candelabro-calavera-3.jpg"
     ],
-    "description": "🎃 Edición Halloween. Dale a tu decoración un toque oscuro y fuera de lo común: un cráneo de aspecto envejecido con una columna vertebral que sostiene la vela, una pieza que llama la atención tanto encendida como apagada. Al prender la vela, la luz cálida resalta las formas del cráneo y crea una atmósfera intensa y misteriosa. Ideal para salas, escritorios, vitrinas, mesas temáticas o rincones góticos. Impreso en 3D y detallado a mano, con acabado tipo hueso envejecido. Compatible con velas de hasta 2 cm de diámetro (vela no incluida). Hecho a pedido, con envíos a todo el Perú.",
-    "offerPrice": 100
+    "description": "🎃 Edición Halloween. Dale a tu decoración un toque oscuro y fuera de lo común: un cráneo de aspecto envejecido con una columna vertebral que sostiene la vela, una pieza que llama la atención tanto encendida como apagada. Al prender la vela, la luz cálida resalta las formas del cráneo y crea una atmósfera intensa y misteriosa. Ideal para salas, escritorios, vitrinas, mesas temáticas o rincones góticos. Impreso en 3D y detallado a mano, con acabado tipo hueso envejecido. Compatible con velas de hasta 2 cm de diámetro (vela no incluida). Hecho a pedido, con envíos a todo el Perú."
   },
   {
     "id": "evil-mask",
@@ -1275,9 +1189,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 250,
+    "regularPrice": 220,
     "featured": true,
-    "offer": true,
     "image": "assets/products/evil-mask-hero-v2.png",
     "gallery": [
       "assets/products/evil-mask-hero-v2.png",
@@ -1285,8 +1198,7 @@
       "assets/products/evil-mask-2.jpg",
       "assets/products/evil-mask-3.jpg"
     ],
-    "description": "🎃 Edición Halloween. Máscara demoníaca de gran presencia: cuernos imponentes, textura escamada y un acabado lleno de detalle. Disponible en rojo o azul. Perfecta para tu disfraz, una fiesta temática, sesión de fotos o para exhibirla como pieza de decoración. Impresa en 3D y pintada a mano. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú.",
-    "offerPrice": 220
+    "description": "🎃 Edición Halloween. Máscara demoníaca de gran presencia: cuernos imponentes, textura escamada y un acabado lleno de detalle. Disponible en rojo o azul. Perfecta para tu disfraz, una fiesta temática, sesión de fotos o para exhibirla como pieza de decoración. Impresa en 3D y pintada a mano. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú."
   },
   {
     "id": "zkull-urban",
@@ -1301,17 +1213,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 70,
+    "regularPrice": 50,
     "featured": true,
-    "offer": true,
     "image": "assets/products/zkull-urban-hero-v2.png",
     "gallery": [
       "assets/products/zkull-urban-hero-v2.png",
       "assets/products/zkull-urban-1.jpg",
       "assets/products/zkull-urban-2.jpg"
     ],
-    "description": "🎃 Edición Halloween. Actitud callejera con espíritu de temporada: una figura de calavera con look urbano —gorra, casaca inflada y zapatillas— y una presencia que no pasa desapercibida. Art toy de escritorio impreso en 3D y pintado a mano. Disponible en varias combinaciones de color (consulta las disponibles). Ideal para decoración, colección o regalo. Precio por figura. Hecho a pedido, con envíos a todo el Perú.",
-    "offerPrice": 50
+    "description": "🎃 Edición Halloween. Actitud callejera con espíritu de temporada: una figura de calavera con look urbano —gorra, casaca inflada y zapatillas— y una presencia que no pasa desapercibida. Art toy de escritorio impreso en 3D y pintado a mano. Disponible en varias combinaciones de color (consulta las disponibles). Ideal para decoración, colección o regalo. Precio por figura. Hecho a pedido, con envíos a todo el Perú."
   },
   {
     "id": "mascara-krampus",
@@ -1326,17 +1236,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 230,
+    "regularPrice": 200,
     "featured": true,
-    "offer": true,
     "image": "assets/products/mascara-krampus-hero-v2.png",
     "gallery": [
       "assets/products/mascara-krampus-hero-v2.png",
       "assets/products/mascara-krampus-1.jpg",
       "assets/products/mascara-krampus-2.jpg"
     ],
-    "description": "🎃 Edición Halloween. Lleva tu disfraz a un nivel mucho más oscuro con la Máscara Krampus: diseño demoníaco, cuernos de carnero y una expresión aterradora con colmillos. Impresa en 3D y pintada a mano, con acabado detallado. Perfecta para disfraces, fiestas temáticas, sesiones de fotos o para exhibirla como pieza de decoración oscura. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú.",
-    "offerPrice": 200
+    "description": "🎃 Edición Halloween. Lleva tu disfraz a un nivel mucho más oscuro con la Máscara Krampus: diseño demoníaco, cuernos de carnero y una expresión aterradora con colmillos. Impresa en 3D y pintada a mano, con acabado detallado. Perfecta para disfraces, fiestas temáticas, sesiones de fotos o para exhibirla como pieza de decoración oscura. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú."
   },
   {
     "id": "mascara-baphomet",
@@ -1353,17 +1261,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 160,
+    "regularPrice": 140,
     "featured": true,
-    "offer": true,
     "image": "assets/products/mascara-baphomet-hero-v2.png",
     "gallery": [
       "assets/products/mascara-baphomet-hero-v2.png",
       "assets/products/mascara-baphomet-1.jpg",
       "assets/products/mascara-baphomet-2.jpg"
     ],
-    "description": "🎃 Edición Halloween. Máscara de Baphomet en acabado negro con cuernos detallados y pentagrama rojo en la frente: diseño siniestro y llamativo, con alto nivel de detalle. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y decoración temática oscura. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 😈🔥",
-    "offerPrice": 140
+    "description": "🎃 Edición Halloween. Máscara de Baphomet en acabado negro con cuernos detallados y pentagrama rojo en la frente: diseño siniestro y llamativo, con alto nivel de detalle. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y decoración temática oscura. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 😈🔥"
   },
   {
     "id": "mascara-hellboy-articulada",
@@ -1380,17 +1286,15 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 220,
+    "regularPrice": 200,
     "featured": true,
-    "offer": true,
     "image": "assets/products/mascara-hellboy-articulada-1.jpg",
     "gallery": [
       "assets/products/mascara-hellboy-articulada-1.jpg",
       "assets/products/mascara-hellboy-articulada-2.jpg",
       "assets/products/mascara-hellboy-articulada-3.jpg"
     ],
-    "description": "🎃 Edición Halloween. Máscara articulada inspirada en Hellboy, con acabado rojo y gran nivel de detalle. La mandíbula es articulada: al hablar, la boca se mueve contigo. Incluye un puro desmontable para completar el look. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y colección. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 🔥",
-    "offerPrice": 200
+    "description": "🎃 Edición Halloween. Máscara articulada inspirada en Hellboy, con acabado rojo y gran nivel de detalle. La mandíbula es articulada: al hablar, la boca se mueve contigo. Incluye un puro desmontable para completar el look. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y colección. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 🔥"
   },
   {
     "id": "casco-de-stormtrooper",
@@ -1411,17 +1315,15 @@
     "height": "Tamaño real 1:1",
     "material": "PLA+",
     "availability": "A pedido",
-    "regularPrice": 240,
+    "regularPrice": 200,
     "featured": true,
-    "offer": true,
     "image": "assets/products/casco-de-stormtrooper-hero.jpg",
     "gallery": [
       "assets/products/casco-de-stormtrooper-hero.jpg",
       "assets/products/casco-de-stormtrooper-2.jpg",
       "assets/products/casco-de-stormtrooper-3.jpg"
     ],
-    "description": "🎃 Edición Halloween. Casco de Stormtrooper de Star Wars a tamaño real 1:1, especial para cosplay. Acabado blanco con detalles en negro, fiel al clásico soldado imperial. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
-    "offerPrice": 200
+    "description": "🎃 Edición Halloween. Casco de Stormtrooper de Star Wars a tamaño real 1:1, especial para cosplay. Acabado blanco con detalles en negro, fiel al clásico soldado imperial. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú."
   },
   {
     "id": "casco-del-mandaloriano",
@@ -1442,9 +1344,8 @@
     "height": "Tamaño real 1:1",
     "material": "PLA+",
     "availability": "A pedido",
-    "regularPrice": 240,
+    "regularPrice": 200,
     "featured": true,
-    "offer": true,
     "image": "assets/products/casco-del-mandaloriano-hero.jpg",
     "gallery": [
       "assets/products/casco-del-mandaloriano-hero.jpg",
@@ -1452,8 +1353,7 @@
       "assets/products/casco-del-mandaloriano-3.jpg",
       "assets/products/casco-del-mandaloriano-4.jpg"
     ],
-    "description": "🎃 Edición Halloween. Casco del Mandaloriano de Star Wars a tamaño real 1:1, especial para cosplay. Acabado cromado y fabricado en PLA+ para mayor resistencia y durabilidad: listo para lucirlo en tu disfraz o exhibirlo en tu colección. Hecho a pedido, con envíos a todo el Perú.",
-    "offerPrice": 200
+    "description": "🎃 Edición Halloween. Casco del Mandaloriano de Star Wars a tamaño real 1:1, especial para cosplay. Acabado cromado y fabricado en PLA+ para mayor resistencia y durabilidad: listo para lucirlo en tu disfraz o exhibirlo en tu colección. Hecho a pedido, con envíos a todo el Perú."
   },
   {
     "id": "casco-gladiador-maximo",
@@ -1470,9 +1370,8 @@
     "height": "Tamaño real 1:1 · Talla única para adulto",
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 250,
+    "regularPrice": 200,
     "featured": true,
-    "offer": true,
     "image": "assets/products/casco-gladiador-maximo-hero-v2.png",
     "gallery": [
       "assets/products/casco-gladiador-maximo-hero-v2.png",
@@ -1480,8 +1379,7 @@
       "assets/products/casco-gladiador-maximo-2.jpg",
       "assets/products/casco-gladiador-maximo-3.jpg"
     ],
-    "description": "🎃 Edición Halloween. Casco de Gladiador Máximo a tamaño real 1:1, especial para completar disfraces y cosplay. Impreso en 3D y pintado a mano con acabado metálico envejecido. Talla única para adulto. Hecho a pedido, con envíos a todo el Perú.",
-    "offerPrice": 200
+    "description": "🎃 Edición Halloween. Casco de Gladiador Máximo a tamaño real 1:1, especial para completar disfraces y cosplay. Impreso en 3D y pintado a mano con acabado metálico envejecido. Talla única para adulto. Hecho a pedido, con envíos a todo el Perú."
   },
   {
     "id": "corona-de-elfo",
@@ -1497,9 +1395,8 @@
     "height": "A la medida de tu cabeza · Adulto (hombre o mujer) o niño",
     "material": "PLA+",
     "availability": "A pedido",
-    "regularPrice": 100,
+    "regularPrice": 60,
     "featured": true,
-    "offer": true,
     "image": "assets/products/corona-de-elfo-hero-v2.png",
     "gallery": [
       "assets/products/corona-de-elfo-hero-v2.png",
@@ -1508,8 +1405,7 @@
       "assets/products/corona-de-elfo-3.jpg",
       "assets/products/corona-de-elfo-4.jpg"
     ],
-    "description": "🎃 Edición Halloween. Corona de Elfo de fantasía: una diadema con ramas y hojas curvas que se elevan como llamas, con una pieza central en forma de gota sobre la frente. Impresa en 3D y pintada a mano con acabado dorado envejecido. Ideal para Halloween, cosplay, sesiones de fotos y disfraces de fantasía. Disponible para adulto (hombre o mujer) y también para niño. Se hace a pedido, a la medida de quien la va a usar: solo necesitamos la medida de su cabeza. Hecha a pedido, con envíos a todo el Perú.",
-    "offerPrice": 60
+    "description": "🎃 Edición Halloween. Corona de Elfo de fantasía: una diadema con ramas y hojas curvas que se elevan como llamas, con una pieza central en forma de gota sobre la frente. Impresa en 3D y pintada a mano con acabado dorado envejecido. Ideal para Halloween, cosplay, sesiones de fotos y disfraces de fantasía. Disponible para adulto (hombre o mujer) y también para niño. Se hace a pedido, a la medida de quien la va a usar: solo necesitamos la medida de su cabeza. Hecha a pedido, con envíos a todo el Perú."
   },
   {
     "id": "cuernos-de-fauno",
@@ -1527,9 +1423,8 @@
     "height": "Diadema (bincha) adaptable · Para adulto, hombre o mujer",
     "material": "PLA+",
     "availability": "A pedido",
-    "regularPrice": 100,
+    "regularPrice": 60,
     "featured": true,
-    "offer": true,
     "image": "assets/products/cuernos-de-fauno-hero-v2.png",
     "gallery": [
       "assets/products/cuernos-de-fauno-hero-v2.png",
@@ -1539,8 +1434,7 @@
       "assets/products/cuernos-de-fauno-4.jpg",
       "assets/products/cuernos-de-fauno-5.jpg"
     ],
-    "description": "🎃 Edición Halloween. Cuernos de Fauno: un excelente accesorio para este Halloween. Dos cuernos curvos con anillos marcados, montados sobre una diadema (bincha) adaptable y cómoda de usar, para adulto, hombre o mujer. Impresos en 3D en PLA+, pintados a mano o en color puro, según tu gusto (consulta los colores disponibles). Ideales para disfraces, cosplay, fiestas temáticas y sesiones de fotos. Hechos a pedido, con envíos a todo el Perú.",
-    "offerPrice": 60
+    "description": "🎃 Edición Halloween. Cuernos de Fauno: un excelente accesorio para este Halloween. Dos cuernos curvos con anillos marcados, montados sobre una diadema (bincha) adaptable y cómoda de usar, para adulto, hombre o mujer. Impresos en 3D en PLA+, pintados a mano o en color puro, según tu gusto (consulta los colores disponibles). Ideales para disfraces, cosplay, fiestas temáticas y sesiones de fotos. Hechos a pedido, con envíos a todo el Perú."
   },
   {
     "id": "mascarada-del-diablo",
@@ -1558,9 +1452,8 @@
     "height": "Medida estándar para adulto · Hombre o mujer · Elástico opcional",
     "material": "PLA+",
     "availability": "A pedido",
-    "regularPrice": 80,
+    "regularPrice": 60,
     "featured": true,
-    "offer": true,
     "image": "assets/products/mascarada-del-diablo-hero-v2.png",
     "gallery": [
       "assets/products/mascarada-del-diablo-hero-v2.png",
@@ -1570,8 +1463,7 @@
       "assets/products/mascarada-del-diablo-4.jpg",
       "assets/products/mascarada-del-diablo-5.jpg"
     ],
-    "description": "🎃 Edición Halloween. La Mascarada del Diablo: media máscara roja de aspecto demoníaco, con relieves marcados en la frente, contorno de ojos pronunciado y dos cuernos curvos con textura. Impresa en 3D en PLA+ y pintada a mano, con acabado envejecido y detalles en negro. Medida estándar para adulto, hombre o mujer. Incluye elástico opcional para sujetarla. Ideal para disfraces, fiestas temáticas, mascaradas y sesiones de fotos. Hecha a pedido, con envíos a todo el Perú.",
-    "offerPrice": 60
+    "description": "🎃 Edición Halloween. La Mascarada del Diablo: media máscara roja de aspecto demoníaco, con relieves marcados en la frente, contorno de ojos pronunciado y dos cuernos curvos con textura. Impresa en 3D en PLA+ y pintada a mano, con acabado envejecido y detalles en negro. Medida estándar para adulto, hombre o mujer. Incluye elástico opcional para sujetarla. Ideal para disfraces, fiestas temáticas, mascaradas y sesiones de fotos. Hecha a pedido, con envíos a todo el Perú."
   },
   {
     "id": "mascara-el-juego-del-calamar",
@@ -1583,16 +1475,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 55,
+    "regularPrice": 50,
     "featured": true,
-    "offer": true,
     "image": "assets/products/mascara-el-juego-del-calamar-hero-v2.png",
     "gallery": [
       "assets/products/mascara-el-juego-del-calamar-hero-v2.png",
       "assets/products/mascara-el-juego-del-calamar.jpg"
     ],
-    "description": "Máscara decorativa de El Juego del Calamar (círculo, triángulo o cuadrado), impresa en 3D. Perfecta para exhibición, cosplay o para completar tu disfraz.",
-    "offerPrice": 50
+    "description": "Máscara decorativa de El Juego del Calamar (círculo, triángulo o cuadrado), impresa en 3D. Perfecta para exhibición, cosplay o para completar tu disfraz."
   },
   {
     "id": "casco-de-agamenon-la-odisea",
@@ -1604,9 +1494,8 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 438,
+    "regularPrice": 398,
     "featured": true,
-    "offer": true,
     "image": "assets/products/casco-de-agamenon-la-odisea-hero-v2.png",
     "gallery": [
       "assets/products/casco-de-agamenon-la-odisea-hero-v2.png",
@@ -1616,8 +1505,7 @@
       "assets/products/casco-de-agamenon-la-odisea-4.jpg",
       "assets/products/casco-de-agamenon-la-odisea-5.jpg"
     ],
-    "description": "Casco decorativo de Agamenón a tamaño real, inspirado en La Odisea y la Grecia de los héroes. Una pieza imponente de exhibición.",
-    "offerPrice": 398
+    "description": "Casco decorativo de Agamenón a tamaño real, inspirado en La Odisea y la Grecia de los héroes. Una pieza imponente de exhibición."
   },
   {
     "id": "pato-lucas-kratos-god-of-war",
@@ -1629,16 +1517,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 132,
+    "regularPrice": 120,
     "featured": true,
-    "offer": true,
     "image": "assets/products/pato-lucas-kratos-god-of-war-hero-v2.png",
     "gallery": [
       "assets/products/pato-lucas-kratos-god-of-war-hero-v2.png",
       "assets/products/pato-lucas-kratos-god-of-war.jpg"
     ],
-    "description": "El clásico y temperamental Pato Lucas se fusiona con la furia de Kratos de God of War: barba, tatuaje espartano y mirada de pocos amigos. Una figura decorativa única.",
-    "offerPrice": 120
+    "description": "El clásico y temperamental Pato Lucas se fusiona con la furia de Kratos de God of War: barba, tatuaje espartano y mirada de pocos amigos. Una figura decorativa única."
   },
   {
     "id": "maceta-pikachu",
@@ -1651,16 +1537,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 66,
+    "regularPrice": 60,
     "featured": true,
-    "offer": true,
     "image": "assets/products/maceta-pikachu-hero-v2.webp",
     "gallery": [
       "assets/products/maceta-pikachu-hero-v2.webp",
       "assets/products/maceta-pikachu.jpg"
     ],
-    "description": "Maceta decorativa de Pikachu (Pokémon), impresa en 3D con filamento de alta calidad. Perfecta para tus suculentas o cactus en el escritorio o la repisa.",
-    "offerPrice": 60
+    "description": "Maceta decorativa de Pikachu (Pokémon), impresa en 3D con filamento de alta calidad. Perfecta para tus suculentas o cactus en el escritorio o la repisa."
   },
   {
     "id": "replica-copa-del-mundo-tamano-real",
@@ -1672,16 +1556,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 165,
+    "regularPrice": 150,
     "featured": true,
-    "offer": true,
     "image": "assets/products/replica-copa-del-mundo-tamano-real-hero-v2.png",
     "gallery": [
       "assets/products/replica-copa-del-mundo-tamano-real-hero-v2.png",
       "assets/products/replica-copa-del-mundo-tamano-real.jpg"
     ],
-    "description": "Siente la pasión del mundial: réplica premium de la Copa del Mundo FIFA a tamaño real (escala 1:1), con acabado dorado y base tipo malaquita.",
-    "offerPrice": 150
+    "description": "Siente la pasión del mundial: réplica premium de la Copa del Mundo FIFA a tamaño real (escala 1:1), con acabado dorado y base tipo malaquita."
   },
   {
     "id": "botin-de-oro-del-mundial",
@@ -1693,16 +1575,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 176,
+    "regularPrice": 160,
     "featured": true,
-    "offer": true,
     "image": "assets/products/botin-de-oro-del-mundial-hero-v2.png",
     "gallery": [
       "assets/products/botin-de-oro-del-mundial-hero-v2.png",
       "assets/products/botin-de-oro-del-mundial.jpg"
     ],
-    "description": "Diseño exclusivo de Boom Art: el Botín de Oro (Golden Boot) dorado incorpora un relieve de alta precisión con el mapamundi. Pieza de colección para el amante del fútbol.",
-    "offerPrice": 160
+    "description": "Diseño exclusivo de Boom Art: el Botín de Oro (Golden Boot) dorado incorpora un relieve de alta precisión con el mapamundi. Pieza de colección para el amante del fútbol."
   },
   {
     "id": "balon-de-oro-del-mundial",
@@ -1714,16 +1594,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 220,
+    "regularPrice": 200,
     "featured": true,
-    "offer": true,
     "image": "assets/products/balon-de-oro-del-mundial-hero-v2.png",
     "gallery": [
       "assets/products/balon-de-oro-del-mundial-hero-v2.png",
       "assets/products/balon-de-oro-del-mundial.jpg"
     ],
-    "description": "El Balón de Oro, máximo galardón individual del fútbol, en réplica decorativa con acabado dorado. El regalo ideal para el fanático que lo tiene casi todo.",
-    "offerPrice": 200
+    "description": "El Balón de Oro, máximo galardón individual del fútbol, en réplica decorativa con acabado dorado. El regalo ideal para el fanático que lo tiene casi todo."
   },
   {
     "id": "caja-organizadora-figuritas-panini-2026",
@@ -1735,16 +1613,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 33,
+    "regularPrice": 30,
     "featured": true,
-    "offer": true,
     "image": "assets/products/caja-organizadora-figuritas-panini-2026-hero-v2.webp",
     "gallery": [
       "assets/products/caja-organizadora-figuritas-panini-2026-hero-v2.webp",
       "assets/products/caja-organizadora-figuritas-panini-2026.jpg"
     ],
-    "description": "Organiza y protege tus figuritas repetidas del álbum Panini Mundial 2026 con esta caja coleccionadora impresa en 3D. Se acabó tenerlas sueltas.",
-    "offerPrice": 30
+    "description": "Organiza y protege tus figuritas repetidas del álbum Panini Mundial 2026 con esta caja coleccionadora impresa en 3D. Se acabó tenerlas sueltas."
   },
   {
     "id": "maceta-groot",
@@ -1756,16 +1632,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 85,
+    "regularPrice": 77,
     "featured": true,
-    "offer": true,
     "image": "assets/products/maceta-groot-hero-v2.webp",
     "gallery": [
       "assets/products/maceta-groot-hero-v2.webp",
       "assets/products/maceta-groot.jpg"
     ],
-    "description": "Maceta inspirada en Groot, con diseño detallado y colores naranja y verde que evocan su aspecto de árbol. Tamaño generoso para acomodar varias plantas. Ideal para los fans de los Guardianes de la Galaxia.",
-    "offerPrice": 77
+    "description": "Maceta inspirada en Groot, con diseño detallado y colores naranja y verde que evocan su aspecto de árbol. Tamaño generoso para acomodar varias plantas. Ideal para los fans de los Guardianes de la Galaxia."
   },
   {
     "id": "maceta-baby-groot",
@@ -1777,16 +1651,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 49,
+    "regularPrice": 44,
     "featured": true,
-    "offer": true,
     "image": "assets/products/maceta-baby-groot-hero-v2.webp",
     "gallery": [
       "assets/products/maceta-baby-groot-hero-v2.webp",
       "assets/products/maceta-baby-groot.jpg"
     ],
-    "description": "Maceta de Baby Groot (Guardianes de la Galaxia), minimalista y con hermosos detalles en el rostro y las ramas. Ideal para escritorios, repisas y decoración de ambientes.",
-    "offerPrice": 44
+    "description": "Maceta de Baby Groot (Guardianes de la Galaxia), minimalista y con hermosos detalles en el rostro y las ramas. Ideal para escritorios, repisas y decoración de ambientes."
   },
   {
     "id": "maceta-dedo-medio",
@@ -1797,16 +1669,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 49,
+    "regularPrice": 44,
     "featured": true,
-    "offer": true,
     "image": "assets/products/maceta-dedo-medio-hero-v2.png",
     "gallery": [
       "assets/products/maceta-dedo-medio-hero-v2.png",
       "assets/products/maceta-dedo-medio.jpg"
     ],
-    "description": "Una maceta pequeña y divertida con forma de dedo medio, en color neutro que combina con todos tus espacios: la sala, el escritorio de la oficina, donde quieras dar un mensaje sin decir nada.",
-    "offerPrice": 44
+    "description": "Una maceta pequeña y divertida con forma de dedo medio, en color neutro que combina con todos tus espacios: la sala, el escritorio de la oficina, donde quieras dar un mensaje sin decir nada."
   },
   {
     "id": "maceta-darth-vader",
@@ -1818,16 +1688,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 61,
+    "regularPrice": 55,
     "featured": true,
-    "offer": true,
     "image": "assets/products/maceta-darth-vader-hero-v2.webp",
     "gallery": [
       "assets/products/maceta-darth-vader-hero-v2.webp",
       "assets/products/maceta-darth-vader.jpg"
     ],
-    "description": "Maceta de Darth Vader (Star Wars) en elegante color negro, capturando el casco del Lord Sith. El lado oscuro de la jardinería para tu escritorio.",
-    "offerPrice": 55
+    "description": "Maceta de Darth Vader (Star Wars) en elegante color negro, capturando el casco del Lord Sith. El lado oscuro de la jardinería para tu escritorio."
   },
   {
     "id": "maceta-david",
@@ -1839,16 +1707,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 73,
+    "regularPrice": 66,
     "featured": true,
-    "offer": true,
     "image": "assets/products/maceta-david-hero-v2.png",
     "gallery": [
       "assets/products/maceta-david-hero-v2.png",
       "assets/products/maceta-david.jpg"
     ],
-    "description": "Maceta inspirada en el David de Miguel Ángel: elegancia y arte clásico en un diseño minimalista que eleva cualquier ambiente.",
-    "offerPrice": 66
+    "description": "Maceta inspirada en el David de Miguel Ángel: elegancia y arte clásico en un diseño minimalista que eleva cualquier ambiente."
   },
   {
     "id": "maceta-minimalista",
@@ -1859,16 +1725,14 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 49,
+    "regularPrice": 44,
     "featured": true,
-    "offer": true,
     "image": "assets/products/maceta-minimalista-hero-v2.png",
     "gallery": [
       "assets/products/maceta-minimalista-hero-v2.png",
       "assets/products/maceta-minimalista.jpg"
     ],
-    "description": "Optimiza tu espacio con una maceta minimalista de líneas limpias y textura sutil, ideal para escritorio, repisa o mesa de centro.",
-    "offerPrice": 44
+    "description": "Optimiza tu espacio con una maceta minimalista de líneas limpias y textura sutil, ideal para escritorio, repisa o mesa de centro."
   },
   {
     "id": "maceta-palmera",
@@ -1879,15 +1743,13 @@
     ],
     "material": "PLA",
     "availability": "A pedido",
-    "regularPrice": 49,
+    "regularPrice": 44,
     "featured": true,
-    "offer": true,
     "image": "assets/products/maceta-palmera-hero-v2.png",
     "gallery": [
       "assets/products/maceta-palmera-hero-v2.png",
       "assets/products/maceta-palmera.jpg"
     ],
-    "description": "Maceta minimalista negra con textura de hojas de palmera: elegante y moderna, ideal para complementar una decoración tropical o contemporánea.",
-    "offerPrice": 44
+    "description": "Maceta minimalista negra con textura de hojas de palmera: elegante y moderna, ideal para complementar una decoración tropical o contemporánea."
   }
 ]

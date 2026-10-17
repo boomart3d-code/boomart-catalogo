@@ -52,7 +52,7 @@
 
   const productPrice = (product) => {
     if (product.templePricing) return Number(product.templePricing.temple || 0);
-    return Number(product.offerPrice != null ? product.offerPrice : product.regularPrice) || 0;
+    return Number(product.regularPrice) || 0;
   };
 
   const priceLabel = (product) => {
@@ -199,8 +199,6 @@
       .sort((a, b) => {
         const featured = Number(Boolean(b.featured)) - Number(Boolean(a.featured));
         if (featured) return featured;
-        const offer = Number(Boolean(b.offer)) - Number(Boolean(a.offer));
-        if (offer) return offer;
         return productPrice(a) - productPrice(b);
       })
       .slice(0, MAX_RESULTS);

@@ -3,7 +3,7 @@
   <channel>
     <title>BoomArt - Catalogo de productos</title>
     <link>https://boomart.pe/</link>
-    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-10-16.</description>
+    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-10-17.</description>
     <item>
       <g:id>templo-aries</g:id>
       <g:title>Templo de Aries</g:title>
@@ -234,8 +234,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/templo-con-caja-de-pandora-y-pedestal-9.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/templo-con-caja-de-pandora-y-pedestal-10.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>1560.00 PEN</g:price>
-      <g:sale_price>1500.00 PEN</g:sale_price>
+      <g:price>1500.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -254,8 +253,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/busto-de-atena-saint-seiya-5.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/busto-de-atena-saint-seiya-6.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>130.00 PEN</g:price>
-      <g:sale_price>100.00 PEN</g:sale_price>
+      <g:price>100.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -270,8 +268,7 @@
       <g:image_link>https://boomart.pe/assets/products/escultura-de-atena-saint-seiya-hero2.jpg</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/escultura-de-atena-saint-seiya-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>130.00 PEN</g:price>
-      <g:sale_price>100.00 PEN</g:sale_price>
+      <g:price>100.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -286,8 +283,7 @@
       <g:image_link>https://boomart.pe/assets/products/torre-del-reloj-saint-seiya-hero.jpg</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/torre-del-reloj-saint-seiya-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>130.00 PEN</g:price>
-      <g:sale_price>100.00 PEN</g:sale_price>
+      <g:price>100.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -303,8 +299,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/set-de-12-templos-mini-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/set-de-12-templos-mini-cliente-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>150.00 PEN</g:price>
-      <g:sale_price>100.00 PEN</g:sale_price>
+      <g:price>100.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -319,8 +314,7 @@
       <g:image_link>https://boomart.pe/assets/products/set-santuario-15-piezas-hero2.jpg</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/set-santuario-15-piezas-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>200.00 PEN</g:price>
-      <g:sale_price>150.00 PEN</g:sale_price>
+      <g:price>150.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -335,8 +329,7 @@
       <g:image_link>https://boomart.pe/assets/products/set-12-cajas-de-pandora-con-pedestales-hero.jpg</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/set-12-cajas-de-pandora-con-pedestales-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>440.00 PEN</g:price>
-      <g:sale_price>400.00 PEN</g:sale_price>
+      <g:price>400.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -351,8 +344,7 @@
       <g:image_link>https://boomart.pe/assets/products/casco-de-pegaso-saint-seiya-hero.jpg</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/casco-de-pegaso-saint-seiya-hero2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>275.00 PEN</g:price>
-      <g:sale_price>250.00 PEN</g:sale_price>
+      <g:price>250.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -367,8 +359,7 @@
       <g:image_link>https://boomart.pe/assets/products/tiara-de-pegaso-saint-seiya-hero.jpg</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/tiara-de-pegaso-saint-seiya-hero2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>120.00 PEN</g:price>
-      <g:sale_price>100.00 PEN</g:sale_price>
+      <g:price>100.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -385,8 +376,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/tiara-de-ikki-de-fenix-saint-seiya-3.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/tiara-de-ikki-de-fenix-saint-seiya-4.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>120.00 PEN</g:price>
-      <g:sale_price>100.00 PEN</g:sale_price>
+      <g:price>100.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -396,7 +386,7 @@
     <item>
       <g:id>set-12-altares-exhibidor</g:id>
       <g:title>Colección de 12 Altares Exhibidor · Casas del Zodiaco · Saint Seiya</g:title>
-      <g:description>Arma el Santuario completo. Los 12 Altares Exhibidor de las Casas del Zodiaco, uno por cada Caballero Dorado, con acabado tipo piedra envejecida y el símbolo de cada signo en dorado. Pensados para lucir tus figuras Myth Cloth EX de Bandai como en el anime. Sueltos cuestan S/100 cada uno (S/1200 el juego); en oferta, S/80 cada uno. Llevando los 12 juntos: S/850, el Santuario entero con el mejor precio. Impresos en 3D a pedido en Perú, con envíos a todo el país. Las figuras Myth Cloth de la foto son de Bandai y no están incluidas: el producto son los 12 altares. Fabricado a pedido en impresion 3D (PLA), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
+      <g:description>Arma el Santuario completo. Los 12 Altares Exhibidor de las Casas del Zodiaco, uno por cada Caballero Dorado, con acabado tipo piedra envejecida y el símbolo de cada signo en dorado. Pensados para lucir tus figuras Myth Cloth EX de Bandai como en el anime. Precio por altar individual: S/80. El conjunto de los 12 altares tiene un precio oficial de S/850. Impresos en 3D a pedido en Perú, con envíos a todo el país. Las figuras Myth Cloth de la foto son de Bandai y no están incluidas: el producto son los 12 altares. Fabricado a pedido en impresion 3D (PLA), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
       <g:link>https://boomart.pe/producto/set-12-altares-exhibidor/</g:link>
       <g:image_link>https://boomart.pe/assets/products/set-12-altares-exhibidor-1.jpg</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-aries-2.jpg</g:additional_image_link>
@@ -410,8 +400,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-sagitario-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-capricornio-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>1200.00 PEN</g:price>
-      <g:sale_price>850.00 PEN</g:sale_price>
+      <g:price>850.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -427,8 +416,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-aries-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-aries-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 PEN</g:price>
-      <g:sale_price>80.00 PEN</g:sale_price>
+      <g:price>80.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -444,8 +432,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-tauro-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-tauro-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 PEN</g:price>
-      <g:sale_price>80.00 PEN</g:sale_price>
+      <g:price>80.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -461,8 +448,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-geminis-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-geminis-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 PEN</g:price>
-      <g:sale_price>80.00 PEN</g:sale_price>
+      <g:price>80.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -478,8 +464,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-cancer-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-cancer-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 PEN</g:price>
-      <g:sale_price>80.00 PEN</g:sale_price>
+      <g:price>80.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -495,8 +480,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-leo-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-leo-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 PEN</g:price>
-      <g:sale_price>80.00 PEN</g:sale_price>
+      <g:price>80.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -512,8 +496,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-virgo-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-virgo-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 PEN</g:price>
-      <g:sale_price>80.00 PEN</g:sale_price>
+      <g:price>80.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -529,8 +512,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-libra-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-libra-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 PEN</g:price>
-      <g:sale_price>80.00 PEN</g:sale_price>
+      <g:price>80.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -546,8 +528,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-escorpio-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-escorpio-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 PEN</g:price>
-      <g:sale_price>80.00 PEN</g:sale_price>
+      <g:price>80.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -563,8 +544,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-sagitario-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-sagitario-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 PEN</g:price>
-      <g:sale_price>80.00 PEN</g:sale_price>
+      <g:price>80.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -580,8 +560,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-capricornio-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-capricornio-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 PEN</g:price>
-      <g:sale_price>80.00 PEN</g:sale_price>
+      <g:price>80.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -597,8 +576,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-acuario-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-acuario-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 PEN</g:price>
-      <g:sale_price>80.00 PEN</g:sale_price>
+      <g:price>80.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -614,8 +592,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-piscis-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/altar-exhibidor-piscis-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 PEN</g:price>
-      <g:sale_price>80.00 PEN</g:sale_price>
+      <g:price>80.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -630,8 +607,7 @@
       <g:image_link>https://boomart.pe/assets/products/diorama-caballeros-de-bronce-hero.jpg</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/diorama-caballeros-de-bronce-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>165.00 PEN</g:price>
-      <g:sale_price>150.00 PEN</g:sale_price>
+      <g:price>150.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -646,8 +622,7 @@
       <g:image_link>https://boomart.pe/assets/products/diorama-de-pegaso-hero.jpg</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/diorama-de-pegaso-hero2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>165.00 PEN</g:price>
-      <g:sale_price>150.00 PEN</g:sale_price>
+      <g:price>150.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -666,8 +641,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/fawkes-fenix-de-dumbledore-4.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/fawkes-fenix-de-dumbledore-5.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>200.00 PEN</g:price>
-      <g:sale_price>180.00 PEN</g:sale_price>
+      <g:price>180.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -685,8 +659,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/castillo-de-hogwarts-gallery-04.png</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/castillo-de-hogwarts-gallery-05.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>88.00 PEN</g:price>
-      <g:sale_price>80.00 PEN</g:sale_price>
+      <g:price>80.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -707,8 +680,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/ajedrez-de-hogwarts-4-casas-5.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/ajedrez-de-hogwarts-4-casas-6.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>286.00 PEN</g:price>
-      <g:sale_price>260.00 PEN</g:sale_price>
+      <g:price>260.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -723,8 +695,7 @@
       <g:image_link>https://boomart.pe/assets/products/lampara-sombrero-seleccionador-hero-v2.png</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/lampara-sombrero-seleccionador.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>105.00 PEN</g:price>
-      <g:sale_price>95.00 PEN</g:sale_price>
+      <g:price>95.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -742,8 +713,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/lampara-lunar-hogwarts-3.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/lampara-lunar-hogwarts-4.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>275.00 PEN</g:price>
-      <g:sale_price>250.00 PEN</g:sale_price>
+      <g:price>250.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -759,8 +729,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/casco-de-wolverine-con-garras-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/casco-de-wolverine-con-garras-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>220.00 PEN</g:price>
-      <g:sale_price>200.00 PEN</g:sale_price>
+      <g:price>200.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -775,8 +744,7 @@
       <g:image_link>https://boomart.pe/assets/products/mascara-de-batwoman-hero-v2.png</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/mascara-de-batwoman.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>110.00 PEN</g:price>
-      <g:sale_price>100.00 PEN</g:sale_price>
+      <g:price>100.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -791,8 +759,7 @@
       <g:image_link>https://boomart.pe/assets/products/palomera-cara-de-spiderman-hero-v2.webp</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/palomera-cara-de-spiderman.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>77.00 PEN</g:price>
-      <g:sale_price>70.00 PEN</g:sale_price>
+      <g:price>70.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -807,8 +774,7 @@
       <g:image_link>https://boomart.pe/assets/products/palomera-spiderman-hero-v2.webp</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/palomera-spiderman.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>77.00 PEN</g:price>
-      <g:sale_price>70.00 PEN</g:sale_price>
+      <g:price>70.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -824,8 +790,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/mario-billy-saw-1.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/mario-billy-saw-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 PEN</g:price>
-      <g:sale_price>80.00 PEN</g:sale_price>
+      <g:price>80.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -841,8 +806,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/mascara-calabaza-calavera-1.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/mascara-calabaza-calavera-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>150.00 PEN</g:price>
-      <g:sale_price>120.00 PEN</g:sale_price>
+      <g:price>120.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -859,8 +823,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/candelabro-calavera-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/candelabro-calavera-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>120.00 PEN</g:price>
-      <g:sale_price>100.00 PEN</g:sale_price>
+      <g:price>100.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -877,8 +840,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/evil-mask-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/evil-mask-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>250.00 PEN</g:price>
-      <g:sale_price>220.00 PEN</g:sale_price>
+      <g:price>220.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -894,8 +856,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/zkull-urban-1.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/zkull-urban-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>70.00 PEN</g:price>
-      <g:sale_price>50.00 PEN</g:sale_price>
+      <g:price>50.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -911,8 +872,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/mascara-krampus-1.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/mascara-krampus-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>230.00 PEN</g:price>
-      <g:sale_price>200.00 PEN</g:sale_price>
+      <g:price>200.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -928,8 +888,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/mascara-baphomet-1.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/mascara-baphomet-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>160.00 PEN</g:price>
-      <g:sale_price>140.00 PEN</g:sale_price>
+      <g:price>140.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -945,8 +904,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/mascara-hellboy-articulada-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/mascara-hellboy-articulada-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>220.00 PEN</g:price>
-      <g:sale_price>200.00 PEN</g:sale_price>
+      <g:price>200.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -962,8 +920,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/casco-de-stormtrooper-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/casco-de-stormtrooper-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>240.00 PEN</g:price>
-      <g:sale_price>200.00 PEN</g:sale_price>
+      <g:price>200.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -980,8 +937,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/casco-del-mandaloriano-3.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/casco-del-mandaloriano-4.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>240.00 PEN</g:price>
-      <g:sale_price>200.00 PEN</g:sale_price>
+      <g:price>200.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -998,8 +954,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/casco-gladiador-maximo-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/casco-gladiador-maximo-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>250.00 PEN</g:price>
-      <g:sale_price>200.00 PEN</g:sale_price>
+      <g:price>200.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1017,8 +972,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/corona-de-elfo-3.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/corona-de-elfo-4.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 PEN</g:price>
-      <g:sale_price>60.00 PEN</g:sale_price>
+      <g:price>60.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1037,8 +991,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/cuernos-de-fauno-4.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/cuernos-de-fauno-5.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 PEN</g:price>
-      <g:sale_price>60.00 PEN</g:sale_price>
+      <g:price>60.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1057,8 +1010,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/mascarada-del-diablo-4.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/mascarada-del-diablo-5.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>80.00 PEN</g:price>
-      <g:sale_price>60.00 PEN</g:sale_price>
+      <g:price>60.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1073,8 +1025,7 @@
       <g:image_link>https://boomart.pe/assets/products/mascara-el-juego-del-calamar-hero-v2.png</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/mascara-el-juego-del-calamar.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>55.00 PEN</g:price>
-      <g:sale_price>50.00 PEN</g:sale_price>
+      <g:price>50.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1093,8 +1044,7 @@
       <g:additional_image_link>https://boomart.pe/assets/products/casco-de-agamenon-la-odisea-4.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/casco-de-agamenon-la-odisea-5.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>438.00 PEN</g:price>
-      <g:sale_price>398.00 PEN</g:sale_price>
+      <g:price>398.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1109,8 +1059,7 @@
       <g:image_link>https://boomart.pe/assets/products/pato-lucas-kratos-god-of-war-hero-v2.png</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/pato-lucas-kratos-god-of-war.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>132.00 PEN</g:price>
-      <g:sale_price>120.00 PEN</g:sale_price>
+      <g:price>120.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1125,8 +1074,7 @@
       <g:image_link>https://boomart.pe/assets/products/maceta-pikachu-hero-v2.webp</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/maceta-pikachu.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>66.00 PEN</g:price>
-      <g:sale_price>60.00 PEN</g:sale_price>
+      <g:price>60.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1141,8 +1089,7 @@
       <g:image_link>https://boomart.pe/assets/products/replica-copa-del-mundo-tamano-real-hero-v2.png</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/replica-copa-del-mundo-tamano-real.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>165.00 PEN</g:price>
-      <g:sale_price>150.00 PEN</g:sale_price>
+      <g:price>150.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1157,8 +1104,7 @@
       <g:image_link>https://boomart.pe/assets/products/botin-de-oro-del-mundial-hero-v2.png</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/botin-de-oro-del-mundial.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>176.00 PEN</g:price>
-      <g:sale_price>160.00 PEN</g:sale_price>
+      <g:price>160.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1173,8 +1119,7 @@
       <g:image_link>https://boomart.pe/assets/products/balon-de-oro-del-mundial-hero-v2.png</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/balon-de-oro-del-mundial.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>220.00 PEN</g:price>
-      <g:sale_price>200.00 PEN</g:sale_price>
+      <g:price>200.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1189,8 +1134,7 @@
       <g:image_link>https://boomart.pe/assets/products/caja-organizadora-figuritas-panini-2026-hero-v2.webp</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/caja-organizadora-figuritas-panini-2026.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>33.00 PEN</g:price>
-      <g:sale_price>30.00 PEN</g:sale_price>
+      <g:price>30.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1205,8 +1149,7 @@
       <g:image_link>https://boomart.pe/assets/products/maceta-groot-hero-v2.webp</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/maceta-groot.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>85.00 PEN</g:price>
-      <g:sale_price>77.00 PEN</g:sale_price>
+      <g:price>77.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1221,8 +1164,7 @@
       <g:image_link>https://boomart.pe/assets/products/maceta-baby-groot-hero-v2.webp</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/maceta-baby-groot.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>49.00 PEN</g:price>
-      <g:sale_price>44.00 PEN</g:sale_price>
+      <g:price>44.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1237,8 +1179,7 @@
       <g:image_link>https://boomart.pe/assets/products/maceta-dedo-medio-hero-v2.png</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/maceta-dedo-medio.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>49.00 PEN</g:price>
-      <g:sale_price>44.00 PEN</g:sale_price>
+      <g:price>44.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1253,8 +1194,7 @@
       <g:image_link>https://boomart.pe/assets/products/maceta-darth-vader-hero-v2.webp</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/maceta-darth-vader.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>61.00 PEN</g:price>
-      <g:sale_price>55.00 PEN</g:sale_price>
+      <g:price>55.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1269,8 +1209,7 @@
       <g:image_link>https://boomart.pe/assets/products/maceta-david-hero-v2.png</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/maceta-david.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>73.00 PEN</g:price>
-      <g:sale_price>66.00 PEN</g:sale_price>
+      <g:price>66.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1285,8 +1224,7 @@
       <g:image_link>https://boomart.pe/assets/products/maceta-minimalista-hero-v2.png</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/maceta-minimalista.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>49.00 PEN</g:price>
-      <g:sale_price>44.00 PEN</g:sale_price>
+      <g:price>44.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -1301,8 +1239,7 @@
       <g:image_link>https://boomart.pe/assets/products/maceta-palmera-hero-v2.png</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/maceta-palmera.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
-      <g:price>49.00 PEN</g:price>
-      <g:sale_price>44.00 PEN</g:sale_price>
+      <g:price>44.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>

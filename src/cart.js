@@ -93,7 +93,7 @@
     return {
       variantKey: null,
       variantLabel: null,
-      unitPrice: Number(product.offerPrice != null ? product.offerPrice : product.regularPrice) || 0
+      unitPrice: Number(product.regularPrice) || 0
     };
   }
 

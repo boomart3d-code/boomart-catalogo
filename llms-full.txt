@@ -5,7 +5,7 @@ Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion ~48 horas uti
 la validacion del adelanto (50%). Pedidos por WhatsApp: https://wa.me/51925666542
 
 Total de piezas: 76
-Actualizado: 2026-10-16
+Actualizado: 2026-10-17
 Fuente estructurada: https://boomart.pe/catalogo.json
 
 ---
@@ -171,7 +171,7 @@ El imponente Templo del Patriarca llega para completar el Santuario de Saint Sei
 ### Colección Completa · 12 Templos + 12 Cajas de Pandora y Pedestales · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/1500 (antes S/1560)
+- Precio: S/1500
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Cajas De Pandora, Combo, Saint Seiya, Templos
@@ -183,7 +183,7 @@ La colección completa del Santuario de Athena: los 12 Templos de las Casas del 
 ### Busto de Atena · 25 cm · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/100 (antes S/130)
+- Precio: S/100
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Atena, Esculturas, Saint Seiya
@@ -195,7 +195,7 @@ El busto de Atena, diosa protectora del Santuario, es la pieza central que toda 
 ### Escultura de la Diosa Atena · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/100 (antes S/130)
+- Precio: S/100
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Atena, Esculturas, Saint Seiya
@@ -207,7 +207,7 @@ Escultura de Atena de cuerpo entero, la diosa de la sabiduría y la guerra justa
 ### Torre del Reloj de Fuego · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/100 (antes S/130)
+- Precio: S/100
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Saint Seiya
@@ -219,7 +219,7 @@ La icónica Torre del Reloj del Santuario de Athena, con sus doce llamas encendi
 ### Set de 12 Templos Mini · Casas del Zodiaco
 
 - Categoria: Saint Seiya
-- Precio oferta: S/100 (antes S/150)
+- Precio: S/100
 - Material: PLA+
 - Disponibilidad: A pedido
 - Etiquetas: Saint Seiya, Templos
@@ -231,7 +231,7 @@ Set de 12 Casas del Zodiaco en miniatura. Cada templo mide entre 6.5 y 8 cm de a
 ### Set Completo del Santuario · 15 piezas · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/150 (antes S/200)
+- Precio: S/150
 - Material: PLA+
 - Disponibilidad: A pedido
 - Etiquetas: Saint Seiya, Templos, Santuario, Set, Colección, Atena, Torre del Reloj, Patriarca
@@ -243,7 +243,7 @@ Colección de 15 piezas: 12 templos mini de 6.5 a 8 cm, Templo del Patriarca de 
 ### Set de 12 Cajas de Pandora con Pedestales · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/400 (antes S/440)
+- Precio: S/400
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Cajas De Pandora, Saint Seiya
@@ -255,7 +255,7 @@ Las 12 Cajas de Pandora de los Caballeros Dorados, cada una con su pedestal esti
 ### Casco de Pegaso V1 · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/250 (antes S/275)
+- Precio: S/250
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Cascos, Cosplay, Saint Seiya
@@ -267,7 +267,7 @@ Casco funcional de cosplay de la Armadura de Pegaso V1, la que porta Seiya en la
 ### Tiara de Pegaso · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/100 (antes S/120)
+- Precio: S/100
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Cascos, Cosplay, Saint Seiya, Pegaso
@@ -279,7 +279,7 @@ Tiara de cosplay de la Armadura de Pegaso, la que porta Seiya en Saint Seiya, en
 ### Tiara de Ikki de Fénix · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/100 (antes S/120)
+- Precio: S/100
 - Material: PLA+
 - Disponibilidad: A pedido
 - Etiquetas: Cascos, Cosplay, Saint Seiya, Fénix, Ikki, Disfraces, Halloween
@@ -291,19 +291,19 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 ### Colección de 12 Altares Exhibidor · Casas del Zodiaco · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/850 (antes S/1200)
+- Precio: S/850
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Altar Exhibidor, Set, Saint Seiya, Myth Cloth, Casas del Zodiaco
 - Imagen: https://boomart.pe/assets/products/set-12-altares-exhibidor-1.jpg
 - Ficha: https://boomart.pe/producto/set-12-altares-exhibidor/
 
-Arma el Santuario completo. Los 12 Altares Exhibidor de las Casas del Zodiaco, uno por cada Caballero Dorado, con acabado tipo piedra envejecida y el símbolo de cada signo en dorado. Pensados para lucir tus figuras Myth Cloth EX de Bandai como en el anime. Sueltos cuestan S/100 cada uno (S/1200 el juego); en oferta, S/80 cada uno. Llevando los 12 juntos: S/850, el Santuario entero con el mejor precio. Impresos en 3D a pedido en Perú, con envíos a todo el país. Las figuras Myth Cloth de la foto son de Bandai y no están incluidas: el producto son los 12 altares.
+Arma el Santuario completo. Los 12 Altares Exhibidor de las Casas del Zodiaco, uno por cada Caballero Dorado, con acabado tipo piedra envejecida y el símbolo de cada signo en dorado. Pensados para lucir tus figuras Myth Cloth EX de Bandai como en el anime. Precio por altar individual: S/80. El conjunto de los 12 altares tiene un precio oficial de S/850. Impresos en 3D a pedido en Perú, con envíos a todo el país. Las figuras Myth Cloth de la foto son de Bandai y no están incluidas: el producto son los 12 altares.
 
 ### Altar Exhibidor · Casa de Aries · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/80 (antes S/100)
+- Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Altar Exhibidor, Aries, Saint Seiya, Myth Cloth
@@ -315,7 +315,7 @@ Altar exhibidor de la Casa de Aries, la 1ª Casa del Santuario de Athena, hecho 
 ### Altar Exhibidor · Casa de Tauro · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/80 (antes S/100)
+- Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Altar Exhibidor, Tauro, Saint Seiya, Myth Cloth
@@ -327,7 +327,7 @@ Altar exhibidor de la Casa de Tauro, la 2ª Casa del Santuario de Athena, hecho 
 ### Altar Exhibidor · Casa de Géminis · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/80 (antes S/100)
+- Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Altar Exhibidor, Géminis, Saint Seiya, Myth Cloth
@@ -339,7 +339,7 @@ Altar exhibidor de la Casa de Géminis, la 3ª Casa del Santuario de Athena, hec
 ### Altar Exhibidor · Casa de Cáncer · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/80 (antes S/100)
+- Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Altar Exhibidor, Cáncer, Saint Seiya, Myth Cloth
@@ -351,7 +351,7 @@ Altar exhibidor de la Casa de Cáncer, la 4ª Casa del Santuario de Athena, hech
 ### Altar Exhibidor · Casa de Leo · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/80 (antes S/100)
+- Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Altar Exhibidor, Leo, Saint Seiya, Myth Cloth
@@ -363,7 +363,7 @@ Altar exhibidor de la Casa de Leo, la 5ª Casa del Santuario de Athena, hecho pa
 ### Altar Exhibidor · Casa de Virgo · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/80 (antes S/100)
+- Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Altar Exhibidor, Virgo, Saint Seiya, Myth Cloth
@@ -375,7 +375,7 @@ Altar exhibidor de la Casa de Virgo, la 6ª Casa del Santuario de Athena, hecho 
 ### Altar Exhibidor · Casa de Libra · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/80 (antes S/100)
+- Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Altar Exhibidor, Libra, Saint Seiya, Myth Cloth
@@ -387,7 +387,7 @@ Altar exhibidor de la Casa de Libra, la 7ª Casa del Santuario de Athena, hecho 
 ### Altar Exhibidor · Casa de Escorpio · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/80 (antes S/100)
+- Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Altar Exhibidor, Escorpio, Saint Seiya, Myth Cloth
@@ -399,7 +399,7 @@ Altar exhibidor de la Casa de Escorpio, la 8ª Casa del Santuario de Athena, hec
 ### Altar Exhibidor · Casa de Sagitario · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/80 (antes S/100)
+- Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Altar Exhibidor, Sagitario, Saint Seiya, Myth Cloth
@@ -411,7 +411,7 @@ Altar exhibidor de la Casa de Sagitario, la 9ª Casa del Santuario de Athena, he
 ### Altar Exhibidor · Casa de Capricornio · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/80 (antes S/100)
+- Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Altar Exhibidor, Capricornio, Saint Seiya, Myth Cloth
@@ -423,7 +423,7 @@ Altar exhibidor de la Casa de Capricornio, la 10ª Casa del Santuario de Athena,
 ### Altar Exhibidor · Casa de Acuario · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/80 (antes S/100)
+- Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Altar Exhibidor, Acuario, Saint Seiya, Myth Cloth
@@ -435,7 +435,7 @@ Altar exhibidor de la Casa de Acuario, la 11ª Casa del Santuario de Athena, hec
 ### Altar Exhibidor · Casa de Piscis · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/80 (antes S/100)
+- Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Altar Exhibidor, Piscis, Saint Seiya, Myth Cloth
@@ -447,7 +447,7 @@ Altar exhibidor de la Casa de Piscis, la 12ª Casa del Santuario de Athena, hech
 ### Altar Caballero del Dragón · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/150 (antes S/165)
+- Precio: S/150
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Altar Exhibidor, Dragón, Saint Seiya, Myth Cloth
@@ -459,7 +459,7 @@ Altar exhibidor del Caballero de Bronce del Dragón (Shiryu), con el emblema del
 ### Altar de Pegaso · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/150 (antes S/165)
+- Precio: S/150
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Altar Exhibidor, Pegaso, Saint Seiya, Myth Cloth
@@ -473,7 +473,7 @@ Altar exhibidor del Caballero de Bronce Pegaso (Seiya), con la placa tallada del
 ### Tiara de Ikki de Fénix · Saint Seiya
 
 - Categoria: Saint Seiya
-- Precio oferta: S/100 (antes S/120)
+- Precio: S/100
 - Material: PLA+
 - Disponibilidad: A pedido
 - Etiquetas: Cascos, Cosplay, Saint Seiya, Fénix, Ikki, Disfraces, Halloween
@@ -485,7 +485,7 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 ### Mario Billy 🎃 · Saw (El Juego del Miedo)
 
 - Categoria: 🎃 Halloween
-- Precio oferta: S/80 (antes S/100)
+- Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Mario, Saw, Cine, Videojuegos
@@ -497,7 +497,7 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 ### Máscara Calabaza Calavera 🎃 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio oferta: S/120 (antes S/150)
+- Precio: S/120
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Mascaras, Disfraces, Calabaza
@@ -509,7 +509,7 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 ### Candelabro Calavera 🎃 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio oferta: S/100 (antes S/120)
+- Precio: S/100
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Portavelas, Decoración, Calavera, Gótico
@@ -521,7 +521,7 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 ### Evil Mask 😈 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio oferta: S/220 (antes S/250)
+- Precio: S/220
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Mascaras, Disfraces, Demonio, Cuernos
@@ -533,7 +533,7 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 ### ZKULL Urban 💀 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio oferta: S/50 (antes S/70)
+- Precio: S/50
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Skull, Streetwear, Art Toy, Urbano, Coleccionables
@@ -545,7 +545,7 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 ### Máscara Krampus 😈 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio oferta: S/200 (antes S/230)
+- Precio: S/200
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Mascaras, Krampus, Demonio, Disfraces, Cuernos
@@ -557,7 +557,7 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 ### Máscara Baphomet 😈 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio oferta: S/140 (antes S/160)
+- Precio: S/140
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Mascaras, Baphomet, Demonio, Pentagrama, Cuernos, Disfraces, Cosplay
@@ -569,7 +569,7 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 ### Máscara Hellboy Articulada 👹 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio oferta: S/200 (antes S/220)
+- Precio: S/200
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Mascaras, Hellboy, Articulada, Mandíbula móvil, Cosplay, Disfraces, Demonio
@@ -581,7 +581,7 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 ### Casco de Stormtrooper 🎃 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio oferta: S/200 (antes S/240)
+- Precio: S/200
 - Material: PLA+
 - Disponibilidad: A pedido
 - Etiquetas: Cascos, Stormtrooper, Star Wars, Cosplay, Disfraces, Tamaño real, Halloween
@@ -593,7 +593,7 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 ### Casco del Mandaloriano 🎃 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio oferta: S/200 (antes S/240)
+- Precio: S/200
 - Material: PLA+
 - Disponibilidad: A pedido
 - Etiquetas: Cascos, Mandaloriano, Star Wars, Cosplay, Disfraces, Tamaño real, Halloween
@@ -605,7 +605,7 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 ### Casco de Gladiador Máximo 🎃 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio oferta: S/200 (antes S/250)
+- Precio: S/200
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Cascos, Gladiador, Máximo, Disfraces, Cosplay, Tamaño real
@@ -617,7 +617,7 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 ### Corona de Elfo 🧝 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio oferta: S/60 (antes S/100)
+- Precio: S/60
 - Material: PLA+
 - Disponibilidad: A pedido
 - Etiquetas: Coronas, Elfo, Fantasía, Disfraces, Cosplay
@@ -629,7 +629,7 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 ### Cuernos de Fauno 🐐 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio oferta: S/60 (antes S/100)
+- Precio: S/60
 - Material: PLA+
 - Disponibilidad: A pedido
 - Etiquetas: Cuernos, Fauno, Diadema, Bincha, Disfraces, Cosplay, Accesorios
@@ -641,7 +641,7 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 ### La Mascarada del Diablo 😈 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio oferta: S/60 (antes S/80)
+- Precio: S/60
 - Material: PLA+
 - Disponibilidad: A pedido
 - Etiquetas: Mascaras, Mascarada, Diablo, Demonio, Cuernos, Disfraces, Cosplay
@@ -655,7 +655,7 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 ### Fawkes · Fénix de Dumbledore · Harry Potter
 
 - Categoria: Harry Potter
-- Precio oferta: S/180 (antes S/200)
+- Precio: S/180
 - Material: PLA+ con detalles en PLA Silk dorado y PLA Silk plata
 - Disponibilidad: A pedido
 - Etiquetas: Harry Potter, Fawkes, Fénix, Dumbledore, Figuras, Coleccionables
@@ -667,7 +667,7 @@ Fawkes es el fiel fénix de Albus Dumbledore: una criatura mágica conocida por 
 ### Castillo de Hogwarts · Harry Potter
 
 - Categoria: Harry Potter
-- Precio oferta: S/80 (antes S/88)
+- Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Harry Potter
@@ -679,7 +679,7 @@ El castillo de Hogwarts en réplica decorativa impresa en 3D: torres, puentes y 
 ### Ajedrez de Hogwarts · 4 Casas · Harry Potter
 
 - Categoria: Harry Potter
-- Precio oferta: S/260 (antes S/286)
+- Precio: S/260
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Ajedrez, Harry Potter
@@ -691,7 +691,7 @@ Ajedrez de colección Hogwarts · 4 Casas. Un homenaje integral al colegio de ma
 ### Lámpara Sombrero Seleccionador · Harry Potter
 
 - Categoria: Harry Potter
-- Precio oferta: S/95 (antes S/105)
+- Precio: S/95
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Harry Potter, Lamparas
@@ -703,7 +703,7 @@ Lámpara LED del Sombrero Seleccionador con iluminación integrada que resalta s
 ### Lámpara Lunar Hogwarts · Harry Potter
 
 - Categoria: Harry Potter
-- Precio oferta: S/250 (antes S/275)
+- Precio: S/250
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Harry Potter, Lamparas
@@ -717,7 +717,7 @@ Ilumina tu espacio con la magia de esta lámpara lunar de Hogwarts: un modelo ex
 ### Casco de Wolverine + Garras · Marvel
 
 - Categoria: Marvel & DC
-- Precio oferta: S/200 (antes S/220)
+- Precio: S/200
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Cascos, Marvel
@@ -729,7 +729,7 @@ Casco decorativo de Wolverine acompañado de su set de garras. Dos piezas de exh
 ### Máscara de Batwoman · DC
 
 - Categoria: Marvel & DC
-- Precio oferta: S/100 (antes S/110)
+- Precio: S/100
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: DC, Mascaras
@@ -741,7 +741,7 @@ Máscara decorativa de Batwoman para exhibición: orejas afiladas y contorno mar
 ### Palomera Cara de Spider-Man · Marvel
 
 - Categoria: Marvel & DC
-- Precio oferta: S/70 (antes S/77)
+- Precio: S/70
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Marvel, Palomeras
@@ -753,7 +753,7 @@ Espectacular palomera con forma de la cara de Spider-Man: ojos blancos, telarañ
 ### Palomera Spider-Man · Marvel
 
 - Categoria: Marvel & DC
-- Precio oferta: S/70 (antes S/77)
+- Precio: S/70
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Marvel, Palomeras
@@ -767,7 +767,7 @@ Palomera temática de Spider-Man para tu noche de películas: práctica, resiste
 ### Casco de Stormtrooper 🎃 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio oferta: S/200 (antes S/240)
+- Precio: S/200
 - Material: PLA+
 - Disponibilidad: A pedido
 - Etiquetas: Cascos, Stormtrooper, Star Wars, Cosplay, Disfraces, Tamaño real, Halloween
@@ -779,7 +779,7 @@ Palomera temática de Spider-Man para tu noche de películas: práctica, resiste
 ### Casco del Mandaloriano 🎃 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio oferta: S/200 (antes S/240)
+- Precio: S/200
 - Material: PLA+
 - Disponibilidad: A pedido
 - Etiquetas: Cascos, Mandaloriano, Star Wars, Cosplay, Disfraces, Tamaño real, Halloween
@@ -791,7 +791,7 @@ Palomera temática de Spider-Man para tu noche de películas: práctica, resiste
 ### Máscara de El Juego del Calamar
 
 - Categoria: Series y Películas
-- Precio oferta: S/50 (antes S/55)
+- Precio: S/50
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Mascaras, Series
@@ -803,7 +803,7 @@ Máscara decorativa de El Juego del Calamar (círculo, triángulo o cuadrado), i
 ### Casco de Agamenón · La Odisea
 
 - Categoria: Series y Películas
-- Precio oferta: S/398 (antes S/438)
+- Precio: S/398
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Cascos, Cine
@@ -815,7 +815,7 @@ Casco decorativo de Agamenón a tamaño real, inspirado en La Odisea y la Grecia
 ### Pato Lucas Kratos · God of War
 
 - Categoria: Series y Películas
-- Precio oferta: S/120 (antes S/132)
+- Precio: S/120
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: God of War, Videojuegos
@@ -829,7 +829,7 @@ El clásico y temperamental Pato Lucas se fusiona con la furia de Kratos de God 
 ### Maceta de Pikachu · Pokémon
 
 - Categoria: Macetas
-- Precio oferta: S/60 (antes S/66)
+- Precio: S/60
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Macetas, Pokemon, Videojuegos
@@ -841,7 +841,7 @@ Maceta decorativa de Pikachu (Pokémon), impresa en 3D con filamento de alta cal
 ### Maceta Groot · Guardianes de la Galaxia
 
 - Categoria: Macetas
-- Precio oferta: S/77 (antes S/85)
+- Precio: S/77
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Macetas, Marvel
@@ -853,7 +853,7 @@ Maceta inspirada en Groot, con diseño detallado y colores naranja y verde que e
 ### Maceta Baby Groot
 
 - Categoria: Macetas
-- Precio oferta: S/44 (antes S/49)
+- Precio: S/44
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Macetas, Marvel
@@ -865,7 +865,7 @@ Maceta de Baby Groot (Guardianes de la Galaxia), minimalista y con hermosos deta
 ### Maceta Dedo Medio
 
 - Categoria: Macetas
-- Precio oferta: S/44 (antes S/49)
+- Precio: S/44
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Macetas
@@ -877,7 +877,7 @@ Una maceta pequeña y divertida con forma de dedo medio, en color neutro que com
 ### Maceta Darth Vader · Star Wars
 
 - Categoria: Macetas
-- Precio oferta: S/55 (antes S/61)
+- Precio: S/55
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Macetas, Star Wars
@@ -889,7 +889,7 @@ Maceta de Darth Vader (Star Wars) en elegante color negro, capturando el casco d
 ### Maceta David · Arte clásico
 
 - Categoria: Macetas
-- Precio oferta: S/66 (antes S/73)
+- Precio: S/66
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Arte Clásico, Macetas
@@ -901,7 +901,7 @@ Maceta inspirada en el David de Miguel Ángel: elegancia y arte clásico en un d
 ### Maceta Minimalista
 
 - Categoria: Macetas
-- Precio oferta: S/44 (antes S/49)
+- Precio: S/44
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Macetas
@@ -913,7 +913,7 @@ Optimiza tu espacio con una maceta minimalista de líneas limpias y textura suti
 ### Maceta Palmera
 
 - Categoria: Macetas
-- Precio oferta: S/44 (antes S/49)
+- Precio: S/44
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Macetas
@@ -927,7 +927,7 @@ Maceta minimalista negra con textura de hojas de palmera: elegante y moderna, id
 ### Réplica Premium Copa del Mundo · Tamaño real 1:1
 
 - Categoria: Mundial de Fútbol
-- Precio oferta: S/150 (antes S/165)
+- Precio: S/150
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Futbol, Mundial
@@ -939,7 +939,7 @@ Siente la pasión del mundial: réplica premium de la Copa del Mundo FIFA a tama
 ### Botín de Oro del Mundial
 
 - Categoria: Mundial de Fútbol
-- Precio oferta: S/160 (antes S/176)
+- Precio: S/160
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Futbol, Mundial
@@ -951,7 +951,7 @@ Diseño exclusivo de Boom Art: el Botín de Oro (Golden Boot) dorado incorpora u
 ### Balón de Oro del Mundial
 
 - Categoria: Mundial de Fútbol
-- Precio oferta: S/200 (antes S/220)
+- Precio: S/200
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Futbol, Mundial
@@ -963,7 +963,7 @@ El Balón de Oro, máximo galardón individual del fútbol, en réplica decorati
 ### Caja Organizadora de Figuritas · Panini Mundial 2026
 
 - Categoria: Mundial de Fútbol
-- Precio oferta: S/30 (antes S/33)
+- Precio: S/30
 - Material: PLA
 - Disponibilidad: A pedido
 - Etiquetas: Futbol, Mundial
