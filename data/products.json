@@ -1297,6 +1297,35 @@
     "description": "🎃 Edición Halloween. Máscara articulada inspirada en Hellboy, con acabado rojo y gran nivel de detalle. La mandíbula es articulada: al hablar, la boca se mueve contigo. Incluye un puro desmontable para completar el look. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y colección. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 🔥"
   },
   {
+    "id": "mascara-dr-doom",
+    "name": "Máscara de Dr. Doom 🎃 · Halloween",
+    "category": "🎃 Halloween",
+    "extraCategories": [
+      "Marvel & DC"
+    ],
+    "tags": [
+      "Máscaras",
+      "Dr. Doom",
+      "Doctor Doom",
+      "Marvel",
+      "Cosplay",
+      "Disfraces",
+      "Halloween"
+    ],
+    "height": "Tamaño real (máscara funcional)",
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 130,
+    "featured": true,
+    "image": "assets/products/mascara-dr-doom-hero.jpg",
+    "gallery": [
+      "assets/products/mascara-dr-doom-hero.jpg",
+      "assets/products/mascara-dr-doom-2.jpg",
+      "assets/products/mascara-dr-doom-3.jpg"
+    ],
+    "description": "🎃 Edición Halloween. Máscara de Dr. Doom funcional, lista para usar en tu disfraz o cosplay. Fabricada en PLA+ con acabado de pintura cromo metálico. Hecha a pedido, con envíos a todo el Perú."
+  },
+  {
     "id": "casco-de-batman",
     "name": "Casco de Batman 🎃 · Halloween",
     "category": "🎃 Halloween",
