@@ -384,12 +384,19 @@
     "height": 1200,
     "bytes": 134312
   },
-  "mascara-red-hood": {
-    "source": "assets/products/mascara-red-hood-hero.jpg",
-    "hash": "b827788e40e43eaf",
+  "visor-de-cyclops": {
+    "source": "assets/products/visor-de-cyclops-hero.jpg",
+    "hash": "be870456fb9fc444",
     "width": 960,
     "height": 1200,
-    "bytes": 95862
+    "bytes": 89198
+  },
+  "mascara-red-hood": {
+    "source": "assets/products/mascara-red-hood-hero.jpg",
+    "hash": "6bba99b10479f103",
+    "width": 960,
+    "height": 1200,
+    "bytes": 92604
   },
   "mascara-dr-doom": {
     "source": "assets/products/mascara-dr-doom-hero.jpg",

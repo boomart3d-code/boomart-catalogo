@@ -1297,6 +1297,36 @@
     "description": "🎃 Edición Halloween. Máscara articulada inspirada en Hellboy, con acabado rojo y gran nivel de detalle. La mandíbula es articulada: al hablar, la boca se mueve contigo. Incluye un puro desmontable para completar el look. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y colección. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 🔥"
   },
   {
+    "id": "visor-de-cyclops",
+    "name": "Visor de Cyclops + chapa de cinturón 🎃 · Halloween",
+    "category": "🎃 Halloween",
+    "extraCategories": [
+      "Marvel & DC"
+    ],
+    "tags": [
+      "Cyclops",
+      "X-Men",
+      "Marvel",
+      "Visor",
+      "Cosplay",
+      "Disfraces",
+      "Halloween"
+    ],
+    "height": "Tamaño real para usar",
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 100,
+    "featured": true,
+    "image": "assets/products/visor-de-cyclops-hero.jpg",
+    "gallery": [
+      "assets/products/visor-de-cyclops-hero.jpg",
+      "assets/products/visor-de-cyclops-2.jpg",
+      "assets/products/visor-de-cyclops-3.jpg",
+      "assets/products/visor-de-cyclops-4.jpg"
+    ],
+    "description": "🎃 Edición Halloween. Visor de Cyclops de los X-Men para usar en tu cosplay o disfraz, más la chapa de cinturón con el logo X-Men. Fabricados en PLA+ para mayor resistencia y durabilidad. Hechos a pedido, con envíos a todo el Perú."
+  },
+  {
     "id": "mascara-red-hood",
     "name": "Máscara de Red Hood 🎃 · Halloween",
     "category": "🎃 Halloween",

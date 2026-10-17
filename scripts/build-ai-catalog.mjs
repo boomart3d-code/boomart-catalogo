@@ -1356,6 +1356,7 @@ const CATEGORY_META = {
 // en el enlace corto que se comparte en publicidad y WhatsApp.
 const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
   // Disfraces y cosplay: el producto nuevo abre la coleccion.
+  "visor-de-cyclops",
   "mascara-red-hood",
   "mascara-dr-doom",
   "casco-de-batman",

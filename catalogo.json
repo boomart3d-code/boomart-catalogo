@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 79,
+  "count": 80,
   "products": [
     {
       "id": "templo-aries",
@@ -1531,6 +1531,37 @@
       ],
       "url": "https://boomart.pe/producto/mascara-hellboy-articulada/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20Hellboy%20Articulada%20%F0%9F%91%B9%20%C2%B7%20Halloween"
+    },
+    {
+      "id": "visor-de-cyclops",
+      "name": "Visor de Cyclops + chapa de cinturón 🎃 · Halloween",
+      "category": "🎃 Halloween",
+      "tags": [
+        "Cyclops",
+        "X-Men",
+        "Marvel",
+        "Visor",
+        "Cosplay",
+        "Disfraces",
+        "Halloween"
+      ],
+      "description": "🎃 Edición Halloween. Visor de Cyclops de los X-Men para usar en tu cosplay o disfraz, más la chapa de cinturón con el logo X-Men. Fabricados en PLA+ para mayor resistencia y durabilidad. Hechos a pedido, con envíos a todo el Perú.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Precio: S/100"
+      ],
+      "image": "https://boomart.pe/assets/products/visor-de-cyclops-hero.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/visor-de-cyclops-hero.jpg",
+        "https://boomart.pe/assets/products/visor-de-cyclops-2.jpg",
+        "https://boomart.pe/assets/products/visor-de-cyclops-3.jpg",
+        "https://boomart.pe/assets/products/visor-de-cyclops-4.jpg"
+      ],
+      "url": "https://boomart.pe/producto/visor-de-cyclops/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Visor%20de%20Cyclops%20%2B%20chapa%20de%20cintur%C3%B3n%20%F0%9F%8E%83%20%C2%B7%20Halloween"
     },
     {
       "id": "mascara-red-hood",
