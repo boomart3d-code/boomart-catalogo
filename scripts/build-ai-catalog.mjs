@@ -1356,6 +1356,7 @@ const CATEGORY_META = {
 // en el enlace corto que se comparte en publicidad y WhatsApp.
 const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
   // Disfraces y cosplay: el producto nuevo abre la coleccion.
+  "casco-de-batman",
   "casco-de-stormtrooper",
   "casco-del-mandaloriano",
   "tiara-de-ikki-de-fenix-saint-seiya",

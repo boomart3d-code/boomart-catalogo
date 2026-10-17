@@ -384,6 +384,13 @@
     "height": 1200,
     "bytes": 134312
   },
+  "casco-de-batman": {
+    "source": "assets/products/casco-de-batman-hero.jpg",
+    "hash": "27611e51d267acd4",
+    "width": 960,
+    "height": 1200,
+    "bytes": 99293
+  },
   "casco-de-stormtrooper": {
     "source": "assets/products/casco-de-stormtrooper-hero.jpg",
     "hash": "57914bb4c2260d4a",
