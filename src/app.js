@@ -646,6 +646,18 @@ const dismissProduct = () => {
   }
 };
 
+// Pandora Box solas: al marcar un signo se muestra la foto de su caja; al volver al
+// set completo, la foto de las 12 (2026-10-18).
+document.addEventListener("boomart:show-sign", (event) => {
+  if (!activeProduct || !activeProduct.signPicker) return;
+  const sign = event.detail && event.detail.sign;
+  const gallery = galleryItems(activeProduct);
+  const index = sign === "set" ? 0 : gallery.findIndex((item) => item.type === "image" && item.src.endsWith(`-${sign}.jpg`));
+  if (index < 0 || index === activeImageIndex) return;
+  activeImageIndex = index;
+  renderModalImage();
+});
+
 const changeImage = (direction) => {
   const gallery = galleryItems(activeProduct);
   if (gallery.length < 2) return;

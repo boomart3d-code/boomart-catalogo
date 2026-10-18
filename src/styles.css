@@ -6191,3 +6191,31 @@ body .pp-rating a {
 .sign-chip.is-selected{background:var(--red,#e5233a);border-color:var(--red,#e5233a);color:#fff}
 .sign-hint{margin:6px 0 0;font-size:.9rem;color:var(--gold,#d6ad62)}
 .sign-hint button{margin-left:6px;padding:4px 10px;border-radius:999px;border:1px solid currentColor;background:transparent;color:inherit;font:inherit;font-weight:700;cursor:pointer}
+
+/* Ficha en computadora (2026-10-18, pedido de Adrián): con pantallas de poca altura
+   las dos columnas medían más que la ventana y se cortaban las miniaturas y, a la
+   derecha, «copiar enlace» / «consultar por WhatsApp». Ahora la ficha nunca pasa
+   del alto de la pantalla: la foto se achica (siempre completa) y la columna de
+   información hace scroll hasta el final. */
+@media (min-width: 1051px) {
+  .product-modal .modal-shell {
+    grid-template-rows: minmax(0, calc(100vh - 28px));
+    grid-template-rows: minmax(0, calc(100dvh - 28px));
+  }
+  .product-modal .modal-gallery {
+    grid-template-rows: minmax(0, 1fr) auto;
+    min-height: 0;
+    height: 100%;
+  }
+  .product-modal .modal-image-wrap {
+    min-height: 0;
+  }
+  .product-modal .modal-image-wrap img {
+    max-height: 100%;
+  }
+  .product-modal .modal-info {
+    max-height: 100%;
+  }
+}
+/* Pandora Box: con «Set completo» la lista de signos queda oculta de verdad. */
+.sign-chips[hidden], .sign-hint[hidden] { display: none !important; }

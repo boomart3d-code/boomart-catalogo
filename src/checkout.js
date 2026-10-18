@@ -278,6 +278,7 @@
       signBtn.classList.toggle("is-selected", on);
       signBtn.setAttribute("aria-pressed", String(on));
       updateSigns(container);
+      if (on) document.dispatchEvent(new CustomEvent("boomart:show-sign", { detail: { sign: signBtn.dataset.sign } }));
       return;
     }
 
@@ -376,6 +377,7 @@
     const hint = container.querySelector("[data-sign-hint]");
     const addBtn = container.querySelector("[data-add-to-cart]");
     if (mode === "set") {
+      document.dispatchEvent(new CustomEvent("boomart:show-sign", { detail: { sign: "set" } }));
       if (chips) chips.hidden = true;
       if (hint) hint.hidden = true;
       container.dataset.variant = "set12";
