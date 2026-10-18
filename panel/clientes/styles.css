@@ -19,3 +19,13 @@
 .studioLine{margin-top:12px;padding:10px 12px;border:1px solid var(--line);border-left:3px solid var(--green);border-radius:10px;background:#111113;color:var(--text);font-size:.9rem;line-height:1.7}
 .studioLine .pill{margin:0 0 0 4px}.dueText{color:#fca5a5}.linkBtn{min-height:0;padding:3px 10px;margin-left:6px;font-size:.8rem;background:#222226}
 @media(max-width:650px){.vFilters{grid-template-columns:1fr}}
+/* Cierre desde el celular (2026-10-17) */
+.finalBtn{background:var(--red)!important;border-color:var(--red)!important;color:#fff!important}
+.closeInfo{margin-top:12px;padding:10px 12px;border:1px solid #1f5c43;border-left:3px solid var(--green);border-radius:10px;background:#0f1a15;font-size:.9rem}
+.closeInfo b{color:var(--green)}
+#vDialog{width:min(560px,calc(100% - 24px));max-height:92dvh;overflow:auto;padding:22px;border:1px solid var(--line);border-radius:15px;background:var(--card);color:var(--text)}
+#vDialog::backdrop{background:#000b}#vDialog h2{margin:0 0 6px}.dlgWho{color:var(--text)!important;font-weight:700}
+.dlgFields{display:grid;gap:10px;margin:12px 0}.dlgFields label{display:flex;flex-direction:column;gap:6px;font-weight:650}.dlgFields select,.dlgFields input{width:100%}
+.dlgNote{font-size:.85rem}.dlgMsg{color:var(--gold)!important;font-weight:700;min-height:1em}
+#mText{width:100%;min-height:260px;border-radius:10px;border:1px solid var(--line);background:#101012;color:var(--text);padding:10px;font:inherit;line-height:1.45}
+#vDialog .actions{flex-wrap:wrap}.waLink{background:#128c4a!important;border-color:#128c4a!important;color:#fff!important}
