@@ -10,7 +10,19 @@
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const money = n => new Intl.NumberFormat("es-PE", {style:"currency", currency:"PEN"}).format(Number(n || 0));
-const fmtDate = x => x ? new Intl.DateTimeFormat("es-PE", {dateStyle:"medium", timeStyle:"short", timeZone:"America/Lima"}).format(new Date(x)) : "—";
+const fmtDate = x => {
+  const d = x ? new Date(x) : null;
+  return d && !isNaN(d) ? new Intl.DateTimeFormat("es-PE", {dateStyle:"medium", timeStyle:"short", timeZone:"America/Lima"}).format(d) : "—";
+};
+// Fecha de abono de Studio: «2026-10-17 16:57:00» o solo «2026-10-17» (hora de Lima).
+const fmtAbono = f => {
+  const t = String(f || "").trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(t)) {
+    const [y, m, d] = t.split("-").map(Number);
+    return new Intl.DateTimeFormat("es-PE", {dateStyle:"medium", timeZone:"UTC"}).format(new Date(Date.UTC(y, m - 1, d, 12)));
+  }
+  return /^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}/.test(t) ? fmtDate(t.replace(" ", "T").slice(0, 19) + "-05:00") : (t || "—");
+};
 const limaMonth = () => new Intl.DateTimeFormat("en-CA", {timeZone:"America/Lima", year:"numeric", month:"2-digit"}).format(new Date()).slice(0, 7);
 const monthName = m => {
   const [y, mo] = m.split("-").map(Number);
@@ -111,7 +123,7 @@ function saleCard(v) {
   const productos = (v.productos || []).map(p =>
     `<li>${esc(p.cantidad)} × ${esc(p.nombre)} <span>${money(p.subtotal)}</span></li>`).join("");
   const abonos = (v.abonos || []).map(a =>
-    `<li>${esc(a.fecha ? fmtDate(String(a.fecha).replace(" ", "T") + "-05:00") : "—")} · ${money(a.monto)} · ${esc(a.medio || "")}${a.nota ? ` · ${esc(a.nota)}` : ""}</li>`).join("");
+    `<li>${esc(fmtAbono(a.fecha))} · ${money(a.monto)} · ${esc(a.medio || "")}${a.nota ? ` · ${esc(a.nota)}` : ""}</li>`).join("");
   const saldo = Number(v.saldo || 0) > 0.009;
   return `<article class="record sale">
     <div class="recordTop"><div>
