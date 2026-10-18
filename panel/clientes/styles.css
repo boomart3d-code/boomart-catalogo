@@ -9,3 +9,13 @@
 #paymentMessage{font-weight:750}.paymentHistory{border-top:1px solid var(--line);padding-top:10px;margin-top:12px}.paymentHistory>div{padding:8px 0}.paymentHistory small{display:block;color:var(--muted)}.paymentHistory button{margin-top:8px}button:disabled{opacity:.65;cursor:default}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 #paymentDialog label,#paymentDialog input,#paymentDialog select{min-width:0}#paymentDialog input:not([type=checkbox]),#paymentDialog select{width:100%}#paymentDialog .actions{flex-wrap:wrap}
 @media(max-width:650px){#paymentDialog{padding:16px}.paymentLine,.paymentFields{grid-template-columns:1fr 1fr}.paymentLine label:first-child,.paymentFields label:last-child{grid-column:1/-1}.paymentLine .removeLine{justify-self:start}.paymentLine{border-bottom:1px solid var(--line);padding-bottom:15px}}
+/* Ventas de Studio en el portal (2026-10-17) */
+.tabs{display:flex;gap:8px;margin:0 0 14px}.tabs button{background:#151517}.tabs button.active{background:var(--red);border-color:var(--red)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.chips button{min-height:36px;padding:6px 12px;background:#151517}.chips button.active{border-color:var(--gold);color:var(--gold)}
+.vFilters{grid-template-columns:230px 1fr auto}.vSplit{margin:-4px 0 10px}#vMore{width:100%;margin-top:10px}
+.pill.web{color:#7dd3fc;border-color:#1e4a5f}.pill.direct{color:var(--muted)}.pill.due{color:#fca5a5;border-color:#7f1d1d}
+.saleItems{margin:12px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}.saleItems li{display:flex;gap:10px;padding:7px 0;border-bottom:1px dashed #262629}.saleItems li span{margin-left:auto;color:var(--muted)}
+.saleAbonos{margin-top:10px;color:var(--muted)}.saleAbonos summary{cursor:pointer;color:var(--text);font-weight:700}.saleAbonos ul{margin:8px 0 0;padding-left:18px}
+.studioLine{margin-top:12px;padding:10px 12px;border:1px solid var(--line);border-left:3px solid var(--green);border-radius:10px;background:#111113;color:var(--text);font-size:.9rem;line-height:1.7}
+.studioLine .pill{margin:0 0 0 4px}.dueText{color:#fca5a5}.linkBtn{min-height:0;padding:3px 10px;margin-left:6px;font-size:.8rem;background:#222226}
+@media(max-width:650px){.vFilters{grid-template-columns:1fr}}
