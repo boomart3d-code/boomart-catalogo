@@ -1,0 +1,18 @@
+{
+  "id": "/panel/clientes/",
+  "name": "BA Ventas",
+  "short_name": "BA Ventas",
+  "description": "Panel privado de BoomArt: clientes y ventas de Studio.",
+  "lang": "es-PE",
+  "start_url": "/panel/clientes/?src=app",
+  "scope": "/panel/clientes/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#111111",
+  "theme_color": "#111111",
+  "icons": [
+    {"src": "/panel/clientes/app/ventas-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "/panel/clientes/app/ventas-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "/panel/clientes/app/ventas-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
