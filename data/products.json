@@ -520,7 +520,8 @@
       "assets/products/casco-de-pegaso-saint-seiya-hero2.jpg"
     ],
     "description": "Casco funcional de cosplay de la Armadura de Pegaso V1, la que porta Seiya en la versión clásica de Saint Seiya, en tamaño real 1:1. Se puede usar puesto: alas laterales, visor y volúmenes reproducidos fielmente en un acabado tipo metal cepillado. Como se imprime a pedido, el calce se adapta a la talla de quien lo va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Impreso en 3D en Perú, con envíos a todo el país.",
-    "height": "Tamaño real 1:1 (ajustable a pedido)"
+    "height": "Tamaño real 1:1 (ajustable a pedido)",
+    "sizeOptions": true
   },
   {
     "id": "tiara-de-pegaso-saint-seiya",
@@ -542,7 +543,8 @@
       "assets/products/tiara-de-pegaso-saint-seiya-hero2.jpg"
     ],
     "description": "Tiara de cosplay de la Armadura de Pegaso, la que porta Seiya en Saint Seiya, en tamaño real 1:1. Diadema con las alas y el frontal del casco con sus cuernos dorados y visor rojo, lista para usar puesta como accesorio de cosplay o para exhibir junto a tu figura. Como se imprime a pedido, el calce se adapta a la talla de quien la va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Impresa en 3D en Perú, con envíos a todo el país.",
-    "height": "Tamaño real 1:1 (ajustable a pedido)"
+    "height": "Tamaño real 1:1 (ajustable a pedido)",
+    "sizeOptions": true
   },
   {
     "id": "tiara-de-ikki-de-fenix-saint-seiya",
@@ -572,7 +574,8 @@
       "assets/products/tiara-de-ikki-de-fenix-saint-seiya-4.jpg"
     ],
     "description": "Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en tamaño real 1:1. Diadema con sus grandes cuernos dorados, el frontal plateado y la gema roja al centro, lista para usar en tu cosplay o disfraz de Halloween, o para exhibir junto a tu figura. Acabado dorado y plateado pintado a mano. Como se fabrica a pedido, el calce se adapta a la talla de quien la va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Hecha en Perú, con envíos a todo el país.",
-    "height": "Tamaño real 1:1 (ajustable a pedido)"
+    "height": "Tamaño real 1:1 (ajustable a pedido)",
+    "sizeOptions": true
   },
   {
     "id": "set-12-altares-exhibidor",
@@ -1035,9 +1038,13 @@
     "category": "Marvel & DC",
     "tags": [
       "Cascos",
-      "Marvel"
+      "Marvel",
+      "Cosplay",
+      "Disfraces",
+      "Tamaño real",
+      "Halloween"
     ],
-    "material": "PLA",
+    "material": "PLA+",
     "availability": "A pedido",
     "regularPrice": 200,
     "featured": true,
@@ -1052,12 +1059,14 @@
       "assets/products/casco-de-wolverine-con-garras-7.jpg",
       "assets/products/casco-de-wolverine-con-garras-8.jpg"
     ],
-    "description": "Casco decorativo de Wolverine acompañado de su set de garras. Dos piezas de exhibición para el fan de Marvel y los X-Men.",
+    "description": "🎃 Edición Halloween. Casco de Wolverine (Marvel) con su set de garras, pensado para cosplay y disfraz. Disponible en dos tamaños: adulto (tamaño real 1:1) o niño (escala reducida). Elige el tamaño al agregarlo al carrito. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
     "video": {
       "src": "assets/products/videos/casco-de-wolverine-con-garras-v2.mp4",
       "poster": "assets/products/videos/casco-de-wolverine-con-garras-v2.jpg",
       "uploadDate": "2026-10-18"
-    }
+    },
+    "sizeOptions": true,
+    "height": "Tamaño real 1:1 · Adulto o niño"
   },
   {
     "id": "mascara-de-batwoman",
@@ -1076,7 +1085,8 @@
       "assets/products/mascara-de-batwoman-hero-v2.png",
       "assets/products/mascara-de-batwoman.jpg"
     ],
-    "description": "Máscara decorativa de Batwoman para exhibición: orejas afiladas y contorno marcado, impresa en 3D y detallada a mano."
+    "description": "Máscara decorativa de Batwoman para exhibición: orejas afiladas y contorno marcado, impresa en 3D y detallada a mano.",
+    "sizeOptions": true
   },
   {
     "id": "palomera-cara-de-spiderman",
@@ -1157,7 +1167,8 @@
       "assets/products/mascara-calabaza-calavera-1.jpg",
       "assets/products/mascara-calabaza-calavera-2.jpg"
     ],
-    "description": "🎃 Edición Halloween. Máscara Calabaza Calavera: mitad jack-o'-lantern, mitad cráneo, con el ceño marcado, las cuencas huecas y una hilera de dientes de sierra en degradado hacia el blanco. Impresa en 3D y pintada a mano. Ideal para tu disfraz, sesión de fotos o para colgarla como decoración de temporada. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú."
+    "description": "🎃 Edición Halloween. Máscara Calabaza Calavera: mitad jack-o'-lantern, mitad cráneo, con el ceño marcado, las cuencas huecas y una hilera de dientes de sierra en degradado hacia el blanco. Impresa en 3D y pintada a mano. Ideal para tu disfraz, sesión de fotos o para colgarla como decoración de temporada. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú.",
+    "sizeOptions": true
   },
   {
     "id": "candelabro-calavera",
@@ -1203,7 +1214,8 @@
       "assets/products/evil-mask-2.jpg",
       "assets/products/evil-mask-3.jpg"
     ],
-    "description": "🎃 Edición Halloween. Máscara demoníaca de gran presencia: cuernos imponentes, textura escamada y un acabado lleno de detalle. Disponible en rojo o azul. Perfecta para tu disfraz, una fiesta temática, sesión de fotos o para exhibirla como pieza de decoración. Impresa en 3D y pintada a mano. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú."
+    "description": "🎃 Edición Halloween. Máscara demoníaca de gran presencia: cuernos imponentes, textura escamada y un acabado lleno de detalle. Disponible en rojo o azul. Perfecta para tu disfraz, una fiesta temática, sesión de fotos o para exhibirla como pieza de decoración. Impresa en 3D y pintada a mano. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú.",
+    "sizeOptions": true
   },
   {
     "id": "zkull-urban",
@@ -1249,7 +1261,8 @@
       "assets/products/mascara-krampus-1.jpg",
       "assets/products/mascara-krampus-2.jpg"
     ],
-    "description": "🎃 Edición Halloween. Lleva tu disfraz a un nivel mucho más oscuro con la Máscara Krampus: diseño demoníaco, cuernos de carnero y una expresión aterradora con colmillos. Impresa en 3D y pintada a mano, con acabado detallado. Perfecta para disfraces, fiestas temáticas, sesiones de fotos o para exhibirla como pieza de decoración oscura. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú."
+    "description": "🎃 Edición Halloween. Lleva tu disfraz a un nivel mucho más oscuro con la Máscara Krampus: diseño demoníaco, cuernos de carnero y una expresión aterradora con colmillos. Impresa en 3D y pintada a mano, con acabado detallado. Perfecta para disfraces, fiestas temáticas, sesiones de fotos o para exhibirla como pieza de decoración oscura. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú.",
+    "sizeOptions": true
   },
   {
     "id": "mascara-baphomet",
@@ -1274,7 +1287,8 @@
       "assets/products/mascara-baphomet-1.jpg",
       "assets/products/mascara-baphomet-2.jpg"
     ],
-    "description": "🎃 Edición Halloween. Máscara de Baphomet en acabado negro con cuernos detallados y pentagrama rojo en la frente: diseño siniestro y llamativo, con alto nivel de detalle. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y decoración temática oscura. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 😈🔥"
+    "description": "🎃 Edición Halloween. Máscara de Baphomet en acabado negro con cuernos detallados y pentagrama rojo en la frente: diseño siniestro y llamativo, con alto nivel de detalle. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y decoración temática oscura. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 😈🔥",
+    "sizeOptions": true
   },
   {
     "id": "mascara-hellboy-articulada",
@@ -1299,7 +1313,8 @@
       "assets/products/mascara-hellboy-articulada-2.jpg",
       "assets/products/mascara-hellboy-articulada-3.jpg"
     ],
-    "description": "🎃 Edición Halloween. Máscara articulada inspirada en Hellboy, con acabado rojo y gran nivel de detalle. La mandíbula es articulada: al hablar, la boca se mueve contigo. Incluye un puro desmontable para completar el look. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y colección. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 🔥"
+    "description": "🎃 Edición Halloween. Máscara articulada inspirada en Hellboy, con acabado rojo y gran nivel de detalle. La mandíbula es articulada: al hablar, la boca se mueve contigo. Incluye un puro desmontable para completar el look. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y colección. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 🔥",
+    "sizeOptions": true
   },
   {
     "id": "visor-de-cyclops",
@@ -1329,7 +1344,8 @@
       "assets/products/visor-de-cyclops-3.jpg",
       "assets/products/visor-de-cyclops-4.jpg"
     ],
-    "description": "🎃 Edición Halloween. Visor de Cyclops de los X-Men para usar en tu cosplay o disfraz, más la chapa de cinturón con el logo X-Men. Fabricados en PLA+ para mayor resistencia y durabilidad. Hechos a pedido, con envíos a todo el Perú."
+    "description": "🎃 Edición Halloween. Visor de Cyclops de los X-Men para usar en tu cosplay o disfraz, más la chapa de cinturón con el logo X-Men. Fabricados en PLA+ para mayor resistencia y durabilidad. Hechos a pedido, con envíos a todo el Perú.",
+    "sizeOptions": true
   },
   {
     "id": "mascara-red-hood",
@@ -1359,7 +1375,8 @@
       "assets/products/mascara-red-hood-2.jpg",
       "assets/products/mascara-red-hood-3.jpg"
     ],
-    "description": "🎃 Edición Halloween. Máscara de Red Hood (DC) a tamaño real 1:1, especial para cosplay y disfraz. Fabricada en PLA+ para mayor resistencia y durabilidad. Hecha a pedido, con envíos a todo el Perú."
+    "description": "🎃 Edición Halloween. Máscara de Red Hood (DC) a tamaño real 1:1, especial para cosplay y disfraz. Fabricada en PLA+ para mayor resistencia y durabilidad. Hecha a pedido, con envíos a todo el Perú.",
+    "sizeOptions": true
   },
   {
     "id": "mascara-dr-doom",
@@ -1388,7 +1405,8 @@
       "assets/products/mascara-dr-doom-2.jpg",
       "assets/products/mascara-dr-doom-3.jpg"
     ],
-    "description": "🎃 Edición Halloween. Máscara de Dr. Doom funcional, lista para usar en tu disfraz o cosplay. Fabricada en PLA+ con acabado de pintura cromo metálico. Hecha a pedido, con envíos a todo el Perú."
+    "description": "🎃 Edición Halloween. Máscara de Dr. Doom funcional, lista para usar en tu disfraz o cosplay. Fabricada en PLA+ con acabado de pintura cromo metálico. Hecha a pedido, con envíos a todo el Perú.",
+    "sizeOptions": true
   },
   {
     "id": "casco-de-batman",
@@ -1421,7 +1439,8 @@
       "assets/products/casco-de-batman-6.jpg",
       "assets/products/casco-de-batman-7.jpg"
     ],
-    "description": "🎃 Edición Halloween. Casco de Batman a tamaño real 1:1, especial para cosplay y disfraz. Fabricado en PLA+ con detalles pintados a mano. Elige tu acabado: mate o brillante, con o sin detalles de pintura. Hecho a pedido, con envíos a todo el Perú."
+    "description": "🎃 Edición Halloween. Casco de Batman a tamaño real 1:1, especial para cosplay y disfraz. Fabricado en PLA+ con detalles pintados a mano. Elige tu acabado: mate o brillante, con o sin detalles de pintura. Hecho a pedido, con envíos a todo el Perú.",
+    "sizeOptions": true
   },
   {
     "id": "casco-de-stormtrooper",
@@ -1450,7 +1469,8 @@
       "assets/products/casco-de-stormtrooper-2.jpg",
       "assets/products/casco-de-stormtrooper-3.jpg"
     ],
-    "description": "🎃 Edición Halloween. Casco de Stormtrooper de Star Wars a tamaño real 1:1, especial para cosplay. Acabado blanco con detalles en negro, fiel al clásico soldado imperial. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú."
+    "description": "🎃 Edición Halloween. Casco de Stormtrooper de Star Wars a tamaño real 1:1, especial para cosplay. Acabado blanco con detalles en negro, fiel al clásico soldado imperial. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
+    "sizeOptions": true
   },
   {
     "id": "casco-del-mandaloriano",
@@ -1480,7 +1500,8 @@
       "assets/products/casco-del-mandaloriano-3.jpg",
       "assets/products/casco-del-mandaloriano-4.jpg"
     ],
-    "description": "🎃 Edición Halloween. Casco del Mandaloriano de Star Wars a tamaño real 1:1, especial para cosplay. Acabado cromado y fabricado en PLA+ para mayor resistencia y durabilidad: listo para lucirlo en tu disfraz o exhibirlo en tu colección. Hecho a pedido, con envíos a todo el Perú."
+    "description": "🎃 Edición Halloween. Casco del Mandaloriano de Star Wars a tamaño real 1:1, especial para cosplay. Acabado cromado y fabricado en PLA+ para mayor resistencia y durabilidad: listo para lucirlo en tu disfraz o exhibirlo en tu colección. Hecho a pedido, con envíos a todo el Perú.",
+    "sizeOptions": true
   },
   {
     "id": "casco-gladiador-maximo",
@@ -1494,7 +1515,7 @@
       "Cosplay",
       "Tamaño real"
     ],
-    "height": "Tamaño real 1:1 · Talla única para adulto",
+    "height": "Tamaño real 1:1 · Adulto o niño",
     "material": "PLA",
     "availability": "A pedido",
     "regularPrice": 200,
@@ -1506,7 +1527,8 @@
       "assets/products/casco-gladiador-maximo-2.jpg",
       "assets/products/casco-gladiador-maximo-3.jpg"
     ],
-    "description": "🎃 Edición Halloween. Casco de Gladiador Máximo a tamaño real 1:1, especial para completar disfraces y cosplay. Impreso en 3D y pintado a mano con acabado metálico envejecido. Talla única para adulto. Hecho a pedido, con envíos a todo el Perú."
+    "description": "🎃 Edición Halloween. Casco de Gladiador Máximo a tamaño real 1:1, especial para completar disfraces y cosplay. Impreso en 3D y pintado a mano con acabado metálico envejecido. Talla única para adulto. Hecho a pedido, con envíos a todo el Perú.",
+    "sizeOptions": true
   },
   {
     "id": "corona-de-elfo",
@@ -1576,7 +1598,7 @@
       "Disfraces",
       "Cosplay"
     ],
-    "height": "Medida estándar para adulto · Hombre o mujer · Elástico opcional",
+    "height": "Medida estándar · Adulto o niño · Elástico opcional",
     "material": "PLA+",
     "availability": "A pedido",
     "regularPrice": 60,
@@ -1590,7 +1612,8 @@
       "assets/products/mascarada-del-diablo-4.jpg",
       "assets/products/mascarada-del-diablo-5.jpg"
     ],
-    "description": "🎃 Edición Halloween. La Mascarada del Diablo: media máscara roja de aspecto demoníaco, con relieves marcados en la frente, contorno de ojos pronunciado y dos cuernos curvos con textura. Impresa en 3D en PLA+ y pintada a mano, con acabado envejecido y detalles en negro. Medida estándar para adulto, hombre o mujer. Incluye elástico opcional para sujetarla. Ideal para disfraces, fiestas temáticas, mascaradas y sesiones de fotos. Hecha a pedido, con envíos a todo el Perú."
+    "description": "🎃 Edición Halloween. La Mascarada del Diablo: media máscara roja de aspecto demoníaco, con relieves marcados en la frente, contorno de ojos pronunciado y dos cuernos curvos con textura. Impresa en 3D en PLA+ y pintada a mano, con acabado envejecido y detalles en negro. Medida estándar para adulto, hombre o mujer. Incluye elástico opcional para sujetarla. Ideal para disfraces, fiestas temáticas, mascaradas y sesiones de fotos. Hecha a pedido, con envíos a todo el Perú.",
+    "sizeOptions": true
   },
   {
     "id": "mascara-el-juego-del-calamar",
@@ -1609,7 +1632,8 @@
       "assets/products/mascara-el-juego-del-calamar-hero-v2.png",
       "assets/products/mascara-el-juego-del-calamar.jpg"
     ],
-    "description": "Máscara decorativa de El Juego del Calamar (círculo, triángulo o cuadrado), impresa en 3D. Perfecta para exhibición, cosplay o para completar tu disfraz."
+    "description": "Máscara decorativa de El Juego del Calamar (círculo, triángulo o cuadrado), impresa en 3D. Perfecta para exhibición, cosplay o para completar tu disfraz.",
+    "sizeOptions": true
   },
   {
     "id": "casco-de-agamenon-la-odisea",
@@ -1632,7 +1656,8 @@
       "assets/products/casco-de-agamenon-la-odisea-4.jpg",
       "assets/products/casco-de-agamenon-la-odisea-5.jpg"
     ],
-    "description": "Casco decorativo de Agamenón a tamaño real, inspirado en La Odisea y la Grecia de los héroes. Una pieza imponente de exhibición."
+    "description": "Casco decorativo de Agamenón a tamaño real, inspirado en La Odisea y la Grecia de los héroes. Una pieza imponente de exhibición.",
+    "sizeOptions": true
   },
   {
     "id": "pato-lucas-kratos-god-of-war",

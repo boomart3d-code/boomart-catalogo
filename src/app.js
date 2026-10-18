@@ -212,6 +212,10 @@ const TEMPLE_BOX_LABELS = { temple: "Templo", pandora: "Pandora Box + pedestal",
 // el cliente puede cambiar a Templo o Pandora Box en cualquier momento antes de agregar.
 const DEFAULT_TEMPLE_VARIANT = "combo";
 
+// Máscaras y cascos: tamaño adulto (por defecto) o niño, mismo precio (2026-10-18).
+const SIZE_OPTIONS = { adulto: "Adulto · 1:1", nino: "Niño" };
+const DEFAULT_SIZE = "adulto";
+
 const addToCartMarkup = (product) => {
   const variantPicker = product.templePricing
     ? `
@@ -229,15 +233,33 @@ const addToCartMarkup = (product) => {
           .join("")}
       </div>
     `
+    : product.sizeOptions
+    ? `
+      <div class="temple-price-card size-picker" role="group" aria-label="Elige el tamaño de ${product.name}">
+        ${Object.keys(SIZE_OPTIONS)
+          .map((key) => {
+            const selected = key === DEFAULT_SIZE;
+            return `
+              <button type="button" class="temple-price-option${selected ? " is-selected" : ""}" data-variant-option="${key}" aria-pressed="${selected}">
+                <span>${SIZE_OPTIONS[key]}</span>
+                <strong>${formatPrice(product.regularPrice)}</strong>
+              </button>
+            `;
+          })
+          .join("")}
+      </div>
+    `
     : "";
 
-  const initialVariant = product.templePricing ? DEFAULT_TEMPLE_VARIANT : "";
+  const initialVariant = product.templePricing ? DEFAULT_TEMPLE_VARIANT : product.sizeOptions ? DEFAULT_SIZE : "";
 
   // Resumen de lo que se va a agregar (opcion + precio). En el celular la barra
   // de compra queda fija abajo y tapa las opciones, asi que el boton lo repite
   // (se muestra con CSS en la ficha movil y se actualiza al cambiar de opcion).
   const initialPriceLabel = product.templePricing
     ? `${TEMPLE_BOX_LABELS[DEFAULT_TEMPLE_VARIANT]} · ${formatPrice(product.templePricing[DEFAULT_TEMPLE_VARIANT])}`
+    : product.sizeOptions
+    ? `${SIZE_OPTIONS[DEFAULT_SIZE]} · ${formatPrice(product.regularPrice)}`
     : formatPrice(product.regularPrice);
 
   return `

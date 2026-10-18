@@ -76,10 +76,23 @@
     return catalog.find((product) => product.id === productId) || null;
   }
 
+  // Tamaños de máscaras y cascos (pedido de Adrián, 2026-10-18): mismo precio,
+  // adulto por defecto. Un producto los ofrece con "sizeOptions": true.
+  const SIZE_LABELS = { adulto: "Tamaño adulto", nino: "Tamaño niño" };
+
   // Resuelve nombre, imagen y precio unitario vigente para una variante de producto.
-  // variantKey: null para productos simples; "temple" | "pandora" | "combo" para templos.
+  // variantKey: null para productos simples; "temple" | "pandora" | "combo" para templos;
+  // "adulto" | "nino" para productos con tamaños.
   function resolveVariant(product, variantKey) {
     if (!product) return null;
+    if (product.sizeOptions) {
+      const key = SIZE_LABELS[variantKey] ? variantKey : "adulto";
+      return {
+        variantKey: key,
+        variantLabel: SIZE_LABELS[key],
+        unitPrice: Number(product.regularPrice) || 0
+      };
+    }
     if (product.templePricing) {
       const key = variantKey && product.templePricing[variantKey] != null ? variantKey : null;
       if (!key) return null;
@@ -130,6 +143,8 @@
       if (!product) return;
       const variant = resolveVariant(product, line.variant);
       if (!variant) return;
+      // Línea guardada antes de que el producto tuviera tamaños: queda como adulto.
+      if (line.variant !== variant.variantKey) line.variant = variant.variantKey;
       const unitCents = toCents(variant.unitPrice);
       const quantity = Math.max(1, Math.floor(line.quantity));
       resolved.push({
