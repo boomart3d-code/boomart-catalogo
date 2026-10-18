@@ -212,9 +212,12 @@ const TEMPLE_BOX_LABELS = { temple: "Templo", pandora: "Pandora Box + pedestal",
 // el cliente puede cambiar a Templo o Pandora Box en cualquier momento antes de agregar.
 const DEFAULT_TEMPLE_VARIANT = "combo";
 
-// Máscaras y cascos: tamaño adulto (por defecto) o niño, mismo precio (2026-10-18).
+// Máscaras y cascos: tamaño adulto (por defecto) o niño (2026-10-18). Niño cuesta
+// 10 % menos que adulto, redondeado al sol (misma regla que cart.js).
 const SIZE_OPTIONS = { adulto: "Adulto · 1:1", nino: "Niño" };
 const DEFAULT_SIZE = "adulto";
+const sizePrice = (product, key) =>
+  key === "nino" ? Math.round(Number(product.regularPrice || 0) * 0.9) : Number(product.regularPrice || 0);
 
 const addToCartMarkup = (product) => {
   const variantPicker = product.templePricing
@@ -242,7 +245,7 @@ const addToCartMarkup = (product) => {
             return `
               <button type="button" class="temple-price-option${selected ? " is-selected" : ""}" data-variant-option="${key}" aria-pressed="${selected}">
                 <span>${SIZE_OPTIONS[key]}</span>
-                <strong>${formatPrice(product.regularPrice)}</strong>
+                <strong>${formatPrice(sizePrice(product, key))}</strong>
               </button>
             `;
           })
@@ -259,7 +262,7 @@ const addToCartMarkup = (product) => {
   const initialPriceLabel = product.templePricing
     ? `${TEMPLE_BOX_LABELS[DEFAULT_TEMPLE_VARIANT]} · ${formatPrice(product.templePricing[DEFAULT_TEMPLE_VARIANT])}`
     : product.sizeOptions
-    ? `${SIZE_OPTIONS[DEFAULT_SIZE]} · ${formatPrice(product.regularPrice)}`
+    ? `${SIZE_OPTIONS[DEFAULT_SIZE]} · ${formatPrice(sizePrice(product, DEFAULT_SIZE))}`
     : formatPrice(product.regularPrice);
 
   return `
@@ -284,6 +287,8 @@ const priceMarkup = (product) => {
   // del propio selector de Templo/Pandora Box/Combo (evita repetir la misma
   // informacion dos veces en la tarjeta).
   if (product.templePricing) return "";
+  // Con tamaños, cada opción del selector ya muestra su precio (adulto / niño).
+  if (product.sizeOptions) return "";
 
   return `
     <div class="simple-price">
@@ -305,6 +310,14 @@ const gridPriceMarkup = (product) => {
     return `
       <div class="simple-price">
         <strong>Desde ${formatPrice(product.templePricing.temple)}</strong>
+      </div>
+    `;
+  }
+  if (product.sizeOptions) {
+    // En la grilla: el precio de adulto (la opción por defecto).
+    return `
+      <div class="simple-price">
+        <strong>${formatPrice(product.regularPrice)}</strong>
       </div>
     `;
   }

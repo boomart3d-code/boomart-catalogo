@@ -76,9 +76,11 @@
     return catalog.find((product) => product.id === productId) || null;
   }
 
-  // Tamaños de máscaras y cascos (pedido de Adrián, 2026-10-18): mismo precio,
-  // adulto por defecto. Un producto los ofrece con "sizeOptions": true.
+  // Tamaños de máscaras y cascos (pedido de Adrián, 2026-10-18): adulto por defecto;
+  // niño cuesta 10 % menos que adulto (precio propio, no descuento), redondeado al sol.
+  // Un producto los ofrece con "sizeOptions": true. Misma regla en app.js (sizePrice).
   const SIZE_LABELS = { adulto: "Tamaño adulto", nino: "Tamaño niño" };
+  const CHILD_PRICE_FACTOR = 0.9;
 
   // Resuelve nombre, imagen y precio unitario vigente para una variante de producto.
   // variantKey: null para productos simples; "temple" | "pandora" | "combo" para templos;
@@ -90,7 +92,9 @@
       return {
         variantKey: key,
         variantLabel: SIZE_LABELS[key],
-        unitPrice: Number(product.regularPrice) || 0
+        unitPrice: key === "nino"
+          ? Math.round((Number(product.regularPrice) || 0) * CHILD_PRICE_FACTOR)
+          : Number(product.regularPrice) || 0
       };
     }
     if (product.templePricing) {
