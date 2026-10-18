@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 80,
+  "count": 81,
   "products": [
     {
       "id": "templo-aries",
@@ -574,6 +574,48 @@
       ],
       "url": "https://boomart.pe/producto/set-12-cajas-de-pandora-con-pedestales/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Set%20de%2012%20Cajas%20de%20Pandora%20con%20Pedestales%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "pandora-box-caballeros-dorados",
+      "name": "Pandora Box · 12 Caballeros Dorados (sin pedestal) · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Saint Seiya",
+        "Pandora Box",
+        "Caballeros Dorados",
+        "Zodiaco",
+        "Colección",
+        "PLA Silk"
+      ],
+      "description": "Las Pandora Box de los 12 Caballeros Dorados, de Aries a Piscis, fabricadas en PLA Silk dorado (6.5 × 5 × 5 cm cada una). Se venden sin pedestal. Llévate el set completo de 12 por S/200 o elige solo el signo (o los signos) que quieras, a S/20 cada uno. Hechas a pedido, con envíos a todo el Perú.",
+      "material": "PLA Silk",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 20,
+      "pricing": [
+        "Por signo: S/20",
+        "Set completo (12 signos): S/200"
+      ],
+      "image": "https://boomart.pe/assets/products/pandora-box-caballeros-dorados.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/pandora-box-caballeros-dorados.jpg",
+        "https://boomart.pe/assets/products/pandora-box-caballeros-dorados-set.jpg",
+        "https://boomart.pe/assets/products/pandora-box-caballeros-dorados-aries.jpg",
+        "https://boomart.pe/assets/products/pandora-box-caballeros-dorados-tauro.jpg",
+        "https://boomart.pe/assets/products/pandora-box-caballeros-dorados-geminis.jpg",
+        "https://boomart.pe/assets/products/pandora-box-caballeros-dorados-cancer.jpg",
+        "https://boomart.pe/assets/products/pandora-box-caballeros-dorados-leo.jpg",
+        "https://boomart.pe/assets/products/pandora-box-caballeros-dorados-virgo.jpg",
+        "https://boomart.pe/assets/products/pandora-box-caballeros-dorados-libra.jpg",
+        "https://boomart.pe/assets/products/pandora-box-caballeros-dorados-escorpio.jpg",
+        "https://boomart.pe/assets/products/pandora-box-caballeros-dorados-sagitario.jpg",
+        "https://boomart.pe/assets/products/pandora-box-caballeros-dorados-capricornio.jpg",
+        "https://boomart.pe/assets/products/pandora-box-caballeros-dorados-acuario.jpg",
+        "https://boomart.pe/assets/products/pandora-box-caballeros-dorados-piscis.jpg",
+        "https://boomart.pe/assets/products/pandora-box-caballeros-dorados-set-2.jpg"
+      ],
+      "url": "https://boomart.pe/producto/pandora-box-caballeros-dorados/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Pandora%20Box%20%C2%B7%2012%20Caballeros%20Dorados%20(sin%20pedestal)%20%C2%B7%20Saint%20Seiya"
     },
     {
       "id": "casco-de-pegaso-saint-seiya",
