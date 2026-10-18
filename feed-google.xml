@@ -3,7 +3,7 @@
   <channel>
     <title>BoomArt - Catalogo de productos</title>
     <link>https://boomart.pe/</link>
-    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-10-17.</description>
+    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-10-18.</description>
     <item>
       <g:id>templo-aries</g:id>
       <g:title>Templo de Aries</g:title>
@@ -728,6 +728,11 @@
       <g:image_link>https://boomart.pe/assets/products/casco-de-wolverine-con-garras-hero-v3.jpg</g:image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/casco-de-wolverine-con-garras-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://boomart.pe/assets/products/casco-de-wolverine-con-garras-3.jpg</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/casco-de-wolverine-con-garras-4.jpg</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/casco-de-wolverine-con-garras-5.jpg</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/casco-de-wolverine-con-garras-6.jpg</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/casco-de-wolverine-con-garras-7.jpg</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/casco-de-wolverine-con-garras-8.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>200.00 PEN</g:price>
       <g:condition>new</g:condition>

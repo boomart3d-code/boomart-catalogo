@@ -386,10 +386,10 @@
   },
   "visor-de-cyclops": {
     "source": "assets/products/visor-de-cyclops-hero.jpg",
-    "hash": "be870456fb9fc444",
+    "hash": "411d5341392a6a03",
     "width": 960,
     "height": 1200,
-    "bytes": 89198
+    "bytes": 87482
   },
   "mascara-red-hood": {
     "source": "assets/products/mascara-red-hood-hero.jpg",
