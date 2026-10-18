@@ -92,6 +92,7 @@ const setCanonical = (href) => {
 };
 
 const priceLabel = (product) => {
+  if (product.signPicker) return `desde S/${product.signPicker.unitPrice}`;
   if (product.templePricing) {
     const v = product.templePricing.temple ?? product.templePricing.combo ?? product.templePricing.pandora;
     return v ? `desde S/${v}` : "";
@@ -216,6 +217,9 @@ const DEFAULT_TEMPLE_VARIANT = "combo";
 // 10 % menos que adulto, redondeado al sol (misma regla que cart.js).
 const SIZE_OPTIONS = { adulto: "Adulto · 1:1", nino: "Niño" };
 const DEFAULT_SIZE = "adulto";
+// Pandora Box solas (2026-10-18): una publicacion con el set completo (por defecto) o
+// uno o varios signos sueltos; cada signo entra al carrito como su propia linea.
+const ZODIAC_SIGN_LABELS = { aries: "Aries", tauro: "Tauro", geminis: "Géminis", cancer: "Cáncer", leo: "Leo", virgo: "Virgo", libra: "Libra", escorpio: "Escorpio", sagitario: "Sagitario", capricornio: "Capricornio", acuario: "Acuario", piscis: "Piscis" };
 const sizePrice = (product, key) =>
   key === "nino" ? Math.round(Number(product.regularPrice || 0) * 0.9) : Number(product.regularPrice || 0);
 
@@ -236,6 +240,25 @@ const addToCartMarkup = (product) => {
           .join("")}
       </div>
     `
+    : product.signPicker
+    ? `
+      <div class="temple-price-card sign-mode" role="group" aria-label="Elige set completo o signos para ${product.name}">
+        <button type="button" class="temple-price-option is-selected" data-pick-mode="set" aria-pressed="true">
+          <span>Set completo · 12 signos</span>
+          <strong>${formatPrice(product.signPicker.setPrice)}</strong>
+        </button>
+        <button type="button" class="temple-price-option" data-pick-mode="signos" aria-pressed="false">
+          <span>Elegir signos</span>
+          <strong>${formatPrice(product.signPicker.unitPrice)} c/u</strong>
+        </button>
+      </div>
+      <div class="sign-chips" data-sign-chips hidden role="group" aria-label="Signos">
+        ${Object.entries(ZODIAC_SIGN_LABELS)
+          .map(([key, label]) => `<button type="button" class="sign-chip" data-sign="${key}" aria-pressed="false">${label}</button>`)
+          .join("")}
+      </div>
+      <p class="sign-hint" data-sign-hint hidden></p>
+    `
     : product.sizeOptions
     ? `
       <div class="temple-price-card size-picker" role="group" aria-label="Elige el tamaño de ${product.name}">
@@ -254,19 +277,25 @@ const addToCartMarkup = (product) => {
     `
     : "";
 
-  const initialVariant = product.templePricing ? DEFAULT_TEMPLE_VARIANT : product.sizeOptions ? DEFAULT_SIZE : "";
+  const initialVariant = product.templePricing
+    ? DEFAULT_TEMPLE_VARIANT
+    : product.signPicker ? "set12" : product.sizeOptions ? DEFAULT_SIZE : "";
 
   // Resumen de lo que se va a agregar (opcion + precio). En el celular la barra
   // de compra queda fija abajo y tapa las opciones, asi que el boton lo repite
   // (se muestra con CSS en la ficha movil y se actualiza al cambiar de opcion).
   const initialPriceLabel = product.templePricing
     ? `${TEMPLE_BOX_LABELS[DEFAULT_TEMPLE_VARIANT]} · ${formatPrice(product.templePricing[DEFAULT_TEMPLE_VARIANT])}`
+    : product.signPicker
+    ? `Set completo · ${formatPrice(product.signPicker.setPrice)}`
     : product.sizeOptions
     ? `${SIZE_OPTIONS[DEFAULT_SIZE]} · ${formatPrice(sizePrice(product, DEFAULT_SIZE))}`
     : formatPrice(product.regularPrice);
 
   return `
-    <div class="add-to-cart" data-product="${product.id}" data-variant="${initialVariant}">
+    <div class="add-to-cart" data-product="${product.id}" data-variant="${initialVariant}"${product.signPicker
+      ? ` data-unit-price="${product.signPicker.unitPrice}" data-set-price="${product.signPicker.setPrice}"`
+      : ""}>
       ${variantPicker}
       <div class="add-to-cart-row">
         <div class="qty-stepper" role="group" aria-label="Cantidad">
@@ -287,8 +316,8 @@ const priceMarkup = (product) => {
   // del propio selector de Templo/Pandora Box/Combo (evita repetir la misma
   // informacion dos veces en la tarjeta).
   if (product.templePricing) return "";
-  // Con tamaños, cada opción del selector ya muestra su precio (adulto / niño).
-  if (product.sizeOptions) return "";
+  // Con tamaños o signos, cada opción del selector ya muestra su precio.
+  if (product.sizeOptions || product.signPicker) return "";
 
   return `
     <div class="simple-price">
@@ -310,6 +339,13 @@ const gridPriceMarkup = (product) => {
     return `
       <div class="simple-price">
         <strong>Desde ${formatPrice(product.templePricing.temple)}</strong>
+      </div>
+    `;
+  }
+  if (product.signPicker) {
+    return `
+      <div class="simple-price">
+        <strong>Desde ${formatPrice(product.signPicker.unitPrice)}</strong>
       </div>
     `;
   }

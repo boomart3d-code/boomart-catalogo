@@ -70,6 +70,14 @@ const waLink = (name) =>
  *   listPrice  único precio oficial para los feeds (Google/Meta/Pinterest)
  */
 function priceInfo(p) {
+  if (p.signPicker) {
+    const { unitPrice, setPrice } = p.signPicker;
+    return {
+      from: unitPrice,
+      lines: [`Por signo: S/${unitPrice}`, `Set completo (12 signos): S/${setPrice}`],
+      listPrice: unitPrice,
+    };
+  }
   if (p.templePricing) {
     const { temple, pandora, combo } = p.templePricing;
     // El templo suelto es la unidad vendible de referencia (evita que el feed
@@ -477,7 +485,7 @@ ${cards}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=61">
+    <link rel="stylesheet" href="src/styles.css?v=62">
     <style>
       .ai-catalog { max-width: 1040px; margin: 0 auto; padding: 32px 20px 80px; }
       .ai-catalog h1 { margin-bottom: 8px; }
@@ -567,7 +575,7 @@ ${socialFooterHtml()}
       </div>
     </footer>
     <script src="src/track.js?v=5" defer></script>
-    <script src="src/shopping-assistant.js?v=6" defer></script>
+    <script src="src/shopping-assistant.js?v=7" defer></script>
   </body>
 </html>
 `;
@@ -843,6 +851,15 @@ function offerLd(p) {
       returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
     },
   };
+  if (p.signPicker) {
+    return {
+      "@type": "AggregateOffer",
+      offerCount: 13,
+      lowPrice: p.signPicker.unitPrice,
+      highPrice: p.signPicker.setPrice,
+      ...common,
+    };
+  }
   if (p.templePricing) {
     const vals = [p.templePricing.temple, p.templePricing.pandora, p.templePricing.combo].filter(
       (n) => typeof n === "number",
@@ -961,6 +978,10 @@ const PRODUCT_PAGE_CSS = `
 
 function priceBlockHtml(p) {
   const price = priceInfo(p);
+  if (p.signPicker) {
+    const { unitPrice, setPrice } = p.signPicker;
+    return `<div class="pp-price"><span class="now">desde S/${unitPrice}</span><ul><li>Por signo: <strong>S/${unitPrice}</strong> c/u</li><li>Set completo (12 signos): <strong>S/${setPrice}</strong></li></ul></div>`;
+  }
   if (p.templePricing) {
     const t = p.templePricing;
     const vals = [t.temple, t.pandora, t.combo].filter((n) => typeof n === "number");
@@ -1074,7 +1095,7 @@ function buildProductPage(p, all, ratingLd) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=61">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=62">
     <style>${PRODUCT_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(productLd(p))}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbLd(p))}</script>
@@ -1268,7 +1289,7 @@ ${socialFooterHtml()}
       })();
     </script>
     <script src="${rel}src/track.js?v=5" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=6" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=7" defer></script>
   </body>
 </html>
 `;
@@ -1461,7 +1482,7 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
       const price = priceInfo(p);
       const pr =
         price.from != null
-          ? (p.templePricing ? `desde S/${price.from}` : `S/${price.from}`)
+          ? (p.templePricing || p.signPicker ? `desde S/${price.from}` : `S/${price.from}`)
           : "Consultar";
       const img = `${rel}${String((p.gallery && p.gallery[0]) || p.image).replace(/^\/+/, "")}`;
       return `        <a class="cat-card" href="${rel}producto/${esc(p.id)}/">
@@ -1530,7 +1551,7 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=61">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=62">
     <style>${CATEGORY_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(itemListLd)}</script>
     <script type="application/ld+json">${JSON.stringify(crumbLd)}</script>
@@ -1593,7 +1614,7 @@ ${socialFooterHtml()}
       </span>
     </a>
     <script src="${rel}src/track.js?v=5" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=6" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=7" defer></script>
   </body>
 </html>
 `;

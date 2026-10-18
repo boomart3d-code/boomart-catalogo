@@ -81,12 +81,21 @@
   // Un producto los ofrece con "sizeOptions": true. Misma regla en app.js (sizePrice).
   const SIZE_LABELS = { adulto: "Tamaño adulto", nino: "Tamaño niño" };
   const CHILD_PRICE_FACTOR = 0.9;
+  // Pandora Box solas (2026-10-18): set completo o signos sueltos ("signPicker").
+  const SIGN_LABELS = { aries: "Aries", tauro: "Tauro", geminis: "Géminis", cancer: "Cáncer", leo: "Leo", virgo: "Virgo", libra: "Libra", escorpio: "Escorpio", sagitario: "Sagitario", capricornio: "Capricornio", acuario: "Acuario", piscis: "Piscis" };
 
   // Resuelve nombre, imagen y precio unitario vigente para una variante de producto.
   // variantKey: null para productos simples; "temple" | "pandora" | "combo" para templos;
   // "adulto" | "nino" para productos con tamaños.
   function resolveVariant(product, variantKey) {
     if (!product) return null;
+    if (product.signPicker) {
+      const sp = product.signPicker;
+      if (variantKey && SIGN_LABELS[variantKey]) {
+        return { variantKey, variantLabel: SIGN_LABELS[variantKey], unitPrice: Number(sp.unitPrice) || 0 };
+      }
+      return { variantKey: "set12", variantLabel: "Set completo (12 signos)", unitPrice: Number(sp.setPrice) || 0 };
+    }
     if (product.sizeOptions) {
       const key = SIZE_LABELS[variantKey] ? variantKey : "adulto";
       return {

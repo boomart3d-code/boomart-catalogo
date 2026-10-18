@@ -266,6 +266,21 @@
     if (!container) return;
     const productId = container.dataset.product;
 
+    // Pandora Box solas: set completo o varios signos (2026-10-18).
+    const modeBtn = event.target.closest("[data-pick-mode]");
+    if (modeBtn) {
+      setSignMode(container, modeBtn.dataset.pickMode);
+      return;
+    }
+    const signBtn = event.target.closest("[data-sign]");
+    if (signBtn) {
+      const on = !signBtn.classList.contains("is-selected");
+      signBtn.classList.toggle("is-selected", on);
+      signBtn.setAttribute("aria-pressed", String(on));
+      updateSigns(container);
+      return;
+    }
+
     const variantOption = event.target.closest("[data-variant-option]");
     if (variantOption) {
       container.dataset.variant = variantOption.dataset.variantOption;
@@ -297,13 +312,22 @@
 
     const addBtn = event.target.closest("[data-add-to-cart]");
     if (addBtn) {
-      const variantKey = container.dataset.variant || null;
+      const keys = (container.dataset.variant || "").split(",").filter(Boolean);
+      if (container.querySelector("[data-sign-chips]") && !keys.length) return; // eligió «signos» sin marcar ninguno
+      const variantKey = keys.length ? keys.join(",") : null;
       const qty = Number(qtyValueEl.textContent) || 1;
-      const state = window.BoomartCart.add(productId, variantKey, qty);
+      let state = null;
+      (keys.length ? keys : [null]).forEach((k) => {
+        state = window.BoomartCart.add(productId, k, qty);
+      });
       qtyValueEl.textContent = "1";
-      const addedLine = state.lines.find(
-        (line) => line.productId === productId && (line.variantKey || null) === variantKey
+      const addedLines = state.lines.filter(
+        (line) => line.productId === productId && (keys.length ? keys.includes(line.variantKey) : !line.variantKey)
       );
+      const addedLine = addedLines.length > 1
+        ? { ...addedLines[0], variantLabel: addedLines.map((l) => l.variantLabel).join(", "),
+            unitPrice: addedLines.reduce((sum, l) => sum + Number(l.unitPrice), 0) }
+        : addedLines[0];
 
       const fromModal = Boolean(addBtn.closest("#productModal"));
       trackEvt("agregar_carrito", {
@@ -340,6 +364,52 @@
       }
     }
   });
+
+  // Pandora Box solas: modo «set completo» o «elegir signos» y resumen del boton.
+  function setSignMode(container, mode) {
+    container.querySelectorAll("[data-pick-mode]").forEach((btn) => {
+      const selected = btn.dataset.pickMode === mode;
+      btn.classList.toggle("is-selected", selected);
+      btn.setAttribute("aria-pressed", String(selected));
+    });
+    const chips = container.querySelector("[data-sign-chips]");
+    const hint = container.querySelector("[data-sign-hint]");
+    const addBtn = container.querySelector("[data-add-to-cart]");
+    if (mode === "set") {
+      if (chips) chips.hidden = true;
+      if (hint) hint.hidden = true;
+      container.dataset.variant = "set12";
+      if (addBtn) {
+        addBtn.disabled = false;
+        addBtn.dataset.priceLabel = `Set completo · S/${container.dataset.setPrice}`;
+      }
+      return;
+    }
+    if (chips) chips.hidden = false;
+    updateSigns(container);
+  }
+
+  function updateSigns(container) {
+    const picked = [...container.querySelectorAll("[data-sign].is-selected")].map((b) => b.dataset.sign);
+    const unit = Number(container.dataset.unitPrice) || 0;
+    const setPrice = Number(container.dataset.setPrice) || 0;
+    container.dataset.variant = picked.join(",");
+    const addBtn = container.querySelector("[data-add-to-cart]");
+    if (addBtn) {
+      addBtn.disabled = picked.length === 0;
+      addBtn.dataset.priceLabel = picked.length
+        ? `${picked.length} signo${picked.length === 1 ? "" : "s"} · S/${picked.length * unit}`
+        : "Elige al menos un signo";
+    }
+    const hint = container.querySelector("[data-sign-hint]");
+    if (hint) {
+      const better = setPrice && picked.length * unit >= setPrice;
+      hint.hidden = !better;
+      hint.innerHTML = better
+        ? `Te conviene el set completo: los 12 signos por S/${setPrice}. <button type="button" data-pick-mode="set">Cambiar al set</button>`
+        : "";
+    }
+  }
 
   // Delegado: acciones dentro de las lineas del carrito (cantidad, quitar).
   cartLinesEl.addEventListener("click", (event) => {

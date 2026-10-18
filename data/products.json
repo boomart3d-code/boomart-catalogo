@@ -502,6 +502,46 @@
     "description": "Las 12 Cajas de Pandora de los Caballeros Dorados, cada una con su pedestal estilo piedra. El set completo que corona cualquier colección de Saint Seiya."
   },
   {
+    "id": "pandora-box-caballeros-dorados",
+    "name": "Pandora Box · 12 Caballeros Dorados (sin pedestal) · Saint Seiya",
+    "category": "Saint Seiya",
+    "tags": [
+      "Saint Seiya",
+      "Pandora Box",
+      "Caballeros Dorados",
+      "Zodiaco",
+      "Colección",
+      "PLA Silk"
+    ],
+    "height": "6.5 × 5 × 5 cm cada una",
+    "material": "PLA Silk",
+    "availability": "A pedido",
+    "regularPrice": 20,
+    "signPicker": {
+      "unitPrice": 20,
+      "setPrice": 200
+    },
+    "image": "assets/products/pandora-box-caballeros-dorados.jpg",
+    "gallery": [
+      "assets/products/pandora-box-caballeros-dorados.jpg",
+      "assets/products/pandora-box-caballeros-dorados-set.jpg",
+      "assets/products/pandora-box-caballeros-dorados-aries.jpg",
+      "assets/products/pandora-box-caballeros-dorados-tauro.jpg",
+      "assets/products/pandora-box-caballeros-dorados-geminis.jpg",
+      "assets/products/pandora-box-caballeros-dorados-cancer.jpg",
+      "assets/products/pandora-box-caballeros-dorados-leo.jpg",
+      "assets/products/pandora-box-caballeros-dorados-virgo.jpg",
+      "assets/products/pandora-box-caballeros-dorados-libra.jpg",
+      "assets/products/pandora-box-caballeros-dorados-escorpio.jpg",
+      "assets/products/pandora-box-caballeros-dorados-sagitario.jpg",
+      "assets/products/pandora-box-caballeros-dorados-capricornio.jpg",
+      "assets/products/pandora-box-caballeros-dorados-acuario.jpg",
+      "assets/products/pandora-box-caballeros-dorados-piscis.jpg",
+      "assets/products/pandora-box-caballeros-dorados-set-2.jpg"
+    ],
+    "description": "Las Pandora Box de los 12 Caballeros Dorados, de Aries a Piscis, fabricadas en PLA Silk dorado (6.5 × 5 × 5 cm cada una). Se venden sin pedestal. Llévate el set completo de 12 por S/200 o elige solo el signo (o los signos) que quieras, a S/20 cada uno. Hechas a pedido, con envíos a todo el Perú."
+  },
+  {
     "id": "casco-de-pegaso-saint-seiya",
     "name": "Casco de Pegaso V1 · Saint Seiya",
     "category": "Saint Seiya",

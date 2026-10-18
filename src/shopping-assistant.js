@@ -52,12 +52,13 @@
 
   const productPrice = (product) => {
     if (product.templePricing) return Number(product.templePricing.temple || 0);
+    if (product.signPicker) return Number(product.signPicker.unitPrice || 0);
     return Number(product.regularPrice) || 0;
   };
 
   const priceLabel = (product) => {
     const price = productPrice(product);
-    return product.templePricing ? `Desde S/${price}` : `S/${price}`;
+    return product.templePricing || product.signPicker ? `Desde S/${price}` : `S/${price}`;
   };
 
   const productImage = (product) => {
@@ -205,7 +206,7 @@
   };
 
   const resultCard = (product) => {
-    const canAdd = Boolean(window.BoomartCart && !product.templePricing);
+    const canAdd = Boolean(window.BoomartCart && !product.templePricing && !product.signPicker);
     const canOpenInline = Boolean(document.querySelector("#productModal"));
     const viewControl = canOpenInline
       ? `<button type="button" data-open="${escapeHtml(product.id)}">Ver producto</button>`

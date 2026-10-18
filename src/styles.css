@@ -6185,3 +6185,9 @@ body .pp-rating a {
     font-size: clamp(2.5rem, 12.5vw, 3.4rem);
   }
 }
+/* Pandora Box solas: elegir signos (2026-10-18) */
+.sign-chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px}
+.sign-chip{min-height:40px;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:transparent;color:inherit;font:inherit;font-weight:700;cursor:pointer}
+.sign-chip.is-selected{background:var(--red,#e5233a);border-color:var(--red,#e5233a);color:#fff}
+.sign-hint{margin:6px 0 0;font-size:.9rem;color:var(--gold,#d6ad62)}
+.sign-hint button{margin-left:6px;padding:4px 10px;border-radius:999px;border:1px solid currentColor;background:transparent;color:inherit;font:inherit;font-weight:700;cursor:pointer}
