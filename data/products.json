@@ -2067,5 +2067,33 @@
       "poster": "assets/products/videos/soporte-mando-majin-buu.jpg",
       "uploadDate": "2026-10-19"
     }
+  },
+  {
+    "id": "soporte-mando-gta-vi",
+    "name": "Soporte universal para mandos de GTA VI",
+    "category": "Soportes de Mandos",
+    "tags": [
+      "Soporte",
+      "Mando",
+      "Control",
+      "Gamer",
+      "GTA",
+      "GTA VI",
+      "GTA 6",
+      "Grand Theft Auto",
+      "Videojuegos",
+      "Accesorios"
+    ],
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 140,
+    "featured": true,
+    "image": "assets/products/soporte-mando-gta-vi.jpg",
+    "gallery": [
+      "assets/products/soporte-mando-gta-vi.jpg",
+      "assets/products/soporte-mando-gta-vi-2.jpg",
+      "assets/products/soporte-mando-gta-vi-3.jpg"
+    ],
+    "description": "Soporte de mando universal inspirado en GTA VI, con el logo de Grand Theft Auto, palmeras y placa «Wanted»: sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. No incluye el mando: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú."
   }
 ]
