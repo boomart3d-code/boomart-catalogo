@@ -6222,3 +6222,8 @@ body .pp-rating a {
 /* Aviso fijo de la ficha (p. ej. «No incluye el mando», 2026-10-18) */
 .product-notice{margin:0;padding:10px 12px;border:1px solid rgba(214,173,98,.55);border-left:4px solid var(--gold,#d6ad62);border-radius:8px;background:rgba(214,173,98,.10);color:#f1dfb8;font-weight:750;line-height:1.4}
 .product-notice[hidden]{display:none!important}
+/* Explora por colección (2026-10-18): 8 categorías, una por mosaico → 2 filas de 4 en
+   computadora y tablet (en el celular sigue el diseño propio de 720px o menos). */
+@media (min-width: 721px) {
+  .collections-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
