@@ -485,7 +485,7 @@ ${cards}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=63">
+    <link rel="stylesheet" href="src/styles.css?v=64">
     <style>
       .ai-catalog { max-width: 1040px; margin: 0 auto; padding: 32px 20px 80px; }
       .ai-catalog h1 { margin-bottom: 8px; }
@@ -807,6 +807,9 @@ const CAT_CONTEXT = {
   "Mundial de Futbol": "pieza de colección para fanáticos del fútbol",
   "Mundial de Fútbol": "pieza de colección para fanáticos del fútbol",
 };
+// Avisos fijos por categoria (igual que CATEGORY_NOTICES en src/app.js).
+const CATEGORY_NOTICES = { "Soportes de Mandos": "No incluye el mando: solo se vende el soporte." };
+const productNotice = (p) => p.notice || CATEGORY_NOTICES[p.category] || "";
 const catContext = (p) =>
   CAT_CONTEXT[p.category] || "figura de colección impresa en 3D";
 
@@ -950,6 +953,7 @@ const PRODUCT_PAGE_CSS = `
     .pp-price li{margin:3px 0}
     .pp-cta{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 6px;align-items:center}
     .pp-facts{font-size:.88rem;font-weight:600;line-height:1.45;color:var(--muted);margin:0 0 14px}
+    .pp-notice{margin:0 0 14px;padding:10px 12px;border:1px solid rgba(214,173,98,.55);border-left:4px solid #d6ad62;border-radius:8px;background:rgba(214,173,98,.10);font-weight:750;line-height:1.4}
     .pp-body{margin-top:34px;max-width:70ch;line-height:1.65}
     .pp-body h2{font-size:1.15rem;margin:22px 0 8px}
     .pp-body p{margin:0 0 12px}
@@ -1096,7 +1100,7 @@ function buildProductPage(p, all, ratingLd) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=63">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=64">
     <style>${PRODUCT_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(productLd(p))}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbLd(p))}</script>
@@ -1135,6 +1139,7 @@ function buildProductPage(p, all, ratingLd) {
             p.height ? `Tamaño: ${esc(p.height)}` : "",
             p.material ? `Material: ${esc(p.material)}` : "",
           ].filter(Boolean).join(" &middot; ")}</p>
+          ${productNotice(p) ? `<p class="pp-notice">⚠️ ${esc(productNotice(p))}</p>` : ""}
           ${ratingStr}
           ${priceBlockHtml(p)}
           <div class="pp-cta">
@@ -1560,7 +1565,7 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=63">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=64">
     <style>${CATEGORY_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(itemListLd)}</script>
     <script type="application/ld+json">${JSON.stringify(crumbLd)}</script>

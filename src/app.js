@@ -13,6 +13,10 @@ const modalImageWrap = document.querySelector("#modalImageWrap");
 const modalTitle = document.querySelector("#modalTitle");
 const modalCategory = document.querySelector("#modalCategory");
 const modalDescription = document.querySelector("#modalDescription");
+// Avisos fijos por categoría (2026-10-18): los soportes de mando NO incluyen el mando.
+// Un producto también puede traer su propio "notice" en products.json.
+const CATEGORY_NOTICES = { "Soportes de Mandos": "No incluye el mando: solo se vende el soporte." };
+const productNotice = (product) => product.notice || CATEGORY_NOTICES[product.category] || "";
 const modalDetails = document.querySelector("#modalDetails");
 const modalPricing = document.querySelector("#modalPricing");
 const thumbRow = document.querySelector("#thumbRow");
@@ -599,6 +603,17 @@ const openProduct = (productId, fromHistory = false) => {
   modalTitle.textContent = activeProduct.name;
   modalCategory.textContent = activeProduct.category;
   modalDescription.textContent = activeProduct.description;
+  let modalNotice = document.querySelector("#modalNotice");
+  if (!modalNotice) {
+    modalNotice = document.createElement("p");
+    modalNotice.id = "modalNotice";
+    modalNotice.className = "product-notice";
+    const details = document.querySelector("#modalDetails");
+    if (details) details.insertAdjacentElement("afterend", modalNotice);
+  }
+  const notice = productNotice(activeProduct);
+  modalNotice.hidden = !notice;
+  modalNotice.textContent = notice ? `⚠️ ${notice}` : "";
   modalDetails.textContent = [
     activeProduct.height ? `Tamaño: ${activeProduct.height}` : "",
     activeProduct.material ? `Material: ${activeProduct.material}` : "",

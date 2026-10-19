@@ -6219,3 +6219,6 @@ body .pp-rating a {
 }
 /* Pandora Box: con «Set completo» la lista de signos queda oculta de verdad. */
 .sign-chips[hidden], .sign-hint[hidden] { display: none !important; }
+/* Aviso fijo de la ficha (p. ej. «No incluye el mando», 2026-10-18) */
+.product-notice{margin:0;padding:10px 12px;border:1px solid rgba(214,173,98,.55);border-left:4px solid var(--gold,#d6ad62);border-radius:8px;background:rgba(214,173,98,.10);color:#f1dfb8;font-weight:750;line-height:1.4}
+.product-notice[hidden]{display:none!important}
