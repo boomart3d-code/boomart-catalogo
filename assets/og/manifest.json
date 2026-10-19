@@ -572,5 +572,12 @@
     "width": 900,
     "height": 1200,
     "bytes": 102047
+  },
+  "soporte-mando-deadpool": {
+    "source": "assets/products/soporte-mando-deadpool.jpg",
+    "hash": "30cefb0a731786a4",
+    "width": 694,
+    "height": 1200,
+    "bytes": 83607
   }
 }

@@ -1975,5 +1975,36 @@
       "poster": "assets/products/videos/soporte-mando-wolverine.jpg",
       "uploadDate": "2026-10-18"
     }
+  },
+  {
+    "id": "soporte-mando-deadpool",
+    "name": "Soporte de Mando Deadpool · Marvel",
+    "category": "Soportes de Mandos",
+    "tags": [
+      "Soporte",
+      "Mando",
+      "Control",
+      "Gamer",
+      "Deadpool",
+      "Marvel",
+      "Accesorios"
+    ],
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 140,
+    "featured": true,
+    "image": "assets/products/soporte-mando-deadpool.jpg",
+    "gallery": [
+      "assets/products/soporte-mando-deadpool.jpg",
+      "assets/products/soporte-mando-deadpool-2.jpg",
+      "assets/products/soporte-mando-deadpool-3.jpg",
+      "assets/products/soporte-mando-deadpool-4.jpg"
+    ],
+    "description": "Soporte de mando universal con el puño de Deadpool (Marvel) rodeado de balas doradas: sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
+    "video": {
+      "src": "assets/products/videos/soporte-mando-deadpool.mp4",
+      "poster": "assets/products/videos/soporte-mando-deadpool.jpg",
+      "uploadDate": "2026-10-18"
+    }
   }
 ]
