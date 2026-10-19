@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 85,
+  "count": 86,
   "products": [
     {
       "id": "templo-aries",
@@ -2387,6 +2387,39 @@
       ],
       "url": "https://boomart.pe/producto/soporte-mando-majin-buu/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Soporte%20de%20Mando%20Majin%20Buu%20%C2%B7%20Dragon%20Ball"
+    },
+    {
+      "id": "soporte-mando-gta-vi",
+      "name": "Soporte universal para mandos de GTA VI",
+      "category": "Soportes de Mandos",
+      "tags": [
+        "Soporte",
+        "Mando",
+        "Control",
+        "Gamer",
+        "GTA",
+        "GTA VI",
+        "GTA 6",
+        "Grand Theft Auto",
+        "Videojuegos",
+        "Accesorios"
+      ],
+      "description": "Soporte de mando universal inspirado en GTA VI, con el logo de Grand Theft Auto, palmeras y placa «Wanted»: sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. No incluye el mando: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 140,
+      "pricing": [
+        "Precio: S/140"
+      ],
+      "image": "https://boomart.pe/assets/products/soporte-mando-gta-vi.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/soporte-mando-gta-vi.jpg",
+        "https://boomart.pe/assets/products/soporte-mando-gta-vi-2.jpg",
+        "https://boomart.pe/assets/products/soporte-mando-gta-vi-3.jpg"
+      ],
+      "url": "https://boomart.pe/producto/soporte-mando-gta-vi/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Soporte%20universal%20para%20mandos%20de%20GTA%20VI"
     }
   ]
 }
