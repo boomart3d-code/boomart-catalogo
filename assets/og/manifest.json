@@ -314,13 +314,6 @@
     "height": 1200,
     "bytes": 119767
   },
-  "soporte-mando-wolverine": {
-    "source": "assets/products/soporte-mando-wolverine.jpg",
-    "hash": "420dd436a506b328",
-    "width": 900,
-    "height": 1200,
-    "bytes": 103883
-  },
   "mascara-de-batwoman": {
     "source": "assets/products/mascara-de-batwoman-hero-v2.png",
     "hash": "a3b01595cfc041f9",
@@ -572,5 +565,12 @@
     "width": 1200,
     "height": 1200,
     "bytes": 140547
+  },
+  "soporte-mando-wolverine": {
+    "source": "assets/products/soporte-mando-wolverine.jpg",
+    "hash": "420dd436a506b328",
+    "width": 900,
+    "height": 1200,
+    "bytes": 103883
   }
 }

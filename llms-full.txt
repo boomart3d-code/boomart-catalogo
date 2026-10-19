@@ -4,8 +4,8 @@ Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Cal
 Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion ~48 horas utiles desde
 la validacion del adelanto (50%). Pedidos por WhatsApp: https://wa.me/51925666542
 
-Total de piezas: 81
-Actualizado: 2026-10-18
+Total de piezas: 82
+Actualizado: 2026-10-19
 Fuente estructurada: https://boomart.pe/catalogo.json
 
 ---
@@ -1079,3 +1079,17 @@ El Balón de Oro, máximo galardón individual del fútbol, en réplica decorati
 - Ficha: https://boomart.pe/producto/caja-organizadora-figuritas-panini-2026/
 
 Organiza y protege tus figuritas repetidas del álbum Panini Mundial 2026 con esta caja coleccionadora impresa en 3D. Se acabó tenerlas sueltas.
+
+## Soportes de Mandos
+
+### Soporte de Mando Wolverine · Marvel
+
+- Categoria: Soportes de Mandos
+- Precio: S/140
+- Material: PLA+
+- Disponibilidad: A pedido
+- Etiquetas: Soporte, Mando, Control, Gamer, Wolverine, X-Men, Marvel, Accesorios
+- Imagen: https://boomart.pe/assets/products/soporte-mando-wolverine.jpg
+- Ficha: https://boomart.pe/producto/soporte-mando-wolverine/
+
+Soporte de mando universal con el puño de Wolverine (Marvel) y sus garras: sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.
