@@ -575,7 +575,7 @@ ${socialFooterHtml()}
       </div>
     </footer>
     <script src="src/track.js?v=5" defer></script>
-    <script src="src/shopping-assistant.js?v=7" defer></script>
+    <script src="src/shopping-assistant.js?v=8" defer></script>
   </body>
 </html>
 `;
@@ -803,6 +803,7 @@ const CAT_CONTEXT = {
   "Series y Peliculas": "figura de colección de cine y series",
   "Series y Películas": "figura de colección de cine y series",
   Macetas: "maceta decorativa impresa en 3D",
+  "Soportes de Mandos": "soporte de mando para tu setup gamer",
   "Mundial de Futbol": "pieza de colección para fanáticos del fútbol",
   "Mundial de Fútbol": "pieza de colección para fanáticos del fútbol",
 };
@@ -1289,7 +1290,7 @@ ${socialFooterHtml()}
       })();
     </script>
     <script src="${rel}src/track.js?v=5" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=7" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=8" defer></script>
   </body>
 </html>
 `;
@@ -1311,6 +1312,14 @@ async function writeProductPages(products, ratingLd) {
  * productos que enlaza a /producto/<id>/. Aditivas; la tienda (SPA) no cambia.
  */
 const CATEGORY_META = {
+  "Soportes de Mandos": {
+    h1: "Soportes de mando gamer impresos en 3D",
+    title: "Soportes de mando para PS5, Xbox y más, impresos en 3D · Perú | BoomArt",
+    intro: [
+      "Soportes de mando universales con diseños de tus personajes favoritos, como el puño de Wolverine con sus garras: sostienen tu control de PlayStation, Xbox u otras consolas y le dan estilo a tu setup gamer.",
+      "Fabricados a pedido en PLA+ para mayor resistencia, en Lima y Callao. Envíos a todo el Perú. Escríbenos por WhatsApp para consultar.",
+    ],
+  },
   "Saint Seiya": {
     h1: "Figuras de Saint Seiya impresas en 3D",
     title: "Figuras de Saint Seiya (Caballeros del Zodiaco) en 3D · Perú | BoomArt",
@@ -1614,7 +1623,7 @@ ${socialFooterHtml()}
       </span>
     </a>
     <script src="${rel}src/track.js?v=5" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=7" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=8" defer></script>
   </body>
 </html>
 `;

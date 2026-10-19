@@ -18,6 +18,7 @@
     "Series y Películas",
     "Mundial de Fútbol",
     "Macetas",
+    "Soportes de Mandos",
   ];
 
   const state = {

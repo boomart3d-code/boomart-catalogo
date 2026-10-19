@@ -1943,5 +1943,34 @@
       "assets/products/maceta-palmera.jpg"
     ],
     "description": "Maceta minimalista negra con textura de hojas de palmera: elegante y moderna, ideal para complementar una decoración tropical o contemporánea."
+  },
+  {
+    "id": "soporte-mando-wolverine",
+    "name": "Soporte de Mando Wolverine · Marvel",
+    "category": "Soportes de Mandos",
+    "tags": [
+      "Soporte",
+      "Mando",
+      "Control",
+      "Gamer",
+      "Wolverine",
+      "X-Men",
+      "Marvel",
+      "Accesorios"
+    ],
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 140,
+    "featured": true,
+    "image": "assets/products/soporte-mando-wolverine.jpg",
+    "gallery": [
+      "assets/products/soporte-mando-wolverine.jpg"
+    ],
+    "description": "Soporte de mando universal con el puño de Wolverine (Marvel) y sus garras: sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
+    "video": {
+      "src": "assets/products/videos/soporte-mando-wolverine.mp4",
+      "poster": "assets/products/videos/soporte-mando-wolverine.jpg",
+      "uploadDate": "2026-10-18"
+    }
   }
 ]
