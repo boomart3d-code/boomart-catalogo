@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 82,
+  "count": 83,
   "products": [
     {
       "id": "templo-aries",
@@ -2289,6 +2289,37 @@
       ],
       "url": "https://boomart.pe/producto/soporte-mando-wolverine/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Soporte%20de%20Mando%20Wolverine%20%C2%B7%20Marvel"
+    },
+    {
+      "id": "soporte-mando-deadpool",
+      "name": "Soporte de Mando Deadpool · Marvel",
+      "category": "Soportes de Mandos",
+      "tags": [
+        "Soporte",
+        "Mando",
+        "Control",
+        "Gamer",
+        "Deadpool",
+        "Marvel",
+        "Accesorios"
+      ],
+      "description": "Soporte de mando universal con el puño de Deadpool (Marvel) rodeado de balas doradas: sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 140,
+      "pricing": [
+        "Precio: S/140"
+      ],
+      "image": "https://boomart.pe/assets/products/soporte-mando-deadpool.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/soporte-mando-deadpool.jpg",
+        "https://boomart.pe/assets/products/soporte-mando-deadpool-2.jpg",
+        "https://boomart.pe/assets/products/soporte-mando-deadpool-3.jpg",
+        "https://boomart.pe/assets/products/soporte-mando-deadpool-4.jpg"
+      ],
+      "url": "https://boomart.pe/producto/soporte-mando-deadpool/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Soporte%20de%20Mando%20Deadpool%20%C2%B7%20Marvel"
     }
   ]
 }
