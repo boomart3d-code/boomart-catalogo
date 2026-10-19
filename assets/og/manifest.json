@@ -586,5 +586,12 @@
     "width": 1200,
     "height": 1200,
     "bytes": 135556
+  },
+  "soporte-mando-majin-buu": {
+    "source": "assets/products/soporte-mando-majin-buu.jpg",
+    "hash": "707a1727853905d4",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 128065
   }
 }

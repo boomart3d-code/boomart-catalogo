@@ -2039,5 +2039,39 @@
       "poster": "assets/products/videos/soporte-mando-picoro.jpg",
       "uploadDate": "2026-10-18"
     }
+  },
+  {
+    "id": "soporte-mando-majin-buu",
+    "name": "Soporte de Mando Majin Buu · Dragon Ball",
+    "category": "Soportes de Mandos",
+    "tags": [
+      "Soporte",
+      "Mando",
+      "Control",
+      "Gamer",
+      "Majin Buu",
+      "Buu",
+      "Dragon Ball",
+      "Anime",
+      "Accesorios"
+    ],
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 100,
+    "featured": true,
+    "image": "assets/products/soporte-mando-majin-buu.jpg",
+    "gallery": [
+      "assets/products/soporte-mando-majin-buu.jpg",
+      "assets/products/soporte-mando-majin-buu-2.jpg",
+      "assets/products/soporte-mando-majin-buu-3.jpg",
+      "assets/products/soporte-mando-majin-buu-4.jpg",
+      "assets/products/soporte-mando-majin-buu-5.jpg"
+    ],
+    "description": "Soporte de mando universal con la mano de Majin Buu (Dragon Ball) y el sello de Majin: sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. No incluye el mando: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
+    "video": {
+      "src": "assets/products/videos/soporte-mando-majin-buu.mp4",
+      "poster": "assets/products/videos/soporte-mando-majin-buu.jpg",
+      "uploadDate": "2026-10-19"
+    }
   }
 ]
