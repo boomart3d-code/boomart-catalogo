@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 83,
+  "count": 84,
   "products": [
     {
       "id": "templo-aries",
@@ -2320,6 +2320,39 @@
       ],
       "url": "https://boomart.pe/producto/soporte-mando-deadpool/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Soporte%20de%20Mando%20Deadpool%20%C2%B7%20Marvel"
+    },
+    {
+      "id": "soporte-mando-picoro",
+      "name": "Soporte de Mando Picoro · Dragon Ball",
+      "category": "Soportes de Mandos",
+      "tags": [
+        "Soporte",
+        "Mando",
+        "Control",
+        "Gamer",
+        "Picoro",
+        "Piccolo",
+        "Dragon Ball",
+        "Anime",
+        "Accesorios"
+      ],
+      "description": "Soporte de mando universal con la mano de Picoro (Dragon Ball): sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. No incluye el mando: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Precio: S/100"
+      ],
+      "image": "https://boomart.pe/assets/products/soporte-mando-picoro.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/soporte-mando-picoro.jpg",
+        "https://boomart.pe/assets/products/soporte-mando-picoro-2.jpg",
+        "https://boomart.pe/assets/products/soporte-mando-picoro-3.jpg",
+        "https://boomart.pe/assets/products/soporte-mando-picoro-4.jpg"
+      ],
+      "url": "https://boomart.pe/producto/soporte-mando-picoro/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Soporte%20de%20Mando%20Picoro%20%C2%B7%20Dragon%20Ball"
     }
   ]
 }
