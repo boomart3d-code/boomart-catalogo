@@ -15,10 +15,10 @@
     "Saint Seiya",
     "🎃 Halloween",
     "Marvel & DC",
-    "Series y Películas",
     "Mundial de Fútbol",
     "Macetas",
     "Soportes de Mandos",
+    "Figuras Coleccionables",
   ];
 
   const state = {

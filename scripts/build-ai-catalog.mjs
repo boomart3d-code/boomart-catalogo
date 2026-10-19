@@ -485,7 +485,7 @@ ${cards}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=67">
+    <link rel="stylesheet" href="src/styles.css?v=68">
     <style>
       .ai-catalog { max-width: 1040px; margin: 0 auto; padding: 32px 20px 80px; }
       .ai-catalog h1 { margin-bottom: 8px; }
@@ -575,7 +575,7 @@ ${socialFooterHtml()}
       </div>
     </footer>
     <script src="src/track.js?v=5" defer></script>
-    <script src="src/shopping-assistant.js?v=8" defer></script>
+    <script src="src/shopping-assistant.js?v=9" defer></script>
   </body>
 </html>
 `;
@@ -804,12 +804,16 @@ const CAT_CONTEXT = {
   "Series y Películas": "figura de colección de cine y series",
   Macetas: "maceta decorativa impresa en 3D",
   "Soportes de Mandos": "soporte de mando para tu setup gamer",
+  "Figuras Coleccionables": "figura coleccionable decorativa impresa en 3D",
   "Mundial de Futbol": "pieza de colección para fanáticos del fútbol",
   "Mundial de Fútbol": "pieza de colección para fanáticos del fútbol",
 };
 // Avisos fijos por categoria (igual que CATEGORY_NOTICES en src/app.js).
 const CATEGORY_NOTICES = { "Soportes de Mandos": "No incluye el mando: solo se vende el soporte." };
 const productNotice = (p) => p.notice || CATEGORY_NOTICES[p.category] || "";
+// Nombre visible de una categoria (igual que CATEGORY_LABELS en src/app.js).
+const CATEGORY_LABELS = { "🎃 Halloween": "🎃 Halloween y Cosplay" };
+const categoryLabel = (c) => CATEGORY_LABELS[c] || c;
 const catContext = (p) =>
   CAT_CONTEXT[p.category] || "figura de colección impresa en 3D";
 
@@ -820,7 +824,7 @@ const stripEmoji = (s) =>
     .trim();
 
 function pageTitle(p) {
-  const cat = stripEmoji(p.category);
+  const cat = stripEmoji(categoryLabel(p.category));
   const hasCat = p.name.toLowerCase().includes(cat.toLowerCase());
   const tail = hasCat ? "impresión 3D en Perú" : `${cat} · impresión 3D`;
   return `${p.name} · ${tail} | BoomArt`;
@@ -891,7 +895,7 @@ function productLd(p) {
     description: String(p.description || p.name).replace(/\s+/g, " ").trim(),
     image: imgs,
     sku: p.id,
-    category: stripEmoji(p.category),
+    category: stripEmoji(categoryLabel(p.category)),
     brand: { "@type": "Brand", name: "BoomArt" },
     offers: offerLd(p),
   };
@@ -920,7 +924,7 @@ function breadcrumbLd(p) {
       {
         "@type": "ListItem",
         position: 2,
-        name: stripEmoji(p.category),
+        name: stripEmoji(categoryLabel(p.category)),
         item: `${SITE}/categoria/${slug(p.category)}/`,
       },
       { "@type": "ListItem", position: 3, name: p.name, item: `${SITE}/producto/${p.id}/` },
@@ -1025,7 +1029,7 @@ function buildProductPage(p, all, ratingLd) {
   const price = priceInfo(p);
   const wa = waLink(p.name);
   const shop = `${rel}index.html?producto=${encodeURIComponent(p.id)}`;
-  const catClean = stripEmoji(p.category);
+  const catClean = stripEmoji(categoryLabel(p.category));
   const ctx = catContext(p);
 
   const mainImgRel = `${rel}${String(imgs[0]).replace(/^\/+/, "")}`;
@@ -1100,7 +1104,7 @@ function buildProductPage(p, all, ratingLd) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=67">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=68">
     <style>${PRODUCT_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(productLd(p))}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbLd(p))}</script>
@@ -1295,7 +1299,7 @@ ${socialFooterHtml()}
       })();
     </script>
     <script src="${rel}src/track.js?v=5" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=8" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=9" defer></script>
   </body>
 </html>
 `;
@@ -1317,6 +1321,14 @@ async function writeProductPages(products, ratingLd) {
  * productos que enlaza a /producto/<id>/. Aditivas; la tienda (SPA) no cambia.
  */
 const CATEGORY_META = {
+  "Figuras Coleccionables": {
+    h1: "Figuras coleccionables impresas en 3D",
+    title: "Figuras coleccionables y decorativas impresas en 3D · Perú | BoomArt",
+    intro: [
+      "Figuras coleccionables y decorativas con personajes de cine, series y videojuegos: el Pato Lucas Kratos (God of War), Mario Billy de Saw y ZKULL Urban, para tu escritorio, repisa o colección.",
+      "Hechas a pedido en Lima y Callao, con envíos a todo el Perú. Escríbenos por WhatsApp para consultar.",
+    ],
+  },
   "Soportes de Mandos": {
     h1: "Soportes de mando gamer impresos en 3D",
     title: "Soportes de mando para PS5, Xbox y más, impresos en 3D · Perú | BoomArt",
@@ -1352,8 +1364,8 @@ const CATEGORY_META = {
     ],
   },
   "🎃 Halloween": {
-    h1: "Figuras y máscaras de Halloween en 3D",
-    title: "Máscaras y decoración de Halloween impresas en 3D · Perú | BoomArt",
+    h1: "Halloween y Cosplay: máscaras, cascos y disfraces en 3D",
+    title: "Halloween y Cosplay: máscaras y cascos para disfraz en 3D · Perú | BoomArt",
     intro: [
       "Colección de temporada de Halloween: máscaras, calaveras y piezas de terror para decorar tu casa o regalar. Incluye la máscara Calabaza Calavera, el candelabro calavera, Evil Mask, la máscara de Krampus, Mario Billy (Saw) y más.",
       "Todas impresas en 3D y pintadas a mano, hechas a pedido. La disponibilidad depende de la temporada: consulta por WhatsApp con tiempo antes de tu evento.",
@@ -1465,7 +1477,7 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
   const rel = options.rel || "../../";
   const s = categorySlug(cat);
   const url = options.url || `${SITE}/categoria/${s}/`;
-  const clean = options.clean || stripEmoji(cat);
+  const clean = options.clean || stripEmoji(categoryLabel(cat));
   const wa = `${WHATSAPP}?text=${encodeURIComponent(`Hola BoomArt, quiero consultar por el catálogo de ${clean}`)}`;
   // Sin imagen propia, la categoría usa la miniatura liviana (assets/og/) de su
   // primer producto: las fotos principales pueden ser PNG de más de 1 MB que
@@ -1528,7 +1540,7 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
     ],
   };
   const catNav = Object.keys(CATEGORY_META)
-    .map((c) => `<li><a href="${rel}categoria/${categorySlug(c)}/">${esc(stripEmoji(c))}</a></li>`)
+    .map((c) => `<li><a href="${rel}categoria/${categorySlug(c)}/">${esc(stripEmoji(categoryLabel(c)))}</a></li>`)
     .join("\n          ");
 
   return `<!doctype html>
@@ -1565,7 +1577,7 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rel}src/styles.css?v=67">
+    <link rel="stylesheet" href="${rel}src/styles.css?v=68">
     <style>${CATEGORY_PAGE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify(itemListLd)}</script>
     <script type="application/ld+json">${JSON.stringify(crumbLd)}</script>
@@ -1628,7 +1640,7 @@ ${socialFooterHtml()}
       </span>
     </a>
     <script src="${rel}src/track.js?v=5" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=8" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=9" defer></script>
   </body>
 </html>
 `;

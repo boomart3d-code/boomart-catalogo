@@ -436,6 +436,22 @@ const productCard = (product) => `
 // temporada, cambia la categoría de esos productos en el panel.
 const SEASON_LABEL = "🎃 Halloween";
 
+// Catálogo por secciones (pedido de Adrián, 2026-10-19): en «Todos» los productos se
+// muestran agrupados por categoría con su título, en este orden; una categoría nueva
+// se agrega sola al final. CATEGORY_LABELS cambia solo el nombre que se ve (el valor
+// interno y los enlaces /categoria/<slug>/ no cambian).
+const CATEGORY_ORDER = [
+  "Saint Seiya", "Harry Potter", "Marvel & DC", "🎃 Halloween", "Mundial de Fútbol",
+  "Macetas", "Soportes de Mandos", "Figuras Coleccionables",
+];
+const CATEGORY_LABELS = { "🎃 Halloween": "🎃 Halloween y Cosplay" };
+const categoryLabel = (category) => CATEGORY_LABELS[category] || category;
+const orderedCategories = (cats) => [...cats].sort((a, b) => {
+  const ia = CATEGORY_ORDER.indexOf(a);
+  const ib = CATEGORY_ORDER.indexOf(b);
+  return (ia < 0 ? 999 : ia) - (ib < 0 ? 999 : ib);
+});
+
 // El filtro Halloween del catalogo principal es una coleccion transversal:
 // incluye tambien productos cuya categoria principal es Marvel, Saint Seiya o
 // Series y Peliculas. El orden prioriza disfraces/cosplay, luego cascos y
@@ -476,10 +492,8 @@ const HALLOWEEN_CAMPAIGN_ORDER = new Map(
 // (sin categoría activa) y se vuelve a él tocando "Limpiar filtros" o volviendo
 // a tocar la categoría ya activa.
 const catalogCategories = () => {
-  const cats = [...new Set(products.map((product) => product.category))];
-  const i = cats.indexOf(SEASON_LABEL);
-  if (i > 0) cats.unshift(...cats.splice(i, 1));
-  return cats;
+  // Mismo orden que las secciones del catálogo (CATEGORY_ORDER).
+  return orderedCategories([...new Set(products.map((product) => product.category))]);
 };
 
 const renderFilters = () => {
@@ -489,7 +503,7 @@ const renderFilters = () => {
   const assistantChip = `<button class="assistant-chip" type="button" id="filterAssistant">Te ayudo a elegir</button>`;
   const allChip = `<button class="${activeFilter === "Todos" && !activeCollection ? "active" : ""}" type="button" data-filter="Todos">Todos</button>`;
   filterRow.innerHTML = assistantChip + allChip + catalogCategories()
-    .map((category) => `<button class="${category === activeFilter ? "active" : ""}" type="button" data-filter="${category}">${category}</button>`)
+    .map((category) => `<button class="${category === activeFilter ? "active" : ""}" type="button" data-filter="${category}">${categoryLabel(category)}</button>`)
     .join("");
 };
 
@@ -498,7 +512,7 @@ const quickCategoriesList = document.querySelector("#quickCategoriesList");
 
 const renderQuickCategories = () => {
   quickCategoriesList.innerHTML = catalogCategories()
-    .map((category) => `<button class="${category === activeFilter ? "active" : ""}" type="button" data-filter="${category}">${category}</button>`)
+    .map((category) => `<button class="${category === activeFilter ? "active" : ""}" type="button" data-filter="${category}">${categoryLabel(category)}</button>`)
     .join("");
 };
 
@@ -527,14 +541,29 @@ const renderProducts = () => {
   const grouped = activeFilter === "Todos" && !activeCollection && !searchInput.value.trim();
   if (grouped) {
     const shown = new Set();
-    productGrid.innerHTML = visible
-      .map((product) => {
-        const collection = COLLECTIONS.find((candidate) => candidate.ids.includes(product.id));
-        const items = collection ? collectionItems(collection) : [];
-        if (!collection || items.length < 3) return productCard(product);
-        if (shown.has(collection.key)) return "";
-        shown.add(collection.key);
-        return collectionCard(collection, items);
+    const cardFor = (product) => {
+      const collection = COLLECTIONS.find((candidate) => candidate.ids.includes(product.id));
+      const items = collection ? collectionItems(collection) : [];
+      if (!collection || items.length < 3) return productCard(product);
+      if (shown.has(collection.key)) return "";
+      shown.add(collection.key);
+      return collectionCard(collection, items);
+    };
+    // Una sección por categoría: título + sus productos (cosplay primero en Halloween).
+    productGrid.innerHTML = orderedCategories([...new Set(visible.map((product) => product.category))])
+      .map((category) => {
+        const items = visible.filter((product) => product.category === category);
+        if (category === SEASON_LABEL) {
+          const rank = (product) => (HALLOWEEN_CAMPAIGN_ORDER.has(product.id) ? HALLOWEEN_CAMPAIGN_ORDER.get(product.id) : 999);
+          items.sort((a, b) => rank(a) - rank(b));
+        }
+        return `
+          <div class="catalog-group-head">
+            <h3>${categoryLabel(category)}</h3>
+            <span>${items.length} producto${items.length === 1 ? "" : "s"}</span>
+            <button type="button" class="catalog-group-link" data-filter="${category}">Ver solo esta categoría →</button>
+          </div>
+          ${items.map(cardFor).join("")}`;
       })
       .join("");
   } else {
@@ -601,7 +630,7 @@ const openProduct = (productId, fromHistory = false) => {
 
   activeImageIndex = 0;
   modalTitle.textContent = activeProduct.name;
-  modalCategory.textContent = activeProduct.category;
+  modalCategory.textContent = categoryLabel(activeProduct.category);
   modalDescription.textContent = activeProduct.description;
   let modalNotice = document.querySelector("#modalNotice");
   if (!modalNotice) {

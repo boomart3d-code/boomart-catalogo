@@ -1169,7 +1169,7 @@
   {
     "id": "mario-billy-saw",
     "name": "Mario Billy 🎃 · Saw (El Juego del Miedo)",
-    "category": "🎃 Halloween",
+    "category": "Figuras Coleccionables",
     "tags": [
       "Mario",
       "Saw",
@@ -1260,7 +1260,7 @@
   {
     "id": "zkull-urban",
     "name": "ZKULL Urban 💀 · Halloween",
-    "category": "🎃 Halloween",
+    "category": "Figuras Coleccionables",
     "tags": [
       "Skull",
       "Streetwear",
@@ -1486,9 +1486,6 @@
     "id": "casco-de-stormtrooper",
     "name": "Casco de Stormtrooper 🎃 · Halloween",
     "category": "🎃 Halloween",
-    "extraCategories": [
-      "Series y Películas"
-    ],
     "tags": [
       "Cascos",
       "Stormtrooper",
@@ -1516,9 +1513,6 @@
     "id": "casco-del-mandaloriano",
     "name": "Casco del Mandaloriano 🎃 · Halloween",
     "category": "🎃 Halloween",
-    "extraCategories": [
-      "Series y Películas"
-    ],
     "tags": [
       "Cascos",
       "Mandaloriano",
@@ -1658,7 +1652,7 @@
   {
     "id": "mascara-el-juego-del-calamar",
     "name": "Máscara de El Juego del Calamar",
-    "category": "Series y Películas",
+    "category": "🎃 Halloween",
     "tags": [
       "Mascaras",
       "Series"
@@ -1678,7 +1672,7 @@
   {
     "id": "casco-de-agamenon-la-odisea",
     "name": "Casco de Agamenón · La Odisea",
-    "category": "Series y Películas",
+    "category": "🎃 Halloween",
     "tags": [
       "Cascos",
       "Cine"
@@ -1702,7 +1696,7 @@
   {
     "id": "pato-lucas-kratos-god-of-war",
     "name": "Pato Lucas Kratos · God of War",
-    "category": "Series y Películas",
+    "category": "Figuras Coleccionables",
     "tags": [
       "God of War",
       "Videojuegos"

@@ -6278,3 +6278,40 @@ body .pp-rating a {
    traen el producto normalizado (misma superficie y misma línea de apoyo) en un lienzo 4:5,
    así que aquí van sin relleno extra. */
 .collections-carousel .collection-tile img { padding: 0; aspect-ratio: 4 / 5; object-fit: contain; object-position: center; }
+/* Catálogo por secciones (2026-10-19): título de cada categoría a lo ancho de la grilla. */
+.catalog-group-head {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+  margin: 26px 0 2px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--ink, #111);
+}
+.catalog-group-head:first-child { margin-top: 0; }
+.catalog-group-head h3 {
+  margin: 0;
+  font-family: var(--display-font, inherit);
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.catalog-group-head span { color: var(--muted, #6b6b6b); font-weight: 700; font-size: 0.9rem; }
+.catalog-group-link {
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--red-dark, #b5172b);
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.catalog-group-link:hover { text-decoration: underline; }
+@media (max-width: 720px) {
+  .catalog-group-head { margin-top: 18px; }
+  .catalog-group-link { margin-left: 0; flex-basis: 100%; text-align: left; }
+}
