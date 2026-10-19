@@ -44,7 +44,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css?v=65">
+    <link rel="stylesheet" href="src/styles.css?v=66">
 
     <script type="application/ld+json">
     {
@@ -294,6 +294,9 @@
           <h2 id="collectionsTitle">Explora por colección</h2>
           <a class="collections-all" href="#catalogo">Ver todo el catálogo →</a>
         </div>
+        <div class="collections-carousel" data-carousel>
+          <button type="button" class="carousel-btn carousel-prev" data-carousel-prev aria-label="Ver categorías anteriores">‹</button>
+          <div class="collections-viewport">
         <div class="collections-grid">
           <button type="button" class="collection-tile" data-filter="Saint Seiya" data-scroll>
             <img src="assets/hero/templo-aries.webp" alt="" width="1000" height="628" loading="lazy" decoding="async">
@@ -327,6 +330,9 @@
             <img src="assets/hero/soporte-mando-picoro.webp" alt="" width="592" height="1000" loading="lazy" decoding="async">
             <span>Soportes de Mandos</span>
           </button>
+        </div>
+          </div>
+          <button type="button" class="carousel-btn carousel-next" data-carousel-next aria-label="Ver más categorías">›</button>
         </div>
       </section>
 
@@ -752,6 +758,7 @@
     <script src="src/cart.js?v=10"></script>
     <script src="src/products.js?v=5"></script>
     <script src="src/app.js?v=50"></script>
+    <script src="src/collections-carousel.js?v=1" defer></script>
     <script src="src/checkout.js?v=30"></script>
     <script src="src/products-loader.js?v=5"></script>
     <script src="src/reviews.js?v=6"></script>

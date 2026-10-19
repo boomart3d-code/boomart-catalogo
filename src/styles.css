@@ -6222,8 +6222,55 @@ body .pp-rating a {
 /* Aviso fijo de la ficha (p. ej. «No incluye el mando», 2026-10-18) */
 .product-notice{margin:0;padding:10px 12px;border:1px solid rgba(214,173,98,.55);border-left:4px solid var(--gold,#d6ad62);border-radius:8px;background:rgba(214,173,98,.10);color:#f1dfb8;font-weight:750;line-height:1.4}
 .product-notice[hidden]{display:none!important}
-/* Explora por colección (2026-10-18): 8 categorías, una por mosaico → 2 filas de 4 en
-   computadora y tablet (en el celular sigue el diseño propio de 720px o menos). */
-@media (min-width: 721px) {
-  .collections-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+/* Explora por colección como CARRUSEL (2026-10-18, src/collections-carousel.js):
+   mosaicos chicos para dar un vistazo (6 visibles en PC, 4 en tablet, ~2,4 en el
+   celular), avanza solo cada 1,5 s, se detiene con el mouse encima y tiene botones ‹ ›.
+   En el celular la sección vuelve a mostrarse (antes estaba oculta). */
+.collections-carousel { position: relative; margin-top: 24px; }
+.collections-viewport { overflow: hidden; }
+.collections-carousel .collections-grid {
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  will-change: transform;
+}
+.collections-carousel .collection-tile { flex: 0 0 calc((100% - 5 * 12px) / 6); min-width: 0; }
+.collections-carousel .collection-tile > span,
+.collections-carousel .collection-tile > strong { font-size: 1rem; padding: 10px 12px 12px; }
+.carousel-btn {
+  position: absolute;
+  top: 42%;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0 0 4px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  background: rgba(10, 10, 10, 0.82);
+  color: #fff;
+  font-size: 1.9rem;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+.carousel-btn:hover { background: var(--red); border-color: var(--red); }
+.carousel-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.carousel-prev { left: -16px; }
+.carousel-next { right: -16px; }
+@media (max-width: 1100px) {
+  .collections-carousel .collection-tile { flex-basis: calc((100% - 3 * 12px) / 4); }
+}
+@media (max-width: 720px) {
+  .collections { display: block; }
+  .collections-carousel { margin-top: 14px; }
+  .collections-carousel .collections-grid { gap: 10px; }
+  .collections-carousel .collection-tile { flex-basis: calc((100% - 2 * 10px) / 2.4); }
+  .collections-carousel .collection-tile > span,
+  .collections-carousel .collection-tile > strong { font-size: 0.86rem; padding: 8px 10px 10px; }
+  .carousel-btn { width: 36px; height: 36px; font-size: 1.5rem; }
+  .carousel-prev { left: 4px; }
+  .carousel-next { right: 4px; }
 }
