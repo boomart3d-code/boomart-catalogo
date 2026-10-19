@@ -6274,3 +6274,7 @@ body .pp-rating a {
   .carousel-prev { left: 4px; }
   .carousel-next { right: 4px; }
 }
+/* Mosaicos con tamaño visual parejo (2026-10-18): las imágenes assets/hero/tile-*.webp ya
+   traen el producto normalizado (misma superficie y misma línea de apoyo) en un lienzo 4:5,
+   así que aquí van sin relleno extra. */
+.collections-carousel .collection-tile img { padding: 0; aspect-ratio: 4 / 5; object-fit: contain; object-position: center; }
