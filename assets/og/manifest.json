@@ -579,5 +579,12 @@
     "width": 694,
     "height": 1200,
     "bytes": 82240
+  },
+  "soporte-mando-picoro": {
+    "source": "assets/products/soporte-mando-picoro.jpg",
+    "hash": "cc1b7e6744186e18",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 138103
   }
 }
