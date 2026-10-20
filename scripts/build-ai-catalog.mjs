@@ -1321,14 +1321,6 @@ async function writeProductPages(products, ratingLd) {
  * productos que enlaza a /producto/<id>/. Aditivas; la tienda (SPA) no cambia.
  */
 const CATEGORY_META = {
-  "Máscaras": {
-    h1: "Máscaras para cosplay y disfraces impresas en 3D",
-    title: "Máscaras para cosplay y disfraces en 3D · Perú | BoomArt",
-    intro: [
-      "Máscaras a tamaño real inspiradas en personajes del cine, series, videojuegos y cómics, impresas en 3D y pintadas a mano para cosplay, disfraces, sesiones de fotos o exhibición.",
-      "Fabricadas a pedido en PLA+ en Lima y Callao, con envíos a todo el Perú. Consulta por WhatsApp las medidas, acabados y tiempos de entrega.",
-    ],
-  },
   "Figuras Coleccionables": {
     h1: "Figuras coleccionables impresas en 3D",
     title: "Figuras coleccionables y decorativas impresas en 3D · Perú | BoomArt",
