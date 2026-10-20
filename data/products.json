@@ -2095,5 +2095,35 @@
       "assets/products/soporte-mando-gta-vi-3.jpg"
     ],
     "description": "Soporte de mando universal inspirado en GTA VI, con el logo de Grand Theft Auto, palmeras y placa «Wanted»: sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. No incluye el mando: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú."
+  },
+  {
+    "id": "soporte-mando-the-last-of-us",
+    "name": "Soporte de Mando y Audífonos · The Last of Us",
+    "category": "Soportes de Mandos",
+    "tags": [
+      "Soporte",
+      "Mando",
+      "Control",
+      "Audífonos",
+      "Auriculares",
+      "Gamer",
+      "The Last of Us",
+      "Luciérnagas",
+      "Videojuegos",
+      "Accesorios"
+    ],
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 50,
+    "featured": true,
+    "image": "assets/products/soporte-mando-the-last-of-us.jpg",
+    "gallery": [
+      "assets/products/soporte-mando-the-last-of-us.jpg",
+      "assets/products/soporte-mando-the-last-of-us-2.jpg",
+      "assets/products/soporte-mando-the-last-of-us-3.jpg",
+      "assets/products/soporte-mando-the-last-of-us-4.jpg"
+    ],
+    "notice": "No incluye el mando ni los audífonos: solo se vende el soporte.",
+    "description": "Soporte para mando y audífonos inspirado en The Last of Us, con el símbolo de las Luciérnagas y el arco con helecho grabado: sostiene tu control de PlayStation, Xbox u otras consolas y tus audífonos en una sola pieza para tu setup gamer. No incluye el mando ni los audífonos: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú."
   }
 ]

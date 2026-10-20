@@ -596,9 +596,16 @@
   },
   "soporte-mando-gta-vi": {
     "source": "assets/products/soporte-mando-gta-vi.jpg",
-    "hash": "1f1b26c8e73e4783",
+    "hash": "f69e79aea942bef3",
     "width": 900,
     "height": 1200,
-    "bytes": 92639
+    "bytes": 93124
+  },
+  "soporte-mando-the-last-of-us": {
+    "source": "assets/products/soporte-mando-the-last-of-us.jpg",
+    "hash": "f962286c7d694cb2",
+    "width": 739,
+    "height": 964,
+    "bytes": 53669
   }
 }
