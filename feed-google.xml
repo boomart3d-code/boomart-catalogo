@@ -3,7 +3,7 @@
   <channel>
     <title>BoomArt - Catalogo de productos</title>
     <link>https://boomart.pe/</link>
-    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-10-19.</description>
+    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-10-20.</description>
     <item>
       <g:id>templo-aries</g:id>
       <g:title>Templo de Aries</g:title>
@@ -1423,6 +1423,23 @@
       <g:additional_image_link>https://boomart.pe/assets/products/soporte-mando-gta-vi-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>140.00 PEN</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>BoomArt</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
+      <g:product_type>Soportes de Mandos</g:product_type>
+    </item>
+    <item>
+      <g:id>soporte-mando-the-last-of-us</g:id>
+      <g:title>Soporte de Mando y Audífonos · The Last of Us</g:title>
+      <g:description>Soporte para mando y audífonos inspirado en The Last of Us, con el símbolo de las Luciérnagas y el arco con helecho grabado: sostiene tu control de PlayStation, Xbox u otras consolas y tus audífonos en una sola pieza para tu setup gamer. No incluye el mando ni los audífonos: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú. Fabricado a pedido en impresion 3D (PLA+), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
+      <g:link>https://boomart.pe/producto/soporte-mando-the-last-of-us/</g:link>
+      <g:image_link>https://boomart.pe/assets/products/soporte-mando-the-last-of-us.jpg</g:image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/soporte-mando-the-last-of-us-2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/soporte-mando-the-last-of-us-3.jpg</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/soporte-mando-the-last-of-us-4.jpg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>50.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>

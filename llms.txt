@@ -4,7 +4,7 @@
 
 ## Catalogo
 
-- [Catalogo completo (HTML, texto plano)](https://boomart.pe/catalogo.html): las 86 piezas con descripcion, material y precios.
+- [Catalogo completo (HTML, texto plano)](https://boomart.pe/catalogo.html): las 87 piezas con descripcion, material y precios.
 - [Catalogo en Markdown](https://boomart.pe/llms-full.txt): mismo contenido en un solo archivo de texto.
 - [Feed JSON](https://boomart.pe/catalogo.json): datos estructurados (precios, imagenes, categorias).
 - [Feed Google/Pinterest (XML)](https://boomart.pe/feed-google.xml): formato Google Merchant Center.
@@ -31,7 +31,7 @@
 - Figuras Coleccionables: 3 piezas
 - Macetas: 8 piezas
 - Mundial de Fútbol: 4 piezas
-- Soportes de Mandos: 5 piezas
+- Soportes de Mandos: 6 piezas
 
 ## Opiniones de clientes
 
@@ -52,4 +52,4 @@
 - Facebook: https://www.facebook.com/boom.art.873521/
 - TikTok: https://www.tiktok.com/@boomart.3d
 - Ubicacion: Bellavista, Callao, Peru
-- Actualizado: 2026-10-19
+- Actualizado: 2026-10-20
