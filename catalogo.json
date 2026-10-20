@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 88,
+  "count": 89,
   "products": [
     {
       "id": "templo-aries",
@@ -2487,6 +2487,38 @@
       ],
       "url": "https://boomart.pe/producto/mando-the-last-of-us-muro/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Mando%20The%20Last%20Of%20Us%20Muro"
+    },
+    {
+      "id": "mascara-de-john-wick",
+      "name": "Máscara de John Wick",
+      "category": "Máscaras",
+      "tags": [
+        "Máscaras",
+        "John Wick",
+        "Cine",
+        "Películas",
+        "Cosplay",
+        "Disfraces",
+        "Tamaño real"
+      ],
+      "description": "Máscara de John Wick a tamaño real 1:1, inspirada en el legendario personaje del cine. Presenta cabello, cejas y barba pintados a mano, con aberturas funcionales para los ojos. Ideal para cosplay, disfraces, sesiones de fotos o exhibición. No incluye armas ni base: solo se vende la máscara. Fabricada en PLA+ para mayor resistencia y durabilidad. Hecha a pedido, con envíos a todo el Perú.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 180,
+      "pricing": [
+        "Precio: S/180"
+      ],
+      "image": "https://boomart.pe/assets/products/mascara-de-john-wick-hero-v2.png",
+      "gallery": [
+        "https://boomart.pe/assets/products/mascara-de-john-wick-hero-v2.png",
+        "https://boomart.pe/assets/products/mascara-de-john-wick-2.jpg",
+        "https://boomart.pe/assets/products/mascara-de-john-wick-3.jpg",
+        "https://boomart.pe/assets/products/mascara-de-john-wick-4.jpg",
+        "https://boomart.pe/assets/products/mascara-de-john-wick-5.jpg"
+      ],
+      "url": "https://boomart.pe/producto/mascara-de-john-wick/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20de%20John%20Wick"
     }
   ]
 }

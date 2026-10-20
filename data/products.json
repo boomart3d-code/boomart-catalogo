@@ -2154,5 +2154,35 @@
     ],
     "notice": "No incluye el mando: solo se vende el soporte.",
     "description": "Soporte de mando inspirado en The Last of Us, con un muro en ruinas, el emblema de las Luciérnagas y una escena de supervivencia al atardecer. Sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. No incluye el mando: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú."
+  },
+  {
+    "id": "mascara-de-john-wick",
+    "name": "Máscara de John Wick",
+    "category": "Máscaras",
+    "tags": [
+      "Máscaras",
+      "John Wick",
+      "Cine",
+      "Películas",
+      "Cosplay",
+      "Disfraces",
+      "Tamaño real"
+    ],
+    "height": "Tamaño real 1:1",
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 180,
+    "featured": true,
+    "image": "assets/products/mascara-de-john-wick-hero-v2.png",
+    "gallery": [
+      "assets/products/mascara-de-john-wick-hero-v2.png",
+      "assets/products/mascara-de-john-wick-2.jpg",
+      "assets/products/mascara-de-john-wick-3.jpg",
+      "assets/products/mascara-de-john-wick-4.jpg",
+      "assets/products/mascara-de-john-wick-5.jpg"
+    ],
+    "notice": "No incluye armas ni base: solo se vende la máscara.",
+    "description": "Máscara de John Wick a tamaño real 1:1, inspirada en el legendario personaje del cine. Presenta cabello, cejas y barba pintados a mano, con aberturas funcionales para los ojos. Ideal para cosplay, disfraces, sesiones de fotos o exhibición. No incluye armas ni base: solo se vende la máscara. Fabricada en PLA+ para mayor resistencia y durabilidad. Hecha a pedido, con envíos a todo el Perú.",
+    "sizeOptions": true
   }
 ]

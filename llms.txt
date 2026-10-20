@@ -4,7 +4,7 @@
 
 ## Catalogo
 
-- [Catalogo completo (HTML, texto plano)](https://boomart.pe/catalogo.html): las 88 piezas con descripcion, material y precios.
+- [Catalogo completo (HTML, texto plano)](https://boomart.pe/catalogo.html): las 89 piezas con descripcion, material y precios.
 - [Catalogo en Markdown](https://boomart.pe/llms-full.txt): mismo contenido en un solo archivo de texto.
 - [Feed JSON](https://boomart.pe/catalogo.json): datos estructurados (precios, imagenes, categorias).
 - [Feed Google/Pinterest (XML)](https://boomart.pe/feed-google.xml): formato Google Merchant Center.
@@ -32,6 +32,7 @@
 - Macetas: 8 piezas
 - Mundial de Fútbol: 4 piezas
 - Soportes de Mandos: 7 piezas
+- Máscaras: 1 piezas
 
 ## Opiniones de clientes
 

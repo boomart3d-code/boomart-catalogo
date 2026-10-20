@@ -614,5 +614,12 @@
     "width": 877,
     "height": 1200,
     "bytes": 79654
+  },
+  "mascara-de-john-wick": {
+    "source": "assets/products/mascara-de-john-wick-hero-v2.png",
+    "hash": "a6b236ff3a150c06",
+    "width": 1200,
+    "height": 1200,
+    "bytes": 81906
   }
 }
