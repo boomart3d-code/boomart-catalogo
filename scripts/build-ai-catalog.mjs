@@ -1402,34 +1402,38 @@ const CATEGORY_META = {
 // principal de cada producto (Marvel, Saint Seiya, etc.) y los reune tambien
 // en el enlace corto que se comparte en publicidad y WhatsApp.
 const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
-  // Disfraces y cosplay: el producto nuevo abre la coleccion.
+  // Marvel y DC.
   "visor-de-cyclops",
   "mascara-red-hood",
   "mascara-dr-doom",
   "casco-de-batman",
+  "mascara-de-batwoman",
+  "casco-de-wolverine-con-garras",
+  // Star Wars.
   "casco-de-stormtrooper",
   "casco-del-mandaloriano",
-  "tiara-de-ikki-de-fenix-saint-seiya",
-  "mascarada-del-diablo",
-  "cuernos-de-fauno",
-  "corona-de-elfo",
-  "casco-gladiador-maximo",
-  "mascara-calabaza-calavera",
-  "evil-mask",
+  // Cine y series.
+  "mascara-de-john-wick",
+  "mascara-el-juego-del-calamar",
   "mascara-hellboy-articulada",
+  "casco-gladiador-maximo",
+  "casco-de-agamenon-la-odisea",
+  "mario-billy-saw",
+  // Mascaras diabolicas y terror.
+  "mascarada-del-diablo",
+  "evil-mask",
   "mascara-baphomet",
   "mascara-krampus",
-  "mascara-de-batwoman",
-  "mascara-el-juego-del-calamar",
-  // Cascos y accesorios de otras categorias que tambien sirven para Halloween.
-  "casco-de-wolverine-con-garras",
-  "casco-de-agamenon-la-odisea",
+  "mascara-calabaza-calavera",
+  // Fantasia, elfos y accesorios historicos.
+  "corona-de-elfo",
+  "cuernos-de-fauno",
+  "tiara-de-ikki-de-fenix-saint-seiya",
   "casco-de-pegaso-saint-seiya",
   "tiara-de-pegaso-saint-seiya",
-  // Decoracion y figuras.
-  "candelabro-calavera",
-  "mario-billy-saw",
+  // Figuras y decoracion; el candelabro cierra la coleccion.
   "zkull-urban",
+  "candelabro-calavera",
 ];
 
 const HALLOWEEN_CAMPAIGN_META = {
@@ -1650,11 +1654,16 @@ async function writeCategoryPages(products, ratingLd) {
   const groups = groupByCategory(products);
   await Promise.all(
     groups.map(async ([cat, list]) => {
+      const categoryProducts = cat === "🎃 Halloween"
+        ? HALLOWEEN_CAMPAIGN_PRODUCT_IDS
+            .map((id) => products.find((product) => product.id === id))
+            .filter(Boolean)
+        : list;
       const dir = path.join(ROOT, "categoria", categorySlug(cat));
       await mkdir(dir, { recursive: true });
       await writeFile(
         path.join(dir, "index.html"),
-        buildCategoryPage(cat, list, products, ratingLd),
+        buildCategoryPage(cat, categoryProducts, products, ratingLd),
       );
     }),
   );
