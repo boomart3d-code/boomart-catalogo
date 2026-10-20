@@ -288,34 +288,45 @@
           <h2 id="collectionsTitle">Explora por colección</h2>
           <a class="collections-all" href="#catalogo">Ver todo el catálogo →</a>
         </div>
+        <div class="collections-carousel" data-carousel>
+          <button type="button" class="carousel-btn carousel-prev" data-carousel-prev aria-label="Ver categorías anteriores">‹</button>
+          <div class="collections-viewport">
         <div class="collections-grid">
           <button type="button" class="collection-tile" data-filter="Saint Seiya" data-scroll>
-            <img src="assets/hero/templo-aries.webp" alt="" width="1000" height="628" loading="lazy" decoding="async">
+            <img src="assets/hero/tile-saint-seiya.webp" alt="" width="800" height="1000" loading="lazy" decoding="async">
             <span>Saint Seiya</span>
           </button>
-          <button type="button" class="collection-tile" data-filter="🎃 Halloween" data-scroll>
-            <img src="assets/hero/mascara-krampus.webp" alt="" width="894" height="1000" loading="lazy" decoding="async">
-            <span>Halloween</span>
-          </button>
           <button type="button" class="collection-tile" data-filter="Harry Potter" data-scroll>
-            <img src="assets/hero/castillo-de-hogwarts-frente.webp" alt="" width="1000" height="846" loading="lazy" decoding="async">
+            <img src="assets/hero/tile-harry-potter.webp?v=2" alt="" width="800" height="1000" loading="lazy" decoding="async">
             <span>Harry Potter</span>
           </button>
           <button type="button" class="collection-tile" data-filter="Marvel &amp; DC" data-scroll>
-            <img src="assets/hero/casco-de-wolverine.webp" alt="" width="729" height="868" loading="lazy" decoding="async">
+            <img src="assets/hero/tile-marvel-dc.webp?v=2" alt="" width="800" height="1000" loading="lazy" decoding="async">
             <span>Marvel y DC</span>
           </button>
+          <button type="button" class="collection-tile" data-filter="🎃 Halloween" data-scroll>
+            <img src="assets/hero/tile-halloween.webp?v=2" alt="" width="800" height="1000" loading="lazy" decoding="async">
+            <span>Halloween y Cosplay</span>
+          </button>
           <button type="button" class="collection-tile" data-filter="Mundial de Fútbol" data-scroll>
-            <img src="assets/hero/balon-de-oro.webp" alt="" width="676" height="1000" loading="lazy" decoding="async">
+            <img src="assets/hero/tile-mundial.webp" alt="" width="800" height="1000" loading="lazy" decoding="async">
             <span>Mundial de Fútbol</span>
           </button>
-          <a class="collection-tile collection-tile-corporate" href="merchandising-corporativo/">
-            <img src="assets/hero/para-empresas.webp" alt="" width="996" height="1000" loading="lazy" decoding="async">
-            <div class="collection-tile-corporate-copy">
-              <strong>Para empresas</strong>
-              <small>Merchandising corporativo y regalos con tu marca</small>
-            </div>
-          </a>
+          <button type="button" class="collection-tile" data-filter="Macetas" data-scroll>
+            <img src="assets/hero/tile-macetas.webp" alt="" width="800" height="1000" loading="lazy" decoding="async">
+            <span>Macetas</span>
+          </button>
+          <button type="button" class="collection-tile" data-filter="Soportes de Mandos" data-scroll>
+            <img src="assets/hero/tile-soportes-mandos.webp" alt="" width="800" height="1000" loading="lazy" decoding="async">
+            <span>Soportes de Mandos</span>
+          </button>
+          <button type="button" class="collection-tile" data-filter="Figuras Coleccionables" data-scroll>
+            <img src="assets/hero/tile-series-peliculas.webp" alt="" width="800" height="1000" loading="lazy" decoding="async">
+            <span>Figuras Coleccionables</span>
+          </button>
+        </div>
+          </div>
+          <button type="button" class="carousel-btn carousel-next" data-carousel-next aria-label="Ver más categorías">›</button>
         </div>
       </section>
 
@@ -741,6 +752,7 @@
     <script src="src/cart.js?v=10"></script>
     <script src="src/products.js?v=5"></script>
     <script src="src/app.js?v=51"></script>
+    <script src="src/collections-carousel.js?v=1" defer></script>
     <script src="src/checkout.js?v=30"></script>
     <script src="src/products-loader.js?v=5"></script>
     <script src="src/reviews.js?v=6"></script>

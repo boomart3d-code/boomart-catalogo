@@ -2125,5 +2125,34 @@
     ],
     "notice": "No incluye el mando ni los audífonos: solo se vende el soporte.",
     "description": "Soporte para mando y audífonos inspirado en The Last of Us, con el símbolo de las Luciérnagas y el arco con helecho grabado: sostiene tu control de PlayStation, Xbox u otras consolas y tus audífonos en una sola pieza para tu setup gamer. No incluye el mando ni los audífonos: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú."
+  },
+  {
+    "id": "mando-the-last-of-us-muro",
+    "name": "Mando The Last Of Us Muro",
+    "category": "Soportes de Mandos",
+    "tags": [
+      "Soporte",
+      "Mando",
+      "Control",
+      "Gamer",
+      "The Last of Us",
+      "Luciérnagas",
+      "Muro",
+      "Videojuegos",
+      "Accesorios"
+    ],
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 150,
+    "featured": true,
+    "image": "assets/products/mando-the-last-of-us-muro.jpg",
+    "gallery": [
+      "assets/products/mando-the-last-of-us-muro.jpg",
+      "assets/products/mando-the-last-of-us-muro-2.jpg",
+      "assets/products/mando-the-last-of-us-muro-3.jpg",
+      "assets/products/mando-the-last-of-us-muro-4.jpg"
+    ],
+    "notice": "No incluye el mando: solo se vende el soporte.",
+    "description": "Soporte de mando inspirado en The Last of Us, con un muro en ruinas, el emblema de las Luciérnagas y una escena de supervivencia al atardecer. Sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. No incluye el mando: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú."
   }
 ]

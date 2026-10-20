@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 87,
+  "count": 88,
   "products": [
     {
       "id": "templo-aries",
@@ -2454,6 +2454,39 @@
       ],
       "url": "https://boomart.pe/producto/soporte-mando-the-last-of-us/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Soporte%20de%20Mando%20y%20Aud%C3%ADfonos%20%C2%B7%20The%20Last%20of%20Us"
+    },
+    {
+      "id": "mando-the-last-of-us-muro",
+      "name": "Mando The Last Of Us Muro",
+      "category": "Soportes de Mandos",
+      "tags": [
+        "Soporte",
+        "Mando",
+        "Control",
+        "Gamer",
+        "The Last of Us",
+        "Luciérnagas",
+        "Muro",
+        "Videojuegos",
+        "Accesorios"
+      ],
+      "description": "Soporte de mando inspirado en The Last of Us, con un muro en ruinas, el emblema de las Luciérnagas y una escena de supervivencia al atardecer. Sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. No incluye el mando: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 150,
+      "pricing": [
+        "Precio: S/150"
+      ],
+      "image": "https://boomart.pe/assets/products/mando-the-last-of-us-muro.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/mando-the-last-of-us-muro.jpg",
+        "https://boomart.pe/assets/products/mando-the-last-of-us-muro-2.jpg",
+        "https://boomart.pe/assets/products/mando-the-last-of-us-muro-3.jpg",
+        "https://boomart.pe/assets/products/mando-the-last-of-us-muro-4.jpg"
+      ],
+      "url": "https://boomart.pe/producto/mando-the-last-of-us-muro/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Mando%20The%20Last%20Of%20Us%20Muro"
     }
   ]
 }
