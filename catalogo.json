@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 89,
+  "count": 90,
   "products": [
     {
       "id": "templo-aries",
@@ -1384,6 +1384,37 @@
       ],
       "url": "https://boomart.pe/producto/mario-billy-saw/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Mario%20Billy%20%F0%9F%8E%83%20%C2%B7%20Saw%20(El%20Juego%20del%20Miedo)"
+    },
+    {
+      "id": "mascara-calavera",
+      "name": "Máscara Calavera 💀 · Halloween",
+      "category": "🎃 Halloween",
+      "tags": [
+        "Mascaras",
+        "Calavera",
+        "Craneo",
+        "Ghost Rider",
+        "Disfraces",
+        "Cosplay"
+      ],
+      "description": "🎃 Edición Halloween. Máscara Calavera: un cráneo detallado con mandíbula móvil, inspirado en Ghost Rider (sin las llamas). Impresa en 3D en PLA+ y pintada a mano, con acabado envejecido en tono hueso. Ideal para tu disfraz, fiestas temáticas, sesiones de fotos o para exhibirla como decoración de terror. Disponible en talla adulto y niño. Hecha a pedido, con envíos a todo el Perú.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Precio: S/100"
+      ],
+      "image": "https://boomart.pe/assets/products/mascara-calavera-1.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/mascara-calavera-1.jpg",
+        "https://boomart.pe/assets/products/mascara-calavera-2.jpg",
+        "https://boomart.pe/assets/products/mascara-calavera-3.jpg",
+        "https://boomart.pe/assets/products/mascara-calavera-4.jpg",
+        "https://boomart.pe/assets/products/mascara-calavera-5.jpg"
+      ],
+      "url": "https://boomart.pe/producto/mascara-calavera/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20Calavera%20%F0%9F%92%80%20%C2%B7%20Halloween"
     },
     {
       "id": "mascara-calabaza-calavera",

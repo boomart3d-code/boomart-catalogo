@@ -1189,6 +1189,33 @@
     "description": "🎃 Edición Halloween. El crossover más retorcido de tu colección: Mario convertido en Billy, el muñeco de Saw (El Juego del Miedo), con el rostro pálido, las espirales rojas en las mejillas, smoking con moño y su inconfundible triciclo rojo. Impresa en 3D y pintada a mano, sobre pedestal negro. El detalle perfecto para decorar en Halloween o para el fan del terror todo el año. Hecha a pedido, con envíos a todo el Perú."
   },
   {
+    "id": "mascara-calavera",
+    "name": "Máscara Calavera 💀 · Halloween",
+    "category": "🎃 Halloween",
+    "tags": [
+      "Mascaras",
+      "Calavera",
+      "Craneo",
+      "Ghost Rider",
+      "Disfraces",
+      "Cosplay"
+    ],
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 100,
+    "featured": true,
+    "image": "assets/products/mascara-calavera-1.jpg",
+    "gallery": [
+      "assets/products/mascara-calavera-1.jpg",
+      "assets/products/mascara-calavera-2.jpg",
+      "assets/products/mascara-calavera-3.jpg",
+      "assets/products/mascara-calavera-4.jpg",
+      "assets/products/mascara-calavera-5.jpg"
+    ],
+    "description": "🎃 Edición Halloween. Máscara Calavera: un cráneo detallado con mandíbula móvil, inspirado en Ghost Rider (sin las llamas). Impresa en 3D en PLA+ y pintada a mano, con acabado envejecido en tono hueso. Ideal para tu disfraz, fiestas temáticas, sesiones de fotos o para exhibirla como decoración de terror. Disponible en talla adulto y niño. Hecha a pedido, con envíos a todo el Perú.",
+    "sizeOptions": true
+  },
+  {
     "id": "mascara-calabaza-calavera",
     "name": "Máscara Calabaza Calavera 🎃 · Halloween",
     "category": "🎃 Halloween",

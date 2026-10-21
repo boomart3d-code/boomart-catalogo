@@ -4,7 +4,7 @@
 
 ## Catalogo
 
-- [Catalogo completo (HTML, texto plano)](https://boomart.pe/catalogo.html): las 89 piezas con descripcion, material y precios.
+- [Catalogo completo (HTML, texto plano)](https://boomart.pe/catalogo.html): las 90 piezas con descripcion, material y precios.
 - [Catalogo en Markdown](https://boomart.pe/llms-full.txt): mismo contenido en un solo archivo de texto.
 - [Feed JSON](https://boomart.pe/catalogo.json): datos estructurados (precios, imagenes, categorias).
 - [Feed Google/Pinterest (XML)](https://boomart.pe/feed-google.xml): formato Google Merchant Center.
@@ -25,7 +25,7 @@
 ## Categorias
 
 - Saint Seiya: 39 piezas
-- 🎃 Halloween: 20 piezas
+- 🎃 Halloween: 21 piezas
 - Harry Potter: 5 piezas
 - Marvel & DC: 8 piezas
 - Figuras Coleccionables: 3 piezas

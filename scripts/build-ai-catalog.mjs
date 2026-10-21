@@ -1404,6 +1404,8 @@ const CATEGORY_META = {
 // principal de cada producto (Marvel, Saint Seiya, etc.) y los reune tambien
 // en el enlace corto que se comparte en publicidad y WhatsApp.
 const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
+  // Novedad.
+  "mascara-calavera",
   // Marvel y DC.
   "visor-de-cyclops",
   "mascara-red-hood",

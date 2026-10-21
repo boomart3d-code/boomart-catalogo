@@ -458,6 +458,8 @@ const orderedCategories = (cats) => [...cats].sort((a, b) => {
 // accesorios, y deja decoracion/figuras al final. Mantener sincronizado con
 // HALLOWEEN_CAMPAIGN_PRODUCT_IDS en scripts/build-ai-catalog.mjs.
 const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
+  // Novedad.
+  "mascara-calavera",
   // Marvel y DC.
   "visor-de-cyclops",
   "mascara-red-hood",
