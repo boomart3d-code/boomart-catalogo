@@ -928,5 +928,29 @@ Código de pedido: ${code}`;
       })
     );
     showStep("done");
+
+    // Reseñas de Clientes en Google: ofrece al comprador recibir la encuesta por correo (Google la envía).
+    // Aislado en try/catch: si falla o está bloqueado, el pedido no se afecta.
+    try {
+      if (customer.email) {
+        const eta = new Date(Date.now() + 10 * 86400000).toISOString().slice(0, 10);
+        window.renderOptIn = function () {
+          window.gapi.load("surveyoptin", function () {
+            window.gapi.surveyoptin.render({
+              merchant_id: 5849118628,
+              order_id: code,
+              email: customer.email,
+              delivery_country: "PE",
+              estimated_delivery_date: eta
+            });
+          });
+        };
+        const s = document.createElement("script");
+        s.src = "https://apis.google.com/js/platform.js?onload=renderOptIn";
+        s.async = true;
+        s.defer = true;
+        document.head.appendChild(s);
+      }
+    } catch (_e) {}
   });
 })();
