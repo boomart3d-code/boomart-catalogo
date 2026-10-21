@@ -571,6 +571,7 @@ ${socialFooterHtml()}
         <ul class="footer-links">
           <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="politicas.html">Politicas de compra, envio y privacidad</a></li>
+          <li><a href="libro-de-reclamaciones.html">Libro de Reclamaciones</a></li>
         </ul>
       </div>
     </footer>
@@ -1192,6 +1193,7 @@ ${socialFooterHtml()}
           <li><a href="${rel}catalogo.html">Catálogo completo</a></li>
           <li><a href="${rel}nosotros.html">Nosotros</a></li>
           <li><a href="${rel}politicas.html">Políticas de compra, envío y privacidad</a></li>
+          <li><a href="${rel}libro-de-reclamaciones.html">Libro de Reclamaciones</a></li>
         </ul>
       </div>
       <a class="button secondary" href="${esc(wa)}" target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
@@ -1632,6 +1634,7 @@ ${socialFooterHtml()}
           <li><a href="${rel}catalogo.html">Catálogo completo</a></li>
           <li><a href="${rel}nosotros.html">Nosotros</a></li>
           <li><a href="${rel}politicas.html">Políticas de compra, envío y privacidad</a></li>
+          <li><a href="${rel}libro-de-reclamaciones.html">Libro de Reclamaciones</a></li>
         </ul>
       </div>
       <a class="button secondary" href="${esc(wa)}" target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
@@ -1875,6 +1878,7 @@ function buildSitemap(products) {
     })),
     { loc: `${SITE}/nosotros.html`, priority: "0.5", changefreq: "monthly" },
     { loc: `${SITE}/politicas.html`, priority: "0.3", changefreq: "yearly" },
+    { loc: `${SITE}/libro-de-reclamaciones.html`, priority: "0.2", changefreq: "yearly" },
   ];
   return (
     `<?xml version="1.0" encoding="UTF-8"?>\n` +

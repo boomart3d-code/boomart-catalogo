@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM5C8Q1394"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HM5C8Q1394');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Libro de Reclamaciones virtual de BoomArt: registra un reclamo o una queja y recibe la constancia en tu correo.">
+    <title>Libro de Reclamaciones | BoomArt</title>
+    <link rel="canonical" href="https://boomart.pe/libro-de-reclamaciones.html">
+    <link rel="icon" type="image/svg+xml" href="assets/boomart-mark.svg?v=7">
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="assets/boomart-mark-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/app-icon-180.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BoomArt">
+    <meta property="og:title" content="Libro de Reclamaciones | BoomArt">
+    <meta property="og:description" content="Registra un reclamo o una queja en BoomArt y recibe tu constancia por correo.">
+    <meta property="og:url" content="https://boomart.pe/libro-de-reclamaciones.html">
+    <meta property="og:image" content="https://boomart.pe/assets/boomart-og.jpg">
+    <meta property="og:locale" content="es_PE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles.css?v=61">
+    <style>
+      .lr-form fieldset { border: 1px solid var(--line); border-radius: 14px; padding: 20px 20px 8px; margin: 0 0 22px; background: rgba(255,255,255,.03); }
+      .lr-form legend { font-family: var(--display-font); font-weight: 800; font-size: 1.35rem; letter-spacing: .04em; text-transform: uppercase; padding: 0 10px; color: var(--paper); }
+      .lr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; }
+      .lr-grid .full { grid-column: 1 / -1; }
+      .lr-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+      .lr-field label, .lr-label { font-weight: 700; font-size: .92rem; color: var(--paper); }
+      .lr-field small { color: var(--muted); font-size: .8rem; }
+      .lr-form input[type=text], .lr-form input[type=email], .lr-form input[type=tel], .lr-form input[type=number], .lr-form select, .lr-form textarea {
+        width: 100%; background: #101010; color: var(--paper); border: 1px solid rgba(255,255,255,.22); border-radius: 10px; padding: 12px 14px; font: inherit; }
+      .lr-form textarea { min-height: 130px; resize: vertical; }
+      .lr-form input:focus, .lr-form select:focus, .lr-form textarea:focus { outline: 2px solid var(--red); outline-offset: 1px; }
+      .lr-form .invalid { border-color: #ff5a6e !important; }
+      .lr-err { color: #ff8a98; font-size: .82rem; display: none; }
+      .lr-err.on { display: block; }
+      .lr-radio, .lr-check { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px; font-size: .95rem; }
+      .lr-radio input, .lr-check input { margin-top: 4px; accent-color: var(--red); }
+      .lr-box { border: 1px dashed rgba(214,178,104,.6); border-radius: 12px; padding: 14px 16px; margin: 0 0 22px; color: var(--paper); }
+      .lr-box p { margin: 4px 0; font-size: .92rem; }
+      .lr-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+      .lr-submit { appearance: none; border: 0; cursor: pointer; background: var(--red); color: #fff; font-weight: 800; font-size: 1rem; padding: 15px 28px; border-radius: 999px; }
+      .lr-submit[disabled] { opacity: .6; cursor: wait; }
+      .lr-ok { border: 2px solid #2fbf6b; background: rgba(47,191,107,.1); border-radius: 14px; padding: 22px; display: none; }
+      .lr-ok.on { display: block; }
+      .lr-ok h2 { margin-top: 0; }
+      .lr-msg { margin-top: 12px; font-size: .92rem; color: #ff8a98; }
+      @media (max-width: 640px) { .lr-grid { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="BoomArt inicio">
+        <img class="brand-logo" src="assets/boomart-logo.svg" alt="BoomArt">
+        <span>
+          <strong>BOOM ART</strong>
+          <small>Catálogo 3D</small>
+        </span>
+      </a>
+      <nav aria-label="Secciones del sitio">
+        <a href="index.html#catalogo">Catálogo</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%20el%20cat%C3%A1logo%20de%20productos%203D." target="_blank" rel="noreferrer">WhatsApp</a>
+      </nav>
+    </header>
+
+    <main>
+      <article class="legal-page">
+        <p class="eyebrow">Información legal</p>
+        <h1>Libro de Reclamaciones</h1>
+        <p class="lead">Si tienes un reclamo o una queja sobre tu compra o la atención que recibiste, regístralo aquí. Te enviaremos la constancia a tu correo.</p>
+
+        <div class="lr-box">
+          <p><strong>Proveedor:</strong> MOLINA ESCALONA MONICA CARINA (nombre comercial: BoomArt)</p>
+          <p><strong>RUC:</strong> 15610001596</p>
+          <p><strong>Domicilio:</strong> Jr. Eduardo García Calderón 127, Bellavista, Callao</p>
+          <p><strong>Contacto:</strong> <a href="mailto:contacto@boomart.pe">contacto@boomart.pe</a> · WhatsApp <a href="https://wa.me/51925666542" target="_blank" rel="noreferrer">925 666 542</a></p>
+        </div>
+
+        <div id="lr-ok" class="lr-ok" role="status" aria-live="polite" tabindex="-1">
+          <h2>Recibimos tu hoja de reclamación</h2>
+          <p>Tu número de hoja es <strong id="lr-numero"></strong>.</p>
+          <p id="lr-correo"></p>
+          <p>Te responderemos por correo dentro del plazo que establece la normativa de protección al consumidor.</p>
+          <p><a href="index.html">Volver a la tienda</a></p>
+        </div>
+
+        <noscript><p class="lr-msg">Necesitas activar JavaScript para enviar la hoja desde esta página. También puedes escribirnos a contacto@boomart.pe con los mismos datos.</p></noscript>
+
+        <form id="lr-form" class="lr-form" novalidate autocomplete="on">
+          <div class="lr-hp" aria-hidden="true"><label>No llenes este campo <input type="text" name="web" tabindex="-1" autocomplete="off"></label></div>
+
+          <fieldset>
+            <legend>1. Identificación del consumidor</legend>
+            <div class="lr-grid">
+              <div class="lr-field full">
+                <label for="nombre">Nombres y apellidos *</label>
+                <input type="text" id="nombre" name="nombre" maxlength="120" autocomplete="name" required>
+                <span class="lr-err" data-for="nombre">Escribe tu nombre completo.</span>
+              </div>
+              <div class="lr-field">
+                <label for="docTipo">Tipo de documento *</label>
+                <select id="docTipo" name="docTipo" required>
+                  <option value="DNI">DNI</option>
+                  <option value="CE">Carné de extranjería</option>
+                  <option value="PASAPORTE">Pasaporte</option>
+                  <option value="RUC">RUC</option>
+                </select>
+              </div>
+              <div class="lr-field">
+                <label for="docNumero">Número de documento *</label>
+                <input type="text" id="docNumero" name="docNumero" maxlength="20" inputmode="numeric" required>
+                <span class="lr-err" data-for="docNumero">Revisa el número de documento.</span>
+              </div>
+              <div class="lr-field full">
+                <label for="domicilio">Domicilio *</label>
+                <input type="text" id="domicilio" name="domicilio" maxlength="200" autocomplete="street-address" required>
+                <span class="lr-err" data-for="domicilio">Escribe tu domicilio.</span>
+              </div>
+              <div class="lr-field">
+                <label for="telefono">Teléfono *</label>
+                <input type="tel" id="telefono" name="telefono" maxlength="25" autocomplete="tel" required>
+                <span class="lr-err" data-for="telefono">Revisa tu teléfono.</span>
+              </div>
+              <div class="lr-field">
+                <label for="email">Correo electrónico *</label>
+                <input type="email" id="email" name="email" maxlength="120" autocomplete="email" required>
+                <small>Aquí te enviaremos la constancia y la respuesta.</small>
+                <span class="lr-err" data-for="email">Revisa que el correo esté bien escrito.</span>
+              </div>
+              <div class="full">
+                <label class="lr-check"><input type="checkbox" id="menorEdad" name="menorEdad"> <span>Soy menor de edad (completaré los datos de mi padre, madre o apoderado)</span></label>
+              </div>
+              <div class="lr-field full" id="apoderado-wrap" hidden>
+                <label for="apoderado">Padre, madre o apoderado (nombre completo) *</label>
+                <input type="text" id="apoderado" name="apoderado" maxlength="140">
+                <span class="lr-err" data-for="apoderado">Indica el nombre del padre, madre o apoderado.</span>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. Identificación del bien contratado</legend>
+            <div class="lr-grid">
+              <div class="lr-field">
+                <label for="bienTipo">Tipo *</label>
+                <select id="bienTipo" name="bienTipo" required>
+                  <option value="producto">Producto</option>
+                  <option value="servicio">Servicio</option>
+                </select>
+              </div>
+              <div class="lr-field">
+                <label for="monto">Monto reclamado (S/)</label>
+                <input type="number" id="monto" name="monto" min="0" max="1000000" step="0.01" inputmode="decimal">
+                <span class="lr-err" data-for="monto">Escribe un monto válido o déjalo vacío.</span>
+              </div>
+              <div class="lr-field full">
+                <label for="bienDetalle">Descripción del producto o servicio *</label>
+                <input type="text" id="bienDetalle" name="bienDetalle" maxlength="200" placeholder="Ejemplo: Templo de Aries con Pandora Box" required>
+                <span class="lr-err" data-for="bienDetalle">Describe el producto o servicio.</span>
+              </div>
+              <div class="lr-field full">
+                <label for="pedidoRef">Número de pedido (si lo tienes)</label>
+                <input type="text" id="pedidoRef" name="pedidoRef" maxlength="60" placeholder="Ejemplo: W-00123">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>3. Detalle de la reclamación</legend>
+            <p class="lr-label">Elige una opción *</p>
+            <label class="lr-radio"><input type="radio" name="tipo" value="reclamo" checked> <span><strong>Reclamo:</strong> disconformidad relacionada con los productos o servicios.</span></label>
+            <label class="lr-radio"><input type="radio" name="tipo" value="queja"> <span><strong>Queja:</strong> malestar o descontento respecto a la atención al público, sin relación con el producto o servicio.</span></label>
+            <div class="lr-field">
+              <label for="detalle">Detalle *</label>
+              <textarea id="detalle" name="detalle" maxlength="2500" required></textarea>
+              <span class="lr-err" data-for="detalle">Cuéntanos qué pasó (mínimo 10 caracteres).</span>
+            </div>
+            <div class="lr-field">
+              <label for="pedidoConsumidor">Pedido del consumidor *</label>
+              <textarea id="pedidoConsumidor" name="pedidoConsumidor" maxlength="1500" style="min-height:90px" required></textarea>
+              <small>¿Qué solución esperas? Por ejemplo: reparación, reemplazo o devolución de dinero.</small>
+              <span class="lr-err" data-for="pedidoConsumidor">Indica qué solución esperas.</span>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>4. Conformidad</legend>
+            <label class="lr-check"><input type="checkbox" id="aceptaDatos" name="aceptaDatos" required> <span>Declaro que la información que he escrito es verdadera y autorizo el uso de mis datos personales solo para atender este reclamo o queja. *</span></label>
+            <span class="lr-err" data-for="aceptaDatos">Debes aceptar para enviar la hoja.</span>
+          </fieldset>
+
+          <p style="font-size:.9rem;color:var(--muted)">La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es requisito previo para interponer una denuncia ante el INDECOPI. Responderemos tu hoja por correo, dentro del plazo que establece la normativa de protección al consumidor.</p>
+
+          <button class="lr-submit" id="lr-enviar" type="submit">Enviar hoja de reclamación</button>
+          <p class="lr-msg" id="lr-msg" role="alert"></p>
+        </form>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <strong>BOOM ART</strong>
+        <p>Piezas hechas a pedido. Consulta disponibilidad, colores, acabados y tiempos de entrega por WhatsApp.</p>
+        <p><a href="https://share.google/1EB41G5DoHVk4GWhA" target="_blank" rel="noreferrer">📍 Ver ubicación en Google Maps</a></p>
+        <p><a href="mailto:contacto@boomart.pe">✉️ contacto@boomart.pe</a></p>
+        <ul class="footer-links">
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="politicas.html">Políticas de compra, envío y privacidad</a></li>
+          <li><a href="libro-de-reclamaciones.html">Libro de Reclamaciones</a></li>
+        </ul>
+      </div>
+      <a class="button secondary" href="https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%20el%20cat%C3%A1logo%20de%20productos%203D." target="_blank" rel="noreferrer">Escríbenos por WhatsApp</a>
+    </footer>
+
+    <script>
+      (function () {
+        var ENDPOINT = "https://sasqusmvysbvqiggdmuj.supabase.co/functions/v1/reclamos";
+        var form = document.getElementById("lr-form");
+        var msg = document.getElementById("lr-msg");
+        var btn = document.getElementById("lr-enviar");
+        var menor = document.getElementById("menorEdad");
+        var wrap = document.getElementById("apoderado-wrap");
+        menor.addEventListener("change", function () { wrap.hidden = !menor.checked; });
+
+        function marcar(campo, mal) {
+          var el = form.elements[campo];
+          var err = form.querySelector('.lr-err[data-for="' + campo + '"]');
+          if (el && el.classList) el.classList.toggle("invalid", mal);
+          if (err) err.classList.toggle("on", mal);
+        }
+
+        function validar() {
+          var f = form.elements, malos = [];
+          var v = function (n) { return (f[n].value || "").trim(); };
+          var chk = [
+            ["nombre", v("nombre").length < 3],
+            ["docNumero", !/^[A-Za-z0-9-]{6,20}$/.test(v("docNumero"))],
+            ["domicilio", v("domicilio").length < 5],
+            ["telefono", !/^[0-9+() -]{6,25}$/.test(v("telefono"))],
+            ["email", !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v("email"))],
+            ["apoderado", menor.checked && v("apoderado").length < 3],
+            ["bienDetalle", v("bienDetalle").length < 3],
+            ["monto", v("monto") !== "" && !(Number(v("monto")) >= 0)],
+            ["detalle", v("detalle").length < 10],
+            ["pedidoConsumidor", v("pedidoConsumidor").length < 5],
+            ["aceptaDatos", !f.aceptaDatos.checked]
+          ];
+          chk.forEach(function (c) { marcar(c[0], c[1]); if (c[1]) malos.push(c[0]); });
+          return malos;
+        }
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          msg.textContent = "";
+          var malos = validar();
+          if (malos.length) {
+            msg.textContent = "Revisa los campos marcados en rojo.";
+            var primero = form.elements[malos[0]];
+            if (primero && primero.focus) primero.focus();
+            return;
+          }
+          var f = form.elements;
+          var datos = {
+            web: f.web.value,
+            tipo: form.querySelector('input[name="tipo"]:checked').value,
+            nombre: f.nombre.value, docTipo: f.docTipo.value, docNumero: f.docNumero.value,
+            domicilio: f.domicilio.value, telefono: f.telefono.value, email: f.email.value,
+            menorEdad: menor.checked, apoderado: f.apoderado.value,
+            bienTipo: f.bienTipo.value, bienDetalle: f.bienDetalle.value, pedidoRef: f.pedidoRef.value,
+            monto: f.monto.value, detalle: f.detalle.value, pedidoConsumidor: f.pedidoConsumidor.value,
+            aceptaDatos: f.aceptaDatos.checked
+          };
+          btn.disabled = true;
+          btn.textContent = "Enviando…";
+          fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(datos) })
+            .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+            .then(function (res) {
+              if (!res.ok || !res.j.ok) { throw new Error(res.j && res.j.error ? res.j.error : "No se pudo enviar"); }
+              document.getElementById("lr-numero").textContent = res.j.numero;
+              document.getElementById("lr-correo").textContent = res.j.correo
+                ? "Enviamos tu constancia a " + datos.email + ". Si no la ves, revisa la carpeta de spam."
+                : "Guardamos tu hoja, pero no pudimos enviar el correo de constancia. Guarda tu número de hoja o escríbenos a contacto@boomart.pe.";
+              form.style.display = "none";
+              var ok = document.getElementById("lr-ok");
+              ok.classList.add("on");
+              ok.scrollIntoView({ behavior: "smooth", block: "start" });
+              ok.focus();
+            })
+            .catch(function (err) {
+              msg.textContent = (err && err.message ? err.message : "No se pudo enviar") + " Si el problema sigue, escríbenos a contacto@boomart.pe.";
+              btn.disabled = false;
+              btn.textContent = "Enviar hoja de reclamación";
+            });
+        });
+      })();
+    </script>
+    <script src="src/track.js?v=5" defer></script>
+  </body>
+</html>
