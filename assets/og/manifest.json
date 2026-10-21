@@ -342,6 +342,13 @@
     "height": 1200,
     "bytes": 138736
   },
+  "mascara-calavera": {
+    "source": "assets/products/mascara-calavera-1.jpg",
+    "hash": "0440cc1d7ed54e40",
+    "width": 960,
+    "height": 1200,
+    "bytes": 82884
+  },
   "mascara-calabaza-calavera": {
     "source": "assets/products/mascara-calabaza-calavera-hero-v2.png",
     "hash": "8d944e95c8a32642",
