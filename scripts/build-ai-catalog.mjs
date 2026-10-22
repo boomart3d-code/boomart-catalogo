@@ -947,6 +947,8 @@ const PRODUCT_PAGE_CSS = `
     .pp-thumbs .pp-thumb-video{position:relative}
     .pp-thumbs .pp-thumb-video span{position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.35);color:#fff;font-size:1rem;pointer-events:none}
     .pp-main-img[hidden]{display:none}
+    .pp-media,.pp-info,.pp-more,.pp-cats,.pp-body,.pp-related{min-width:0;max-width:100%}
+    .pp-thumbs,.pp-more-row,.pp-cat-row{max-width:100%}
     .pp-info h1{margin:2px 0 4px;font-size:clamp(1.55rem,4vw,2.35rem);line-height:1.1}
     .pp-sub{color:var(--muted);margin:0 0 16px}
     .pp-rating{font-size:.9rem;margin:0 0 16px}
@@ -993,7 +995,7 @@ const PRODUCT_PAGE_CSS = `
     @media(max-width:760px){
       .pp{padding:12px 14px 44px}
       .pp-crumbs{margin-bottom:12px}
-      .pp-top{grid-template-columns:1fr;gap:14px}
+      .pp-top{grid-template-columns:minmax(0,1fr);gap:14px}
       .pp-main-img{border-radius:10px}
       .pp-thumbs{flex-wrap:nowrap;gap:6px;margin-top:8px;overflow-x:auto}
       .pp-thumbs button{width:52px;height:52px;flex:0 0 52px}

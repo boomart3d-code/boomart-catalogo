@@ -75,3 +75,6 @@ de otros clientes ni credenciales.
 - Si hace falta un formato adicional, derivarlo mecánicamente desde esos
   originales. Si la aplicación exige cambiar el dibujo, detenerse y pedir la
   aprobación expresa de Adrián.
+
+## Antes de publicar cambios en las plantillas de ficha/categoría
+- Sirve el repo (`python -m http.server 4173`) y corre `node scripts/check-mobile-overflow.mjs`. Debe decir «con problema: 0». Detecta páginas que se salen del ancho del celular (obliga a pellizcar). Causa típica: columnas `1fr` en grillas con filas de miniaturas; usar `minmax(0,1fr)` y `min-width:0`.
