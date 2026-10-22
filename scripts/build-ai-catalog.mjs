@@ -20,6 +20,7 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { SOCIAL_URLS, socialBandHtml, socialFooterHtml } from "./social-links.mjs";
+import { videoUploadDate } from "./video-upload-date.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://boomart.pe";
@@ -910,7 +911,7 @@ function productLd(p) {
       description: `Video de ${p.name}, fabricado a pedido por BoomArt en Perú.`,
       thumbnailUrl: abs(p.video.poster || imgs[0]),
       contentUrl: abs(p.video.src),
-      uploadDate: p.video.uploadDate || "2026-10-15",
+      uploadDate: videoUploadDate(p.video.uploadDate || undefined),
     };
   }
   return ld;

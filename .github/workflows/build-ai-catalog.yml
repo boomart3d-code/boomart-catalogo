@@ -8,6 +8,8 @@ on:
       - "data/reviews.json"
       - "assets/products/**"
       - "scripts/build-ai-catalog.mjs"
+      - "scripts/video-upload-date.mjs"
+      - "scripts/video-upload-date.test.mjs"
       - ".github/scripts/build-og-images.mjs"
       - ".github/workflows/build-ai-catalog.yml"
   workflow_dispatch:
@@ -33,6 +35,9 @@ jobs:
 
       - name: Generar miniaturas livianas para WhatsApp y redes
         run: node .github/scripts/build-og-images.mjs
+
+      - name: Validar fechas de videos
+        run: node --test scripts/video-upload-date.test.mjs
 
       - name: Regenerar catalogo y feeds
         run: node scripts/build-ai-catalog.mjs
