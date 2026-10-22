@@ -70,6 +70,18 @@
     .pp-body{margin-top:34px;max-width:70ch;line-height:1.65}
     .pp-body h2{font-size:1.15rem;margin:22px 0 8px}
     .pp-body p{margin:0 0 12px}
+    .pp-more{margin:26px 0 4px}
+    .pp-more-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:0 0 10px}
+    .pp-more-head h2{font-size:1.05rem;margin:0}
+    .pp-more-head a{font-size:.85rem;font-weight:700;color:#e1132f;text-decoration:none;white-space:nowrap}
+    .pp-more-row{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+    .pp-more-row a{flex:0 0 128px;scroll-snap-align:start;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:block}
+    .pp-more-row img{width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;background:#101010;display:block}
+    .pp-more-row .n{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;padding:6px 8px 0;font-size:.78rem;font-weight:600;line-height:1.25}
+    .pp-more-row .pr{display:block;padding:2px 8px 8px;font-size:.78rem;color:var(--muted)}
+    .pp-cats{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:12px 0 0}
+    .pp-cats .lbl{font-size:.82rem;color:var(--muted);margin-right:2px}
+    .pp-cats a{font-size:.8rem;font-weight:700;padding:5px 11px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:inherit}
     .pp-related{margin-top:44px}
     .pp-related h2{font-size:1.15rem;margin:0 0 14px}
     .pp-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
@@ -148,6 +160,32 @@
         </div>
       </div>
 
+      <section class="pp-more" aria-label="Más productos">
+        <div class="pp-more-head"><h2>Más de Halloween y Cosplay</h2><a href="../../categoria/halloween/">Ver todos (20) &rarr;</a></div>
+        <div class="pp-more-row">
+          <a href="../mascara-calavera/"><img src="../../assets/products/mascara-calavera-1.webp" alt="Máscara Calavera 💀 · Halloween" loading="lazy" decoding="async" width="128" height="160"><span class="n">Máscara Calavera · Halloween</span><span class="pr">S/100</span></a>
+          <a href="../mascara-calabaza-calavera/"><img src="../../assets/products/mascara-calabaza-calavera-hero-v2.webp" alt="Máscara Calabaza Calavera 🎃 · Halloween" loading="lazy" decoding="async" width="128" height="160"><span class="n">Máscara Calabaza Calavera · Halloween</span><span class="pr">S/120</span></a>
+          <a href="../candelabro-calavera/"><img src="../../assets/products/candelabro-calavera-hero-v2.webp" alt="Candelabro Calavera 🎃 · Halloween" loading="lazy" decoding="async" width="128" height="160"><span class="n">Candelabro Calavera · Halloween</span><span class="pr">S/100</span></a>
+          <a href="../evil-mask/"><img src="../../assets/products/evil-mask-hero-v2.webp" alt="Evil Mask 😈 · Halloween" loading="lazy" decoding="async" width="128" height="160"><span class="n">Evil Mask · Halloween</span><span class="pr">S/220</span></a>
+          <a href="../mascara-krampus/"><img src="../../assets/products/mascara-krampus-hero-v2.webp" alt="Máscara Krampus 😈 · Halloween" loading="lazy" decoding="async" width="128" height="160"><span class="n">Máscara Krampus · Halloween</span><span class="pr">S/200</span></a>
+          <a href="../mascara-baphomet/"><img src="../../assets/products/mascara-baphomet-hero-v2.webp" alt="Máscara Baphomet 😈 · Halloween" loading="lazy" decoding="async" width="128" height="160"><span class="n">Máscara Baphomet · Halloween</span><span class="pr">S/140</span></a>
+          <a href="../mascara-hellboy-articulada/"><img src="../../assets/products/mascara-hellboy-articulada-1.webp" alt="Máscara Hellboy Articulada 👹 · Halloween" loading="lazy" decoding="async" width="128" height="160"><span class="n">Máscara Hellboy Articulada · Halloween</span><span class="pr">S/200</span></a>
+          <a href="../visor-de-cyclops/"><img src="../../assets/products/visor-de-cyclops-hero.webp" alt="Visor de Cyclops + chapa de cinturón 🎃 · Halloween" loading="lazy" decoding="async" width="128" height="160"><span class="n">Visor de Cyclops + chapa de cinturón · Halloween</span><span class="pr">S/100</span></a>
+          <a href="../mascara-red-hood/"><img src="../../assets/products/mascara-red-hood-hero.webp" alt="Máscara de Red Hood 🎃 · Halloween" loading="lazy" decoding="async" width="128" height="160"><span class="n">Máscara de Red Hood · Halloween</span><span class="pr">S/200</span></a>
+          <a href="../mascara-dr-doom/"><img src="../../assets/products/mascara-dr-doom-hero.webp" alt="Máscara de Dr. Doom 🎃 · Halloween" loading="lazy" decoding="async" width="128" height="160"><span class="n">Máscara de Dr. Doom · Halloween</span><span class="pr">S/130</span></a>
+        </div>
+        <div class="pp-cats"><span class="lbl">Explora también:</span>
+          <a href="../../categoria/figuras-coleccionables/">Figuras Coleccionables</a>
+          <a href="../../categoria/soportes-de-mandos/">Soportes de Mandos</a>
+          <a href="../../categoria/saint-seiya/">Saint Seiya</a>
+          <a href="../../categoria/harry-potter/">Harry Potter</a>
+          <a href="../../categoria/marvel-dc/">Marvel &amp; DC</a>
+          <a href="../../categoria/macetas/">Macetas</a>
+          <a href="../../categoria/mundial-de-futbol/">Mundial de Fútbol</a>
+          <a href="../../catalogo.html">Catálogo completo</a>
+        </div>
+      </section>
+
       <div class="pp-body">
         <h2>Detalle de la pieza</h2>
         <p>Casco del Mandaloriano 🎃 · Halloween es una figura de colección impresa en 3D, diseñada y fabricada por BoomArt en Perú. Se imprime en 3D en PLA+, con acabado y pintura a mano según la pieza, así que es un objeto hecho especialmente para tu pedido &mdash; puedes pedir un color, tamaño o detalle distinto y lo coordinamos por WhatsApp.</p>
@@ -160,15 +198,7 @@
         <p><a href="../../index.html?producto=casco-del-mandaloriano">Agrégala al carrito en la tienda BoomArt</a> o <a href="https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Casco%20del%20Mandaloriano%20%F0%9F%8E%83%20%C2%B7%20Halloween" target="_blank" rel="noreferrer nofollow">escríbenos por WhatsApp</a> para consultar disponibilidad y coordinar tu pedido.</p>
       </div>
 
-      <section class="pp-related">
-        <h2>También te puede interesar</h2>
-        <div class="pp-rel-grid">
-          <a href="../mascara-calavera/"><img src="../../assets/products/mascara-calavera-1.webp" alt="Máscara Calavera 💀 · Halloween" loading="lazy" decoding="async" width="180" height="180"><span>Máscara Calavera 💀 · Halloween</span></a>
-          <a href="../mascara-calabaza-calavera/"><img src="../../assets/products/mascara-calabaza-calavera-hero-v2.webp" alt="Máscara Calabaza Calavera 🎃 · Halloween" loading="lazy" decoding="async" width="180" height="180"><span>Máscara Calabaza Calavera 🎃 · Halloween</span></a>
-          <a href="../candelabro-calavera/"><img src="../../assets/products/candelabro-calavera-hero-v2.webp" alt="Candelabro Calavera 🎃 · Halloween" loading="lazy" decoding="async" width="180" height="180"><span>Candelabro Calavera 🎃 · Halloween</span></a>
-          <a href="../evil-mask/"><img src="../../assets/products/evil-mask-hero-v2.webp" alt="Evil Mask 😈 · Halloween" loading="lazy" decoding="async" width="180" height="180"><span>Evil Mask 😈 · Halloween</span></a>
-        </div>
-      </section>
+      
     </main>
 
     <footer class="footer">

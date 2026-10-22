@@ -963,6 +963,18 @@ const PRODUCT_PAGE_CSS = `
     .pp-body{margin-top:34px;max-width:70ch;line-height:1.65}
     .pp-body h2{font-size:1.15rem;margin:22px 0 8px}
     .pp-body p{margin:0 0 12px}
+    .pp-more{margin:26px 0 4px}
+    .pp-more-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:0 0 10px}
+    .pp-more-head h2{font-size:1.05rem;margin:0}
+    .pp-more-head a{font-size:.85rem;font-weight:700;color:#e1132f;text-decoration:none;white-space:nowrap}
+    .pp-more-row{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+    .pp-more-row a{flex:0 0 128px;scroll-snap-align:start;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:block}
+    .pp-more-row img{width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;background:#101010;display:block}
+    .pp-more-row .n{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;padding:6px 8px 0;font-size:.78rem;font-weight:600;line-height:1.25}
+    .pp-more-row .pr{display:block;padding:2px 8px 8px;font-size:.78rem;color:var(--muted)}
+    .pp-cats{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:12px 0 0}
+    .pp-cats .lbl{font-size:.82rem;color:var(--muted);margin-right:2px}
+    .pp-cats a{font-size:.8rem;font-weight:700;padding:5px 11px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:inherit}
     .pp-related{margin-top:44px}
     .pp-related h2{font-size:1.15rem;margin:0 0 14px}
     .pp-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
@@ -1063,6 +1075,33 @@ function buildProductPage(p, all, ratingLd) {
     )
     .join("\n          ");
 
+  // Navegación sutil: más productos de la misma categoría + otras categorías
+  const sameCat = all.filter((x) => x.category === p.category && x.id !== p.id);
+  const moreCards = sameCat
+    .slice(0, 10)
+    .map((r) => {
+      const pi = priceInfo(r);
+      const lbl = pi.from != null ? `${r.templePricing || r.signPicker ? "Desde " : ""}S/${pi.from}` : "";
+      return `<a href="../${esc(r.id)}/"><img src="${esc(toWebp(`${rel}${String((r.gallery && r.gallery[0]) || r.image).replace(/^\/+/, "")}`))}" alt="${esc(r.name)}" loading="lazy" decoding="async" width="128" height="160"><span class="n">${esc(stripEmoji(r.name))}</span>${lbl ? `<span class="pr">${esc(lbl)}</span>` : ""}</a>`;
+    })
+    .join("\n          ");
+  const otherCats = Object.keys(CATEGORY_META)
+    .filter((c) => c !== p.category && all.some((x) => x.category === c))
+    .map((c) => `<a href="${rel}categoria/${categorySlug(c)}/">${esc(stripEmoji(categoryLabel(c)))}</a>`)
+    .join("\n          ");
+  const moreHtml = moreCards
+    ? `<section class="pp-more" aria-label="Más productos">
+        <div class="pp-more-head"><h2>Más de ${esc(catClean)}</h2><a href="${rel}categoria/${slug(p.category)}/">Ver todos (${sameCat.length + 1}) &rarr;</a></div>
+        <div class="pp-more-row">
+          ${moreCards}
+        </div>
+        <div class="pp-cats"><span class="lbl">Explora también:</span>
+          ${otherCats}
+          <a href="${rel}catalogo.html">Catálogo completo</a>
+        </div>
+      </section>`
+    : "";
+
   const ratingStr = ratingLd && ratingLd.aggregateRating
     ? `<p class="pp-rating">&#9733; ${ratingLd.aggregateRating.ratingValue} / 5 &middot; <a href="${rel}opinion/">${ratingLd.aggregateRating.reviewCount} opiniones de clientes</a></p>`
     : "";
@@ -1161,6 +1200,8 @@ function buildProductPage(p, all, ratingLd) {
         </div>
       </div>
 
+      ${moreHtml}
+
       <div class="pp-body">
         <h2>Detalle de la pieza</h2>
         <p>${esc(p.name)} es una ${esc(ctx)}, diseñada y fabricada por BoomArt en ${esc(p.height && /cm/i.test(p.height) ? p.height + ", " : "")}Perú. Se imprime en 3D en ${esc(p.material || "PLA+")}, con acabado y pintura a mano según la pieza, así que es un objeto hecho especialmente para tu pedido &mdash; puedes pedir un color, tamaño o detalle distinto y lo coordinamos por WhatsApp.</p>
@@ -1174,7 +1215,7 @@ function buildProductPage(p, all, ratingLd) {
       </div>
 
       ${
-        related.length
+        related.length && !moreHtml
           ? `<section class="pp-related">
         <h2>También te puede interesar</h2>
         <div class="pp-rel-grid">
