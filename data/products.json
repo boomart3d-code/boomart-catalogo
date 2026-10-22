@@ -1031,6 +1031,31 @@
     "description": "Ajedrez de colección Hogwarts · 4 Casas. Un homenaje integral al colegio de magia."
   },
   {
+    "id": "ajedrez-harry-potter-modular-40x40",
+    "name": "Ajedrez Harry Potter Modular 40x40 · Personalizado",
+    "category": "Harry Potter",
+    "tags": [
+      "Ajedrez",
+      "Harry Potter",
+      "Tablero",
+      "Personalizado",
+      "Modular",
+      "Regalos"
+    ],
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 220,
+    "featured": true,
+    "image": "assets/products/ajedrez-harry-potter-modular-1.jpg",
+    "gallery": [
+      "assets/products/ajedrez-harry-potter-modular-1.jpg",
+      "assets/products/ajedrez-harry-potter-modular-2.jpg",
+      "assets/products/ajedrez-harry-potter-modular-3.jpg",
+      "assets/products/ajedrez-harry-potter-modular-4.jpg"
+    ],
+    "description": "♟️ Ajedrez Harry Potter modular y personalizable. Tablero de 40 x 40 cm formado por 4 módulos de 20 cm que se unen para jugar. Piezas de 6 a 8 cm de alto, en PLA+ y pintadas a mano en dorado y plata, sobre casillas doradas y plateadas. Lleva 2 nombres grabados en el marco: el tuyo y el de tu rival, o el de la persona a quien se lo regalas; solo dinos los nombres al hacer tu pedido. Un regalo único para fans de Harry Potter y del ajedrez. Hecho a pedido, con envíos a todo el Perú."
+  },
+  {
     "id": "lampara-sombrero-seleccionador",
     "name": "Lámpara Sombrero Seleccionador · Harry Potter",
     "category": "Harry Potter",

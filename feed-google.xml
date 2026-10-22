@@ -3,7 +3,7 @@
   <channel>
     <title>BoomArt - Catalogo de productos</title>
     <link>https://boomart.pe/</link>
-    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-10-21.</description>
+    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-10-22.</description>
     <item>
       <g:id>templo-aries</g:id>
       <g:title>Templo de Aries</g:title>
@@ -705,6 +705,23 @@
       <g:additional_image_link>https://boomart.pe/assets/products/ajedrez-de-hogwarts-4-casas-6.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>260.00 PEN</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>BoomArt</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
+      <g:product_type>Harry Potter</g:product_type>
+    </item>
+    <item>
+      <g:id>ajedrez-harry-potter-modular-40x40</g:id>
+      <g:title>Ajedrez Harry Potter Modular 40x40 · Personalizado</g:title>
+      <g:description>♟️ Ajedrez Harry Potter modular y personalizable. Tablero de 40 x 40 cm formado por 4 módulos de 20 cm que se unen para jugar. Piezas de 6 a 8 cm de alto, en PLA+ y pintadas a mano en dorado y plata, sobre casillas doradas y plateadas. Lleva 2 nombres grabados en el marco: el tuyo y el de tu rival, o el de la persona a quien se lo regalas; solo dinos los nombres al hacer tu pedido. Un regalo único para fans de Harry Potter y del ajedrez. Hecho a pedido, con envíos a todo el Perú. Fabricado a pedido en impresion 3D (PLA+), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
+      <g:link>https://boomart.pe/producto/ajedrez-harry-potter-modular-40x40/</g:link>
+      <g:image_link>https://boomart.pe/assets/products/ajedrez-harry-potter-modular-1.jpg</g:image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/ajedrez-harry-potter-modular-2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/ajedrez-harry-potter-modular-3.jpg</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/ajedrez-harry-potter-modular-4.jpg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>220.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
