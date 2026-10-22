@@ -295,10 +295,10 @@
   },
   "ajedrez-harry-potter-modular-40x40": {
     "source": "assets/products/ajedrez-harry-potter-modular-0.jpg",
-    "hash": "be78314284a1a36b",
+    "hash": "982484ef10bd8814",
     "width": 960,
     "height": 1200,
-    "bytes": 131556
+    "bytes": 130245
   },
   "lampara-sombrero-seleccionador": {
     "source": "assets/products/lampara-sombrero-seleccionador-hero-v2.png",
@@ -350,11 +350,11 @@
     "bytes": 138736
   },
   "mascara-calavera": {
-    "source": "assets/products/mascara-calavera-1.jpg",
-    "hash": "4301eadbdf86ca98",
+    "source": "assets/products/mascara-calavera-0.jpg",
+    "hash": "27d51e5318e001a8",
     "width": 960,
     "height": 1200,
-    "bytes": 83001
+    "bytes": 97843
   },
   "mascara-calabaza-calavera": {
     "source": "assets/products/mascara-calabaza-calavera-hero-v2.png",
