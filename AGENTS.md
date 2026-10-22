@@ -78,3 +78,4 @@ de otros clientes ni credenciales.
 
 ## Antes de publicar cambios en las plantillas de ficha/categoría
 - Sirve el repo (`python -m http.server 4173`) y corre `node scripts/check-mobile-overflow.mjs`. Debe decir «con problema: 0». Detecta páginas que se salen del ancho del celular (obliga a pellizcar). Causa típica: columnas `1fr` en grillas con filas de miniaturas; usar `minmax(0,1fr)` y `min-width:0`.
+- Tras tocar `src/styles.css` o la cabecera: `node scripts/check-header-gap.mjs` (con el servidor en 4173). Debe decir «con hueco: 0». La cabecera `.site-header` solo se baja 46px (`--quicknav-h`) en las páginas que traen la barra `.quick-nav` (regla `html:has(.quick-nav)`); si no, dejaba un hueco por donde se veía pasar el título de la página (visto en /impresion-3d-personalizada/, nosotros, politicas, etc.).

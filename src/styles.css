@@ -10,7 +10,7 @@
   --red-dark: #a70c20;
   --gold: #d6b268;
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
-  --quicknav-h: 46px;
+  --quicknav-h: 0px;
   --gallery-ivory: #f4f0e8;
   --gallery-ivory-soft: #faf8f3;
   --gallery-carbon: #0b0b0b;
@@ -54,6 +54,13 @@ a {
 button,
 input {
   font: inherit;
+}
+
+/* La cabecera pegajosa solo se baja 46px si la pagina trae la barra .quick-nav;
+   en las demas (nosotros, politicas, cotizar, etc.) top:46px dejaba un hueco por el que
+   se veia pasar el contenido por encima de la cabecera. */
+html:has(.quick-nav) {
+  --quicknav-h: 46px;
 }
 
 .site-header {
