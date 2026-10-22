@@ -972,9 +972,18 @@ const PRODUCT_PAGE_CSS = `
     .pp-more-row img{width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;background:#101010;display:block}
     .pp-more-row .n{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;padding:6px 8px 0;font-size:.78rem;font-weight:600;line-height:1.25}
     .pp-more-row .pr{display:block;padding:2px 8px 8px;font-size:.78rem;color:var(--muted)}
-    .pp-cats{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:12px 0 0}
-    .pp-cats .lbl{font-size:.82rem;color:var(--muted);margin-right:2px}
-    .pp-cats a{font-size:.8rem;font-weight:700;padding:5px 11px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:inherit}
+    .site-header{top:0}
+    .pp-cats{margin:22px 0 0}
+    .pp-cats .lbl{display:block;font-size:.98rem;font-weight:800;margin:0 0 10px}
+    .pp-cat-row{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+    .pp-cat-tile{flex:0 0 118px;scroll-snap-align:start;display:flex;flex-direction:column;text-decoration:none;color:#fff;background:#0b0b0b;border-radius:12px;overflow:hidden}
+    .pp-cat-tile img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;padding:6px;background:#101010;transition:transform .3s ease}
+    .pp-cat-tile:hover img{transform:scale(1.04)}
+    .pp-cat-tile span{padding:8px 9px 10px;font-size:.8rem;font-weight:800;line-height:1.15}
+    .pp-cat-all{justify-content:center;gap:8px;padding:12px;background:#e1132f}
+    .pp-cat-all span{padding:0;font-size:.9rem}
+    .pp-cat-all b{font-size:1.4rem;line-height:1}
+    @media(min-width:900px){.pp-cat-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));overflow:visible}.pp-cat-tile{flex:none}.pp-cat-all{grid-column:1/-1;flex-direction:row;align-items:center;justify-content:space-between;padding:12px 18px}.pp-cat-all span{font-size:1rem}}
     .pp-related{margin-top:44px}
     .pp-related h2{font-size:1.15rem;margin:0 0 14px}
     .pp-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
@@ -1085,9 +1094,20 @@ function buildProductPage(p, all, ratingLd) {
       return `<a href="../${esc(r.id)}/"><img src="${esc(toWebp(`${rel}${String((r.gallery && r.gallery[0]) || r.image).replace(/^\/+/, "")}`))}" alt="${esc(r.name)}" loading="lazy" decoding="async" width="128" height="160"><span class="n">${esc(stripEmoji(r.name))}</span>${lbl ? `<span class="pr">${esc(lbl)}</span>` : ""}</a>`;
     })
     .join("\n          ");
-  const otherCats = Object.keys(CATEGORY_META)
-    .filter((c) => c !== p.category && all.some((x) => x.category === c))
-    .map((c) => `<a href="${rel}categoria/${categorySlug(c)}/">${esc(stripEmoji(categoryLabel(c)))}</a>`)
+  const CAT_TILE_ORDER = [
+    ["saint-seiya", "tile-saint-seiya.webp"],
+    ["halloween", "tile-halloween.webp?v=2"],
+    ["marvel-dc", "tile-marvel-dc.webp?v=2"],
+    ["harry-potter", "tile-harry-potter.webp?v=2"],
+    ["soportes-de-mandos", "tile-soportes-mandos.webp"],
+    ["figuras-coleccionables", "tile-series-peliculas.webp"],
+    ["macetas", "tile-macetas.webp"],
+    ["mundial-de-futbol", "tile-mundial.webp"],
+  ];
+  const catBySlug = Object.fromEntries(Object.keys(CATEGORY_META).map((c) => [categorySlug(c), c]));
+  const otherCats = CAT_TILE_ORDER
+    .filter(([sl]) => catBySlug[sl] && sl !== slug(p.category) && all.some((x) => x.category === catBySlug[sl]))
+    .map(([sl, file]) => `<a class="pp-cat-tile" href="${rel}categoria/${sl}/"><img src="${rel}assets/hero/${file}" alt="" loading="lazy" decoding="async" width="160" height="200"><span>${esc(stripEmoji(categoryLabel(catBySlug[sl])))}</span></a>`)
     .join("\n          ");
   const moreHtml = moreCards
     ? `<section class="pp-more" aria-label="Más productos">
@@ -1095,9 +1115,11 @@ function buildProductPage(p, all, ratingLd) {
         <div class="pp-more-row">
           ${moreCards}
         </div>
-        <div class="pp-cats"><span class="lbl">Explora también:</span>
+        <div class="pp-cats"><span class="lbl">Explora otras temáticas</span>
+          <div class="pp-cat-row">
           ${otherCats}
-          <a href="${rel}catalogo.html">Catálogo completo</a>
+          <a class="pp-cat-tile pp-cat-all" href="${rel}catalogo.html"><span>Ver todo el catálogo</span><b aria-hidden="true">&rarr;</b></a>
+          </div>
         </div>
       </section>`
     : "";
@@ -1511,6 +1533,7 @@ const CATEGORY_PAGE_CSS = `
     .cat-card .n{font-weight:700;font-size:.92rem;line-height:1.25}
     .cat-card .p{font-size:.9rem;color:var(--muted)}
     .cat-more{margin-top:28px}
+    .site-header{top:0}
 `;
 
 function categorySlug(cat) {

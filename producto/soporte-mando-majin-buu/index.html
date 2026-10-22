@@ -79,9 +79,18 @@
     .pp-more-row img{width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;background:#101010;display:block}
     .pp-more-row .n{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;padding:6px 8px 0;font-size:.78rem;font-weight:600;line-height:1.25}
     .pp-more-row .pr{display:block;padding:2px 8px 8px;font-size:.78rem;color:var(--muted)}
-    .pp-cats{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:12px 0 0}
-    .pp-cats .lbl{font-size:.82rem;color:var(--muted);margin-right:2px}
-    .pp-cats a{font-size:.8rem;font-weight:700;padding:5px 11px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:inherit}
+    .site-header{top:0}
+    .pp-cats{margin:22px 0 0}
+    .pp-cats .lbl{display:block;font-size:.98rem;font-weight:800;margin:0 0 10px}
+    .pp-cat-row{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+    .pp-cat-tile{flex:0 0 118px;scroll-snap-align:start;display:flex;flex-direction:column;text-decoration:none;color:#fff;background:#0b0b0b;border-radius:12px;overflow:hidden}
+    .pp-cat-tile img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;padding:6px;background:#101010;transition:transform .3s ease}
+    .pp-cat-tile:hover img{transform:scale(1.04)}
+    .pp-cat-tile span{padding:8px 9px 10px;font-size:.8rem;font-weight:800;line-height:1.15}
+    .pp-cat-all{justify-content:center;gap:8px;padding:12px;background:#e1132f}
+    .pp-cat-all span{padding:0;font-size:.9rem}
+    .pp-cat-all b{font-size:1.4rem;line-height:1}
+    @media(min-width:900px){.pp-cat-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));overflow:visible}.pp-cat-tile{flex:none}.pp-cat-all{grid-column:1/-1;flex-direction:row;align-items:center;justify-content:space-between;padding:12px 18px}.pp-cat-all span{font-size:1rem}}
     .pp-related{margin-top:44px}
     .pp-related h2{font-size:1.15rem;margin:0 0 14px}
     .pp-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
@@ -172,15 +181,17 @@
           <a href="../soporte-mando-the-last-of-us/"><img src="../../assets/products/soporte-mando-the-last-of-us.webp" alt="Soporte de Mando y Audífonos · The Last of Us" loading="lazy" decoding="async" width="128" height="160"><span class="n">Soporte de Mando y Audífonos · The Last of Us</span><span class="pr">S/50</span></a>
           <a href="../mando-the-last-of-us-muro/"><img src="../../assets/products/mando-the-last-of-us-muro.webp" alt="Soporte de Mando The Last of Us Muro" loading="lazy" decoding="async" width="128" height="160"><span class="n">Soporte de Mando The Last of Us Muro</span><span class="pr">S/150</span></a>
         </div>
-        <div class="pp-cats"><span class="lbl">Explora también:</span>
-          <a href="../../categoria/figuras-coleccionables/">Figuras Coleccionables</a>
-          <a href="../../categoria/saint-seiya/">Saint Seiya</a>
-          <a href="../../categoria/harry-potter/">Harry Potter</a>
-          <a href="../../categoria/marvel-dc/">Marvel &amp; DC</a>
-          <a href="../../categoria/halloween/">Halloween y Cosplay</a>
-          <a href="../../categoria/macetas/">Macetas</a>
-          <a href="../../categoria/mundial-de-futbol/">Mundial de Fútbol</a>
-          <a href="../../catalogo.html">Catálogo completo</a>
+        <div class="pp-cats"><span class="lbl">Explora otras temáticas</span>
+          <div class="pp-cat-row">
+          <a class="pp-cat-tile" href="../../categoria/saint-seiya/"><img src="../../assets/hero/tile-saint-seiya.webp" alt="" loading="lazy" decoding="async" width="160" height="200"><span>Saint Seiya</span></a>
+          <a class="pp-cat-tile" href="../../categoria/halloween/"><img src="../../assets/hero/tile-halloween.webp?v=2" alt="" loading="lazy" decoding="async" width="160" height="200"><span>Halloween y Cosplay</span></a>
+          <a class="pp-cat-tile" href="../../categoria/marvel-dc/"><img src="../../assets/hero/tile-marvel-dc.webp?v=2" alt="" loading="lazy" decoding="async" width="160" height="200"><span>Marvel &amp; DC</span></a>
+          <a class="pp-cat-tile" href="../../categoria/harry-potter/"><img src="../../assets/hero/tile-harry-potter.webp?v=2" alt="" loading="lazy" decoding="async" width="160" height="200"><span>Harry Potter</span></a>
+          <a class="pp-cat-tile" href="../../categoria/figuras-coleccionables/"><img src="../../assets/hero/tile-series-peliculas.webp" alt="" loading="lazy" decoding="async" width="160" height="200"><span>Figuras Coleccionables</span></a>
+          <a class="pp-cat-tile" href="../../categoria/macetas/"><img src="../../assets/hero/tile-macetas.webp" alt="" loading="lazy" decoding="async" width="160" height="200"><span>Macetas</span></a>
+          <a class="pp-cat-tile" href="../../categoria/mundial-de-futbol/"><img src="../../assets/hero/tile-mundial.webp" alt="" loading="lazy" decoding="async" width="160" height="200"><span>Mundial de Fútbol</span></a>
+          <a class="pp-cat-tile pp-cat-all" href="../../catalogo.html"><span>Ver todo el catálogo</span><b aria-hidden="true">&rarr;</b></a>
+          </div>
         </div>
       </section>
 
