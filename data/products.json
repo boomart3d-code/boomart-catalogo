@@ -1230,8 +1230,9 @@
     "availability": "A pedido",
     "regularPrice": 100,
     "featured": true,
-    "image": "assets/products/mascara-calavera-1.jpg",
+    "image": "assets/products/mascara-calavera-0.jpg",
     "gallery": [
+      "assets/products/mascara-calavera-0.jpg",
       "assets/products/mascara-calavera-1.jpg",
       "assets/products/mascara-calavera-2.jpg",
       "assets/products/mascara-calavera-3.jpg",
