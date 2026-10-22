@@ -1046,8 +1046,9 @@
     "availability": "A pedido",
     "regularPrice": 220,
     "featured": true,
-    "image": "assets/products/ajedrez-harry-potter-modular-1.jpg",
+    "image": "assets/products/ajedrez-harry-potter-modular-0.jpg",
     "gallery": [
+      "assets/products/ajedrez-harry-potter-modular-0.jpg",
       "assets/products/ajedrez-harry-potter-modular-1.jpg",
       "assets/products/ajedrez-harry-potter-modular-2.jpg",
       "assets/products/ajedrez-harry-potter-modular-3.jpg",
