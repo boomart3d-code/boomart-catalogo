@@ -294,11 +294,11 @@
     "bytes": 199495
   },
   "ajedrez-harry-potter-modular-40x40": {
-    "source": "assets/products/ajedrez-harry-potter-modular-1.jpg",
-    "hash": "067049a84fe962f6",
+    "source": "assets/products/ajedrez-harry-potter-modular-0.jpg",
+    "hash": "be78314284a1a36b",
     "width": 960,
     "height": 1200,
-    "bytes": 153657
+    "bytes": 131556
   },
   "lampara-sombrero-seleccionador": {
     "source": "assets/products/lampara-sombrero-seleccionador-hero-v2.png",
