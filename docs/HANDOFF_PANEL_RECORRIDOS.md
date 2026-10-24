@@ -56,3 +56,11 @@ rotulan como agregados, sin fingir que son el contenido definitivo del pedido.
 Sin cambios a BD ni a tracking. JS/CSS versionados para renovar caché.
 Prueba de resumen/escape y regresión PostgreSQL embebida aprobada. La conexión
 al navegador no respondió al intentar la revisión visual de este ajuste.
+
+## Intereses previos al pedido (24/10/2026)
+
+Añadido listado de otros productos consultados antes de la salida a WhatsApp,
+sin horas ni repeticiones, conservando orden de primera consulta. Omite productos
+del snapshot del pedido (o agregados históricos cuando no hay snapshot), y vistas
+posteriores. Solo presenta intereses observados en la sesión; no crea audiencias
+ni envía mensajes de remarketing. Sin cambios de datos, RPC ni permisos.
