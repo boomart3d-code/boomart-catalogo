@@ -44,3 +44,15 @@ el panel previo y puede dejarse sin uso. No borrar eventos.
 - Sintaxis JS y `git diff --check` aprobados.
 - Desplegable revisado en Chrome con fixture local ficticio. Captura en
   `D:/BOOMART-EQUIPO/tmp/qa-recorridos/vista-panel.png` (no versionada).
+
+## Simplificación solicitada por Adrián (24/10/2026)
+
+Sustituido el registro técnico por resumen con productos, total, cantidad,
+cupón, método elegido, código cuando existe, procedencia, campaña si existe,
+ubicación aproximada y equipo. Cronología limitada a entrada, primer agregado,
+inicio de compra y salida a WhatsApp. Omite filtros, rutas, idioma, zona horaria,
+referente crudo y navegación posterior al pedido. Productos históricos se
+rotulan como agregados, sin fingir que son el contenido definitivo del pedido.
+Sin cambios a BD ni a tracking. JS/CSS versionados para renovar caché.
+Prueba de resumen/escape y regresión PostgreSQL embebida aprobada. La conexión
+al navegador no respondió al intentar la revisión visual de este ajuste.

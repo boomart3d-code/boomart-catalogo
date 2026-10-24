@@ -1,0 +1,9 @@
+#recorridos .card { margin: 12px 0; }
+#recorridos summary { cursor: pointer; line-height: 1.7; }
+.recorrido-datos { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,220px),1fr)); gap: 18px 24px; margin: 24px 0; }
+.recorrido-datos dt { color: var(--muted,#a29b92); font-size: .85rem; margin-bottom: 4px; }
+.recorrido-datos dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+.recorrido-pasos { list-style: none; padding: 0; margin: 12px 0; }
+.recorrido-pasos li { display: flex; align-items: baseline; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line,#2a2a2f); }
+.recorrido-pasos time { min-width: 94px; color: var(--muted,#a29b92); font-variant-numeric: tabular-nums; }
+.recorrido-nota { color: var(--muted,#a29b92); font-size: .85rem; }

@@ -35,6 +35,7 @@ const {PGlite} = require('D:/BOOMART-EQUIPO/tmp/qa-recorridos/node_modules/@elec
  vm.runInNewContext(fs.readFileSync('panel/recorridos.js','utf8'),{window,document});
  let calls=0;await window.BoomartRecorridos({rpc:async()=>({data:++calls===1?[{sid:'synthetic',ultima:'2026-10-24T12:00Z',fuente:'<img src=x onerror=1>',pedido:true}]:[{creado:'2026-10-24T12:00Z',tipo:'pedido_whatsapp',extra:{pedido:'<script>x</script>',items:[{id:'mini',cantidad:1}]}}]})},{},root,x=>x);
  assert.ok(!root.row.innerHTML.includes('<img'));await handler();assert.ok(box.innerHTML.includes('&lt;script&gt;'));assert.ok(box.innerHTML.includes('mini'));
+ assert.ok(box.innerHTML.includes('Pasos de compra'));assert.ok(!box.innerHTML.includes('Zona horaria'));assert.ok(!box.innerHTML.includes('Referente'));
  await handler();assert.equal(calls,2);
  await db.close();console.log('OK: autorización, filtros, recorrido histórico, código, escape HTML y carga diferida.');
 })().catch(e=>{console.error(e);process.exitCode=1});
