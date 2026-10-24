@@ -163,6 +163,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
   <script src="../src/supabase-config.js?v=1"></script>
+  <script src="recorridos.js?v=1"></script>
   <script>
     (function () {
       "use strict";
@@ -507,7 +508,9 @@
             <li>No se guardan nombres, correos, teléfonos ni IP; solo códigos aleatorios del navegador.</li>
           </ul></details>`;
 
-        $("#contenido").innerHTML = html;
+        $("#contenido").innerHTML = html + '<section id="recorridos" style="overflow-wrap:anywhere"></section>';
+        const rr = calcularRango();
+        window.BoomartRecorridos(sb, {p_desde:rr.desde,p_hasta:rr.hasta,p_solo_peru:$("#chkPeru").checked}, $("#recorridos"), nombreProducto);
       };
 
       // ---------- Carga de datos ----------

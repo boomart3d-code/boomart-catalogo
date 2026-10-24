@@ -16,6 +16,7 @@
   const trackEvt = (name, props) => {
     try {
       if (window.BoomartTrack) window.BoomartTrack.event(name, props);
+      if (name === "pedido_whatsapp" && window.BoomartTrack?.flush) window.BoomartTrack.flush();
     } catch (e) { /* nada */ }
   };
   const trackCart = (name, extra) => {
@@ -920,7 +921,9 @@ Código de pedido: ${code}`;
     trackEvt("pedido_whatsapp", {
       c: state.totals.itemCount,
       v: state.totals.total,
-      d: { metodo: selectedPaymentMethod, cupon: plan.couponApplied ? "si" : "no" },
+      d: { metodo: selectedPaymentMethod, cupon: plan.couponApplied ? "si" : "no", pedido: code,
+        items: state.lines.slice(0, 20).map(l => ({ id: String(l.productId).slice(0,80), cantidad: l.quantity, variante: String(l.variantLabel || "").slice(0,60) })),
+        items_truncados: state.lines.length > 20 ? "si" : "no" },
     });
     document.dispatchEvent(
       new CustomEvent("boomart:order-sent", {

@@ -182,10 +182,19 @@ Deno.serve(async (req) => {
     const ev = e as Record<string, unknown>;
     const tipo = texto(ev.t, 30);
     if (!tipo || !TIPOS.has(tipo)) continue;
-    let extra: Record<string, string> | null = null;
+    let extra: Record<string, unknown> | null = null;
     if (ev.d && typeof ev.d === "object") {
       extra = {};
       for (const [k, v] of Object.entries(ev.d as Record<string, unknown>).slice(0, 6)) {
+        if (k === "items" && tipo === "pedido_whatsapp" && Array.isArray(v)) {
+          extra.items = v.slice(0, 20).flatMap((item) => {
+            if (!item || typeof item !== "object") return [];
+            const id = texto(item.id, 80);
+            const cantidad = entero(item.cantidad, 1, 999);
+            return id && cantidad ? [{ id, cantidad, variante: texto(item.variante, 60) }] : [];
+          });
+          continue;
+        }
         const val = texto(String(v ?? ""), 60);
         if (val) extra[String(k).slice(0, 20)] = val;
       }
