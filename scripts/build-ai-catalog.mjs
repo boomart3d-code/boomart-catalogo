@@ -1498,6 +1498,7 @@ const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
   "mascara-krampus",
   "mascara-calabaza-calavera",
   // Fantasia, elfos y accesorios historicos.
+  "corona-targaryen",
   "corona-de-elfo",
   "cuernos-de-fauno",
   "tiara-de-ikki-de-fenix-saint-seiya",

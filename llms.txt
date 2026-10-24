@@ -4,7 +4,7 @@
 
 ## Catalogo
 
-- [Catalogo completo (HTML, texto plano)](https://boomart.pe/catalogo.html): las 91 piezas con descripcion, material y precios.
+- [Catalogo completo (HTML, texto plano)](https://boomart.pe/catalogo.html): las 92 piezas con descripcion, material y precios.
 - [Catalogo en Markdown](https://boomart.pe/llms-full.txt): mismo contenido en un solo archivo de texto.
 - [Feed JSON](https://boomart.pe/catalogo.json): datos estructurados (precios, imagenes, categorias).
 - [Feed Google/Pinterest (XML)](https://boomart.pe/feed-google.xml): formato Google Merchant Center.
@@ -25,7 +25,7 @@
 ## Categorias
 
 - Saint Seiya: 39 piezas
-- 🎃 Halloween: 21 piezas
+- 🎃 Halloween: 22 piezas
 - Harry Potter: 6 piezas
 - Marvel & DC: 8 piezas
 - Figuras Coleccionables: 3 piezas
@@ -52,4 +52,4 @@
 - Facebook: https://www.facebook.com/boom.art.873521/
 - TikTok: https://www.tiktok.com/@boomart.3d
 - Ubicacion: Bellavista, Callao, Peru
-- Actualizado: 2026-10-22
+- Actualizado: 2026-10-24

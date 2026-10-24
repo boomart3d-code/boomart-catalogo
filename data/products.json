@@ -2237,5 +2237,27 @@
     ],
     "description": "Máscara de John Wick a tamaño real 1:1, inspirada en el legendario personaje del cine. Presenta cabello, cejas y barba pintados a mano, con aberturas funcionales para los ojos. Ideal para cosplay, disfraces, sesiones de fotos o exhibición. Fabricada en PLA+ para mayor resistencia y durabilidad. Hecha a pedido, con envíos a todo el Perú.",
     "sizeOptions": true
+  },
+  {
+    "id": "corona-targaryen",
+    "name": "Corona Targaryen",
+    "category": "🎃 Halloween",
+    "tags": [
+      "Coronas",
+      "Cosplay",
+      "Fantasía"
+    ],
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 70,
+    "featured": false,
+    "image": "assets/products/corona-targaryen-01.jpg",
+    "gallery": [
+      "assets/products/corona-targaryen-01.jpg",
+      "assets/products/corona-targaryen-02.jpg",
+      "assets/products/corona-targaryen-03.jpg",
+      "assets/products/corona-targaryen-04.jpg"
+    ],
+    "description": "Corona Targaryen impresa en 3D, con acabado dorado, bordes en tono acero y medallones en relieve. Para complementar tu cosplay, look de Halloween o colección. Consulta el ajuste y la disponibilidad al hacer tu pedido."
   }
 ]

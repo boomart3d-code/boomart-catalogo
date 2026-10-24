@@ -635,5 +635,12 @@
     "width": 1200,
     "height": 1200,
     "bytes": 85229
+  },
+  "corona-targaryen": {
+    "source": "assets/products/corona-targaryen-01.jpg",
+    "hash": "7e3ac4a2975ece08",
+    "width": 960,
+    "height": 1200,
+    "bytes": 197060
   }
 }

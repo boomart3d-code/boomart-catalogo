@@ -3,7 +3,7 @@
   <channel>
     <title>BoomArt - Catalogo de productos</title>
     <link>https://boomart.pe/</link>
-    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-10-22.</description>
+    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-10-24.</description>
     <item>
       <g:id>templo-aries</g:id>
       <g:title>Templo de Aries</g:title>
@@ -1512,6 +1512,23 @@
       <g:additional_image_link>https://boomart.pe/assets/products/mascara-de-john-wick-5.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>180.00 PEN</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>BoomArt</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
+      <g:product_type>🎃 Halloween</g:product_type>
+    </item>
+    <item>
+      <g:id>corona-targaryen</g:id>
+      <g:title>Corona Targaryen</g:title>
+      <g:description>Corona Targaryen impresa en 3D, con acabado dorado, bordes en tono acero y medallones en relieve. Para complementar tu cosplay, look de Halloween o colección. Consulta el ajuste y la disponibilidad al hacer tu pedido. Fabricado a pedido en impresion 3D (PLA+), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
+      <g:link>https://boomart.pe/producto/corona-targaryen/</g:link>
+      <g:image_link>https://boomart.pe/assets/products/corona-targaryen-01.jpg</g:image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/corona-targaryen-02.jpg</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/corona-targaryen-03.jpg</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/corona-targaryen-04.jpg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>70.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
