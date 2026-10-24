@@ -14,7 +14,7 @@
     root.innerHTML = `<h2>Carritos y salidas a WhatsApp</h2><p>Hasta 100 sesiones recientes del rango y filtro elegidos. Horas de Lima. Un clic no confirma envío del mensaje ni pago. Cada sesión representa un navegador, no una identidad comprobada.</p>${rows.length ? "" : "<p>No hay recorridos en este rango.</p>"}`;
     rows.forEach((s, i) => {
       const d = document.createElement("details"); d.className = "card";
-      d.innerHTML = `<summary><strong>Visita ${i+1} · ${esc(fecha(s.ultima))}</strong> · ${esc(s.fuente || "Sin origen registrado")} · ${s.pedido ? "Salida del pedido a WhatsApp" : s.inicio_compra ? "Inició compra" : s.carrito ? "Abrió carrito" : "Clic de WhatsApp"}</summary><div class="recorrido-detalle"></div>`;
+      d.innerHTML = `<summary><strong>Visita ${i+1} · última actividad: ${esc(fecha(s.ultima))}</strong> · ${esc(s.fuente || "Sin origen registrado")} · ${s.pedido ? "Salida del pedido a WhatsApp" : s.inicio_compra ? "Inició compra" : s.carrito ? "Abrió carrito" : "Clic de WhatsApp"}</summary><div class="recorrido-detalle"></div>`;
       let loaded = false, loading = false;
       d.addEventListener("toggle", async () => {
         if (!d.open || loaded || loading) return;

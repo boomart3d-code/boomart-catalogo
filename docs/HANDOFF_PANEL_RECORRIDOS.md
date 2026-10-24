@@ -1,7 +1,8 @@
 # Detalle de recorridos — 24/10/2026 · Codex
 
-Estado: implementado y probado localmente; NO desplegado. Adrián autorizó
-la mejora en esta conversación. No se consultaron ni modificaron pedidos reales.
+Estado: DESPLEGADO el 24/10/2026 por Codex, autorizado por Adrián.
+Se verificó el recorrido real en lectura desde el panel administrativo.
+No se modificaron filas de pedidos, clientes ni eventos.
 
 El panel incorpora carritos y salidas a WhatsApp (100 sesiones del rango y
 filtro), con carga diferida de la cronología. Incluye fuente, medio, campaña,
@@ -12,20 +13,21 @@ hasta 20 líneas de productos/variantes/cantidades sin contactos ni documentos.
 El código y contenido exacto no pueden reconstruirse para eventos antiguos.
 No se interpreta un clic como mensaje enviado, pago o venta confirmada.
 
-## Activación pendiente
+## Activación verificada
 
-1. Iniciar sesión en Supabase (sesión del navegador cerrada; acceso GitHub
-   también solicita login). No se obtuvieron ni guardaron credenciales.
-2. Aplicar SOLO `supabase/migrations/202610240001_panel_recorridos.sql`.
-   No ejecutar migraciones ajenas en lote. Reutiliza admin y funciones geo
-   existentes. No toca filas ni permisos de tablas. Acceso RPC solo autenticado
-   con comprobación interna del administrador existente.
-3. Desplegar `supabase/functions/track/index.ts`, manteniendo JWT desactivado
-   como el recolector público actual. Conserva límites, geo y filtros previos.
-4. Verificar RPC (rechazo anónimo/no administrador y lectura administrativa).
-5. Publicar commit web a origin/main y verificar en panel autenticado.
-   Después se puede inspeccionar la compra reciente, sin garantizar recuperar
-   información que nunca se registró. No afirmar que se desplegó antes de esto.
+- Migración individual aplicada con éxito en el proyecto existente.
+- Recolector `track` actualizado en el editor oficial tras comparar su versión
+  remota con la local: solo cambió el tratamiento del contenido del carrito.
+- JWT del recolector sigue desactivado como antes; no se modificó ese ajuste.
+- RPC: administrador devuelve recorridos y rol anónimo sin EXECUTE; petición
+  HTTP anónima rechazada con 401/42501.
+- Commit funcional `2f4ddf1b` enviado a origin/main; GitHub Pages run
+  `40106266283` finalizó con success. Panel publicado, módulo disponible y
+  desplegable administrativo con cronología y nombres de productos verificado.
+- Hallazgo para Adrián comunicado en el chat; no guardar datos operativos
+  de clientes en esta documentación ni en la memoria compartida.
+- Ajuste de rótulos: la fecha de la cabecera significa última actividad, y el
+  embudo describe el clic hacia WhatsApp sin afirmar que el mensaje se envió.
 
 Rollback: revertir commit frontend; la función RPC adicional no interfiere con
 el panel previo y puede dejarse sin uso. No borrar eventos.

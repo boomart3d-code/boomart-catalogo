@@ -163,7 +163,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
   <script src="../src/supabase-config.js?v=1"></script>
-  <script src="recorridos.js?v=1"></script>
+  <script src="recorridos.js?v=2"></script>
   <script>
     (function () {
       "use strict";
@@ -371,7 +371,7 @@
         html += barRow("Abrieron el detalle de un producto", e.vieron_producto, base, "");
         html += barRow("Agregaron un producto al carrito", e.agregaron, base, "y");
         html += barRow("Iniciaron la compra (datos del pedido)", e.iniciaron, base, "y");
-        html += barRow("Enviaron el pedido por WhatsApp", e.pedido, base, "g");
+        html += barRow("Pulsaron enviar pedido a WhatsApp", e.pedido, base, "g");
         html += `<hr style="border:0;border-top:1px solid var(--line);margin:12px 0">`;
         html += barRow("Hicieron clic en algún botón de WhatsApp", e.wa_clic, base, "g");
         html += barRow("…en el WhatsApp de un producto concreto", e.wa_producto, base, "g");
