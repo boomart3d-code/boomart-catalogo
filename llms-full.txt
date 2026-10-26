@@ -5,7 +5,7 @@ Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion ~48 horas uti
 la validacion del adelanto (50%). Pedidos por WhatsApp: https://wa.me/51925666542
 
 Total de piezas: 92
-Actualizado: 2026-10-24
+Actualizado: 2026-10-26
 Fuente estructurada: https://boomart.pe/catalogo.json
 
 ---
@@ -497,14 +497,14 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 ### Máscara Calavera 💀 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio: S/100
+- Máscara calavera: S/100 | Máscara calavera con cuernos: S/150
 - Material: PLA+
 - Disponibilidad: A pedido
 - Etiquetas: Mascaras, Calavera, Craneo, Ghost Rider, Disfraces, Cosplay
 - Imagen: https://boomart.pe/assets/products/mascara-calavera-0.jpg
 - Ficha: https://boomart.pe/producto/mascara-calavera/
 
-🎃 Edición Halloween. Máscara Calavera: un cráneo detallado con mandíbula móvil, inspirado en Ghost Rider (sin las llamas). Impresa en 3D en PLA+ y pintada a mano, con acabado envejecido en tono hueso. Ideal para tu disfraz, fiestas temáticas, sesiones de fotos o para exhibirla como decoración de terror. Disponible en talla adulto y niño. Hecha a pedido, con envíos a todo el Perú.
+🎃 Edición Halloween. Elige entre la Máscara Calavera clásica y la Máscara calavera con cuernos. La versión clásica presenta un cráneo con mandíbula móvil, inspirado en Ghost Rider (sin las llamas); la versión con cuernos incorpora grandes cuernos curvos y colmillos, con acabado envejecido en tono hueso. Impresas en 3D en PLA+ y pintadas a mano. Para disfraces, fiestas temáticas, sesiones de fotos o decoración de terror. Hechas a pedido, con envíos a todo el Perú.
 
 ### Máscara Calabaza Calavera 🎃 · Halloween
 

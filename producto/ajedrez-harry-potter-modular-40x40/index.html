@@ -116,7 +116,7 @@
       .pp-body{margin-top:24px;line-height:1.55}
     }
 </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Ajedrez Harry Potter Modular 40x40 · Personalizado","description":"♟️ Ajedrez Harry Potter modular y personalizable. Tablero de 40 x 40 cm formado por 4 módulos de 20 cm que se unen para jugar. Piezas de 6 a 8 cm de alto, en PLA+ y pintadas a mano en dorado y plata, sobre casillas doradas y plateadas. Lleva 2 nombres grabados en el marco: el tuyo y el de tu rival, o el de la persona a quien se lo regalas; solo dinos los nombres al hacer tu pedido. Un regalo único para fans de Harry Potter y del ajedrez. Hecho a pedido, con envíos a todo el Perú.","image":["https://boomart.pe/assets/products/ajedrez-harry-potter-modular-0.jpg","https://boomart.pe/assets/products/ajedrez-harry-potter-modular-1.jpg","https://boomart.pe/assets/products/ajedrez-harry-potter-modular-2.jpg","https://boomart.pe/assets/products/ajedrez-harry-potter-modular-3.jpg","https://boomart.pe/assets/products/ajedrez-harry-potter-modular-4.jpg"],"sku":"ajedrez-harry-potter-modular-40x40","category":"Harry Potter","brand":{"@type":"Brand","name":"BoomArt"},"offers":{"@type":"Offer","price":220,"priceCurrency":"PEN","availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition","priceValidUntil":"2027-02-21","url":"https://boomart.pe/producto/ajedrez-harry-potter-modular-40x40/","seller":{"@type":"Organization","name":"BoomArt"},"hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","applicableCountry":"PE","returnPolicyCategory":"https://schema.org/MerchantReturnNotPermitted"}},"material":"PLA+"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Ajedrez Harry Potter Modular 40x40 · Personalizado","description":"♟️ Ajedrez Harry Potter modular y personalizable. Tablero de 40 x 40 cm formado por 4 módulos de 20 cm que se unen para jugar. Piezas de 6 a 8 cm de alto, en PLA+ y pintadas a mano en dorado y plata, sobre casillas doradas y plateadas. Lleva 2 nombres grabados en el marco: el tuyo y el de tu rival, o el de la persona a quien se lo regalas; solo dinos los nombres al hacer tu pedido. Un regalo único para fans de Harry Potter y del ajedrez. Hecho a pedido, con envíos a todo el Perú.","image":["https://boomart.pe/assets/products/ajedrez-harry-potter-modular-0.jpg","https://boomart.pe/assets/products/ajedrez-harry-potter-modular-1.jpg","https://boomart.pe/assets/products/ajedrez-harry-potter-modular-2.jpg","https://boomart.pe/assets/products/ajedrez-harry-potter-modular-3.jpg","https://boomart.pe/assets/products/ajedrez-harry-potter-modular-4.jpg"],"sku":"ajedrez-harry-potter-modular-40x40","category":"Harry Potter","brand":{"@type":"Brand","name":"BoomArt"},"offers":{"@type":"Offer","price":220,"priceCurrency":"PEN","availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition","priceValidUntil":"2027-02-23","url":"https://boomart.pe/producto/ajedrez-harry-potter-modular-40x40/","seller":{"@type":"Organization","name":"BoomArt"},"hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","applicableCountry":"PE","returnPolicyCategory":"https://schema.org/MerchantReturnNotPermitted"}},"material":"PLA+"}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://boomart.pe/"},{"@type":"ListItem","position":2,"name":"Harry Potter","item":"https://boomart.pe/categoria/harry-potter/"},{"@type":"ListItem","position":3,"name":"Ajedrez Harry Potter Modular 40x40 · Personalizado","item":"https://boomart.pe/producto/ajedrez-harry-potter-modular-40x40/"}]}</script>
   </head>
   <body>
@@ -161,8 +161,8 @@
           <div class="pp-price"><span class="now">S/220</span></div>
           <p class="pp-coupon">🎁 10% en tu primera compra registrándote</p>
           <div class="pp-cta">
-            <a class="button primary" href="../../index.html?producto=ajedrez-harry-potter-modular-40x40">Ver en la tienda y agregar al carrito</a>
-            <a class="button secondary" href="https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Ajedrez%20Harry%20Potter%20Modular%2040x40%20%C2%B7%20Personalizado" target="_blank" rel="noreferrer nofollow">Consultar por WhatsApp</a>
+            <a class="button primary" id="ppShop" href="../../index.html?producto=ajedrez-harry-potter-modular-40x40">Ver en la tienda y agregar al carrito</a>
+            <a class="button secondary" id="ppWhatsapp" href="https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Ajedrez%20Harry%20Potter%20Modular%2040x40%20%C2%B7%20Personalizado" target="_blank" rel="noreferrer nofollow">Consultar por WhatsApp</a>
             <button type="button" class="button ghost" id="ppShare" data-url="https://boomart.pe/producto/ajedrez-harry-potter-modular-40x40/?src=compartir" data-title="Ajedrez Harry Potter Modular 40x40 · Personalizado" data-id="ajedrez-harry-potter-modular-40x40" style="display:none">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 15V3m0 0L8 7m4-4 4 4M4 13v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <span class="pp-share-label">Compartir</span>
@@ -292,14 +292,14 @@
           return Promise.resolve(fallbackCopy(t));
         }
         function doCopy() {
-          copy(url).then(function (ok) {
+          copy(btn.getAttribute("data-url") || url).then(function (ok) {
             if (ok) { track("copy"); note("Enlace copiado ✓", 2600); }
             else { note("No se pudo copiar el enlace", 3200); }
           });
         }
         btn.addEventListener("click", function () {
           if (useNative) {
-            navigator.share({ title: title, text: title, url: url }).then(
+            navigator.share({ title: btn.getAttribute("data-title") || title, text: btn.getAttribute("data-title") || title, url: btn.getAttribute("data-url") || url }).then(
               function () { track("web_share"); },
               function (err) { if (!err || err.name !== "AbortError") doCopy(); }
             );
@@ -335,6 +335,7 @@
         });
       })();
     </script>
+
     <script src="../../src/track.js?v=5" defer></script>
     <script src="../../src/shopping-assistant.js?v=9" defer></script>
   </body>

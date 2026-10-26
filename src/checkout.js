@@ -283,6 +283,27 @@
       return;
     }
 
+    const modelOption = event.target.closest("[data-model-option]");
+    if (modelOption) {
+      const modelId = modelOption.dataset.modelOption;
+      const basePrice = Number(modelOption.dataset.modelPrice);
+      const currentSize = container.dataset.variant.split(":").pop() === "nino" ? "nino" : "adulto";
+      container.dataset.variant = `${modelId}:${currentSize}`;
+      container.querySelectorAll("[data-model-option]").forEach((button) => {
+        button.classList.toggle("is-selected", button === modelOption);
+        button.setAttribute("aria-pressed", String(button === modelOption));
+      });
+      container.querySelectorAll("[data-variant-option]").forEach((button) => {
+        const size = button.dataset.variantOption.split(":").pop();
+        button.dataset.variantOption = `${modelId}:${size}`;
+        button.querySelector("strong").textContent = money(size === "nino" ? Math.round(basePrice * 0.9) : basePrice);
+      });
+      const selected = container.querySelector('[data-variant-option][aria-pressed="true"]');
+      const addButton = container.querySelector("[data-add-to-cart]");
+      if (addButton && selected) addButton.dataset.priceLabel = `${modelOption.querySelector("span").textContent} · ${selected.querySelector("span").textContent} · ${selected.querySelector("strong").textContent}`;
+      document.dispatchEvent(new CustomEvent("boomart:show-model", { detail: { productId, modelId } }));
+      return;
+    }
     const variantOption = event.target.closest("[data-variant-option]");
     if (variantOption) {
       container.dataset.variant = variantOption.dataset.variantOption;
@@ -297,7 +318,8 @@
         // Mantiene al dia el resumen "Opcion · precio" del boton (ver app.js).
         const optionName = variantOption.querySelector("span")?.textContent.trim();
         const optionPrice = variantOption.querySelector("strong")?.textContent.trim();
-        if (optionName && optionPrice) addBtn.dataset.priceLabel = `${optionName} · ${optionPrice}`;
+        const modelName = container.querySelector('[data-model-option][aria-pressed="true"] span')?.textContent;
+        if (optionName && optionPrice) addBtn.dataset.priceLabel = `${modelName ? modelName + " · " : ""}${optionName} · ${optionPrice}`;
       }
       return;
     }

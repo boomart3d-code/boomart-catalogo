@@ -3,7 +3,7 @@
   "url": "https://boomart.pe/",
   "description": "Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao, Peru. Envios a todo el pais.",
   "currency": "PEN",
-  "updated": "2026-10-24",
+  "updated": "2026-10-26",
   "contact": {
     "whatsapp": "https://wa.me/51925666542",
     "email": "contacto@boomart.pe",
@@ -1428,13 +1428,14 @@
         "Disfraces",
         "Cosplay"
       ],
-      "description": "🎃 Edición Halloween. Máscara Calavera: un cráneo detallado con mandíbula móvil, inspirado en Ghost Rider (sin las llamas). Impresa en 3D en PLA+ y pintada a mano, con acabado envejecido en tono hueso. Ideal para tu disfraz, fiestas temáticas, sesiones de fotos o para exhibirla como decoración de terror. Disponible en talla adulto y niño. Hecha a pedido, con envíos a todo el Perú.",
+      "description": "🎃 Edición Halloween. Elige entre la Máscara Calavera clásica y la Máscara calavera con cuernos. La versión clásica presenta un cráneo con mandíbula móvil, inspirado en Ghost Rider (sin las llamas); la versión con cuernos incorpora grandes cuernos curvos y colmillos, con acabado envejecido en tono hueso. Impresas en 3D en PLA+ y pintadas a mano. Para disfraces, fiestas temáticas, sesiones de fotos o decoración de terror. Hechas a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
-        "Precio: S/100"
+        "Máscara calavera: S/100",
+        "Máscara calavera con cuernos: S/150"
       ],
       "image": "https://boomart.pe/assets/products/mascara-calavera-0.jpg",
       "gallery": [
@@ -1444,6 +1445,32 @@
         "https://boomart.pe/assets/products/mascara-calavera-3.jpg",
         "https://boomart.pe/assets/products/mascara-calavera-4.jpg",
         "https://boomart.pe/assets/products/mascara-calavera-5.jpg"
+      ],
+      "modelOptions": [
+        {
+          "id": "clasica",
+          "name": "Máscara calavera",
+          "regularPrice": 100,
+          "gallery": [
+            "https://boomart.pe/assets/products/mascara-calavera-0.jpg",
+            "https://boomart.pe/assets/products/mascara-calavera-1.jpg",
+            "https://boomart.pe/assets/products/mascara-calavera-2.jpg",
+            "https://boomart.pe/assets/products/mascara-calavera-3.jpg",
+            "https://boomart.pe/assets/products/mascara-calavera-4.jpg",
+            "https://boomart.pe/assets/products/mascara-calavera-5.jpg"
+          ]
+        },
+        {
+          "id": "con-cuernos",
+          "name": "Máscara calavera con cuernos",
+          "regularPrice": 150,
+          "gallery": [
+            "https://boomart.pe/assets/products/mascara-calavera-con-cuernos-0.jpg",
+            "https://boomart.pe/assets/products/mascara-calavera-con-cuernos-1.jpg",
+            "https://boomart.pe/assets/products/mascara-calavera-con-cuernos-2.jpg",
+            "https://boomart.pe/assets/products/mascara-calavera-con-cuernos-3.jpg"
+          ]
+        }
       ],
       "url": "https://boomart.pe/producto/mascara-calavera/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20Calavera%20%F0%9F%92%80%20%C2%B7%20Halloween"

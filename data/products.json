@@ -1239,7 +1239,33 @@
       "assets/products/mascara-calavera-4.jpg",
       "assets/products/mascara-calavera-5.jpg"
     ],
-    "description": "🎃 Edición Halloween. Máscara Calavera: un cráneo detallado con mandíbula móvil, inspirado en Ghost Rider (sin las llamas). Impresa en 3D en PLA+ y pintada a mano, con acabado envejecido en tono hueso. Ideal para tu disfraz, fiestas temáticas, sesiones de fotos o para exhibirla como decoración de terror. Disponible en talla adulto y niño. Hecha a pedido, con envíos a todo el Perú.",
+    "description": "🎃 Edición Halloween. Elige entre la Máscara Calavera clásica y la Máscara calavera con cuernos. La versión clásica presenta un cráneo con mandíbula móvil, inspirado en Ghost Rider (sin las llamas); la versión con cuernos incorpora grandes cuernos curvos y colmillos, con acabado envejecido en tono hueso. Impresas en 3D en PLA+ y pintadas a mano. Para disfraces, fiestas temáticas, sesiones de fotos o decoración de terror. Hechas a pedido, con envíos a todo el Perú.",
+    "modelOptions": [
+      {
+        "id": "clasica",
+        "name": "Máscara calavera",
+        "regularPrice": 100,
+        "gallery": [
+          "assets/products/mascara-calavera-0.jpg",
+          "assets/products/mascara-calavera-1.jpg",
+          "assets/products/mascara-calavera-2.jpg",
+          "assets/products/mascara-calavera-3.jpg",
+          "assets/products/mascara-calavera-4.jpg",
+          "assets/products/mascara-calavera-5.jpg"
+        ]
+      },
+      {
+        "id": "con-cuernos",
+        "name": "Máscara calavera con cuernos",
+        "regularPrice": 150,
+        "gallery": [
+          "assets/products/mascara-calavera-con-cuernos-0.jpg",
+          "assets/products/mascara-calavera-con-cuernos-1.jpg",
+          "assets/products/mascara-calavera-con-cuernos-2.jpg",
+          "assets/products/mascara-calavera-con-cuernos-3.jpg"
+        ]
+      }
+    ],
     "sizeOptions": true
   },
   {

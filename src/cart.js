@@ -89,6 +89,22 @@
   // "adulto" | "nino" para productos con tamaños.
   function resolveVariant(product, variantKey) {
     if (!product) return null;
+    if (product.modelOptions?.length) {
+      const parts = String(variantKey || "").split(":");
+      // Los carritos existentes con adulto/nino conservan la máscara clásica.
+      const legacySize = SIZE_LABELS[parts[0]] ? parts[0] : null;
+      const model = legacySize || !variantKey ? product.modelOptions[0]
+        : product.modelOptions.find((option) => option.id === parts[0]);
+      if (!model) return null;
+      const size = legacySize || (SIZE_LABELS[parts[1]] ? parts[1] : "adulto");
+      const base = Number(model.regularPrice) || 0;
+      return {
+        variantKey: `${model.id}:${size}`,
+        variantLabel: `${model.name} · ${SIZE_LABELS[size]}`,
+        image: model.gallery?.[0] || product.image,
+        unitPrice: size === "nino" ? Math.round(base * CHILD_PRICE_FACTOR) : base
+      };
+    }
     if (product.signPicker) {
       const sp = product.signPicker;
       if (variantKey && SIGN_LABELS[variantKey]) {
@@ -164,7 +180,7 @@
         productId: product.id,
         name: product.name,
         category: product.category,
-        image: product.image || "",
+        image: variant.image || product.image || "",
         variantKey: variant.variantKey,
         variantLabel: variant.variantLabel,
         unitPrice: variant.unitPrice,

@@ -71,6 +71,11 @@ const waLink = (name) =>
  *   listPrice  único precio oficial para los feeds (Google/Meta/Pinterest)
  */
 function priceInfo(p) {
+  if (p.modelOptions?.length) {
+    const prices = p.modelOptions.map((model) => Number(model.regularPrice));
+    return { from: Math.min(...prices), listPrice: Number(p.modelOptions[0].regularPrice),
+      lines: p.modelOptions.map((model) => `${model.name}: S/${model.regularPrice}`) };
+  }
   if (p.signPicker) {
     const { unitPrice, setPrice } = p.signPicker;
     return {
@@ -302,6 +307,7 @@ function buildJson(products) {
       pricing: price.lines,
       image: abs(p.image),
       gallery: (p.gallery || []).map(abs),
+      ...(p.modelOptions ? { modelOptions: p.modelOptions.map((model) => ({ ...model, gallery: model.gallery.map(abs) })) } : {}),
       url: `${SITE}/producto/${p.id}/`,
       whatsapp: waLink(p.name),
     };
@@ -861,6 +867,11 @@ function offerLd(p) {
       returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
     },
   };
+  if (p.modelOptions?.length) {
+    const prices = p.modelOptions.map((model) => Number(model.regularPrice));
+    return { "@type": "AggregateOffer", offerCount: prices.length,
+      lowPrice: Math.min(...prices), highPrice: Math.max(...prices), ...common };
+  }
   if (p.signPicker) {
     return {
       "@type": "AggregateOffer",
@@ -1013,6 +1024,9 @@ const PRODUCT_PAGE_CSS = `
 
 function priceBlockHtml(p) {
   const price = priceInfo(p);
+  if (p.modelOptions?.length) {
+    return `<div class="pp-price"><span class="now">Elige tu modelo</span><div class="pp-thumbs" style="flex-direction:column;align-items:stretch;overflow:visible" role="group" aria-label="Modelos de máscara">${p.modelOptions.map((model, index) => `<button type="button" class="button secondary" style="width:auto;height:auto;flex:1 1 100%;padding:12px;text-align:left;white-space:normal" data-pp-model="${esc(model.id)}" aria-pressed="${index === 0}">${esc(model.name)} · <strong>S/${model.regularPrice}</strong></button>`).join("")}</div></div>`;
+  }
   if (p.signPicker) {
     const { unitPrice, setPrice } = p.signPicker;
     return `<div class="pp-price"><span class="now">desde S/${unitPrice}</span><ul><li>Por signo: <strong>S/${unitPrice}</strong> c/u</li><li>Set completo (12 signos): <strong>S/${setPrice}</strong></li></ul></div>`;
@@ -1214,8 +1228,8 @@ function buildProductPage(p, all, ratingLd) {
           ${priceBlockHtml(p)}
           <p class="pp-coupon">🎁 10% en tu primera compra registrándote</p>
           <div class="pp-cta">
-            <a class="button primary" href="${esc(shop)}">Ver en la tienda y agregar al carrito</a>
-            <a class="button secondary" href="${esc(wa)}" target="_blank" rel="noreferrer nofollow">Consultar por WhatsApp</a>
+            <a class="button primary" id="ppShop" href="${esc(shop)}">Ver en la tienda y agregar al carrito</a>
+            <a class="button secondary" id="ppWhatsapp" href="${esc(wa)}" target="_blank" rel="noreferrer nofollow">Consultar por WhatsApp</a>
             <button type="button" class="button ghost" id="ppShare" data-url="${esc(url)}?src=compartir" data-title="${esc(p.name)}" data-id="${esc(p.id)}" style="display:none">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 15V3m0 0L8 7m4-4 4 4M4 13v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <span class="pp-share-label">Compartir</span>
@@ -1325,14 +1339,14 @@ ${socialFooterHtml()}
           return Promise.resolve(fallbackCopy(t));
         }
         function doCopy() {
-          copy(url).then(function (ok) {
+          copy(btn.getAttribute("data-url") || url).then(function (ok) {
             if (ok) { track("copy"); note("Enlace copiado ✓", 2600); }
             else { note("No se pudo copiar el enlace", 3200); }
           });
         }
         btn.addEventListener("click", function () {
           if (useNative) {
-            navigator.share({ title: title, text: title, url: url }).then(
+            navigator.share({ title: btn.getAttribute("data-title") || title, text: btn.getAttribute("data-title") || title, url: btn.getAttribute("data-url") || url }).then(
               function () { track("web_share"); },
               function (err) { if (!err || err.name !== "AbortError") doCopy(); }
             );
@@ -1368,6 +1382,38 @@ ${socialFooterHtml()}
         });
       })();
     </script>
+${p.modelOptions?.length ? `<script>
+      (function () {
+        var models = ${JSON.stringify(p.modelOptions).replace(/</g, "\\u003c")};
+        var buttons = document.querySelectorAll('[data-pp-model]');
+        function choose(id) {
+          var model = models.find(function (item) { return item.id === id; });
+          if (!model) return;
+          var main = document.getElementById('ppMain');
+          var thumbs = document.getElementById('ppThumbs');
+          main.src = '${rel}' + model.gallery[0].replace(/\\.jpg$/, '.webp');
+          main.alt = model.name + ' · BoomArt';
+          document.querySelector('.pp-info h1').textContent = model.name;
+          thumbs.replaceChildren();
+          model.gallery.forEach(function (src, index) {
+            var button = document.createElement('button');
+            button.type = 'button'; button.dataset.src = '${rel}' + src.replace(/\\.jpg$/, '.webp');
+            button.setAttribute('aria-current', String(index === 0));
+            var image = document.createElement('img'); image.src = button.dataset.src;
+            image.alt = model.name + ' · vista ' + (index + 1); image.loading = 'lazy';
+            image.width = 62; image.height = 62; button.appendChild(image); thumbs.appendChild(button);
+          });
+          buttons.forEach(function (button) { button.setAttribute('aria-pressed', String(button.dataset.ppModel === id)); button.style.borderColor = button.dataset.ppModel === id ? '#e1132f' : ''; });
+          document.getElementById('ppShop').href = '${shop}&modelo=' + encodeURIComponent(id);
+          document.getElementById('ppWhatsapp').href = '${WHATSAPP}?text=' + encodeURIComponent('Hola BoomArt, quiero consultar por: ' + model.name + ' · S/' + model.regularPrice);
+          var share = document.getElementById('ppShare');
+          share.setAttribute('data-url', '${url}?src=compartir&modelo=' + encodeURIComponent(id));
+          share.setAttribute('data-title', model.name);
+        }
+        buttons.forEach(function (button) { button.addEventListener('click', function () { choose(button.dataset.ppModel); }); });
+        choose(new URLSearchParams(location.search).get('modelo') || models[0].id);
+      })();
+    </script>` : ''}
     <script src="${rel}src/track.js?v=5" defer></script>
     <script src="${rel}src/shopping-assistant.js?v=9" defer></script>
   </body>

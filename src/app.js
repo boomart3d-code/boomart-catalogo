@@ -140,7 +140,9 @@ if (shareProductBtn) {
 const SHARE_SRC = "compartir";
 
 const shareProduct = async (product) => {
-  const url = `${productPageUrl(product.id)}?src=${SHARE_SRC}`;
+  const model = product.modelOptions?.find((option) => option.id === product.activeModel);
+  const url = `${productPageUrl(product.id)}?src=${SHARE_SRC}${model ? "&modelo=" + encodeURIComponent(model.id) : ""}`;
+  if (model) product = { ...product, name: model.name, regularPrice: model.regularPrice };
   if (useNativeShare()) {
     try {
       await navigator.share({ title: product.name, text: shareText(product), url });
@@ -228,6 +230,14 @@ const sizePrice = (product, key) =>
   key === "nino" ? Math.round(Number(product.regularPrice || 0) * 0.9) : Number(product.regularPrice || 0);
 
 const addToCartMarkup = (product) => {
+  const firstModel = product.modelOptions?.[0];
+  const modelPicker = firstModel ? `
+    <div class="temple-price-card model-picker" role="group" aria-label="Elige el modelo">
+      ${product.modelOptions.map((model, index) => `
+        <button type="button" class="temple-price-option${index === 0 ? " is-selected" : ""}" data-model-option="${model.id}" data-model-price="${model.regularPrice}" aria-pressed="${index === 0}">
+          <span>${model.name}</span><strong>${formatPrice(model.regularPrice)}</strong>
+        </button>`).join("")}
+    </div>` : "";
   const variantPicker = product.templePricing
     ? `
       <div class="temple-price-card" role="group" aria-label="Elige una opcion para ${product.name}">
@@ -270,7 +280,7 @@ const addToCartMarkup = (product) => {
           .map((key) => {
             const selected = key === DEFAULT_SIZE;
             return `
-              <button type="button" class="temple-price-option${selected ? " is-selected" : ""}" data-variant-option="${key}" aria-pressed="${selected}">
+              <button type="button" class="temple-price-option${selected ? " is-selected" : ""}" data-variant-option="${firstModel ? firstModel.id + ":" : ""}${key}" aria-pressed="${selected}">
                 <span>${SIZE_OPTIONS[key]}</span>
                 <strong>${formatPrice(sizePrice(product, key))}</strong>
               </button>
@@ -283,7 +293,7 @@ const addToCartMarkup = (product) => {
 
   const initialVariant = product.templePricing
     ? DEFAULT_TEMPLE_VARIANT
-    : product.signPicker ? "set12" : product.sizeOptions ? DEFAULT_SIZE : "";
+    : product.signPicker ? "set12" : product.sizeOptions ? `${firstModel ? firstModel.id + ":" : ""}${DEFAULT_SIZE}` : "";
 
   // Resumen de lo que se va a agregar (opcion + precio). En el celular la barra
   // de compra queda fija abajo y tapa las opciones, asi que el boton lo repite
@@ -300,7 +310,7 @@ const addToCartMarkup = (product) => {
     <div class="add-to-cart" data-product="${product.id}" data-variant="${initialVariant}"${product.signPicker
       ? ` data-unit-price="${product.signPicker.unitPrice}" data-set-price="${product.signPicker.setPrice}"`
       : ""}>
-      ${variantPicker}
+      ${modelPicker}${variantPicker}
       <div class="add-to-cart-row">
         <div class="qty-stepper" role="group" aria-label="Cantidad">
           <button type="button" class="qty-btn" data-qty-decrease aria-label="Quitar una unidad">−</button>
@@ -606,7 +616,9 @@ const setGlobalWhatsapp = () => {
 // segundo para que la foto principal siga siendo la portada. El video se pinta
 // solo cuando se elige (no se descarga antes), sin sonido y en bucle (2026-10-15).
 const galleryItems = (product) => {
-  const photos = (product.gallery.length ? product.gallery : [product.image].filter(Boolean))
+  const model = product.modelOptions?.find((option) => option.id === product.activeModel);
+  const gallery = model?.gallery || product.gallery;
+  const photos = (gallery.length ? gallery : [product.image].filter(Boolean))
     .map((src) => ({ type: "image", src }));
   if (product.video && product.video.src) {
     photos.splice(Math.min(1, photos.length), 0, { type: "video", src: product.video.src, poster: product.video.poster || "" });
@@ -658,8 +670,14 @@ const openProduct = (productId, fromHistory = false) => {
     activeProduct.material ? `Material: ${activeProduct.material}` : "",
   ].filter(Boolean).join(" · ");
   modalPricing.innerHTML = priceMarkup(activeProduct) + addToCartMarkup(activeProduct);
+  activeProduct.activeModel = activeProduct.modelOptions?.[0]?.id;
+  const requestedModel = new URL(window.location.href).searchParams.get("modelo");
+  if (activeProduct.modelOptions?.some((option) => option.id === requestedModel)) {
+    modalPricing.querySelector(`[data-model-option="${requestedModel}"]`)?.click();
+  }
   if (shareProductWa) {
-    shareProductWa.href = whatsappUrl(inquiryMessage(activeProduct));
+    const model = activeProduct.modelOptions?.find((option) => option.id === activeProduct.activeModel);
+    shareProductWa.href = whatsappUrl(inquiryMessage(model ? { ...activeProduct, name: model.name, regularPrice: model.regularPrice } : activeProduct));
     shareProductWa.dataset.product = productId;
   }
   if (!fromHistory) trackEvt("ver_producto", { p: productId, o: "tienda" });
@@ -710,6 +728,17 @@ document.addEventListener("boomart:show-sign", (event) => {
   if (index < 0 || index === activeImageIndex) return;
   activeImageIndex = index;
   renderModalImage();
+});
+
+document.addEventListener("boomart:show-model", (event) => {
+  if (!activeProduct || activeProduct.id !== event.detail.productId) return;
+  const model = activeProduct.modelOptions?.find((option) => option.id === event.detail.modelId);
+  if (!model) return;
+  activeProduct.activeModel = model.id;
+  activeImageIndex = 0;
+  modalTitle.textContent = model.name;
+  renderModalImage();
+  if (shareProductWa) shareProductWa.href = whatsappUrl(inquiryMessage({ ...activeProduct, name: model.name }));
 });
 
 const changeImage = (direction) => {
