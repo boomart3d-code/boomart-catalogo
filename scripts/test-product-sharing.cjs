@@ -55,7 +55,7 @@ async function run() {
         assert.equal(await page.evaluate(() => navigator.clipboard.readText()), expected);
       } else if (scenario === "unavailable") {
         await page.locator("#shareFeedback").waitFor({ state: "visible" });
-        assert.match(await page.locator("#shareFeedback").textContent(), /WhatsApp/);
+        assert.match(await page.locator("#shareFeedback").textContent(), /No se pudo copiar el enlace/);
         assert.doesNotMatch(await page.locator("#shareFeedback").textContent(), /copiado/);
       }
       const probe = await page.evaluate(() => window.shareProbe);
@@ -79,12 +79,18 @@ async function run() {
 
       if (scenario === "desktop") {
         assert.match(await page.locator("#shareProduct").textContent(), /Copiar enlace/);
-        assert.equal(await page.locator("#shareProductWa").getAttribute("href").then(href =>
-          decodeURIComponent(href).includes(expected)), true);
+        // The WhatsApp action is now a product inquiry; sharing uses its own button.
+        const inquiry = new URL(await page.locator("#shareProductWa").getAttribute("href"));
+        assert.equal(inquiry.searchParams.get("text"),
+          `Hola BoomArt, quiero consultar por: ${await page.locator("#modalTitle").textContent()}`);
         await page.screenshot({ path: process.env.BOOMART_TEST_SCREENSHOT || "share-desktop.png" });
         await page.locator("#closeModal").click();
-        await page.locator('[data-share="templo-aries"]').click();
-        await page.locator('[data-share="templo-aries"].is-copied').waitFor();
+        // In the unfiltered home, temples are grouped into a collection card.
+        await page.locator('#filterRow [data-filter="Saint Seiya"]').click();
+        await page.locator('.card-media[data-open="templo-aries"]').click();
+        await page.locator("#productModal[open]").waitFor();
+        await page.locator("#shareProduct").click();
+        await page.locator("#shareFeedback").waitFor({ state: "visible" });
         assert.equal(await page.evaluate(() => navigator.clipboard.readText()), expected);
         assert.equal(await page.evaluate(() => window.shareProbe.nativeCalls.length), 0);
       }

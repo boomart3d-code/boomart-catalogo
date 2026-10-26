@@ -1703,6 +1703,8 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="${rel}src/styles.css?v=69">
     <style>${CATEGORY_PAGE_CSS}</style>
+    <link rel="stylesheet" href="${rel}src/category-sharing.css?v=1">
+    <script src="${rel}src/category-sharing.js?v=1" defer></script>
     <script type="application/ld+json">${JSON.stringify(itemListLd)}</script>
     <script type="application/ld+json">${JSON.stringify(crumbLd)}</script>
   </head>
@@ -1727,6 +1729,13 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
 
       <p class="eyebrow">Catálogo BoomArt</p>
       <h1>${esc(meta.h1)}</h1>
+      <div class="category-share-row">
+        <button type="button" class="button ghost category-share" data-category-share data-category-name="${esc(clean)}" data-category-url="${esc(url)}" aria-label="Compartir el catálogo de ${esc(clean)}">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4m-6.8 7 6.8 4"/></svg>
+          <span>Compartir categoría</span>
+        </button>
+        <span class="category-share-feedback" role="status" aria-live="polite"></span>
+      </div>
       <div class="cat-intro">
         ${meta.intro.map((t) => `<p>${esc(t)}</p>`).join("\n        ")}
       </div>

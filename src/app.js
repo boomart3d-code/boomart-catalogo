@@ -551,6 +551,20 @@ const matchesProduct = (product) => {
 const renderProducts = () => {
   // La búsqueda es global: si se escribe algo, se sale de la colección abierta.
   if (searchInput.value.trim()) activeCollection = null;
+  const shareRow = document.querySelector("#categoryShareRow");
+  if (shareRow) {
+    shareRow.hidden = activeFilter === "Todos";
+    const button = shareRow.querySelector("[data-category-share]");
+    const name = categoryLabel(activeFilter).replace(/^[^\p{L}\p{N}]+/u, "");
+    const url = `${SITE_ORIGIN}/categoria/${slugifyCategory(activeFilter)}/`;
+    if (button.dataset.categoryUrl !== url) {
+      shareRow.querySelector(".category-share-feedback").replaceChildren();
+    }
+    button.dataset.categoryName = name;
+    button.dataset.categoryUrl = url;
+    button.setAttribute("aria-label", `Compartir el catálogo de ${name}`);
+    shareRow.querySelector("#categoryShareName").textContent = name;
+  }
   const visible = products.filter(matchesProduct);
   if (activeFilter === SEASON_LABEL) {
     visible.sort(
