@@ -471,6 +471,7 @@ const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
   // Novedad.
   "mascara-calavera",
   // Marvel y DC.
+  "casco-daredevil",
   "visor-de-cyclops",
   "mascara-red-hood",
   "mascara-dr-doom",

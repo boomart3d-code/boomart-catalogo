@@ -1155,6 +1155,37 @@
     "sizeOptions": true
   },
   {
+    "id": "casco-daredevil",
+    "name": "Casco de Daredevil · Marvel",
+    "category": "Marvel & DC",
+    "extraCategories": [
+      "🎃 Halloween"
+    ],
+    "tags": [
+      "Daredevil",
+      "Marvel",
+      "Casco",
+      "Máscara",
+      "Cosplay",
+      "Disfraces",
+      "Halloween"
+    ],
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 200,
+    "featured": true,
+    "image": "assets/products/casco-daredevil-hero.webp",
+    "gallery": [
+      "assets/products/casco-daredevil-hero.webp",
+      "assets/products/casco-daredevil-frente.webp",
+      "assets/products/casco-daredevil-lateral.webp",
+      "assets/products/casco-daredevil-puesto.webp",
+      "assets/products/casco-daredevil-angulo-superior.webp",
+      "assets/products/casco-daredevil-conjunto.webp"
+    ],
+    "description": "Casco de Daredevil inspirado en Marvel, impreso en 3D en PLA+ y pintado a mano. Acabado texturizado en rojo y negro, con los cuernos característicos del personaje. Para cosplay, disfraces o exhibición. Hecho a pedido. El precio corresponde a un casco; los soportes, bastones, lentes y demás accesorios de la foto de conjunto no están incluidos."
+  },
+  {
     "id": "palomera-cara-de-spiderman",
     "name": "Palomera Cara de Spider-Man · Marvel",
     "category": "Marvel & DC",

@@ -3,7 +3,7 @@
   <channel>
     <title>BoomArt - Catalogo de productos</title>
     <link>https://boomart.pe/</link>
-    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-10-26.</description>
+    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-10-28.</description>
     <item>
       <g:id>templo-aries</g:id>
       <g:title>Templo de Aries</g:title>
@@ -792,6 +792,25 @@
       <g:additional_image_link>https://boomart.pe/assets/products/mascara-de-batwoman.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>100.00 PEN</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>BoomArt</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
+      <g:product_type>Marvel &amp; DC</g:product_type>
+    </item>
+    <item>
+      <g:id>casco-daredevil</g:id>
+      <g:title>Casco de Daredevil · Marvel</g:title>
+      <g:description>Casco de Daredevil inspirado en Marvel, impreso en 3D en PLA+ y pintado a mano. Acabado texturizado en rojo y negro, con los cuernos característicos del personaje. Para cosplay, disfraces o exhibición. Hecho a pedido. El precio corresponde a un casco; los soportes, bastones, lentes y demás accesorios de la foto de conjunto no están incluidos. Fabricado a pedido en impresion 3D (PLA+), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
+      <g:link>https://boomart.pe/producto/casco-daredevil/</g:link>
+      <g:image_link>https://boomart.pe/assets/products/casco-daredevil-hero.webp</g:image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/casco-daredevil-frente.webp</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/casco-daredevil-lateral.webp</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/casco-daredevil-puesto.webp</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/casco-daredevil-angulo-superior.webp</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/casco-daredevil-conjunto.webp</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>200.00 PEN</g:price>
       <g:condition>new</g:condition>
       <g:brand>BoomArt</g:brand>
       <g:identifier_exists>no</g:identifier_exists>

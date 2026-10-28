@@ -328,6 +328,13 @@
     "height": 1200,
     "bytes": 93555
   },
+  "casco-daredevil": {
+    "source": "assets/products/casco-daredevil-hero.webp",
+    "hash": "831ef6503ca3ac23",
+    "width": 960,
+    "height": 1200,
+    "bytes": 175988
+  },
   "palomera-cara-de-spiderman": {
     "source": "assets/products/palomera-cara-de-spiderman-hero-v2.webp",
     "hash": "35f5a0d4510e49d7",
