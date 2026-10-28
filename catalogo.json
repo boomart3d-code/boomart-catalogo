@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 96,
+  "count": 97,
   "products": [
     {
       "id": "templo-aries",
@@ -2750,6 +2750,35 @@
       ],
       "url": "https://boomart.pe/producto/escudo-zelda/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Escudo%20Hyliano%20%C2%B7%20The%20Legend%20of%20Zelda"
+    },
+    {
+      "id": "ocarina-zelda",
+      "name": "Ocarina de Zelda · Ocarina of Time",
+      "category": "🎃 Halloween",
+      "tags": [
+        "Zelda",
+        "Ocarina of Time",
+        "Videojuegos",
+        "Cosplay",
+        "Coleccionismo"
+      ],
+      "description": "Ocarina inspirada en The Legend of Zelda: Ocarina of Time, impresa en 3D en PLA+ con el emblema triangular característico. Un complemento para tu colección de Zelda, cosplay o exhibición junto a la máscara de Majora, la espada y el escudo. Hecha a pedido. Precio por una unidad; las otras piezas se venden por separado. La portada muestra una pieza real azul con detalles dorados. Las imágenes siguientes son vistas referenciales del modelo y combinaciones de color para consultar al coordinar tu pedido; el acabado puede variar.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 25,
+      "pricing": [
+        "Precio: S/25"
+      ],
+      "image": "https://boomart.pe/assets/products/ocarina-hero-real.webp",
+      "gallery": [
+        "https://boomart.pe/assets/products/ocarina-hero-real.webp",
+        "https://boomart.pe/assets/products/ocarina-modelo-frente.webp",
+        "https://boomart.pe/assets/products/ocarina-modelo-reverso.webp",
+        "https://boomart.pe/assets/products/ocarina-colores-referencia.webp"
+      ],
+      "url": "https://boomart.pe/producto/ocarina-zelda/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Ocarina%20de%20Zelda%20%C2%B7%20Ocarina%20of%20Time"
     }
   ]
 }

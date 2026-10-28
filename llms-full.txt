@@ -4,7 +4,7 @@ Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Cal
 Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion ~48 horas utiles desde
 la validacion del adelanto (50%). Pedidos por WhatsApp: https://wa.me/51925666542
 
-Total de piezas: 96
+Total de piezas: 97
 Actualizado: 2026-10-28
 Fuente estructurada: https://boomart.pe/catalogo.json
 
@@ -794,6 +794,18 @@ Espada decorativa inspirada en The Legend of Zelda, impresa en 3D en PLA+ y pint
 
 Escudo Hyliano inspirado en The Legend of Zelda, impreso en 3D en PLA+ y pintado a mano. Frente azul con emblemas rojos y dorados, borde plateado y agarre posterior. Para cosplay o exhibición, hecho a pedido. El precio corresponde únicamente al escudo; espada y máscara se venden por separado.
 
+### Ocarina de Zelda · Ocarina of Time
+
+- Categoria: 🎃 Halloween
+- Precio: S/25
+- Material: PLA+
+- Disponibilidad: A pedido
+- Etiquetas: Zelda, Ocarina of Time, Videojuegos, Cosplay, Coleccionismo
+- Imagen: https://boomart.pe/assets/products/ocarina-hero-real.webp
+- Ficha: https://boomart.pe/producto/ocarina-zelda/
+
+Ocarina inspirada en The Legend of Zelda: Ocarina of Time, impresa en 3D en PLA+ con el emblema triangular característico. Un complemento para tu colección de Zelda, cosplay o exhibición junto a la máscara de Majora, la espada y el escudo. Hecha a pedido. Precio por una unidad; las otras piezas se venden por separado. La portada muestra una pieza real azul con detalles dorados. Las imágenes siguientes son vistas referenciales del modelo y combinaciones de color para consultar al coordinar tu pedido; el acabado puede variar.
+
 ## Harry Potter
 
 ### Fawkes · Fénix de Dumbledore · Harry Potter
@@ -1287,3 +1299,15 @@ Espada decorativa inspirada en The Legend of Zelda, impresa en 3D en PLA+ y pint
 - Ficha: https://boomart.pe/producto/escudo-zelda/
 
 Escudo Hyliano inspirado en The Legend of Zelda, impreso en 3D en PLA+ y pintado a mano. Frente azul con emblemas rojos y dorados, borde plateado y agarre posterior. Para cosplay o exhibición, hecho a pedido. El precio corresponde únicamente al escudo; espada y máscara se venden por separado.
+
+### Ocarina de Zelda · Ocarina of Time
+
+- Categoria: 🎃 Halloween
+- Precio: S/25
+- Material: PLA+
+- Disponibilidad: A pedido
+- Etiquetas: Zelda, Ocarina of Time, Videojuegos, Cosplay, Coleccionismo
+- Imagen: https://boomart.pe/assets/products/ocarina-hero-real.webp
+- Ficha: https://boomart.pe/producto/ocarina-zelda/
+
+Ocarina inspirada en The Legend of Zelda: Ocarina of Time, impresa en 3D en PLA+ con el emblema triangular característico. Un complemento para tu colección de Zelda, cosplay o exhibición junto a la máscara de Majora, la espada y el escudo. Hecha a pedido. Precio por una unidad; las otras piezas se venden por separado. La portada muestra una pieza real azul con detalles dorados. Las imágenes siguientes son vistas referenciales del modelo y combinaciones de color para consultar al coordinar tu pedido; el acabado puede variar.

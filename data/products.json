@@ -2406,5 +2406,32 @@
       "poster": "assets/products/escudo-zelda-hero.webp",
       "uploadDate": "2026-10-28"
     }
+  },
+  {
+    "id": "ocarina-zelda",
+    "name": "Ocarina de Zelda · Ocarina of Time",
+    "category": "🎃 Halloween",
+    "extraCategories": [
+      "Series y Películas"
+    ],
+    "tags": [
+      "Zelda",
+      "Ocarina of Time",
+      "Videojuegos",
+      "Cosplay",
+      "Coleccionismo"
+    ],
+    "regularPrice": 25,
+    "material": "PLA+",
+    "availability": "A pedido",
+    "featured": true,
+    "image": "assets/products/ocarina-hero-real.webp",
+    "gallery": [
+      "assets/products/ocarina-hero-real.webp",
+      "assets/products/ocarina-modelo-frente.webp",
+      "assets/products/ocarina-modelo-reverso.webp",
+      "assets/products/ocarina-colores-referencia.webp"
+    ],
+    "description": "Ocarina inspirada en The Legend of Zelda: Ocarina of Time, impresa en 3D en PLA+ con el emblema triangular característico. Un complemento para tu colección de Zelda, cosplay o exhibición junto a la máscara de Majora, la espada y el escudo. Hecha a pedido. Precio por una unidad; las otras piezas se venden por separado. La portada muestra una pieza real azul con detalles dorados. Las imágenes siguientes son vistas referenciales del modelo y combinaciones de color para consultar al coordinar tu pedido; el acabado puede variar."
   }
 ]

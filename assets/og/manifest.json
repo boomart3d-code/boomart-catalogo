@@ -670,5 +670,12 @@
     "width": 960,
     "height": 1200,
     "bytes": 124553
+  },
+  "ocarina-zelda": {
+    "source": "assets/products/ocarina-hero-real.webp",
+    "hash": "c71cf94ffcbe2a83",
+    "width": 960,
+    "height": 1200,
+    "bytes": 115278
   }
 }

@@ -1599,5 +1599,22 @@
       <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
       <g:product_type>🎃 Halloween</g:product_type>
     </item>
+    <item>
+      <g:id>ocarina-zelda</g:id>
+      <g:title>Ocarina de Zelda · Ocarina of Time</g:title>
+      <g:description>Ocarina inspirada en The Legend of Zelda: Ocarina of Time, impresa en 3D en PLA+ con el emblema triangular característico. Un complemento para tu colección de Zelda, cosplay o exhibición junto a la máscara de Majora, la espada y el escudo. Hecha a pedido. Precio por una unidad; las otras piezas se venden por separado. La portada muestra una pieza real azul con detalles dorados. Las imágenes siguientes son vistas referenciales del modelo y combinaciones de color para consultar al coordinar tu pedido; el acabado puede variar. Fabricado a pedido en impresion 3D (PLA+), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
+      <g:link>https://boomart.pe/producto/ocarina-zelda/</g:link>
+      <g:image_link>https://boomart.pe/assets/products/ocarina-hero-real.webp</g:image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/ocarina-modelo-frente.webp</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/ocarina-modelo-reverso.webp</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/ocarina-colores-referencia.webp</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>25.00 PEN</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>BoomArt</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
+      <g:product_type>🎃 Halloween</g:product_type>
+    </item>
   </channel>
 </rss>
