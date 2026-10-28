@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 93,
+  "count": 96,
   "products": [
     {
       "id": "templo-aries",
@@ -2669,6 +2669,87 @@
       ],
       "url": "https://boomart.pe/producto/corona-targaryen/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Corona%20Targaryen"
+    },
+    {
+      "id": "mascara-majora",
+      "name": "Máscara de Majora · The Legend of Zelda",
+      "category": "🎃 Halloween",
+      "tags": [
+        "Zelda",
+        "The Legend of Zelda",
+        "Videojuegos",
+        "Cosplay",
+        "Fantasía"
+      ],
+      "description": "Máscara de Majora inspirada en The Legend of Zelda, impresa en 3D en PLA+ y pintada a mano. Sus grandes ojos, formas y colores característicos destacan en una pieza para cosplay o exhibición. Hecha a pedido. El precio corresponde únicamente a la máscara.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 350,
+      "pricing": [
+        "Precio: S/350"
+      ],
+      "image": "https://boomart.pe/assets/products/mascara-majora-hero.webp",
+      "gallery": [
+        "https://boomart.pe/assets/products/mascara-majora-hero.webp",
+        "https://boomart.pe/assets/products/mascara-majora-detalle.webp"
+      ],
+      "url": "https://boomart.pe/producto/mascara-majora/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20de%20Majora%20%C2%B7%20The%20Legend%20of%20Zelda"
+    },
+    {
+      "id": "espada-zelda",
+      "name": "Espada de Zelda · Espada Maestra",
+      "category": "🎃 Halloween",
+      "tags": [
+        "Zelda",
+        "The Legend of Zelda",
+        "Videojuegos",
+        "Cosplay",
+        "Fantasía"
+      ],
+      "description": "Espada decorativa inspirada en The Legend of Zelda, impresa en 3D en PLA+ y pintada a mano. Hoja con acabado plateado, empuñadura azul y detalles dorados. Para cosplay o exhibición, hecha a pedido. El precio corresponde únicamente a la espada; máscara y escudo se venden por separado.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 180,
+      "pricing": [
+        "Precio: S/180"
+      ],
+      "image": "https://boomart.pe/assets/products/espada-zelda-hero.webp",
+      "gallery": [
+        "https://boomart.pe/assets/products/espada-zelda-hero.webp",
+        "https://boomart.pe/assets/products/espada-zelda-detalle.webp"
+      ],
+      "url": "https://boomart.pe/producto/espada-zelda/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Espada%20de%20Zelda%20%C2%B7%20Espada%20Maestra"
+    },
+    {
+      "id": "escudo-zelda",
+      "name": "Escudo Hyliano · The Legend of Zelda",
+      "category": "🎃 Halloween",
+      "tags": [
+        "Zelda",
+        "The Legend of Zelda",
+        "Videojuegos",
+        "Cosplay",
+        "Fantasía"
+      ],
+      "description": "Escudo Hyliano inspirado en The Legend of Zelda, impreso en 3D en PLA+ y pintado a mano. Frente azul con emblemas rojos y dorados, borde plateado y agarre posterior. Para cosplay o exhibición, hecho a pedido. El precio corresponde únicamente al escudo; espada y máscara se venden por separado.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 380,
+      "pricing": [
+        "Precio: S/380"
+      ],
+      "image": "https://boomart.pe/assets/products/escudo-zelda-hero.webp",
+      "gallery": [
+        "https://boomart.pe/assets/products/escudo-zelda-hero.webp",
+        "https://boomart.pe/assets/products/escudo-zelda-reverso.webp"
+      ],
+      "url": "https://boomart.pe/producto/escudo-zelda/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Escudo%20Hyliano%20%C2%B7%20The%20Legend%20of%20Zelda"
     }
   ]
 }

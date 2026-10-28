@@ -469,6 +469,9 @@ const orderedCategories = (cats) => [...cats].sort((a, b) => {
 // HALLOWEEN_CAMPAIGN_PRODUCT_IDS en scripts/build-ai-catalog.mjs.
 const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
   // Novedad.
+  "mascara-majora",
+  "espada-zelda",
+  "escudo-zelda",
   "mascara-calavera",
   // Marvel y DC.
   "casco-daredevil",

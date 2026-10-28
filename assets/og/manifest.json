@@ -649,5 +649,26 @@
     "width": 960,
     "height": 1200,
     "bytes": 148747
+  },
+  "mascara-majora": {
+    "source": "assets/products/mascara-majora-hero.webp",
+    "hash": "d69a98d94a79f8f1",
+    "width": 960,
+    "height": 1200,
+    "bytes": 159434
+  },
+  "espada-zelda": {
+    "source": "assets/products/espada-zelda-hero.webp",
+    "hash": "820f46aba75b88ef",
+    "width": 960,
+    "height": 1200,
+    "bytes": 61788
+  },
+  "escudo-zelda": {
+    "source": "assets/products/escudo-zelda-hero.webp",
+    "hash": "33bd33870a0d2a2e",
+    "width": 960,
+    "height": 1200,
+    "bytes": 124553
   }
 }

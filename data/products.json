@@ -2316,5 +2316,95 @@
       "assets/products/corona-targaryen-04.jpg"
     ],
     "description": "Corona Targaryen impresa en 3D, con acabado dorado, bordes en tono acero y medallones en relieve. Para complementar tu cosplay, look de Halloween o colección. Consulta el ajuste y la disponibilidad al hacer tu pedido."
+  },
+  {
+    "id": "mascara-majora",
+    "name": "Máscara de Majora · The Legend of Zelda",
+    "category": "🎃 Halloween",
+    "extraCategories": [
+      "Series y Películas"
+    ],
+    "tags": [
+      "Zelda",
+      "The Legend of Zelda",
+      "Videojuegos",
+      "Cosplay",
+      "Fantasía"
+    ],
+    "regularPrice": 350,
+    "material": "PLA+",
+    "availability": "A pedido",
+    "featured": true,
+    "image": "assets/products/mascara-majora-hero.webp",
+    "gallery": [
+      "assets/products/mascara-majora-hero.webp",
+      "assets/products/mascara-majora-detalle.webp"
+    ],
+    "description": "Máscara de Majora inspirada en The Legend of Zelda, impresa en 3D en PLA+ y pintada a mano. Sus grandes ojos, formas y colores característicos destacan en una pieza para cosplay o exhibición. Hecha a pedido. El precio corresponde únicamente a la máscara.",
+    "video": {
+      "src": "assets/videos/mascara-majora-producto.mp4",
+      "poster": "assets/products/mascara-majora-hero.webp",
+      "uploadDate": "2026-10-28"
+    }
+  },
+  {
+    "id": "espada-zelda",
+    "name": "Espada de Zelda · Espada Maestra",
+    "category": "🎃 Halloween",
+    "extraCategories": [
+      "Series y Películas"
+    ],
+    "tags": [
+      "Zelda",
+      "The Legend of Zelda",
+      "Videojuegos",
+      "Cosplay",
+      "Fantasía"
+    ],
+    "regularPrice": 180,
+    "material": "PLA+",
+    "availability": "A pedido",
+    "featured": true,
+    "image": "assets/products/espada-zelda-hero.webp",
+    "gallery": [
+      "assets/products/espada-zelda-hero.webp",
+      "assets/products/espada-zelda-detalle.webp"
+    ],
+    "description": "Espada decorativa inspirada en The Legend of Zelda, impresa en 3D en PLA+ y pintada a mano. Hoja con acabado plateado, empuñadura azul y detalles dorados. Para cosplay o exhibición, hecha a pedido. El precio corresponde únicamente a la espada; máscara y escudo se venden por separado.",
+    "video": {
+      "src": "assets/videos/espada-zelda-producto.mp4",
+      "poster": "assets/products/espada-zelda-hero.webp",
+      "uploadDate": "2026-10-28"
+    }
+  },
+  {
+    "id": "escudo-zelda",
+    "name": "Escudo Hyliano · The Legend of Zelda",
+    "category": "🎃 Halloween",
+    "extraCategories": [
+      "Series y Películas"
+    ],
+    "tags": [
+      "Zelda",
+      "The Legend of Zelda",
+      "Videojuegos",
+      "Cosplay",
+      "Fantasía"
+    ],
+    "regularPrice": 380,
+    "material": "PLA+",
+    "availability": "A pedido",
+    "featured": true,
+    "image": "assets/products/escudo-zelda-hero.webp",
+    "gallery": [
+      "assets/products/escudo-zelda-hero.webp",
+      "assets/products/escudo-zelda-reverso.webp"
+    ],
+    "description": "Escudo Hyliano inspirado en The Legend of Zelda, impreso en 3D en PLA+ y pintado a mano. Frente azul con emblemas rojos y dorados, borde plateado y agarre posterior. Para cosplay o exhibición, hecho a pedido. El precio corresponde únicamente al escudo; espada y máscara se venden por separado.",
+    "video": {
+      "src": "assets/videos/escudo-zelda-producto.mp4",
+      "poster": "assets/products/escudo-zelda-hero.webp",
+      "uploadDate": "2026-10-28"
+    }
   }
 ]

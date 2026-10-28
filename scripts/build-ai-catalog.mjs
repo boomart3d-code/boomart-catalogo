@@ -1519,6 +1519,9 @@ const CATEGORY_META = {
 // en el enlace corto que se comparte en publicidad y WhatsApp.
 const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
   // Novedad.
+  "mascara-majora",
+  "espada-zelda",
+  "escudo-zelda",
   "mascara-calavera",
   // Marvel y DC.
   "casco-daredevil",
