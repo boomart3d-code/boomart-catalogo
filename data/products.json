@@ -1481,7 +1481,10 @@
       "Visor",
       "Cosplay",
       "Disfraces",
-      "Halloween"
+      "Halloween",
+      "Cíclope táctico",
+      "Black Cyclops",
+      "Negro"
     ],
     "height": "Tamaño real para usar",
     "material": "PLA+",
@@ -1495,8 +1498,32 @@
       "assets/products/visor-de-cyclops-3.jpg",
       "assets/products/visor-de-cyclops-4.jpg"
     ],
-    "description": "🎃 Edición Halloween. Visor de Cyclops de los X-Men para usar en tu cosplay o disfraz, más la chapa de cinturón con el logo X-Men. Fabricados en PLA+ para mayor resistencia y durabilidad. Hechos a pedido, con envíos a todo el Perú.",
-    "sizeOptions": true
+    "description": "Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (Black Cyclops), en negro y rojo. Ambas incluyen el visor de los X-Men y la chapa de cinturón con el emblema X-Men, al mismo precio. En la versión táctica, la carcasa del visor y las partes amarillas de la chapa pasan a negro, conservando la franja roja del visor y los detalles rojos de la chapa. Fabricados en PLA+ y hechos a pedido para cosplay, disfraces y sesiones de fotos, con envíos a todo el Perú.",
+    "sizeOptions": true,
+    "modelOptions": [
+      {
+        "id": "clasico",
+        "name": "Visor de Cíclope + chapa · Amarillo y rojo",
+        "regularPrice": 100,
+        "gallery": [
+          "assets/products/visor-de-cyclops-hero.jpg",
+          "assets/products/visor-de-cyclops-2.jpg",
+          "assets/products/visor-de-cyclops-3.jpg",
+          "assets/products/visor-de-cyclops-4.jpg"
+        ]
+      },
+      {
+        "id": "tactico-negro",
+        "name": "Visor de Cíclope táctico + chapa · Negro y rojo",
+        "regularPrice": 100,
+        "gallery": [
+          "assets/products/visor-de-cyclops-negro-1.webp",
+          "assets/products/visor-de-cyclops-negro-2.webp",
+          "assets/products/visor-de-cyclops-negro-3.webp",
+          "assets/products/visor-de-cyclops-negro-4.webp"
+        ]
+      }
+    ]
   },
   {
     "id": "mascara-red-hood",

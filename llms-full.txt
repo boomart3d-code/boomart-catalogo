@@ -5,7 +5,7 @@ Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion ~48 horas uti
 la validacion del adelanto (50%). Pedidos por WhatsApp: https://wa.me/51925666542
 
 Total de piezas: 97
-Actualizado: 2026-10-28
+Actualizado: 2026-10-29
 Fuente estructurada: https://boomart.pe/catalogo.json
 
 ---
@@ -593,14 +593,14 @@ Casco de Daredevil inspirado en Marvel, impreso en 3D en PLA+ y pintado a mano. 
 ### Visor de Cyclops + chapa de cinturón 🎃 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio: S/100
+- Visor de Cíclope + chapa · Amarillo y rojo: S/100 | Visor de Cíclope táctico + chapa · Negro y rojo: S/100
 - Material: PLA+
 - Disponibilidad: A pedido
-- Etiquetas: Cyclops, X-Men, Marvel, Visor, Cosplay, Disfraces, Halloween
+- Etiquetas: Cyclops, X-Men, Marvel, Visor, Cosplay, Disfraces, Halloween, Cíclope táctico, Black Cyclops, Negro
 - Imagen: https://boomart.pe/assets/products/visor-de-cyclops-hero.jpg
 - Ficha: https://boomart.pe/producto/visor-de-cyclops/
 
-🎃 Edición Halloween. Visor de Cyclops de los X-Men para usar en tu cosplay o disfraz, más la chapa de cinturón con el logo X-Men. Fabricados en PLA+ para mayor resistencia y durabilidad. Hechos a pedido, con envíos a todo el Perú.
+Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (Black Cyclops), en negro y rojo. Ambas incluyen el visor de los X-Men y la chapa de cinturón con el emblema X-Men, al mismo precio. En la versión táctica, la carcasa del visor y las partes amarillas de la chapa pasan a negro, conservando la franja roja del visor y los detalles rojos de la chapa. Fabricados en PLA+ y hechos a pedido para cosplay, disfraces y sesiones de fotos, con envíos a todo el Perú.
 
 ### Máscara de Red Hood 🎃 · Halloween
 
@@ -945,14 +945,14 @@ Palomera temática de Spider-Man para tu noche de películas: práctica, resiste
 ### Visor de Cyclops + chapa de cinturón 🎃 · Halloween
 
 - Categoria: 🎃 Halloween
-- Precio: S/100
+- Visor de Cíclope + chapa · Amarillo y rojo: S/100 | Visor de Cíclope táctico + chapa · Negro y rojo: S/100
 - Material: PLA+
 - Disponibilidad: A pedido
-- Etiquetas: Cyclops, X-Men, Marvel, Visor, Cosplay, Disfraces, Halloween
+- Etiquetas: Cyclops, X-Men, Marvel, Visor, Cosplay, Disfraces, Halloween, Cíclope táctico, Black Cyclops, Negro
 - Imagen: https://boomart.pe/assets/products/visor-de-cyclops-hero.jpg
 - Ficha: https://boomart.pe/producto/visor-de-cyclops/
 
-🎃 Edición Halloween. Visor de Cyclops de los X-Men para usar en tu cosplay o disfraz, más la chapa de cinturón con el logo X-Men. Fabricados en PLA+ para mayor resistencia y durabilidad. Hechos a pedido, con envíos a todo el Perú.
+Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (Black Cyclops), en negro y rojo. Ambas incluyen el visor de los X-Men y la chapa de cinturón con el emblema X-Men, al mismo precio. En la versión táctica, la carcasa del visor y las partes amarillas de la chapa pasan a negro, conservando la franja roja del visor y los detalles rojos de la chapa. Fabricados en PLA+ y hechos a pedido para cosplay, disfraces y sesiones de fotos, con envíos a todo el Perú.
 
 ### Máscara de Red Hood 🎃 · Halloween
 

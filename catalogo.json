@@ -3,7 +3,7 @@
   "url": "https://boomart.pe/",
   "description": "Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao, Peru. Envios a todo el pais.",
   "currency": "PEN",
-  "updated": "2026-10-28",
+  "updated": "2026-10-29",
   "contact": {
     "whatsapp": "https://wa.me/51925666542",
     "email": "contacto@boomart.pe",
@@ -1717,15 +1717,19 @@
         "Visor",
         "Cosplay",
         "Disfraces",
-        "Halloween"
+        "Halloween",
+        "Cíclope táctico",
+        "Black Cyclops",
+        "Negro"
       ],
-      "description": "🎃 Edición Halloween. Visor de Cyclops de los X-Men para usar en tu cosplay o disfraz, más la chapa de cinturón con el logo X-Men. Fabricados en PLA+ para mayor resistencia y durabilidad. Hechos a pedido, con envíos a todo el Perú.",
+      "description": "Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (Black Cyclops), en negro y rojo. Ambas incluyen el visor de los X-Men y la chapa de cinturón con el emblema X-Men, al mismo precio. En la versión táctica, la carcasa del visor y las partes amarillas de la chapa pasan a negro, conservando la franja roja del visor y los detalles rojos de la chapa. Fabricados en PLA+ y hechos a pedido para cosplay, disfraces y sesiones de fotos, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
-        "Precio: S/100"
+        "Visor de Cíclope + chapa · Amarillo y rojo: S/100",
+        "Visor de Cíclope táctico + chapa · Negro y rojo: S/100"
       ],
       "image": "https://boomart.pe/assets/products/visor-de-cyclops-hero.jpg",
       "gallery": [
@@ -1733,6 +1737,30 @@
         "https://boomart.pe/assets/products/visor-de-cyclops-2.jpg",
         "https://boomart.pe/assets/products/visor-de-cyclops-3.jpg",
         "https://boomart.pe/assets/products/visor-de-cyclops-4.jpg"
+      ],
+      "modelOptions": [
+        {
+          "id": "clasico",
+          "name": "Visor de Cíclope + chapa · Amarillo y rojo",
+          "regularPrice": 100,
+          "gallery": [
+            "https://boomart.pe/assets/products/visor-de-cyclops-hero.jpg",
+            "https://boomart.pe/assets/products/visor-de-cyclops-2.jpg",
+            "https://boomart.pe/assets/products/visor-de-cyclops-3.jpg",
+            "https://boomart.pe/assets/products/visor-de-cyclops-4.jpg"
+          ]
+        },
+        {
+          "id": "tactico-negro",
+          "name": "Visor de Cíclope táctico + chapa · Negro y rojo",
+          "regularPrice": 100,
+          "gallery": [
+            "https://boomart.pe/assets/products/visor-de-cyclops-negro-1.webp",
+            "https://boomart.pe/assets/products/visor-de-cyclops-negro-2.webp",
+            "https://boomart.pe/assets/products/visor-de-cyclops-negro-3.webp",
+            "https://boomart.pe/assets/products/visor-de-cyclops-negro-4.webp"
+          ]
+        }
       ],
       "url": "https://boomart.pe/producto/visor-de-cyclops/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Visor%20de%20Cyclops%20%2B%20chapa%20de%20cintur%C3%B3n%20%F0%9F%8E%83%20%C2%B7%20Halloween"
