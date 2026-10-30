@@ -1,5 +1,7 @@
 # Skins Zelda para Nintendo Switch 2
 
+Portada elegida por Adrian despues de publicar: foto azul con consola y disenos en primer plano, `skins-zelda-nintendo-switch-2-hero-v2.webp`. Primera del producto y del modelo predeterminado Escudo Hyliano; fotos anteriores conservadas. Otras selecciones mantienen su vista instalada y el set abre la lamina11. Sin cambios de precios.
+
 30/10/2026, Codex. Pedido de Adrian: publicar skins decorativas para la base de carga Nintendo Switch 2, una a eleccion S/90 o set de11 S/200. Las12 capturas incluyen Navi repetida; hay11 disenos distintos. No inventar un duodecimo.
 
 - Producto `skins-zelda-nintendo-switch-2`, Coleccion Hyrule.11 opciones individuales y `set-11`, sin tallas. Galeria de cada opcion: vista instalada, diseno aislado y lamina comparativa. El set abre la lamina y permite recorrer las11 vistas instaladas.

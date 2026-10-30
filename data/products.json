@@ -21,8 +21,9 @@
     "availability": "A pedido",
     "regularPrice": 90,
     "featured": true,
-    "image": "assets/products/skins-zelda-nintendo-switch-2-escudo-hyliano.webp",
+    "image": "assets/products/skins-zelda-nintendo-switch-2-hero-v2.webp",
     "gallery": [
+      "assets/products/skins-zelda-nintendo-switch-2-hero-v2.webp",
       "assets/products/skins-zelda-nintendo-switch-2-escudo-hyliano.webp",
       "assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp",
       "assets/products/skins-zelda-nintendo-switch-2-majora.webp",
@@ -35,6 +36,7 @@
         "name": "Skin 01 · Escudo Hyliano · 1 unidad",
         "regularPrice": 90,
         "gallery": [
+          "assets/products/skins-zelda-nintendo-switch-2-hero-v2.webp",
           "assets/products/skins-zelda-nintendo-switch-2-escudo-hyliano.webp",
           "assets/products/skins-zelda-nintendo-switch-2-escudo-hyliano-diseno.webp",
           "assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
