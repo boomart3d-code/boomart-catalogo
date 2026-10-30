@@ -1473,9 +1473,9 @@ const CATEGORY_META = {
   },
   "Marvel & DC": {
     h1: "Figuras de Marvel y DC impresas en 3D",
-    title: "Figuras de Marvel y DC en 3D (Spider-Man, Wolverine, Batwoman) · Perú | BoomArt",
+    title: "Figuras de Marvel y DC en 3D (Spider-Man, Wolverine) · Perú | BoomArt",
     intro: [
-      "Figuras y accesorios de superhéroes de Marvel y DC impresos en 3D: el casco de Wolverine con garras, la máscara de Batwoman y las palomeras de Spider-Man para tu escritorio o tu colección.",
+      "Figuras y accesorios de superhéroes de Marvel y DC impresos en 3D: el casco de Wolverine con garras y las palomeras de Spider-Man para tu escritorio o tu colección.",
       "Piezas hechas a pedido y detalladas a mano en Lima y Callao. Envíos a todo el Perú. Escríbenos por WhatsApp para consultar.",
     ],
   },
@@ -1530,7 +1530,6 @@ const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
   "mascara-red-hood",
   "mascara-dr-doom",
   "casco-de-batman",
-  "mascara-de-batwoman",
   "casco-de-wolverine-con-garras",
   // Star Wars.
   "casco-de-stormtrooper",

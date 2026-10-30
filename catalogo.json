@@ -3,7 +3,7 @@
   "url": "https://boomart.pe/",
   "description": "Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao, Peru. Envios a todo el pais.",
   "currency": "PEN",
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "contact": {
     "whatsapp": "https://wa.me/51925666542",
     "email": "contacto@boomart.pe",
@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 97,
+  "count": 96,
   "products": [
     {
       "id": "templo-aries",
@@ -1316,30 +1316,6 @@
       ],
       "url": "https://boomart.pe/producto/casco-de-wolverine-con-garras/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Casco%20de%20Wolverine%20%2B%20Garras%20%C2%B7%20Marvel"
-    },
-    {
-      "id": "mascara-de-batwoman",
-      "name": "Máscara de Batwoman · DC",
-      "category": "Marvel & DC",
-      "tags": [
-        "DC",
-        "Mascaras"
-      ],
-      "description": "Máscara decorativa de Batwoman para exhibición: orejas afiladas y contorno marcado, impresa en 3D y detallada a mano.",
-      "material": "PLA",
-      "availability": "A pedido",
-      "priceCurrency": "PEN",
-      "priceFrom": 100,
-      "pricing": [
-        "Precio: S/100"
-      ],
-      "image": "https://boomart.pe/assets/products/mascara-de-batwoman-hero-v2.png",
-      "gallery": [
-        "https://boomart.pe/assets/products/mascara-de-batwoman-hero-v2.png",
-        "https://boomart.pe/assets/products/mascara-de-batwoman.jpg"
-      ],
-      "url": "https://boomart.pe/producto/mascara-de-batwoman/",
-      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20M%C3%A1scara%20de%20Batwoman%20%C2%B7%20DC"
     },
     {
       "id": "casco-daredevil",

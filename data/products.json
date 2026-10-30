@@ -1135,26 +1135,6 @@
     "height": "Tamaño real 1:1 · Adulto o niño"
   },
   {
-    "id": "mascara-de-batwoman",
-    "name": "Máscara de Batwoman · DC",
-    "category": "Marvel & DC",
-    "tags": [
-      "DC",
-      "Mascaras"
-    ],
-    "material": "PLA",
-    "availability": "A pedido",
-    "regularPrice": 100,
-    "featured": true,
-    "image": "assets/products/mascara-de-batwoman-hero-v2.png",
-    "gallery": [
-      "assets/products/mascara-de-batwoman-hero-v2.png",
-      "assets/products/mascara-de-batwoman.jpg"
-    ],
-    "description": "Máscara decorativa de Batwoman para exhibición: orejas afiladas y contorno marcado, impresa en 3D y detallada a mano.",
-    "sizeOptions": true
-  },
-  {
     "id": "casco-daredevil",
     "name": "Casco de Daredevil · Marvel",
     "category": "Marvel & DC",

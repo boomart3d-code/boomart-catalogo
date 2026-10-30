@@ -480,7 +480,6 @@ const HALLOWEEN_CAMPAIGN_PRODUCT_IDS = [
   "mascara-red-hood",
   "mascara-dr-doom",
   "casco-de-batman",
-  "mascara-de-batwoman",
   "casco-de-wolverine-con-garras",
   // Star Wars.
   "casco-de-stormtrooper",

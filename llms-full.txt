@@ -4,8 +4,8 @@ Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Cal
 Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion ~48 horas utiles desde
 la validacion del adelanto (50%). Pedidos por WhatsApp: https://wa.me/51925666542
 
-Total de piezas: 97
-Actualizado: 2026-10-29
+Total de piezas: 96
+Actualizado: 2026-10-30
 Fuente estructurada: https://boomart.pe/catalogo.json
 
 ---
@@ -893,18 +893,6 @@ Ilumina tu espacio con la magia de esta lámpara lunar de Hogwarts: un modelo ex
 - Ficha: https://boomart.pe/producto/casco-de-wolverine-con-garras/
 
 🎃 Edición Halloween. Casco de Wolverine (Marvel) con su set de garras, pensado para cosplay y disfraz. Disponible en dos tamaños: adulto (tamaño real 1:1) o niño (escala reducida). Elige el tamaño al agregarlo al carrito. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.
-
-### Máscara de Batwoman · DC
-
-- Categoria: Marvel & DC
-- Precio: S/100
-- Material: PLA
-- Disponibilidad: A pedido
-- Etiquetas: DC, Mascaras
-- Imagen: https://boomart.pe/assets/products/mascara-de-batwoman-hero-v2.png
-- Ficha: https://boomart.pe/producto/mascara-de-batwoman/
-
-Máscara decorativa de Batwoman para exhibición: orejas afiladas y contorno marcado, impresa en 3D y detallada a mano.
 
 ### Casco de Daredevil · Marvel
 
