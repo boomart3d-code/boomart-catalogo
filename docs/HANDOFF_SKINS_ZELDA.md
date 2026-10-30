@@ -1,5 +1,7 @@
 # Skins Zelda para Nintendo Switch 2
 
+Precios finales confirmados por Adrian el30/10: BASE+1SKIN S50, cada SKIN ADICIONAL sin otra base S20, BASE+11SKINS S200. Sustituyen S90 anterior. BASE=plataforma inferior con dos apoyos laterales tipo piedra; SKIN=tarjeta decorada intercambiable, segun fotos separadas aportadas.23 opciones agrupadas (11packs,11extras,set). `addon:true` excluye extras del precio desde y AggregateOffer del pack para evitar anunciar base desdeS20; carrito conserva S20 al agregar una skin adicional. Las vistas instaladas se conservan y se agregan fotos de base/skin separadas. Lamina de precios actualizada como `11-disenos-v2.webp`. Sin otros precios alterados. Studio247-269 y Biblioteca enlazados; costos Studio estimados por politica vigente, no medidos. Evidencia de esta ampliacion: `D:/BOOMART-ENTREGAS/Skins-Zelda-Studio-20261030`, fixture de altas/mapeo23 y QA web. Revision movil general107paginas x4anchos, sin desbordes.
+
 Portada elegida por Adrian despues de publicar: foto azul con consola y disenos en primer plano, `skins-zelda-nintendo-switch-2-hero-v2.webp`. Primera del producto y del modelo predeterminado Escudo Hyliano; fotos anteriores conservadas. Otras selecciones mantienen su vista instalada y el set abre la lamina11. Sin cambios de precios.
 
 30/10/2026, Codex. Pedido de Adrian: publicar skins decorativas para la base de carga Nintendo Switch 2, una a eleccion S/90 o set de11 S/200. Las12 capturas incluyen Navi repetida; hay11 disenos distintos. No inventar un duodecimo.

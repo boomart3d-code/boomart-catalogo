@@ -233,10 +233,10 @@ const addToCartMarkup = (product) => {
   const firstModel = product.modelOptions?.[0];
   const modelPicker = firstModel ? `
     <div class="temple-price-card model-picker" role="group" aria-label="Elige el modelo">
-      ${product.modelOptions.map((model, index) => `
+      ${product.modelOptions.map((model, index) => `${model.group && product.modelOptions[index - 1]?.group !== model.group ? `${index ? "</div></details>" : ""}<details${index === 0 ? " open" : ""}><summary style="cursor:pointer;padding:12px 0;font-weight:700">${model.group}</summary><div>` : ""}
         <button type="button" class="temple-price-option${index === 0 ? " is-selected" : ""}" data-model-option="${model.id}" data-model-price="${model.regularPrice}" aria-pressed="${index === 0}">
           <span>${model.name}</span><strong>${formatPrice(model.regularPrice)}</strong>
-        </button>`).join("")}
+        </button>`).join("")}${product.modelOptions.some((model) => model.group) ? "</div></details>" : ""}
     </div>` : "";
   const variantPicker = product.templePricing
     ? `
@@ -753,6 +753,8 @@ document.addEventListener("boomart:show-model", (event) => {
   const model = activeProduct.modelOptions?.find((option) => option.id === event.detail.modelId);
   if (!model) return;
   activeProduct.activeModel = model.id;
+  const modelGroup = modalPricing.querySelector(`[data-model-option="${model.id}"]`)?.closest("details");
+  if (modelGroup) modelGroup.open = true;
   activeImageIndex = 0;
   modalTitle.textContent = model.name;
   renderModalImage();

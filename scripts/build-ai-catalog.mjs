@@ -72,7 +72,7 @@ const waLink = (name) =>
  */
 function priceInfo(p) {
   if (p.modelOptions?.length) {
-    const prices = p.modelOptions.map((model) => Number(model.regularPrice));
+    const prices = p.modelOptions.filter((model) => !model.addon).map((model) => Number(model.regularPrice));
     return { from: Math.min(...prices), listPrice: Number(p.modelOptions[0].regularPrice),
       lines: p.modelOptions.map((model) => `${model.name}: S/${model.regularPrice}`) };
   }
@@ -868,7 +868,7 @@ function offerLd(p) {
     },
   };
   if (p.modelOptions?.length) {
-    const prices = p.modelOptions.map((model) => Number(model.regularPrice));
+    const prices = p.modelOptions.filter((model) => !model.addon).map((model) => Number(model.regularPrice));
     return { "@type": "AggregateOffer", offerCount: prices.length,
       lowPrice: Math.min(...prices), highPrice: Math.max(...prices), ...common };
   }
@@ -1025,7 +1025,8 @@ const PRODUCT_PAGE_CSS = `
 function priceBlockHtml(p) {
   const price = priceInfo(p);
   if (p.modelOptions?.length) {
-    return `<div class="pp-price"><span class="now">Elige tu modelo</span><div class="pp-thumbs" style="flex-direction:column;align-items:stretch;overflow:visible" role="group" aria-label="Modelos disponibles">${p.modelOptions.map((model, index) => `<button type="button" class="button secondary" style="width:auto;height:auto;flex:1 1 100%;padding:12px;text-align:left;white-space:normal" data-pp-model="${esc(model.id)}" aria-pressed="${index === 0}">${esc(model.name)} · <strong>S/${model.regularPrice}</strong></button>`).join("")}</div></div>`;
+    const models = p.modelOptions.map((model, index) => `${model.group && p.modelOptions[index - 1]?.group !== model.group ? `${index ? "</div></details>" : ""}<details${index === 0 ? " open" : ""}><summary style="cursor:pointer;padding:12px 0;font-weight:700">${esc(model.group)}</summary><div>` : ""}<button type="button" class="button secondary" style="width:auto;height:auto;flex:1 1 100%;padding:12px;text-align:left;white-space:normal" data-pp-model="${esc(model.id)}" aria-pressed="${index === 0}">${esc(model.name)} · <strong>S/${model.regularPrice}</strong></button>`).join("") + (p.modelOptions.some((model) => model.group) ? "</div></details>" : "");
+    return `<div class="pp-price"><span class="now">Elige tu modelo</span><div class="pp-thumbs" style="flex-direction:column;align-items:stretch;overflow:visible" role="group" aria-label="Modelos disponibles">${models}</div></div>`;
   }
   if (p.signPicker) {
     const { unitPrice, setPrice } = p.signPicker;
@@ -1389,6 +1390,8 @@ ${p.modelOptions?.length ? `<script>
         function choose(id) {
           var model = models.find(function (item) { return item.id === id; });
           if (!model) return;
+          var group = document.querySelector('[data-pp-model="' + id + '"]').closest('details');
+          if (group) group.open = true;
           var main = document.getElementById('ppMain');
           var thumbs = document.getElementById('ppThumbs');
           main.src = '${rel}' + model.gallery[0].replace(/\\.jpg$/, '.webp');

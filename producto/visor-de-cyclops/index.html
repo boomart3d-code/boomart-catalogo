@@ -346,6 +346,8 @@
         function choose(id) {
           var model = models.find(function (item) { return item.id === id; });
           if (!model) return;
+          var group = document.querySelector('[data-pp-model="' + id + '"]').closest('details');
+          if (group) group.open = true;
           var main = document.getElementById('ppMain');
           var thumbs = document.getElementById('ppThumbs');
           main.src = '../../' + model.gallery[0].replace(/\.jpg$/, '.webp');
