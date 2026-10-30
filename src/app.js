@@ -293,7 +293,7 @@ const addToCartMarkup = (product) => {
 
   const initialVariant = product.templePricing
     ? DEFAULT_TEMPLE_VARIANT
-    : product.signPicker ? "set12" : product.sizeOptions ? `${firstModel ? firstModel.id + ":" : ""}${DEFAULT_SIZE}` : "";
+    : product.signPicker ? "set12" : product.sizeOptions ? `${firstModel ? firstModel.id + ":" : ""}${DEFAULT_SIZE}` : firstModel?.id || "";
 
   // Resumen de lo que se va a agregar (opcion + precio). En el celular la barra
   // de compra queda fija abajo y tapa las opciones, asi que el boton lo repite
@@ -756,7 +756,7 @@ document.addEventListener("boomart:show-model", (event) => {
   activeImageIndex = 0;
   modalTitle.textContent = model.name;
   renderModalImage();
-  if (shareProductWa) shareProductWa.href = whatsappUrl(inquiryMessage({ ...activeProduct, name: model.name }));
+  if (shareProductWa) shareProductWa.href = whatsappUrl(inquiryMessage({ ...activeProduct, name: model.name, regularPrice: model.regularPrice }));
 });
 
 const changeImage = (direction) => {

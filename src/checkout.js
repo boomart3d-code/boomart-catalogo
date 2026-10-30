@@ -288,7 +288,8 @@
       const modelId = modelOption.dataset.modelOption;
       const basePrice = Number(modelOption.dataset.modelPrice);
       const currentSize = container.dataset.variant.split(":").pop() === "nino" ? "nino" : "adulto";
-      container.dataset.variant = `${modelId}:${currentSize}`;
+      const hasSizes = Boolean(container.querySelector("[data-variant-option]"));
+      container.dataset.variant = hasSizes ? `${modelId}:${currentSize}` : modelId;
       container.querySelectorAll("[data-model-option]").forEach((button) => {
         button.classList.toggle("is-selected", button === modelOption);
         button.setAttribute("aria-pressed", String(button === modelOption));
@@ -301,6 +302,7 @@
       const selected = container.querySelector('[data-variant-option][aria-pressed="true"]');
       const addButton = container.querySelector("[data-add-to-cart]");
       if (addButton && selected) addButton.dataset.priceLabel = `${modelOption.querySelector("span").textContent} · ${selected.querySelector("span").textContent} · ${selected.querySelector("strong").textContent}`;
+      if (addButton && !hasSizes) addButton.dataset.priceLabel = `${modelOption.querySelector("span").textContent} · ${money(basePrice)}`;
       document.dispatchEvent(new CustomEvent("boomart:show-model", { detail: { productId, modelId } }));
       return;
     }

@@ -1,4 +1,11 @@
 {
+  "skins-zelda-nintendo-switch-2": {
+    "source": "assets/products/skins-zelda-nintendo-switch-2-escudo-hyliano.webp",
+    "hash": "0b06ca3504cdc7df",
+    "width": 960,
+    "height": 1200,
+    "bytes": 95093
+  },
   "templo-aries": {
     "source": "assets/products/templo-aries-hero-v2.png",
     "hash": "9a24539ccd7cf163",

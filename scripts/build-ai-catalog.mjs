@@ -1025,7 +1025,7 @@ const PRODUCT_PAGE_CSS = `
 function priceBlockHtml(p) {
   const price = priceInfo(p);
   if (p.modelOptions?.length) {
-    return `<div class="pp-price"><span class="now">Elige tu modelo</span><div class="pp-thumbs" style="flex-direction:column;align-items:stretch;overflow:visible" role="group" aria-label="Modelos de máscara">${p.modelOptions.map((model, index) => `<button type="button" class="button secondary" style="width:auto;height:auto;flex:1 1 100%;padding:12px;text-align:left;white-space:normal" data-pp-model="${esc(model.id)}" aria-pressed="${index === 0}">${esc(model.name)} · <strong>S/${model.regularPrice}</strong></button>`).join("")}</div></div>`;
+    return `<div class="pp-price"><span class="now">Elige tu modelo</span><div class="pp-thumbs" style="flex-direction:column;align-items:stretch;overflow:visible" role="group" aria-label="Modelos disponibles">${p.modelOptions.map((model, index) => `<button type="button" class="button secondary" style="width:auto;height:auto;flex:1 1 100%;padding:12px;text-align:left;white-space:normal" data-pp-model="${esc(model.id)}" aria-pressed="${index === 0}">${esc(model.name)} · <strong>S/${model.regularPrice}</strong></button>`).join("")}</div></div>`;
   }
   if (p.signPicker) {
     const { unitPrice, setPrice } = p.signPicker;
@@ -1243,7 +1243,7 @@ function buildProductPage(p, all, ratingLd) {
 
       <div class="pp-body">
         <h2>Detalle de la pieza</h2>
-        <p>${esc(p.name)} es una ${esc(ctx)}, diseñada y fabricada por BoomArt en ${esc(p.height && /cm/i.test(p.height) ? p.height + ", " : "")}Perú. Se imprime en 3D en ${esc(p.material || "PLA+")}, con acabado y pintura a mano según la pieza, así que es un objeto hecho especialmente para tu pedido &mdash; puedes pedir un color, tamaño o detalle distinto y lo coordinamos por WhatsApp.</p>
+        <p>${p.detailText ? esc(p.detailText) : `${esc(p.name)} es una ${esc(ctx)}, diseñada y fabricada por BoomArt en ${esc(p.height && /cm/i.test(p.height) ? p.height + ", " : "")}Perú. Se imprime en 3D en ${esc(p.material || "PLA+")}, con acabado y pintura a mano según la pieza, así que es un objeto hecho especialmente para tu pedido &mdash; puedes pedir un color, tamaño o detalle distinto y lo coordinamos por WhatsApp.`}</p>
         ${p.tags && p.tags.length ? `<p>Relacionada con: ${p.tags.map((t) => esc(t)).join(", ")}.</p>` : ""}
         <h2>Producción y tiempos</h2>
         <p>Cada pieza se produce a pedido. La fabricación toma aproximadamente <strong>48 horas útiles</strong> desde que confirmas tu compra. No trabajamos con stock: esto nos permite ajustar cada figura a lo que pides.</p>

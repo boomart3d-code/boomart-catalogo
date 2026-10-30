@@ -1,5 +1,169 @@
 [
   {
+    "id": "skins-zelda-nintendo-switch-2",
+    "name": "Skins 3D Zelda para base de carga Nintendo Switch 2 · Colección Hyrule",
+    "category": "Soportes de Mandos",
+    "extraCategories": [
+      "Series y Películas"
+    ],
+    "tags": [
+      "Zelda",
+      "Nintendo Switch 2",
+      "Dock",
+      "Base de carga",
+      "Skin 3D",
+      "Alto relieve",
+      "Hyrule",
+      "Ocarina of Time",
+      "Videojuegos"
+    ],
+    "material": "Impresión 3D en alto relieve",
+    "availability": "A pedido",
+    "regularPrice": 90,
+    "featured": true,
+    "image": "assets/products/skins-zelda-nintendo-switch-2-escudo-hyliano.webp",
+    "gallery": [
+      "assets/products/skins-zelda-nintendo-switch-2-escudo-hyliano.webp",
+      "assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp",
+      "assets/products/skins-zelda-nintendo-switch-2-majora.webp",
+      "assets/products/skins-zelda-nintendo-switch-2-emblema-hyrule.webp"
+    ],
+    "description": "Transforma el frente de tu base de carga de Nintendo Switch 2 con una skin decorativa 3D de temática Zelda, con diseños en alto relieve. Colección Hyrule: elige 1 skin por S/90 o lleva el set de 11 diseños diferentes por S/200. Selecciona un modelo para verlo instalado en la base de presentación, como en nuestras fotos; la lámina numerada te permite comparar todos los diseños. Incluye únicamente la cantidad de skins de la opción elegida. Consola, base de carga Nintendo y videojuegos no incluidos. Una pieza para acompañar tu espacio gamer y tus aventuras de Ocarina of Time. Las vistas de los diseños son visualizaciones referenciales; los colores y acabados pueden variar ligeramente por la fabricación 3D. Hechas a pedido por BoomArt, con envíos a todo el Perú.",
+    "modelOptions": [
+      {
+        "id": "escudo-hyliano",
+        "name": "Skin 01 · Escudo Hyliano · 1 unidad",
+        "regularPrice": 90,
+        "gallery": [
+          "assets/products/skins-zelda-nintendo-switch-2-escudo-hyliano.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-escudo-hyliano-diseno.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+        ]
+      },
+      {
+        "id": "emblema-hyrule",
+        "name": "Skin 02 · Emblema de Hyrule · 1 unidad",
+        "regularPrice": 90,
+        "gallery": [
+          "assets/products/skins-zelda-nintendo-switch-2-emblema-hyrule.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-emblema-hyrule-diseno.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+        ]
+      },
+      {
+        "id": "ojo-sheikah",
+        "name": "Skin 03 · Ojo Sheikah · 1 unidad",
+        "regularPrice": 90,
+        "gallery": [
+          "assets/products/skins-zelda-nintendo-switch-2-ojo-sheikah.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-ojo-sheikah-diseno.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+        ]
+      },
+      {
+        "id": "ojo-rojo",
+        "name": "Skin 04 · Ojo rojo · 1 unidad",
+        "regularPrice": 90,
+        "gallery": [
+          "assets/products/skins-zelda-nintendo-switch-2-ojo-rojo.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-ojo-rojo-diseno.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+        ]
+      },
+      {
+        "id": "emblema-ancestral",
+        "name": "Skin 05 · Emblema ancestral · 1 unidad",
+        "regularPrice": 90,
+        "gallery": [
+          "assets/products/skins-zelda-nintendo-switch-2-emblema-ancestral.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-emblema-ancestral-diseno.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+        ]
+      },
+      {
+        "id": "navi",
+        "name": "Skin 06 · Navi · 1 unidad",
+        "regularPrice": 90,
+        "gallery": [
+          "assets/products/skins-zelda-nintendo-switch-2-navi.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-navi-diseno.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+        ]
+      },
+      {
+        "id": "corazon",
+        "name": "Skin 07 · Contenedor de corazón · 1 unidad",
+        "regularPrice": 90,
+        "gallery": [
+          "assets/products/skins-zelda-nintendo-switch-2-corazon.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-corazon-diseno.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+        ]
+      },
+      {
+        "id": "korok",
+        "name": "Skin 08 · Korok · 1 unidad",
+        "regularPrice": 90,
+        "gallery": [
+          "assets/products/skins-zelda-nintendo-switch-2-korok.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-korok-diseno.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+        ]
+      },
+      {
+        "id": "resistencia",
+        "name": "Skin 09 · Resistencia · 1 unidad",
+        "regularPrice": 90,
+        "gallery": [
+          "assets/products/skins-zelda-nintendo-switch-2-resistencia.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-resistencia-diseno.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+        ]
+      },
+      {
+        "id": "corazon-resistencia",
+        "name": "Skin 10 · Corazón y resistencia · 1 unidad",
+        "regularPrice": 90,
+        "gallery": [
+          "assets/products/skins-zelda-nintendo-switch-2-corazon-resistencia.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-corazon-resistencia-diseno.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+        ]
+      },
+      {
+        "id": "majora",
+        "name": "Skin 11 · Máscara de Majora · 1 unidad",
+        "regularPrice": 90,
+        "gallery": [
+          "assets/products/skins-zelda-nintendo-switch-2-majora.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-majora-diseno.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+        ]
+      },
+      {
+        "id": "set-11",
+        "name": "Set completo · 11 skins Zelda en alto relieve",
+        "regularPrice": 200,
+        "gallery": [
+          "assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-escudo-hyliano.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-emblema-hyrule.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-ojo-sheikah.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-ojo-rojo.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-emblema-ancestral.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-navi.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-corazon.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-korok.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-resistencia.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-corazon-resistencia.webp",
+          "assets/products/skins-zelda-nintendo-switch-2-majora.webp"
+        ]
+      }
+    ],
+    "notice": "Incluye skins decorativas. Consola y base de carga Nintendo no incluidas.",
+    "detailText": "Skins decorativas impresas en 3D en alto relieve, para personalizar el frente de la base de carga de Nintendo Switch 2 con temática Zelda. S/90 incluye una skin a elección entre los 11 diseños; S/200 incluye las 11 skins diferentes de la Colección Hyrule. No incluye la consola, la base de carga Nintendo ni videojuegos. Las imágenes de diseño son visualizaciones referenciales del acabado."
+  },
+  {
     "id": "templo-aries",
     "name": "Templo de Aries",
     "category": "Saint Seiya",

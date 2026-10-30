@@ -37,6 +37,18 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://boomart.pe/categoria/soportes-de-mandos/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boomart.pe/categoria/series-y-peliculas/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://boomart.pe/categoria/saint-seiya/</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -79,16 +91,10 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://boomart.pe/categoria/soportes-de-mandos/</loc>
+    <loc>https://boomart.pe/producto/skins-zelda-nintendo-switch-2/</loc>
     <lastmod>2026-10-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://boomart.pe/categoria/series-y-peliculas/</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://boomart.pe/producto/templo-aries/</loc>

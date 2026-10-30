@@ -11,8 +11,183 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 96,
+  "count": 97,
   "products": [
+    {
+      "id": "skins-zelda-nintendo-switch-2",
+      "name": "Skins 3D Zelda para base de carga Nintendo Switch 2 · Colección Hyrule",
+      "category": "Soportes de Mandos",
+      "tags": [
+        "Zelda",
+        "Nintendo Switch 2",
+        "Dock",
+        "Base de carga",
+        "Skin 3D",
+        "Alto relieve",
+        "Hyrule",
+        "Ocarina of Time",
+        "Videojuegos"
+      ],
+      "description": "Transforma el frente de tu base de carga de Nintendo Switch 2 con una skin decorativa 3D de temática Zelda, con diseños en alto relieve. Colección Hyrule: elige 1 skin por S/90 o lleva el set de 11 diseños diferentes por S/200. Selecciona un modelo para verlo instalado en la base de presentación, como en nuestras fotos; la lámina numerada te permite comparar todos los diseños. Incluye únicamente la cantidad de skins de la opción elegida. Consola, base de carga Nintendo y videojuegos no incluidos. Una pieza para acompañar tu espacio gamer y tus aventuras de Ocarina of Time. Las vistas de los diseños son visualizaciones referenciales; los colores y acabados pueden variar ligeramente por la fabricación 3D. Hechas a pedido por BoomArt, con envíos a todo el Perú.",
+      "material": "Impresión 3D en alto relieve",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 90,
+      "pricing": [
+        "Skin 01 · Escudo Hyliano · 1 unidad: S/90",
+        "Skin 02 · Emblema de Hyrule · 1 unidad: S/90",
+        "Skin 03 · Ojo Sheikah · 1 unidad: S/90",
+        "Skin 04 · Ojo rojo · 1 unidad: S/90",
+        "Skin 05 · Emblema ancestral · 1 unidad: S/90",
+        "Skin 06 · Navi · 1 unidad: S/90",
+        "Skin 07 · Contenedor de corazón · 1 unidad: S/90",
+        "Skin 08 · Korok · 1 unidad: S/90",
+        "Skin 09 · Resistencia · 1 unidad: S/90",
+        "Skin 10 · Corazón y resistencia · 1 unidad: S/90",
+        "Skin 11 · Máscara de Majora · 1 unidad: S/90",
+        "Set completo · 11 skins Zelda en alto relieve: S/200"
+      ],
+      "image": "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-escudo-hyliano.webp",
+      "gallery": [
+        "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-escudo-hyliano.webp",
+        "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp",
+        "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-majora.webp",
+        "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-emblema-hyrule.webp"
+      ],
+      "modelOptions": [
+        {
+          "id": "escudo-hyliano",
+          "name": "Skin 01 · Escudo Hyliano · 1 unidad",
+          "regularPrice": 90,
+          "gallery": [
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-escudo-hyliano.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-escudo-hyliano-diseno.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+          ]
+        },
+        {
+          "id": "emblema-hyrule",
+          "name": "Skin 02 · Emblema de Hyrule · 1 unidad",
+          "regularPrice": 90,
+          "gallery": [
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-emblema-hyrule.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-emblema-hyrule-diseno.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+          ]
+        },
+        {
+          "id": "ojo-sheikah",
+          "name": "Skin 03 · Ojo Sheikah · 1 unidad",
+          "regularPrice": 90,
+          "gallery": [
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-ojo-sheikah.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-ojo-sheikah-diseno.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+          ]
+        },
+        {
+          "id": "ojo-rojo",
+          "name": "Skin 04 · Ojo rojo · 1 unidad",
+          "regularPrice": 90,
+          "gallery": [
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-ojo-rojo.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-ojo-rojo-diseno.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+          ]
+        },
+        {
+          "id": "emblema-ancestral",
+          "name": "Skin 05 · Emblema ancestral · 1 unidad",
+          "regularPrice": 90,
+          "gallery": [
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-emblema-ancestral.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-emblema-ancestral-diseno.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+          ]
+        },
+        {
+          "id": "navi",
+          "name": "Skin 06 · Navi · 1 unidad",
+          "regularPrice": 90,
+          "gallery": [
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-navi.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-navi-diseno.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+          ]
+        },
+        {
+          "id": "corazon",
+          "name": "Skin 07 · Contenedor de corazón · 1 unidad",
+          "regularPrice": 90,
+          "gallery": [
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-corazon.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-corazon-diseno.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+          ]
+        },
+        {
+          "id": "korok",
+          "name": "Skin 08 · Korok · 1 unidad",
+          "regularPrice": 90,
+          "gallery": [
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-korok.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-korok-diseno.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+          ]
+        },
+        {
+          "id": "resistencia",
+          "name": "Skin 09 · Resistencia · 1 unidad",
+          "regularPrice": 90,
+          "gallery": [
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-resistencia.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-resistencia-diseno.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+          ]
+        },
+        {
+          "id": "corazon-resistencia",
+          "name": "Skin 10 · Corazón y resistencia · 1 unidad",
+          "regularPrice": 90,
+          "gallery": [
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-corazon-resistencia.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-corazon-resistencia-diseno.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+          ]
+        },
+        {
+          "id": "majora",
+          "name": "Skin 11 · Máscara de Majora · 1 unidad",
+          "regularPrice": 90,
+          "gallery": [
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-majora.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-majora-diseno.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp"
+          ]
+        },
+        {
+          "id": "set-11",
+          "name": "Set completo · 11 skins Zelda en alto relieve",
+          "regularPrice": 200,
+          "gallery": [
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-11-disenos.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-escudo-hyliano.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-emblema-hyrule.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-ojo-sheikah.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-ojo-rojo.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-emblema-ancestral.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-navi.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-corazon.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-korok.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-resistencia.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-corazon-resistencia.webp",
+            "https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-majora.webp"
+          ]
+        }
+      ],
+      "url": "https://boomart.pe/producto/skins-zelda-nintendo-switch-2/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Skins%203D%20Zelda%20para%20base%20de%20carga%20Nintendo%20Switch%202%20%C2%B7%20Colecci%C3%B3n%20Hyrule"
+    },
     {
       "id": "templo-aries",
       "name": "Templo de Aries",

@@ -96,6 +96,14 @@
       const model = legacySize || !variantKey ? product.modelOptions[0]
         : product.modelOptions.find((option) => option.id === parts[0]);
       if (!model) return null;
+      if (!product.sizeOptions) {
+        return {
+          variantKey: model.id,
+          variantLabel: model.name,
+          image: model.gallery?.[0] || product.image,
+          unitPrice: Number(model.regularPrice) || 0
+        };
+      }
       const size = legacySize || (SIZE_LABELS[parts[1]] ? parts[1] : "adulto");
       const base = Number(model.regularPrice) || 0;
       return {
