@@ -321,13 +321,6 @@
     "height": 1200,
     "bytes": 119767
   },
-  "mascara-de-batwoman": {
-    "source": "assets/products/mascara-de-batwoman-hero-v2.png",
-    "hash": "a3b01595cfc041f9",
-    "width": 960,
-    "height": 1200,
-    "bytes": 93555
-  },
   "casco-daredevil": {
     "source": "assets/products/casco-daredevil-hero.webp",
     "hash": "831ef6503ca3ac23",
