@@ -30,4 +30,22 @@ Hace falta Sharp para generar derivados, instalado normalmente con `npm install 
 - 16 pruebas de imagenes, checkout y fechas de video aprobadas.
 - Datos del catalogo, precios, pedidos y clientes sin modificaciones.
 
-Medicion anterior en navegador (390 px, DPR1, limite 1.6 Mbps/150 ms): recursos propios de portada 2591 KiB, de los cuales 2483 KiB son imagenes; ficha Zelda 1921 KiB, imagenes 1885 KiB. Foto principal Zelda aprox. 10.4 s. Son pruebas de laboratorio, no una promesa para todas las conexiones. El despliegue y las mediciones posteriores se registran tras verificar la web publica.
+## Publicacion y medicion posterior
+
+Codigo publicado en main: `5db213b99bc44277e3951d09fb026c3d2c95cbb1`. GitHub Actions del catalogo y despliegue de Pages terminaron correctamente. HTML publico incluye srcset y helpers; muestras de derivados y scripts dan HTTP200, con los scripts comprimidos con gzip. Consola de la comprobacion publica sin errores.
+
+Condiciones antes/despues: navegador de 390 px, DPR1, limite de descarga 1.6 Mbps, latencia configurada 150 ms, cache desactivada. Se cuenta el peso de recursos del propio dominio, no el de servicios externos. No equivale a una medicion de usuarios reales ni promete esos tiempos en cualquier telefono.
+
+| Medicion | Antes | Despues |
+|---|---:|---:|
+| Portada, recursos propios | 2591 KiB | 537 KiB |
+| Portada, imagenes | 2483 KiB | 413 KiB |
+| Portada, evento load | 13.9 s | 5.1 s |
+| Ficha Zelda, recursos propios | 1921 KiB | 156 KiB |
+| Ficha Zelda, imagenes | 1885 KiB | 105 KiB |
+| Ficha Zelda, evento load | 11.8 s | 2.9 s |
+| Descarga foto principal Zelda | 10.4 s | 1.9 s |
+
+Reduccion de peso observado: portada79 %, ficha Zelda92 %. El contenido de texto ya aparecia pronto antes (FCP1.46s en portada, .92s en ficha); no se afirma una mejora de FCP, que en esta medicion fue1.54s y1.09s. La mejora comprobada es la descarga de fotos y carga total, manteniendo imagenes grandes disponibles.
+
+Evidencia: `docs/performance-20261031/mediciones.json` y `web-publicada.png`. La carpeta de trabajo que se publico es `D:/BOOMART-ENTREGAS/web-daredevil-20261028`, rama `codex/imagenes-adaptables-20261031`. El checkout canonico conserva sus cambios ajenos, sin pull ni sobrescrituras; para retomar, partir de origin/main actualizado en un checkout limpio.

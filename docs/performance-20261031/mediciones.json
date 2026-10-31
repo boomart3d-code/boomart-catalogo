@@ -1,0 +1,164 @@
+{
+  "date": "2026-10-31",
+  "conditions": {
+    "width": 390,
+    "dpr": 1,
+    "downloadMbps": 1.6,
+    "latencyMs": 150,
+    "cacheDisabled": true
+  },
+  "scope": "Recursos del propio dominio; se excluye el peso de servicios externos. Medicion de laboratorio.",
+  "before": {
+    "home": {
+      "totalKB": 2591,
+      "imageKB": 2483,
+      "loadMs": 13915
+    },
+    "zelda": {
+      "totalKB": 1921,
+      "imageKB": 1885,
+      "loadMs": 11820,
+      "mainImageMs": 10388
+    }
+  },
+  "after": {
+    "home": {
+      "page": "home",
+      "width": 390,
+      "dpr": 1,
+      "ready": "complete",
+      "elapsed": 34772,
+      "load": 5111,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 1544
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 1544
+        }
+      ],
+      "requests": 39,
+      "totalKB": 537,
+      "imageKB": 413,
+      "products": "97 productos visibles",
+      "images": 3,
+      "connection": {
+        "downlink": 1.55,
+        "type": "4g"
+      },
+      "largest": [
+        {
+          "path": "/assets/responsive/hero/busto-de-atena-4977c1fa4aa1-360w.webp",
+          "kB": 66,
+          "ms": 3597
+        },
+        {
+          "path": "/assets/responsive/products/templo-del-patriarca-hero-a66112c8e3e8-360w.webp",
+          "kB": 43,
+          "ms": 1543
+        },
+        {
+          "path": "/assets/responsive/products/templo-aries-hero-v2-a9344e77de94-360w.webp",
+          "kB": 36,
+          "ms": 1465
+        },
+        {
+          "path": "/assets/responsive/hero/altar-de-pegaso-f5d10d9d4748-360w.webp",
+          "kB": 36,
+          "ms": 2543
+        },
+        {
+          "path": "/assets/responsive/products/busto-de-atena-saint-seiya-hero-efdab991a62d-360w.webp",
+          "kB": 34,
+          "ms": 1420
+        }
+      ]
+    },
+    "zelda": {
+      "page": "zelda",
+      "width": 390,
+      "dpr": 1,
+      "ready": "complete",
+      "elapsed": 21721,
+      "load": 2853,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 1092
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 1092
+        }
+      ],
+      "requests": 16,
+      "totalKB": 156,
+      "imageKB": 105,
+      "main": {
+        "path": "/assets/responsive/products/skins-zelda-nintendo-switch-2-hero-v2-2cf8e00aba18-720w.webp",
+        "complete": true,
+        "width": 362
+      },
+      "largest": [
+        {
+          "path": "/assets/responsive/products/skins-zelda-nintendo-switch-2-hero-v2-2cf8e00aba18-720w.webp",
+          "kB": 69,
+          "ms": 1880
+        },
+        {
+          "path": "/assets/brand/boomart-icon-asistente.png",
+          "kB": 11,
+          "ms": 525
+        },
+        {
+          "path": "/assets/responsive/products/skins-zelda-nintendo-switch-2-hero-v2-2cf8e00aba18-120w.webp",
+          "kB": 5,
+          "ms": 493
+        },
+        {
+          "path": "/assets/responsive/products/skins-zelda-nintendo-switch-2-11-disenos-v2-f3e0ce204f43-120w.webp",
+          "kB": 4,
+          "ms": 413
+        },
+        {
+          "path": "/assets/responsive/products/skins-zelda-nintendo-switch-2-emblema-hyrule-927086dcc1fb-120w.webp",
+          "kB": 3,
+          "ms": 429
+        },
+        {
+          "path": "/assets/responsive/products/skins-zelda-nintendo-switch-2-majora-550c40e3c370-120w.webp",
+          "kB": 3,
+          "ms": 429
+        }
+      ],
+      "thumbs": [
+        {
+          "path": "/assets/responsive/products/skins-zelda-nintendo-switch-2-hero-v2-2cf8e00aba18-120w.webp",
+          "w": 48
+        },
+        {
+          "path": "/assets/responsive/products/skins-zelda-nintendo-switch-2-escudo-hyliano-bb762e657f0d-120w.webp",
+          "w": 50
+        },
+        {
+          "path": "/assets/responsive/products/skins-zelda-nintendo-switch-2-escudo-hyliano-diseno-7ea03478f938-120w.webp",
+          "w": 50
+        },
+        {
+          "path": "/assets/responsive/products/skins-zelda-nintendo-switch-2-11-disenos-v2-f3e0ce204f43-120w.webp",
+          "w": 50
+        },
+        {
+          "path": "/assets/responsive/products/skins-zelda-nintendo-switch-2-base-soporte-3a19382b12ee-120w.webp",
+          "w": 50
+        },
+        {
+          "path": "/assets/responsive/products/skins-zelda-nintendo-switch-2-skin-ejemplo-edd1e6f0109b-120w.webp",
+          "w": 50
+        }
+      ]
+    }
+  }
+}
