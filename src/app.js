@@ -40,6 +40,7 @@ const formatPrice = (value) => `S/${value}`;
 // se aplica a assets/products/, donde ya se genero para todas las fotos.
 const webpSrc = (src) =>
   src && src.startsWith("assets/products/") ? src.replace(/\.(jpe?g|png)$/i, ".webp") : src;
+const imageAttrs = (src, kind = 'card') => window.BoomArtImages.html(webpSrc(src), kind);
 
 const normalize = (text) =>
   String(text || "")
@@ -207,7 +208,7 @@ const placeholder = (product) => `
 
 const productImage = (product, className = "") => {
   if (!product.image) return placeholder(product);
-  return `<img class="${className}" src="${webpSrc(product.image)}" alt="${product.name}" loading="lazy" decoding="async">`;
+  return `<img class="${className}" ${imageAttrs(product.image)} alt="${product.name}" loading="lazy" decoding="async">`;
 };
 
 const TEMPLE_BOX_LABELS = { temple: "Templo", pandora: "Pandora Box + pedestal", combo: "Combo" };
@@ -417,7 +418,7 @@ const collectionCard = (collection, items) => {
   <article class="product-card collection-card" data-collection="${collection.key}">
     <button class="card-media" type="button" data-collection="${collection.key}" aria-label="Ver los ${items.length} signos: ${collection.title}">
       <span class="collection-count">${items.length} signos</span>
-      <img src="${webpSrc(first.image)}" alt="" loading="lazy" decoding="async">
+      <img ${imageAttrs(first.image)} alt="" loading="lazy" decoding="async">
     </button>
     <div class="card-body">
       <p class="collection-kicker">${collection.kicker}</p>
@@ -651,12 +652,12 @@ const renderModalImage = () => {
     ? placeholder(activeProduct)
     : current.type === "video"
       ? `<video class="modal-video" src="${current.src}"${current.poster ? ` poster="${current.poster}"` : ""} autoplay muted loop playsinline preload="auto" aria-label="Video de ${activeProduct.name}"></video>`
-      : `<img src="${webpSrc(current.src)}" alt="${activeProduct.name} imagen ${activeImageIndex + 1}" decoding="async">`;
+      : `<img ${imageAttrs(current.src, 'main')} alt="${activeProduct.name} imagen ${activeImageIndex + 1}" fetchpriority="high" decoding="async">`;
 
   thumbRow.innerHTML = gallery
     .map((item, index) => item.type === "video"
-      ? `<button class="thumb-video${index === activeImageIndex ? " active" : ""}" type="button" data-thumb="${index}" aria-label="Ver video de ${activeProduct.name}"><img src="${item.poster || webpSrc(activeProduct.image)}" alt="" loading="lazy" decoding="async"><span aria-hidden="true">▶</span></button>`
-      : `<button class="${index === activeImageIndex ? "active" : ""}" type="button" data-thumb="${index}" aria-label="Ver foto ${index + 1} de ${gallery.length} de ${activeProduct.name}"><img src="${webpSrc(item.src)}" alt="" loading="lazy" decoding="async"></button>`)
+      ? `<button class="thumb-video${index === activeImageIndex ? " active" : ""}" type="button" data-thumb="${index}" aria-label="Ver video de ${activeProduct.name}"><img ${imageAttrs(item.poster || activeProduct.image, 'thumb')} alt="" loading="lazy" decoding="async"><span aria-hidden="true">▶</span></button>`
+      : `<button class="${index === activeImageIndex ? "active" : ""}" type="button" data-thumb="${index}" aria-label="Ver foto ${index + 1} de ${gallery.length} de ${activeProduct.name}"><img ${imageAttrs(item.src, 'thumb')} alt="" loading="lazy" decoding="async"></button>`)
     .join("");
 
   const hasMultiple = gallery.length > 1;
@@ -1212,7 +1213,7 @@ if (heroReel) {
   const loadHeroSlide = (index) => {
     const slide = slides[(index + slides.length) % slides.length];
     slide?.querySelectorAll("img[data-src]").forEach((img) => {
-      img.src = img.dataset.src;
+      window.BoomArtImages.apply(img, img.dataset.src, 'hero');
       img.removeAttribute("data-src");
     });
   };
@@ -1248,7 +1249,7 @@ if (heroReel) {
     const previous = activeSlide;
     activeSlide = (nextIndex + slides.length) % slides.length;
     // La activa, sus vecinas visibles y la que entra después.
-    [-1, 0, 1, 2].forEach((k) => loadHeroSlide(activeSlide + k));
+    [-1, 0, 1].forEach((k) => loadHeroSlide(activeSlide + k));
     placeSlides(activeSlide, previous);
     dots.forEach((dot, index) => {
       const active = index === activeSlide;
@@ -1265,7 +1266,9 @@ if (heroReel) {
 
   const startHeroReel = () => {
     stopHeroReel();
-    if (reduceMotion.matches || document.hidden || slides.length < 2) return;
+    const connection = navigator.connection;
+    const constrained = connection?.saveData || /(^|-)2g$/.test(connection?.effectiveType || '') || (connection?.downlink > 0 && connection.downlink < 2);
+    if (reduceMotion.matches || constrained || document.hidden || slides.length < 2 || !heroVisible) return;
     reelTimer = window.setInterval(() => showHeroSlide(activeSlide + 1), 5600);
   };
 
@@ -1306,9 +1309,17 @@ if (heroReel) {
     showHeroSlide(slides.indexOf(side), true);
   });
 
+  let heroVisible = true;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      heroVisible = entry.isIntersecting;
+      startHeroReel();
+    }).observe(heroReel);
+  }
+  navigator.connection?.addEventListener?.('change', startHeroReel);
   heroReel.classList.add("is-carousel");
   placeSlides(activeSlide, null);
-  [-1, 1, 2].forEach((k) => loadHeroSlide(activeSlide + k));
+  [-1, 1].forEach((k) => loadHeroSlide(activeSlide + k));
   document.addEventListener("visibilitychange", startHeroReel);
   reduceMotion.addEventListener?.("change", startHeroReel);
   startHeroReel();

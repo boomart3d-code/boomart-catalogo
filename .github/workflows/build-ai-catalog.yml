@@ -7,6 +7,10 @@ on:
       - "data/products.json"
       - "data/reviews.json"
       - "assets/products/**"
+      - "assets/hero/**"
+      - "scripts/build-responsive-images.mjs"
+      - "scripts/responsive-html.mjs"
+      - "src/responsive-images.js"
       - "scripts/build-ai-catalog.mjs"
       - "scripts/video-upload-date.mjs"
       - "scripts/video-upload-date.test.mjs"
@@ -39,13 +43,19 @@ jobs:
       - name: Validar fechas de videos
         run: node --test scripts/video-upload-date.test.mjs
 
+      - name: Generar fotos por tamaño para celulares y miniaturas
+        run: node scripts/build-responsive-images.mjs
+
+      - name: Validar seleccion de imagenes
+        run: node --test scripts/responsive-images.test.mjs
+
       - name: Regenerar catalogo y feeds
         run: node scripts/build-ai-catalog.mjs
 
       - name: Publicar los archivos regenerados (si hubo cambios)
         id: commit
         run: |
-          FILES="catalogo.html catalogo.json llms.txt llms-full.txt feed-google.xml feed-meta.csv index.html sitemap.xml producto categoria assets/og"
+          FILES="catalogo.html catalogo.json llms.txt llms-full.txt feed-google.xml feed-meta.csv index.html sitemap.xml producto categoria Halloween saintseiya assets/og assets/responsive src/image-sources.js"
           if [ -n "$(git status --porcelain $FILES)" ]; then
             git config user.name "boomart-bot"
             git config user.email "boomart.3d@gmail.com"

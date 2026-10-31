@@ -16,7 +16,8 @@
  * No necesita dependencias: solo Node.js 18+.
  */
 
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile as writeRaw, mkdir } from "node:fs/promises";
+import { responsiveHtml } from "./responsive-html.mjs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { SOCIAL_URLS, socialBandHtml, socialFooterHtml } from "./social-links.mjs";
@@ -24,6 +25,7 @@ import { videoUploadDate } from "./video-upload-date.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://boomart.pe";
+const writeFile = (file, content) => writeRaw(file, String(file).endsWith('.html') ? responsiveHtml(content) : content);
 
 // Miniaturas livianas para compartir (WhatsApp no muestra og:image pesadas).
 // Las genera .github/scripts/build-og-images.mjs en assets/og/ antes de este
@@ -583,7 +585,7 @@ ${socialFooterHtml()}
       </div>
     </footer>
     <script src="src/track.js?v=5" defer></script>
-    <script src="src/shopping-assistant.js?v=9" defer></script>
+    <script src="src/shopping-assistant.js?v=10" defer></script>
   </body>
 </html>
 `;
@@ -1375,7 +1377,7 @@ ${socialFooterHtml()}
           } else {
             if (video) { video.pause(); video.hidden = true; }
             main.hidden = false;
-            main.src = btn.getAttribute("data-src");
+            window.BoomArtImages.apply(main, btn.getAttribute("data-src"), 'main');
           }
           thumbs.querySelectorAll("button").forEach(function (b) {
             b.setAttribute("aria-current", b === btn);
@@ -1394,7 +1396,7 @@ ${p.modelOptions?.length ? `<script>
           if (group) group.open = true;
           var main = document.getElementById('ppMain');
           var thumbs = document.getElementById('ppThumbs');
-          main.src = '${rel}' + model.gallery[0].replace(/\\.jpg$/, '.webp');
+          window.BoomArtImages.apply(main, '${rel}' + model.gallery[0].replace(/\\.jpg$/, '.webp'), 'main');
           main.alt = model.name + ' · BoomArt';
           document.querySelector('.pp-info h1').textContent = model.name;
           thumbs.replaceChildren();
@@ -1402,9 +1404,9 @@ ${p.modelOptions?.length ? `<script>
             var button = document.createElement('button');
             button.type = 'button'; button.dataset.src = '${rel}' + src.replace(/\\.jpg$/, '.webp');
             button.setAttribute('aria-current', String(index === 0));
-            var image = document.createElement('img'); image.src = button.dataset.src;
+            var image = document.createElement('img'); window.BoomArtImages.apply(image, button.dataset.src, 'thumb');
             image.alt = model.name + ' · vista ' + (index + 1); image.loading = 'lazy';
-            image.width = 62; image.height = 62; button.appendChild(image); thumbs.appendChild(button);
+            button.appendChild(image); thumbs.appendChild(button);
           });
           buttons.forEach(function (button) { button.setAttribute('aria-pressed', String(button.dataset.ppModel === id)); button.style.borderColor = button.dataset.ppModel === id ? '#e1132f' : ''; });
           document.getElementById('ppShop').href = '${shop}&modelo=' + encodeURIComponent(id);
@@ -1418,7 +1420,7 @@ ${p.modelOptions?.length ? `<script>
       })();
     </script>` : ''}
     <script src="${rel}src/track.js?v=5" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=9" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=10" defer></script>
   </body>
 </html>
 `;
@@ -1781,7 +1783,7 @@ ${socialFooterHtml()}
       </span>
     </a>
     <script src="${rel}src/track.js?v=5" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=9" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=10" defer></script>
   </body>
 </html>
 `;
@@ -2082,6 +2084,9 @@ const [productPageCount, categoryPageCount] = await Promise.all([
 const ratingUpdated = await injectRatingIntoIndex(ratingLd);
 const reviewsBlocksUpdated = await injectReviewsBlocks(reviews);
 const socialBlocksUpdated = await syncSocialBlocks();
+// Las fotos de portada tambien se actualizan cuando opiniones/redes no cambiaron.
+const indexFile = path.join(ROOT, 'index.html');
+await writeFile(indexFile, await readFile(indexFile, 'utf8'));
 // Despues de actualizar index.html: /Halloween/ es una copia de la portada.
 await writeHalloweenCampaignPage(products);
 await writeSaintSeiyaCampaignPage(products);

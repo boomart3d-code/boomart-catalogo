@@ -214,7 +214,7 @@
       : `<a href="/?producto=${encodeURIComponent(product.id)}" data-assistant-product-link>Ver producto</a>`;
     return `
       <article class="shopping-assistant-product">
-        ${productImage(product) ? `<img src="${escapeHtml(productImage(product))}" alt="${escapeHtml(product.name)}" loading="lazy">` : ""}
+        ${productImage(product) ? `<img ${window.BoomArtImages ? window.BoomArtImages.html(productImage(product), 'thumb') : `src="${escapeHtml(productImage(product))}"`} alt="${escapeHtml(product.name)}" loading="lazy">` : ""}
         <div><h4>${escapeHtml(product.name)}</h4><strong>${escapeHtml(priceLabel(product))}</strong></div>
         <div class="shopping-assistant-product-actions">
           ${viewControl}
