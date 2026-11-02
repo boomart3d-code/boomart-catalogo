@@ -2865,5 +2865,37 @@
     "imageAlt": "Bandeja de dulces en forma de árbol navideño, verde con tronco marrón y estrella dorada",
     "detailText": "Centro de mesa navideño con bandejas giratorias para presentar dulces y galletas. Altura aproximada: 32 cm. Impreso en 3D en PLA+ y preparado a pedido. Se puede solicitar en distintas combinaciones de colores.",
     "description": "Decora la mesa navideña y presenta tus dulces con esta bandeja giratoria en forma de árbol. Mide aproximadamente 32 cm de alto, está impresa en 3D en PLA+ y se prepara a pedido. Puedes solicitarla en distintas combinaciones de colores. Las fotografías muestran las opciones verde con tronco marrón y estrella dorada, y rojo con verde y centro blanco."
+  },
+  {
+    "id": "belen-iluminado",
+    "name": "Belén Iluminado",
+    "category": "Navidad",
+    "tags": [
+      "Navidad",
+      "Belén",
+      "Pesebre",
+      "Nacimiento",
+      "Iluminación LED",
+      "Decoración navideña"
+    ],
+    "material": "PLA+",
+    "grammaticalGender": "masculino",
+    "regularPrice": 85,
+    "featured": true,
+    "image": "assets/products/belen-iluminado-hero-v2.webp",
+    "gallery": [
+      "assets/products/belen-iluminado-hero-v2.webp",
+      "assets/products/belen-iluminado-luz-calida-plano-amplio.webp",
+      "assets/products/belen-iluminado-luz-ambar.webp",
+      "assets/products/belen-iluminado-completo.webp",
+      "assets/products/belen-iluminado-frontal-ambar.webp",
+      "assets/products/belen-iluminado-luz-amarilla.webp",
+      "assets/products/belen-iluminado-resplandor.webp",
+      "assets/products/belen-iluminado-sin-led.webp"
+    ],
+    "height": "Altura aproximada: 11 cm",
+    "imageAlt": "Belén Iluminado con escena de nacimiento y su luz cálida",
+    "detailText": "Figura de nacimiento impresa en 3D con PLA+. Mide aproximadamente 11 cm de alto e incluye iluminación LED.",
+    "description": "Belén Iluminado: una escena de nacimiento enmarcada por alas, con iluminación LED incluida. Impreso en 3D con PLA+ y de aproximadamente 11 cm de alto."
   }
 ]

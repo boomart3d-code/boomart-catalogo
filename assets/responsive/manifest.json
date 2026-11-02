@@ -1153,6 +1153,166 @@
       ]
     ]
   },
+  "assets/products/belen-iluminado-completo.webp": {
+    "w": 1086,
+    "h": 1448,
+    "src": "assets/products/belen-iluminado-completo.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/belen-iluminado-completo-c26e97fc19eb-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/belen-iluminado-completo-c26e97fc19eb-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/belen-iluminado-completo-c26e97fc19eb-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/belen-iluminado-frontal-ambar.webp": {
+    "w": 1086,
+    "h": 1448,
+    "src": "assets/products/belen-iluminado-frontal-ambar.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/belen-iluminado-frontal-ambar-e831545efe4b-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/belen-iluminado-frontal-ambar-e831545efe4b-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/belen-iluminado-frontal-ambar-e831545efe4b-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/belen-iluminado-hero-v2.webp": {
+    "w": 1086,
+    "h": 1448,
+    "src": "assets/products/belen-iluminado-hero-v2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/belen-iluminado-hero-v2-6965d2b7c3cf-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/belen-iluminado-hero-v2-6965d2b7c3cf-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/belen-iluminado-hero-v2-6965d2b7c3cf-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/belen-iluminado-luz-amarilla.webp": {
+    "w": 1086,
+    "h": 1448,
+    "src": "assets/products/belen-iluminado-luz-amarilla.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/belen-iluminado-luz-amarilla-e2a19464fd13-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/belen-iluminado-luz-amarilla-e2a19464fd13-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/belen-iluminado-luz-amarilla-e2a19464fd13-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/belen-iluminado-luz-ambar.webp": {
+    "w": 1086,
+    "h": 1448,
+    "src": "assets/products/belen-iluminado-luz-ambar.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/belen-iluminado-luz-ambar-357ef34800cc-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/belen-iluminado-luz-ambar-357ef34800cc-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/belen-iluminado-luz-ambar-357ef34800cc-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/belen-iluminado-luz-calida-plano-amplio.webp": {
+    "w": 1312,
+    "h": 1199,
+    "src": "assets/products/belen-iluminado-luz-calida-plano-amplio.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/belen-iluminado-luz-calida-plano-amplio-95f6dc4708dc-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/belen-iluminado-luz-calida-plano-amplio-95f6dc4708dc-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/belen-iluminado-luz-calida-plano-amplio-95f6dc4708dc-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/belen-iluminado-luz-calida-plano-amplio-95f6dc4708dc-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/belen-iluminado-resplandor.webp": {
+    "w": 1448,
+    "h": 1086,
+    "src": "assets/products/belen-iluminado-resplandor.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/belen-iluminado-resplandor-a5650b8e2a22-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/belen-iluminado-resplandor-a5650b8e2a22-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/belen-iluminado-resplandor-a5650b8e2a22-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/belen-iluminado-resplandor-a5650b8e2a22-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/belen-iluminado-sin-led.webp": {
+    "w": 1086,
+    "h": 1448,
+    "src": "assets/products/belen-iluminado-sin-led.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/belen-iluminado-sin-led-f4941acc12b4-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/belen-iluminado-sin-led-f4941acc12b4-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/belen-iluminado-sin-led-f4941acc12b4-720w.webp"
+      ]
+    ]
+  },
   "assets/products/botin-de-oro-del-mundial-hero-v2.webp": {
     "w": 1086,
     "h": 1448,

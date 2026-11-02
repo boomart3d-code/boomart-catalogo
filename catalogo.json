@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 99,
+  "count": 100,
   "products": [
     {
       "id": "skins-zelda-nintendo-switch-2",
@@ -3227,6 +3227,40 @@
       ],
       "url": "https://boomart.pe/producto/bandeja-dulces-arbol-navideno/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Bandeja%20de%20Dulces%20en%20Forma%20de%20%C3%81rbol%20Navide%C3%B1o"
+    },
+    {
+      "id": "belen-iluminado",
+      "name": "Belén Iluminado",
+      "category": "Navidad",
+      "tags": [
+        "Navidad",
+        "Belén",
+        "Pesebre",
+        "Nacimiento",
+        "Iluminación LED",
+        "Decoración navideña"
+      ],
+      "description": "Belén Iluminado: una escena de nacimiento enmarcada por alas, con iluminación LED incluida. Impreso en 3D con PLA+ y de aproximadamente 11 cm de alto.",
+      "material": "PLA+",
+      "availability": null,
+      "priceCurrency": "PEN",
+      "priceFrom": 85,
+      "pricing": [
+        "Precio: S/85"
+      ],
+      "image": "https://boomart.pe/assets/products/belen-iluminado-hero-v2.webp",
+      "gallery": [
+        "https://boomart.pe/assets/products/belen-iluminado-hero-v2.webp",
+        "https://boomart.pe/assets/products/belen-iluminado-luz-calida-plano-amplio.webp",
+        "https://boomart.pe/assets/products/belen-iluminado-luz-ambar.webp",
+        "https://boomart.pe/assets/products/belen-iluminado-completo.webp",
+        "https://boomart.pe/assets/products/belen-iluminado-frontal-ambar.webp",
+        "https://boomart.pe/assets/products/belen-iluminado-luz-amarilla.webp",
+        "https://boomart.pe/assets/products/belen-iluminado-resplandor.webp",
+        "https://boomart.pe/assets/products/belen-iluminado-sin-led.webp"
+      ],
+      "url": "https://boomart.pe/producto/belen-iluminado/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Bel%C3%A9n%20Iluminado"
     }
   ]
 }

@@ -1658,5 +1658,26 @@
       <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
       <g:product_type>Navidad</g:product_type>
     </item>
+    <item>
+      <g:id>belen-iluminado</g:id>
+      <g:title>Belén Iluminado</g:title>
+      <g:description>Belén Iluminado: una escena de nacimiento enmarcada por alas, con iluminación LED incluida. Impreso en 3D con PLA+ y de aproximadamente 11 cm de alto. Fabricado a pedido en impresion 3D (PLA+), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
+      <g:link>https://boomart.pe/producto/belen-iluminado/</g:link>
+      <g:image_link>https://boomart.pe/assets/products/belen-iluminado-hero-v2.webp</g:image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/belen-iluminado-luz-calida-plano-amplio.webp</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/belen-iluminado-luz-ambar.webp</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/belen-iluminado-completo.webp</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/belen-iluminado-frontal-ambar.webp</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/belen-iluminado-luz-amarilla.webp</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/belen-iluminado-resplandor.webp</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/belen-iluminado-sin-led.webp</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>85.00 PEN</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>BoomArt</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
+      <g:product_type>Navidad</g:product_type>
+    </item>
   </channel>
 </rss>
