@@ -677,5 +677,12 @@
     "width": 960,
     "height": 1200,
     "bytes": 115278
+  },
+  "tazon-de-galletas-santa": {
+    "source": "assets/products/tazon-de-galletas-santa-hero-v2.webp",
+    "hash": "98875122ed66b5e0",
+    "width": 800,
+    "height": 1000,
+    "bytes": 89946
   }
 }
