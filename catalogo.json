@@ -3,7 +3,7 @@
   "url": "https://boomart.pe/",
   "description": "Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao, Peru. Envios a todo el pais.",
   "currency": "PEN",
-  "updated": "2026-10-31",
+  "updated": "2026-11-02",
   "contact": {
     "whatsapp": "https://wa.me/51925666542",
     "email": "contacto@boomart.pe",
@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 97,
+  "count": 98,
   "products": [
     {
       "id": "skins-zelda-nintendo-switch-2",
@@ -3164,6 +3164,37 @@
       ],
       "url": "https://boomart.pe/producto/ocarina-zelda/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Ocarina%20de%20Zelda%20%C2%B7%20Ocarina%20of%20Time"
+    },
+    {
+      "id": "tazon-de-galletas-santa",
+      "name": "Tazón de galletas Santa",
+      "category": "Navidad",
+      "tags": [
+        "Navidad",
+        "Santa Claus",
+        "Tazón",
+        "Galletas",
+        "Decoración navideña",
+        "Mesa navideña"
+      ],
+      "description": "Tazón de galletas Santa, un recipiente de tamaño grande para presentar galletas y acompañar la mesa navideña. Impreso en 3D con PLA+ y hecho a pedido. Medidas aproximadas: tazón de 20 cm de ancho × 16 cm de fondo; altura total de aproximadamente 22 cm, incluidos los zapatos.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 130,
+      "pricing": [
+        "Precio: S/130"
+      ],
+      "image": "https://boomart.pe/assets/products/tazon-de-galletas-santa-hero-v2.webp",
+      "gallery": [
+        "https://boomart.pe/assets/products/tazon-de-galletas-santa-hero-v2.webp",
+        "https://boomart.pe/assets/products/tazon-de-galletas-santa-con-papel.webp",
+        "https://boomart.pe/assets/products/tazon-de-galletas-santa-frontal.webp",
+        "https://boomart.pe/assets/products/tazon-de-galletas-santa-lateral.webp",
+        "https://boomart.pe/assets/products/tazon-de-galletas-santa-interior.webp"
+      ],
+      "url": "https://boomart.pe/producto/tazon-de-galletas-santa/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Taz%C3%B3n%20de%20galletas%20Santa"
     }
   ]
 }

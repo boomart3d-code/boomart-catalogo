@@ -6392,6 +6392,117 @@
       ]
     ]
   },
+  "assets/products/tazon-de-galletas-santa-con-papel.webp": {
+    "w": 1254,
+    "h": 1254,
+    "src": "assets/products/tazon-de-galletas-santa-con-papel.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/tazon-de-galletas-santa-con-papel-d3f71a795401-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/tazon-de-galletas-santa-con-papel-d3f71a795401-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/tazon-de-galletas-santa-con-papel-d3f71a795401-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/tazon-de-galletas-santa-con-papel-d3f71a795401-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/tazon-de-galletas-santa-frontal.webp": {
+    "w": 1448,
+    "h": 1086,
+    "src": "assets/products/tazon-de-galletas-santa-frontal.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/tazon-de-galletas-santa-frontal-23f4c5e30eda-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/tazon-de-galletas-santa-frontal-23f4c5e30eda-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/tazon-de-galletas-santa-frontal-23f4c5e30eda-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/tazon-de-galletas-santa-frontal-23f4c5e30eda-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/tazon-de-galletas-santa-hero-v2.webp": {
+    "w": 800,
+    "h": 1000,
+    "src": "assets/products/tazon-de-galletas-santa-hero-v2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/tazon-de-galletas-santa-hero-v2-c3aae6dfe947-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/tazon-de-galletas-santa-hero-v2-c3aae6dfe947-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/tazon-de-galletas-santa-hero-v2-c3aae6dfe947-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/tazon-de-galletas-santa-interior.webp": {
+    "w": 1672,
+    "h": 941,
+    "src": "assets/products/tazon-de-galletas-santa-interior.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/tazon-de-galletas-santa-interior-706561972972-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/tazon-de-galletas-santa-interior-706561972972-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/tazon-de-galletas-santa-interior-706561972972-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/tazon-de-galletas-santa-interior-706561972972-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/tazon-de-galletas-santa-lateral.webp": {
+    "w": 1448,
+    "h": 1086,
+    "src": "assets/products/tazon-de-galletas-santa-lateral.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/tazon-de-galletas-santa-lateral-940f6d263ce5-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/tazon-de-galletas-santa-lateral-940f6d263ce5-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/tazon-de-galletas-santa-lateral-940f6d263ce5-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/tazon-de-galletas-santa-lateral-940f6d263ce5-1200w.webp"
+      ]
+    ]
+  },
   "assets/products/templo-acuario-hero.webp": {
     "w": 1122,
     "h": 1402,
@@ -8509,6 +8620,25 @@
       [
         720,
         "assets/responsive/hero/tile-mundial-9c63d9e93027-720w.webp"
+      ]
+    ]
+  },
+  "assets/hero/tile-navidad.webp": {
+    "w": 800,
+    "h": 1000,
+    "src": "assets/hero/tile-navidad.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/hero/tile-navidad-513a49c8b4e6-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/hero/tile-navidad-513a49c8b4e6-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/hero/tile-navidad-513a49c8b4e6-720w.webp"
       ]
     ]
   },

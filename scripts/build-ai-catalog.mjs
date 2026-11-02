@@ -817,6 +817,7 @@ const CAT_CONTEXT = {
   "Figuras Coleccionables": "figura coleccionable decorativa impresa en 3D",
   "Mundial de Futbol": "pieza de colección para fanáticos del fútbol",
   "Mundial de Fútbol": "pieza de colección para fanáticos del fútbol",
+  Navidad: "tazón de galletas navideño impreso en 3D",
 };
 // Avisos fijos por categoria (igual que CATEGORY_NOTICES en src/app.js).
 const CATEGORY_NOTICES = { "Soportes de Mandos": "No incluye el mando: solo se vende el soporte." };
@@ -852,7 +853,8 @@ function pageDescription(p) {
   const price = priceInfo(p);
   const from = price.from != null ? ` Desde S/${price.from}.` : "";
   const short = clampWords(p.description || p.name, 120);
-  return `${short}${from} Impresa en 3D a pedido en Lima y Callao, con envíos a todo el Perú. Cómprala por WhatsApp o en la tienda BoomArt.`;
+  const masculine = p.grammaticalGender === "masculino";
+  return `${short}${from} ${masculine ? "Impreso" : "Impresa"} en 3D a pedido en Lima y Callao, con envíos a todo el Perú. ${masculine ? "Cómpralo" : "Cómprala"} por WhatsApp o en la tienda BoomArt.`;
 }
 
 function offerLd(p) {
@@ -1116,6 +1118,7 @@ function buildProductPage(p, all, ratingLd) {
     .join("\n          ");
   const CAT_TILE_ORDER = [
     ["saint-seiya", "tile-saint-seiya.webp"],
+    ["navidad", "tile-navidad.webp"],
     ["halloween", "tile-halloween.webp?v=2"],
     ["marvel-dc", "tile-marvel-dc.webp?v=2"],
     ["harry-potter", "tile-harry-potter.webp?v=2"],
@@ -1214,7 +1217,7 @@ function buildProductPage(p, all, ratingLd) {
 
       <div class="pp-top">
         <div class="pp-media">
-          <img class="pp-main-img" id="ppMain" src="${esc(toWebp(mainImgRel))}" alt="${esc(p.name)} · figura impresa en 3D por BoomArt" width="640" height="640" decoding="async">
+          <img class="pp-main-img" id="ppMain" src="${esc(toWebp(mainImgRel))}" alt="${esc(p.imageAlt || `${p.name} · figura impresa en 3D por BoomArt`)}" width="640" height="640" decoding="async">
           ${videoThumb ? `<video class="pp-main-img" id="ppVideo" muted loop playsinline preload="none" hidden aria-label="Video de ${esc(p.name)}"></video>` : ""}
           ${imgs.length > 1 || videoThumb ? `<div class="pp-thumbs" id="ppThumbs">\n            ${thumbsHtml}\n          </div>` : ""}
         </div>
@@ -1253,7 +1256,7 @@ function buildProductPage(p, all, ratingLd) {
         <h2>Envío y entrega</h2>
         <p>Entregamos a domicilio en Lima y Callao coordinando por WhatsApp, y a provincias por la agencia Shalom. El costo del envío se coordina por WhatsApp y se paga aparte, directo al courier, al momento del despacho. <a href="${rel}politicas.html">Ver políticas de compra y envío</a>.</p>
         <h2>Cómo comprar</h2>
-        <p><a href="${esc(shop)}">Agrégala al carrito en la tienda BoomArt</a> o <a href="${esc(wa)}" target="_blank" rel="noreferrer nofollow">escríbenos por WhatsApp</a> para consultar disponibilidad y coordinar tu pedido.</p>
+        <p><a href="${esc(shop)}">${p.grammaticalGender === "masculino" ? "Agrégalo" : "Agrégala"} al carrito en la tienda BoomArt</a> o <a href="${esc(wa)}" target="_blank" rel="noreferrer nofollow">escríbenos por WhatsApp</a> para consultar disponibilidad y coordinar tu pedido.</p>
       </div>
 
       ${
@@ -1515,6 +1518,14 @@ const CATEGORY_META = {
     intro: [
       "Piezas de colección para fanáticos del fútbol: la réplica premium de la Copa del Mundo a tamaño real 1:1, el Botín de Oro, el Balón de Oro y la caja organizadora para tus figuritas del álbum Panini Mundial 2026.",
       "Impresas en 3D y detalladas a mano, hechas a pedido en Lima y Callao. Envíos a todo el Perú. Escríbenos por WhatsApp.",
+    ],
+  },
+  Navidad: {
+    h1: "Navidad en BoomArt: detalles para compartir en familia",
+    title: "Navidad: decoración y regalos impresos en 3D · Perú | BoomArt",
+    intro: [
+      "Una colección de piezas impresas en 3D para vestir la mesa y acompañar los momentos compartidos en Navidad.",
+      "Descubre el Tazón de galletas Santa: hecho a pedido en PLA+, de tamaño grande y con espacio para presentar tus galletas. Envíos a todo el Perú. Escríbenos por WhatsApp para consultar.",
     ],
   },
 };

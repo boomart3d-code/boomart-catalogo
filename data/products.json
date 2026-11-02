@@ -2804,5 +2804,35 @@
       "assets/products/ocarina-colores-referencia.webp"
     ],
     "description": "Ocarina inspirada en The Legend of Zelda: Ocarina of Time, impresa en 3D en PLA+ con el emblema triangular característico. Un complemento para tu colección de Zelda, cosplay o exhibición junto a la máscara de Majora, la espada y el escudo. Hecha a pedido. Precio por una unidad; las otras piezas se venden por separado. La portada muestra una pieza real azul con detalles dorados. Las imágenes siguientes son vistas referenciales del modelo y combinaciones de color para consultar al coordinar tu pedido; el acabado puede variar."
+  },
+  {
+    "id": "tazon-de-galletas-santa",
+    "name": "Tazón de galletas Santa",
+    "category": "Navidad",
+    "tags": [
+      "Navidad",
+      "Santa Claus",
+      "Tazón",
+      "Galletas",
+      "Decoración navideña",
+      "Mesa navideña"
+    ],
+    "material": "PLA+",
+    "grammaticalGender": "masculino",
+    "availability": "A pedido",
+    "regularPrice": 130,
+    "featured": true,
+    "image": "assets/products/tazon-de-galletas-santa-hero-v2.webp",
+    "gallery": [
+      "assets/products/tazon-de-galletas-santa-hero-v2.webp",
+      "assets/products/tazon-de-galletas-santa-con-papel.webp",
+      "assets/products/tazon-de-galletas-santa-frontal.webp",
+      "assets/products/tazon-de-galletas-santa-lateral.webp",
+      "assets/products/tazon-de-galletas-santa-interior.webp"
+    ],
+    "height": "Altura total aprox. 22 cm (incluidos los zapatos) · Tazón: 20 cm de ancho × 16 cm de fondo",
+    "imageAlt": "Tazón de galletas Santa con galletas en una mesa navideña clara",
+    "detailText": "El Tazón de galletas Santa es un recipiente grande para presentar galletas en Navidad. Está impreso en 3D con PLA+ y se hace a pedido. Medidas aproximadas: el tazón mide 20 cm de ancho × 16 cm de fondo; la altura total es de aproximadamente 22 cm, incluidos los zapatos.",
+    "description": "Tazón de galletas Santa, un recipiente de tamaño grande para presentar galletas y acompañar la mesa navideña. Impreso en 3D con PLA+ y hecho a pedido. Medidas aproximadas: tazón de 20 cm de ancho × 16 cm de fondo; altura total de aproximadamente 22 cm, incluidos los zapatos."
   }
 ]
