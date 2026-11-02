@@ -684,5 +684,12 @@
     "width": 800,
     "height": 1000,
     "bytes": 89946
+  },
+  "bandeja-dulces-arbol-navideno": {
+    "source": "assets/products/bandeja-dulces-arbol-navideno-hero-v2.webp",
+    "hash": "a73ddd436bc98fc8",
+    "width": 1200,
+    "height": 900,
+    "bytes": 100390
   }
 }
