@@ -691,5 +691,12 @@
     "width": 1200,
     "height": 900,
     "bytes": 100390
+  },
+  "belen-iluminado": {
+    "source": "assets/products/belen-iluminado-hero-v2.webp",
+    "hash": "8cb3b48006bf4bbf",
+    "width": 900,
+    "height": 1200,
+    "bytes": 92801
   }
 }
