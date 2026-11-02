@@ -28,6 +28,7 @@ const shareProductWa = document.querySelector("#shareProductWa");
 const shareFeedback = document.querySelector("#shareFeedback");
 
 let activeFilter = "Todos";
+let showcaseMode = true;
 let activeProduct = null;
 let activeImageIndex = 0;
 
@@ -433,7 +434,9 @@ const collectionCard = (collection, items) => {
 const productCard = (product) => `
   <article class="product-card" data-open="${product.id}" data-product-id="${product.id}" data-category="${product.category}">
     <button class="card-media" type="button" data-open="${product.id}" aria-label="Ver ${product.name}">
-      ${productImage(product)}
+      ${productImage(product, "photo-primary")}
+      <span class="photo-hint" aria-hidden="true">Ver fotos ↗</span>
+      ${(() => { const alternate = (product.gallery || []).find(src => src && webpSrc(src) !== webpSrc(product.image)); return alternate ? `<img class="photo-alternate" ${imageAttrs(alternate)} alt="" loading="lazy" decoding="async">` : ""; })()}
     </button>
     <div class="card-body">
       <h3>${product.name}</h3>
@@ -453,7 +456,7 @@ const SEASON_LABEL = "🎃 Halloween";
 // interno y los enlaces /categoria/<slug>/ no cambian).
 const CATEGORY_ORDER = [
   "Saint Seiya", "Harry Potter", "Marvel & DC", "Navidad", "🎃 Halloween", "Mundial de Fútbol",
-  "Macetas", "Soportes de Mandos", "Figuras Coleccionables",
+  "Macetas", "Soportes de Mandos", "Figuras Coleccionables", "Zelda",
 ];
 const CATEGORY_LABELS = { "🎃 Halloween": "🎃 Halloween y Cosplay" };
 const categoryLabel = (category) => CATEGORY_LABELS[category] || category;
@@ -526,7 +529,7 @@ const renderFilters = () => {
   // indicaba). "Te ayudo a elegir" (solo celular, ver CSS) abre el asistente: ya
   // no flota sobre las fotos en las páginas que tienen portada.
   const assistantChip = `<button class="assistant-chip" type="button" id="filterAssistant">Te ayudo a elegir</button>`;
-  const allChip = `<button class="${activeFilter === "Todos" && !activeCollection ? "active" : ""}" type="button" data-filter="Todos">Todos</button>`;
+  const allChip = `<button class="${activeFilter === "Todos" && !activeCollection && !showcaseMode ? "active" : ""}" type="button" data-filter="Todos">Todos</button>`;
   filterRow.innerHTML = assistantChip + allChip + catalogCategories()
     .map((category) => `<button class="${category === activeFilter ? "active" : ""}" type="button" data-filter="${category}">${categoryLabel(category)}</button>`)
     .join("");
@@ -578,7 +581,28 @@ const renderProducts = () => {
   }
 
   const grouped = activeFilter === "Todos" && !activeCollection && !searchInput.value.trim();
-  if (grouped) {
+  const showcase = grouped && showcaseMode;
+  productGrid.classList.toggle("is-showcase", showcase);
+  document.querySelector("#catalogTitle").textContent = showcase ? "Descubre tu próxima colección" : activeFilter === "Todos" ? "Todos los productos" : categoryLabel(activeFilter);
+  if (showcase) {
+    const curated = {
+      "Saint Seiya": ["set-santuario-15-piezas", "busto-de-atena-saint-seiya", "casco-de-pegaso-saint-seiya", "diorama-de-pegaso"],
+      "🎃 Halloween": ["mascara-krampus", "mascara-calabaza-calavera", "mascara-hellboy-articulada", "casco-daredevil"]
+    };
+    productGrid.innerHTML = catalogCategories().map((category, index) => {
+      const items = products.filter(p => category === SEASON_LABEL ? HALLOWEEN_CAMPAIGN_ORDER.has(p.id) : p.category === category || (p.extraCategories || []).includes(category));
+      const ranking = curated[category] || [];
+      items.sort((a, b) => {
+        const ar = ranking.indexOf(a.id), br = ranking.indexOf(b.id);
+        if (ar >= 0 || br >= 0) return (ar < 0 ? 999 : ar) - (br < 0 ? 999 : br);
+        return Number(Boolean(b.featured)) - Number(Boolean(a.featured));
+      });
+      return `<section class="showcase-row" aria-label="${categoryLabel(category)}">
+        <div class="showcase-heading"><div><span class="showcase-number">COLECCIÓN ${String(index + 1).padStart(2, "0")}</span><h3>${categoryLabel(category)}</h3><p>Explora piezas hechas para tu mundo.</p></div><div class="showcase-actions"><button type="button" class="showcase-arrow" data-track-dir="-1" aria-label="Ver productos anteriores de ${categoryLabel(category)}">←</button><button type="button" class="showcase-arrow" data-track-dir="1" aria-label="Ver más productos de ${categoryLabel(category)}">→</button><button type="button" class="showcase-link" data-filter="${category}" data-scroll>Ver colección <span aria-hidden="true">↗</span></button></div></div>
+        <div class="showcase-track" tabindex="0" aria-label="Productos destacados de ${categoryLabel(category)}">${items.slice(0, 4).map(productCard).join("")}</div>
+      </section>`;
+    }).join("") + `<div class="showcase-all"><p>Hay mucho más por descubrir.</p><button type="button" data-filter="Todos" data-scroll>Explorar todo el catálogo <span aria-hidden="true">↗</span></button></div>`;
+  } else if (grouped) {
     const shown = new Set();
     const cardFor = (product) => {
       const collection = COLLECTIONS.find((candidate) => candidate.ids.includes(product.id));
@@ -609,7 +633,7 @@ const renderProducts = () => {
     productGrid.innerHTML = visible.map(productCard).join("");
   }
 
-  resultCount.textContent = activeCollection
+  resultCount.textContent = showcase ? "Una selección de cada colección" : activeCollection
     ? `${activeCollection.title} · ${visible.length} productos`
     : `${visible.length} producto${visible.length === 1 ? "" : "s"} visible${visible.length === 1 ? "" : "s"}`;
   clearFilters.textContent = activeCollection ? "← Ver todo el catálogo" : "Limpiar filtros";
@@ -779,6 +803,11 @@ const changeImage = (direction) => {
 };
 
 document.addEventListener("click", (event) => {
+  const trackArrow = event.target.closest("[data-track-dir]");
+  if (trackArrow) {
+    const track = trackArrow.closest(".showcase-row").querySelector(".showcase-track");
+    track.scrollBy({ left: Number(trackArrow.dataset.trackDir) * track.clientWidth * 0.8, behavior: "smooth" });
+  }
   const openButton = event.target.closest("[data-open]");
   const filterButton = event.target.closest("[data-filter]");
   const thumbButton = event.target.closest("[data-thumb]");
@@ -808,7 +837,15 @@ document.addEventListener("click", (event) => {
     const clicked = filterButton.dataset.filter;
     activeCollection = null;
     // Tocar la categoría que ya está activa la desactiva (vuelve a "Todos").
-    activeFilter = !fromTile && clicked === activeFilter ? "Todos" : clicked;
+    activeFilter = clicked;
+    showcaseMode = false;
+    const categoryUrl = new URL(window.location.href);
+    categoryUrl.searchParams.delete(PRODUCT_PARAM);
+    categoryUrl.searchParams.set(CATEGORY_PARAM, clicked === "Todos" ? "todos" : slugifyCategory(clicked));
+    categoryUrl.hash = "catalogo";
+    history.pushState({ category: clicked }, "", categoryUrl);
+    searchInput.value = "";
+    quickSearchInput.value = "";
     if (activeFilter !== "Todos") trackEvt("filtrar", { d: { categoria: activeFilter } });
     if (fromTile) {
       searchInput.value = "";
@@ -847,6 +884,10 @@ searchInput.addEventListener("input", () => {
   }, 900);
 });
 clearFilters.addEventListener("click", () => {
+  showcaseMode = true;
+  const categoryUrl = new URL(window.location.href);
+  categoryUrl.searchParams.delete(CATEGORY_PARAM);
+  history.pushState({}, "", categoryUrl);
   activeFilter = "Todos";
   activeCollection = null;
   searchInput.value = "";
@@ -981,6 +1022,15 @@ window.addEventListener("popstate", () => {
     openProduct(id, true);
   } else {
     closeProductModal();
+    const requested = new URL(window.location.href).searchParams.get(CATEGORY_PARAM);
+    const match = catalogCategories().find(cat => slugifyCategory(cat) === slugifyCategory(requested));
+    activeFilter = match || "Todos";
+    showcaseMode = !requested;
+    activeCollection = null;
+    searchInput.value = "";
+    renderFilters();
+    renderQuickCategories();
+    renderProducts();
   }
 });
 
@@ -1163,9 +1213,11 @@ document.addEventListener("boomart:products-ready", () => {
     window.BOOMART_FORCE_CATEGORY || "";
   let matchedCategoryLink = false;
   if (categoriaParam) {
+    if (slugifyCategory(categoriaParam) === "todos") showcaseMode = false;
     const match = catalogCategories().find((cat) => slugifyCategory(cat) === slugifyCategory(categoriaParam));
     if (match) {
       activeFilter = match;
+      showcaseMode = false;
       matchedCategoryLink = true;
     }
   }

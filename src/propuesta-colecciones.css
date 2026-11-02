@@ -1,0 +1,35 @@
+/* Propuesta local: una vitrina para descubrir las colecciones. */
+.product-grid.is-showcase { display:block; margin-top:30px; }
+.showcase-row { margin:0 0 54px; padding:25px 0 0; border-top:1px solid #cfc8bd; }
+.showcase-heading { display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom:20px; }
+.showcase-number { color:#a30e29; font-size:.7rem; font-weight:800; letter-spacing:.14em; }
+.showcase-heading h3 { font-family:'Barlow Condensed',sans-serif; font-size:clamp(2rem,4vw,3.5rem); line-height:.95; text-transform:uppercase; margin:8px 0; }
+.showcase-heading p { margin:0; color:#6d665e; font-size:.94rem; }
+.showcase-link,.showcase-all button { border:0; border-bottom:2px solid #d70d2b; padding:9px 0; background:transparent; color:#171513; font-weight:800; cursor:pointer; white-space:nowrap; }
+.showcase-link span,.showcase-all button span { color:#d70d2b; margin-left:8px; }
+.showcase-track { display:grid; grid-auto-flow:column; grid-auto-columns:calc((100% - 54px)/4); gap:18px; overflow-x:auto; overscroll-behavior-inline:contain; scroll-snap-type:x proximity; padding-bottom:10px; scrollbar-width:thin; }
+.showcase-track .product-card { min-width:0; scroll-snap-align:start; }
+.showcase-track .card-body { padding:14px 2px; }
+.showcase-track .card-body h3 { font-size:1rem; line-height:1.25; }
+.showcase-all { padding:38px; margin:12px 0 54px; background:#171514; color:#fff; display:flex; justify-content:space-between; align-items:center; gap:18px; }
+.showcase-all p { margin:0; font-family:'Barlow Condensed',sans-serif; font-size:clamp(1.6rem,3vw,2.5rem); text-transform:uppercase; font-weight:700; }
+.showcase-all button { color:#fff; }
+.collections-all { border:0; background:transparent; cursor:pointer; }
+.card-media .photo-primary,.card-media .photo-alternate { transition:opacity .25s ease, transform .25s ease; }
+.card-media .photo-alternate { position:absolute; inset:0; opacity:0; pointer-events:none; }
+@media (hover:hover) and (pointer:fine) { .card-media:hover .photo-alternate,.card-media:focus-visible .photo-alternate {opacity:1;} .card-media:hover:has(.photo-alternate) .photo-primary,.card-media:focus-visible:has(.photo-alternate) .photo-primary {opacity:0;} }
+@media (prefers-reduced-motion:reduce) { .card-media .photo-primary,.card-media .photo-alternate {transition:none;} }
+@media (max-width:700px) { .showcase-row {margin-bottom:38px;} .showcase-heading {align-items:start;} .showcase-heading h3 {font-size:2rem;} .showcase-heading p {font-size:.83rem;} .showcase-link {font-size:.8rem;} .showcase-track {grid-auto-columns:calc((100% - 12px)/2);gap:12px;} .showcase-all {padding:24px;flex-direction:column;align-items:flex-start;} }
+
+.showcase-actions { display:flex; align-items:center; gap:10px; }
+.showcase-arrow { width:36px; height:36px; border:1px solid #c9c1b8; border-radius:50%; background:transparent; color:#171513; cursor:pointer; }
+.photo-hint { display:none; position:absolute; z-index:2; left:8px; bottom:8px; padding:5px 8px; background:rgba(20,18,16,.76); color:white; font-size:.67rem; font-weight:700; }
+@media (hover:none) { .photo-hint { display:block; } }
+@media(max-width:700px) { .showcase-actions {gap:5px;} .showcase-arrow {width:30px;height:30px;flex-shrink:0;} .showcase-link {white-space:normal;text-align:right;} }
+@media (max-width:700px) {
+ .showcase-heading { display:flex; flex-direction:column; align-items:stretch; gap:12px; }
+ .showcase-heading > div:first-child,.showcase-row,.showcase-track { min-width:0; }
+ .showcase-heading h3 { overflow-wrap:anywhere; }
+ .showcase-heading p { display:none; }
+ .showcase-actions { justify-content:flex-end; }
+}

@@ -46,6 +46,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/styles.css?v=69">
     <link rel="stylesheet" href="src/navidad-image-harmony.css?v=1">
+    <link rel="stylesheet" href="src/propuesta-colecciones.css?v=1">
     <link rel="stylesheet" href="src/category-sharing.css?v=1">
 
     <script type="application/ld+json">
@@ -294,7 +295,7 @@
       <section class="collections" aria-labelledby="collectionsTitle">
         <div class="collections-head">
           <h2 id="collectionsTitle">Explora por colección</h2>
-          <a class="collections-all" href="#catalogo">Ver todo el catálogo →</a>
+          <button type="button" class="collections-all" data-filter="Todos" data-scroll>Ver todo el catálogo →</button>
         </div>
         <div class="collections-carousel" data-carousel>
           <button type="button" class="carousel-btn carousel-prev" data-carousel-prev aria-label="Ver categorías anteriores">‹</button>
@@ -335,6 +336,10 @@
           <button type="button" class="collection-tile" data-filter="Figuras Coleccionables" data-scroll>
             <img alt="" loading="lazy" decoding="async" src="assets/responsive/hero/tile-series-peliculas-90df9a8b4b9c-360w.webp" srcset="assets/responsive/hero/tile-series-peliculas-90df9a8b4b9c-120w.webp 120w, assets/responsive/hero/tile-series-peliculas-90df9a8b4b9c-360w.webp 360w, assets/responsive/hero/tile-series-peliculas-90df9a8b4b9c-720w.webp 720w, assets/hero/tile-series-peliculas.webp 800w" sizes="(max-width: 600px) 128px, 180px" width="800" height="1000" data-image-source="assets/hero/tile-series-peliculas.webp" data-image-kind="tile">
             <span>Figuras Coleccionables</span>
+          </button>
+          <button type="button" class="collection-tile" data-filter="Zelda" data-scroll>
+            <img src="assets/products/mascara-majora-hero.webp" alt="" width="800" height="1000" loading="lazy" decoding="async">
+            <span>Zelda</span>
           </button>
         </div>
           </div>
@@ -776,7 +781,7 @@
     <script src="src/track.js?v=5"></script>
     <script src="src/cart.js?v=12"></script>
     <script src="src/products.js?v=5"></script>
-    <script src="src/app.js?v=64"></script>
+    <script src="src/app.js?v=65"></script>
     <script src="src/category-sharing.js?v=1" defer></script>
     <script src="src/collections-carousel.js?v=1" defer></script>
     <script src="src/checkout.js?v=34"></script>
