@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" fill="none">
+  <defs><linearGradient id="mist" x2="0" y2="1"><stop stop-color="#789a6a" stop-opacity="0"/><stop offset="1" stop-color="#8caa77" stop-opacity=".2"/></linearGradient></defs>
+  <g stroke="#8aab7c" opacity=".12" stroke-width="16"><path d="M830 800 875 0m-8 140-88-87m82 218 110-116M1490 800l-40-800m10 280-111-131m121 341 104-172M1282 800l36-800m-21 451-109-118"/></g>
+  <path d="m660 800 270-190 150 98 175-236 345 328Z" fill="url(#mist)"/>
+  <g stroke="#d7c080" stroke-width="1.5" opacity=".22"><circle cx="1180" cy="350" r="240"/><circle cx="1180" cy="350" r="216" stroke-dasharray="1 18" stroke-linecap="round"/><path d="m1180 110 208 360H972ZM1180 230l69 120h-138Zm-69 120 69 120h-138Zm138 0 69 120h-138Z"/></g>
+  <g fill="#e8dcad" opacity=".6"><circle cx="1460" cy="340" r="2"/><circle cx="860" cy="510" r="2"/><circle cx="1010" cy="170" r="1.5"/><circle cx="1387" cy="641" r="2.5"/><circle cx="1290" cy="112" r="2"/><circle cx="940" cy="676" r="1.5"/><circle cx="1515" cy="182" r="1.5"/></g>
+</svg>

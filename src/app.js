@@ -436,7 +436,7 @@ const productCard = (product) => `
     <button class="card-media" type="button" data-open="${product.id}" aria-label="Ver ${product.name}">
       ${productImage(product, "photo-primary")}
       <span class="photo-hint" aria-hidden="true">Ver fotos ↗</span>
-      ${(() => { const alternate = (product.gallery || []).find(src => src && webpSrc(src) !== webpSrc(product.image)); return alternate ? `<img class="photo-alternate" ${imageAttrs(alternate)} alt="" loading="lazy" decoding="async">` : ""; })()}
+      ${(() => { const alternate = (product.gallery || []).find(src => src && webpSrc(src) !== webpSrc(product.image)); return alternate ? `<img class="photo-alternate" ${window.BoomV2 ? `data-alt-src="${webpSrc(alternate)}"` : `${imageAttrs(alternate)} loading="lazy"`} alt="" decoding="async">` : ""; })()}
     </button>
     <div class="card-body">
       <h3>${product.name}</h3>
@@ -553,7 +553,7 @@ const matchesProduct = (product) => {
       ? HALLOWEEN_CAMPAIGN_ORDER.has(product.id)
       : product.category === activeFilter || (product.extraCategories || []).includes(activeFilter));
   const matchesCollection = !activeCollection || activeCollection.ids.includes(product.id);
-  return matchesSearch && matchesFilter && matchesCollection;
+  return matchesSearch && matchesFilter && matchesCollection && (!window.BoomV2 || window.BoomV2.matches(product));
 };
 
 const renderProducts = () => {
@@ -580,11 +580,15 @@ const renderProducts = () => {
     );
   }
 
+  if (window.BoomV2) visible.sort(window.BoomV2.compare);
   const grouped = activeFilter === "Todos" && !activeCollection && !searchInput.value.trim();
   const showcase = grouped && showcaseMode;
   productGrid.classList.toggle("is-showcase", showcase);
   document.querySelector("#catalogTitle").textContent = showcase ? "Descubre tu próxima colección" : activeFilter === "Todos" ? "Todos los productos" : categoryLabel(activeFilter);
-  if (showcase) {
+  if (window.BoomV2) window.BoomV2.context(activeFilter, showcase, visible.length);
+  if (showcase && window.BoomV2) {
+    productGrid.innerHTML = window.BoomV2.home(products, productCard, categoryLabel, catalogCategories());
+  } else if (showcase) {
     const curated = {
       "Saint Seiya": ["set-santuario-15-piezas", "busto-de-atena-saint-seiya", "casco-de-pegaso-saint-seiya", "diorama-de-pegaso"],
       "🎃 Halloween": ["mascara-krampus", "mascara-calabaza-calavera", "mascara-hellboy-articulada", "casco-daredevil"]
@@ -643,7 +647,7 @@ const renderProducts = () => {
 // Lleva al inicio de los resultados (útil en el celular, donde la colección
 // o categoría elegida arriba queda lejos de la grilla).
 const scrollToResults = () => {
-  document.querySelector(".result-meta")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  document.querySelector(window.BoomV2 ? "#catalogo" : ".result-meta")?.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
 const setGlobalWhatsapp = () => {
@@ -838,6 +842,7 @@ document.addEventListener("click", (event) => {
     activeCollection = null;
     // Tocar la categoría que ya está activa la desactiva (vuelve a "Todos").
     activeFilter = clicked;
+    if (window.BoomV2) window.BoomV2.reset();
     showcaseMode = false;
     const categoryUrl = new URL(window.location.href);
     categoryUrl.searchParams.delete(PRODUCT_PARAM);
@@ -863,7 +868,7 @@ document.addEventListener("click", (event) => {
     renderProducts();
     if (fromQuickPanel) {
       closeQuickCategories();
-      productGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+      scrollToResults();
     } else if (fromTile) {
       scrollToResults();
     }
@@ -884,6 +889,7 @@ searchInput.addEventListener("input", () => {
   }, 900);
 });
 clearFilters.addEventListener("click", () => {
+  if (window.BoomV2) window.BoomV2.reset();
   showcaseMode = true;
   const categoryUrl = new URL(window.location.href);
   categoryUrl.searchParams.delete(CATEGORY_PARAM);
@@ -1113,6 +1119,7 @@ function scheduleCouponFly(delay) {
 }
 
 function showCouponPopup() {
+  if (document.body.classList.contains("design-v2")) return;
   if (!couponPopup) return;
   clearTimeout(Number(couponPopup.dataset.flyTimer));
   clearTimeout(Number(couponPopup.dataset.hideTimer));

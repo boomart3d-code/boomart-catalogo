@@ -1,0 +1,71 @@
+/* Propuesta V2 local: composición móvil y colecciones con identidad. */
+(() => {
+  const esc = s => String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const themes = {
+    'Saint Seiya': { short:'Saint Seiya', title:'Vuelve a encender<br><em>tu cosmos.</em>', copy:'Templos, esculturas y piezas para quienes llevan el Santuario en la memoria.', image:'assets/hero/busto-de-atena.webp', tone:'cosmos', ids:['set-santuario-15-piezas','busto-de-atena-saint-seiya','casco-de-pegaso-saint-seiya','diorama-de-pegaso'], audio:'assets/audio/saint-seiya-demo.mp3', track:'Pegasus Fantasy · muestra' },
+    'Harry Potter': {short:'Harry Potter',title:'Un lugar para<br><em>la magia.</em>',copy:'Piezas para hacer de tu espacio un rincón de tu universo favorito.',image:'assets/hero/fawkes.webp',tone:'magic'},
+    'Marvel & DC': {short:'Marvel y DC',title:'Fuera de la pantalla.<br><em>Dentro de tu mundo.</em>',copy:'Cascos, personajes y piezas para tu lado más fan.',tone:'heroes'},
+    'Navidad': {short:'Navidad',title:'Los detalles<br><em>nos reúnen.</em>',copy:'Piezas para compartir la mesa, las historias y la magia de estar juntos.',image:'assets/hero/santa-cutout-v2.webp',tone:'christmas',ids:['tazon-de-galletas-santa','bandeja-dulces-arbol-navideno','belen-iluminado']},
+    '🎃 Halloween': {short:'Halloween y Cosplay',title:'Atrévete a<br><em>transformarte.</em>',copy:'Máscaras y accesorios para entrar en personaje.',image:'assets/hero/mascara-krampus.webp',tone:'halloween'},
+    'Zelda': {short:'Zelda',title:'Tu aventura<br><em>continúa aquí.</em>',copy:'Piezas para llevar un poco de Hyrule a tu espacio.',image:'assets/hero/escudo-zelda-cutout-v2.webp',tone:'hyrule',ids:['mascara-majora','espada-zelda','escudo-zelda','skins-zelda-nintendo-switch-2'],audio:'assets/audio/zelda-demo.mp3',track:'Ocarina of Time · muestra'},
+    'Macetas':{short:'Macetas',title:'Dale vida<br><em>a tu espacio.</em>',copy:'Personajes y formas para acompañar tu rincón favorito.',tone:'plants'},
+    'Mundial de Fútbol':{short:'Mundial de Fútbol',title:'La pasión<br><em>tiene su lugar.</em>',copy:'Piezas que celebran el fútbol y los momentos que recordamos.',tone:'football'},
+    'Soportes de Mandos':{short:'Soportes de mandos',title:'Tu setup.<br><em>Tu personaje.</em>',copy:'Un lugar para tus mandos y para lo que te gusta jugar.',tone:'gaming'},
+    'Figuras Coleccionables':{short:'Figuras coleccionables',title:'Haz espacio<br><em>a tus favoritos.</em>',copy:'Piezas con carácter para una colección tan personal como tú.',tone:'figures'}
+  };
+  let type = 'Todos', order = 'featured', category = '', heroIndex = 0, heroPaused = false;
+  const audio = new Audio(); audio.preload = 'none'; audio.loop = true; audio.volume = .14;
+  const image = (src, kind='card') => window.BoomArtImages.html(src.replace(/\.(png|jpe?g)$/i,'.webp'),kind);
+  const belongs = (p,c) => c === '🎃 Halloween' ? HALLOWEEN_CAMPAIGN_ORDER.has(p.id) : p.category === c || (p.extraCategories || []).includes(c);
+  function selection(list,c) { const ids=themes[c]?.ids || [];return list.filter(p=>belongs(p,c)).sort((a,b)=>{const ai=ids.indexOf(a.id),bi=ids.indexOf(b.id);return (ai<0?999:ai)-(bi<0?999:bi) || Number(!!b.featured)-Number(!!a.featured);}); }
+  function audioLabel() { const button=document.querySelector('[data-ambient]'); if(button){button.setAttribute('aria-pressed',String(!audio.paused));button.innerHTML=`<span aria-hidden="true">${audio.paused?'♫':'Ⅱ'}</span> ${audio.paused?'Activar ambiente':'Pausar ambiente'}`;} }
+  function stopAudio(){audio.pause();audioLabel();}
+  const api = window.BoomV2 = {
+    reset(){type='Todos';order='featured';},
+    compare(a,b){const price=p=>p.signPicker?.unitPrice??p.templePricing?.temple??p.regularPrice??0;return order==='low'?price(a)-price(b):order==='high'?price(b)-price(a):Number(!!b.featured)-Number(!!a.featured);},
+    matches(p){const n=p.name.toLowerCase();return type==='Todos'||(type==='Templos'&&/templo|santuario|pandora/.test(n))||(type==='Esculturas'&&/busto|escultura|altar|reloj/.test(n))||(type==='Cascos y tiaras'&&/casco|tiara/.test(n));},
+    home(list,card,label,categories){
+      const directory=categories.map((c,i)=>{const selected=selection(list,c),p=selected[0],t=themes[c]||{};return `<button type="button" class="v2-universe" data-filter="${esc(c)}" data-scroll data-tone="${t.tone||'figures'}"><span class="v2-universe-number">${String(i+1).padStart(2,'0')}</span><img ${image(p.image,'tile')} alt="" loading="lazy" decoding="async"><span class="v2-universe-label"><strong>${esc(t.short||label(c))}</strong><small>${selected.length} piezas <span aria-hidden="true">↗</span></small></span></button>`;}).join('');
+      const rows=['Saint Seiya','Navidad','Zelda'].map((c,i)=>{const t=themes[c];return `<section class="v2-edit" data-tone="${t.tone}"><div class="v2-edit-intro"><span class="v2-kicker">${i===1?'PARA COMPARTIR':'UN UNIVERSO POR DESCUBRIR'}</span><h3>${t.title}</h3><p>${t.copy}</p><button type="button" data-filter="${esc(c)}" data-scroll class="v2-text-link">Explorar ${esc(t.short)} <span aria-hidden="true">↗</span></button></div><div class="showcase-track v2-products" tabindex="0" aria-label="Selección de ${esc(t.short)}">${selection(list,c).slice(0,4).map(card).join('')}</div></section>`;}).join('');
+      return `<div class="v2-directory" aria-label="Todas las colecciones">${directory}</div><div class="v2-craft"><span>DISEÑADO PARA TI</span><p>De la afición a la pieza.<br><strong>Hecho a pedido, aquí en Perú.</strong></p><a href="#personalizado">Tengo una idea ↗</a></div>${rows}<div class="v2-all"><span>Tu próxima pieza puede estar aquí.</span><button type="button" data-filter="Todos" data-scroll>Ver todos los productos ↗</button></div>`;
+    },
+    context(c,home,count){
+      document.body.dataset.view=home?'home':c==='Todos'?'all':'category';
+      let header=document.querySelector('#v2Category');if(!header){header=document.createElement('div');header.id='v2Category';document.querySelector('.catalog-head').before(header);}
+      header.hidden=home||c==='Todos';
+      if(category!==c||home){stopAudio();category=home?'':c;header.innerHTML='';}
+      const t=themes[c]||{};
+      document.querySelector('#searchInput').placeholder=home?'Encuentra tu próxima pieza…':c==='Todos'?'Buscar en todo el catálogo…':`Buscar en ${t.short||c}…`;
+      if(!header.hidden&&!header.children.length){const p=products.find(p=>p.category===c),src=t.image||p?.image;header.dataset.tone=t.tone||'figures';header.innerHTML=`<div class="v2-category-copy"><button type="button" data-v2-home class="v2-breadcrumb">Inicio / Colecciones <span aria-hidden="true">↗</span></button><p class="v2-kicker">${esc(t.short||c)}</p><h1>${t.title||esc(c)}</h1><p>${esc(t.copy||'Piezas hechas a pedido para tu colección.')}</p>${t.audio?`<div class="v2-ambient"><button type="button" data-ambient aria-pressed="false"><span aria-hidden="true">♫</span> Activar ambiente</button><small>${esc(t.track)} · volumen suave</small><span role="status" id="v2AudioStatus"></span></div>`:''}</div><div class="v2-category-art"><img ${image(src,'main')} alt="${esc(t.short||c)}" decoding="async"></div>`;}
+      let tools=document.querySelector('#v2Tools');if(!tools){tools=document.createElement('div');tools.id='v2Tools';document.querySelector('#productGrid').before(tools);}
+      tools.hidden=home;
+      tools.innerHTML=home?'':`<div class="v2-type-list" aria-label="Tipo de pieza">${(c==='Saint Seiya'?['Todos','Templos','Esculturas','Cascos y tiaras']:[]).map(x=>`<button type="button" data-v2-type="${x}" aria-pressed="${x===type}">${x}</button>`).join('')}</div><div class="v2-sort"><span>${count} piezas</span><label>Ordenar <select id="v2Sort"><option value="featured"${order==='featured'?' selected':''}>Destacados</option><option value="low"${order==='low'?' selected':''}>Menor precio</option><option value="high"${order==='high'?' selected':''}>Mayor precio</option></select></label></div>`;
+      document.querySelector('#catalogTitle').textContent=home?'Encuentra tu universo.':c==='Todos'?'Todas las piezas':`La colección ${t.short||c}`;
+    }
+  };
+  // Una fotografía secundaria se pide cuando existe intención de verla.
+  for(const event of ['pointerover','focusin'])document.addEventListener(event,e=>{if(event==='pointerover'&&e.pointerType==='touch')return;const img=e.target.closest('.card-media')?.querySelector('img[data-alt-src]');if(img){img.addEventListener('load',()=>img.classList.add('is-ready'),{once:true});window.BoomArtImages.apply(img,img.dataset.altSrc,'card');img.removeAttribute('data-alt-src');}});
+  document.addEventListener('click',async e=>{
+    if(e.target.closest('[data-v2-home]')){document.querySelector('#clearFilters').click();window.scrollTo({top:0,behavior:'smooth'});}
+    const filter=e.target.closest('[data-v2-type]');if(filter){type=filter.dataset.v2Type;renderProducts();}
+    if(e.target.closest('[data-ambient]')){const t=themes[category];if(!t?.audio)return;if(!audio.paused){stopAudio();return;}if(!audio.src.endsWith(t.audio))audio.src=t.audio;try{await audio.play();audioLabel();}catch{document.querySelector('#v2AudioStatus').textContent='No se pudo iniciar. Toca para reintentar.';audioLabel();}}
+    const slide=e.target.closest('[data-v2-slide]');if(slide){showSlide(Number(slide.dataset.v2Slide));heroPaused=true;updatePause();}
+  });
+  document.addEventListener('change',e=>{if(e.target.id==='v2Sort'){order=e.target.value;renderProducts();}});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)stopAudio();});
+  const drawer=document.querySelector('#cartDrawer');if(drawer)new MutationObserver(()=>{if(!drawer.hidden)stopAudio();}).observe(drawer,{attributes:true,attributeFilter:['hidden']});
+  const logo=document.querySelector('.quick-nav-logo');logo.innerHTML='<img src="assets/boomart-logo.svg" alt="BoomArt" width="80" height="40">';logo.addEventListener('click',e=>{e.preventDefault();document.querySelector('#clearFilters').click();window.scrollTo({top:0,behavior:'smooth'});});
+  const account=document.querySelector('#accountToggle');document.querySelector('.quick-nav-actions').insertBefore(account,document.querySelector('#cartFloatToggle'));
+  const coupon=document.querySelector('#couponBanner');document.querySelector('#portada').after(coupon);
+  const slides=[
+    {k:'COLECCIÓN SAINT SEIYA',h:'El cosmos<br><em>cobra forma.</em>',p:'Piezas que hacen espacio a lo que te apasiona.',c:'Saint Seiya',src:'assets/hero/busto-de-atena.webp',alt:'Busto de Atena de Saint Seiya',caption:'Busto de Atena · Saint Seiya',tone:'cosmos'},
+    {k:'NAVIDAD EN BOOMART',h:'Los detalles<br><em>nos reúnen.</em>',p:'Haz espacio a los momentos compartidos.',c:'Navidad',src:'assets/hero/santa-cutout-v2.webp',alt:'Tazón de galletas Santa de BoomArt',caption:'Tazón de galletas Santa · Navidad',tone:'christmas'},
+    {k:'COLECCIÓN ZELDA',h:'Tu aventura<br><em>continúa aquí.</em>',p:'Un poco de Hyrule en tu propio espacio.',c:'Zelda',src:'assets/hero/escudo-zelda-cutout-v2.webp',alt:'Escudo de Zelda fabricado por BoomArt',caption:'Escudo de Hyrule · Zelda',tone:'hyrule'}
+  ];
+  function showSlide(i){heroIndex=i;const s=slides[i],root=document.querySelector('.v2-hero');root.dataset.tone=s.tone;document.querySelector('#v2HeroKicker').textContent=s.k;document.querySelector('#v2HeroTitle').innerHTML=s.h;document.querySelector('#v2HeroText').textContent=s.p;const link=document.querySelector('#v2HeroLink');link.dataset.filter=s.c;link.innerHTML=`Explorar ${s.c} <span aria-hidden="true">↗</span>`;window.BoomArtImages.apply(document.querySelector('#v2HeroImage'),s.src,'main');document.querySelector('#v2HeroImage').alt=s.alt;document.querySelector('#v2HeroCaption').textContent=s.caption;document.querySelector('#v2HeroCount').textContent=`0${i+1} / 03`;document.querySelectorAll('[data-v2-slide]').forEach((el,n)=>el.setAttribute('aria-pressed',String(n===i)));}
+  function updatePause(){const b=document.querySelector('#v2HeroPause');b.textContent=heroPaused?'▶':'Ⅱ';b.setAttribute('aria-label',heroPaused?'Reanudar carrusel':'Pausar carrusel');}
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)');heroPaused=reduced.matches;updatePause();
+  reduced.addEventListener('change',e=>{if(e.matches){heroPaused=true;updatePause();}});
+  document.querySelector('#v2HeroPause').addEventListener('click',()=>{heroPaused=!heroPaused;updatePause();});
+  setInterval(()=>{if(!heroPaused&&!document.hidden&&document.body.dataset.view==='home'&&document.querySelector('.v2-hero').getBoundingClientRect().bottom>0)showSlide((heroIndex+1)%slides.length);},7500);
+})();

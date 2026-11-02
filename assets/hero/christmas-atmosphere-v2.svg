@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" fill="none">
+  <defs>
+    <radialGradient id="light"><stop stop-color="#fff5d0" stop-opacity=".95"/><stop offset=".22" stop-color="#f8d68c" stop-opacity=".55"/><stop offset="1" stop-color="#e8bd71" stop-opacity="0"/></radialGradient>
+    <g id="twig" stroke-linecap="round"><path d="M0 0Q90 30 200 45" stroke="#5c633d" stroke-width="2"/><path d="M18 5Q14-7 4-18M26 8Q25-9 15-25M35 11Q37-7 30-26M44 13Q48-7 44-27M54 16Q60-5 60-27M65 19Q72-3 77-26M77 22Q86 1 93-24M89 25Q100 5 111-18M103 28Q115 10 128-11M117 31Q131 14 146-4M132 34Q149 20 164 5M148 37Q166 26 180 16M164 40Q183 32 197 27M18 5Q9 16-3 21M28 8Q17 25 5 32M38 11Q28 30 16 42M49 15Q39 34 27 47M61 18Q51 38 40 53M73 21Q63 41 54 58M86 24Q76 46 68 61M99 27Q90 48 82 65M113 30Q104 51 98 67M128 33Q119 52 115 68M143 36Q135 54 130 68M159 39Q151 55 146 66M176 42Q168 54 162 62" stroke="#35563e" stroke-width="2.4"/><path d="M43 13 34-6m33 26 3-21m30 27 12-21m29 30 18-15M46 14 32 30m43-8L60 39m43-10L90 47m43-12-11 19m36-14-12 16" stroke="#6f8051" stroke-width="1.5"/></g>
+  </defs>
+  <g opacity=".55"><path d="M1345-30c72 77 155 103 290 109" stroke="#6d7050" stroke-width="5"/>
+    <use href="#twig" transform="translate(1430 20) rotate(127)"/><use href="#twig" transform="translate(1490 46) rotate(106)"/><use href="#twig" transform="translate(1544 65) rotate(83)"/><use href="#twig" transform="translate(1580 65) rotate(47)"/>
+    <use href="#twig" transform="translate(1417 14) rotate(-141)"/><use href="#twig" transform="translate(1495 45) rotate(-126)"/>
+  </g>
+  <path d="M700 690c140-48 220 30 340-9s235-35 490 0" stroke="#b28b53" stroke-opacity=".2" stroke-width="2"/>
+  <g fill="url(#light)"><circle cx="736" cy="684" r="38"/><circle cx="857" cy="681" r="28"/><circle cx="992" cy="693" r="40"/><circle cx="1137" cy="658" r="28"/><circle cx="1310" cy="661" r="36"/><circle cx="1479" cy="676" r="42"/><circle cx="1543" cy="230" r="48"/><circle cx="1305" cy="180" r="28"/></g>
+  <g fill="#fff4d0" opacity=".7"><circle cx="736" cy="684" r="4"/><circle cx="857" cy="681" r="3"/><circle cx="992" cy="693" r="4"/><circle cx="1137" cy="658" r="3"/><circle cx="1310" cy="661" r="4"/><circle cx="1479" cy="676" r="4"/></g>
+  <g stroke="#ab874b" opacity=".35"><path d="M1190 93v20m-10-10h20m-17-7 14 14m0-14-14 14M1504 378v20m-10-10h20"/><path d="M890 128v14m-7-7h14"/></g>
+</svg>
