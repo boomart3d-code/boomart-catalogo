@@ -431,7 +431,7 @@ const collectionCard = (collection, items) => {
 };
 
 const productCard = (product) => `
-  <article class="product-card" data-open="${product.id}">
+  <article class="product-card" data-open="${product.id}" data-product-id="${product.id}" data-category="${product.category}">
     <button class="card-media" type="button" data-open="${product.id}" aria-label="Ver ${product.name}">
       ${productImage(product)}
     </button>
@@ -648,6 +648,11 @@ const galleryItems = (product) => {
 const renderModalImage = () => {
   const gallery = galleryItems(activeProduct);
   const current = gallery[activeImageIndex];
+  if (activeProduct?.id === "bandeja-dulces-arbol-navideno" && activeImageIndex === 0) {
+    modal.dataset.coverFit = "true";
+  } else {
+    delete modal.dataset.coverFit;
+  }
   modalImageWrap.innerHTML = !current
     ? placeholder(activeProduct)
     : current.type === "video"
@@ -668,6 +673,8 @@ const renderModalImage = () => {
 const openProduct = (productId, fromHistory = false) => {
   activeProduct = products.find((product) => product.id === productId);
   if (!activeProduct) return;
+
+  modal.dataset.category = activeProduct.category || "";
 
   activeImageIndex = 0;
   modalTitle.textContent = activeProduct.name;
@@ -723,6 +730,8 @@ const stripProductParam = () => {
 const closeProductModal = () => {
   if (modal.open) modal.close();
   activeProduct = null;
+  delete modal.dataset.category;
+  delete modal.dataset.coverFit;
   setCanonical(`${SITE_ORIGIN}/`);
 };
 

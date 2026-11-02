@@ -1,0 +1,29 @@
+/* Encuadre y fondo coherentes para la colección Navidad.
+   Conserva las fotos completas en galerías; la portada panorámica del árbol
+   recorta solo el fondo lateral para llenar el mismo marco vertical 4:5. */
+.product-card[data-category="Navidad"] .card-media {
+  background: #f2e1cc;
+}
+
+.product-card[data-category="Navidad"] .card-media img {
+  background: #f2e1cc;
+}
+
+.product-card[data-product-id="bandeja-dulces-arbol-navideno"] .card-media img {
+  padding: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.product-modal[data-category="Navidad"] .modal-gallery,
+.product-modal[data-category="Navidad"] .modal-image-wrap,
+.product-modal[data-category="Navidad"] .thumb-row,
+.product-modal[data-category="Navidad"] .thumb-row button,
+.product-modal[data-category="Navidad"] .thumb-row img {
+  background-color: #f2e1cc;
+}
+
+.product-modal[data-cover-fit="true"] .modal-image-wrap img {
+  object-fit: cover;
+  object-position: center;
+}

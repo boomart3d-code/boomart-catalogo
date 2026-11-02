@@ -1599,6 +1599,8 @@ const CATEGORY_PAGE_CSS = `
     @media(min-width:560px){.cat-grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}}
     .cat-card{border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:rgba(255,255,255,.02)}
     .cat-card img{width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;background:#101010;display:block}
+    .cat--navidad .cat-card img{background:#f2e1cc}
+    .cat--navidad .cat-card[href$="/producto/bandeja-dulces-arbol-navideno/"] img{object-fit:cover}
     .cat-card .b{padding:10px 12px;display:flex;flex-direction:column;gap:4px}
     .cat-card .n{font-weight:700;font-size:.92rem;line-height:1.25}
     .cat-card .p{font-size:.9rem;color:var(--muted)}
@@ -1741,7 +1743,7 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
       </nav>
     </header>
 
-    <main class="cat">
+    <main class="cat${cat === "Navidad" ? " cat--navidad" : ""}">
       <nav class="cat-crumbs" aria-label="Ruta de navegación">
         <a href="${rel}index.html">Inicio</a> <span aria-hidden="true">&rsaquo;</span>
         <span>${esc(clean)}</span>
