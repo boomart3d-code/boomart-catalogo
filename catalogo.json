@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 98,
+  "count": 99,
   "products": [
     {
       "id": "skins-zelda-nintendo-switch-2",
@@ -3195,6 +3195,38 @@
       ],
       "url": "https://boomart.pe/producto/tazon-de-galletas-santa/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Taz%C3%B3n%20de%20galletas%20Santa"
+    },
+    {
+      "id": "bandeja-dulces-arbol-navideno",
+      "name": "Bandeja de Dulces en Forma de Árbol Navideño",
+      "category": "Navidad",
+      "tags": [
+        "Navidad",
+        "Bandeja giratoria",
+        "Dulces",
+        "Galletas",
+        "Centro de mesa",
+        "Decoración navideña"
+      ],
+      "description": "Decora la mesa navideña y presenta tus dulces con esta bandeja giratoria en forma de árbol. Mide aproximadamente 32 cm de alto, está impresa en 3D en PLA+ y se prepara a pedido. Puedes solicitarla en distintas combinaciones de colores. Las fotografías muestran las opciones verde con tronco marrón y estrella dorada, y rojo con verde y centro blanco.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 160,
+      "pricing": [
+        "Precio: S/160"
+      ],
+      "image": "https://boomart.pe/assets/products/bandeja-dulces-arbol-navideno-hero-v2.webp",
+      "gallery": [
+        "https://boomart.pe/assets/products/bandeja-dulces-arbol-navideno-hero-v2.webp",
+        "https://boomart.pe/assets/products/bandeja-dulces-arbol-navideno-detalle-galletas.webp",
+        "https://boomart.pe/assets/products/bandeja-dulces-arbol-navideno-detalle-bandejas.webp",
+        "https://boomart.pe/assets/products/bandeja-dulces-arbol-navideno-vista-completa.webp",
+        "https://boomart.pe/assets/products/bandeja-dulces-arbol-navideno-merry-christmas.webp",
+        "https://boomart.pe/assets/products/bandeja-dulces-arbol-navideno-estrella-dorada.webp"
+      ],
+      "url": "https://boomart.pe/producto/bandeja-dulces-arbol-navideno/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Bandeja%20de%20Dulces%20en%20Forma%20de%20%C3%81rbol%20Navide%C3%B1o"
     }
   ]
 }

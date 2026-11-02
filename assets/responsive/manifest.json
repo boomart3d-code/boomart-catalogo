@@ -1027,6 +1027,132 @@
       ]
     ]
   },
+  "assets/products/bandeja-dulces-arbol-navideno-detalle-bandejas.webp": {
+    "w": 1678,
+    "h": 937,
+    "src": "assets/products/bandeja-dulces-arbol-navideno-detalle-bandejas.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-detalle-bandejas-f39585738adf-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-detalle-bandejas-f39585738adf-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-detalle-bandejas-f39585738adf-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-detalle-bandejas-f39585738adf-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/bandeja-dulces-arbol-navideno-detalle-galletas.webp": {
+    "w": 1685,
+    "h": 933,
+    "src": "assets/products/bandeja-dulces-arbol-navideno-detalle-galletas.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-detalle-galletas-c200d69cb03e-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-detalle-galletas-c200d69cb03e-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-detalle-galletas-c200d69cb03e-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-detalle-galletas-c200d69cb03e-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/bandeja-dulces-arbol-navideno-estrella-dorada.webp": {
+    "w": 835,
+    "h": 1884,
+    "src": "assets/products/bandeja-dulces-arbol-navideno-estrella-dorada.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-estrella-dorada-2e080b1650fb-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-estrella-dorada-2e080b1650fb-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-estrella-dorada-2e080b1650fb-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/bandeja-dulces-arbol-navideno-hero-v2.webp": {
+    "w": 1448,
+    "h": 1086,
+    "src": "assets/products/bandeja-dulces-arbol-navideno-hero-v2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-hero-v2-f0ed70aaedaf-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-hero-v2-f0ed70aaedaf-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-hero-v2-f0ed70aaedaf-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-hero-v2-f0ed70aaedaf-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/bandeja-dulces-arbol-navideno-merry-christmas.webp": {
+    "w": 843,
+    "h": 1864,
+    "src": "assets/products/bandeja-dulces-arbol-navideno-merry-christmas.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-merry-christmas-d4c12b77d72d-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-merry-christmas-d4c12b77d72d-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-merry-christmas-d4c12b77d72d-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/bandeja-dulces-arbol-navideno-vista-completa.webp": {
+    "w": 1024,
+    "h": 1536,
+    "src": "assets/products/bandeja-dulces-arbol-navideno-vista-completa.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-vista-completa-c0fc69931843-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-vista-completa-c0fc69931843-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/bandeja-dulces-arbol-navideno-vista-completa-c0fc69931843-720w.webp"
+      ]
+    ]
+  },
   "assets/products/botin-de-oro-del-mundial-hero-v2.webp": {
     "w": 1086,
     "h": 1448,

@@ -2834,5 +2834,36 @@
     "imageAlt": "Tazón de galletas Santa con galletas en una mesa navideña clara",
     "detailText": "El Tazón de galletas Santa es un recipiente grande para presentar galletas en Navidad. Está impreso en 3D con PLA+ y se hace a pedido. Medidas aproximadas: el tazón mide 20 cm de ancho × 16 cm de fondo; la altura total es de aproximadamente 22 cm, incluidos los zapatos.",
     "description": "Tazón de galletas Santa, un recipiente de tamaño grande para presentar galletas y acompañar la mesa navideña. Impreso en 3D con PLA+ y hecho a pedido. Medidas aproximadas: tazón de 20 cm de ancho × 16 cm de fondo; altura total de aproximadamente 22 cm, incluidos los zapatos."
+  },
+  {
+    "id": "bandeja-dulces-arbol-navideno",
+    "name": "Bandeja de Dulces en Forma de Árbol Navideño",
+    "category": "Navidad",
+    "tags": [
+      "Navidad",
+      "Bandeja giratoria",
+      "Dulces",
+      "Galletas",
+      "Centro de mesa",
+      "Decoración navideña"
+    ],
+    "material": "PLA+",
+    "grammaticalGender": "femenino",
+    "availability": "A pedido",
+    "regularPrice": 160,
+    "featured": true,
+    "image": "assets/products/bandeja-dulces-arbol-navideno-hero-v2.webp",
+    "gallery": [
+      "assets/products/bandeja-dulces-arbol-navideno-hero-v2.webp",
+      "assets/products/bandeja-dulces-arbol-navideno-detalle-galletas.webp",
+      "assets/products/bandeja-dulces-arbol-navideno-detalle-bandejas.webp",
+      "assets/products/bandeja-dulces-arbol-navideno-vista-completa.webp",
+      "assets/products/bandeja-dulces-arbol-navideno-merry-christmas.webp",
+      "assets/products/bandeja-dulces-arbol-navideno-estrella-dorada.webp"
+    ],
+    "height": "Altura aproximada: 32 cm",
+    "imageAlt": "Bandeja de dulces en forma de árbol navideño, verde con tronco marrón y estrella dorada",
+    "detailText": "Centro de mesa navideño con bandejas giratorias para presentar dulces y galletas. Altura aproximada: 32 cm. Impreso en 3D en PLA+ y preparado a pedido. Se puede solicitar en distintas combinaciones de colores.",
+    "description": "Decora la mesa navideña y presenta tus dulces con esta bandeja giratoria en forma de árbol. Mide aproximadamente 32 cm de alto, está impresa en 3D en PLA+ y se prepara a pedido. Puedes solicitarla en distintas combinaciones de colores. Las fotografías muestran las opciones verde con tronco marrón y estrella dorada, y rojo con verde y centro blanco."
   }
 ]
