@@ -9666,6 +9666,25 @@
       ]
     ]
   },
+  "assets/hero/dr-doom-cutout-v2.webp": {
+    "w": 800,
+    "h": 1000,
+    "src": "assets/hero/dr-doom-cutout-v2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/hero/dr-doom-cutout-v2-1b7c733fadd5-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/hero/dr-doom-cutout-v2-1b7c733fadd5-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/hero/dr-doom-cutout-v2-1b7c733fadd5-720w.webp"
+      ]
+    ]
+  },
   "assets/hero/escudo-zelda-cutout-v2.webp": {
     "w": 1122,
     "h": 1402,

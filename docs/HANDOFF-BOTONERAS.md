@@ -24,3 +24,13 @@
 - Evidencia D:/BOOMART-ENTREGAS/botoneras-revision-20261103/botoneras-escritorio.png y botoneras-movil.png.
 - Checkout canonico D:/CODIGOS BOOMART APP con 8 cambios ajenos preservado sin modificaciones.
 - Siguiente paso: revision visual de Adrian. Publicacion pendiente de su indicacion; no se hizo push.
+
+## Correccion posterior: Dr. Doom completo
+- 2026-11-03: el archivo anterior assets/hero/tile-marvel-dc.webp ya tenia cortada la barbilla. No era un recorte de CSS.
+- Nuevo calado transparente desde assets/products/mascara-dr-doom-hero.webp mediante image_gen, manteniendo mascara completa, retirando pared y pedestal; revisado visualmente contra la foto de origen.
+- Nuevo asset assets/hero/dr-doom-cutout-v2.webp (800x1000, 114340 bytes), tres derivados responsivos. Original generado preservado en C:/Users/osore/.codex/generated_images/01a195d2-e8b0-7451-8144-c2fb9fbc6e20/exec-69ad4ba4-13cc-4d32-8e95-64f4a9ac07ee.png.
+- Tema Marvel usa el nuevo archivo; mejora cabecera y su miniatura de coleccion. Original anterior y galeria del producto preservados.
+- boomart-v2.js cache version 5; mapa de imagenes y sus referencias regenerados con build-responsive-images y build-ai-catalog. Datos comerciales intactos.
+- Verificacion CUA: escritorio y movil 390px, mascara y menton completos, object-fit contain, sin overflow horizontal. Evidencias doom-completo-escritorio.png y doom-completo-movil.png en la carpeta de revision.
+- Mantiene estado de propuesta local pendiente de publicacion.
+- Comprobacion adicional: 6/6 pruebas responsivas. Diff de las paginas generado limitado al hash de imagenes; Halloween/saintseiya tambien sincronizan las versiones CSS/JS de la propuesta, como hace su generador. Sin cambios en products.json.
