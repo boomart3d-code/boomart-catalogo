@@ -1849,6 +1849,101 @@
       ]
     ]
   },
+  "assets/products/cascanueces-de-navidad-colores.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/cascanueces-de-navidad-colores.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/cascanueces-de-navidad-colores-6a882629b8e1-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/cascanueces-de-navidad-colores-6a882629b8e1-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/cascanueces-de-navidad-colores-6a882629b8e1-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/cascanueces-de-navidad-frontal.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/cascanueces-de-navidad-frontal.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/cascanueces-de-navidad-frontal-a74dc3eedd27-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/cascanueces-de-navidad-frontal-a74dc3eedd27-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/cascanueces-de-navidad-frontal-a74dc3eedd27-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/cascanueces-de-navidad-lateral.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/cascanueces-de-navidad-lateral.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/cascanueces-de-navidad-lateral-53f5e2336768-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/cascanueces-de-navidad-lateral-53f5e2336768-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/cascanueces-de-navidad-lateral-53f5e2336768-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/cascanueces-de-navidad-posterior.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/cascanueces-de-navidad-posterior.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/cascanueces-de-navidad-posterior-18a9eedc26e0-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/cascanueces-de-navidad-posterior-18a9eedc26e0-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/cascanueces-de-navidad-posterior-18a9eedc26e0-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/cascanueces-de-navidad-tres-cuartos.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/cascanueces-de-navidad-tres-cuartos.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/cascanueces-de-navidad-tres-cuartos-5fe90efb42f9-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/cascanueces-de-navidad-tres-cuartos-5fe90efb42f9-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/cascanueces-de-navidad-tres-cuartos-5fe90efb42f9-720w.webp"
+      ]
+    ]
+  },
   "assets/products/casco-daredevil-angulo-superior.webp": {
     "w": 1122,
     "h": 1402,

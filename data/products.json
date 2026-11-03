@@ -2897,5 +2897,35 @@
     "imageAlt": "Belén Iluminado con escena de nacimiento y su luz cálida",
     "detailText": "Figura de nacimiento impresa en 3D con PLA+. Mide aproximadamente 11 cm de alto e incluye iluminación LED.",
     "description": "Belén Iluminado: una escena de nacimiento enmarcada por alas, con iluminación LED incluida. Impreso en 3D con PLA+ y de aproximadamente 11 cm de alto."
+  },
+  {
+    "id": "cascanueces-de-navidad",
+    "name": "Cascanueces de Navidad",
+    "category": "Navidad",
+    "tags": [
+      "Navidad",
+      "Cascanueces",
+      "Soldado cascanueces",
+      "Figura navideña",
+      "Decoración navideña",
+      "Merry Xmas"
+    ],
+    "material": "PLA+",
+    "grammaticalGender": "masculino",
+    "availability": "A pedido",
+    "regularPrice": 220,
+    "featured": true,
+    "image": "assets/products/cascanueces-de-navidad-frontal.webp",
+    "gallery": [
+      "assets/products/cascanueces-de-navidad-frontal.webp",
+      "assets/products/cascanueces-de-navidad-tres-cuartos.webp",
+      "assets/products/cascanueces-de-navidad-lateral.webp",
+      "assets/products/cascanueces-de-navidad-posterior.webp",
+      "assets/products/cascanueces-de-navidad-colores.webp"
+    ],
+    "height": "Altura aproximada: 40 cm",
+    "imageAlt": "Cascanueces de Navidad rojo y dorado sobre su base negra con la frase Merry Xmas",
+    "detailText": "Soldado cascanueces navideño de pie sobre una base negra con la frase Merry Xmas y copos de nieve dorados. Mide aproximadamente 40 cm de alto. Impreso en 3D con PLA+ y preparado a pedido. También se puede solicitar en otras combinaciones de colores.",
+    "description": "Cascanueces de Navidad: un soldado de uniforme rojo con detalles dorados, sombrero alto y peluca blanca, sobre una base negra con la frase Merry Xmas y copos de nieve. Mide aproximadamente 40 cm de alto, está impreso en 3D con PLA+ y se prepara a pedido. Puedes solicitarlo en otras combinaciones de colores; la última fotografía muestra algunas opciones."
   }
 ]
