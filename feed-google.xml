@@ -1679,5 +1679,39 @@
       <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
       <g:product_type>Navidad</g:product_type>
     </item>
+    <item>
+      <g:id>cascanueces-de-navidad</g:id>
+      <g:title>Cascanueces de Navidad</g:title>
+      <g:description>Cascanueces de Navidad: un soldado de uniforme rojo con detalles dorados, sombrero alto y peluca blanca, sobre una base negra con la frase Merry Xmas y copos de nieve. Mide aproximadamente 40 cm de alto, está impreso en 3D con PLA+ y se prepara a pedido. Puedes solicitarlo en otras combinaciones de colores; la última fotografía muestra algunas opciones. Fabricado a pedido en impresion 3D (PLA+), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
+      <g:link>https://boomart.pe/producto/cascanueces-de-navidad/</g:link>
+      <g:image_link>https://boomart.pe/assets/products/cascanueces-de-navidad-frontal.webp</g:image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/cascanueces-de-navidad-tres-cuartos.webp</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/cascanueces-de-navidad-lateral.webp</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/cascanueces-de-navidad-posterior.webp</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/cascanueces-de-navidad-colores.webp</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>220.00 PEN</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>BoomArt</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
+      <g:product_type>Navidad</g:product_type>
+    </item>
+    <item>
+      <g:id>pesebre-minimalista</g:id>
+      <g:title>Pesebre Minimalista</g:title>
+      <g:description>Pesebre Minimalista: una escena de nacimiento de líneas limpias y acabado facetado, con el portal coronado por una estrella y las figuras sobre una base circular. Mide 12 cm de alto, 16 cm de ancho y 16 cm de fondo. Impreso en 3D con PLA+ y preparado a pedido. Fabricado a pedido en impresion 3D (PLA+), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.</g:description>
+      <g:link>https://boomart.pe/producto/pesebre-minimalista/</g:link>
+      <g:image_link>https://boomart.pe/assets/products/pesebre-minimalista-frontal.webp</g:image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/pesebre-minimalista-lateral.webp</g:additional_image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/pesebre-minimalista-posterior.webp</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>65.00 PEN</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>BoomArt</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
+      <g:product_type>Navidad</g:product_type>
+    </item>
   </channel>
 </rss>

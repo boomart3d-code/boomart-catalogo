@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 100,
+  "count": 102,
   "products": [
     {
       "id": "skins-zelda-nintendo-switch-2",
@@ -3261,6 +3261,66 @@
       ],
       "url": "https://boomart.pe/producto/belen-iluminado/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Bel%C3%A9n%20Iluminado"
+    },
+    {
+      "id": "cascanueces-de-navidad",
+      "name": "Cascanueces de Navidad",
+      "category": "Navidad",
+      "tags": [
+        "Navidad",
+        "Cascanueces",
+        "Soldado cascanueces",
+        "Figura navideña",
+        "Decoración navideña",
+        "Merry Xmas"
+      ],
+      "description": "Cascanueces de Navidad: un soldado de uniforme rojo con detalles dorados, sombrero alto y peluca blanca, sobre una base negra con la frase Merry Xmas y copos de nieve. Mide aproximadamente 40 cm de alto, está impreso en 3D con PLA+ y se prepara a pedido. Puedes solicitarlo en otras combinaciones de colores; la última fotografía muestra algunas opciones.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 220,
+      "pricing": [
+        "Precio: S/220"
+      ],
+      "image": "https://boomart.pe/assets/products/cascanueces-de-navidad-frontal.webp",
+      "gallery": [
+        "https://boomart.pe/assets/products/cascanueces-de-navidad-frontal.webp",
+        "https://boomart.pe/assets/products/cascanueces-de-navidad-tres-cuartos.webp",
+        "https://boomart.pe/assets/products/cascanueces-de-navidad-lateral.webp",
+        "https://boomart.pe/assets/products/cascanueces-de-navidad-posterior.webp",
+        "https://boomart.pe/assets/products/cascanueces-de-navidad-colores.webp"
+      ],
+      "url": "https://boomart.pe/producto/cascanueces-de-navidad/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Cascanueces%20de%20Navidad"
+    },
+    {
+      "id": "pesebre-minimalista",
+      "name": "Pesebre Minimalista",
+      "category": "Navidad",
+      "tags": [
+        "Navidad",
+        "Pesebre",
+        "Nacimiento",
+        "Belén",
+        "Diseño minimalista",
+        "Decoración navideña"
+      ],
+      "description": "Pesebre Minimalista: una escena de nacimiento de líneas limpias y acabado facetado, con el portal coronado por una estrella y las figuras sobre una base circular. Mide 12 cm de alto, 16 cm de ancho y 16 cm de fondo. Impreso en 3D con PLA+ y preparado a pedido.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 65,
+      "pricing": [
+        "Precio: S/65"
+      ],
+      "image": "https://boomart.pe/assets/products/pesebre-minimalista-frontal.webp",
+      "gallery": [
+        "https://boomart.pe/assets/products/pesebre-minimalista-frontal.webp",
+        "https://boomart.pe/assets/products/pesebre-minimalista-lateral.webp",
+        "https://boomart.pe/assets/products/pesebre-minimalista-posterior.webp"
+      ],
+      "url": "https://boomart.pe/producto/pesebre-minimalista/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Pesebre%20Minimalista"
     }
   ]
 }

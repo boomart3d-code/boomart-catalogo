@@ -698,5 +698,19 @@
     "width": 900,
     "height": 1200,
     "bytes": 92801
+  },
+  "cascanueces-de-navidad": {
+    "source": "assets/products/cascanueces-de-navidad-frontal.webp",
+    "hash": "41903ce32fa02127",
+    "width": 960,
+    "height": 1200,
+    "bytes": 76248
+  },
+  "pesebre-minimalista": {
+    "source": "assets/products/pesebre-minimalista-frontal.webp",
+    "hash": "6b0b032cad9d217b",
+    "width": 960,
+    "height": 1200,
+    "bytes": 79668
   }
 }
