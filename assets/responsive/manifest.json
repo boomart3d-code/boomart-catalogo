@@ -6202,6 +6202,120 @@
       ]
     ]
   },
+  "assets/products/pesebre-tejido-azul-verde-cuna-negra.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/pesebre-tejido-azul-verde-cuna-negra.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pesebre-tejido-azul-verde-cuna-negra-6f3ca0eeccf0-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pesebre-tejido-azul-verde-cuna-negra-6f3ca0eeccf0-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pesebre-tejido-azul-verde-cuna-negra-6f3ca0eeccf0-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pesebre-tejido-celeste-marron-frontal.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/pesebre-tejido-celeste-marron-frontal.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pesebre-tejido-celeste-marron-frontal-b7cb2a93d22e-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pesebre-tejido-celeste-marron-frontal-b7cb2a93d22e-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pesebre-tejido-celeste-marron-frontal-b7cb2a93d22e-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pesebre-tejido-celeste-marron.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/pesebre-tejido-celeste-marron.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pesebre-tejido-celeste-marron-02a1b8ade8dd-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pesebre-tejido-celeste-marron-02a1b8ade8dd-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pesebre-tejido-celeste-marron-02a1b8ade8dd-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pesebre-tejido-detalle-celeste-gris.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/pesebre-tejido-detalle-celeste-gris.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pesebre-tejido-detalle-celeste-gris-9d139cec5b28-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pesebre-tejido-detalle-celeste-gris-9d139cec5b28-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pesebre-tejido-detalle-celeste-gris-9d139cec5b28-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pesebre-tejido-detalle-cuna.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/pesebre-tejido-detalle-cuna.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pesebre-tejido-detalle-cuna-c5939cf7495c-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pesebre-tejido-detalle-cuna-c5939cf7495c-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pesebre-tejido-detalle-cuna-c5939cf7495c-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pesebre-tejido-menta-verde-oliva.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/pesebre-tejido-menta-verde-oliva.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pesebre-tejido-menta-verde-oliva-940d32ba045e-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pesebre-tejido-menta-verde-oliva-940d32ba045e-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pesebre-tejido-menta-verde-oliva-940d32ba045e-720w.webp"
+      ]
+    ]
+  },
   "assets/products/promo-12-casas-mini.webp": {
     "w": 1254,
     "h": 1254,

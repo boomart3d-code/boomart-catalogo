@@ -2955,5 +2955,36 @@
     "imageAlt": "Pesebre Minimalista de líneas facetadas en tono crema, con el portal, la Sagrada Familia y una estrella",
     "detailText": "Pesebre de diseño minimalista con acabado facetado: el portal con su estrella y las figuras del nacimiento sobre una base circular. Mide 12 cm de alto, 16 cm de ancho y 16 cm de fondo. Impreso en 3D con PLA+ y preparado a pedido.",
     "description": "Pesebre Minimalista: una escena de nacimiento de líneas limpias y acabado facetado, con el portal coronado por una estrella y las figuras sobre una base circular. Mide 12 cm de alto, 16 cm de ancho y 16 cm de fondo. Impreso en 3D con PLA+ y preparado a pedido."
+  },
+  {
+    "id": "pesebre-tejido",
+    "name": "Pesebre Tejido",
+    "category": "Navidad",
+    "tags": [
+      "Navidad",
+      "Pesebre",
+      "Nacimiento",
+      "María y José",
+      "Efecto tejido",
+      "Decoración navideña"
+    ],
+    "material": "PLA+",
+    "grammaticalGender": "masculino",
+    "availability": "A pedido",
+    "regularPrice": 55,
+    "featured": true,
+    "image": "assets/products/pesebre-tejido-celeste-marron.webp",
+    "gallery": [
+      "assets/products/pesebre-tejido-celeste-marron.webp",
+      "assets/products/pesebre-tejido-celeste-marron-frontal.webp",
+      "assets/products/pesebre-tejido-menta-verde-oliva.webp",
+      "assets/products/pesebre-tejido-azul-verde-cuna-negra.webp",
+      "assets/products/pesebre-tejido-detalle-celeste-gris.webp",
+      "assets/products/pesebre-tejido-detalle-cuna.webp"
+    ],
+    "height": "Altura aproximada: 10 cm",
+    "imageAlt": "Pesebre Tejido con María y José de textura tejida junto a la cuna del Niño",
+    "detailText": "Pesebre con María y José y la cuna del Niño, de textura que imita el tejido. Mide aproximadamente 10 cm de alto. Impreso en 3D con PLA+ y preparado a pedido. Se puede solicitar en distintas combinaciones de colores.",
+    "description": "Pesebre Tejido: María y José junto a la cuna del Niño, con una textura que imita el tejido a mano. Mide aproximadamente 10 cm de alto, está impreso en 3D con PLA+ y se prepara a pedido. Puedes solicitarlo en distintas combinaciones de colores; las fotografías muestran algunas opciones."
   }
 ]
