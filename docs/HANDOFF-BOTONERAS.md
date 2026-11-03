@@ -34,3 +34,14 @@
 - Verificacion CUA: escritorio y movil 390px, mascara y menton completos, object-fit contain, sin overflow horizontal. Evidencias doom-completo-escritorio.png y doom-completo-movil.png en la carpeta de revision.
 - Mantiene estado de propuesta local pendiente de publicacion.
 - Comprobacion adicional: 6/6 pruebas responsivas. Diff de las paginas generado limitado al hash de imagenes; Halloween/saintseiya tambien sincronizan las versiones CSS/JS de la propuesta, como hace su generador. Sin cambios en products.json.
+
+## Ambientes por categoria (2026-11-03)
+- Adrian autorizo elegir musica relacionada para todas las categorias y pidio un efecto de pantalla de 2 segundos desde el boton.
+- Nuevo modulo src/category-ambience.js: audio unico por gesto, efecto canvas tematico temporal, movimiento reducido, pausa y control flotante. Botones en cabecera y filtros.
+- Diez categorias con temas relacionados. Ver assets/audio/README.md y sources.json para seleccion/procedencia. Ocho muestras nuevas de 30s, Seiya 60s y Zelda 31s existentes.
+- CSS8, boomart-v2.js6, nuevo category-ambience.js1; generador sincroniza campanas Halloween y Saint Seiya. No cambia products.json ni fotos/precios.
+- Verificacion real CUA: las 10 pistas reproducen sin error, se pausan al navegar; el efecto aparece y desaparece mientras continua el audio; pausa flotante sincroniza ambos botones; clic rapido cancela; movimiento reducido conserva musica sin canvas; carrito pausa.
+- Diez categorias revisadas a 320px: dos controles por categoria, sin autoplay ni overflow. Vista y efecto inspeccionados a 390px y escritorio. No se probo en iPhone/Android fisicos; no se afirma escucha humana completa de todas las pistas.
+- JS syntax y 10/10 pruebas existentes correctas; header-gap 18 casos sin huecos. Datos comerciales y recursos de otros cambios preservados.
+- Evidencias D:/BOOMART-ENTREGAS/ambientes-revision-20261103/ y verificaciones de medios en botoneras-revision-20261103/.
+- Sigue siendo propuesta local en localhost:4186; pendiente de indicacion de publicar.
