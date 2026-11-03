@@ -41,6 +41,8 @@
       let tools=document.querySelector('#v2Tools');if(!tools){tools=document.createElement('div');tools.id='v2Tools';document.querySelector('#productGrid').before(tools);}
       tools.hidden=home;
       tools.innerHTML=home?'':`<div class="v2-type-list" aria-label="Tipo de pieza">${(c==='Saint Seiya'?['Todos','Templos','Esculturas','Cascos y tiaras']:[]).map(x=>`<button type="button" data-v2-type="${x}" aria-pressed="${x===type}">${x}</button>`).join('')}</div><div class="v2-sort"><span>${count} piezas</span><label>Ordenar <select id="v2Sort"><option value="featured"${order==='featured'?' selected':''}>Destacados</option><option value="low"${order==='low'?' selected':''}>Menor precio</option><option value="high"${order==='high'?' selected':''}>Mayor precio</option></select></label></div>`;
+      const typeList=tools.querySelector('.v2-type-list'),selectedType=typeList?.querySelector('[aria-pressed="true"]');
+      if(selectedType)requestAnimationFrame(()=>{if(selectedType.isConnected&&typeList.scrollWidth>typeList.clientWidth){const item=selectedType.getBoundingClientRect(),row=typeList.getBoundingClientRect();typeList.scrollLeft+=item.left-row.left-(row.width-item.width)/2;}});
       document.querySelector('#catalogTitle').textContent=home?'Encuentra tu universo.':c==='Todos'?'Todas las piezas':`La colección ${t.short||c}`;
     }
   };
@@ -48,11 +50,11 @@
   for(const event of ['pointerover','focusin'])document.addEventListener(event,e=>{if(event==='pointerover'&&e.pointerType==='touch')return;const img=e.target.closest('.card-media')?.querySelector('img[data-alt-src]');if(img){img.addEventListener('load',()=>img.classList.add('is-ready'),{once:true});window.BoomArtImages.apply(img,img.dataset.altSrc,'card');img.removeAttribute('data-alt-src');}});
   document.addEventListener('click',async e=>{
     if(e.target.closest('[data-v2-home]')){document.querySelector('#clearFilters').click();window.scrollTo({top:0,behavior:'smooth'});}
-    const filter=e.target.closest('[data-v2-type]');if(filter){type=filter.dataset.v2Type;renderProducts();}
+    const filter=e.target.closest('[data-v2-type]');if(filter){type=filter.dataset.v2Type;renderProducts();document.querySelector('.v2-type-list [aria-pressed="true"]')?.focus({preventScroll:true});}
     if(e.target.closest('[data-ambient]')){const t=themes[category];if(!t?.audio)return;if(!audio.paused){stopAudio();return;}if(!audio.src.endsWith(t.audio))audio.src=t.audio;try{await audio.play();audioLabel();}catch{document.querySelector('#v2AudioStatus').textContent='No se pudo iniciar. Toca para reintentar.';audioLabel();}}
     const slide=e.target.closest('[data-v2-slide]');if(slide){showSlide(Number(slide.dataset.v2Slide));heroPaused=true;updatePause();}
   });
-  document.addEventListener('change',e=>{if(e.target.id==='v2Sort'){order=e.target.value;renderProducts();}});
+  document.addEventListener('change',e=>{if(e.target.id==='v2Sort'){order=e.target.value;renderProducts();document.querySelector('#v2Sort')?.focus({preventScroll:true});}});
   document.addEventListener('visibilitychange',()=>{if(document.hidden)stopAudio();});
   const drawer=document.querySelector('#cartDrawer');if(drawer)new MutationObserver(()=>{if(!drawer.hidden)stopAudio();}).observe(drawer,{attributes:true,attributeFilter:['hidden']});
   const logo=document.querySelector('.quick-nav-logo');logo.innerHTML='<img src="assets/boomart-logo.svg" alt="BoomArt" width="80" height="40">';logo.addEventListener('click',e=>{e.preventDefault();document.querySelector('#clearFilters').click();window.scrollTo({top:0,behavior:'smooth'});});

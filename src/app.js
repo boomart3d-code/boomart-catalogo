@@ -525,14 +525,28 @@ const catalogCategories = () => {
 };
 
 const renderFilters = () => {
+  const hadFocus = filterRow.contains(document.activeElement);
   // "Todos" queda marcado de verdad cuando no hay filtro (antes ninguna pastilla lo
   // indicaba). "Te ayudo a elegir" (solo celular, ver CSS) abre el asistente: ya
   // no flota sobre las fotos en las páginas que tienen portada.
   const assistantChip = `<button class="assistant-chip" type="button" id="filterAssistant">Te ayudo a elegir</button>`;
-  const allChip = `<button class="${activeFilter === "Todos" && !activeCollection && !showcaseMode ? "active" : ""}" type="button" data-filter="Todos">Todos</button>`;
+  const allSelected = activeFilter === "Todos" && !activeCollection && !showcaseMode;
+  const allChip = `<button class="${allSelected ? "active" : ""}" type="button" data-filter="Todos" aria-pressed="${allSelected}">Todos</button>`;
   filterRow.innerHTML = assistantChip + allChip + catalogCategories()
-    .map((category) => `<button class="${category === activeFilter ? "active" : ""}" type="button" data-filter="${category}">${categoryLabel(category)}</button>`)
+    .map((category) => `<button class="${category === activeFilter ? "active" : ""}" type="button" data-filter="${category}" aria-pressed="${category === activeFilter}">${categoryLabel(category)}</button>`)
     .join("");
+  const selected = filterRow.querySelector('[aria-pressed="true"]');
+  if (selected) {
+    if (hadFocus) selected.focus({ preventScroll: true });
+    // Keep the selected category in view without moving the page vertically.
+    requestAnimationFrame(() => {
+      // renderProducts reveals the category navigation after the home view.
+      if (selected.isConnected && filterRow.scrollWidth > filterRow.clientWidth) {
+        const item = selected.getBoundingClientRect(), row = filterRow.getBoundingClientRect();
+        filterRow.scrollLeft += item.left - row.left - (row.width - item.width) / 2;
+      }
+    });
+  }
 };
 
 const quickCategoriesPanel = document.querySelector("#quickCategoriesPanel");
