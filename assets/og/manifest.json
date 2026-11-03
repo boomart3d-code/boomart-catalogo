@@ -712,5 +712,12 @@
     "width": 960,
     "height": 1200,
     "bytes": 79668
+  },
+  "pesebre-tejido": {
+    "source": "assets/products/pesebre-tejido-celeste-marron.webp",
+    "hash": "6aba01c17f0252f9",
+    "width": 960,
+    "height": 1200,
+    "bytes": 92769
   }
 }
