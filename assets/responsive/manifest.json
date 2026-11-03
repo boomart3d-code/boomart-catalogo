@@ -6145,6 +6145,63 @@
       ]
     ]
   },
+  "assets/products/pesebre-minimalista-frontal.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/pesebre-minimalista-frontal.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pesebre-minimalista-frontal-98b72d7d27d0-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pesebre-minimalista-frontal-98b72d7d27d0-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pesebre-minimalista-frontal-98b72d7d27d0-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pesebre-minimalista-lateral.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/pesebre-minimalista-lateral.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pesebre-minimalista-lateral-f7ae83d68b05-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pesebre-minimalista-lateral-f7ae83d68b05-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pesebre-minimalista-lateral-f7ae83d68b05-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pesebre-minimalista-posterior.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/pesebre-minimalista-posterior.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pesebre-minimalista-posterior-b2e9c664ccbf-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pesebre-minimalista-posterior-b2e9c664ccbf-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pesebre-minimalista-posterior-b2e9c664ccbf-720w.webp"
+      ]
+    ]
+  },
   "assets/products/promo-12-casas-mini.webp": {
     "w": 1254,
     "h": 1254,

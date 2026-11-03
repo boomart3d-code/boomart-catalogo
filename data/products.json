@@ -2927,5 +2927,33 @@
     "imageAlt": "Cascanueces de Navidad rojo y dorado sobre su base negra con la frase Merry Xmas",
     "detailText": "Soldado cascanueces navideño de pie sobre una base negra con la frase Merry Xmas y copos de nieve dorados. Mide aproximadamente 40 cm de alto. Impreso en 3D con PLA+ y preparado a pedido. También se puede solicitar en otras combinaciones de colores.",
     "description": "Cascanueces de Navidad: un soldado de uniforme rojo con detalles dorados, sombrero alto y peluca blanca, sobre una base negra con la frase Merry Xmas y copos de nieve. Mide aproximadamente 40 cm de alto, está impreso en 3D con PLA+ y se prepara a pedido. Puedes solicitarlo en otras combinaciones de colores; la última fotografía muestra algunas opciones."
+  },
+  {
+    "id": "pesebre-minimalista",
+    "name": "Pesebre Minimalista",
+    "category": "Navidad",
+    "tags": [
+      "Navidad",
+      "Pesebre",
+      "Nacimiento",
+      "Belén",
+      "Diseño minimalista",
+      "Decoración navideña"
+    ],
+    "material": "PLA+",
+    "grammaticalGender": "masculino",
+    "availability": "A pedido",
+    "regularPrice": 65,
+    "featured": true,
+    "image": "assets/products/pesebre-minimalista-frontal.webp",
+    "gallery": [
+      "assets/products/pesebre-minimalista-frontal.webp",
+      "assets/products/pesebre-minimalista-lateral.webp",
+      "assets/products/pesebre-minimalista-posterior.webp"
+    ],
+    "height": "Alto 12 cm · Ancho 16 cm · Fondo 16 cm",
+    "imageAlt": "Pesebre Minimalista de líneas facetadas en tono crema, con el portal, la Sagrada Familia y una estrella",
+    "detailText": "Pesebre de diseño minimalista con acabado facetado: el portal con su estrella y las figuras del nacimiento sobre una base circular. Mide 12 cm de alto, 16 cm de ancho y 16 cm de fondo. Impreso en 3D con PLA+ y preparado a pedido.",
+    "description": "Pesebre Minimalista: una escena de nacimiento de líneas limpias y acabado facetado, con el portal coronado por una estrella y las figuras sobre una base circular. Mide 12 cm de alto, 16 cm de ancho y 16 cm de fondo. Impreso en 3D con PLA+ y preparado a pedido."
   }
 ]
