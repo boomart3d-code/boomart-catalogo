@@ -45,3 +45,9 @@
 - JS syntax y 10/10 pruebas existentes correctas; header-gap 18 casos sin huecos. Datos comerciales y recursos de otros cambios preservados.
 - Evidencias D:/BOOMART-ENTREGAS/ambientes-revision-20261103/ y verificaciones de medios en botoneras-revision-20261103/.
 - Sigue siendo propuesta local en localhost:4186; pendiente de indicacion de publicar.
+
+## Correccion de tarjeta Marvel y DC — 2026-11-03
+- El nuevo calado completo de Dr Doom conservaba dos transformaciones del recorte anterior: scale(1.35) y translateY(-11%). Se retiran ambas reglas especiales, incluida hover; ahora usa contain y el margen comun de las tarjetas.
+- CSS v10 sincronizado en inicio y campanas. No cambia el asset ni la cabecera de categoria.
+- Navegador escritorio: mascara completa, incluida parte superior y menton. En 320/390px, imagen dentro del area con margen superior22px/inferior10px y sin overflow. Captura escritorio tambien con hover comun activo, sin corte. Evidencias en D:/BOOMART-ENTREGAS/doom-tarjeta-20261103/.
+- Correccion puntual autorizada para produccion por el pedido actual. Estado de publicacion y SHA final en el relevo del equipo. Las secciones antiguas de propuesta pendiente son historicas: los ambientes y las botoneras ya se publicaron en el avance anterior.

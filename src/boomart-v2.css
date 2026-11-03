@@ -94,10 +94,8 @@ body.design-v2 {--v2-ink:#171512;--v2-paper:#f4f0e8;--v2-line:#d9d1c4;background
 .v2-universe-label {position:relative;display:flex;min-height:78px;flex-direction:column;justify-content:center;gap:8px;padding:13px 15px 17px;background:transparent;border-top:1px solid #99866d1c;}
 .v2-universe-label strong {font:700 1.2rem/1 'Barlow Condensed',sans-serif;text-transform:uppercase;}
 .v2-universe-label small {font-size:.65rem;color:#6b6258;display:flex;justify-content:space-between;}
-.v2-universe[data-tone="heroes"] img {transform:translateY(-11%) scale(1.35);}
 .v2-universe:hover {border-color:#b29b76;box-shadow:0 8px 22px #49382312;}
 .v2-universe:hover img {transform:translateY(-3px);}
-.v2-universe[data-tone="heroes"]:hover img {transform:translateY(calc(-11% - 3px)) scale(1.35);}
 .v2-craft {padding:32px 38px;background:#191714;color:#f4f0e8;display:flex;gap:35px;align-items:center;justify-content:space-between;margin-bottom:64px;}
 .v2-craft>span {font-size:.65rem;letter-spacing:.12em;}
 .v2-craft p {font:400 clamp(1.5rem,3vw,2.3rem)/1.2 'Barlow Condensed',sans-serif;margin:0;}
