@@ -459,7 +459,7 @@ const CATEGORY_ORDER = [
   "Macetas", "Soportes de Mandos", "Figuras Coleccionables", "Zelda",
 ];
 const CATEGORY_LABELS = { "🎃 Halloween": "🎃 Halloween y Cosplay" };
-const categoryLabel = (category) => CATEGORY_LABELS[category] || category;
+const categoryLabel = (category) => window.BoomV2?.label(category) || CATEGORY_LABELS[category] || category;
 const orderedCategories = (cats) => [...cats].sort((a, b) => {
   const ia = CATEGORY_ORDER.indexOf(a);
   const ib = CATEGORY_ORDER.indexOf(b);
