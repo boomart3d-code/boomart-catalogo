@@ -505,10 +505,10 @@
   },
   "maceta-pikachu": {
     "source": "assets/products/maceta-pikachu-botanica-v1-1.jpg",
-    "hash": "633005ee78ebaff5",
+    "hash": "38dd12176b5024c1",
     "width": 960,
     "height": 1200,
-    "bytes": 76806
+    "bytes": 75317
   },
   "replica-copa-del-mundo-tamano-real": {
     "source": "assets/products/replica-copa-del-mundo-tamano-real-hero-v2.png",
@@ -540,52 +540,52 @@
   },
   "maceta-groot": {
     "source": "assets/products/maceta-groot-botanica-v1-1.jpg",
-    "hash": "673ace9389f8e89b",
+    "hash": "ac85f2384de01021",
     "width": 960,
     "height": 1200,
-    "bytes": 92630
+    "bytes": 90564
   },
   "maceta-baby-groot": {
     "source": "assets/products/maceta-baby-groot-botanica-v1-1.jpg",
-    "hash": "b8b56f4d158fc002",
+    "hash": "da2c25d2f8fdb537",
     "width": 960,
     "height": 1200,
-    "bytes": 100726
+    "bytes": 98157
   },
   "maceta-dedo-medio": {
     "source": "assets/products/maceta-dedo-medio-botanica-v1-1.jpg",
-    "hash": "db67f9f989958320",
+    "hash": "8d5913ab3f60c3cc",
     "width": 960,
     "height": 1200,
-    "bytes": 113710
+    "bytes": 113018
   },
   "maceta-darth-vader": {
     "source": "assets/products/maceta-darth-vader-botanica-v1-1.jpg",
-    "hash": "1e287fcc93e02d64",
+    "hash": "7d5c0a35013b653f",
     "width": 960,
     "height": 1200,
-    "bytes": 127081
+    "bytes": 124670
   },
   "maceta-david": {
     "source": "assets/products/maceta-david-botanica-v1-1.jpg",
-    "hash": "6223f604d2474238",
+    "hash": "1870c9b4d2f857c1",
     "width": 960,
     "height": 1200,
-    "bytes": 86126
+    "bytes": 87378
   },
   "maceta-minimalista": {
     "source": "assets/products/maceta-minimalista-botanica-v1-1.jpg",
-    "hash": "0bdb7404a598369e",
+    "hash": "cc19e13f680f528d",
     "width": 960,
     "height": 1200,
-    "bytes": 103064
+    "bytes": 103498
   },
   "maceta-palmera": {
     "source": "assets/products/maceta-palmera-botanica-v1-1.jpg",
-    "hash": "be41c6d43d8abb88",
+    "hash": "fc112f371a8e742a",
     "width": 960,
     "height": 1200,
-    "bytes": 124353
+    "bytes": 124214
   },
   "soporte-mando-wolverine": {
     "source": "assets/products/soporte-mando-wolverine.jpg",
