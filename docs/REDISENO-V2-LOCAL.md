@@ -63,3 +63,9 @@ Instrucción utilizada: «Edit this product photograph into a clean transparent 
 - Evidencias en `D:/BOOMART-ENTREGAS/auditoria-redisenio-20261102/`: `verificacion-categorias-v3.json`, `medios-categorias-v3.json`, `categorias-caladas-v3-movil.png`, `portada-fawkes-v3-movil.png`, `portada-cosplay-v3-movil.png`, `portada-soportes-v3-movil.png`.
 
 Sin publicación, push, cambios de precios ni escritura en Studio. No se incluyó una fecha de estreno de Harry Potter en el sitio; esa fecha no se investigó en este avance.
+
+## Acceso al producto desde la imagen de portada — 2 de noviembre de 2026
+
+Las seis imágenes de portada son botones con etiqueta accesible y apertura de la ficha existente mediante `data-open`. La selección actualiza tanto la imagen como su ID de producto: Atena, Santa, escudo de Zelda, Mandaloriano, Picoro y Fawkes. El botón «Explorar» conserva el acceso a la colección. El carrusel se pausa al enfocar/seleccionar la imagen para mantener el producto elegido. Se conservaron el encuadre y los calados.
+
+Verificación: las seis imágenes se pulsaron en el navegador y abrieron el producto esperado, comprobando título, modal abierto y parámetro de URL; 6/6 correctas. Enter sobre la imagen de Fawkes también abre su ficha. Sintaxis JS y `git diff --check` correctos. Evidencias: `D:/BOOMART-ENTREGAS/auditoria-redisenio-20261102/verificacion-enlaces-portada.json` y `ficha-desde-portada-fawkes.png`. Sin pedidos ni publicación. La vista previa queda con la ficha de Fawkes abierta para revisión.
