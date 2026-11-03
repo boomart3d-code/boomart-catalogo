@@ -3834,6 +3834,44 @@
       ]
     ]
   },
+  "assets/products/maceta-baby-groot-botanica-v1-1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/maceta-baby-groot-botanica-v1-1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/maceta-baby-groot-botanica-v1-1-273fb20a81e5-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/maceta-baby-groot-botanica-v1-1-273fb20a81e5-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/maceta-baby-groot-botanica-v1-1-273fb20a81e5-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/maceta-baby-groot-botanica-v1-2.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/maceta-baby-groot-botanica-v1-2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/maceta-baby-groot-botanica-v1-2-845c5cca3461-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/maceta-baby-groot-botanica-v1-2-845c5cca3461-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/maceta-baby-groot-botanica-v1-2-845c5cca3461-720w.webp"
+      ]
+    ]
+  },
   "assets/products/maceta-baby-groot-hero-v2.webp": {
     "w": 1200,
     "h": 1500,
@@ -3872,6 +3910,44 @@
       ]
     ]
   },
+  "assets/products/maceta-darth-vader-botanica-v1-1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/maceta-darth-vader-botanica-v1-1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/maceta-darth-vader-botanica-v1-1-66100ce34c5d-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/maceta-darth-vader-botanica-v1-1-66100ce34c5d-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/maceta-darth-vader-botanica-v1-1-66100ce34c5d-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/maceta-darth-vader-botanica-v1-2.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/maceta-darth-vader-botanica-v1-2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/maceta-darth-vader-botanica-v1-2-49c2dbb8d1c3-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/maceta-darth-vader-botanica-v1-2-49c2dbb8d1c3-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/maceta-darth-vader-botanica-v1-2-49c2dbb8d1c3-720w.webp"
+      ]
+    ]
+  },
   "assets/products/maceta-darth-vader-hero-v2.webp": {
     "w": 1200,
     "h": 1500,
@@ -3907,6 +3983,44 @@
       [
         720,
         "assets/responsive/products/maceta-darth-vader-1244055daa6f-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/maceta-david-botanica-v1-1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/maceta-david-botanica-v1-1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/maceta-david-botanica-v1-1-b3cd149251ea-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/maceta-david-botanica-v1-1-b3cd149251ea-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/maceta-david-botanica-v1-1-b3cd149251ea-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/maceta-david-botanica-v1-2.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/maceta-david-botanica-v1-2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/maceta-david-botanica-v1-2-b10f5c7fc050-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/maceta-david-botanica-v1-2-b10f5c7fc050-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/maceta-david-botanica-v1-2-b10f5c7fc050-720w.webp"
       ]
     ]
   },
@@ -3952,6 +4066,44 @@
       ]
     ]
   },
+  "assets/products/maceta-dedo-medio-botanica-v1-1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/maceta-dedo-medio-botanica-v1-1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/maceta-dedo-medio-botanica-v1-1-44e114b4045b-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/maceta-dedo-medio-botanica-v1-1-44e114b4045b-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/maceta-dedo-medio-botanica-v1-1-44e114b4045b-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/maceta-dedo-medio-botanica-v1-2.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/maceta-dedo-medio-botanica-v1-2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/maceta-dedo-medio-botanica-v1-2-80802f6cb1c4-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/maceta-dedo-medio-botanica-v1-2-80802f6cb1c4-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/maceta-dedo-medio-botanica-v1-2-80802f6cb1c4-720w.webp"
+      ]
+    ]
+  },
   "assets/products/maceta-dedo-medio-hero-v2.webp": {
     "w": 1254,
     "h": 1254,
@@ -3994,6 +4146,44 @@
       ]
     ]
   },
+  "assets/products/maceta-groot-botanica-v1-1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/maceta-groot-botanica-v1-1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/maceta-groot-botanica-v1-1-7246aafc3b77-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/maceta-groot-botanica-v1-1-7246aafc3b77-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/maceta-groot-botanica-v1-1-7246aafc3b77-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/maceta-groot-botanica-v1-2.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/maceta-groot-botanica-v1-2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/maceta-groot-botanica-v1-2-7bc3b6b1e837-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/maceta-groot-botanica-v1-2-7bc3b6b1e837-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/maceta-groot-botanica-v1-2-7bc3b6b1e837-720w.webp"
+      ]
+    ]
+  },
   "assets/products/maceta-groot-hero-v2.webp": {
     "w": 1200,
     "h": 1500,
@@ -4032,6 +4222,44 @@
       ]
     ]
   },
+  "assets/products/maceta-minimalista-botanica-v1-1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/maceta-minimalista-botanica-v1-1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/maceta-minimalista-botanica-v1-1-b7b5626c30e6-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/maceta-minimalista-botanica-v1-1-b7b5626c30e6-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/maceta-minimalista-botanica-v1-1-b7b5626c30e6-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/maceta-minimalista-botanica-v1-2.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/maceta-minimalista-botanica-v1-2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/maceta-minimalista-botanica-v1-2-9ea5e46a1738-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/maceta-minimalista-botanica-v1-2-9ea5e46a1738-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/maceta-minimalista-botanica-v1-2-9ea5e46a1738-720w.webp"
+      ]
+    ]
+  },
   "assets/products/maceta-minimalista-hero-v2.webp": {
     "w": 1086,
     "h": 1448,
@@ -4067,6 +4295,44 @@
       [
         720,
         "assets/responsive/products/maceta-minimalista-933083530287-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/maceta-palmera-botanica-v1-1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/maceta-palmera-botanica-v1-1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/maceta-palmera-botanica-v1-1-8ac0dc7654d8-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/maceta-palmera-botanica-v1-1-8ac0dc7654d8-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/maceta-palmera-botanica-v1-1-8ac0dc7654d8-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/maceta-palmera-botanica-v1-2.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/maceta-palmera-botanica-v1-2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/maceta-palmera-botanica-v1-2-4c762f51dd79-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/maceta-palmera-botanica-v1-2-4c762f51dd79-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/maceta-palmera-botanica-v1-2-4c762f51dd79-720w.webp"
       ]
     ]
   },
@@ -4109,6 +4375,44 @@
       [
         720,
         "assets/responsive/products/maceta-palmera-8b09b4850e0c-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/maceta-pikachu-botanica-v1-1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/maceta-pikachu-botanica-v1-1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/maceta-pikachu-botanica-v1-1-ae747606950a-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/maceta-pikachu-botanica-v1-1-ae747606950a-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/maceta-pikachu-botanica-v1-1-ae747606950a-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/maceta-pikachu-botanica-v1-2.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/maceta-pikachu-botanica-v1-2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/maceta-pikachu-botanica-v1-2-f86a437c86ab-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/maceta-pikachu-botanica-v1-2-f86a437c86ab-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/maceta-pikachu-botanica-v1-2-f86a437c86ab-720w.webp"
       ]
     ]
   },

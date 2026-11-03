@@ -504,11 +504,11 @@
     "bytes": 141442
   },
   "maceta-pikachu": {
-    "source": "assets/products/maceta-pikachu-hero-v2.webp",
-    "hash": "afebe1eda88d509f",
+    "source": "assets/products/maceta-pikachu-botanica-v1-1.jpg",
+    "hash": "633005ee78ebaff5",
     "width": 960,
     "height": 1200,
-    "bytes": 127118
+    "bytes": 76806
   },
   "replica-copa-del-mundo-tamano-real": {
     "source": "assets/products/replica-copa-del-mundo-tamano-real-hero-v2.png",
@@ -539,53 +539,53 @@
     "bytes": 196067
   },
   "maceta-groot": {
-    "source": "assets/products/maceta-groot-hero-v2.webp",
-    "hash": "51c6b63693777d99",
+    "source": "assets/products/maceta-groot-botanica-v1-1.jpg",
+    "hash": "673ace9389f8e89b",
     "width": 960,
     "height": 1200,
-    "bytes": 143158
+    "bytes": 92630
   },
   "maceta-baby-groot": {
-    "source": "assets/products/maceta-baby-groot-hero-v2.webp",
-    "hash": "4fb59d7da1c668b7",
+    "source": "assets/products/maceta-baby-groot-botanica-v1-1.jpg",
+    "hash": "b8b56f4d158fc002",
     "width": 960,
     "height": 1200,
-    "bytes": 145686
+    "bytes": 100726
   },
   "maceta-dedo-medio": {
-    "source": "assets/products/maceta-dedo-medio-hero-v2.png",
-    "hash": "68d1ee95130a5ee2",
-    "width": 1200,
-    "height": 1200,
-    "bytes": 146508
-  },
-  "maceta-darth-vader": {
-    "source": "assets/products/maceta-darth-vader-hero-v2.webp",
-    "hash": "55343847aaa97223",
+    "source": "assets/products/maceta-dedo-medio-botanica-v1-1.jpg",
+    "hash": "db67f9f989958320",
     "width": 960,
     "height": 1200,
-    "bytes": 91212
+    "bytes": 113710
+  },
+  "maceta-darth-vader": {
+    "source": "assets/products/maceta-darth-vader-botanica-v1-1.jpg",
+    "hash": "1e287fcc93e02d64",
+    "width": 960,
+    "height": 1200,
+    "bytes": 127081
   },
   "maceta-david": {
-    "source": "assets/products/maceta-david-hero-v2.png",
-    "hash": "e15c441486e71a80",
-    "width": 1200,
+    "source": "assets/products/maceta-david-botanica-v1-1.jpg",
+    "hash": "6223f604d2474238",
+    "width": 960,
     "height": 1200,
-    "bytes": 121241
+    "bytes": 86126
   },
   "maceta-minimalista": {
-    "source": "assets/products/maceta-minimalista-hero-v2.png",
-    "hash": "7c107c902f81dd6a",
-    "width": 900,
+    "source": "assets/products/maceta-minimalista-botanica-v1-1.jpg",
+    "hash": "0bdb7404a598369e",
+    "width": 960,
     "height": 1200,
-    "bytes": 99991
+    "bytes": 103064
   },
   "maceta-palmera": {
-    "source": "assets/products/maceta-palmera-hero-v2.png",
-    "hash": "4c0c180bf7cdf4fc",
-    "width": 1200,
+    "source": "assets/products/maceta-palmera-botanica-v1-1.jpg",
+    "hash": "be41c6d43d8abb88",
+    "width": 960,
     "height": 1200,
-    "bytes": 140547
+    "bytes": 124353
   },
   "soporte-mando-wolverine": {
     "source": "assets/products/soporte-mando-wolverine.jpg",

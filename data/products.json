@@ -2203,10 +2203,10 @@
     "availability": "A pedido",
     "regularPrice": 60,
     "featured": true,
-    "image": "assets/products/maceta-pikachu-hero-v2.webp",
+    "image": "assets/products/maceta-pikachu-botanica-v1-1.jpg",
     "gallery": [
-      "assets/products/maceta-pikachu-hero-v2.webp",
-      "assets/products/maceta-pikachu.jpg"
+      "assets/products/maceta-pikachu-botanica-v1-1.jpg",
+      "assets/products/maceta-pikachu-botanica-v1-2.jpg"
     ],
     "description": "Maceta decorativa de Pikachu (Pokémon), impresa en 3D con filamento de alta calidad. Perfecta para tus suculentas o cactus en el escritorio o la repisa."
   },
@@ -2298,10 +2298,10 @@
     "availability": "A pedido",
     "regularPrice": 77,
     "featured": true,
-    "image": "assets/products/maceta-groot-hero-v2.webp",
+    "image": "assets/products/maceta-groot-botanica-v1-1.jpg",
     "gallery": [
-      "assets/products/maceta-groot-hero-v2.webp",
-      "assets/products/maceta-groot.jpg"
+      "assets/products/maceta-groot-botanica-v1-1.jpg",
+      "assets/products/maceta-groot-botanica-v1-2.jpg"
     ],
     "description": "Maceta inspirada en Groot, con diseño detallado y colores naranja y verde que evocan su aspecto de árbol. Tamaño generoso para acomodar varias plantas. Ideal para los fans de los Guardianes de la Galaxia."
   },
@@ -2317,10 +2317,10 @@
     "availability": "A pedido",
     "regularPrice": 44,
     "featured": true,
-    "image": "assets/products/maceta-baby-groot-hero-v2.webp",
+    "image": "assets/products/maceta-baby-groot-botanica-v1-1.jpg",
     "gallery": [
-      "assets/products/maceta-baby-groot-hero-v2.webp",
-      "assets/products/maceta-baby-groot.jpg"
+      "assets/products/maceta-baby-groot-botanica-v1-1.jpg",
+      "assets/products/maceta-baby-groot-botanica-v1-2.jpg"
     ],
     "description": "Maceta de Baby Groot (Guardianes de la Galaxia), minimalista y con hermosos detalles en el rostro y las ramas. Ideal para escritorios, repisas y decoración de ambientes."
   },
@@ -2335,10 +2335,10 @@
     "availability": "A pedido",
     "regularPrice": 44,
     "featured": true,
-    "image": "assets/products/maceta-dedo-medio-hero-v2.png",
+    "image": "assets/products/maceta-dedo-medio-botanica-v1-1.jpg",
     "gallery": [
-      "assets/products/maceta-dedo-medio-hero-v2.png",
-      "assets/products/maceta-dedo-medio.jpg"
+      "assets/products/maceta-dedo-medio-botanica-v1-1.jpg",
+      "assets/products/maceta-dedo-medio-botanica-v1-2.jpg"
     ],
     "description": "Una maceta pequeña y divertida con forma de dedo medio, en color neutro que combina con todos tus espacios: la sala, el escritorio de la oficina, donde quieras dar un mensaje sin decir nada."
   },
@@ -2354,10 +2354,10 @@
     "availability": "A pedido",
     "regularPrice": 55,
     "featured": true,
-    "image": "assets/products/maceta-darth-vader-hero-v2.webp",
+    "image": "assets/products/maceta-darth-vader-botanica-v1-1.jpg",
     "gallery": [
-      "assets/products/maceta-darth-vader-hero-v2.webp",
-      "assets/products/maceta-darth-vader.jpg"
+      "assets/products/maceta-darth-vader-botanica-v1-1.jpg",
+      "assets/products/maceta-darth-vader-botanica-v1-2.jpg"
     ],
     "description": "Maceta de Darth Vader (Star Wars) en elegante color negro, capturando el casco del Lord Sith. El lado oscuro de la jardinería para tu escritorio."
   },
@@ -2373,10 +2373,10 @@
     "availability": "A pedido",
     "regularPrice": 66,
     "featured": true,
-    "image": "assets/products/maceta-david-hero-v2.png",
+    "image": "assets/products/maceta-david-botanica-v1-1.jpg",
     "gallery": [
-      "assets/products/maceta-david-hero-v2.png",
-      "assets/products/maceta-david.jpg"
+      "assets/products/maceta-david-botanica-v1-1.jpg",
+      "assets/products/maceta-david-botanica-v1-2.jpg"
     ],
     "description": "Maceta inspirada en el David de Miguel Ángel: elegancia y arte clásico en un diseño minimalista que eleva cualquier ambiente."
   },
@@ -2391,10 +2391,10 @@
     "availability": "A pedido",
     "regularPrice": 44,
     "featured": true,
-    "image": "assets/products/maceta-minimalista-hero-v2.png",
+    "image": "assets/products/maceta-minimalista-botanica-v1-1.jpg",
     "gallery": [
-      "assets/products/maceta-minimalista-hero-v2.png",
-      "assets/products/maceta-minimalista.jpg"
+      "assets/products/maceta-minimalista-botanica-v1-1.jpg",
+      "assets/products/maceta-minimalista-botanica-v1-2.jpg"
     ],
     "description": "Optimiza tu espacio con una maceta minimalista de líneas limpias y textura sutil, ideal para escritorio, repisa o mesa de centro."
   },
@@ -2409,10 +2409,10 @@
     "availability": "A pedido",
     "regularPrice": 44,
     "featured": true,
-    "image": "assets/products/maceta-palmera-hero-v2.png",
+    "image": "assets/products/maceta-palmera-botanica-v1-1.jpg",
     "gallery": [
-      "assets/products/maceta-palmera-hero-v2.png",
-      "assets/products/maceta-palmera.jpg"
+      "assets/products/maceta-palmera-botanica-v1-1.jpg",
+      "assets/products/maceta-palmera-botanica-v1-2.jpg"
     ],
     "description": "Maceta minimalista negra con textura de hojas de palmera: elegante y moderna, ideal para complementar una decoración tropical o contemporánea."
   },

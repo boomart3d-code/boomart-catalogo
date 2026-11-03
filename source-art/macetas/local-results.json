@@ -1,0 +1,138 @@
+[
+  {
+    "id": "maceta-pikachu",
+    "index": 1,
+    "source": "assets/products/maceta-pikachu-hero-v2.webp",
+    "target": "assets/products/maceta-pikachu-botanica-v1-1.jpg",
+    "generated": "D:\\BOOMART-ENTREGAS\\macetas-fotos-20261102\\assets\\products\\maceta-pikachu-botanica-v1-1.jpg",
+    "prompt": null,
+    "status": "awaiting visual inspection",
+    "mask": "source-art/macetas/masks/maceta-pikachu-1.png",
+    "method": "local pixel-preserving cutout/composite; approved by owner",
+    "sourceBBox": [
+      286,
+      127,
+      911,
+      1228
+    ]
+  },
+  {
+    "id": "maceta-pikachu",
+    "index": 2,
+    "source": "assets/products/maceta-pikachu.jpg",
+    "target": "assets/products/maceta-pikachu-botanica-v1-2.jpg",
+    "generated": "D:\\BOOMART-ENTREGAS\\macetas-fotos-20261102\\assets\\products\\maceta-pikachu-botanica-v1-2.jpg",
+    "prompt": null,
+    "status": "awaiting visual inspection",
+    "mask": "source-art/macetas/masks/maceta-pikachu-2.png",
+    "method": "local pixel-preserving cutout/composite; approved by owner",
+    "sourceBBox": [
+      307,
+      182,
+      793,
+      1043
+    ]
+  },
+  {
+    "id": "maceta-groot",
+    "index": 1,
+    "source": "assets/products/maceta-groot-hero-v2.webp",
+    "target": "assets/products/maceta-groot-botanica-v1-1.jpg",
+    "generated": "D:\\BOOMART-ENTREGAS\\macetas-fotos-20261102\\assets\\products\\maceta-groot-botanica-v1-1.jpg",
+    "prompt": null,
+    "status": "awaiting visual inspection",
+    "mask": "source-art/macetas/masks/maceta-groot-1.png",
+    "method": "local pixel-preserving cutout/composite; approved by owner",
+    "sourceBBox": [
+      238,
+      130,
+      965,
+      1241
+    ]
+  },
+  {
+    "id": "maceta-groot",
+    "index": 2,
+    "source": "assets/products/maceta-groot.jpg",
+    "target": "assets/products/maceta-groot-botanica-v1-2.jpg",
+    "generated": "D:\\BOOMART-ENTREGAS\\macetas-fotos-20261102\\assets\\products\\maceta-groot-botanica-v1-2.jpg",
+    "prompt": null,
+    "status": "awaiting visual inspection",
+    "mask": "source-art/macetas/masks/maceta-groot-2.png",
+    "method": "local pixel-preserving cutout/composite; approved by owner",
+    "sourceBBox": [
+      117,
+      114,
+      1030,
+      1513
+    ]
+  },
+  {
+    "id": "maceta-baby-groot",
+    "index": 1,
+    "source": "assets/products/maceta-baby-groot-hero-v2.webp",
+    "target": "assets/products/maceta-baby-groot-botanica-v1-1.jpg",
+    "generated": "D:\\BOOMART-ENTREGAS\\macetas-fotos-20261102\\assets\\products\\maceta-baby-groot-botanica-v1-1.jpg",
+    "prompt": null,
+    "status": "awaiting visual inspection",
+    "mask": "source-art/macetas/masks/maceta-baby-groot-1.png",
+    "method": "local pixel-preserving cutout/composite; approved by owner",
+    "sourceBBox": [
+      345,
+      129,
+      855,
+      1229
+    ]
+  },
+  {
+    "id": "maceta-baby-groot",
+    "index": 2,
+    "source": "assets/products/maceta-baby-groot.jpg",
+    "target": "assets/products/maceta-baby-groot-botanica-v1-2.jpg",
+    "generated": "D:\\BOOMART-ENTREGAS\\macetas-fotos-20261102\\assets\\products\\maceta-baby-groot-botanica-v1-2.jpg",
+    "prompt": null,
+    "status": "awaiting visual inspection",
+    "mask": "source-art/macetas/masks/maceta-baby-groot-2.png",
+    "method": "local pixel-preserving cutout/composite; approved by owner",
+    "sourceBBox": [
+      144,
+      103,
+      794,
+      1529
+    ]
+  },
+  {
+    "id": "maceta-darth-vader",
+    "index": 1,
+    "source": "assets/products/maceta-darth-vader-hero-v2.webp",
+    "target": "assets/products/maceta-darth-vader-botanica-v1-1.jpg",
+    "generated": "D:\\BOOMART-ENTREGAS\\macetas-fotos-20261102\\assets\\products\\maceta-darth-vader-botanica-v1-1.jpg",
+    "prompt": null,
+    "status": "awaiting visual inspection",
+    "mask": "source-art/macetas/masks/maceta-darth-vader-1.png",
+    "method": "local pixel-preserving cutout/composite; approved by owner",
+    "sourceBBox": [
+      158,
+      48,
+      1043,
+      1194
+    ]
+  },
+  {
+    "id": "maceta-darth-vader",
+    "index": 2,
+    "source": "assets/products/maceta-darth-vader.jpg",
+    "target": "assets/products/maceta-darth-vader-botanica-v1-2.jpg",
+    "generated": "D:\\BOOMART-ENTREGAS\\macetas-fotos-20261102\\assets\\products\\maceta-darth-vader-botanica-v1-2.jpg",
+    "prompt": null,
+    "status": "awaiting visual inspection",
+    "mask": "source-art/macetas/masks/maceta-darth-vader-2.png",
+    "method": "local pixel-preserving cutout/composite; approved by owner",
+    "sourceBBox": [
+      96,
+      125,
+      1111,
+      1441
+    ]
+  }
+]

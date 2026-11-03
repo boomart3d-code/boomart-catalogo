@@ -1,0 +1,218 @@
+{
+  "date": "2026-11-02",
+  "status": "16 photos ready; local review pending; not published",
+  "tool": "built-in image_gen for 8 photos; authorized local composition for 8 photos",
+  "style": "A believable REAL product photograph in an elegant, quiet, lived-in contemporary home, with understated Scandinavian botanical styling. A flat matte pale natural oak tabletop with subtle real wood grain, a softly textured warm off-white ivory plaster wall behind it. At the extreme far background edge only, a very small softly out-of-focus hint of green foliage; no other planter, no props beside the product. Soft broad natural window daylight from the left, neutral accurate white balance, gentle real contact shadows, airy but not overexposed. No dark backdrop, no hard theatrical light, no CGI/render look, no stylized background, no colored lighting, no patterns or graphic overlays, no text, no logos. Retain the photographed 3D printed plastic surface and actual layer/roughness details; do not turn it into smooth porcelain, ceramic, resin, stone or real wood. Keep the exact original colors, geometry and all distinctive details of the product and any plant that is already inside it. Do not add or remove a plant from the product. Portrait 4:5, complete product and all plant tips visible, prominent at approximately 78-82% frame height, balanced comfortable margins, no excessive empty space above.",
+  "jobs": [
+    {
+      "id": "maceta-pikachu",
+      "index": 1,
+      "source": "assets/products/maceta-pikachu-hero-v2.webp",
+      "target": "assets/products/maceta-pikachu-botanica-v1-1.jpg",
+      "generated": "D:\\BOOMART-ENTREGAS\\macetas-fotos-20261102\\assets\\products\\maceta-pikachu-botanica-v1-1.jpg",
+      "prompt": null,
+      "status": "visually inspected; ready for local catalog review",
+      "mask": "source-art/macetas/masks/maceta-pikachu-1.png",
+      "method": "local pixel-preserving cutout/composite; approved by owner",
+      "sourceBBox": [
+        286,
+        127,
+        911,
+        1228
+      ]
+    },
+    {
+      "id": "maceta-pikachu",
+      "index": 2,
+      "source": "assets/products/maceta-pikachu.jpg",
+      "target": "assets/products/maceta-pikachu-botanica-v1-2.jpg",
+      "generated": "D:\\BOOMART-ENTREGAS\\macetas-fotos-20261102\\assets\\products\\maceta-pikachu-botanica-v1-2.jpg",
+      "prompt": null,
+      "status": "visually inspected; ready for local catalog review",
+      "mask": "source-art/macetas/masks/maceta-pikachu-2.png",
+      "method": "local pixel-preserving cutout/composite; approved by owner",
+      "sourceBBox": [
+        307,
+        182,
+        793,
+        1043
+      ]
+    },
+    {
+      "id": "maceta-groot",
+      "index": 1,
+      "source": "assets/products/maceta-groot-hero-v2.webp",
+      "target": "assets/products/maceta-groot-botanica-v1-1.jpg",
+      "generated": "D:\\BOOMART-ENTREGAS\\macetas-fotos-20261102\\assets\\products\\maceta-groot-botanica-v1-1.jpg",
+      "prompt": null,
+      "status": "visually inspected; ready for local catalog review",
+      "mask": "source-art/macetas/masks/maceta-groot-1.png",
+      "method": "local pixel-preserving cutout/composite; approved by owner",
+      "sourceBBox": [
+        238,
+        130,
+        965,
+        1241
+      ]
+    },
+    {
+      "id": "maceta-groot",
+      "index": 2,
+      "source": "assets/products/maceta-groot.jpg",
+      "target": "assets/products/maceta-groot-botanica-v1-2.jpg",
+      "generated": "D:\\BOOMART-ENTREGAS\\macetas-fotos-20261102\\assets\\products\\maceta-groot-botanica-v1-2.jpg",
+      "prompt": null,
+      "status": "visually inspected; ready for local catalog review",
+      "mask": "source-art/macetas/masks/maceta-groot-2.png",
+      "method": "local pixel-preserving cutout/composite; approved by owner",
+      "sourceBBox": [
+        117,
+        114,
+        1030,
+        1513
+      ]
+    },
+    {
+      "id": "maceta-baby-groot",
+      "index": 1,
+      "source": "assets/products/maceta-baby-groot-hero-v2.webp",
+      "target": "assets/products/maceta-baby-groot-botanica-v1-1.jpg",
+      "generated": "D:\\BOOMART-ENTREGAS\\macetas-fotos-20261102\\assets\\products\\maceta-baby-groot-botanica-v1-1.jpg",
+      "prompt": null,
+      "status": "visually inspected; ready for local catalog review",
+      "mask": "source-art/macetas/masks/maceta-baby-groot-1.png",
+      "method": "local pixel-preserving cutout/composite; approved by owner",
+      "sourceBBox": [
+        345,
+        129,
+        855,
+        1229
+      ]
+    },
+    {
+      "id": "maceta-baby-groot",
+      "index": 2,
+      "source": "assets/products/maceta-baby-groot.jpg",
+      "target": "assets/products/maceta-baby-groot-botanica-v1-2.jpg",
+      "generated": "D:\\BOOMART-ENTREGAS\\macetas-fotos-20261102\\assets\\products\\maceta-baby-groot-botanica-v1-2.jpg",
+      "prompt": null,
+      "status": "visually inspected; ready for local catalog review",
+      "mask": "source-art/macetas/masks/maceta-baby-groot-2.png",
+      "method": "local pixel-preserving cutout/composite; approved by owner",
+      "sourceBBox": [
+        144,
+        103,
+        794,
+        1529
+      ]
+    },
+    {
+      "id": "maceta-dedo-medio",
+      "index": 1,
+      "source": "assets/products/maceta-dedo-medio-hero-v2.png",
+      "target": "assets/products/maceta-dedo-medio-botanica-v1-1.jpg",
+      "generated": "C:\\Users\\osore\\.codex\\generated_images\\01a195d2-e8b0-7451-8144-c2fb9fbc6e20\\exec-734d70ed-6035-42ce-9a23-adf53a7f239d.png",
+      "prompt": "Use case: precise-object-edit. Image 1 is the EDIT TARGET. Image 2 is ONLY a background, daylight and oak-surface reference. Do not copy the grey pot or plant from Image 2. Preserve The exact small off-white rough-textured smiling seated planter, two little feet and two raised arms showing middle fingers. Keep each hand shape, two black round eyes and curved black smile, and original green succulent growing out of its open top. No extra limbs or fingers. Replace only the surroundings, remove any graphic overlays outside the product, and correct lighting naturally without altering the product. A believable REAL product photograph in an elegant, quiet, lived-in contemporary home, with understated Scandinavian botanical styling. A flat matte pale natural oak tabletop with subtle real wood grain, a softly textured warm off-white ivory plaster wall behind it. At the extreme far background edge only, a very small softly out-of-focus hint of green foliage; no other planter, no props beside the product. Soft broad natural window daylight from the left, neutral accurate white balance, gentle real contact shadows, airy but not overexposed. No dark backdrop, no hard theatrical light, no CGI/render look, no stylized background, no colored lighting, no patterns or graphic overlays, no text, no logos. Retain the photographed 3D printed plastic surface and actual layer/roughness details; do not turn it into smooth porcelain, ceramic, resin, stone or real wood. Keep the exact original colors, geometry and all distinctive details of the product and any plant that is already inside it. Do not add or remove a plant from the product. Portrait 4:5, complete product and all plant tips visible, prominent at approximately 78-82% frame height, balanced comfortable margins, no excessive empty space above.",
+      "status": "visually inspected; ready for local catalog review"
+    },
+    {
+      "id": "maceta-dedo-medio",
+      "index": 2,
+      "source": "assets/products/maceta-dedo-medio.jpg",
+      "target": "assets/products/maceta-dedo-medio-botanica-v1-2.jpg",
+      "generated": "C:\\Users\\osore\\.codex\\generated_images\\01a195d2-e8b0-7451-8144-c2fb9fbc6e20\\exec-8b9abc47-72eb-47de-a67f-b4ff7c0ccfe3.png",
+      "prompt": "Use case: precise-object-edit. Image 1 is the EDIT TARGET. Image 2 ONLY references backdrop, daylight, colors of the surroundings and pale oak surface. Do NOT copy its pot/plant. Preserve The exact small off-white rough-textured smiling seated planter, two little feet and two raised arms showing middle fingers. Keep each hand shape, two black round eyes and curved black smile, and original green succulent growing out of its open top. No extra limbs or fingers. Remove completely the old background, other products, all advertising text, graphic shapes, spaceships, contact details and logos in the surrounding image. The PRODUCT itself and its plants remain unchanged, including its original perspective. This is the secondary gallery photograph: frame slightly closer than the main shot, at 86-88% frame height, but show the whole product, plant tips and base with safe margins, no cropping or new camera angles. A believable REAL product photograph in an elegant, quiet, lived-in contemporary home, with understated Scandinavian botanical styling. A flat matte pale natural oak tabletop with subtle real wood grain, a softly textured warm off-white ivory plaster wall behind it. At the extreme far background edge only, a very small softly out-of-focus hint of green foliage; no other planter, no props beside the product. Soft broad natural window daylight from the left, neutral accurate white balance, gentle real contact shadows, airy but not overexposed. No dark backdrop, no hard theatrical light, no CGI/render look, no stylized background, no colored lighting, no patterns or graphic overlays, no text, no logos. Retain the photographed 3D printed plastic surface and actual layer/roughness details; do not turn it into smooth porcelain, ceramic, resin, stone or real wood. Keep the exact original colors, geometry and all distinctive details of the product and any plant that is already inside it. Do not add or remove a plant from the product. Portrait 4:5, complete product and all plant tips visible, prominent at approximately 78-82% frame height, balanced comfortable margins, no excessive empty space above.",
+      "status": "visually inspected; ready for local catalog review"
+    },
+    {
+      "id": "maceta-darth-vader",
+      "index": 1,
+      "source": "assets/products/maceta-darth-vader-hero-v2.webp",
+      "target": "assets/products/maceta-darth-vader-botanica-v1-1.jpg",
+      "generated": "D:\\BOOMART-ENTREGAS\\macetas-fotos-20261102\\assets\\products\\maceta-darth-vader-botanica-v1-1.jpg",
+      "prompt": null,
+      "status": "visually inspected; ready for local catalog review",
+      "mask": "source-art/macetas/masks/maceta-darth-vader-1.png",
+      "method": "local pixel-preserving cutout/composite; approved by owner",
+      "sourceBBox": [
+        158,
+        48,
+        1043,
+        1194
+      ]
+    },
+    {
+      "id": "maceta-darth-vader",
+      "index": 2,
+      "source": "assets/products/maceta-darth-vader.jpg",
+      "target": "assets/products/maceta-darth-vader-botanica-v1-2.jpg",
+      "generated": "D:\\BOOMART-ENTREGAS\\macetas-fotos-20261102\\assets\\products\\maceta-darth-vader-botanica-v1-2.jpg",
+      "prompt": null,
+      "status": "visually inspected; ready for local catalog review",
+      "mask": "source-art/macetas/masks/maceta-darth-vader-2.png",
+      "method": "local pixel-preserving cutout/composite; approved by owner",
+      "sourceBBox": [
+        96,
+        125,
+        1111,
+        1441
+      ]
+    },
+    {
+      "id": "maceta-david",
+      "index": 1,
+      "source": "assets/products/maceta-david-hero-v2.png",
+      "target": "assets/products/maceta-david-botanica-v1-1.jpg",
+      "generated": "C:\\Users\\osore\\.codex\\generated_images\\01a195d2-e8b0-7451-8144-c2fb9fbc6e20\\exec-14c7dcff-e759-4b0d-80f8-4c0bf38b4ea9.png",
+      "prompt": "Use case: precise-object-edit. Image 1 is the EDIT TARGET. Image 2 is ONLY a background, daylight and oak-surface reference. Do not copy the grey pot or plant from Image 2. Preserve The exact light grey speckled head-and-neck David bust planter on its circular base, same sculpted face looking left, curly hair, neck proportions and the original succulent with three tall stems. Preserve 3D print speckles and layers, not real marble. Replace only the surroundings, remove any graphic overlays outside the product, and correct lighting naturally without altering the product. A believable REAL product photograph in an elegant, quiet, lived-in contemporary home, with understated Scandinavian botanical styling. A flat matte pale natural oak tabletop with subtle real wood grain, a softly textured warm off-white ivory plaster wall behind it. At the extreme far background edge only, a very small softly out-of-focus hint of green foliage; no other planter, no props beside the product. Soft broad natural window daylight from the left, neutral accurate white balance, gentle real contact shadows, airy but not overexposed. No dark backdrop, no hard theatrical light, no CGI/render look, no stylized background, no colored lighting, no patterns or graphic overlays, no text, no logos. Retain the photographed 3D printed plastic surface and actual layer/roughness details; do not turn it into smooth porcelain, ceramic, resin, stone or real wood. Keep the exact original colors, geometry and all distinctive details of the product and any plant that is already inside it. Do not add or remove a plant from the product. Portrait 4:5, complete product and all plant tips visible, prominent at approximately 78-82% frame height, balanced comfortable margins, no excessive empty space above.",
+      "status": "visually inspected; ready for local catalog review"
+    },
+    {
+      "id": "maceta-david",
+      "index": 2,
+      "source": "assets/products/maceta-david.jpg",
+      "target": "assets/products/maceta-david-botanica-v1-2.jpg",
+      "generated": "C:\\Users\\osore\\.codex\\generated_images\\01a195d2-e8b0-7451-8144-c2fb9fbc6e20\\exec-33c0c355-dd82-4b83-887f-195d54407e6e.png",
+      "prompt": "Use case: precise-object-edit. Image 1 is the EDIT TARGET. Image 2 ONLY references backdrop, daylight, colors of the surroundings and pale oak surface. Do NOT copy its pot/plant. Preserve The exact light grey speckled head-and-neck David bust planter on its circular base, same sculpted face looking left, curly hair, neck proportions and the original succulent with three tall stems. Preserve 3D print speckles and layers, not real marble. Remove completely the old background, other products, all advertising text, graphic shapes, contact details and logos in the surrounding image. The PRODUCT itself and its plants remain unchanged, including its original perspective. This is the secondary gallery photograph: frame slightly closer than the main shot, at 86-88% frame height, but show the whole product, plant tips and base with safe margins, no cropping or new camera angles. A believable REAL product photograph in an elegant, quiet, lived-in contemporary home, with understated Scandinavian botanical styling. A flat matte pale natural oak tabletop with subtle real wood grain, a softly textured warm off-white ivory plaster wall behind it. At the extreme far background edge only, a very small softly out-of-focus hint of green foliage; no other planter, no props beside the product. Soft broad natural window daylight from the left, neutral accurate white balance, gentle real contact shadows, airy but not overexposed. No dark backdrop, no hard theatrical light, no CGI/render look, no stylized background, no colored lighting, no patterns or graphic overlays, no text, no logos. Retain the photographed 3D printed plastic surface and actual layer/roughness details; do not turn it into smooth porcelain, ceramic, resin, stone or real wood. Keep the exact original colors, geometry and all distinctive details of the product and any plant that is already inside it. Do not add or remove a plant from the product. Portrait 4:5, complete product and all plant tips visible, prominent at approximately 78-82% frame height, balanced comfortable margins, no excessive empty space above.",
+      "status": "visually inspected; ready for local catalog review"
+    },
+    {
+      "id": "maceta-minimalista",
+      "index": 1,
+      "source": "assets/products/maceta-minimalista-hero-v2.png",
+      "target": "assets/products/maceta-minimalista-botanica-v1-1.jpg",
+      "generated": "C:\\Users\\osore\\.codex\\generated_images\\01a195d2-e8b0-7451-8144-c2fb9fbc6e20\\exec-acd234a6-0738-4eb1-b7b5-18f127a1c886.png",
+      "prompt": "Use case: precise-object-edit. Input image is the EDIT TARGET. Replace ONLY its surroundings and lighting. Preserve EXACTLY this light grey speckled 3D printed planter: hourglass double-bowl profile, vertical fluting in the upper cylinder and lower base, smooth curved waist and lower bowl, circular matching drainage saucer, and the original green succulent with all stems. Do not simplify or redesign the pot. A believable REAL product photograph in an elegant, quiet, lived-in contemporary home, with understated Scandinavian botanical styling. A flat matte pale natural oak tabletop with subtle real wood grain, a softly textured warm off-white ivory plaster wall behind it. At the extreme far background edge only, a very small softly out-of-focus hint of green foliage; no other planter, no props beside the product. Soft broad natural window daylight from the left, neutral accurate white balance, gentle real contact shadows, airy but not overexposed. No dark backdrop, no hard theatrical light, no CGI/render look, no stylized background, no colored lighting, no patterns or graphic overlays, no text, no logos. Retain the photographed 3D printed plastic surface and actual layer/roughness details; do not turn it into smooth porcelain, ceramic, resin, stone or real wood. Keep the exact original colors, geometry and all distinctive details of the product and any plant that is already inside it. Do not add or remove a plant from the product. Portrait 4:5, complete product and all plant tips visible, prominent at approximately 78-82% frame height, balanced comfortable margins, no excessive empty space above.",
+      "status": "visually inspected; ready for local catalog review"
+    },
+    {
+      "id": "maceta-minimalista",
+      "index": 2,
+      "source": "assets/products/maceta-minimalista.jpg",
+      "target": "assets/products/maceta-minimalista-botanica-v1-2.jpg",
+      "generated": "C:\\Users\\osore\\.codex\\generated_images\\01a195d2-e8b0-7451-8144-c2fb9fbc6e20\\exec-7f93aebd-57bf-4675-8bfb-dad815c22414.png",
+      "prompt": "Use case: precise-object-edit. Image 1 is the EDIT TARGET. Image 2 ONLY references backdrop, daylight, colors of the surroundings and pale oak surface. Do NOT copy its pot/plant. Preserve The exact light grey speckled hourglass planter with upper cylindrical vertical fluting, smoothly curved waist, lower fluted base and matching circular drainage saucer. Keep the original green succulent with tall stems and all individual details. Remove completely the old background, other products, all advertising text, graphic shapes, contact details and logos in the surrounding image. The PRODUCT itself and its plants remain unchanged, including its original perspective. This is the secondary gallery photograph: frame slightly closer than the main shot, at 86-88% frame height, but show the whole product, plant tips and base with safe margins, no cropping or new camera angles. A believable REAL product photograph in an elegant, quiet, lived-in contemporary home, with understated Scandinavian botanical styling. A flat matte pale natural oak tabletop with subtle real wood grain, a softly textured warm off-white ivory plaster wall behind it. At the extreme far background edge only, a very small softly out-of-focus hint of green foliage; no other planter, no props beside the product. Soft broad natural window daylight from the left, neutral accurate white balance, gentle real contact shadows, airy but not overexposed. No dark backdrop, no hard theatrical light, no CGI/render look, no stylized background, no colored lighting, no patterns or graphic overlays, no text, no logos. Retain the photographed 3D printed plastic surface and actual layer/roughness details; do not turn it into smooth porcelain, ceramic, resin, stone or real wood. Keep the exact original colors, geometry and all distinctive details of the product and any plant that is already inside it. Do not add or remove a plant from the product. Portrait 4:5, complete product and all plant tips visible, prominent at approximately 78-82% frame height, balanced comfortable margins, no excessive empty space above.",
+      "status": "visually inspected; ready for local catalog review"
+    },
+    {
+      "id": "maceta-palmera",
+      "index": 1,
+      "source": "assets/products/maceta-palmera-hero-v2.png",
+      "target": "assets/products/maceta-palmera-botanica-v1-1.jpg",
+      "generated": "C:\\Users\\osore\\.codex\\generated_images\\01a195d2-e8b0-7451-8144-c2fb9fbc6e20\\exec-a2dad750-feb2-48db-a9fd-b8e98f3adce3.png",
+      "prompt": "Use case: precise-object-edit. Image 1 is the EDIT TARGET. Image 2 is ONLY a background, daylight and oak-surface reference. Do not copy the grey pot or plant from Image 2. Preserve The exact black cylindrical planter with intricate raised palm-leaf pattern and the horizontal separation line around the lower part. Keep the same white decorative pebbles and original green/pink broad scalloped succulent. Preserve printed texture and every relief rather than simplifying it. Replace only the surroundings, remove any graphic overlays outside the product, and correct lighting naturally without altering the product. A believable REAL product photograph in an elegant, quiet, lived-in contemporary home, with understated Scandinavian botanical styling. A flat matte pale natural oak tabletop with subtle real wood grain, a softly textured warm off-white ivory plaster wall behind it. At the extreme far background edge only, a very small softly out-of-focus hint of green foliage; no other planter, no props beside the product. Soft broad natural window daylight from the left, neutral accurate white balance, gentle real contact shadows, airy but not overexposed. No dark backdrop, no hard theatrical light, no CGI/render look, no stylized background, no colored lighting, no patterns or graphic overlays, no text, no logos. Retain the photographed 3D printed plastic surface and actual layer/roughness details; do not turn it into smooth porcelain, ceramic, resin, stone or real wood. Keep the exact original colors, geometry and all distinctive details of the product and any plant that is already inside it. Do not add or remove a plant from the product. Portrait 4:5, complete product and all plant tips visible, prominent at approximately 78-82% frame height, balanced comfortable margins, no excessive empty space above.",
+      "status": "visually inspected; ready for local catalog review"
+    },
+    {
+      "id": "maceta-palmera",
+      "index": 2,
+      "source": "assets/products/maceta-palmera.jpg",
+      "target": "assets/products/maceta-palmera-botanica-v1-2.jpg",
+      "generated": "C:\\Users\\osore\\.codex\\generated_images\\01a195d2-e8b0-7451-8144-c2fb9fbc6e20\\exec-d39af3c2-e0da-4044-9979-7c268120456e.png",
+      "prompt": "Use case: precise-object-edit. Image 1 is the EDIT TARGET. Image 2 ONLY references backdrop, daylight, colors of the surroundings and pale oak surface. Do NOT copy its pot/plant. Preserve The exact black cylindrical planter with intricate raised palm-leaf pattern and the horizontal separation line around the lower part. Keep the same white decorative pebbles and original green/pink broad scalloped succulent. Preserve printed texture and every relief rather than simplifying it. Remove completely the old background, other products, all advertising text, graphic shapes, contact details and logos in the surrounding image. The PRODUCT itself and its plants remain unchanged, including its original perspective. This is the secondary gallery photograph: frame slightly closer than the main shot, at 86-88% frame height, but show the whole product, plant tips and base with safe margins, no cropping or new camera angles. A believable REAL product photograph in an elegant, quiet, lived-in contemporary home, with understated Scandinavian botanical styling. A flat matte pale natural oak tabletop with subtle real wood grain, a softly textured warm off-white ivory plaster wall behind it. At the extreme far background edge only, a very small softly out-of-focus hint of green foliage; no other planter, no props beside the product. Soft broad natural window daylight from the left, neutral accurate white balance, gentle real contact shadows, airy but not overexposed. No dark backdrop, no hard theatrical light, no CGI/render look, no stylized background, no colored lighting, no patterns or graphic overlays, no text, no logos. Retain the photographed 3D printed plastic surface and actual layer/roughness details; do not turn it into smooth porcelain, ceramic, resin, stone or real wood. Keep the exact original colors, geometry and all distinctive details of the product and any plant that is already inside it. Do not add or remove a plant from the product. Portrait 4:5, complete product and all plant tips visible, prominent at approximately 78-82% frame height, balanced comfortable margins, no excessive empty space above.",
+      "status": "visually inspected; ready for local catalog review"
+    }
+  ],
+  "localConsent": "Adrian: Si, usa recorte y composicion local. 2026-11-02",
+  "backgroundPlate": "source-art/macetas/fondo-botanico-v1.png"
+}
