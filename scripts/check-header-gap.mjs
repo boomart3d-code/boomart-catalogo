@@ -33,14 +33,17 @@ for (const w of [1366, 390]) {
   for (const u of pages) {
     try { await page.goto(base + u, { waitUntil: "load", timeout: 20000 }); } catch { continue; }
     const r = await page.evaluate(async () => {
-      const h = document.querySelector(".site-header");
+      const legacy = document.querySelector(".site-header");
+      // V2 usa quick-nav como cabecera única y oculta la cabecera anterior.
+      const h = legacy && getComputedStyle(legacy).display !== "none"
+        ? legacy : document.querySelector(".quick-nav");
       if (!h) return null;
       window.scrollTo(0, 700);
       await new Promise((r) => setTimeout(r, 150));
       if (!["sticky", "fixed"].includes(getComputedStyle(h).position)) return null; /* en celular la cabecera se desplaza con la pagina: no aplica */
       const q = document.querySelector(".quick-nav");
       const qb = q ? q.getBoundingClientRect() : null;
-      const expected = qb ? qb.bottom : 0;
+      const expected = qb && h !== q ? qb.bottom : 0;
       return { top: Math.round(h.getBoundingClientRect().top), expected: Math.round(expected), tall: document.documentElement.scrollHeight > 900 };
     });
     if (!r || !r.tall) continue;

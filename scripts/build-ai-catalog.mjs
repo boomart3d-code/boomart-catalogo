@@ -1896,6 +1896,9 @@ async function writeCampaignLanding(products, cfg) {
   ];
   for (const [re, rep] of metaSet) html = replaceOnce(html, re, rep, re.source.slice(0, 40));
 
+  // V2 filtra la colección y dibuja su cabecera en app.js; no tiene el carrete antiguo.
+  // Las campañas conservan metadatos, categoría forzada y catálogo, sin reponer ese diseño.
+  if (!html.includes('id="v2HeroImage"')) {
   // Portada de campaña (mismo diseño): H1 con las palabras que busca la gente.
   html = replaceOnce(html, /<h1 class="hero-eyebrow" id="heroTitle">[^<]*<\/h1>/,
     `<h1 class="hero-eyebrow" id="heroTitle">${a(cfg.h1)}</h1>`, "H1 de la portada");
@@ -1923,6 +1926,7 @@ async function writeCampaignLanding(products, cfg) {
     `<div class="hero-media hero-reel" id="heroReel" aria-label="${a(cfg.reelLabel)}" aria-roledescription="carrusel">${eol}${slides}${eol}` +
       `${pad}<div class="hero-reel-controls" role="group" aria-label="Elegir fotografía">${eol}${dots}${eol}${pad}</div>${eol}        </div>${eol}      </section>`,
     "carrete de la portada");
+  }
 
   // Lista de la campaña para buscadores e IA (las tarjetas las dibuja app.js).
   const itemList = {

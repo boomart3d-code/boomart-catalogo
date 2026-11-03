@@ -42,5 +42,7 @@ test('portada publicada incluye los helpers antes de app y fotos adaptables desd
   const at=name=>scripts.findIndex(src=>src.startsWith('src/'+name));
   assert.ok(at('image-sources.js')>=0 && at('image-sources.js')<at('responsive-images.js'));
   assert.ok(at('responsive-images.js')<at('app.js'));
-  assert.match(html, /class="hero-reel-photo"[^>]+srcset=/);
+  assert.match(html, /id="v2HeroImage"[^>]+srcset=/);
+  assert.match(html, /id="v2HeroProduct"[^>]+data-open="busto-de-atena-saint-seiya"/);
+  assert.equal(responsiveHtml(html),html);
 });

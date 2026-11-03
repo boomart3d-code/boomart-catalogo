@@ -1,6 +1,6 @@
 # BoomArt V2 — vista previa local
 
-Estado: implementación local para revisión de Adrián. Sin push ni despliegue. URL: http://localhost:4183/.
+Estado: diseño aprobado por Adrián y publicación autorizada el 2 de noviembre de 2026. Las secciones siguientes conservan el historial de revisión local. Destino: https://boomart.pe/. Vista previa conservada: http://localhost:4183/.
 
 ## Resultado
 
@@ -69,3 +69,16 @@ Sin publicación, push, cambios de precios ni escritura en Studio. No se incluy�
 Las seis imágenes de portada son botones con etiqueta accesible y apertura de la ficha existente mediante `data-open`. La selección actualiza tanto la imagen como su ID de producto: Atena, Santa, escudo de Zelda, Mandaloriano, Picoro y Fawkes. El botón «Explorar» conserva el acceso a la colección. El carrusel se pausa al enfocar/seleccionar la imagen para mantener el producto elegido. Se conservaron el encuadre y los calados.
 
 Verificación: las seis imágenes se pulsaron en el navegador y abrieron el producto esperado, comprobando título, modal abierto y parámetro de URL; 6/6 correctas. Enter sobre la imagen de Fawkes también abre su ficha. Sintaxis JS y `git diff --check` correctos. Evidencias: `D:/BOOMART-ENTREGAS/auditoria-redisenio-20261102/verificacion-enlaces-portada.json` y `ficha-desde-portada-fawkes.png`. Sin pedidos ni publicación. La vista previa queda con la ficha de Fawkes abierta para revisión.
+
+## Preparación de publicación autorizada
+
+- Corrección solicitada por Adrián: texto de redes y nombre de marca del pie en crema `#f4f0e8` sobre negro `#090909`; párrafos y enlaces secundarios claros. Verificado en navegador.
+- Botones «Explorar» con fondo oscuro, borde fino, forma redondeada y flecha en un círculo con el acento de cada colección. Comprobado a 320 px sin desbordamiento y manteniendo el acceso a la colección.
+- Generador de campañas adaptado a V2: conserva metadatos, categoría forzada y colección, sin intentar reconstruir el carrusel antiguo. `/Halloween/` y `/saintseiya/` comprobados con 32 y 39 piezas.
+- Imágenes adaptables regeneradas antes del catálogo: 9 derivados nuevos; manifiesto y versión de caché actualizados. La prueba de portada verifica ahora el nuevo botón y su imagen adaptable, incluida la idempotencia del transformador.
+- 10/10 pruebas de imágenes y fechas correctas. `check-mobile-overflow.mjs`: 111 páginas × 320/360/390/414, con problema 0. `check-header-gap.mjs`: 16 comprobaciones, con hueco 0; el verificador reconoce la cabecera visible de V2 en lugar de medir la antigua oculta.
+- Comprobación de recursos: 114 páginas, 3822 referencias locales, 0 faltantes. Sin cambios en `data/products.json` ni `data/reviews.json`.
+- Enlaces de categorías del pie dirigidos a la vista interactiva y Zelda incluido. Páginas indexables de producto/categoría conservadas y regeneradas con sus fuentes originales.
+- Punto de retorno previo al lanzamiento: `460413860231c57a899ecf176925fd78bd21e80e`, tag local `codex/backup-web-20261102-pre-v2`. El checkout canónico con cambios ajenos permanece intacto.
+
+El resultado del despliegue y las verificaciones públicas se registrarán en `D:/BOOMART-ENTREGAS/auditoria-redisenio-20261102/PUBLICACION-REDISENO-V2.md` y en el relevo de equipo.

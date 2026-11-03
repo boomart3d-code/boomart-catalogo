@@ -1,5 +1,8 @@
 /* BoomArt V2 · propuesta móvil: marfil, carbón y mundos con carácter. */
 body.design-v2 {--v2-ink:#171512;--v2-paper:#f4f0e8;--v2-line:#d9d1c4;background:var(--v2-paper);color:var(--v2-ink);}
+.design-v2 .social-section,.design-v2 .footer {color:#f4f0e8;}
+.design-v2 .social-section h2,.design-v2 .footer-brand strong,.design-v2 .footer .social-follow-title {color:#f4f0e8;}
+.design-v2 .social-section p,.design-v2 .footer p,.design-v2 .footer-links a {color:#d8cfc3;}
 .design-v2 .site-header,.design-v2 .collections,.design-v2 #ofertas,.design-v2 [aria-label="Por qué comprar en BoomArt"],.design-v2 #quickTopBtn {display:none!important;}
 .design-v2 main {padding-top:0!important;max-width:none;}
 .design-v2 .quick-nav {height:64px;min-height:64px;top:0;padding:0 clamp(16px,4vw,64px);border-bottom:1px solid #39352f;background:#11100f;display:flex;align-items:center;justify-content:space-between;}
@@ -41,8 +44,15 @@ body.design-v2 {--v2-ink:#171512;--v2-paper:#f4f0e8;--v2-line:#d9d1c4;background
 .v2-hero h1 em {font-style:normal;color:#dfc389;}
 .v2-hero[data-tone="christmas"] h1 em {color:#962c25;}
 .v2-hero-copy>p:not(.v2-kicker) {font-size:1rem;line-height:1.6;max-width:330px;color:inherit;opacity:.8;}
-.v2-cta {display:inline-flex;align-items:center;justify-content:space-between;gap:36px;min-height:48px;background:#f4f0e8;color:#171512;padding:13px 20px;border:0;font-weight:800;margin-top:12px;cursor:pointer;}
-.v2-cta span {color:#cf1735;font-size:1.35rem;}
+.v2-cta {--cta-accent:#dfc389;--cta-icon:#201b15;display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:54px;background:linear-gradient(135deg,#302b26f5,#171615f5);color:#f4f0e8;padding:7px 8px 7px 23px;border:1px solid var(--cta-accent);border-radius:999px;font:700 .76rem/1.2 Inter,sans-serif;letter-spacing:.045em;text-transform:uppercase;margin-top:16px;cursor:pointer;box-shadow:0 8px 24px #0002,inset 0 1px 0 #fff1;transition:box-shadow .2s ease,transform .2s ease;}
+.v2-cta span {display:grid;place-items:center;flex:none;width:36px;height:36px;border-radius:50%;background:var(--cta-accent);color:var(--cta-icon);font-size:1.3rem;line-height:1;letter-spacing:0;}
+.v2-hero[data-tone="cosplay"] .v2-cta {--cta-accent:#d9bbb0;}
+.v2-hero[data-tone="gaming"] .v2-cta {--cta-accent:#afe4d4;}
+.v2-hero[data-tone="magic"] .v2-cta {--cta-accent:#efc088;}
+.v2-hero[data-tone="christmas"] .v2-cta {--cta-accent:#ad3b38;--cta-icon:#fff5e8;}
+.v2-cta:focus-visible {outline:2px solid var(--cta-accent);outline-offset:4px;}
+@media(hover:hover) {.v2-cta:hover {transform:translateY(-2px);box-shadow:0 12px 28px #0004,inset 0 1px 0 #fff2;}}
+.v2-cta:active {transform:translateY(0);}
 .v2-hero-art {position:relative;min-width:0;display:flex;align-items:center;justify-content:center;}
 .v2-hero-art img {position:relative;z-index:1;width:100%;height:450px;object-fit:contain;filter:drop-shadow(0 22px 28px #0006);transition:opacity .25s ease;}
 .v2-hero-product {position:relative;z-index:1;display:flex;align-items:center;justify-content:center;max-width:100%;padding:0;border:0;background:transparent;cursor:pointer;border-radius:4px;}
@@ -171,7 +181,7 @@ body.design-v2 {--v2-ink:#171512;--v2-paper:#f4f0e8;--v2-line:#d9d1c4;background
  .v2-hero .v2-kicker {margin:0 0 16px;font-size:.6rem;}
  .v2-hero h1 {font-size:3.65rem;line-height:.9;margin:0 0 12px;}
  .v2-hero-copy>p:not(.v2-kicker) {font-size:.78rem;line-height:1.5;max-width:260px;margin:0;}
- .v2-cta {font-size:.75rem;min-height:44px;padding:10px 15px;gap:24px;margin-top:18px;}
+ .v2-cta {font-size:.68rem;min-height:50px;padding:6px 7px 6px 18px;gap:22px;margin-top:18px;}
  .v2-hero-art {width:100%;height:265px;flex:1;margin:16px 0 12px;min-height:245px;}
  .v2-hero-art img {height:265px;max-width:100%;}
  .v2-orbit {inset:15px 10px;}
@@ -220,7 +230,7 @@ body.design-v2 {--v2-ink:#171512;--v2-paper:#f4f0e8;--v2-line:#d9d1c4;background
  .design-v2 .product-modal .modal-image-wrap {aspect-ratio:4/5;max-height:60dvh;}
  .design-v2 .modal-share .button {min-height:44px;}
 }
-@media(prefers-reduced-motion:reduce){.v2-universe img,.v2-hero-art img{transition:none;}}
+@media(prefers-reduced-motion:reduce){.v2-universe img,.v2-hero-art img,.v2-cta{transition:none;}.v2-cta:hover{transform:none;}}
 
 .design-v2 .card-media:hover .photo-alternate:not(.is-ready),.design-v2 .card-media:focus-visible .photo-alternate:not(.is-ready) {opacity:0;}
 .design-v2 .card-media:hover:has(.photo-alternate:not(.is-ready)) .photo-primary,.design-v2 .card-media:focus-visible:has(.photo-alternate:not(.is-ready)) .photo-primary {opacity:1;}

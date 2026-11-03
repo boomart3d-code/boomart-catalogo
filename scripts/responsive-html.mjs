@@ -15,7 +15,7 @@ export function responsiveHtml(html) {
     const source = tag.match(/\sdata-image-source="([^"]+)"/)?.[1] || tag.match(/\ssrc="([^"]+)"/)?.[1];
     if (!source) return tag;
     const kind = tag.match(/\sdata-image-kind="([^"]+)"/)?.[1] || (/id="ppMain"/.test(tag) ? 'main'
-      : /hero-reel-photo/.test(tag) ? 'hero'
+      : /hero-reel-photo|id="v2HeroImage"/.test(tag) ? 'hero'
       : /\/hero\/tile-/.test(source) ? 'tile'
       : /\bwidth="(?:52|62)"/.test(tag) ? 'thumb'
       : /\bwidth="(?:128|160|180)"/.test(tag) ? 'related' : 'card');

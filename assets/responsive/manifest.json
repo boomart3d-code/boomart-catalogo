@@ -8621,6 +8621,25 @@
       ]
     ]
   },
+  "assets/hero/escudo-zelda-cutout-v2.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/hero/escudo-zelda-cutout-v2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/hero/escudo-zelda-cutout-v2-4a2df3ba7916-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/hero/escudo-zelda-cutout-v2-4a2df3ba7916-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/hero/escudo-zelda-cutout-v2-4a2df3ba7916-720w.webp"
+      ]
+    ]
+  },
   "assets/hero/fawkes.webp": {
     "w": 418,
     "h": 1000,
@@ -8746,6 +8765,25 @@
       ]
     ]
   },
+  "assets/hero/santa-cutout-v2.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/hero/santa-cutout-v2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/hero/santa-cutout-v2-db1769b4f220-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/hero/santa-cutout-v2-db1769b4f220-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/hero/santa-cutout-v2-db1769b4f220-720w.webp"
+      ]
+    ]
+  },
   "assets/hero/santuario.webp": {
     "w": 1000,
     "h": 641,
@@ -8777,6 +8815,25 @@
       [
         360,
         "assets/responsive/hero/soporte-mando-picoro-1826b9713ab7-360w.webp"
+      ]
+    ]
+  },
+  "assets/hero/soporte-picoro-cutout-v3.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/hero/soporte-picoro-cutout-v3.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/hero/soporte-picoro-cutout-v3-c8ea12799ec3-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/hero/soporte-picoro-cutout-v3-c8ea12799ec3-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/hero/soporte-picoro-cutout-v3-c8ea12799ec3-720w.webp"
       ]
     ]
   },
