@@ -7,277 +7,277 @@
     "bytes": 128868
   },
   "templo-aries": {
-    "source": "assets/products/templo-aries-hero-v2.png",
-    "hash": "9a24539ccd7cf163",
-    "width": 900,
+    "source": "assets/products/templo-aries-natural-v1.jpg",
+    "hash": "97c284f2972c65ae",
+    "width": 960,
     "height": 1200,
-    "bytes": 185056
+    "bytes": 135497
   },
   "templo-tauro": {
-    "source": "assets/products/templo-tauro-hero.jpg",
-    "hash": "0b6b5873d53a7d02",
-    "width": 1200,
-    "height": 1097,
-    "bytes": 223242
+    "source": "assets/products/templo-tauro-natural-v1.jpg",
+    "hash": "aef85e5b5be5f264",
+    "width": 960,
+    "height": 1200,
+    "bytes": 143773
   },
   "templo-geminis": {
-    "source": "assets/products/templo-geminis-hero.jpg",
-    "hash": "722bbb6046ed6c9f",
-    "width": 1200,
-    "height": 1097,
-    "bytes": 216440
+    "source": "assets/products/templo-geminis-natural-v1.jpg",
+    "hash": "ae82901abf0687bd",
+    "width": 960,
+    "height": 1200,
+    "bytes": 140941
   },
   "templo-cancer": {
-    "source": "assets/products/templo-cancer-hero.jpg",
-    "hash": "2f84b3bcbb0a941c",
-    "width": 1200,
-    "height": 1097,
-    "bytes": 242211
+    "source": "assets/products/templo-cancer-natural-v1.jpg",
+    "hash": "ab06c0445a7c9845",
+    "width": 960,
+    "height": 1200,
+    "bytes": 181048
   },
   "templo-leo": {
-    "source": "assets/products/templo-leo-hero.jpg",
-    "hash": "bf071790f80057de",
-    "width": 1200,
-    "height": 1097,
-    "bytes": 244861
+    "source": "assets/products/templo-leo-natural-v1.jpg",
+    "hash": "058dc281df12950a",
+    "width": 960,
+    "height": 1200,
+    "bytes": 150149
   },
   "templo-virgo": {
-    "source": "assets/products/templo-virgo-hero.jpg",
-    "hash": "63d5bfc643bef77f",
-    "width": 1200,
-    "height": 1097,
-    "bytes": 237444
+    "source": "assets/products/templo-virgo-natural-v1.jpg",
+    "hash": "9b6b17e30ac61ecb",
+    "width": 960,
+    "height": 1200,
+    "bytes": 160856
   },
   "templo-libra": {
-    "source": "assets/products/templo-libra-hero.jpg",
-    "hash": "9861e6f78bed50bb",
-    "width": 1200,
-    "height": 1097,
-    "bytes": 238393
+    "source": "assets/products/templo-libra-natural-v1.jpg",
+    "hash": "5142cc8d4471b8cc",
+    "width": 960,
+    "height": 1200,
+    "bytes": 163539
   },
   "templo-escorpio": {
-    "source": "assets/products/templo-escorpio-hero.jpg",
-    "hash": "b040bdb8597ceb0c",
-    "width": 1200,
-    "height": 1097,
-    "bytes": 235403
+    "source": "assets/products/templo-escorpio-natural-v1.jpg",
+    "hash": "e9c038609946b586",
+    "width": 960,
+    "height": 1200,
+    "bytes": 159210
   },
   "templo-sagitario": {
-    "source": "assets/products/templo-sagitario-hero.jpg",
-    "hash": "8511ba9888afdd80",
-    "width": 1200,
+    "source": "assets/products/templo-sagitario-natural-v1.jpg",
+    "hash": "417528eabc7d9cf2",
+    "width": 960,
     "height": 1200,
-    "bytes": 242714
+    "bytes": 162198
   },
   "templo-capricornio": {
-    "source": "assets/products/templo-capricornio-hero.jpg",
-    "hash": "0cfafd4f922580dd",
+    "source": "assets/products/templo-capricornio-natural-v1.jpg",
+    "hash": "d7a05c85c0e93df5",
     "width": 960,
     "height": 1200,
-    "bytes": 198812
+    "bytes": 136881
   },
   "templo-acuario": {
-    "source": "assets/products/templo-acuario-hero.jpg",
-    "hash": "db10528b895657c0",
+    "source": "assets/products/templo-acuario-natural-v1.jpg",
+    "hash": "79596d0b55cbe8e6",
     "width": 960,
     "height": 1200,
-    "bytes": 198720
+    "bytes": 158008
   },
   "templo-piscis": {
-    "source": "assets/products/templo-piscis-hero.jpg",
-    "hash": "92a61253fdcd3f2f",
+    "source": "assets/products/templo-piscis-natural-v1.jpg",
+    "hash": "ed5f9399925d5276",
     "width": 960,
     "height": 1200,
-    "bytes": 217427
+    "bytes": 165881
   },
   "templo-del-patriarca": {
-    "source": "assets/products/templo-del-patriarca-hero.png",
-    "hash": "0895276917b6640e",
-    "width": 900,
+    "source": "assets/products/templo-del-patriarca-natural-v1.jpg",
+    "hash": "aadf3bb9080623f0",
+    "width": 960,
     "height": 1200,
-    "bytes": 216473
+    "bytes": 176485
   },
   "templo-con-caja-de-pandora-y-pedestal": {
-    "source": "assets/products/templo-con-caja-de-pandora-y-pedestal-hero.jpg",
-    "hash": "8b2e6af9ef12b528",
-    "width": 1200,
-    "height": 900,
-    "bytes": 208528
+    "source": "assets/products/templo-con-caja-de-pandora-y-pedestal-natural-v1.jpg",
+    "hash": "f3a5f498c41d760a",
+    "width": 960,
+    "height": 1200,
+    "bytes": 176076
   },
   "busto-de-atena-saint-seiya": {
-    "source": "assets/products/busto-de-atena-saint-seiya-hero.jpg",
-    "hash": "49022fecdfa158b2",
-    "width": 900,
+    "source": "assets/products/busto-de-atena-saint-seiya-natural-v1.jpg",
+    "hash": "1c9178a4873b19bc",
+    "width": 960,
     "height": 1200,
-    "bytes": 176786
+    "bytes": 130926
   },
   "escultura-de-atena-saint-seiya": {
-    "source": "assets/products/escultura-de-atena-saint-seiya-hero2.jpg",
-    "hash": "ed266331f7707955",
-    "width": 900,
+    "source": "assets/products/escultura-de-atena-saint-seiya-natural-v1.jpg",
+    "hash": "c16424a88a00d529",
+    "width": 960,
     "height": 1200,
-    "bytes": 147760
+    "bytes": 111947
   },
   "torre-del-reloj-saint-seiya": {
-    "source": "assets/products/torre-del-reloj-saint-seiya-hero.jpg",
-    "hash": "96debcb6e6ccda91",
-    "width": 900,
+    "source": "assets/products/torre-del-reloj-saint-seiya-natural-v1.jpg",
+    "hash": "36c1df2be757129a",
+    "width": 960,
     "height": 1200,
-    "bytes": 188228
+    "bytes": 123719
   },
   "set-de-12-templos-mini": {
-    "source": "assets/products/set-de-12-templos-mini-hero.jpg",
-    "hash": "dc314dd722689d8c",
-    "width": 900,
+    "source": "assets/products/set-de-12-templos-mini-natural-v1.jpg",
+    "hash": "f2769a7c548b0d6a",
+    "width": 960,
     "height": 1200,
-    "bytes": 202535
+    "bytes": 157376
   },
   "set-santuario-15-piezas": {
-    "source": "assets/products/set-santuario-15-piezas-hero2.jpg",
-    "hash": "af824dc0fbebc20c",
-    "width": 900,
+    "source": "assets/products/set-santuario-15-piezas-natural-v1.jpg",
+    "hash": "fcf11d57f5a1b591",
+    "width": 960,
     "height": 1200,
-    "bytes": 220921
+    "bytes": 176882
   },
   "set-12-cajas-de-pandora-con-pedestales": {
-    "source": "assets/products/set-12-cajas-de-pandora-con-pedestales-hero.jpg",
-    "hash": "f45d6b331dda8442",
-    "width": 1200,
-    "height": 900,
-    "bytes": 190086
+    "source": "assets/products/set-12-cajas-de-pandora-con-pedestales-natural-v1.jpg",
+    "hash": "12ffb56ce4c70e30",
+    "width": 960,
+    "height": 1200,
+    "bytes": 144733
   },
   "pandora-box-caballeros-dorados": {
-    "source": "assets/products/pandora-box-caballeros-dorados-0.jpg",
-    "hash": "df63748f8dc0bfca",
-    "width": 1130,
+    "source": "assets/products/pandora-box-caballeros-dorados-natural-v1.jpg",
+    "hash": "7f948d3b9f5d68f6",
+    "width": 960,
     "height": 1200,
-    "bytes": 188106
+    "bytes": 170320
   },
   "casco-de-pegaso-saint-seiya": {
-    "source": "assets/products/casco-de-pegaso-saint-seiya-hero.jpg",
-    "hash": "c85197424f76a1c0",
-    "width": 994,
+    "source": "assets/products/casco-de-pegaso-saint-seiya-natural-v1.jpg",
+    "hash": "9abde3e772c43ee1",
+    "width": 960,
     "height": 1200,
-    "bytes": 155424
+    "bytes": 91752
   },
   "tiara-de-pegaso-saint-seiya": {
-    "source": "assets/products/tiara-de-pegaso-saint-seiya-hero.jpg",
-    "hash": "b1f40bfef29a12c8",
-    "width": 900,
+    "source": "assets/products/tiara-de-pegaso-saint-seiya-natural-v1.jpg",
+    "hash": "6b7b35335519206b",
+    "width": 960,
     "height": 1200,
-    "bytes": 162546
+    "bytes": 100915
   },
   "tiara-de-ikki-de-fenix-saint-seiya": {
-    "source": "assets/products/tiara-de-ikki-de-fenix-saint-seiya-hero.jpg",
-    "hash": "b39c0ff4ef640f48",
+    "source": "assets/products/tiara-de-ikki-de-fenix-saint-seiya-natural-v1.jpg",
+    "hash": "1cc93565cdbe73ad",
     "width": 960,
     "height": 1200,
-    "bytes": 55000
+    "bytes": 81885
   },
   "set-12-altares-exhibidor": {
-    "source": "assets/products/set-12-altares-exhibidor-1.jpg",
-    "hash": "bd7f53d2cc04039d",
-    "width": 1200,
-    "height": 900,
-    "bytes": 238020
-  },
-  "altar-exhibidor-aries": {
-    "source": "assets/products/altar-exhibidor-aries-1.jpg",
-    "hash": "a3c973476b7bdc54",
-    "width": 1200,
-    "height": 1200,
-    "bytes": 198652
-  },
-  "altar-exhibidor-tauro": {
-    "source": "assets/products/altar-exhibidor-tauro-1.jpg",
-    "hash": "2d8412d8acc70104",
-    "width": 1200,
-    "height": 1200,
-    "bytes": 203097
-  },
-  "altar-exhibidor-geminis": {
-    "source": "assets/products/altar-exhibidor-geminis-1.jpg",
-    "hash": "5a729723318f8776",
-    "width": 1200,
-    "height": 1200,
-    "bytes": 232014
-  },
-  "altar-exhibidor-cancer": {
-    "source": "assets/products/altar-exhibidor-cancer-1.jpg",
-    "hash": "d5f7e46613e519e5",
-    "width": 1200,
-    "height": 1200,
-    "bytes": 219322
-  },
-  "altar-exhibidor-leo": {
-    "source": "assets/products/altar-exhibidor-leo-1.jpg",
-    "hash": "5233e4ef30b7d6e7",
-    "width": 1200,
-    "height": 1200,
-    "bytes": 200525
-  },
-  "altar-exhibidor-virgo": {
-    "source": "assets/products/altar-exhibidor-virgo-1.jpg",
-    "hash": "9ac8f64ff479056d",
-    "width": 1200,
-    "height": 1200,
-    "bytes": 184818
-  },
-  "altar-exhibidor-libra": {
-    "source": "assets/products/altar-exhibidor-libra-1.jpg",
-    "hash": "9713b460bbc3b90d",
-    "width": 1200,
-    "height": 1200,
-    "bytes": 203425
-  },
-  "altar-exhibidor-escorpio": {
-    "source": "assets/products/altar-exhibidor-escorpio-1.jpg",
-    "hash": "8adaa079f960295d",
-    "width": 1200,
-    "height": 1200,
-    "bytes": 211331
-  },
-  "altar-exhibidor-sagitario": {
-    "source": "assets/products/altar-exhibidor-sagitario-1.jpg",
-    "hash": "97ad81eda9ba93f2",
-    "width": 1200,
-    "height": 1200,
-    "bytes": 222378
-  },
-  "altar-exhibidor-capricornio": {
-    "source": "assets/products/altar-exhibidor-capricornio-1.jpg",
-    "hash": "5fc6c56c8b2f1635",
-    "width": 1200,
-    "height": 1200,
-    "bytes": 202007
-  },
-  "altar-exhibidor-acuario": {
-    "source": "assets/products/altar-exhibidor-acuario-1.jpg",
-    "hash": "5e12f39baa6e1f0c",
-    "width": 1200,
-    "height": 1200,
-    "bytes": 211596
-  },
-  "altar-exhibidor-piscis": {
-    "source": "assets/products/altar-exhibidor-piscis-1.jpg",
-    "hash": "d688fa8a11bc61df",
-    "width": 1200,
-    "height": 1200,
-    "bytes": 215832
-  },
-  "diorama-caballeros-de-bronce": {
-    "source": "assets/products/diorama-caballeros-de-bronce-hero.jpg",
-    "hash": "74c767347ab011cd",
-    "width": 994,
-    "height": 1200,
-    "bytes": 225439
-  },
-  "diorama-de-pegaso": {
-    "source": "assets/products/diorama-de-pegaso-hero.jpg",
-    "hash": "76e4f22940704293",
+    "source": "assets/products/set-12-altares-exhibidor-natural-v1.jpg",
+    "hash": "3f9053e2f6bf2cff",
     "width": 960,
     "height": 1200,
-    "bytes": 216493
+    "bytes": 212361
+  },
+  "altar-exhibidor-aries": {
+    "source": "assets/products/altar-exhibidor-aries-natural-v1.jpg",
+    "hash": "08ac544671eb3c13",
+    "width": 960,
+    "height": 1200,
+    "bytes": 150467
+  },
+  "altar-exhibidor-tauro": {
+    "source": "assets/products/altar-exhibidor-tauro-natural-v1.jpg",
+    "hash": "ccc0da126b22eb68",
+    "width": 960,
+    "height": 1200,
+    "bytes": 160275
+  },
+  "altar-exhibidor-geminis": {
+    "source": "assets/products/altar-exhibidor-geminis-natural-v1.jpg",
+    "hash": "c40c7c206501a0e1",
+    "width": 960,
+    "height": 1200,
+    "bytes": 175151
+  },
+  "altar-exhibidor-cancer": {
+    "source": "assets/products/altar-exhibidor-cancer-natural-v1.jpg",
+    "hash": "cc2b0c52e7f13806",
+    "width": 960,
+    "height": 1200,
+    "bytes": 164032
+  },
+  "altar-exhibidor-leo": {
+    "source": "assets/products/altar-exhibidor-leo-natural-v1.jpg",
+    "hash": "13fda5fe078f4828",
+    "width": 960,
+    "height": 1200,
+    "bytes": 158572
+  },
+  "altar-exhibidor-virgo": {
+    "source": "assets/products/altar-exhibidor-virgo-natural-v1.jpg",
+    "hash": "3dbb91c18b43d7c8",
+    "width": 960,
+    "height": 1200,
+    "bytes": 153667
+  },
+  "altar-exhibidor-libra": {
+    "source": "assets/products/altar-exhibidor-libra-natural-v1.jpg",
+    "hash": "c53eadd115bcb201",
+    "width": 960,
+    "height": 1200,
+    "bytes": 156898
+  },
+  "altar-exhibidor-escorpio": {
+    "source": "assets/products/altar-exhibidor-escorpio-natural-v1.jpg",
+    "hash": "adf875c5f9389e62",
+    "width": 960,
+    "height": 1200,
+    "bytes": 158237
+  },
+  "altar-exhibidor-sagitario": {
+    "source": "assets/products/altar-exhibidor-sagitario-natural-v1.jpg",
+    "hash": "07b60252f2dd666b",
+    "width": 960,
+    "height": 1200,
+    "bytes": 177284
+  },
+  "altar-exhibidor-capricornio": {
+    "source": "assets/products/altar-exhibidor-capricornio-natural-v1.jpg",
+    "hash": "438028f6a036ec67",
+    "width": 960,
+    "height": 1200,
+    "bytes": 144564
+  },
+  "altar-exhibidor-acuario": {
+    "source": "assets/products/altar-exhibidor-acuario-natural-v1.jpg",
+    "hash": "eb4b0a37d59611c4",
+    "width": 960,
+    "height": 1200,
+    "bytes": 141994
+  },
+  "altar-exhibidor-piscis": {
+    "source": "assets/products/altar-exhibidor-piscis-natural-v1.jpg",
+    "hash": "70d357e620f441fc",
+    "width": 960,
+    "height": 1200,
+    "bytes": 162990
+  },
+  "diorama-caballeros-de-bronce": {
+    "source": "assets/products/diorama-caballeros-de-bronce-natural-v1.jpg",
+    "hash": "3e62a2a36a544e3b",
+    "width": 960,
+    "height": 1200,
+    "bytes": 195022
+  },
+  "diorama-de-pegaso": {
+    "source": "assets/products/diorama-de-pegaso-natural-v1.jpg",
+    "hash": "2aad74d542f29cc2",
+    "width": 960,
+    "height": 1200,
+    "bytes": 158039
   },
   "fawkes-fenix-de-dumbledore": {
     "source": "assets/products/fawkes-fenix-de-dumbledore-hero-v2.png",

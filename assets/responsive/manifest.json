@@ -303,6 +303,25 @@
       ]
     ]
   },
+  "assets/products/altar-exhibidor-acuario-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/altar-exhibidor-acuario-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/altar-exhibidor-acuario-natural-v1-d9d96b0ba6b3-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/altar-exhibidor-acuario-natural-v1-d9d96b0ba6b3-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/altar-exhibidor-acuario-natural-v1-d9d96b0ba6b3-720w.webp"
+      ]
+    ]
+  },
   "assets/products/altar-exhibidor-aries-1.webp": {
     "w": 1254,
     "h": 1254,
@@ -361,6 +380,25 @@
       [
         360,
         "assets/responsive/products/altar-exhibidor-aries-3-b575e195e654-360w.webp"
+      ]
+    ]
+  },
+  "assets/products/altar-exhibidor-aries-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/altar-exhibidor-aries-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/altar-exhibidor-aries-natural-v1-42bdf3dd4170-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/altar-exhibidor-aries-natural-v1-42bdf3dd4170-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/altar-exhibidor-aries-natural-v1-42bdf3dd4170-720w.webp"
       ]
     ]
   },
@@ -425,6 +463,25 @@
       ]
     ]
   },
+  "assets/products/altar-exhibidor-cancer-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/altar-exhibidor-cancer-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/altar-exhibidor-cancer-natural-v1-775df9ccb148-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/altar-exhibidor-cancer-natural-v1-775df9ccb148-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/altar-exhibidor-cancer-natural-v1-775df9ccb148-720w.webp"
+      ]
+    ]
+  },
   "assets/products/altar-exhibidor-capricornio-1.webp": {
     "w": 1254,
     "h": 1254,
@@ -486,6 +543,25 @@
       ]
     ]
   },
+  "assets/products/altar-exhibidor-capricornio-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/altar-exhibidor-capricornio-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/altar-exhibidor-capricornio-natural-v1-577aefd8cb86-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/altar-exhibidor-capricornio-natural-v1-577aefd8cb86-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/altar-exhibidor-capricornio-natural-v1-577aefd8cb86-720w.webp"
+      ]
+    ]
+  },
   "assets/products/altar-exhibidor-escorpio-1.webp": {
     "w": 1254,
     "h": 1254,
@@ -540,6 +616,25 @@
       [
         360,
         "assets/responsive/products/altar-exhibidor-escorpio-3-8087ec2a387d-360w.webp"
+      ]
+    ]
+  },
+  "assets/products/altar-exhibidor-escorpio-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/altar-exhibidor-escorpio-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/altar-exhibidor-escorpio-natural-v1-3802a052bf41-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/altar-exhibidor-escorpio-natural-v1-3802a052bf41-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/altar-exhibidor-escorpio-natural-v1-3802a052bf41-720w.webp"
       ]
     ]
   },
@@ -604,6 +699,25 @@
       ]
     ]
   },
+  "assets/products/altar-exhibidor-geminis-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/altar-exhibidor-geminis-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/altar-exhibidor-geminis-natural-v1-bf33e989c04e-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/altar-exhibidor-geminis-natural-v1-bf33e989c04e-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/altar-exhibidor-geminis-natural-v1-bf33e989c04e-720w.webp"
+      ]
+    ]
+  },
   "assets/products/altar-exhibidor-leo-1.webp": {
     "w": 1254,
     "h": 1254,
@@ -662,6 +776,25 @@
       [
         360,
         "assets/responsive/products/altar-exhibidor-leo-3-b23b646c8cb4-360w.webp"
+      ]
+    ]
+  },
+  "assets/products/altar-exhibidor-leo-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/altar-exhibidor-leo-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/altar-exhibidor-leo-natural-v1-574012a0e54b-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/altar-exhibidor-leo-natural-v1-574012a0e54b-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/altar-exhibidor-leo-natural-v1-574012a0e54b-720w.webp"
       ]
     ]
   },
@@ -726,6 +859,25 @@
       ]
     ]
   },
+  "assets/products/altar-exhibidor-libra-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/altar-exhibidor-libra-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/altar-exhibidor-libra-natural-v1-0e24510e2bc3-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/altar-exhibidor-libra-natural-v1-0e24510e2bc3-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/altar-exhibidor-libra-natural-v1-0e24510e2bc3-720w.webp"
+      ]
+    ]
+  },
   "assets/products/altar-exhibidor-piscis-1.webp": {
     "w": 1254,
     "h": 1254,
@@ -784,6 +936,25 @@
       [
         360,
         "assets/responsive/products/altar-exhibidor-piscis-3-2e435677655b-360w.webp"
+      ]
+    ]
+  },
+  "assets/products/altar-exhibidor-piscis-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/altar-exhibidor-piscis-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/altar-exhibidor-piscis-natural-v1-1dc21591e47e-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/altar-exhibidor-piscis-natural-v1-1dc21591e47e-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/altar-exhibidor-piscis-natural-v1-1dc21591e47e-720w.webp"
       ]
     ]
   },
@@ -848,6 +1019,25 @@
       ]
     ]
   },
+  "assets/products/altar-exhibidor-sagitario-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/altar-exhibidor-sagitario-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/altar-exhibidor-sagitario-natural-v1-48bb0ff637be-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/altar-exhibidor-sagitario-natural-v1-48bb0ff637be-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/altar-exhibidor-sagitario-natural-v1-48bb0ff637be-720w.webp"
+      ]
+    ]
+  },
   "assets/products/altar-exhibidor-tauro-1.webp": {
     "w": 1254,
     "h": 1254,
@@ -909,6 +1099,25 @@
       ]
     ]
   },
+  "assets/products/altar-exhibidor-tauro-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/altar-exhibidor-tauro-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/altar-exhibidor-tauro-natural-v1-deb23b69c2f4-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/altar-exhibidor-tauro-natural-v1-deb23b69c2f4-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/altar-exhibidor-tauro-natural-v1-deb23b69c2f4-720w.webp"
+      ]
+    ]
+  },
   "assets/products/altar-exhibidor-virgo-1.webp": {
     "w": 1254,
     "h": 1254,
@@ -967,6 +1176,25 @@
       [
         360,
         "assets/responsive/products/altar-exhibidor-virgo-3-bbc2fc5419a9-360w.webp"
+      ]
+    ]
+  },
+  "assets/products/altar-exhibidor-virgo-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/altar-exhibidor-virgo-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/altar-exhibidor-virgo-natural-v1-77f6f1b62376-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/altar-exhibidor-virgo-natural-v1-77f6f1b62376-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/altar-exhibidor-virgo-natural-v1-77f6f1b62376-720w.webp"
       ]
     ]
   },
@@ -1488,6 +1716,25 @@
       ]
     ]
   },
+  "assets/products/busto-de-atena-saint-seiya-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/busto-de-atena-saint-seiya-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/busto-de-atena-saint-seiya-natural-v1-8ed98de9be08-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/busto-de-atena-saint-seiya-natural-v1-8ed98de9be08-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/busto-de-atena-saint-seiya-natural-v1-8ed98de9be08-720w.webp"
+      ]
+    ]
+  },
   "assets/products/caja-organizadora-figuritas-panini-2026-hero-v2.webp": {
     "w": 1200,
     "h": 1500,
@@ -1994,6 +2241,25 @@
       [
         360,
         "assets/responsive/products/casco-de-pegaso-saint-seiya-hero2-46e2cb539c31-360w.webp"
+      ]
+    ]
+  },
+  "assets/products/casco-de-pegaso-saint-seiya-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/casco-de-pegaso-saint-seiya-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/casco-de-pegaso-saint-seiya-natural-v1-05df6faf6e4a-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/casco-de-pegaso-saint-seiya-natural-v1-05df6faf6e4a-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/casco-de-pegaso-saint-seiya-natural-v1-05df6faf6e4a-720w.webp"
       ]
     ]
   },
@@ -2946,6 +3212,25 @@
       ]
     ]
   },
+  "assets/products/diorama-caballeros-de-bronce-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/diorama-caballeros-de-bronce-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/diorama-caballeros-de-bronce-natural-v1-f2eadb3d9aa6-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/diorama-caballeros-de-bronce-natural-v1-f2eadb3d9aa6-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/diorama-caballeros-de-bronce-natural-v1-f2eadb3d9aa6-720w.webp"
+      ]
+    ]
+  },
   "assets/products/diorama-de-pegaso-hero.webp": {
     "w": 960,
     "h": 1200,
@@ -2981,6 +3266,25 @@
       [
         720,
         "assets/responsive/products/diorama-de-pegaso-hero2-c609e089b5e6-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/diorama-de-pegaso-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/diorama-de-pegaso-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/diorama-de-pegaso-natural-v1-a6e60620b271-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/diorama-de-pegaso-natural-v1-a6e60620b271-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/diorama-de-pegaso-natural-v1-a6e60620b271-720w.webp"
       ]
     ]
   },
@@ -3061,6 +3365,25 @@
       [
         720,
         "assets/responsive/products/escultura-de-atena-saint-seiya-hero2-2f2c1b214704-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/escultura-de-atena-saint-seiya-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/escultura-de-atena-saint-seiya-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/escultura-de-atena-saint-seiya-natural-v1-db9b46873528-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/escultura-de-atena-saint-seiya-natural-v1-db9b46873528-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/escultura-de-atena-saint-seiya-natural-v1-db9b46873528-720w.webp"
       ]
     ]
   },
@@ -5229,6 +5552,25 @@
       ]
     ]
   },
+  "assets/products/pandora-box-caballeros-dorados-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/pandora-box-caballeros-dorados-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pandora-box-caballeros-dorados-natural-v1-4bd43cb6ae4a-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pandora-box-caballeros-dorados-natural-v1-4bd43cb6ae4a-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pandora-box-caballeros-dorados-natural-v1-4bd43cb6ae4a-720w.webp"
+      ]
+    ]
+  },
   "assets/products/pandora-box-caballeros-dorados-piscis.webp": {
     "w": 1000,
     "h": 1079,
@@ -5484,6 +5826,25 @@
       ]
     ]
   },
+  "assets/products/set-12-altares-exhibidor-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/set-12-altares-exhibidor-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/set-12-altares-exhibidor-natural-v1-7419e2244a62-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/set-12-altares-exhibidor-natural-v1-7419e2244a62-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/set-12-altares-exhibidor-natural-v1-7419e2244a62-720w.webp"
+      ]
+    ]
+  },
   "assets/products/set-12-cajas-de-pandora-con-pedestales-2.webp": {
     "w": 1600,
     "h": 1200,
@@ -5523,6 +5884,25 @@
       [
         720,
         "assets/responsive/products/set-12-cajas-de-pandora-con-pedestales-hero-6638e217d0f3-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/set-12-cajas-de-pandora-con-pedestales-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/set-12-cajas-de-pandora-con-pedestales-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/set-12-cajas-de-pandora-con-pedestales-natural-v1-8da6d54b16a7-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/set-12-cajas-de-pandora-con-pedestales-natural-v1-8da6d54b16a7-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/set-12-cajas-de-pandora-con-pedestales-natural-v1-8da6d54b16a7-720w.webp"
       ]
     ]
   },
@@ -5587,6 +5967,25 @@
       ]
     ]
   },
+  "assets/products/set-de-12-templos-mini-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/set-de-12-templos-mini-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/set-de-12-templos-mini-natural-v1-965be90b67fd-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/set-de-12-templos-mini-natural-v1-965be90b67fd-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/set-de-12-templos-mini-natural-v1-965be90b67fd-720w.webp"
+      ]
+    ]
+  },
   "assets/products/set-santuario-15-piezas-2.webp": {
     "w": 738,
     "h": 922,
@@ -5622,6 +6021,25 @@
       [
         720,
         "assets/responsive/products/set-santuario-15-piezas-hero2-def03fde6d8f-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/set-santuario-15-piezas-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/set-santuario-15-piezas-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/set-santuario-15-piezas-natural-v1-70d6bf988144-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/set-santuario-15-piezas-natural-v1-70d6bf988144-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/set-santuario-15-piezas-natural-v1-70d6bf988144-720w.webp"
       ]
     ]
   },
@@ -6827,6 +7245,25 @@
       ]
     ]
   },
+  "assets/products/templo-acuario-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/templo-acuario-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/templo-acuario-natural-v1-8ad28b7e61f4-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/templo-acuario-natural-v1-8ad28b7e61f4-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/templo-acuario-natural-v1-8ad28b7e61f4-720w.webp"
+      ]
+    ]
+  },
   "assets/products/templo-acuario-pandora.webp": {
     "w": 1200,
     "h": 1600,
@@ -6926,6 +7363,25 @@
       ]
     ]
   },
+  "assets/products/templo-aries-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/templo-aries-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/templo-aries-natural-v1-9386b5672ae9-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/templo-aries-natural-v1-9386b5672ae9-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/templo-aries-natural-v1-9386b5672ae9-720w.webp"
+      ]
+    ]
+  },
   "assets/products/templo-aries-pandora.webp": {
     "w": 1200,
     "h": 1600,
@@ -6988,6 +7444,25 @@
       [
         1200,
         "assets/responsive/products/templo-cancer-medidas-370f62ea8403-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/templo-cancer-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/templo-cancer-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/templo-cancer-natural-v1-e3dfe2a6e3cc-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/templo-cancer-natural-v1-e3dfe2a6e3cc-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/templo-cancer-natural-v1-e3dfe2a6e3cc-720w.webp"
       ]
     ]
   },
@@ -7072,6 +7547,25 @@
       [
         1200,
         "assets/responsive/products/templo-capricornio-medidas-e7ba0a0c340f-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/templo-capricornio-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/templo-capricornio-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/templo-capricornio-natural-v1-14fd38f55f9e-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/templo-capricornio-natural-v1-14fd38f55f9e-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/templo-capricornio-natural-v1-14fd38f55f9e-720w.webp"
       ]
     ]
   },
@@ -7360,6 +7854,25 @@
       ]
     ]
   },
+  "assets/products/templo-con-caja-de-pandora-y-pedestal-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/templo-con-caja-de-pandora-y-pedestal-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/templo-con-caja-de-pandora-y-pedestal-natural-v1-0090aba30769-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/templo-con-caja-de-pandora-y-pedestal-natural-v1-0090aba30769-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/templo-con-caja-de-pandora-y-pedestal-natural-v1-0090aba30769-720w.webp"
+      ]
+    ]
+  },
   "assets/products/templo-del-patriarca-2.webp": {
     "w": 1200,
     "h": 1600,
@@ -7436,6 +7949,25 @@
       ]
     ]
   },
+  "assets/products/templo-del-patriarca-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/templo-del-patriarca-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/templo-del-patriarca-natural-v1-79402c3f835c-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/templo-del-patriarca-natural-v1-79402c3f835c-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/templo-del-patriarca-natural-v1-79402c3f835c-720w.webp"
+      ]
+    ]
+  },
   "assets/products/templo-escorpio-hero.webp": {
     "w": 1312,
     "h": 1199,
@@ -7479,6 +8011,25 @@
       [
         1200,
         "assets/responsive/products/templo-escorpio-medidas-a5ed8feac8dc-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/templo-escorpio-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/templo-escorpio-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/templo-escorpio-natural-v1-a2858c7038e0-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/templo-escorpio-natural-v1-a2858c7038e0-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/templo-escorpio-natural-v1-a2858c7038e0-720w.webp"
       ]
     ]
   },
@@ -7563,6 +8114,25 @@
       [
         1200,
         "assets/responsive/products/templo-geminis-medidas-3a3ec265b226-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/templo-geminis-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/templo-geminis-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/templo-geminis-natural-v1-b6c0b19dd195-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/templo-geminis-natural-v1-b6c0b19dd195-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/templo-geminis-natural-v1-b6c0b19dd195-720w.webp"
       ]
     ]
   },
@@ -7654,6 +8224,25 @@
       ]
     ]
   },
+  "assets/products/templo-leo-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/templo-leo-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/templo-leo-natural-v1-4d166ff67046-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/templo-leo-natural-v1-4d166ff67046-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/templo-leo-natural-v1-4d166ff67046-720w.webp"
+      ]
+    ]
+  },
   "assets/products/templo-leo-pandora.webp": {
     "w": 1200,
     "h": 1600,
@@ -7719,6 +8308,25 @@
       ]
     ]
   },
+  "assets/products/templo-libra-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/templo-libra-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/templo-libra-natural-v1-84b0ec2d222f-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/templo-libra-natural-v1-84b0ec2d222f-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/templo-libra-natural-v1-84b0ec2d222f-720w.webp"
+      ]
+    ]
+  },
   "assets/products/templo-libra-pandora.webp": {
     "w": 1200,
     "h": 1600,
@@ -7777,6 +8385,25 @@
       [
         1200,
         "assets/responsive/products/templo-piscis-medidas-98b6072f669b-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/templo-piscis-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/templo-piscis-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/templo-piscis-natural-v1-6c1e56c12400-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/templo-piscis-natural-v1-6c1e56c12400-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/templo-piscis-natural-v1-6c1e56c12400-720w.webp"
       ]
     ]
   },
@@ -7842,6 +8469,25 @@
       [
         1200,
         "assets/responsive/products/templo-sagitario-medidas-dbff6d314eea-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/templo-sagitario-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/templo-sagitario-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/templo-sagitario-natural-v1-4b496981aec5-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/templo-sagitario-natural-v1-4b496981aec5-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/templo-sagitario-natural-v1-4b496981aec5-720w.webp"
       ]
     ]
   },
@@ -7926,6 +8572,25 @@
       [
         1200,
         "assets/responsive/products/templo-tauro-medidas-abe83d8f33d3-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/templo-tauro-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/templo-tauro-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/templo-tauro-natural-v1-4347c5485f9d-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/templo-tauro-natural-v1-4347c5485f9d-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/templo-tauro-natural-v1-4347c5485f9d-720w.webp"
       ]
     ]
   },
@@ -8014,6 +8679,25 @@
       [
         1200,
         "assets/responsive/products/templo-virgo-medidas-afad7eb40d7d-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/templo-virgo-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/templo-virgo-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/templo-virgo-natural-v1-6d901cf45e7a-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/templo-virgo-natural-v1-6d901cf45e7a-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/templo-virgo-natural-v1-6d901cf45e7a-720w.webp"
       ]
     ]
   },
@@ -8135,6 +8819,25 @@
       ]
     ]
   },
+  "assets/products/tiara-de-ikki-de-fenix-saint-seiya-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/tiara-de-ikki-de-fenix-saint-seiya-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/tiara-de-ikki-de-fenix-saint-seiya-natural-v1-5a538f1e3abf-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/tiara-de-ikki-de-fenix-saint-seiya-natural-v1-5a538f1e3abf-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/tiara-de-ikki-de-fenix-saint-seiya-natural-v1-5a538f1e3abf-720w.webp"
+      ]
+    ]
+  },
   "assets/products/tiara-de-pegaso-saint-seiya-hero.webp": {
     "w": 900,
     "h": 1200,
@@ -8173,6 +8876,25 @@
       ]
     ]
   },
+  "assets/products/tiara-de-pegaso-saint-seiya-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/tiara-de-pegaso-saint-seiya-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/tiara-de-pegaso-saint-seiya-natural-v1-27bd430a937c-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/tiara-de-pegaso-saint-seiya-natural-v1-27bd430a937c-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/tiara-de-pegaso-saint-seiya-natural-v1-27bd430a937c-720w.webp"
+      ]
+    ]
+  },
   "assets/products/torre-del-reloj-saint-seiya-2.webp": {
     "w": 1200,
     "h": 1600,
@@ -8208,6 +8930,25 @@
       [
         720,
         "assets/responsive/products/torre-del-reloj-saint-seiya-hero-0feda0a6599a-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/torre-del-reloj-saint-seiya-natural-v1.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/torre-del-reloj-saint-seiya-natural-v1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/torre-del-reloj-saint-seiya-natural-v1-a72ea4b0d122-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/torre-del-reloj-saint-seiya-natural-v1-a72ea4b0d122-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/torre-del-reloj-saint-seiya-natural-v1-a72ea4b0d122-720w.webp"
       ]
     ]
   },

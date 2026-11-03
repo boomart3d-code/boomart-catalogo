@@ -377,9 +377,9 @@
       "combo": 130
     },
     "featured": true,
-    "image": "assets/products/templo-aries-hero-v2.png",
+    "image": "assets/products/templo-aries-natural-v1.jpg",
     "gallery": [
-      "assets/products/templo-aries-hero-v2.png",
+      "assets/products/templo-aries-natural-v1.jpg",
       "assets/products/templo-aries-hero.jpg",
       "assets/products/templo-aries-pandora.jpg",
       "assets/products/templo-aries-medidas.jpg"
@@ -404,9 +404,9 @@
       "combo": 130
     },
     "featured": true,
-    "image": "assets/products/templo-tauro-hero.jpg",
+    "image": "assets/products/templo-tauro-natural-v1.jpg",
     "gallery": [
-      "assets/products/templo-tauro-hero.jpg",
+      "assets/products/templo-tauro-natural-v1.jpg",
       "assets/products/templo-tauro-2.jpg",
       "assets/products/templo-tauro-pandora.jpg",
       "assets/products/templo-tauro-medidas.jpg"
@@ -431,9 +431,9 @@
       "combo": 130
     },
     "featured": true,
-    "image": "assets/products/templo-geminis-hero.jpg",
+    "image": "assets/products/templo-geminis-natural-v1.jpg",
     "gallery": [
-      "assets/products/templo-geminis-hero.jpg",
+      "assets/products/templo-geminis-natural-v1.jpg",
       "assets/products/templo-geminis-2.jpg",
       "assets/products/templo-geminis-pandora.jpg",
       "assets/products/templo-geminis-medidas.jpg"
@@ -458,9 +458,9 @@
       "combo": 130
     },
     "featured": true,
-    "image": "assets/products/templo-cancer-hero.jpg",
+    "image": "assets/products/templo-cancer-natural-v1.jpg",
     "gallery": [
-      "assets/products/templo-cancer-hero.jpg",
+      "assets/products/templo-cancer-natural-v1.jpg",
       "assets/products/templo-cancer-pandora.jpg",
       "assets/products/templo-cancer-medidas.jpg"
     ],
@@ -484,9 +484,9 @@
       "combo": 130
     },
     "featured": true,
-    "image": "assets/products/templo-leo-hero.jpg",
+    "image": "assets/products/templo-leo-natural-v1.jpg",
     "gallery": [
-      "assets/products/templo-leo-hero.jpg",
+      "assets/products/templo-leo-natural-v1.jpg",
       "assets/products/templo-leo-pandora.jpg",
       "assets/products/templo-leo-medidas.jpg"
     ],
@@ -510,9 +510,9 @@
       "combo": 130
     },
     "featured": true,
-    "image": "assets/products/templo-virgo-hero.jpg",
+    "image": "assets/products/templo-virgo-natural-v1.jpg",
     "gallery": [
-      "assets/products/templo-virgo-hero.jpg",
+      "assets/products/templo-virgo-natural-v1.jpg",
       "assets/products/templo-virgo-pandora.jpg",
       "assets/products/templo-virgo-medidas.jpg"
     ],
@@ -536,9 +536,9 @@
       "combo": 130
     },
     "featured": true,
-    "image": "assets/products/templo-libra-hero.jpg",
+    "image": "assets/products/templo-libra-natural-v1.jpg",
     "gallery": [
-      "assets/products/templo-libra-hero.jpg",
+      "assets/products/templo-libra-natural-v1.jpg",
       "assets/products/templo-libra-pandora.jpg",
       "assets/products/templo-libra-medidas.jpg"
     ],
@@ -562,9 +562,9 @@
       "combo": 130
     },
     "featured": true,
-    "image": "assets/products/templo-escorpio-hero.jpg",
+    "image": "assets/products/templo-escorpio-natural-v1.jpg",
     "gallery": [
-      "assets/products/templo-escorpio-hero.jpg",
+      "assets/products/templo-escorpio-natural-v1.jpg",
       "assets/products/templo-escorpio-pandora.jpg",
       "assets/products/templo-escorpio-medidas.jpg"
     ],
@@ -588,9 +588,9 @@
       "combo": 130
     },
     "featured": true,
-    "image": "assets/products/templo-sagitario-hero.jpg",
+    "image": "assets/products/templo-sagitario-natural-v1.jpg",
     "gallery": [
-      "assets/products/templo-sagitario-hero.jpg",
+      "assets/products/templo-sagitario-natural-v1.jpg",
       "assets/products/templo-sagitario-pandora.jpg",
       "assets/products/templo-sagitario-medidas.jpg"
     ],
@@ -614,9 +614,9 @@
       "combo": 130
     },
     "featured": true,
-    "image": "assets/products/templo-capricornio-hero.jpg",
+    "image": "assets/products/templo-capricornio-natural-v1.jpg",
     "gallery": [
-      "assets/products/templo-capricornio-hero.jpg",
+      "assets/products/templo-capricornio-natural-v1.jpg",
       "assets/products/templo-capricornio-pandora.jpg",
       "assets/products/templo-capricornio-medidas.jpg"
     ],
@@ -640,9 +640,9 @@
       "combo": 130
     },
     "featured": true,
-    "image": "assets/products/templo-acuario-hero.jpg",
+    "image": "assets/products/templo-acuario-natural-v1.jpg",
     "gallery": [
-      "assets/products/templo-acuario-hero.jpg",
+      "assets/products/templo-acuario-natural-v1.jpg",
       "assets/products/templo-acuario-pandora.jpg",
       "assets/products/templo-acuario-tamano-real-20cm.jpg",
       "assets/products/templo-acuario-medidas.jpg"
@@ -667,9 +667,9 @@
       "combo": 130
     },
     "featured": true,
-    "image": "assets/products/templo-piscis-hero.jpg",
+    "image": "assets/products/templo-piscis-natural-v1.jpg",
     "gallery": [
-      "assets/products/templo-piscis-hero.jpg",
+      "assets/products/templo-piscis-natural-v1.jpg",
       "assets/products/templo-piscis-pandora.jpg",
       "assets/products/templo-piscis-medidas.jpg"
     ],
@@ -690,9 +690,9 @@
     "availability": "A pedido",
     "regularPrice": 200,
     "featured": true,
-    "image": "assets/products/templo-del-patriarca-hero.png",
+    "image": "assets/products/templo-del-patriarca-natural-v1.jpg",
     "gallery": [
-      "assets/products/templo-del-patriarca-hero.png",
+      "assets/products/templo-del-patriarca-natural-v1.jpg",
       "assets/products/templo-del-patriarca-2.jpg",
       "assets/products/templo-del-patriarca-3.jpg",
       "assets/products/templo-del-patriarca-4.jpg"
@@ -714,9 +714,9 @@
     "availability": "A pedido",
     "regularPrice": 1500,
     "featured": true,
-    "image": "assets/products/templo-con-caja-de-pandora-y-pedestal-hero.jpg",
+    "image": "assets/products/templo-con-caja-de-pandora-y-pedestal-natural-v1.jpg",
     "gallery": [
-      "assets/products/templo-con-caja-de-pandora-y-pedestal-hero.jpg",
+      "assets/products/templo-con-caja-de-pandora-y-pedestal-natural-v1.jpg",
       "assets/products/templo-con-caja-de-pandora-y-pedestal-medidas.jpg",
       "assets/products/templo-con-caja-de-pandora-y-pedestal-2.jpg",
       "assets/products/templo-con-caja-de-pandora-y-pedestal-3.jpg",
@@ -746,9 +746,9 @@
     "availability": "A pedido",
     "regularPrice": 100,
     "featured": true,
-    "image": "assets/products/busto-de-atena-saint-seiya-hero.jpg",
+    "image": "assets/products/busto-de-atena-saint-seiya-natural-v1.jpg",
     "gallery": [
-      "assets/products/busto-de-atena-saint-seiya-hero.jpg",
+      "assets/products/busto-de-atena-saint-seiya-natural-v1.jpg",
       "assets/products/busto-de-atena-saint-seiya-2.jpg",
       "assets/products/busto-de-atena-saint-seiya-3.jpg",
       "assets/products/busto-de-atena-saint-seiya-4.jpg",
@@ -770,9 +770,9 @@
     "availability": "A pedido",
     "regularPrice": 100,
     "featured": true,
-    "image": "assets/products/escultura-de-atena-saint-seiya-hero2.jpg",
+    "image": "assets/products/escultura-de-atena-saint-seiya-natural-v1.jpg",
     "gallery": [
-      "assets/products/escultura-de-atena-saint-seiya-hero2.jpg",
+      "assets/products/escultura-de-atena-saint-seiya-natural-v1.jpg",
       "assets/products/escultura-de-atena-saint-seiya-2.jpg"
     ],
     "description": "Escultura de Atena de cuerpo entero, la diosa de la sabiduría y la guerra justa, con espectacular acabado estilo piedra envejecida. Impresa en 3D y detallada a mano, hecha a pedido en Lima."
@@ -788,9 +788,9 @@
     "availability": "A pedido",
     "regularPrice": 100,
     "featured": true,
-    "image": "assets/products/torre-del-reloj-saint-seiya-hero.jpg",
+    "image": "assets/products/torre-del-reloj-saint-seiya-natural-v1.jpg",
     "gallery": [
-      "assets/products/torre-del-reloj-saint-seiya-hero.jpg",
+      "assets/products/torre-del-reloj-saint-seiya-natural-v1.jpg",
       "assets/products/torre-del-reloj-saint-seiya-2.jpg"
     ],
     "description": "La icónica Torre del Reloj del Santuario de Athena, con sus doce llamas encendidas marcando la cuenta regresiva. Réplica decorativa de 32 cm de alto, acabado tipo piedra envejecida, impresa en 3D en PLA+/PETG y detallada a mano. Hecha a pedido en Lima."
@@ -808,9 +808,9 @@
     "availability": "A pedido",
     "regularPrice": 100,
     "featured": true,
-    "image": "assets/products/set-de-12-templos-mini-hero.jpg",
+    "image": "assets/products/set-de-12-templos-mini-natural-v1.jpg",
     "gallery": [
-      "assets/products/set-de-12-templos-mini-hero.jpg",
+      "assets/products/set-de-12-templos-mini-natural-v1.jpg",
       "assets/products/set-de-12-templos-mini-2.jpg",
       "assets/products/set-de-12-templos-mini-cliente-3.jpg"
     ],
@@ -835,9 +835,9 @@
     "availability": "A pedido",
     "regularPrice": 150,
     "featured": true,
-    "image": "assets/products/set-santuario-15-piezas-hero2.jpg",
+    "image": "assets/products/set-santuario-15-piezas-natural-v1.jpg",
     "gallery": [
-      "assets/products/set-santuario-15-piezas-hero2.jpg",
+      "assets/products/set-santuario-15-piezas-natural-v1.jpg",
       "assets/products/set-santuario-15-piezas-2.jpg"
     ],
     "description": "Colección de 15 piezas: 12 templos mini de 6.5 a 8 cm, Templo del Patriarca de 9 cm, Escultura de Atena de 12 cm y Torre del Reloj de 15 cm. Fabricada en PLA+ resistente, con acabado de piedra envejecida pintado a mano. Producción de 24 a 48 horas útiles. No incluye figuras, estante ni maqueta de montaña."
@@ -854,9 +854,9 @@
     "availability": "A pedido",
     "regularPrice": 400,
     "featured": true,
-    "image": "assets/products/set-12-cajas-de-pandora-con-pedestales-hero.jpg",
+    "image": "assets/products/set-12-cajas-de-pandora-con-pedestales-natural-v1.jpg",
     "gallery": [
-      "assets/products/set-12-cajas-de-pandora-con-pedestales-hero.jpg",
+      "assets/products/set-12-cajas-de-pandora-con-pedestales-natural-v1.jpg",
       "assets/products/set-12-cajas-de-pandora-con-pedestales-2.jpg"
     ],
     "description": "Las 12 Cajas de Pandora de los Caballeros Dorados, cada una con su pedestal estilo piedra. El set completo que corona cualquier colección de Saint Seiya."
@@ -881,9 +881,9 @@
       "unitPrice": 20,
       "setPrice": 200
     },
-    "image": "assets/products/pandora-box-caballeros-dorados-0.jpg",
+    "image": "assets/products/pandora-box-caballeros-dorados-natural-v1.jpg",
     "gallery": [
-      "assets/products/pandora-box-caballeros-dorados-0.jpg",
+      "assets/products/pandora-box-caballeros-dorados-natural-v1.jpg",
       "assets/products/pandora-box-caballeros-dorados-set.jpg",
       "assets/products/pandora-box-caballeros-dorados-aries.jpg",
       "assets/products/pandora-box-caballeros-dorados-tauro.jpg",
@@ -914,9 +914,9 @@
     "availability": "A pedido",
     "regularPrice": 250,
     "featured": true,
-    "image": "assets/products/casco-de-pegaso-saint-seiya-hero.jpg",
+    "image": "assets/products/casco-de-pegaso-saint-seiya-natural-v1.jpg",
     "gallery": [
-      "assets/products/casco-de-pegaso-saint-seiya-hero.jpg",
+      "assets/products/casco-de-pegaso-saint-seiya-natural-v1.jpg",
       "assets/products/casco-de-pegaso-saint-seiya-hero2.jpg"
     ],
     "description": "Casco funcional de cosplay de la Armadura de Pegaso V1, la que porta Seiya en la versión clásica de Saint Seiya, en tamaño real 1:1. Se puede usar puesto: alas laterales, visor y volúmenes reproducidos fielmente en un acabado tipo metal cepillado. Como se imprime a pedido, el calce se adapta a la talla de quien lo va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Impreso en 3D en Perú, con envíos a todo el país.",
@@ -937,9 +937,9 @@
     "availability": "A pedido",
     "regularPrice": 100,
     "featured": true,
-    "image": "assets/products/tiara-de-pegaso-saint-seiya-hero.jpg",
+    "image": "assets/products/tiara-de-pegaso-saint-seiya-natural-v1.jpg",
     "gallery": [
-      "assets/products/tiara-de-pegaso-saint-seiya-hero.jpg",
+      "assets/products/tiara-de-pegaso-saint-seiya-natural-v1.jpg",
       "assets/products/tiara-de-pegaso-saint-seiya-hero2.jpg"
     ],
     "description": "Tiara de cosplay de la Armadura de Pegaso, la que porta Seiya en Saint Seiya, en tamaño real 1:1. Diadema con las alas y el frontal del casco con sus cuernos dorados y visor rojo, lista para usar puesta como accesorio de cosplay o para exhibir junto a tu figura. Como se imprime a pedido, el calce se adapta a la talla de quien la va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Impresa en 3D en Perú, con envíos a todo el país.",
@@ -966,9 +966,9 @@
     "availability": "A pedido",
     "regularPrice": 100,
     "featured": true,
-    "image": "assets/products/tiara-de-ikki-de-fenix-saint-seiya-hero.jpg",
+    "image": "assets/products/tiara-de-ikki-de-fenix-saint-seiya-natural-v1.jpg",
     "gallery": [
-      "assets/products/tiara-de-ikki-de-fenix-saint-seiya-hero.jpg",
+      "assets/products/tiara-de-ikki-de-fenix-saint-seiya-natural-v1.jpg",
       "assets/products/tiara-de-ikki-de-fenix-saint-seiya-2.jpg",
       "assets/products/tiara-de-ikki-de-fenix-saint-seiya-3.jpg",
       "assets/products/tiara-de-ikki-de-fenix-saint-seiya-4.jpg"
@@ -992,9 +992,9 @@
     "availability": "A pedido",
     "regularPrice": 850,
     "featured": true,
-    "image": "assets/products/set-12-altares-exhibidor-1.jpg",
+    "image": "assets/products/set-12-altares-exhibidor-natural-v1.jpg",
     "gallery": [
-      "assets/products/set-12-altares-exhibidor-1.jpg",
+      "assets/products/set-12-altares-exhibidor-natural-v1.jpg",
       "assets/products/altar-exhibidor-aries-2.jpg",
       "assets/products/altar-exhibidor-tauro-2.jpg",
       "assets/products/altar-exhibidor-geminis-2.jpg",
@@ -1024,9 +1024,9 @@
     "availability": "A pedido",
     "regularPrice": 80,
     "featured": true,
-    "image": "assets/products/altar-exhibidor-aries-1.jpg",
+    "image": "assets/products/altar-exhibidor-aries-natural-v1.jpg",
     "gallery": [
-      "assets/products/altar-exhibidor-aries-1.jpg",
+      "assets/products/altar-exhibidor-aries-natural-v1.jpg",
       "assets/products/altar-exhibidor-aries-2.jpg",
       "assets/products/altar-exhibidor-aries-3.jpg"
     ],
@@ -1046,9 +1046,9 @@
     "availability": "A pedido",
     "regularPrice": 80,
     "featured": true,
-    "image": "assets/products/altar-exhibidor-tauro-1.jpg",
+    "image": "assets/products/altar-exhibidor-tauro-natural-v1.jpg",
     "gallery": [
-      "assets/products/altar-exhibidor-tauro-1.jpg",
+      "assets/products/altar-exhibidor-tauro-natural-v1.jpg",
       "assets/products/altar-exhibidor-tauro-2.jpg",
       "assets/products/altar-exhibidor-tauro-3.jpg"
     ],
@@ -1068,9 +1068,9 @@
     "availability": "A pedido",
     "regularPrice": 80,
     "featured": true,
-    "image": "assets/products/altar-exhibidor-geminis-1.jpg",
+    "image": "assets/products/altar-exhibidor-geminis-natural-v1.jpg",
     "gallery": [
-      "assets/products/altar-exhibidor-geminis-1.jpg",
+      "assets/products/altar-exhibidor-geminis-natural-v1.jpg",
       "assets/products/altar-exhibidor-geminis-2.jpg",
       "assets/products/altar-exhibidor-geminis-3.jpg"
     ],
@@ -1090,9 +1090,9 @@
     "availability": "A pedido",
     "regularPrice": 80,
     "featured": true,
-    "image": "assets/products/altar-exhibidor-cancer-1.jpg",
+    "image": "assets/products/altar-exhibidor-cancer-natural-v1.jpg",
     "gallery": [
-      "assets/products/altar-exhibidor-cancer-1.jpg",
+      "assets/products/altar-exhibidor-cancer-natural-v1.jpg",
       "assets/products/altar-exhibidor-cancer-2.jpg",
       "assets/products/altar-exhibidor-cancer-3.jpg"
     ],
@@ -1112,9 +1112,9 @@
     "availability": "A pedido",
     "regularPrice": 80,
     "featured": true,
-    "image": "assets/products/altar-exhibidor-leo-1.jpg",
+    "image": "assets/products/altar-exhibidor-leo-natural-v1.jpg",
     "gallery": [
-      "assets/products/altar-exhibidor-leo-1.jpg",
+      "assets/products/altar-exhibidor-leo-natural-v1.jpg",
       "assets/products/altar-exhibidor-leo-2.jpg",
       "assets/products/altar-exhibidor-leo-3.jpg"
     ],
@@ -1134,9 +1134,9 @@
     "availability": "A pedido",
     "regularPrice": 80,
     "featured": true,
-    "image": "assets/products/altar-exhibidor-virgo-1.jpg",
+    "image": "assets/products/altar-exhibidor-virgo-natural-v1.jpg",
     "gallery": [
-      "assets/products/altar-exhibidor-virgo-1.jpg",
+      "assets/products/altar-exhibidor-virgo-natural-v1.jpg",
       "assets/products/altar-exhibidor-virgo-2.jpg",
       "assets/products/altar-exhibidor-virgo-3.jpg"
     ],
@@ -1156,9 +1156,9 @@
     "availability": "A pedido",
     "regularPrice": 80,
     "featured": true,
-    "image": "assets/products/altar-exhibidor-libra-1.jpg",
+    "image": "assets/products/altar-exhibidor-libra-natural-v1.jpg",
     "gallery": [
-      "assets/products/altar-exhibidor-libra-1.jpg",
+      "assets/products/altar-exhibidor-libra-natural-v1.jpg",
       "assets/products/altar-exhibidor-libra-2.jpg",
       "assets/products/altar-exhibidor-libra-3.jpg"
     ],
@@ -1178,9 +1178,9 @@
     "availability": "A pedido",
     "regularPrice": 80,
     "featured": true,
-    "image": "assets/products/altar-exhibidor-escorpio-1.jpg",
+    "image": "assets/products/altar-exhibidor-escorpio-natural-v1.jpg",
     "gallery": [
-      "assets/products/altar-exhibidor-escorpio-1.jpg",
+      "assets/products/altar-exhibidor-escorpio-natural-v1.jpg",
       "assets/products/altar-exhibidor-escorpio-2.jpg",
       "assets/products/altar-exhibidor-escorpio-3.jpg"
     ],
@@ -1200,9 +1200,9 @@
     "availability": "A pedido",
     "regularPrice": 80,
     "featured": true,
-    "image": "assets/products/altar-exhibidor-sagitario-1.jpg",
+    "image": "assets/products/altar-exhibidor-sagitario-natural-v1.jpg",
     "gallery": [
-      "assets/products/altar-exhibidor-sagitario-1.jpg",
+      "assets/products/altar-exhibidor-sagitario-natural-v1.jpg",
       "assets/products/altar-exhibidor-sagitario-2.jpg",
       "assets/products/altar-exhibidor-sagitario-3.jpg"
     ],
@@ -1222,9 +1222,9 @@
     "availability": "A pedido",
     "regularPrice": 80,
     "featured": true,
-    "image": "assets/products/altar-exhibidor-capricornio-1.jpg",
+    "image": "assets/products/altar-exhibidor-capricornio-natural-v1.jpg",
     "gallery": [
-      "assets/products/altar-exhibidor-capricornio-1.jpg",
+      "assets/products/altar-exhibidor-capricornio-natural-v1.jpg",
       "assets/products/altar-exhibidor-capricornio-2.jpg",
       "assets/products/altar-exhibidor-capricornio-3.jpg"
     ],
@@ -1244,9 +1244,9 @@
     "availability": "A pedido",
     "regularPrice": 80,
     "featured": true,
-    "image": "assets/products/altar-exhibidor-acuario-1.jpg",
+    "image": "assets/products/altar-exhibidor-acuario-natural-v1.jpg",
     "gallery": [
-      "assets/products/altar-exhibidor-acuario-1.jpg",
+      "assets/products/altar-exhibidor-acuario-natural-v1.jpg",
       "assets/products/altar-exhibidor-acuario-2.jpg",
       "assets/products/altar-exhibidor-acuario-3.jpg"
     ],
@@ -1266,9 +1266,9 @@
     "availability": "A pedido",
     "regularPrice": 80,
     "featured": true,
-    "image": "assets/products/altar-exhibidor-piscis-1.jpg",
+    "image": "assets/products/altar-exhibidor-piscis-natural-v1.jpg",
     "gallery": [
-      "assets/products/altar-exhibidor-piscis-1.jpg",
+      "assets/products/altar-exhibidor-piscis-natural-v1.jpg",
       "assets/products/altar-exhibidor-piscis-2.jpg",
       "assets/products/altar-exhibidor-piscis-3.jpg"
     ],
@@ -1288,9 +1288,9 @@
     "availability": "A pedido",
     "regularPrice": 150,
     "featured": true,
-    "image": "assets/products/diorama-caballeros-de-bronce-hero.jpg",
+    "image": "assets/products/diorama-caballeros-de-bronce-natural-v1.jpg",
     "gallery": [
-      "assets/products/diorama-caballeros-de-bronce-hero.jpg",
+      "assets/products/diorama-caballeros-de-bronce-natural-v1.jpg",
       "assets/products/diorama-caballeros-de-bronce-2.jpg"
     ],
     "description": "Altar exhibidor del Caballero de Bronce del Dragón (Shiryu), con el emblema del dragón en relieve y dos guardianes tallados a los costados de la columna. Hecho para montar tu figura Myth Cloth EX de Bandai de Shiryu. Base circular estilo escama de dragón en verde con detalles dorados y acabado tipo piedra envejecida en la columna. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D."
@@ -1309,9 +1309,9 @@
     "availability": "A pedido",
     "regularPrice": 150,
     "featured": true,
-    "image": "assets/products/diorama-de-pegaso-hero.jpg",
+    "image": "assets/products/diorama-de-pegaso-natural-v1.jpg",
     "gallery": [
-      "assets/products/diorama-de-pegaso-hero.jpg",
+      "assets/products/diorama-de-pegaso-natural-v1.jpg",
       "assets/products/diorama-de-pegaso-hero2.jpg"
     ],
     "description": "Altar exhibidor del Caballero de Bronce Pegaso (Seiya), con la placa tallada del emblema de Pegaso entre columnas y base tipo ruinas del Santuario. Hecho para montar tu figura Myth Cloth EX de Bandai de Seiya. Acabado realista tipo piedra envejecida, impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D."
