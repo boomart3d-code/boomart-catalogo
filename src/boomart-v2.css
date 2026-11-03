@@ -294,3 +294,8 @@ body.design-v2 {--v2-ink:#171512;--v2-paper:#f4f0e8;--v2-line:#d9d1c4;background
 
 .design-v2 .card-media:hover .photo-alternate:not(.is-ready),.design-v2 .card-media:focus-visible .photo-alternate:not(.is-ready) {opacity:0;}
 .design-v2 .card-media:hover:has(.photo-alternate:not(.is-ready)) .photo-primary,.design-v2 .card-media:focus-visible:has(.photo-alternate:not(.is-ready)) .photo-primary {opacity:1;}
+
+/* Los destinos del catalogo son enlaces, con la misma apariencia aprobada. */
+.v2-universe,.v2-text-link,.v2-hero-product {text-decoration:none;}
+a.v2-universe {display:block;}
+a.v2-hero-product {display:flex;align-items:center;justify-content:center;}

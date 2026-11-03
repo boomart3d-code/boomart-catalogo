@@ -433,11 +433,11 @@ const collectionCard = (collection, items) => {
 
 const productCard = (product) => `
   <article class="product-card" data-open="${product.id}" data-product-id="${product.id}" data-category="${product.category}">
-    <button class="card-media" type="button" data-open="${product.id}" aria-label="Ver ${product.name}">
+    <a class="card-media" href="producto/${product.id}/" data-open="${product.id}" aria-label="Ver ${product.name}">
       ${productImage(product, "photo-primary")}
       <span class="photo-hint" aria-hidden="true">Ver fotos ↗</span>
       ${(() => { const alternate = (product.gallery || []).find(src => src && webpSrc(src) !== webpSrc(product.image)); return alternate ? `<img class="photo-alternate" ${window.BoomV2 ? `data-alt-src="${webpSrc(alternate)}"` : `${imageAttrs(alternate)} loading="lazy"`} alt="" decoding="async">` : ""; })()}
-    </button>
+    </a>
     <div class="card-body">
       <h3>${product.name}</h3>
       ${gridPriceMarkup(product)}
@@ -832,6 +832,14 @@ document.addEventListener("click", (event) => {
   // Una pastilla de signo dentro de una tarjeta de colección abre esa pieza (data-open
   // gana); el resto de la tarjeta abre la colección completa.
   const collectionButton = openButton ? null : event.target.closest("[data-collection]");
+
+  // Enlaces reales para rastreadores y para abrir en otra pestaña.
+  // El clic normal conserva la navegación rápida y el modal existentes.
+  const catalogLink = event.target.closest("a[href][data-open], a[href][data-filter]");
+  if (catalogLink) {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
+    event.preventDefault();
+  }
 
   if (openButton) openProduct(openButton.dataset.open);
   if (collectionButton) {
