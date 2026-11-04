@@ -11,7 +11,7 @@ body.design-v2 {--v2-ink:#171512;--v2-paper:#f4f0e8;--v2-line:#d9d1c4;background
 .design-v2 .quick-nav-actions {gap:5px;align-items:center;}
 .design-v2 .quick-nav-btn,.design-v2 .quick-nav .account-toggle,.design-v2 .cart-float {position:static!important;display:flex!important;align-items:center;justify-content:center;width:44px;min-width:44px;height:44px;margin:0;padding:10px;border:0;border-radius:0;background:transparent;color:#fff;box-shadow:none;}
 /* El contador del carrito se ancla a su icono: el boton debe ser el contenedor posicionado (si queda static, el numero se va al borde de la pantalla). */
-.design-v2 .quick-nav .cart-float {position:relative!important;}
+.design-v2 .quick-nav .cart-float {position:relative!important;left:auto;right:auto;top:auto;bottom:auto;z-index:auto;}
 .design-v2 .quick-nav .cart-float .cart-float-count {top:4px;right:2px;}
 .design-v2 .quick-nav-categories {width:auto;gap:8px;}
 .design-v2 .account-label {display:none;}
