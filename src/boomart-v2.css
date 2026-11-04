@@ -300,3 +300,11 @@ body.design-v2 {--v2-ink:#171512;--v2-paper:#f4f0e8;--v2-line:#d9d1c4;background
 .v2-universe,.v2-text-link,.v2-hero-product {text-decoration:none;}
 a.v2-universe {display:block;}
 a.v2-hero-product {display:flex;align-items:center;justify-content:center;}
+/* Formularios sobre fondo marfil (pedido a medida y reseñas): campos claros y sobrios, no bloques negros. */
+.design-v2 .custom-order-card,.design-v2 .reviews-section .review-form-card {background:#f4f0e8;border:1px solid #d8d2c9;border-radius:2px;box-shadow:none;}
+.design-v2 .custom-order-card label,.design-v2 .reviews-section .review-form-card label {color:#0b0b0b;}
+.design-v2 .custom-order-card .review-form-grid {align-items:start;}
+.design-v2 .custom-order-card input:not([type="checkbox"]),.design-v2 .custom-order-card textarea,.design-v2 .reviews-section .review-form-card input:not([type="checkbox"]),.design-v2 .reviews-section .review-form-card select,.design-v2 .reviews-section .review-form-card textarea {background:#fff;color:#0b0b0b;border:1px solid #cfc8bd;border-radius:2px;padding:12px 14px;transition:border-color .15s ease,box-shadow .15s ease;}
+.design-v2 .custom-order-card input::placeholder,.design-v2 .custom-order-card textarea::placeholder,.design-v2 .reviews-section .review-form-card input::placeholder,.design-v2 .reviews-section .review-form-card textarea::placeholder {color:#8a8379;opacity:1;}
+.design-v2 .custom-order-card input:focus,.design-v2 .custom-order-card textarea:focus,.design-v2 .reviews-section .review-form-card input:focus,.design-v2 .reviews-section .review-form-card select:focus,.design-v2 .reviews-section .review-form-card textarea:focus {outline:none;border-color:#0b0b0b;box-shadow:0 0 0 3px rgba(201,162,92,.35);}
+.design-v2 .custom-order-card .custom-order-hint {color:#5f5952;}
