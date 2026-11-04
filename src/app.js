@@ -27,6 +27,17 @@ const shareProductBtn = document.querySelector("#shareProduct");
 const shareProductWa = document.querySelector("#shareProductWa");
 const shareFeedback = document.querySelector("#shareFeedback");
 
+// La barra fija puede crecer por el texto, el zoom o el área segura del móvil.
+// Reservar su altura real evita que tape las acciones al final de la ficha.
+const syncModalCartSpace = () => {
+  const row = modal?.querySelector(".add-to-cart-row");
+  const height = row?.getBoundingClientRect().height;
+  if (height) modal.style.setProperty("--product-cart-height", `${Math.ceil(height)}px`);
+};
+const modalCartObserver = typeof ResizeObserver === "function"
+  ? new ResizeObserver(syncModalCartSpace) : null;
+window.addEventListener("resize", syncModalCartSpace);
+
 let activeFilter = "Todos";
 let showcaseMode = true;
 let activeProduct = null;
@@ -752,6 +763,11 @@ const openProduct = (productId, fromHistory = false) => {
   if (shareFeedback) shareFeedback.hidden = true;
   renderModalImage();
   if (!modal.open) modal.showModal();
+  modalCartObserver?.disconnect();
+  const cartRow = modal.querySelector(".add-to-cart-row");
+  if (cartRow) modalCartObserver?.observe(cartRow);
+  syncModalCartSpace();
+  modal.scrollTop = 0;
   setCanonical(productPageUrl(productId));
 
   // Refleja el producto en la URL para poder copiarla / compartirla.
@@ -770,6 +786,7 @@ const stripProductParam = () => {
 };
 
 const closeProductModal = () => {
+  modalCartObserver?.disconnect();
   if (modal.open) modal.close();
   activeProduct = null;
   delete modal.dataset.category;

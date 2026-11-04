@@ -290,6 +290,21 @@ body.design-v2 {--v2-ink:#171512;--v2-paper:#f4f0e8;--v2-line:#d9d1c4;background
  .design-v2 .product-modal .modal-image-wrap {aspect-ratio:4/5;max-height:60dvh;}
  .design-v2 .modal-share .button {min-height:44px;}
 }
+/* En tablet y móvil horizontal también hay una sola columna. El límite de
+   altura del contenedor de escritorio cortaba esa columna antes de las acciones. */
+@media(min-width:721px) and (max-width:1050px) {
+ .design-v2 .product-modal {max-height:calc(100dvh - 28px);overflow-y:auto;overscroll-behavior:contain;}
+ .design-v2 .product-modal .modal-shell {max-height:none;overflow:visible;}
+ .design-v2 .product-modal .modal-info {overflow:visible;}
+ .design-v2 #closeModal {position:fixed;}
+}
+/* El padding del tema no debe borrar la reserva para la barra fija de compra.
+   Incluye su altura real (también el área segura) y espacio para pulsar las
+   acciones de compartir y WhatsApp al llegar al final del scroll. */
+@media(max-width:720px) {
+ .design-v2 .product-modal .modal-info {padding-bottom:calc(var(--product-cart-height, calc(96px + env(safe-area-inset-bottom))) + 24px);}
+ .design-v2 .modal-share .button {min-height:44px;}
+}
 @media(prefers-reduced-motion:reduce){.v2-universe img,.v2-hero-art img,.v2-cta{transition:none;}.v2-cta:hover{transform:none;}}
 @media(prefers-reduced-motion:reduce){.design-v2 .filter-row button,.design-v2 .filter-row button::after,.v2-type-list button{transition:none;}}
 

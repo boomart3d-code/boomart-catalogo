@@ -86,7 +86,8 @@ async function run() {
         await page.screenshot({ path: process.env.BOOMART_TEST_SCREENSHOT || "share-desktop.png" });
         await page.locator("#closeModal").click();
         // In the unfiltered home, temples are grouped into a collection card.
-        await page.locator('#filterRow [data-filter="Saint Seiya"]').click();
+        // V2 exposes the collection directory; the legacy filter row is hidden.
+        await page.locator('.v2-universe[data-filter="Saint Seiya"], body:not(.design-v2) #filterRow [data-filter="Saint Seiya"]').click();
         await page.locator('.card-media[data-open="templo-aries"]').click();
         await page.locator("#productModal[open]").waitFor();
         await page.locator("#shareProduct").click();
