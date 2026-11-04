@@ -5738,6 +5738,120 @@
       ]
     ]
   },
+  "assets/products/palomera-dr-doom-abierta-en-mano.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/palomera-dr-doom-abierta-en-mano.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-dr-doom-abierta-en-mano-47d6c3b66bc8-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-dr-doom-abierta-en-mano-47d6c3b66bc8-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-dr-doom-abierta-en-mano-47d6c3b66bc8-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-dr-doom-frontal-abierta.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/palomera-dr-doom-frontal-abierta.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-dr-doom-frontal-abierta-199fea40af13-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-dr-doom-frontal-abierta-199fea40af13-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-dr-doom-frontal-abierta-199fea40af13-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-dr-doom-interior-y-tapa.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/palomera-dr-doom-interior-y-tapa.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-dr-doom-interior-y-tapa-35d14e5dc08e-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-dr-doom-interior-y-tapa-35d14e5dc08e-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-dr-doom-interior-y-tapa-35d14e5dc08e-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-dr-doom-lateral-abierta.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/palomera-dr-doom-lateral-abierta.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-dr-doom-lateral-abierta-98816c290d6a-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-dr-doom-lateral-abierta-98816c290d6a-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-dr-doom-lateral-abierta-98816c290d6a-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-dr-doom-lateral-cerrada.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/palomera-dr-doom-lateral-cerrada.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-dr-doom-lateral-cerrada-7890a6d5b99e-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-dr-doom-lateral-cerrada-7890a6d5b99e-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-dr-doom-lateral-cerrada-7890a6d5b99e-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-dr-doom-portada-cerrada.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/palomera-dr-doom-portada-cerrada.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-dr-doom-portada-cerrada-3f04720405f2-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-dr-doom-portada-cerrada-3f04720405f2-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-dr-doom-portada-cerrada-3f04720405f2-720w.webp"
+      ]
+    ]
+  },
   "assets/products/palomera-spiderman-hero-v2.webp": {
     "w": 1200,
     "h": 1500,
