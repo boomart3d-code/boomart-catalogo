@@ -3,7 +3,7 @@
   "url": "https://boomart.pe/",
   "description": "Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao, Peru. Envios a todo el pais.",
   "currency": "PEN",
-  "updated": "2026-11-03",
+  "updated": "2026-11-04",
   "contact": {
     "whatsapp": "https://wa.me/51925666542",
     "email": "contacto@boomart.pe",
@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 103,
+  "count": 104,
   "products": [
     {
       "id": "skins-zelda-nintendo-switch-2",
@@ -3353,6 +3353,38 @@
       ],
       "url": "https://boomart.pe/producto/pesebre-tejido/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Pesebre%20Tejido"
+    },
+    {
+      "id": "palomera-dr-doom",
+      "name": "Palomera Dr. Doom · Marvel",
+      "category": "Marvel & DC",
+      "tags": [
+        "Marvel",
+        "Palomeras",
+        "Dr. Doom",
+        "Doctor Doom",
+        "Cine",
+        "Decoración Marvel"
+      ],
+      "description": "Palomera Dr. Doom: la cabeza del villano de Marvel con su rostro metálico plateado, los remaches, la capucha verde y una tapa ovalada que se abre. Impresa en 3D con PLA+ y preparada a pedido. En la foto con la mano puedes ver una referencia del tamaño.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "priceCurrency": "PEN",
+      "priceFrom": 225,
+      "pricing": [
+        "Precio: S/225"
+      ],
+      "image": "https://boomart.pe/assets/products/palomera-dr-doom-portada-cerrada.webp",
+      "gallery": [
+        "https://boomart.pe/assets/products/palomera-dr-doom-portada-cerrada.webp",
+        "https://boomart.pe/assets/products/palomera-dr-doom-frontal-abierta.webp",
+        "https://boomart.pe/assets/products/palomera-dr-doom-lateral-cerrada.webp",
+        "https://boomart.pe/assets/products/palomera-dr-doom-lateral-abierta.webp",
+        "https://boomart.pe/assets/products/palomera-dr-doom-interior-y-tapa.webp",
+        "https://boomart.pe/assets/products/palomera-dr-doom-abierta-en-mano.webp"
+      ],
+      "url": "https://boomart.pe/producto/palomera-dr-doom/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Palomera%20Dr.%20Doom%20%C2%B7%20Marvel"
     }
   ]
 }

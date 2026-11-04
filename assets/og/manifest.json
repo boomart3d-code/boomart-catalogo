@@ -719,5 +719,12 @@
     "width": 960,
     "height": 1200,
     "bytes": 92769
+  },
+  "palomera-dr-doom": {
+    "source": "assets/products/palomera-dr-doom-portada-cerrada.webp",
+    "hash": "03bc33e3b71252d4",
+    "width": 960,
+    "height": 1200,
+    "bytes": 94143
   }
 }
