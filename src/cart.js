@@ -174,6 +174,16 @@
   // Devuelve las lineas del carrito ya resueltas contra el catalogo vigente,
   // descartando silenciosamente productos/variantes que ya no existan.
   function getResolvedLines() {
+    // Las skins de S/20 son componentes de un pack, nunca una compra suelta.
+    // También limpia carritos antiguos si se quitó su última base.
+    const skins = findProduct("skins-zelda-nintendo-switch-2");
+    if (skins) {
+      const hasBase = items.some(line => line.productId === skins.id && skins.modelOptions.some(model => model.id === String(line.variant || skins.modelOptions[0].id).split(":")[0] && !model.addon));
+      if (!hasBase) {
+        const valid = items.filter(line => line.productId !== skins.id || !skins.modelOptions.some(model => model.id === String(line.variant || "").split(":")[0] && model.addon));
+        if (valid.length !== items.length) { items = valid; persist(); }
+      }
+    }
     const resolved = [];
     items.forEach((line) => {
       const product = findProduct(line.productId);
@@ -228,8 +238,11 @@
   function add(productId, variantKey, quantity) {
     const product = findProduct(productId);
     if (!product) return getState();
+    getResolvedLines(); // No reactivar adicionales huérfanas de un carrito viejo.
     const variant = resolveVariant(product, variantKey || null);
     if (!variant) return getState();
+    if (product.id === "skins-zelda-nintendo-switch-2" && product.modelOptions.find(model => model.id === variant.variantKey)?.addon &&
+        !getResolvedLines().some(line => line.productId === productId && product.modelOptions.some(model => model.id === line.variantKey && !model.addon))) return getState();
     const qty = Math.max(1, Math.floor(Number(quantity) || 1));
     const key = lineKey(productId, variant.variantKey);
     const existing = items.find((line) => lineKey(line.productId, line.variant) === key);
@@ -240,6 +253,29 @@
     }
     persist();
     notify();
+    return getState();
+  }
+
+  // Una sola operación para el pack configurado. Precios siempre del catálogo;
+  // once diseños distintos aplican la colección completa de S/200.
+  function addSkinPack(productId, selection, quantity) {
+    const product = findProduct(productId);
+    if (product?.id !== "skins-zelda-nintendo-switch-2") return getState();
+    getResolvedLines();
+    const base = product.modelOptions.find(model => model.id === selection?.base && !model.addon);
+    if (!base || !Array.isArray(selection.extras)) return getState();
+    const ids = [...new Set(selection.extras)].filter(id => id !== base.id);
+    const extras = ids.map(id => product.modelOptions.find(model => model.id === `extra-${id}` && model.addon));
+    if (extras.some(model => !model)) return getState();
+    const skinCount = product.modelOptions.filter(model => !model.addon && model.id !== "set-11").length;
+    const keys = base.id === "set-11" || extras.length === skinCount - 1 ? ["set-11"] : [base.id, ...extras.map(model => model.id)];
+    const qty = Math.max(1, Math.floor(Number(quantity) || 1));
+    keys.forEach(variant => {
+      const existing = items.find(line => line.productId === productId && line.variant === variant);
+      if (existing) existing.quantity += qty;
+      else items.push({ productId, variant, quantity: qty });
+    });
+    persist(); notify();
     return getState();
   }
 
@@ -290,6 +326,7 @@
     getState,
     getTotals,
     add,
+    addSkinPack,
     setQuantity,
     remove,
     clear,

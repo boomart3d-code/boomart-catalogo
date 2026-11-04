@@ -154,8 +154,10 @@ const SHARE_SRC = "compartir";
 
 const shareProduct = async (product) => {
   const model = product.modelOptions?.find((option) => option.id === product.activeModel);
-  const url = `${productPageUrl(product.id)}?src=${SHARE_SRC}${model ? "&modelo=" + encodeURIComponent(model.id) : ""}`;
-  if (model) product = { ...product, name: model.name, regularPrice: model.regularPrice };
+  const pack = product.skinPack;
+  const url = `${productPageUrl(product.id)}?src=${SHARE_SRC}${pack ? "&modelo=" + encodeURIComponent(pack.baseId) + (pack.extras.length ? "&skins=" + encodeURIComponent(pack.extras.join(",")) : "") : model ? "&modelo=" + encodeURIComponent(model.id) : ""}`;
+  if (pack) product = { ...product, name: pack.label, regularPrice: pack.total };
+  else if (model) product = { ...product, name: model.name, regularPrice: model.regularPrice };
   if (useNativeShare()) {
     try {
       await navigator.share({ title: product.name, text: shareText(product), url });
@@ -726,6 +728,7 @@ const renderModalImage = () => {
 const openProduct = (productId, fromHistory = false) => {
   activeProduct = products.find((product) => product.id === productId);
   if (!activeProduct) return;
+  delete activeProduct.skinPack;
 
   modal.dataset.category = activeProduct.category || "";
 
@@ -836,6 +839,10 @@ document.addEventListener("boomart:show-model", (event) => {
   modalTitle.textContent = window.BoomArtSkinPicker?.isProduct(activeProduct) ? activeProduct.name : model.name;
   renderModalImage();
   if (shareProductWa) shareProductWa.href = whatsappUrl(inquiryMessage({ ...activeProduct, name: model.name, regularPrice: model.regularPrice }));
+});
+
+document.addEventListener("boomart:skin-pack", (event) => {
+  if (activeProduct?.id === event.detail.productId) activeProduct.skinPack = event.detail.pack;
 });
 
 const changeImage = (direction) => {

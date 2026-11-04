@@ -375,8 +375,9 @@
         buttons.forEach(function (button) { button.addEventListener('click', function () { choose(button.dataset.ppModel); }); });
         var initial = new URLSearchParams(location.search).get('modelo');
         if (!models.some(function (model) { return model.id === initial; })) initial = models[0].id;
-        window.BoomArtSkinPicker?.mount(buttons[0]?.parentElement.closest('.pp-thumbs'), {id:'visor-de-cyclops', modelOptions:models}, {attribute:'data-pp-model', prefix:'../../', selectedId:initial, notice:document.querySelector('.pp-notice'), description:document.querySelector('.pp-sub')});
+        var skinPicker = window.BoomArtSkinPicker?.mount(buttons[0]?.parentElement.closest('.pp-thumbs'), {id:'visor-de-cyclops', modelOptions:models}, {attribute:'data-pp-model', prefix:'../../', selectedId:initial, notice:document.querySelector('.pp-notice'), description:document.querySelector('.pp-sub')});
         choose(initial);
+        skinPicker?.sync();
       })();
     </script>
     <script src="../../src/track.js?v=5" defer></script>

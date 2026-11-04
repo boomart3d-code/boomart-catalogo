@@ -3,12 +3,15 @@
 .skin-picker-host{min-width:0;max-width:100%}
 .skin-picker{color:#29251f;min-width:0;display:grid;gap:10px}
 .skin-picker button{font:inherit;color:#29251f;cursor:pointer}
-.skin-picker .skin-modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.skin-picker .skin-modes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
 .skin-picker .skin-modes button{display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center;min-height:62px;width:auto;height:auto;padding:8px 4px;border:1px solid #aaa092;border-radius:4px;background:#faf8f3;text-align:center;white-space:normal}
 .skin-picker .skin-modes span{font-size:.72rem;font-weight:650;line-height:1.3}
 .skin-picker .skin-modes strong{font-size:.98rem;line-height:1.2}
 .skin-picker .skin-modes button[aria-pressed=true]{background:#f2d5d2;border:2px solid #a51a34;padding:7px 3px}
 .skin-picker .skin-mode-note{margin:0!important;color:#484139!important;font-size:.76rem;line-height:1.45!important}
+.skin-picker .skin-stages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.skin-picker .skin-stages button{min-height:44px;border:1px solid #aaa092;border-radius:4px;background:#faf8f3;font-size:.73rem;font-weight:650;padding:6px}
+.skin-picker .skin-stages button[aria-pressed=true]{background:#eae3d6;border-color:#29251f}
 .skin-picker .skin-preview{position:relative;min-width:0;background:#171512;border-radius:4px;overflow:hidden}
 .skin-picker .skin-preview>[data-skin-zoom]{position:relative;display:block;width:100%;height:auto;padding:0;border:0;background:#171512;border-radius:0}
 .skin-picker .skin-preview img{display:block;width:100%;height:205px;max-height:none;object-fit:contain;background:#171512}
@@ -24,6 +27,11 @@
 .skin-picker .skin-swatches img{display:block;width:100%;height:100%;object-fit:contain}
 .skin-picker .skin-swatches button>span{position:absolute;right:1px;bottom:1px;padding:1px 4px;background:#faf8f3;color:#29251f;font-size:.64rem;font-weight:750}
 .skin-picker .skin-swatches button[aria-pressed=true]{border-color:#a51a34;box-shadow:0 0 0 1px #a51a34}
+.skin-picker .skin-swatches .skin-check{position:absolute;top:1px;right:1px;min-width:18px;height:18px;display:grid;place-items:center;border-radius:3px;background:#245638;color:#fff;font-size:.7rem}
+.skin-picker .skin-swatches .skin-check[data-included=true]{background:#29251f}
+.skin-picker .skin-swatches button[data-preview=true]{outline:2px solid #29251f;outline-offset:1px}
+.skin-picker .skin-chosen{display:flex;gap:6px;overflow-x:auto;min-width:0;padding-bottom:3px}
+.skin-picker .skin-chosen button{flex:none;min-height:44px;max-width:220px;padding:7px 10px;border:1px solid #aaa092;border-radius:4px;background:#eae3d6;color:#29251f;font-size:.72rem}
 .skin-picker button:focus-visible,.skin-includes summary:focus-visible{outline:3px solid #a51a34;outline-offset:2px}
 .skin-picker .skin-includes{border-top:1px solid #c8bfaf;color:#484139;font-size:.78rem;line-height:1.45}
 .skin-picker .skin-includes summary{padding:10px 0;cursor:pointer;font-weight:650}

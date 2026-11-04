@@ -73,6 +73,12 @@ const waLink = (name) =>
  *   listPrice  único precio oficial para los feeds (Google/Meta/Pinterest)
  */
 function priceInfo(p) {
+  if (p.id === "skins-zelda-nintendo-switch-2") {
+    const base = Number(p.modelOptions.find(model => !model.addon && model.id !== "set-11").regularPrice);
+    const extra = Number(p.modelOptions.find(model => model.addon).regularPrice);
+    const full = Number(p.modelOptions.find(model => model.id === "set-11").regularPrice);
+    return {from:base,listPrice:base,lines:[`Pack obligatorio: base + 1 skin a elección: S/${base}`, `Cada temática adicional al mismo pack: +S/${extra} (no se vende por separado)`, `Base + 2 skins: S/${base+extra}; base + 3 skins: S/${base+2*extra}`, `Base + colección completa de 11 diseños distintos: S/${full}`]};
+  }
   if (p.modelOptions?.length) {
     const prices = p.modelOptions.filter((model) => !model.addon).map((model) => Number(model.regularPrice));
     return { from: Math.min(...prices), listPrice: Number(p.modelOptions[0].regularPrice),
@@ -871,6 +877,12 @@ function offerLd(p) {
       returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
     },
   };
+  if (p.id === "skins-zelda-nintendo-switch-2") {
+    const single = p.modelOptions.filter(model => !model.addon && model.id !== "set-11");
+    const base = Number(single[0].regularPrice), extra = Number(p.modelOptions.find(model => model.addon).regularPrice);
+    const full = Number(p.modelOptions.find(model => model.id === "set-11").regularPrice);
+    return {"@type":"AggregateOffer",lowPrice:base,highPrice:Math.max(full,base+Math.max(0,single.length-2)*extra),...common};
+  }
   if (p.modelOptions?.length) {
     const prices = p.modelOptions.filter((model) => !model.addon).map((model) => Number(model.regularPrice));
     return { "@type": "AggregateOffer", offerCount: prices.length,
@@ -1191,7 +1203,7 @@ function buildProductPage(p, all, ratingLd) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="${rel}src/styles.css?v=69">
-    <style>${PRODUCT_PAGE_CSS}</style>${p.id === "skins-zelda-nintendo-switch-2" ? `\n    <link rel="stylesheet" href="${rel}src/product-skins.css?v=1"><script src="${rel}src/product-skins.js?v=1"></script>` : ""}
+    <style>${PRODUCT_PAGE_CSS}</style>${p.id === "skins-zelda-nintendo-switch-2" ? `\n    <link rel="stylesheet" href="${rel}src/product-skins.css?v=2"><script src="${rel}src/product-skins.js?v=2"></script>` : ""}
     <script type="application/ld+json">${JSON.stringify(productLd(p))}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbLd(p))}</script>
   </head>
@@ -1421,8 +1433,9 @@ ${p.modelOptions?.length ? `<script>
         buttons.forEach(function (button) { button.addEventListener('click', function () { choose(button.dataset.ppModel); }); });
         var initial = new URLSearchParams(location.search).get('modelo');
         if (!models.some(function (model) { return model.id === initial; })) initial = models[0].id;
-        window.BoomArtSkinPicker?.mount(buttons[0]?.parentElement.closest('.pp-thumbs'), {id:'${p.id}', modelOptions:models}, {attribute:'data-pp-model', prefix:'${rel}', selectedId:initial, notice:document.querySelector('.pp-notice'), description:document.querySelector('.pp-sub')});
+        var skinPicker = window.BoomArtSkinPicker?.mount(buttons[0]?.parentElement.closest('.pp-thumbs'), {id:'${p.id}', modelOptions:models}, {attribute:'data-pp-model', prefix:'${rel}', selectedId:initial, notice:document.querySelector('.pp-notice'), description:document.querySelector('.pp-sub')});
         choose(initial);
+        skinPicker?.sync();
       })();
     </script>` : ''}
     <script src="${rel}src/track.js?v=5" defer></script>

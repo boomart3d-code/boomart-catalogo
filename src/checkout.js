@@ -343,9 +343,13 @@
       const variantKey = keys.length ? keys.join(",") : null;
       const qty = Number(qtyValueEl.textContent) || 1;
       let state = null;
-      (keys.length ? keys : [null]).forEach((k) => {
-        state = window.BoomartCart.add(productId, k, qty);
-      });
+      if (container.dataset.skinPack) {
+        state = window.BoomartCart.addSkinPack(productId, JSON.parse(container.dataset.skinPack), qty);
+      } else {
+        (keys.length ? keys : [null]).forEach((k) => {
+          state = window.BoomartCart.add(productId, k, qty);
+        });
+      }
       qtyValueEl.textContent = "1";
       const addedLines = state.lines.filter(
         (line) => line.productId === productId && (keys.length ? keys.includes(line.variantKey) : !line.variantKey)

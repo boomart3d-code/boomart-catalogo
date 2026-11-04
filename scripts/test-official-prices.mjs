@@ -61,7 +61,10 @@ for (const product of products) {
   for (const variant of product.templePricing ? Object.keys(product.templePricing) : [null]) {
     cart.clear();
     cart.add(product.id, variant, 2);
-    check(() => assert.equal(cart.getState().totals.total, 2 * (variant ? product.templePricing[variant] : product.regularPrice), `${product.id}/${variant}`));
+    // Pandora se agrega como set completo por defecto; su regularPrice es el
+    // precio de referencia de un signo, no el de esa selección inicial.
+    const selectedPrice = variant ? product.templePricing[variant] : product.signPicker?.setPrice ?? product.regularPrice;
+    check(() => assert.equal(cart.getState().totals.total, 2 * selectedPrice, `${product.id}/${variant}`));
   }
 }
 
