@@ -40,7 +40,7 @@ async function contrast(page){return page.evaluate(()=>{
    await page.evaluate(()=>document.fonts.ready);
    for(const p of products){
     await page.evaluate(id=>{history.replaceState({},'','?producto='+id+'&excluir=1');dispatchEvent(new PopStateEvent('popstate'));},p.id);
-    const states=[null,...(p.signPicker?['[data-pick-mode="signos"]','[data-sign="aries"]']:[])];
+    const states=[null,...(p.id==='skins-zelda-nintendo-switch-2'?['.skin-includes summary','[data-skin-mode="extra"]','[data-skin-mode="all"]']:[]),...(p.signPicker?['[data-pick-mode="signos"]','[data-sign="aries"]']:[])];
     for(const selector of states){
      if(selector)await page.locator('#productModal '+selector).click();
      const measured=await contrast(page);

@@ -1,0 +1,38 @@
+/* Selector compartido por la ficha emergente y la URL individual. */
+.has-skin-picker>.simple-price,.has-skin-picker>.now{display:none}
+.skin-picker-host{min-width:0;max-width:100%}
+.skin-picker{color:#29251f;min-width:0;display:grid;gap:10px}
+.skin-picker button{font:inherit;color:#29251f;cursor:pointer}
+.skin-picker .skin-modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.skin-picker .skin-modes button{display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center;min-height:62px;width:auto;height:auto;padding:8px 4px;border:1px solid #aaa092;border-radius:4px;background:#faf8f3;text-align:center;white-space:normal}
+.skin-picker .skin-modes span{font-size:.72rem;font-weight:650;line-height:1.3}
+.skin-picker .skin-modes strong{font-size:.98rem;line-height:1.2}
+.skin-picker .skin-modes button[aria-pressed=true]{background:#f2d5d2;border:2px solid #a51a34;padding:7px 3px}
+.skin-picker .skin-mode-note{margin:0!important;color:#484139!important;font-size:.76rem;line-height:1.45!important}
+.skin-picker .skin-preview{position:relative;min-width:0;background:#171512;border-radius:4px;overflow:hidden}
+.skin-picker .skin-preview>[data-skin-zoom]{position:relative;display:block;width:100%;height:auto;padding:0;border:0;background:#171512;border-radius:0}
+.skin-picker .skin-preview img{display:block;width:100%;height:205px;max-height:none;object-fit:contain;background:#171512}
+.skin-picker [data-skin-zoom]>span{position:absolute;right:8px;bottom:8px;padding:5px 7px;border:1px solid #c8bfaf;background:#171512;color:#faf8f3;font-size:.7rem}
+.skin-picker .skin-preview-caption{display:flex;gap:10px;justify-content:space-between;align-items:center;padding:9px 12px;background:#eae3d6;color:#29251f}
+.skin-picker .skin-preview-caption strong{font-size:.88rem;line-height:1.35}
+.skin-picker .skin-preview-caption span{font-size:.75rem;white-space:nowrap}
+.skin-picker .skin-browse{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#484139}
+.skin-picker .skin-browse>span{font-size:.72rem;line-height:1.4;text-align:center}
+.skin-picker .skin-browse button{width:44px;height:44px;min-width:44px;border:1px solid #aaa092;background:#faf8f3;border-radius:4px;font-size:1.6rem;line-height:1}
+.skin-picker .skin-swatches{position:relative;display:flex;gap:7px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x proximity;padding:3px 2px 7px;scrollbar-width:thin}
+.skin-picker .skin-swatches button{position:relative;flex:0 0 64px;width:64px;height:70px;min-height:44px;border:2px solid #aaa092;border-radius:4px;padding:2px;background:#faf8f3;scroll-snap-align:center}
+.skin-picker .skin-swatches img{display:block;width:100%;height:100%;object-fit:contain}
+.skin-picker .skin-swatches button>span{position:absolute;right:1px;bottom:1px;padding:1px 4px;background:#faf8f3;color:#29251f;font-size:.64rem;font-weight:750}
+.skin-picker .skin-swatches button[aria-pressed=true]{border-color:#a51a34;box-shadow:0 0 0 1px #a51a34}
+.skin-picker button:focus-visible,.skin-includes summary:focus-visible{outline:3px solid #a51a34;outline-offset:2px}
+.skin-picker .skin-includes{border-top:1px solid #c8bfaf;color:#484139;font-size:.78rem;line-height:1.45}
+.skin-picker .skin-includes summary{padding:10px 0;cursor:pointer;font-weight:650}
+.skin-picker .skin-includes .pp-sub{margin:10px 0;color:#484139;font-size:.78rem;line-height:1.5}
+.skin-picker .skin-includes #modalDescription{margin:10px 0;font-size:.78rem;line-height:1.5;color:#484139}
+.skin-picker .skin-includes .product-notice,.skin-picker .skin-includes .pp-notice{margin:0!important;padding:10px!important;font-size:.78rem!important;line-height:1.45!important;font-weight:500!important;color:#57360f!important;background:#f1e2c8;border:1px solid #9b6b2e;border-radius:4px}
+.skin-picker [hidden]{display:none!important}
+.skin-zoom{width:min(900px,96vw);height:92dvh;max-width:96vw;max-height:92dvh;border:1px solid #aaa092;border-radius:4px;padding:48px 8px 8px;background:#171512}
+.skin-zoom::backdrop{background:#000c}
+.skin-zoom>img{display:block;width:100%;height:100%;object-fit:contain}
+.skin-zoom>button{position:absolute;top:4px;right:4px;display:grid;place-items:center;width:44px;height:44px;border:1px solid #aaa092;border-radius:4px;background:#faf8f3;color:#29251f;font-size:1.8rem;cursor:pointer}
+@media(max-width:360px){.skin-picker .skin-modes span{font-size:.68rem}.skin-picker .skin-preview img{height:180px}}

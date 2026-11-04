@@ -1191,7 +1191,7 @@ function buildProductPage(p, all, ratingLd) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="${rel}src/styles.css?v=69">
-    <style>${PRODUCT_PAGE_CSS}</style>
+    <style>${PRODUCT_PAGE_CSS}</style>${p.id === "skins-zelda-nintendo-switch-2" ? `\n    <link rel="stylesheet" href="${rel}src/product-skins.css?v=1"><script src="${rel}src/product-skins.js?v=1"></script>` : ""}
     <script type="application/ld+json">${JSON.stringify(productLd(p))}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbLd(p))}</script>
   </head>
@@ -1401,7 +1401,7 @@ ${p.modelOptions?.length ? `<script>
           var thumbs = document.getElementById('ppThumbs');
           window.BoomArtImages.apply(main, '${rel}' + model.gallery[0].replace(/\\.jpg$/, '.webp'), 'main');
           main.alt = model.name + ' · BoomArt';
-          document.querySelector('.pp-info h1').textContent = model.name;
+          if (!window.BoomArtSkinPicker?.isProduct({id:'${p.id}'})) document.querySelector('.pp-info h1').textContent = model.name;
           thumbs.replaceChildren();
           model.gallery.forEach(function (src, index) {
             var button = document.createElement('button');
@@ -1419,7 +1419,10 @@ ${p.modelOptions?.length ? `<script>
           share.setAttribute('data-title', model.name);
         }
         buttons.forEach(function (button) { button.addEventListener('click', function () { choose(button.dataset.ppModel); }); });
-        choose(new URLSearchParams(location.search).get('modelo') || models[0].id);
+        var initial = new URLSearchParams(location.search).get('modelo');
+        if (!models.some(function (model) { return model.id === initial; })) initial = models[0].id;
+        window.BoomArtSkinPicker?.mount(buttons[0]?.parentElement.closest('.pp-thumbs'), {id:'${p.id}', modelOptions:models}, {attribute:'data-pp-model', prefix:'${rel}', selectedId:initial, notice:document.querySelector('.pp-notice'), description:document.querySelector('.pp-sub')});
+        choose(initial);
       })();
     </script>` : ''}
     <script src="${rel}src/track.js?v=5" defer></script>

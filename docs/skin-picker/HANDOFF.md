@@ -1,0 +1,11 @@
+# Skins Zelda: selector visual compacto
+
+04/11/2026. Codex, sesión 01a1a75e-ea51-75c2-8164-c1313fda1ddb. Pedido de Adrián: corregir texto tenue y sustituir la lista extensa de opciones por una selección compacta que muestre cada skin instalada.
+
+Se conserva la fuente comercial de las 23 variantes: 11 packs base + skin a S/50, 11 adicionales sin base a S/20 y base + 11 skins a S/200. El selector compartido ofrece tres modos de compra, 11 miniaturas deslizables, flechas, navegación con teclado y vista previa instalada con ampliación. Nombre y contador se muestran solo para el diseño elegido. La descripción y el aviso completos se conservan en un desplegable. Altura habitual del selector: 527–552 px. Texto carbón sobre marfil; miniaturas y fotos completas con contain.
+
+Implementación: product-skins.js y product-skins.css, cargados juntos desde portada/campañas y ficha individual de Zelda. Se reutilizan los controles originales ocultos para mantener la integración del carrito y las URLs de modelos; las líneas del carrito conservan los nombres completos y sus fotos. La ficha emergente mantiene un título estable y el resumen de compra usa un nombre breve. El aviso y la descripción se restauran al abrir otro producto. El generador HTML conserva el selector al regenerar y se ejecutó sobre los 104 productos. También regenera los bloques de modelos de Calavera y Cyclops y sincroniza la referencia de imágenes de opiniones.
+
+Validación local: 138 combinaciones de variante × tamaño × ficha (23 variantes, 320/390/1280 px, modal y URL individual), sin errores JavaScript. Fotos, importes, consulta WhatsApp y enlaces de modelos correctos. Teclado, ampliación/cierre, restauración de avisos y enlaces directos de variantes pasan. Carrito local: pack, adicional y colección; prueba de dominio test-skins-models también pasa. Contraste: 3126 textos en las 104 fichas, móvil/escritorio, incluyendo desplegable abierto y tres modos de skins; mínimo 4.84:1, ningún fallo. Regresión de acciones: 248 casos aprobados. No se generaron pedidos/clientes ni se enviaron mensajes.
+
+Capturas: modal-mobile.png y static-mobile.png. Resultado de publicación, comprobación en vivo, desbordes y commits registrados en el cierre de la tarea del equipo.

@@ -116,6 +116,7 @@
       .pp-body{margin-top:24px;line-height:1.55}
     }
 </style>
+    <link rel="stylesheet" href="../../src/product-skins.css?v=1"><script src="../../src/product-skins.js?v=1"></script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Skins 3D Zelda para base de carga Nintendo Switch 2 · Colección Hyrule","description":"BASE = la plataforma inferior de apoyo con sus dos soportes laterales tipo piedra. SKIN = la tarjeta superior decorada, intercambiable y en alto relieve. Personaliza tu base de carga Nintendo Switch 2 con Zelda en 3D y alto relieve. Pack inicial S/50: base/superficie de apoyo con las dos piezas laterales tipo piedra y 1 skin a elección. Agrega la segunda, tercera y siguientes skins por S/20 cada una, sin repetir la base; selecciona el diseño adicional y añádelo al carrito. Base + colección completa de 11 skins intercambiables: S/200. Elige un modelo para verlo instalado. Consola, dock de carga Nintendo y videojuegos no incluidos. Para tus aventuras de Ocarina of Time y tu espacio gamer. Imágenes de diseño referenciales; colores y acabados pueden variar ligeramente por la fabricación 3D. Hecho a pedido por BoomArt, con envíos a todo el Perú.","image":["https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-hero-v2.webp","https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-escudo-hyliano.webp","https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-11-disenos-v2.webp","https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-majora.webp","https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-emblema-hyrule.webp","https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-base-soporte.webp","https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-skin-ejemplo.webp"],"sku":"skins-zelda-nintendo-switch-2","category":"Soportes de Mandos","brand":{"@type":"Brand","name":"BoomArt"},"offers":{"@type":"AggregateOffer","offerCount":12,"lowPrice":50,"highPrice":200,"priceCurrency":"PEN","availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition","priceValidUntil":"2027-03-04","url":"https://boomart.pe/producto/skins-zelda-nintendo-switch-2/","seller":{"@type":"Organization","name":"BoomArt"},"hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","applicableCountry":"PE","returnPolicyCategory":"https://schema.org/MerchantReturnNotPermitted"}},"material":"Impresión 3D en alto relieve"}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://boomart.pe/"},{"@type":"ListItem","position":2,"name":"Soportes de Mandos","item":"https://boomart.pe/categoria/soportes-de-mandos/"},{"@type":"ListItem","position":3,"name":"Skins 3D Zelda para base de carga Nintendo Switch 2 · Colección Hyrule","item":"https://boomart.pe/producto/skins-zelda-nintendo-switch-2/"}]}</script>
   </head>
@@ -355,7 +356,7 @@
           var thumbs = document.getElementById('ppThumbs');
           window.BoomArtImages.apply(main, '../../' + model.gallery[0].replace(/\.jpg$/, '.webp'), 'main');
           main.alt = model.name + ' · BoomArt';
-          document.querySelector('.pp-info h1').textContent = model.name;
+          if (!window.BoomArtSkinPicker?.isProduct({id:'skins-zelda-nintendo-switch-2'})) document.querySelector('.pp-info h1').textContent = model.name;
           thumbs.replaceChildren();
           model.gallery.forEach(function (src, index) {
             var button = document.createElement('button');
@@ -373,7 +374,10 @@
           share.setAttribute('data-title', model.name);
         }
         buttons.forEach(function (button) { button.addEventListener('click', function () { choose(button.dataset.ppModel); }); });
-        choose(new URLSearchParams(location.search).get('modelo') || models[0].id);
+        var initial = new URLSearchParams(location.search).get('modelo');
+        if (!models.some(function (model) { return model.id === initial; })) initial = models[0].id;
+        window.BoomArtSkinPicker?.mount(buttons[0]?.parentElement.closest('.pp-thumbs'), {id:'skins-zelda-nintendo-switch-2', modelOptions:models}, {attribute:'data-pp-model', prefix:'../../', selectedId:initial, notice:document.querySelector('.pp-notice'), description:document.querySelector('.pp-sub')});
+        choose(initial);
       })();
     </script>
     <script src="../../src/track.js?v=5" defer></script>

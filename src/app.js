@@ -742,17 +742,25 @@ const openProduct = (productId, fromHistory = false) => {
     if (details) details.insertAdjacentElement("afterend", modalNotice);
   }
   const notice = productNotice(activeProduct);
+  // El selector compacto guarda este aviso en un desplegable. Devolverlo a su
+  // posición antes de sustituir el selector al abrir cualquier otro producto.
+  if (modalNotice.parentElement !== modalDetails.parentElement) modalDetails.insertAdjacentElement("afterend", modalNotice);
+  if (modalDescription.parentElement !== modalPricing.parentElement) modalPricing.insertAdjacentElement("afterend", modalDescription);
   modalNotice.hidden = !notice;
   modalNotice.textContent = notice ? `⚠️ ${notice}` : "";
   modalDetails.textContent = [
     activeProduct.height ? `Tamaño: ${activeProduct.height}` : "",
     activeProduct.material ? `Material: ${activeProduct.material}` : "",
   ].filter(Boolean).join(" · ");
+  modalPricing.classList.remove("has-skin-picker");
   modalPricing.innerHTML = priceMarkup(activeProduct) + addToCartMarkup(activeProduct);
   activeProduct.activeModel = activeProduct.modelOptions?.[0]?.id;
+  window.BoomArtSkinPicker?.mount(modalPricing.querySelector(".model-picker"), activeProduct, { notice: modalNotice, description: modalDescription });
   const requestedModel = new URL(window.location.href).searchParams.get("modelo");
   if (activeProduct.modelOptions?.some((option) => option.id === requestedModel)) {
     modalPricing.querySelector(`[data-model-option="${requestedModel}"]`)?.click();
+  } else if (window.BoomArtSkinPicker?.isProduct(activeProduct)) {
+    modalPricing.querySelector("[data-model-option]")?.click();
   }
   if (shareProductWa) {
     const model = activeProduct.modelOptions?.find((option) => option.id === activeProduct.activeModel);
@@ -825,7 +833,7 @@ document.addEventListener("boomart:show-model", (event) => {
   const modelGroup = modalPricing.querySelector(`[data-model-option="${model.id}"]`)?.closest("details");
   if (modelGroup) modelGroup.open = true;
   activeImageIndex = 0;
-  modalTitle.textContent = model.name;
+  modalTitle.textContent = window.BoomArtSkinPicker?.isProduct(activeProduct) ? activeProduct.name : model.name;
   renderModalImage();
   if (shareProductWa) shareProductWa.href = whatsappUrl(inquiryMessage({ ...activeProduct, name: model.name, regularPrice: model.regularPrice }));
 });

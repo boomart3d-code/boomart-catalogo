@@ -355,7 +355,7 @@
           var thumbs = document.getElementById('ppThumbs');
           window.BoomArtImages.apply(main, '../../' + model.gallery[0].replace(/\.jpg$/, '.webp'), 'main');
           main.alt = model.name + ' · BoomArt';
-          document.querySelector('.pp-info h1').textContent = model.name;
+          if (!window.BoomArtSkinPicker?.isProduct({id:'visor-de-cyclops'})) document.querySelector('.pp-info h1').textContent = model.name;
           thumbs.replaceChildren();
           model.gallery.forEach(function (src, index) {
             var button = document.createElement('button');
@@ -373,7 +373,10 @@
           share.setAttribute('data-title', model.name);
         }
         buttons.forEach(function (button) { button.addEventListener('click', function () { choose(button.dataset.ppModel); }); });
-        choose(new URLSearchParams(location.search).get('modelo') || models[0].id);
+        var initial = new URLSearchParams(location.search).get('modelo');
+        if (!models.some(function (model) { return model.id === initial; })) initial = models[0].id;
+        window.BoomArtSkinPicker?.mount(buttons[0]?.parentElement.closest('.pp-thumbs'), {id:'visor-de-cyclops', modelOptions:models}, {attribute:'data-pp-model', prefix:'../../', selectedId:initial, notice:document.querySelector('.pp-notice'), description:document.querySelector('.pp-sub')});
+        choose(initial);
       })();
     </script>
     <script src="../../src/track.js?v=5" defer></script>
