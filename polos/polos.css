@@ -128,7 +128,9 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
 .migas{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gris)}
 .ficha{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(26px,4.5vw,72px);width:min(1300px,100% - 48px);margin:34px auto 100px;align-items:start}
 .galeria{display:grid;grid-template-columns:80px minmax(0,1fr);gap:14px;position:sticky;top:82px;align-items:start}
-.minis{display:flex;flex-direction:column;gap:8px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--linea-f) transparent;padding-right:2px}
+.minis{display:flex;flex-direction:column;gap:8px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;-ms-overflow-style:none;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 14px,#000 calc(100% - 14px),transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 14px,#000 calc(100% - 14px),transparent 100%);padding:14px 0}
+.minis::-webkit-scrollbar{display:none;width:0;height:0}          /* sin barra nativa: al pasar el mouse la barra cambiaba de ancho y la lista oscilaba de arriba a abajo */
 .mini{flex:0 0 auto;border:2px solid transparent;background:var(--arena);padding:0;aspect-ratio:4/5;overflow:hidden;position:relative;opacity:.72;transition:.25s;border-radius:10px}
 .mini.on,.mini:hover{opacity:1}.mini.on{border-color:var(--tinta)}
 .mini canvas,.mini img{width:100%;height:100%;object-fit:cover}
@@ -210,7 +212,7 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
   .pie-in{grid-template-columns:1fr}
   .ficha{grid-template-columns:1fr;margin-top:14px}
   .galeria,.info{position:static}
-  .galeria{grid-template-columns:1fr}.minis{flex-direction:row;order:2;overflow:auto;max-height:none!important}.mini{flex:0 0 66px}
+  .galeria{grid-template-columns:1fr}.minis{flex-direction:row;order:2;overflow:auto;max-height:none!important;-webkit-mask-image:none;mask-image:none;padding:0}.mini{flex:0 0 66px}
   .prob-cuerpo{grid-template-columns:1fr;height:auto}
   .prob-esc{padding:10px}.prob-esc .escena{max-height:none;width:100%}
   .prob-lat{border-left:0;border-top:1px solid var(--linea)}

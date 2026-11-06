@@ -270,7 +270,7 @@ function abrirFicha(id) {
       <details><summary>Cuidados</summary><p>Espera 24 a 48 horas antes del primer lavado. Lava del revés, en ciclo suave con agua fría (hasta 30 °C), sin lejía ni suavizante. Seca a la sombra o a baja temperatura. Plancha del revés, a temperatura media-baja, sin pasar la plancha sobre el estampado.</p></details></div></div></div>`;
   const escena = crearEscena($("#fEscena", H), fondoPlano(p));
   const minis = $("#fMinis", H);
-  const igualarAlto = () => { const e = $("#fEscena .escena", H); if (e) minis.style.maxHeight = e.clientHeight + "px"; };       // la lista de fotos se desplaza sola, con la altura de la foto principal
+  const igualarAlto = () => { const e = $("#fEscena .escena", H); if (!e) return; const v = e.clientHeight + "px"; if (minis.style.maxHeight !== v) minis.style.maxHeight = v; };       // la lista de fotos se desplaza sola, con la altura de la foto principal
   igualarAlto(); new ResizeObserver(igualarAlto).observe($("#fEscena", H));
   const mostrar = () => {
     const it = items[st.item]; items.forEach((x, n) => x.btn.classList.toggle("on", n === st.item));
