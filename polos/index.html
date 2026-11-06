@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#f6f1e7">
+  <title>Polos de autor · BoomArt</title>
+  <meta name="description" content="Polos de autor estampados con DTF de alta definición, desde Lima. Míralos puestos, de frente, de espalda y de lado.">
+  <link rel="icon" type="image/svg+xml" href="../assets/boomart-mark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="polos.css?v=30">
+</head>
+<body>
+  <header class="cab" id="cab">
+    <a class="marca" href="#/" aria-label="BoomArt polos, inicio"><b>BOOMART</b><i>Polos</i></a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#coleccion" data-ir>Colección</a>
+      <a href="#probador" data-ir>Modelos</a>
+      <a href="#proceso" data-ir>Cómo se hace</a>
+      <a href="#prenda" data-ir>La prenda</a>
+      <a href="#tallas" data-ir>Tallas</a>
+    </nav>
+    <span class="privado" role="note">Próximamente</span>
+  <button class="seleccion-cab" id="abrirSeleccion" type="button">Mi selección (0)</button></header>
+
+  <main id="app">
+    <!-- PORTADA -->
+    <section class="hero" id="inicio">
+      <div class="hero-txt">
+        <p class="etiqueta">Colección 01</p>
+        <h1>Polos<br>de autor</h1>
+        <p class="lead">Estampados de alta definición sobre algodón de caída limpia. Mira cada diseño puesto, de frente, de espalda y de lado, antes de pedirlo.</p>
+        <div class="hero-acc">
+          <a class="btn btn-osc" href="#coleccion" data-ir>Ver la colección</a>
+          <a class="btn btn-linea-osc" href="#probador" data-ir>Ver los modelos</a>
+        </div>
+      </div>
+      <div class="hero-vis" id="heroVis" aria-live="polite">
+        <canvas class="hero-c" id="heroA" aria-hidden="true"></canvas>
+        <canvas class="hero-c" id="heroB" aria-hidden="true"></canvas>
+        <div class="hero-pie"><span id="heroCap">Gryffindor · Blanco · Espalda</span><span class="hero-pts" id="heroPts"></span></div>
+      </div>
+    </section>
+
+    <ul class="beneficios" aria-label="Características">
+      <li><b>Colección de autor</b><span>Diseño y detalle</span></li>
+      <li><b>Impresión DTF</b><span>300 ppp</span></li>
+      <li><b>Envíos</b><span>A todo el Perú</span></li>
+      <li><b>Tallas</b><span>S · M · L</span></li>
+    </ul>
+
+    <!-- COLECCIÓN -->
+    <section class="sec" id="coleccion">
+      <div class="cont">
+        <div class="sec-cab">
+          <div><p class="etiqueta">Colección</p><h2>Elige tu diseño</h2></div>
+          <div class="filtros" id="filtros" role="toolbar" aria-label="Filtrar polos"></div>
+        </div>
+        <div class="catalogo-herramientas"><label class="buscador">Buscar un diseño<input id="buscarDisenos" type="search" placeholder="Diseño, personaje o colección" autocomplete="off"></label><label>Ordenar<select id="ordenDisenos"><option value="coleccion">Orden de la colección</option><option value="nombre">Nombre A–Z</option></select></label><button id="limpiarFiltros" type="button">Restablecer filtros</button></div>
+        <p id="catalogoCuenta" class="catalogo-cuenta" aria-live="polite"></p><div class="grilla" id="grilla"></div><button type="button" id="catalogoMas" class="btn btn-linea-osc" hidden>Ver más diseños</button>
+      </div>
+    </section>
+
+    <!-- MODELOS -->
+    <section class="sec sec-hueso" id="probador">
+      <div class="cont probador-teaser">
+        <div class="pt-txt">
+          <p class="etiqueta">Modelos</p>
+          <h2>Míralo puesto,<br>desde cada ángulo</h2>
+          <p class="lead">Recorre cada polo en distintos modelos, de frente, de espalda y de lado, con una dirección artística cuidada en cada fotografía. Elige ver solo las fotos de hombre, de mujer o todas.</p>
+          <ol class="pasos">
+            <li><b>01</b><span>Escoge un diseño</span></li>
+            <li><b>02</b><span>Elige hombre, mujer o todos</span></li>
+            <li><b>03</b><span>Cambia de ángulo y acércate a cada detalle</span></li>
+          </ol>
+          <button class="btn btn-osc" id="abrirProbadorHome" type="button">Ver los modelos</button>
+        </div>
+        <div class="pt-vis" id="ptVis"></div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="sec" id="proceso">
+      <div class="cont">
+        <div class="sec-cab"><div><p class="etiqueta">Cómo se hace</p><h2>Una pieza, de principio a fin</h2></div></div>
+        <div class="proceso">
+          <article><b class="num">01</b><h3>Arte preparado a mano</h3><p>Cada diseño se limpia, se ajusta a la medida exacta de la prenda y se revisa sobre el color real del polo antes de imprimir.</p></article>
+          <article><b class="num">02</b><h3>DTF de alta definición</h3><p>Preparación técnica independiente del arte, con revisión de transparencia, bordes y resolución antes de imprimir.</p></article>
+          <article><b class="num">03</b><h3>Listo para ti</h3><p>Cada talla lleva su etiqueta interior. Preparamos tu polo y coordinamos el envío contigo desde Lima.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LA PRENDA -->
+    <section class="sec sec-hueso" id="prenda">
+      <div class="cont">
+        <div class="sec-cab"><div><p class="etiqueta">La prenda</p><h2>Hecha para durar</h2></div>
+          <p class="lead" style="max-width:46ch;margin:0">Elegimos la tela y la confección que mejor reciben la impresión DTF: un algodón de alta calidad, firme y suave, con acabados de prenda premium.</p></div>
+        <div class="prenda-grid">
+          <article><h3>Tela</h3><p>100 % algodón pima peinado, hilado en anillo (ring-spun). Fibra larga y fina: suave al tacto, resistente al uso y con la superficie uniforme que la impresión DTF necesita.</p></article>
+          <article><h3>Gramaje</h3><p>200 g/m². Un peso medio-alto: cuerpo y caída limpia, sin transparentarse ni perder forma.</p></article>
+          <article><h3>Costuras</h3><p>Doble costura reforzada en hombros, mangas y dobladillo. Hombros con cinta de refuerzo para que la prenda conserve su forma lavado tras lavado.</p></article>
+          <article><h3>Cuello</h3><p>Cuello acanalado (rib) de alta recuperación, con cinta interior en la nuca. Vuelve a su forma y no se abre con el uso.</p></article>
+          <article><h3>Preencogido</h3><p>La tela viene preencogida: la talla que eliges es la talla que conservas después de lavar.</p></article>
+          <article><h3>Impresión DTF</h3><p>Impresión a 300 ppp con tintas de pigmento: color intenso, bordes definidos y un tacto flexible que acompaña la tela. Sin etiquetas que piquen: la etiqueta interior va impresa.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TALLAS -->
+    <section class="sec sec-hueso" id="tallas">
+      <div class="cont tallas">
+        <div><p class="etiqueta">Guía de tallas</p><h2>Encuentra tu talla</h2>
+          <p class="lead">Medidas de la prenda tendida, en centímetros, para cortes de hombre y de mujer. Si estás entre dos tallas, elige la mayor para una caída más suelta. Por el proceso de confección, pueden variar hasta 1 cm.</p></div>
+        <div class="tabla-wrap">
+          <div class="seg" id="segTallas" role="tablist"><button class="on" data-g="hombre" role="tab">Hombre</button><button data-g="mujer" role="tab">Mujer</button></div>
+          <table class="tabla" id="tablaTallas"></table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS -->
+    <section class="sec" id="preguntas">
+      <div class="cont faq">
+        <div><p class="etiqueta">Preguntas</p><h2>Antes de pedir</h2></div>
+        <div class="acordeon">
+          <details><summary>¿Cuándo estarán disponibles y cuánto cuestan?</summary><p>Estamos terminando la primera colección. Los precios y la fecha de lanzamiento se anunciarán pronto: hoy figuran como «Próximamente». Si quieres que te avisemos, escríbenos por WhatsApp y guardamos tu consulta.</p></details>
+          <details><summary>¿El estampado se ve igual que en las fotos?</summary><p>Las fotografías muestran cada diseño puesto sobre la prenda, de frente, de espalda y de lado. El estampado se imprime con el arte original en alta resolución (300 ppp) y las medidas que ves en la ficha de cada diseño. La posición puede variar unos milímetros según la talla, y los colores pueden verse algo distintos según tu pantalla.</p></details>
+          <details><summary>¿De qué está hecho el polo?</summary><p>De 100 % algodón pima peinado, hilado en anillo, de 200 g/m² y preencogido. Lleva doble costura reforzada en hombros, mangas y dobladillo, y cuello acanalado con cinta interior. Es la combinación que mejor recibe la impresión DTF y la que mejor envejece.</p></details>
+          <details><summary>¿Qué tallas hay y cómo elijo la mía?</summary><p>Tallas S, M y L, en corte de hombre y de mujer. En la guía de tallas están las medidas de pecho, largo, hombros y manga de cada una, con la prenda tendida. Si estás entre dos tallas, elige la mayor para una caída más suelta.</p></details>
+          <details><summary>¿Cuánto demora mi pedido?</summary><p>Cada polo se prepara después de confirmar tu pedido: unos 5 a 7 días hábiles entre impresión, curado y control de calidad. Luego coordinamos el envío contigo; el envío se coordina y se paga aparte al courier.</p></details>
+          <details><summary>¿Cómo se lava?</summary><p>Espera 24 a 48 horas antes del primer lavado, para que el estampado termine de curar. Lávalo del revés, en ciclo suave con agua fría (hasta 30 °C) y detergente suave; sin lejía ni suavizante. Sécalo a la sombra o en secadora a temperatura baja. Si lo planchas, hazlo del revés, a temperatura media-baja y sin pasar la plancha sobre el estampado.</p></details>
+          <details><summary>¿Puedo pedir un diseño propio?</summary><p>Sí. Escríbenos por WhatsApp con tu idea o tu imagen; mientras más grande y nítida, mejor (lo ideal es un PNG con fondo transparente o un archivo vectorial). Preparamos el arte, te mostramos cómo quedaría en el polo y confirmamos medidas y precio antes de imprimir.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="cont pie-in">
+      <div><p class="pie-marca">BOOMART <i>Polos</i></p><p>Polos de autor, desde Lima.</p></div>
+      <div><p class="pie-t">Contacto</p><a href="https://wa.me/51925666542?text=Hola%20BoomArt%20%F0%9F%91%8B%20Quiero%20consultar%20por%20los%20polos" target="_blank" rel="noopener">WhatsApp · +51 925 666 542</a></div>
+      <div><p class="pie-t">Próximamente</p><p class="pie-n">Estamos terminando la primera colección. Precios y disponibilidad se anunciarán pronto.</p></div>
+    </div>
+  </footer>
+
+  <!-- FICHA DE PRODUCTO -->
+  <div class="hoja" id="hoja" hidden role="dialog" aria-modal="true" aria-labelledby="fNombre"></div>
+  <!-- MODELOS -->
+  <div class="hoja prob" id="prob" hidden role="dialog" aria-modal="true" aria-label="Modelos"></div>
+  <!-- VISOR CON ZOOM -->
+  <div class="visor" id="visor" hidden role="dialog" aria-modal="true" aria-label="Zoom de la foto">
+    <div class="visor-caja">
+    <div class="visor-barra"><span id="visorTit"></span><div><button type="button" id="vMenos" aria-label="Alejar">−</button><b id="vZoom">100 %</b><button type="button" id="vMas" aria-label="Acercar">+</button><button type="button" id="vReset" aria-label="Restablecer">Ajustar</button><button type="button" id="vCerrar" aria-label="Cerrar">✕</button></div></div>
+    <div class="visor-esc" id="visorEsc"><div class="visor-lienzo" id="visorLienzo"></div></div>
+    <p class="visor-ayuda">Rueda o pellizco para acercar · arrastra para moverte · doble clic para alternar</p>
+    </div>
+  </div>
+
+  <dialog id="dialogoColeccion" class="dialogo-coleccion"></dialog>
+  <script src="catalogo-core.js?v=1"></script>
+  <script src="perspectiva.js?v=1"></script>
+  <script src="polos.js?v=30"></script>
+</body>
+</html>

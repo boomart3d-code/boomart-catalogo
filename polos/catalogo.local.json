@@ -1,0 +1,360 @@
+{
+  "version": 1,
+  "marca": "BoomArt",
+  "posicionamiento": "Coleccion de autor · prendas premium",
+  "material_objetivo_interno": "Algodon pima peinado 200 g/m2; especificacion de la coleccion (confirmar con el proveedor antes de la primera venta)",
+  "productos": [
+    {
+      "id": "gryffindor",
+      "nombre": "Gryffindor",
+      "tema": "Harry Potter",
+      "carpeta": "Gryffindor Polo Blanco",
+      "tipo": "B",
+      "color": "blanco",
+      "seleccion": {
+        "hombre": [
+          [
+            "h1",
+            "espalda"
+          ],
+          [
+            "h2",
+            "espalda-p2"
+          ],
+          [
+            "h2",
+            "frente-p2"
+          ],
+          [
+            "h1",
+            "detalle-pecho"
+          ],
+          [
+            "h1",
+            "lateral-derecho"
+          ],
+          [
+            "h1",
+            "detalle-manga"
+          ],
+          [
+            "ph",
+            "frente-plano"
+          ],
+          [
+            "ph",
+            "espalda-plana"
+          ]
+        ],
+        "mujer": [
+          [
+            "m2",
+            "espalda"
+          ],
+          [
+            "m2",
+            "espalda-p2"
+          ],
+          [
+            "m2",
+            "frente"
+          ],
+          [
+            "m2",
+            "detalle-pecho"
+          ],
+          [
+            "m2",
+            "lateral-derecho"
+          ],
+          [
+            "m2",
+            "detalle-manga"
+          ],
+          [
+            "pm",
+            "frente-plano"
+          ],
+          [
+            "pm",
+            "espalda-plana"
+          ]
+        ]
+      },
+      "texto": "El león de la casa de los valientes, en grande sobre la espalda. Un parche discreto en el pecho y el estandarte en la manga.",
+      "precio": null,
+      "material": "Algodón pima 100 % peinado, hilado en anillo (ring-spun), jersey preencogido.",
+      "gramaje": 200,
+      "estado": "proximamente",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "slytherin",
+      "nombre": "Slytherin",
+      "tema": "Harry Potter",
+      "carpeta": "Polo Slytherin negro",
+      "tipo": "B",
+      "color": "negro",
+      "seleccion": {
+        "hombre": [
+          [
+            "h1",
+            "espalda-p2"
+          ],
+          [
+            "h2",
+            "espalda"
+          ],
+          [
+            "h1",
+            "frente-p3"
+          ],
+          [
+            "h2",
+            "detalle-pecho"
+          ],
+          [
+            "h2",
+            "lateral-derecho-p3"
+          ],
+          [
+            "h2",
+            "detalle-manga"
+          ],
+          [
+            "ph",
+            "espalda-plana"
+          ],
+          [
+            "ph",
+            "frente-plano"
+          ]
+        ],
+        "mujer": [
+          [
+            "m1",
+            "espalda-p2"
+          ],
+          [
+            "m2",
+            "espalda"
+          ],
+          [
+            "m1",
+            "frente-p3"
+          ],
+          [
+            "m2",
+            "detalle-pecho"
+          ],
+          [
+            "m2",
+            "lateral-derecho-p3"
+          ],
+          [
+            "m2",
+            "detalle-manga"
+          ],
+          [
+            "pm",
+            "espalda-plana"
+          ],
+          [
+            "pm",
+            "frente-plano"
+          ]
+        ]
+      },
+      "texto": "La serpiente de la casa de la astucia, en grande sobre la espalda. El escudo de la casa en el pecho y el «Avada Kedavra» en la manga.",
+      "precio": null,
+      "material": "Algodón pima 100 % peinado, hilado en anillo (ring-spun), jersey preencogido.",
+      "gramaje": 200,
+      "estado": "proximamente",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "ravenclaw",
+      "nombre": "Ravenclaw",
+      "tema": "Harry Potter",
+      "carpeta": "Polo Ravenclaw Blanco",
+      "tipo": "B",
+      "color": "blanco",
+      "precio": null,
+      "material": "Algodón pima 100 % peinado, hilado en anillo (ring-spun), jersey preencogido.",
+      "gramaje": 200,
+      "estado": "proximamente",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "texto": "El escudo de la casa de la sabiduría, en grande sobre la espalda. El águila de la casa en el pecho y su nombre en la manga.",
+      "seleccion": {
+        "hombre": [
+          [
+            "h2",
+            "espalda"
+          ],
+          [
+            "h1",
+            "espalda-p2"
+          ],
+          [
+            "h1",
+            "frente-p3"
+          ],
+          [
+            "h2",
+            "detalle-pecho"
+          ],
+          [
+            "h2",
+            "lateral-derecho-p3"
+          ],
+          [
+            "h2",
+            "detalle-manga"
+          ],
+          [
+            "ph",
+            "espalda-plana"
+          ],
+          [
+            "ph",
+            "frente-plano"
+          ]
+        ],
+        "mujer": [
+          [
+            "m1",
+            "espalda"
+          ],
+          [
+            "m1",
+            "espalda-p2"
+          ],
+          [
+            "m2",
+            "frente-p3"
+          ],
+          [
+            "m1",
+            "detalle-pecho"
+          ],
+          [
+            "m2",
+            "lateral-derecho-p3"
+          ],
+          [
+            "m1",
+            "detalle-manga"
+          ],
+          [
+            "pm",
+            "espalda-plana"
+          ],
+          [
+            "pm",
+            "frente-plano"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "hufflepuff",
+      "nombre": "Hufflepuff",
+      "tema": "Harry Potter",
+      "carpeta": "Hufflepuff Negro",
+      "tipo": "B",
+      "color": "negro",
+      "precio": null,
+      "material": "Algodón pima 100 % peinado, hilado en anillo (ring-spun), jersey preencogido.",
+      "gramaje": 200,
+      "estado": "proximamente",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "texto": "El tejón de la casa de la lealtad, enmarcado en dorado sobre la espalda. El escudo de la casa en el pecho y su insignia en la manga.",
+      "seleccion": {
+        "hombre": [
+          [
+            "h1",
+            "espalda"
+          ],
+          [
+            "h2",
+            "espalda-p2"
+          ],
+          [
+            "h2",
+            "frente-p3"
+          ],
+          [
+            "h1",
+            "detalle-pecho"
+          ],
+          [
+            "h1",
+            "lateral-derecho-p3"
+          ],
+          [
+            "h1",
+            "detalle-manga"
+          ],
+          [
+            "ph",
+            "espalda-plana"
+          ],
+          [
+            "ph",
+            "frente-plano"
+          ]
+        ],
+        "mujer": [
+          [
+            "m2",
+            "espalda"
+          ],
+          [
+            "m2",
+            "espalda-p2"
+          ],
+          [
+            "m2",
+            "frente-p3"
+          ],
+          [
+            "m1",
+            "detalle-pecho"
+          ],
+          [
+            "m2",
+            "lateral-derecho"
+          ],
+          [
+            "m1",
+            "detalle-manga"
+          ],
+          [
+            "pm",
+            "espalda-plana"
+          ],
+          [
+            "pm",
+            "frente-plano"
+          ]
+        ]
+      }
+    }
+  ]
+}
