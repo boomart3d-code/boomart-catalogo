@@ -124,8 +124,8 @@
        "escala": 1.0
       },
       "h1-lateral-derecho-p2": {
-       "dx": -1.31,
-       "dy": 14.58,
+       "dx": -1.34,
+       "dy": 15.74,
        "rot": 6.8,
        "escala": 0.778,
        "esq": [
@@ -140,8 +140,8 @@
        ]
       },
       "h1-lateral-derecho-p3": {
-       "dx": 2.25,
-       "dy": 11.81,
+       "dx": 2.2,
+       "dy": 12.84,
        "rot": -2.3,
        "escala": 0.981,
        "esq": [
@@ -438,9 +438,9 @@
        "escala": 1.0
       },
       "h1-espalda-p2": {
-       "dx": 0.21,
-       "dy": -0.65,
-       "rot": 0,
+       "dx": 0.09,
+       "dy": -0.9,
+       "rot": 0.0,
        "escala": 1.0
       },
       "h1-espalda-p3": {
@@ -567,9 +567,9 @@
    "planos": {},
    "galeria": {
     "ph|espalda-plana": {
-     "mini": "img/galeria/gryffindor-ph-espalda-plana-blanco-2e70a24fb9dd6f29-mini.webp",
-     "foto": "img/galeria/gryffindor-ph-espalda-plana-blanco-2e70a24fb9dd6f29-foto.webp",
-     "zoom": "img/galeria/gryffindor-ph-espalda-plana-blanco-2e70a24fb9dd6f29-zoom.webp"
+     "mini": "img/galeria/gryffindor-ph-espalda-plana-blanco-1fb8195fbd1fe3b5-mini.webp",
+     "foto": "img/galeria/gryffindor-ph-espalda-plana-blanco-1fb8195fbd1fe3b5-foto.webp",
+     "zoom": "img/galeria/gryffindor-ph-espalda-plana-blanco-1fb8195fbd1fe3b5-zoom.webp"
     },
     "ph|frente-plano": {
      "mini": "img/galeria/gryffindor-ph-frente-plano-blanco-ebdae89a6663e996-mini.webp",
@@ -577,9 +577,9 @@
      "zoom": "img/galeria/gryffindor-ph-frente-plano-blanco-ebdae89a6663e996-zoom.webp"
     },
     "h1|detalle-manga": {
-     "mini": "img/galeria/gryffindor-h1-detalle-manga-blanco-0314ca2a30eaa7d8-mini.webp",
-     "foto": "img/galeria/gryffindor-h1-detalle-manga-blanco-0314ca2a30eaa7d8-foto.webp",
-     "zoom": "img/galeria/gryffindor-h1-detalle-manga-blanco-0314ca2a30eaa7d8-zoom.webp"
+     "mini": "img/galeria/gryffindor-h1-detalle-manga-blanco-7b0c88fda28be55e-mini.webp",
+     "foto": "img/galeria/gryffindor-h1-detalle-manga-blanco-7b0c88fda28be55e-foto.webp",
+     "zoom": "img/galeria/gryffindor-h1-detalle-manga-blanco-7b0c88fda28be55e-zoom.webp"
     },
     "h1|detalle-pecho": {
      "mini": "img/galeria/gryffindor-h1-detalle-pecho-blanco-e53145ca9690430d-mini.webp",
@@ -587,9 +587,9 @@
      "zoom": "img/galeria/gryffindor-h1-detalle-pecho-blanco-e53145ca9690430d-zoom.webp"
     },
     "h1|espalda": {
-     "mini": "img/galeria/gryffindor-h1-espalda-blanco-20f449c2000124d9-mini.webp",
-     "foto": "img/galeria/gryffindor-h1-espalda-blanco-20f449c2000124d9-foto.webp",
-     "zoom": "img/galeria/gryffindor-h1-espalda-blanco-20f449c2000124d9-zoom.webp"
+     "mini": "img/galeria/gryffindor-h1-espalda-blanco-0cb037553e43837c-mini.webp",
+     "foto": "img/galeria/gryffindor-h1-espalda-blanco-0cb037553e43837c-foto.webp",
+     "zoom": "img/galeria/gryffindor-h1-espalda-blanco-0cb037553e43837c-zoom.webp"
     },
     "h1|frente": {
      "mini": "img/galeria/gryffindor-h1-frente-blanco-88402e5e52327936-mini.webp",
@@ -597,19 +597,19 @@
      "zoom": "img/galeria/gryffindor-h1-frente-blanco-88402e5e52327936-zoom.webp"
     },
     "h1|lateral-derecho": {
-     "mini": "img/galeria/gryffindor-h1-lateral-derecho-blanco-9f2b57c1ad690db8-mini.webp",
-     "foto": "img/galeria/gryffindor-h1-lateral-derecho-blanco-9f2b57c1ad690db8-foto.webp",
-     "zoom": "img/galeria/gryffindor-h1-lateral-derecho-blanco-9f2b57c1ad690db8-zoom.webp"
+     "mini": "img/galeria/gryffindor-h1-lateral-derecho-blanco-d9bd01ebc83c87e1-mini.webp",
+     "foto": "img/galeria/gryffindor-h1-lateral-derecho-blanco-d9bd01ebc83c87e1-foto.webp",
+     "zoom": "img/galeria/gryffindor-h1-lateral-derecho-blanco-d9bd01ebc83c87e1-zoom.webp"
     },
     "m2|espalda": {
-     "mini": "img/galeria/gryffindor-m2-espalda-blanco-1422c0aa744b9e8e-mini.webp",
-     "foto": "img/galeria/gryffindor-m2-espalda-blanco-1422c0aa744b9e8e-foto.webp",
-     "zoom": "img/galeria/gryffindor-m2-espalda-blanco-1422c0aa744b9e8e-zoom.webp"
+     "mini": "img/galeria/gryffindor-m2-espalda-blanco-ef2260abe0fa19c2-mini.webp",
+     "foto": "img/galeria/gryffindor-m2-espalda-blanco-ef2260abe0fa19c2-foto.webp",
+     "zoom": "img/galeria/gryffindor-m2-espalda-blanco-ef2260abe0fa19c2-zoom.webp"
     },
     "m2|espalda-p2": {
-     "mini": "img/galeria/gryffindor-m2-espalda-p2-blanco-12f0267a55331639-mini.webp",
-     "foto": "img/galeria/gryffindor-m2-espalda-p2-blanco-12f0267a55331639-foto.webp",
-     "zoom": "img/galeria/gryffindor-m2-espalda-p2-blanco-12f0267a55331639-zoom.webp"
+     "mini": "img/galeria/gryffindor-m2-espalda-p2-blanco-5393ed0d27ff5630-mini.webp",
+     "foto": "img/galeria/gryffindor-m2-espalda-p2-blanco-5393ed0d27ff5630-foto.webp",
+     "zoom": "img/galeria/gryffindor-m2-espalda-p2-blanco-5393ed0d27ff5630-zoom.webp"
     },
     "m2|frente": {
      "mini": "img/galeria/gryffindor-m2-frente-blanco-b6a215f9572618ef-mini.webp",
@@ -622,14 +622,14 @@
      "zoom": "img/galeria/gryffindor-m2-detalle-pecho-blanco-dda2794ddbefabca-zoom.webp"
     },
     "m2|lateral-derecho": {
-     "mini": "img/galeria/gryffindor-m2-lateral-derecho-blanco-9f363606ecdef153-mini.webp",
-     "foto": "img/galeria/gryffindor-m2-lateral-derecho-blanco-9f363606ecdef153-foto.webp",
-     "zoom": "img/galeria/gryffindor-m2-lateral-derecho-blanco-9f363606ecdef153-zoom.webp"
+     "mini": "img/galeria/gryffindor-m2-lateral-derecho-blanco-4bcad8a210079b34-mini.webp",
+     "foto": "img/galeria/gryffindor-m2-lateral-derecho-blanco-4bcad8a210079b34-foto.webp",
+     "zoom": "img/galeria/gryffindor-m2-lateral-derecho-blanco-4bcad8a210079b34-zoom.webp"
     },
     "m2|detalle-manga": {
-     "mini": "img/galeria/gryffindor-m2-detalle-manga-blanco-b19d1f23cc1ffd83-mini.webp",
-     "foto": "img/galeria/gryffindor-m2-detalle-manga-blanco-b19d1f23cc1ffd83-foto.webp",
-     "zoom": "img/galeria/gryffindor-m2-detalle-manga-blanco-b19d1f23cc1ffd83-zoom.webp"
+     "mini": "img/galeria/gryffindor-m2-detalle-manga-blanco-d3cc86949fd0637a-mini.webp",
+     "foto": "img/galeria/gryffindor-m2-detalle-manga-blanco-d3cc86949fd0637a-foto.webp",
+     "zoom": "img/galeria/gryffindor-m2-detalle-manga-blanco-d3cc86949fd0637a-zoom.webp"
     },
     "pm|frente-plano": {
      "mini": "img/galeria/gryffindor-pm-frente-plano-blanco-e078119a44cdc9e1-mini.webp",
@@ -637,9 +637,9 @@
      "zoom": "img/galeria/gryffindor-pm-frente-plano-blanco-e078119a44cdc9e1-zoom.webp"
     },
     "pm|espalda-plana": {
-     "mini": "img/galeria/gryffindor-pm-espalda-plana-blanco-5cde52c9af66bb44-mini.webp",
-     "foto": "img/galeria/gryffindor-pm-espalda-plana-blanco-5cde52c9af66bb44-foto.webp",
-     "zoom": "img/galeria/gryffindor-pm-espalda-plana-blanco-5cde52c9af66bb44-zoom.webp"
+     "mini": "img/galeria/gryffindor-pm-espalda-plana-blanco-24caaeb581458747-mini.webp",
+     "foto": "img/galeria/gryffindor-pm-espalda-plana-blanco-24caaeb581458747-foto.webp",
+     "zoom": "img/galeria/gryffindor-pm-espalda-plana-blanco-24caaeb581458747-zoom.webp"
     }
    }
   },
@@ -933,9 +933,9 @@
        ]
       },
       "h1-espalda-p2": {
-       "dx": 0.21,
-       "dy": -0.65,
-       "rot": 0,
+       "dx": 0.09,
+       "dy": -0.9,
+       "rot": 0.0,
        "escala": 1.0
       },
       "h1-espalda-p3": {
@@ -1039,11 +1039,10 @@
        ]
       },
       "ph-espalda-plana": {
-       "dx": 0.0,
-       "dy": 1.0,
+       "dx": -0.3,
+       "dy": 1.1,
        "rot": 0.0,
-       "escala": 1.0,
-       "curva": 0.6
+       "escala": 1.0
       },
       "pm-espalda-plana": {
        "dx": 0.23,
@@ -1080,8 +1079,8 @@
        "escala": 0.942
       },
       "h1-detalle-pecho": {
-       "dx": -4.39,
-       "dy": 5.44,
+       "dx": -3.44,
+       "dy": 5.4,
        "rot": 0.0,
        "escala": 1.247
       },
@@ -1222,29 +1221,29 @@
    "planos": {},
    "galeria": {
     "h1|espalda-p2": {
-     "mini": "img/galeria/slytherin-h1-espalda-p2-negro-a8bc54b9be7d9c5f-mini.webp",
-     "foto": "img/galeria/slytherin-h1-espalda-p2-negro-a8bc54b9be7d9c5f-foto.webp",
-     "zoom": "img/galeria/slytherin-h1-espalda-p2-negro-a8bc54b9be7d9c5f-zoom.webp"
+     "mini": "img/galeria/slytherin-h1-espalda-p2-negro-f854968237fe5825-mini.webp",
+     "foto": "img/galeria/slytherin-h1-espalda-p2-negro-f854968237fe5825-foto.webp",
+     "zoom": "img/galeria/slytherin-h1-espalda-p2-negro-f854968237fe5825-zoom.webp"
     },
     "h2|espalda": {
-     "mini": "img/galeria/slytherin-h2-espalda-negro-20b4321f0f2d5bf0-mini.webp",
-     "foto": "img/galeria/slytherin-h2-espalda-negro-20b4321f0f2d5bf0-foto.webp",
-     "zoom": "img/galeria/slytherin-h2-espalda-negro-20b4321f0f2d5bf0-zoom.webp"
+     "mini": "img/galeria/slytherin-h2-espalda-negro-9987748333c6f741-mini.webp",
+     "foto": "img/galeria/slytherin-h2-espalda-negro-9987748333c6f741-foto.webp",
+     "zoom": "img/galeria/slytherin-h2-espalda-negro-9987748333c6f741-zoom.webp"
     },
     "h1|frente-p3": {
-     "mini": "img/galeria/slytherin-h1-frente-p3-negro-095df878b9f4d4b2-mini.webp",
-     "foto": "img/galeria/slytherin-h1-frente-p3-negro-095df878b9f4d4b2-foto.webp",
-     "zoom": "img/galeria/slytherin-h1-frente-p3-negro-095df878b9f4d4b2-zoom.webp"
+     "mini": "img/galeria/slytherin-h1-frente-p3-negro-e031d9e923593c10-mini.webp",
+     "foto": "img/galeria/slytherin-h1-frente-p3-negro-e031d9e923593c10-foto.webp",
+     "zoom": "img/galeria/slytherin-h1-frente-p3-negro-e031d9e923593c10-zoom.webp"
     },
     "h2|detalle-pecho": {
-     "mini": "img/galeria/slytherin-h2-detalle-pecho-negro-0b83b6f2be953991-mini.webp",
-     "foto": "img/galeria/slytherin-h2-detalle-pecho-negro-0b83b6f2be953991-foto.webp",
-     "zoom": "img/galeria/slytherin-h2-detalle-pecho-negro-0b83b6f2be953991-zoom.webp"
+     "mini": "img/galeria/slytherin-h2-detalle-pecho-negro-fc55ee9542eed46e-mini.webp",
+     "foto": "img/galeria/slytherin-h2-detalle-pecho-negro-fc55ee9542eed46e-foto.webp",
+     "zoom": "img/galeria/slytherin-h2-detalle-pecho-negro-fc55ee9542eed46e-zoom.webp"
     },
     "h2|lateral-derecho-p3": {
-     "mini": "img/galeria/slytherin-h2-lateral-derecho-p3-negro-58e127c90c9516a2-mini.webp",
-     "foto": "img/galeria/slytherin-h2-lateral-derecho-p3-negro-58e127c90c9516a2-foto.webp",
-     "zoom": "img/galeria/slytherin-h2-lateral-derecho-p3-negro-58e127c90c9516a2-zoom.webp"
+     "mini": "img/galeria/slytherin-h2-lateral-derecho-p3-negro-4c58628a1e8ad7c7-mini.webp",
+     "foto": "img/galeria/slytherin-h2-lateral-derecho-p3-negro-4c58628a1e8ad7c7-foto.webp",
+     "zoom": "img/galeria/slytherin-h2-lateral-derecho-p3-negro-4c58628a1e8ad7c7-zoom.webp"
     },
     "h2|detalle-manga": {
      "mini": "img/galeria/slytherin-h2-detalle-manga-negro-a4c25916b06f5882-mini.webp",
@@ -1252,34 +1251,34 @@
      "zoom": "img/galeria/slytherin-h2-detalle-manga-negro-a4c25916b06f5882-zoom.webp"
     },
     "ph|espalda-plana": {
-     "mini": "img/galeria/slytherin-ph-espalda-plana-negro-053742e8e0f8f816-mini.webp",
-     "foto": "img/galeria/slytherin-ph-espalda-plana-negro-053742e8e0f8f816-foto.webp",
-     "zoom": "img/galeria/slytherin-ph-espalda-plana-negro-053742e8e0f8f816-zoom.webp"
+     "mini": "img/galeria/slytherin-ph-espalda-plana-negro-032d586564bbd22e-mini.webp",
+     "foto": "img/galeria/slytherin-ph-espalda-plana-negro-032d586564bbd22e-foto.webp",
+     "zoom": "img/galeria/slytherin-ph-espalda-plana-negro-032d586564bbd22e-zoom.webp"
     },
     "ph|frente-plano": {
-     "mini": "img/galeria/slytherin-ph-frente-plano-negro-184fdb122963b630-mini.webp",
-     "foto": "img/galeria/slytherin-ph-frente-plano-negro-184fdb122963b630-foto.webp",
-     "zoom": "img/galeria/slytherin-ph-frente-plano-negro-184fdb122963b630-zoom.webp"
+     "mini": "img/galeria/slytherin-ph-frente-plano-negro-ede3d1aa8e165eea-mini.webp",
+     "foto": "img/galeria/slytherin-ph-frente-plano-negro-ede3d1aa8e165eea-foto.webp",
+     "zoom": "img/galeria/slytherin-ph-frente-plano-negro-ede3d1aa8e165eea-zoom.webp"
     },
     "m1|espalda-p2": {
-     "mini": "img/galeria/slytherin-m1-espalda-p2-negro-80f010edbb574a62-mini.webp",
-     "foto": "img/galeria/slytherin-m1-espalda-p2-negro-80f010edbb574a62-foto.webp",
-     "zoom": "img/galeria/slytherin-m1-espalda-p2-negro-80f010edbb574a62-zoom.webp"
+     "mini": "img/galeria/slytherin-m1-espalda-p2-negro-ecbdd87aaca03da4-mini.webp",
+     "foto": "img/galeria/slytherin-m1-espalda-p2-negro-ecbdd87aaca03da4-foto.webp",
+     "zoom": "img/galeria/slytherin-m1-espalda-p2-negro-ecbdd87aaca03da4-zoom.webp"
     },
     "m2|espalda": {
-     "mini": "img/galeria/slytherin-m2-espalda-negro-161609866e6fb3dc-mini.webp",
-     "foto": "img/galeria/slytherin-m2-espalda-negro-161609866e6fb3dc-foto.webp",
-     "zoom": "img/galeria/slytherin-m2-espalda-negro-161609866e6fb3dc-zoom.webp"
+     "mini": "img/galeria/slytherin-m2-espalda-negro-3e55151de058a9f2-mini.webp",
+     "foto": "img/galeria/slytherin-m2-espalda-negro-3e55151de058a9f2-foto.webp",
+     "zoom": "img/galeria/slytherin-m2-espalda-negro-3e55151de058a9f2-zoom.webp"
     },
     "m1|frente-p3": {
-     "mini": "img/galeria/slytherin-m1-frente-p3-negro-5484abd62177a0de-mini.webp",
-     "foto": "img/galeria/slytherin-m1-frente-p3-negro-5484abd62177a0de-foto.webp",
-     "zoom": "img/galeria/slytherin-m1-frente-p3-negro-5484abd62177a0de-zoom.webp"
+     "mini": "img/galeria/slytherin-m1-frente-p3-negro-d752107f501298f3-mini.webp",
+     "foto": "img/galeria/slytherin-m1-frente-p3-negro-d752107f501298f3-foto.webp",
+     "zoom": "img/galeria/slytherin-m1-frente-p3-negro-d752107f501298f3-zoom.webp"
     },
     "m2|detalle-pecho": {
-     "mini": "img/galeria/slytherin-m2-detalle-pecho-negro-83dbf11172e01e20-mini.webp",
-     "foto": "img/galeria/slytherin-m2-detalle-pecho-negro-83dbf11172e01e20-foto.webp",
-     "zoom": "img/galeria/slytherin-m2-detalle-pecho-negro-83dbf11172e01e20-zoom.webp"
+     "mini": "img/galeria/slytherin-m2-detalle-pecho-negro-76bc3ef6b3f4e552-mini.webp",
+     "foto": "img/galeria/slytherin-m2-detalle-pecho-negro-76bc3ef6b3f4e552-foto.webp",
+     "zoom": "img/galeria/slytherin-m2-detalle-pecho-negro-76bc3ef6b3f4e552-zoom.webp"
     },
     "m2|lateral-derecho-p3": {
      "mini": "img/galeria/slytherin-m2-lateral-derecho-p3-negro-0fc7375092fb5ee4-mini.webp",
@@ -1292,14 +1291,14 @@
      "zoom": "img/galeria/slytherin-m2-detalle-manga-negro-6dcf2555a06b931b-zoom.webp"
     },
     "pm|espalda-plana": {
-     "mini": "img/galeria/slytherin-pm-espalda-plana-negro-25415e6c4074326e-mini.webp",
-     "foto": "img/galeria/slytherin-pm-espalda-plana-negro-25415e6c4074326e-foto.webp",
-     "zoom": "img/galeria/slytherin-pm-espalda-plana-negro-25415e6c4074326e-zoom.webp"
+     "mini": "img/galeria/slytherin-pm-espalda-plana-negro-12b395a17699e9e9-mini.webp",
+     "foto": "img/galeria/slytherin-pm-espalda-plana-negro-12b395a17699e9e9-foto.webp",
+     "zoom": "img/galeria/slytherin-pm-espalda-plana-negro-12b395a17699e9e9-zoom.webp"
     },
     "pm|frente-plano": {
-     "mini": "img/galeria/slytherin-pm-frente-plano-negro-69433161f782fd6a-mini.webp",
-     "foto": "img/galeria/slytherin-pm-frente-plano-negro-69433161f782fd6a-foto.webp",
-     "zoom": "img/galeria/slytherin-pm-frente-plano-negro-69433161f782fd6a-zoom.webp"
+     "mini": "img/galeria/slytherin-pm-frente-plano-negro-46389a202df2435d-mini.webp",
+     "foto": "img/galeria/slytherin-pm-frente-plano-negro-46389a202df2435d-foto.webp",
+     "zoom": "img/galeria/slytherin-pm-frente-plano-negro-46389a202df2435d-zoom.webp"
     }
    }
   },
@@ -1313,8 +1312,24 @@
    "seleccion": {
     "hombre": [
      [
+      "ph",
+      "espalda-plana"
+     ],
+     [
+      "ph",
+      "frente-plano"
+     ],
+     [
       "h2",
-      "espalda"
+      "detalle-manga"
+     ],
+     [
+      "h1",
+      "detalle-pecho"
+     ],
+     [
+      "h1",
+      "frente-p3"
      ],
      [
       "h1",
@@ -1322,27 +1337,7 @@
      ],
      [
       "h1",
-      "frente-p3"
-     ],
-     [
-      "h2",
-      "detalle-pecho"
-     ],
-     [
-      "h2",
       "lateral-derecho-p3"
-     ],
-     [
-      "h2",
-      "detalle-manga"
-     ],
-     [
-      "ph",
-      "espalda-plana"
-     ],
-     [
-      "ph",
-      "frente-plano"
      ]
     ],
     "mujer": [
@@ -1391,7 +1386,7 @@
    ],
    "estampados": {
     "espalda": {
-     "archivo": "img/estampados/ravenclaw-espalda-c87834af15d6.webp",
+     "archivo": "img/estampados/ravenclaw-espalda-f1d83dece445.webp",
      "ancho_cm": 23.1,
      "alto_cm": 28.7,
      "mov": {
@@ -1423,9 +1418,9 @@
        ]
       },
       "h1-espalda-p2": {
-       "dx": 0.21,
-       "dy": -0.65,
-       "rot": 0,
+       "dx": 0.09,
+       "dy": -0.9,
+       "rot": 0.0,
        "escala": 1.0
       },
       "h1-espalda-p3": {
@@ -1553,12 +1548,12 @@
      "alto_cm": 3.3,
      "mov": {
       "hombre": {
-       "dx": 0.0,
-       "dy": 0.0
+       "dx": -0.82,
+       "dy": 1.46
       },
       "mujer": {
-       "dx": 0.0,
-       "dy": 0.0
+       "dx": -0.82,
+       "dy": 1.46
       }
      },
      "curva_auto": 0.0,
@@ -1592,8 +1587,8 @@
        ]
       },
       "h1-lateral-derecho-p3": {
-       "dx": 2.25,
-       "dy": 11.81,
+       "dx": 2.2,
+       "dy": 12.84,
        "rot": -2.3,
        "escala": 0.981,
        "esq": [
@@ -1614,8 +1609,8 @@
        "escala": 1.0
       },
       "h2-detalle-manga": {
-       "dx": 0.41,
-       "dy": 6.24,
+       "dx": 0.43,
+       "dy": 7.69,
        "rot": -1.0,
        "escala": 1.0
       },
@@ -1718,17 +1713,17 @@
      }
     },
     "pecho_pequeno": {
-     "archivo": "img/estampados/ravenclaw-pecho_pequeno-fa0ad82e3c14.webp",
+     "archivo": "img/estampados/ravenclaw-pecho_pequeno-973eed67f7c4.webp",
      "ancho_cm": 7.1,
      "alto_cm": 8.0,
      "mov": {
       "hombre": {
-       "dx": 0.0,
-       "dy": 0.0
+       "dx": -2.03,
+       "dy": 4.7
       },
       "mujer": {
-       "dx": 0.0,
-       "dy": 0.0
+       "dx": -2.03,
+       "dy": 4.7
       }
      },
      "curva_auto": 0.3,
@@ -1740,8 +1735,8 @@
        "escala": 1.0
       },
       "h1-detalle-pecho": {
-       "dx": -4.39,
-       "dy": 5.44,
+       "dx": -3.44,
+       "dy": 5.4,
        "rot": 0.0,
        "escala": 1.247
       },
@@ -1752,10 +1747,10 @@
        "escala": 0.873
       },
       "h1-frente-p3": {
-       "dx": 0.26,
-       "dy": 8.48,
-       "rot": -5.3,
-       "escala": 0.932,
+       "dx": 0.28,
+       "dy": 6.93,
+       "rot": -4.4,
+       "escala": 0.811,
        "esq": [
         0.0,
         0.0,
@@ -1871,85 +1866,80 @@
    },
    "planos": {},
    "galeria": {
-    "h2|espalda": {
-     "mini": "img/galeria/ravenclaw-h2-espalda-blanco-9f2d5f8989b8493f-mini.webp",
-     "foto": "img/galeria/ravenclaw-h2-espalda-blanco-9f2d5f8989b8493f-foto.webp",
-     "zoom": "img/galeria/ravenclaw-h2-espalda-blanco-9f2d5f8989b8493f-zoom.webp"
-    },
-    "h1|espalda-p2": {
-     "mini": "img/galeria/ravenclaw-h1-espalda-p2-blanco-8ddaaee169487501-mini.webp",
-     "foto": "img/galeria/ravenclaw-h1-espalda-p2-blanco-8ddaaee169487501-foto.webp",
-     "zoom": "img/galeria/ravenclaw-h1-espalda-p2-blanco-8ddaaee169487501-zoom.webp"
-    },
-    "h1|frente-p3": {
-     "mini": "img/galeria/ravenclaw-h1-frente-p3-blanco-020baef6bff43a0f-mini.webp",
-     "foto": "img/galeria/ravenclaw-h1-frente-p3-blanco-020baef6bff43a0f-foto.webp",
-     "zoom": "img/galeria/ravenclaw-h1-frente-p3-blanco-020baef6bff43a0f-zoom.webp"
-    },
-    "h2|detalle-pecho": {
-     "mini": "img/galeria/ravenclaw-h2-detalle-pecho-blanco-8e8b5d966e79d337-mini.webp",
-     "foto": "img/galeria/ravenclaw-h2-detalle-pecho-blanco-8e8b5d966e79d337-foto.webp",
-     "zoom": "img/galeria/ravenclaw-h2-detalle-pecho-blanco-8e8b5d966e79d337-zoom.webp"
-    },
-    "h2|lateral-derecho-p3": {
-     "mini": "img/galeria/ravenclaw-h2-lateral-derecho-p3-blanco-1ea54eb374278dfe-mini.webp",
-     "foto": "img/galeria/ravenclaw-h2-lateral-derecho-p3-blanco-1ea54eb374278dfe-foto.webp",
-     "zoom": "img/galeria/ravenclaw-h2-lateral-derecho-p3-blanco-1ea54eb374278dfe-zoom.webp"
-    },
-    "h2|detalle-manga": {
-     "mini": "img/galeria/ravenclaw-h2-detalle-manga-blanco-46ac2639cda39334-mini.webp",
-     "foto": "img/galeria/ravenclaw-h2-detalle-manga-blanco-46ac2639cda39334-foto.webp",
-     "zoom": "img/galeria/ravenclaw-h2-detalle-manga-blanco-46ac2639cda39334-zoom.webp"
-    },
     "ph|espalda-plana": {
-     "mini": "img/galeria/ravenclaw-ph-espalda-plana-blanco-92fea0767861559f-mini.webp",
-     "foto": "img/galeria/ravenclaw-ph-espalda-plana-blanco-92fea0767861559f-foto.webp",
-     "zoom": "img/galeria/ravenclaw-ph-espalda-plana-blanco-92fea0767861559f-zoom.webp"
+     "mini": "img/galeria/ravenclaw-ph-espalda-plana-blanco-2ade562ced5045f7-mini.webp",
+     "foto": "img/galeria/ravenclaw-ph-espalda-plana-blanco-2ade562ced5045f7-foto.webp",
+     "zoom": "img/galeria/ravenclaw-ph-espalda-plana-blanco-2ade562ced5045f7-zoom.webp"
     },
     "ph|frente-plano": {
-     "mini": "img/galeria/ravenclaw-ph-frente-plano-blanco-51afdeff59884c05-mini.webp",
-     "foto": "img/galeria/ravenclaw-ph-frente-plano-blanco-51afdeff59884c05-foto.webp",
-     "zoom": "img/galeria/ravenclaw-ph-frente-plano-blanco-51afdeff59884c05-zoom.webp"
+     "mini": "img/galeria/ravenclaw-ph-frente-plano-blanco-6bc5e628d3b199e7-mini.webp",
+     "foto": "img/galeria/ravenclaw-ph-frente-plano-blanco-6bc5e628d3b199e7-foto.webp",
+     "zoom": "img/galeria/ravenclaw-ph-frente-plano-blanco-6bc5e628d3b199e7-zoom.webp"
+    },
+    "h2|detalle-manga": {
+     "mini": "img/galeria/ravenclaw-h2-detalle-manga-blanco-b615490e9eb808fd-mini.webp",
+     "foto": "img/galeria/ravenclaw-h2-detalle-manga-blanco-b615490e9eb808fd-foto.webp",
+     "zoom": "img/galeria/ravenclaw-h2-detalle-manga-blanco-b615490e9eb808fd-zoom.webp"
+    },
+    "h1|detalle-pecho": {
+     "mini": "img/galeria/ravenclaw-h1-detalle-pecho-blanco-47086155a0dbed6c-mini.webp",
+     "foto": "img/galeria/ravenclaw-h1-detalle-pecho-blanco-47086155a0dbed6c-foto.webp",
+     "zoom": "img/galeria/ravenclaw-h1-detalle-pecho-blanco-47086155a0dbed6c-zoom.webp"
+    },
+    "h1|frente-p3": {
+     "mini": "img/galeria/ravenclaw-h1-frente-p3-blanco-62929d68bd2cb5c9-mini.webp",
+     "foto": "img/galeria/ravenclaw-h1-frente-p3-blanco-62929d68bd2cb5c9-foto.webp",
+     "zoom": "img/galeria/ravenclaw-h1-frente-p3-blanco-62929d68bd2cb5c9-zoom.webp"
+    },
+    "h1|espalda-p2": {
+     "mini": "img/galeria/ravenclaw-h1-espalda-p2-blanco-17f21b26a3ecd428-mini.webp",
+     "foto": "img/galeria/ravenclaw-h1-espalda-p2-blanco-17f21b26a3ecd428-foto.webp",
+     "zoom": "img/galeria/ravenclaw-h1-espalda-p2-blanco-17f21b26a3ecd428-zoom.webp"
+    },
+    "h1|lateral-derecho-p3": {
+     "mini": "img/galeria/ravenclaw-h1-lateral-derecho-p3-blanco-c6808eb39309dbb8-mini.webp",
+     "foto": "img/galeria/ravenclaw-h1-lateral-derecho-p3-blanco-c6808eb39309dbb8-foto.webp",
+     "zoom": "img/galeria/ravenclaw-h1-lateral-derecho-p3-blanco-c6808eb39309dbb8-zoom.webp"
     },
     "m1|espalda": {
-     "mini": "img/galeria/ravenclaw-m1-espalda-blanco-4a42ed4a24bd230e-mini.webp",
-     "foto": "img/galeria/ravenclaw-m1-espalda-blanco-4a42ed4a24bd230e-foto.webp",
-     "zoom": "img/galeria/ravenclaw-m1-espalda-blanco-4a42ed4a24bd230e-zoom.webp"
+     "mini": "img/galeria/ravenclaw-m1-espalda-blanco-7e13f2500875489b-mini.webp",
+     "foto": "img/galeria/ravenclaw-m1-espalda-blanco-7e13f2500875489b-foto.webp",
+     "zoom": "img/galeria/ravenclaw-m1-espalda-blanco-7e13f2500875489b-zoom.webp"
     },
     "m1|espalda-p2": {
-     "mini": "img/galeria/ravenclaw-m1-espalda-p2-blanco-038fade95bcf278b-mini.webp",
-     "foto": "img/galeria/ravenclaw-m1-espalda-p2-blanco-038fade95bcf278b-foto.webp",
-     "zoom": "img/galeria/ravenclaw-m1-espalda-p2-blanco-038fade95bcf278b-zoom.webp"
+     "mini": "img/galeria/ravenclaw-m1-espalda-p2-blanco-adb239d692b3b58e-mini.webp",
+     "foto": "img/galeria/ravenclaw-m1-espalda-p2-blanco-adb239d692b3b58e-foto.webp",
+     "zoom": "img/galeria/ravenclaw-m1-espalda-p2-blanco-adb239d692b3b58e-zoom.webp"
     },
     "m2|frente-p3": {
-     "mini": "img/galeria/ravenclaw-m2-frente-p3-blanco-08f8bd688ac0da08-mini.webp",
-     "foto": "img/galeria/ravenclaw-m2-frente-p3-blanco-08f8bd688ac0da08-foto.webp",
-     "zoom": "img/galeria/ravenclaw-m2-frente-p3-blanco-08f8bd688ac0da08-zoom.webp"
+     "mini": "img/galeria/ravenclaw-m2-frente-p3-blanco-e6aff86ade612c35-mini.webp",
+     "foto": "img/galeria/ravenclaw-m2-frente-p3-blanco-e6aff86ade612c35-foto.webp",
+     "zoom": "img/galeria/ravenclaw-m2-frente-p3-blanco-e6aff86ade612c35-zoom.webp"
     },
     "m1|detalle-pecho": {
-     "mini": "img/galeria/ravenclaw-m1-detalle-pecho-blanco-fc00d2fe693dec70-mini.webp",
-     "foto": "img/galeria/ravenclaw-m1-detalle-pecho-blanco-fc00d2fe693dec70-foto.webp",
-     "zoom": "img/galeria/ravenclaw-m1-detalle-pecho-blanco-fc00d2fe693dec70-zoom.webp"
+     "mini": "img/galeria/ravenclaw-m1-detalle-pecho-blanco-22d13c50ac409fee-mini.webp",
+     "foto": "img/galeria/ravenclaw-m1-detalle-pecho-blanco-22d13c50ac409fee-foto.webp",
+     "zoom": "img/galeria/ravenclaw-m1-detalle-pecho-blanco-22d13c50ac409fee-zoom.webp"
     },
     "m2|lateral-derecho-p3": {
-     "mini": "img/galeria/ravenclaw-m2-lateral-derecho-p3-blanco-ae9a5018946b2dcd-mini.webp",
-     "foto": "img/galeria/ravenclaw-m2-lateral-derecho-p3-blanco-ae9a5018946b2dcd-foto.webp",
-     "zoom": "img/galeria/ravenclaw-m2-lateral-derecho-p3-blanco-ae9a5018946b2dcd-zoom.webp"
+     "mini": "img/galeria/ravenclaw-m2-lateral-derecho-p3-blanco-980a01b8a03ba517-mini.webp",
+     "foto": "img/galeria/ravenclaw-m2-lateral-derecho-p3-blanco-980a01b8a03ba517-foto.webp",
+     "zoom": "img/galeria/ravenclaw-m2-lateral-derecho-p3-blanco-980a01b8a03ba517-zoom.webp"
     },
     "m1|detalle-manga": {
-     "mini": "img/galeria/ravenclaw-m1-detalle-manga-blanco-40728e0788a328bc-mini.webp",
-     "foto": "img/galeria/ravenclaw-m1-detalle-manga-blanco-40728e0788a328bc-foto.webp",
-     "zoom": "img/galeria/ravenclaw-m1-detalle-manga-blanco-40728e0788a328bc-zoom.webp"
+     "mini": "img/galeria/ravenclaw-m1-detalle-manga-blanco-1f12280ebed44010-mini.webp",
+     "foto": "img/galeria/ravenclaw-m1-detalle-manga-blanco-1f12280ebed44010-foto.webp",
+     "zoom": "img/galeria/ravenclaw-m1-detalle-manga-blanco-1f12280ebed44010-zoom.webp"
     },
     "pm|espalda-plana": {
-     "mini": "img/galeria/ravenclaw-pm-espalda-plana-blanco-8a3826fe672b28fb-mini.webp",
-     "foto": "img/galeria/ravenclaw-pm-espalda-plana-blanco-8a3826fe672b28fb-foto.webp",
-     "zoom": "img/galeria/ravenclaw-pm-espalda-plana-blanco-8a3826fe672b28fb-zoom.webp"
+     "mini": "img/galeria/ravenclaw-pm-espalda-plana-blanco-a8057c448611a32f-mini.webp",
+     "foto": "img/galeria/ravenclaw-pm-espalda-plana-blanco-a8057c448611a32f-foto.webp",
+     "zoom": "img/galeria/ravenclaw-pm-espalda-plana-blanco-a8057c448611a32f-zoom.webp"
     },
     "pm|frente-plano": {
-     "mini": "img/galeria/ravenclaw-pm-frente-plano-blanco-a61e364a69ea0a56-mini.webp",
-     "foto": "img/galeria/ravenclaw-pm-frente-plano-blanco-a61e364a69ea0a56-foto.webp",
-     "zoom": "img/galeria/ravenclaw-pm-frente-plano-blanco-a61e364a69ea0a56-zoom.webp"
+     "mini": "img/galeria/ravenclaw-pm-frente-plano-blanco-dcfb82584dc2ae04-mini.webp",
+     "foto": "img/galeria/ravenclaw-pm-frente-plano-blanco-dcfb82584dc2ae04-foto.webp",
+     "zoom": "img/galeria/ravenclaw-pm-frente-plano-blanco-dcfb82584dc2ae04-zoom.webp"
     }
    }
   },
@@ -2239,9 +2229,9 @@
        ]
       },
       "h1-espalda-p2": {
-       "dx": 0.21,
-       "dy": -0.65,
-       "rot": 0,
+       "dx": 0.09,
+       "dy": -0.9,
+       "rot": 0.0,
        "escala": 1.0
       },
       "h1-espalda-p3": {
@@ -2346,11 +2336,10 @@
        ]
       },
       "ph-espalda-plana": {
-       "dx": 0.0,
-       "dy": 1.0,
+       "dx": -0.3,
+       "dy": 1.1,
        "rot": 0.0,
-       "escala": 1.0,
-       "curva": 0.6
+       "escala": 1.0
       },
       "pm-espalda-plana": {
        "dx": 0.23,
@@ -2399,10 +2388,10 @@
        "escala": 0.873
       },
       "h1-frente-p3": {
-       "dx": 0.26,
-       "dy": 8.48,
-       "rot": -5.3,
-       "escala": 0.932,
+       "dx": 0.28,
+       "dy": 6.93,
+       "rot": -4.4,
+       "escala": 0.811,
        "esq": [
         0.0,
         0.0,
@@ -2519,14 +2508,14 @@
    "planos": {},
    "galeria": {
     "ph|espalda-plana": {
-     "mini": "img/galeria/hufflepuff-ph-espalda-plana-negro-9f604dfe54f219d3-mini.webp",
-     "foto": "img/galeria/hufflepuff-ph-espalda-plana-negro-9f604dfe54f219d3-foto.webp",
-     "zoom": "img/galeria/hufflepuff-ph-espalda-plana-negro-9f604dfe54f219d3-zoom.webp"
+     "mini": "img/galeria/hufflepuff-ph-espalda-plana-negro-0bf1bc626322e103-mini.webp",
+     "foto": "img/galeria/hufflepuff-ph-espalda-plana-negro-0bf1bc626322e103-foto.webp",
+     "zoom": "img/galeria/hufflepuff-ph-espalda-plana-negro-0bf1bc626322e103-zoom.webp"
     },
     "ph|frente-plano": {
-     "mini": "img/galeria/hufflepuff-ph-frente-plano-negro-5b0ae19ed2dff827-mini.webp",
-     "foto": "img/galeria/hufflepuff-ph-frente-plano-negro-5b0ae19ed2dff827-foto.webp",
-     "zoom": "img/galeria/hufflepuff-ph-frente-plano-negro-5b0ae19ed2dff827-zoom.webp"
+     "mini": "img/galeria/hufflepuff-ph-frente-plano-negro-08b474f20bea7dd5-mini.webp",
+     "foto": "img/galeria/hufflepuff-ph-frente-plano-negro-08b474f20bea7dd5-foto.webp",
+     "zoom": "img/galeria/hufflepuff-ph-frente-plano-negro-08b474f20bea7dd5-zoom.webp"
     },
     "h1|detalle-manga": {
      "mini": "img/galeria/hufflepuff-h1-detalle-manga-negro-2b2e9776851125c1-mini.webp",
@@ -2534,44 +2523,44 @@
      "zoom": "img/galeria/hufflepuff-h1-detalle-manga-negro-2b2e9776851125c1-zoom.webp"
     },
     "h1|espalda": {
-     "mini": "img/galeria/hufflepuff-h1-espalda-negro-e6d502396b29b6e3-mini.webp",
-     "foto": "img/galeria/hufflepuff-h1-espalda-negro-e6d502396b29b6e3-foto.webp",
-     "zoom": "img/galeria/hufflepuff-h1-espalda-negro-e6d502396b29b6e3-zoom.webp"
+     "mini": "img/galeria/hufflepuff-h1-espalda-negro-96f746233e13c686-mini.webp",
+     "foto": "img/galeria/hufflepuff-h1-espalda-negro-96f746233e13c686-foto.webp",
+     "zoom": "img/galeria/hufflepuff-h1-espalda-negro-96f746233e13c686-zoom.webp"
     },
     "h1|detalle-pecho": {
-     "mini": "img/galeria/hufflepuff-h1-detalle-pecho-negro-035bb08dbf21c98d-mini.webp",
-     "foto": "img/galeria/hufflepuff-h1-detalle-pecho-negro-035bb08dbf21c98d-foto.webp",
-     "zoom": "img/galeria/hufflepuff-h1-detalle-pecho-negro-035bb08dbf21c98d-zoom.webp"
+     "mini": "img/galeria/hufflepuff-h1-detalle-pecho-negro-0a15485ec610928c-mini.webp",
+     "foto": "img/galeria/hufflepuff-h1-detalle-pecho-negro-0a15485ec610928c-foto.webp",
+     "zoom": "img/galeria/hufflepuff-h1-detalle-pecho-negro-0a15485ec610928c-zoom.webp"
     },
     "h1|frente": {
-     "mini": "img/galeria/hufflepuff-h1-frente-negro-8d39b793e65b79bb-mini.webp",
-     "foto": "img/galeria/hufflepuff-h1-frente-negro-8d39b793e65b79bb-foto.webp",
-     "zoom": "img/galeria/hufflepuff-h1-frente-negro-8d39b793e65b79bb-zoom.webp"
+     "mini": "img/galeria/hufflepuff-h1-frente-negro-de51d0cf672e1283-mini.webp",
+     "foto": "img/galeria/hufflepuff-h1-frente-negro-de51d0cf672e1283-foto.webp",
+     "zoom": "img/galeria/hufflepuff-h1-frente-negro-de51d0cf672e1283-zoom.webp"
     },
     "h1|lateral-derecho-p3": {
-     "mini": "img/galeria/hufflepuff-h1-lateral-derecho-p3-negro-65a3ddb4e46e10d8-mini.webp",
-     "foto": "img/galeria/hufflepuff-h1-lateral-derecho-p3-negro-65a3ddb4e46e10d8-foto.webp",
-     "zoom": "img/galeria/hufflepuff-h1-lateral-derecho-p3-negro-65a3ddb4e46e10d8-zoom.webp"
+     "mini": "img/galeria/hufflepuff-h1-lateral-derecho-p3-negro-7b6a71d0f56b02a0-mini.webp",
+     "foto": "img/galeria/hufflepuff-h1-lateral-derecho-p3-negro-7b6a71d0f56b02a0-foto.webp",
+     "zoom": "img/galeria/hufflepuff-h1-lateral-derecho-p3-negro-7b6a71d0f56b02a0-zoom.webp"
     },
     "m2|espalda": {
-     "mini": "img/galeria/hufflepuff-m2-espalda-negro-de00d08f8286845e-mini.webp",
-     "foto": "img/galeria/hufflepuff-m2-espalda-negro-de00d08f8286845e-foto.webp",
-     "zoom": "img/galeria/hufflepuff-m2-espalda-negro-de00d08f8286845e-zoom.webp"
+     "mini": "img/galeria/hufflepuff-m2-espalda-negro-732287d4f1d93d2f-mini.webp",
+     "foto": "img/galeria/hufflepuff-m2-espalda-negro-732287d4f1d93d2f-foto.webp",
+     "zoom": "img/galeria/hufflepuff-m2-espalda-negro-732287d4f1d93d2f-zoom.webp"
     },
     "m2|espalda-p2": {
-     "mini": "img/galeria/hufflepuff-m2-espalda-p2-negro-7e14feea4a9b8399-mini.webp",
-     "foto": "img/galeria/hufflepuff-m2-espalda-p2-negro-7e14feea4a9b8399-foto.webp",
-     "zoom": "img/galeria/hufflepuff-m2-espalda-p2-negro-7e14feea4a9b8399-zoom.webp"
+     "mini": "img/galeria/hufflepuff-m2-espalda-p2-negro-494d36cfb33d0b54-mini.webp",
+     "foto": "img/galeria/hufflepuff-m2-espalda-p2-negro-494d36cfb33d0b54-foto.webp",
+     "zoom": "img/galeria/hufflepuff-m2-espalda-p2-negro-494d36cfb33d0b54-zoom.webp"
     },
     "m2|frente-p3": {
-     "mini": "img/galeria/hufflepuff-m2-frente-p3-negro-29d90f9efa22199f-mini.webp",
-     "foto": "img/galeria/hufflepuff-m2-frente-p3-negro-29d90f9efa22199f-foto.webp",
-     "zoom": "img/galeria/hufflepuff-m2-frente-p3-negro-29d90f9efa22199f-zoom.webp"
+     "mini": "img/galeria/hufflepuff-m2-frente-p3-negro-30f0d80c92716884-mini.webp",
+     "foto": "img/galeria/hufflepuff-m2-frente-p3-negro-30f0d80c92716884-foto.webp",
+     "zoom": "img/galeria/hufflepuff-m2-frente-p3-negro-30f0d80c92716884-zoom.webp"
     },
     "m1|detalle-pecho": {
-     "mini": "img/galeria/hufflepuff-m1-detalle-pecho-negro-6afa2419d319293e-mini.webp",
-     "foto": "img/galeria/hufflepuff-m1-detalle-pecho-negro-6afa2419d319293e-foto.webp",
-     "zoom": "img/galeria/hufflepuff-m1-detalle-pecho-negro-6afa2419d319293e-zoom.webp"
+     "mini": "img/galeria/hufflepuff-m1-detalle-pecho-negro-06e2fa0d67e0946b-mini.webp",
+     "foto": "img/galeria/hufflepuff-m1-detalle-pecho-negro-06e2fa0d67e0946b-foto.webp",
+     "zoom": "img/galeria/hufflepuff-m1-detalle-pecho-negro-06e2fa0d67e0946b-zoom.webp"
     },
     "m2|lateral-derecho": {
      "mini": "img/galeria/hufflepuff-m2-lateral-derecho-negro-3d1244b4dbcefb5e-mini.webp",
@@ -2584,14 +2573,14 @@
      "zoom": "img/galeria/hufflepuff-m1-detalle-manga-negro-2e28ed6b771853ad-zoom.webp"
     },
     "pm|espalda-plana": {
-     "mini": "img/galeria/hufflepuff-pm-espalda-plana-negro-ad45d825d22b45fd-mini.webp",
-     "foto": "img/galeria/hufflepuff-pm-espalda-plana-negro-ad45d825d22b45fd-foto.webp",
-     "zoom": "img/galeria/hufflepuff-pm-espalda-plana-negro-ad45d825d22b45fd-zoom.webp"
+     "mini": "img/galeria/hufflepuff-pm-espalda-plana-negro-815dab633aa06a44-mini.webp",
+     "foto": "img/galeria/hufflepuff-pm-espalda-plana-negro-815dab633aa06a44-foto.webp",
+     "zoom": "img/galeria/hufflepuff-pm-espalda-plana-negro-815dab633aa06a44-zoom.webp"
     },
     "pm|frente-plano": {
-     "mini": "img/galeria/hufflepuff-pm-frente-plano-negro-a4ca5b041f342fe2-mini.webp",
-     "foto": "img/galeria/hufflepuff-pm-frente-plano-negro-a4ca5b041f342fe2-foto.webp",
-     "zoom": "img/galeria/hufflepuff-pm-frente-plano-negro-a4ca5b041f342fe2-zoom.webp"
+     "mini": "img/galeria/hufflepuff-pm-frente-plano-negro-226d46619c9ed988-mini.webp",
+     "foto": "img/galeria/hufflepuff-pm-frente-plano-negro-226d46619c9ed988-foto.webp",
+     "zoom": "img/galeria/hufflepuff-pm-frente-plano-negro-226d46619c9ed988-zoom.webp"
     }
    }
   }
@@ -3026,12 +3015,29 @@
      "clave": "h1-lateral-derecho-p3",
      "nombre": "Lateral · pose 3",
      "fotos": {
+      "blanco": {
+       "foto": "img/modelos/h1-lateral-derecho-p3-blanco.webp",
+       "zoom": "img/modelos/h1-lateral-derecho-p3-blanco-zoom.webp"
+      },
       "negro": {
        "foto": "img/modelos/h1-lateral-derecho-p3-negro.webp",
        "zoom": "img/modelos/h1-lateral-derecho-p3-negro-zoom.webp"
       }
      },
      "por_color": {
+      "blanco": {
+       "pxcm": 12.92,
+       "cx": 1009.5,
+       "top": 402.0,
+       "hem": 1319.0,
+       "radio": 0,
+       "manga": {
+        "cx": 1016.0,
+        "cy": 571.36,
+        "rot": 0
+       },
+       "mascara": "img/mascaras/h1-lateral-derecho-p3-blanco.png"
+      },
       "negro": {
        "pxcm": 13.0,
        "cx": 1005.5,
@@ -3046,7 +3052,7 @@
        "mascara": "img/mascaras/h1-lateral-derecho-p3-negro.png"
       }
      },
-     "mascara": "img/mascaras/h1-lateral-derecho-p3-negro.png"
+     "mascara": "img/mascaras/h1-lateral-derecho-p3-blanco.png"
     }
    ]
   },
@@ -3076,32 +3082,12 @@
      "clave": "h2-espalda",
      "nombre": "Espalda",
      "fotos": {
-      "blanco": {
-       "foto": "img/modelos/h2-espalda-blanco.webp",
-       "zoom": "img/modelos/h2-espalda-blanco-zoom.webp"
-      },
       "negro": {
        "foto": "img/modelos/h2-espalda-negro.webp",
        "zoom": "img/modelos/h2-espalda-negro-zoom.webp"
       }
      },
      "por_color": {
-      "blanco": {
-       "pxcm": 12.28,
-       "cx": 1000.0,
-       "top": 390.0,
-       "hem": 1262.0,
-       "radio": 282.4,
-       "espalda": {
-        "cx": 1000.0,
-        "top": 517.7295774647887
-       },
-       "espalda_alta": {
-        "cx": 1000.0,
-        "top": 493.1661971830986
-       },
-       "mascara": "img/mascaras/h2-espalda-blanco.png"
-      },
       "negro": {
        "pxcm": 12.44,
        "cx": 1000.0,
@@ -3119,7 +3105,7 @@
        "mascara": "img/mascaras/h2-espalda-negro.png"
       }
      },
-     "mascara": "img/mascaras/h2-espalda-blanco.png"
+     "mascara": "img/mascaras/h2-espalda-negro.png"
     },
     {
      "toma": "detalle-pecho",
@@ -3139,32 +3125,12 @@
      "clave": "h2-detalle-pecho",
      "nombre": "Detalle pecho",
      "fotos": {
-      "blanco": {
-       "foto": "img/modelos/h2-detalle-pecho-blanco.webp",
-       "zoom": "img/modelos/h2-detalle-pecho-blanco-zoom.webp"
-      },
       "negro": {
        "foto": "img/modelos/h2-detalle-pecho-negro.webp",
        "zoom": "img/modelos/h2-detalle-pecho-negro-zoom.webp"
       }
      },
      "por_color": {
-      "blanco": {
-       "pxcm": 38.59,
-       "cx": 1024.5,
-       "top": 368.0,
-       "hem": 2559.0,
-       "radio": 887.6,
-       "pecho": {
-        "cx": 1024.5,
-        "top": 922.0
-       },
-       "pecho_pequeno": {
-        "cx": 736.08,
-        "cy": 1082.49
-       },
-       "mascara": "img/mascaras/h2-detalle-pecho-blanco.png"
-      },
       "negro": {
        "pxcm": 38.81,
        "cx": 1024.5,
@@ -3182,7 +3148,7 @@
        "mascara": "img/mascaras/h2-detalle-pecho-negro.png"
       }
      },
-     "mascara": "img/mascaras/h2-detalle-pecho-blanco.png"
+     "mascara": "img/mascaras/h2-detalle-pecho-negro.png"
     },
     {
      "toma": "detalle-manga",
@@ -3253,29 +3219,12 @@
      "clave": "h2-lateral-derecho-p3",
      "nombre": "Lateral · pose 3",
      "fotos": {
-      "blanco": {
-       "foto": "img/modelos/h2-lateral-derecho-p3-blanco.webp",
-       "zoom": "img/modelos/h2-lateral-derecho-p3-blanco-zoom.webp"
-      },
       "negro": {
        "foto": "img/modelos/h2-lateral-derecho-p3-negro.webp",
        "zoom": "img/modelos/h2-lateral-derecho-p3-negro-zoom.webp"
       }
      },
      "por_color": {
-      "blanco": {
-       "pxcm": 12.27,
-       "cx": 1022.5,
-       "top": 388.0,
-       "hem": 1259.0,
-       "radio": 0,
-       "manga": {
-        "cx": 1028.0,
-        "cy": 552.88,
-        "rot": 0
-       },
-       "mascara": "img/mascaras/h2-lateral-derecho-p3-blanco.png"
-      },
       "negro": {
        "pxcm": 12.35,
        "cx": 1021.5,
@@ -3290,7 +3239,7 @@
        "mascara": "img/mascaras/h2-lateral-derecho-p3-negro.png"
       }
      },
-     "mascara": "img/mascaras/h2-lateral-derecho-p3-blanco.png"
+     "mascara": "img/mascaras/h2-lateral-derecho-p3-negro.png"
     }
    ]
   },
