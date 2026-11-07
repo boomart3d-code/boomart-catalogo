@@ -4201,19 +4201,19 @@
      ],
      [
       "h3",
+      "primer-plano-manga"
+     ],
+     [
+      "h3",
       "detalle-pecho"
      ],
      [
       "h3",
-      "detalle-manga"
+      "detalle-espalda-alta"
      ],
      [
       "h3",
       "frente"
-     ],
-     [
-      "h3",
-      "detalle-espalda-alta"
      ]
     ],
     "mujer": [
@@ -4227,19 +4227,15 @@
      ],
      [
       "m3",
-      "detalle-manga"
+      "primer-plano-manga"
+     ],
+     [
+      "m3",
+      "detalle-espalda-alta"
      ],
      [
       "m3",
       "detalle-pecho"
-     ],
-     [
-      "m3",
-      "espalda"
-     ],
-     [
-      "m3",
-      "lateral-derecho"
      ]
     ]
    },
@@ -4468,6 +4464,18 @@
        "rot": 0.0,
        "escala": 1.0
       },
+      "m3-frente": {
+       "dx": -0.08,
+       "dy": 2.45,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m3-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 1.85,
+       "rot": 0.0,
+       "escala": 1.0
+      },
       "ph-frente-plano": {
        "dx": 0.0,
        "dy": 3.74,
@@ -4475,11 +4483,10 @@
        "escala": 0.987
       },
       "pm-frente-plano": {
-       "dx": -0.01,
-       "dy": 3.31,
+       "dx": -0.16,
+       "dy": -0.59,
        "rot": 0.0,
-       "escala": 0.94,
-       "curva": 0.8
+       "escala": 0.94
       }
      },
      "malla_config": {
@@ -4657,8 +4664,8 @@
        "escala": 0.843
       },
       "m3-detalle-espalda-alta": {
-       "dx": 0.23,
-       "dy": 5.52,
+       "dx": 0.31,
+       "dy": 6.94,
        "rot": 0.0,
        "escala": 1.0
       },
@@ -4868,6 +4875,12 @@
        "rot": 0.0,
        "escala": 1.0
       },
+      "h3-primer-plano-manga": {
+       "dx": -0.04,
+       "dy": -0.08,
+       "rot": 0.0,
+       "escala": 0.854
+      },
       "m3-lateral-derecho": {
        "dx": 3.11,
        "dy": -5.47,
@@ -4879,6 +4892,12 @@
        "dy": 6.21,
        "rot": -2.1,
        "escala": 1.0
+      },
+      "m3-primer-plano-manga": {
+       "dx": 0.22,
+       "dy": -0.77,
+       "rot": 0.0,
+       "escala": 0.826
       },
       "ph-lateral-derecho": {
        "dx": -0.76,
@@ -4902,64 +4921,59 @@
    "planos": {},
    "galeria": {
     "ph|frente-plano": {
-     "mini": "img/galeria/cisne-hyoga-negro-ph-frente-plano-negro-a58c37a7d91a2374-mini.webp",
-     "foto": "img/galeria/cisne-hyoga-negro-ph-frente-plano-negro-a58c37a7d91a2374-foto.webp",
-     "zoom": "img/galeria/cisne-hyoga-negro-ph-frente-plano-negro-a58c37a7d91a2374-zoom.webp"
+     "mini": "img/galeria/cisne-hyoga-negro-ph-frente-plano-negro-e3360c5be3bb0355-mini.webp",
+     "foto": "img/galeria/cisne-hyoga-negro-ph-frente-plano-negro-e3360c5be3bb0355-foto.webp",
+     "zoom": "img/galeria/cisne-hyoga-negro-ph-frente-plano-negro-e3360c5be3bb0355-zoom.webp"
     },
     "ph|espalda-plana": {
-     "mini": "img/galeria/cisne-hyoga-negro-ph-espalda-plana-negro-8ab28ff7b1f5e61a-mini.webp",
-     "foto": "img/galeria/cisne-hyoga-negro-ph-espalda-plana-negro-8ab28ff7b1f5e61a-foto.webp",
-     "zoom": "img/galeria/cisne-hyoga-negro-ph-espalda-plana-negro-8ab28ff7b1f5e61a-zoom.webp"
+     "mini": "img/galeria/cisne-hyoga-negro-ph-espalda-plana-negro-21806eced8f7d5ec-mini.webp",
+     "foto": "img/galeria/cisne-hyoga-negro-ph-espalda-plana-negro-21806eced8f7d5ec-foto.webp",
+     "zoom": "img/galeria/cisne-hyoga-negro-ph-espalda-plana-negro-21806eced8f7d5ec-zoom.webp"
+    },
+    "h3|primer-plano-manga": {
+     "mini": "img/galeria/cisne-hyoga-negro-h3-primer-plano-manga-negro-81b0d9fb9dc9b7ee-mini.webp",
+     "foto": "img/galeria/cisne-hyoga-negro-h3-primer-plano-manga-negro-81b0d9fb9dc9b7ee-foto.webp",
+     "zoom": "img/galeria/cisne-hyoga-negro-h3-primer-plano-manga-negro-81b0d9fb9dc9b7ee-zoom.webp"
     },
     "h3|detalle-pecho": {
-     "mini": "img/galeria/cisne-hyoga-negro-h3-detalle-pecho-negro-82558c7126b49ec3-mini.webp",
-     "foto": "img/galeria/cisne-hyoga-negro-h3-detalle-pecho-negro-82558c7126b49ec3-foto.webp",
-     "zoom": "img/galeria/cisne-hyoga-negro-h3-detalle-pecho-negro-82558c7126b49ec3-zoom.webp"
-    },
-    "h3|detalle-manga": {
-     "mini": "img/galeria/cisne-hyoga-negro-h3-detalle-manga-negro-8b04d4a83cab987d-mini.webp",
-     "foto": "img/galeria/cisne-hyoga-negro-h3-detalle-manga-negro-8b04d4a83cab987d-foto.webp",
-     "zoom": "img/galeria/cisne-hyoga-negro-h3-detalle-manga-negro-8b04d4a83cab987d-zoom.webp"
-    },
-    "h3|frente": {
-     "mini": "img/galeria/cisne-hyoga-negro-h3-frente-negro-23d149806d590e2b-mini.webp",
-     "foto": "img/galeria/cisne-hyoga-negro-h3-frente-negro-23d149806d590e2b-foto.webp",
-     "zoom": "img/galeria/cisne-hyoga-negro-h3-frente-negro-23d149806d590e2b-zoom.webp"
+     "mini": "img/galeria/cisne-hyoga-negro-h3-detalle-pecho-negro-5639cf06a2ede68a-mini.webp",
+     "foto": "img/galeria/cisne-hyoga-negro-h3-detalle-pecho-negro-5639cf06a2ede68a-foto.webp",
+     "zoom": "img/galeria/cisne-hyoga-negro-h3-detalle-pecho-negro-5639cf06a2ede68a-zoom.webp"
     },
     "h3|detalle-espalda-alta": {
-     "mini": "img/galeria/cisne-hyoga-negro-h3-detalle-espalda-alta-negro-f5e908cd6b82cdc8-mini.webp",
-     "foto": "img/galeria/cisne-hyoga-negro-h3-detalle-espalda-alta-negro-f5e908cd6b82cdc8-foto.webp",
-     "zoom": "img/galeria/cisne-hyoga-negro-h3-detalle-espalda-alta-negro-f5e908cd6b82cdc8-zoom.webp"
+     "mini": "img/galeria/cisne-hyoga-negro-h3-detalle-espalda-alta-negro-415921c5540f421e-mini.webp",
+     "foto": "img/galeria/cisne-hyoga-negro-h3-detalle-espalda-alta-negro-415921c5540f421e-foto.webp",
+     "zoom": "img/galeria/cisne-hyoga-negro-h3-detalle-espalda-alta-negro-415921c5540f421e-zoom.webp"
+    },
+    "h3|frente": {
+     "mini": "img/galeria/cisne-hyoga-negro-h3-frente-negro-398c92dcfd11f038-mini.webp",
+     "foto": "img/galeria/cisne-hyoga-negro-h3-frente-negro-398c92dcfd11f038-foto.webp",
+     "zoom": "img/galeria/cisne-hyoga-negro-h3-frente-negro-398c92dcfd11f038-zoom.webp"
     },
     "pm|frente-plano": {
-     "mini": "img/galeria/cisne-hyoga-negro-pm-frente-plano-negro-547dea2897ec59ba-mini.webp",
-     "foto": "img/galeria/cisne-hyoga-negro-pm-frente-plano-negro-547dea2897ec59ba-foto.webp",
-     "zoom": "img/galeria/cisne-hyoga-negro-pm-frente-plano-negro-547dea2897ec59ba-zoom.webp"
+     "mini": "img/galeria/cisne-hyoga-negro-pm-frente-plano-negro-67fe83ef1ec62891-mini.webp",
+     "foto": "img/galeria/cisne-hyoga-negro-pm-frente-plano-negro-67fe83ef1ec62891-foto.webp",
+     "zoom": "img/galeria/cisne-hyoga-negro-pm-frente-plano-negro-67fe83ef1ec62891-zoom.webp"
     },
     "pm|espalda-plana": {
-     "mini": "img/galeria/cisne-hyoga-negro-pm-espalda-plana-negro-f91968cafaabe10f-mini.webp",
-     "foto": "img/galeria/cisne-hyoga-negro-pm-espalda-plana-negro-f91968cafaabe10f-foto.webp",
-     "zoom": "img/galeria/cisne-hyoga-negro-pm-espalda-plana-negro-f91968cafaabe10f-zoom.webp"
+     "mini": "img/galeria/cisne-hyoga-negro-pm-espalda-plana-negro-13f7a498bea55ade-mini.webp",
+     "foto": "img/galeria/cisne-hyoga-negro-pm-espalda-plana-negro-13f7a498bea55ade-foto.webp",
+     "zoom": "img/galeria/cisne-hyoga-negro-pm-espalda-plana-negro-13f7a498bea55ade-zoom.webp"
     },
-    "m3|detalle-manga": {
-     "mini": "img/galeria/cisne-hyoga-negro-m3-detalle-manga-negro-1e51476707624d74-mini.webp",
-     "foto": "img/galeria/cisne-hyoga-negro-m3-detalle-manga-negro-1e51476707624d74-foto.webp",
-     "zoom": "img/galeria/cisne-hyoga-negro-m3-detalle-manga-negro-1e51476707624d74-zoom.webp"
+    "m3|primer-plano-manga": {
+     "mini": "img/galeria/cisne-hyoga-negro-m3-primer-plano-manga-negro-f3af314e859ff51d-mini.webp",
+     "foto": "img/galeria/cisne-hyoga-negro-m3-primer-plano-manga-negro-f3af314e859ff51d-foto.webp",
+     "zoom": "img/galeria/cisne-hyoga-negro-m3-primer-plano-manga-negro-f3af314e859ff51d-zoom.webp"
+    },
+    "m3|detalle-espalda-alta": {
+     "mini": "img/galeria/cisne-hyoga-negro-m3-detalle-espalda-alta-negro-0e44b68007963a0c-mini.webp",
+     "foto": "img/galeria/cisne-hyoga-negro-m3-detalle-espalda-alta-negro-0e44b68007963a0c-foto.webp",
+     "zoom": "img/galeria/cisne-hyoga-negro-m3-detalle-espalda-alta-negro-0e44b68007963a0c-zoom.webp"
     },
     "m3|detalle-pecho": {
-     "mini": "img/galeria/cisne-hyoga-negro-m3-detalle-pecho-negro-dac9971187c78b4e-mini.webp",
-     "foto": "img/galeria/cisne-hyoga-negro-m3-detalle-pecho-negro-dac9971187c78b4e-foto.webp",
-     "zoom": "img/galeria/cisne-hyoga-negro-m3-detalle-pecho-negro-dac9971187c78b4e-zoom.webp"
-    },
-    "m3|espalda": {
-     "mini": "img/galeria/cisne-hyoga-negro-m3-espalda-negro-ab268ff7c917e3f4-mini.webp",
-     "foto": "img/galeria/cisne-hyoga-negro-m3-espalda-negro-ab268ff7c917e3f4-foto.webp",
-     "zoom": "img/galeria/cisne-hyoga-negro-m3-espalda-negro-ab268ff7c917e3f4-zoom.webp"
-    },
-    "m3|lateral-derecho": {
-     "mini": "img/galeria/cisne-hyoga-negro-m3-lateral-derecho-negro-ad79fc9d949242a6-mini.webp",
-     "foto": "img/galeria/cisne-hyoga-negro-m3-lateral-derecho-negro-ad79fc9d949242a6-foto.webp",
-     "zoom": "img/galeria/cisne-hyoga-negro-m3-lateral-derecho-negro-ad79fc9d949242a6-zoom.webp"
+     "mini": "img/galeria/cisne-hyoga-negro-m3-detalle-pecho-negro-93bd48e345b8f674-mini.webp",
+     "foto": "img/galeria/cisne-hyoga-negro-m3-detalle-pecho-negro-93bd48e345b8f674-foto.webp",
+     "zoom": "img/galeria/cisne-hyoga-negro-m3-detalle-pecho-negro-93bd48e345b8f674-zoom.webp"
     }
    }
   },
@@ -4982,7 +4996,7 @@
      ],
      [
       "h3",
-      "detalle-manga"
+      "primer-plano-manga"
      ],
      [
       "h3",
@@ -4991,6 +5005,10 @@
      [
       "h3",
       "espalda"
+     ],
+     [
+      "h3",
+      "frente"
      ]
     ],
     "mujer": [
@@ -5004,7 +5022,7 @@
      ],
      [
       "m3",
-      "detalle-manga"
+      "primer-plano-manga"
      ],
      [
       "m3",
@@ -5236,10 +5254,22 @@
        "escala": 1.0
       },
       "h3-detalle-pecho": {
-       "dx": -0.17,
-       "dy": 4.64,
+       "dx": 0.04,
+       "dy": 4.44,
        "rot": 0.0,
        "escala": 1.0
+      },
+      "m3-frente": {
+       "dx": -0.08,
+       "dy": 2.45,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m3-detalle-pecho": {
+       "dx": -0.13,
+       "dy": 3.17,
+       "rot": 0.0,
+       "escala": 0.983
       },
       "ph-frente-plano": {
        "dx": -0.16,
@@ -5248,11 +5278,10 @@
        "escala": 0.987
       },
       "pm-frente-plano": {
-       "dx": -0.01,
-       "dy": 3.31,
+       "dx": -0.16,
+       "dy": -0.59,
        "rot": 0.0,
-       "escala": 0.94,
-       "curva": 0.8
+       "escala": 0.94
       }
      },
      "malla_config": {
@@ -5454,6 +5483,12 @@
        "rot": 0.0,
        "escala": 1.0
       },
+      "h3-primer-plano-manga": {
+       "dx": 0.02,
+       "dy": 0.06,
+       "rot": 0.0,
+       "escala": 0.718
+      },
       "m3-lateral-derecho": {
        "dx": 3.01,
        "dy": -5.83,
@@ -5465,6 +5500,12 @@
        "dy": 6.41,
        "rot": -2.3,
        "escala": 0.909
+      },
+      "m3-primer-plano-manga": {
+       "dx": 0.34,
+       "dy": -0.78,
+       "rot": 0.0,
+       "escala": 0.709
       },
       "ph-lateral-derecho": {
        "dx": -0.76,
@@ -5636,8 +5677,8 @@
        ]
       },
       "h3-espalda": {
-       "dx": -0.1,
-       "dy": -2.44,
+       "dx": -0.33,
+       "dy": -3.57,
        "rot": 0.0,
        "escala": 1.0
       },
@@ -5675,54 +5716,59 @@
    "planos": {},
    "galeria": {
     "ph|frente-plano": {
-     "mini": "img/galeria/dragon-shiryu-negro-ph-frente-plano-negro-0d46e524bf2736e6-mini.webp",
-     "foto": "img/galeria/dragon-shiryu-negro-ph-frente-plano-negro-0d46e524bf2736e6-foto.webp",
-     "zoom": "img/galeria/dragon-shiryu-negro-ph-frente-plano-negro-0d46e524bf2736e6-zoom.webp"
+     "mini": "img/galeria/dragon-shiryu-negro-ph-frente-plano-negro-1426f592f3041179-mini.webp",
+     "foto": "img/galeria/dragon-shiryu-negro-ph-frente-plano-negro-1426f592f3041179-foto.webp",
+     "zoom": "img/galeria/dragon-shiryu-negro-ph-frente-plano-negro-1426f592f3041179-zoom.webp"
     },
     "ph|espalda-plana": {
-     "mini": "img/galeria/dragon-shiryu-negro-ph-espalda-plana-negro-8c90c66678d62265-mini.webp",
-     "foto": "img/galeria/dragon-shiryu-negro-ph-espalda-plana-negro-8c90c66678d62265-foto.webp",
-     "zoom": "img/galeria/dragon-shiryu-negro-ph-espalda-plana-negro-8c90c66678d62265-zoom.webp"
+     "mini": "img/galeria/dragon-shiryu-negro-ph-espalda-plana-negro-01a4fb5bfadc4d71-mini.webp",
+     "foto": "img/galeria/dragon-shiryu-negro-ph-espalda-plana-negro-01a4fb5bfadc4d71-foto.webp",
+     "zoom": "img/galeria/dragon-shiryu-negro-ph-espalda-plana-negro-01a4fb5bfadc4d71-zoom.webp"
     },
-    "h3|detalle-manga": {
-     "mini": "img/galeria/dragon-shiryu-negro-h3-detalle-manga-negro-c5cc88c5da2ebc64-mini.webp",
-     "foto": "img/galeria/dragon-shiryu-negro-h3-detalle-manga-negro-c5cc88c5da2ebc64-foto.webp",
-     "zoom": "img/galeria/dragon-shiryu-negro-h3-detalle-manga-negro-c5cc88c5da2ebc64-zoom.webp"
+    "h3|primer-plano-manga": {
+     "mini": "img/galeria/dragon-shiryu-negro-h3-primer-plano-manga-negro-af7d1602d8b4b927-mini.webp",
+     "foto": "img/galeria/dragon-shiryu-negro-h3-primer-plano-manga-negro-af7d1602d8b4b927-foto.webp",
+     "zoom": "img/galeria/dragon-shiryu-negro-h3-primer-plano-manga-negro-af7d1602d8b4b927-zoom.webp"
     },
     "h3|detalle-pecho": {
-     "mini": "img/galeria/dragon-shiryu-negro-h3-detalle-pecho-negro-5b9c1bbc96f82b24-mini.webp",
-     "foto": "img/galeria/dragon-shiryu-negro-h3-detalle-pecho-negro-5b9c1bbc96f82b24-foto.webp",
-     "zoom": "img/galeria/dragon-shiryu-negro-h3-detalle-pecho-negro-5b9c1bbc96f82b24-zoom.webp"
+     "mini": "img/galeria/dragon-shiryu-negro-h3-detalle-pecho-negro-997b4d1ad6cb6d66-mini.webp",
+     "foto": "img/galeria/dragon-shiryu-negro-h3-detalle-pecho-negro-997b4d1ad6cb6d66-foto.webp",
+     "zoom": "img/galeria/dragon-shiryu-negro-h3-detalle-pecho-negro-997b4d1ad6cb6d66-zoom.webp"
     },
     "h3|espalda": {
-     "mini": "img/galeria/dragon-shiryu-negro-h3-espalda-negro-28bae7c165cad83f-mini.webp",
-     "foto": "img/galeria/dragon-shiryu-negro-h3-espalda-negro-28bae7c165cad83f-foto.webp",
-     "zoom": "img/galeria/dragon-shiryu-negro-h3-espalda-negro-28bae7c165cad83f-zoom.webp"
+     "mini": "img/galeria/dragon-shiryu-negro-h3-espalda-negro-3ce81c9adcf83fc6-mini.webp",
+     "foto": "img/galeria/dragon-shiryu-negro-h3-espalda-negro-3ce81c9adcf83fc6-foto.webp",
+     "zoom": "img/galeria/dragon-shiryu-negro-h3-espalda-negro-3ce81c9adcf83fc6-zoom.webp"
+    },
+    "h3|frente": {
+     "mini": "img/galeria/dragon-shiryu-negro-h3-frente-negro-c28eeda710041688-mini.webp",
+     "foto": "img/galeria/dragon-shiryu-negro-h3-frente-negro-c28eeda710041688-foto.webp",
+     "zoom": "img/galeria/dragon-shiryu-negro-h3-frente-negro-c28eeda710041688-zoom.webp"
     },
     "pm|frente-plano": {
-     "mini": "img/galeria/dragon-shiryu-negro-pm-frente-plano-negro-50095066cc080503-mini.webp",
-     "foto": "img/galeria/dragon-shiryu-negro-pm-frente-plano-negro-50095066cc080503-foto.webp",
-     "zoom": "img/galeria/dragon-shiryu-negro-pm-frente-plano-negro-50095066cc080503-zoom.webp"
+     "mini": "img/galeria/dragon-shiryu-negro-pm-frente-plano-negro-d6c4c66943c75234-mini.webp",
+     "foto": "img/galeria/dragon-shiryu-negro-pm-frente-plano-negro-d6c4c66943c75234-foto.webp",
+     "zoom": "img/galeria/dragon-shiryu-negro-pm-frente-plano-negro-d6c4c66943c75234-zoom.webp"
     },
     "pm|espalda-plana": {
-     "mini": "img/galeria/dragon-shiryu-negro-pm-espalda-plana-negro-d9fce256d3b18588-mini.webp",
-     "foto": "img/galeria/dragon-shiryu-negro-pm-espalda-plana-negro-d9fce256d3b18588-foto.webp",
-     "zoom": "img/galeria/dragon-shiryu-negro-pm-espalda-plana-negro-d9fce256d3b18588-zoom.webp"
+     "mini": "img/galeria/dragon-shiryu-negro-pm-espalda-plana-negro-c76d19c8dc210880-mini.webp",
+     "foto": "img/galeria/dragon-shiryu-negro-pm-espalda-plana-negro-c76d19c8dc210880-foto.webp",
+     "zoom": "img/galeria/dragon-shiryu-negro-pm-espalda-plana-negro-c76d19c8dc210880-zoom.webp"
     },
-    "m3|detalle-manga": {
-     "mini": "img/galeria/dragon-shiryu-negro-m3-detalle-manga-negro-f7537a39e71711d4-mini.webp",
-     "foto": "img/galeria/dragon-shiryu-negro-m3-detalle-manga-negro-f7537a39e71711d4-foto.webp",
-     "zoom": "img/galeria/dragon-shiryu-negro-m3-detalle-manga-negro-f7537a39e71711d4-zoom.webp"
+    "m3|primer-plano-manga": {
+     "mini": "img/galeria/dragon-shiryu-negro-m3-primer-plano-manga-negro-ec70cb96c3c6cd86-mini.webp",
+     "foto": "img/galeria/dragon-shiryu-negro-m3-primer-plano-manga-negro-ec70cb96c3c6cd86-foto.webp",
+     "zoom": "img/galeria/dragon-shiryu-negro-m3-primer-plano-manga-negro-ec70cb96c3c6cd86-zoom.webp"
     },
     "m3|detalle-pecho": {
-     "mini": "img/galeria/dragon-shiryu-negro-m3-detalle-pecho-negro-ed7b8864ff40b6f7-mini.webp",
-     "foto": "img/galeria/dragon-shiryu-negro-m3-detalle-pecho-negro-ed7b8864ff40b6f7-foto.webp",
-     "zoom": "img/galeria/dragon-shiryu-negro-m3-detalle-pecho-negro-ed7b8864ff40b6f7-zoom.webp"
+     "mini": "img/galeria/dragon-shiryu-negro-m3-detalle-pecho-negro-f7312c829a901596-mini.webp",
+     "foto": "img/galeria/dragon-shiryu-negro-m3-detalle-pecho-negro-f7312c829a901596-foto.webp",
+     "zoom": "img/galeria/dragon-shiryu-negro-m3-detalle-pecho-negro-f7312c829a901596-zoom.webp"
     },
     "m3|espalda": {
-     "mini": "img/galeria/dragon-shiryu-negro-m3-espalda-negro-f875b676844f0d35-mini.webp",
-     "foto": "img/galeria/dragon-shiryu-negro-m3-espalda-negro-f875b676844f0d35-foto.webp",
-     "zoom": "img/galeria/dragon-shiryu-negro-m3-espalda-negro-f875b676844f0d35-zoom.webp"
+     "mini": "img/galeria/dragon-shiryu-negro-m3-espalda-negro-65fdb2428cda78d1-mini.webp",
+     "foto": "img/galeria/dragon-shiryu-negro-m3-espalda-negro-65fdb2428cda78d1-foto.webp",
+     "zoom": "img/galeria/dragon-shiryu-negro-m3-espalda-negro-65fdb2428cda78d1-zoom.webp"
     }
    }
   },
@@ -5745,7 +5791,7 @@
      ],
      [
       "h3",
-      "detalle-manga"
+      "primer-plano-manga"
      ],
      [
       "h3",
@@ -5771,7 +5817,7 @@
      ],
      [
       "m3",
-      "detalle-manga"
+      "primer-plano-manga"
      ],
      [
       "m3",
@@ -6003,8 +6049,20 @@
        "escala": 1.0
       },
       "h3-detalle-pecho": {
-       "dx": -0.17,
-       "dy": 4.64,
+       "dx": 0.04,
+       "dy": 4.44,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m3-frente": {
+       "dx": -0.08,
+       "dy": 2.45,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m3-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 1.85,
        "rot": 0.0,
        "escala": 1.0
       },
@@ -6015,11 +6073,10 @@
        "escala": 0.987
       },
       "pm-frente-plano": {
-       "dx": -0.01,
-       "dy": 3.31,
+       "dx": -0.16,
+       "dy": -0.59,
        "rot": 0.0,
-       "escala": 0.94,
-       "curva": 0.8
+       "escala": 0.94
       }
      },
      "malla_config": {
@@ -6210,16 +6267,22 @@
        ]
       },
       "h3-lateral-derecho": {
-       "dx": -4.84,
-       "dy": 0.31,
-       "rot": 4.6,
-       "escala": 0.919
+       "dx": -4.52,
+       "dy": 0.24,
+       "rot": 2.7,
+       "escala": 0.985
       },
       "h3-detalle-manga": {
        "dx": -3.39,
        "dy": 14.09,
        "rot": 0.0,
        "escala": 1.0
+      },
+      "h3-primer-plano-manga": {
+       "dx": -0.08,
+       "dy": 1.33,
+       "rot": -3.0,
+       "escala": 0.624
       },
       "m3-lateral-derecho": {
        "dx": 2.78,
@@ -6232,6 +6295,12 @@
        "dy": 5.45,
        "rot": -1.9,
        "escala": 0.816
+      },
+      "m3-primer-plano-manga": {
+       "dx": -0.42,
+       "dy": -0.96,
+       "rot": -2.1,
+       "escala": 0.631
       },
       "ph-lateral-derecho": {
        "dx": -0.76,
@@ -6403,16 +6472,16 @@
        ]
       },
       "h3-espalda": {
-       "dx": -0.1,
-       "dy": -2.44,
+       "dx": -0.33,
+       "dy": -3.57,
        "rot": 0.0,
        "escala": 1.0
       },
       "h3-detalle-espalda-alta": {
-       "dx": -0.25,
-       "dy": 5.35,
+       "dx": 0.29,
+       "dy": 5.5,
        "rot": 0.0,
-       "escala": 1.0
+       "escala": 1.067
       },
       "m3-espalda": {
        "dx": 0.09,
@@ -6442,59 +6511,2462 @@
    "planos": {},
    "galeria": {
     "ph|frente-plano": {
-     "mini": "img/galeria/seiya-blanco-ph-frente-plano-blanco-71bd709b9552d726-mini.webp",
-     "foto": "img/galeria/seiya-blanco-ph-frente-plano-blanco-71bd709b9552d726-foto.webp",
-     "zoom": "img/galeria/seiya-blanco-ph-frente-plano-blanco-71bd709b9552d726-zoom.webp"
+     "mini": "img/galeria/seiya-blanco-ph-frente-plano-blanco-cc4222dd97e37ffd-mini.webp",
+     "foto": "img/galeria/seiya-blanco-ph-frente-plano-blanco-cc4222dd97e37ffd-foto.webp",
+     "zoom": "img/galeria/seiya-blanco-ph-frente-plano-blanco-cc4222dd97e37ffd-zoom.webp"
     },
     "ph|espalda-plana": {
-     "mini": "img/galeria/seiya-blanco-ph-espalda-plana-blanco-9fa4639fb891a352-mini.webp",
-     "foto": "img/galeria/seiya-blanco-ph-espalda-plana-blanco-9fa4639fb891a352-foto.webp",
-     "zoom": "img/galeria/seiya-blanco-ph-espalda-plana-blanco-9fa4639fb891a352-zoom.webp"
+     "mini": "img/galeria/seiya-blanco-ph-espalda-plana-blanco-9dd054a0ef5c847d-mini.webp",
+     "foto": "img/galeria/seiya-blanco-ph-espalda-plana-blanco-9dd054a0ef5c847d-foto.webp",
+     "zoom": "img/galeria/seiya-blanco-ph-espalda-plana-blanco-9dd054a0ef5c847d-zoom.webp"
     },
-    "h3|detalle-manga": {
-     "mini": "img/galeria/seiya-blanco-h3-detalle-manga-blanco-da9f78ee76cf24d7-mini.webp",
-     "foto": "img/galeria/seiya-blanco-h3-detalle-manga-blanco-da9f78ee76cf24d7-foto.webp",
-     "zoom": "img/galeria/seiya-blanco-h3-detalle-manga-blanco-da9f78ee76cf24d7-zoom.webp"
+    "h3|primer-plano-manga": {
+     "mini": "img/galeria/seiya-blanco-h3-primer-plano-manga-blanco-1fdadd39b772de08-mini.webp",
+     "foto": "img/galeria/seiya-blanco-h3-primer-plano-manga-blanco-1fdadd39b772de08-foto.webp",
+     "zoom": "img/galeria/seiya-blanco-h3-primer-plano-manga-blanco-1fdadd39b772de08-zoom.webp"
     },
     "h3|detalle-pecho": {
-     "mini": "img/galeria/seiya-blanco-h3-detalle-pecho-blanco-22a3d20d6faa3690-mini.webp",
-     "foto": "img/galeria/seiya-blanco-h3-detalle-pecho-blanco-22a3d20d6faa3690-foto.webp",
-     "zoom": "img/galeria/seiya-blanco-h3-detalle-pecho-blanco-22a3d20d6faa3690-zoom.webp"
+     "mini": "img/galeria/seiya-blanco-h3-detalle-pecho-blanco-422d169f1a0f25f2-mini.webp",
+     "foto": "img/galeria/seiya-blanco-h3-detalle-pecho-blanco-422d169f1a0f25f2-foto.webp",
+     "zoom": "img/galeria/seiya-blanco-h3-detalle-pecho-blanco-422d169f1a0f25f2-zoom.webp"
     },
     "h3|detalle-espalda-alta": {
-     "mini": "img/galeria/seiya-blanco-h3-detalle-espalda-alta-blanco-7b24ea931627e4e4-mini.webp",
-     "foto": "img/galeria/seiya-blanco-h3-detalle-espalda-alta-blanco-7b24ea931627e4e4-foto.webp",
-     "zoom": "img/galeria/seiya-blanco-h3-detalle-espalda-alta-blanco-7b24ea931627e4e4-zoom.webp"
+     "mini": "img/galeria/seiya-blanco-h3-detalle-espalda-alta-blanco-27160bcfa2bfe744-mini.webp",
+     "foto": "img/galeria/seiya-blanco-h3-detalle-espalda-alta-blanco-27160bcfa2bfe744-foto.webp",
+     "zoom": "img/galeria/seiya-blanco-h3-detalle-espalda-alta-blanco-27160bcfa2bfe744-zoom.webp"
     },
     "h3|frente": {
-     "mini": "img/galeria/seiya-blanco-h3-frente-blanco-fae89560e0fe792b-mini.webp",
-     "foto": "img/galeria/seiya-blanco-h3-frente-blanco-fae89560e0fe792b-foto.webp",
-     "zoom": "img/galeria/seiya-blanco-h3-frente-blanco-fae89560e0fe792b-zoom.webp"
+     "mini": "img/galeria/seiya-blanco-h3-frente-blanco-a9313401a3023663-mini.webp",
+     "foto": "img/galeria/seiya-blanco-h3-frente-blanco-a9313401a3023663-foto.webp",
+     "zoom": "img/galeria/seiya-blanco-h3-frente-blanco-a9313401a3023663-zoom.webp"
     },
     "pm|frente-plano": {
-     "mini": "img/galeria/seiya-blanco-pm-frente-plano-blanco-9da4cfcc0f860653-mini.webp",
-     "foto": "img/galeria/seiya-blanco-pm-frente-plano-blanco-9da4cfcc0f860653-foto.webp",
-     "zoom": "img/galeria/seiya-blanco-pm-frente-plano-blanco-9da4cfcc0f860653-zoom.webp"
+     "mini": "img/galeria/seiya-blanco-pm-frente-plano-blanco-31220fe506a5760a-mini.webp",
+     "foto": "img/galeria/seiya-blanco-pm-frente-plano-blanco-31220fe506a5760a-foto.webp",
+     "zoom": "img/galeria/seiya-blanco-pm-frente-plano-blanco-31220fe506a5760a-zoom.webp"
     },
     "pm|espalda-plana": {
-     "mini": "img/galeria/seiya-blanco-pm-espalda-plana-blanco-b7cb52fe9eacc94b-mini.webp",
-     "foto": "img/galeria/seiya-blanco-pm-espalda-plana-blanco-b7cb52fe9eacc94b-foto.webp",
-     "zoom": "img/galeria/seiya-blanco-pm-espalda-plana-blanco-b7cb52fe9eacc94b-zoom.webp"
+     "mini": "img/galeria/seiya-blanco-pm-espalda-plana-blanco-aff26ce449dd9421-mini.webp",
+     "foto": "img/galeria/seiya-blanco-pm-espalda-plana-blanco-aff26ce449dd9421-foto.webp",
+     "zoom": "img/galeria/seiya-blanco-pm-espalda-plana-blanco-aff26ce449dd9421-zoom.webp"
     },
-    "m3|detalle-manga": {
-     "mini": "img/galeria/seiya-blanco-m3-detalle-manga-blanco-0cd397db39fc3270-mini.webp",
-     "foto": "img/galeria/seiya-blanco-m3-detalle-manga-blanco-0cd397db39fc3270-foto.webp",
-     "zoom": "img/galeria/seiya-blanco-m3-detalle-manga-blanco-0cd397db39fc3270-zoom.webp"
+    "m3|primer-plano-manga": {
+     "mini": "img/galeria/seiya-blanco-m3-primer-plano-manga-blanco-b2b56bc3d81f84b5-mini.webp",
+     "foto": "img/galeria/seiya-blanco-m3-primer-plano-manga-blanco-b2b56bc3d81f84b5-foto.webp",
+     "zoom": "img/galeria/seiya-blanco-m3-primer-plano-manga-blanco-b2b56bc3d81f84b5-zoom.webp"
     },
     "m3|detalle-pecho": {
-     "mini": "img/galeria/seiya-blanco-m3-detalle-pecho-blanco-6877c2b1e4fa7e22-mini.webp",
-     "foto": "img/galeria/seiya-blanco-m3-detalle-pecho-blanco-6877c2b1e4fa7e22-foto.webp",
-     "zoom": "img/galeria/seiya-blanco-m3-detalle-pecho-blanco-6877c2b1e4fa7e22-zoom.webp"
+     "mini": "img/galeria/seiya-blanco-m3-detalle-pecho-blanco-87cdb92c527b260b-mini.webp",
+     "foto": "img/galeria/seiya-blanco-m3-detalle-pecho-blanco-87cdb92c527b260b-foto.webp",
+     "zoom": "img/galeria/seiya-blanco-m3-detalle-pecho-blanco-87cdb92c527b260b-zoom.webp"
     },
     "m3|espalda": {
-     "mini": "img/galeria/seiya-blanco-m3-espalda-blanco-041f93d5d81f4ce7-mini.webp",
-     "foto": "img/galeria/seiya-blanco-m3-espalda-blanco-041f93d5d81f4ce7-foto.webp",
-     "zoom": "img/galeria/seiya-blanco-m3-espalda-blanco-041f93d5d81f4ce7-zoom.webp"
+     "mini": "img/galeria/seiya-blanco-m3-espalda-blanco-e15d1f51d1b70e29-mini.webp",
+     "foto": "img/galeria/seiya-blanco-m3-espalda-blanco-e15d1f51d1b70e29-foto.webp",
+     "zoom": "img/galeria/seiya-blanco-m3-espalda-blanco-e15d1f51d1b70e29-zoom.webp"
+    }
+   }
+  },
+  {
+   "id": "shun-andromeda-blanco",
+   "nombre": "SHUN ANDROMEDA - BLANCO",
+   "tema": "Saint Seiya",
+   "texto": "",
+   "tipo": "A",
+   "color": "blanco",
+   "seleccion": {
+    "hombre": [
+     [
+      "ph",
+      "frente-plano"
+     ],
+     [
+      "ph",
+      "espalda-plana"
+     ],
+     [
+      "h3",
+      "detalle-manga"
+     ],
+     [
+      "h3",
+      "espalda"
+     ],
+     [
+      "h3",
+      "detalle-pecho"
+     ],
+     [
+      "h3",
+      "frente"
+     ]
+    ],
+    "mujer": [
+     [
+      "pm",
+      "frente-plano"
+     ],
+     [
+      "pm",
+      "espalda-plana"
+     ],
+     [
+      "m3",
+      "detalle-manga"
+     ],
+     [
+      "m3",
+      "frente"
+     ],
+     [
+      "m3",
+      "lateral-derecho"
+     ],
+     [
+      "m3",
+      "espalda"
+     ]
+    ]
+   },
+   "precio": null,
+   "material": null,
+   "gramaje": null,
+   "estado": "en_preparacion",
+   "tallas": [
+    "S",
+    "M",
+    "L"
+   ],
+   "estampados": {
+    "pecho": {
+     "archivo": "img/estampados/shun-andromeda-blanco-pecho-d33c06a2d782.webp",
+     "ancho_cm": 25.8,
+     "alto_cm": 40.0,
+     "mov": {
+      "hombre": {
+       "dx": 0.0,
+       "dy": 2.38
+      },
+      "mujer": {
+       "dx": 0.0,
+       "dy": 2.38
+      }
+     },
+     "curva_auto": 0.5,
+     "ajuste": {
+      "h1-frente": {
+       "dx": 0.2,
+       "dy": 3.12,
+       "rot": 0.0,
+       "escala": 0.998,
+       "curva": 0.8,
+       "esq": [
+        -0.59,
+        -0.71,
+        0.59,
+        -0.82,
+        -0.47,
+        0.35,
+        0.59,
+        0.47
+       ]
+      },
+      "h1-detalle-pecho": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "h1-frente-p2": {
+       "dx": 0.2,
+       "dy": 3.12,
+       "rot": 0,
+       "escala": 0.998,
+       "curva": 0.8
+      },
+      "h1-frente-p3": {
+       "dx": 0.21,
+       "dy": 5.28,
+       "rot": 0.0,
+       "escala": 0.998,
+       "esq": [
+        0.0,
+        0.47,
+        -0.18,
+        -0.3,
+        -0.42,
+        0.06,
+        0.3,
+        1.01
+       ]
+      },
+      "h2-frente": {
+       "dx": 0.74,
+       "dy": 5.77,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8,
+       "esq": [
+        -0.87,
+        -0.37,
+        0.0,
+        -2.42,
+        1.49,
+        0.35,
+        0.7,
+        1.4
+       ]
+      },
+      "h2-detalle-pecho": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "h2-frente-p2": {
+       "dx": 0.53,
+       "dy": 4.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "esq": [
+        -1.06,
+        0.21,
+        -0.21,
+        -0.85,
+        -0.74,
+        0.0,
+        0.96,
+        0.0
+       ]
+      },
+      "h2-frente-p3": {
+       "dx": 0.74,
+       "dy": 5.77,
+       "rot": 0.0,
+       "escala": 0.987,
+       "esq": [
+        -1.96,
+        0.0,
+        0.44,
+        -2.29,
+        0.0,
+        0.0,
+        0.65,
+        1.53
+       ]
+      },
+      "m1-frente": {
+       "dx": 0.44,
+       "dy": 1.4,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "m1-detalle-pecho": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8,
+       "esq": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.66,
+        0.0,
+        0.85,
+        0.13
+       ]
+      },
+      "m1-frente-p2": {
+       "dx": -0.12,
+       "dy": -9.03,
+       "rot": 0.0,
+       "escala": 0.602,
+       "esq": [
+        -0.68,
+        -0.37,
+        0.25,
+        -0.31,
+        0.31,
+        -0.31,
+        0.37,
+        -0.37
+       ]
+      },
+      "m1-frente-p3": {
+       "dx": 0.67,
+       "dy": -11.07,
+       "rot": 0.0,
+       "escala": 0.585,
+       "esq": [
+        -1.06,
+        -0.26,
+        -0.09,
+        -0.48,
+        -0.62,
+        -1.08,
+        0.57,
+        -0.66
+       ]
+      },
+      "m2-frente": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "m2-detalle-pecho": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "m2-frente-p2": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "m2-frente-p3": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "h3-frente": {
+       "dx": 0.0,
+       "dy": 4.46,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h3-detalle-pecho": {
+       "dx": -0.2,
+       "dy": 4.05,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m3-frente": {
+       "dx": -0.08,
+       "dy": 2.45,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m3-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 2.91,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "ph-frente-plano": {
+       "dx": 0.0,
+       "dy": 3.49,
+       "rot": 0.0,
+       "escala": 0.987
+      },
+      "pm-frente-plano": {
+       "dx": -0.16,
+       "dy": -0.59,
+       "rot": 0.0,
+       "escala": 0.94
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "espalda_alta": {
+     "archivo": "img/estampados/shun-andromeda-blanco-espalda_alta-f63bc20c2fb1.webp",
+     "ancho_cm": 6.7,
+     "alto_cm": 9.0,
+     "mov": {
+      "hombre": {
+       "dx": -0.13,
+       "dy": -0.58
+      },
+      "mujer": {
+       "dx": -0.13,
+       "dy": -0.58
+      }
+     },
+     "curva_auto": 0.3,
+     "ajuste": {
+      "h1-espalda": {
+       "dx": 0.26,
+       "dy": -1.23,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h1-detalle-espalda-alta": {
+       "dx": 0.06,
+       "dy": -3.21,
+       "rot": 0.0,
+       "escala": 0.672
+      },
+      "h1-espalda-p2": {
+       "dx": 0.26,
+       "dy": -1.23,
+       "rot": 0,
+       "escala": 1.0
+      },
+      "h1-espalda-p3": {
+       "dx": -5.02,
+       "dy": 1.0,
+       "rot": 0.0,
+       "escala": 0.784,
+       "esq": [
+        0.0,
+        1.31,
+        -0.1,
+        0.54,
+        -0.58,
+        -0.34,
+        -0.05,
+        -0.78
+       ]
+      },
+      "h2-espalda": {
+       "dx": 0.0,
+       "dy": -0.28,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h2-detalle-espalda-alta": {
+       "dx": 0.0,
+       "dy": -0.38,
+       "rot": 0.0,
+       "escala": 0.718
+      },
+      "h2-espalda-p2": {
+       "dx": 0.0,
+       "dy": -0.28,
+       "rot": 0,
+       "escala": 1.0
+      },
+      "h2-espalda-p3": {
+       "dx": -6.38,
+       "dy": -0.5,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        0.29,
+        0.03,
+        -0.13,
+        -0.78,
+        -1.41,
+        -0.14,
+        0.2,
+        -0.17
+       ]
+      },
+      "m1-espalda": {
+       "dx": 0.11,
+       "dy": -0.23,
+       "rot": 0.0,
+       "escala": 0.892
+      },
+      "m1-detalle-espalda-alta": {
+       "dx": 0.04,
+       "dy": -0.13,
+       "rot": 0.0,
+       "escala": 0.546
+      },
+      "m1-espalda-p2": {
+       "dx": 0.17,
+       "dy": -5.76,
+       "rot": 0.0,
+       "escala": 0.544
+      },
+      "m1-espalda-p3": {
+       "dx": -5.65,
+       "dy": -3.43,
+       "rot": 0.0,
+       "escala": 0.668,
+       "esq": [
+        -0.03,
+        0.31,
+        0.18,
+        -0.42,
+        0.07,
+        0.31,
+        0.0,
+        -0.1
+       ]
+      },
+      "m2-espalda": {
+       "dx": 0.1,
+       "dy": -1.12,
+       "rot": 0
+      },
+      "m2-detalle-espalda-alta": {
+       "dx": -0.01,
+       "dy": -0.76,
+       "rot": 0.0,
+       "escala": 0.573
+      },
+      "m2-espalda-p2": {
+       "dx": 0.43,
+       "dy": -1.19,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m2-espalda-p3": {
+       "dx": -6.13,
+       "dy": -2.76,
+       "rot": 0.0,
+       "escala": 0.625,
+       "esq": [
+        0.09,
+        0.33,
+        0.61,
+        -0.42,
+        0.03,
+        -0.05,
+        0.28,
+        -0.2
+       ]
+      },
+      "h3-espalda": {
+       "dx": -0.13,
+       "dy": -2.2,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h3-detalle-espalda-alta": {
+       "dx": -0.13,
+       "dy": 4.24,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m3-espalda": {
+       "dx": -0.05,
+       "dy": -1.43,
+       "rot": 0.0,
+       "escala": 0.843
+      },
+      "m3-detalle-espalda-alta": {
+       "dx": 0.23,
+       "dy": 5.52,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "ph-espalda-plana": {
+       "dx": -0.03,
+       "dy": -2.1,
+       "rot": 0.0,
+       "escala": 1.088
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "manga_derecha": {
+     "archivo": "img/estampados/shun-andromeda-blanco-manga_derecha-b08c536e51d3.webp",
+     "ancho_cm": 5.8,
+     "alto_cm": 7.0,
+     "mov": {
+      "hombre": {
+       "dx": -0.67,
+       "dy": -1.89
+      },
+      "mujer": {
+       "dx": -0.67,
+       "dy": -1.89
+      }
+     },
+     "curva_auto": 0.0,
+     "ajuste": {
+      "h1-lateral-derecho": {
+       "dx": -0.72,
+       "dy": 3.8,
+       "rot": 0.0,
+       "escala": 1.03
+      },
+      "h1-detalle-manga": {
+       "dx": 0.32,
+       "dy": 2.24,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h1-lateral-derecho-p2": {
+       "dx": -1.4,
+       "dy": 13.8,
+       "rot": 4.1,
+       "escala": 0.913,
+       "esq": [
+        0.5,
+        0.53,
+        -0.09,
+        0.33,
+        -0.13,
+        -0.18,
+        0.19,
+        -0.24
+       ]
+      },
+      "h1-lateral-derecho-p3": {
+       "dx": 1.01,
+       "dy": 9.85,
+       "rot": 0.0,
+       "escala": 0.981,
+       "esq": [
+        0.05,
+        0.14,
+        0.0,
+        0.19,
+        0.02,
+        0.0,
+        -0.02,
+        0.09
+       ]
+      },
+      "h2-lateral-derecho": {
+       "dx": 0.41,
+       "dy": 5.42,
+       "rot": -4.6,
+       "escala": 1.0
+      },
+      "h2-detalle-manga": {
+       "dx": -0.07,
+       "dy": 5.11,
+       "rot": -2.3,
+       "escala": 1.0,
+       "esq": [
+        -0.12,
+        -0.06,
+        0.12,
+        -0.12,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "h2-lateral-derecho-p2": {
+       "dx": 2.74,
+       "dy": 9.4,
+       "rot": -17.1,
+       "escala": 1.0
+      },
+      "h2-lateral-derecho-p3": {
+       "dx": 1.28,
+       "dy": 10.09,
+       "rot": -7.2,
+       "escala": 1.0
+      },
+      "m1-lateral-derecho": {
+       "dx": -0.5,
+       "dy": -1.16,
+       "rot": 0.0,
+       "escala": 1.03,
+       "esq": [
+        0.22,
+        0.22,
+        -0.21,
+        0.23,
+        -0.16,
+        -0.14,
+        0.03,
+        -0.1
+       ]
+      },
+      "m1-detalle-manga": {
+       "dx": 0.12,
+       "dy": 4.57,
+       "rot": -1.8,
+       "escala": 1.0
+      },
+      "m1-lateral-derecho-p2": {
+       "dx": 2.1,
+       "dy": -0.86,
+       "rot": -11.7,
+       "escala": 0.601,
+       "esq": [
+        -0.02,
+        0.07,
+        0.02,
+        0.0,
+        0.0,
+        0.0,
+        -0.05,
+        0.11
+       ]
+      },
+      "m1-lateral-derecho-p3": {
+       "dx": 2.31,
+       "dy": 4.44,
+       "rot": 0.0,
+       "escala": 0.757
+      },
+      "m2-lateral-derecho": {
+       "dx": 0.98,
+       "dy": 0.09,
+       "rot": 0.0,
+       "escala": 0.812,
+       "esq": [
+        0.06,
+        0.55,
+        -0.04,
+        0.15,
+        0.0,
+        0.04,
+        -0.04,
+        0.47
+       ]
+      },
+      "m2-detalle-manga": {
+       "dx": -0.33,
+       "dy": 4.16,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m2-lateral-derecho-p2": {
+       "dx": 4.07,
+       "dy": 6.21,
+       "rot": -12.6,
+       "escala": 0.812
+      },
+      "m2-lateral-derecho-p3": {
+       "dx": 4.14,
+       "dy": 5.08,
+       "rot": -1.8,
+       "escala": 0.751,
+       "esq": [
+        -0.06,
+        -0.06,
+        0.21,
+        -0.09,
+        0.32,
+        0.44,
+        -0.18,
+        0.44
+       ]
+      },
+      "h3-lateral-derecho": {
+       "dx": -5.0,
+       "dy": 0.31,
+       "rot": 1.4,
+       "escala": 0.985
+      },
+      "h3-detalle-manga": {
+       "dx": -3.89,
+       "dy": 14.2,
+       "rot": 0.0,
+       "escala": 1.1
+      },
+      "h3-primer-plano-manga": {
+       "dx": -0.08,
+       "dy": 1.33,
+       "rot": -3.0,
+       "escala": 0.624
+      },
+      "m3-lateral-derecho": {
+       "dx": 2.51,
+       "dy": -5.27,
+       "rot": -4.5,
+       "escala": 0.791
+      },
+      "m3-detalle-manga": {
+       "dx": 3.76,
+       "dy": 5.47,
+       "rot": 0.0,
+       "escala": 0.893
+      },
+      "m3-primer-plano-manga": {
+       "dx": -0.42,
+       "dy": -0.96,
+       "rot": -2.1,
+       "escala": 0.631
+      },
+      "ph-lateral-derecho": {
+       "dx": -0.76,
+       "dy": -1.28,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "pm-lateral-izquierdo": {
+       "dx": 0.07,
+       "dy": -2.06,
+       "rot": 0.0,
+       "escala": 0.79
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    }
+   },
+   "planos": {},
+   "galeria": {
+    "ph|frente-plano": {
+     "mini": "img/galeria/shun-andromeda-blanco-ph-frente-plano-blanco-ebf90c6523cc33aa-mini.webp",
+     "foto": "img/galeria/shun-andromeda-blanco-ph-frente-plano-blanco-ebf90c6523cc33aa-foto.webp",
+     "zoom": "img/galeria/shun-andromeda-blanco-ph-frente-plano-blanco-ebf90c6523cc33aa-zoom.webp"
+    },
+    "ph|espalda-plana": {
+     "mini": "img/galeria/shun-andromeda-blanco-ph-espalda-plana-blanco-cab26089af6ad20a-mini.webp",
+     "foto": "img/galeria/shun-andromeda-blanco-ph-espalda-plana-blanco-cab26089af6ad20a-foto.webp",
+     "zoom": "img/galeria/shun-andromeda-blanco-ph-espalda-plana-blanco-cab26089af6ad20a-zoom.webp"
+    },
+    "h3|detalle-manga": {
+     "mini": "img/galeria/shun-andromeda-blanco-h3-detalle-manga-blanco-df6e2d57f6c1796e-mini.webp",
+     "foto": "img/galeria/shun-andromeda-blanco-h3-detalle-manga-blanco-df6e2d57f6c1796e-foto.webp",
+     "zoom": "img/galeria/shun-andromeda-blanco-h3-detalle-manga-blanco-df6e2d57f6c1796e-zoom.webp"
+    },
+    "h3|espalda": {
+     "mini": "img/galeria/shun-andromeda-blanco-h3-espalda-blanco-4d382be1605bee6c-mini.webp",
+     "foto": "img/galeria/shun-andromeda-blanco-h3-espalda-blanco-4d382be1605bee6c-foto.webp",
+     "zoom": "img/galeria/shun-andromeda-blanco-h3-espalda-blanco-4d382be1605bee6c-zoom.webp"
+    },
+    "h3|detalle-pecho": {
+     "mini": "img/galeria/shun-andromeda-blanco-h3-detalle-pecho-blanco-c60cbb80cd29f412-mini.webp",
+     "foto": "img/galeria/shun-andromeda-blanco-h3-detalle-pecho-blanco-c60cbb80cd29f412-foto.webp",
+     "zoom": "img/galeria/shun-andromeda-blanco-h3-detalle-pecho-blanco-c60cbb80cd29f412-zoom.webp"
+    },
+    "h3|frente": {
+     "mini": "img/galeria/shun-andromeda-blanco-h3-frente-blanco-6463f09376a4e83e-mini.webp",
+     "foto": "img/galeria/shun-andromeda-blanco-h3-frente-blanco-6463f09376a4e83e-foto.webp",
+     "zoom": "img/galeria/shun-andromeda-blanco-h3-frente-blanco-6463f09376a4e83e-zoom.webp"
+    },
+    "pm|frente-plano": {
+     "mini": "img/galeria/shun-andromeda-blanco-pm-frente-plano-blanco-18c1c90fed41f46e-mini.webp",
+     "foto": "img/galeria/shun-andromeda-blanco-pm-frente-plano-blanco-18c1c90fed41f46e-foto.webp",
+     "zoom": "img/galeria/shun-andromeda-blanco-pm-frente-plano-blanco-18c1c90fed41f46e-zoom.webp"
+    },
+    "pm|espalda-plana": {
+     "mini": "img/galeria/shun-andromeda-blanco-pm-espalda-plana-blanco-8a76152de67710de-mini.webp",
+     "foto": "img/galeria/shun-andromeda-blanco-pm-espalda-plana-blanco-8a76152de67710de-foto.webp",
+     "zoom": "img/galeria/shun-andromeda-blanco-pm-espalda-plana-blanco-8a76152de67710de-zoom.webp"
+    },
+    "m3|detalle-manga": {
+     "mini": "img/galeria/shun-andromeda-blanco-m3-detalle-manga-blanco-1f20c7c1b8a3ac6d-mini.webp",
+     "foto": "img/galeria/shun-andromeda-blanco-m3-detalle-manga-blanco-1f20c7c1b8a3ac6d-foto.webp",
+     "zoom": "img/galeria/shun-andromeda-blanco-m3-detalle-manga-blanco-1f20c7c1b8a3ac6d-zoom.webp"
+    },
+    "m3|frente": {
+     "mini": "img/galeria/shun-andromeda-blanco-m3-frente-blanco-eacec9d7e0d5256b-mini.webp",
+     "foto": "img/galeria/shun-andromeda-blanco-m3-frente-blanco-eacec9d7e0d5256b-foto.webp",
+     "zoom": "img/galeria/shun-andromeda-blanco-m3-frente-blanco-eacec9d7e0d5256b-zoom.webp"
+    },
+    "m3|lateral-derecho": {
+     "mini": "img/galeria/shun-andromeda-blanco-m3-lateral-derecho-blanco-87b2393d9140b715-mini.webp",
+     "foto": "img/galeria/shun-andromeda-blanco-m3-lateral-derecho-blanco-87b2393d9140b715-foto.webp",
+     "zoom": "img/galeria/shun-andromeda-blanco-m3-lateral-derecho-blanco-87b2393d9140b715-zoom.webp"
+    },
+    "m3|espalda": {
+     "mini": "img/galeria/shun-andromeda-blanco-m3-espalda-blanco-e6a4372709383b05-mini.webp",
+     "foto": "img/galeria/shun-andromeda-blanco-m3-espalda-blanco-e6a4372709383b05-foto.webp",
+     "zoom": "img/galeria/shun-andromeda-blanco-m3-espalda-blanco-e6a4372709383b05-zoom.webp"
+    }
+   }
+  },
+  {
+   "id": "ikki-fenix-negro",
+   "nombre": "IKKI FENIX - NEGRO",
+   "tema": "Saint Seiya",
+   "texto": "",
+   "tipo": "A",
+   "color": "negro",
+   "seleccion": {
+    "hombre": [
+     [
+      "ph",
+      "frente-plano"
+     ],
+     [
+      "ph",
+      "espalda-plana"
+     ],
+     [
+      "h3",
+      "detalle-pecho"
+     ],
+     [
+      "h3",
+      "detalle-manga"
+     ],
+     [
+      "h3",
+      "detalle-espalda-alta"
+     ],
+     [
+      "h3",
+      "frente"
+     ]
+    ],
+    "mujer": [
+     [
+      "pm",
+      "frente-plano"
+     ],
+     [
+      "pm",
+      "espalda-plana"
+     ],
+     [
+      "m3",
+      "primer-plano-manga"
+     ],
+     [
+      "m3",
+      "detalle-pecho"
+     ],
+     [
+      "m3",
+      "espalda"
+     ],
+     [
+      "m3",
+      "lateral-derecho"
+     ]
+    ]
+   },
+   "precio": null,
+   "material": null,
+   "gramaje": null,
+   "estado": "en_preparacion",
+   "tallas": [
+    "S",
+    "M",
+    "L"
+   ],
+   "estampados": {
+    "pecho": {
+     "archivo": "img/estampados/ikki-fenix-negro-pecho-bf78f0a3a1e2.webp",
+     "ancho_cm": 27.0,
+     "alto_cm": 38.0,
+     "mov": {
+      "hombre": {
+       "dx": 0.0,
+       "dy": 2.95
+      },
+      "mujer": {
+       "dx": 0.0,
+       "dy": 2.95
+      }
+     },
+     "curva_auto": 0.5,
+     "ajuste": {
+      "h1-frente": {
+       "dx": 0.2,
+       "dy": 3.12,
+       "rot": 0.0,
+       "escala": 0.998,
+       "curva": 0.8,
+       "esq": [
+        -0.59,
+        -0.71,
+        0.59,
+        -0.82,
+        -0.47,
+        0.35,
+        0.59,
+        0.47
+       ]
+      },
+      "h1-detalle-pecho": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "h1-frente-p2": {
+       "dx": 0.2,
+       "dy": 3.12,
+       "rot": 0,
+       "escala": 0.998,
+       "curva": 0.8
+      },
+      "h1-frente-p3": {
+       "dx": 0.21,
+       "dy": 5.28,
+       "rot": 0.0,
+       "escala": 0.998,
+       "esq": [
+        0.0,
+        0.47,
+        -0.18,
+        -0.3,
+        -0.42,
+        0.06,
+        0.3,
+        1.01
+       ]
+      },
+      "h2-frente": {
+       "dx": 0.74,
+       "dy": 5.77,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8,
+       "esq": [
+        -0.87,
+        -0.37,
+        0.0,
+        -2.42,
+        1.49,
+        0.35,
+        0.7,
+        1.4
+       ]
+      },
+      "h2-detalle-pecho": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "h2-frente-p2": {
+       "dx": 0.53,
+       "dy": 4.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "esq": [
+        -1.06,
+        0.21,
+        -0.21,
+        -0.85,
+        -0.74,
+        0.0,
+        0.96,
+        0.0
+       ]
+      },
+      "h2-frente-p3": {
+       "dx": 0.74,
+       "dy": 5.77,
+       "rot": 0.0,
+       "escala": 0.987,
+       "esq": [
+        -1.96,
+        0.0,
+        0.44,
+        -2.29,
+        0.0,
+        0.0,
+        0.65,
+        1.53
+       ]
+      },
+      "m1-frente": {
+       "dx": 0.44,
+       "dy": 1.4,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "m1-detalle-pecho": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8,
+       "esq": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.66,
+        0.0,
+        0.85,
+        0.13
+       ]
+      },
+      "m1-frente-p2": {
+       "dx": -0.12,
+       "dy": -9.03,
+       "rot": 0.0,
+       "escala": 0.602,
+       "esq": [
+        -0.68,
+        -0.37,
+        0.25,
+        -0.31,
+        0.31,
+        -0.31,
+        0.37,
+        -0.37
+       ]
+      },
+      "m1-frente-p3": {
+       "dx": 0.67,
+       "dy": -11.07,
+       "rot": 0.0,
+       "escala": 0.585,
+       "esq": [
+        -1.06,
+        -0.26,
+        -0.09,
+        -0.48,
+        -0.62,
+        -1.08,
+        0.57,
+        -0.66
+       ]
+      },
+      "m2-frente": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "m2-detalle-pecho": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "m2-frente-p2": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "m2-frente-p3": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "h3-frente": {
+       "dx": 0.37,
+       "dy": 3.68,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h3-detalle-pecho": {
+       "dx": 0.04,
+       "dy": 4.44,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m3-frente": {
+       "dx": -0.08,
+       "dy": 2.45,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m3-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 1.85,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "ph-frente-plano": {
+       "dx": -0.16,
+       "dy": 4.58,
+       "rot": 0.0,
+       "escala": 0.987
+      },
+      "pm-frente-plano": {
+       "dx": -0.16,
+       "dy": -0.59,
+       "rot": 0.0,
+       "escala": 0.94
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "manga_derecha": {
+     "archivo": "img/estampados/ikki-fenix-negro-manga_derecha-33d97ea206db.webp",
+     "ancho_cm": 6.7,
+     "alto_cm": 7.0,
+     "mov": {
+      "hombre": {
+       "dx": -1.33,
+       "dy": -1.2
+      },
+      "mujer": {
+       "dx": -1.33,
+       "dy": -1.2
+      }
+     },
+     "curva_auto": 0.0,
+     "ajuste": {
+      "h1-lateral-derecho": {
+       "dx": -0.72,
+       "dy": 3.8,
+       "rot": 0.0,
+       "escala": 1.03
+      },
+      "h1-detalle-manga": {
+       "dx": 0.32,
+       "dy": 2.24,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h1-lateral-derecho-p2": {
+       "dx": -1.4,
+       "dy": 13.8,
+       "rot": 4.1,
+       "escala": 0.913,
+       "esq": [
+        0.5,
+        0.53,
+        -0.09,
+        0.33,
+        -0.13,
+        -0.18,
+        0.19,
+        -0.24
+       ]
+      },
+      "h1-lateral-derecho-p3": {
+       "dx": 1.01,
+       "dy": 9.85,
+       "rot": 0.0,
+       "escala": 0.981,
+       "esq": [
+        0.05,
+        0.14,
+        0.0,
+        0.19,
+        0.02,
+        0.0,
+        -0.02,
+        0.09
+       ]
+      },
+      "h2-lateral-derecho": {
+       "dx": 0.41,
+       "dy": 5.42,
+       "rot": -4.6,
+       "escala": 1.0
+      },
+      "h2-detalle-manga": {
+       "dx": -0.07,
+       "dy": 5.11,
+       "rot": -2.3,
+       "escala": 1.0,
+       "esq": [
+        -0.12,
+        -0.06,
+        0.12,
+        -0.12,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "h2-lateral-derecho-p2": {
+       "dx": 2.74,
+       "dy": 9.4,
+       "rot": -17.1,
+       "escala": 1.0
+      },
+      "h2-lateral-derecho-p3": {
+       "dx": 1.28,
+       "dy": 10.09,
+       "rot": -7.2,
+       "escala": 1.0
+      },
+      "m1-lateral-derecho": {
+       "dx": -0.5,
+       "dy": -1.16,
+       "rot": 0.0,
+       "escala": 1.03,
+       "esq": [
+        0.22,
+        0.22,
+        -0.21,
+        0.23,
+        -0.16,
+        -0.14,
+        0.03,
+        -0.1
+       ]
+      },
+      "m1-detalle-manga": {
+       "dx": 0.12,
+       "dy": 4.57,
+       "rot": -1.8,
+       "escala": 1.0
+      },
+      "m1-lateral-derecho-p2": {
+       "dx": 2.1,
+       "dy": -0.86,
+       "rot": -11.7,
+       "escala": 0.601,
+       "esq": [
+        -0.02,
+        0.07,
+        0.02,
+        0.0,
+        0.0,
+        0.0,
+        -0.05,
+        0.11
+       ]
+      },
+      "m1-lateral-derecho-p3": {
+       "dx": 2.31,
+       "dy": 4.44,
+       "rot": 0.0,
+       "escala": 0.757
+      },
+      "m2-lateral-derecho": {
+       "dx": 0.98,
+       "dy": 0.09,
+       "rot": 0.0,
+       "escala": 0.812,
+       "esq": [
+        0.06,
+        0.55,
+        -0.04,
+        0.15,
+        0.0,
+        0.04,
+        -0.04,
+        0.47
+       ]
+      },
+      "m2-detalle-manga": {
+       "dx": -0.33,
+       "dy": 4.16,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m2-lateral-derecho-p2": {
+       "dx": 4.07,
+       "dy": 6.21,
+       "rot": -12.6,
+       "escala": 0.812
+      },
+      "m2-lateral-derecho-p3": {
+       "dx": 4.14,
+       "dy": 5.08,
+       "rot": -1.8,
+       "escala": 0.751,
+       "esq": [
+        -0.06,
+        -0.06,
+        0.21,
+        -0.09,
+        0.32,
+        0.44,
+        -0.18,
+        0.44
+       ]
+      },
+      "h3-lateral-derecho": {
+       "dx": -4.52,
+       "dy": 0.24,
+       "rot": 2.7,
+       "escala": 0.985
+      },
+      "h3-detalle-manga": {
+       "dx": -3.84,
+       "dy": 12.33,
+       "rot": 0.0,
+       "escala": 1.1
+      },
+      "h3-primer-plano-manga": {
+       "dx": -0.08,
+       "dy": 1.33,
+       "rot": -3.0,
+       "escala": 0.624
+      },
+      "m3-lateral-derecho": {
+       "dx": 3.18,
+       "dy": -5.18,
+       "rot": -4.2,
+       "escala": 0.791
+      },
+      "m3-detalle-manga": {
+       "dx": 4.2,
+       "dy": 6.57,
+       "rot": -1.6,
+       "escala": 0.893
+      },
+      "m3-primer-plano-manga": {
+       "dx": 0.0,
+       "dy": -0.25,
+       "rot": -1.3,
+       "escala": 0.709
+      },
+      "ph-lateral-derecho": {
+       "dx": -0.76,
+       "dy": -1.28,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "pm-lateral-izquierdo": {
+       "dx": -0.05,
+       "dy": -1.98,
+       "rot": 2.7,
+       "escala": 0.79
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "espalda_alta": {
+     "archivo": "img/estampados/ikki-fenix-negro-espalda_alta-a05f06a62aaa.webp",
+     "ancho_cm": 5.4,
+     "alto_cm": 13.3,
+     "mov": {
+      "hombre": {
+       "dx": 0.26,
+       "dy": -0.5
+      },
+      "mujer": {
+       "dx": 0.26,
+       "dy": -0.5
+      }
+     },
+     "curva_auto": 0.3,
+     "ajuste": {
+      "h1-espalda": {
+       "dx": 0.26,
+       "dy": -1.23,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h1-detalle-espalda-alta": {
+       "dx": 0.06,
+       "dy": -3.21,
+       "rot": 0.0,
+       "escala": 0.672
+      },
+      "h1-espalda-p2": {
+       "dx": 0.26,
+       "dy": -1.23,
+       "rot": 0,
+       "escala": 1.0
+      },
+      "h1-espalda-p3": {
+       "dx": -5.02,
+       "dy": 1.0,
+       "rot": 0.0,
+       "escala": 0.784,
+       "esq": [
+        0.0,
+        1.31,
+        -0.1,
+        0.54,
+        -0.58,
+        -0.34,
+        -0.05,
+        -0.78
+       ]
+      },
+      "h2-espalda": {
+       "dx": 0.0,
+       "dy": -0.28,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h2-detalle-espalda-alta": {
+       "dx": 0.0,
+       "dy": -0.38,
+       "rot": 0.0,
+       "escala": 0.718
+      },
+      "h2-espalda-p2": {
+       "dx": 0.0,
+       "dy": -0.28,
+       "rot": 0,
+       "escala": 1.0
+      },
+      "h2-espalda-p3": {
+       "dx": -6.38,
+       "dy": -0.5,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        0.29,
+        0.03,
+        -0.13,
+        -0.78,
+        -1.41,
+        -0.14,
+        0.2,
+        -0.17
+       ]
+      },
+      "m1-espalda": {
+       "dx": 0.11,
+       "dy": -0.23,
+       "rot": 0.0,
+       "escala": 0.892
+      },
+      "m1-detalle-espalda-alta": {
+       "dx": 0.04,
+       "dy": -0.13,
+       "rot": 0.0,
+       "escala": 0.546
+      },
+      "m1-espalda-p2": {
+       "dx": 0.17,
+       "dy": -5.76,
+       "rot": 0.0,
+       "escala": 0.544
+      },
+      "m1-espalda-p3": {
+       "dx": -5.65,
+       "dy": -3.43,
+       "rot": 0.0,
+       "escala": 0.668,
+       "esq": [
+        -0.03,
+        0.31,
+        0.18,
+        -0.42,
+        0.07,
+        0.31,
+        0.0,
+        -0.1
+       ]
+      },
+      "m2-espalda": {
+       "dx": 0.1,
+       "dy": -1.12,
+       "rot": 0
+      },
+      "m2-detalle-espalda-alta": {
+       "dx": -0.01,
+       "dy": -0.76,
+       "rot": 0.0,
+       "escala": 0.573
+      },
+      "m2-espalda-p2": {
+       "dx": 0.43,
+       "dy": -1.19,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m2-espalda-p3": {
+       "dx": -6.13,
+       "dy": -2.76,
+       "rot": 0.0,
+       "escala": 0.625,
+       "esq": [
+        0.09,
+        0.33,
+        0.61,
+        -0.42,
+        0.03,
+        -0.05,
+        0.28,
+        -0.2
+       ]
+      },
+      "h3-espalda": {
+       "dx": -0.33,
+       "dy": -3.57,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h3-detalle-espalda-alta": {
+       "dx": 0.26,
+       "dy": 6.26,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m3-espalda": {
+       "dx": 0.09,
+       "dy": -2.01,
+       "rot": 0.0,
+       "escala": 0.843
+      },
+      "m3-detalle-espalda-alta": {
+       "dx": 0.49,
+       "dy": 7.31,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "ph-espalda-plana": {
+       "dx": -0.03,
+       "dy": -2.1,
+       "rot": 0.0,
+       "escala": 1.088
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    }
+   },
+   "planos": {},
+   "galeria": {
+    "ph|frente-plano": {
+     "mini": "img/galeria/ikki-fenix-negro-ph-frente-plano-negro-3eb76ee0aa1183fe-mini.webp",
+     "foto": "img/galeria/ikki-fenix-negro-ph-frente-plano-negro-3eb76ee0aa1183fe-foto.webp",
+     "zoom": "img/galeria/ikki-fenix-negro-ph-frente-plano-negro-3eb76ee0aa1183fe-zoom.webp"
+    },
+    "ph|espalda-plana": {
+     "mini": "img/galeria/ikki-fenix-negro-ph-espalda-plana-negro-ba61f08eaf1913f4-mini.webp",
+     "foto": "img/galeria/ikki-fenix-negro-ph-espalda-plana-negro-ba61f08eaf1913f4-foto.webp",
+     "zoom": "img/galeria/ikki-fenix-negro-ph-espalda-plana-negro-ba61f08eaf1913f4-zoom.webp"
+    },
+    "h3|detalle-pecho": {
+     "mini": "img/galeria/ikki-fenix-negro-h3-detalle-pecho-negro-098420f937fc20f0-mini.webp",
+     "foto": "img/galeria/ikki-fenix-negro-h3-detalle-pecho-negro-098420f937fc20f0-foto.webp",
+     "zoom": "img/galeria/ikki-fenix-negro-h3-detalle-pecho-negro-098420f937fc20f0-zoom.webp"
+    },
+    "h3|detalle-manga": {
+     "mini": "img/galeria/ikki-fenix-negro-h3-detalle-manga-negro-62828e9f56a22003-mini.webp",
+     "foto": "img/galeria/ikki-fenix-negro-h3-detalle-manga-negro-62828e9f56a22003-foto.webp",
+     "zoom": "img/galeria/ikki-fenix-negro-h3-detalle-manga-negro-62828e9f56a22003-zoom.webp"
+    },
+    "h3|detalle-espalda-alta": {
+     "mini": "img/galeria/ikki-fenix-negro-h3-detalle-espalda-alta-negro-0c7ed7eb443e536e-mini.webp",
+     "foto": "img/galeria/ikki-fenix-negro-h3-detalle-espalda-alta-negro-0c7ed7eb443e536e-foto.webp",
+     "zoom": "img/galeria/ikki-fenix-negro-h3-detalle-espalda-alta-negro-0c7ed7eb443e536e-zoom.webp"
+    },
+    "h3|frente": {
+     "mini": "img/galeria/ikki-fenix-negro-h3-frente-negro-b906eb44c2c8cb70-mini.webp",
+     "foto": "img/galeria/ikki-fenix-negro-h3-frente-negro-b906eb44c2c8cb70-foto.webp",
+     "zoom": "img/galeria/ikki-fenix-negro-h3-frente-negro-b906eb44c2c8cb70-zoom.webp"
+    },
+    "pm|frente-plano": {
+     "mini": "img/galeria/ikki-fenix-negro-pm-frente-plano-negro-21b34d661b28c68c-mini.webp",
+     "foto": "img/galeria/ikki-fenix-negro-pm-frente-plano-negro-21b34d661b28c68c-foto.webp",
+     "zoom": "img/galeria/ikki-fenix-negro-pm-frente-plano-negro-21b34d661b28c68c-zoom.webp"
+    },
+    "pm|espalda-plana": {
+     "mini": "img/galeria/ikki-fenix-negro-pm-espalda-plana-negro-fca6e00f12c686e4-mini.webp",
+     "foto": "img/galeria/ikki-fenix-negro-pm-espalda-plana-negro-fca6e00f12c686e4-foto.webp",
+     "zoom": "img/galeria/ikki-fenix-negro-pm-espalda-plana-negro-fca6e00f12c686e4-zoom.webp"
+    },
+    "m3|primer-plano-manga": {
+     "mini": "img/galeria/ikki-fenix-negro-m3-primer-plano-manga-negro-7a7a7d5795c566f3-mini.webp",
+     "foto": "img/galeria/ikki-fenix-negro-m3-primer-plano-manga-negro-7a7a7d5795c566f3-foto.webp",
+     "zoom": "img/galeria/ikki-fenix-negro-m3-primer-plano-manga-negro-7a7a7d5795c566f3-zoom.webp"
+    },
+    "m3|detalle-pecho": {
+     "mini": "img/galeria/ikki-fenix-negro-m3-detalle-pecho-negro-d081dfd7672cbcc2-mini.webp",
+     "foto": "img/galeria/ikki-fenix-negro-m3-detalle-pecho-negro-d081dfd7672cbcc2-foto.webp",
+     "zoom": "img/galeria/ikki-fenix-negro-m3-detalle-pecho-negro-d081dfd7672cbcc2-zoom.webp"
+    },
+    "m3|espalda": {
+     "mini": "img/galeria/ikki-fenix-negro-m3-espalda-negro-9e6f78631ddc5d02-mini.webp",
+     "foto": "img/galeria/ikki-fenix-negro-m3-espalda-negro-9e6f78631ddc5d02-foto.webp",
+     "zoom": "img/galeria/ikki-fenix-negro-m3-espalda-negro-9e6f78631ddc5d02-zoom.webp"
+    },
+    "m3|lateral-derecho": {
+     "mini": "img/galeria/ikki-fenix-negro-m3-lateral-derecho-negro-394f161eb934a402-mini.webp",
+     "foto": "img/galeria/ikki-fenix-negro-m3-lateral-derecho-negro-394f161eb934a402-foto.webp",
+     "zoom": "img/galeria/ikki-fenix-negro-m3-lateral-derecho-negro-394f161eb934a402-zoom.webp"
+    }
+   }
+  },
+  {
+   "id": "12-dorados-negro",
+   "nombre": "12 DORADOS - NEGRO",
+   "tema": "Saint Seiya",
+   "texto": "",
+   "tipo": "A",
+   "color": "negro",
+   "seleccion": {
+    "hombre": [
+     [
+      "ph",
+      "frente-plano"
+     ],
+     [
+      "ph",
+      "espalda-plana"
+     ],
+     [
+      "h3",
+      "primer-plano-manga"
+     ],
+     [
+      "h3",
+      "detalle-pecho"
+     ],
+     [
+      "h3",
+      "detalle-espalda-alta"
+     ],
+     [
+      "h3",
+      "frente"
+     ]
+    ],
+    "mujer": [
+     [
+      "pm",
+      "frente-plano"
+     ],
+     [
+      "pm",
+      "espalda-plana"
+     ],
+     [
+      "m3",
+      "primer-plano-manga"
+     ],
+     [
+      "m3",
+      "frente"
+     ],
+     [
+      "m3",
+      "detalle-espalda-alta"
+     ]
+    ]
+   },
+   "precio": null,
+   "material": null,
+   "gramaje": null,
+   "estado": "en_preparacion",
+   "tallas": [
+    "S",
+    "M",
+    "L"
+   ],
+   "estampados": {
+    "pecho": {
+     "archivo": "img/estampados/12-dorados-negro-pecho-3fbd2b81a9b1.webp",
+     "ancho_cm": 26.5,
+     "alto_cm": 40.0,
+     "mov": {
+      "hombre": {
+       "dx": -0.16,
+       "dy": 4.97
+      },
+      "mujer": {
+       "dx": -0.16,
+       "dy": 4.97
+      }
+     },
+     "curva_auto": 0.5,
+     "ajuste": {
+      "h1-frente": {
+       "dx": 0.2,
+       "dy": 3.12,
+       "rot": 0.0,
+       "escala": 0.998,
+       "curva": 0.8,
+       "esq": [
+        -0.59,
+        -0.71,
+        0.59,
+        -0.82,
+        -0.47,
+        0.35,
+        0.59,
+        0.47
+       ]
+      },
+      "h1-detalle-pecho": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "h1-frente-p2": {
+       "dx": 0.2,
+       "dy": 3.12,
+       "rot": 0,
+       "escala": 0.998,
+       "curva": 0.8
+      },
+      "h1-frente-p3": {
+       "dx": 0.21,
+       "dy": 5.28,
+       "rot": 0.0,
+       "escala": 0.998,
+       "esq": [
+        0.0,
+        0.47,
+        -0.18,
+        -0.3,
+        -0.42,
+        0.06,
+        0.3,
+        1.01
+       ]
+      },
+      "h2-frente": {
+       "dx": 0.74,
+       "dy": 5.77,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8,
+       "esq": [
+        -0.87,
+        -0.37,
+        0.0,
+        -2.42,
+        1.49,
+        0.35,
+        0.7,
+        1.4
+       ]
+      },
+      "h2-detalle-pecho": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "h2-frente-p2": {
+       "dx": 0.53,
+       "dy": 4.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "esq": [
+        -1.06,
+        0.21,
+        -0.21,
+        -0.85,
+        -0.74,
+        0.0,
+        0.96,
+        0.0
+       ]
+      },
+      "h2-frente-p3": {
+       "dx": 0.74,
+       "dy": 5.77,
+       "rot": 0.0,
+       "escala": 0.987,
+       "esq": [
+        -1.96,
+        0.0,
+        0.44,
+        -2.29,
+        0.0,
+        0.0,
+        0.65,
+        1.53
+       ]
+      },
+      "m1-frente": {
+       "dx": 0.44,
+       "dy": 1.4,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "m1-detalle-pecho": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8,
+       "esq": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.66,
+        0.0,
+        0.85,
+        0.13
+       ]
+      },
+      "m1-frente-p2": {
+       "dx": -0.12,
+       "dy": -9.03,
+       "rot": 0.0,
+       "escala": 0.602,
+       "esq": [
+        -0.68,
+        -0.37,
+        0.25,
+        -0.31,
+        0.31,
+        -0.31,
+        0.37,
+        -0.37
+       ]
+      },
+      "m1-frente-p3": {
+       "dx": 0.67,
+       "dy": -11.07,
+       "rot": 0.0,
+       "escala": 0.585,
+       "esq": [
+        -1.06,
+        -0.26,
+        -0.09,
+        -0.48,
+        -0.62,
+        -1.08,
+        0.57,
+        -0.66
+       ]
+      },
+      "m2-frente": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "m2-detalle-pecho": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0.0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "m2-frente-p2": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "m2-frente-p3": {
+       "dx": 0.44,
+       "dy": 0.71,
+       "rot": 0,
+       "escala": 0.987,
+       "curva": 0.8
+      },
+      "h3-frente": {
+       "dx": -0.16,
+       "dy": 4.33,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h3-detalle-pecho": {
+       "dx": 0.04,
+       "dy": 4.44,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m3-frente": {
+       "dx": -0.09,
+       "dy": 3.4,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m3-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 1.85,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "ph-frente-plano": {
+       "dx": -0.16,
+       "dy": 4.58,
+       "rot": 0.0,
+       "escala": 0.987
+      },
+      "pm-frente-plano": {
+       "dx": -0.16,
+       "dy": 0.37,
+       "rot": 0.0,
+       "escala": 0.94
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "manga_derecha": {
+     "archivo": "img/estampados/12-dorados-negro-manga_derecha-4664ae73da2d.webp",
+     "ancho_cm": 7.0,
+     "alto_cm": 7.0,
+     "mov": {
+      "hombre": {
+       "dx": -0.83,
+       "dy": -1.7
+      },
+      "mujer": {
+       "dx": -0.83,
+       "dy": -1.7
+      }
+     },
+     "curva_auto": 0.0,
+     "ajuste": {
+      "h1-lateral-derecho": {
+       "dx": -0.72,
+       "dy": 3.8,
+       "rot": 0.0,
+       "escala": 1.03
+      },
+      "h1-detalle-manga": {
+       "dx": 0.32,
+       "dy": 2.24,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h1-lateral-derecho-p2": {
+       "dx": -1.4,
+       "dy": 13.8,
+       "rot": 4.1,
+       "escala": 0.913,
+       "esq": [
+        0.5,
+        0.53,
+        -0.09,
+        0.33,
+        -0.13,
+        -0.18,
+        0.19,
+        -0.24
+       ]
+      },
+      "h1-lateral-derecho-p3": {
+       "dx": 1.01,
+       "dy": 9.85,
+       "rot": 0.0,
+       "escala": 0.981,
+       "esq": [
+        0.05,
+        0.14,
+        0.0,
+        0.19,
+        0.02,
+        0.0,
+        -0.02,
+        0.09
+       ]
+      },
+      "h2-lateral-derecho": {
+       "dx": 0.41,
+       "dy": 5.42,
+       "rot": -4.6,
+       "escala": 1.0
+      },
+      "h2-detalle-manga": {
+       "dx": -0.07,
+       "dy": 5.11,
+       "rot": -2.3,
+       "escala": 1.0,
+       "esq": [
+        -0.12,
+        -0.06,
+        0.12,
+        -0.12,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "h2-lateral-derecho-p2": {
+       "dx": 2.74,
+       "dy": 9.4,
+       "rot": -17.1,
+       "escala": 1.0
+      },
+      "h2-lateral-derecho-p3": {
+       "dx": 1.28,
+       "dy": 10.09,
+       "rot": -7.2,
+       "escala": 1.0
+      },
+      "m1-lateral-derecho": {
+       "dx": -0.5,
+       "dy": -1.16,
+       "rot": 0.0,
+       "escala": 1.03,
+       "esq": [
+        0.22,
+        0.22,
+        -0.21,
+        0.23,
+        -0.16,
+        -0.14,
+        0.03,
+        -0.1
+       ]
+      },
+      "m1-detalle-manga": {
+       "dx": 0.12,
+       "dy": 4.57,
+       "rot": -1.8,
+       "escala": 1.0
+      },
+      "m1-lateral-derecho-p2": {
+       "dx": 2.1,
+       "dy": -0.86,
+       "rot": -11.7,
+       "escala": 0.601,
+       "esq": [
+        -0.02,
+        0.07,
+        0.02,
+        0.0,
+        0.0,
+        0.0,
+        -0.05,
+        0.11
+       ]
+      },
+      "m1-lateral-derecho-p3": {
+       "dx": 2.31,
+       "dy": 4.44,
+       "rot": 0.0,
+       "escala": 0.757
+      },
+      "m2-lateral-derecho": {
+       "dx": 0.98,
+       "dy": 0.09,
+       "rot": 0.0,
+       "escala": 0.812,
+       "esq": [
+        0.06,
+        0.55,
+        -0.04,
+        0.15,
+        0.0,
+        0.04,
+        -0.04,
+        0.47
+       ]
+      },
+      "m2-detalle-manga": {
+       "dx": -0.33,
+       "dy": 4.16,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m2-lateral-derecho-p2": {
+       "dx": 4.07,
+       "dy": 6.21,
+       "rot": -12.6,
+       "escala": 0.812
+      },
+      "m2-lateral-derecho-p3": {
+       "dx": 4.14,
+       "dy": 5.08,
+       "rot": -1.8,
+       "escala": 0.751,
+       "esq": [
+        -0.06,
+        -0.06,
+        0.21,
+        -0.09,
+        0.32,
+        0.44,
+        -0.18,
+        0.44
+       ]
+      },
+      "h3-lateral-derecho": {
+       "dx": -5.16,
+       "dy": 0.69,
+       "rot": 5.0,
+       "escala": 0.985
+      },
+      "h3-detalle-manga": {
+       "dx": -4.7,
+       "dy": 13.38,
+       "rot": 0.0,
+       "escala": 1.1
+      },
+      "h3-primer-plano-manga": {
+       "dx": -0.52,
+       "dy": 0.37,
+       "rot": 0.0,
+       "escala": 0.854
+      },
+      "m3-lateral-derecho": {
+       "dx": 3.57,
+       "dy": -5.08,
+       "rot": 0.0,
+       "escala": 0.791
+      },
+      "m3-detalle-manga": {
+       "dx": 4.09,
+       "dy": 6.33,
+       "rot": 0.0,
+       "escala": 0.893
+      },
+      "m3-primer-plano-manga": {
+       "dx": 0.26,
+       "dy": -0.72,
+       "rot": 0.0,
+       "escala": 0.826
+      },
+      "ph-lateral-derecho": {
+       "dx": -0.76,
+       "dy": -1.28,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "pm-lateral-izquierdo": {
+       "dx": -0.07,
+       "dy": -2.22,
+       "rot": 0.0,
+       "escala": 0.79
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "espalda_alta": {
+     "archivo": "img/estampados/12-dorados-negro-espalda_alta-3b8c99f0ad6f.webp",
+     "ancho_cm": 9.6,
+     "alto_cm": 12.3,
+     "mov": {
+      "hombre": {
+       "dx": 0.51,
+       "dy": -1.08
+      },
+      "mujer": {
+       "dx": 0.51,
+       "dy": -1.08
+      }
+     },
+     "curva_auto": 0.3,
+     "ajuste": {
+      "h1-espalda": {
+       "dx": 0.26,
+       "dy": -1.23,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h1-detalle-espalda-alta": {
+       "dx": 0.06,
+       "dy": -3.21,
+       "rot": 0.0,
+       "escala": 0.672
+      },
+      "h1-espalda-p2": {
+       "dx": 0.26,
+       "dy": -1.23,
+       "rot": 0,
+       "escala": 1.0
+      },
+      "h1-espalda-p3": {
+       "dx": -5.02,
+       "dy": 1.0,
+       "rot": 0.0,
+       "escala": 0.784,
+       "esq": [
+        0.0,
+        1.31,
+        -0.1,
+        0.54,
+        -0.58,
+        -0.34,
+        -0.05,
+        -0.78
+       ]
+      },
+      "h2-espalda": {
+       "dx": 0.0,
+       "dy": -0.28,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h2-detalle-espalda-alta": {
+       "dx": 0.0,
+       "dy": -0.38,
+       "rot": 0.0,
+       "escala": 0.718
+      },
+      "h2-espalda-p2": {
+       "dx": 0.0,
+       "dy": -0.28,
+       "rot": 0,
+       "escala": 1.0
+      },
+      "h2-espalda-p3": {
+       "dx": -6.38,
+       "dy": -0.5,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        0.29,
+        0.03,
+        -0.13,
+        -0.78,
+        -1.41,
+        -0.14,
+        0.2,
+        -0.17
+       ]
+      },
+      "m1-espalda": {
+       "dx": 0.11,
+       "dy": -0.23,
+       "rot": 0.0,
+       "escala": 0.892
+      },
+      "m1-detalle-espalda-alta": {
+       "dx": 0.04,
+       "dy": -0.13,
+       "rot": 0.0,
+       "escala": 0.546
+      },
+      "m1-espalda-p2": {
+       "dx": 0.17,
+       "dy": -5.76,
+       "rot": 0.0,
+       "escala": 0.544
+      },
+      "m1-espalda-p3": {
+       "dx": -5.65,
+       "dy": -3.43,
+       "rot": 0.0,
+       "escala": 0.668,
+       "esq": [
+        -0.03,
+        0.31,
+        0.18,
+        -0.42,
+        0.07,
+        0.31,
+        0.0,
+        -0.1
+       ]
+      },
+      "m2-espalda": {
+       "dx": 0.1,
+       "dy": -1.12,
+       "rot": 0
+      },
+      "m2-detalle-espalda-alta": {
+       "dx": -0.01,
+       "dy": -0.76,
+       "rot": 0.0,
+       "escala": 0.573
+      },
+      "m2-espalda-p2": {
+       "dx": 0.43,
+       "dy": -1.19,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m2-espalda-p3": {
+       "dx": -6.13,
+       "dy": -2.76,
+       "rot": 0.0,
+       "escala": 0.625,
+       "esq": [
+        0.09,
+        0.33,
+        0.61,
+        -0.42,
+        0.03,
+        -0.05,
+        0.28,
+        -0.2
+       ]
+      },
+      "h3-espalda": {
+       "dx": -0.33,
+       "dy": -3.57,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h3-detalle-espalda-alta": {
+       "dx": 0.29,
+       "dy": 5.5,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m3-espalda": {
+       "dx": 0.09,
+       "dy": -2.01,
+       "rot": 0.0,
+       "escala": 0.843
+      },
+      "m3-detalle-espalda-alta": {
+       "dx": 0.51,
+       "dy": 5.14,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "ph-espalda-plana": {
+       "dx": -0.03,
+       "dy": -2.1,
+       "rot": 0.0,
+       "escala": 1.088
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    }
+   },
+   "planos": {},
+   "galeria": {
+    "ph|frente-plano": {
+     "mini": "img/galeria/12-dorados-negro-ph-frente-plano-negro-fe3426a63bb33bd7-mini.webp",
+     "foto": "img/galeria/12-dorados-negro-ph-frente-plano-negro-fe3426a63bb33bd7-foto.webp",
+     "zoom": "img/galeria/12-dorados-negro-ph-frente-plano-negro-fe3426a63bb33bd7-zoom.webp"
+    },
+    "ph|espalda-plana": {
+     "mini": "img/galeria/12-dorados-negro-ph-espalda-plana-negro-3616aa3ad1f370b8-mini.webp",
+     "foto": "img/galeria/12-dorados-negro-ph-espalda-plana-negro-3616aa3ad1f370b8-foto.webp",
+     "zoom": "img/galeria/12-dorados-negro-ph-espalda-plana-negro-3616aa3ad1f370b8-zoom.webp"
+    },
+    "h3|primer-plano-manga": {
+     "mini": "img/galeria/12-dorados-negro-h3-primer-plano-manga-negro-03a970078862be3b-mini.webp",
+     "foto": "img/galeria/12-dorados-negro-h3-primer-plano-manga-negro-03a970078862be3b-foto.webp",
+     "zoom": "img/galeria/12-dorados-negro-h3-primer-plano-manga-negro-03a970078862be3b-zoom.webp"
+    },
+    "h3|detalle-pecho": {
+     "mini": "img/galeria/12-dorados-negro-h3-detalle-pecho-negro-eb1e5efd251490b9-mini.webp",
+     "foto": "img/galeria/12-dorados-negro-h3-detalle-pecho-negro-eb1e5efd251490b9-foto.webp",
+     "zoom": "img/galeria/12-dorados-negro-h3-detalle-pecho-negro-eb1e5efd251490b9-zoom.webp"
+    },
+    "h3|detalle-espalda-alta": {
+     "mini": "img/galeria/12-dorados-negro-h3-detalle-espalda-alta-negro-c477111279553010-mini.webp",
+     "foto": "img/galeria/12-dorados-negro-h3-detalle-espalda-alta-negro-c477111279553010-foto.webp",
+     "zoom": "img/galeria/12-dorados-negro-h3-detalle-espalda-alta-negro-c477111279553010-zoom.webp"
+    },
+    "h3|frente": {
+     "mini": "img/galeria/12-dorados-negro-h3-frente-negro-0d81859f3d35f443-mini.webp",
+     "foto": "img/galeria/12-dorados-negro-h3-frente-negro-0d81859f3d35f443-foto.webp",
+     "zoom": "img/galeria/12-dorados-negro-h3-frente-negro-0d81859f3d35f443-zoom.webp"
+    },
+    "pm|frente-plano": {
+     "mini": "img/galeria/12-dorados-negro-pm-frente-plano-negro-ad24f5ae8dbf50e5-mini.webp",
+     "foto": "img/galeria/12-dorados-negro-pm-frente-plano-negro-ad24f5ae8dbf50e5-foto.webp",
+     "zoom": "img/galeria/12-dorados-negro-pm-frente-plano-negro-ad24f5ae8dbf50e5-zoom.webp"
+    },
+    "pm|espalda-plana": {
+     "mini": "img/galeria/12-dorados-negro-pm-espalda-plana-negro-b40f6bdc98944e14-mini.webp",
+     "foto": "img/galeria/12-dorados-negro-pm-espalda-plana-negro-b40f6bdc98944e14-foto.webp",
+     "zoom": "img/galeria/12-dorados-negro-pm-espalda-plana-negro-b40f6bdc98944e14-zoom.webp"
+    },
+    "m3|primer-plano-manga": {
+     "mini": "img/galeria/12-dorados-negro-m3-primer-plano-manga-negro-492d65ebc63e51b7-mini.webp",
+     "foto": "img/galeria/12-dorados-negro-m3-primer-plano-manga-negro-492d65ebc63e51b7-foto.webp",
+     "zoom": "img/galeria/12-dorados-negro-m3-primer-plano-manga-negro-492d65ebc63e51b7-zoom.webp"
+    },
+    "m3|frente": {
+     "mini": "img/galeria/12-dorados-negro-m3-frente-negro-e6f230a328efbc89-mini.webp",
+     "foto": "img/galeria/12-dorados-negro-m3-frente-negro-e6f230a328efbc89-foto.webp",
+     "zoom": "img/galeria/12-dorados-negro-m3-frente-negro-e6f230a328efbc89-zoom.webp"
+    },
+    "m3|detalle-espalda-alta": {
+     "mini": "img/galeria/12-dorados-negro-m3-detalle-espalda-alta-negro-090c093a0c535f37-mini.webp",
+     "foto": "img/galeria/12-dorados-negro-m3-detalle-espalda-alta-negro-090c093a0c535f37-foto.webp",
+     "zoom": "img/galeria/12-dorados-negro-m3-detalle-espalda-alta-negro-090c093a0c535f37-zoom.webp"
     }
    }
   }
@@ -8555,6 +11027,10 @@
       "negro": {
        "foto": "img/modelos/h3-espalda-negro.webp",
        "zoom": "img/modelos/h3-espalda-negro-zoom.webp"
+      },
+      "blanco": {
+       "foto": "img/modelos/h3-espalda-blanco.webp",
+       "zoom": "img/modelos/h3-espalda-blanco-zoom.webp"
       }
      },
      "por_color": {
@@ -8573,9 +11049,25 @@
         "top": 838.5605633802817
        },
        "mascara": "img/mascaras/h3-espalda-negro.png"
+      },
+      "blanco": {
+       "pxcm": 21.25,
+       "cx": 1018.0,
+       "top": 665.0,
+       "hem": 2174.0,
+       "radio": 488.8,
+       "espalda": {
+        "cx": 1018.0,
+        "top": 886.0366197183098
+       },
+       "espalda_alta": {
+        "cx": 1018.0,
+        "top": 843.5295774647886
+       },
+       "mascara": "img/mascaras/h3-espalda-blanco.png"
       }
      },
-     "mascara": "img/mascaras/h3-espalda-negro.png"
+     "mascara": "img/mascaras/h3-espalda-blanco.png"
     },
     {
      "toma": "detalle-pecho",
@@ -8744,6 +11236,60 @@
       }
      },
      "mascara": "img/mascaras/h3-detalle-espalda-alta-blanco.png"
+    },
+    {
+     "toma": "primer-plano-manga",
+     "pxcm": 62.47,
+     "top": 480.0,
+     "hem": 2559.0,
+     "cx": 870.4,
+     "manga": {
+      "cx": 870.4,
+      "cy": 1377.28,
+      "rot": 0
+     },
+     "radio": 0,
+     "clave": "h3-primer-plano-manga",
+     "nombre": "Primer plano manga",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/h3-primer-plano-manga-blanco.webp",
+       "zoom": "img/modelos/h3-primer-plano-manga-blanco-zoom.webp"
+      },
+      "negro": {
+       "foto": "img/modelos/h3-primer-plano-manga-negro.webp",
+       "zoom": "img/modelos/h3-primer-plano-manga-negro-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 62.47,
+       "cx": 870.4,
+       "top": 480.0,
+       "hem": 2559.0,
+       "radio": 0,
+       "manga": {
+        "cx": 870.4,
+        "cy": 1377.28,
+        "rot": 0
+       },
+       "mascara": "img/mascaras/h3-primer-plano-manga-blanco.png"
+      },
+      "negro": {
+       "pxcm": 62.77,
+       "cx": 870.4,
+       "top": 444.0,
+       "hem": 2559.0,
+       "radio": 0,
+       "manga": {
+        "cx": 870.4,
+        "cy": 1377.28,
+        "rot": 0
+       },
+       "mascara": "img/mascaras/h3-primer-plano-manga-negro.png"
+      }
+     },
+     "mascara": "img/mascaras/h3-primer-plano-manga-blanco.png"
     }
    ]
   },
@@ -8836,6 +11382,10 @@
       "negro": {
        "foto": "img/modelos/m3-lateral-derecho-negro.webp",
        "zoom": "img/modelos/m3-lateral-derecho-negro-zoom.webp"
+      },
+      "blanco": {
+       "foto": "img/modelos/m3-lateral-derecho-blanco.webp",
+       "zoom": "img/modelos/m3-lateral-derecho-blanco-zoom.webp"
       }
      },
      "por_color": {
@@ -8851,9 +11401,22 @@
         "rot": 0
        },
        "mascara": "img/mascaras/m3-lateral-derecho-negro.png"
+      },
+      "blanco": {
+       "pxcm": 23.56,
+       "cx": 970.5,
+       "top": 712.0,
+       "hem": 2149.0,
+       "radio": 0,
+       "manga": {
+        "cx": 999.27,
+        "cy": 1139.6512,
+        "rot": 0
+       },
+       "mascara": "img/mascaras/m3-lateral-derecho-blanco.png"
       }
      },
-     "mascara": "img/mascaras/m3-lateral-derecho-negro.png"
+     "mascara": "img/mascaras/m3-lateral-derecho-blanco.png"
     },
     {
      "toma": "detalle-pecho",
@@ -8971,6 +11534,158 @@
       }
      },
      "mascara": "img/mascaras/m3-detalle-manga-blanco.png"
+    },
+    {
+     "toma": "frente",
+     "pxcm": 22.62,
+     "top": 742.0,
+     "hem": 2122.0,
+     "cx": 1023.0,
+     "pecho": {
+      "cx": 1023.0,
+      "top": 954.655737704918
+     },
+     "pecho_pequeno": {
+      "cx": 1170.0491803278687,
+      "cy": 1022.5245901639345
+     },
+     "radio": 452.4,
+     "clave": "m3-frente",
+     "nombre": "Frente",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/m3-frente-blanco.webp",
+       "zoom": "img/modelos/m3-frente-blanco-zoom.webp"
+      },
+      "negro": {
+       "foto": "img/modelos/m3-frente-negro.webp",
+       "zoom": "img/modelos/m3-frente-negro-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 22.62,
+       "cx": 1023.0,
+       "top": 742.0,
+       "hem": 2122.0,
+       "radio": 452.4,
+       "pecho": {
+        "cx": 1023.0,
+        "top": 954.655737704918
+       },
+       "pecho_pequeno": {
+        "cx": 1170.0491803278687,
+        "cy": 1022.5245901639345
+       },
+       "mascara": "img/mascaras/m3-frente-blanco.png"
+      },
+      "negro": {
+       "pxcm": 21.92,
+       "cx": 1023.0,
+       "top": 740.0,
+       "hem": 2077.0,
+       "radio": 438.4,
+       "pecho": {
+        "cx": 1023.0,
+        "top": 946.0295081967213
+       },
+       "pecho_pequeno": {
+        "cx": 1165.467213114754,
+        "cy": 1011.7836065573771
+       },
+       "mascara": "img/mascaras/m3-frente-negro.png"
+      }
+     },
+     "mascara": "img/mascaras/m3-frente-blanco.png"
+    },
+    {
+     "toma": "detalle-espalda-alta",
+     "pxcm": 29.02,
+     "top": 828.0,
+     "hem": 2456.0,
+     "cx": 1021.5,
+     "espalda_alta": {
+      "cx": 1021.5,
+      "top": 828.0
+     },
+     "radio": 580.4,
+     "clave": "m3-detalle-espalda-alta",
+     "nombre": "Detalle espalda",
+     "fotos": {
+      "negro": {
+       "foto": "img/modelos/m3-detalle-espalda-alta-negro.webp",
+       "zoom": "img/modelos/m3-detalle-espalda-alta-negro-zoom.webp"
+      }
+     },
+     "por_color": {
+      "negro": {
+       "pxcm": 26.75,
+       "cx": 1021.5,
+       "top": 828.0,
+       "hem": 2416.0,
+       "radio": 535.0,
+       "espalda_alta": {
+        "cx": 1021.5,
+        "top": 828.0
+       },
+       "mascara": "img/mascaras/m3-detalle-espalda-alta-negro.png"
+      }
+     },
+     "mascara": "img/mascaras/m3-detalle-espalda-alta-negro.png"
+    },
+    {
+     "toma": "primer-plano-manga",
+     "pxcm": 60.48,
+     "top": 528.0,
+     "hem": 2559.0,
+     "cx": 1085.4,
+     "manga": {
+      "cx": 1085.44,
+      "cy": 1234.432,
+      "rot": 0
+     },
+     "radio": 0,
+     "clave": "m3-primer-plano-manga",
+     "nombre": "Primer plano manga",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/m3-primer-plano-manga-blanco.webp",
+       "zoom": "img/modelos/m3-primer-plano-manga-blanco-zoom.webp"
+      },
+      "negro": {
+       "foto": "img/modelos/m3-primer-plano-manga-negro.webp",
+       "zoom": "img/modelos/m3-primer-plano-manga-negro-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 60.48,
+       "cx": 1085.4,
+       "top": 528.0,
+       "hem": 2559.0,
+       "radio": 0,
+       "manga": {
+        "cx": 1085.44,
+        "cy": 1234.432,
+        "rot": 0
+       },
+       "mascara": "img/mascaras/m3-primer-plano-manga-blanco.png"
+      },
+      "negro": {
+       "pxcm": 54.58,
+       "cx": 1085.4,
+       "top": 546.0,
+       "hem": 2559.0,
+       "radio": 0,
+       "manga": {
+        "cx": 1085.44,
+        "cy": 1234.432,
+        "rot": 0
+       },
+       "mascara": "img/mascaras/m3-primer-plano-manga-negro.png"
+      }
+     },
+     "mascara": "img/mascaras/m3-primer-plano-manga-blanco.png"
     }
    ]
   }
