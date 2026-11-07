@@ -2669,6 +2669,757 @@
      "zoom": "img/galeria/hufflepuff-m2-lateral-derecho-p3-negro-abf8a48352a3186c-zoom.webp"
     }
    }
+  },
+  {
+   "id": "hogwarts-blanco",
+   "nombre": "Hogwarts - Blanco",
+   "tema": "",
+   "texto": "",
+   "tipo": "B",
+   "color": "blanco",
+   "seleccion": {
+    "hombre": [
+     [
+      "ph",
+      "frente-plano"
+     ],
+     [
+      "ph",
+      "espalda-plana"
+     ],
+     [
+      "h2",
+      "detalle-manga"
+     ],
+     [
+      "h2",
+      "detalle-pecho"
+     ],
+     [
+      "h2",
+      "espalda-p2"
+     ],
+     [
+      "h2",
+      "frente-p2"
+     ],
+     [
+      "h2",
+      "lateral-derecho-p3"
+     ]
+    ],
+    "mujer": [
+     [
+      "pm",
+      "frente-plano"
+     ],
+     [
+      "pm",
+      "espalda-plana"
+     ],
+     [
+      "m2",
+      "detalle-manga"
+     ],
+     [
+      "m1",
+      "detalle-pecho"
+     ],
+     [
+      "m1",
+      "espalda-p2"
+     ],
+     [
+      "m1",
+      "frente-p3"
+     ],
+     [
+      "m1",
+      "lateral-derecho-p2"
+     ]
+    ]
+   },
+   "precio": null,
+   "material": null,
+   "gramaje": null,
+   "estado": "en_preparacion",
+   "tallas": [
+    "S",
+    "M",
+    "L"
+   ],
+   "estampados": {
+    "manga_derecha": {
+     "archivo": "img/estampados/hogwarts-blanco-manga_derecha-17e3fb00a409.webp",
+     "ancho_cm": 7.0,
+     "alto_cm": 7.0,
+     "mov": {
+      "hombre": {
+       "dx": -0.87,
+       "dy": -1.16
+      },
+      "mujer": {
+       "dx": -0.87,
+       "dy": -1.16
+      }
+     },
+     "curva_auto": 0.0,
+     "ajuste": {
+      "h1-lateral-derecho": {
+       "dx": -0.72,
+       "dy": 3.8,
+       "rot": 0.0,
+       "escala": 1.03
+      },
+      "h1-detalle-manga": {
+       "dx": 0.32,
+       "dy": 2.24,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h1-lateral-derecho-p2": {
+       "dx": -1.4,
+       "dy": 13.8,
+       "rot": 4.1,
+       "escala": 0.913,
+       "esq": [
+        0.5,
+        0.53,
+        -0.09,
+        0.33,
+        -0.13,
+        -0.18,
+        0.19,
+        -0.24
+       ]
+      },
+      "h1-lateral-derecho-p3": {
+       "dx": 1.01,
+       "dy": 9.85,
+       "rot": 0.0,
+       "escala": 0.981,
+       "esq": [
+        0.05,
+        0.14,
+        0.0,
+        0.19,
+        0.02,
+        0.0,
+        -0.02,
+        0.09
+       ]
+      },
+      "h2-lateral-derecho": {
+       "dx": 1.28,
+       "dy": 6.9,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h2-detalle-manga": {
+       "dx": -0.07,
+       "dy": 5.11,
+       "rot": -2.3,
+       "escala": 1.0,
+       "esq": [
+        -0.12,
+        -0.06,
+        0.12,
+        -0.12,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "h2-lateral-derecho-p2": {
+       "dx": 2.74,
+       "dy": 9.4,
+       "rot": -17.1,
+       "escala": 1.0
+      },
+      "h2-lateral-derecho-p3": {
+       "dx": 1.28,
+       "dy": 10.09,
+       "rot": -7.2,
+       "escala": 1.0
+      },
+      "m1-lateral-derecho": {
+       "dx": -0.5,
+       "dy": -1.16,
+       "rot": 0.0,
+       "escala": 1.03,
+       "esq": [
+        0.22,
+        0.22,
+        -0.21,
+        0.23,
+        -0.16,
+        -0.14,
+        0.03,
+        -0.1
+       ]
+      },
+      "m1-detalle-manga": {
+       "dx": 0.12,
+       "dy": 4.57,
+       "rot": -1.8,
+       "escala": 1.0
+      },
+      "m1-lateral-derecho-p2": {
+       "dx": 2.1,
+       "dy": -0.86,
+       "rot": -11.7,
+       "escala": 0.601,
+       "esq": [
+        -0.02,
+        0.07,
+        0.02,
+        0.0,
+        0.0,
+        0.0,
+        -0.05,
+        0.11
+       ]
+      },
+      "m1-lateral-derecho-p3": {
+       "dx": 2.31,
+       "dy": 4.44,
+       "rot": 0.0,
+       "escala": 0.757
+      },
+      "m2-lateral-derecho": {
+       "dx": 0.98,
+       "dy": 0.09,
+       "rot": 0.0,
+       "escala": 0.812,
+       "esq": [
+        0.06,
+        0.55,
+        -0.04,
+        0.15,
+        0.0,
+        0.04,
+        -0.04,
+        0.47
+       ]
+      },
+      "m2-detalle-manga": {
+       "dx": -0.33,
+       "dy": 4.16,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m2-lateral-derecho-p2": {
+       "dx": 4.07,
+       "dy": 6.21,
+       "rot": -12.6,
+       "escala": 0.812
+      },
+      "m2-lateral-derecho-p3": {
+       "dx": 4.14,
+       "dy": 5.08,
+       "rot": -1.8,
+       "escala": 0.751,
+       "esq": [
+        -0.06,
+        -0.06,
+        0.21,
+        -0.09,
+        0.32,
+        0.44,
+        -0.18,
+        0.44
+       ]
+      },
+      "ph-lateral-derecho": {
+       "dx": -0.02,
+       "dy": 1.4,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "pm-lateral-izquierdo": {
+       "dx": 0.25,
+       "dy": -1.67,
+       "rot": 0.0,
+       "escala": 0.76
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "espalda": {
+     "archivo": "img/estampados/hogwarts-blanco-espalda-3ccf88cef210.webp",
+     "ancho_cm": 24.7,
+     "alto_cm": 40.0,
+     "mov": {
+      "hombre": {
+       "dx": 0.0,
+       "dy": 0.0
+      },
+      "mujer": {
+       "dx": 0.0,
+       "dy": 0.0
+      }
+     },
+     "curva_auto": 0.5,
+     "ajuste": {
+      "h1-espalda": {
+       "dx": 0.29,
+       "dy": -2.51,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.6,
+        -0.1,
+        0.5,
+        0.0
+       ]
+      },
+      "h1-espalda-p2": {
+       "dx": 0.2,
+       "dy": -2.5,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h1-espalda-p3": {
+       "dx": -6.48,
+       "dy": 3.13,
+       "rot": 0.0,
+       "escala": 1.0,
+       "curva": 0.95,
+       "esq": [
+        3.42,
+        0.47,
+        -2.03,
+        -2.98,
+        -2.35,
+        -0.49,
+        3.92,
+        0.65
+       ]
+      },
+      "h2-espalda": {
+       "dx": 0.22,
+       "dy": 0.33,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h2-espalda-p2": {
+       "dx": 0.38,
+       "dy": -1.92,
+       "rot": -0.5,
+       "escala": 1.0
+      },
+      "h2-espalda-p3": {
+       "dx": -6.86,
+       "dy": 0.22,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        2.6,
+        1.04,
+        -2.04,
+        -3.75,
+        -1.88,
+        1.51,
+        4.87,
+        1.91
+       ]
+      },
+      "m1-espalda": {
+       "dx": 0.06,
+       "dy": -2.44,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.8,
+        -0.73,
+        0.73,
+        -0.51
+       ]
+      },
+      "m1-espalda-p2": {
+       "dx": -0.23,
+       "dy": -16.66,
+       "rot": 0.0,
+       "escala": 0.509,
+       "esq": [
+        -0.59,
+        -0.22,
+        1.44,
+        -0.41,
+        1.24,
+        3.36,
+        0.02,
+        4.02
+       ]
+      },
+      "m1-espalda-p3": {
+       "dx": -0.85,
+       "dy": -1.2,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        0.94,
+        -0.83,
+        -6.04,
+        -2.82,
+        -5.97,
+        -2.29,
+        2.79,
+        -3.07
+       ]
+      },
+      "m2-espalda": {
+       "dx": 0.22,
+       "dy": -0.15,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m2-espalda-p2": {
+       "dx": -0.06,
+       "dy": -3.81,
+       "rot": 0.0,
+       "escala": 0.957
+      },
+      "m2-espalda-p3": {
+       "dx": -0.29,
+       "dy": 1.6,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        -2.4,
+        -2.39,
+        -7.76,
+        -5.17,
+        -4.53,
+        -2.78,
+        2.78,
+        -1.49
+       ]
+      },
+      "ph-espalda-plana": {
+       "dx": -0.3,
+       "dy": -0.69,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "pm-espalda-plana": {
+       "dx": -0.24,
+       "dy": -3.34,
+       "rot": 0.0,
+       "escala": 0.942
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "pecho_pequeno": {
+     "archivo": "img/estampados/hogwarts-blanco-pecho_pequeno-8df153eca87d.webp",
+     "ancho_cm": 8.0,
+     "alto_cm": 7.6,
+     "mov": {
+      "hombre": {
+       "dx": -0.93,
+       "dy": 5.55
+      },
+      "mujer": {
+       "dx": -0.93,
+       "dy": 5.55
+      }
+     },
+     "curva_auto": 0.3,
+     "ajuste": {
+      "h1-frente": {
+       "dx": -1.68,
+       "dy": 3.9,
+       "rot": 0.0,
+       "escala": 0.942
+      },
+      "h1-detalle-pecho": {
+       "dx": -1.85,
+       "dy": 6.54,
+       "rot": 0.0,
+       "escala": 1.247
+      },
+      "h1-frente-p2": {
+       "dx": -0.99,
+       "dy": 2.28,
+       "rot": 0.0,
+       "escala": 0.873
+      },
+      "h1-frente-p3": {
+       "dx": -0.27,
+       "dy": 5.56,
+       "rot": -4.9,
+       "escala": 0.811,
+       "esq": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.42,
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "h2-frente": {
+       "dx": -1.26,
+       "dy": 5.02,
+       "rot": -4.5,
+       "escala": 1.0
+      },
+      "h2-detalle-pecho": {
+       "dx": -2.94,
+       "dy": 3.59,
+       "rot": -5.3,
+       "escala": 1.0
+      },
+      "h2-frente-p2": {
+       "dx": -2.04,
+       "dy": 6.07,
+       "rot": -9.0,
+       "escala": 1.0
+      },
+      "h2-frente-p3": {
+       "dx": -2.15,
+       "dy": 5.1,
+       "rot": -13.1,
+       "escala": 1.0
+      },
+      "m1-frente": {
+       "dx": 2.65,
+       "dy": 5.01,
+       "rot": 0.0,
+       "escala": 0.96,
+       "esq": [
+        0.4,
+        0.44,
+        -0.53,
+        0.13,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "m1-detalle-pecho": {
+       "dx": 3.5,
+       "dy": 6.64,
+       "rot": 0.0,
+       "escala": 0.99,
+       "esq": [
+        0.27,
+        0.09,
+        -0.36,
+        0.13,
+        0.01,
+        -0.25,
+        0.06,
+        -0.23
+       ]
+      },
+      "m1-frente-p2": {
+       "dx": 0.05,
+       "dy": -2.7,
+       "rot": 0.0,
+       "escala": 0.559,
+       "esq": [
+        0.45,
+        0.03,
+        -0.29,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "m1-frente-p3": {
+       "dx": -0.42,
+       "dy": -3.83,
+       "rot": -3.1,
+       "escala": 0.579,
+       "esq": [
+        0.21,
+        0.26,
+        0.11,
+        0.31,
+        -0.26,
+        -0.21,
+        0.26,
+        -0.42
+       ]
+      },
+      "m2-frente": {
+       "dx": 3.66,
+       "dy": 5.68,
+       "rot": 0.0,
+       "escala": 0.793,
+       "esq": [
+        0.0,
+        -0.45,
+        0.13,
+        -0.45,
+        0.26,
+        0.13,
+        -0.32,
+        0.32
+       ]
+      },
+      "m2-detalle-pecho": {
+       "dx": 3.83,
+       "dy": 3.69,
+       "rot": 0.0,
+       "escala": 0.76,
+       "esq": [
+        0.4,
+        0.02,
+        -0.62,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "m2-frente-p2": {
+       "dx": 0.47,
+       "dy": 1.65,
+       "rot": 0.0,
+       "escala": 0.895,
+       "esq": [
+        0.73,
+        0.76,
+        -0.08,
+        0.4,
+        0.1,
+        -0.72,
+        0.49,
+        -0.62
+       ]
+      },
+      "m2-frente-p3": {
+       "dx": 4.56,
+       "dy": 3.82,
+       "rot": 0.0,
+       "escala": 0.793
+      },
+      "ph-frente-plano": {
+       "dx": -1.46,
+       "dy": 4.8,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "pm-frente-plano": {
+       "dx": 1.39,
+       "dy": 3.65,
+       "rot": 0.0,
+       "escala": 0.753,
+       "esq": [
+        0.15,
+        0.0,
+        -0.17,
+        0.0,
+        0.0,
+        0.0,
+        -0.09,
+        0.0
+       ]
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    }
+   },
+   "planos": {},
+   "galeria": {
+    "ph|frente-plano": {
+     "mini": "img/galeria/hogwarts-blanco-ph-frente-plano-blanco-cea39720c4406d42-mini.webp",
+     "foto": "img/galeria/hogwarts-blanco-ph-frente-plano-blanco-cea39720c4406d42-foto.webp",
+     "zoom": "img/galeria/hogwarts-blanco-ph-frente-plano-blanco-cea39720c4406d42-zoom.webp"
+    },
+    "ph|espalda-plana": {
+     "mini": "img/galeria/hogwarts-blanco-ph-espalda-plana-blanco-82893792993eec63-mini.webp",
+     "foto": "img/galeria/hogwarts-blanco-ph-espalda-plana-blanco-82893792993eec63-foto.webp",
+     "zoom": "img/galeria/hogwarts-blanco-ph-espalda-plana-blanco-82893792993eec63-zoom.webp"
+    },
+    "h2|detalle-manga": {
+     "mini": "img/galeria/hogwarts-blanco-h2-detalle-manga-blanco-7a05ab82bdf79a38-mini.webp",
+     "foto": "img/galeria/hogwarts-blanco-h2-detalle-manga-blanco-7a05ab82bdf79a38-foto.webp",
+     "zoom": "img/galeria/hogwarts-blanco-h2-detalle-manga-blanco-7a05ab82bdf79a38-zoom.webp"
+    },
+    "h2|detalle-pecho": {
+     "mini": "img/galeria/hogwarts-blanco-h2-detalle-pecho-blanco-336788a91e280039-mini.webp",
+     "foto": "img/galeria/hogwarts-blanco-h2-detalle-pecho-blanco-336788a91e280039-foto.webp",
+     "zoom": "img/galeria/hogwarts-blanco-h2-detalle-pecho-blanco-336788a91e280039-zoom.webp"
+    },
+    "h2|espalda-p2": {
+     "mini": "img/galeria/hogwarts-blanco-h2-espalda-p2-blanco-9cb23052a3935422-mini.webp",
+     "foto": "img/galeria/hogwarts-blanco-h2-espalda-p2-blanco-9cb23052a3935422-foto.webp",
+     "zoom": "img/galeria/hogwarts-blanco-h2-espalda-p2-blanco-9cb23052a3935422-zoom.webp"
+    },
+    "h2|frente-p2": {
+     "mini": "img/galeria/hogwarts-blanco-h2-frente-p2-blanco-d4f1cb301a227bc1-mini.webp",
+     "foto": "img/galeria/hogwarts-blanco-h2-frente-p2-blanco-d4f1cb301a227bc1-foto.webp",
+     "zoom": "img/galeria/hogwarts-blanco-h2-frente-p2-blanco-d4f1cb301a227bc1-zoom.webp"
+    },
+    "h2|lateral-derecho-p3": {
+     "mini": "img/galeria/hogwarts-blanco-h2-lateral-derecho-p3-blanco-c20c8b870d796fe8-mini.webp",
+     "foto": "img/galeria/hogwarts-blanco-h2-lateral-derecho-p3-blanco-c20c8b870d796fe8-foto.webp",
+     "zoom": "img/galeria/hogwarts-blanco-h2-lateral-derecho-p3-blanco-c20c8b870d796fe8-zoom.webp"
+    },
+    "pm|frente-plano": {
+     "mini": "img/galeria/hogwarts-blanco-pm-frente-plano-blanco-a18931575b71d89a-mini.webp",
+     "foto": "img/galeria/hogwarts-blanco-pm-frente-plano-blanco-a18931575b71d89a-foto.webp",
+     "zoom": "img/galeria/hogwarts-blanco-pm-frente-plano-blanco-a18931575b71d89a-zoom.webp"
+    },
+    "pm|espalda-plana": {
+     "mini": "img/galeria/hogwarts-blanco-pm-espalda-plana-blanco-b5c6a1a904d167e8-mini.webp",
+     "foto": "img/galeria/hogwarts-blanco-pm-espalda-plana-blanco-b5c6a1a904d167e8-foto.webp",
+     "zoom": "img/galeria/hogwarts-blanco-pm-espalda-plana-blanco-b5c6a1a904d167e8-zoom.webp"
+    },
+    "m2|detalle-manga": {
+     "mini": "img/galeria/hogwarts-blanco-m2-detalle-manga-blanco-2d6a328bafeb5379-mini.webp",
+     "foto": "img/galeria/hogwarts-blanco-m2-detalle-manga-blanco-2d6a328bafeb5379-foto.webp",
+     "zoom": "img/galeria/hogwarts-blanco-m2-detalle-manga-blanco-2d6a328bafeb5379-zoom.webp"
+    },
+    "m1|detalle-pecho": {
+     "mini": "img/galeria/hogwarts-blanco-m1-detalle-pecho-blanco-369955b3951a5854-mini.webp",
+     "foto": "img/galeria/hogwarts-blanco-m1-detalle-pecho-blanco-369955b3951a5854-foto.webp",
+     "zoom": "img/galeria/hogwarts-blanco-m1-detalle-pecho-blanco-369955b3951a5854-zoom.webp"
+    },
+    "m1|espalda-p2": {
+     "mini": "img/galeria/hogwarts-blanco-m1-espalda-p2-blanco-d9dac1297878c6b3-mini.webp",
+     "foto": "img/galeria/hogwarts-blanco-m1-espalda-p2-blanco-d9dac1297878c6b3-foto.webp",
+     "zoom": "img/galeria/hogwarts-blanco-m1-espalda-p2-blanco-d9dac1297878c6b3-zoom.webp"
+    },
+    "m1|frente-p3": {
+     "mini": "img/galeria/hogwarts-blanco-m1-frente-p3-blanco-f3290911eb0b7360-mini.webp",
+     "foto": "img/galeria/hogwarts-blanco-m1-frente-p3-blanco-f3290911eb0b7360-foto.webp",
+     "zoom": "img/galeria/hogwarts-blanco-m1-frente-p3-blanco-f3290911eb0b7360-zoom.webp"
+    },
+    "m1|lateral-derecho-p2": {
+     "mini": "img/galeria/hogwarts-blanco-m1-lateral-derecho-p2-blanco-ac07aea31c51ed62-mini.webp",
+     "foto": "img/galeria/hogwarts-blanco-m1-lateral-derecho-p2-blanco-ac07aea31c51ed62-foto.webp",
+     "zoom": "img/galeria/hogwarts-blanco-m1-lateral-derecho-p2-blanco-ac07aea31c51ed62-zoom.webp"
+    }
+   }
   }
  ],
  "avatares": [
@@ -3174,6 +3925,10 @@
       "negro": {
        "foto": "img/modelos/h2-detalle-pecho-negro.webp",
        "zoom": "img/modelos/h2-detalle-pecho-negro-zoom.webp"
+      },
+      "blanco": {
+       "foto": "img/modelos/h2-detalle-pecho-blanco.webp",
+       "zoom": "img/modelos/h2-detalle-pecho-blanco-zoom.webp"
       }
      },
      "por_color": {
@@ -3192,6 +3947,22 @@
         "cy": 1082.49
        },
        "mascara": "img/mascaras/h2-detalle-pecho-negro.png"
+      },
+      "blanco": {
+       "pxcm": 38.59,
+       "cx": 1024.5,
+       "top": 368.0,
+       "hem": 2559.0,
+       "radio": 887.6,
+       "pecho": {
+        "cx": 1024.5,
+        "top": 922.0
+       },
+       "pecho_pequeno": {
+        "cx": 736.08,
+        "cy": 1082.49
+       },
+       "mascara": "img/mascaras/h2-detalle-pecho-blanco.png"
       }
      },
      "mascara": "img/mascaras/h2-detalle-pecho-negro.png"
@@ -3311,6 +4082,10 @@
       "negro": {
        "foto": "img/modelos/h2-lateral-derecho-p3-negro.webp",
        "zoom": "img/modelos/h2-lateral-derecho-p3-negro-zoom.webp"
+      },
+      "blanco": {
+       "foto": "img/modelos/h2-lateral-derecho-p3-blanco.webp",
+       "zoom": "img/modelos/h2-lateral-derecho-p3-blanco-zoom.webp"
       }
      },
      "por_color": {
@@ -3326,9 +4101,108 @@
         "rot": 0
        },
        "mascara": "img/mascaras/h2-lateral-derecho-p3-negro.png"
+      },
+      "blanco": {
+       "pxcm": 12.27,
+       "cx": 1022.5,
+       "top": 388.0,
+       "hem": 1259.0,
+       "radio": 0,
+       "manga": {
+        "cx": 1028.0,
+        "cy": 552.88,
+        "rot": 0
+       },
+       "mascara": "img/mascaras/h2-lateral-derecho-p3-blanco.png"
       }
      },
      "mascara": "img/mascaras/h2-lateral-derecho-p3-negro.png"
+    },
+    {
+     "toma": "espalda-p2",
+     "pxcm": 12.27,
+     "top": 390.0,
+     "hem": 1261.0,
+     "cx": 1001.5,
+     "espalda": {
+      "cx": 1001.5,
+      "top": 517.5830985915493
+     },
+     "espalda_alta": {
+      "cx": 1001.5,
+      "top": 493.04788732394366
+     },
+     "radio": 282.2,
+     "clave": "h2-espalda-p2",
+     "nombre": "Espalda · pose 2",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/h2-espalda-p2-blanco.webp",
+       "zoom": "img/modelos/h2-espalda-p2-blanco-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 12.27,
+       "cx": 1001.5,
+       "top": 390.0,
+       "hem": 1261.0,
+       "radio": 282.2,
+       "espalda": {
+        "cx": 1001.5,
+        "top": 517.5830985915493
+       },
+       "espalda_alta": {
+        "cx": 1001.5,
+        "top": 493.04788732394366
+       },
+       "mascara": "img/mascaras/h2-espalda-p2-blanco.png"
+      }
+     },
+     "mascara": "img/mascaras/h2-espalda-p2-blanco.png"
+    },
+    {
+     "toma": "frente-p2",
+     "pxcm": 12.35,
+     "top": 384.0,
+     "hem": 1261.0,
+     "cx": 1006.5,
+     "pecho": {
+      "cx": 1006.5,
+      "top": 506.2859154929577
+     },
+     "pecho_pequeno": {
+      "cx": 913.8591549295775,
+      "cy": 574.2225352112675
+     },
+     "radio": 284.1,
+     "clave": "h2-frente-p2",
+     "nombre": "Frente · pose 2",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/h2-frente-p2-blanco.webp",
+       "zoom": "img/modelos/h2-frente-p2-blanco-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 12.35,
+       "cx": 1006.5,
+       "top": 384.0,
+       "hem": 1261.0,
+       "radio": 284.1,
+       "pecho": {
+        "cx": 1006.5,
+        "top": 506.2859154929577
+       },
+       "pecho_pequeno": {
+        "cx": 913.8591549295775,
+        "cy": 574.2225352112675
+       },
+       "mascara": "img/mascaras/h2-frente-p2-blanco.png"
+      }
+     },
+     "mascara": "img/mascaras/h2-frente-p2-blanco.png"
     }
    ]
   },
@@ -3599,6 +4473,129 @@
       }
      },
      "mascara": "img/mascaras/m1-detalle-manga-blanco.png"
+    },
+    {
+     "toma": "espalda-p2",
+     "pxcm": 21.66,
+     "top": 500.0,
+     "hem": 1821.0,
+     "cx": 999.5,
+     "espalda": {
+      "cx": 999.5,
+      "top": 703.5639344262295
+     },
+     "espalda_alta": {
+      "cx": 999.5,
+      "top": 660.2524590163935
+     },
+     "radio": 433.2,
+     "clave": "m1-espalda-p2",
+     "nombre": "Espalda · pose 2",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/m1-espalda-p2-blanco.webp",
+       "zoom": "img/modelos/m1-espalda-p2-blanco-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 21.66,
+       "cx": 999.5,
+       "top": 500.0,
+       "hem": 1821.0,
+       "radio": 433.2,
+       "espalda": {
+        "cx": 999.5,
+        "top": 703.5639344262295
+       },
+       "espalda_alta": {
+        "cx": 999.5,
+        "top": 660.2524590163935
+       },
+       "mascara": "img/mascaras/m1-espalda-p2-blanco.png"
+      }
+     },
+     "mascara": "img/mascaras/m1-espalda-p2-blanco.png"
+    },
+    {
+     "toma": "frente-p3",
+     "pxcm": 21.43,
+     "top": 506.0,
+     "hem": 1813.0,
+     "cx": 1024.5,
+     "pecho": {
+      "cx": 1024.5,
+      "top": 707.4065573770491
+     },
+     "pecho_pequeno": {
+      "cx": 1163.7704918032787,
+      "cy": 771.6852459016393
+     },
+     "radio": 428.6,
+     "clave": "m1-frente-p3",
+     "nombre": "Frente · pose 3",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/m1-frente-p3-blanco.webp",
+       "zoom": "img/modelos/m1-frente-p3-blanco-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 21.43,
+       "cx": 1024.5,
+       "top": 506.0,
+       "hem": 1813.0,
+       "radio": 428.6,
+       "pecho": {
+        "cx": 1024.5,
+        "top": 707.4065573770491
+       },
+       "pecho_pequeno": {
+        "cx": 1163.7704918032787,
+        "cy": 771.6852459016393
+       },
+       "mascara": "img/mascaras/m1-frente-p3-blanco.png"
+      }
+     },
+     "mascara": "img/mascaras/m1-frente-p3-blanco.png"
+    },
+    {
+     "toma": "lateral-derecho-p2",
+     "pxcm": 21.39,
+     "top": 514.0,
+     "hem": 1819.0,
+     "cx": 931.5,
+     "manga": {
+      "cx": 1032.0,
+      "cy": 754.64,
+      "rot": 0
+     },
+     "radio": 0,
+     "clave": "m1-lateral-derecho-p2",
+     "nombre": "Lateral · pose 2",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/m1-lateral-derecho-p2-blanco.webp",
+       "zoom": "img/modelos/m1-lateral-derecho-p2-blanco-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 21.39,
+       "cx": 931.5,
+       "top": 514.0,
+       "hem": 1819.0,
+       "radio": 0,
+       "manga": {
+        "cx": 1032.0,
+        "cy": 754.64,
+        "rot": 0
+       },
+       "mascara": "img/mascaras/m1-lateral-derecho-p2-blanco.png"
+      }
+     },
+     "mascara": "img/mascaras/m1-lateral-derecho-p2-blanco.png"
     }
    ]
   },
@@ -3734,6 +4731,10 @@
       "negro": {
        "foto": "img/modelos/m2-detalle-manga-negro.webp",
        "zoom": "img/modelos/m2-detalle-manga-negro-zoom.webp"
+      },
+      "blanco": {
+       "foto": "img/modelos/m2-detalle-manga-blanco.webp",
+       "zoom": "img/modelos/m2-detalle-manga-blanco-zoom.webp"
       }
      },
      "por_color": {
@@ -3749,6 +4750,19 @@
         "rot": 0
        },
        "mascara": "img/mascaras/m2-detalle-manga-negro.png"
+      },
+      "blanco": {
+       "pxcm": 55.73,
+       "cx": 1044.0,
+       "top": 120.0,
+       "hem": 2559.0,
+       "radio": 0,
+       "manga": {
+        "cx": 1044.0,
+        "cy": 1161.54,
+        "rot": 0
+       },
+       "mascara": "img/mascaras/m2-detalle-manga-blanco.png"
       }
      },
      "mascara": "img/mascaras/m2-detalle-manga-negro.png"
