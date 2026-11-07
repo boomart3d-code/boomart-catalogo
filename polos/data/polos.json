@@ -2681,11 +2681,11 @@
     "hombre": [
      [
       "ph",
-      "frente-plano"
+      "espalda-plana"
      ],
      [
       "ph",
-      "espalda-plana"
+      "frente-plano"
      ],
      [
       "h2",
@@ -2711,11 +2711,11 @@
     "mujer": [
      [
       "pm",
-      "frente-plano"
+      "espalda-plana"
      ],
      [
       "pm",
-      "espalda-plana"
+      "frente-plano"
      ],
      [
       "m2",
@@ -3432,11 +3432,11 @@
     "hombre": [
      [
       "ph",
-      "frente-plano"
+      "espalda-plana"
      ],
      [
       "ph",
-      "espalda-plana"
+      "frente-plano"
      ],
      [
       "h1",
@@ -3462,11 +3462,11 @@
     "mujer": [
      [
       "pm",
-      "frente-plano"
+      "espalda-plana"
      ],
      [
       "pm",
-      "espalda-plana"
+      "frente-plano"
      ],
      [
       "m1",
