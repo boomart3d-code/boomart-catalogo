@@ -3420,6 +3420,767 @@
      "zoom": "img/galeria/hogwarts-blanco-m1-lateral-derecho-p2-blanco-ac07aea31c51ed62-zoom.webp"
     }
    }
+  },
+  {
+   "id": "harry-potter-negro",
+   "nombre": "Harry Potter Negro",
+   "tema": "Harry Potter",
+   "texto": "",
+   "tipo": "B",
+   "color": "negro",
+   "seleccion": {
+    "hombre": [
+     [
+      "ph",
+      "frente-plano"
+     ],
+     [
+      "ph",
+      "espalda-plana"
+     ],
+     [
+      "h1",
+      "detalle-manga"
+     ],
+     [
+      "h1",
+      "detalle-pecho"
+     ],
+     [
+      "h1",
+      "frente-p2"
+     ],
+     [
+      "h1",
+      "espalda-p2"
+     ],
+     [
+      "h1",
+      "lateral-derecho-p3"
+     ]
+    ],
+    "mujer": [
+     [
+      "pm",
+      "frente-plano"
+     ],
+     [
+      "pm",
+      "espalda-plana"
+     ],
+     [
+      "m1",
+      "detalle-manga"
+     ],
+     [
+      "m1",
+      "detalle-pecho"
+     ],
+     [
+      "m1",
+      "frente-p3"
+     ],
+     [
+      "m1",
+      "espalda-p2"
+     ],
+     [
+      "m1",
+      "lateral-derecho-p3"
+     ]
+    ]
+   },
+   "precio": null,
+   "material": null,
+   "gramaje": null,
+   "estado": "en_preparacion",
+   "tallas": [
+    "S",
+    "M",
+    "L"
+   ],
+   "estampados": {
+    "espalda": {
+     "archivo": "img/estampados/harry-potter-negro-espalda-f08593e948a6.webp",
+     "ancho_cm": 15.9,
+     "alto_cm": 40.0,
+     "mov": {
+      "hombre": {
+       "dx": 0.27,
+       "dy": -0.42
+      },
+      "mujer": {
+       "dx": 0.27,
+       "dy": -2.9
+      }
+     },
+     "curva_auto": 0.5,
+     "ajuste": {
+      "h1-espalda": {
+       "dx": 0.29,
+       "dy": -2.51,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.6,
+        -0.1,
+        0.5,
+        0.0
+       ]
+      },
+      "h1-espalda-p2": {
+       "dx": 0.2,
+       "dy": -2.5,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h1-espalda-p3": {
+       "dx": -7.0,
+       "dy": 1.28,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        1.59,
+        1.83,
+        -2.03,
+        -2.98,
+        -2.35,
+        -0.49,
+        5.41,
+        0.99
+       ]
+      },
+      "h2-espalda": {
+       "dx": 0.22,
+       "dy": 0.33,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h2-espalda-p2": {
+       "dx": 0.38,
+       "dy": -1.92,
+       "rot": -0.5,
+       "escala": 1.0
+      },
+      "h2-espalda-p3": {
+       "dx": -8.59,
+       "dy": -0.3,
+       "rot": 0.0,
+       "escala": 1.0,
+       "curva": 0.65,
+       "esq": [
+        2.6,
+        1.04,
+        -2.04,
+        -3.75,
+        -1.88,
+        1.51,
+        4.87,
+        1.91
+       ]
+      },
+      "m1-espalda": {
+       "dx": 0.06,
+       "dy": -2.44,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.8,
+        -0.73,
+        0.73,
+        -0.51
+       ]
+      },
+      "m1-espalda-p2": {
+       "dx": -0.35,
+       "dy": -16.14,
+       "rot": 0.0,
+       "escala": 0.492,
+       "esq": [
+        -0.59,
+        -0.22,
+        1.44,
+        -0.41,
+        1.24,
+        3.36,
+        0.17,
+        3.66
+       ]
+      },
+      "m1-espalda-p3": {
+       "dx": -0.85,
+       "dy": -1.2,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        0.94,
+        -0.83,
+        -6.04,
+        -2.82,
+        -5.97,
+        -2.29,
+        2.79,
+        -3.07
+       ]
+      },
+      "m2-espalda": {
+       "dx": 0.22,
+       "dy": -0.15,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m2-espalda-p2": {
+       "dx": -0.06,
+       "dy": -3.81,
+       "rot": 0.0,
+       "escala": 0.957
+      },
+      "m2-espalda-p3": {
+       "dx": -0.29,
+       "dy": 1.6,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        -2.4,
+        -2.39,
+        -7.76,
+        -5.17,
+        -4.53,
+        -2.78,
+        2.78,
+        -1.49
+       ]
+      },
+      "ph-espalda-plana": {
+       "dx": -0.3,
+       "dy": -0.69,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "pm-espalda-plana": {
+       "dx": -0.07,
+       "dy": -2.81,
+       "rot": 0.0,
+       "escala": 0.942
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "pecho_pequeno": {
+     "archivo": "img/estampados/harry-potter-negro-pecho_pequeno-cf82f71aa120.webp",
+     "ancho_cm": 8.6,
+     "alto_cm": 7.7,
+     "mov": {
+      "hombre": {
+       "dx": 0.21,
+       "dy": 4.23
+      },
+      "mujer": {
+       "dx": 0.21,
+       "dy": 4.23
+      }
+     },
+     "curva_auto": 0.3,
+     "ajuste": {
+      "h1-frente": {
+       "dx": -0.72,
+       "dy": 4.23,
+       "rot": 0.0,
+       "escala": 0.942
+      },
+      "h1-detalle-pecho": {
+       "dx": -3.22,
+       "dy": 5.48,
+       "rot": 0.0,
+       "escala": 1.247
+      },
+      "h1-frente-p2": {
+       "dx": -0.99,
+       "dy": 2.28,
+       "rot": 0.0,
+       "escala": 0.873
+      },
+      "h1-frente-p3": {
+       "dx": -0.27,
+       "dy": 5.56,
+       "rot": -4.9,
+       "escala": 0.811,
+       "esq": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.42,
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "h2-frente": {
+       "dx": -1.26,
+       "dy": 5.02,
+       "rot": -4.5,
+       "escala": 1.0
+      },
+      "h2-detalle-pecho": {
+       "dx": -2.94,
+       "dy": 3.59,
+       "rot": -5.3,
+       "escala": 1.0
+      },
+      "h2-frente-p2": {
+       "dx": -2.04,
+       "dy": 6.07,
+       "rot": -9.0,
+       "escala": 1.0
+      },
+      "h2-frente-p3": {
+       "dx": -2.15,
+       "dy": 5.1,
+       "rot": -13.1,
+       "escala": 1.0
+      },
+      "m1-frente": {
+       "dx": 2.65,
+       "dy": 5.01,
+       "rot": 0.0,
+       "escala": 0.96,
+       "esq": [
+        0.4,
+        0.44,
+        -0.53,
+        0.13,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "m1-detalle-pecho": {
+       "dx": 1.77,
+       "dy": 5.22,
+       "rot": 0.0,
+       "escala": 0.99,
+       "esq": [
+        0.27,
+        0.09,
+        -0.36,
+        0.13,
+        0.01,
+        -0.25,
+        0.06,
+        -0.23
+       ]
+      },
+      "m1-frente-p2": {
+       "dx": 0.05,
+       "dy": -2.7,
+       "rot": 0.0,
+       "escala": 0.559,
+       "esq": [
+        0.45,
+        0.03,
+        -0.29,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "m1-frente-p3": {
+       "dx": 0.39,
+       "dy": -3.79,
+       "rot": 1.7,
+       "escala": 0.639,
+       "curva": 0.45,
+       "yaw": 16.0,
+       "esq": [
+        0.8,
+        0.33,
+        -0.61,
+        0.35,
+        -0.26,
+        -0.21,
+        0.63,
+        -0.39
+       ]
+      },
+      "m2-frente": {
+       "dx": 3.66,
+       "dy": 5.68,
+       "rot": 0.0,
+       "escala": 0.793,
+       "esq": [
+        0.0,
+        -0.45,
+        0.13,
+        -0.45,
+        0.26,
+        0.13,
+        -0.32,
+        0.32
+       ]
+      },
+      "m2-detalle-pecho": {
+       "dx": 3.83,
+       "dy": 3.69,
+       "rot": 0.0,
+       "escala": 0.76,
+       "esq": [
+        0.4,
+        0.02,
+        -0.62,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "m2-frente-p2": {
+       "dx": 0.47,
+       "dy": 1.65,
+       "rot": 0.0,
+       "escala": 0.895,
+       "esq": [
+        0.73,
+        0.76,
+        -0.08,
+        0.4,
+        0.1,
+        -0.72,
+        0.49,
+        -0.62
+       ]
+      },
+      "m2-frente-p3": {
+       "dx": 4.56,
+       "dy": 3.82,
+       "rot": 0.0,
+       "escala": 0.793
+      },
+      "ph-frente-plano": {
+       "dx": -1.46,
+       "dy": 4.8,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "pm-frente-plano": {
+       "dx": 0.72,
+       "dy": 4.1,
+       "rot": 0.0,
+       "escala": 0.813,
+       "esq": [
+        0.15,
+        0.0,
+        -0.17,
+        0.0,
+        0.0,
+        0.0,
+        -0.09,
+        0.0
+       ]
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "manga_derecha": {
+     "archivo": "img/estampados/harry-potter-negro-manga_derecha-f810b5b4cb8f.webp",
+     "ancho_cm": 4.0,
+     "alto_cm": 6.9,
+     "mov": {
+      "hombre": {
+       "dx": -0.38,
+       "dy": -1.65
+      },
+      "mujer": {
+       "dx": 0.02,
+       "dy": -1.72
+      }
+     },
+     "curva_auto": 0.0,
+     "ajuste": {
+      "h1-lateral-derecho": {
+       "dx": -0.4,
+       "dy": 2.02,
+       "rot": -2.6,
+       "escala": 1.331
+      },
+      "h1-detalle-manga": {
+       "dx": 0.39,
+       "dy": 0.72,
+       "rot": -1.2,
+       "escala": 1.488
+      },
+      "h1-lateral-derecho-p2": {
+       "dx": -1.4,
+       "dy": 13.8,
+       "rot": 4.1,
+       "escala": 0.913,
+       "esq": [
+        0.5,
+        0.53,
+        -0.09,
+        0.33,
+        -0.13,
+        -0.18,
+        0.19,
+        -0.24
+       ]
+      },
+      "h1-lateral-derecho-p3": {
+       "dx": 0.57,
+       "dy": 8.6,
+       "rot": -3.3,
+       "escala": 1.559,
+       "yaw": -20.0,
+       "esq": [
+        0.05,
+        0.14,
+        0.0,
+        0.19,
+        0.02,
+        0.0,
+        -0.02,
+        0.09
+       ]
+      },
+      "h2-lateral-derecho": {
+       "dx": 1.28,
+       "dy": 6.9,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h2-detalle-manga": {
+       "dx": -1.05,
+       "dy": 2.11,
+       "rot": -4.4,
+       "escala": 1.592,
+       "yaw": -27.0,
+       "esq": [
+        -0.12,
+        -0.06,
+        0.12,
+        -0.12,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "h2-lateral-derecho-p2": {
+       "dx": 2.69,
+       "dy": 7.59,
+       "rot": -15.4,
+       "escala": 1.609,
+       "yaw": -22.0,
+       "pitch": -3.0
+      },
+      "h2-lateral-derecho-p3": {
+       "dx": 1.56,
+       "dy": 8.03,
+       "rot": -5.3,
+       "escala": 1.611,
+       "yaw": -24.0
+      },
+      "m1-lateral-derecho": {
+       "dx": -0.5,
+       "dy": -1.16,
+       "rot": 0.0,
+       "escala": 1.03,
+       "esq": [
+        0.22,
+        0.22,
+        -0.21,
+        0.23,
+        -0.16,
+        -0.14,
+        0.03,
+        -0.1
+       ]
+      },
+      "m1-detalle-manga": {
+       "dx": -0.53,
+       "dy": 2.04,
+       "rot": -6.3,
+       "escala": 1.475,
+       "yaw": -6.0,
+       "pitch": 10.0
+      },
+      "m1-lateral-derecho-p2": {
+       "dx": 2.1,
+       "dy": -0.86,
+       "rot": -11.7,
+       "escala": 0.601,
+       "esq": [
+        -0.02,
+        0.07,
+        0.02,
+        0.0,
+        0.0,
+        0.0,
+        -0.05,
+        0.11
+       ]
+      },
+      "m1-lateral-derecho-p3": {
+       "dx": 2.22,
+       "dy": 3.37,
+       "rot": 0.0,
+       "escala": 1.117,
+       "yaw": -14.0
+      },
+      "m2-lateral-derecho": {
+       "dx": 0.98,
+       "dy": 0.09,
+       "rot": 0.0,
+       "escala": 0.812,
+       "esq": [
+        0.06,
+        0.55,
+        -0.04,
+        0.15,
+        0.0,
+        0.04,
+        -0.04,
+        0.47
+       ]
+      },
+      "m2-detalle-manga": {
+       "dx": -0.33,
+       "dy": 4.16,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m2-lateral-derecho-p2": {
+       "dx": 4.07,
+       "dy": 6.21,
+       "rot": -12.6,
+       "escala": 0.812
+      },
+      "m2-lateral-derecho-p3": {
+       "dx": 4.14,
+       "dy": 5.08,
+       "rot": -1.8,
+       "escala": 0.751,
+       "esq": [
+        -0.06,
+        -0.06,
+        0.21,
+        -0.09,
+        0.32,
+        0.44,
+        -0.18,
+        0.44
+       ]
+      },
+      "ph-lateral-derecho": {
+       "dx": -0.02,
+       "dy": 1.4,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "pm-lateral-izquierdo": {
+       "dx": 0.25,
+       "dy": -1.67,
+       "rot": 0.0,
+       "escala": 0.76
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    }
+   },
+   "planos": {},
+   "galeria": {
+    "ph|frente-plano": {
+     "mini": "img/galeria/harry-potter-negro-ph-frente-plano-negro-b391cd2f76689658-mini.webp",
+     "foto": "img/galeria/harry-potter-negro-ph-frente-plano-negro-b391cd2f76689658-foto.webp",
+     "zoom": "img/galeria/harry-potter-negro-ph-frente-plano-negro-b391cd2f76689658-zoom.webp"
+    },
+    "ph|espalda-plana": {
+     "mini": "img/galeria/harry-potter-negro-ph-espalda-plana-negro-a27af57255daebd9-mini.webp",
+     "foto": "img/galeria/harry-potter-negro-ph-espalda-plana-negro-a27af57255daebd9-foto.webp",
+     "zoom": "img/galeria/harry-potter-negro-ph-espalda-plana-negro-a27af57255daebd9-zoom.webp"
+    },
+    "h1|detalle-manga": {
+     "mini": "img/galeria/harry-potter-negro-h1-detalle-manga-negro-95c9d266bad2e5c2-mini.webp",
+     "foto": "img/galeria/harry-potter-negro-h1-detalle-manga-negro-95c9d266bad2e5c2-foto.webp",
+     "zoom": "img/galeria/harry-potter-negro-h1-detalle-manga-negro-95c9d266bad2e5c2-zoom.webp"
+    },
+    "h1|detalle-pecho": {
+     "mini": "img/galeria/harry-potter-negro-h1-detalle-pecho-negro-8bad0a06df3dac77-mini.webp",
+     "foto": "img/galeria/harry-potter-negro-h1-detalle-pecho-negro-8bad0a06df3dac77-foto.webp",
+     "zoom": "img/galeria/harry-potter-negro-h1-detalle-pecho-negro-8bad0a06df3dac77-zoom.webp"
+    },
+    "h1|frente-p2": {
+     "mini": "img/galeria/harry-potter-negro-h1-frente-p2-negro-ce074d43bafccb6f-mini.webp",
+     "foto": "img/galeria/harry-potter-negro-h1-frente-p2-negro-ce074d43bafccb6f-foto.webp",
+     "zoom": "img/galeria/harry-potter-negro-h1-frente-p2-negro-ce074d43bafccb6f-zoom.webp"
+    },
+    "h1|espalda-p2": {
+     "mini": "img/galeria/harry-potter-negro-h1-espalda-p2-negro-3cf31a9d0c7b9d04-mini.webp",
+     "foto": "img/galeria/harry-potter-negro-h1-espalda-p2-negro-3cf31a9d0c7b9d04-foto.webp",
+     "zoom": "img/galeria/harry-potter-negro-h1-espalda-p2-negro-3cf31a9d0c7b9d04-zoom.webp"
+    },
+    "h1|lateral-derecho-p3": {
+     "mini": "img/galeria/harry-potter-negro-h1-lateral-derecho-p3-negro-fdc6a69ca222c294-mini.webp",
+     "foto": "img/galeria/harry-potter-negro-h1-lateral-derecho-p3-negro-fdc6a69ca222c294-foto.webp",
+     "zoom": "img/galeria/harry-potter-negro-h1-lateral-derecho-p3-negro-fdc6a69ca222c294-zoom.webp"
+    },
+    "pm|frente-plano": {
+     "mini": "img/galeria/harry-potter-negro-pm-frente-plano-negro-b2c4dc3382b562ff-mini.webp",
+     "foto": "img/galeria/harry-potter-negro-pm-frente-plano-negro-b2c4dc3382b562ff-foto.webp",
+     "zoom": "img/galeria/harry-potter-negro-pm-frente-plano-negro-b2c4dc3382b562ff-zoom.webp"
+    },
+    "pm|espalda-plana": {
+     "mini": "img/galeria/harry-potter-negro-pm-espalda-plana-negro-c2d923f1fe5a1eba-mini.webp",
+     "foto": "img/galeria/harry-potter-negro-pm-espalda-plana-negro-c2d923f1fe5a1eba-foto.webp",
+     "zoom": "img/galeria/harry-potter-negro-pm-espalda-plana-negro-c2d923f1fe5a1eba-zoom.webp"
+    },
+    "m1|detalle-manga": {
+     "mini": "img/galeria/harry-potter-negro-m1-detalle-manga-negro-b4afe28fa101aa5d-mini.webp",
+     "foto": "img/galeria/harry-potter-negro-m1-detalle-manga-negro-b4afe28fa101aa5d-foto.webp",
+     "zoom": "img/galeria/harry-potter-negro-m1-detalle-manga-negro-b4afe28fa101aa5d-zoom.webp"
+    },
+    "m1|detalle-pecho": {
+     "mini": "img/galeria/harry-potter-negro-m1-detalle-pecho-negro-3f5578a522009d6f-mini.webp",
+     "foto": "img/galeria/harry-potter-negro-m1-detalle-pecho-negro-3f5578a522009d6f-foto.webp",
+     "zoom": "img/galeria/harry-potter-negro-m1-detalle-pecho-negro-3f5578a522009d6f-zoom.webp"
+    },
+    "m1|frente-p3": {
+     "mini": "img/galeria/harry-potter-negro-m1-frente-p3-negro-e0ed8daaf9894c6e-mini.webp",
+     "foto": "img/galeria/harry-potter-negro-m1-frente-p3-negro-e0ed8daaf9894c6e-foto.webp",
+     "zoom": "img/galeria/harry-potter-negro-m1-frente-p3-negro-e0ed8daaf9894c6e-zoom.webp"
+    },
+    "m1|espalda-p2": {
+     "mini": "img/galeria/harry-potter-negro-m1-espalda-p2-negro-9da1449740be0990-mini.webp",
+     "foto": "img/galeria/harry-potter-negro-m1-espalda-p2-negro-9da1449740be0990-foto.webp",
+     "zoom": "img/galeria/harry-potter-negro-m1-espalda-p2-negro-9da1449740be0990-zoom.webp"
+    },
+    "m1|lateral-derecho-p3": {
+     "mini": "img/galeria/harry-potter-negro-m1-lateral-derecho-p3-negro-14bfa28764a30826-mini.webp",
+     "foto": "img/galeria/harry-potter-negro-m1-lateral-derecho-p3-negro-14bfa28764a30826-foto.webp",
+     "zoom": "img/galeria/harry-potter-negro-m1-lateral-derecho-p3-negro-14bfa28764a30826-zoom.webp"
+    }
+   }
   }
  ],
  "avatares": [
@@ -3732,6 +4493,10 @@
       "blanco": {
        "foto": "img/modelos/h1-espalda-p2-blanco.webp",
        "zoom": "img/modelos/h1-espalda-p2-blanco-zoom.webp"
+      },
+      "negro": {
+       "foto": "img/modelos/h1-espalda-p2-negro.webp",
+       "zoom": "img/modelos/h1-espalda-p2-negro-zoom.webp"
       }
      },
      "por_color": {
@@ -3750,6 +4515,22 @@
         "top": 542.9239436619719
        },
        "mascara": "img/mascaras/h1-espalda-p2-blanco.png"
+      },
+      "negro": {
+       "pxcm": 14.66,
+       "cx": 1006.5,
+       "top": 422.0,
+       "hem": 1463.0,
+       "radio": 337.2,
+       "espalda": {
+        "cx": 1006.5,
+        "top": 574.4845070422535
+       },
+       "espalda_alta": {
+        "cx": 1006.5,
+        "top": 545.1605633802817
+       },
+       "mascara": "img/mascaras/h1-espalda-p2-negro.png"
       }
      },
      "mascara": "img/mascaras/h1-espalda-p2-blanco.png"
@@ -3850,6 +4631,49 @@
       }
      },
      "mascara": "img/mascaras/h1-lateral-derecho-p3-blanco.png"
+    },
+    {
+     "toma": "frente-p2",
+     "pxcm": 14.61,
+     "top": 428.0,
+     "hem": 1465.0,
+     "cx": 1017.5,
+     "pecho": {
+      "cx": 1017.5,
+      "top": 572.5957746478873
+     },
+     "pecho_pequeno": {
+      "cx": 907.9577464788732,
+      "cy": 652.9267605633803
+     },
+     "radio": 336.0,
+     "clave": "h1-frente-p2",
+     "nombre": "Frente · pose 2",
+     "fotos": {
+      "negro": {
+       "foto": "img/modelos/h1-frente-p2-negro.webp",
+       "zoom": "img/modelos/h1-frente-p2-negro-zoom.webp"
+      }
+     },
+     "por_color": {
+      "negro": {
+       "pxcm": 14.66,
+       "cx": 1018.5,
+       "top": 428.0,
+       "hem": 1469.0,
+       "radio": 337.2,
+       "pecho": {
+        "cx": 1018.5,
+        "top": 573.1535211267606
+       },
+       "pecho_pequeno": {
+        "cx": 908.5352112676056,
+        "cy": 653.7943661971831
+       },
+       "mascara": "img/mascaras/h1-frente-p2-negro.png"
+      }
+     },
+     "mascara": "img/mascaras/h1-frente-p2-negro.png"
     }
    ]
   },
@@ -4495,6 +5319,10 @@
       "blanco": {
        "foto": "img/modelos/m1-espalda-p2-blanco.webp",
        "zoom": "img/modelos/m1-espalda-p2-blanco-zoom.webp"
+      },
+      "negro": {
+       "foto": "img/modelos/m1-espalda-p2-negro.webp",
+       "zoom": "img/modelos/m1-espalda-p2-negro-zoom.webp"
       }
      },
      "por_color": {
@@ -4513,6 +5341,22 @@
         "top": 660.2524590163935
        },
        "mascara": "img/mascaras/m1-espalda-p2-blanco.png"
+      },
+      "negro": {
+       "pxcm": 21.85,
+       "cx": 997.5,
+       "top": 494.0,
+       "hem": 1827.0,
+       "radio": 437.0,
+       "espalda": {
+        "cx": 997.5,
+        "top": 699.4131147540984
+       },
+       "espalda_alta": {
+        "cx": 997.5,
+        "top": 655.7081967213114
+       },
+       "mascara": "img/mascaras/m1-espalda-p2-negro.png"
       }
      },
      "mascara": "img/mascaras/m1-espalda-p2-blanco.png"
@@ -4538,6 +5382,10 @@
       "blanco": {
        "foto": "img/modelos/m1-frente-p3-blanco.webp",
        "zoom": "img/modelos/m1-frente-p3-blanco-zoom.webp"
+      },
+      "negro": {
+       "foto": "img/modelos/m1-frente-p3-negro.webp",
+       "zoom": "img/modelos/m1-frente-p3-negro-zoom.webp"
       }
      },
      "por_color": {
@@ -4556,6 +5404,22 @@
         "cy": 771.6852459016393
        },
        "mascara": "img/mascaras/m1-frente-p3-blanco.png"
+      },
+      "negro": {
+       "pxcm": 21.59,
+       "cx": 1020.5,
+       "top": 500.0,
+       "hem": 1817.0,
+       "radio": 431.8,
+       "pecho": {
+        "cx": 1020.5,
+        "top": 702.9475409836066
+       },
+       "pecho_pequeno": {
+        "cx": 1160.8360655737706,
+        "cy": 767.7180327868853
+       },
+       "mascara": "img/mascaras/m1-frente-p3-negro.png"
       }
      },
      "mascara": "img/mascaras/m1-frente-p3-blanco.png"
@@ -4596,6 +5460,43 @@
       }
      },
      "mascara": "img/mascaras/m1-lateral-derecho-p2-blanco.png"
+    },
+    {
+     "toma": "lateral-derecho-p3",
+     "pxcm": 19.13,
+     "top": 610.0,
+     "hem": 1777.0,
+     "cx": 987.5,
+     "manga": {
+      "cx": 1024.0,
+      "cy": 816.72,
+      "rot": 0
+     },
+     "radio": 0,
+     "clave": "m1-lateral-derecho-p3",
+     "nombre": "Lateral · pose 3",
+     "fotos": {
+      "negro": {
+       "foto": "img/modelos/m1-lateral-derecho-p3-negro.webp",
+       "zoom": "img/modelos/m1-lateral-derecho-p3-negro-zoom.webp"
+      }
+     },
+     "por_color": {
+      "negro": {
+       "pxcm": 19.16,
+       "cx": 986.5,
+       "top": 612.0,
+       "hem": 1781.0,
+       "radio": 0,
+       "manga": {
+        "cx": 1024.0,
+        "cy": 816.72,
+        "rot": 0
+       },
+       "mascara": "img/mascaras/m1-lateral-derecho-p3-negro.png"
+      }
+     },
+     "mascara": "img/mascaras/m1-lateral-derecho-p3-negro.png"
     }
    ]
   },
