@@ -283,13 +283,15 @@ function abrirFicha(id) {
       b.onclick = () => { st.item = n; mostrar(); }; it.btn = b; pintarEn($("canvas", b), p.id, it.av, it.toma, 260);
     });
   };
-  const cambiarGen = (g) => { if(g==='todos')return; st.genero=g; fijarGen(g); items = armarItems(); st.item = 0; minis.scrollTop = 0; $$("#fGen button", H).forEach((x) => {x.classList.toggle("on", x.dataset.g === g);x.setAttribute("aria-pressed",String(x.dataset.g===g));}); pintarMinis(); mostrar(); pedir(); };
+  const actualizarManga = () => { const nombre=st.genero==='mujer'?'Manga izquierda':'Manga derecha'; const boton=$('#fCerca [data-u="manga_derecha"]',H), etiqueta=$('#fMed [data-ub="manga_derecha"]',H); if(boton)boton.textContent=nombre;if(etiqueta)etiqueta.textContent=nombre; };
+  const cambiarGen = (g) => { if(g==='todos')return; st.genero=g; fijarGen(g); items = armarItems(); st.item = 0; minis.scrollTop = 0; $$("#fGen button", H).forEach((x) => {x.classList.toggle("on", x.dataset.g === g);x.setAttribute("aria-pressed",String(x.dataset.g===g));}); pintarMinis(); mostrar(); pedir(); actualizarManga(); };
   $$("#fGen button", H).forEach((b) => (b.onclick = () => cambiarGen(b.dataset.g)));
   pintarMinis();
   const pintarTallasF = () => { $("#fTallas", H).innerHTML = (p.tallas || ["S", "M", "L"]).map((t) => `<button class="talla ${t === st.talla ? "on" : ""}" type="button" data-t="${t}">${t}</button>`).join(""); $$("#fTallas .talla", H).forEach((b) => (b.onclick = () => { st.talla = b.dataset.t; preferenciaTalla=st.talla; pintarTallasF(); pedir(); })); };
   const pedir = () => { const v=CATALOGO_UI.variante(p,st.genero,st.talla); $("#fGuardar",H).textContent=leerSeleccion().some(x=>x.clave===v.clave)?'Guardado en mi selección ✓':'Guardar selección'; $("#fPedir",H).href=`https://wa.me/${WA}?text=${encodeURIComponent('Hola BoomArt. Me interesa '+CATALOGO_UI.mensaje(v)+'. Quisiera conocer los detalles de la colección.')}`; };
 
-  $("#fMed", H).innerHTML = Object.entries(p.estampados).map(([ub, e]) => `<li><span>${NOMBRE_UB[ub] || ub}</span><b>${ub==='pecho'||ub==='espalda'?'Diseño principal':'Detalle de autor'}</b></li>`).join("");
+  $("#fMed", H).innerHTML = Object.entries(p.estampados).map(([ub, e]) => `<li><span data-ub="${esc(ub)}">${NOMBRE_UB[ub] || ub}</span><b>${ub==='pecho'||ub==='espalda'?'Diseño principal':'Detalle de autor'}</b></li>`).join("");
+  actualizarManga();
   $$("#fCerca .chip", H).forEach((b) => (b.onclick = () => {
     const u = b.dataset.u, det = items.find((x) => x.toma === DETALLE_UB[u]); if (det) return abrirVisor({ prod: p.id, av: det.av, toma: det.toma });        // foto de detalle tomada de cerca
     for (const x of items) {                                                                                                                      // si no hay, se acerca al estampado en la primera foto donde se ve
