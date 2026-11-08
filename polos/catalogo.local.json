@@ -2,7 +2,7 @@
   "version": 1,
   "marca": "BoomArt",
   "posicionamiento": "Coleccion de autor · prendas premium",
-  "material_objetivo_interno": "Algodon pima peinado 200 g/m2; especificacion de la coleccion (confirmar con el proveedor antes de la primera venta)",
+  "material_objetivo_interno": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
   "productos": [
     {
       "id": "gryffindor",
@@ -82,9 +82,9 @@
         ]
       },
       "texto": "El león de la casa de los valientes, en grande sobre la espalda. Un parche discreto en el pecho y el estandarte en la manga.",
-      "precio": null,
-      "material": "Algodón pima 100 % peinado, hilado en anillo (ring-spun), jersey preencogido.",
-      "gramaje": 200,
+      "precio": 50,
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "gramaje": null,
       "estado": "proximamente",
       "tallas": [
         "S",
@@ -170,9 +170,9 @@
         ]
       },
       "texto": "La serpiente de la casa de la astucia, en grande sobre la espalda. El escudo de la casa en el pecho y el «Avada Kedavra» en la manga.",
-      "precio": null,
-      "material": "Algodón pima 100 % peinado, hilado en anillo (ring-spun), jersey preencogido.",
-      "gramaje": 200,
+      "precio": 50,
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "gramaje": null,
       "estado": "proximamente",
       "tallas": [
         "S",
@@ -187,9 +187,9 @@
       "carpeta": "Polo Ravenclaw Blanco",
       "tipo": "B",
       "color": "blanco",
-      "precio": null,
-      "material": "Algodón pima 100 % peinado, hilado en anillo (ring-spun), jersey preencogido.",
-      "gramaje": 200,
+      "precio": 50,
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "gramaje": null,
       "estado": "proximamente",
       "tallas": [
         "S",
@@ -275,9 +275,9 @@
       "carpeta": "Hufflepuff Negro",
       "tipo": "B",
       "color": "negro",
-      "precio": null,
-      "material": "Algodón pima 100 % peinado, hilado en anillo (ring-spun), jersey preencogido.",
-      "gramaje": 200,
+      "precio": 50,
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "gramaje": null,
       "estado": "proximamente",
       "tallas": [
         "S",

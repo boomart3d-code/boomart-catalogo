@@ -8,6 +8,18 @@ const el = (html) => { const t = document.createElement("template"); t.innerHTML
 const esc = (t) => String(t ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const soles = n => CATALOGO_UI.precioConfirmado({precio:n}) ? "S/ " + Number(n).toFixed(0) : "Próximamente";
 const WA = "51925666542";
+const enlaceWhatsApp = mensaje => `https://wa.me/${WA}?text=${encodeURIComponent(mensaje)}`;
+const textoPack = () => D.promocion && `${D.promocion.cantidad} polos por ${soles(D.promocion.precio)}`;
+
+function pintarPack() {
+  const pack = textoPack();
+  if (!pack) return;
+  const panel = $("#packLanzamiento");
+  const enlace = enlaceWhatsApp(`Hola BoomArt. Quisiera consultar por el pack de lanzamiento de ${pack}.`);
+  panel.innerHTML = `<div><p class="etiqueta">Promoción de lanzamiento</p><p class="pack-precio"><strong>${esc(pack)}</strong></p></div>
+    <a class="btn btn-linea-osc" href="${esc(enlace)}" target="_blank" rel="noopener">Consultar el pack</a>`;
+  panel.hidden = false;
+}
 let D = null;                                  // datos (polos.json)
 const GEN = { v: (() => { try { return localStorage.getItem("polos.gen") || "todos"; } catch (e) { return "todos"; } })() };
 const fijarGen = (g) => { GEN.v = g; try { localStorage.setItem("polos.gen", g); } catch (e) { /* sin memoria */ } };
@@ -258,13 +270,13 @@ function abrirFicha(id) {
   const ubs = Object.keys(p.estampados).filter(u => u !== "manga_izquierda");
   H.innerHTML = `<div class="hoja-barra"><button class="volver" type="button" id="fVolver">Colección</button><span class="migas">Polos / ${esc(p.nombre)}</span></div>
   <div class="ficha"><div class="galeria"><div class="minis" id="fMinis"></div><div id="fEscena"></div></div>
-  <div class="info"><p class="tema">${esc(p.tema)}</p><h1 id="fNombre">${esc(p.nombre)}</h1><span class="precio">${soles(p.precio)}</span><p class="nota">${CATALOGO_UI.precioConfirmado(p) ? "Colección de autor BoomArt." : "Próximamente. El precio y la disponibilidad se anunciarán con el lanzamiento de la colección."}</p>
+  <div class="info"><p class="tema">${esc(p.tema)}</p><h1 id="fNombre">${esc(p.nombre)}</h1><span class="precio">${soles(p.precio)}</span><p class="nota">${CATALOGO_UI.precioConfirmado(p) ? "Precio por unidad" : "Precio por confirmar"}</p>${textoPack() ? `<p class="ficha-pack"><b>Promoción de lanzamiento</b> · ${esc(textoPack())}</p>` : ""}
     <p class="desc">${esc(p.texto)}</p>
     <div class="bloque"><h4>Color <b style="letter-spacing:.06em">${esc(c.nombre)}</b></h4><div class="colores"><i class="sw on" style="--c:${c.hex}"></i><span class="unico">Este diseño se ofrece solo en ${esc(c.nombre.toLowerCase())}.</span></div></div>
     <div class="bloque"><h4>${p.prenda === "unisex" ? "Polo unisex · Ver en modelos" : "Elige tu corte"}</h4>${segGen("fGen")}</div>
     <div class="bloque"><h4>Talla <a id="fGuia">Guía de tallas</a></h4><div class="tallas-b" id="fTallas"></div></div>
     <div class="bloque"><h4>Ver de cerca</h4><div class="cerca" id="fCerca">${ubs.map((u) => `<button type="button" class="chip" data-u="${u}">${esc(NOMBRE_UB[u] || u)}</button>`).join("")}</div></div>
-    <div class="acciones"><button class="btn btn-osc grande" type="button" id="fProbar">Ver todos los modelos</button><button class="btn btn-osc grande" type="button" id="fGuardar">Guardar selección</button><a class="btn btn-linea-osc grande" id="fPedir" target="_blank" rel="noopener">Consultar esta pieza</a><button class="compartir" type="button" id="fCompartir">Compartir diseño ↗</button></div>
+    <div class="acciones"><button class="btn btn-osc grande" type="button" id="fProbar">Ver todos los modelos</button><button class="btn btn-osc grande" type="button" id="fGuardar">Guardar selección</button><a class="btn btn-linea-osc grande" id="fPedir" target="_blank" rel="noopener">Consultar por WhatsApp</a><button class="compartir" type="button" id="fCompartir">Compartir diseño ↗</button></div>
     <div class="detalles"><details open><summary>Detalles del diseño</summary><ul class="medidas" id="fMed"></ul></details>
       <details><summary>Tela y prenda</summary><p>${p.material ? `${esc(p.material)} ${p.gramaje ? esc(p.gramaje)+" g/m²." : ""}` : "Información de tela y confección por confirmar."}</p></details>
       <details><summary>Impresión DTF</summary><p>Impresión a 300 ppp con tintas de pigmento: color intenso, bordes definidos y tacto flexible. El arte se prepara de forma independiente para cada prenda y se verifica antes de imprimir.</p></details>
@@ -289,7 +301,7 @@ function abrirFicha(id) {
   $$("#fGen button", H).forEach((b) => (b.onclick = () => cambiarGen(b.dataset.g)));
   pintarMinis();
   const pintarTallasF = () => { $("#fTallas", H).innerHTML = (p.tallas || ["S", "M", "L"]).map((t) => `<button class="talla ${t === st.talla ? "on" : ""}" type="button" data-t="${t}">${t}</button>`).join(""); $$("#fTallas .talla", H).forEach((b) => (b.onclick = () => { st.talla = b.dataset.t; preferenciaTalla=st.talla; pintarTallasF(); pedir(); })); };
-  const pedir = () => { const v=CATALOGO_UI.variante(p,st.genero,st.talla); $("#fGuardar",H).textContent=leerSeleccion().some(x=>x.clave===v.clave)?'Guardado en mi selección ✓':'Guardar selección'; $("#fPedir",H).href=`https://wa.me/${WA}?text=${encodeURIComponent('Hola BoomArt. Me interesa '+CATALOGO_UI.mensaje(v)+'. Quisiera conocer los detalles de la colección.')}`; };
+  const pedir = () => { const v=CATALOGO_UI.variante(p,st.genero,st.talla); $("#fGuardar",H).textContent=leerSeleccion().some(x=>x.clave===v.clave)?'Guardado en mi selección ✓':'Guardar selección'; $("#fPedir",H).href=`https://wa.me/${WA}?text=${encodeURIComponent('Hola BoomArt. Quisiera pedir este polo: '+CATALOGO_UI.mensaje(v)+'. ¿Me confirman disponibilidad?')}`; };
 
   $("#fMed", H).innerHTML = ubs.map(ub => `<li><span data-ub="${esc(ub)}">${NOMBRE_UB[ub] || ub}</span><b>${ub==='pecho'||ub==='espalda'?'Diseño principal':'Detalle de autor'}</b></li>`).join("");
   actualizarManga();
@@ -372,7 +384,7 @@ function pintarTeaser() {
 }
 function arrancar() {
   D.avatares.forEach((a) => a.tomas.forEach((t) => { if (!tomaNombre[t.toma]) tomaNombre[t.toma] = t.nombre; }));
-  pintarFiltros(); pintarGrilla(); pintarTeaser(); pintarTallas(); iniciarHero();
+  pintarPack(); pintarFiltros(); pintarGrilla(); pintarTeaser(); pintarTallas(); iniciarHero();
   $("#buscarDisenos").oninput=e=>{filtro.busqueda=e.target.value;filtro.limite=12;pintarGrilla()};
   $("#ordenDisenos").onchange=e=>{filtro.orden=e.target.value;pintarGrilla()};
   $("#limpiarFiltros").onclick=()=>{Object.assign(filtro,{tema:'todos',color:'todos',busqueda:'',limite:12});$("#buscarDisenos").value='';pintarFiltros();pintarGrilla()};

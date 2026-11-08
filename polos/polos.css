@@ -220,7 +220,11 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
-/* Herramientas de coleccion: misma direccion Galeria de Autor, sin promociones. */
+/* Colección y pack de lanzamiento */
+.pack-lanzamiento:not([hidden]){display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin:0 0 26px;padding:18px 22px;border:1px solid var(--linea-f);border-radius:var(--r)}
+.pack-lanzamiento .etiqueta,.pack-precio{margin:0}
+.pack-precio{font:600 30px/1.15 var(--display);color:var(--tinta)}
+.ficha-pack{margin:14px 0 18px;padding:10px 0;border-top:1px solid var(--linea-f);border-bottom:1px solid var(--linea-f);font-size:14px}
 .catalogo-herramientas{display:flex;align-items:end;gap:18px;flex-wrap:wrap;margin:8px 0 12px}
 .catalogo-herramientas label{display:grid;gap:8px;font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--tinta)}
 .catalogo-herramientas .buscador{flex:1;min-width:220px}
