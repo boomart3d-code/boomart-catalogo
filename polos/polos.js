@@ -116,7 +116,7 @@ const selDe = (p, g) => (p.seleccion[g] || []).map(([av, toma]) => ({ av, toma }
 const selTodas = (p) => { const h = selDe(p, "hombre"), m = selDe(p, "mujer"), out = []; for (let i = 0; i < Math.max(h.length, m.length); i++) { if (h[i]) out.push(h[i]); if (m[i]) out.push(m[i]); } return out; };
 const selGen = (p) => (GEN.v === "todos" ? selTodas(p) : selDe(p, GEN.v));
 const portada = (p) => selDe(p, "hombre")[0];
-const alterna = (p) => selDe(p, "mujer")[0];
+const alterna = (p) => selDe(p, "hombre")[1] ?? portada(p);
 
 function visible(nodo) { const o = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("ver"); o.unobserve(e.target); } }), { threshold: 0.12 }); o.observe(nodo); }
 function bloquear(si) { document.body.classList.toggle("fijo", si); }
