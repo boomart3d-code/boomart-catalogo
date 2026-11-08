@@ -14,7 +14,7 @@
  "productos": [
   {
    "id": "gryffindor",
-   "nombre": "Gryffindor",
+   "nombre": "Gryffindor · León dorado",
    "tema": "Harry Potter",
    "texto": "El león de la casa de los valientes, en grande sobre la espalda. Un parche discreto en el pecho y el estandarte en la manga.",
    "tipo": "B",
@@ -661,7 +661,7 @@
   },
   {
    "id": "slytherin",
-   "nombre": "Slytherin",
+   "nombre": "Slytherin · Serpiente esmeralda",
    "tema": "Harry Potter",
    "texto": "La serpiente de la casa de la astucia, en grande sobre la espalda. El escudo de la casa en el pecho y el «Avada Kedavra» en la manga.",
    "tipo": "B",
@@ -1350,7 +1350,7 @@
   },
   {
    "id": "ravenclaw",
-   "nombre": "Ravenclaw",
+   "nombre": "Ravenclaw · Escudo del águila",
    "tema": "Harry Potter",
    "texto": "El escudo de la casa de la sabiduría, en grande sobre la espalda. El águila de la casa en el pecho y su nombre en la manga.",
    "tipo": "B",
@@ -2011,7 +2011,7 @@
   },
   {
    "id": "hufflepuff",
-   "nombre": "Hufflepuff",
+   "nombre": "Hufflepuff · Tejón heráldico",
    "tema": "Harry Potter",
    "texto": "El tejón de la casa de la lealtad, enmarcado en dorado sobre la espalda. El escudo de la casa en el pecho y su insignia en la manga.",
    "tipo": "B",
@@ -2672,7 +2672,7 @@
   },
   {
    "id": "hogwarts-blanco",
-   "nombre": "Hogwarts - Blanco",
+   "nombre": "Hogwarts en acuarela",
    "tema": "Harry Potter",
    "texto": "",
    "tipo": "B",
@@ -3423,7 +3423,7 @@
   },
   {
    "id": "harry-potter-negro",
-   "nombre": "Harry Potter Negro",
+   "nombre": "Harry Potter · Travesía nocturna",
    "tema": "Harry Potter",
    "texto": "",
    "tipo": "B",
@@ -4184,7 +4184,7 @@
   },
   {
    "id": "cisne-hyoga-negro",
-   "nombre": "CISNE HYOGA - NEGRO",
+   "nombre": "Hyoga de Cisne",
    "tema": "Saint Seiya",
    "texto": "",
    "tipo": "A",
@@ -4979,7 +4979,7 @@
   },
   {
    "id": "dragon-shiryu-negro",
-   "nombre": "Dragon Shiryu - Negro",
+   "nombre": "Shiryu de Dragón",
    "tema": "Saint Seiya",
    "texto": "",
    "tipo": "A",
@@ -5774,7 +5774,7 @@
   },
   {
    "id": "seiya-blanco",
-   "nombre": "Seiya - Blanco",
+   "nombre": "Seiya de Pegaso",
    "tema": "Saint Seiya",
    "texto": "",
    "tipo": "A",
@@ -6569,7 +6569,7 @@
   },
   {
    "id": "shun-andromeda-blanco",
-   "nombre": "SHUN ANDROMEDA - BLANCO",
+   "nombre": "Shun de Andrómeda",
    "tema": "Saint Seiya",
    "texto": "",
    "tipo": "A",
@@ -7373,7 +7373,7 @@
   },
   {
    "id": "ikki-fenix-negro",
-   "nombre": "IKKI FENIX - NEGRO",
+   "nombre": "Ikki de Fénix",
    "tema": "Saint Seiya",
    "texto": "",
    "tipo": "A",
@@ -8177,7 +8177,7 @@
   },
   {
    "id": "12-dorados-negro",
-   "nombre": "12 DORADOS - NEGRO",
+   "nombre": "Los doce Caballeros de Oro",
    "tema": "Saint Seiya",
    "texto": "",
    "tipo": "A",
@@ -8972,7 +8972,7 @@
   },
   {
    "id": "5-de-bronce-negro",
-   "nombre": "5 DE BRONCE - NEGRO",
+   "nombre": "Los cinco Caballeros de Bronce",
    "tema": "Saint Seiya",
    "texto": "",
    "tipo": "A",
@@ -9679,7 +9679,7 @@
   },
   {
    "id": "zelda-vitral-blanco",
-   "nombre": "Zelda Vitral - Blanco",
+   "nombre": "Zelda · Vitral de Hyrule",
    "tema": "The Legend of Zelda",
    "texto": "",
    "tipo": "B",
@@ -10379,7 +10379,7 @@
   },
   {
    "id": "zelda-negro",
-   "nombre": "Zelda - Negro",
+   "nombre": "Link · Espada en alto",
    "tema": "The Legend of Zelda",
    "texto": "",
    "tipo": "A",
@@ -11067,7 +11067,7 @@
   },
   {
    "id": "zelda-2-negro",
-   "nombre": "ZELDA 2 - NEGRO",
+   "nombre": "Zelda · Bosque al atardecer",
    "tema": "The Legend of Zelda",
    "texto": "",
    "tipo": "A",
@@ -11767,7 +11767,7 @@
   },
   {
    "id": "zelda-4-blanco",
-   "nombre": "ZELDA 4 BLANCO",
+   "nombre": "Link · Filo azul",
    "tema": "The Legend of Zelda",
    "texto": "",
    "tipo": "A",
@@ -12460,7 +12460,7 @@
   },
   {
    "id": "zelda-retro-1",
-   "nombre": "ZELDA RETRO 1",
+   "nombre": "Zelda · Hyrule retro",
    "tema": "The Legend of Zelda",
    "texto": "",
    "tipo": "A",
@@ -13175,7 +13175,7 @@
   },
   {
    "id": "zelda-verde-negro",
-   "nombre": "ZELDA VERDE - NEGRO",
+   "nombre": "Zelda · Trifuerza esmeralda",
    "tema": "The Legend of Zelda",
    "texto": "",
    "tipo": "A",
@@ -13379,8 +13379,10 @@
       },
       "h4-detalle-pecho": {
        "dx": 0.0,
-       "dy": 0.0,
-       "rot": 0.0
+       "dy": 6.58,
+       "rot": 0.0,
+       "curva": 0.0,
+       "escala": 1.0
       },
       "m4-frente": {
        "dx": -0.08,
@@ -13894,9 +13896,9 @@
      "zoom": "img/galeria/zelda-verde-negro-h4-primer-plano-manga-negro-b324f4825528e3eb-zoom.webp"
     },
     "h4|detalle-pecho": {
-     "mini": "img/galeria/zelda-verde-negro-h4-detalle-pecho-negro-b500eceb224a481d-mini.webp",
-     "foto": "img/galeria/zelda-verde-negro-h4-detalle-pecho-negro-b500eceb224a481d-foto.webp",
-     "zoom": "img/galeria/zelda-verde-negro-h4-detalle-pecho-negro-b500eceb224a481d-zoom.webp"
+     "mini": "img/galeria/zelda-verde-negro-h4-detalle-pecho-negro-76ef6ef617587add-mini.webp",
+     "foto": "img/galeria/zelda-verde-negro-h4-detalle-pecho-negro-76ef6ef617587add-foto.webp",
+     "zoom": "img/galeria/zelda-verde-negro-h4-detalle-pecho-negro-76ef6ef617587add-zoom.webp"
     },
     "h4|frente": {
      "mini": "img/galeria/zelda-verde-negro-h4-frente-negro-f256e74b17daa565-mini.webp",

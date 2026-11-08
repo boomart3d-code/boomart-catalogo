@@ -6,7 +6,7 @@
   "productos": [
     {
       "id": "gryffindor",
-      "nombre": "Gryffindor",
+      "nombre": "Gryffindor · León dorado",
       "tema": "Harry Potter",
       "carpeta": "Gryffindor Polo Blanco",
       "tipo": "B",
@@ -94,7 +94,7 @@
     },
     {
       "id": "slytherin",
-      "nombre": "Slytherin",
+      "nombre": "Slytherin · Serpiente esmeralda",
       "tema": "Harry Potter",
       "carpeta": "Polo Slytherin negro",
       "tipo": "B",
@@ -182,7 +182,7 @@
     },
     {
       "id": "ravenclaw",
-      "nombre": "Ravenclaw",
+      "nombre": "Ravenclaw · Escudo del águila",
       "tema": "Harry Potter",
       "carpeta": "Polo Ravenclaw Blanco",
       "tipo": "B",
@@ -270,7 +270,7 @@
     },
     {
       "id": "hufflepuff",
-      "nombre": "Hufflepuff",
+      "nombre": "Hufflepuff · Tejón heráldico",
       "tema": "Harry Potter",
       "carpeta": "Hufflepuff Negro",
       "tipo": "B",
