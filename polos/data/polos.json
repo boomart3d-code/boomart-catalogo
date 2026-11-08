@@ -13226,6 +13226,10 @@
      ],
      [
       "h4",
+      "detalle-espalda-alta"
+     ],
+     [
+      "h4",
       "detalle-pecho"
      ],
      [
@@ -13908,6 +13912,11 @@
      "mini": "img/galeria/zelda-verde-negro-h4-detalle-manga-negro-a1d575db61ce4401-mini.webp",
      "foto": "img/galeria/zelda-verde-negro-h4-detalle-manga-negro-a1d575db61ce4401-foto.webp",
      "zoom": "img/galeria/zelda-verde-negro-h4-detalle-manga-negro-a1d575db61ce4401-zoom.webp"
+    },
+    "h4|detalle-espalda-alta": {
+     "mini": "img/galeria/zelda-verde-negro-h4-detalle-espalda-alta-negro-d443d5f2bc015c42-mini.webp",
+     "foto": "img/galeria/zelda-verde-negro-h4-detalle-espalda-alta-negro-d443d5f2bc015c42-foto.webp",
+     "zoom": "img/galeria/zelda-verde-negro-h4-detalle-espalda-alta-negro-d443d5f2bc015c42-zoom.webp"
     }
    }
   }
