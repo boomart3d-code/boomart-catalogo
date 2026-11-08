@@ -12,8 +12,10 @@
     return lista;
   }
   function variante(p, genero, talla) {
-    if (!['hombre','mujer'].includes(genero) || !(p.tallas || ['S','M','L']).includes(talla)) throw new Error('Selecciona corte y talla.');
-    const corte = p.prenda === 'unisex' ? 'unisex' : genero;
+    const unisex = p.prenda === "unisex" || (!p.prenda && genero === "unisex");
+    const cortes = unisex ? ["unisex", "hombre", "mujer"] : ["hombre", "mujer"];
+    if (!cortes.includes(genero) || !(p.tallas || ["S", "M", "L"]).includes(talla)) throw new Error("Selecciona corte y talla.");
+    const corte = unisex ? "unisex" : genero;
     return {id:p.id,nombre:p.nombre,color:p.color,genero:corte,talla,clave:`${p.id}|${corte}|${p.color}|${talla}`};
   }
   const mensaje = v => `${v.nombre} · ${{unisex:'Unisex',mujer:'Mujer',hombre:'Hombre'}[v.genero]} · ${v.color} · talla ${v.talla}`;

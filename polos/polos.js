@@ -21,9 +21,6 @@ function pintarPack() {
   panel.hidden = false;
 }
 let D = null;                                  // datos (polos.json)
-const GEN = { v: (() => { try { return localStorage.getItem("polos.gen") || "todos"; } catch (e) { return "todos"; } })() };
-const fijarGen = (g) => { GEN.v = g; try { localStorage.setItem("polos.gen", g); } catch (e) { /* sin memoria */ } };
-const segGen = (id) => `<div class="seg gen" id="${id}" role="group" aria-label="Ver fotos para">${[["hombre", "Hombre"], ["mujer", "Mujer"], ["todos", "Todos"]].map(([k, n]) => `<button type="button" data-g="${k}" class="${GEN.v === k ? "on" : ""}">${n}</button>`).join("")}</div>`;
 const prodDe = (id) => D.productos.find((p) => p.id === id);
 const avDe = (id) => D.avatares.find((a) => a.id === id);
 const colorDe = (id) => D.colores.find((c) => c.id === id);
@@ -123,28 +120,43 @@ async function pintarEn(canvas, prodId, avId, tomaId, W) { try { const c = await
 
 /* ---------------------------------------------------------------- utilidades de interfaz */
 const tomaNombre = { frente: "Frente", espalda: "Espalda", "lateral-derecho": "Lateral", "detalle-pecho": "Detalle del pecho", "detalle-manga": "Detalle de la manga", "detalle-espalda-alta": "Detalle de la espalda", "frente-plano": "Polo tendido", "espalda-plana": "Polo tendido · espalda", "percha-frente": "En percha" };
-/* Cada polo muestra una selección corta de fotos (las más reales, revisadas con el estampado puesto), por género. */
-const selDe = (p, g) => (p.seleccion[g] || []).map(([av, toma]) => ({ av, toma }));
-const selTodas = (p) => { const h = selDe(p, "hombre"), m = selDe(p, "mujer"), out = []; for (let i = 0; i < Math.max(h.length, m.length); i++) { if (h[i]) out.push(h[i]); if (m[i]) out.push(m[i]); } return out; };
-const selGen = (p) => (GEN.v === "todos" ? selTodas(p) : selDe(p, GEN.v));
-const portada = (p) => selDe(p, "hombre")[0];
-const alterna = (p) => selDe(p, "hombre")[1] ?? portada(p);
+/* La colección unisex se muestra con la selección fotográfica masculina. */
+const fotosPublicas = (p) => (p.seleccion.hombre || []).map(([av, toma]) => ({ av, toma }));
+const portada = (p) => fotosPublicas(p)[0];
+const alterna = (p) => fotosPublicas(p)[1] ?? portada(p);
 
 function visible(nodo) { const o = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("ver"); o.unobserve(e.target); } }), { threshold: 0.12 }); o.observe(nodo); }
 function bloquear(si) { document.body.classList.toggle("fijo", si); }
 const fondoPlano = () => "#ece5d7";
 
 let preferenciaTalla='M';
-function tablaMedidas(g) { const tabla=D.medidas?.[g]; return tabla ? Object.fromEntries(Object.entries(tabla).map(([t,m])=>[t,[m.pecho,m.largo,m.hombros,m.manga]])) : TALLAS[g]; }
-function leerSeleccion() {try{return JSON.parse(localStorage.getItem('boomart.polos.seleccion')||'[]').filter(v=>D.productos.some(p=>p.id===v.id));}catch{return []}}
+function leerSeleccion() {
+  try {
+    const guardadas = JSON.parse(localStorage.getItem("boomart.polos.seleccion") || "[]");
+    const unisex = new Map();
+    for (const guardada of guardadas) {
+      const producto = prodDe(guardada.id);
+      if (!producto || !(producto.tallas || ["S", "M", "L"]).includes(guardada.talla)) continue;
+      const variante = CATALOGO_UI.variante(producto, "unisex", guardada.talla);
+      unisex.set(variante.clave, variante);
+    }
+    return [...unisex.values()];
+  } catch {
+    return [];
+  }
+}
 function actualizarContadorSeleccion(){const b=$("#abrirSeleccion");if(b)b.textContent=`Mi selección (${leerSeleccion().length})`;}
 function guardarSeleccion(v){const lista=leerSeleccion();if(!lista.some(x=>x.clave===v.clave))lista.push(v);try{localStorage.setItem('boomart.polos.seleccion',JSON.stringify(lista));}catch{}actualizarContadorSeleccion();const b=$("#fGuardar");if(b)b.textContent='Guardado en mi selección ✓';}
 function dialogoContenido(titulo,html){const dialog=$("#dialogoColeccion");dialog.innerHTML=`<div class="dialogo-cab"><h2>${titulo}</h2><button type="button" aria-label="Cerrar ventana">✕</button></div>${html}`;dialog.querySelector('button').onclick=()=>dialog.close();dialog.showModal();return dialog;}
-function abrirGuia(g){const datos=Object.entries(tablaMedidas(g)).map(([t,m])=>`<tr><th>${t}</th>${m.map(n=>`<td>${n} cm</td>`).join('')}</tr>`).join('');dialogoContenido(`Guía de tallas · ${g==='mujer'?'Mujer':'Hombre'}`,`<p>Medidas de la prenda tendida, en centímetros. Si estás entre dos tallas, elige la mayor para una caída más suelta. Pueden variar hasta 1 cm por la confección.</p><div class="tabla-desplazable"><table><thead><tr><th>Talla</th><th>Pecho</th><th>Largo</th><th>Hombros</th><th>Manga</th></tr></thead><tbody>${datos}</tbody></table></div>`);}
-function abrirSeleccion(){const lista=leerSeleccion(),d=dialogoContenido('Mi selección',lista.length?`<p>Conserva aquí tus piezas favoritas. No es una compra ni una reserva.</p><ul class="seleccion-lista">${lista.map(v=>`<li><span>${esc(CATALOGO_UI.mensaje(v))}</span><button type="button" data-quitar="${esc(v.clave)}">Quitar</button></li>`).join('')}</ul><a class="btn btn-osc" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${encodeURIComponent('Hola BoomArt. Me interesa esta selección de la colección:\n'+lista.map(CATALOGO_UI.mensaje).join('\n'))}">Consultar mi selección</a>`:'<p>Aún no guardaste ninguna pieza. Explora la colección y elige corte y talla.</p>');d.querySelectorAll('[data-quitar]').forEach(b=>b.onclick=()=>{try{localStorage.setItem('boomart.polos.seleccion',JSON.stringify(leerSeleccion().filter(v=>v.clave!==b.dataset.quitar)))}catch{}d.close();actualizarContadorSeleccion();abrirSeleccion()});}
+function abrirGuia() {
+  dialogoContenido("Guía de tallas · Unisex", "<p>El polo unisex viene en tallas S, M y L. Consulta las medidas por WhatsApp antes de hacer tu pedido.</p>");
+}
+function abrirSeleccion(){const lista=leerSeleccion(),d=dialogoContenido('Mi selección',lista.length?`<p>Conserva aquí tus piezas favoritas. No es una compra ni una reserva.</p><ul class="seleccion-lista">${lista.map(v=>`<li><span>${esc(CATALOGO_UI.mensaje(v))}</span><button type="button" data-quitar="${esc(v.clave)}">Quitar</button></li>`).join('')}</ul><a class="btn btn-osc" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${encodeURIComponent('Hola BoomArt. Me interesa esta selección de la colección:\n'+lista.map(CATALOGO_UI.mensaje).join('\n'))}">Consultar mi selección</a>`:'<p>Aún no guardaste ninguna pieza. Explora la colección y elige tu talla.</p>');d.querySelectorAll('[data-quitar]').forEach(b=>b.onclick=()=>{try{localStorage.setItem('boomart.polos.seleccion',JSON.stringify(leerSeleccion().filter(v=>v.clave!==b.dataset.quitar)))}catch{}d.close();actualizarContadorSeleccion();abrirSeleccion()});}
 
 /* ---------------------------------------------------------------- portada (hero) */
-const heroLista = () => D.productos.flatMap(p => ['hombre','mujer'].flatMap(g => selDe(p,g).slice(0,1).map(s=>({p:p.id,av:s.av,t:s.toma,cap:`${p.nombre} · ${colorDe(p.color).nombre}`})))).slice(0,4);
+const heroLista = () => D.productos.flatMap(p => fotosPublicas(p).slice(0, 1).map(s => ({
+  p: p.id, av: s.av, t: s.toma, cap: `${p.nombre} · ${colorDe(p.color).nombre}`
+}))).slice(0, 4);
 function iniciarHero() {
   const HERO = heroLista(), A = $("#heroA"), B = $("#heroB"), pts = $("#heroPts"), cap = $("#heroCap"); let i = -1, actual = A, tok = 0;
   pts.innerHTML = HERO.map(() => "<i></i>").join("");
@@ -178,7 +190,7 @@ function pintarGrilla() {
     const pc = portada(p), al = alterna(p), c = colorDe(p.color);
     const t = el(`<button class="tarjeta" type="button" aria-label="Ver ${esc(p.nombre)}" style="transition-delay:${n * 90}ms">
       <div class="foto"><canvas class="a"></canvas><canvas class="b"></canvas></div>
-      <div class="meta"><div><h3>${esc(p.nombre)}</h3><span class="tema">${esc(p.tema)} · ${esc(c.nombre)}</span><div class="puntos"><i class="dot" style="--c:${c.hex}" title="${esc(c.nombre)}"></i></div></div><span class="precio">${soles(p.precio)}</span></div></button>`);
+      <div class="meta"><div><h3>${esc(p.nombre)}</h3><span class="tema">${esc(p.tema)} · ${esc(c.nombre)} · Unisex</span><div class="puntos"><i class="dot" style="--c:${c.hex}" title="${esc(c.nombre)}"></i></div></div><span class="precio">${soles(p.precio)}</span></div></button>`);
     g.appendChild(t); visible(t);
     pintarEn($(".a", t), p.id, pc.av, pc.toma, 720); pintarEn($(".b", t), p.id, al.av, al.toma, 720);
     t.onclick = () => (location.hash = `#/p/${p.id}`);
@@ -252,10 +264,9 @@ async function abrirVisor(s, foco) {                  // foco: {x, y} en coorden
 function cerrarVisor() { const V = $("#visor"); V.classList.remove("abierto"); visorAbierto = false; setTimeout(() => { V.hidden = true; $("#visorLienzo").innerHTML = ""; }, 280); if ($("#hoja").hidden && $("#prob").hidden) bloquear(false); }
 
 /* ---------------------------------------------------------------- ficha de producto */
-const TALLAS = { hombre: { S: [49, 68, 44, 20], M: [52, 71, 46, 21], L: [55, 74, 48, 22] }, mujer: { S: [42, 58, 36, 16], M: [45, 61, 38, 17], L: [48, 64, 40, 18] } };
 const NOMBRE_UB = { pecho: "Pecho", pecho_pequeno: "Pectoral", espalda: "Espalda completa", espalda_alta: "Espalda alta", manga_derecha: "Manga derecha" };
 const VISTA_UB = { pecho: "frente", pecho_pequeno: "frente", espalda: "espalda", espalda_alta: "espalda", manga_derecha: "lateral-derecho" };
-const tomasDe = (prod, av) => av.tomas.filter((t) => selTodas(prod).some((s) => s.av === av.id && s.toma === t.toma));   // las fotos de este modelo que muestra el polo
+const tomasDe = (prod, av) => av.tomas.filter((t) => fotosPublicas(prod).some((s) => s.av === av.id && s.toma === t.toma));   // las fotos de este modelo que muestra el polo
 const DETALLE_UB = { pecho: "detalle-pecho", pecho_pequeno: "detalle-pecho", manga_derecha: "detalle-manga", espalda_alta: "detalle-espalda-alta" };
 function anclaDe(prod, avId, ub) {                  // centro (en la foto de 2048 x 2560) del estampado `ub` para acercarse a él
   const av = avDe(avId), toma = av.tomas.find((t) => t.toma === VISTA_UB[ub]); if (!toma) return null;
@@ -264,19 +275,21 @@ function anclaDe(prod, avId, ub) {                  // centro (en la foto de 204
 }
 function abrirFicha(id) {
   const p = prodDe(id); if (!p) return location.replace("#/");
-  const H = $("#hoja"), st = { talla: preferenciaTalla, genero:GEN.v==='mujer'?'mujer':'hombre', item: 0 }, c = colorDe(p.color);
-  const armarItems = () => selDe(p,st.genero).map((s) => { const a = avDe(s.av); return { av: s.av, toma: s.toma, nom: a.producto ? tomaNombre[s.toma] : `${a.nombre} · ${tomaNombre[s.toma]}` }; });     // solo las fotos del género elegido (o todas)
-  let items = armarItems();
+  const H = $("#hoja"), st = { talla: preferenciaTalla, item: 0 }, c = colorDe(p.color);
+  const items = fotosPublicas(p).map(s => {
+    const modelo = avDe(s.av);
+    return { ...s, nom: modelo.producto ? tomaNombre[s.toma] : `${modelo.nombre} · ${tomaNombre[s.toma]}` };
+  });
   const ubs = Object.keys(p.estampados).filter(u => u !== "manga_izquierda");
   H.innerHTML = `<div class="hoja-barra"><button class="volver" type="button" id="fVolver">Colección</button><span class="migas">Polos / ${esc(p.nombre)}</span></div>
   <div class="ficha"><div class="galeria"><div class="minis" id="fMinis"></div><div id="fEscena"></div></div>
   <div class="info"><p class="tema">${esc(p.tema)}</p><h1 id="fNombre">${esc(p.nombre)}</h1><span class="precio">${soles(p.precio)}</span><p class="nota">${CATALOGO_UI.precioConfirmado(p) ? "Precio por unidad" : "Precio por confirmar"}</p>${textoPack() ? `<p class="ficha-pack"><b>Promoción de lanzamiento</b> · ${esc(textoPack())}</p>` : ""}
     <p class="desc">${esc(p.texto)}</p>
     <div class="bloque"><h4>Color <b style="letter-spacing:.06em">${esc(c.nombre)}</b></h4><div class="colores"><i class="sw on" style="--c:${c.hex}"></i><span class="unico">Este diseño se ofrece solo en ${esc(c.nombre.toLowerCase())}.</span></div></div>
-    <div class="bloque"><h4>${p.prenda === "unisex" ? "Polo unisex · Ver en modelos" : "Elige tu corte"}</h4>${segGen("fGen")}</div>
+    <div class="bloque"><h4>Polo unisex</h4></div>
     <div class="bloque"><h4>Talla <a id="fGuia">Guía de tallas</a></h4><div class="tallas-b" id="fTallas"></div></div>
     <div class="bloque"><h4>Ver de cerca</h4><div class="cerca" id="fCerca">${ubs.map((u) => `<button type="button" class="chip" data-u="${u}">${esc(NOMBRE_UB[u] || u)}</button>`).join("")}</div></div>
-    <div class="acciones"><button class="btn btn-osc grande" type="button" id="fProbar">Ver todos los modelos</button><button class="btn btn-osc grande" type="button" id="fGuardar">Guardar selección</button><a class="btn btn-linea-osc grande" id="fPedir" target="_blank" rel="noopener">Consultar por WhatsApp</a><button class="compartir" type="button" id="fCompartir">Compartir diseño ↗</button></div>
+    <div class="acciones"><button class="btn btn-osc grande" type="button" id="fProbar">Ver el polo puesto</button><button class="btn btn-osc grande" type="button" id="fGuardar">Guardar selección</button><a class="btn btn-linea-osc grande" id="fPedir" target="_blank" rel="noopener">Consultar por WhatsApp</a><button class="compartir" type="button" id="fCompartir">Compartir diseño ↗</button></div>
     <div class="detalles"><details open><summary>Detalles del diseño</summary><ul class="medidas" id="fMed"></ul></details>
       <details><summary>Tela y prenda</summary><p>${p.material ? `${esc(p.material)} ${p.gramaje ? esc(p.gramaje)+" g/m²." : ""}` : "Información de tela y confección por confirmar."}</p></details>
       <details><summary>Impresión DTF</summary><p>Impresión a 300 ppp con tintas de pigmento: color intenso, bordes definidos y tacto flexible. El arte se prepara de forma independiente para cada prenda y se verifica antes de imprimir.</p></details>
@@ -296,19 +309,15 @@ function abrirFicha(id) {
       b.onclick = () => { st.item = n; mostrar(); }; it.btn = b; pintarEn($("canvas", b), p.id, it.av, it.toma, 260);
     });
   };
-  const actualizarManga = () => { const nombre=st.genero==='mujer'?'Manga izquierda':'Manga derecha'; const boton=$('#fCerca [data-u="manga_derecha"]',H), etiqueta=$('#fMed [data-ub="manga_derecha"]',H); if(boton)boton.textContent=nombre;if(etiqueta)etiqueta.textContent=nombre; };
-  const cambiarGen = (g) => { if(g==='todos')return; st.genero=g; fijarGen(g); items = armarItems(); st.item = 0; minis.scrollTop = 0; $$("#fGen button", H).forEach((x) => {x.classList.toggle("on", x.dataset.g === g);x.setAttribute("aria-pressed",String(x.dataset.g===g));}); pintarMinis(); mostrar(); pedir(); actualizarManga(); };
-  $$("#fGen button", H).forEach((b) => (b.onclick = () => cambiarGen(b.dataset.g)));
   pintarMinis();
   const pintarTallasF = () => { $("#fTallas", H).innerHTML = (p.tallas || ["S", "M", "L"]).map((t) => `<button class="talla ${t === st.talla ? "on" : ""}" type="button" data-t="${t}">${t}</button>`).join(""); $$("#fTallas .talla", H).forEach((b) => (b.onclick = () => { st.talla = b.dataset.t; preferenciaTalla=st.talla; pintarTallasF(); pedir(); })); };
-  const pedir = () => { const v=CATALOGO_UI.variante(p,st.genero,st.talla); $("#fGuardar",H).textContent=leerSeleccion().some(x=>x.clave===v.clave)?'Guardado en mi selección ✓':'Guardar selección'; $("#fPedir",H).href=`https://wa.me/${WA}?text=${encodeURIComponent('Hola BoomArt. Quisiera pedir este polo: '+CATALOGO_UI.mensaje(v)+'. ¿Me confirman disponibilidad?')}`; };
+  const pedir = () => { const v=CATALOGO_UI.variante(p,"unisex",st.talla); $("#fGuardar",H).textContent=leerSeleccion().some(x=>x.clave===v.clave)?'Guardado en mi selección ✓':'Guardar selección'; $("#fPedir",H).href=`https://wa.me/${WA}?text=${encodeURIComponent('Hola BoomArt. Quisiera pedir este polo: '+CATALOGO_UI.mensaje(v)+'. ¿Me confirman disponibilidad?')}`; };
 
   $("#fMed", H).innerHTML = ubs.map(ub => `<li><span data-ub="${esc(ub)}">${NOMBRE_UB[ub] || ub}</span><b>${ub==='pecho'||ub==='espalda'?'Diseño principal':'Detalle de autor'}</b></li>`).join("");
-  actualizarManga();
   $$("#fCerca .chip", H).forEach((b) => (b.onclick = () => {
     const u = b.dataset.u, det = items.find((x) => u === "manga_derecha" && x.toma === "primer-plano-manga") || items.find((x) => x.toma === DETALLE_UB[u]);
     if (det) return abrirVisor({ prod: p.id, av: det.av, toma: det.toma });
-    const arte = p.estampados[u === "manga_derecha" ? mangaDe(p, st.genero) : u]?.archivo;
+    const arte = p.estampados[u === "manga_derecha" ? mangaDe(p, "hombre") : u]?.archivo;
     for (const x of items) {                                                                                                                      // si no hay, se acerca al estampado en la primera foto donde se ve
       const a = avDe(x.av), t = a.tomas.find((q) => q.toma === x.toma), pz = t && piezasPara(p, t, a.genero).find((q) => q.url === arte);
       if (pz) return abrirVisor({ prod: p.id, av: x.av, toma: x.toma }, { x: pz.cx, y: pz.cy, zoom: 3.2 });
@@ -316,12 +325,8 @@ function abrirFicha(id) {
   }));
   pintarTallasF(); pedir(); mostrar();
   $("#fVolver", H).onclick = () => (location.hash = "#/"); $("#fProbar", H).onclick = () => (location.hash = `#/p/${p.id}/probador`);
-  $("#fGuia",H).onclick=()=>p.prenda === "unisex"
-    ? dialogoContenido("Guía de tallas · Unisex", "<p>El polo está previsto en tallas S, M y L. Publicaremos las medidas cuando estén verificadas.</p>")
-    : abrirGuia(st.genero);
-  $("#fGen [data-g=todos]",H)?.remove();
-  $$("#fGen button",H).forEach(b=>{b.classList.toggle('on',b.dataset.g===st.genero);b.setAttribute('aria-pressed',String(b.dataset.g===st.genero))});
-  $("#fGuardar",H).onclick=()=>guardarSeleccion(CATALOGO_UI.variante(p,st.genero,st.talla));
+  $("#fGuia", H).onclick = abrirGuia;
+  $("#fGuardar", H).onclick = () => guardarSeleccion(CATALOGO_UI.variante(p, "unisex", st.talla));
   $("#fCompartir",H).onclick=async()=>{const url=location.href;try{if(navigator.share)await navigator.share({title:`${p.nombre} · BoomArt`,url});else{await navigator.clipboard.writeText(url);$("#fCompartir",H).textContent='Enlace copiado ✓';}}catch(e){if(e.name!=='AbortError')$("#fCompartir",H).textContent='Copia el enlace de la barra de direcciones';}};
   mostrarHoja(H);
 }
@@ -329,12 +334,13 @@ function abrirFicha(id) {
 /* ---------------------------------------------------------------- probador de modelos */
 function abrirProbador(id) {
   const p = prodDe(id) || D.productos[0], H = $("#prob"), c = colorDe(p.color);
-  const lista = () => [...new Set(selGen(p).map((s) => s.av))].map(avDe).filter((a) => !a.producto);                       // los modelos de la selección, según el género
-  const st = { av: lista()[0].id, toma: selGen(p).find((s) => s.av === lista()[0].id).toma };
+  const fotos = fotosPublicas(p);
+  const modelos = [...new Set(fotos.map(s => s.av))].map(avDe).filter(a => !a.producto);
+  if (!modelos.length) { location.hash = `#/p/${p.id}`; return; }
+  const st = { av: modelos[0].id, toma: fotos.find(s => s.av === modelos[0].id).toma };
   H.innerHTML = `<div class="hoja-barra"><button class="volver" type="button" id="pVolver">${esc(p.nombre)}</button><span class="migas">Modelos</span></div>
   <div class="prob-cuerpo"><div class="prob-esc" id="pEscena"></div><aside class="prob-lat">
-    <h2>${esc(p.nombre)}</h2><p class="sub">Polo ${esc(c.nombre.toLowerCase())}, en distintas fotografías y ángulos. Explora la dirección artística del diseño.</p>
-    <div class="bloque"><h4>Fotos para</h4>${segGen("pGen")}</div>
+    <h2>${esc(p.nombre)}</h2><p class="sub">Polo unisex ${esc(c.nombre.toLowerCase())}, en distintas fotografías y ángulos. Explora la dirección artística del diseño.</p>
     <div class="bloque"><h4>Modelo <b id="pModNom" style="letter-spacing:.06em"></b></h4><div class="modelos" id="pModelos"></div></div>
     <div class="bloque"><h4>Vista</h4><div class="tomas" id="pTomas"></div></div>
     <div class="prob-acc"><button class="btn btn-osc grande" id="pZoom" type="button">Acercar y ver detalles</button><a class="btn btn-linea-osc grande" id="pPedir" target="_blank" rel="noopener">Pedir este polo</a></div>
@@ -342,18 +348,14 @@ function abrirProbador(id) {
   const escena = crearEscena($("#pEscena", H), fondoPlano(p));
   const refrescar = () => {
     const av = avDe(st.av), tomas = tomasDe(p, av); if (!tomas.some((t) => t.toma === st.toma)) st.toma = tomas[0].toma;
-    $("#pModelos", H).innerHTML = lista().map((a) => `<button class="modelo ${a.id === st.av ? "on" : ""}" type="button" data-a="${a.id}" title="${esc(a.nombre)}"><canvas></canvas><span>${esc(a.nombre)}</span></button>`).join("");
+    $("#pModelos", H).innerHTML = modelos.map((a) => `<button class="modelo ${a.id === st.av ? "on" : ""}" type="button" data-a="${a.id}" title="${esc(a.nombre)}"><canvas></canvas><span>${esc(a.nombre)}</span></button>`).join("");
     $$("#pModelos .modelo", H).forEach((b) => { const a = avDe(b.dataset.a); const tt = tomasDe(p, a), mini = tt.find((t) => /^(frente|espalda)/.test(t.toma)) || tt[0]; pintarEn($("canvas", b), p.id, a.id, mini.toma, 200); b.onclick = () => { st.av = a.id; refrescar(); }; });
     $("#pModNom", H).textContent = av.nombre;
     $("#pTomas", H).innerHTML = tomas.map((t) => `<button class="toma ${t.toma === st.toma ? "on" : ""}" type="button" data-t="${t.toma}">${tomaNombre[t.toma]}</button>`).join("");
     $$("#pTomas .toma", H).forEach((b) => (b.onclick = () => { st.toma = b.dataset.t; refrescar(); }));
-    $("#pPedir", H).href = `https://wa.me/${WA}?text=${encodeURIComponent(`Hola BoomArt 👋 Quiero el polo ${p.nombre} (${c.nombre.toLowerCase()}).`)}`;
+    $("#pPedir", H).href = `https://wa.me/${WA}?text=${encodeURIComponent(`Hola BoomArt 👋 Quiero el polo unisex ${p.nombre} (${c.nombre.toLowerCase()}).`)}`;
     escena.mostrar({ prod: p.id, av: st.av, toma: st.toma });
   };
-  $$("#pGen button", H).forEach((b) => (b.onclick = () => {
-    fijarGen(b.dataset.g); $$("#pGen button", H).forEach((x) => x.classList.toggle("on", x === b));
-    if (!lista().some((a) => a.id === st.av)) st.av = lista()[0].id; refrescar();
-  }));
   $("#pZoom", H).onclick = () => escena.abrir();
   $("#pVolver", H).onclick = () => (location.hash = `#/p/${p.id}`);
   refrescar(); mostrarHoja(H);
@@ -373,24 +375,20 @@ function ruta() {
 document.addEventListener("keydown", (e) => { if ($("#dialogoColeccion")?.open) return; if (e.key === "Escape") { if (visorAbierto) cerrarVisor(); else if (location.hash.startsWith("#/p/")) history.back(); } });
 
 /* ---------------------------------------------------------------- páginas: tallas, teaser, scroll */
-function pintarTallas(g = "hombre") {
-  $("#tablaTallas").innerHTML = `<thead><tr><th>Talla</th><th>Pecho</th><th>Largo</th><th>Hombros</th><th>Manga</th></tr></thead><tbody>${Object.entries(tablaMedidas(g)).map(([t, v]) => `<tr><td>${t}</td>${v.map((x) => `<td>${x} cm</td>`).join("")}</tr>`).join("")}</tbody>`;
-  $$("#segTallas button").forEach((b) => b.classList.toggle("on", b.dataset.g === g));
-}
 function pintarTeaser() {
-  const v = $("#ptVis"), lista = D.productos.flatMap(p=>['hombre','mujer'].flatMap(g=>selDe(p,g).slice(0,1).map(s=>({pid:p.id,...s})))).slice(0,4);
+  const v = $("#ptVis"), lista = D.productos.flatMap(p => fotosPublicas(p)
+    .filter(s => !avDe(s.av).producto).slice(0, 1).map(s => ({ pid: p.id, ...s }))).slice(0, 4);
   v.innerHTML = lista.map((s) => `<figure><canvas></canvas><figcaption>${esc(avDe(s.av).nombre)}</figcaption></figure>`).join("");
   $$("canvas", v).forEach((cv, i) => pintarEn(cv, lista[i].pid, lista[i].av, lista[i].toma, 560));
 }
 function arrancar() {
   D.avatares.forEach((a) => a.tomas.forEach((t) => { if (!tomaNombre[t.toma]) tomaNombre[t.toma] = t.nombre; }));
-  pintarPack(); pintarFiltros(); pintarGrilla(); pintarTeaser(); pintarTallas(); iniciarHero();
+  pintarPack(); pintarFiltros(); pintarGrilla(); pintarTeaser(); iniciarHero();
   $("#buscarDisenos").oninput=e=>{filtro.busqueda=e.target.value;filtro.limite=12;pintarGrilla()};
   $("#ordenDisenos").onchange=e=>{filtro.orden=e.target.value;pintarGrilla()};
   $("#limpiarFiltros").onclick=()=>{Object.assign(filtro,{tema:'todos',color:'todos',busqueda:'',limite:12});$("#buscarDisenos").value='';pintarFiltros();pintarGrilla()};
   $("#abrirSeleccion").onclick=abrirSeleccion;
   actualizarContadorSeleccion();
-  $$("#segTallas button").forEach((b) => (b.onclick = () => pintarTallas(b.dataset.g)));
   $$("[data-ir]").forEach((a) => (a.onclick = (e) => { e.preventDefault(); const t = $(a.getAttribute("href")); if (t) t.scrollIntoView({ behavior: "smooth" }); }));
   $("#abrirProbadorHome").onclick = () => (location.hash = "#/p/" + D.productos[0].id + "/probador");
   const cab = $("#cab"); const f = () => cab.classList.toggle("solido", scrollY > 40); addEventListener("scroll", f, { passive: true }); f();

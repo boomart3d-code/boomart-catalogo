@@ -657,7 +657,8 @@
      "foto": "img/galeria/gryffindor-m1-lateral-derecho-blanco-b1ba7eb4623f6750-foto.webp",
      "zoom": "img/galeria/gryffindor-m1-lateral-derecho-blanco-b1ba7eb4623f6750-zoom.webp"
     }
-   }
+   },
+   "prenda": "unisex"
   },
   {
    "id": "slytherin",
@@ -1346,7 +1347,8 @@
      "foto": "img/galeria/slytherin-m2-frente-p3-negro-1672748ebf27bf64-foto.webp",
      "zoom": "img/galeria/slytherin-m2-frente-p3-negro-1672748ebf27bf64-zoom.webp"
     }
-   }
+   },
+   "prenda": "unisex"
   },
   {
    "id": "ravenclaw",
@@ -2007,7 +2009,8 @@
      "foto": "img/galeria/ravenclaw-m2-frente-p2-blanco-5950819df4319450-foto.webp",
      "zoom": "img/galeria/ravenclaw-m2-frente-p2-blanco-5950819df4319450-zoom.webp"
     }
-   }
+   },
+   "prenda": "unisex"
   },
   {
    "id": "hufflepuff",
@@ -2668,7 +2671,8 @@
      "foto": "img/galeria/hufflepuff-m2-lateral-derecho-p3-negro-abf8a48352a3186c-foto.webp",
      "zoom": "img/galeria/hufflepuff-m2-lateral-derecho-p3-negro-abf8a48352a3186c-zoom.webp"
     }
-   }
+   },
+   "prenda": "unisex"
   },
   {
    "id": "hogwarts-blanco",
@@ -3419,7 +3423,8 @@
      "foto": "img/galeria/hogwarts-blanco-m1-lateral-derecho-p2-blanco-ac07aea31c51ed62-foto.webp",
      "zoom": "img/galeria/hogwarts-blanco-m1-lateral-derecho-p2-blanco-ac07aea31c51ed62-zoom.webp"
     }
-   }
+   },
+   "prenda": "unisex"
   },
   {
    "id": "harry-potter-negro",
@@ -4180,7 +4185,8 @@
      "foto": "img/galeria/harry-potter-negro-m1-lateral-derecho-p3-negro-14bfa28764a30826-foto.webp",
      "zoom": "img/galeria/harry-potter-negro-m1-lateral-derecho-p3-negro-14bfa28764a30826-zoom.webp"
     }
-   }
+   },
+   "prenda": "unisex"
   },
   {
    "id": "cisne-hyoga-negro",
@@ -4975,7 +4981,8 @@
      "foto": "img/galeria/cisne-hyoga-negro-m3-detalle-pecho-negro-93bd48e345b8f674-foto.webp",
      "zoom": "img/galeria/cisne-hyoga-negro-m3-detalle-pecho-negro-93bd48e345b8f674-zoom.webp"
     }
-   }
+   },
+   "prenda": "unisex"
   },
   {
    "id": "dragon-shiryu-negro",
@@ -5770,7 +5777,8 @@
      "foto": "img/galeria/dragon-shiryu-negro-m3-espalda-negro-65fdb2428cda78d1-foto.webp",
      "zoom": "img/galeria/dragon-shiryu-negro-m3-espalda-negro-65fdb2428cda78d1-zoom.webp"
     }
-   }
+   },
+   "prenda": "unisex"
   },
   {
    "id": "seiya-blanco",
@@ -6565,7 +6573,8 @@
      "foto": "img/galeria/seiya-blanco-m3-espalda-blanco-e15d1f51d1b70e29-foto.webp",
      "zoom": "img/galeria/seiya-blanco-m3-espalda-blanco-e15d1f51d1b70e29-zoom.webp"
     }
-   }
+   },
+   "prenda": "unisex"
   },
   {
    "id": "shun-andromeda-blanco",
@@ -7369,7 +7378,8 @@
      "foto": "img/galeria/shun-andromeda-blanco-m3-espalda-blanco-e6a4372709383b05-foto.webp",
      "zoom": "img/galeria/shun-andromeda-blanco-m3-espalda-blanco-e6a4372709383b05-zoom.webp"
     }
-   }
+   },
+   "prenda": "unisex"
   },
   {
    "id": "ikki-fenix-negro",
@@ -8173,7 +8183,8 @@
      "foto": "img/galeria/ikki-fenix-negro-m3-lateral-derecho-negro-394f161eb934a402-foto.webp",
      "zoom": "img/galeria/ikki-fenix-negro-m3-lateral-derecho-negro-394f161eb934a402-zoom.webp"
     }
-   }
+   },
+   "prenda": "unisex"
   },
   {
    "id": "12-dorados-negro",
@@ -8968,7 +8979,8 @@
      "foto": "img/galeria/12-dorados-negro-m3-detalle-espalda-alta-negro-090c093a0c535f37-foto.webp",
      "zoom": "img/galeria/12-dorados-negro-m3-detalle-espalda-alta-negro-090c093a0c535f37-zoom.webp"
     }
-   }
+   },
+   "prenda": "unisex"
   },
   {
    "id": "5-de-bronce-negro",
