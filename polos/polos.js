@@ -34,6 +34,7 @@ async function mascara(toma, W, H) {                       // recorte suave de l
   mascaras.set(k, m); return m;
 }
 const tomaCol = (toma, prod) => ({ ...toma, ...(toma.por_color?.[prod.color] || {}) });          // medidas y recorte de la foto en el color de este polo (los mismos que usa la app)
+const mangaDe = (prod, genero) => prod.mangas ? prod.mangas[genero] : "manga_derecha";
 function piezasPara(prod, toma, genero) {
   toma = tomaCol(toma, prod);
   // La galería web es independiente de la impresión: cada foto usa su propia ubicación, giro, tamaño y curvatura (los ajustó Adrián en la app).
@@ -46,7 +47,7 @@ function piezasPara(prod, toma, genero) {
     p.rot = (a.rot || 0) + (aj.rot || 0); p.curva = toma.radio ? (aj.curva ?? e.curva_auto ?? 0) : 0; p.yaw = aj.yaw || 0; p.pitch = aj.pitch || 0; p.esq = aj.esq ? aj.esq.map((x) => x * k) : null;      // giro y cuánto se adapta a la curva del torso (0 a 1)
     out.push(p);
   };
-  [["pecho", "pecho"], ["pecho_pequeno", "pecho_pequeno"], ["espalda", "espalda"], ["espalda_alta", "espalda_alta"], ["manga", "manga_derecha"]].forEach(([k, ub]) => { if (toma[k]) add(ub, { ...toma[k] }); });   // cada toma trae solo las anclas que se ven en ella
+  [["pecho", "pecho"], ["pecho_pequeno", "pecho_pequeno"], ["espalda", "espalda"], ["espalda_alta", "espalda_alta"], ["manga", mangaDe(prod, genero)]].forEach(([k, ub]) => { if (ub && toma[k]) add(ub, { ...toma[k] }); });
   return out;
 }
 
@@ -254,18 +255,18 @@ function abrirFicha(id) {
   const H = $("#hoja"), st = { talla: preferenciaTalla, genero:GEN.v==='mujer'?'mujer':'hombre', item: 0 }, c = colorDe(p.color);
   const armarItems = () => selDe(p,st.genero).map((s) => { const a = avDe(s.av); return { av: s.av, toma: s.toma, nom: a.producto ? tomaNombre[s.toma] : `${a.nombre} · ${tomaNombre[s.toma]}` }; });     // solo las fotos del género elegido (o todas)
   let items = armarItems();
-  const ubs = Object.keys(p.estampados);
+  const ubs = Object.keys(p.estampados).filter(u => u !== "manga_izquierda");
   H.innerHTML = `<div class="hoja-barra"><button class="volver" type="button" id="fVolver">Colección</button><span class="migas">Polos / ${esc(p.nombre)}</span></div>
   <div class="ficha"><div class="galeria"><div class="minis" id="fMinis"></div><div id="fEscena"></div></div>
   <div class="info"><p class="tema">${esc(p.tema)}</p><h1 id="fNombre">${esc(p.nombre)}</h1><span class="precio">${soles(p.precio)}</span><p class="nota">${CATALOGO_UI.precioConfirmado(p) ? "Colección de autor BoomArt." : "Próximamente. El precio y la disponibilidad se anunciarán con el lanzamiento de la colección."}</p>
     <p class="desc">${esc(p.texto)}</p>
     <div class="bloque"><h4>Color <b style="letter-spacing:.06em">${esc(c.nombre)}</b></h4><div class="colores"><i class="sw on" style="--c:${c.hex}"></i><span class="unico">Este diseño se ofrece solo en ${esc(c.nombre.toLowerCase())}.</span></div></div>
-    <div class="bloque"><h4>Elige tu corte</h4>${segGen("fGen")}</div>
+    <div class="bloque"><h4>${p.prenda === "unisex" ? "Polo unisex · Ver en modelos" : "Elige tu corte"}</h4>${segGen("fGen")}</div>
     <div class="bloque"><h4>Talla <a id="fGuia">Guía de tallas</a></h4><div class="tallas-b" id="fTallas"></div></div>
     <div class="bloque"><h4>Ver de cerca</h4><div class="cerca" id="fCerca">${ubs.map((u) => `<button type="button" class="chip" data-u="${u}">${esc(NOMBRE_UB[u] || u)}</button>`).join("")}</div></div>
     <div class="acciones"><button class="btn btn-osc grande" type="button" id="fProbar">Ver todos los modelos</button><button class="btn btn-osc grande" type="button" id="fGuardar">Guardar selección</button><a class="btn btn-linea-osc grande" id="fPedir" target="_blank" rel="noopener">Consultar esta pieza</a><button class="compartir" type="button" id="fCompartir">Compartir diseño ↗</button></div>
     <div class="detalles"><details open><summary>Detalles del diseño</summary><ul class="medidas" id="fMed"></ul></details>
-      <details><summary>Tela y prenda</summary><p>${["hogwarts-blanco", "harry-potter-negro"].includes(p.id) ? "Informacion de tela y confeccion por confirmar." : `${esc(p.material || "Algodón pima 100 % peinado, hilado en anillo.")} ${p.gramaje ? esc(p.gramaje)+" g/m²." : ""} Doble costura reforzada en hombros, mangas y dobladillo, cuello acanalado de alta recuperación con cinta interior y tela preencogida.`}</p></details>
+      <details><summary>Tela y prenda</summary><p>${p.material ? `${esc(p.material)} ${p.gramaje ? esc(p.gramaje)+" g/m²." : ""}` : "Información de tela y confección por confirmar."}</p></details>
       <details><summary>Impresión DTF</summary><p>Impresión a 300 ppp con tintas de pigmento: color intenso, bordes definidos y tacto flexible. El arte se prepara de forma independiente para cada prenda y se verifica antes de imprimir.</p></details>
       <details><summary>Cuidados</summary><p>Espera 24 a 48 horas antes del primer lavado. Lava del revés, en ciclo suave con agua fría (hasta 30 °C), sin lejía ni suavizante. Seca a la sombra o a baja temperatura. Plancha del revés, a temperatura media-baja, sin pasar la plancha sobre el estampado.</p></details></div></div></div>`;
   const escena = crearEscena($("#fEscena", H), fondoPlano(p));
@@ -290,18 +291,22 @@ function abrirFicha(id) {
   const pintarTallasF = () => { $("#fTallas", H).innerHTML = (p.tallas || ["S", "M", "L"]).map((t) => `<button class="talla ${t === st.talla ? "on" : ""}" type="button" data-t="${t}">${t}</button>`).join(""); $$("#fTallas .talla", H).forEach((b) => (b.onclick = () => { st.talla = b.dataset.t; preferenciaTalla=st.talla; pintarTallasF(); pedir(); })); };
   const pedir = () => { const v=CATALOGO_UI.variante(p,st.genero,st.talla); $("#fGuardar",H).textContent=leerSeleccion().some(x=>x.clave===v.clave)?'Guardado en mi selección ✓':'Guardar selección'; $("#fPedir",H).href=`https://wa.me/${WA}?text=${encodeURIComponent('Hola BoomArt. Me interesa '+CATALOGO_UI.mensaje(v)+'. Quisiera conocer los detalles de la colección.')}`; };
 
-  $("#fMed", H).innerHTML = Object.entries(p.estampados).map(([ub, e]) => `<li><span data-ub="${esc(ub)}">${NOMBRE_UB[ub] || ub}</span><b>${ub==='pecho'||ub==='espalda'?'Diseño principal':'Detalle de autor'}</b></li>`).join("");
+  $("#fMed", H).innerHTML = ubs.map(ub => `<li><span data-ub="${esc(ub)}">${NOMBRE_UB[ub] || ub}</span><b>${ub==='pecho'||ub==='espalda'?'Diseño principal':'Detalle de autor'}</b></li>`).join("");
   actualizarManga();
   $$("#fCerca .chip", H).forEach((b) => (b.onclick = () => {
-    const u = b.dataset.u, det = items.find((x) => x.toma === DETALLE_UB[u]); if (det) return abrirVisor({ prod: p.id, av: det.av, toma: det.toma });        // foto de detalle tomada de cerca
+    const u = b.dataset.u, det = items.find((x) => u === "manga_derecha" && x.toma === "primer-plano-manga") || items.find((x) => x.toma === DETALLE_UB[u]);
+    if (det) return abrirVisor({ prod: p.id, av: det.av, toma: det.toma });
+    const arte = p.estampados[u === "manga_derecha" ? mangaDe(p, st.genero) : u]?.archivo;
     for (const x of items) {                                                                                                                      // si no hay, se acerca al estampado en la primera foto donde se ve
-      const a = avDe(x.av), t = a.tomas.find((q) => q.toma === x.toma), pz = t && piezasPara(p, t, a.genero).find((q) => q.url === p.estampados[u].archivo);
+      const a = avDe(x.av), t = a.tomas.find((q) => q.toma === x.toma), pz = t && piezasPara(p, t, a.genero).find((q) => q.url === arte);
       if (pz) return abrirVisor({ prod: p.id, av: x.av, toma: x.toma }, { x: pz.cx, y: pz.cy, zoom: 3.2 });
     }
   }));
   pintarTallasF(); pedir(); mostrar();
   $("#fVolver", H).onclick = () => (location.hash = "#/"); $("#fProbar", H).onclick = () => (location.hash = `#/p/${p.id}/probador`);
-  $("#fGuia",H).onclick=()=>abrirGuia(st.genero);
+  $("#fGuia",H).onclick=()=>p.prenda === "unisex"
+    ? dialogoContenido("Guía de tallas · Unisex", "<p>El polo está previsto en tallas S, M y L. Publicaremos las medidas cuando estén verificadas.</p>")
+    : abrirGuia(st.genero);
   $("#fGen [data-g=todos]",H)?.remove();
   $$("#fGen button",H).forEach(b=>{b.classList.toggle('on',b.dataset.g===st.genero);b.setAttribute('aria-pressed',String(b.dataset.g===st.genero))});
   $("#fGuardar",H).onclick=()=>guardarSeleccion(CATALOGO_UI.variante(p,st.genero,st.talla));

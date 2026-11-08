@@ -13,9 +13,10 @@
   }
   function variante(p, genero, talla) {
     if (!['hombre','mujer'].includes(genero) || !(p.tallas || ['S','M','L']).includes(talla)) throw new Error('Selecciona corte y talla.');
-    return {id:p.id,nombre:p.nombre,color:p.color,genero,talla,clave:`${p.id}|${genero}|${p.color}|${talla}`};
+    const corte = p.prenda === 'unisex' ? 'unisex' : genero;
+    return {id:p.id,nombre:p.nombre,color:p.color,genero:corte,talla,clave:`${p.id}|${corte}|${p.color}|${talla}`};
   }
-  const mensaje = v => `${v.nombre} · ${v.genero === 'mujer' ? 'Mujer' : 'Hombre'} · ${v.color} · talla ${v.talla}`;
+  const mensaje = v => `${v.nombre} · ${{unisex:'Unisex',mujer:'Mujer',hombre:'Hombre'}[v.genero]} · ${v.color} · talla ${v.talla}`;
   const api = {normalizar,precioConfirmado,filtrar,variante,mensaje};
   if (typeof module !== 'undefined' && module.exports) module.exports=api;
   else root.CATALOGO_UI=api;

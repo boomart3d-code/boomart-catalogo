@@ -8969,6 +8969,3494 @@
      "zoom": "img/galeria/12-dorados-negro-m3-detalle-espalda-alta-negro-090c093a0c535f37-zoom.webp"
     }
    }
+  },
+  {
+   "id": "5-de-bronce-negro",
+   "nombre": "5 DE BRONCE - NEGRO",
+   "tema": "Saint Seiya",
+   "texto": "",
+   "tipo": "A",
+   "color": "negro",
+   "seleccion": {
+    "hombre": [
+     [
+      "ph",
+      "frente-plano"
+     ],
+     [
+      "ph",
+      "espalda-plana"
+     ],
+     [
+      "h3",
+      "primer-plano-manga"
+     ],
+     [
+      "h3",
+      "detalle-pecho"
+     ],
+     [
+      "h3",
+      "detalle-espalda-alta"
+     ],
+     [
+      "h3",
+      "frente"
+     ]
+    ],
+    "mujer": [
+     [
+      "pm",
+      "frente-plano"
+     ],
+     [
+      "pm",
+      "espalda-plana"
+     ],
+     [
+      "m3",
+      "primer-plano-manga"
+     ],
+     [
+      "m3",
+      "detalle-espalda-alta"
+     ],
+     [
+      "m3",
+      "detalle-pecho"
+     ]
+    ]
+   },
+   "precio": null,
+   "material": null,
+   "gramaje": null,
+   "estado": "en_preparacion",
+   "tallas": [
+    "S",
+    "M",
+    "L"
+   ],
+   "estampados": {
+    "pecho": {
+     "archivo": "img/estampados/5-de-bronce-negro-pecho-7055f6f41152.webp",
+     "ancho_cm": 27.0,
+     "alto_cm": 30.6,
+     "mov": {
+      "hombre": {
+       "dx": 0.0,
+       "dy": 0.46
+      },
+      "mujer": {
+       "dx": 0.0,
+       "dy": 0.46
+      }
+     },
+     "curva_auto": 0.5,
+     "ajuste": {
+      "h1-frente": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "h1-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "h1-frente-p2": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "h1-frente-p3": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "h2-frente": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "h2-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "h2-frente-p2": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "h2-frente-p3": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "m1-frente": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "m1-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "m1-frente-p2": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "m1-frente-p3": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "m2-frente": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "m2-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "m2-frente-p2": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "m2-frente-p3": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "h3-frente": {
+       "dx": 0.37,
+       "dy": 2.18,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h3-detalle-pecho": {
+       "dx": 0.08,
+       "dy": 1.79,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m3-frente": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "m3-detalle-pecho": {
+       "dx": 0.33,
+       "dy": 0.46,
+       "rot": 0.0,
+       "escala": 0.983
+      },
+      "h4-frente": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "h4-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "m4-frente": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "m4-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "ph-frente-plano": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      },
+      "pm-frente-plano": {
+       "dx": 0.0,
+       "dy": 0.46,
+       "rot": 0.0
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "manga_derecha": {
+     "archivo": "img/estampados/5-de-bronce-negro-manga_derecha-5d8007827a46.webp",
+     "ancho_cm": 9.0,
+     "alto_cm": 3.9,
+     "mov": {
+      "hombre": {
+       "dx": -0.33,
+       "dy": 0.0
+      },
+      "mujer": {
+       "dx": -0.33,
+       "dy": 0.0
+      }
+     },
+     "curva_auto": 0.0,
+     "ajuste": {
+      "h1-lateral-derecho": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "h1-detalle-manga": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "h1-lateral-derecho-p2": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "h1-lateral-derecho-p3": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "h2-lateral-derecho": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "h2-detalle-manga": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "h2-lateral-derecho-p2": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "h2-lateral-derecho-p3": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "m1-lateral-derecho": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "m1-detalle-manga": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "m1-lateral-derecho-p2": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "m1-lateral-derecho-p3": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "m2-lateral-derecho": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "m2-detalle-manga": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "m2-lateral-derecho-p2": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "m2-lateral-derecho-p3": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "h3-lateral-derecho": {
+       "dx": -5.0,
+       "dy": 2.0,
+       "rot": 2.5,
+       "escala": 0.985
+      },
+      "h3-detalle-manga": {
+       "dx": -4.09,
+       "dy": 15.29,
+       "rot": 0.0,
+       "escala": 1.1
+      },
+      "h3-primer-plano-manga": {
+       "dx": -0.43,
+       "dy": 1.62,
+       "rot": 0.0,
+       "escala": 0.624
+      },
+      "m3-lateral-derecho": {
+       "dx": 1.91,
+       "dy": -3.82,
+       "rot": -8.1,
+       "escala": 0.791,
+       "yaw": -16.0,
+       "pitch": -6.0
+      },
+      "m3-detalle-manga": {
+       "dx": 2.41,
+       "dy": 8.04,
+       "rot": -3.9,
+       "escala": 0.893,
+       "yaw": -25.0,
+       "pitch": -1.0,
+       "esq": [
+        0.03,
+        0.41,
+        0.03,
+        -0.06,
+        0.0,
+        -0.19,
+        0.0,
+        0.35
+       ]
+      },
+      "m3-primer-plano-manga": {
+       "dx": -0.6,
+       "dy": 0.94,
+       "rot": -3.9,
+       "escala": 0.631,
+       "yaw": -7.0,
+       "esq": [
+        0.0,
+        0.1,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "h4-lateral-derecho": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "h4-detalle-manga": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "h4-primer-plano-manga": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "m4-lateral-derecho": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "m4-detalle-manga": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "m4-primer-plano-manga": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      },
+      "ph-lateral-derecho": {
+       "dx": 0.33,
+       "dy": 0.0,
+       "rot": -0.0
+      },
+      "pm-lateral-izquierdo": {
+       "dx": -0.33,
+       "dy": 0.0,
+       "rot": 0.0
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "espalda_alta": {
+     "archivo": "img/estampados/5-de-bronce-negro-espalda_alta-1edca3d3e80f.webp",
+     "ancho_cm": 8.3,
+     "alto_cm": 11.5,
+     "mov": {
+      "hombre": {
+       "dx": 0.0,
+       "dy": 0.0
+      },
+      "mujer": {
+       "dx": 0.0,
+       "dy": 0.0
+      }
+     },
+     "curva_auto": 0.3,
+     "ajuste": {
+      "h1-espalda": {
+       "dx": 0.26,
+       "dy": -1.23,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h1-detalle-espalda-alta": {
+       "dx": 0.06,
+       "dy": -3.21,
+       "rot": 0.0,
+       "escala": 0.672
+      },
+      "h1-espalda-p2": {
+       "dx": 0.26,
+       "dy": -1.23,
+       "rot": 0,
+       "escala": 1.0
+      },
+      "h1-espalda-p3": {
+       "dx": -5.02,
+       "dy": 1.0,
+       "rot": 0.0,
+       "escala": 0.784,
+       "esq": [
+        0.0,
+        1.31,
+        -0.1,
+        0.54,
+        -0.58,
+        -0.34,
+        -0.05,
+        -0.78
+       ]
+      },
+      "h2-espalda": {
+       "dx": 0.0,
+       "dy": -0.28,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h2-detalle-espalda-alta": {
+       "dx": 0.0,
+       "dy": -0.38,
+       "rot": 0.0,
+       "escala": 0.718
+      },
+      "h2-espalda-p2": {
+       "dx": 0.0,
+       "dy": -0.28,
+       "rot": 0,
+       "escala": 1.0
+      },
+      "h2-espalda-p3": {
+       "dx": -6.38,
+       "dy": -0.5,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        0.29,
+        0.03,
+        -0.13,
+        -0.78,
+        -1.41,
+        -0.14,
+        0.2,
+        -0.17
+       ]
+      },
+      "m1-espalda": {
+       "dx": 0.11,
+       "dy": -0.23,
+       "rot": 0.0,
+       "escala": 0.892
+      },
+      "m1-detalle-espalda-alta": {
+       "dx": 0.04,
+       "dy": -0.13,
+       "rot": 0.0,
+       "escala": 0.546
+      },
+      "m1-espalda-p2": {
+       "dx": 0.17,
+       "dy": -5.76,
+       "rot": 0.0,
+       "escala": 0.544
+      },
+      "m1-espalda-p3": {
+       "dx": -5.65,
+       "dy": -3.43,
+       "rot": 0.0,
+       "escala": 0.668,
+       "esq": [
+        -0.03,
+        0.31,
+        0.18,
+        -0.42,
+        0.07,
+        0.31,
+        0.0,
+        -0.1
+       ]
+      },
+      "m2-espalda": {
+       "dx": 0.11,
+       "dy": -0.23,
+       "rot": 0
+      },
+      "m2-detalle-espalda-alta": {
+       "dx": -0.01,
+       "dy": -0.76,
+       "rot": 0.0,
+       "escala": 0.573
+      },
+      "m2-espalda-p2": {
+       "dx": 0.43,
+       "dy": -1.19,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m2-espalda-p3": {
+       "dx": -6.13,
+       "dy": -2.76,
+       "rot": 0.0,
+       "escala": 0.625,
+       "esq": [
+        0.09,
+        0.33,
+        0.61,
+        -0.42,
+        0.03,
+        -0.05,
+        0.28,
+        -0.2
+       ]
+      },
+      "h3-espalda": {
+       "dx": -0.33,
+       "dy": -3.57,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h3-detalle-espalda-alta": {
+       "dx": 0.29,
+       "dy": 5.5,
+       "rot": 0.0,
+       "escala": 1.067
+      },
+      "m3-espalda": {
+       "dx": 0.09,
+       "dy": -2.01,
+       "rot": 0.0,
+       "escala": 0.843
+      },
+      "m3-detalle-espalda-alta": {
+       "dx": 0.23,
+       "dy": 5.52,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h4-espalda": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0,
+       "escala": 1.101
+      },
+      "h4-detalle-espalda-alta": {
+       "dx": 1.43,
+       "dy": 7.49,
+       "rot": 0.0,
+       "escala": 1.14
+      },
+      "m4-espalda": {
+       "dx": 1.37,
+       "dy": -0.19,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m4-detalle-espalda-alta": {
+       "dx": 1.41,
+       "dy": 5.44,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "ph-espalda-plana": {
+       "dx": -0.03,
+       "dy": -1.69,
+       "rot": 0.0,
+       "escala": 1.088
+      },
+      "pm-espalda-plana": {
+       "dx": -0.16,
+       "dy": -1.67,
+       "rot": 0.0,
+       "escala": 0.936
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    }
+   },
+   "planos": {},
+   "mangas": {
+    "hombre": "manga_derecha",
+    "mujer": "manga_derecha"
+   },
+   "prenda": "unisex",
+   "galeria": {
+    "ph|frente-plano": {
+     "mini": "img/galeria/5-de-bronce-negro-ph-frente-plano-negro-1bdc6b72a9c8b085-mini.webp",
+     "foto": "img/galeria/5-de-bronce-negro-ph-frente-plano-negro-1bdc6b72a9c8b085-foto.webp",
+     "zoom": "img/galeria/5-de-bronce-negro-ph-frente-plano-negro-1bdc6b72a9c8b085-zoom.webp"
+    },
+    "ph|espalda-plana": {
+     "mini": "img/galeria/5-de-bronce-negro-ph-espalda-plana-negro-45816f9571871782-mini.webp",
+     "foto": "img/galeria/5-de-bronce-negro-ph-espalda-plana-negro-45816f9571871782-foto.webp",
+     "zoom": "img/galeria/5-de-bronce-negro-ph-espalda-plana-negro-45816f9571871782-zoom.webp"
+    },
+    "h3|primer-plano-manga": {
+     "mini": "img/galeria/5-de-bronce-negro-h3-primer-plano-manga-negro-9d58b4d57a1403e5-mini.webp",
+     "foto": "img/galeria/5-de-bronce-negro-h3-primer-plano-manga-negro-9d58b4d57a1403e5-foto.webp",
+     "zoom": "img/galeria/5-de-bronce-negro-h3-primer-plano-manga-negro-9d58b4d57a1403e5-zoom.webp"
+    },
+    "h3|detalle-pecho": {
+     "mini": "img/galeria/5-de-bronce-negro-h3-detalle-pecho-negro-d788d1ceea882149-mini.webp",
+     "foto": "img/galeria/5-de-bronce-negro-h3-detalle-pecho-negro-d788d1ceea882149-foto.webp",
+     "zoom": "img/galeria/5-de-bronce-negro-h3-detalle-pecho-negro-d788d1ceea882149-zoom.webp"
+    },
+    "h3|detalle-espalda-alta": {
+     "mini": "img/galeria/5-de-bronce-negro-h3-detalle-espalda-alta-negro-f0b364263cbd8a5c-mini.webp",
+     "foto": "img/galeria/5-de-bronce-negro-h3-detalle-espalda-alta-negro-f0b364263cbd8a5c-foto.webp",
+     "zoom": "img/galeria/5-de-bronce-negro-h3-detalle-espalda-alta-negro-f0b364263cbd8a5c-zoom.webp"
+    },
+    "h3|frente": {
+     "mini": "img/galeria/5-de-bronce-negro-h3-frente-negro-4b9944298b99807f-mini.webp",
+     "foto": "img/galeria/5-de-bronce-negro-h3-frente-negro-4b9944298b99807f-foto.webp",
+     "zoom": "img/galeria/5-de-bronce-negro-h3-frente-negro-4b9944298b99807f-zoom.webp"
+    },
+    "pm|frente-plano": {
+     "mini": "img/galeria/5-de-bronce-negro-pm-frente-plano-negro-406eb8ec53ec574b-mini.webp",
+     "foto": "img/galeria/5-de-bronce-negro-pm-frente-plano-negro-406eb8ec53ec574b-foto.webp",
+     "zoom": "img/galeria/5-de-bronce-negro-pm-frente-plano-negro-406eb8ec53ec574b-zoom.webp"
+    },
+    "pm|espalda-plana": {
+     "mini": "img/galeria/5-de-bronce-negro-pm-espalda-plana-negro-9250cbac66fa41e1-mini.webp",
+     "foto": "img/galeria/5-de-bronce-negro-pm-espalda-plana-negro-9250cbac66fa41e1-foto.webp",
+     "zoom": "img/galeria/5-de-bronce-negro-pm-espalda-plana-negro-9250cbac66fa41e1-zoom.webp"
+    },
+    "m3|primer-plano-manga": {
+     "mini": "img/galeria/5-de-bronce-negro-m3-primer-plano-manga-negro-151a312f1e652df6-mini.webp",
+     "foto": "img/galeria/5-de-bronce-negro-m3-primer-plano-manga-negro-151a312f1e652df6-foto.webp",
+     "zoom": "img/galeria/5-de-bronce-negro-m3-primer-plano-manga-negro-151a312f1e652df6-zoom.webp"
+    },
+    "m3|detalle-espalda-alta": {
+     "mini": "img/galeria/5-de-bronce-negro-m3-detalle-espalda-alta-negro-7fff99f2c8f8295c-mini.webp",
+     "foto": "img/galeria/5-de-bronce-negro-m3-detalle-espalda-alta-negro-7fff99f2c8f8295c-foto.webp",
+     "zoom": "img/galeria/5-de-bronce-negro-m3-detalle-espalda-alta-negro-7fff99f2c8f8295c-zoom.webp"
+    },
+    "m3|detalle-pecho": {
+     "mini": "img/galeria/5-de-bronce-negro-m3-detalle-pecho-negro-2fc4904f0bb95d78-mini.webp",
+     "foto": "img/galeria/5-de-bronce-negro-m3-detalle-pecho-negro-2fc4904f0bb95d78-foto.webp",
+     "zoom": "img/galeria/5-de-bronce-negro-m3-detalle-pecho-negro-2fc4904f0bb95d78-zoom.webp"
+    }
+   }
+  },
+  {
+   "id": "zelda-vitral-blanco",
+   "nombre": "Zelda Vitral - Blanco",
+   "tema": "The Legend of Zelda",
+   "texto": "",
+   "tipo": "B",
+   "color": "blanco",
+   "seleccion": {
+    "hombre": [
+     [
+      "ph",
+      "frente-plano"
+     ],
+     [
+      "ph",
+      "espalda-plana"
+     ],
+     [
+      "h4",
+      "primer-plano-manga"
+     ],
+     [
+      "h4",
+      "detalle-pecho"
+     ],
+     [
+      "h4",
+      "espalda"
+     ],
+     [
+      "h4",
+      "detalle-manga"
+     ]
+    ],
+    "mujer": [
+     [
+      "pm",
+      "espalda-plana"
+     ],
+     [
+      "pm",
+      "frente-plano"
+     ],
+     [
+      "m4",
+      "primer-plano-manga"
+     ],
+     [
+      "m4",
+      "frente"
+     ],
+     [
+      "m4",
+      "espalda"
+     ]
+    ]
+   },
+   "precio": null,
+   "material": null,
+   "gramaje": null,
+   "estado": "en_preparacion",
+   "tallas": [
+    "S",
+    "M",
+    "L"
+   ],
+   "estampados": {
+    "espalda": {
+     "archivo": "img/estampados/zelda-vitral-blanco-espalda-62dd349ab11d.webp",
+     "ancho_cm": 25.5,
+     "alto_cm": 40.0,
+     "mov": {
+      "hombre": {
+       "dx": 0.0,
+       "dy": 0.0
+      },
+      "mujer": {
+       "dx": 0.0,
+       "dy": 0.0
+      }
+     },
+     "curva_auto": 0.5,
+     "ajuste": {
+      "h1-espalda": {
+       "dx": 0.29,
+       "dy": -2.51,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.6,
+        -0.1,
+        0.5,
+        0.0
+       ]
+      },
+      "h1-espalda-p2": {
+       "dx": 0.2,
+       "dy": -2.5,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h1-espalda-p3": {
+       "dx": -7.0,
+       "dy": 1.28,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        1.59,
+        1.83,
+        -2.03,
+        -2.98,
+        -2.35,
+        -0.49,
+        5.41,
+        0.99
+       ]
+      },
+      "h2-espalda": {
+       "dx": -0.62,
+       "dy": -1.19,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        -0.45,
+        -0.45,
+        0.63,
+        -0.18,
+        0.81,
+        0.99,
+        0.63,
+        1.35
+       ]
+      },
+      "h2-espalda-p2": {
+       "dx": 0.38,
+       "dy": -1.92,
+       "rot": -0.5,
+       "escala": 1.0
+      },
+      "h2-espalda-p3": {
+       "dx": -8.59,
+       "dy": -0.3,
+       "rot": 0.0,
+       "escala": 1.0,
+       "curva": 0.65,
+       "esq": [
+        2.6,
+        1.04,
+        -2.04,
+        -3.75,
+        -1.88,
+        1.51,
+        4.87,
+        1.91
+       ]
+      },
+      "m1-espalda": {
+       "dx": 0.06,
+       "dy": -2.44,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.8,
+        -0.73,
+        0.73,
+        -0.51
+       ]
+      },
+      "m1-espalda-p2": {
+       "dx": -0.23,
+       "dy": -16.66,
+       "rot": 0.0,
+       "escala": 0.509,
+       "esq": [
+        -0.59,
+        -0.22,
+        1.44,
+        -0.41,
+        1.24,
+        3.36,
+        0.02,
+        4.02
+       ]
+      },
+      "m1-espalda-p3": {
+       "dx": -0.85,
+       "dy": -1.2,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        0.94,
+        -0.83,
+        -6.04,
+        -2.82,
+        -5.97,
+        -2.29,
+        2.79,
+        -3.07
+       ]
+      },
+      "m2-espalda": {
+       "dx": -0.16,
+       "dy": -2.08,
+       "rot": 0.0,
+       "escala": 0.957
+      },
+      "m2-espalda-p2": {
+       "dx": -0.06,
+       "dy": -3.81,
+       "rot": 0.0,
+       "escala": 0.957
+      },
+      "m2-espalda-p3": {
+       "dx": -0.46,
+       "dy": -1.78,
+       "rot": 0.0,
+       "escala": 0.959,
+       "esq": [
+        -2.85,
+        0.56,
+        -7.54,
+        -3.65,
+        -3.09,
+        -0.58,
+        1.42,
+        -0.81
+       ]
+      },
+      "h4-espalda": {
+       "dx": 0.28,
+       "dy": -1.26,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m4-espalda": {
+       "dx": 0.0,
+       "dy": -4.28,
+       "rot": 0.0,
+       "escala": 0.94
+      },
+      "ph-espalda-plana": {
+       "dx": -0.3,
+       "dy": -0.69,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "pm-espalda-plana": {
+       "dx": -0.24,
+       "dy": -3.34,
+       "rot": 0.0,
+       "escala": 0.942
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "manga_derecha": {
+     "archivo": "img/estampados/zelda-vitral-blanco-manga_derecha-17959bd76976.webp",
+     "ancho_cm": 7.4,
+     "alto_cm": 8.9,
+     "mov": {
+      "hombre": {
+       "dx": -0.96,
+       "dy": -2.15
+      },
+      "mujer": {
+       "dx": -0.96,
+       "dy": -2.15
+      }
+     },
+     "curva_auto": 0.0,
+     "ajuste": {
+      "h1-lateral-derecho": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "h1-detalle-manga": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "h1-lateral-derecho-p2": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "h1-lateral-derecho-p3": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "h2-lateral-derecho": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "h2-detalle-manga": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "h2-lateral-derecho-p2": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "h2-lateral-derecho-p3": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "m1-lateral-derecho": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "m1-detalle-manga": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "m1-lateral-derecho-p2": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "m1-lateral-derecho-p3": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "m2-lateral-derecho": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "m2-detalle-manga": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "m2-lateral-derecho-p2": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "m2-lateral-derecho-p3": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "h3-lateral-derecho": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "h3-detalle-manga": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "h3-primer-plano-manga": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "m3-lateral-derecho": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "m3-detalle-manga": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "m3-primer-plano-manga": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "h4-lateral-derecho": {
+       "dx": -0.77,
+       "dy": 1.1,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h4-detalle-manga": {
+       "dx": -0.31,
+       "dy": 2.48,
+       "rot": 1.7,
+       "escala": 1.0
+      },
+      "h4-primer-plano-manga": {
+       "dx": -0.83,
+       "dy": 3.14,
+       "rot": 0.9,
+       "escala": 0.84
+      },
+      "m4-lateral-derecho": {
+       "dx": -0.66,
+       "dy": 0.06,
+       "rot": -2.6,
+       "escala": 0.78
+      },
+      "m4-detalle-manga": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "m4-primer-plano-manga": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0
+      },
+      "ph-lateral-derecho": {
+       "dx": -0.96,
+       "dy": -2.15,
+       "rot": 0.0,
+       "escala": 0.959
+      },
+      "pm-lateral-izquierdo": {
+       "dx": -0.21,
+       "dy": -1.77,
+       "rot": 0.0,
+       "escala": 0.643
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "pecho_pequeno": {
+     "archivo": "img/estampados/zelda-vitral-blanco-pecho_pequeno-529797b8183b.webp",
+     "ancho_cm": 10.4,
+     "alto_cm": 15.4,
+     "mov": {
+      "hombre": {
+       "dx": 0.32,
+       "dy": 7.09
+      },
+      "mujer": {
+       "dx": 0.32,
+       "dy": 7.09
+      }
+     },
+     "curva_auto": 0.3,
+     "ajuste": {
+      "h1-frente": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "h1-detalle-pecho": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "h1-frente-p2": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "h1-frente-p3": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "h2-frente": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "h2-detalle-pecho": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "h2-frente-p2": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "h2-frente-p3": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "m1-frente": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "m1-detalle-pecho": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "m1-frente-p2": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "m1-frente-p3": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "m2-frente": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "m2-detalle-pecho": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "m2-frente-p2": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "m2-frente-p3": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "h3-frente": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "h3-detalle-pecho": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "m3-frente": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "m3-detalle-pecho": {
+       "dx": 0.32,
+       "dy": 7.09,
+       "rot": 0.0
+      },
+      "h4-frente": {
+       "dx": -1.01,
+       "dy": 5.41,
+       "rot": 0.0,
+       "escala": 0.726
+      },
+      "h4-detalle-pecho": {
+       "dx": 4.45,
+       "dy": 15.36,
+       "rot": 0.0,
+       "escala": 0.811
+      },
+      "m4-frente": {
+       "dx": 2.53,
+       "dy": 4.1,
+       "rot": 0.0,
+       "escala": 0.688,
+       "esq": [
+        0.18,
+        0.0,
+        -0.18,
+        0.0,
+        0.36,
+        0.0,
+        -0.39,
+        -0.07
+       ]
+      },
+      "m4-detalle-pecho": {
+       "dx": -1.61,
+       "dy": 10.58,
+       "rot": 0.0,
+       "escala": 0.661,
+       "curva": 0.2,
+       "yaw": -2.0,
+       "pitch": -4.0,
+       "esq": [
+        0.19,
+        0.03,
+        -0.06,
+        0.0,
+        0.65,
+        0.16,
+        -0.32,
+        0.16
+       ]
+      },
+      "ph-frente-plano": {
+       "dx": -2.1,
+       "dy": 4.04,
+       "rot": 0.0,
+       "escala": 0.734
+      },
+      "pm-frente-plano": {
+       "dx": 0.98,
+       "dy": 5.63,
+       "rot": 0.0,
+       "escala": 0.675,
+       "esq": [
+        0.15,
+        0.0,
+        -0.17,
+        0.0,
+        0.0,
+        0.0,
+        -0.09,
+        0.0
+       ]
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    }
+   },
+   "planos": {},
+   "mangas": {
+    "hombre": "manga_derecha",
+    "mujer": "manga_derecha"
+   },
+   "prenda": "unisex",
+   "galeria": {
+    "ph|frente-plano": {
+     "mini": "img/galeria/zelda-vitral-blanco-ph-frente-plano-blanco-7629aa474684bade-mini.webp",
+     "foto": "img/galeria/zelda-vitral-blanco-ph-frente-plano-blanco-7629aa474684bade-foto.webp",
+     "zoom": "img/galeria/zelda-vitral-blanco-ph-frente-plano-blanco-7629aa474684bade-zoom.webp"
+    },
+    "ph|espalda-plana": {
+     "mini": "img/galeria/zelda-vitral-blanco-ph-espalda-plana-blanco-4b047f0df578fb0d-mini.webp",
+     "foto": "img/galeria/zelda-vitral-blanco-ph-espalda-plana-blanco-4b047f0df578fb0d-foto.webp",
+     "zoom": "img/galeria/zelda-vitral-blanco-ph-espalda-plana-blanco-4b047f0df578fb0d-zoom.webp"
+    },
+    "h4|primer-plano-manga": {
+     "mini": "img/galeria/zelda-vitral-blanco-h4-primer-plano-manga-blanco-ecef9e0d445d9aea-mini.webp",
+     "foto": "img/galeria/zelda-vitral-blanco-h4-primer-plano-manga-blanco-ecef9e0d445d9aea-foto.webp",
+     "zoom": "img/galeria/zelda-vitral-blanco-h4-primer-plano-manga-blanco-ecef9e0d445d9aea-zoom.webp"
+    },
+    "h4|detalle-pecho": {
+     "mini": "img/galeria/zelda-vitral-blanco-h4-detalle-pecho-blanco-74c181772d1e1063-mini.webp",
+     "foto": "img/galeria/zelda-vitral-blanco-h4-detalle-pecho-blanco-74c181772d1e1063-foto.webp",
+     "zoom": "img/galeria/zelda-vitral-blanco-h4-detalle-pecho-blanco-74c181772d1e1063-zoom.webp"
+    },
+    "h4|espalda": {
+     "mini": "img/galeria/zelda-vitral-blanco-h4-espalda-blanco-bd80a7930f007116-mini.webp",
+     "foto": "img/galeria/zelda-vitral-blanco-h4-espalda-blanco-bd80a7930f007116-foto.webp",
+     "zoom": "img/galeria/zelda-vitral-blanco-h4-espalda-blanco-bd80a7930f007116-zoom.webp"
+    },
+    "h4|detalle-manga": {
+     "mini": "img/galeria/zelda-vitral-blanco-h4-detalle-manga-blanco-80c39cc64ab0b56c-mini.webp",
+     "foto": "img/galeria/zelda-vitral-blanco-h4-detalle-manga-blanco-80c39cc64ab0b56c-foto.webp",
+     "zoom": "img/galeria/zelda-vitral-blanco-h4-detalle-manga-blanco-80c39cc64ab0b56c-zoom.webp"
+    },
+    "pm|espalda-plana": {
+     "mini": "img/galeria/zelda-vitral-blanco-pm-espalda-plana-blanco-341dc651e5e349c3-mini.webp",
+     "foto": "img/galeria/zelda-vitral-blanco-pm-espalda-plana-blanco-341dc651e5e349c3-foto.webp",
+     "zoom": "img/galeria/zelda-vitral-blanco-pm-espalda-plana-blanco-341dc651e5e349c3-zoom.webp"
+    },
+    "pm|frente-plano": {
+     "mini": "img/galeria/zelda-vitral-blanco-pm-frente-plano-blanco-a21c30a20848b415-mini.webp",
+     "foto": "img/galeria/zelda-vitral-blanco-pm-frente-plano-blanco-a21c30a20848b415-foto.webp",
+     "zoom": "img/galeria/zelda-vitral-blanco-pm-frente-plano-blanco-a21c30a20848b415-zoom.webp"
+    },
+    "m4|primer-plano-manga": {
+     "mini": "img/galeria/zelda-vitral-blanco-m4-primer-plano-manga-blanco-79b21818ca259d2b-mini.webp",
+     "foto": "img/galeria/zelda-vitral-blanco-m4-primer-plano-manga-blanco-79b21818ca259d2b-foto.webp",
+     "zoom": "img/galeria/zelda-vitral-blanco-m4-primer-plano-manga-blanco-79b21818ca259d2b-zoom.webp"
+    },
+    "m4|frente": {
+     "mini": "img/galeria/zelda-vitral-blanco-m4-frente-blanco-27f566d6a60f5f4d-mini.webp",
+     "foto": "img/galeria/zelda-vitral-blanco-m4-frente-blanco-27f566d6a60f5f4d-foto.webp",
+     "zoom": "img/galeria/zelda-vitral-blanco-m4-frente-blanco-27f566d6a60f5f4d-zoom.webp"
+    },
+    "m4|espalda": {
+     "mini": "img/galeria/zelda-vitral-blanco-m4-espalda-blanco-fd5a31242a1ed3ca-mini.webp",
+     "foto": "img/galeria/zelda-vitral-blanco-m4-espalda-blanco-fd5a31242a1ed3ca-foto.webp",
+     "zoom": "img/galeria/zelda-vitral-blanco-m4-espalda-blanco-fd5a31242a1ed3ca-zoom.webp"
+    }
+   }
+  },
+  {
+   "id": "zelda-negro",
+   "nombre": "Zelda - Negro",
+   "tema": "The Legend of Zelda",
+   "texto": "",
+   "tipo": "A",
+   "color": "negro",
+   "seleccion": {
+    "mujer": [
+     [
+      "pm",
+      "frente-plano"
+     ],
+     [
+      "pm",
+      "espalda-plana"
+     ],
+     [
+      "m4",
+      "primer-plano-manga"
+     ],
+     [
+      "m4",
+      "detalle-pecho"
+     ],
+     [
+      "m4",
+      "espalda"
+     ],
+     [
+      "m4",
+      "frente"
+     ]
+    ],
+    "hombre": [
+     [
+      "ph",
+      "frente-plano"
+     ],
+     [
+      "ph",
+      "espalda-plana"
+     ],
+     [
+      "h4",
+      "primer-plano-manga"
+     ],
+     [
+      "h4",
+      "detalle-pecho"
+     ],
+     [
+      "h4",
+      "detalle-espalda-alta"
+     ],
+     [
+      "h4",
+      "frente"
+     ]
+    ]
+   },
+   "precio": null,
+   "material": null,
+   "gramaje": null,
+   "estado": "en_preparacion",
+   "tallas": [
+    "S",
+    "M",
+    "L"
+   ],
+   "estampados": {
+    "pecho": {
+     "archivo": "img/estampados/zelda-negro-pecho-253414112de6.webp",
+     "ancho_cm": 24.1,
+     "alto_cm": 40.0,
+     "mov": {
+      "hombre": {
+       "dx": 0.0,
+       "dy": 5.5
+      },
+      "mujer": {
+       "dx": 0.0,
+       "dy": 5.5
+      }
+     },
+     "curva_auto": 0.5,
+     "ajuste": {
+      "h1-frente": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "h1-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "h1-frente-p2": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "h1-frente-p3": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "h2-frente": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "h2-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "h2-frente-p2": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "h2-frente-p3": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "m1-frente": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "m1-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "m1-frente-p2": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "m1-frente-p3": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "m2-frente": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "m2-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "m2-frente-p2": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "m2-frente-p3": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "h3-frente": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "h3-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "m3-frente": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "m3-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "h4-frente": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "h4-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "m4-frente": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "m4-detalle-pecho": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "ph-frente-plano": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      },
+      "pm-frente-plano": {
+       "dx": 0.0,
+       "dy": 5.5,
+       "rot": 0.0
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "espalda_alta": {
+     "archivo": "img/estampados/zelda-negro-espalda_alta-689606ca3dab.webp",
+     "ancho_cm": 8.0,
+     "alto_cm": 7.4,
+     "mov": {
+      "hombre": {
+       "dx": 0.0,
+       "dy": 0.0
+      },
+      "mujer": {
+       "dx": 0.0,
+       "dy": 0.0
+      }
+     },
+     "curva_auto": 0.3,
+     "ajuste": {
+      "h1-espalda": {
+       "dx": 0.26,
+       "dy": -1.23,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h1-detalle-espalda-alta": {
+       "dx": 0.06,
+       "dy": -3.21,
+       "rot": 0.0,
+       "escala": 0.672
+      },
+      "h1-espalda-p2": {
+       "dx": 0.26,
+       "dy": -1.23,
+       "rot": 0,
+       "escala": 1.0
+      },
+      "h1-espalda-p3": {
+       "dx": -5.02,
+       "dy": 1.0,
+       "rot": 0.0,
+       "escala": 0.784,
+       "esq": [
+        0.0,
+        1.31,
+        -0.1,
+        0.54,
+        -0.58,
+        -0.34,
+        -0.05,
+        -0.78
+       ]
+      },
+      "h2-espalda": {
+       "dx": 0.0,
+       "dy": -0.28,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h2-detalle-espalda-alta": {
+       "dx": 0.0,
+       "dy": -0.38,
+       "rot": 0.0,
+       "escala": 0.718
+      },
+      "h2-espalda-p2": {
+       "dx": 0.0,
+       "dy": -0.28,
+       "rot": 0,
+       "escala": 1.0
+      },
+      "h2-espalda-p3": {
+       "dx": -6.38,
+       "dy": -0.5,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        0.29,
+        0.03,
+        -0.13,
+        -0.78,
+        -1.41,
+        -0.14,
+        0.2,
+        -0.17
+       ]
+      },
+      "m1-espalda": {
+       "dx": 0.11,
+       "dy": -0.23,
+       "rot": 0.0,
+       "escala": 0.892
+      },
+      "m1-detalle-espalda-alta": {
+       "dx": 0.04,
+       "dy": -0.13,
+       "rot": 0.0,
+       "escala": 0.546
+      },
+      "m1-espalda-p2": {
+       "dx": 0.17,
+       "dy": -5.76,
+       "rot": 0.0,
+       "escala": 0.544
+      },
+      "m1-espalda-p3": {
+       "dx": -5.65,
+       "dy": -3.43,
+       "rot": 0.0,
+       "escala": 0.668,
+       "esq": [
+        -0.03,
+        0.31,
+        0.18,
+        -0.42,
+        0.07,
+        0.31,
+        0.0,
+        -0.1
+       ]
+      },
+      "m2-espalda": {
+       "dx": 0.11,
+       "dy": -0.23,
+       "rot": 0
+      },
+      "m2-detalle-espalda-alta": {
+       "dx": -0.01,
+       "dy": -0.76,
+       "rot": 0.0,
+       "escala": 0.573
+      },
+      "m2-espalda-p2": {
+       "dx": 0.43,
+       "dy": -1.19,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m2-espalda-p3": {
+       "dx": -6.13,
+       "dy": -2.76,
+       "rot": 0.0,
+       "escala": 0.625,
+       "esq": [
+        0.09,
+        0.33,
+        0.61,
+        -0.42,
+        0.03,
+        -0.05,
+        0.28,
+        -0.2
+       ]
+      },
+      "h3-espalda": {
+       "dx": -0.33,
+       "dy": -3.57,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h3-detalle-espalda-alta": {
+       "dx": 0.29,
+       "dy": 5.5,
+       "rot": 0.0,
+       "escala": 1.067
+      },
+      "m3-espalda": {
+       "dx": 0.09,
+       "dy": -2.01,
+       "rot": 0.0,
+       "escala": 0.843
+      },
+      "m3-detalle-espalda-alta": {
+       "dx": 0.23,
+       "dy": 5.52,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h4-espalda": {
+       "dx": 0.08,
+       "dy": -0.11,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h4-detalle-espalda-alta": {
+       "dx": 0.25,
+       "dy": 7.06,
+       "rot": 0.0,
+       "escala": 1.14
+      },
+      "m4-espalda": {
+       "dx": 1.37,
+       "dy": -0.19,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m4-detalle-espalda-alta": {
+       "dx": 1.41,
+       "dy": 5.44,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "ph-espalda-plana": {
+       "dx": -0.03,
+       "dy": -1.69,
+       "rot": 0.0,
+       "escala": 1.088
+      },
+      "pm-espalda-plana": {
+       "dx": -0.16,
+       "dy": -1.67,
+       "rot": 0.0,
+       "escala": 0.936
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "manga_derecha": {
+     "archivo": "img/estampados/zelda-negro-manga_derecha-138c2be11d58.webp",
+     "ancho_cm": 7.8,
+     "alto_cm": 7.0,
+     "mov": {
+      "hombre": {
+       "dx": -1.07,
+       "dy": -3.89
+      },
+      "mujer": {
+       "dx": -1.07,
+       "dy": -3.89
+      }
+     },
+     "curva_auto": 0.0,
+     "ajuste": {
+      "h1-lateral-derecho": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "h1-detalle-manga": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "h1-lateral-derecho-p2": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "h1-lateral-derecho-p3": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "h2-lateral-derecho": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "h2-detalle-manga": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "h2-lateral-derecho-p2": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "h2-lateral-derecho-p3": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "m1-lateral-derecho": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "m1-detalle-manga": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "m1-lateral-derecho-p2": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "m1-lateral-derecho-p3": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "m2-lateral-derecho": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "m2-detalle-manga": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "m2-lateral-derecho-p2": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "m2-lateral-derecho-p3": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "h3-lateral-derecho": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "h3-detalle-manga": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "h3-primer-plano-manga": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "m3-lateral-derecho": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "m3-detalle-manga": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "m3-primer-plano-manga": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "h4-lateral-derecho": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      },
+      "h4-detalle-manga": {
+       "dx": -0.02,
+       "dy": 2.74,
+       "rot": 1.1,
+       "escala": 1.0
+      },
+      "h4-primer-plano-manga": {
+       "dx": 0.61,
+       "dy": 0.85,
+       "rot": 5.5,
+       "escala": 0.84
+      },
+      "m4-lateral-derecho": {
+       "dx": -0.44,
+       "dy": -0.41,
+       "rot": -8.6,
+       "escala": 0.752
+      },
+      "m4-detalle-manga": {
+       "dx": 0.0,
+       "dy": 0.23,
+       "rot": -8.2,
+       "escala": 0.823
+      },
+      "m4-primer-plano-manga": {
+       "dx": -0.57,
+       "dy": -1.77,
+       "rot": -3.3,
+       "escala": 0.87
+      },
+      "ph-lateral-derecho": {
+       "dx": -1.07,
+       "dy": -2.96,
+       "rot": -0.8,
+       "escala": 0.959
+      },
+      "pm-lateral-izquierdo": {
+       "dx": -1.07,
+       "dy": -3.89,
+       "rot": 0.0
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    }
+   },
+   "planos": {},
+   "mangas": {
+    "hombre": "manga_derecha",
+    "mujer": "manga_derecha"
+   },
+   "prenda": "unisex",
+   "galeria": {
+    "pm|frente-plano": {
+     "mini": "img/galeria/zelda-negro-pm-frente-plano-negro-27b5f203c65d7ff5-mini.webp",
+     "foto": "img/galeria/zelda-negro-pm-frente-plano-negro-27b5f203c65d7ff5-foto.webp",
+     "zoom": "img/galeria/zelda-negro-pm-frente-plano-negro-27b5f203c65d7ff5-zoom.webp"
+    },
+    "pm|espalda-plana": {
+     "mini": "img/galeria/zelda-negro-pm-espalda-plana-negro-69438ff0a12080ef-mini.webp",
+     "foto": "img/galeria/zelda-negro-pm-espalda-plana-negro-69438ff0a12080ef-foto.webp",
+     "zoom": "img/galeria/zelda-negro-pm-espalda-plana-negro-69438ff0a12080ef-zoom.webp"
+    },
+    "m4|primer-plano-manga": {
+     "mini": "img/galeria/zelda-negro-m4-primer-plano-manga-negro-facab411c1ca2c74-mini.webp",
+     "foto": "img/galeria/zelda-negro-m4-primer-plano-manga-negro-facab411c1ca2c74-foto.webp",
+     "zoom": "img/galeria/zelda-negro-m4-primer-plano-manga-negro-facab411c1ca2c74-zoom.webp"
+    },
+    "m4|detalle-pecho": {
+     "mini": "img/galeria/zelda-negro-m4-detalle-pecho-negro-4264d7e9a0035feb-mini.webp",
+     "foto": "img/galeria/zelda-negro-m4-detalle-pecho-negro-4264d7e9a0035feb-foto.webp",
+     "zoom": "img/galeria/zelda-negro-m4-detalle-pecho-negro-4264d7e9a0035feb-zoom.webp"
+    },
+    "m4|espalda": {
+     "mini": "img/galeria/zelda-negro-m4-espalda-negro-2b6dfa1c4b55692f-mini.webp",
+     "foto": "img/galeria/zelda-negro-m4-espalda-negro-2b6dfa1c4b55692f-foto.webp",
+     "zoom": "img/galeria/zelda-negro-m4-espalda-negro-2b6dfa1c4b55692f-zoom.webp"
+    },
+    "m4|frente": {
+     "mini": "img/galeria/zelda-negro-m4-frente-negro-f8ebd5fbccc7bc2c-mini.webp",
+     "foto": "img/galeria/zelda-negro-m4-frente-negro-f8ebd5fbccc7bc2c-foto.webp",
+     "zoom": "img/galeria/zelda-negro-m4-frente-negro-f8ebd5fbccc7bc2c-zoom.webp"
+    },
+    "ph|frente-plano": {
+     "mini": "img/galeria/zelda-negro-ph-frente-plano-negro-9059646950aa5e93-mini.webp",
+     "foto": "img/galeria/zelda-negro-ph-frente-plano-negro-9059646950aa5e93-foto.webp",
+     "zoom": "img/galeria/zelda-negro-ph-frente-plano-negro-9059646950aa5e93-zoom.webp"
+    },
+    "ph|espalda-plana": {
+     "mini": "img/galeria/zelda-negro-ph-espalda-plana-negro-8b9bb114d4363eee-mini.webp",
+     "foto": "img/galeria/zelda-negro-ph-espalda-plana-negro-8b9bb114d4363eee-foto.webp",
+     "zoom": "img/galeria/zelda-negro-ph-espalda-plana-negro-8b9bb114d4363eee-zoom.webp"
+    },
+    "h4|primer-plano-manga": {
+     "mini": "img/galeria/zelda-negro-h4-primer-plano-manga-negro-7d562c902bab83d7-mini.webp",
+     "foto": "img/galeria/zelda-negro-h4-primer-plano-manga-negro-7d562c902bab83d7-foto.webp",
+     "zoom": "img/galeria/zelda-negro-h4-primer-plano-manga-negro-7d562c902bab83d7-zoom.webp"
+    },
+    "h4|detalle-pecho": {
+     "mini": "img/galeria/zelda-negro-h4-detalle-pecho-negro-f47cc7d0251fc8dc-mini.webp",
+     "foto": "img/galeria/zelda-negro-h4-detalle-pecho-negro-f47cc7d0251fc8dc-foto.webp",
+     "zoom": "img/galeria/zelda-negro-h4-detalle-pecho-negro-f47cc7d0251fc8dc-zoom.webp"
+    },
+    "h4|detalle-espalda-alta": {
+     "mini": "img/galeria/zelda-negro-h4-detalle-espalda-alta-negro-feeea178b246387c-mini.webp",
+     "foto": "img/galeria/zelda-negro-h4-detalle-espalda-alta-negro-feeea178b246387c-foto.webp",
+     "zoom": "img/galeria/zelda-negro-h4-detalle-espalda-alta-negro-feeea178b246387c-zoom.webp"
+    },
+    "h4|frente": {
+     "mini": "img/galeria/zelda-negro-h4-frente-negro-ebb710bd4ed3cd71-mini.webp",
+     "foto": "img/galeria/zelda-negro-h4-frente-negro-ebb710bd4ed3cd71-foto.webp",
+     "zoom": "img/galeria/zelda-negro-h4-frente-negro-ebb710bd4ed3cd71-zoom.webp"
+    }
+   }
+  },
+  {
+   "id": "zelda-2-negro",
+   "nombre": "ZELDA 2 - NEGRO",
+   "tema": "The Legend of Zelda",
+   "texto": "",
+   "tipo": "A",
+   "color": "negro",
+   "seleccion": {
+    "hombre": [
+     [
+      "ph",
+      "frente-plano"
+     ],
+     [
+      "ph",
+      "espalda-plana"
+     ],
+     [
+      "h4",
+      "detalle-pecho"
+     ],
+     [
+      "h4",
+      "detalle-espalda-alta"
+     ],
+     [
+      "h4",
+      "primer-plano-manga"
+     ],
+     [
+      "h4",
+      "frente"
+     ],
+     [
+      "h4",
+      "espalda"
+     ]
+    ],
+    "mujer": [
+     [
+      "pm",
+      "frente-plano"
+     ],
+     [
+      "pm",
+      "espalda-plana"
+     ],
+     [
+      "m4",
+      "primer-plano-manga"
+     ],
+     [
+      "m4",
+      "detalle-pecho"
+     ],
+     [
+      "m4",
+      "espalda"
+     ],
+     [
+      "m4",
+      "frente"
+     ]
+    ]
+   },
+   "precio": null,
+   "material": null,
+   "gramaje": null,
+   "estado": "en_preparacion",
+   "tallas": [
+    "S",
+    "M",
+    "L"
+   ],
+   "estampados": {
+    "pecho": {
+     "archivo": "img/estampados/zelda-2-negro-pecho-1683d369c962.webp",
+     "ancho_cm": 27.0,
+     "alto_cm": 35.3,
+     "mov": {
+      "hombre": {
+       "dx": -0.04,
+       "dy": 2.36
+      },
+      "mujer": {
+       "dx": 0.06,
+       "dy": -1.57
+      }
+     },
+     "curva_auto": 0.5,
+     "ajuste": {
+      "h1-frente": {
+       "dx": -0.04,
+       "dy": 2.36,
+       "rot": 0.0
+      },
+      "h1-detalle-pecho": {
+       "dx": -0.04,
+       "dy": 2.36,
+       "rot": 0.0
+      },
+      "h1-frente-p2": {
+       "dx": -0.04,
+       "dy": 2.36,
+       "rot": 0.0
+      },
+      "h1-frente-p3": {
+       "dx": -0.04,
+       "dy": 2.36,
+       "rot": 0.0
+      },
+      "h2-frente": {
+       "dx": -0.04,
+       "dy": 2.36,
+       "rot": 0.0
+      },
+      "h2-detalle-pecho": {
+       "dx": -0.04,
+       "dy": 2.36,
+       "rot": 0.0
+      },
+      "h2-frente-p2": {
+       "dx": -0.04,
+       "dy": 2.36,
+       "rot": 0.0
+      },
+      "h2-frente-p3": {
+       "dx": -0.04,
+       "dy": 2.36,
+       "rot": 0.0
+      },
+      "m1-frente": {
+       "dx": 0.06,
+       "dy": -1.57,
+       "rot": 0.0
+      },
+      "m1-detalle-pecho": {
+       "dx": 0.06,
+       "dy": -1.57,
+       "rot": 0.0
+      },
+      "m1-frente-p2": {
+       "dx": 0.06,
+       "dy": -1.57,
+       "rot": 0.0
+      },
+      "m1-frente-p3": {
+       "dx": 0.06,
+       "dy": -1.57,
+       "rot": 0.0
+      },
+      "m2-frente": {
+       "dx": 0.06,
+       "dy": -1.57,
+       "rot": 0.0
+      },
+      "m2-detalle-pecho": {
+       "dx": 0.06,
+       "dy": -1.57,
+       "rot": 0.0
+      },
+      "m2-frente-p2": {
+       "dx": 0.06,
+       "dy": -1.57,
+       "rot": 0.0
+      },
+      "m2-frente-p3": {
+       "dx": 0.06,
+       "dy": -1.57,
+       "rot": 0.0
+      },
+      "h3-frente": {
+       "dx": -0.04,
+       "dy": 2.36,
+       "rot": 0.0
+      },
+      "h3-detalle-pecho": {
+       "dx": -0.04,
+       "dy": 2.36,
+       "rot": 0.0
+      },
+      "m3-frente": {
+       "dx": 0.06,
+       "dy": -1.57,
+       "rot": 0.0
+      },
+      "m3-detalle-pecho": {
+       "dx": 0.06,
+       "dy": -1.57,
+       "rot": 0.0
+      },
+      "h4-frente": {
+       "dx": -0.1,
+       "dy": 4.38,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h4-detalle-pecho": {
+       "dx": 0.05,
+       "dy": 7.11,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m4-frente": {
+       "dx": 0.24,
+       "dy": 2.76,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m4-detalle-pecho": {
+       "dx": 0.07,
+       "dy": 4.06,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "ph-frente-plano": {
+       "dx": -0.04,
+       "dy": 4.2,
+       "rot": 0.0,
+       "escala": 0.987
+      },
+      "pm-frente-plano": {
+       "dx": 0.06,
+       "dy": -1.57,
+       "rot": 0.0
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "manga_derecha": {
+     "archivo": "img/estampados/zelda-2-negro-manga_derecha-cfa4219994dc.webp",
+     "ancho_cm": 6.9,
+     "alto_cm": 10.0,
+     "mov": {
+      "hombre": {
+       "dx": -0.8,
+       "dy": -3.82
+      },
+      "mujer": {
+       "dx": 0.47,
+       "dy": -2.71
+      }
+     },
+     "curva_auto": 0.0,
+     "ajuste": {
+      "h1-lateral-derecho": {
+       "dx": -0.8,
+       "dy": -3.82,
+       "rot": 0.0
+      },
+      "h1-detalle-manga": {
+       "dx": -0.8,
+       "dy": -3.82,
+       "rot": 0.0
+      },
+      "h1-lateral-derecho-p2": {
+       "dx": -0.8,
+       "dy": -3.82,
+       "rot": 0.0
+      },
+      "h1-lateral-derecho-p3": {
+       "dx": -0.8,
+       "dy": -3.82,
+       "rot": 0.0
+      },
+      "h2-lateral-derecho": {
+       "dx": -0.8,
+       "dy": -3.82,
+       "rot": 0.0
+      },
+      "h2-detalle-manga": {
+       "dx": -0.8,
+       "dy": -3.82,
+       "rot": 0.0
+      },
+      "h2-lateral-derecho-p2": {
+       "dx": -0.8,
+       "dy": -3.82,
+       "rot": 0.0
+      },
+      "h2-lateral-derecho-p3": {
+       "dx": -0.8,
+       "dy": -3.82,
+       "rot": 0.0
+      },
+      "m1-lateral-derecho": {
+       "dx": 0.47,
+       "dy": -2.71,
+       "rot": 0.0
+      },
+      "m1-detalle-manga": {
+       "dx": 0.47,
+       "dy": -2.71,
+       "rot": 0.0
+      },
+      "m1-lateral-derecho-p2": {
+       "dx": 0.47,
+       "dy": -2.71,
+       "rot": 0.0
+      },
+      "m1-lateral-derecho-p3": {
+       "dx": 0.47,
+       "dy": -2.71,
+       "rot": 0.0
+      },
+      "m2-lateral-derecho": {
+       "dx": 0.47,
+       "dy": -2.71,
+       "rot": 0.0
+      },
+      "m2-detalle-manga": {
+       "dx": 0.47,
+       "dy": -2.71,
+       "rot": 0.0
+      },
+      "m2-lateral-derecho-p2": {
+       "dx": 0.47,
+       "dy": -2.71,
+       "rot": 0.0
+      },
+      "m2-lateral-derecho-p3": {
+       "dx": 0.47,
+       "dy": -2.71,
+       "rot": 0.0
+      },
+      "h3-lateral-derecho": {
+       "dx": -0.8,
+       "dy": -3.82,
+       "rot": 0.0
+      },
+      "h3-detalle-manga": {
+       "dx": -0.8,
+       "dy": -3.82,
+       "rot": 0.0
+      },
+      "h3-primer-plano-manga": {
+       "dx": -0.8,
+       "dy": -3.82,
+       "rot": 0.0
+      },
+      "m3-lateral-derecho": {
+       "dx": 0.47,
+       "dy": -2.71,
+       "rot": 0.0
+      },
+      "m3-detalle-manga": {
+       "dx": 0.47,
+       "dy": -2.71,
+       "rot": 0.0
+      },
+      "m3-primer-plano-manga": {
+       "dx": 0.47,
+       "dy": -2.71,
+       "rot": 0.0
+      },
+      "h4-lateral-derecho": {
+       "dx": -0.15,
+       "dy": -0.39,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h4-detalle-manga": {
+       "dx": -0.05,
+       "dy": 0.48,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h4-primer-plano-manga": {
+       "dx": 0.45,
+       "dy": 0.73,
+       "rot": 0.0,
+       "escala": 0.84
+      },
+      "m4-lateral-derecho": {
+       "dx": 0.47,
+       "dy": -2.71,
+       "rot": 0.0
+      },
+      "m4-detalle-manga": {
+       "dx": 0.68,
+       "dy": -0.53,
+       "rot": 0.0,
+       "escala": 0.823
+      },
+      "m4-primer-plano-manga": {
+       "dx": 0.47,
+       "dy": -2.71,
+       "rot": 0.0
+      },
+      "ph-lateral-derecho": {
+       "dx": 0.8,
+       "dy": -3.82,
+       "rot": -0.0
+      },
+      "pm-lateral-izquierdo": {
+       "dx": 0.47,
+       "dy": -2.71,
+       "rot": 0.0
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "espalda_alta": {
+     "archivo": "img/estampados/zelda-2-negro-espalda_alta-4c349ae90c5c.webp",
+     "ancho_cm": 8.7,
+     "alto_cm": 12.8,
+     "mov": {
+      "hombre": {
+       "dx": 0.0,
+       "dy": 0.0
+      },
+      "mujer": {
+       "dx": 0.0,
+       "dy": 0.0
+      }
+     },
+     "curva_auto": 0.3,
+     "ajuste": {
+      "h1-espalda": {
+       "dx": 0.26,
+       "dy": -1.23,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h1-detalle-espalda-alta": {
+       "dx": 0.06,
+       "dy": -3.21,
+       "rot": 0.0,
+       "escala": 0.672
+      },
+      "h1-espalda-p2": {
+       "dx": 0.26,
+       "dy": -1.23,
+       "rot": 0,
+       "escala": 1.0
+      },
+      "h1-espalda-p3": {
+       "dx": -5.02,
+       "dy": 1.0,
+       "rot": 0.0,
+       "escala": 0.784,
+       "esq": [
+        0.0,
+        1.31,
+        -0.1,
+        0.54,
+        -0.58,
+        -0.34,
+        -0.05,
+        -0.78
+       ]
+      },
+      "h2-espalda": {
+       "dx": 0.0,
+       "dy": -0.28,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h2-detalle-espalda-alta": {
+       "dx": 0.0,
+       "dy": -0.38,
+       "rot": 0.0,
+       "escala": 0.718
+      },
+      "h2-espalda-p2": {
+       "dx": 0.0,
+       "dy": -0.28,
+       "rot": 0,
+       "escala": 1.0
+      },
+      "h2-espalda-p3": {
+       "dx": -6.38,
+       "dy": -0.5,
+       "rot": 0.0,
+       "escala": 1.0,
+       "esq": [
+        0.29,
+        0.03,
+        -0.13,
+        -0.78,
+        -1.41,
+        -0.14,
+        0.2,
+        -0.17
+       ]
+      },
+      "m1-espalda": {
+       "dx": 0.11,
+       "dy": -0.23,
+       "rot": 0.0,
+       "escala": 0.892
+      },
+      "m1-detalle-espalda-alta": {
+       "dx": 0.04,
+       "dy": -0.13,
+       "rot": 0.0,
+       "escala": 0.546
+      },
+      "m1-espalda-p2": {
+       "dx": 0.17,
+       "dy": -5.76,
+       "rot": 0.0,
+       "escala": 0.544
+      },
+      "m1-espalda-p3": {
+       "dx": -5.65,
+       "dy": -3.43,
+       "rot": 0.0,
+       "escala": 0.668,
+       "esq": [
+        -0.03,
+        0.31,
+        0.18,
+        -0.42,
+        0.07,
+        0.31,
+        0.0,
+        -0.1
+       ]
+      },
+      "m2-espalda": {
+       "dx": 0.11,
+       "dy": -0.23,
+       "rot": 0
+      },
+      "m2-detalle-espalda-alta": {
+       "dx": -0.01,
+       "dy": -0.76,
+       "rot": 0.0,
+       "escala": 0.573
+      },
+      "m2-espalda-p2": {
+       "dx": 0.43,
+       "dy": -1.19,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m2-espalda-p3": {
+       "dx": -6.13,
+       "dy": -2.76,
+       "rot": 0.0,
+       "escala": 0.625,
+       "esq": [
+        0.09,
+        0.33,
+        0.61,
+        -0.42,
+        0.03,
+        -0.05,
+        0.28,
+        -0.2
+       ]
+      },
+      "h3-espalda": {
+       "dx": -0.33,
+       "dy": -3.57,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h3-detalle-espalda-alta": {
+       "dx": 0.29,
+       "dy": 5.5,
+       "rot": 0.0,
+       "escala": 1.067
+      },
+      "m3-espalda": {
+       "dx": 0.09,
+       "dy": -2.01,
+       "rot": 0.0,
+       "escala": 0.843
+      },
+      "m3-detalle-espalda-alta": {
+       "dx": 0.23,
+       "dy": 5.52,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h4-espalda": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0,
+       "escala": 1.101
+      },
+      "h4-detalle-espalda-alta": {
+       "dx": 1.43,
+       "dy": 7.49,
+       "rot": 0.0,
+       "escala": 1.14
+      },
+      "m4-espalda": {
+       "dx": 1.37,
+       "dy": -0.19,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m4-detalle-espalda-alta": {
+       "dx": -0.12,
+       "dy": 4.47,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "ph-espalda-plana": {
+       "dx": -0.03,
+       "dy": -1.69,
+       "rot": 0.0,
+       "escala": 1.088
+      },
+      "pm-espalda-plana": {
+       "dx": -0.16,
+       "dy": -1.67,
+       "rot": 0.0,
+       "escala": 0.936
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    }
+   },
+   "planos": {},
+   "mangas": {
+    "hombre": "manga_derecha",
+    "mujer": "manga_derecha"
+   },
+   "prenda": "unisex",
+   "galeria": {
+    "ph|frente-plano": {
+     "mini": "img/galeria/zelda-2-negro-ph-frente-plano-negro-37b21a1f631abdb1-mini.webp",
+     "foto": "img/galeria/zelda-2-negro-ph-frente-plano-negro-37b21a1f631abdb1-foto.webp",
+     "zoom": "img/galeria/zelda-2-negro-ph-frente-plano-negro-37b21a1f631abdb1-zoom.webp"
+    },
+    "ph|espalda-plana": {
+     "mini": "img/galeria/zelda-2-negro-ph-espalda-plana-negro-398b585a3269e231-mini.webp",
+     "foto": "img/galeria/zelda-2-negro-ph-espalda-plana-negro-398b585a3269e231-foto.webp",
+     "zoom": "img/galeria/zelda-2-negro-ph-espalda-plana-negro-398b585a3269e231-zoom.webp"
+    },
+    "h4|detalle-pecho": {
+     "mini": "img/galeria/zelda-2-negro-h4-detalle-pecho-negro-302122d83e2f6d93-mini.webp",
+     "foto": "img/galeria/zelda-2-negro-h4-detalle-pecho-negro-302122d83e2f6d93-foto.webp",
+     "zoom": "img/galeria/zelda-2-negro-h4-detalle-pecho-negro-302122d83e2f6d93-zoom.webp"
+    },
+    "h4|detalle-espalda-alta": {
+     "mini": "img/galeria/zelda-2-negro-h4-detalle-espalda-alta-negro-5bef032f0f4b8ed3-mini.webp",
+     "foto": "img/galeria/zelda-2-negro-h4-detalle-espalda-alta-negro-5bef032f0f4b8ed3-foto.webp",
+     "zoom": "img/galeria/zelda-2-negro-h4-detalle-espalda-alta-negro-5bef032f0f4b8ed3-zoom.webp"
+    },
+    "h4|primer-plano-manga": {
+     "mini": "img/galeria/zelda-2-negro-h4-primer-plano-manga-negro-cae269a5f13a9eba-mini.webp",
+     "foto": "img/galeria/zelda-2-negro-h4-primer-plano-manga-negro-cae269a5f13a9eba-foto.webp",
+     "zoom": "img/galeria/zelda-2-negro-h4-primer-plano-manga-negro-cae269a5f13a9eba-zoom.webp"
+    },
+    "h4|frente": {
+     "mini": "img/galeria/zelda-2-negro-h4-frente-negro-50cdb8a948446a8b-mini.webp",
+     "foto": "img/galeria/zelda-2-negro-h4-frente-negro-50cdb8a948446a8b-foto.webp",
+     "zoom": "img/galeria/zelda-2-negro-h4-frente-negro-50cdb8a948446a8b-zoom.webp"
+    },
+    "h4|espalda": {
+     "mini": "img/galeria/zelda-2-negro-h4-espalda-negro-868fe6a78335b6a5-mini.webp",
+     "foto": "img/galeria/zelda-2-negro-h4-espalda-negro-868fe6a78335b6a5-foto.webp",
+     "zoom": "img/galeria/zelda-2-negro-h4-espalda-negro-868fe6a78335b6a5-zoom.webp"
+    },
+    "pm|frente-plano": {
+     "mini": "img/galeria/zelda-2-negro-pm-frente-plano-negro-fd46343aa52daef8-mini.webp",
+     "foto": "img/galeria/zelda-2-negro-pm-frente-plano-negro-fd46343aa52daef8-foto.webp",
+     "zoom": "img/galeria/zelda-2-negro-pm-frente-plano-negro-fd46343aa52daef8-zoom.webp"
+    },
+    "pm|espalda-plana": {
+     "mini": "img/galeria/zelda-2-negro-pm-espalda-plana-negro-5098742b666adb5a-mini.webp",
+     "foto": "img/galeria/zelda-2-negro-pm-espalda-plana-negro-5098742b666adb5a-foto.webp",
+     "zoom": "img/galeria/zelda-2-negro-pm-espalda-plana-negro-5098742b666adb5a-zoom.webp"
+    },
+    "m4|primer-plano-manga": {
+     "mini": "img/galeria/zelda-2-negro-m4-primer-plano-manga-negro-07a783b69c9c16ac-mini.webp",
+     "foto": "img/galeria/zelda-2-negro-m4-primer-plano-manga-negro-07a783b69c9c16ac-foto.webp",
+     "zoom": "img/galeria/zelda-2-negro-m4-primer-plano-manga-negro-07a783b69c9c16ac-zoom.webp"
+    },
+    "m4|detalle-pecho": {
+     "mini": "img/galeria/zelda-2-negro-m4-detalle-pecho-negro-d85ec17cf59ff983-mini.webp",
+     "foto": "img/galeria/zelda-2-negro-m4-detalle-pecho-negro-d85ec17cf59ff983-foto.webp",
+     "zoom": "img/galeria/zelda-2-negro-m4-detalle-pecho-negro-d85ec17cf59ff983-zoom.webp"
+    },
+    "m4|espalda": {
+     "mini": "img/galeria/zelda-2-negro-m4-espalda-negro-ef078725da074c1a-mini.webp",
+     "foto": "img/galeria/zelda-2-negro-m4-espalda-negro-ef078725da074c1a-foto.webp",
+     "zoom": "img/galeria/zelda-2-negro-m4-espalda-negro-ef078725da074c1a-zoom.webp"
+    },
+    "m4|frente": {
+     "mini": "img/galeria/zelda-2-negro-m4-frente-negro-8e9de6e14772c956-mini.webp",
+     "foto": "img/galeria/zelda-2-negro-m4-frente-negro-8e9de6e14772c956-foto.webp",
+     "zoom": "img/galeria/zelda-2-negro-m4-frente-negro-8e9de6e14772c956-zoom.webp"
+    }
+   }
+  },
+  {
+   "id": "zelda-4-blanco",
+   "nombre": "ZELDA 4 BLANCO",
+   "tema": "The Legend of Zelda",
+   "texto": "",
+   "tipo": "A",
+   "color": "blanco",
+   "seleccion": {
+    "hombre": [
+     [
+      "ph",
+      "frente-plano"
+     ],
+     [
+      "ph",
+      "espalda-plana"
+     ],
+     [
+      "h4",
+      "primer-plano-manga"
+     ],
+     [
+      "h4",
+      "detalle-pecho"
+     ],
+     [
+      "h4",
+      "detalle-espalda-alta"
+     ],
+     [
+      "h4",
+      "frente"
+     ]
+    ],
+    "mujer": [
+     [
+      "pm",
+      "frente-plano"
+     ],
+     [
+      "pm",
+      "espalda-plana"
+     ],
+     [
+      "m4",
+      "primer-plano-manga"
+     ],
+     [
+      "m4",
+      "espalda"
+     ],
+     [
+      "m4",
+      "detalle-pecho"
+     ],
+     [
+      "m4",
+      "frente"
+     ]
+    ]
+   },
+   "precio": null,
+   "material": null,
+   "gramaje": null,
+   "estado": "en_preparacion",
+   "tallas": [
+    "S",
+    "M",
+    "L"
+   ],
+   "estampados": {
+    "pecho": {
+     "archivo": "img/estampados/zelda-4-blanco-pecho-7b03abf8d3f1.webp",
+     "ancho_cm": 26.4,
+     "alto_cm": 40.0,
+     "mov": {
+      "hombre": {
+       "dx": -0.3,
+       "dy": 4.23
+      },
+      "mujer": {
+       "dx": 0.02,
+       "dy": -0.84
+      }
+     },
+     "curva_auto": 0.5,
+     "ajuste": {
+      "h1-frente": {
+       "dx": -0.3,
+       "dy": 4.23,
+       "rot": 0.0
+      },
+      "h1-detalle-pecho": {
+       "dx": -0.3,
+       "dy": 4.23,
+       "rot": 0.0
+      },
+      "h1-frente-p2": {
+       "dx": -0.3,
+       "dy": 4.23,
+       "rot": 0.0
+      },
+      "h1-frente-p3": {
+       "dx": -0.3,
+       "dy": 4.23,
+       "rot": 0.0
+      },
+      "h2-frente": {
+       "dx": -0.3,
+       "dy": 4.23,
+       "rot": 0.0
+      },
+      "h2-detalle-pecho": {
+       "dx": -0.3,
+       "dy": 4.23,
+       "rot": 0.0
+      },
+      "h2-frente-p2": {
+       "dx": -0.3,
+       "dy": 4.23,
+       "rot": 0.0
+      },
+      "h2-frente-p3": {
+       "dx": -0.3,
+       "dy": 4.23,
+       "rot": 0.0
+      },
+      "m1-frente": {
+       "dx": 0.02,
+       "dy": -0.84,
+       "rot": 0.0
+      },
+      "m1-detalle-pecho": {
+       "dx": 0.02,
+       "dy": -0.84,
+       "rot": 0.0
+      },
+      "m1-frente-p2": {
+       "dx": 0.02,
+       "dy": -0.84,
+       "rot": 0.0
+      },
+      "m1-frente-p3": {
+       "dx": 0.02,
+       "dy": -0.84,
+       "rot": 0.0
+      },
+      "m2-frente": {
+       "dx": 0.02,
+       "dy": -0.84,
+       "rot": 0.0
+      },
+      "m2-detalle-pecho": {
+       "dx": 0.02,
+       "dy": -0.84,
+       "rot": 0.0
+      },
+      "m2-frente-p2": {
+       "dx": 0.02,
+       "dy": -0.84,
+       "rot": 0.0
+      },
+      "m2-frente-p3": {
+       "dx": 0.02,
+       "dy": -0.84,
+       "rot": 0.0
+      },
+      "h3-frente": {
+       "dx": -0.3,
+       "dy": 4.23,
+       "rot": 0.0
+      },
+      "h3-detalle-pecho": {
+       "dx": -0.3,
+       "dy": 4.23,
+       "rot": 0.0
+      },
+      "m3-frente": {
+       "dx": 0.02,
+       "dy": -0.84,
+       "rot": 0.0
+      },
+      "m3-detalle-pecho": {
+       "dx": 0.02,
+       "dy": -0.84,
+       "rot": 0.0
+      },
+      "h4-frente": {
+       "dx": -0.3,
+       "dy": 4.23,
+       "rot": 0.0
+      },
+      "h4-detalle-pecho": {
+       "dx": -0.3,
+       "dy": 4.23,
+       "rot": 0.0
+      },
+      "m4-frente": {
+       "dx": -0.25,
+       "dy": 0.7,
+       "rot": 0.0,
+       "escala": 0.977
+      },
+      "m4-detalle-pecho": {
+       "dx": -0.13,
+       "dy": 2.34,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "ph-frente-plano": {
+       "dx": -0.3,
+       "dy": 4.23,
+       "rot": 0.0
+      },
+      "pm-frente-plano": {
+       "dx": 0.02,
+       "dy": -0.84,
+       "rot": 0.0
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "espalda_alta": {
+     "archivo": "img/estampados/zelda-4-blanco-espalda_alta-f6c480fa2e82.webp",
+     "ancho_cm": 8.0,
+     "alto_cm": 8.0,
+     "mov": {
+      "hombre": {
+       "dx": 0.87,
+       "dy": -0.19
+      },
+      "mujer": {
+       "dx": 0.87,
+       "dy": -0.19
+      }
+     },
+     "curva_auto": 0.3,
+     "ajuste": {
+      "h1-espalda": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "h1-detalle-espalda-alta": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "h1-espalda-p2": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "h1-espalda-p3": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "h2-espalda": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "h2-detalle-espalda-alta": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "h2-espalda-p2": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "h2-espalda-p3": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "m1-espalda": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "m1-detalle-espalda-alta": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "m1-espalda-p2": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "m1-espalda-p3": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "m2-espalda": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "m2-detalle-espalda-alta": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "m2-espalda-p2": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "m2-espalda-p3": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "h3-espalda": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "h3-detalle-espalda-alta": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "m3-espalda": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "m3-detalle-espalda-alta": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "h4-espalda": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0,
+       "escala": 1.101
+      },
+      "h4-detalle-espalda-alta": {
+       "dx": 1.43,
+       "dy": 7.49,
+       "rot": 0.0,
+       "escala": 1.14
+      },
+      "m4-espalda": {
+       "dx": 1.37,
+       "dy": -0.19,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "m4-detalle-espalda-alta": {
+       "dx": 1.41,
+       "dy": 5.44,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "ph-espalda-plana": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      },
+      "pm-espalda-plana": {
+       "dx": 0.87,
+       "dy": -0.19,
+       "rot": 0.0
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "manga_derecha": {
+     "archivo": "img/estampados/zelda-4-blanco-manga_derecha-01ae49d7acf9.webp",
+     "ancho_cm": 5.5,
+     "alto_cm": 7.0,
+     "mov": {
+      "hombre": {
+       "dx": 0.0,
+       "dy": 0.0
+      },
+      "mujer": {
+       "dx": 0.0,
+       "dy": 0.0
+      }
+     },
+     "curva_auto": 0.0,
+     "ajuste": {
+      "h1-lateral-derecho": {
+       "dx": -0.72,
+       "dy": 3.8,
+       "rot": 0.0,
+       "escala": 1.03
+      },
+      "h1-detalle-manga": {
+       "dx": 0.32,
+       "dy": 2.24,
+       "rot": 0.0,
+       "escala": 1.0
+      },
+      "h1-lateral-derecho-p2": {
+       "dx": -1.4,
+       "dy": 13.8,
+       "rot": 4.1,
+       "escala": 0.913,
+       "esq": [
+        0.5,
+        0.53,
+        -0.09,
+        0.33,
+        -0.13,
+        -0.18,
+        0.19,
+        -0.24
+       ]
+      },
+      "h1-lateral-derecho-p3": {
+       "dx": 1.01,
+       "dy": 9.85,
+       "rot": 0.0,
+       "escala": 0.981,
+       "esq": [
+        0.05,
+        0.14,
+        0.0,
+        0.19,
+        0.02,
+        0.0,
+        -0.02,
+        0.09
+       ]
+      },
+      "h2-lateral-derecho": {
+       "dx": 0.41,
+       "dy": 5.42,
+       "rot": -4.6,
+       "escala": 1.0
+      },
+      "h2-detalle-manga": {
+       "dx": -0.07,
+       "dy": 5.11,
+       "rot": -2.3,
+       "escala": 1.0,
+       "esq": [
+        -0.12,
+        -0.06,
+        0.12,
+        -0.12,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "h2-lateral-derecho-p2": {
+       "dx": 2.74,
+       "dy": 9.4,
+       "rot": -17.1,
+       "escala": 1.0
+      },
+      "h2-lateral-derecho-p3": {
+       "dx": 1.28,
+       "dy": 10.09,
+       "rot": -7.2,
+       "escala": 1.0
+      },
+      "h3-lateral-derecho": {
+       "dx": -5.0,
+       "dy": 2.0,
+       "rot": 2.5,
+       "escala": 0.985
+      },
+      "h3-detalle-manga": {
+       "dx": -4.09,
+       "dy": 15.29,
+       "rot": 0.0,
+       "escala": 1.1
+      },
+      "h3-primer-plano-manga": {
+       "dx": -0.43,
+       "dy": 1.62,
+       "rot": 0.0,
+       "escala": 0.624
+      },
+      "h4-lateral-derecho": {
+       "dx": -0.34,
+       "dy": 0.77,
+       "rot": 0.0,
+       "escala": 1.077
+      },
+      "h4-detalle-manga": {
+       "dx": -0.05,
+       "dy": 1.28,
+       "rot": 0.0,
+       "escala": 1.073
+      },
+      "h4-primer-plano-manga": {
+       "dx": -0.53,
+       "dy": 2.26,
+       "rot": 0.5,
+       "escala": 0.934
+      },
+      "ph-lateral-derecho": {
+       "dx": -1.07,
+       "dy": -2.96,
+       "rot": -0.8,
+       "escala": 0.959
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    },
+    "manga_izquierda": {
+     "archivo": "img/estampados/zelda-4-blanco-manga_izquierda-46590d69822b.webp",
+     "ancho_cm": 5.5,
+     "alto_cm": 7.0,
+     "mov": {
+      "hombre": {
+       "dx": 0.0,
+       "dy": 0.0
+      },
+      "mujer": {
+       "dx": 0.04,
+       "dy": 1.16
+      }
+     },
+     "curva_auto": 0.0,
+     "ajuste": {
+      "m1-lateral-derecho": {
+       "dx": 0.04,
+       "dy": 1.16,
+       "rot": 0.0
+      },
+      "m1-detalle-manga": {
+       "dx": 0.04,
+       "dy": 1.16,
+       "rot": 0.0
+      },
+      "m1-lateral-derecho-p2": {
+       "dx": 0.04,
+       "dy": 1.16,
+       "rot": 0.0
+      },
+      "m1-lateral-derecho-p3": {
+       "dx": 0.04,
+       "dy": 1.16,
+       "rot": 0.0
+      },
+      "m2-lateral-derecho": {
+       "dx": 0.04,
+       "dy": 1.16,
+       "rot": 0.0
+      },
+      "m2-detalle-manga": {
+       "dx": 0.04,
+       "dy": 1.16,
+       "rot": 0.0
+      },
+      "m2-lateral-derecho-p2": {
+       "dx": 0.04,
+       "dy": 1.16,
+       "rot": 0.0
+      },
+      "m2-lateral-derecho-p3": {
+       "dx": 0.04,
+       "dy": 1.16,
+       "rot": 0.0
+      },
+      "m3-lateral-derecho": {
+       "dx": 0.04,
+       "dy": 1.16,
+       "rot": 0.0
+      },
+      "m3-detalle-manga": {
+       "dx": 0.04,
+       "dy": 1.16,
+       "rot": 0.0
+      },
+      "m3-primer-plano-manga": {
+       "dx": 0.04,
+       "dy": 1.16,
+       "rot": 0.0
+      },
+      "m4-lateral-derecho": {
+       "dx": 0.04,
+       "dy": 1.16,
+       "rot": 0.0
+      },
+      "m4-detalle-manga": {
+       "dx": 0.29,
+       "dy": 0.4,
+       "rot": -0.7,
+       "escala": 1.0
+      },
+      "m4-primer-plano-manga": {
+       "dx": 0.08,
+       "dy": -1.09,
+       "rot": -2.1,
+       "escala": 1.0
+      },
+      "pm-lateral-izquierdo": {
+       "dx": 0.06,
+       "dy": -2.16,
+       "rot": 0.0,
+       "escala": 1.0
+      }
+     },
+     "malla_config": {
+      "hombre": null,
+      "mujer": null
+     }
+    }
+   },
+   "planos": {},
+   "mangas": {
+    "hombre": "manga_derecha",
+    "mujer": "manga_izquierda"
+   },
+   "prenda": "unisex",
+   "galeria": {
+    "ph|frente-plano": {
+     "mini": "img/galeria/zelda-4-blanco-ph-frente-plano-blanco-ab3b564b435490c7-mini.webp",
+     "foto": "img/galeria/zelda-4-blanco-ph-frente-plano-blanco-ab3b564b435490c7-foto.webp",
+     "zoom": "img/galeria/zelda-4-blanco-ph-frente-plano-blanco-ab3b564b435490c7-zoom.webp"
+    },
+    "ph|espalda-plana": {
+     "mini": "img/galeria/zelda-4-blanco-ph-espalda-plana-blanco-39634bf5940dec0f-mini.webp",
+     "foto": "img/galeria/zelda-4-blanco-ph-espalda-plana-blanco-39634bf5940dec0f-foto.webp",
+     "zoom": "img/galeria/zelda-4-blanco-ph-espalda-plana-blanco-39634bf5940dec0f-zoom.webp"
+    },
+    "h4|primer-plano-manga": {
+     "mini": "img/galeria/zelda-4-blanco-h4-primer-plano-manga-blanco-89acdf00c14fe23e-mini.webp",
+     "foto": "img/galeria/zelda-4-blanco-h4-primer-plano-manga-blanco-89acdf00c14fe23e-foto.webp",
+     "zoom": "img/galeria/zelda-4-blanco-h4-primer-plano-manga-blanco-89acdf00c14fe23e-zoom.webp"
+    },
+    "h4|detalle-pecho": {
+     "mini": "img/galeria/zelda-4-blanco-h4-detalle-pecho-blanco-00ec677383f2e113-mini.webp",
+     "foto": "img/galeria/zelda-4-blanco-h4-detalle-pecho-blanco-00ec677383f2e113-foto.webp",
+     "zoom": "img/galeria/zelda-4-blanco-h4-detalle-pecho-blanco-00ec677383f2e113-zoom.webp"
+    },
+    "h4|detalle-espalda-alta": {
+     "mini": "img/galeria/zelda-4-blanco-h4-detalle-espalda-alta-blanco-1eb2b35bc655746e-mini.webp",
+     "foto": "img/galeria/zelda-4-blanco-h4-detalle-espalda-alta-blanco-1eb2b35bc655746e-foto.webp",
+     "zoom": "img/galeria/zelda-4-blanco-h4-detalle-espalda-alta-blanco-1eb2b35bc655746e-zoom.webp"
+    },
+    "h4|frente": {
+     "mini": "img/galeria/zelda-4-blanco-h4-frente-blanco-a7fecbb7fd864158-mini.webp",
+     "foto": "img/galeria/zelda-4-blanco-h4-frente-blanco-a7fecbb7fd864158-foto.webp",
+     "zoom": "img/galeria/zelda-4-blanco-h4-frente-blanco-a7fecbb7fd864158-zoom.webp"
+    },
+    "pm|frente-plano": {
+     "mini": "img/galeria/zelda-4-blanco-pm-frente-plano-blanco-e6e9d69b542b6b7e-mini.webp",
+     "foto": "img/galeria/zelda-4-blanco-pm-frente-plano-blanco-e6e9d69b542b6b7e-foto.webp",
+     "zoom": "img/galeria/zelda-4-blanco-pm-frente-plano-blanco-e6e9d69b542b6b7e-zoom.webp"
+    },
+    "pm|espalda-plana": {
+     "mini": "img/galeria/zelda-4-blanco-pm-espalda-plana-blanco-3389ff617a81e026-mini.webp",
+     "foto": "img/galeria/zelda-4-blanco-pm-espalda-plana-blanco-3389ff617a81e026-foto.webp",
+     "zoom": "img/galeria/zelda-4-blanco-pm-espalda-plana-blanco-3389ff617a81e026-zoom.webp"
+    },
+    "m4|primer-plano-manga": {
+     "mini": "img/galeria/zelda-4-blanco-m4-primer-plano-manga-blanco-a83c092c088ab7b7-mini.webp",
+     "foto": "img/galeria/zelda-4-blanco-m4-primer-plano-manga-blanco-a83c092c088ab7b7-foto.webp",
+     "zoom": "img/galeria/zelda-4-blanco-m4-primer-plano-manga-blanco-a83c092c088ab7b7-zoom.webp"
+    },
+    "m4|espalda": {
+     "mini": "img/galeria/zelda-4-blanco-m4-espalda-blanco-83b8cdf36f96129e-mini.webp",
+     "foto": "img/galeria/zelda-4-blanco-m4-espalda-blanco-83b8cdf36f96129e-foto.webp",
+     "zoom": "img/galeria/zelda-4-blanco-m4-espalda-blanco-83b8cdf36f96129e-zoom.webp"
+    },
+    "m4|detalle-pecho": {
+     "mini": "img/galeria/zelda-4-blanco-m4-detalle-pecho-blanco-c75971d5c9ad7e39-mini.webp",
+     "foto": "img/galeria/zelda-4-blanco-m4-detalle-pecho-blanco-c75971d5c9ad7e39-foto.webp",
+     "zoom": "img/galeria/zelda-4-blanco-m4-detalle-pecho-blanco-c75971d5c9ad7e39-zoom.webp"
+    },
+    "m4|frente": {
+     "mini": "img/galeria/zelda-4-blanco-m4-frente-blanco-df4cb8acdc2490d0-mini.webp",
+     "foto": "img/galeria/zelda-4-blanco-m4-frente-blanco-df4cb8acdc2490d0-foto.webp",
+     "zoom": "img/galeria/zelda-4-blanco-m4-frente-blanco-df4cb8acdc2490d0-zoom.webp"
+    }
+   }
   }
  ],
  "avatares": [
@@ -11686,6 +15174,600 @@
       }
      },
      "mascara": "img/mascaras/m3-primer-plano-manga-blanco.png"
+    }
+   ]
+  },
+  {
+   "id": "h4",
+   "genero": "hombre",
+   "escena": "zelda",
+   "tono": 2,
+   "cuerpo": "atletico",
+   "nombre": "Bruno",
+   "tomas": [
+    {
+     "toma": "frente",
+     "pxcm": 21.32,
+     "top": 634.0,
+     "hem": 2148.0,
+     "cx": 1004.0,
+     "pecho": {
+      "cx": 1004.0,
+      "top": 845.1070422535212
+     },
+     "pecho_pequeno": {
+      "cx": 844.0704225352113,
+      "cy": 962.3887323943662
+     },
+     "radio": 490.4,
+     "clave": "h4-frente",
+     "nombre": "Frente",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/h4-frente-blanco.webp",
+       "zoom": "img/modelos/h4-frente-blanco-zoom.webp"
+      },
+      "negro": {
+       "foto": "img/modelos/h4-frente-negro.webp",
+       "zoom": "img/modelos/h4-frente-negro-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 21.32,
+       "cx": 1004.0,
+       "top": 634.0,
+       "hem": 2148.0,
+       "radio": 490.4,
+       "pecho": {
+        "cx": 1004.0,
+        "top": 845.1070422535212
+       },
+       "pecho_pequeno": {
+        "cx": 844.0704225352113,
+        "cy": 962.3887323943662
+       },
+       "mascara": "img/mascaras/h4-frente-blanco.png"
+      },
+      "negro": {
+       "pxcm": 20.99,
+       "cx": 1003.0,
+       "top": 634.0,
+       "hem": 2124.0,
+       "radio": 482.8,
+       "pecho": {
+        "cx": 1003.0,
+        "top": 841.7605633802817
+       },
+       "pecho_pequeno": {
+        "cx": 845.6056338028169,
+        "cy": 957.1830985915494
+       },
+       "mascara": "img/mascaras/h4-frente-negro.png"
+      }
+     },
+     "mascara": "img/mascaras/h4-frente-blanco.png"
+    },
+    {
+     "toma": "espalda",
+     "pxcm": 21.52,
+     "top": 626.0,
+     "hem": 2154.0,
+     "cx": 1007.5,
+     "espalda": {
+      "cx": 1007.5,
+      "top": 849.8197183098591
+     },
+     "espalda_alta": {
+      "cx": 1007.5,
+      "top": 806.7774647887325
+     },
+     "radio": 495.0,
+     "clave": "h4-espalda",
+     "nombre": "Espalda",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/h4-espalda-blanco.webp",
+       "zoom": "img/modelos/h4-espalda-blanco-zoom.webp"
+      },
+      "negro": {
+       "foto": "img/modelos/h4-espalda-negro.webp",
+       "zoom": "img/modelos/h4-espalda-negro-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 21.52,
+       "cx": 1007.5,
+       "top": 626.0,
+       "hem": 2154.0,
+       "radio": 495.0,
+       "espalda": {
+        "cx": 1007.5,
+        "top": 849.8197183098591
+       },
+       "espalda_alta": {
+        "cx": 1007.5,
+        "top": 806.7774647887325
+       },
+       "mascara": "img/mascaras/h4-espalda-blanco.png"
+      },
+      "negro": {
+       "pxcm": 21.27,
+       "cx": 1005.0,
+       "top": 624.0,
+       "hem": 2134.0,
+       "radio": 489.2,
+       "espalda": {
+        "cx": 1005.0,
+        "top": 845.1830985915493
+       },
+       "espalda_alta": {
+        "cx": 1005.0,
+        "top": 802.6478873239437
+       },
+       "mascara": "img/mascaras/h4-espalda-negro.png"
+      }
+     },
+     "mascara": "img/mascaras/h4-espalda-blanco.png"
+    },
+    {
+     "toma": "detalle-pecho",
+     "pxcm": 33.63,
+     "top": 824.0,
+     "hem": 2559.0,
+     "cx": 1020.5,
+     "pecho": {
+      "cx": 1020.5,
+      "top": 1066.9
+     },
+     "pecho_pequeno": {
+      "cx": 582.9200000000001,
+      "cy": 1014.85
+     },
+     "radio": 773.5,
+     "clave": "h4-detalle-pecho",
+     "nombre": "Detalle pecho",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/h4-detalle-pecho-blanco.webp",
+       "zoom": "img/modelos/h4-detalle-pecho-blanco-zoom.webp"
+      },
+      "negro": {
+       "foto": "img/modelos/h4-detalle-pecho-negro.webp",
+       "zoom": "img/modelos/h4-detalle-pecho-negro-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 33.63,
+       "cx": 1020.5,
+       "top": 824.0,
+       "hem": 2559.0,
+       "radio": 773.5,
+       "pecho": {
+        "cx": 1020.5,
+        "top": 1066.9
+       },
+       "pecho_pequeno": {
+        "cx": 582.9200000000001,
+        "cy": 1014.85
+       },
+       "mascara": "img/mascaras/h4-detalle-pecho-blanco.png"
+      },
+      "negro": {
+       "pxcm": 33.11,
+       "cx": 1020.5,
+       "top": 822.0,
+       "hem": 2559.0,
+       "radio": 761.5,
+       "pecho": {
+        "cx": 1020.5,
+        "top": 1066.9
+       },
+       "pecho_pequeno": {
+        "cx": 582.9200000000001,
+        "cy": 1014.85
+       },
+       "mascara": "img/mascaras/h4-detalle-pecho-negro.png"
+      }
+     },
+     "mascara": "img/mascaras/h4-detalle-pecho-blanco.png"
+    },
+    {
+     "toma": "detalle-manga",
+     "pxcm": 21.38,
+     "top": 606.0,
+     "hem": 2152.0,
+     "cx": 901.1,
+     "manga": {
+      "cx": 901.12,
+      "cy": 1063.424,
+      "rot": 0
+     },
+     "radio": 0,
+     "clave": "h4-detalle-manga",
+     "nombre": "Detalle manga",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/h4-detalle-manga-blanco.webp",
+       "zoom": "img/modelos/h4-detalle-manga-blanco-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 21.38,
+       "cx": 901.1,
+       "top": 606.0,
+       "hem": 2152.0,
+       "radio": 0,
+       "manga": {
+        "cx": 901.12,
+        "cy": 1063.424,
+        "rot": 0
+       },
+       "mascara": "img/mascaras/h4-detalle-manga-blanco.png"
+      }
+     },
+     "mascara": "img/mascaras/h4-detalle-manga-blanco.png"
+    },
+    {
+     "toma": "detalle-espalda-alta",
+     "pxcm": 33.09,
+     "top": 1004.0,
+     "hem": 2559.0,
+     "cx": 1010.5,
+     "espalda_alta": {
+      "cx": 1010.5,
+      "top": 1004.0
+     },
+     "radio": 761.1,
+     "clave": "h4-detalle-espalda-alta",
+     "nombre": "Detalle espalda",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/h4-detalle-espalda-alta-blanco.webp",
+       "zoom": "img/modelos/h4-detalle-espalda-alta-blanco-zoom.webp"
+      },
+      "negro": {
+       "foto": "img/modelos/h4-detalle-espalda-alta-negro.webp",
+       "zoom": "img/modelos/h4-detalle-espalda-alta-negro-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 33.09,
+       "cx": 1010.5,
+       "top": 1004.0,
+       "hem": 2559.0,
+       "radio": 761.1,
+       "espalda_alta": {
+        "cx": 1010.5,
+        "top": 1004.0
+       },
+       "mascara": "img/mascaras/h4-detalle-espalda-alta-blanco.png"
+      },
+      "negro": {
+       "pxcm": 32.71,
+       "cx": 1010.5,
+       "top": 1002.0,
+       "hem": 2559.0,
+       "radio": 752.3,
+       "espalda_alta": {
+        "cx": 1010.5,
+        "top": 1004.0
+       },
+       "mascara": "img/mascaras/h4-detalle-espalda-alta-negro.png"
+      }
+     },
+     "mascara": "img/mascaras/h4-detalle-espalda-alta-blanco.png"
+    },
+    {
+     "toma": "primer-plano-manga",
+     "pxcm": 33.6,
+     "top": 752.0,
+     "hem": 2559.0,
+     "cx": 757.8,
+     "manga": {
+      "cx": 757.76,
+      "cy": 1369.6,
+      "rot": 0
+     },
+     "radio": 0,
+     "clave": "h4-primer-plano-manga",
+     "nombre": "Primer plano manga",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/h4-primer-plano-manga-blanco.webp",
+       "zoom": "img/modelos/h4-primer-plano-manga-blanco-zoom.webp"
+      },
+      "negro": {
+       "foto": "img/modelos/h4-primer-plano-manga-negro.webp",
+       "zoom": "img/modelos/h4-primer-plano-manga-negro-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 33.6,
+       "cx": 757.8,
+       "top": 752.0,
+       "hem": 2559.0,
+       "radio": 0,
+       "manga": {
+        "cx": 757.76,
+        "cy": 1369.6,
+        "rot": 0
+       },
+       "mascara": "img/mascaras/h4-primer-plano-manga-blanco.png"
+      },
+      "negro": {
+       "pxcm": 32.87,
+       "cx": 757.8,
+       "top": 750.0,
+       "hem": 2559.0,
+       "radio": 0,
+       "manga": {
+        "cx": 757.76,
+        "cy": 1369.6,
+        "rot": 0
+       },
+       "mascara": "img/mascaras/h4-primer-plano-manga-negro.png"
+      }
+     },
+     "mascara": "img/mascaras/h4-primer-plano-manga-blanco.png"
+    }
+   ]
+  },
+  {
+   "id": "m4",
+   "genero": "mujer",
+   "escena": "zelda",
+   "tono": 2,
+   "cuerpo": "medio",
+   "nombre": "Andrea",
+   "tomas": [
+    {
+     "toma": "frente",
+     "pxcm": 22.62,
+     "top": 752.0,
+     "hem": 2132.0,
+     "cx": 1017.5,
+     "pecho": {
+      "cx": 1017.5,
+      "top": 964.655737704918
+     },
+     "pecho_pequeno": {
+      "cx": 1164.5491803278687,
+      "cy": 1032.5245901639344
+     },
+     "radio": 452.4,
+     "clave": "m4-frente",
+     "nombre": "Frente",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/m4-frente-blanco.webp",
+       "zoom": "img/modelos/m4-frente-blanco-zoom.webp"
+      },
+      "negro": {
+       "foto": "img/modelos/m4-frente-negro.webp",
+       "zoom": "img/modelos/m4-frente-negro-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 22.62,
+       "cx": 1017.5,
+       "top": 752.0,
+       "hem": 2132.0,
+       "radio": 452.4,
+       "pecho": {
+        "cx": 1017.5,
+        "top": 964.655737704918
+       },
+       "pecho_pequeno": {
+        "cx": 1164.5491803278687,
+        "cy": 1032.5245901639344
+       },
+       "mascara": "img/mascaras/m4-frente-blanco.png"
+      },
+      "negro": {
+       "pxcm": 21.72,
+       "cx": 1017.5,
+       "top": 750.0,
+       "hem": 2075.0,
+       "radio": 434.4,
+       "pecho": {
+        "cx": 1017.5,
+        "top": 954.1803278688525
+       },
+       "pecho_pequeno": {
+        "cx": 1158.688524590164,
+        "cy": 1019.344262295082
+       },
+       "mascara": "img/mascaras/m4-frente-negro.png"
+      }
+     },
+     "mascara": "img/mascaras/m4-frente-blanco.png"
+    },
+    {
+     "toma": "espalda",
+     "pxcm": 23.75,
+     "top": 723.0,
+     "hem": 2172.0,
+     "cx": 1015.5,
+     "espalda": {
+      "cx": 1015.5,
+      "top": 946.2885245901639
+     },
+     "espalda_alta": {
+      "cx": 1015.5,
+      "top": 898.7803278688524
+     },
+     "radio": 475.0,
+     "clave": "m4-espalda",
+     "nombre": "Espalda",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/m4-espalda-blanco.webp",
+       "zoom": "img/modelos/m4-espalda-blanco-zoom.webp"
+      },
+      "negro": {
+       "foto": "img/modelos/m4-espalda-negro.webp",
+       "zoom": "img/modelos/m4-espalda-negro-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 23.75,
+       "cx": 1015.5,
+       "top": 723.0,
+       "hem": 2172.0,
+       "radio": 475.0,
+       "espalda": {
+        "cx": 1015.5,
+        "top": 946.2885245901639
+       },
+       "espalda_alta": {
+        "cx": 1015.5,
+        "top": 898.7803278688524
+       },
+       "mascara": "img/mascaras/m4-espalda-blanco.png"
+      },
+      "negro": {
+       "pxcm": 21.9,
+       "cx": 1016.5,
+       "top": 721.0,
+       "hem": 2057.0,
+       "radio": 438.0,
+       "espalda": {
+        "cx": 1016.5,
+        "top": 926.8754098360655
+       },
+       "espalda_alta": {
+        "cx": 1016.5,
+        "top": 883.072131147541
+       },
+       "mascara": "img/mascaras/m4-espalda-negro.png"
+      }
+     },
+     "mascara": "img/mascaras/m4-espalda-blanco.png"
+    },
+    {
+     "toma": "detalle-pecho",
+     "pxcm": 40.87,
+     "top": 528.0,
+     "hem": 2559.0,
+     "cx": 1023.5,
+     "pecho": {
+      "cx": 1023.5,
+      "top": 812.34
+     },
+     "pecho_pequeno": {
+      "cx": 1473.84,
+      "cy": 751.4100000000001
+     },
+     "radio": 817.4,
+     "clave": "m4-detalle-pecho",
+     "nombre": "Detalle pecho",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/m4-detalle-pecho-blanco.webp",
+       "zoom": "img/modelos/m4-detalle-pecho-blanco-zoom.webp"
+      },
+      "negro": {
+       "foto": "img/modelos/m4-detalle-pecho-negro.webp",
+       "zoom": "img/modelos/m4-detalle-pecho-negro-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 40.87,
+       "cx": 1023.5,
+       "top": 528.0,
+       "hem": 2559.0,
+       "radio": 817.4,
+       "pecho": {
+        "cx": 1023.5,
+        "top": 812.34
+       },
+       "pecho_pequeno": {
+        "cx": 1473.84,
+        "cy": 751.4100000000001
+       },
+       "mascara": "img/mascaras/m4-detalle-pecho-blanco.png"
+      },
+      "negro": {
+       "pxcm": 39.24,
+       "cx": 1023.5,
+       "top": 522.0,
+       "hem": 2559.0,
+       "radio": 784.8,
+       "pecho": {
+        "cx": 1023.5,
+        "top": 812.34
+       },
+       "pecho_pequeno": {
+        "cx": 1473.84,
+        "cy": 751.4100000000001
+       },
+       "mascara": "img/mascaras/m4-detalle-pecho-negro.png"
+      }
+     },
+     "mascara": "img/mascaras/m4-detalle-pecho-blanco.png"
+    },
+    {
+     "toma": "primer-plano-manga",
+     "pxcm": 33.28,
+     "top": 780.0,
+     "hem": 2559.0,
+     "cx": 1136.6,
+     "manga": {
+      "cx": 1136.64,
+      "cy": 1280.5120000000002,
+      "rot": 0
+     },
+     "radio": 0,
+     "clave": "m4-primer-plano-manga",
+     "nombre": "Primer plano manga",
+     "fotos": {
+      "blanco": {
+       "foto": "img/modelos/m4-primer-plano-manga-blanco.webp",
+       "zoom": "img/modelos/m4-primer-plano-manga-blanco-zoom.webp"
+      },
+      "negro": {
+       "foto": "img/modelos/m4-primer-plano-manga-negro.webp",
+       "zoom": "img/modelos/m4-primer-plano-manga-negro-zoom.webp"
+      }
+     },
+     "por_color": {
+      "blanco": {
+       "pxcm": 33.28,
+       "cx": 1136.6,
+       "top": 780.0,
+       "hem": 2559.0,
+       "radio": 0,
+       "manga": {
+        "cx": 1136.64,
+        "cy": 1280.5120000000002,
+        "rot": 0
+       },
+       "mascara": "img/mascaras/m4-primer-plano-manga-blanco.png"
+      },
+      "negro": {
+       "pxcm": 33.42,
+       "cx": 1136.6,
+       "top": 782.0,
+       "hem": 2559.0,
+       "radio": 0,
+       "manga": {
+        "cx": 1136.64,
+        "cy": 1280.5120000000002,
+        "rot": 0
+       },
+       "mascara": "img/mascaras/m4-primer-plano-manga-negro.png"
+      }
+     },
+     "mascara": "img/mascaras/m4-primer-plano-manga-blanco.png"
     }
    ]
   }
