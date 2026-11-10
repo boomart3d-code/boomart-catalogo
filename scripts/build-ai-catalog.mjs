@@ -19,6 +19,7 @@
 import { readFile, writeFile as writeRaw, mkdir } from "node:fs/promises";
 import { responsiveHtml } from "./responsive-html.mjs";
 import { fileURLToPath } from "node:url";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { SOCIAL_URLS, socialBandHtml, socialFooterHtml } from "./social-links.mjs";
 import { videoUploadDate } from "./video-upload-date.mjs";
@@ -113,6 +114,52 @@ function priceInfo(p) {
     lines: current != null ? [`Precio: S/${current}`] : [],
     listPrice: current,
   };
+}
+
+/**
+ * Opciones de compra de una ficha, cada una con SKU, nombre y precio propios.
+ * Fuente unica para los datos estructurados de la ficha y para el feed de
+ * OpenAI, de modo que un precio nunca se atribuya a otra opcion.
+ *
+ * La PRIMERA opcion es la base: su precio es siempre priceInfo().listPrice (el
+ * que usan los feeds de Google/Meta y la meta product:price:amount) y su SKU es
+ * el id del producto. Las demas usan `${id}-${clave}`.
+ */
+function purchaseOptions(p) {
+  const list = priceInfo(p).listPrice;
+  const own = (key) => `${p.id}-${key}`;
+  let raw = [];
+  if (p.id === "skins-zelda-nintendo-switch-2") {
+    const full = p.modelOptions.find((model) => model.id === "set-11");
+    raw = [
+      { key: null, label: "Base + 1 skin a elección (pack obligatorio)", price: list },
+      { key: "coleccion-completa", label: "Base + colección completa de 11 diseños distintos", price: full && Number(full.regularPrice) },
+    ];
+  } else if (p.modelOptions?.length) {
+    raw = p.modelOptions
+      .filter((model) => !model.addon)
+      .map((model, i) => ({ key: i === 0 ? null : model.id, label: model.name, price: Number(model.regularPrice) }));
+  } else if (p.signPicker) {
+    raw = [
+      { key: null, label: "Un signo", price: Number(p.signPicker.unitPrice) },
+      { key: "set-completo", label: "Set completo (12 signos)", price: Number(p.signPicker.setPrice) },
+    ];
+  } else if (p.templePricing) {
+    const t = p.templePricing;
+    const defs = [
+      { key: "temple", label: "Templo solo", price: t.temple },
+      { key: "pandora", label: "Pandora Box + pedestal", price: t.pandora },
+      { key: "combo", label: "Combo (templo + Pandora Box + pedestal)", price: t.combo },
+    ].filter((d) => typeof d.price === "number");
+    const baseKey = typeof t.temple === "number" ? "temple" : t.combo != null ? "combo" : "pandora";
+    defs.sort((a, b) => (a.key === baseKey ? -1 : b.key === baseKey ? 1 : 0));
+    raw = defs.map((d, i) => ({ key: i === 0 ? null : d.key, label: d.label, price: d.price }));
+  } else if (list != null) {
+    raw = [{ key: null, label: null, price: list }];
+  }
+  return raw
+    .filter((o) => Number.isFinite(o.price) && o.price > 0)
+    .map((o) => ({ sku: o.key ? own(o.key) : p.id, key: o.key, label: o.label, price: o.price }));
 }
 
 const money = (n) => `${Number(n).toFixed(2)} PEN`;
@@ -350,9 +397,9 @@ function buildJsonLd(products) {
       const product = {
         "@type": "Product",
         position: i + 1,
-        name: p.name,
-        category: p.category,
-        description: p.description || "",
+        name: machineName(p),
+        category: stripEmoji(categoryLabel(p.category)),
+        description: tidyText(p.description || ""),
         url: `${SITE}/producto/${p.id}/`,
         image: abs(p.image || (p.gallery && p.gallery[0])),
         brand: { "@type": "Brand", name: "BoomArt" },
@@ -471,7 +518,7 @@ ${cards}
     : "";
 
   return `<!doctype html>
-<html lang="es">
+<html lang="es-PE">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -729,10 +776,10 @@ function buildGoogleFeed(products) {
         .slice(0, 10)
         .map((g) => `      <g:additional_image_link>${esc(g)}</g:additional_image_link>`)
         .join("\n");
-      const desc = `${p.description || p.name} Fabricado a pedido en impresion 3D (${p.material || "PLA"}), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.`;
+      const desc = `${tidyText(p.description || p.name)} Fabricado a pedido en impresion 3D (${p.material || "PLA"}), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.`;
       return `    <item>
       <g:id>${esc(p.id)}</g:id>
-      <g:title>${esc(p.name)}</g:title>
+      <g:title>${esc(machineName(p))}</g:title>
       <g:description>${esc(desc)}</g:description>
       <g:link>${SITE}/producto/${esc(p.id)}/</g:link>
       <g:image_link>${esc(main)}</g:image_link>
@@ -783,10 +830,10 @@ function buildMetaFeed(products) {
     const gallery = (p.gallery || []).filter(Boolean).map(abs);
     const main = abs(p.image) || gallery[0];
     const extra = gallery.filter((g) => g !== main).slice(0, 20).join(",");
-    const desc = `${p.description || p.name} Fabricado a pedido en impresion 3D (${p.material || "PLA"}). Produccion ~48 h utiles. Envios a todo el Peru.`;
+    const desc = `${tidyText(p.description || p.name)} Fabricado a pedido en impresion 3D (${p.material || "PLA"}). Produccion ~48 h utiles. Envios a todo el Peru.`;
     return [
       p.id,
-      p.name,
+      machineName(p),
       desc,
       "in stock",
       "new",
@@ -802,6 +849,87 @@ function buildMetaFeed(products) {
       .join(",");
   });
   return [cols.join(","), ...rows].join("\n") + "\n";
+}
+
+/* ---------------------------------------------------------------- feed de OpenAI
+ * Catalogo para ChatGPT (busqueda de productos y ChatGPT Ads).
+ * Especificacion oficial: https://developers.openai.com/commerce/product-feeds/spec
+ *
+ * NO es el XML de Google: OpenAI acepta CSV / TSV / JSONL (o Parquet) y recibe
+ * el archivo por SFTP, asi que este script solo lo deja generado; subirlo es un
+ * paso manual de Adrian desde su cuenta de OpenAI Ads. Una fila por opcion de
+ * compra: los productos con varias opciones (templos, mascaras, sets) salen
+ * como un grupo de variantes, cada una con su propio item_id y precio.
+ *
+ * Solo se exportan campos con datos reales: sin GTIN, sin envio (no se publica
+ * su monto), sin resenas de producto (las opiniones son de la tienda).
+ */
+const OPENAI_COLUMNS = [
+  "item_id", "offer_id", "group_id", "listing_has_variations", "variant_dict",
+  "title", "description", "url", "brand", "seller_name", "seller_url",
+  "image_url", "additional_image_urls", "availability", "price", "condition",
+  "product_category", "material", "return_policy",
+  "is_eligible_search", "is_ads_eligible",
+];
+
+function buildOpenAiRows(products) {
+  const rows = [];
+  for (const p of products) {
+    const options = purchaseOptions(p);
+    if (!options.length) continue; // la spec exige price > 0
+    const variants = options.length > 1;
+    const productGallery = (p.gallery || []).filter(Boolean).map(abs);
+    for (const o of options) {
+      // Foto de la opcion: la galeria propia del modelo si existe; para la
+      // Pandora Box, la foto cuyo nombre la indica; si no, las de la ficha.
+      const model = (p.modelOptions || []).find((m) => m.name === o.label);
+      let gallery = model?.gallery?.length ? model.gallery.filter(Boolean).map(abs) : productGallery;
+      let main = gallery[0] || abs(p.image);
+      if (o.key === "pandora") {
+        const own = productGallery.find((g) => /pandora/i.test(g));
+        if (own) main = own;
+      }
+      if (!model && o.key !== "pandora") main = abs(p.image) || main;
+      const base = tidyText(p.description || p.name);
+      rows.push({
+        item_id: o.sku,
+        ...(variants ? { offer_id: o.sku, group_id: `grupo-${p.id}`, listing_has_variations: true, variant_dict: { Opción: o.label } } : {}),
+        title: clampWords(variants ? `${machineName(p)} — ${o.label}` : machineName(p), 150),
+        description: `${base}${variants ? ` Opción de compra: ${o.label}.` : ""} Fabricado a pedido en impresión 3D (${p.material || "PLA"}). Envíos a todo el Perú.`.slice(0, 5000),
+        url: `${SITE}/producto/${p.id}/`,
+        brand: "BoomArt",
+        seller_name: "BoomArt",
+        seller_url: `${SITE}/`,
+        image_url: main,
+        additional_image_urls: gallery.filter((g) => g !== main).slice(0, 10),
+        availability: "in_stock",
+        price: money(o.price),
+        condition: "new",
+        product_category: googleCategory(p),
+        ...(p.material ? { material: p.material } : {}),
+        return_policy: `${SITE}/politicas.html#cambios-y-devoluciones`,
+        is_eligible_search: true,
+        // Elegibilidad para anuncios: un archivo generado no activa nada; la
+        // campana se crea y se paga solo desde la cuenta de Adrian.
+        is_ads_eligible: true,
+      });
+    }
+  }
+  return rows;
+}
+
+function buildOpenAiJsonl(products) {
+  return buildOpenAiRows(products).map((r) => JSON.stringify(r)).join("\n") + "\n";
+}
+
+function buildOpenAiCsv(products) {
+  const cell = (v) => {
+    if (v === undefined || v === null || v === "") return "";
+    const s = Array.isArray(v) ? v.join(",") : typeof v === "object" ? JSON.stringify(v) : String(v);
+    return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+  };
+  const lines = buildOpenAiRows(products).map((r) => OPENAI_COLUMNS.map((c) => cell(r[c])).join(","));
+  return [OPENAI_COLUMNS.join(","), ...lines].join("\n") + "\n";
 }
 
 /* ---------------------------------------------------------------- paginas de producto
@@ -840,11 +968,31 @@ const stripEmoji = (s) =>
     .replace(/\s+/g, " ")
     .trim();
 
+// Texto para buscadores, datos estructurados y feeds: sin emoji (Merchant Center
+// y otros catalogos los desaconsejan en titulos) y sin separadores sueltos que
+// dejaria el emoji al quitarlo. La tienda y la ficha siguen mostrando el nombre
+// original con su emoji; esto solo afecta lo que leen las maquinas.
+const tidyText = (s) =>
+  stripEmoji(s)
+    .replace(/(\s[·|])(\s[·|])+/g, "$1")
+    .replace(/^[\s·|–—-]+|[\s·|–—-]+$/g, "")
+    .trim();
+const machineName = (p) => tidyText(p.name);
+
+// Un titulo de resultado de busqueda se corta cerca de los 60 caracteres: se
+// elige la variante mas completa que quepa; si el nombre solo ya es mas largo,
+// se deja "Nombre | BoomArt".
+const TITLE_MAX = 65;
 function pageTitle(p) {
+  const name = machineName(p);
   const cat = stripEmoji(categoryLabel(p.category));
-  const hasCat = p.name.toLowerCase().includes(cat.toLowerCase());
-  const tail = hasCat ? "impresión 3D en Perú" : `${cat} · impresión 3D`;
-  return `${p.name} · ${tail} | BoomArt`;
+  const hasCat = name.toLowerCase().includes(cat.toLowerCase());
+  const candidates = [
+    `${name} · ${hasCat ? "impresión 3D en Perú" : `${cat} · impresión 3D`} | BoomArt`,
+    `${name} · impresión 3D | BoomArt`,
+    `${name} | BoomArt`,
+  ];
+  return candidates.find((t) => t.length <= TITLE_MAX) || candidates[candidates.length - 1];
 }
 
 function clampWords(str, max) {
@@ -855,12 +1003,17 @@ function clampWords(str, max) {
   return (lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[\s,.;:!¡¿?-]+$/, "") + "...";
 }
 
+// Una metadescripcion se muestra completa hasta ~155-160 caracteres: la cola
+// (precio base, tecnica y alcance) es fija y el resto se llena con la
+// descripcion real de la pieza.
+const DESC_MAX = 158;
 function pageDescription(p) {
   const price = priceInfo(p);
   const from = price.from != null ? ` Desde S/${price.from}.` : "";
-  const short = clampWords(p.description || p.name, 120);
   const masculine = p.grammaticalGender === "masculino";
-  return `${short}${from} ${masculine ? "Impreso" : "Impresa"} en 3D a pedido en Lima y Callao, con envíos a todo el Perú. ${masculine ? "Cómpralo" : "Cómprala"} por WhatsApp o en la tienda BoomArt.`;
+  const tail = `${from} ${masculine ? "Impreso" : "Impresa"} en 3D a pedido, con envíos a todo el Perú.`;
+  const room = Math.max(60, DESC_MAX - tail.length);
+  return `${clampWords(tidyText(p.description || p.name), room)}${tail}`;
 }
 
 function offerLd(p) {
@@ -877,40 +1030,20 @@ function offerLd(p) {
       returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
     },
   };
-  if (p.id === "skins-zelda-nintendo-switch-2") {
-    const single = p.modelOptions.filter(model => !model.addon && model.id !== "set-11");
-    const base = Number(single[0].regularPrice), extra = Number(p.modelOptions.find(model => model.addon).regularPrice);
-    const full = Number(p.modelOptions.find(model => model.id === "set-11").regularPrice);
-    return {"@type":"AggregateOffer",lowPrice:base,highPrice:Math.max(full,base+Math.max(0,single.length-2)*extra),...common};
-  }
-  if (p.modelOptions?.length) {
-    const prices = p.modelOptions.filter((model) => !model.addon).map((model) => Number(model.regularPrice));
-    return { "@type": "AggregateOffer", offerCount: prices.length,
-      lowPrice: Math.min(...prices), highPrice: Math.max(...prices), ...common };
-  }
-  if (p.signPicker) {
-    return {
-      "@type": "AggregateOffer",
-      offerCount: 13,
-      lowPrice: p.signPicker.unitPrice,
-      highPrice: p.signPicker.setPrice,
-      ...common,
-    };
-  }
-  if (p.templePricing) {
-    const vals = [p.templePricing.temple, p.templePricing.pandora, p.templePricing.combo].filter(
-      (n) => typeof n === "number",
-    );
-    return {
-      "@type": "AggregateOffer",
-      offerCount: vals.length,
-      lowPrice: Math.min(...vals),
-      highPrice: Math.max(...vals),
-      ...common,
-    };
-  }
-  const price = priceInfo(p).from;
-  return { "@type": "Offer", price: price != null ? price : 0, ...common };
+  // Una oferta por opcion de compra, cada una con su nombre, SKU y precio. Antes
+  // se publicaba un AggregateOffer (de S/45 a S/130) bajo el nombre "Templo de
+  // Aries", y el S/45 es de la Pandora Box: el precio quedaba atribuido a la
+  // pieza equivocada. La primera opcion es la base (mismo precio que los feeds).
+  const options = purchaseOptions(p);
+  if (!options.length) return undefined;
+  const offers = options.map((o) => ({
+    "@type": "Offer",
+    ...(o.label ? { name: o.label } : {}),
+    sku: o.sku,
+    price: o.price,
+    ...common,
+  }));
+  return offers.length === 1 ? offers[0] : offers;
 }
 
 function productLd(p) {
@@ -920,14 +1053,15 @@ function productLd(p) {
   const ld = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: p.name,
-    description: String(p.description || p.name).replace(/\s+/g, " ").trim(),
+    name: machineName(p),
+    description: tidyText(p.description || p.name),
     image: imgs,
     sku: p.id,
     category: stripEmoji(categoryLabel(p.category)),
     brand: { "@type": "Brand", name: "BoomArt" },
     offers: offerLd(p),
   };
+  if (!ld.offers) delete ld.offers;
   if (p.material) ld.material = p.material;
   // Video corto del producto (campo opcional "video"): Google puede mostrarlo
   // en sus resultados de video.
@@ -1169,7 +1303,7 @@ function buildProductPage(p, all, ratingLd) {
       : "";
 
   return `<!doctype html>
-<html lang="es">
+<html lang="es-PE">
   <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM5C8Q1394"></script>
@@ -1190,13 +1324,13 @@ function buildProductPage(p, all, ratingLd) {
     <link rel="manifest" href="${rel}site.webmanifest">
     <meta property="og:type" content="product">
     <meta property="og:site_name" content="BoomArt">
-    <meta property="og:title" content="${esc(p.name)} | BoomArt">
+    <meta property="og:title" content="${esc(machineName(p))} | BoomArt">
     <meta property="og:description" content="${esc(desc)}">
     <meta property="og:url" content="${url}">
     <meta property="og:image" content="${esc(ogImg)}">${ogMeta}
     <meta property="og:locale" content="es_PE">${priceMeta}
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="${esc(p.name)} | BoomArt">
+    <meta name="twitter:title" content="${esc(machineName(p))} | BoomArt">
     <meta name="twitter:description" content="${esc(desc)}">
     <meta name="twitter:image" content="${esc(ogImg)}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1706,7 +1840,7 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
     .join("\n          ");
 
   return `<!doctype html>
-<html lang="es">
+<html lang="es-PE">
   <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM5C8Q1394"></script>
@@ -2026,9 +2160,63 @@ async function writeSaintSeiyaCampaignPage(products) {
 }
 
 /* ---------------------------------------------------------------- sitemap.xml */
-function buildSitemap(products) {
+/* lastmod REAL. Antes todas las URL llevaban la fecha del dia en que corrio el
+ * generador, asi que Google no podia distinguir lo que cambio. Ahora
+ * data/seo-lastmod.json guarda, por URL, una huella del contenido ya generado y
+ * la fecha en que esa huella aparecio: si la pagina no cambio, conserva su
+ * fecha. Las fechas que el generador reescribe solo (priceValidUntil,
+ * "Actualizado el ...") se ignoran al calcular la huella. La primera vez no hay
+ * historial, asi que todas parten de la fecha de ese dia. */
+const LASTMOD_FILE = path.join(ROOT, "data", "seo-lastmod.json");
+
+function sitemapFileFor(loc) {
+  const rel = loc.slice(SITE.length + 1);
+  if (rel === "") return "index.html";
+  return rel.endsWith("/") ? `${rel}index.html` : rel;
+}
+
+function contentFingerprint(text) {
+  const stable = text
+    .replace(/\r/g, "")
+    .replace(/"priceValidUntil":"\d{4}-\d{2}-\d{2}"/g, '"priceValidUntil":""')
+    .replace(/Actualizado( el)?:? \d{4}-\d{2}-\d{2}/g, "Actualizado");
+  return createHash("sha1").update(stable).digest("hex").slice(0, 12);
+}
+
+async function buildSitemapXml(products) {
+  let previous = {};
+  try {
+    previous = JSON.parse(await readFile(LASTMOD_FILE, "utf8")).pages || {};
+  } catch {
+    previous = {};
+  }
+  const entries = sitemapEntries(products);
+  const pages = {};
+  for (const u of entries) {
+    const file = path.join(ROOT, sitemapFileFor(u.loc));
+    let text;
+    try {
+      text = await readFile(file, "utf8");
+    } catch {
+      throw new Error(`El sitemap lista ${u.loc} pero no existe ${sitemapFileFor(u.loc)}`);
+    }
+    const hash = contentFingerprint(text);
+    const key = u.loc.slice(SITE.length);
+    const before = previous[key];
+    pages[key] = { hash, lastmod: before && before.hash === hash ? before.lastmod : NOW };
+    u.lastmod = pages[key].lastmod;
+  }
+  // Una linea por URL y claves ordenadas: si dos personas regeneran a la vez, Git
+  // mezcla el archivo sin conflictos.
+  const sorted = Object.fromEntries(Object.keys(pages).sort().map((k) => [k, pages[k]]));
+  const body = Object.entries(sorted).map(([k, v]) => `    ${JSON.stringify(k)}: ${JSON.stringify(v)}`).join(",\n");
+  await writeRaw(LASTMOD_FILE, `{\n  "version": 1,\n  "pages": {\n${body}\n  }\n}\n`);
+  return buildSitemap(entries);
+}
+
+function sitemapEntries(products) {
   const cats = groupByCategory(products).map(([cat]) => cat);
-  const urls = [
+  return [
     { loc: `${SITE}/`, priority: "1.0", changefreq: "weekly" },
     { loc: `${SITE}/catalogo.html`, priority: "0.9", changefreq: "weekly" },
     { loc: `${SITE}/impresion-3d-personalizada/`, priority: "0.9", changefreq: "monthly" },
@@ -2049,13 +2237,16 @@ function buildSitemap(products) {
     { loc: `${SITE}/politicas.html`, priority: "0.3", changefreq: "yearly" },
     { loc: `${SITE}/libro-de-reclamaciones.html`, priority: "0.2", changefreq: "yearly" },
   ];
+}
+
+function buildSitemap(entries) {
   return (
     `<?xml version="1.0" encoding="UTF-8"?>\n` +
     `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-    urls
+    entries
       .map(
         (u) =>
-          `  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${NOW}</lastmod>\n` +
+          `  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n` +
           `    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`,
       )
       .join("\n") +
@@ -2104,11 +2295,12 @@ const [productPageCount, categoryPageCount] = await Promise.all([
   writeCategoryPages(products, ratingLd),
   writeFile(path.join(ROOT, "catalogo.html"), buildHtml(products, ratingLd, reviews)),
   writeFile(path.join(ROOT, "catalogo.json"), buildJson(products) + "\n"),
-  writeFile(path.join(ROOT, "sitemap.xml"), buildSitemap(products)),
   writeFile(path.join(ROOT, "llms.txt"), buildLlms(products, reviews)),
   writeFile(path.join(ROOT, "llms-full.txt"), buildLlmsFull(products)),
   writeFile(path.join(ROOT, "feed-google.xml"), buildGoogleFeed(products)),
   writeFile(path.join(ROOT, "feed-meta.csv"), buildMetaFeed(products)),
+  writeFile(path.join(ROOT, "feed-openai.jsonl"), buildOpenAiJsonl(products)),
+  writeFile(path.join(ROOT, "feed-openai.csv"), buildOpenAiCsv(products)),
 ]);
 
 // Secuencial (no Promise.all): ambas leen y reescriben index.html/opinion,
@@ -2123,6 +2315,8 @@ await writeFile(indexFile, await readFile(indexFile, 'utf8'));
 // Despues de actualizar index.html: /Halloween/ es una copia de la portada.
 await writeHalloweenCampaignPage(products);
 await writeSaintSeiyaCampaignPage(products);
+// El sitemap va al final: su lastmod sale de la huella de las paginas ya escritas.
+await writeFile(path.join(ROOT, "sitemap.xml"), await buildSitemapXml(products));
 
 console.log(
   `OK - generado desde ${products.length} productos` +
@@ -2132,6 +2326,8 @@ console.log(
     `  Halloween/index.html (campaña de ${HALLOWEEN_CAMPAIGN_PRODUCT_IDS.length} productos)\n` +
     "  sitemap.xml\n  catalogo.html\n  catalogo.json\n  llms.txt\n  llms-full.txt\n" +
     "  feed-google.xml (Google Merchant + Pinterest)\n  feed-meta.csv (Instagram / Facebook)\n" +
+    "  feed-openai.jsonl / feed-openai.csv (ChatGPT, ver developers.openai.com/commerce/product-feeds/spec)\n" +
+    "  data/seo-lastmod.json (huellas para el lastmod real del sitemap)\n" +
     `  index.html (aggregateRating ${ratingUpdated ? "actualizado" : "sin cambios"})\n` +
     `  index.html + opinion/index.html (opiniones en texto plano ${reviewsBlocksUpdated ? "actualizadas" : "sin cambios"})\n` +
     `  redes sociales en index/nosotros/politicas (${socialBlocksUpdated ? "actualizadas" : "sin cambios"})`,

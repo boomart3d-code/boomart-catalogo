@@ -42,10 +42,19 @@ await Promise.all(Array.from({length: 6}, async () => {
       if (pathname.startsWith('/producto/')) {
         const p = nodes.find(n => n['@type'] === 'Product');
         if (!p?.name || !p?.image || !p?.offers) issues.push('Product incompleto');
-        if (p?.offers?.priceCurrency !== 'PEN') issues.push('Moneda distinta de PEN');
-        if (!(Number(p?.offers?.price ?? p?.offers?.lowPrice) > 0)) issues.push('Precio invalido');
+        // Una ficha con varias opciones publica una Offer por opcion (con nombre,
+        // SKU y precio propios). AggregateOffer mezclaba precios de piezas distintas
+        // y Google no lo admite en fichas de comerciante.
+        const offers = [].concat(p?.offers || []);
+        if (offers.some(o => o['@type'] !== 'Offer')) issues.push('La oferta no es de tipo Offer');
+        if (offers.some(o => o.priceCurrency !== 'PEN')) issues.push('Moneda distinta de PEN');
+        if (offers.some(o => !(Number(o.price) > 0))) issues.push('Precio invalido');
+        if (offers.length > 1 && offers.some(o => !o.name || !o.sku)) issues.push('Opcion sin nombre o SKU');
+        if (new Set(offers.map(o => o.sku)).size !== offers.length) issues.push('SKU repetido entre opciones');
+        if (/\p{Extended_Pictographic}/u.test(p?.name || '')) issues.push('Emoji en el nombre del Product');
         if (!h1[0] || !html.includes('<main class="pp">')) issues.push('Ficha no presente en HTML');
       }
+      if (!/<html[^>]*\blang=["']es-PE["']/i.test(html)) issues.push('Idioma distinto de es-PE');
       const links = [...html.matchAll(/<a\b[^>]*href=["']([^"']+)["']/gi)].map(m => new URL(m[1].replace(/&amp;/g, '&'), url).href);
       if (url === `${SITE}/`) {
         const categories = urls.filter(u => new URL(u).pathname.startsWith('/categoria/') && !u.includes('series-y-peliculas'));
@@ -67,6 +76,7 @@ for (const [_, item] of items) {
   const id=item.match(/<g:id>([^<]+)<\/g:id>/)?.[1];
   if (!products.some(p=>p.id===id)) feedIssues.push(`ID desconocido ${id}`);
   for (const field of ['title','description','link','image_link','availability','price','identifier_exists']) if (!new RegExp(`<g:${field}>[^<]+<\/g:${field}>`).test(item)) feedIssues.push(`${id}: falta ${field}`);
+  if (/\p{Extended_Pictographic}/u.test(item.match(/<g:title>([^<]*)<\/g:title>/)?.[1] || '')) feedIssues.push(`${id}: emoji en el titulo del feed`);
 }
 const report = {date:new Date().toISOString(), mode:live?'publico':'archivos-locales', pages:urls.length, products:products.length, feedItems:items.length, feedIssues, pagesWithIssues:results.filter(r=>r.issues.length).length, results};
 if (out >= 0) await writeFile(path.resolve(process.argv[out+1]), JSON.stringify(report,null,2)+'\n');

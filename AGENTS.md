@@ -26,6 +26,11 @@ Studio (es un tablero compartido entre los dos proyectos).
   `node scripts/build-ai-catalog.mjs` y subir junto con el cambio los
   archivos regenerados (catálogo HTML/JSON, archivos para IA, feeds,
   sitemap, páginas de producto/categoría).
+- SEO e IA (fuente única, feeds, sitemap, robots, Search Console): ver
+  `docs/SEO_Y_BUSCADORES.md`. Tras regenerar, correr `node scripts/audit-seo.mjs`
+  y `node scripts/validate-feeds.mjs`; ambos deben terminar sin errores. El
+  `lastmod` del sitemap sale de `data/seo-lastmod.json` (lo commitea el flujo
+  `build-ai-catalog.yml`; no se edita a mano).
 - Si se cambia un JS/CSS referenciado desde HTML con caché busting (`?v=N`),
   subir también la versión incrementada para evitar que el navegador del
   cliente sirva la copia vieja en caché.
