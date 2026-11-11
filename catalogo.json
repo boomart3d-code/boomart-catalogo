@@ -31,6 +31,10 @@
       "description": "Personaliza tu base de carga Nintendo Switch 2 con Zelda en 3D y alto relieve. Cada pack incluye una base impresa (plataforma y apoyos laterales tipo piedra) y una skin a elección por S/50. Añade otras temáticas al mismo pack por S/20 cada una: base + 2 skins S/70; base + 3 skins S/90. La base con los 11 diseños distintos de la Colección Hyrule cuesta S/200. No se venden skins sueltas. La skin es la tarjeta decorativa superior intercambiable. Consola, dock de Nintendo y videojuegos no incluidos. Imágenes referenciales; colores y acabados pueden variar ligeramente por la fabricación 3D. Hecho a pedido por BoomArt, con envíos a todo el Perú.",
       "material": "Impresión 3D en alto relieve",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 50,
       "pricing": [
@@ -398,6 +402,10 @@
       "description": "Combo de la Casa de Aries: templo de 16 cm de alto × 17 cm de fondo × 23 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado.",
       "material": "PLA+ reforzado y PLA Silk dorado",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -427,6 +435,10 @@
       "description": "Combo de la Casa de Tauro: templo de 16 cm de alto × 19 cm de fondo × 22 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado.",
       "material": "PLA+ reforzado y PLA Silk dorado",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -456,6 +468,10 @@
       "description": "Combo de la Casa de Géminis: templo de 16 cm de alto × 18 cm de fondo × 22 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado.",
       "material": "PLA+ reforzado y PLA Silk dorado",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -485,6 +501,10 @@
       "description": "Combo de la Casa de Cáncer: templo de 17 cm de alto × 21.5 cm de fondo × 20 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado.",
       "material": "PLA+ reforzado y PLA Silk dorado",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -513,6 +533,10 @@
       "description": "Combo de la Casa de Leo: templo de 16 cm de alto × 18 cm de fondo × 22 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado.",
       "material": "PLA+ reforzado y PLA Silk dorado",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -541,6 +565,10 @@
       "description": "Combo de la Casa de Virgo: templo de 16 cm de alto × 15 cm de fondo × 24.5 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado.",
       "material": "PLA+ reforzado y PLA Silk dorado",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -569,6 +597,10 @@
       "description": "Combo de la Casa de Libra: templo de 17.5 cm de alto × 20 cm de fondo × 22 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado.",
       "material": "PLA+ reforzado y PLA Silk dorado",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -597,6 +629,10 @@
       "description": "Combo de la Casa de Escorpio: templo de 17 cm de alto × 19 cm de fondo × 21 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado.",
       "material": "PLA+ reforzado y PLA Silk dorado",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -625,6 +661,10 @@
       "description": "Combo de la Casa de Sagitario: templo de 19 cm de alto × 15 cm de fondo × 21 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado.",
       "material": "PLA+ reforzado y PLA Silk dorado",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -653,6 +693,10 @@
       "description": "Combo de la Casa de Capricornio: templo de 16 cm de alto × 14 cm de fondo × 23 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado.",
       "material": "PLA+ reforzado y PLA Silk dorado",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -681,6 +725,10 @@
       "description": "Combo de la Casa de Acuario: templo de 20 cm de alto × 22 cm de fondo × 19 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado.",
       "material": "PLA+ reforzado y PLA Silk dorado",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -710,6 +758,10 @@
       "description": "Combo de la Casa de Piscis: templo de 17 cm de alto × 16.5 cm de fondo × 19.5 cm de ancho, Pandora Box de 6.5 × 5 × 5 cm y pedestal de 8 × 7.5 × 7.5 cm. Templo y pedestal fabricados en PLA+ reforzado con acabado artesanal tipo piedra envejecida; Pandora Box en PLA Silk dorado.",
       "material": "PLA+ reforzado y PLA Silk dorado",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -739,6 +791,10 @@
       "description": "El imponente Templo del Patriarca llega para completar el Santuario de Saint Seiya. Fabricado en PLA+ y pintado a mano con acabado de piedra envejecida. Mide 25 cm de alto, 24 cm de profundidad y 13 cm de ancho.",
       "material": "PLA+ pintado a mano",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 200,
       "pricing": [
@@ -767,6 +823,10 @@
       "description": "La colección completa del Santuario de Athena: los 12 Templos de las Casas del Zodiaco (Aries a Piscis), cada uno con su Caja de Pandora dorada y su pedestal a juego. Acabado tipo piedra gris envejecida, detallado a mano.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 1500,
       "pricing": [
@@ -804,6 +864,10 @@
       "description": "El busto de Atena, diosa protectora del Santuario, es la pieza central que toda colección de Saint Seiya (Caballeros del Zodiaco) merece. Rostro sereno, casco con detalle y armadura trabajada, con espectacular acabado estilo piedra envejecida.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -833,6 +897,10 @@
       "description": "Escultura de Atena de cuerpo entero, la diosa de la sabiduría y la guerra justa, con espectacular acabado estilo piedra envejecida. Impresa en 3D y detallada a mano, hecha a pedido en Lima.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -856,6 +924,10 @@
       "description": "La icónica Torre del Reloj del Santuario de Athena, con sus doce llamas encendidas marcando la cuenta regresiva. Réplica decorativa de 32 cm de alto, acabado tipo piedra envejecida, impresa en 3D en PLA+/PETG y detallada a mano. Hecha a pedido en Lima.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -880,6 +952,10 @@
       "description": "Set de 12 Casas del Zodiaco en miniatura. Cada templo mide entre 6.5 y 8 cm de alto y aproximadamente 8 cm de ancho. Fabricados en PLA+ resistente, con acabado de piedra envejecida pintado a mano y parte posterior plana. Producción de 24 a 48 horas útiles. No incluye figuras, estante ni maqueta de montaña.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -911,6 +987,10 @@
       "description": "Colección de 15 piezas: 12 templos mini de 6.5 a 8 cm, Templo del Patriarca de 9 cm, Escultura de Atena de 12 cm y Torre del Reloj de 15 cm. Fabricada en PLA+ resistente, con acabado de piedra envejecida pintado a mano. Producción de 24 a 48 horas útiles. No incluye figuras, estante ni maqueta de montaña.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 150,
       "pricing": [
@@ -935,6 +1015,10 @@
       "description": "Las 12 Cajas de Pandora de los Caballeros Dorados, cada una con su pedestal estilo piedra. El set completo que corona cualquier colección de Saint Seiya.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 400,
       "pricing": [
@@ -963,6 +1047,10 @@
       "description": "Las Pandora Box de los 12 Caballeros Dorados, de Aries a Piscis, fabricadas en PLA Silk dorado (6.5 × 5 × 5 cm cada una). Se venden sin pedestal. Llévate el set completo de 12 por S/200 o elige solo el signo (o los signos) que quieras, a S/20 cada uno. Hechas a pedido, con envíos a todo el Perú.",
       "material": "PLA Silk",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 20,
       "pricing": [
@@ -1002,6 +1090,10 @@
       "description": "Casco funcional de cosplay de la Armadura de Pegaso V1, la que porta Seiya en la versión clásica de Saint Seiya, en tamaño real 1:1. Se puede usar puesto: alas laterales, visor y volúmenes reproducidos fielmente en un acabado tipo metal cepillado. Como se imprime a pedido, el calce se adapta a la talla de quien lo va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Impreso en 3D en Perú, con envíos a todo el país.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 250,
       "pricing": [
@@ -1028,6 +1120,10 @@
       "description": "Tiara de cosplay de la Armadura de Pegaso, la que porta Seiya en Saint Seiya, en tamaño real 1:1. Diadema con las alas y el frontal del casco con sus cuernos dorados y visor rojo, lista para usar puesta como accesorio de cosplay o para exhibir junto a tu figura. Como se imprime a pedido, el calce se adapta a la talla de quien la va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Impresa en 3D en Perú, con envíos a todo el país.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -1057,6 +1153,10 @@
       "description": "Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en tamaño real 1:1. Diadema con sus grandes cuernos dorados, el frontal plateado y la gema roja al centro, lista para usar en tu cosplay o disfraz de Halloween, o para exhibir junto a tu figura. Acabado dorado y plateado pintado a mano. Como se fabrica a pedido, el calce se adapta a la talla de quien la va a usar (niño, adolescente o adulto) — indícanos la talla al hacer tu pedido. Hecha en Perú, con envíos a todo el país.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -1086,6 +1186,10 @@
       "description": "Arma el Santuario completo. Los 12 Altares Exhibidor de las Casas del Zodiaco, uno por cada Caballero Dorado, con acabado tipo piedra envejecida y el símbolo de cada signo en dorado. Pensados para lucir tus figuras Myth Cloth EX de Bandai como en el anime. Precio por altar individual: S/80. El conjunto de los 12 altares tiene un precio oficial de S/850. Impresos en 3D a pedido en Perú, con envíos a todo el país. Las figuras Myth Cloth de la foto son de Bandai y no están incluidas: el producto son los 12 altares.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 850,
       "pricing": [
@@ -1123,6 +1227,10 @@
       "description": "Altar exhibidor de la Casa de Aries, la 1ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Aries (Mu). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
@@ -1150,6 +1258,10 @@
       "description": "Altar exhibidor de la Casa de Tauro, la 2ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Tauro (Aldebarán). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
@@ -1177,6 +1289,10 @@
       "description": "Altar exhibidor de la Casa de Géminis, la 3ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Géminis (Saga). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
@@ -1204,6 +1320,10 @@
       "description": "Altar exhibidor de la Casa de Cáncer, la 4ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Cáncer (Máscara de Muerte). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
@@ -1231,6 +1351,10 @@
       "description": "Altar exhibidor de la Casa de Leo, la 5ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Leo (Aioria). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
@@ -1258,6 +1382,10 @@
       "description": "Altar exhibidor de la Casa de Virgo, la 6ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Virgo (Shaka). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
@@ -1285,6 +1413,10 @@
       "description": "Altar exhibidor de la Casa de Libra, la 7ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Libra (Dohko). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
@@ -1312,6 +1444,10 @@
       "description": "Altar exhibidor de la Casa de Escorpio, la 8ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Escorpio (Milo). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
@@ -1339,6 +1475,10 @@
       "description": "Altar exhibidor de la Casa de Sagitario, la 9ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Sagitario (Aioros). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
@@ -1366,6 +1506,10 @@
       "description": "Altar exhibidor de la Casa de Capricornio, la 10ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Capricornio (Shura). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
@@ -1393,6 +1537,10 @@
       "description": "Altar exhibidor de la Casa de Acuario, la 11ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Acuario (Camus). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
@@ -1420,6 +1568,10 @@
       "description": "Altar exhibidor de la Casa de Piscis, la 12ª Casa del Santuario de Athena, hecho para montar tu figura Myth Cloth EX de Bandai del Caballero Dorado de Piscis (Afrodita). Réplica del templo con columnas y el símbolo del signo en dorado, con acabado tipo piedra envejecida. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
@@ -1447,6 +1599,10 @@
       "description": "Altar exhibidor del Caballero de Bronce del Dragón (Shiryu), con el emblema del dragón en relieve y dos guardianes tallados a los costados de la columna. Hecho para montar tu figura Myth Cloth EX de Bandai de Shiryu. Base circular estilo escama de dragón en verde con detalles dorados y acabado tipo piedra envejecida en la columna. Impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 150,
       "pricing": [
@@ -1473,6 +1629,10 @@
       "description": "Altar exhibidor del Caballero de Bronce Pegaso (Seiya), con la placa tallada del emblema de Pegaso entre columnas y base tipo ruinas del Santuario. Hecho para montar tu figura Myth Cloth EX de Bandai de Seiya. Acabado realista tipo piedra envejecida, impreso en 3D a pedido en Perú, con envíos a todo el país. La figura de la foto es de Bandai y no está incluida: el producto es únicamente el altar impreso en 3D.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 150,
       "pricing": [
@@ -1501,6 +1661,10 @@
       "description": "Fawkes es el fiel fénix de Albus Dumbledore: una criatura mágica conocida por su plumaje rojo y dorado, su lealtad, sus lágrimas curativas y su capacidad de renacer de las cenizas. Esta pieza decorativa inspirada en el mundo de Harry Potter está impresa en 3D y pintada a mano, con una base de exhibición dorada que realza su presencia. Fabricada en PLA+, con detalles en PLA Silk dorado y PLA Silk plata en las patas. Mide aproximadamente entre 40 y 45 cm desde la cola hasta la cresta. Hecha a pedido, con envíos a todo el Perú.",
       "material": "PLA+ con detalles en PLA Silk dorado y PLA Silk plata",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 180,
       "pricing": [
@@ -1528,6 +1692,10 @@
       "description": "El castillo de Hogwarts en réplica decorativa impresa en 3D: torres, puentes y el Gran Comedor reconocibles al instante. Pieza imprescindible para todo fan del mundo mágico.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
@@ -1555,6 +1723,10 @@
       "description": "Ajedrez de colección Hogwarts · 4 Casas. Un homenaje integral al colegio de magia.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 260,
       "pricing": [
@@ -1589,6 +1761,10 @@
       "description": "♟️ Ajedrez Harry Potter modular y personalizable. Tablero de 40 x 40 cm formado por 4 módulos de 20 cm que se unen para jugar. Piezas de 6 a 8 cm de alto, en PLA+ y pintadas a mano en dorado y plata, sobre casillas doradas y plateadas. Lleva 2 nombres grabados en el marco: el tuyo y el de tu rival, o el de la persona a quien se lo regalas; solo dinos los nombres al hacer tu pedido. Un regalo único para fans de Harry Potter y del ajedrez. Hecho a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 220,
       "pricing": [
@@ -1616,6 +1792,10 @@
       "description": "Lámpara LED del Sombrero Seleccionador con iluminación integrada que resalta su emblemática expresión. El regalo perfecto para los verdaderos fans de Harry Potter.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 95,
       "pricing": [
@@ -1640,6 +1820,10 @@
       "description": "Ilumina tu espacio con la magia de esta lámpara lunar de Hogwarts: un modelo exclusivo que combina el castillo con una luna retroiluminada. Dimensiones (largo x ancho x alto): 254 x 254 x 115 mm.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 250,
       "pricing": [
@@ -1671,6 +1855,10 @@
       "description": "🎃 Edición Halloween. Casco de Wolverine (Marvel) con su set de garras, pensado para cosplay y disfraz. Disponible en dos tamaños: adulto (tamaño real 1:1) o niño (escala reducida). Elige el tamaño al agregarlo al carrito. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 200,
       "pricing": [
@@ -1706,6 +1894,10 @@
       "description": "Casco de Daredevil inspirado en Marvel, impreso en 3D en PLA+ y pintado a mano. Acabado texturizado en rojo y negro, con los cuernos característicos del personaje. Para cosplay, disfraces o exhibición. Hecho a pedido. El precio corresponde a un casco; los soportes, bastones, lentes y demás accesorios de la foto de conjunto no están incluidos.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 200,
       "pricing": [
@@ -1734,6 +1926,10 @@
       "description": "Espectacular palomera con forma de la cara de Spider-Man: ojos blancos, telaraña roja y azul. Ideal para tu noche de cine en casa o como pieza decorativa Marvel.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 70,
       "pricing": [
@@ -1758,6 +1954,10 @@
       "description": "Palomera temática de Spider-Man para tu noche de películas: práctica, resistente y con el diseño arácnido que todo fan de Marvel reconoce.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 70,
       "pricing": [
@@ -1784,6 +1984,10 @@
       "description": "🎃 Edición Halloween. El crossover más retorcido de tu colección: Mario convertido en Billy, el muñeco de Saw (El Juego del Miedo), con el rostro pálido, las espirales rojas en las mejillas, smoking con moño y su inconfundible triciclo rojo. Impresa en 3D y pintada a mano, sobre pedestal negro. El detalle perfecto para decorar en Halloween o para el fan del terror todo el año. Hecha a pedido, con envíos a todo el Perú.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 80,
       "pricing": [
@@ -1813,6 +2017,10 @@
       "description": "🎃 Edición Halloween. Elige entre la Máscara Calavera clásica y la Máscara calavera con cuernos. La versión clásica presenta un cráneo con mandíbula móvil, inspirado en Ghost Rider (sin las llamas); la versión con cuernos incorpora grandes cuernos curvos y colmillos, con acabado envejecido en tono hueso. Impresas en 3D en PLA+ y pintadas a mano. Para disfraces, fiestas temáticas, sesiones de fotos o decoración de terror. Hechas a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -1869,6 +2077,10 @@
       "description": "🎃 Edición Halloween. Máscara Calabaza Calavera: mitad jack-o'-lantern, mitad cráneo, con el ceño marcado, las cuencas huecas y una hilera de dientes de sierra en degradado hacia el blanco. Impresa en 3D y pintada a mano. Ideal para tu disfraz, sesión de fotos o para colgarla como decoración de temporada. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 120,
       "pricing": [
@@ -1896,6 +2108,10 @@
       "description": "🎃 Edición Halloween. Dale a tu decoración un toque oscuro y fuera de lo común: un cráneo de aspecto envejecido con una columna vertebral que sostiene la vela, una pieza que llama la atención tanto encendida como apagada. Al prender la vela, la luz cálida resalta las formas del cráneo y crea una atmósfera intensa y misteriosa. Ideal para salas, escritorios, vitrinas, mesas temáticas o rincones góticos. Impreso en 3D y detallado a mano, con acabado tipo hueso envejecido. Compatible con velas de hasta 2 cm de diámetro (vela no incluida). Hecho a pedido, con envíos a todo el Perú.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -1924,6 +2140,10 @@
       "description": "🎃 Edición Halloween. Máscara demoníaca de gran presencia: cuernos imponentes, textura escamada y un acabado lleno de detalle. Disponible en rojo o azul. Perfecta para tu disfraz, una fiesta temática, sesión de fotos o para exhibirla como pieza de decoración. Impresa en 3D y pintada a mano. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 220,
       "pricing": [
@@ -1953,6 +2173,10 @@
       "description": "🎃 Edición Halloween. Actitud callejera con espíritu de temporada: una figura de calavera con look urbano —gorra, casaca inflada y zapatillas— y una presencia que no pasa desapercibida. Art toy de escritorio impreso en 3D y pintado a mano. Disponible en varias combinaciones de color (consulta las disponibles). Ideal para decoración, colección o regalo. Precio por figura. Hecho a pedido, con envíos a todo el Perú.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 50,
       "pricing": [
@@ -1981,6 +2205,10 @@
       "description": "🎃 Edición Halloween. Lleva tu disfraz a un nivel mucho más oscuro con la Máscara Krampus: diseño demoníaco, cuernos de carnero y una expresión aterradora con colmillos. Impresa en 3D y pintada a mano, con acabado detallado. Perfecta para disfraces, fiestas temáticas, sesiones de fotos o para exhibirla como pieza de decoración oscura. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 200,
       "pricing": [
@@ -2011,6 +2239,10 @@
       "description": "🎃 Edición Halloween. Máscara de Baphomet en acabado negro con cuernos detallados y pentagrama rojo en la frente: diseño siniestro y llamativo, con alto nivel de detalle. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y decoración temática oscura. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 😈🔥",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 140,
       "pricing": [
@@ -2041,6 +2273,10 @@
       "description": "🎃 Edición Halloween. Máscara articulada inspirada en Hellboy, con acabado rojo y gran nivel de detalle. La mandíbula es articulada: al hablar, la boca se mueve contigo. Incluye un puro desmontable para completar el look. Impresa en 3D y pintada a mano. Ideal para Halloween, cosplay, sesiones de fotos y colección. Talla única para adulto. Hecha a pedido, con envíos a todo el Perú. 🔥",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 200,
       "pricing": [
@@ -2074,6 +2310,10 @@
       "description": "Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (Black Cyclops), en negro y rojo. Ambas incluyen el visor de los X-Men y la chapa de cinturón con el emblema X-Men, al mismo precio. En la versión táctica, la carcasa del visor y las partes amarillas de la chapa pasan a negro, conservando la franja roja del visor y los detalles rojos de la chapa. Fabricados en PLA+ y hechos a pedido para cosplay, disfraces y sesiones de fotos, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -2131,6 +2371,10 @@
       "description": "🎃 Edición Halloween. Máscara de Red Hood (DC) a tamaño real 1:1, especial para cosplay y disfraz. Fabricada en PLA+ para mayor resistencia y durabilidad. Hecha a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 200,
       "pricing": [
@@ -2161,6 +2405,10 @@
       "description": "🎃 Edición Halloween. Máscara de Dr. Doom funcional, lista para usar en tu disfraz o cosplay. Fabricada en PLA+ con acabado de pintura cromo metálico. Hecha a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 130,
       "pricing": [
@@ -2191,6 +2439,10 @@
       "description": "🎃 Edición Halloween. Casco de Batman a tamaño real 1:1, especial para cosplay y disfraz. Fabricado en PLA+ con detalles pintados a mano. Elige tu acabado: mate o brillante, con o sin detalles de pintura. Hecho a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 180,
       "pricing": [
@@ -2225,6 +2477,10 @@
       "description": "🎃 Edición Halloween. Casco de Stormtrooper de Star Wars a tamaño real 1:1, especial para cosplay. Acabado blanco con detalles en negro, fiel al clásico soldado imperial. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 200,
       "pricing": [
@@ -2255,6 +2511,10 @@
       "description": "🎃 Edición Halloween. Casco del Mandaloriano de Star Wars a tamaño real 1:1, especial para cosplay. Acabado cromado y fabricado en PLA+ para mayor resistencia y durabilidad: listo para lucirlo en tu disfraz o exhibirlo en tu colección. Hecho a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 200,
       "pricing": [
@@ -2285,6 +2545,10 @@
       "description": "🎃 Edición Halloween. Casco de Gladiador Máximo a tamaño real 1:1, especial para completar disfraces y cosplay. Impreso en 3D y pintado a mano con acabado metálico envejecido. Talla única para adulto. Hecho a pedido, con envíos a todo el Perú.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 200,
       "pricing": [
@@ -2314,6 +2578,10 @@
       "description": "🎃 Edición Halloween. Corona de Elfo de fantasía: una diadema con ramas y hojas curvas que se elevan como llamas, con una pieza central en forma de gota sobre la frente. Impresa en 3D y pintada a mano con acabado dorado envejecido. Ideal para Halloween, cosplay, sesiones de fotos y disfraces de fantasía. Disponible para adulto (hombre o mujer) y también para niño. Se hace a pedido, a la medida de quien la va a usar: solo necesitamos la medida de su cabeza. Hecha a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 60,
       "pricing": [
@@ -2346,6 +2614,10 @@
       "description": "🎃 Edición Halloween. Cuernos de Fauno: un excelente accesorio para este Halloween. Dos cuernos curvos con anillos marcados, montados sobre una diadema (bincha) adaptable y cómoda de usar, para adulto, hombre o mujer. Impresos en 3D en PLA+, pintados a mano o en color puro, según tu gusto (consulta los colores disponibles). Ideales para disfraces, cosplay, fiestas temáticas y sesiones de fotos. Hechos a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 60,
       "pricing": [
@@ -2379,6 +2651,10 @@
       "description": "🎃 Edición Halloween. La Mascarada del Diablo: media máscara roja de aspecto demoníaco, con relieves marcados en la frente, contorno de ojos pronunciado y dos cuernos curvos con textura. Impresa en 3D en PLA+ y pintada a mano, con acabado envejecido y detalles en negro. Medida estándar para adulto, hombre o mujer. Incluye elástico opcional para sujetarla. Ideal para disfraces, fiestas temáticas, mascaradas y sesiones de fotos. Hecha a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 60,
       "pricing": [
@@ -2407,6 +2683,10 @@
       "description": "Máscara decorativa de El Juego del Calamar (círculo, triángulo o cuadrado), impresa en 3D. Perfecta para exhibición, cosplay o para completar tu disfraz.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 50,
       "pricing": [
@@ -2431,6 +2711,10 @@
       "description": "Casco decorativo de Agamenón a tamaño real, inspirado en La Odisea y la Grecia de los héroes. Una pieza imponente de exhibición.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 398,
       "pricing": [
@@ -2459,6 +2743,10 @@
       "description": "El clásico y temperamental Pato Lucas se fusiona con la furia de Kratos de God of War: barba, tatuaje espartano y mirada de pocos amigos. Una figura decorativa única.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 120,
       "pricing": [
@@ -2484,6 +2772,10 @@
       "description": "Maceta decorativa de Pikachu (Pokémon), impresa en 3D con filamento de alta calidad. Perfecta para tus suculentas o cactus en el escritorio o la repisa.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 60,
       "pricing": [
@@ -2508,6 +2800,10 @@
       "description": "Siente la pasión del mundial: réplica premium de la Copa del Mundo FIFA a tamaño real (escala 1:1), con acabado dorado y base tipo malaquita.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 150,
       "pricing": [
@@ -2532,6 +2828,10 @@
       "description": "Diseño exclusivo de Boom Art: el Botín de Oro (Golden Boot) dorado incorpora un relieve de alta precisión con el mapamundi. Pieza de colección para el amante del fútbol.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 160,
       "pricing": [
@@ -2556,6 +2856,10 @@
       "description": "El Balón de Oro, máximo galardón individual del fútbol, en réplica decorativa con acabado dorado. El regalo ideal para el fanático que lo tiene casi todo.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 200,
       "pricing": [
@@ -2580,6 +2884,10 @@
       "description": "Organiza y protege tus figuritas repetidas del álbum Panini Mundial 2026 con esta caja coleccionadora impresa en 3D. Se acabó tenerlas sueltas.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 30,
       "pricing": [
@@ -2604,6 +2912,10 @@
       "description": "Maceta inspirada en Groot, con diseño detallado y colores naranja y verde que evocan su aspecto de árbol. Tamaño generoso para acomodar varias plantas. Ideal para los fans de los Guardianes de la Galaxia.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 77,
       "pricing": [
@@ -2628,6 +2940,10 @@
       "description": "Maceta de Baby Groot (Guardianes de la Galaxia), minimalista y con hermosos detalles en el rostro y las ramas. Ideal para escritorios, repisas y decoración de ambientes.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 44,
       "pricing": [
@@ -2651,6 +2967,10 @@
       "description": "Una maceta pequeña y divertida con forma de dedo medio, en color neutro que combina con todos tus espacios: la sala, el escritorio de la oficina, donde quieras dar un mensaje sin decir nada.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 44,
       "pricing": [
@@ -2675,6 +2995,10 @@
       "description": "Maceta de Darth Vader (Star Wars) en elegante color negro, capturando el casco del Lord Sith. El lado oscuro de la jardinería para tu escritorio.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 55,
       "pricing": [
@@ -2699,6 +3023,10 @@
       "description": "Maceta inspirada en el David de Miguel Ángel: elegancia y arte clásico en un diseño minimalista que eleva cualquier ambiente.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 66,
       "pricing": [
@@ -2722,6 +3050,10 @@
       "description": "Optimiza tu espacio con una maceta minimalista de líneas limpias y textura sutil, ideal para escritorio, repisa o mesa de centro.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 44,
       "pricing": [
@@ -2745,6 +3077,10 @@
       "description": "Maceta minimalista negra con textura de hojas de palmera: elegante y moderna, ideal para complementar una decoración tropical o contemporánea.",
       "material": "PLA",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 44,
       "pricing": [
@@ -2775,6 +3111,10 @@
       "description": "Soporte de mando universal con el puño de Wolverine (Marvel) y sus garras: sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. No incluye el mando: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 140,
       "pricing": [
@@ -2806,6 +3146,10 @@
       "description": "Soporte de mando universal con el puño de Deadpool (Marvel) rodeado de balas doradas: sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. No incluye el mando: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 140,
       "pricing": [
@@ -2839,6 +3183,10 @@
       "description": "Soporte de mando universal con la mano de Picoro (Dragon Ball): sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. No incluye el mando: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -2872,6 +3220,10 @@
       "description": "Soporte de mando universal con la mano de Majin Buu (Dragon Ball) y el sello de Majin: sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. No incluye el mando: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 100,
       "pricing": [
@@ -2907,6 +3259,10 @@
       "description": "Soporte de mando universal inspirado en GTA VI, con el logo de Grand Theft Auto, palmeras y placa «Wanted»: sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. No incluye el mando: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 140,
       "pricing": [
@@ -2940,6 +3296,10 @@
       "description": "Soporte para mando y audífonos inspirado en The Last of Us, con el símbolo de las Luciérnagas y el arco con helecho grabado: sostiene tu control de PlayStation, Xbox u otras consolas y tus audífonos en una sola pieza para tu setup gamer. No incluye el mando ni los audífonos: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 50,
       "pricing": [
@@ -2973,6 +3333,10 @@
       "description": "Soporte de mando inspirado en The Last of Us, con un muro en ruinas, el emblema de las Luciérnagas y una escena de supervivencia al atardecer. Sostiene tu control de PlayStation, Xbox u otras consolas y lo convierte en una pieza de exhibición para tu setup gamer. No incluye el mando: solo se vende el soporte. Fabricado en PLA+ para mayor resistencia y durabilidad. Hecho a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 150,
       "pricing": [
@@ -3004,6 +3368,10 @@
       "description": "Máscara de John Wick a tamaño real 1:1, inspirada en el legendario personaje del cine. Presenta cabello, cejas y barba pintados a mano, con aberturas funcionales para los ojos. Ideal para cosplay, disfraces, sesiones de fotos o exhibición. Fabricada en PLA+ para mayor resistencia y durabilidad. Hecha a pedido, con envíos a todo el Perú.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 180,
       "pricing": [
@@ -3032,6 +3400,10 @@
       "description": "Corona Targaryen impresa en 3D, con acabado dorado, bordes en tono acero y medallones en relieve. Para complementar tu cosplay, look de Halloween o colección. Consulta el ajuste y la disponibilidad al hacer tu pedido.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 70,
       "pricing": [
@@ -3061,6 +3433,10 @@
       "description": "Máscara de Majora inspirada en The Legend of Zelda, impresa en 3D en PLA+ y pintada a mano. Sus grandes ojos, formas y colores característicos destacan en una pieza para cosplay o exhibición. Hecha a pedido. El precio corresponde únicamente a la máscara.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 350,
       "pricing": [
@@ -3088,6 +3464,10 @@
       "description": "Espada decorativa inspirada en The Legend of Zelda, impresa en 3D en PLA+ y pintada a mano. Hoja con acabado plateado, empuñadura azul y detalles dorados. Para cosplay o exhibición, hecha a pedido. El precio corresponde únicamente a la espada; máscara y escudo se venden por separado.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 180,
       "pricing": [
@@ -3115,6 +3495,10 @@
       "description": "Escudo Hyliano inspirado en The Legend of Zelda, impreso en 3D en PLA+ y pintado a mano. Frente azul con emblemas rojos y dorados, borde plateado y agarre posterior. Para cosplay o exhibición, hecho a pedido. El precio corresponde únicamente al escudo; espada y máscara se venden por separado.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 380,
       "pricing": [
@@ -3142,6 +3526,10 @@
       "description": "Ocarina inspirada en The Legend of Zelda: Ocarina of Time, impresa en 3D en PLA+ con el emblema triangular característico. Un complemento para tu colección de Zelda, cosplay o exhibición junto a la máscara de Majora, la espada y el escudo. Hecha a pedido. Precio por una unidad; las otras piezas se venden por separado. La portada muestra una pieza real azul con detalles dorados. Las imágenes siguientes son vistas referenciales del modelo y combinaciones de color para consultar al coordinar tu pedido; el acabado puede variar.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 25,
       "pricing": [
@@ -3172,6 +3560,10 @@
       "description": "Tazón de galletas Santa, un recipiente de tamaño grande para presentar galletas y acompañar la mesa navideña. Impreso en 3D con PLA+ y hecho a pedido. Medidas aproximadas: tazón de 20 cm de ancho × 16 cm de fondo; altura total de aproximadamente 22 cm, incluidos los zapatos.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 130,
       "pricing": [
@@ -3203,6 +3595,10 @@
       "description": "Decora la mesa navideña y presenta tus dulces con esta bandeja giratoria en forma de árbol. Mide aproximadamente 32 cm de alto, está impresa en 3D en PLA+ y se prepara a pedido. Puedes solicitarla en distintas combinaciones de colores. Las fotografías muestran las opciones verde con tronco marrón y estrella dorada, y rojo con verde y centro blanco.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 160,
       "pricing": [
@@ -3235,6 +3631,10 @@
       "description": "Belén Iluminado: una escena de nacimiento enmarcada por alas, con iluminación LED incluida. Impreso en 3D con PLA+ y de aproximadamente 11 cm de alto.",
       "material": "PLA+",
       "availability": null,
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 85,
       "pricing": [
@@ -3269,6 +3669,10 @@
       "description": "Cascanueces de Navidad: un soldado de uniforme rojo con detalles dorados, sombrero alto y peluca blanca, sobre una base negra con la frase Merry Xmas y copos de nieve. Mide aproximadamente 40 cm de alto, está impreso en 3D con PLA+ y se prepara a pedido. Puedes solicitarlo en otras combinaciones de colores; la última fotografía muestra algunas opciones.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 220,
       "pricing": [
@@ -3300,6 +3704,10 @@
       "description": "Pesebre Minimalista: una escena de nacimiento de líneas limpias y acabado facetado, con el portal coronado por una estrella y las figuras sobre una base circular. Mide 12 cm de alto, 16 cm de ancho y 16 cm de fondo. Impreso en 3D con PLA+ y preparado a pedido.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 65,
       "pricing": [
@@ -3329,6 +3737,10 @@
       "description": "Pesebre Tejido: María y José junto a la cuna del Niño, con una textura que imita el tejido a mano. Mide aproximadamente 10 cm de alto, está impreso en 3D con PLA+ y se prepara a pedido. Puedes solicitarlo en distintas combinaciones de colores; las fotografías muestran algunas opciones.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 55,
       "pricing": [
@@ -3361,6 +3773,10 @@
       "description": "Palomera Dr. Doom: la cabeza del villano de Marvel con su rostro metálico plateado, los remaches, la capucha verde y una tapa ovalada que se abre. Impresa en 3D con PLA+ y preparada a pedido. En la foto con la mano puedes ver una referencia del tamaño.",
       "material": "PLA+",
       "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
       "priceCurrency": "PEN",
       "priceFrom": 225,
       "pricing": [

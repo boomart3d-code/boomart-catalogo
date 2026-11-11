@@ -14,16 +14,24 @@
     "decoracion": 15,
     "deportes": 4
   },
-  "sha256Jsonl": "2309b087e20a0c2f3194739cf5a892b2fa6065e32d0dd1fd1df1ecef1071a7f0",
-  "sha256Csv": "5895b6df720d17d918a1cdb30cec366129c3d103099077f17cc2a7765a3f8414",
+  "filasPorDisponibilidad": {
+    "backorder": 131,
+    "unknown": 1
+  },
+  "filasElegiblesParaAnuncios": 131,
+  "sha256Jsonl": "ccb9d8628e76771c1984502d058951ae2b30b7e7e44021e1243a4c3f765de4d6",
+  "sha256Csv": "796ba016d1096549f6bbdab012eff6e36e453ac23c20a356865a4a63dc8f7f6b",
+  "sha256Txt": "4856a08354f65a8ba7f4f5711d4d3c4e1f35c9a266ed53d8c6764dda521013f2",
   "archivos": {
-    "jsonl": "https://boomart.pe/feed-openai.jsonl",
     "csv": "https://boomart.pe/feed-openai.csv",
+    "txt": "https://boomart.pe/feed-openai.txt",
+    "jsonl": "https://boomart.pe/feed-openai.jsonl",
     "grupos": "https://boomart.pe/feed-openai-grupos.json"
   },
   "renovacion": {
     "recomendada": "diaria, con una carga completa (docs/CHATGPT_ADS.md)",
-    "retencionOpenAI": "OpenAI conserva hasta 14 dias el ultimo registro de un producto que falta en una carga"
+    "caducidad": "Segun el Centro de Ayuda de OpenAI Ads, los productos importados caducan a las 2 semanas si no se renuevan; se recomienda URL alojada o SFTP automatizado",
+    "retencionOpenAI": "OpenAI conserva hasta 14 dias el ultimo registro de un producto que falta en una carga completa"
   },
-  "entrega": "Por SFTP desde la cuenta de OpenAI Ads. Esta URL es la copia publica que sirve de fuente y de verificacion; no es un enlace que Ads Manager lea por su cuenta."
+  "entrega": "Ads Manager importa por CSV/TXT, URL alojada HTTPS o SFTP. URL alojada recomendada para BoomArt: feed-openai.csv (alternativa feed-openai.txt, tabulado)."
 }

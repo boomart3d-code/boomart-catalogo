@@ -1,8 +1,8 @@
 # Catalogo completo BoomArt
 
 Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao (Peru).
-Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion ~48 horas utiles desde
-la validacion del adelanto (50%). Pedidos por WhatsApp: https://wa.me/51925666542
+Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion bajo pedido: 24 a 48 horas en las piezas sencillas y 3 a 5 días en las elaboradas
+(cada pieza indica el suyo), desde la validacion del adelanto (50%). Pedidos por WhatsApp: https://wa.me/51925666542
 
 Total de piezas: 104
 Actualizado: 2026-11-11
@@ -18,6 +18,7 @@ Fuente estructurada: https://boomart.pe/catalogo.json
 - Pack obligatorio: base + 1 skin a elección: S/50 | Cada temática adicional al mismo pack: +S/20 (no se vende por separado) | Base + 2 skins: S/70; base + 3 skins: S/90 | Base + colección completa de 11 diseños distintos: S/200
 - Material: Impresión 3D en alto relieve
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Zelda, Nintendo Switch 2, Dock, Base de carga, Skin 3D, Alto relieve, Hyrule, Ocarina of Time, Videojuegos
 - Imagen: https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-hero-v2.webp
 - Ficha: https://boomart.pe/producto/skins-zelda-nintendo-switch-2/
@@ -30,6 +31,7 @@ Personaliza tu base de carga Nintendo Switch 2 con Zelda en 3D y alto relieve. C
 - Precio: S/140
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Soporte, Mando, Control, Gamer, Wolverine, X-Men, Marvel, Accesorios
 - Imagen: https://boomart.pe/assets/products/soporte-mando-wolverine.jpg
 - Ficha: https://boomart.pe/producto/soporte-mando-wolverine/
@@ -42,6 +44,7 @@ Soporte de mando universal con el puño de Wolverine (Marvel) y sus garras: sost
 - Precio: S/140
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Soporte, Mando, Control, Gamer, Deadpool, Marvel, Accesorios
 - Imagen: https://boomart.pe/assets/products/soporte-mando-deadpool.jpg
 - Ficha: https://boomart.pe/producto/soporte-mando-deadpool/
@@ -54,6 +57,7 @@ Soporte de mando universal con el puño de Deadpool (Marvel) rodeado de balas do
 - Precio: S/100
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Soporte, Mando, Control, Gamer, Picoro, Piccolo, Dragon Ball, Anime, Accesorios
 - Imagen: https://boomart.pe/assets/products/soporte-mando-picoro.jpg
 - Ficha: https://boomart.pe/producto/soporte-mando-picoro/
@@ -66,6 +70,7 @@ Soporte de mando universal con la mano de Picoro (Dragon Ball): sostiene tu cont
 - Precio: S/100
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Soporte, Mando, Control, Gamer, Majin Buu, Buu, Dragon Ball, Anime, Accesorios
 - Imagen: https://boomart.pe/assets/products/soporte-mando-majin-buu.jpg
 - Ficha: https://boomart.pe/producto/soporte-mando-majin-buu/
@@ -78,6 +83,7 @@ Soporte de mando universal con la mano de Majin Buu (Dragon Ball) y el sello de 
 - Precio: S/140
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Soporte, Mando, Control, Gamer, GTA, GTA VI, GTA 6, Grand Theft Auto, Videojuegos, Accesorios
 - Imagen: https://boomart.pe/assets/products/soporte-mando-gta-vi.jpg
 - Ficha: https://boomart.pe/producto/soporte-mando-gta-vi/
@@ -90,6 +96,7 @@ Soporte de mando universal inspirado en GTA VI, con el logo de Grand Theft Auto,
 - Precio: S/50
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Soporte, Mando, Control, Audífonos, Auriculares, Gamer, The Last of Us, Luciérnagas, Videojuegos, Accesorios
 - Imagen: https://boomart.pe/assets/products/soporte-mando-the-last-of-us.jpg
 - Ficha: https://boomart.pe/producto/soporte-mando-the-last-of-us/
@@ -102,6 +109,7 @@ Soporte para mando y audífonos inspirado en The Last of Us, con el símbolo de 
 - Precio: S/150
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Soporte, Mando, Control, Gamer, The Last of Us, Luciérnagas, Muro, Videojuegos, Accesorios
 - Imagen: https://boomart.pe/assets/products/mando-the-last-of-us-muro.jpg
 - Ficha: https://boomart.pe/producto/mando-the-last-of-us-muro/
@@ -116,6 +124,7 @@ Soporte de mando inspirado en The Last of Us, con un muro en ruinas, el emblema 
 - Pack obligatorio: base + 1 skin a elección: S/50 | Cada temática adicional al mismo pack: +S/20 (no se vende por separado) | Base + 2 skins: S/70; base + 3 skins: S/90 | Base + colección completa de 11 diseños distintos: S/200
 - Material: Impresión 3D en alto relieve
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Zelda, Nintendo Switch 2, Dock, Base de carga, Skin 3D, Alto relieve, Hyrule, Ocarina of Time, Videojuegos
 - Imagen: https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-hero-v2.webp
 - Ficha: https://boomart.pe/producto/skins-zelda-nintendo-switch-2/
@@ -128,6 +137,7 @@ Personaliza tu base de carga Nintendo Switch 2 con Zelda en 3D y alto relieve. C
 - Precio: S/350
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Zelda, The Legend of Zelda, Videojuegos, Cosplay, Fantasía
 - Imagen: https://boomart.pe/assets/products/mascara-majora-hero.webp
 - Ficha: https://boomart.pe/producto/mascara-majora/
@@ -140,6 +150,7 @@ Máscara de Majora inspirada en The Legend of Zelda, impresa en 3D en PLA+ y pin
 - Precio: S/180
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Zelda, The Legend of Zelda, Videojuegos, Cosplay, Fantasía
 - Imagen: https://boomart.pe/assets/products/espada-zelda-hero.webp
 - Ficha: https://boomart.pe/producto/espada-zelda/
@@ -152,6 +163,7 @@ Espada decorativa inspirada en The Legend of Zelda, impresa en 3D en PLA+ y pint
 - Precio: S/380
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Zelda, The Legend of Zelda, Videojuegos, Cosplay, Fantasía
 - Imagen: https://boomart.pe/assets/products/escudo-zelda-hero.webp
 - Ficha: https://boomart.pe/producto/escudo-zelda/
@@ -164,6 +176,7 @@ Escudo Hyliano inspirado en The Legend of Zelda, impreso en 3D en PLA+ y pintado
 - Precio: S/25
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Zelda, Ocarina of Time, Videojuegos, Cosplay, Coleccionismo
 - Imagen: https://boomart.pe/assets/products/ocarina-hero-real.webp
 - Ficha: https://boomart.pe/producto/ocarina-zelda/
@@ -178,6 +191,7 @@ Ocarina inspirada en The Legend of Zelda: Ocarina of Time, impresa en 3D en PLA+
 - Pack obligatorio: base + 1 skin a elección: S/50 | Cada temática adicional al mismo pack: +S/20 (no se vende por separado) | Base + 2 skins: S/70; base + 3 skins: S/90 | Base + colección completa de 11 diseños distintos: S/200
 - Material: Impresión 3D en alto relieve
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Zelda, Nintendo Switch 2, Dock, Base de carga, Skin 3D, Alto relieve, Hyrule, Ocarina of Time, Videojuegos
 - Imagen: https://boomart.pe/assets/products/skins-zelda-nintendo-switch-2-hero-v2.webp
 - Ficha: https://boomart.pe/producto/skins-zelda-nintendo-switch-2/
@@ -190,6 +204,7 @@ Personaliza tu base de carga Nintendo Switch 2 con Zelda en 3D y alto relieve. C
 - Precio: S/350
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Zelda, The Legend of Zelda, Videojuegos, Cosplay, Fantasía
 - Imagen: https://boomart.pe/assets/products/mascara-majora-hero.webp
 - Ficha: https://boomart.pe/producto/mascara-majora/
@@ -202,6 +217,7 @@ Máscara de Majora inspirada en The Legend of Zelda, impresa en 3D en PLA+ y pin
 - Precio: S/180
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Zelda, The Legend of Zelda, Videojuegos, Cosplay, Fantasía
 - Imagen: https://boomart.pe/assets/products/espada-zelda-hero.webp
 - Ficha: https://boomart.pe/producto/espada-zelda/
@@ -214,6 +230,7 @@ Espada decorativa inspirada en The Legend of Zelda, impresa en 3D en PLA+ y pint
 - Precio: S/380
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Zelda, The Legend of Zelda, Videojuegos, Cosplay, Fantasía
 - Imagen: https://boomart.pe/assets/products/escudo-zelda-hero.webp
 - Ficha: https://boomart.pe/producto/escudo-zelda/
@@ -226,6 +243,7 @@ Escudo Hyliano inspirado en The Legend of Zelda, impreso en 3D en PLA+ y pintado
 - Precio: S/25
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Zelda, Ocarina of Time, Videojuegos, Cosplay, Coleccionismo
 - Imagen: https://boomart.pe/assets/products/ocarina-hero-real.webp
 - Ficha: https://boomart.pe/producto/ocarina-zelda/
@@ -240,6 +258,7 @@ Ocarina inspirada en The Legend of Zelda: Ocarina of Time, impresa en 3D en PLA+
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA+ reforzado y PLA Silk dorado
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Saint Seiya, Templo, Combo
 - Imagen: https://boomart.pe/assets/products/templo-aries-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/templo-aries/
@@ -252,6 +271,7 @@ Combo de la Casa de Aries: templo de 16 cm de alto × 17 cm de fondo × 23 cm de
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA+ reforzado y PLA Silk dorado
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Saint Seiya, Templo, Combo
 - Imagen: https://boomart.pe/assets/products/templo-tauro-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/templo-tauro/
@@ -264,6 +284,7 @@ Combo de la Casa de Tauro: templo de 16 cm de alto × 19 cm de fondo × 22 cm de
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA+ reforzado y PLA Silk dorado
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Saint Seiya, Templo, Combo
 - Imagen: https://boomart.pe/assets/products/templo-geminis-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/templo-geminis/
@@ -276,6 +297,7 @@ Combo de la Casa de Géminis: templo de 16 cm de alto × 18 cm de fondo × 22 cm
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA+ reforzado y PLA Silk dorado
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Saint Seiya, Templo, Combo
 - Imagen: https://boomart.pe/assets/products/templo-cancer-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/templo-cancer/
@@ -288,6 +310,7 @@ Combo de la Casa de Cáncer: templo de 17 cm de alto × 21.5 cm de fondo × 20 c
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA+ reforzado y PLA Silk dorado
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Saint Seiya, Templo, Combo
 - Imagen: https://boomart.pe/assets/products/templo-leo-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/templo-leo/
@@ -300,6 +323,7 @@ Combo de la Casa de Leo: templo de 16 cm de alto × 18 cm de fondo × 22 cm de a
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA+ reforzado y PLA Silk dorado
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Saint Seiya, Templo, Combo
 - Imagen: https://boomart.pe/assets/products/templo-virgo-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/templo-virgo/
@@ -312,6 +336,7 @@ Combo de la Casa de Virgo: templo de 16 cm de alto × 15 cm de fondo × 24.5 cm 
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA+ reforzado y PLA Silk dorado
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Saint Seiya, Templo, Combo
 - Imagen: https://boomart.pe/assets/products/templo-libra-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/templo-libra/
@@ -324,6 +349,7 @@ Combo de la Casa de Libra: templo de 17.5 cm de alto × 20 cm de fondo × 22 cm 
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA+ reforzado y PLA Silk dorado
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Saint Seiya, Templo, Combo
 - Imagen: https://boomart.pe/assets/products/templo-escorpio-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/templo-escorpio/
@@ -336,6 +362,7 @@ Combo de la Casa de Escorpio: templo de 17 cm de alto × 19 cm de fondo × 21 cm
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA+ reforzado y PLA Silk dorado
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Saint Seiya, Templo, Combo
 - Imagen: https://boomart.pe/assets/products/templo-sagitario-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/templo-sagitario/
@@ -348,6 +375,7 @@ Combo de la Casa de Sagitario: templo de 19 cm de alto × 15 cm de fondo × 21 c
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA+ reforzado y PLA Silk dorado
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Saint Seiya, Templo, Combo
 - Imagen: https://boomart.pe/assets/products/templo-capricornio-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/templo-capricornio/
@@ -360,6 +388,7 @@ Combo de la Casa de Capricornio: templo de 16 cm de alto × 14 cm de fondo × 23
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA+ reforzado y PLA Silk dorado
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Saint Seiya, Templo, Combo
 - Imagen: https://boomart.pe/assets/products/templo-acuario-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/templo-acuario/
@@ -372,6 +401,7 @@ Combo de la Casa de Acuario: templo de 20 cm de alto × 22 cm de fondo × 19 cm 
 - Templo solo: S/100 | Pandora Box + pedestal: S/45 | Combo (templo + Pandora Box + pedestal): S/130
 - Material: PLA+ reforzado y PLA Silk dorado
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Saint Seiya, Templo, Combo
 - Imagen: https://boomart.pe/assets/products/templo-piscis-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/templo-piscis/
@@ -384,6 +414,7 @@ Combo de la Casa de Piscis: templo de 17 cm de alto × 16.5 cm de fondo × 19.5 
 - Precio: S/200
 - Material: PLA+ pintado a mano
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Saint Seiya, Templo, Patriarca, Santuario
 - Imagen: https://boomart.pe/assets/products/templo-del-patriarca-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/templo-del-patriarca/
@@ -396,6 +427,7 @@ El imponente Templo del Patriarca llega para completar el Santuario de Saint Sei
 - Precio: S/1500
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Cajas De Pandora, Combo, Saint Seiya, Templos
 - Imagen: https://boomart.pe/assets/products/templo-con-caja-de-pandora-y-pedestal-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/templo-con-caja-de-pandora-y-pedestal/
@@ -408,6 +440,7 @@ La colección completa del Santuario de Athena: los 12 Templos de las Casas del 
 - Precio: S/100
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Atena, Esculturas, Saint Seiya
 - Imagen: https://boomart.pe/assets/products/busto-de-atena-saint-seiya-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/busto-de-atena-saint-seiya/
@@ -420,6 +453,7 @@ El busto de Atena, diosa protectora del Santuario, es la pieza central que toda 
 - Precio: S/100
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Atena, Esculturas, Saint Seiya
 - Imagen: https://boomart.pe/assets/products/escultura-de-atena-saint-seiya-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/escultura-de-atena-saint-seiya/
@@ -432,6 +466,7 @@ Escultura de Atena de cuerpo entero, la diosa de la sabiduría y la guerra justa
 - Precio: S/100
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Saint Seiya
 - Imagen: https://boomart.pe/assets/products/torre-del-reloj-saint-seiya-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/torre-del-reloj-saint-seiya/
@@ -444,6 +479,7 @@ La icónica Torre del Reloj del Santuario de Athena, con sus doce llamas encendi
 - Precio: S/100
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Saint Seiya, Templos
 - Imagen: https://boomart.pe/assets/products/set-de-12-templos-mini-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/set-de-12-templos-mini/
@@ -456,6 +492,7 @@ Set de 12 Casas del Zodiaco en miniatura. Cada templo mide entre 6.5 y 8 cm de a
 - Precio: S/150
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Saint Seiya, Templos, Santuario, Set, Colección, Atena, Torre del Reloj, Patriarca
 - Imagen: https://boomart.pe/assets/products/set-santuario-15-piezas-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/set-santuario-15-piezas/
@@ -468,6 +505,7 @@ Colección de 15 piezas: 12 templos mini de 6.5 a 8 cm, Templo del Patriarca de 
 - Precio: S/400
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Cajas De Pandora, Saint Seiya
 - Imagen: https://boomart.pe/assets/products/set-12-cajas-de-pandora-con-pedestales-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/set-12-cajas-de-pandora-con-pedestales/
@@ -480,6 +518,7 @@ Las 12 Cajas de Pandora de los Caballeros Dorados, cada una con su pedestal esti
 - Por signo: S/20 | Set completo (12 signos): S/200
 - Material: PLA Silk
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Saint Seiya, Pandora Box, Caballeros Dorados, Zodiaco, Colección, PLA Silk
 - Imagen: https://boomart.pe/assets/products/pandora-box-caballeros-dorados-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/pandora-box-caballeros-dorados/
@@ -492,6 +531,7 @@ Las Pandora Box de los 12 Caballeros Dorados, de Aries a Piscis, fabricadas en P
 - Precio: S/250
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Cascos, Cosplay, Saint Seiya
 - Imagen: https://boomart.pe/assets/products/casco-de-pegaso-saint-seiya-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/casco-de-pegaso-saint-seiya/
@@ -504,6 +544,7 @@ Casco funcional de cosplay de la Armadura de Pegaso V1, la que porta Seiya en la
 - Precio: S/100
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Cascos, Cosplay, Saint Seiya, Pegaso
 - Imagen: https://boomart.pe/assets/products/tiara-de-pegaso-saint-seiya-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/tiara-de-pegaso-saint-seiya/
@@ -516,6 +557,7 @@ Tiara de cosplay de la Armadura de Pegaso, la que porta Seiya en Saint Seiya, en
 - Precio: S/100
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Cascos, Cosplay, Saint Seiya, Fénix, Ikki, Disfraces, Halloween
 - Imagen: https://boomart.pe/assets/products/tiara-de-ikki-de-fenix-saint-seiya-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/tiara-de-ikki-de-fenix-saint-seiya/
@@ -528,6 +570,7 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 - Precio: S/850
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Altar Exhibidor, Set, Saint Seiya, Myth Cloth, Casas del Zodiaco
 - Imagen: https://boomart.pe/assets/products/set-12-altares-exhibidor-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/set-12-altares-exhibidor/
@@ -540,6 +583,7 @@ Arma el Santuario completo. Los 12 Altares Exhibidor de las Casas del Zodiaco, u
 - Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Altar Exhibidor, Aries, Saint Seiya, Myth Cloth
 - Imagen: https://boomart.pe/assets/products/altar-exhibidor-aries-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/altar-exhibidor-aries/
@@ -552,6 +596,7 @@ Altar exhibidor de la Casa de Aries, la 1ª Casa del Santuario de Athena, hecho 
 - Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Altar Exhibidor, Tauro, Saint Seiya, Myth Cloth
 - Imagen: https://boomart.pe/assets/products/altar-exhibidor-tauro-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/altar-exhibidor-tauro/
@@ -564,6 +609,7 @@ Altar exhibidor de la Casa de Tauro, la 2ª Casa del Santuario de Athena, hecho 
 - Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Altar Exhibidor, Géminis, Saint Seiya, Myth Cloth
 - Imagen: https://boomart.pe/assets/products/altar-exhibidor-geminis-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/altar-exhibidor-geminis/
@@ -576,6 +622,7 @@ Altar exhibidor de la Casa de Géminis, la 3ª Casa del Santuario de Athena, hec
 - Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Altar Exhibidor, Cáncer, Saint Seiya, Myth Cloth
 - Imagen: https://boomart.pe/assets/products/altar-exhibidor-cancer-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/altar-exhibidor-cancer/
@@ -588,6 +635,7 @@ Altar exhibidor de la Casa de Cáncer, la 4ª Casa del Santuario de Athena, hech
 - Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Altar Exhibidor, Leo, Saint Seiya, Myth Cloth
 - Imagen: https://boomart.pe/assets/products/altar-exhibidor-leo-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/altar-exhibidor-leo/
@@ -600,6 +648,7 @@ Altar exhibidor de la Casa de Leo, la 5ª Casa del Santuario de Athena, hecho pa
 - Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Altar Exhibidor, Virgo, Saint Seiya, Myth Cloth
 - Imagen: https://boomart.pe/assets/products/altar-exhibidor-virgo-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/altar-exhibidor-virgo/
@@ -612,6 +661,7 @@ Altar exhibidor de la Casa de Virgo, la 6ª Casa del Santuario de Athena, hecho 
 - Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Altar Exhibidor, Libra, Saint Seiya, Myth Cloth
 - Imagen: https://boomart.pe/assets/products/altar-exhibidor-libra-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/altar-exhibidor-libra/
@@ -624,6 +674,7 @@ Altar exhibidor de la Casa de Libra, la 7ª Casa del Santuario de Athena, hecho 
 - Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Altar Exhibidor, Escorpio, Saint Seiya, Myth Cloth
 - Imagen: https://boomart.pe/assets/products/altar-exhibidor-escorpio-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/altar-exhibidor-escorpio/
@@ -636,6 +687,7 @@ Altar exhibidor de la Casa de Escorpio, la 8ª Casa del Santuario de Athena, hec
 - Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Altar Exhibidor, Sagitario, Saint Seiya, Myth Cloth
 - Imagen: https://boomart.pe/assets/products/altar-exhibidor-sagitario-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/altar-exhibidor-sagitario/
@@ -648,6 +700,7 @@ Altar exhibidor de la Casa de Sagitario, la 9ª Casa del Santuario de Athena, he
 - Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Altar Exhibidor, Capricornio, Saint Seiya, Myth Cloth
 - Imagen: https://boomart.pe/assets/products/altar-exhibidor-capricornio-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/altar-exhibidor-capricornio/
@@ -660,6 +713,7 @@ Altar exhibidor de la Casa de Capricornio, la 10ª Casa del Santuario de Athena,
 - Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Altar Exhibidor, Acuario, Saint Seiya, Myth Cloth
 - Imagen: https://boomart.pe/assets/products/altar-exhibidor-acuario-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/altar-exhibidor-acuario/
@@ -672,6 +726,7 @@ Altar exhibidor de la Casa de Acuario, la 11ª Casa del Santuario de Athena, hec
 - Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Altar Exhibidor, Piscis, Saint Seiya, Myth Cloth
 - Imagen: https://boomart.pe/assets/products/altar-exhibidor-piscis-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/altar-exhibidor-piscis/
@@ -684,6 +739,7 @@ Altar exhibidor de la Casa de Piscis, la 12ª Casa del Santuario de Athena, hech
 - Precio: S/150
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Altar Exhibidor, Dragón, Saint Seiya, Myth Cloth
 - Imagen: https://boomart.pe/assets/products/diorama-caballeros-de-bronce-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/diorama-caballeros-de-bronce/
@@ -696,6 +752,7 @@ Altar exhibidor del Caballero de Bronce del Dragón (Shiryu), con el emblema del
 - Precio: S/150
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Altar Exhibidor, Pegaso, Saint Seiya, Myth Cloth
 - Imagen: https://boomart.pe/assets/products/diorama-de-pegaso-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/diorama-de-pegaso/
@@ -710,6 +767,7 @@ Altar exhibidor del Caballero de Bronce Pegaso (Seiya), con la placa tallada del
 - Precio: S/100
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Cascos, Cosplay, Saint Seiya, Fénix, Ikki, Disfraces, Halloween
 - Imagen: https://boomart.pe/assets/products/tiara-de-ikki-de-fenix-saint-seiya-natural-v1.jpg
 - Ficha: https://boomart.pe/producto/tiara-de-ikki-de-fenix-saint-seiya/
@@ -722,6 +780,7 @@ Tiara de cosplay de la Armadura del Fénix, la que porta Ikki en Saint Seiya, en
 - Precio: S/200
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Daredevil, Marvel, Casco, Máscara, Cosplay, Disfraces, Halloween
 - Imagen: https://boomart.pe/assets/products/casco-daredevil-hero.webp
 - Ficha: https://boomart.pe/producto/casco-daredevil/
@@ -734,6 +793,7 @@ Casco de Daredevil inspirado en Marvel, impreso en 3D en PLA+ y pintado a mano. 
 - Máscara calavera: S/100 | Máscara calavera con cuernos: S/150
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Mascaras, Calavera, Craneo, Ghost Rider, Disfraces, Cosplay
 - Imagen: https://boomart.pe/assets/products/mascara-calavera-0.jpg
 - Ficha: https://boomart.pe/producto/mascara-calavera/
@@ -746,6 +806,7 @@ Casco de Daredevil inspirado en Marvel, impreso en 3D en PLA+ y pintado a mano. 
 - Precio: S/120
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Mascaras, Disfraces, Calabaza
 - Imagen: https://boomart.pe/assets/products/mascara-calabaza-calavera-hero-v2.png
 - Ficha: https://boomart.pe/producto/mascara-calabaza-calavera/
@@ -758,6 +819,7 @@ Casco de Daredevil inspirado en Marvel, impreso en 3D en PLA+ y pintado a mano. 
 - Precio: S/100
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Portavelas, Decoración, Calavera, Gótico
 - Imagen: https://boomart.pe/assets/products/candelabro-calavera-hero-v2.png
 - Ficha: https://boomart.pe/producto/candelabro-calavera/
@@ -770,6 +832,7 @@ Casco de Daredevil inspirado en Marvel, impreso en 3D en PLA+ y pintado a mano. 
 - Precio: S/220
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Mascaras, Disfraces, Demonio, Cuernos
 - Imagen: https://boomart.pe/assets/products/evil-mask-hero-v2.png
 - Ficha: https://boomart.pe/producto/evil-mask/
@@ -782,6 +845,7 @@ Casco de Daredevil inspirado en Marvel, impreso en 3D en PLA+ y pintado a mano. 
 - Precio: S/200
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Mascaras, Krampus, Demonio, Disfraces, Cuernos
 - Imagen: https://boomart.pe/assets/products/mascara-krampus-hero-v2.png
 - Ficha: https://boomart.pe/producto/mascara-krampus/
@@ -794,6 +858,7 @@ Casco de Daredevil inspirado en Marvel, impreso en 3D en PLA+ y pintado a mano. 
 - Precio: S/140
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Mascaras, Baphomet, Demonio, Pentagrama, Cuernos, Disfraces, Cosplay
 - Imagen: https://boomart.pe/assets/products/mascara-baphomet-hero-v2.png
 - Ficha: https://boomart.pe/producto/mascara-baphomet/
@@ -806,6 +871,7 @@ Casco de Daredevil inspirado en Marvel, impreso en 3D en PLA+ y pintado a mano. 
 - Precio: S/200
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Mascaras, Hellboy, Articulada, Mandíbula móvil, Cosplay, Disfraces, Demonio
 - Imagen: https://boomart.pe/assets/products/mascara-hellboy-articulada-1.jpg
 - Ficha: https://boomart.pe/producto/mascara-hellboy-articulada/
@@ -818,6 +884,7 @@ Casco de Daredevil inspirado en Marvel, impreso en 3D en PLA+ y pintado a mano. 
 - Visor de Cíclope + chapa · Amarillo y rojo: S/100 | Visor de Cíclope táctico + chapa · Negro y rojo: S/100
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Cyclops, X-Men, Marvel, Visor, Cosplay, Disfraces, Halloween, Cíclope táctico, Black Cyclops, Negro
 - Imagen: https://boomart.pe/assets/products/visor-de-cyclops-hero.jpg
 - Ficha: https://boomart.pe/producto/visor-de-cyclops/
@@ -830,6 +897,7 @@ Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (B
 - Precio: S/200
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Máscaras, Red Hood, DC, Batman, Cosplay, Disfraces, Tamaño real, Halloween
 - Imagen: https://boomart.pe/assets/products/mascara-red-hood-hero.jpg
 - Ficha: https://boomart.pe/producto/mascara-red-hood/
@@ -842,6 +910,7 @@ Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (B
 - Precio: S/130
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Máscaras, Dr. Doom, Doctor Doom, Marvel, Cosplay, Disfraces, Halloween
 - Imagen: https://boomart.pe/assets/products/mascara-dr-doom-hero.jpg
 - Ficha: https://boomart.pe/producto/mascara-dr-doom/
@@ -854,6 +923,7 @@ Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (B
 - Precio: S/180
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Cascos, Batman, DC, Cosplay, Disfraces, Tamaño real, Halloween
 - Imagen: https://boomart.pe/assets/products/casco-de-batman-hero.jpg
 - Ficha: https://boomart.pe/producto/casco-de-batman/
@@ -866,6 +936,7 @@ Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (B
 - Precio: S/200
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Cascos, Stormtrooper, Star Wars, Cosplay, Disfraces, Tamaño real, Halloween
 - Imagen: https://boomart.pe/assets/products/casco-de-stormtrooper-hero.jpg
 - Ficha: https://boomart.pe/producto/casco-de-stormtrooper/
@@ -878,6 +949,7 @@ Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (B
 - Precio: S/200
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Cascos, Mandaloriano, Star Wars, Cosplay, Disfraces, Tamaño real, Halloween
 - Imagen: https://boomart.pe/assets/products/casco-del-mandaloriano-hero.jpg
 - Ficha: https://boomart.pe/producto/casco-del-mandaloriano/
@@ -890,6 +962,7 @@ Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (B
 - Precio: S/200
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Cascos, Gladiador, Máximo, Disfraces, Cosplay, Tamaño real
 - Imagen: https://boomart.pe/assets/products/casco-gladiador-maximo-hero-v2.png
 - Ficha: https://boomart.pe/producto/casco-gladiador-maximo/
@@ -902,6 +975,7 @@ Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (B
 - Precio: S/60
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Coronas, Elfo, Fantasía, Disfraces, Cosplay
 - Imagen: https://boomart.pe/assets/products/corona-de-elfo-hero-v2.png
 - Ficha: https://boomart.pe/producto/corona-de-elfo/
@@ -914,6 +988,7 @@ Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (B
 - Precio: S/60
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Cuernos, Fauno, Diadema, Bincha, Disfraces, Cosplay, Accesorios
 - Imagen: https://boomart.pe/assets/products/cuernos-de-fauno-hero-v2.png
 - Ficha: https://boomart.pe/producto/cuernos-de-fauno/
@@ -926,6 +1001,7 @@ Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (B
 - Precio: S/60
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Mascaras, Mascarada, Diablo, Demonio, Cuernos, Disfraces, Cosplay
 - Imagen: https://boomart.pe/assets/products/mascarada-del-diablo-hero-v2.png
 - Ficha: https://boomart.pe/producto/mascarada-del-diablo/
@@ -938,6 +1014,7 @@ Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (B
 - Precio: S/50
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Mascaras, Series
 - Imagen: https://boomart.pe/assets/products/mascara-el-juego-del-calamar-hero-v2.png
 - Ficha: https://boomart.pe/producto/mascara-el-juego-del-calamar/
@@ -950,6 +1027,7 @@ Máscara decorativa de El Juego del Calamar (círculo, triángulo o cuadrado), i
 - Precio: S/398
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Cascos, Cine
 - Imagen: https://boomart.pe/assets/products/casco-de-agamenon-la-odisea-hero-v2.png
 - Ficha: https://boomart.pe/producto/casco-de-agamenon-la-odisea/
@@ -962,6 +1040,7 @@ Casco decorativo de Agamenón a tamaño real, inspirado en La Odisea y la Grecia
 - Precio: S/180
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Máscaras, John Wick, Cine, Películas, Cosplay, Disfraces, Tamaño real
 - Imagen: https://boomart.pe/assets/products/mascara-de-john-wick-hero-v2.png
 - Ficha: https://boomart.pe/producto/mascara-de-john-wick/
@@ -974,6 +1053,7 @@ Máscara de John Wick a tamaño real 1:1, inspirada en el legendario personaje d
 - Precio: S/70
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Coronas, Cosplay, Fantasía
 - Imagen: https://boomart.pe/assets/products/corona-targaryen-01.jpg
 - Ficha: https://boomart.pe/producto/corona-targaryen/
@@ -986,6 +1066,7 @@ Corona Targaryen impresa en 3D, con acabado dorado, bordes en tono acero y medal
 - Precio: S/350
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Zelda, The Legend of Zelda, Videojuegos, Cosplay, Fantasía
 - Imagen: https://boomart.pe/assets/products/mascara-majora-hero.webp
 - Ficha: https://boomart.pe/producto/mascara-majora/
@@ -998,6 +1079,7 @@ Máscara de Majora inspirada en The Legend of Zelda, impresa en 3D en PLA+ y pin
 - Precio: S/180
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Zelda, The Legend of Zelda, Videojuegos, Cosplay, Fantasía
 - Imagen: https://boomart.pe/assets/products/espada-zelda-hero.webp
 - Ficha: https://boomart.pe/producto/espada-zelda/
@@ -1010,6 +1092,7 @@ Espada decorativa inspirada en The Legend of Zelda, impresa en 3D en PLA+ y pint
 - Precio: S/380
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Zelda, The Legend of Zelda, Videojuegos, Cosplay, Fantasía
 - Imagen: https://boomart.pe/assets/products/escudo-zelda-hero.webp
 - Ficha: https://boomart.pe/producto/escudo-zelda/
@@ -1022,6 +1105,7 @@ Escudo Hyliano inspirado en The Legend of Zelda, impreso en 3D en PLA+ y pintado
 - Precio: S/25
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Zelda, Ocarina of Time, Videojuegos, Cosplay, Coleccionismo
 - Imagen: https://boomart.pe/assets/products/ocarina-hero-real.webp
 - Ficha: https://boomart.pe/producto/ocarina-zelda/
@@ -1036,6 +1120,7 @@ Ocarina inspirada en The Legend of Zelda: Ocarina of Time, impresa en 3D en PLA+
 - Precio: S/180
 - Material: PLA+ con detalles en PLA Silk dorado y PLA Silk plata
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Harry Potter, Fawkes, Fénix, Dumbledore, Figuras, Coleccionables
 - Imagen: https://boomart.pe/assets/products/fawkes-fenix-de-dumbledore-hero-v2.png
 - Ficha: https://boomart.pe/producto/fawkes-fenix-de-dumbledore/
@@ -1048,6 +1133,7 @@ Fawkes es el fiel fénix de Albus Dumbledore: una criatura mágica conocida por 
 - Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Harry Potter
 - Imagen: https://boomart.pe/assets/products/castillo-de-hogwarts-gallery-01.png
 - Ficha: https://boomart.pe/producto/castillo-de-hogwarts/
@@ -1060,6 +1146,7 @@ El castillo de Hogwarts en réplica decorativa impresa en 3D: torres, puentes y 
 - Precio: S/260
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Ajedrez, Harry Potter
 - Imagen: https://boomart.pe/assets/products/ajedrez-de-hogwarts-4-casas-hero-v2.webp
 - Ficha: https://boomart.pe/producto/ajedrez-de-hogwarts-4-casas/
@@ -1072,6 +1159,7 @@ Ajedrez de colección Hogwarts · 4 Casas. Un homenaje integral al colegio de ma
 - Precio: S/220
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Ajedrez, Harry Potter, Tablero, Personalizado, Modular, Regalos
 - Imagen: https://boomart.pe/assets/products/ajedrez-harry-potter-modular-0.jpg
 - Ficha: https://boomart.pe/producto/ajedrez-harry-potter-modular-40x40/
@@ -1084,6 +1172,7 @@ Ajedrez de colección Hogwarts · 4 Casas. Un homenaje integral al colegio de ma
 - Precio: S/95
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Harry Potter, Lamparas
 - Imagen: https://boomart.pe/assets/products/lampara-sombrero-seleccionador-hero-v2.png
 - Ficha: https://boomart.pe/producto/lampara-sombrero-seleccionador/
@@ -1096,6 +1185,7 @@ Lámpara LED del Sombrero Seleccionador con iluminación integrada que resalta s
 - Precio: S/250
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Harry Potter, Lamparas
 - Imagen: https://boomart.pe/assets/products/lampara-lunar-hogwarts-hero-v2.png
 - Ficha: https://boomart.pe/producto/lampara-lunar-hogwarts/
@@ -1110,6 +1200,7 @@ Ilumina tu espacio con la magia de esta lámpara lunar de Hogwarts: un modelo ex
 - Precio: S/200
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Cascos, Marvel, Cosplay, Disfraces, Tamaño real, Halloween
 - Imagen: https://boomart.pe/assets/products/casco-de-wolverine-con-garras-hero-v4.jpg
 - Ficha: https://boomart.pe/producto/casco-de-wolverine-con-garras/
@@ -1122,6 +1213,7 @@ Ilumina tu espacio con la magia de esta lámpara lunar de Hogwarts: un modelo ex
 - Precio: S/200
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Daredevil, Marvel, Casco, Máscara, Cosplay, Disfraces, Halloween
 - Imagen: https://boomart.pe/assets/products/casco-daredevil-hero.webp
 - Ficha: https://boomart.pe/producto/casco-daredevil/
@@ -1134,6 +1226,7 @@ Casco de Daredevil inspirado en Marvel, impreso en 3D en PLA+ y pintado a mano. 
 - Precio: S/70
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Marvel, Palomeras
 - Imagen: https://boomart.pe/assets/products/palomera-cara-de-spiderman-hero-v2.webp
 - Ficha: https://boomart.pe/producto/palomera-cara-de-spiderman/
@@ -1146,6 +1239,7 @@ Espectacular palomera con forma de la cara de Spider-Man: ojos blancos, telarañ
 - Precio: S/70
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Marvel, Palomeras
 - Imagen: https://boomart.pe/assets/products/palomera-spiderman-hero-v2.webp
 - Ficha: https://boomart.pe/producto/palomera-spiderman/
@@ -1158,6 +1252,7 @@ Palomera temática de Spider-Man para tu noche de películas: práctica, resiste
 - Visor de Cíclope + chapa · Amarillo y rojo: S/100 | Visor de Cíclope táctico + chapa · Negro y rojo: S/100
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Cyclops, X-Men, Marvel, Visor, Cosplay, Disfraces, Halloween, Cíclope táctico, Black Cyclops, Negro
 - Imagen: https://boomart.pe/assets/products/visor-de-cyclops-hero.jpg
 - Ficha: https://boomart.pe/producto/visor-de-cyclops/
@@ -1170,6 +1265,7 @@ Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (B
 - Precio: S/200
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Máscaras, Red Hood, DC, Batman, Cosplay, Disfraces, Tamaño real, Halloween
 - Imagen: https://boomart.pe/assets/products/mascara-red-hood-hero.jpg
 - Ficha: https://boomart.pe/producto/mascara-red-hood/
@@ -1182,6 +1278,7 @@ Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (B
 - Precio: S/130
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Máscaras, Dr. Doom, Doctor Doom, Marvel, Cosplay, Disfraces, Halloween
 - Imagen: https://boomart.pe/assets/products/mascara-dr-doom-hero.jpg
 - Ficha: https://boomart.pe/producto/mascara-dr-doom/
@@ -1194,6 +1291,7 @@ Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (B
 - Precio: S/180
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Cascos, Batman, DC, Cosplay, Disfraces, Tamaño real, Halloween
 - Imagen: https://boomart.pe/assets/products/casco-de-batman-hero.jpg
 - Ficha: https://boomart.pe/producto/casco-de-batman/
@@ -1206,6 +1304,7 @@ Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (B
 - Precio: S/225
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Marvel, Palomeras, Dr. Doom, Doctor Doom, Cine, Decoración Marvel
 - Imagen: https://boomart.pe/assets/products/palomera-dr-doom-portada-cerrada.webp
 - Ficha: https://boomart.pe/producto/palomera-dr-doom/
@@ -1220,6 +1319,7 @@ Palomera Dr. Doom: la cabeza del villano de Marvel con su rostro metálico plate
 - Precio: S/80
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Mario, Saw, Cine, Videojuegos
 - Imagen: https://boomart.pe/assets/products/mario-billy-saw-hero-v2.webp
 - Ficha: https://boomart.pe/producto/mario-billy-saw/
@@ -1232,6 +1332,7 @@ Palomera Dr. Doom: la cabeza del villano de Marvel con su rostro metálico plate
 - Precio: S/50
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Skull, Streetwear, Art Toy, Urbano, Coleccionables
 - Imagen: https://boomart.pe/assets/products/zkull-urban-hero-v2.png
 - Ficha: https://boomart.pe/producto/zkull-urban/
@@ -1244,6 +1345,7 @@ Palomera Dr. Doom: la cabeza del villano de Marvel con su rostro metálico plate
 - Precio: S/120
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: God of War, Videojuegos
 - Imagen: https://boomart.pe/assets/products/pato-lucas-kratos-god-of-war-hero-v2.png
 - Ficha: https://boomart.pe/producto/pato-lucas-kratos-god-of-war/
@@ -1258,6 +1360,7 @@ El clásico y temperamental Pato Lucas se fusiona con la furia de Kratos de God 
 - Precio: S/60
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Macetas, Pokemon, Videojuegos
 - Imagen: https://boomart.pe/assets/products/maceta-pikachu-botanica-v1-1.jpg
 - Ficha: https://boomart.pe/producto/maceta-pikachu/
@@ -1270,6 +1373,7 @@ Maceta decorativa de Pikachu (Pokémon), impresa en 3D con filamento de alta cal
 - Precio: S/77
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Macetas, Marvel
 - Imagen: https://boomart.pe/assets/products/maceta-groot-botanica-v1-1.jpg
 - Ficha: https://boomart.pe/producto/maceta-groot/
@@ -1282,6 +1386,7 @@ Maceta inspirada en Groot, con diseño detallado y colores naranja y verde que e
 - Precio: S/44
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Macetas, Marvel
 - Imagen: https://boomart.pe/assets/products/maceta-baby-groot-botanica-v1-1.jpg
 - Ficha: https://boomart.pe/producto/maceta-baby-groot/
@@ -1294,6 +1399,7 @@ Maceta de Baby Groot (Guardianes de la Galaxia), minimalista y con hermosos deta
 - Precio: S/44
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Macetas
 - Imagen: https://boomart.pe/assets/products/maceta-dedo-medio-botanica-v1-1.jpg
 - Ficha: https://boomart.pe/producto/maceta-dedo-medio/
@@ -1306,6 +1412,7 @@ Una maceta pequeña y divertida con forma de dedo medio, en color neutro que com
 - Precio: S/55
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Macetas, Star Wars
 - Imagen: https://boomart.pe/assets/products/maceta-darth-vader-botanica-v1-1.jpg
 - Ficha: https://boomart.pe/producto/maceta-darth-vader/
@@ -1318,6 +1425,7 @@ Maceta de Darth Vader (Star Wars) en elegante color negro, capturando el casco d
 - Precio: S/66
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Arte Clásico, Macetas
 - Imagen: https://boomart.pe/assets/products/maceta-david-botanica-v1-1.jpg
 - Ficha: https://boomart.pe/producto/maceta-david/
@@ -1330,6 +1438,7 @@ Maceta inspirada en el David de Miguel Ángel: elegancia y arte clásico en un d
 - Precio: S/44
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Macetas
 - Imagen: https://boomart.pe/assets/products/maceta-minimalista-botanica-v1-1.jpg
 - Ficha: https://boomart.pe/producto/maceta-minimalista/
@@ -1342,6 +1451,7 @@ Optimiza tu espacio con una maceta minimalista de líneas limpias y textura suti
 - Precio: S/44
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Macetas
 - Imagen: https://boomart.pe/assets/products/maceta-palmera-botanica-v1-1.jpg
 - Ficha: https://boomart.pe/producto/maceta-palmera/
@@ -1356,6 +1466,7 @@ Maceta minimalista negra con textura de hojas de palmera: elegante y moderna, id
 - Precio: S/150
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Futbol, Mundial
 - Imagen: https://boomart.pe/assets/products/replica-copa-del-mundo-tamano-real-hero-v2.png
 - Ficha: https://boomart.pe/producto/replica-copa-del-mundo-tamano-real/
@@ -1368,6 +1479,7 @@ Siente la pasión del mundial: réplica premium de la Copa del Mundo FIFA a tama
 - Precio: S/160
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Futbol, Mundial
 - Imagen: https://boomart.pe/assets/products/botin-de-oro-del-mundial-hero-v2.png
 - Ficha: https://boomart.pe/producto/botin-de-oro-del-mundial/
@@ -1380,6 +1492,7 @@ Diseño exclusivo de Boom Art: el Botín de Oro (Golden Boot) dorado incorpora u
 - Precio: S/200
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Futbol, Mundial
 - Imagen: https://boomart.pe/assets/products/balon-de-oro-del-mundial-hero-v2.png
 - Ficha: https://boomart.pe/producto/balon-de-oro-del-mundial/
@@ -1392,6 +1505,7 @@ El Balón de Oro, máximo galardón individual del fútbol, en réplica decorati
 - Precio: S/30
 - Material: PLA
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Futbol, Mundial
 - Imagen: https://boomart.pe/assets/products/caja-organizadora-figuritas-panini-2026-hero-v2.webp
 - Ficha: https://boomart.pe/producto/caja-organizadora-figuritas-panini-2026/
@@ -1406,6 +1520,7 @@ Organiza y protege tus figuritas repetidas del álbum Panini Mundial 2026 con es
 - Precio: S/130
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Navidad, Santa Claus, Tazón, Galletas, Decoración navideña, Mesa navideña
 - Imagen: https://boomart.pe/assets/products/tazon-de-galletas-santa-hero-v2.webp
 - Ficha: https://boomart.pe/producto/tazon-de-galletas-santa/
@@ -1418,6 +1533,7 @@ Tazón de galletas Santa, un recipiente de tamaño grande para presentar galleta
 - Precio: S/160
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Navidad, Bandeja giratoria, Dulces, Galletas, Centro de mesa, Decoración navideña
 - Imagen: https://boomart.pe/assets/products/bandeja-dulces-arbol-navideno-hero-v2.webp
 - Ficha: https://boomart.pe/producto/bandeja-dulces-arbol-navideno/
@@ -1430,6 +1546,7 @@ Decora la mesa navideña y presenta tus dulces con esta bandeja giratoria en for
 - Precio: S/85
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Navidad, Belén, Pesebre, Nacimiento, Iluminación LED, Decoración navideña
 - Imagen: https://boomart.pe/assets/products/belen-iluminado-hero-v2.webp
 - Ficha: https://boomart.pe/producto/belen-iluminado/
@@ -1442,6 +1559,7 @@ Belén Iluminado: una escena de nacimiento enmarcada por alas, con iluminación 
 - Precio: S/220
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Navidad, Cascanueces, Soldado cascanueces, Figura navideña, Decoración navideña, Merry Xmas
 - Imagen: https://boomart.pe/assets/products/cascanueces-de-navidad-frontal.webp
 - Ficha: https://boomart.pe/producto/cascanueces-de-navidad/
@@ -1454,6 +1572,7 @@ Cascanueces de Navidad: un soldado de uniforme rojo con detalles dorados, sombre
 - Precio: S/65
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Navidad, Pesebre, Nacimiento, Belén, Diseño minimalista, Decoración navideña
 - Imagen: https://boomart.pe/assets/products/pesebre-minimalista-frontal.webp
 - Ficha: https://boomart.pe/producto/pesebre-minimalista/
@@ -1466,6 +1585,7 @@ Pesebre Minimalista: una escena de nacimiento de líneas limpias y acabado facet
 - Precio: S/55
 - Material: PLA+
 - Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Navidad, Pesebre, Nacimiento, María y José, Efecto tejido, Decoración navideña
 - Imagen: https://boomart.pe/assets/products/pesebre-tejido-celeste-marron.webp
 - Ficha: https://boomart.pe/producto/pesebre-tejido/
