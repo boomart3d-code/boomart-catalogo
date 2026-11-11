@@ -6670,6 +6670,21 @@
       ]
     ]
   },
+  "assets/products/set-de-12-templos-mini-real-1.webp": {
+    "w": 720,
+    "h": 1000,
+    "src": "assets/products/set-de-12-templos-mini-real-1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/set-de-12-templos-mini-real-1-65ea38363255-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/set-de-12-templos-mini-real-1-65ea38363255-360w.webp"
+      ]
+    ]
+  },
   "assets/products/set-santuario-15-piezas-2.webp": {
     "w": 738,
     "h": 922,
@@ -6724,6 +6739,55 @@
       [
         720,
         "assets/responsive/products/set-santuario-15-piezas-natural-v1-70d6bf988144-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/set-santuario-15-piezas-real-1.webp": {
+    "w": 960,
+    "h": 1000,
+    "src": "assets/products/set-santuario-15-piezas-real-1.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/set-santuario-15-piezas-real-1-e5a1635ad118-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/set-santuario-15-piezas-real-1-e5a1635ad118-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/set-santuario-15-piezas-real-1-e5a1635ad118-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/set-santuario-15-piezas-real-2.webp": {
+    "w": 720,
+    "h": 1040,
+    "src": "assets/products/set-santuario-15-piezas-real-2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/set-santuario-15-piezas-real-2-f8f0c5baa2f0-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/set-santuario-15-piezas-real-2-f8f0c5baa2f0-360w.webp"
+      ]
+    ]
+  },
+  "assets/products/set-santuario-15-piezas-real-3.webp": {
+    "w": 720,
+    "h": 900,
+    "src": "assets/products/set-santuario-15-piezas-real-3.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/set-santuario-15-piezas-real-3-527eeae9ce34-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/set-santuario-15-piezas-real-3-527eeae9ce34-360w.webp"
       ]
     ]
   },
