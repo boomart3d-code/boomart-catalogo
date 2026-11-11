@@ -85,7 +85,7 @@
   const SIGN_LABELS = { aries: "Aries", tauro: "Tauro", geminis: "Géminis", cancer: "Cáncer", leo: "Leo", virgo: "Virgo", libra: "Libra", escorpio: "Escorpio", sagitario: "Sagitario", capricornio: "Capricornio", acuario: "Acuario", piscis: "Piscis" };
 
   // Resuelve nombre, imagen y precio unitario vigente para una variante de producto.
-  // variantKey: null para productos simples; "temple" | "pandora" | "combo" para templos;
+  // variantKey: null para productos simples; "combo" | "temple" | "pandora" | "pedestal" | "pandora-sola" para templos;
   // "adulto" | "nino" para productos con tamaños.
   function resolveVariant(product, variantKey) {
     if (!product) return null;
@@ -133,7 +133,7 @@
     if (product.templePricing) {
       const key = variantKey && product.templePricing[variantKey] != null ? variantKey : null;
       if (!key) return null;
-      const labels = { temple: "Templo", pandora: "Pandora Box + pedestal", combo: "Combo (templo + Pandora Box)" };
+      const labels = { combo: "Combo (templo + Pandora Box + pedestal)", temple: "Templo solo", pandora: "Pandora Box + pedestal", pedestal: "Pedestal solo", "pandora-sola": "Pandora Box sola" };
       return {
         variantKey: key,
         variantLabel: labels[key],

@@ -17,6 +17,7 @@
  */
 
 import { readFile, writeFile as writeRaw, mkdir, readdir, rm } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import { responsiveHtml } from "./responsive-html.mjs";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
@@ -93,6 +94,19 @@ const waLink = (name) =>
  *   lines      desglose legible para humanos
  *   listPrice  único precio oficial para los feeds (Google/Meta/Pinterest)
  */
+// Opciones de compra de los templos, en el orden en que se muestran. La primera
+// presente es la base (precio publicado, SKU = id del producto).
+const TEMPLE_OPTIONS = [
+  { key: "combo", label: "Combo (templo + Pandora Box + pedestal)" },
+  { key: "temple", label: "Templo solo" },
+  { key: "pandora", label: "Pandora Box + pedestal" },
+  { key: "pedestal", label: "Pedestal solo" },
+  { key: "pandora-sola", label: "Pandora Box sola" },
+];
+const templeOptionList = (t) =>
+  TEMPLE_OPTIONS.filter((o) => typeof t[o.key] === "number").map((o) => ({ ...o, price: t[o.key] }));
+const templeBasePrice = (t) => templeOptionList(t)[0]?.price ?? null;
+
 function priceInfo(p) {
   if (p.id === "skins-zelda-nintendo-switch-2") {
     const base = Number(p.modelOptions.find(model => !model.addon && model.id !== "set-11").regularPrice);
@@ -114,17 +128,12 @@ function priceInfo(p) {
     };
   }
   if (p.templePricing) {
-    const { temple, pandora, combo } = p.templePricing;
-    // El templo suelto es la unidad vendible de referencia (evita que el feed
-    // marque "precio no coincide" contra la ficha, que muestra las 3 opciones).
-    const base = typeof temple === "number" ? temple : combo ?? pandora ?? null;
+    // Precio publicado = el combo (decisión de Adrián, 12-nov-2026); dentro de la
+    // ficha se puede comprar cada pieza por separado (ver TEMPLE_OPTIONS).
+    const base = templeBasePrice(p.templePricing);
     return {
       from: base,
-      lines: [
-        typeof temple === "number" ? `Templo solo: S/${temple}` : null,
-        typeof pandora === "number" ? `Pandora Box + pedestal: S/${pandora}` : null,
-        typeof combo === "number" ? `Combo (templo + Pandora Box + pedestal): S/${combo}` : null,
-      ].filter(Boolean),
+      lines: templeOptionList(p.templePricing).map((o) => `${o.label}: S/${o.price}`),
       listPrice: base,
     };
   }
@@ -165,15 +174,7 @@ function purchaseOptions(p) {
       { key: "set-completo", label: "Set completo (12 signos)", price: Number(p.signPicker.setPrice) },
     ];
   } else if (p.templePricing) {
-    const t = p.templePricing;
-    const defs = [
-      { key: "temple", label: "Templo solo", price: t.temple },
-      { key: "pandora", label: "Pandora Box + pedestal", price: t.pandora },
-      { key: "combo", label: "Combo (templo + Pandora Box + pedestal)", price: t.combo },
-    ].filter((d) => typeof d.price === "number");
-    const baseKey = typeof t.temple === "number" ? "temple" : t.combo != null ? "combo" : "pandora";
-    defs.sort((a, b) => (a.key === baseKey ? -1 : b.key === baseKey ? 1 : 0));
-    raw = defs.map((d, i) => ({ key: i === 0 ? null : d.key, label: d.label, price: d.price }));
+    raw = templeOptionList(p.templePricing).map((d, i) => ({ key: i === 0 ? null : d.key, label: d.label, price: d.price }));
   } else if (list != null) {
     raw = [{ key: null, label: null, price: list }];
   }
@@ -183,6 +184,15 @@ function purchaseOptions(p) {
 }
 
 const money = (n) => `${Number(n).toFixed(2)} PEN`;
+
+// Feed de ChatGPT Ads: la especificación de OpenAI pide la foto principal como JPEG o PNG.
+// Si la foto de la ficha es .webp, se usa su copia JPG de assets/feed/ (misma imagen; la
+// web sigue usando la .webp). Sin copia, queda la original.
+function feedJpg(url) {
+  if (!/\.webp$/i.test(url)) return url;
+  const name = url.split("/").pop().replace(/\.webp$/i, ".jpg");
+  return existsSync(path.join(ROOT, "assets", "feed", name)) ? `${SITE}/assets/feed/${name}` : url;
+}
 
 // Taxonomia de Google Shopping por categoria de BoomArt.
 const GOOGLE_CATEGORY = {
@@ -660,7 +670,7 @@ ${socialFooterHtml()}
       </div>
     </footer>
     <script src="src/track.js?v=5" defer></script>
-    <script src="src/shopping-assistant.js?v=10" defer></script>
+    <script src="src/shopping-assistant.js?v=11" defer></script>
   </body>
 </html>
 `;
@@ -915,11 +925,14 @@ function buildOpenAiRows(products) {
       const model = (p.modelOptions || []).find((m) => m.name === o.label);
       let gallery = model?.gallery?.length ? model.gallery.filter(Boolean).map(abs) : productGallery;
       let main = gallery[0] || abs(p.image);
-      if (o.key === "pandora") {
+      // Piezas sueltas del templo (Pandora Box, pedestal): la foto de la Pandora Box con
+      // su pedestal es la más cercana; el resto usa la foto principal.
+      const smallPiece = ["pandora", "pandora-sola", "pedestal"].includes(o.key);
+      if (smallPiece) {
         const own = productGallery.find((g) => /pandora/i.test(g));
         if (own) main = own;
       }
-      if (!model && o.key !== "pandora") main = abs(p.image) || main;
+      if (!model && !smallPiece) main = abs(p.image) || main;
       const base = tidyText(p.description || p.name);
       rows.push({
         item_id: o.sku,
@@ -930,7 +943,7 @@ function buildOpenAiRows(products) {
         brand: "BoomArt",
         seller_name: "BoomArt",
         seller_url: `${SITE}/`,
-        image_url: main,
+        image_url: feedJpg(main),
         additional_image_urls: gallery.filter((g) => g !== main).slice(0, 10),
         availability: stock.estado,
         price: money(o.price),
@@ -1058,7 +1071,7 @@ const CAT_CONTEXT = {
 const CATEGORY_NOTICES = { "Soportes de Mandos": "No incluye el mando: solo se vende el soporte." };
 const productNotice = (p) => p.notice || CATEGORY_NOTICES[p.category] || "";
 // Nombre visible de una categoria (igual que CATEGORY_LABELS en src/app.js).
-const CATEGORY_LABELS = { "🎃 Halloween": "🎃 Halloween y Cosplay" };
+const CATEGORY_LABELS = { "🎃 Halloween": "Cascos, Máscaras y Cosplay" };
 const categoryLabel = (c) => CATEGORY_LABELS[c] || c;
 const catContext = (p) =>
   CAT_CONTEXT[p.category] || "figura de colección impresa en 3D";
@@ -1284,18 +1297,10 @@ function priceBlockHtml(p) {
     return `<div class="pp-price"><span class="now">desde S/${unitPrice}</span><ul><li>Por signo: <strong>S/${unitPrice}</strong> c/u</li><li>Set completo (12 signos): <strong>S/${setPrice}</strong></li></ul></div>`;
   }
   if (p.templePricing) {
-    const t = p.templePricing;
-    const vals = [t.temple, t.pandora, t.combo].filter((n) => typeof n === "number");
-    const rows = [
-      typeof t.temple === "number" ? `<li>Templo solo: <strong>S/${t.temple}</strong></li>` : "",
-      typeof t.pandora === "number"
-        ? `<li>Caja de Pandora + pedestal: <strong>S/${t.pandora}</strong></li>`
-        : "",
-      typeof t.combo === "number"
-        ? `<li>Combo completo (templo + Caja de Pandora + pedestal): <strong>S/${t.combo}</strong></li>`
-        : "",
-    ].join("");
-    return `<div class="pp-price"><span class="now">desde S/${Math.min(...vals)}</span><ul>${rows}</ul></div>`;
+    const rows = templeOptionList(p.templePricing)
+      .map((o) => `<li>${o.label}: <strong>S/${o.price}</strong></li>`)
+      .join("");
+    return `<div class="pp-price"><span class="now">S/${templeBasePrice(p.templePricing)}</span><ul>${rows}</ul></div>`;
   }
   const now = price.from;
   if (now == null) return `<div class="pp-price"><span class="now">Precio a consultar</span></div>`;
@@ -1359,7 +1364,7 @@ function buildProductPage(p, all, ratingLd) {
     .slice(0, 10)
     .map((r) => {
       const pi = priceInfo(r);
-      const lbl = pi.from != null ? `${r.templePricing || r.signPicker ? "Desde " : ""}S/${pi.from}` : "";
+      const lbl = pi.from != null ? `${r.signPicker ? "Desde " : ""}S/${pi.from}` : "";
       return `<a href="../${esc(r.id)}/"><img src="${esc(toWebp(`${rel}${String((r.gallery && r.gallery[0]) || r.image).replace(/^\/+/, "")}`))}" alt="${esc(r.name)}" loading="lazy" decoding="async" width="128" height="160"><span class="n">${esc(stripEmoji(r.name))}</span>${lbl ? `<span class="pr">${esc(lbl)}</span>` : ""}</a>`;
     })
     .join("\n          ");
@@ -1674,7 +1679,7 @@ ${p.modelOptions?.length ? `<script>
       })();
     </script>` : ''}
     <script src="${rel}src/track.js?v=5" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=10" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=11" defer></script>
   </body>
 </html>
 `;
@@ -1755,12 +1760,14 @@ const CATEGORY_META = {
       "Piezas hechas a pedido y detalladas a mano en Lima y Callao. Envíos a todo el Perú. Escríbenos por WhatsApp para consultar.",
     ],
   },
+  // Nombre de temporada (noviembre a septiembre). En octubre vuelve a «🎃 Halloween y
+  // Cosplay» con data/temporada-halloween-nombres.json (acuerdo con Adrián, 19-oct-2026).
   "🎃 Halloween": {
-    h1: "Halloween y Cosplay: máscaras, cascos y disfraces en 3D",
-    title: "Halloween y Cosplay: máscaras y cascos para disfraz en 3D · Perú | BoomArt",
+    h1: "Cascos, máscaras y cosplay impresos en 3D",
+    title: "Cascos, máscaras y cosplay en 3D · Perú | BoomArt",
     intro: [
-      "Colección de temporada de Halloween: máscaras, calaveras y piezas de terror para decorar tu casa o regalar. Incluye la máscara Calabaza Calavera, el candelabro calavera, Evil Mask, la máscara de Krampus, Mario Billy (Saw) y más.",
-      "Todas impresas en 3D y pintadas a mano, hechas a pedido. La disponibilidad depende de la temporada: consulta por WhatsApp con tiempo antes de tu evento.",
+      "Cascos, máscaras y accesorios de cosplay impresos en 3D para disfraces, convenciones, fiestas o tu colección: el casco del Mandaloriano, el de Stormtrooper, la máscara de Krampus, la Máscara de Majora, la Corona Targaryen y más.",
+      "Todas pintadas y detalladas a mano, hechas a pedido. Escríbenos por WhatsApp con tiempo antes de tu evento.",
       "Fabricadas en Perú, con envíos a todo el país.",
     ],
   },
@@ -1922,7 +1929,7 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
       const price = priceInfo(p);
       const pr =
         price.from != null
-          ? (p.templePricing || p.signPicker ? `desde S/${price.from}` : `S/${price.from}`)
+          ? (p.signPicker ? `desde S/${price.from}` : `S/${price.from}`)
           : "Consultar";
       const img = `${rel}${String((p.gallery && p.gallery[0]) || p.image).replace(/^\/+/, "")}`;
       return `        <a class="cat-card" href="${rel}producto/${esc(p.id)}/">
@@ -2064,7 +2071,7 @@ ${socialFooterHtml()}
       </span>
     </a>
     <script src="${rel}src/track.js?v=5" defer></script>
-    <script src="${rel}src/shopping-assistant.js?v=10" defer></script>
+    <script src="${rel}src/shopping-assistant.js?v=11" defer></script>
   </body>
 </html>
 `;

@@ -15,7 +15,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const rd = (f) => readFile(path.join(ROOT, f), "utf8");
 const CFG = JSON.parse(await rd("data/plazos-fabricacion.json"));
 const PRODUCTS = JSON.parse(await rd("data/products.json"));
-const base = (p) => (p.templePricing ? p.templePricing.temple : p.signPicker ? p.signPicker.unitPrice : p.modelOptions ? p.modelOptions[0].regularPrice : p.regularPrice);
+const base = (p) => (p.templePricing ? (p.templePricing.combo ?? p.templePricing.temple) : p.signPicker ? p.signPicker.unitPrice : p.modelOptions ? p.modelOptions[0].regularPrice : p.regularPrice);
 const expected = (p) => plazoOf(p, CFG, base(p));
 const SENCILLO = "24 a 48 horas";
 const ELABORADO = "3 a 5 días";

@@ -11,7 +11,7 @@ const catalog = JSON.parse(await read("catalogo.json"));
 const google = await read("feed-google.xml");
 const meta = await read("feed-meta.csv");
 const appSource = await read("src/app.js");
-const official = (p) => p.templePricing?.temple ?? p.regularPrice;
+const official = (p) => p.templePricing?.combo ?? p.templePricing?.temple ?? p.regularPrice;
 let checks = 0;
 function check(fn) { fn(); checks++; }
 

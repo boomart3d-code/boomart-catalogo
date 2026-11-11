@@ -32,7 +32,7 @@ node scripts/test-official-prices.mjs # precios oficiales vs feeds, fichas y car
 ## 3. Datos estructurados (JSON-LD)
 
 - Una `Offer` por opción de compra, con `name`, `sku` y `price` propios. Fuente: `purchaseOptions()` en el generador. La primera opción es la base: su SKU es el id del producto y su precio es el de los feeds de Google/Meta y la meta `product:price:amount`.
-- Templos: `templo-aries` (templo solo S/100), `templo-aries-pandora` (S/45), `templo-aries-combo` (S/130). Las máscaras con modelos, el signo/set y los skins siguen el mismo patrón.
+- Templos (desde el 12-nov-2026): precio publicado = combo. `templo-aries` (combo S/130), `templo-aries-temple` (templo solo S/100), `templo-aries-pandora` (Pandora Box + pedestal S/45), `templo-aries-pedestal` (S/30), `templo-aries-pandora-sola` (S/20). Opciones en `TEMPLE_OPTIONS` del generador y `templePricing` de cada templo. Las máscaras con modelos, el signo/set y los skins siguen el mismo patrón.
 - Ya NO se usa `AggregateOffer` (mezclaba precios de piezas distintas y Google exige `Offer` en fichas de comerciante).
 - Los nombres para máquinas (title, JSON-LD, feeds, `og:title`) salen sin emoji; la tienda y el H1 conservan el nombre original.
 - Sin valoraciones por producto, sin stock inventado, sin monto de envío (ver regla de envío).
@@ -69,10 +69,11 @@ No usar la Indexing API para fichas de producto (no es un uso admitido). IndexNo
 ## 8. Decisiones y datos pendientes de Adrián
 
 - **Plazos de fabricación** (RESUELTO el 12-nov): sencillas 24 a 48 horas, elaboradas 3 a 5 días, desde `data/plazos-fabricacion.json` (fichas, `politicas.html`, catálogo y los tres feeds). Falta revisar la clasificación sencillo/elaborado y el texto «48 horas útiles» del formulario de pedido de `index.html` (no se tocó).
+- **Categoría de temporada**: de noviembre a septiembre se llama «Cascos, Máscaras y Cosplay» (`CATEGORY_LABELS` en `src/app.js` y el generador) y los nombres van sin «· Halloween»; en octubre se restauran desde `data/temporada-halloween-nombres.json`. La URL `/categoria/halloween/` no cambia.
+- **Feed de ChatGPT**: si la foto principal es .webp, el feed usa su copia JPG de `assets/feed/` (la web no cambia). Para una foto nueva en .webp, crear allí la copia `.jpg` con el mismo nombre.
 - **Disponibilidad «A pedido»**: el feed de OpenAI usa `backorder` (no afirma stock; ver `docs/CHATGPT_ADS.md` §3). Google, Meta y los datos estructurados siguen en `InStock`/`in_stock`; unificarlos es una decisión comercial pendiente.
 - **Devoluciones**: los datos estructurados dicen «no permitidas» (`MerchantReturnNotPermitted`) pero `politicas.html` acepta fallas de fabricación (7 días) y daño de transporte (48 h). No se inventó ninguna política; las definiciones que faltan están en `docs/CHATGPT_ADS.md` §7.
 - **`belen-iluminado`** no tiene `availability` en `data/products.json` y no hay ningún dato de existencias: en el feed de OpenAI sale `unknown` y fuera de anuncios hasta que se confirme.
-- **Precio visible en templos**: la ficha titula «desde S/45» (Pandora Box) mientras el feed y la descripción usan S/100 (templo solo).
-- **Descripción de templos**: empieza con «Combo de la Casa de Aries…» pero el precio base es el del templo solo.
+- **Precio de templos** (RESUELTO el 12-nov): se publica el combo S/130 en ficha, tarjetas, catálogo y feeds; dentro se compran templo, Pandora Box + pedestal, pedestal o Pandora Box por separado.
 - **`priceRange` de la portada** dice «S/45 - S/500»; los precios del catálogo van de S/20 a S/1500.
 - **Accesibilidad** (Lighthouse móvil): contraste de color en `.eyebrow`, `.pr` y enlaces rojos (colores, no tocados) y nombres accesibles de las tarjetas de la tienda (JS).

@@ -107,9 +107,9 @@
     },
     {
       "id": "temporada-halloween",
-      "nombre": "Temporada: Halloween",
-      "descripcion": "Toda la categoria Halloween y Cosplay.",
-      "sugerenciaContexto": "Personas que buscan disfraces, mascaras o decoracion para Halloween.",
+      "nombre": "Temporada: Cascos, Máscaras y Cosplay",
+      "descripcion": "Toda la categoria Cascos, Mascaras y Cosplay.",
+      "sugerenciaContexto": "Personas que buscan cascos, mascaras o accesorios para cosplay, disfraces o coleccion.",
       "reglas": [{ "categorias": ["🎃 Halloween"] }]
     },
     {

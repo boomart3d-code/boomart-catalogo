@@ -52,7 +52,7 @@
     .replace(/'/g, "&#039;");
 
   const productPrice = (product) => {
-    if (product.templePricing) return Number(product.templePricing.temple || 0);
+    if (product.templePricing) return Number(product.templePricing.combo || product.templePricing.temple || 0);
     if (product.signPicker) return Number(product.signPicker.unitPrice || 0);
     return Number(product.regularPrice) || 0;
   };

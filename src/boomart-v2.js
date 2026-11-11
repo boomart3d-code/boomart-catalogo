@@ -22,7 +22,7 @@
   const api = window.BoomV2 = {
     label(c){return themes[c]?.short;},
     reset(){type='Todos';order='featured';},
-    compare(a,b){const price=p=>p.signPicker?.unitPrice??p.templePricing?.temple??p.regularPrice??0;if(order==='low')return price(a)-price(b);if(order==='high')return price(b)-price(a);const ids=themes[activeFilter]?.ids||[],rank=p=>{const i=ids.indexOf(p.id);return i<0?999:i;};return rank(a)-rank(b)||Number(!!b.featured)-Number(!!a.featured);},
+    compare(a,b){const price=p=>p.signPicker?.unitPrice??p.templePricing?.combo??p.templePricing?.temple??p.regularPrice??0;if(order==='low')return price(a)-price(b);if(order==='high')return price(b)-price(a);const ids=themes[activeFilter]?.ids||[],rank=p=>{const i=ids.indexOf(p.id);return i<0?999:i;};return rank(a)-rank(b)||Number(!!b.featured)-Number(!!a.featured);},
     matches(p){const n=p.name.toLowerCase();return type==='Todos'||(type==='Templos'&&/templo|santuario|pandora/.test(n))||(type==='Esculturas'&&/busto|escultura|altar|reloj/.test(n))||(type==='Cascos y tiaras'&&/casco|tiara/.test(n));},
     home(list,card,label,categories){
       const directory=categories.map((c,i)=>{const selected=selection(list,c),p=selected[0],t=themes[c]||{};return `<a href="${categoryUrl(c)}" class="v2-universe" data-filter="${esc(c)}" data-scroll data-tone="${t.tone||'figures'}"><span class="v2-universe-number">${String(i+1).padStart(2,'0')}</span><span class="v2-universe-art"><img ${image(t.image||p.image,'tile')} alt="" loading="lazy" decoding="async"></span><span class="v2-universe-label"><strong>${esc(t.short||label(c))}</strong><small>${selected.length} piezas <span aria-hidden="true">↗</span></small></span></a>`;}).join('');

@@ -111,8 +111,8 @@ const setCanonical = (href) => {
 const priceLabel = (product) => {
   if (product.signPicker) return `desde S/${product.signPicker.unitPrice}`;
   if (product.templePricing) {
-    const v = product.templePricing.temple ?? product.templePricing.combo ?? product.templePricing.pandora;
-    return v ? `desde S/${v}` : "";
+    const v = templeMainPrice(product);
+    return v ? `S/${v}` : "";
   }
   const now = product.regularPrice;
   return now ? `S/${now}` : "";
@@ -225,7 +225,12 @@ const productImage = (product, className = "") => {
   return `<img class="${className}" ${imageAttrs(product.image)} alt="${product.name}" loading="lazy" decoding="async">`;
 };
 
-const TEMPLE_BOX_LABELS = { temple: "Templo", pandora: "Pandora Box + pedestal", combo: "Combo" };
+const TEMPLE_BOX_LABELS = { combo: "Combo", temple: "Templo solo", pandora: "Pandora Box + pedestal", pedestal: "Pedestal solo", "pandora-sola": "Pandora Box sola" };
+// Precio publicado de un templo: el combo (decisión de Adrián, 12-nov-2026).
+function templeMainPrice(product) {
+  const t = product.templePricing || {};
+  return t.combo ?? t.temple ?? t.pandora;
+}
 
 // Controles para agregar al carrito. Cada tarjeta/modal tiene su propia instancia
 // independiente (no comparten estado entre si), identificada por data-product.
@@ -363,11 +368,10 @@ const priceMarkup = (product) => {
 // Toda la tarjeta abre la ficha al tocarla, no solo la foto o el nombre.
 const gridPriceMarkup = (product) => {
   if (product.templePricing) {
-    // "Desde" muestra el templo solo (la pieza principal), no la opcion mas
-    // barata de las 3 (Pandora Box sola es un accesorio, no el producto).
+    // Se publica el precio del combo; las piezas sueltas se eligen en la ficha.
     return `
       <div class="simple-price">
-        <strong>Desde ${formatPrice(product.templePricing.temple)}</strong>
+        <strong>${formatPrice(templeMainPrice(product))}</strong>
       </div>
     `;
   }
@@ -414,7 +418,7 @@ const collectionItems = (collection) =>
 
 const currentPrice = (product) =>
   product.templePricing
-    ? Number(product.templePricing.temple)
+    ? Number(templeMainPrice(product))
     : Number(product.regularPrice);
 
 const collectionCard = (collection, items) => {
@@ -471,7 +475,7 @@ const CATEGORY_ORDER = [
   "Saint Seiya", "Harry Potter", "Marvel & DC", "Navidad", "🎃 Halloween", "Mundial de Fútbol",
   "Macetas", "Soportes de Mandos", "Figuras Coleccionables", "Zelda",
 ];
-const CATEGORY_LABELS = { "🎃 Halloween": "🎃 Halloween y Cosplay" };
+const CATEGORY_LABELS = { "🎃 Halloween": "Cascos, Máscaras y Cosplay" };
 const categoryLabel = (category) => window.BoomV2?.label(category) || CATEGORY_LABELS[category] || category;
 const orderedCategories = (cats) => [...cats].sort((a, b) => {
   const ia = CATEGORY_ORDER.indexOf(a);

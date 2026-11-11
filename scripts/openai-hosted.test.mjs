@@ -172,12 +172,16 @@ test("el procesamiento: filtra por feed y entiende fechas en ISO, segundos y mil
 });
 
 /* ------------------------------------------------------------ el monitor completo contra una API FALSA */
+// La API falsa responde con las cifras del feed REAL generado (filas y elegibles), para que la
+// prueba no dependa de cuántos productos u opciones tenga el catálogo en cada momento.
+const FEED_ROWS = (await rd("feed-openai.jsonl")).trim().split(/\r?\n/).map((l) => JSON.parse(l));
+const LIVE = { rows: FEED_ROWS.length, eligible: FEED_ROWS.filter((r) => String(r.is_ads_eligible) === "true").length };
 async function runMonitor(payload, env = {}) {
   const server = http.createServer((req, res) => {
     if (req.headers.authorization !== "Bearer clave-de-prueba") { res.writeHead(401).end("{}"); return; }
     res.setHeader("content-type", "application/json");
     if (req.url.startsWith("/v1/feeds/uploads")) res.end(JSON.stringify(payload));
-    else if (req.url.startsWith("/v1/feeds")) res.end(JSON.stringify({ data: [{ id: "fd_1", product_count: 131 }] }));
+    else if (req.url.startsWith("/v1/feeds")) res.end(JSON.stringify({ data: [{ id: "fd_1", product_count: LIVE.eligible }] }));
     else res.writeHead(404).end("{}");
   });
   await new Promise((r) => server.listen(0, "127.0.0.1", r));
@@ -194,7 +198,7 @@ async function runMonitor(payload, env = {}) {
 }
 
 test("monitor: con una carga correcta y reciente termina bien y NO imprime la clave", async () => {
-  const r = await runMonitor({ data: [up({ completed_at: new Date().toISOString() })] });
+  const r = await runMonitor({ data: [up({ rows_accepted: LIVE.rows, rows_ads_eligible: LIVE.eligible, completed_at: new Date().toISOString() })] });
   assert.equal(r.code, 0, r.out);
   assert.doesNotMatch(r.out, /clave-de-prueba/);
   assert.match(r.out, /"errores": 0/);

@@ -383,9 +383,11 @@
     "material": "PLA+ reforzado y PLA Silk dorado",
     "availability": "A pedido",
     "templePricing": {
+      "combo": 130,
       "temple": 100,
       "pandora": 45,
-      "combo": 130
+      "pedestal": 30,
+      "pandora-sola": 20
     },
     "featured": true,
     "image": "assets/products/templo-aries-natural-v1.jpg",
@@ -410,9 +412,11 @@
     "material": "PLA+ reforzado y PLA Silk dorado",
     "availability": "A pedido",
     "templePricing": {
+      "combo": 130,
       "temple": 100,
       "pandora": 45,
-      "combo": 130
+      "pedestal": 30,
+      "pandora-sola": 20
     },
     "featured": true,
     "image": "assets/products/templo-tauro-natural-v1.jpg",
@@ -437,9 +441,11 @@
     "material": "PLA+ reforzado y PLA Silk dorado",
     "availability": "A pedido",
     "templePricing": {
+      "combo": 130,
       "temple": 100,
       "pandora": 45,
-      "combo": 130
+      "pedestal": 30,
+      "pandora-sola": 20
     },
     "featured": true,
     "image": "assets/products/templo-geminis-natural-v1.jpg",
@@ -464,9 +470,11 @@
     "material": "PLA+ reforzado y PLA Silk dorado",
     "availability": "A pedido",
     "templePricing": {
+      "combo": 130,
       "temple": 100,
       "pandora": 45,
-      "combo": 130
+      "pedestal": 30,
+      "pandora-sola": 20
     },
     "featured": true,
     "image": "assets/products/templo-cancer-natural-v1.jpg",
@@ -490,9 +498,11 @@
     "material": "PLA+ reforzado y PLA Silk dorado",
     "availability": "A pedido",
     "templePricing": {
+      "combo": 130,
       "temple": 100,
       "pandora": 45,
-      "combo": 130
+      "pedestal": 30,
+      "pandora-sola": 20
     },
     "featured": true,
     "image": "assets/products/templo-leo-natural-v1.jpg",
@@ -516,9 +526,11 @@
     "material": "PLA+ reforzado y PLA Silk dorado",
     "availability": "A pedido",
     "templePricing": {
+      "combo": 130,
       "temple": 100,
       "pandora": 45,
-      "combo": 130
+      "pedestal": 30,
+      "pandora-sola": 20
     },
     "featured": true,
     "image": "assets/products/templo-virgo-natural-v1.jpg",
@@ -542,9 +554,11 @@
     "material": "PLA+ reforzado y PLA Silk dorado",
     "availability": "A pedido",
     "templePricing": {
+      "combo": 130,
       "temple": 100,
       "pandora": 45,
-      "combo": 130
+      "pedestal": 30,
+      "pandora-sola": 20
     },
     "featured": true,
     "image": "assets/products/templo-libra-natural-v1.jpg",
@@ -568,9 +582,11 @@
     "material": "PLA+ reforzado y PLA Silk dorado",
     "availability": "A pedido",
     "templePricing": {
+      "combo": 130,
       "temple": 100,
       "pandora": 45,
-      "combo": 130
+      "pedestal": 30,
+      "pandora-sola": 20
     },
     "featured": true,
     "image": "assets/products/templo-escorpio-natural-v1.jpg",
@@ -594,9 +610,11 @@
     "material": "PLA+ reforzado y PLA Silk dorado",
     "availability": "A pedido",
     "templePricing": {
+      "combo": 130,
       "temple": 100,
       "pandora": 45,
-      "combo": 130
+      "pedestal": 30,
+      "pandora-sola": 20
     },
     "featured": true,
     "image": "assets/products/templo-sagitario-natural-v1.jpg",
@@ -620,9 +638,11 @@
     "material": "PLA+ reforzado y PLA Silk dorado",
     "availability": "A pedido",
     "templePricing": {
+      "combo": 130,
       "temple": 100,
       "pandora": 45,
-      "combo": 130
+      "pedestal": 30,
+      "pandora-sola": 20
     },
     "featured": true,
     "image": "assets/products/templo-capricornio-natural-v1.jpg",
@@ -646,9 +666,11 @@
     "material": "PLA+ reforzado y PLA Silk dorado",
     "availability": "A pedido",
     "templePricing": {
+      "combo": 130,
       "temple": 100,
       "pandora": 45,
-      "combo": 130
+      "pedestal": 30,
+      "pandora-sola": 20
     },
     "featured": true,
     "image": "assets/products/templo-acuario-natural-v1.jpg",
@@ -673,9 +695,11 @@
     "material": "PLA+ reforzado y PLA Silk dorado",
     "availability": "A pedido",
     "templePricing": {
+      "combo": 130,
       "temple": 100,
       "pandora": 45,
-      "combo": 130
+      "pedestal": 30,
+      "pandora-sola": 20
     },
     "featured": true,
     "image": "assets/products/templo-piscis-natural-v1.jpg",
@@ -1590,7 +1614,7 @@
   },
   {
     "id": "mario-billy-saw",
-    "name": "Mario Billy 🎃 · Saw (El Juego del Miedo)",
+    "name": "Mario Billy · Saw (El Juego del Miedo)",
     "category": "Figuras Coleccionables",
     "tags": [
       "Mario",
@@ -1612,7 +1636,7 @@
   },
   {
     "id": "mascara-calavera",
-    "name": "Máscara Calavera 💀 · Halloween",
+    "name": "Máscara Calavera",
     "category": "🎃 Halloween",
     "tags": [
       "Mascaras",
@@ -1666,7 +1690,7 @@
   },
   {
     "id": "mascara-calabaza-calavera",
-    "name": "Máscara Calabaza Calavera 🎃 · Halloween",
+    "name": "Máscara Calabaza Calavera",
     "category": "🎃 Halloween",
     "tags": [
       "Mascaras",
@@ -1688,7 +1712,7 @@
   },
   {
     "id": "candelabro-calavera",
-    "name": "Candelabro Calavera 🎃 · Halloween",
+    "name": "Candelabro Calavera",
     "category": "🎃 Halloween",
     "tags": [
       "Portavelas",
@@ -1711,7 +1735,7 @@
   },
   {
     "id": "evil-mask",
-    "name": "Evil Mask 😈 · Halloween",
+    "name": "Evil Mask",
     "category": "🎃 Halloween",
     "tags": [
       "Mascaras",
@@ -1735,7 +1759,7 @@
   },
   {
     "id": "zkull-urban",
-    "name": "ZKULL Urban 💀 · Halloween",
+    "name": "ZKULL Urban",
     "category": "Figuras Coleccionables",
     "tags": [
       "Skull",
@@ -1758,7 +1782,7 @@
   },
   {
     "id": "mascara-krampus",
-    "name": "Máscara Krampus 😈 · Halloween",
+    "name": "Máscara Krampus",
     "category": "🎃 Halloween",
     "tags": [
       "Mascaras",
@@ -1782,7 +1806,7 @@
   },
   {
     "id": "mascara-baphomet",
-    "name": "Máscara Baphomet 😈 · Halloween",
+    "name": "Máscara Baphomet",
     "category": "🎃 Halloween",
     "tags": [
       "Mascaras",
@@ -1808,7 +1832,7 @@
   },
   {
     "id": "mascara-hellboy-articulada",
-    "name": "Máscara Hellboy Articulada 👹 · Halloween",
+    "name": "Máscara Hellboy Articulada",
     "category": "🎃 Halloween",
     "tags": [
       "Mascaras",
@@ -1834,7 +1858,7 @@
   },
   {
     "id": "visor-de-cyclops",
-    "name": "Visor de Cyclops + chapa de cinturón 🎃 · Halloween",
+    "name": "Visor de Cyclops + chapa de cinturón",
     "category": "🎃 Halloween",
     "extraCategories": [
       "Marvel & DC"
@@ -1892,7 +1916,7 @@
   },
   {
     "id": "mascara-red-hood",
-    "name": "Máscara de Red Hood 🎃 · Halloween",
+    "name": "Máscara de Red Hood",
     "category": "🎃 Halloween",
     "extraCategories": [
       "Marvel & DC"
@@ -1923,7 +1947,7 @@
   },
   {
     "id": "mascara-dr-doom",
-    "name": "Máscara de Dr. Doom 🎃 · Halloween",
+    "name": "Máscara de Dr. Doom",
     "category": "🎃 Halloween",
     "extraCategories": [
       "Marvel & DC"
@@ -1953,7 +1977,7 @@
   },
   {
     "id": "casco-de-batman",
-    "name": "Casco de Batman 🎃 · Halloween",
+    "name": "Casco de Batman",
     "category": "🎃 Halloween",
     "extraCategories": [
       "Marvel & DC"
@@ -1987,7 +2011,7 @@
   },
   {
     "id": "casco-de-stormtrooper",
-    "name": "Casco de Stormtrooper 🎃 · Halloween",
+    "name": "Casco de Stormtrooper",
     "category": "🎃 Halloween",
     "tags": [
       "Cascos",
@@ -2014,7 +2038,7 @@
   },
   {
     "id": "casco-del-mandaloriano",
-    "name": "Casco del Mandaloriano 🎃 · Halloween",
+    "name": "Casco del Mandaloriano",
     "category": "🎃 Halloween",
     "tags": [
       "Cascos",
@@ -2042,7 +2066,7 @@
   },
   {
     "id": "casco-gladiador-maximo",
-    "name": "Casco de Gladiador Máximo 🎃 · Halloween",
+    "name": "Casco de Gladiador Máximo",
     "category": "🎃 Halloween",
     "tags": [
       "Cascos",
@@ -2069,7 +2093,7 @@
   },
   {
     "id": "corona-de-elfo",
-    "name": "Corona de Elfo 🧝 · Halloween",
+    "name": "Corona de Elfo",
     "category": "🎃 Halloween",
     "tags": [
       "Coronas",
@@ -2095,7 +2119,7 @@
   },
   {
     "id": "cuernos-de-fauno",
-    "name": "Cuernos de Fauno 🐐 · Halloween",
+    "name": "Cuernos de Fauno",
     "category": "🎃 Halloween",
     "tags": [
       "Cuernos",
@@ -2124,7 +2148,7 @@
   },
   {
     "id": "mascarada-del-diablo",
-    "name": "La Mascarada del Diablo 😈 · Halloween",
+    "name": "La Mascarada del Diablo",
     "category": "🎃 Halloween",
     "tags": [
       "Mascaras",
