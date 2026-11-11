@@ -1,0 +1,126 @@
+{
+  "_comentario": "Reglas editables para organizar el catalogo en campanas de ChatGPT Ads. Se leen al generar el feed (node scripts/build-ai-catalog.mjs). Cada regla/clausula acepta estas condiciones y TODAS las que se escriban deben cumplirse (Y); dentro de una lista basta una (O): categorias (categoria principal o extra del producto), etiquetas (tags de data/products.json, sin importar tildes ni mayusculas), ids, idPatron (expresion regular sobre el id), temas (tema principal ya calculado) y precioMax (precio base en soles). Un error de escritura en una condicion detiene el generador.",
+  "version": 1,
+  "rutaPorDefecto": ["Figuras y decoracion 3D"],
+  "temaPorDefecto": "otros",
+  "_temaPrincipal": "Cada producto recibe UNA tematica principal y una ruta de categoria. Gana la primera regla que coincida, asi que las mas especificas van arriba. El tema va a ads_metadata.custom_label_0 y la ruta a product_category (ambos se pueden filtrar en un grupo de anuncios).",
+  "temaPrincipal": [
+    { "tema": "anime", "ruta": ["Anime", "Saint Seiya", "Cascos y tiaras"], "categorias": ["Saint Seiya"], "etiquetas": ["Cascos"] },
+    { "tema": "anime", "ruta": ["Anime", "Saint Seiya", "Altares exhibidores"], "categorias": ["Saint Seiya"], "etiquetas": ["Altar Exhibidor"] },
+    { "tema": "anime", "ruta": ["Anime", "Saint Seiya", "Templos del Zodiaco"], "categorias": ["Saint Seiya"], "etiquetas": ["Templo", "Templos"] },
+    { "tema": "anime", "ruta": ["Anime", "Saint Seiya", "Cajas de Pandora"], "categorias": ["Saint Seiya"], "etiquetas": ["Cajas De Pandora", "Pandora Box"] },
+    { "tema": "anime", "ruta": ["Anime", "Saint Seiya", "Esculturas y bustos"], "categorias": ["Saint Seiya"], "etiquetas": ["Esculturas"] },
+    { "tema": "anime", "ruta": ["Anime", "Saint Seiya"], "categorias": ["Saint Seiya"] },
+
+    { "tema": "gaming", "ruta": ["Gaming", "Zelda"], "categorias": ["Zelda"] },
+    { "tema": "gaming", "ruta": ["Gaming", "Soportes de mando"], "categorias": ["Soportes de Mandos"] },
+
+    { "tema": "cosplay", "ruta": ["Cosplay y disfraces", "Cascos"], "etiquetas": ["Cascos", "Casco"] },
+    { "tema": "cosplay", "ruta": ["Cosplay y disfraces", "Mascaras"], "etiquetas": ["Mascaras"] },
+    { "tema": "cosplay", "ruta": ["Cosplay y disfraces", "Coronas y cuernos"], "etiquetas": ["Coronas", "Cuernos"] },
+    { "tema": "cosplay", "ruta": ["Cosplay y disfraces"], "etiquetas": ["Cosplay", "Disfraces"] },
+
+    { "tema": "decoracion", "ruta": ["Decoracion", "Navidad"], "categorias": ["Navidad"] },
+    { "tema": "decoracion", "ruta": ["Decoracion", "Macetas"], "categorias": ["Macetas"] },
+    { "tema": "decoracion", "ruta": ["Decoracion", "Velas y candelabros"], "etiquetas": ["Portavelas"] },
+
+    { "tema": "cine-y-series", "ruta": ["Cine y series", "Harry Potter", "Ajedrez"], "categorias": ["Harry Potter"], "etiquetas": ["Ajedrez"] },
+    { "tema": "cine-y-series", "ruta": ["Cine y series", "Harry Potter", "Lamparas"], "categorias": ["Harry Potter"], "etiquetas": ["Lamparas"] },
+    { "tema": "cine-y-series", "ruta": ["Cine y series", "Harry Potter"], "categorias": ["Harry Potter"] },
+    { "tema": "cine-y-series", "ruta": ["Cine y series", "Marvel y DC", "Palomeras"], "categorias": ["Marvel & DC"], "etiquetas": ["Palomeras"] },
+    { "tema": "cine-y-series", "ruta": ["Cine y series", "Marvel y DC"], "categorias": ["Marvel & DC"] },
+
+    { "tema": "coleccionables", "ruta": ["Coleccionables", "Figuras de arte"], "categorias": ["Figuras Coleccionables"] },
+    { "tema": "deportes", "ruta": ["Deportes", "Mundial de Futbol"], "categorias": ["Mundial de Fútbol"] }
+  ],
+
+  "_grupos": "Grupos para elegir en una campana de catalogo. Un producto puede estar en varios (p. ej. un templo es anime, coleccionable, decoracion y regalo). Se publican con sus item_id en feed-openai-grupos.json, listos para usar como filtro 'item_id in [...]'. 'sugerenciaContexto' es texto libre propuesto, no verificado con la API de OpenAI. Elegir un grupo NO garantiza que los productos reciban impresiones.",
+  "grupos": [
+    {
+      "id": "anime",
+      "nombre": "Anime y Saint Seiya",
+      "descripcion": "Templos del Zodiaco, altares exhibidores, Pandora Box, cascos y tiaras de Saint Seiya.",
+      "sugerenciaContexto": "Personas que buscan figuras, decoracion o regalos de Saint Seiya (Caballeros del Zodiaco) y anime clasico en Peru.",
+      "reglas": [{ "temas": ["anime"] }]
+    },
+    {
+      "id": "gaming",
+      "nombre": "Gaming",
+      "descripcion": "Soportes de mando, skins para Nintendo Switch 2 y piezas de Zelda y otros videojuegos.",
+      "sugerenciaContexto": "Jugadores que organizan su setup o buscan accesorios y piezas de videojuegos como Zelda, GTA o The Last of Us.",
+      "reglas": [{ "temas": ["gaming"] }, { "etiquetas": ["Videojuegos", "Gamer"] }]
+    },
+    {
+      "id": "decoracion",
+      "nombre": "Decoracion",
+      "descripcion": "Macetas, decoracion navidena, lamparas y piezas de exhibicion para el hogar.",
+      "sugerenciaContexto": "Personas que decoran su casa, escritorio o mesa con piezas tematicas, macetas o decoracion navidena.",
+      "reglas": [
+        { "temas": ["decoracion"] },
+        { "etiquetas": ["Decoracion", "Decoracion navidena", "Decoracion Marvel", "Lamparas", "Altar Exhibidor", "Templo", "Templos", "Esculturas", "Palomeras"] }
+      ]
+    },
+    {
+      "id": "coleccionables",
+      "nombre": "Coleccionables",
+      "descripcion": "Figuras, altares para Myth Cloth, templos, esculturas y piezas de coleccion.",
+      "sugerenciaContexto": "Coleccionistas que buscan figuras, exhibidores y piezas de edicion limitada hechas a pedido.",
+      "reglas": [
+        { "temas": ["coleccionables"] },
+        { "etiquetas": ["Coleccionables", "Coleccionismo", "Art Toy", "Myth Cloth", "Altar Exhibidor", "Templo", "Templos", "Coleccion", "Figuras", "Esculturas", "Caballeros Dorados", "Cajas De Pandora"] }
+      ]
+    },
+    {
+      "id": "regalos",
+      "nombre": "Ideas de regalo",
+      "descripcion": "Piezas hasta S/100, toda la categoria Navidad y productos marcados como regalo.",
+      "sugerenciaContexto": "Personas que buscan un regalo original para fans de anime, videojuegos, cine o decoracion.",
+      "reglas": [{ "precioMax": 100 }, { "categorias": ["Navidad"] }, { "etiquetas": ["Regalos"] }]
+    },
+    {
+      "id": "cosplay",
+      "nombre": "Cosplay y disfraces",
+      "descripcion": "Mascaras, cascos, coronas y accesorios de personajes para disfraz y cosplay.",
+      "sugerenciaContexto": "Personas que preparan un disfraz, una convencion o una sesion de fotos de cosplay.",
+      "reglas": [{ "temas": ["cosplay"] }, { "etiquetas": ["Cosplay", "Disfraces"] }]
+    },
+    {
+      "id": "cine-y-series",
+      "nombre": "Cine y series",
+      "descripcion": "Harry Potter, Marvel, DC, Star Wars y otras piezas de cine y series.",
+      "sugerenciaContexto": "Fans de Harry Potter, Marvel, DC o Star Wars que buscan piezas de coleccion o decoracion.",
+      "reglas": [{ "temas": ["cine-y-series"] }, { "etiquetas": ["Cine", "Series", "Star Wars", "Marvel", "DC", "Harry Potter"] }]
+    },
+    {
+      "id": "deportes",
+      "nombre": "Deportes",
+      "descripcion": "Piezas del Mundial de Futbol.",
+      "sugerenciaContexto": "Aficionados al futbol que buscan piezas de coleccion del Mundial.",
+      "reglas": [{ "temas": ["deportes"] }]
+    },
+    {
+      "id": "temporada-navidad",
+      "nombre": "Temporada: Navidad",
+      "descripcion": "Toda la categoria Navidad (nacimientos, pesebres, cascanueces, mesa navidena).",
+      "sugerenciaContexto": "Personas que preparan la decoracion o la mesa de Navidad.",
+      "reglas": [{ "categorias": ["Navidad"] }]
+    },
+    {
+      "id": "temporada-halloween",
+      "nombre": "Temporada: Halloween",
+      "descripcion": "Toda la categoria Halloween y Cosplay.",
+      "sugerenciaContexto": "Personas que buscan disfraces, mascaras o decoracion para Halloween.",
+      "reglas": [{ "categorias": ["🎃 Halloween"] }]
+    },
+    {
+      "id": "temporada-mundial",
+      "nombre": "Temporada: Mundial de Futbol",
+      "descripcion": "Toda la categoria Mundial de Futbol.",
+      "sugerenciaContexto": "Aficionados que se preparan para el Mundial.",
+      "reglas": [{ "categorias": ["Mundial de Fútbol"] }]
+    }
+  ],
+
+  "_excluirDeAnuncios": "ids de producto (no de variante) que NO deben procesarse para anuncios: salen con is_ads_eligible=false. Vacio = todos elegibles; la campana decide con sus filtros.",
+  "excluirDeAnuncios": []
+}

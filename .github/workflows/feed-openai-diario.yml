@@ -1,0 +1,72 @@
+name: Renovar feed de ChatGPT Ads (diario)
+
+# OpenAI recomienda refrescar el catalogo AL MENOS UNA VEZ AL DIA con una carga completa, y
+# conserva hasta 14 dias el ultimo registro de un producto que falta en una carga. Este flujo:
+#   1. prueba el feed (duplicados, incompletos, desactualizados, enlaces rotos);
+#   2. comprueba el sitio PUBLICADO como lo ven OAI-AdsBot y OAI-SearchBot;
+#   3. sube feed-openai.csv a OpenAI por SFTP, SOLO si guardaste las credenciales como secretos.
+# Si algo falla, la ejecucion queda en rojo y GitHub avisa por correo. No crea campanas ni gasta.
+# Guia: docs/CHATGPT_ADS.md
+
+on:
+  schedule:
+    # Todos los dias a las 06:23 hora de Lima (11:23 UTC)
+    - cron: "23 11 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: feed-openai-diario
+  cancel-in-progress: false
+
+jobs:
+  renovar:
+    runs-on: ubuntu-latest
+    env:
+      # Secretos del repositorio (Settings > Secrets and variables > Actions). Vacios = no se sube nada.
+      SFTP_HOST: ${{ secrets.OPENAI_ADS_SFTP_HOST }}
+      SFTP_USER: ${{ secrets.OPENAI_ADS_SFTP_USER }}
+      SFTP_KEY: ${{ secrets.OPENAI_ADS_SFTP_KEY }}
+      SFTP_PORT: ${{ secrets.OPENAI_ADS_SFTP_PORT }}
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Probar el feed (duplicados, incompletos, desactualizados, enlaces rotos)
+        run: |
+          node --test scripts/openai-feed.test.mjs
+          node scripts/validate-feeds.mjs
+
+      - name: Comprobar el sitio publicado y el acceso de OAI-AdsBot y OAI-SearchBot
+        run: node scripts/check-openai-feed-access.mjs --base https://boomart.pe
+
+      - name: Subir el feed a OpenAI por SFTP
+        if: env.SFTP_HOST != '' && env.SFTP_USER != '' && env.SFTP_KEY != ''
+        run: |
+          set -euo pipefail
+          KEY="$(mktemp)"
+          BATCH="$(mktemp)"
+          trap 'rm -f "$KEY" "$BATCH"' EXIT
+          printf '%s\n' "$SFTP_KEY" > "$KEY"
+          chmod 600 "$KEY"
+          # Archivo con nombre estable, directamente en la raiz del SFTP (guia de feeds de OpenAI Ads)
+          printf 'put feed-openai.csv feed-openai.csv\nbye\n' > "$BATCH"
+          sftp -b "$BATCH" -i "$KEY" -P "${SFTP_PORT:-22}" \
+            -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new \
+            "$SFTP_USER@$SFTP_HOST"
+          FILAS="$(($(wc -l < feed-openai.csv) - 1))"
+          echo "::notice::Feed subido a OpenAI: $FILAS filas ($(date -u +%F))"
+          echo "Feed subido a OpenAI por SFTP: $FILAS filas, $(date -u +%FT%TZ)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Aviso si no hay credenciales SFTP
+        if: env.SFTP_HOST == '' || env.SFTP_USER == '' || env.SFTP_KEY == ''
+        run: |
+          echo "::notice::El feed esta probado y publicado, pero NO se subio a OpenAI: faltan los secretos OPENAI_ADS_SFTP_HOST, OPENAI_ADS_SFTP_USER y OPENAI_ADS_SFTP_KEY (ver docs/CHATGPT_ADS.md)."
+          echo "Sin credenciales SFTP: feed probado, no subido a OpenAI." >> "$GITHUB_STEP_SUMMARY"

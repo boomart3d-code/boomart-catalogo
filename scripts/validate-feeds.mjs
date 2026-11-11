@@ -7,8 +7,10 @@
 // Solo lee archivos del repositorio; no usa red ni credenciales.
 
 import { readFile, access, readdir } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { checkRows, checkAgainstCatalog, checkGroupsDoc, checkMeta, checkLocalLinks } from "./openai-feed-checks.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://boomart.pe";
@@ -110,61 +112,55 @@ const csvRows = parseCsv(csvText);
 const csvHeader = csvRows[0];
 if (csvRows.length - 1 !== jsonl.length) fail(`feed-openai: CSV (${csvRows.length - 1}) y JSONL (${jsonl.length}) tienen distinto numero de filas`);
 
-const REQUIRED = ["item_id", "title", "description", "url", "brand", "seller_name", "image_url", "availability", "price"];
-const AVAILABILITY = ["in_stock", "out_of_stock", "pre_order", "backorder", "unknown"];
-const itemIds = new Set();
-const groups = new Map();
+// Estructura de las filas (incompletas, duplicadas, mal formadas, sin etiqueta): modulo compartido
+// con las pruebas, que demuestran con casos inventados que cada fallo se detecta.
+const adsConfig = JSON.parse(await rd("data/ads-grupos.json"));
+const temasConocidos = [...new Set(adsConfig.temaPrincipal.map((r) => r.tema))];
+const structural = checkRows(jsonl, { temas: temasConocidos });
+structural.errors.forEach(fail);
+structural.warnings.forEach(warn);
+
+// las fotos y la pagina de cada fila existen en el repositorio (enlaces rotos)
+(await checkLocalLinks(jsonl, exists, { site: SITE })).errors.forEach(fail);
 const webpRows = new Set();
 for (const row of jsonl) {
   const where = `feed-openai ${row.item_id}`;
-  for (const f of REQUIRED) if (row[f] === undefined || row[f] === null || row[f] === "") fail(`${where}: falta ${f}`);
-  if (itemIds.has(row.item_id)) fail(`${where}: item_id repetido`);
-  itemIds.add(row.item_id);
-  if (!AVAILABILITY.includes(row.availability)) fail(`${where}: availability invalido (${row.availability})`);
-  if (!/^\d+(\.\d+)? [A-Z]{3}$/.test(row.price) || !(parseFloat(row.price) > 0)) fail(`${where}: price invalido (${row.price})`);
-  if (!row.price.endsWith(" PEN")) fail(`${where}: la moneda deberia ser PEN`);
-  if ([...String(row.title)].length > 150) fail(`${where}: titulo de mas de 150 caracteres`);
-  if ([...String(row.description)].length > 5000) fail(`${where}: descripcion de mas de 5000 caracteres`);
-  if (EMOJI.test(row.title) || EMOJI.test(row.description)) fail(`${where}: emoji en titulo o descripcion`);
-  if (!/^https:\/\//.test(row.url) || !/^https:\/\//.test(row.image_url)) fail(`${where}: url o image_url no es HTTPS absoluta`);
-  for (const u of [row.image_url, ...(row.additional_image_urls || [])]) {
-    if (!(await exists(localPath(u)))) fail(`${where}: la foto ${u} no existe en el repositorio`);
-    if (/\.webp(\?|$)/i.test(u)) webpRows.add(row.item_id);
-  }
-  const page = localPath(row.url);
-  if (!(await exists(`${page}index.html`))) fail(`${where}: la pagina ${row.url} no existe`);
-  if (row.listing_has_variations) {
-    if (!row.group_id || row.group_id === row.item_id) fail(`${where}: group_id vacio o igual a item_id`);
-    if (!row.variant_dict || !Object.keys(row.variant_dict).length) fail(`${where}: variante sin variant_dict`);
-    (groups.get(row.group_id) || groups.set(row.group_id, []).get(row.group_id)).push(row);
-  }
-  if (row.is_ads_eligible !== true) fail(`${where}: is_ads_eligible deberia ser true`);
+  for (const u of [row.image_url, ...(row.additional_image_urls || [])]) if (/\.webp(\?|$)/i.test(u)) webpRows.add(row.item_id);
   // coincide con el CSV, fila a fila
   const csvRow = csvRows.find((r) => r[csvHeader.indexOf("item_id")] === row.item_id);
   if (!csvRow) fail(`${where}: falta en feed-openai.csv`);
   else if (csvRow[csvHeader.indexOf("price")] !== row.price) fail(`${where}: precio distinto entre CSV y JSONL`);
+  else if (csvRow[csvHeader.indexOf("product_category")] !== row.product_category) fail(`${where}: product_category distinta entre CSV y JSONL`);
+  else if (csvRow[csvHeader.indexOf("ads_metadata")] !== JSON.stringify(row.ads_metadata ?? "")) fail(`${where}: ads_metadata distinta entre CSV y JSONL`);
 }
-for (const [g, rows] of groups) {
-  if (rows.length < 2) fail(`feed-openai ${g}: un grupo de variantes con una sola fila`);
-  const names = new Set(rows.map((r) => Object.keys(r.variant_dict).join("|")));
-  if (names.size > 1) fail(`feed-openai ${g}: las variantes usan nombres de opcion distintos`);
-  const opts = rows.map((r) => Object.values(r.variant_dict).join("|"));
-  if (new Set(opts).size !== opts.length) fail(`feed-openai ${g}: opciones repetidas`);
-}
-// cada producto aparece y su opcion base (item_id = id) cuesta lo mismo que la ficha
+const groups = new Map();
+for (const r of jsonl) if (r.group_id) (groups.get(r.group_id) || groups.set(r.group_id, []).get(r.group_id)).push(r);
+
+// Feed contra el catalogo: cada oferta de cada ficha tiene su fila con el mismo SKU y precio;
+// no sobran filas de productos retirados.
+const expected = new Map();
 for (const p of products) {
-  const base = jsonl.find((r) => r.item_id === p.id);
-  if (!base) { fail(`feed-openai: falta ${p.id}`); continue; }
   const offers = ldOffers.get(p.id) || [];
-  if (offers.length && base.price !== `${Number(offers[0].price).toFixed(2)} PEN`) fail(`feed-openai ${p.id}: precio ${base.price} != ficha`);
-  if (jsonl.filter((r) => r.url === `${SITE}/producto/${p.id}/`).length !== offers.length) fail(`feed-openai ${p.id}: ${jsonl.filter((r) => r.url === `${SITE}/producto/${p.id}/`).length} filas para ${offers.length} ofertas de la ficha`);
-  // cada oferta de la ficha tiene su fila con el mismo SKU y precio
-  for (const o of offers) {
-    const r = jsonl.find((x) => x.item_id === o.sku);
-    if (!r) fail(`feed-openai: falta la opcion ${o.sku}`);
-    else if (r.price !== `${Number(o.price).toFixed(2)} PEN`) fail(`feed-openai ${o.sku}: precio ${r.price} != ficha ${o.price}`);
-  }
+  if (!offers.length) fail(`feed-openai: la ficha de ${p.id} no tiene ofertas`);
+  for (const o of offers) expected.set(o.sku, { price: `${Number(o.price).toFixed(2)} PEN` });
 }
+const drift = checkAgainstCatalog(jsonl, expected);
+drift.errors.forEach(fail);
+
+// Archivos auxiliares: grupos de campana y metadatos con la huella del feed
+const sha = (s) => createHash("sha256").update(s).digest("hex");
+const groupsDoc = JSON.parse(await rd("feed-openai-grupos.json"));
+const groupsCheck = checkGroupsDoc(groupsDoc, jsonl);
+groupsCheck.errors.forEach(fail);
+groupsCheck.warnings.forEach(warn);
+const metaCheck = checkMeta(JSON.parse(await rd("feed-openai.meta.json")), {
+  rows: jsonl,
+  jsonlSha: sha(await rd("feed-openai.jsonl")),
+  csvSha: sha(csvText),
+  products: products.length,
+});
+metaCheck.errors.forEach(fail);
+metaCheck.warnings.forEach(warn);
 
 /* ---- 5. avisos de datos (no frenan, pero hay que decidirlos) */
 if (webpRows.size) warn(`${webpRows.size} filas de feed-openai llevan fotos .webp (la especificacion de OpenAI cita JPEG/PNG como ejemplos): ${[...webpRows].join(", ")}`);

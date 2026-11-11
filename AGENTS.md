@@ -31,6 +31,11 @@ Studio (es un tablero compartido entre los dos proyectos).
   y `node scripts/validate-feeds.mjs`; ambos deben terminar sin errores. El
   `lastmod` del sitemap sale de `data/seo-lastmod.json` (lo commitea el flujo
   `build-ai-catalog.yml`; no se edita a mano).
+- ChatGPT Ads (feed `feed-openai.*`, grupos por temática, renovación diaria):
+  ver `docs/CHATGPT_ADS.md`. Las reglas de temática y grupos viven en
+  `data/ads-grupos.json`. Tras cambiar productos, correr también
+  `node --test scripts/openai-feed.test.mjs`. OpenAI recibe el feed solo por
+  SFTP; nunca guardar credenciales SFTP en el repositorio (van como secretos).
 - Si se cambia un JS/CSS referenciado desde HTML con caché busting (`?v=N`),
   subir también la versión incrementada para evitar que el navegador del
   cliente sirva la copia vieja en caché.

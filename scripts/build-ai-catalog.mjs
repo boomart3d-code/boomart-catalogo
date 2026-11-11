@@ -23,6 +23,7 @@ import { createHash } from "node:crypto";
 import path from "node:path";
 import { SOCIAL_URLS, socialBandHtml, socialFooterHtml } from "./social-links.mjs";
 import { videoUploadDate } from "./video-upload-date.mjs";
+import { validateAdsConfig, classifyProduct, buildGroupsDoc } from "./ads-taxonomy.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://boomart.pe";
@@ -38,6 +39,14 @@ try {
   OG_MANIFEST = {};
 }
 const WHATSAPP = "https://wa.me/51925666542";
+
+// Reglas editables de tematica y grupos de campana (ChatGPT Ads): data/ads-grupos.json.
+// Un error de escritura en ese archivo detiene el generador antes de publicar un feed mal armado.
+const ADS = JSON.parse(await readFile(path.join(ROOT, "data", "ads-grupos.json"), "utf8"));
+{
+  const adsErrors = validateAdsConfig(ADS);
+  if (adsErrors.length) throw new Error(`data/ads-grupos.json tiene errores:\n - ${adsErrors.join("\n - ")}`);
+}
 const NOW = new Date().toISOString().slice(0, 10);
 // Vigencia de precios para el structured data (rueda ~120 dias hacia adelante).
 const PRICE_VALID_UNTIL = new Date(Date.now() + 120 * 864e5)
@@ -869,7 +878,7 @@ const OPENAI_COLUMNS = [
   "title", "description", "url", "brand", "seller_name", "seller_url",
   "image_url", "additional_image_urls", "availability", "price", "condition",
   "product_category", "material", "return_policy",
-  "is_eligible_search", "is_ads_eligible",
+  "is_eligible_search", "is_ads_eligible", "ads_metadata",
 ];
 
 function buildOpenAiRows(products) {
@@ -879,6 +888,9 @@ function buildOpenAiRows(products) {
     if (!options.length) continue; // la spec exige price > 0
     const variants = options.length > 1;
     const productGallery = (p.gallery || []).filter(Boolean).map(abs);
+    // Tematica principal y ruta de categoria (reglas de data/ads-grupos.json). Todas
+    // las variantes de un producto comparten ruta y etiqueta.
+    const cls = classifyProduct(p, ADS);
     for (const o of options) {
       // Foto de la opcion: la galeria propia del modelo si existe; para la
       // Pandora Box, la foto cuyo nombre la indica; si no, las de la ficha.
@@ -905,13 +917,18 @@ function buildOpenAiRows(products) {
         availability: "in_stock",
         price: money(o.price),
         condition: "new",
-        product_category: googleCategory(p),
+        // Ruta propia ("Anime > Saint Seiya > Templos del Zodiaco"): es un campo que un
+        // grupo de anuncios SI puede filtrar. Los feeds de Google y Meta conservan la
+        // categoria de Google Shopping.
+        product_category: cls.ruta.join(" > "),
         ...(p.material ? { material: p.material } : {}),
         return_policy: `${SITE}/politicas.html#cambios-y-devoluciones`,
         is_eligible_search: true,
         // Elegibilidad para anuncios: un archivo generado no activa nada; la
         // campana se crea y se paga solo desde la cuenta de Adrian.
-        is_ads_eligible: true,
+        is_ads_eligible: !ADS.excluirDeAnuncios.includes(p.id),
+        // Etiqueta personalizada (la unica clave que la guia de OpenAI documenta).
+        ads_metadata: { custom_label_0: cls.tema },
       });
     }
   }
@@ -930,6 +947,58 @@ function buildOpenAiCsv(products) {
   };
   const lines = buildOpenAiRows(products).map((r) => OPENAI_COLUMNS.map((c) => cell(r[c])).join(","));
   return [OPENAI_COLUMNS.join(","), ...lines].join("\n") + "\n";
+}
+
+const sha256 = (text) => createHash("sha256").update(text).digest("hex");
+
+// Grupos de campana: que item_id entra en cada tematica/grupo (feed-openai-grupos.json).
+function buildOpenAiGroupsJson(products) {
+  const doc = buildGroupsDoc({
+    products,
+    rows: buildOpenAiRows(products),
+    cfg: ADS,
+    priceOf: (p) => priceInfo(p).listPrice,
+    date: NOW,
+  });
+  return JSON.stringify(doc, null, 2) + "\n";
+}
+
+// Metadatos publicos del feed (feed-openai.meta.json): permiten comprobar, sin descargar
+// todo, que el feed publicado es el que se genero a partir del catalogo actual.
+function buildOpenAiMetaJson(products, jsonl, csv) {
+  const rows = jsonl.trim().split("\n").map((l) => JSON.parse(l));
+  const filasPorTema = {};
+  for (const r of rows) {
+    const t = r.ads_metadata?.custom_label_0 || "sin-tema";
+    filasPorTema[t] = (filasPorTema[t] || 0) + 1;
+  }
+  return (
+    JSON.stringify(
+      {
+        version: 1,
+        generadoEl: NOW,
+        moneda: "PEN",
+        productos: products.length,
+        filas: rows.length,
+        gruposDeVariantes: new Set(rows.filter((r) => r.group_id).map((r) => r.group_id)).size,
+        filasPorTema,
+        sha256Jsonl: sha256(jsonl),
+        sha256Csv: sha256(csv),
+        archivos: {
+          jsonl: `${SITE}/feed-openai.jsonl`,
+          csv: `${SITE}/feed-openai.csv`,
+          grupos: `${SITE}/feed-openai-grupos.json`,
+        },
+        renovacion: {
+          recomendada: "diaria, con una carga completa (docs/CHATGPT_ADS.md)",
+          retencionOpenAI: "OpenAI conserva hasta 14 dias el ultimo registro de un producto que falta en una carga",
+        },
+        entrega: "Por SFTP desde la cuenta de OpenAI Ads. Esta URL es la copia publica que sirve de fuente y de verificacion; no es un enlace que Ads Manager lea por su cuenta.",
+      },
+      null,
+      2,
+    ) + "\n"
+  );
 }
 
 /* ---------------------------------------------------------------- paginas de producto
@@ -2289,6 +2358,9 @@ async function syncSocialBlocks() {
 /* ---------------------------------------------------------------- main */
 const [products, reviews] = await Promise.all([loadProducts(), loadReviews()]);
 const ratingLd = buildRatingLd(reviews);
+// El feed de OpenAI se arma una sola vez: el archivo de metadatos lleva la huella de ESTE contenido.
+const openaiJsonl = buildOpenAiJsonl(products);
+const openaiCsv = buildOpenAiCsv(products);
 
 const [productPageCount, categoryPageCount] = await Promise.all([
   writeProductPages(products, ratingLd),
@@ -2299,8 +2371,10 @@ const [productPageCount, categoryPageCount] = await Promise.all([
   writeFile(path.join(ROOT, "llms-full.txt"), buildLlmsFull(products)),
   writeFile(path.join(ROOT, "feed-google.xml"), buildGoogleFeed(products)),
   writeFile(path.join(ROOT, "feed-meta.csv"), buildMetaFeed(products)),
-  writeFile(path.join(ROOT, "feed-openai.jsonl"), buildOpenAiJsonl(products)),
-  writeFile(path.join(ROOT, "feed-openai.csv"), buildOpenAiCsv(products)),
+  writeFile(path.join(ROOT, "feed-openai.jsonl"), openaiJsonl),
+  writeFile(path.join(ROOT, "feed-openai.csv"), openaiCsv),
+  writeFile(path.join(ROOT, "feed-openai-grupos.json"), buildOpenAiGroupsJson(products)),
+  writeFile(path.join(ROOT, "feed-openai.meta.json"), buildOpenAiMetaJson(products, openaiJsonl, openaiCsv)),
 ]);
 
 // Secuencial (no Promise.all): ambas leen y reescriben index.html/opinion,
@@ -2327,6 +2401,7 @@ console.log(
     "  sitemap.xml\n  catalogo.html\n  catalogo.json\n  llms.txt\n  llms-full.txt\n" +
     "  feed-google.xml (Google Merchant + Pinterest)\n  feed-meta.csv (Instagram / Facebook)\n" +
     "  feed-openai.jsonl / feed-openai.csv (ChatGPT, ver developers.openai.com/commerce/product-feeds/spec)\n" +
+    "  feed-openai-grupos.json / feed-openai.meta.json (grupos de campana y huella del feed)\n" +
     "  data/seo-lastmod.json (huellas para el lastmod real del sitemap)\n" +
     `  index.html (aggregateRating ${ratingUpdated ? "actualizado" : "sin cambios"})\n` +
     `  index.html + opinion/index.html (opiniones en texto plano ${reviewsBlocksUpdated ? "actualizadas" : "sin cambios"})\n` +

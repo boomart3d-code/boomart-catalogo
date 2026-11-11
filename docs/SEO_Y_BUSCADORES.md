@@ -52,7 +52,7 @@ node scripts/test-official-prices.mjs # precios oficiales vs feeds, fichas y car
 
 - **Google Merchant Center** (`feed-google.xml`, RSS): cuenta ya creada; los precios del feed son el precio base de cada ficha.
 - **Meta** (`feed-meta.csv`).
-- **ChatGPT** (`feed-openai.jsonl` / `.csv`): sigue la especificación oficial https://developers.openai.com/commerce/product-feeds/spec. NO es XML. Una fila por opción de compra; las opciones de un mismo producto forman un grupo (`group_id`, `variant_dict`). Campos obligatorios presentes en las 132 filas: `item_id, title, description, url, brand, seller_name, image_url, availability, price`; para anuncios, `is_ads_eligible=true`. **Se entrega por SFTP** desde la cuenta de OpenAI Ads; el repositorio solo deja el archivo generado. La documentación estándar habla de mercado EE. UU.: confirmar en Ads Manager que Perú y soles están admitidos antes de subirlo.
+- **ChatGPT** (guía completa, grupos de campaña y renovación diaria en `docs/CHATGPT_ADS.md`) (`feed-openai.jsonl` / `.csv`): sigue la especificación oficial https://developers.openai.com/commerce/product-feeds/spec. NO es XML. Una fila por opción de compra; las opciones de un mismo producto forman un grupo (`group_id`, `variant_dict`). Campos obligatorios presentes en las 132 filas: `item_id, title, description, url, brand, seller_name, image_url, availability, price`; para anuncios, `is_ads_eligible=true`. **Se entrega por SFTP** desde la cuenta de OpenAI Ads; el repositorio solo deja el archivo generado. La documentación estándar habla de mercado EE. UU.: confirmar en Ads Manager que Perú y soles están admitidos antes de subirlo.
 
 ## 7. Google Search Console
 
