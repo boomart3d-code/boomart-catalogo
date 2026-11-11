@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "generadoEl": "2026-11-11",
+  "moneda": "PEN",
+  "productos": 104,
+  "filas": 132,
+  "gruposDeVariantes": 16,
+  "filasPorTema": {
+    "gaming": 13,
+    "anime": 64,
+    "cine-y-series": 9,
+    "cosplay": 24,
+    "coleccionables": 3,
+    "decoracion": 15,
+    "deportes": 4
+  },
+  "sha256Jsonl": "2309b087e20a0c2f3194739cf5a892b2fa6065e32d0dd1fd1df1ecef1071a7f0",
+  "sha256Csv": "5895b6df720d17d918a1cdb30cec366129c3d103099077f17cc2a7765a3f8414",
+  "archivos": {
+    "jsonl": "https://boomart.pe/feed-openai.jsonl",
+    "csv": "https://boomart.pe/feed-openai.csv",
+    "grupos": "https://boomart.pe/feed-openai-grupos.json"
+  },
+  "renovacion": {
+    "recomendada": "diaria, con una carga completa (docs/CHATGPT_ADS.md)",
+    "retencionOpenAI": "OpenAI conserva hasta 14 dias el ultimo registro de un producto que falta en una carga"
+  },
+  "entrega": "Por SFTP desde la cuenta de OpenAI Ads. Esta URL es la copia publica que sirve de fuente y de verificacion; no es un enlace que Ads Manager lea por su cuenta."
+}
