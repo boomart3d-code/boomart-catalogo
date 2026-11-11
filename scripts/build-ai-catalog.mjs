@@ -16,7 +16,7 @@
  * No necesita dependencias: solo Node.js 18+.
  */
 
-import { readFile, writeFile as writeRaw, mkdir } from "node:fs/promises";
+import { readFile, writeFile as writeRaw, mkdir, readdir, rm } from "node:fs/promises";
 import { responsiveHtml } from "./responsive-html.mjs";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
@@ -1688,6 +1688,23 @@ async function writeProductPages(products, ratingLd) {
       await writeFile(path.join(dir, "index.html"), buildProductPage(p, products, ratingLd));
     }),
   );
+  // Un producto quitado de data/products.json no debe dejar publicada su ficha vieja (con precio y
+  // disponibilidad antiguos). Se borra solo la carpeta que contiene únicamente la ficha generada
+  // (index.html con su canonical); cualquier otra cosa se deja para revisión manual.
+  const ids = new Set(products.map((p) => p.id));
+  const base = path.join(ROOT, "producto");
+  for (const entry of await readdir(base, { withFileTypes: true })) {
+    if (!entry.isDirectory() || ids.has(entry.name)) continue;
+    const dir = path.join(base, entry.name);
+    const files = await readdir(dir);
+    const html = files.length === 1 && files[0] === "index.html" ? await readFile(path.join(dir, "index.html"), "utf8") : "";
+    if (html.includes(`<link rel="canonical" href="${SITE}/producto/${entry.name}/"`)) {
+      await rm(dir, { recursive: true });
+      console.log(`  ficha retirada: producto/${entry.name}/ (ya no está en data/products.json)`);
+    } else {
+      console.warn(`  AVISO: producto/${entry.name}/ no está en data/products.json y no parece una ficha generada; revísala a mano`);
+    }
+  }
   return products.length;
 }
 
