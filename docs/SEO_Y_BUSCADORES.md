@@ -52,7 +52,7 @@ node scripts/test-official-prices.mjs # precios oficiales vs feeds, fichas y car
 
 - **Google Merchant Center** (`feed-google.xml`, RSS): cuenta ya creada; los precios del feed son el precio base de cada ficha.
 - **Meta** (`feed-meta.csv`).
-- **ChatGPT** (guía completa, grupos de campaña y renovación diaria en `docs/CHATGPT_ADS.md`) (`feed-openai.jsonl` / `.csv`): sigue la especificación oficial https://developers.openai.com/commerce/product-feeds/spec. NO es XML. Una fila por opción de compra; las opciones de un mismo producto forman un grupo (`group_id`, `variant_dict`). Campos obligatorios presentes en las 132 filas: `item_id, title, description, url, brand, seller_name, image_url, availability, price`; para anuncios, `is_ads_eligible=true`. **Se entrega por SFTP** desde la cuenta de OpenAI Ads; el repositorio solo deja el archivo generado. La documentación estándar habla de mercado EE. UU.: confirmar en Ads Manager que Perú y soles están admitidos antes de subirlo.
+- **ChatGPT Ads** (guía completa, grupos de campaña, plazos y renovación en `docs/CHATGPT_ADS.md`): `feed-openai.csv` (recomendado), `feed-openai.txt` (tabulado) y `feed-openai.jsonl`, siguiendo la especificación oficial https://developers.openai.com/commerce/specs/file-upload/products. NO es XML. Una fila por opción de compra; las opciones de un mismo producto forman un grupo (`group_id`, `variant_dict`). Ads Manager importa por **CSV/TXT, URL alojada HTTPS o SFTP** (Centro de Ayuda de OpenAI); BoomArt usa la **URL alojada** `https://boomart.pe/feed-openai.csv` y conserva SFTP como alternativa. Perú y la moneda PEN están confirmados por OpenAI (mínimo diario 13 PEN); falta completar el registro de la cuenta.
 
 ## 7. Google Search Console
 
@@ -68,10 +68,10 @@ No usar la Indexing API para fichas de producto (no es un uso admitido). IndexNo
 
 ## 8. Decisiones y datos pendientes de Adrián
 
-- **Plazo de producción**: los feeds de Google y Meta dicen «Producción ~48 h útiles». Confirmar que sigue vigente; el feed de OpenAI no lo repite.
-- **Disponibilidad «A pedido»**: se publica como `InStock`/`in_stock`. Si se prefiere `PreOrder`/`pre_order`, es decisión comercial.
-- **Devoluciones**: los datos estructurados dicen «no permitidas» (`MerchantReturnNotPermitted`) pero `politicas.html` acepta fallas de fabricación (7 días) y daño de transporte (48 h).
-- **`belen-iluminado`** no tiene `availability` en `data/products.json`.
+- **Plazos de fabricación** (RESUELTO el 12-nov): sencillas 24 a 48 horas, elaboradas 3 a 5 días, desde `data/plazos-fabricacion.json` (fichas, `politicas.html`, catálogo y los tres feeds). Falta revisar la clasificación sencillo/elaborado y el texto «48 horas útiles» del formulario de pedido de `index.html` (no se tocó).
+- **Disponibilidad «A pedido»**: el feed de OpenAI usa `backorder` (no afirma stock; ver `docs/CHATGPT_ADS.md` §3). Google, Meta y los datos estructurados siguen en `InStock`/`in_stock`; unificarlos es una decisión comercial pendiente.
+- **Devoluciones**: los datos estructurados dicen «no permitidas» (`MerchantReturnNotPermitted`) pero `politicas.html` acepta fallas de fabricación (7 días) y daño de transporte (48 h). No se inventó ninguna política; las definiciones que faltan están en `docs/CHATGPT_ADS.md` §7.
+- **`belen-iluminado`** no tiene `availability` en `data/products.json` y no hay ningún dato de existencias: en el feed de OpenAI sale `unknown` y fuera de anuncios hasta que se confirme.
 - **Precio visible en templos**: la ficha titula «desde S/45» (Pandora Box) mientras el feed y la descripción usan S/100 (templo solo).
 - **Descripción de templos**: empieza con «Combo de la Casa de Aries…» pero el precio base es el del templo solo.
 - **`priceRange` de la portada** dice «S/45 - S/500»; los precios del catálogo van de S/20 a S/1500.

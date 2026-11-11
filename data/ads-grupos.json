@@ -122,5 +122,11 @@
   ],
 
   "_excluirDeAnuncios": "ids de producto (no de variante) que NO deben procesarse para anuncios: salen con is_ads_eligible=false. Vacio = todos elegibles; la campana decide con sus filtros.",
-  "excluirDeAnuncios": []
+  "excluirDeAnuncios": [],
+
+  "_disponibilidad": "Estado de 'availability' que se declara en el feed de OpenAI. La especificacion oficial permite in_stock, out_of_stock, pre_order (ofrecido antes de su lanzamiento), backorder (temporalmente en espera de stock) y unknown; NINGUNO significa 'fabricado bajo pedido'. bajoPedido = estado de los productos con availability 'A pedido' en data/products.json (backorder: no declara existencias inmediatas). OJO: la guia de Ads solo documenta in_stock y out_of_stock para la entrega; si en Ads Manager los productos backorder no quedan 'Ready', cambiar esta linea a in_stock. sinDato = estado de los productos SIN availability confirmada en data/products.json: salen como unknown y NO entran a anuncios hasta que se confirme.",
+  "disponibilidad": {
+    "bajoPedido": "backorder",
+    "sinDato": "unknown"
+  }
 }

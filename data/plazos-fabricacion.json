@@ -1,0 +1,17 @@
+{
+  "_comentario": "Plazos de fabricacion bajo pedido: referencia dada por Adrian el 2026-11-12 (sencillos 24 a 48 horas, elaborados 3 a 5 dias). Es la UNICA fuente: de aqui salen el texto de cada ficha, catalogo.html, catalogo.json, llms-full.txt y las descripciones de los feeds de Google, Meta y OpenAI. Las politicas (politicas.html) se escriben a mano con las mismas cifras; la prueba plazos.test.mjs avisa si dejan de coincidir. Un producto es ELABORADO si cumple CUALQUIERA de las condiciones de reglaElaborado; forzarSencillo y forzarElaborado mandan sobre la regla. Sin datos confirmados no se declara ningun plazo distinto de estos.",
+  "version": 1,
+  "niveles": {
+    "sencillo": { "nombre": "Pieza sencilla", "texto": "24 a 48 horas" },
+    "elaborado": { "nombre": "Pieza elaborada", "texto": "3 a 5 días" }
+  },
+  "nivelPorDefecto": "sencillo",
+  "reglaElaborado": {
+    "precioMin": 150,
+    "etiquetas": ["Tamaño real", "Combo", "Set"],
+    "idPatron": "^set-"
+  },
+  "_forzarSencillo": "Estos dos sets ya declaran en su propia descripcion 'Produccion de 24 a 48 horas utiles' (data/products.json); se respeta ese texto hasta que Adrian decida otra cosa.",
+  "forzarSencillo": ["set-de-12-templos-mini", "set-santuario-15-piezas"],
+  "forzarElaborado": []
+}

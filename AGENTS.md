@@ -31,11 +31,15 @@ Studio (es un tablero compartido entre los dos proyectos).
   y `node scripts/validate-feeds.mjs`; ambos deben terminar sin errores. El
   `lastmod` del sitemap sale de `data/seo-lastmod.json` (lo commitea el flujo
   `build-ai-catalog.yml`; no se edita a mano).
-- ChatGPT Ads (feed `feed-openai.*`, grupos por temática, renovación diaria):
-  ver `docs/CHATGPT_ADS.md`. Las reglas de temática y grupos viven en
-  `data/ads-grupos.json`. Tras cambiar productos, correr también
-  `node --test scripts/openai-feed.test.mjs`. OpenAI recibe el feed solo por
-  SFTP; nunca guardar credenciales SFTP en el repositorio (van como secretos).
+- ChatGPT Ads (feed `feed-openai.*`, grupos por temática, plazos, renovación
+  diaria): ver `docs/CHATGPT_ADS.md`. Ads Manager importa por URL alojada
+  (`https://boomart.pe/feed-openai.csv`), CSV/TXT manual o SFTP. Reglas de
+  temática y grupos: `data/ads-grupos.json`. Plazos de fabricación (24 a 48
+  horas / 3 a 5 días): `data/plazos-fabricacion.json`, única fuente; si cambian,
+  actualizar también `politicas.html` a mano. Tras cambiar productos o plazos,
+  correr `node --test scripts/openai-feed.test.mjs scripts/openai-hosted.test.mjs
+  scripts/plazos.test.mjs scripts/ads-disponibilidad.test.mjs`. Nunca guardar
+  credenciales (SFTP o clave de API de Ads) en el repositorio: van como secretos.
 - Si se cambia un JS/CSS referenciado desde HTML con caché busting (`?v=N`),
   subir también la versión incrementada para evitar que el navegador del
   cliente sirva la copia vieja en caché.

@@ -66,7 +66,26 @@ export function validateAdsConfig(cfg) {
   });
   if (!(cfg.grupos || []).length) errors.push('"grupos" esta vacio');
   if (!Array.isArray(cfg.excluirDeAnuncios)) errors.push('"excluirDeAnuncios" debe ser una lista');
+  if (!cfg.disponibilidad || typeof cfg.disponibilidad !== "object") errors.push('Falta "disponibilidad"');
+  else {
+    for (const k of ["bajoPedido", "sinDato"]) {
+      if (!OPENAI_AVAILABILITY.includes(cfg.disponibilidad[k])) errors.push(`disponibilidad.${k} debe ser uno de: ${OPENAI_AVAILABILITY.join(", ")}`);
+    }
+    if (cfg.disponibilidad.sinDato === cfg.disponibilidad.bajoPedido) errors.push("disponibilidad.sinDato no puede ser igual a bajoPedido (no se distinguiria lo confirmado de lo no confirmado)");
+  }
   return errors;
+}
+
+/** Estados de disponibilidad que acepta la especificacion de OpenAI. */
+export const OPENAI_AVAILABILITY = ["in_stock", "out_of_stock", "pre_order", "backorder", "unknown"];
+
+/**
+ * Disponibilidad que se declara en el feed de OpenAI. Solo se declara el estado "bajo pedido" cuando
+ * data/products.json confirma availability "A pedido"; sin ese dato el producto sale como `sinDato`.
+ */
+export function openAiAvailability(p, cfg) {
+  const confirmada = norm(p.availability) === "a pedido";
+  return { estado: confirmada ? cfg.disponibilidad.bajoPedido : cfg.disponibilidad.sinDato, confirmada };
 }
 
 /** ¿Cumple el producto TODAS las condiciones escritas en la clausula? */
@@ -144,8 +163,15 @@ export function buildGroupsDoc({ products, rows, cfg, priceOf, date }) {
     aviso:
       "Estos grupos solo ordenan el catalogo para que una campana elija productos. Que un producto coincida con un filtro NO garantiza impresiones ni apariciones: OpenAI decide la entrega segun la relevancia, la disponibilidad, la revision y el presupuesto.",
     campos:
-      "ads_metadata.custom_label_0 = tematica principal; product_category = ruta (filtrable con 'in', texto exacto); filtroItemId = lista de item_id lista para pegar en un grupo de anuncios.",
-    temas: [...byTema.entries()].sort((a, b) => b[1] - a[1]).map(([tema, productos]) => ({ tema, productos })),
+      "ads_metadata.custom_label_0 = tematica principal (cada tema trae su filtroEtiqueta: ads_metadata.custom_label_0 in [tema]); product_category = ruta (filtrable con 'in', texto exacto); filtroItemId = lista de item_id lista para pegar en un grupo de anuncios.",
+    temas: [...byTema.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .map(([tema, productos]) => ({
+        tema,
+        productos,
+        // Filtro listo para un grupo de anuncios (guia de OpenAI: ads_metadata.<campo> con 'in', valores como texto)
+        filtroEtiqueta: { field: "ads_metadata.custom_label_0", operator: "in", values: [tema] },
+      })),
     categorias: [...byRuta.entries()]
       .sort((a, b) => a[0].localeCompare(b[0], "es"))
       .map(([ruta, xs]) => ({ product_category: ruta, productos: xs.length, item_ids: xs.flatMap((x) => x.items) })),

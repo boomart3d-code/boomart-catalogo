@@ -7,6 +7,8 @@ export const REQUIRED = ["item_id", "title", "description", "url", "brand", "sel
 export const AVAILABILITY = ["in_stock", "out_of_stock", "pre_order", "backorder", "unknown"];
 export const CONDITIONS = ["new", "refurbished", "used"];
 const EMOJI = /\p{Extended_Pictographic}/u;
+// Frases que afirmarian existencias que BoomArt no tiene (todo se fabrica bajo pedido).
+const IMMEDIATE_STOCK = /\b(stock inmediato|entrega inmediata|disponible de inmediato|disponibilidad inmediata|pronta entrega|en stock|env[ií]o inmediato)\b/i;
 const isEmpty = (v) => v === undefined || v === null || v === "" || (Array.isArray(v) && !v.length);
 const isHttps = (u) => {
   try {
@@ -43,6 +45,16 @@ export function checkRows(rows, { temas = null } = {}) {
       seenTitle.set(titleKey, row.item_id);
     }
     if (!AVAILABILITY.includes(row.availability)) errors.push(`${where}: availability invalido (${row.availability})`);
+    // Disponibilidad honesta: un producto fabricado bajo pedido no afirma existencias inmediatas, y la
+    // condicion "bajo pedido" con su plazo se lee en la descripcion (es el texto que muestra el anuncio).
+    if (["backorder", "pre_order"].includes(row.availability) && !/bajo pedido/i.test(String(row.description ?? ""))) {
+      errors.push(`${where}: availability ${row.availability} pero la descripcion no dice que se fabrica bajo pedido`);
+    }
+    if (["backorder", "pre_order"].includes(row.availability) && !/\d+ a \d+ (horas|d[ií]as)/i.test(String(row.description ?? ""))) {
+      errors.push(`${where}: availability ${row.availability} pero la descripcion no indica el plazo de fabricacion`);
+    }
+    if (row.is_ads_eligible === true && row.availability === "unknown") errors.push(`${where}: es elegible para anuncios con disponibilidad unknown (no confirmada)`);
+    if (IMMEDIATE_STOCK.test(`${row.title ?? ""} ${row.description ?? ""}`)) errors.push(`${where}: declara existencias o entrega inmediata (${(`${row.title} ${row.description}`.match(IMMEDIATE_STOCK) || [""])[0]})`);
     if (!/^\d+(\.\d{1,2})? [A-Z]{3}$/.test(String(row.price)) || !(parseFloat(row.price) > 0)) errors.push(`${where}: price invalido (${row.price})`);
     else if (!String(row.price).endsWith(" PEN")) errors.push(`${where}: la moneda deberia ser PEN (${row.price})`);
     if ([...String(row.title ?? "")].length > 150) errors.push(`${where}: titulo de mas de 150 caracteres`);
@@ -143,12 +155,13 @@ export function checkGroupsDoc(doc, rows) {
 }
 
 /** Metadatos: la huella corresponde a los archivos y los conteos coinciden. */
-export function checkMeta(meta, { rows, jsonlSha, csvSha, products, now = new Date() }) {
+export function checkMeta(meta, { rows, jsonlSha, csvSha, txtSha, products, now = new Date() }) {
   const errors = [];
   const warnings = [];
   if (!meta) return { errors: ["falta feed-openai.meta.json"], warnings };
   if (meta.sha256Jsonl !== jsonlSha) errors.push("feed-openai.meta.json: la huella del JSONL no coincide con el archivo (feed desactualizado o editado a mano)");
   if (meta.sha256Csv !== csvSha) errors.push("feed-openai.meta.json: la huella del CSV no coincide con el archivo");
+  if (txtSha !== undefined && meta.sha256Txt !== txtSha) errors.push("feed-openai.meta.json: la huella del TXT no coincide con el archivo");
   if (meta.filas !== rows.length) errors.push(`feed-openai.meta.json: dice ${meta.filas} filas y el feed tiene ${rows.length}`);
   if (products != null && meta.productos !== products) errors.push(`feed-openai.meta.json: dice ${meta.productos} productos y el catalogo tiene ${products}`);
   if (meta.moneda !== "PEN") errors.push(`feed-openai.meta.json: moneda ${meta.moneda}`);
@@ -175,4 +188,76 @@ export async function checkLocalLinks(rows, exists, { site = "https://boomart.pe
     else if (!(await exists(`${rel(row.url)}index.html`))) errors.push(`${where}: la pagina ${row.url} no existe`);
   }
   return { errors, warnings: [] };
+}
+
+/** Lee un archivo delimitado (CSV con coma, TXT con tabulador) respetando las comillas. */
+export function parseDelimited(text, delimiter = ",") {
+  const rows = [];
+  let row = [];
+  let cell = "";
+  let quoted = false;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (quoted) {
+      if (ch === '"') {
+        if (text[i + 1] === '"') { cell += '"'; i++; } else quoted = false;
+      } else cell += ch;
+    } else if (ch === '"') quoted = true;
+    else if (ch === delimiter) { row.push(cell); cell = ""; }
+    else if (ch === "\n") { row.push(cell); rows.push(row); row = []; cell = ""; }
+    else if (ch !== "\r") cell += ch;
+  }
+  if (cell !== "" || row.length) { row.push(cell); rows.push(row); }
+  return rows;
+}
+
+/** El archivo TXT (tabulado) y el CSV deben decir exactamente lo mismo: mismas columnas, filas y celdas. */
+export function checkTxtMatchesCsv(csvText, txtText) {
+  const errors = [];
+  const csv = parseDelimited(csvText, ",");
+  const txt = parseDelimited(txtText, "\t");
+  if (csv[0]?.join("|") !== txt[0]?.join("|")) errors.push("feed-openai.txt: las columnas no coinciden con las de feed-openai.csv");
+  if (csv.length !== txt.length) errors.push(`feed-openai.txt tiene ${txt.length - 1} filas y feed-openai.csv ${csv.length - 1}`);
+  for (let i = 1; i < Math.min(csv.length, txt.length); i++) {
+    if (csv[i].length !== csv[0].length) errors.push(`feed-openai.csv fila ${i + 1}: ${csv[i].length} celdas (se esperaban ${csv[0].length})`);
+    if (txt[i].length !== txt[0].length) errors.push(`feed-openai.txt fila ${i + 1}: ${txt[i].length} celdas (se esperaban ${txt[0].length})`);
+    for (let j = 0; j < csv[0].length; j++) {
+      if (csv[i][j] !== txt[i][j]) { errors.push(`fila ${i + 1}, columna ${csv[0][j]}: CSV y TXT difieren`); break; }
+    }
+  }
+  return { errors, warnings: [] };
+}
+
+/**
+ * Lo que vera OpenAI al leer el archivo por "URL alojada": respuesta 200 sin redirecciones, tipo de
+ * contenido, UTF-8 valido sin BOM, columnas obligatorias y numero de filas.
+ *  - kind: "csv" | "txt"; bytes: contenido crudo (Uint8Array); expectedRows: filas esperadas
+ */
+export function checkHostedFile({ url, kind, status, location = null, contentType = "", bytes, expectedRows }) {
+  const errors = [];
+  const warnings = [];
+  const where = `URL alojada ${url}`;
+  if (status >= 300 && status < 400) errors.push(`${where}: redirige (${status}) a ${location}; Ads Manager necesita una direccion estable que responda 200 directamente`);
+  else if (status !== 200) errors.push(`${where}: responde ${status}`);
+  if (status !== 200) return { errors, warnings };
+  const okType = kind === "csv" ? /^text\/csv/i : /^text\/(plain|tab-separated-values)/i;
+  if (!okType.test(contentType)) errors.push(`${where}: Content-Type ${contentType || "(vacio)"}; se esperaba ${kind === "csv" ? "text/csv" : "text/plain"}`);
+  if (!/charset=utf-8/i.test(contentType)) warnings.push(`${where}: el Content-Type no declara charset=utf-8`);
+  if (!bytes || !bytes.length) return { errors: [...errors, `${where}: el archivo esta vacio`], warnings };
+  if (bytes.length > 50 * 1024 * 1024) errors.push(`${where}: pesa ${(bytes.length / 1048576).toFixed(1)} MB (demasiado grande)`);
+  if (bytes[0] === 0xef && bytes[1] === 0xbb && bytes[2] === 0xbf) errors.push(`${where}: empieza con BOM; el archivo debe ser UTF-8 sin BOM`);
+  let text;
+  try {
+    text = new TextDecoder("utf-8", { fatal: true }).decode(bytes);
+  } catch {
+    return { errors: [...errors, `${where}: no es UTF-8 valido`], warnings };
+  }
+  const rows = parseDelimited(text.replace(/^\uFEFF/, ""), kind === "csv" ? "," : "\t");
+  const header = rows[0] || [];
+  const missing = REQUIRED.filter((c) => !header.includes(c));
+  if (missing.length) errors.push(`${where}: faltan las columnas obligatorias ${missing.join(", ")}`);
+  if (header.length < 2) errors.push(`${where}: la cabecera no se separa por ${kind === "csv" ? "comas" : "tabuladores"}`);
+  if (expectedRows != null && rows.length - 1 !== expectedRows) errors.push(`${where}: tiene ${rows.length - 1} filas y se esperaban ${expectedRows}`);
+  if (rows.slice(1).some((r) => r.length !== header.length)) errors.push(`${where}: hay filas con distinto numero de celdas que la cabecera`);
+  return { errors, warnings };
 }

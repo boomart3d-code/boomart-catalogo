@@ -10,7 +10,7 @@ import { readFile, access, readdir } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { checkRows, checkAgainstCatalog, checkGroupsDoc, checkMeta, checkLocalLinks } from "./openai-feed-checks.mjs";
+import { checkRows, checkAgainstCatalog, checkGroupsDoc, checkMeta, checkLocalLinks, parseDelimited, checkTxtMatchesCsv, checkHostedFile } from "./openai-feed-checks.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://boomart.pe";
@@ -96,21 +96,19 @@ for (const [id, r] of metaRows) if (EMOJI.test(r[metaHeader.indexOf("title")])) 
 /* ---- 4. feed de OpenAI (formato JSONL y CSV, mismas filas) */
 const jsonl = (await rd("feed-openai.jsonl")).trim().split("\n").map((l) => JSON.parse(l));
 const csvText = await rd("feed-openai.csv");
-const parseCsv = (text) => {
-  const rows = []; let row = []; let cell = ""; let q = false;
-  for (let i = 0; i < text.length; i++) {
-    const ch = text[i];
-    if (q) { if (ch === '"') { if (text[i + 1] === '"') { cell += '"'; i++; } else q = false; } else cell += ch; }
-    else if (ch === '"') q = true;
-    else if (ch === ",") { row.push(cell); cell = ""; }
-    else if (ch === "\n") { row.push(cell); rows.push(row); row = []; cell = ""; }
-    else if (ch !== "\r") cell += ch;
-  }
-  return rows;
-};
-const csvRows = parseCsv(csvText);
+const txtText = await rd("feed-openai.txt");
+const csvRows = parseDelimited(csvText, ",");
 const csvHeader = csvRows[0];
 if (csvRows.length - 1 !== jsonl.length) fail(`feed-openai: CSV (${csvRows.length - 1}) y JSONL (${jsonl.length}) tienen distinto numero de filas`);
+// El TXT (tabulado) dice exactamente lo mismo que el CSV
+checkTxtMatchesCsv(csvText, txtText).errors.forEach(fail);
+// Lo que vera Ads Manager al leer el CSV o el TXT por "URL alojada" (los bytes del archivo; el tipo de
+// contenido y la respuesta HTTP se comprueban sobre el sitio publicado en check-openai-feed-access.mjs)
+for (const [kind, file] of [["csv", "feed-openai.csv"], ["txt", "feed-openai.txt"]]) {
+  const bytes = await readFile(path.join(ROOT, file));
+  const ct = kind === "csv" ? "text/csv; charset=utf-8" : "text/plain; charset=utf-8";
+  checkHostedFile({ url: `${SITE}/${file}`, kind, status: 200, contentType: ct, bytes, expectedRows: jsonl.length }).errors.forEach(fail);
+}
 
 // Estructura de las filas (incompletas, duplicadas, mal formadas, sin etiqueta): modulo compartido
 // con las pruebas, que demuestran con casos inventados que cada fallo se detecta.
@@ -157,6 +155,7 @@ const metaCheck = checkMeta(JSON.parse(await rd("feed-openai.meta.json")), {
   rows: jsonl,
   jsonlSha: sha(await rd("feed-openai.jsonl")),
   csvSha: sha(csvText),
+  txtSha: sha(txtText),
   products: products.length,
 });
 metaCheck.errors.forEach(fail);
@@ -164,7 +163,7 @@ metaCheck.warnings.forEach(warn);
 
 /* ---- 5. avisos de datos (no frenan, pero hay que decidirlos) */
 if (webpRows.size) warn(`${webpRows.size} filas de feed-openai llevan fotos .webp (la especificacion de OpenAI cita JPEG/PNG como ejemplos): ${[...webpRows].join(", ")}`);
-for (const p of products) if (!p.availability) warn(`${p.id}: no tiene "availability" en data/products.json`);
+for (const p of products) if (!p.availability) warn(`${p.id}: no tiene "availability" en data/products.json (en el feed de OpenAI sale unknown y fuera de anuncios hasta confirmarlo)`);
 
 console.log(JSON.stringify({ productos: products.length, filasOpenAI: jsonl.length, gruposDeVariantes: groups.size, urlsSitemap: sitemapUrls.length, errores: errors.length, avisos: warnings.length }, null, 2));
 for (const w of warnings) console.log("AVISO:", w);

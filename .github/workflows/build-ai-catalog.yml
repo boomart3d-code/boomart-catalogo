@@ -20,6 +20,13 @@ on:
       - "scripts/ads-taxonomy.mjs"
       - "scripts/openai-feed-checks.mjs"
       - "scripts/openai-feed.test.mjs"
+      - "scripts/openai-hosted.test.mjs"
+      - "scripts/openai-processing.mjs"
+      - "scripts/plazos.mjs"
+      - "scripts/plazos.test.mjs"
+      - "scripts/ads-disponibilidad.test.mjs"
+      - "data/plazos-fabricacion.json"
+      - "politicas.html"
       - "scripts/robots-check.mjs"
       - "robots.txt"
       - "scripts/indexnow.mjs"
@@ -67,12 +74,12 @@ jobs:
           node --test scripts/indexnow.test.mjs
           node scripts/audit-seo.mjs
           node scripts/validate-feeds.mjs
-          node --test scripts/openai-feed.test.mjs
+          node --test scripts/openai-feed.test.mjs scripts/openai-hosted.test.mjs scripts/plazos.test.mjs scripts/ads-disponibilidad.test.mjs
 
       - name: Publicar los archivos regenerados (si hubo cambios)
         id: commit
         run: |
-          FILES="catalogo.html catalogo.json llms.txt llms-full.txt feed-google.xml feed-meta.csv feed-openai.jsonl feed-openai.csv feed-openai-grupos.json feed-openai.meta.json data/seo-lastmod.json index.html sitemap.xml producto categoria Halloween saintseiya assets/og assets/responsive src/image-sources.js"
+          FILES="catalogo.html catalogo.json llms.txt llms-full.txt feed-google.xml feed-meta.csv feed-openai.jsonl feed-openai.csv feed-openai.txt feed-openai-grupos.json feed-openai.meta.json data/seo-lastmod.json index.html sitemap.xml producto categoria Halloween saintseiya assets/og assets/responsive src/image-sources.js"
           if [ -n "$(git status --porcelain $FILES)" ]; then
             git config user.name "boomart-bot"
             git config user.email "boomart.3d@gmail.com"

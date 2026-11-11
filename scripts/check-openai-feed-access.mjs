@@ -2,7 +2,8 @@
 //  1. robots.txt permite a OAI-AdsBot y OAI-SearchBot todas las paginas, fotos y archivos del feed;
 //  2. cada pagina y cada foto del feed responde 200 (sin redirecciones) a ambos rastreadores;
 //  3. la ficha publicada tiene canonical correcta, sin noindex, y el mismo precio que la fila del feed;
-//  4. el feed publicado es el mismo que genera el catalogo actual (detecta feed desactualizado).
+//  4. el feed publicado es el mismo que genera el catalogo actual (detecta feed desactualizado);
+//  5. el CSV y el TXT, leidos como "URL alojada" de Ads Manager: 200 directo, tipo de contenido, UTF-8 sin BOM.
 //
 // Uso:   node scripts/check-openai-feed-access.mjs [--base https://boomart.pe] [--no-images] [--concurrency 8]
 //        (con --base http://localhost:4173 prueba una copia local servida con python -m http.server)
@@ -13,6 +14,7 @@ import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { robotsAllows } from "./robots-check.mjs";
+import { checkHostedFile } from "./openai-feed-checks.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://boomart.pe";
@@ -65,7 +67,7 @@ const localJsonl = await readFile(path.join(ROOT, "feed-openai.jsonl"), "utf8");
 const rows = localJsonl.trim().split("\n").map((l) => JSON.parse(l));
 const pages = [...new Set(rows.map((r) => r.url))];
 const images = [...new Set(rows.flatMap((r) => [r.image_url, ...(r.additional_image_urls || [])]))];
-const feedFiles = ["feed-openai.jsonl", "feed-openai.csv", "feed-openai.meta.json", "feed-openai-grupos.json", "robots.txt", "sitemap.xml"].map((f) => `${SITE}/${f}`);
+const feedFiles = ["feed-openai.csv", "feed-openai.txt", "feed-openai.jsonl", "feed-openai.meta.json", "feed-openai-grupos.json", "robots.txt", "sitemap.xml"].map((f) => `${SITE}/${f}`);
 
 /* 1. robots.txt */
 const robotsRes = await getText(`${BASE}/robots.txt`);
@@ -124,6 +126,37 @@ await pool(pages, async (u) => {
   }
 });
 
+/* 3b. "URL alojada" de Ads Manager: el CSV (recomendado) y el TXT tabulado (alternativa), tal como los
+ * recibiria OpenAI: 200 directo, tipo de contenido, UTF-8 sin BOM, columnas y filas. Se piden con la
+ * identidad de cada rastreador de OpenAI y con una neutra; el lector real de Ads Manager no declara la suya. */
+const hostedChecked = [];
+for (const [kind, file] of [["csv", "feed-openai.csv"], ["txt", "feed-openai.txt"]]) {
+  const url = `${SITE}/${file}`;
+  for (const ua of ["BoomArt-check/1.0", ...BOTS.map((b) => b.ua)]) {
+    const r = await request(live(url), ua, "GET");
+    const bytes = r.status === 200 ? new Uint8Array(await r.arrayBuffer()) : null;
+    const res = checkHostedFile({ url, kind, status: r.status, location: r.headers.get("location"), contentType: r.headers.get("content-type") || "", bytes, expectedRows: rows.length });
+    hostedChecked.push(`${kind}|${ua.slice(0, 24)}`);
+    for (const e of res.errors) {
+      // En una copia local el tipo de contenido lo decide el servidor de pruebas (Python en Windows sirve
+      // .csv como application/vnd.ms-excel); el real lo decide GitHub Pages. Solo es aviso en ese caso.
+      const localOnly = /localhost|127\.0\.0\.1/.test(BASE) && /Content-Type/.test(e);
+      const list = localOnly ? warnings : errors;
+      const msg = localOnly ? `${e} (servidor local: el tipo real lo define GitHub Pages)` : e;
+      if (!list.includes(msg)) list.push(msg);
+    }
+    for (const w of res.warnings) if (!warnings.includes(w)) warnings.push(w);
+    // el contenido publicado es el que genera el catalogo
+    if (bytes) {
+      const local = await readFile(path.join(ROOT, file));
+      if (sha(Buffer.from(bytes)) !== sha(local)) {
+        const m = `URL alojada ${url}: el archivo PUBLICADO no coincide con el que genera el catalogo actual (desactualizado o despliegue atrasado)`;
+        if (!errors.includes(m)) errors.push(m);
+      }
+    }
+  }
+}
+
 /* 4. el feed PUBLICADO es el que genera el catalogo actual */
 const liveFeedRes = await getText(`${BASE}/feed-openai.jsonl`);
 const liveMetaRes = await getText(`${BASE}/feed-openai.meta.json`);
@@ -144,6 +177,7 @@ const summary = {
   fotos: WITH_IMAGES ? images.length : "no revisadas",
   rastreadores: BOTS.map((b) => b.name),
   peticiones: status.size,
+  urlAlojadaRevisada: ["feed-openai.csv", "feed-openai.txt"],
   edadDelFeedPublicadoEnDias: ageDays,
   errores: errors.length,
   avisos: warnings.length,

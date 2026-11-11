@@ -23,7 +23,8 @@ import { createHash } from "node:crypto";
 import path from "node:path";
 import { SOCIAL_URLS, socialBandHtml, socialFooterHtml } from "./social-links.mjs";
 import { videoUploadDate } from "./video-upload-date.mjs";
-import { validateAdsConfig, classifyProduct, buildGroupsDoc } from "./ads-taxonomy.mjs";
+import { validateAdsConfig, classifyProduct, buildGroupsDoc, openAiAvailability } from "./ads-taxonomy.mjs";
+import { validatePlazos, plazoOf } from "./plazos.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://boomart.pe";
@@ -47,6 +48,16 @@ const ADS = JSON.parse(await readFile(path.join(ROOT, "data", "ads-grupos.json")
   const adsErrors = validateAdsConfig(ADS);
   if (adsErrors.length) throw new Error(`data/ads-grupos.json tiene errores:\n - ${adsErrors.join("\n - ")}`);
 }
+
+// Plazos de fabricacion bajo pedido (sencillo / elaborado): data/plazos-fabricacion.json es la unica
+// fuente del texto de cada ficha, del catalogo y de las descripciones de los feeds.
+const PLAZOS = JSON.parse(await readFile(path.join(ROOT, "data", "plazos-fabricacion.json"), "utf8"));
+{
+  const plazoErrors = validatePlazos(PLAZOS);
+  if (plazoErrors.length) throw new Error(`data/plazos-fabricacion.json tiene errores:\n - ${plazoErrors.join("\n - ")}`);
+}
+const plazo = (p) => plazoOf(p, PLAZOS, priceInfo(p).listPrice);
+const PLAZO_GENERAL = `${PLAZOS.niveles.sencillo.texto} en las piezas sencillas y ${PLAZOS.niveles.elaborado.texto} en las elaboradas`;
 const NOW = new Date().toISOString().slice(0, 10);
 // Vigencia de precios para el structured data (rueda ~120 dias hacia adelante).
 const PRICE_VALID_UNTIL = new Date(Date.now() + 120 * 864e5)
@@ -366,6 +377,7 @@ function buildJson(products) {
       description: p.description || "",
       material: p.material || null,
       availability: p.availability || null,
+      fabricacion: { nivel: plazo(p).nivel, texto: plazo(p).texto },
       priceCurrency: "PEN",
       priceFrom: price.from,
       pricing: price.lines,
@@ -506,6 +518,7 @@ function buildHtml(products, ratingLd, reviews) {
         <ul class="ai-meta">
           ${p.material ? `<li>Material: ${esc(p.material)}</li>` : ""}
           ${p.availability ? `<li>Disponibilidad: ${esc(p.availability)}</li>` : ""}
+          <li>Fabricación bajo pedido: ${esc(plazo(p).texto)}</li>
           ${priceLines}
         </ul>
         ${tags ? `<ul class="ai-tags">${tags}</ul>` : ""}
@@ -621,8 +634,8 @@ ${reviewsSectionHtml(reviews)}      <section id="contacto-final">
         <h2>Como comprar</h2>
         <p>
           Todas las piezas se fabrican a pedido en impresion 3D (PLA+/PETG),
-          con acabado y detallado a mano. Fabricacion aproximada: 48 horas utiles
-          desde la validacion del adelanto (50%). El envio se coordina aparte por
+          con acabado y detallado a mano. Fabricacion bajo pedido: ${PLAZO_GENERAL}
+          (cada pieza indica el suyo), desde la validacion del adelanto (50%). El envio se coordina aparte por
           WhatsApp: a domicilio en Lima y Callao, y por agencia Shalom a provincias.
         </p>
         <p><a href="${WHATSAPP}" target="_blank" rel="noreferrer">Escribir a BoomArt por WhatsApp</a> &middot;
@@ -742,7 +755,8 @@ function buildLlmsFull(products) {
 - Categoria: ${p.category}
 - ${priceStr}
 - Material: ${p.material || "PLA"}
-- Disponibilidad: ${p.availability || "A pedido"}${tags ? `\n- Etiquetas: ${tags}` : ""}
+- Disponibilidad: ${p.availability || "A pedido"}
+- Fabricación bajo pedido: ${plazo(p).texto}${tags ? `\n- Etiquetas: ${tags}` : ""}
 - Imagen: ${abs(p.image || (p.gallery && p.gallery[0]))}
 - Ficha: ${SITE}/producto/${p.id}/
 
@@ -756,8 +770,8 @@ ${p.description || ""}`;
   return `# Catalogo completo BoomArt
 
 Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao (Peru).
-Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion ~48 horas utiles desde
-la validacion del adelanto (50%). Pedidos por WhatsApp: ${WHATSAPP}
+Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion bajo pedido: ${PLAZO_GENERAL}
+(cada pieza indica el suyo), desde la validacion del adelanto (50%). Pedidos por WhatsApp: ${WHATSAPP}
 
 Total de piezas: ${products.length}
 Actualizado: ${NOW}
@@ -785,7 +799,7 @@ function buildGoogleFeed(products) {
         .slice(0, 10)
         .map((g) => `      <g:additional_image_link>${esc(g)}</g:additional_image_link>`)
         .join("\n");
-      const desc = `${tidyText(p.description || p.name)} Fabricado a pedido en impresion 3D (${p.material || "PLA"}), acabado y detallado a mano. Produccion ~48 h utiles. Envios a todo el Peru.`;
+      const desc = `${tidyText(p.description || p.name)} Fabricado bajo pedido en impresion 3D (${p.material || "PLA"}), acabado y detallado a mano. Fabricacion: ${plazo(p).texto}. Envios a todo el Peru.`;
       return `    <item>
       <g:id>${esc(p.id)}</g:id>
       <g:title>${esc(machineName(p))}</g:title>
@@ -839,7 +853,7 @@ function buildMetaFeed(products) {
     const gallery = (p.gallery || []).filter(Boolean).map(abs);
     const main = abs(p.image) || gallery[0];
     const extra = gallery.filter((g) => g !== main).slice(0, 20).join(",");
-    const desc = `${tidyText(p.description || p.name)} Fabricado a pedido en impresion 3D (${p.material || "PLA"}). Produccion ~48 h utiles. Envios a todo el Peru.`;
+    const desc = `${tidyText(p.description || p.name)} Fabricado bajo pedido en impresion 3D (${p.material || "PLA"}). Fabricacion: ${plazo(p).texto}. Envios a todo el Peru.`;
     return [
       p.id,
       machineName(p),
@@ -891,6 +905,10 @@ function buildOpenAiRows(products) {
     // Tematica principal y ruta de categoria (reglas de data/ads-grupos.json). Todas
     // las variantes de un producto comparten ruta y etiqueta.
     const cls = classifyProduct(p, ADS);
+    // Disponibilidad: solo se declara "bajo pedido" si data/products.json lo confirma; sin ese dato el
+    // producto sale como unknown y no entra a anuncios (no se afirman existencias que no estan confirmadas).
+    const stock = openAiAvailability(p, ADS);
+    const lead = stock.confirmada ? `Producto fabricado bajo pedido: ${plazo(p).texto} de fabricación. ` : "";
     for (const o of options) {
       // Foto de la opcion: la galeria propia del modelo si existe; para la
       // Pandora Box, la foto cuyo nombre la indica; si no, las de la ficha.
@@ -907,14 +925,14 @@ function buildOpenAiRows(products) {
         item_id: o.sku,
         ...(variants ? { offer_id: o.sku, group_id: `grupo-${p.id}`, listing_has_variations: true, variant_dict: { Opción: o.label } } : {}),
         title: clampWords(variants ? `${machineName(p)} — ${o.label}` : machineName(p), 150),
-        description: `${base}${variants ? ` Opción de compra: ${o.label}.` : ""} Fabricado a pedido en impresión 3D (${p.material || "PLA"}). Envíos a todo el Perú.`.slice(0, 5000),
+        description: `${lead}${base}${variants ? ` Opción de compra: ${o.label}.` : ""} Fabricado en impresión 3D (${p.material || "PLA"}). Envíos a todo el Perú.`.slice(0, 5000),
         url: `${SITE}/producto/${p.id}/`,
         brand: "BoomArt",
         seller_name: "BoomArt",
         seller_url: `${SITE}/`,
         image_url: main,
         additional_image_urls: gallery.filter((g) => g !== main).slice(0, 10),
-        availability: "in_stock",
+        availability: stock.estado,
         price: money(o.price),
         condition: "new",
         // Ruta propia ("Anime > Saint Seiya > Templos del Zodiaco"): es un campo que un
@@ -926,8 +944,10 @@ function buildOpenAiRows(products) {
         is_eligible_search: true,
         // Elegibilidad para anuncios: un archivo generado no activa nada; la
         // campana se crea y se paga solo desde la cuenta de Adrian.
-        is_ads_eligible: !ADS.excluirDeAnuncios.includes(p.id),
-        // Etiqueta personalizada (la unica clave que la guia de OpenAI documenta).
+        is_ads_eligible: !ADS.excluirDeAnuncios.includes(p.id) && stock.confirmada,
+        // Etiqueta personalizada (documentada en la guia del feed y en el Centro de Ayuda de Ads:
+        // se filtra con ads_metadata.custom_label_0). No se agregan otras claves hasta ver cuales
+        // admite la integracion de la cuenta en Ads Manager.
         ads_metadata: { custom_label_0: cls.tema },
       });
     }
@@ -939,15 +959,20 @@ function buildOpenAiJsonl(products) {
   return buildOpenAiRows(products).map((r) => JSON.stringify(r)).join("\n") + "\n";
 }
 
-function buildOpenAiCsv(products) {
+// Archivo delimitado para importar en Ads Manager (Upload CSV o TXT / URL alojada). El CSV separa por coma;
+// el TXT separa por tabulador (TSV). Mismas columnas y mismas filas; una celda con comillas, comas,
+// tabuladores o saltos de linea va entre comillas y con las comillas dobles ("") como en el CSV.
+function buildOpenAiDelimited(products, delimiter) {
   const cell = (v) => {
     if (v === undefined || v === null || v === "") return "";
     const s = Array.isArray(v) ? v.join(",") : typeof v === "object" ? JSON.stringify(v) : String(v);
-    return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+    return /[",\t\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
   };
-  const lines = buildOpenAiRows(products).map((r) => OPENAI_COLUMNS.map((c) => cell(r[c])).join(","));
-  return [OPENAI_COLUMNS.join(","), ...lines].join("\n") + "\n";
+  const lines = buildOpenAiRows(products).map((r) => OPENAI_COLUMNS.map((c) => cell(r[c])).join(delimiter));
+  return [OPENAI_COLUMNS.join(delimiter), ...lines].join("\n") + "\n";
 }
+const buildOpenAiCsv = (products) => buildOpenAiDelimited(products, ",");
+const buildOpenAiTxt = (products) => buildOpenAiDelimited(products, "\t");
 
 const sha256 = (text) => createHash("sha256").update(text).digest("hex");
 
@@ -965,12 +990,14 @@ function buildOpenAiGroupsJson(products) {
 
 // Metadatos publicos del feed (feed-openai.meta.json): permiten comprobar, sin descargar
 // todo, que el feed publicado es el que se genero a partir del catalogo actual.
-function buildOpenAiMetaJson(products, jsonl, csv) {
+function buildOpenAiMetaJson(products, jsonl, csv, txt) {
   const rows = jsonl.trim().split("\n").map((l) => JSON.parse(l));
   const filasPorTema = {};
+  const filasPorDisponibilidad = {};
   for (const r of rows) {
     const t = r.ads_metadata?.custom_label_0 || "sin-tema";
     filasPorTema[t] = (filasPorTema[t] || 0) + 1;
+    filasPorDisponibilidad[r.availability] = (filasPorDisponibilidad[r.availability] || 0) + 1;
   }
   return (
     JSON.stringify(
@@ -982,18 +1009,23 @@ function buildOpenAiMetaJson(products, jsonl, csv) {
         filas: rows.length,
         gruposDeVariantes: new Set(rows.filter((r) => r.group_id).map((r) => r.group_id)).size,
         filasPorTema,
+        filasPorDisponibilidad,
+        filasElegiblesParaAnuncios: rows.filter((r) => r.is_ads_eligible === true).length,
         sha256Jsonl: sha256(jsonl),
         sha256Csv: sha256(csv),
+        sha256Txt: sha256(txt),
         archivos: {
-          jsonl: `${SITE}/feed-openai.jsonl`,
           csv: `${SITE}/feed-openai.csv`,
+          txt: `${SITE}/feed-openai.txt`,
+          jsonl: `${SITE}/feed-openai.jsonl`,
           grupos: `${SITE}/feed-openai-grupos.json`,
         },
         renovacion: {
           recomendada: "diaria, con una carga completa (docs/CHATGPT_ADS.md)",
-          retencionOpenAI: "OpenAI conserva hasta 14 dias el ultimo registro de un producto que falta en una carga",
+          caducidad: "Segun el Centro de Ayuda de OpenAI Ads, los productos importados caducan a las 2 semanas si no se renuevan; se recomienda URL alojada o SFTP automatizado",
+          retencionOpenAI: "OpenAI conserva hasta 14 dias el ultimo registro de un producto que falta en una carga completa",
         },
-        entrega: "Por SFTP desde la cuenta de OpenAI Ads. Esta URL es la copia publica que sirve de fuente y de verificacion; no es un enlace que Ads Manager lea por su cuenta.",
+        entrega: "Ads Manager importa por CSV/TXT, URL alojada HTTPS o SFTP. URL alojada recomendada para BoomArt: feed-openai.csv (alternativa feed-openai.txt, tabulado).",
       },
       null,
       2,
@@ -1467,7 +1499,7 @@ function buildProductPage(p, all, ratingLd) {
         <p>${p.detailText ? esc(p.detailText) : `${esc(p.name)} es una ${esc(ctx)}, diseñada y fabricada por BoomArt en ${esc(p.height && /cm/i.test(p.height) ? p.height + ", " : "")}Perú. Se imprime en 3D en ${esc(p.material || "PLA+")}, con acabado y pintura a mano según la pieza, así que es un objeto hecho especialmente para tu pedido &mdash; puedes pedir un color, tamaño o detalle distinto y lo coordinamos por WhatsApp.`}</p>
         ${p.tags && p.tags.length ? `<p>Relacionada con: ${p.tags.map((t) => esc(t)).join(", ")}.</p>` : ""}
         <h2>Producción y tiempos</h2>
-        <p>Cada pieza se produce a pedido. La fabricación toma aproximadamente <strong>48 horas útiles</strong> desde que confirmas tu compra. No trabajamos con stock: esto nos permite ajustar cada figura a lo que pides.</p>
+        <p>Cada pieza se produce a pedido. La fabricación toma aproximadamente <strong>${esc(plazo(p).texto)}</strong> desde que confirmas tu compra. No trabajamos con stock: esto nos permite ajustar cada figura a lo que pides.</p>
         <h2>Envío y entrega</h2>
         <p>Entregamos a domicilio en Lima y Callao coordinando por WhatsApp, y a provincias por la agencia Shalom. El costo del envío se coordina por WhatsApp y se paga aparte, directo al courier, al momento del despacho. <a href="${rel}politicas.html">Ver políticas de compra y envío</a>.</p>
         <h2>Cómo comprar</h2>
@@ -2361,6 +2393,7 @@ const ratingLd = buildRatingLd(reviews);
 // El feed de OpenAI se arma una sola vez: el archivo de metadatos lleva la huella de ESTE contenido.
 const openaiJsonl = buildOpenAiJsonl(products);
 const openaiCsv = buildOpenAiCsv(products);
+const openaiTxt = buildOpenAiTxt(products);
 
 const [productPageCount, categoryPageCount] = await Promise.all([
   writeProductPages(products, ratingLd),
@@ -2373,8 +2406,9 @@ const [productPageCount, categoryPageCount] = await Promise.all([
   writeFile(path.join(ROOT, "feed-meta.csv"), buildMetaFeed(products)),
   writeFile(path.join(ROOT, "feed-openai.jsonl"), openaiJsonl),
   writeFile(path.join(ROOT, "feed-openai.csv"), openaiCsv),
+  writeFile(path.join(ROOT, "feed-openai.txt"), openaiTxt),
   writeFile(path.join(ROOT, "feed-openai-grupos.json"), buildOpenAiGroupsJson(products)),
-  writeFile(path.join(ROOT, "feed-openai.meta.json"), buildOpenAiMetaJson(products, openaiJsonl, openaiCsv)),
+  writeFile(path.join(ROOT, "feed-openai.meta.json"), buildOpenAiMetaJson(products, openaiJsonl, openaiCsv, openaiTxt)),
 ]);
 
 // Secuencial (no Promise.all): ambas leen y reescriben index.html/opinion,
@@ -2400,7 +2434,7 @@ console.log(
     `  Halloween/index.html (campaña de ${HALLOWEEN_CAMPAIGN_PRODUCT_IDS.length} productos)\n` +
     "  sitemap.xml\n  catalogo.html\n  catalogo.json\n  llms.txt\n  llms-full.txt\n" +
     "  feed-google.xml (Google Merchant + Pinterest)\n  feed-meta.csv (Instagram / Facebook)\n" +
-    "  feed-openai.jsonl / feed-openai.csv (ChatGPT, ver developers.openai.com/commerce/product-feeds/spec)\n" +
+    "  feed-openai.csv / feed-openai.txt (tabulado) / feed-openai.jsonl (ChatGPT Ads: URL alojada, ver docs/CHATGPT_ADS.md)\n" +
     "  feed-openai-grupos.json / feed-openai.meta.json (grupos de campana y huella del feed)\n" +
     "  data/seo-lastmod.json (huellas para el lastmod real del sitemap)\n" +
     `  index.html (aggregateRating ${ratingUpdated ? "actualizado" : "sin cambios"})\n` +
