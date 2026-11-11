@@ -63,11 +63,14 @@ jobs:
       - name: Generar fotos por tamaño para celulares y miniaturas
         run: node scripts/build-responsive-images.mjs
 
-      - name: Validar seleccion de imagenes
-        run: node --test scripts/responsive-images.test.mjs
-
+      # La prueba de fotos adaptables va DESPUES de regenerar: build-ai-catalog es quien sube el
+      # ?v= de src/image-sources.js en los HTML. Antes iba primero y cualquier foto nueva hacia
+      # fallar el flujo (visto el 11-nov-2026 con las fotos de los sets del Santuario).
       - name: Regenerar catalogo y feeds
         run: node scripts/build-ai-catalog.mjs
+
+      - name: Validar seleccion de imagenes
+        run: node --test scripts/responsive-images.test.mjs
 
       - name: Validar enlaces rastreables, fichas y feed
         run: |
