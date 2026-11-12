@@ -39,6 +39,10 @@
     .btn.on { background: var(--gold); border-color: var(--gold); color: #1a1405; }
     .btn.small { padding: 6px 10px; font-size: .85rem; }
     .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+    #visitasChatgpt label { display: inline-flex; align-items: center; gap: 8px; margin: 4px 0 10px; }
+    #visitasChatgpt select { padding: 6px 9px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: inherit; font: inherit; }
+    #visitasChatgpt th, #visitasChatgpt td { text-align: left; }
+    #visitasChatgpt td:nth-child(2) { overflow-wrap: anywhere; }
     .login { max-width: 420px; margin: 8vh auto 0; }
     .login input[type=email], .custom input[type=date] {
       width: 100%; padding: 11px 12px; border-radius: 10px; border: 1px solid var(--line);
@@ -164,7 +168,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
   <script src="../src/supabase-config.js?v=1"></script>
-  <script src="recorridos.js?v=4"></script>
+  <script src="recorridos.js?v=5"></script>
+  <script src="visitas-chatgpt.js?v=1"></script>
   <script>
     (function () {
       "use strict";
@@ -236,6 +241,8 @@
       const PAGO = new Set(["paid", "anuncio", "cpc", "paid_social"]);
       const fuenteLabel = (f, m, c) => {
         f = (f || "directo").toLowerCase(); m = (m || "").toLowerCase();
+        if (/^(chatgpt|openai)[_-]ads$/.test(f) || (/^(chatgpt|chatgpt\.com|chat\.openai\.com|openai|openai\.com)$/.test(f) && /^(paid|cpc|anuncio|paid_search|paid_social)$/.test(m))) return { t: "ChatGPT Ads", s: c ? `campaña ${c}` : "" };
+        if (/^(chatgpt|chatgpt\.com|chat\.openai\.com)$/.test(f) || (f === "ia" && /^(chatgpt\.com|chat\.openai\.com)$/.test(m))) return { t: "ChatGPT orgánico", s: "" };
         if (META.has(f) && PAGO.has(m)) return { t: `Anuncio de Meta (${f === "ig" || f === "instagram" ? "Instagram" : f === "meta" ? "Facebook/Instagram" : "Facebook"})`, s: c ? `campaña ${c}` : "" };
         if (f === "meta" && m === "anuncio") return { t: "Anuncio de Meta (detectado por el clic)", s: "sin marca en el enlace" };
         if (f === "instagram" && m === "bio") return { t: "Instagram · enlace de la bio", s: c || "" };
@@ -444,7 +451,7 @@
         });
         if (!fu.length) html += `<tr><td colspan="9" style="text-align:center;color:var(--muted)">Sin datos</td></tr>`;
         html += `</tbody></table></div>
-          <p class="note">Para medir un enlace nuevo agrégale <strong>?src=nombre</strong> (por ejemplo boomart.pe/Halloween/?src=ig-historia). Los clics desde anuncios de Meta se reconocen solos.</p>`;
+          <p class="note">Para medir un enlace nuevo agrégale <strong>?src=nombre</strong> (por ejemplo boomart.pe/Halloween/?src=ig-historia).</p><section id="visitasChatgpt"></section>`;
 
         // Paginas de entrada
         const en = lastEntradas || [];
@@ -511,7 +518,9 @@
 
         $("#contenido").innerHTML = html + '<section id="recorridos" style="overflow-wrap:anywhere"></section>';
         const rr = calcularRango();
-        window.BoomartRecorridos(sb, {p_desde:rr.desde,p_hasta:rr.hasta,p_solo_peru:$("#chkPeru").checked}, $("#recorridos"), nombreProducto);
+        const args = {p_desde:rr.desde,p_hasta:rr.hasta,p_solo_peru:$("#chkPeru").checked};
+        window.BoomartVisitasChatgpt(sb, args, $("#visitasChatgpt"), entradaLabel);
+        window.BoomartRecorridos(sb, args, $("#recorridos"), nombreProducto);
       };
 
       // ---------- Carga de datos ----------

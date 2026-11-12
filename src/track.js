@@ -29,6 +29,7 @@
   const K_SES = "boomart_ses";
   const K_EXC = "boomart_excluir";
   const K_DBG = "boomart_debug";
+  const query = new URLSearchParams(window.location.search);
   const SESSION_MS = 30 * 60 * 1000; // inactividad que cierra la sesion
   const IDLE_MS = 30 * 1000; // sin interaccion = el tiempo deja de contar
   const TIME_MARKS = [10, 20, 30, 45, 60, 90, 120, 180, 300, 480, 600, 900];
@@ -55,7 +56,7 @@
 
   const isProd = Boolean(PROD_HOSTS[window.location.hostname]);
   const debug = lsGet(K_DBG) === "1";
-  if (lsGet(K_EXC) === "1" || navigator.webdriver || (!isProd && !debug)) {
+  if (lsGet(K_EXC) === "1" || navigator.webdriver || query.get("oppref") === "preview_mock" || (!isProd && !debug)) {
     window.BoomartTrack = noop;
     return;
   }
@@ -108,7 +109,8 @@
 
   // ---------- De donde llego (primer contacto de la sesion) ----------
   const classifyReferrer = (host) => {
-    if (/(^|\.)(chatgpt\.com|openai\.com|perplexity\.ai|claude\.ai|copilot\.microsoft\.com|gemini\.google\.com)$/.test(host)) return ["ia", host];
+    if (/(^|\.)chatgpt\.com$/.test(host) || host === "chat.openai.com") return ["chatgpt", "referido"];
+    if (/(^|\.)(openai\.com|perplexity\.ai|claude\.ai|copilot\.microsoft\.com|gemini\.google\.com)$/.test(host)) return ["ia", host];
     if (/(^|\.)(facebook\.com|fb\.com|fb\.me|messenger\.com)$/.test(host)) return ["facebook", "referido"];
     if (/(^|\.)instagram\.com$/.test(host)) return ["instagram", "referido"];
     if (/(^|\.)(wa\.me|whatsapp\.com)$/.test(host)) return ["whatsapp", "referido"];
@@ -119,7 +121,7 @@
   };
 
   const attribution = () => {
-    const p = new URLSearchParams(window.location.search);
+    const p = query;
     const utmSource = clean(p.get("utm_source"));
     const utmMedium = clean(p.get("utm_medium"));
     const utmCampaign = clean(p.get("utm_campaign"));
@@ -128,12 +130,23 @@
     try {
       refHost = document.referrer ? new URL(document.referrer).hostname.replace(/^www\./, "").toLowerCase() : "";
     } catch (e) { refHost = ""; }
-    if (refHost === window.location.hostname.replace(/^www\./, "")) refHost = "";
+    const interno = refHost === window.location.hostname.replace(/^www\./, "");
+    if (interno) refHost = "";
+    const chatgpt = /^(chatgpt|chatgpt\.com|chat\.openai\.com)$/.test(utmSource);
+    const anuncio = Boolean(p.get("oppref")?.trim())
+      || /^(chatgpt|openai)[_-]ads$/.test(utmSource)
+      || ((chatgpt || /^(openai|openai\.com)$/.test(utmSource)) && /^(paid|cpc|anuncio|paid_search|paid_social)$/.test(utmMedium));
 
     let fu = "";
     let me = "";
     let ca = utmCampaign;
-    if (utmSource) { fu = utmSource; me = utmMedium || "enlace"; }
+    if (anuncio) {
+      fu = "chatgpt_ads";
+      me = "cpc";
+      if (!/^[a-z0-9_-]+$/.test(ca)) ca = "";
+    }
+    else if (chatgpt) { fu = "chatgpt"; me = "referido"; }
+    else if (utmSource) { fu = utmSource; me = utmMedium || "enlace"; }
     else if (src) { fu = src; me = "enlace"; }
     else if (p.get("fbclid")) { fu = "meta"; me = "anuncio"; }
     else if (p.get("gclid")) { fu = "google"; me = "anuncio"; }
@@ -147,7 +160,7 @@
     if (cat) partes.push(`categoria=${cat}`);
     if (prod) partes.push(`producto=${prod}`);
     const land = (window.location.pathname + (partes.length ? `?${partes.join("&")}` : "")).slice(0, 160);
-    return { fu, me, ca, ref: refHost.slice(0, 80), land };
+    return { campos: { fu, me, ca, ref: refHost.slice(0, 80), land }, interno };
   };
 
   // ---------- Visitante y sesion ----------
@@ -160,10 +173,23 @@
     vidIsNew = true;
   }
 
-  let ses = null;
-  try { ses = JSON.parse(lsGet(K_SES) || "null"); } catch (e) { ses = null; }
-  if (!ses || !ID_RE.test(String(ses.id || "")) || startedAt - (ses.ts || 0) > SESSION_MS) {
-    ses = Object.assign({ id: rid(12), ts: startedAt, nuevo: vidIsNew }, attribution());
+  const leerSesion = (raw) => {
+    try {
+      const s = JSON.parse(raw || "null");
+      return s && ID_RE.test(String(s.id || "")) ? s : null;
+    } catch (e) { return null; }
+  };
+  const vigente = s => s && startedAt - (s.ts || 0) <= SESSION_MS;
+  let sesPestana = null;
+  try { sesPestana = leerSesion(window.sessionStorage.getItem(K_SES)); } catch (e) { /* opcional */ }
+  const sesCompartida = leerSesion(lsGet(K_SES));
+  let ses = vigente(sesPestana) ? sesPestana : vigente(sesCompartida) ? sesCompartida : null;
+  const { campos, interno } = attribution();
+  const navegacion = window.performance?.getEntriesByType?.("navigation")[0]?.type;
+  const entradaChatgpt = /^(chatgpt|chatgpt_ads)$/.test(campos.fu)
+    && !interno && navegacion !== "reload" && navegacion !== "back_forward";
+  if (!ses || entradaChatgpt) {
+    ses = { id: rid(12), inicio: startedAt, ts: startedAt, nuevo: vidIsNew, ...campos };
   }
   let lastTouch = 0;
   const touch = () => {
@@ -171,7 +197,10 @@
     if (t - lastTouch < 5000) return;
     lastTouch = t;
     ses.ts = t;
-    lsSet(K_SES, JSON.stringify(ses));
+    const json = JSON.stringify(ses);
+    try { window.sessionStorage.setItem(K_SES, json); } catch (e) { /* opcional */ }
+    const actual = leerSesion(lsGet(K_SES));
+    if (!actual || actual.id === ses.id || (actual.inicio || 0) <= (ses.inicio || 0)) lsSet(K_SES, json);
   };
   touch();
 
@@ -420,7 +449,7 @@
   window.BoomartTrack = { enabled: true, event: (name, props) => track(name, props, false), flush };
 
   // ---------- Eventos automaticos de la carga ----------
-  track("visita", {}, false);
+  track("visita", {}, entradaChatgpt);
   const pathProduct = productFromPath();
   if (pathProduct) track("ver_producto", { p: pathProduct, o: "pagina" }, false);
 })();

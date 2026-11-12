@@ -4,7 +4,7 @@
   const esc = (v) => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const fecha = v => new Date(v).toLocaleString("es-PE", {timeZone:"America/Lima",day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"});
   const hora = v => new Date(v).toLocaleTimeString("es-PE", {timeZone:"America/Lima",hour:"2-digit",minute:"2-digit"});
-  const origen = v => ({directo:"Origen no identificado",instagram:"Instagram",facebook:"Facebook",tiktok:"TikTok",google:"Google",whatsapp:"WhatsApp",meta:"Meta"}[v] || v || "Origen no identificado");
+  const origen = v => ({directo:"Origen no identificado",instagram:"Instagram",facebook:"Facebook",tiktok:"TikTok",google:"Google",whatsapp:"WhatsApp",meta:"Meta",chatgpt_ads:"ChatGPT Ads",chatgpt:"ChatGPT orgánico"}[v] || v || "Origen no identificado");
   const dinero = v => new Intl.NumberFormat("es-PE",{style:"currency",currency:"PEN"}).format(Number(v));
   const detalle = (eventos, nombre) => {
     const pedido = [...eventos].reverse().find(e=>e.tipo === "pedido_whatsapp");
