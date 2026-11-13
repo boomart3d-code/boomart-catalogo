@@ -5,356 +5,298 @@
   "material_objetivo_interno": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
   "productos": [
     {
-      "id": "gryffindor",
-      "nombre": "Gryffindor · León dorado",
-      "tema": "Harry Potter",
-      "carpeta": "Gryffindor Polo Blanco",
-      "tipo": "B",
-      "color": "blanco",
-      "seleccion": {
-        "hombre": [
-          [
-            "h1",
-            "espalda"
-          ],
-          [
-            "h2",
-            "espalda-p2"
-          ],
-          [
-            "h2",
-            "frente-p2"
-          ],
-          [
-            "h1",
-            "detalle-pecho"
-          ],
-          [
-            "h1",
-            "lateral-derecho"
-          ],
-          [
-            "h1",
-            "detalle-manga"
-          ],
-          [
-            "ph",
-            "frente-plano"
-          ],
-          [
-            "ph",
-            "espalda-plana"
-          ]
-        ],
-        "mujer": [
-          [
-            "m2",
-            "espalda"
-          ],
-          [
-            "m2",
-            "espalda-p2"
-          ],
-          [
-            "m2",
-            "frente"
-          ],
-          [
-            "m2",
-            "detalle-pecho"
-          ],
-          [
-            "m2",
-            "lateral-derecho"
-          ],
-          [
-            "m2",
-            "detalle-manga"
-          ],
-          [
-            "pm",
-            "frente-plano"
-          ],
-          [
-            "pm",
-            "espalda-plana"
-          ]
-        ]
-      },
-      "texto": "El león de la casa de los valientes, en grande sobre la espalda. Un parche discreto en el pecho y el estandarte en la manga.",
       "precio": 50,
-      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
-      "gramaje": null,
-      "estado": "proximamente",
-      "tallas": [
-        "S",
-        "M",
-        "L"
-      ]
-    },
-    {
-      "id": "slytherin",
-      "nombre": "Slytherin · Serpiente esmeralda",
-      "tema": "Harry Potter",
-      "carpeta": "Polo Slytherin negro",
-      "tipo": "B",
+      "texto": "Estampado principal en la espalda y detalle en el pecho.",
       "color": "negro",
-      "seleccion": {
-        "hombre": [
-          [
-            "h1",
-            "espalda-p2"
-          ],
-          [
-            "h2",
-            "espalda"
-          ],
-          [
-            "h1",
-            "frente-p3"
-          ],
-          [
-            "h2",
-            "detalle-pecho"
-          ],
-          [
-            "h2",
-            "lateral-derecho-p3"
-          ],
-          [
-            "h2",
-            "detalle-manga"
-          ],
-          [
-            "ph",
-            "espalda-plana"
-          ],
-          [
-            "ph",
-            "frente-plano"
-          ]
-        ],
-        "mujer": [
-          [
-            "m1",
-            "espalda-p2"
-          ],
-          [
-            "m2",
-            "espalda"
-          ],
-          [
-            "m1",
-            "frente-p3"
-          ],
-          [
-            "m2",
-            "detalle-pecho"
-          ],
-          [
-            "m2",
-            "lateral-derecho-p3"
-          ],
-          [
-            "m2",
-            "detalle-manga"
-          ],
-          [
-            "pm",
-            "espalda-plana"
-          ],
-          [
-            "pm",
-            "frente-plano"
-          ]
-        ]
-      },
-      "texto": "La serpiente de la casa de la astucia, en grande sobre la espalda. El escudo de la casa en el pecho y el «Avada Kedavra» en la manga.",
-      "precio": 50,
-      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
-      "gramaje": null,
-      "estado": "proximamente",
-      "tallas": [
-        "S",
-        "M",
-        "L"
-      ]
-    },
-    {
-      "id": "ravenclaw",
-      "nombre": "Ravenclaw · Escudo del águila",
-      "tema": "Harry Potter",
-      "carpeta": "Polo Ravenclaw Blanco",
       "tipo": "B",
-      "color": "blanco",
-      "precio": 50,
-      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
-      "gramaje": null,
-      "estado": "proximamente",
+      "nombre": "Black Goku",
+      "fotos": [
+        {
+          "archivo": "img/dragon-ball/black-goku-1.webp",
+          "alto": 504,
+          "titulo": "Estampado de espalda",
+          "ancho": 402
+        },
+        {
+          "archivo": "img/dragon-ball/black-goku-2.webp",
+          "alto": 504,
+          "titulo": "Vista de la sesión",
+          "ancho": 402
+        },
+        {
+          "archivo": "img/dragon-ball/black-goku-3.webp",
+          "alto": 504,
+          "titulo": "Otra vista de la prenda",
+          "ancho": 402
+        },
+        {
+          "archivo": "img/dragon-ball/black-goku-4.webp",
+          "alto": 480,
+          "titulo": "Detalle del estampado principal",
+          "ancho": 384
+        },
+        {
+          "archivo": "img/dragon-ball/black-goku-5.webp",
+          "alto": 480,
+          "titulo": "Detalle del pecho y cuello",
+          "ancho": 384
+        },
+        {
+          "archivo": "img/dragon-ball/black-goku-referencia-espalda.webp",
+          "alto": 2560,
+          "titulo": "Referencia del estampado de espalda",
+          "ancho": 2048
+        },
+        {
+          "archivo": "img/dragon-ball/black-goku-referencia-frente.webp",
+          "alto": 2560,
+          "titulo": "Referencia del estampado de pecho",
+          "ancho": 2048
+        }
+      ],
       "tallas": [
         "S",
         "M",
         "L"
       ],
-      "texto": "El escudo de la casa de la sabiduría, en grande sobre la espalda. El águila de la casa en el pecho y su nombre en la manga.",
-      "seleccion": {
-        "hombre": [
-          [
-            "h2",
-            "espalda"
-          ],
-          [
-            "h1",
-            "espalda-p2"
-          ],
-          [
-            "h1",
-            "frente-p3"
-          ],
-          [
-            "h2",
-            "detalle-pecho"
-          ],
-          [
-            "h2",
-            "lateral-derecho-p3"
-          ],
-          [
-            "h2",
-            "detalle-manga"
-          ],
-          [
-            "ph",
-            "espalda-plana"
-          ],
-          [
-            "ph",
-            "frente-plano"
-          ]
-        ],
-        "mujer": [
-          [
-            "m1",
-            "espalda"
-          ],
-          [
-            "m1",
-            "espalda-p2"
-          ],
-          [
-            "m2",
-            "frente-p3"
-          ],
-          [
-            "m1",
-            "detalle-pecho"
-          ],
-          [
-            "m2",
-            "lateral-derecho-p3"
-          ],
-          [
-            "m1",
-            "detalle-manga"
-          ],
-          [
-            "pm",
-            "espalda-plana"
-          ],
-          [
-            "pm",
-            "frente-plano"
-          ]
-        ]
-      }
+      "prenda": "unisex",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "tema": "Dragon Ball",
+      "id": "black-goku"
     },
     {
-      "id": "hufflepuff",
-      "nombre": "Hufflepuff · Tejón heráldico",
-      "tema": "Harry Potter",
-      "carpeta": "Hufflepuff Negro",
-      "tipo": "B",
-      "color": "negro",
       "precio": 50,
-      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
-      "gramaje": null,
-      "estado": "proximamente",
+      "texto": "Estampado principal en la espalda y detalle en el pecho.",
+      "color": "blanco",
+      "tipo": "B",
+      "nombre": "Urban Goku 1",
+      "fotos": [
+        {
+          "archivo": "img/dragon-ball/urban-goku-1-1.webp",
+          "alto": 494,
+          "titulo": "Estampado de espalda en movimiento",
+          "ancho": 394
+        },
+        {
+          "archivo": "img/dragon-ball/urban-goku-1-2.webp",
+          "alto": 494,
+          "titulo": "Vista de la sesión",
+          "ancho": 394
+        },
+        {
+          "archivo": "img/dragon-ball/urban-goku-1-3.webp",
+          "alto": 494,
+          "titulo": "Estampado de pecho y caída",
+          "ancho": 394
+        },
+        {
+          "archivo": "img/dragon-ball/urban-goku-1-4.webp",
+          "alto": 498,
+          "titulo": "Detalle del estampado principal",
+          "ancho": 398
+        },
+        {
+          "archivo": "img/dragon-ball/urban-goku-1-5.webp",
+          "alto": 498,
+          "titulo": "Detalle del pecho y cuello",
+          "ancho": 398
+        },
+        {
+          "archivo": "img/dragon-ball/urban-goku-1-referencia-espalda.webp",
+          "alto": 2560,
+          "titulo": "Referencia del estampado de espalda",
+          "ancho": 2048
+        },
+        {
+          "archivo": "img/dragon-ball/urban-goku-1-referencia-frente.webp",
+          "alto": 2560,
+          "titulo": "Referencia del estampado de pecho",
+          "ancho": 2048
+        }
+      ],
       "tallas": [
         "S",
         "M",
         "L"
       ],
-      "texto": "El tejón de la casa de la lealtad, enmarcado en dorado sobre la espalda. El escudo de la casa en el pecho y su insignia en la manga.",
-      "seleccion": {
-        "hombre": [
-          [
-            "h1",
-            "espalda"
-          ],
-          [
-            "h2",
-            "espalda-p2"
-          ],
-          [
-            "h2",
-            "frente-p3"
-          ],
-          [
-            "h1",
-            "detalle-pecho"
-          ],
-          [
-            "h1",
-            "lateral-derecho-p3"
-          ],
-          [
-            "h1",
-            "detalle-manga"
-          ],
-          [
-            "ph",
-            "espalda-plana"
-          ],
-          [
-            "ph",
-            "frente-plano"
-          ]
-        ],
-        "mujer": [
-          [
-            "m2",
-            "espalda"
-          ],
-          [
-            "m2",
-            "espalda-p2"
-          ],
-          [
-            "m2",
-            "frente-p3"
-          ],
-          [
-            "m1",
-            "detalle-pecho"
-          ],
-          [
-            "m2",
-            "lateral-derecho"
-          ],
-          [
-            "m1",
-            "detalle-manga"
-          ],
-          [
-            "pm",
-            "espalda-plana"
-          ],
-          [
-            "pm",
-            "frente-plano"
-          ]
-        ]
-      }
+      "prenda": "unisex",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "tema": "Dragon Ball",
+      "id": "urban-goku-1"
+    },
+    {
+      "precio": 50,
+      "texto": "Estampado principal en la espalda y detalle en el pecho.",
+      "color": "negro",
+      "tipo": "B",
+      "nombre": "Goku Super Saiyajin Blue",
+      "fotos": [
+        {
+          "archivo": "img/dragon-ball/goku-super-saiyajin-blue-1.webp",
+          "alto": 524,
+          "titulo": "Estampado de espalda",
+          "ancho": 418
+        },
+        {
+          "archivo": "img/dragon-ball/goku-super-saiyajin-blue-2.webp",
+          "alto": 524,
+          "titulo": "Vista de la sesión",
+          "ancho": 418
+        },
+        {
+          "archivo": "img/dragon-ball/goku-super-saiyajin-blue-3.webp",
+          "alto": 452,
+          "titulo": "Detalle del estampado principal",
+          "ancho": 360
+        },
+        {
+          "archivo": "img/dragon-ball/goku-super-saiyajin-blue-4.webp",
+          "alto": 452,
+          "titulo": "Detalle del pecho y cuello",
+          "ancho": 360
+        },
+        {
+          "archivo": "img/dragon-ball/goku-super-saiyajin-blue-referencia-espalda.webp",
+          "alto": 2560,
+          "titulo": "Referencia del estampado de espalda",
+          "ancho": 2048
+        },
+        {
+          "archivo": "img/dragon-ball/goku-super-saiyajin-blue-referencia-frente.webp",
+          "alto": 2560,
+          "titulo": "Referencia del estampado de pecho",
+          "ancho": 2048
+        }
+      ],
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "prenda": "unisex",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "tema": "Dragon Ball",
+      "id": "goku-super-saiyajin-blue"
+    },
+    {
+      "precio": 50,
+      "texto": "Estampado principal en la espalda y detalle en el pecho.",
+      "color": "blanco",
+      "tipo": "B",
+      "nombre": "Goku Niño 1",
+      "fotos": [
+        {
+          "archivo": "img/dragon-ball/goku-nino-1-1.webp",
+          "alto": 496,
+          "titulo": "Estampado de espalda",
+          "ancho": 396
+        },
+        {
+          "archivo": "img/dragon-ball/goku-nino-1-2.webp",
+          "alto": 494,
+          "titulo": "Corte y detalle frontal",
+          "ancho": 394
+        },
+        {
+          "archivo": "img/dragon-ball/goku-nino-1-3.webp",
+          "alto": 496,
+          "titulo": "Vista frontal de la sesión",
+          "ancho": 396
+        },
+        {
+          "archivo": "img/dragon-ball/goku-nino-1-4.webp",
+          "alto": 496,
+          "titulo": "Detalle del estampado principal",
+          "ancho": 396
+        },
+        {
+          "archivo": "img/dragon-ball/goku-nino-1-5.webp",
+          "alto": 496,
+          "titulo": "Detalle del pecho y cuello",
+          "ancho": 396
+        },
+        {
+          "archivo": "img/dragon-ball/goku-nino-1-referencia-espalda.webp",
+          "alto": 2560,
+          "titulo": "Referencia del estampado de espalda",
+          "ancho": 2048
+        },
+        {
+          "archivo": "img/dragon-ball/goku-nino-1-referencia-frente.webp",
+          "alto": 2560,
+          "titulo": "Referencia del estampado de pecho",
+          "ancho": 2048
+        }
+      ],
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "prenda": "unisex",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "tema": "Dragon Ball",
+      "id": "goku-nino-1"
+    },
+    {
+      "precio": 50,
+      "texto": "Estampado principal en la espalda y detalle en el pecho.",
+      "color": "blanco",
+      "tipo": "B",
+      "nombre": "Goku 1",
+      "fotos": [
+        {
+          "archivo": "img/dragon-ball/goku-1-1.webp",
+          "alto": 496,
+          "titulo": "Estampado de espalda",
+          "ancho": 396
+        },
+        {
+          "archivo": "img/dragon-ball/goku-1-2.webp",
+          "alto": 494,
+          "titulo": "Detalle frontal puesto",
+          "ancho": 394
+        },
+        {
+          "archivo": "img/dragon-ball/goku-1-3.webp",
+          "alto": 496,
+          "titulo": "Espalda en movimiento",
+          "ancho": 396
+        },
+        {
+          "archivo": "img/dragon-ball/goku-1-4.webp",
+          "alto": 496,
+          "titulo": "Detalle del estampado principal",
+          "ancho": 396
+        },
+        {
+          "archivo": "img/dragon-ball/goku-1-5.webp",
+          "alto": 496,
+          "titulo": "Detalle del pecho y cuello",
+          "ancho": 396
+        },
+        {
+          "archivo": "img/dragon-ball/goku-1-referencia-espalda.webp",
+          "alto": 2560,
+          "titulo": "Referencia del estampado de espalda",
+          "ancho": 2048
+        },
+        {
+          "archivo": "img/dragon-ball/goku-1-referencia-frente.webp",
+          "alto": 2560,
+          "titulo": "Referencia del estampado de pecho",
+          "ancho": 2048
+        }
+      ],
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "prenda": "unisex",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "tema": "Dragon Ball",
+      "id": "goku-1"
     }
   ]
 }

@@ -11,14 +11,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="polos.css?v=32">
+  <link rel="stylesheet" href="polos.css?v=33">
 </head>
 <body>
   <header class="cab" id="cab">
     <a class="marca" href="#/" aria-label="BoomArt polos, inicio"><b>BOOMART</b><i>Polos</i></a>
     <nav class="nav" aria-label="Secciones">
       <a href="#coleccion" data-ir>Colección</a>
-      <a href="#probador" data-ir>Modelos</a>
       <a href="#proceso" data-ir>Cómo se hace</a>
       <a href="#prenda" data-ir>La prenda</a>
       <a href="#tallas" data-ir>Tallas</a>
@@ -30,19 +29,14 @@
     <!-- PORTADA -->
     <section class="hero" id="inicio">
       <div class="hero-txt">
-        <p class="etiqueta">Colección 01</p>
+        <p class="etiqueta">Colección Dragon Ball</p>
         <h1>Polos<br>de autor</h1>
-        <p class="lead">Estampados de alta definición sobre algodón pima peinado, de tacto suave y caída natural. Mira cada diseño puesto, de frente, de espalda y de lado, antes de pedirlo.</p>
+        <p class="lead">Estampados de alta definición sobre algodón pima peinado, de tacto suave y caída natural. Explora cada diseño puesto y acerca la imagen para ver sus estampados.</p>
         <div class="hero-acc">
           <a class="btn btn-osc" href="#coleccion" data-ir>Ver la colección</a>
-          <a class="btn btn-linea-osc" href="#probador" data-ir>Ver los modelos</a>
         </div>
       </div>
-      <div class="hero-vis" id="heroVis" aria-live="polite">
-        <canvas class="hero-c" id="heroA" aria-hidden="true"></canvas>
-        <canvas class="hero-c" id="heroB" aria-hidden="true"></canvas>
-        <div class="hero-pie"><span id="heroCap">Gryffindor · Blanco · Espalda</span><span class="hero-pts" id="heroPts"></span></div>
-      </div>
+      <div class="hero-fotos" id="heroFotos" aria-label="Polos de la colección"></div>
     </section>
 
     <ul class="beneficios" aria-label="Características">
@@ -57,29 +51,9 @@
       <div class="cont">
         <div class="sec-cab">
           <div><p class="etiqueta">Colección</p><h2>Elige tu diseño</h2></div>
-          <div class="filtros" id="filtros" role="toolbar" aria-label="Filtrar polos"></div>
         </div>
         <aside class="pack-lanzamiento" id="packLanzamiento" aria-label="Promoción de lanzamiento" hidden></aside>
-        <div class="catalogo-herramientas"><label class="buscador">Buscar un diseño<input id="buscarDisenos" type="search" placeholder="Diseño, personaje o colección" autocomplete="off"></label><label>Ordenar<select id="ordenDisenos"><option value="coleccion">Orden de la colección</option><option value="nombre">Nombre A–Z</option></select></label><button id="limpiarFiltros" type="button">Restablecer filtros</button></div>
-        <p id="catalogoCuenta" class="catalogo-cuenta" aria-live="polite"></p><div class="grilla" id="grilla"></div><button type="button" id="catalogoMas" class="btn btn-linea-osc" hidden>Ver más diseños</button>
-      </div>
-    </section>
-
-    <!-- MODELOS -->
-    <section class="sec sec-hueso" id="probador">
-      <div class="cont probador-teaser">
-        <div class="pt-txt">
-          <p class="etiqueta">Modelos</p>
-          <h2>Míralo puesto,<br>desde cada ángulo</h2>
-          <p class="lead">Mira cómo queda el polo unisex de frente, de espalda y de lado. Recorre la galería y acércate a cada estampado.</p>
-          <ol class="pasos">
-            <li><b>01</b><span>Escoge un diseño</span></li>
-            <li><b>02</b><span>Explora el polo puesto</span></li>
-            <li><b>03</b><span>Cambia de ángulo y acércate a cada detalle</span></li>
-          </ol>
-          <button class="btn btn-osc" id="abrirProbadorHome" type="button">Ver los modelos</button>
-        </div>
-        <div class="pt-vis" id="ptVis"></div>
+        <div class="grilla" id="grilla"></div>
       </div>
     </section>
 
@@ -123,7 +97,7 @@
         <div><p class="etiqueta">Preguntas</p><h2>Antes de pedir</h2></div>
         <div class="acordeon">
           <details><summary>¿Cómo hago un pedido?</summary><p>Elige el diseño y la talla, y escríbenos por WhatsApp para confirmar disponibilidad y coordinar tu pedido. También puedes consultar por el pack de lanzamiento de cinco polos.</p></details>
-          <details><summary>¿El estampado se ve igual que en las fotos?</summary><p>Las fotografías muestran cada diseño puesto sobre la prenda, de frente, de espalda y de lado. El estampado se imprime con el arte original en alta resolución (300 ppp) y las medidas que ves en la ficha de cada diseño. La posición puede variar unos milímetros según la talla, y los colores pueden verse algo distintos según tu pantalla.</p></details>
+          <details><summary>¿El estampado se ve igual que en las fotos?</summary><p>La galería incluye imágenes ilustrativas de la sesión y referencias del diseño de espalda y pecho. El estampado se imprime con el arte original en alta resolución (300 ppp). La posición puede variar unos milímetros según la talla, y los colores pueden verse algo distintos según tu pantalla.</p></details>
           <details><summary>¿De qué está hecho el polo?</summary><p>La prenda está confeccionada en algodón pima peinado de calidad premium, con hilado 20/1. Tiene un tacto suave y una caída natural.</p></details>
           <details><summary>¿Qué tallas hay y cómo elijo la mía?</summary><p>La colección se ofrece en tallas S, M y L unisex. Consulta las medidas por WhatsApp antes de hacer tu pedido.</p></details>
           <details><summary>¿Cuánto demora mi pedido?</summary><p>Cada polo se prepara después de confirmar tu pedido: unos 5 a 7 días hábiles entre impresión, curado y control de calidad. Luego coordinamos el envío contigo; el envío se coordina y se paga aparte al courier.</p></details>
@@ -142,22 +116,40 @@
     </div>
   </footer>
 
-  <!-- FICHA DE PRODUCTO -->
-  <div class="hoja" id="hoja" hidden role="dialog" aria-modal="true" aria-labelledby="fNombre"></div>
-  <!-- MODELOS -->
-  <div class="hoja prob" id="prob" hidden role="dialog" aria-modal="true" aria-label="Modelos"></div>
-  <!-- VISOR CON ZOOM -->
-  <div class="visor" id="visor" hidden role="dialog" aria-modal="true" aria-label="Zoom de la foto">
-    <div class="visor-caja">
-    <div class="visor-barra"><span id="visorTit"></span><div><button type="button" id="vMenos" aria-label="Alejar">−</button><b id="vZoom">100 %</b><button type="button" id="vMas" aria-label="Acercar">+</button><button type="button" id="vReset" aria-label="Restablecer">Ajustar</button><button type="button" id="vCerrar" aria-label="Cerrar">✕</button></div></div>
-    <div class="visor-esc" id="visorEsc"><div class="visor-lienzo" id="visorLienzo"></div></div>
-    <p class="visor-ayuda">Rueda o pellizco para acercar · arrastra para moverte · doble clic para alternar</p>
+  <dialog id="ficha" aria-labelledby="nombreFicha">
+    <form method="dialog" class="ficha-cerrar"><button type="submit">Cerrar ficha</button></form>
+    <div class="ficha-producto">
+      <section aria-label="Fotos del polo">
+        <a id="fotoFicha" class="foto-ficha" target="_blank" rel="noopener"></a>
+        <div class="controles-foto">
+          <button id="anteriorFoto" type="button" aria-label="Foto anterior">←</button>
+          <span id="fotoTexto" aria-live="polite"></span>
+          <button id="siguienteFoto" type="button" aria-label="Foto siguiente">→</button>
+        </div>
+        <div id="miniaturas" aria-label="Elegir foto"></div><p class="nota">Sesión ilustrativa. Las últimas dos fotos muestran las referencias del diseño.</p>
+      </section>
+      <section>
+        <p class="etiqueta">Dragon Ball</p>
+        <h2 id="nombreFicha"></h2>
+        <p id="colorFicha"></p><p id="precioFicha" class="precio"></p>
+        <p id="descripcionFicha"></p><p id="materialFicha"></p>
+        <label for="tallaFicha">Talla unisex</label> <select id="tallaFicha"></select>
+        <p>Consulta las medidas por WhatsApp antes de pedir.</p>
+        <div class="ficha-acciones">
+          <a id="pedirPolo" class="btn btn-osc" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+          <button id="guardarPolo" type="button">Guardar en mi selección</button>
+        </div>
+      </section>
     </div>
-  </div>
-
-  <dialog id="dialogoColeccion" class="dialogo-coleccion"></dialog>
+  </dialog>
+  <dialog id="misPolos" aria-labelledby="tituloSeleccion">
+    <form method="dialog" class="ficha-cerrar"><button type="submit">Cerrar selección</button></form>
+    <h2 id="tituloSeleccion">Mi selección</h2>
+    <p id="seleccionVacia">Aún no has guardado ningún polo de la colección.</p>
+    <ul id="listaSeleccion"></ul>
+    <a id="consultarSeleccion" class="btn btn-osc" target="_blank" rel="noopener">Consultar mi selección</a>
+  </dialog>
   <script src="catalogo-core.js?v=3"></script>
-  <script src="perspectiva.js?v=1"></script>
-  <script src="polos.js?v=38"></script>
+  <script src="polos.js?v=39"></script>
 </body>
 </html>

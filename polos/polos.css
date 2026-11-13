@@ -248,3 +248,25 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
 .seleccion-lista button{background:transparent;border:0;text-decoration:underline;min-height:44px;color:var(--tinta);cursor:pointer}
 :focus-visible{outline:2px solid #9c2236;outline-offset:4px}
 @media(max-width:600px){.catalogo-herramientas{align-items:stretch;gap:12px}.catalogo-herramientas .buscador{flex-basis:100%}.catalogo-herramientas label{flex:1;min-width:0}.catalogo-herramientas button{font-size:11px}.seleccion-cab{font-size:11px;padding:0 8px}.dialogo-coleccion{padding:20px}.dialogo-coleccion td,.dialogo-coleccion th{padding:12px 7px}.acciones .btn{width:100%}}
+/* Galería de producto. Las fotografías conservan el marco 4:5. */
+.hero-fotos{display:grid;grid-template-columns:1fr 1fr;gap:4px;align-items:stretch;background:#0b0b0b}
+.hero-fotos img,.producto-card img,.foto-ficha img{width:100%;height:auto;display:block;aspect-ratio:4/5;object-fit:contain}
+.producto-card{display:block;text-decoration:none;color:inherit;background:#faf8f3;padding-bottom:1rem}
+.producto-card h3,.producto-card p{margin:.45rem 1rem 0}
+.producto-card img,.foto-ficha img{background:#171717}
+.producto-card:focus-visible,dialog :focus-visible{outline:2px solid #e1132f;outline-offset:3px}
+#ficha{width:min(1120px,calc(100% - 24px));max-height:calc(100dvh - 24px);border:0;background:#faf8f3;color:#0b0b0b;padding:1rem;overflow:auto}
+#ficha::backdrop,#misPolos::backdrop{background:#0009}
+.ficha-producto{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1rem,4vw,3rem)}
+.ficha-producto h2{margin:0}.foto-ficha{display:block}.foto-ficha img{max-height:66dvh}
+#miniaturas{display:flex;gap:.5rem;overflow:auto;padding:4px}
+#miniaturas button{flex:0 0 58px;padding:0;border:1px solid #a9a198}
+#miniaturas button[aria-pressed=true]{border:2px solid #e1132f}
+#miniaturas img{width:100%;height:auto;display:block}
+.controles-foto,.ficha-acciones{display:flex;gap:.65rem;align-items:center;flex-wrap:wrap;margin-block:.75rem}
+.ficha-acciones a,.ficha-acciones button{max-width:100%}
+.ficha-cerrar{display:flex;justify-content:flex-end;margin-bottom:.75rem}
+.ficha-cerrar button,.controles-foto button,#guardarPolo,#tallaFicha{padding:.4rem .65rem;font:inherit}
+#misPolos{max-width:calc(100% - 24px);padding:1rem;border:0}
+#listaSeleccion li{margin:.5rem 0}#listaSeleccion button{margin-left:.5rem}
+@media(max-width:650px){.ficha-producto{grid-template-columns:1fr}.hero-fotos img{max-height:62dvh}.foto-ficha img{max-height:55dvh}}
