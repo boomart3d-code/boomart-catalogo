@@ -91,8 +91,14 @@
   function resolveVariant(product, variantKey) {
     if (!product) return null;
     if (product.tallas) {
-      if (!product.tallas.includes(variantKey)) return null;
-      return { variantKey, variantLabel: `Talla ${variantKey}`, unitPrice: Number(product.regularPrice) };
+      const [cut, size, extra] = String(variantKey || "").split(":");
+      const label = {mujer: "Mujer", hombre: "Hombre"}[cut];
+      const unitPrice = Number(product.regularPrice);
+      if (product.tallas.includes(variantKey)) {
+        return { variantKey, variantLabel: `Talla ${variantKey} · Corte pendiente`, unitPrice, needsCut: true };
+      }
+      if (!label || extra !== undefined || !product.cortes?.[cut]?.includes(size)) return null;
+      return { variantKey, variantLabel: `${label} · Talla ${size}`, unitPrice };
     }
     if (product.modelOptions?.length) {
       const parts = String(variantKey || "").split(":");
@@ -206,6 +212,7 @@
         image: variant.image || product.image || "",
         variantKey: variant.variantKey,
         variantLabel: variant.variantLabel,
+        ...(variant.needsCut && { needsCut: true }),
         unitPrice: variant.unitPrice,
         quantity,
         subtotal: fromCents(unitCents * quantity)
@@ -304,6 +311,22 @@
     return getState();
   }
 
+  function choosePolosCut(productId, size, cut) {
+    const product = findProduct(productId);
+    const pending = items.find(line => line.productId === productId && line.variant === size);
+    const variant = cut + ":" + size;
+    if (!pending || !product?.cortes?.[cut]?.includes(size)) return;
+    const existing = items.find(line => line.productId === productId && line.variant === variant);
+    if (existing) {
+      existing.quantity += pending.quantity;
+      items = items.filter(line => line !== pending);
+    } else {
+      pending.variant = variant;
+    }
+    persist();
+    notify();
+  }
+
   function remove(productId, variantKey) {
     const key = lineKey(productId, variantKey || null);
     items = items.filter((line) => lineKey(line.productId, line.variant) !== key);
@@ -339,6 +362,7 @@
     add,
     addSkinPack,
     setQuantity,
+    choosePolosCut,
     remove,
     clear,
     subscribe,

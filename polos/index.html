@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../src/styles.css?v=69">
-  <link rel="stylesheet" href="polos.css?v=42">
+  <link rel="stylesheet" href="polos.css?v=43">
 </head>
 <body class="polos-store">
   <header class="cab" id="cab">
@@ -98,7 +98,7 @@
         <div class="sec-cab"><div><p class="etiqueta">La prenda</p><h2>Polos de la colección</h2></div>
           <p class="lead" style="max-width:46ch;margin:0">Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.</p></div>
         <div class="prenda-grid">
-          <article><h3>Corte unisex</h3><p>Encuentra tu talla entre S, M y L.</p></article>
+          <article><h3>Cortes para hombre y mujer</h3><p>Elige tu corte y talla en la ficha del polo.</p></article>
           <article><h3>Colores</h3><p>Cada ficha indica el color del polo que corresponde a ese diseño.</p></article>
           <article><h3>Impresión DTF</h3><p>En la galería puedes acercarte para ver los detalles de cada estampado.</p></article>
         </div>
@@ -109,8 +109,8 @@
     <section class="sec sec-hueso" id="tallas">
       <div class="cont tallas">
         <div><p class="etiqueta">Guía de tallas</p><h2>Encuentra tu talla</h2>
-          <p class="lead">Los polos son de corte unisex. Consulta las medidas por WhatsApp antes de elegir tu talla.</p></div>
-        <div><p class="etiqueta">Tallas unisex</p><p class="lead"><strong>S · M · L</strong></p></div>
+          <p class="lead">Compara las medidas de cada corte con las de un polo que te quede bien. Las medidas están en centímetros.</p></div>
+        <div id="guiasCorte"></div>
       </div>
     </section>
 
@@ -122,8 +122,8 @@
           <details><summary>¿Cómo hago un pedido?</summary><p>Elige el diseño y la talla, y escríbenos por WhatsApp para confirmar disponibilidad y coordinar tu pedido. También puedes consultar por el pack de lanzamiento de cinco polos.</p></details>
           <details><summary>¿El estampado se ve igual que en las fotos?</summary><p>La galería incluye imágenes ilustrativas de la sesión y referencias del diseño de espalda y pecho. El estampado se imprime con el arte original en alta resolución (300 ppp). La posición puede variar unos milímetros según la talla, y los colores pueden verse algo distintos según tu pantalla.</p></details>
           <details><summary>¿De qué está hecho el polo?</summary><p>La prenda está confeccionada en algodón pima peinado de calidad premium, con hilado 20/1. Tiene un tacto suave y una caída natural.</p></details>
-          <details><summary>¿Qué tallas hay y cómo elijo la mía?</summary><p>La colección se ofrece en tallas S, M y L unisex. Consulta las medidas por WhatsApp antes de hacer tu pedido.</p></details>
-          <details><summary>¿Cuánto demora mi pedido?</summary><p>Cada polo se prepara después de confirmar tu pedido: unos 5 a 7 días hábiles entre impresión, curado y control de calidad. Luego coordinamos el envío contigo; el envío se coordina y se paga aparte al courier.</p></details>
+          <details><summary>¿Qué tallas hay y cómo elijo la mía?</summary><p>Hay tallas S, M y L en los cortes de hombre y mujer. Consulta la guía de tallas y elige primero el corte en la ficha.</p></details>
+          <details><summary>¿Cuánto demora mi pedido?</summary><p>Despachamos tu pedido dentro de las 24 horas de confirmarlo. Podemos coordinar el envío para ese mismo día o, a más tardar, para el día siguiente. El costo de envío se coordina y se paga aparte al courier.</p></details>
           <details><summary>¿Cómo se lava?</summary><p>Espera 24 a 48 horas antes del primer lavado, para que el estampado termine de curar. Lávalo del revés, en ciclo suave con agua fría (hasta 30 °C) y detergente suave; sin lejía ni suavizante. Sécalo a la sombra o en secadora a temperatura baja. Si lo planchas, hazlo del revés, a temperatura media-baja y sin pasar la plancha sobre el estampado.</p></details>
           <details><summary>¿Puedo pedir un diseño propio?</summary><p>Sí. Escríbenos por WhatsApp con tu idea o tu imagen; mientras más grande y nítida, mejor (lo ideal es un PNG con fondo transparente o un archivo vectorial). Preparamos el arte, te mostramos cómo quedaría en el polo y confirmamos medidas y precio antes de imprimir.</p></details>
         </div>
@@ -156,8 +156,11 @@
         <h2 id="nombreFicha"></h2>
         <p id="colorFicha"></p><p id="precioFicha" class="precio"></p>
         <p id="descripcionFicha"></p><p id="materialFicha"></p>
-        <label for="tallaFicha">Talla unisex</label> <select id="tallaFicha"></select>
-        <p>Consulta las medidas por WhatsApp antes de pedir.</p>
+        <div class="opciones-polo">
+          <label for="corteFicha">Corte <select id="corteFicha"><option value="">Elige el corte</option><option value="mujer">Mujer</option><option value="hombre">Hombre</option></select></label>
+          <label for="tallaFicha">Talla <select id="tallaFicha" disabled></select></label>
+        </div>
+        <p id="medidasFicha" aria-live="polite"></p>
         <div class="ficha-acciones">
           <button id="agregarPolo" type="button" class="btn btn-osc">Agregar al carrito</button>
         </div>
@@ -194,6 +197,7 @@
           <strong id="cartTotalDisplay">S/0.00</strong>
         </div>
         <p class="cart-pack-progress" id="cartPackProgress" role="status"></p>
+        <p class="cart-note" id="cartCutHint" hidden>Elige el corte de los polos guardados para continuar.</p>
         <p class="cart-note">El envío se coordina aparte según tu destino, no está incluido.</p>
         <button type="button" class="button primary full" id="startCheckout" disabled>Ir a pagar</button>
         <button type="button" class="link-button" id="clearCartBtn">Vaciar carrito</button>
@@ -301,12 +305,12 @@
     </dialog>
 
   <script src="../src/checkout-config.js?v=9"></script>
-  <script src="../src/cart.js?v=15"></script>
-  <script src="../src/checkout.js?v=36"></script>
+  <script src="../src/cart.js?v=16"></script>
+  <script src="../src/checkout.js?v=37"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
   <script src="../src/supabase-config.js?v=1"></script>
   <script src="../src/registro-web.js?v=5"></script>
   <script src="catalogo-core.js?v=3"></script>
-  <script src="polos.js?v=54"></script>
+  <script src="polos.js?v=55"></script>
 </body>
 </html>

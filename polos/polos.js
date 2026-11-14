@@ -30,6 +30,44 @@
     $("fotoTexto").textContent = shot.titulo + " · " + (shotIndex + 1) + " de " + photos.length;
     for (const [i, b] of [...$("miniaturas").children].entries()) b.setAttribute("aria-pressed", String(i === shotIndex));
   }
+  function updateSizeDetail() {
+    const size = data.medidas[$("corteFicha").value]?.[$("tallaFicha").value];
+    $("medidasFicha").textContent = size
+      ? `Pecho ${size.pecho} cm · Largo ${size.largo} cm · Hombros ${size.hombros} cm · Manga ${size.manga} cm`
+      : "Elige corte y talla para ver las medidas.";
+    $("agregarPolo").disabled = !size;
+  }
+
+  function updateSizes() {
+    const sizes = data.medidas[$("corteFicha").value];
+    $("tallaFicha").replaceChildren(new Option("Elige la talla", ""),
+      ...selected.tallas.filter(talla => sizes?.[talla]).map(talla => new Option(talla, talla)));
+    $("tallaFicha").disabled = !sizes;
+    updateSizeDetail();
+  }
+
+  function renderSizeGuide() {
+    for (const [cut, sizes] of Object.entries(data.medidas)) {
+      const table = document.createElement("table");
+      table.createCaption().textContent = cut === "hombre" ? "Hombre" : "Mujer";
+      const head = table.createTHead().insertRow();
+      for (const label of ["Talla", "Pecho", "Largo", "Hombros", "Manga"]) {
+        const cell = document.createElement("th");
+        cell.scope = "col";
+        cell.textContent = label;
+        head.append(cell);
+      }
+      const body = table.createTBody();
+      for (const [size, dimensions] of Object.entries(sizes)) {
+        const row = body.insertRow();
+        for (const value of [size, dimensions.pecho, dimensions.largo, dimensions.hombros, dimensions.manga]) {
+          row.insertCell().textContent = value;
+        }
+      }
+      $("guiasCorte").append(table);
+    }
+  }
+
   function openProduct(product) {
     selected = product;
     $("temaFicha").textContent = product.tema;
@@ -37,8 +75,9 @@
     $("precioFicha").textContent = price(product.precio) + " por unidad";
     $("descripcionFicha").textContent = product.texto;
     $("materialFicha").textContent = product.material;
-    $("colorFicha").textContent = "Polo " + product.color + " · Corte unisex";
-    $("tallaFicha").replaceChildren(...product.tallas.map(t => new Option(t, t)));
+    $("colorFicha").textContent = "Polo " + product.color;
+    $("corteFicha").value = "";
+    updateSizes();
     $("miniaturas").replaceChildren(...product.fotos.map((shot, i) => {
       const b = button("", () => showShot(i));
       b.setAttribute("aria-label", shot.titulo);
@@ -202,7 +241,9 @@
     data = next;
     window.BOOMART_PRODUCTS = data.productos.map(p => ({
       id: p.id, name: p.nombre, regularPrice: p.precio, category: p.tema,
-      image: cartPhoto(p).archivo, tallas: p.tallas
+      image: cartPhoto(p).archivo, tallas: p.tallas,
+      cortes: Object.fromEntries(Object.entries(data.medidas).map(([cut, sizes]) =>
+        [cut, p.tallas.filter(size => sizes[size])]))
     }));
     window.BOOMART_POLOS_PROMOTION = data.promocion;
     try {
@@ -218,6 +259,7 @@
       }
     } catch {}
     window.BoomartCart.refresh();
+    renderSizeGuide();
     iniciarCarrusel();
     iniciarBusqueda();
     entradasAlDesplazar();
@@ -226,8 +268,10 @@
       $("packLanzamiento").hidden = false;
       $("packLanzamiento").textContent = "Pack de lanzamiento · " + promo.cantidad + " polos por " + price(promo.precio);
     }
+    $("corteFicha").onchange = updateSizes;
+    $("tallaFicha").onchange = updateSizeDetail;
     $("agregarPolo").onclick = () => {
-      window.BoomartCart.add(selected.id, $("tallaFicha").value, 1);
+      window.BoomartCart.add(selected.id, `${$("corteFicha").value}:${$("tallaFicha").value}`, 1);
       details.close();
       $("cartToggle").click();
     };

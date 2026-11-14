@@ -137,6 +137,8 @@
       <div class="cart-line-info">
         <p class="cart-line-name">${line.name}</p>
         ${line.variantLabel ? `<p class="cart-line-variant">${line.variantLabel}</p>` : ""}
+        ${line.needsCut ? `<label class="cart-cut-label">Corte
+          <select data-cart-cut><option value="">Elige el corte</option><option value="mujer">Mujer</option><option value="hombre">Hombre</option></select></label>` : ""}
         <p class="cart-line-price">${money(line.unitPrice)} c/u</p>
         <div class="qty-stepper small" role="group" aria-label="Cantidad de ${line.name}">
           <button type="button" class="qty-btn" data-cart-qty-decrease aria-label="Quitar una unidad">−</button>
@@ -173,7 +175,10 @@
       cartDiscountDisplay.textContent = `-${money(cartState.totals.discount)}`;
     }
     cartTotalDisplay.textContent = money(cartState.totals.total);
-    startCheckoutBtn.disabled = cartState.lines.length === 0;
+    const pendingCut = cartState.lines.some(line => line.needsCut);
+    startCheckoutBtn.disabled = cartState.lines.length === 0 || pendingCut;
+    const cutHint = document.querySelector("#cartCutHint");
+    if (cutHint) cutHint.hidden = !pendingCut;
     const packProgress = document.querySelector("#cartPackProgress");
     const promo = window.BOOMART_POLOS_PROMOTION;
     if (packProgress && promo) {
@@ -473,6 +478,14 @@
     }
   });
 
+  if (polos) cartLinesEl.addEventListener("change", (event) => {
+    const cut = event.target.closest("[data-cart-cut]");
+    if (!cut?.value) return;
+    const line = cut.closest("[data-line-product]");
+    window.BoomartCart.choosePolosCut(line.dataset.lineProduct, line.dataset.lineVariant, cut.value);
+    startCheckoutBtn.focus();
+  });
+
   window.BoomartCart.subscribe(renderCart);
   renderCart();
   // El carrito puede traer productos guardados de una visita anterior antes de que
@@ -643,6 +656,7 @@
       ? `
         <p class="delivery-terms-title">${esc(destinationLabel())}</p>
         <p>${esc(terms.summary)}</p>
+        ${polos ? "<p>Despacho dentro de las 24 horas de confirmado el pedido.</p>" : ""}
         <p>${esc(terms.balanceCondition)}</p>
       `
       : "";

@@ -561,3 +561,17 @@ button.foto-ficha {
   height: min(76vh, calc(100dvh - 108px));
   object-fit: contain;
 }
+.opciones-polo { display: flex; flex-wrap: wrap; gap: .75rem; }
+.opciones-polo label, .cart-cut-label { display: grid; gap: .25rem; }
+.opciones-polo select, .cart-cut-label select {
+  min-height: 44px;
+  min-width: 0;
+  max-width: 100%;
+  padding: .4rem .5rem;
+  font-size: 16px;
+}
+#medidasFicha { color: var(--gris); font-size: .9rem; }
+#guiasCorte table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+#guiasCorte table + table { margin-top: 1rem; }
+#guiasCorte caption { text-align: left; font-weight: 700; padding-bottom: .4rem; }
+#guiasCorte :is(th, td) { text-align: left; padding: .4rem .2rem; border-bottom: 1px solid var(--linea); }
