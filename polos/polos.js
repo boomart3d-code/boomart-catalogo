@@ -154,7 +154,20 @@
       const action = document.createElement("span");
       action.className = "accion-tarjeta";
       action.textContent = "Ver polo →";
-      a.append(image(p.fotos[0], p.nombre), title, meta, action);
+      const media = document.createElement("div");
+      media.className = "producto-fotos";
+      media.append(image(p.fotos[0], p.nombre));
+      if (p.fotos[1] && matchMedia("(any-hover: hover) and (any-pointer: fine)").matches) {
+        media.addEventListener("pointerenter", (event) => {
+          if (event.pointerType !== "mouse" || media.querySelector(".producto-foto-siguiente")) return;
+          const preview = image(p.fotos[1], "", false);
+          preview.className = "producto-foto-siguiente";
+          preview.setAttribute("aria-hidden", "true");
+          media.append(preview);
+          preview.decode().then(() => preview.classList.add("lista")).catch(() => preview.remove());
+        });
+      }
+      a.append(media, title, meta, action);
       cards.set(p.id, a);
     }
     function pintar() {
