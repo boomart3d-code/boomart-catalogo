@@ -653,6 +653,66 @@
       "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
       "tema": "Dragon Ball",
       "id": "goku-1"
+    },
+    {
+      "id": "cinco-caballeros-de-bronce",
+      "nombre": "Los cinco Caballeros de Bronce",
+      "tema": "Saint Seiya",
+      "texto": "Los cinco Caballeros de Bronce de perfil en la espalda, con un estampado vertical en el pecho y el logotipo de Saint Seiya en la manga.",
+      "tipo": "B",
+      "color": "negro",
+      "precio": 50,
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "prenda": "unisex",
+      "fotos": [
+        {
+          "archivo": "img/saint-seiya/cinco-caballeros-de-bronce/01-espalda-barra.webp",
+          "titulo": "Espalda junto a la barra",
+          "ancho": 577,
+          "alto": 897
+        },
+        {
+          "archivo": "img/saint-seiya/cinco-caballeros-de-bronce/02-frente-puerta.webp",
+          "titulo": "Frente en la entrada",
+          "ancho": 580,
+          "alto": 897
+        },
+        {
+          "archivo": "img/saint-seiya/cinco-caballeros-de-bronce/03-frente-ventana.webp",
+          "titulo": "Frente junto a la ventana",
+          "ancho": 579,
+          "alto": 897
+        },
+        {
+          "archivo": "img/saint-seiya/cinco-caballeros-de-bronce/04-detalle-espalda.webp",
+          "titulo": "Detalle del estampado de espalda",
+          "ancho": 556,
+          "alto": 1024
+        },
+        {
+          "archivo": "img/saint-seiya/cinco-caballeros-de-bronce/05-detalle-manga.webp",
+          "titulo": "Detalle de la manga derecha",
+          "ancho": 453,
+          "alto": 1024
+        },
+        {
+          "archivo": "img/saint-seiya/cinco-caballeros-de-bronce/06-pecho-ventana.webp",
+          "titulo": "Pecho junto a la ventana",
+          "ancho": 509,
+          "alto": 1024
+        },
+        {
+          "archivo": "img/saint-seiya/cinco-caballeros-de-bronce/07-detalle-frontal.webp",
+          "titulo": "Plano detalle del estampado frontal",
+          "ancho": 1122,
+          "alto": 1402
+        }
+      ]
     }
   ],
   "avatares": [],
