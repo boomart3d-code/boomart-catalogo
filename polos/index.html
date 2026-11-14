@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="polos.css?v=34">
+  <link rel="stylesheet" href="polos.css?v=35">
 </head>
 <body>
   <header class="cab" id="cab">
@@ -36,7 +36,18 @@
           <a class="btn btn-osc" href="#coleccion" data-ir>Ver la colección</a>
         </div>
       </div>
-      <div class="hero-fotos" id="heroFotos" aria-label="Polos de la colección"></div>
+      <section class="portada-carrusel" aria-label="Polos destacados" aria-roledescription="carrusel">
+        <div class="hero-fotos" id="heroFotos"></div>
+        <div class="carrusel-pie">
+          <div><p id="poloDestacado"></p><a id="verDestacado">Ver este polo →</a></div>
+          <div class="carrusel-mandos">
+            <button id="carruselAnterior" type="button" aria-label="Polo anterior">←</button>
+            <span id="posicionCarrusel"></span>
+            <button id="carruselSiguiente" type="button" aria-label="Polo siguiente">→</button>
+            <button id="pausarCarrusel" type="button" hidden>Pausar</button>
+          </div>
+        </div>
+      </section>
     </section>
 
     <ul class="beneficios" aria-label="Características">
@@ -53,6 +64,13 @@
           <div><p class="etiqueta">Colección</p><h2>Elige tu diseño</h2></div>
         </div>
         <aside class="pack-lanzamiento" id="packLanzamiento" aria-label="Promoción de lanzamiento" hidden></aside>
+        <div class="tienda-filtros">
+          <label>Buscar un polo<input id="buscarPolo" type="search" placeholder="Nombre, personaje o colección"></label>
+          <label>Colección<select id="coleccionPolo"><option value="todos">Todas las colecciones</option></select></label>
+          <label>Orden<select id="ordenPolo"><option value="">Destacados</option><option value="nombre">Nombre A–Z</option></select></label>
+        </div>
+        <p id="resultadoPolos" role="status"></p>
+        <div id="sinPolos" hidden><p>No encontramos polos con esos filtros.</p><button id="limpiarPolos" type="button">Ver todos los polos</button></div>
         <div class="grilla" id="grilla"></div>
       </div>
     </section>
@@ -136,7 +154,7 @@
         <label for="tallaFicha">Talla unisex</label> <select id="tallaFicha"></select>
         <p>Consulta las medidas por WhatsApp antes de pedir.</p>
         <div class="ficha-acciones">
-          <a id="pedirPolo" class="btn btn-osc" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+          <a id="pedirPolo" class="btn btn-osc" target="_blank" rel="noopener">Pedir por WhatsApp</a>
           <button id="guardarPolo" type="button">Guardar en mi selección</button>
         </div>
       </section>
@@ -150,6 +168,6 @@
     <a id="consultarSeleccion" class="btn btn-osc" target="_blank" rel="noopener">Consultar mi selección</a>
   </dialog>
   <script src="catalogo-core.js?v=3"></script>
-  <script src="polos.js?v=41"></script>
+  <script src="polos.js?v=42"></script>
 </body>
 </html>

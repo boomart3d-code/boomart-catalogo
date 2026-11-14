@@ -41,7 +41,7 @@
     const entry = CATALOGO_UI.variante(selected, "unisex", talla);
     const pedir = $("pedirPolo");
     if (!talla) return;
-    pedir.href = wa("Hola BoomArt. Quiero consultar por " + CATALOGO_UI.mensaje(entry) + ".");
+    pedir.href = wa("Hola BoomArt. Quiero pedir " + CATALOGO_UI.mensaje(entry) + ".");
     $("guardarPolo").textContent = saved.some(v => v.clave === entry.clave) ? "Guardado en mi selección" : "Guardar en mi selección";
     $("guardarPolo").onclick = () => {
       if (!saved.some(v => v.clave === entry.clave)) saved.push(entry);
@@ -106,6 +106,114 @@
     }
   }
 
+
+  function iniciarCarrusel() {
+    const rail = $("heroFotos");
+    const products = data.productos;
+    if (!products.length) return;
+    let active = 0;
+    const slides = products.map((product, index) => {
+      const link = document.createElement("a");
+      link.className = "hero-polo";
+      link.href = "#/p/" + product.id;
+      link.append(image(product.fotos[0], product.nombre, index > 2 && index !== products.length - 1));
+      link.addEventListener("click", (event) => {
+        if (index === active || event.ctrlKey || event.metaKey) return;
+        event.preventDefault();
+        show(index);
+      });
+      return link;
+    });
+    function show(index) {
+      const n = slides.length;
+      active = (index + n) % n;
+      slides.forEach((slide, i) => {
+        const delta = (i - active + n) % n;
+        const position = delta === 0 ? "actual" : delta === 1 ? "siguiente" : delta === n - 1 ? "anterior" : "fuera";
+        slide.dataset.posicion = position;
+        slide.tabIndex = position === "actual" ? 0 : -1;
+        slide.setAttribute("aria-hidden", String(position !== "actual"));
+      });
+      const product = products[active];
+      $("poloDestacado").textContent = product.nombre + " · " + price(product.precio);
+      $("verDestacado").href = "#/p/" + product.id;
+      $("posicionCarrusel").textContent = (active + 1) + " / " + n;
+    }
+    rail.replaceChildren(...slides);
+    $("carruselAnterior").onclick = () => show(active - 1);
+    $("carruselSiguiente").onclick = () => show(active + 1);
+    $("carruselAnterior").disabled = $("carruselSiguiente").disabled = slides.length < 2;
+    rail.parentElement.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      event.preventDefault();
+      const refocus = rail.contains(document.activeElement);
+      show(active + (event.key === "ArrowLeft" ? -1 : 1));
+      if (refocus) slides[active].focus();
+    });
+    let start;
+    rail.addEventListener("touchstart", (event) => { start = event.touches[0]; }, {passive:true});
+    rail.addEventListener("touchend", (event) => {
+      if (!start) return;
+      const end = event.changedTouches[0];
+      const x = end.clientX - start.clientX;
+      const y = end.clientY - start.clientY;
+      start = null;
+      if (Math.abs(x) > 45 && Math.abs(x) > Math.abs(y)) show(active + (x > 0 ? -1 : 1));
+    }, {passive:true});
+    show(0);
+    if (slides.length < 2 || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const region = rail.parentElement;
+    let playing = true;
+    const toggle = $("pausarCarrusel");
+    toggle.hidden = false;
+    toggle.onclick = () => {
+      playing = !playing;
+      toggle.textContent = playing ? "Pausar" : "Reproducir";
+    };
+    setInterval(() => {
+      if (playing && !document.hidden && !details.open && !choice.open && !region.matches(":hover, :focus-within") && region.getBoundingClientRect().bottom > 0) show(active - 1);
+    }, 5600);
+  }
+
+  function iniciarBusqueda() {
+    const search = $("buscarPolo");
+    const themes = $("coleccionPolo");
+    const sort = $("ordenPolo");
+    for (const name of new Set(data.productos.map(p => p.tema))) themes.add(new Option(name, name));
+    const cards = new Map();
+    for (const p of data.productos) {
+      const a = document.createElement("a");
+      a.className = "producto-card";
+      a.href = "#/p/" + p.id;
+      const title = document.createElement("h3");
+      title.textContent = p.nombre;
+      const meta = document.createElement("p");
+      meta.textContent = p.tema + " · " + price(p.precio);
+      const action = document.createElement("span");
+      action.className = "accion-tarjeta";
+      action.textContent = "Ver polo →";
+      a.append(image(p.fotos[0], p.nombre), title, meta, action);
+      cards.set(p.id, a);
+    }
+    function pintar() {
+      const list = CATALOGO_UI.filtrar(data.productos, {busqueda: search.value, tema: themes.value, orden: sort.value});
+      $("grilla").replaceChildren(...list.map(p => cards.get(p.id)));
+      $("resultadoPolos").textContent = list.length === 1 ? "1 polo" : list.length + " polos";
+      $("sinPolos").hidden = list.length !== 0;
+    }
+    search.addEventListener("input", pintar);
+    themes.addEventListener("change", pintar);
+    sort.addEventListener("change", pintar);
+    $("limpiarPolos").onclick = () => {
+      search.value = "";
+      themes.value = "todos";
+      sort.value = "";
+      pintar();
+      search.focus();
+    };
+    pintar();
+  }
+
   function init(next) {
     data = next;
     try {
@@ -113,27 +221,8 @@
       if (Array.isArray(stored)) saved = stored.filter(v => v && data.productos.some(p => p.id === v.id && p.tallas.includes(v.talla)));
     } catch {}
     remember();
-    $("heroFotos").replaceChildren(...data.productos.slice(0, 2).map(p => {
-      const link = document.createElement("a");
-      link.className = "hero-polo";
-      link.href = "#/p/" + p.id;
-      const caption = document.createElement("span");
-      caption.textContent = p.nombre;
-      link.append(image(p.fotos[0], p.nombre + " · " + p.fotos[0].titulo, false), caption);
-      return link;
-    }));
-
-    $("grilla").replaceChildren(...data.productos.map(p => {
-      const a = document.createElement("a");
-      a.className = "producto-card";
-      a.href = "#/p/" + p.id;
-      const title = document.createElement("h3");
-      title.textContent = p.nombre;
-      const meta = document.createElement("p");
-      meta.textContent = "Polo " + p.color + " · " + price(p.precio);
-      a.append(image(p.fotos[0], p.nombre), title, meta);
-      return a;
-    }));
+    iniciarCarrusel();
+    iniciarBusqueda();
     entradasAlDesplazar();
     const promo = data.promocion;
     if (promo) {
