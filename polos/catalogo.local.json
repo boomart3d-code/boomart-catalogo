@@ -705,6 +705,114 @@
           "alto": 1402
         }
       ]
+    },
+    {
+      "id": "hyoga-de-cisne",
+      "nombre": "Hyoga de Cisne",
+      "tema": "Saint Seiya",
+      "texto": "Hyoga con su armadura azul en la espalda, una figura centrada en el pecho y el emblema del Cisne en la manga.",
+      "tipo": "B",
+      "color": "negro",
+      "precio": 50,
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "prenda": "unisex",
+      "fotos": [
+        {
+          "archivo": "img/saint-seiya/hyoga-de-cisne/01-mirando-al-mar.webp",
+          "titulo": "Espalda frente al mar",
+          "ancho": 587,
+          "alto": 887
+        },
+        {
+          "archivo": "img/saint-seiya/hyoga-de-cisne/02-escaleras.webp",
+          "titulo": "Frente en las escaleras",
+          "ancho": 587,
+          "alto": 887
+        },
+        {
+          "archivo": "img/saint-seiya/hyoga-de-cisne/03-paseo.webp",
+          "titulo": "Paseo junto al mar",
+          "ancho": 587,
+          "alto": 887
+        },
+        {
+          "archivo": "img/saint-seiya/hyoga-de-cisne/04-detalle-pecho.webp",
+          "titulo": "Detalle del estampado del pecho",
+          "ancho": 622,
+          "alto": 836
+        },
+        {
+          "archivo": "img/saint-seiya/hyoga-de-cisne/05-detalle-espalda.webp",
+          "titulo": "Detalle del estampado de espalda",
+          "ancho": 622,
+          "alto": 836
+        },
+        {
+          "archivo": "img/saint-seiya/hyoga-de-cisne/06-detalle-manga.webp",
+          "titulo": "Detalle de la manga derecha",
+          "ancho": 621,
+          "alto": 836
+        }
+      ]
+    },
+    {
+      "id": "shiryu-de-dragon",
+      "nombre": "Shiryu de Dragón",
+      "tema": "Saint Seiya",
+      "texto": "Shiryu con el dragón turquesa en la espalda, la armadura del Dragón en el pecho y un emblema dorado y turquesa en la manga.",
+      "tipo": "B",
+      "color": "negro",
+      "precio": 50,
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "prenda": "unisex",
+      "fotos": [
+        {
+          "archivo": "img/saint-seiya/shiryu-de-dragon/01-muro.webp",
+          "titulo": "Espalda junto al muro",
+          "ancho": 645,
+          "alto": 809
+        },
+        {
+          "archivo": "img/saint-seiya/shiryu-de-dragon/02-porton.webp",
+          "titulo": "Frente junto al portón",
+          "ancho": 644,
+          "alto": 809
+        },
+        {
+          "archivo": "img/saint-seiya/shiryu-de-dragon/03-banco.webp",
+          "titulo": "Frente en el banco",
+          "ancho": 642,
+          "alto": 809
+        },
+        {
+          "archivo": "img/saint-seiya/shiryu-de-dragon/04-detalle-pecho.webp",
+          "titulo": "Detalle del estampado del pecho",
+          "ancho": 1254,
+          "alto": 1254
+        },
+        {
+          "archivo": "img/saint-seiya/shiryu-de-dragon/05-detalle-espalda.webp",
+          "titulo": "Detalle del estampado de espalda",
+          "ancho": 1197,
+          "alto": 1315
+        },
+        {
+          "archivo": "img/saint-seiya/shiryu-de-dragon/06-detalle-manga.webp",
+          "titulo": "Detalle de la manga izquierda",
+          "ancho": 1151,
+          "alto": 1367
+        }
+      ]
     }
   ]
 }
