@@ -7,10 +7,10 @@
     {
       "fotos": [
         {
-          "ancho": 496,
-          "alto": 620,
+          "archivo": "img/travesia-nocturna/01-sofia-espalda-v3.webp",
           "titulo": "Espalda en giro · Sofía",
-          "archivo": "img/travesia-nocturna/05-sofia-giro-espalda.webp"
+          "ancho": 1122,
+          "alto": 1402
         },
         {
           "ancho": 496,
@@ -19,10 +19,10 @@
           "archivo": "img/travesia-nocturna/02-renzo-contrapicado-frente.webp"
         },
         {
-          "ancho": 496,
-          "alto": 620,
+          "archivo": "img/travesia-nocturna/02-marisol-espalda-v3.webp",
           "titulo": "Espalda completa · Marisol",
-          "archivo": "img/travesia-nocturna/07-marisol-espalda.webp"
+          "ancho": 1122,
+          "alto": 1402
         },
         {
           "ancho": 496,
@@ -37,16 +37,16 @@
           "archivo": "img/travesia-nocturna/06-marisol-contrapicado-frente.webp"
         },
         {
-          "ancho": 496,
-          "alto": 620,
+          "archivo": "img/travesia-nocturna/03-mateo-espalda-v3.webp",
           "titulo": "Espalda en giro · Mateo",
-          "archivo": "img/travesia-nocturna/01-mateo-giro-espalda.webp"
+          "ancho": 1122,
+          "alto": 1402
         },
         {
-          "ancho": 496,
-          "alto": 620,
+          "archivo": "img/travesia-nocturna/04-renzo-espalda-v3.webp",
           "titulo": "Espalda completa · Renzo",
-          "archivo": "img/travesia-nocturna/03-renzo-espalda.webp"
+          "ancho": 1122,
+          "alto": 1402
         },
         {
           "ancho": 496,
@@ -55,10 +55,10 @@
           "archivo": "img/travesia-nocturna/08-sofia-tres-cuartos-frente.webp"
         },
         {
-          "ancho": 496,
-          "alto": 620,
+          "archivo": "img/travesia-nocturna/05-detalle-espalda-v3.webp",
           "titulo": "Detalle del estampado de espalda",
-          "archivo": "img/travesia-nocturna/03-detalle-espalda.webp"
+          "ancho": 608,
+          "alto": 760
         },
         {
           "ancho": 496,
@@ -81,6 +81,228 @@
       "id": "harry-potter-negro",
       "color": "negro",
       "nombre": "Harry Potter · Travesía nocturna"
+    },
+    {
+      "id": "gryffindor",
+      "nombre": "Gryffindor · León dorado",
+      "tema": "Harry Potter",
+      "texto": "El león de la casa de los valientes, en grande sobre la espalda. Un parche discreto en el pecho y el estandarte en la manga.",
+      "tipo": "B",
+      "color": "blanco",
+      "precio": 50,
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "prenda": "unisex",
+      "fotos": [
+        {
+          "archivo": "img/harry-potter/gryffindor/01-espalda-y-manga-mueble.webp",
+          "titulo": "Espalda y manga mueble · Gabriel",
+          "ancho": 765,
+          "alto": 1024
+        },
+        {
+          "archivo": "img/harry-potter/gryffindor/02-pecho-y-manga-mueble.webp",
+          "titulo": "Pecho y manga mueble · Sofía",
+          "ancho": 763,
+          "alto": 1024
+        },
+        {
+          "archivo": "img/harry-potter/gryffindor/03-espalda-caminando.webp",
+          "titulo": "Espalda caminando · Gabriel",
+          "ancho": 618,
+          "alto": 626
+        },
+        {
+          "archivo": "img/harry-potter/gryffindor/04-pecho-apoyada-mesa.webp",
+          "titulo": "Pecho apoyada mesa · Sofía",
+          "ancho": 622,
+          "alto": 626
+        },
+        {
+          "archivo": "img/harry-potter/gryffindor/05-frente-contrapicado.webp",
+          "titulo": "Frente contrapicado · Luis",
+          "ancho": 618,
+          "alto": 628
+        },
+        {
+          "archivo": "img/harry-potter/gryffindor/06-espalda-en-giro.webp",
+          "titulo": "Espalda en giro · Marisol",
+          "ancho": 622,
+          "alto": 628
+        }
+      ]
+    },
+    {
+      "id": "slytherin",
+      "nombre": "Slytherin · Serpiente esmeralda",
+      "tema": "Harry Potter",
+      "texto": "La serpiente de la casa de la astucia, en grande sobre la espalda. El escudo de la casa en el pecho y el «Avada Kedavra» en la manga.",
+      "tipo": "B",
+      "color": "negro",
+      "precio": 50,
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "prenda": "unisex",
+      "fotos": [
+        {
+          "archivo": "img/harry-potter/slytherin/01-espalda-y-manga-consola.webp",
+          "titulo": "Espalda y manga consola · Gabriel",
+          "ancho": 765,
+          "alto": 1024
+        },
+        {
+          "archivo": "img/harry-potter/slytherin/02-pecho-y-manga-banco.webp",
+          "titulo": "Pecho y manga banco · Sofía",
+          "ancho": 764,
+          "alto": 1024
+        },
+        {
+          "archivo": "img/harry-potter/slytherin/03-espalda-en-giro.webp",
+          "titulo": "Espalda en giro · Sofía",
+          "ancho": 600,
+          "alto": 638
+        },
+        {
+          "archivo": "img/harry-potter/slytherin/04-frente-en-consola.webp",
+          "titulo": "Frente en consola · Gabriel",
+          "ancho": 601,
+          "alto": 638
+        },
+        {
+          "archivo": "img/harry-potter/slytherin/05-detalle-pecho-y-manga.webp",
+          "titulo": "Detalle pecho y manga · Sofía",
+          "ancho": 600,
+          "alto": 638
+        },
+        {
+          "archivo": "img/harry-potter/slytherin/06-detalle-espalda.webp",
+          "titulo": "Detalle espalda · Gabriel",
+          "ancho": 601,
+          "alto": 638
+        }
+      ]
+    },
+    {
+      "id": "hufflepuff",
+      "nombre": "Hufflepuff · Tejón heráldico",
+      "tema": "Harry Potter",
+      "texto": "El tejón de la casa de la lealtad, enmarcado en dorado sobre la espalda. El escudo de la casa en el pecho y su insignia en la manga.",
+      "tipo": "B",
+      "color": "negro",
+      "precio": 50,
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "prenda": "unisex",
+      "fotos": [
+        {
+          "archivo": "img/harry-potter/hufflepuff/01-espalda-y-manga-taburete.webp",
+          "titulo": "Espalda y manga taburete · Gabriel",
+          "ancho": 765,
+          "alto": 1024
+        },
+        {
+          "archivo": "img/harry-potter/hufflepuff/02-pecho-y-manga-sillon.webp",
+          "titulo": "Pecho y manga sillon · Sofía",
+          "ancho": 763,
+          "alto": 1024
+        },
+        {
+          "archivo": "img/harry-potter/hufflepuff/03-espalda-en-escalon.webp",
+          "titulo": "Espalda en escalon · Sofía",
+          "ancho": 595,
+          "alto": 652
+        },
+        {
+          "archivo": "img/harry-potter/hufflepuff/04-frente-en-contrapicado.webp",
+          "titulo": "Frente en contrapicado · Gabriel",
+          "ancho": 595,
+          "alto": 652
+        },
+        {
+          "archivo": "img/harry-potter/hufflepuff/05-pecho-y-manga-mesa.webp",
+          "titulo": "Pecho y manga mesa · Sofía",
+          "ancho": 595,
+          "alto": 652
+        },
+        {
+          "archivo": "img/harry-potter/hufflepuff/06-espalda-y-manga-mesa.webp",
+          "titulo": "Espalda y manga mesa · Gabriel",
+          "ancho": 595,
+          "alto": 652
+        },
+        {
+          "archivo": "img/harry-potter/hufflepuff/07-detalle-manga-derecha.webp",
+          "titulo": "Detalle manga derecha · Gabriel",
+          "ancho": 1122,
+          "alto": 1402
+        }
+      ]
+    },
+    {
+      "id": "ravenclaw",
+      "nombre": "Ravenclaw · Escudo del águila",
+      "tema": "Harry Potter",
+      "texto": "Escudo de Ravenclaw en la espalda y águila centrada en el pecho. Mangas lisas.",
+      "tipo": "B",
+      "color": "blanco",
+      "precio": 50,
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "prenda": "unisex",
+      "fotos": [
+        {
+          "archivo": "img/harry-potter/ravenclaw/01-espalda-baranda.webp",
+          "titulo": "Espalda baranda · Gabriel",
+          "ancho": 765,
+          "alto": 1024
+        },
+        {
+          "archivo": "img/harry-potter/ravenclaw/02-frente-sentada-en-piedra.webp",
+          "titulo": "Frente sentada en piedra · Sofía",
+          "ancho": 763,
+          "alto": 1024
+        },
+        {
+          "archivo": "img/harry-potter/ravenclaw/03-frente-caminando.webp",
+          "titulo": "Frente caminando · Gabriel",
+          "ancho": 595,
+          "alto": 652
+        },
+        {
+          "archivo": "img/harry-potter/ravenclaw/04-espalda-junto-a-columna.webp",
+          "titulo": "Espalda junto a columna · Sofía",
+          "ancho": 595,
+          "alto": 652
+        },
+        {
+          "archivo": "img/harry-potter/ravenclaw/05-detalle-pecho.webp",
+          "titulo": "Detalle pecho · Sofía",
+          "ancho": 595,
+          "alto": 651
+        },
+        {
+          "archivo": "img/harry-potter/ravenclaw/06-detalle-espalda.webp",
+          "titulo": "Detalle espalda · Gabriel",
+          "ancho": 595,
+          "alto": 651
+        }
+      ]
     },
     {
       "precio": 50,

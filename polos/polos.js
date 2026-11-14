@@ -244,7 +244,7 @@
     window.addEventListener("hashchange", route);
     route();
   }
-  fetch("data/polos.json?v=travesia-1").then(r => {
+  fetch("data/polos.json?v=harry-potter-2").then(r => {
     if (!r.ok) throw new Error("Error de catálogo");
     return r.json();
   }).then(init).catch(() => {
