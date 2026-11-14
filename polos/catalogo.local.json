@@ -305,6 +305,54 @@
       ]
     },
     {
+      "id": "hogwarts-blanco",
+      "nombre": "Hogwarts en acuarela",
+      "tema": "Harry Potter",
+      "texto": "Lechuza y castillo en acuarela en el pecho. Boleto del Hogwarts Express en la espalda alta. Mangas lisas.",
+      "tipo": "A",
+      "color": "blanco",
+      "precio": 50,
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "prenda": "unisex",
+      "fotos": [
+        {
+          "archivo": "img/harry-potter/hogwarts-blanco/01-frente-consola.webp",
+          "titulo": "Frente junto a la consola",
+          "ancho": 507,
+          "alto": 1024
+        },
+        {
+          "archivo": "img/harry-potter/hogwarts-blanco/02-frente-sillon.webp",
+          "titulo": "Frente en el sillón",
+          "ancho": 508,
+          "alto": 1024
+        },
+        {
+          "archivo": "img/harry-potter/hogwarts-blanco/03-espalda-ventana.webp",
+          "titulo": "Espalda junto a la ventana",
+          "ancho": 507,
+          "alto": 1024
+        },
+        {
+          "archivo": "img/harry-potter/hogwarts-blanco/04-detalle-pecho.webp",
+          "titulo": "Detalle de la lechuza y el castillo",
+          "ancho": 765,
+          "alto": 1024
+        },
+        {
+          "archivo": "img/harry-potter/hogwarts-blanco/05-detalle-boleto.webp",
+          "titulo": "Detalle del boleto en la espalda",
+          "ancho": 763,
+          "alto": 1024
+        }
+      ]
+    },
+    {
       "precio": 50,
       "texto": "Estampado principal en la espalda y detalle en el pecho.",
       "color": "negro",
