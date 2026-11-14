@@ -23,8 +23,10 @@
     const shot = photos[shotIndex];
     const img = image(shot, selected.nombre + " · " + shot.titulo, false);
     $("fotoFicha").replaceChildren(img);
-    $("fotoFicha").href = shot.archivo;
-    $("fotoFicha").setAttribute("aria-label", "Abrir imagen al tamaño original");
+    $("fotoFicha").onclick = () => {
+      $("fotoAmpliada").replaceChildren(img.cloneNode());
+      $("visorPolo").showModal();
+    };
     $("fotoTexto").textContent = shot.titulo + " · " + (shotIndex + 1) + " de " + photos.length;
     for (const [i, b] of [...$("miniaturas").children].entries()) b.setAttribute("aria-pressed", String(i === shotIndex));
   }

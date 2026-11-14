@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../src/styles.css?v=69">
-  <link rel="stylesheet" href="polos.css?v=40">
+  <link rel="stylesheet" href="polos.css?v=41">
 </head>
 <body class="polos-store">
   <header class="cab" id="cab">
@@ -143,7 +143,7 @@
     <form method="dialog" class="ficha-cerrar"><button type="submit">Cerrar ficha</button></form>
     <div class="ficha-producto">
       <section aria-label="Fotos del polo">
-        <a id="fotoFicha" class="foto-ficha" target="_blank" rel="noopener"></a>
+        <button id="fotoFicha" class="foto-ficha" type="button" aria-label="Ampliar foto"></button>
         <div class="controles-foto">
           <button id="anteriorFoto" type="button" aria-label="Foto anterior">←</button>
           <span id="fotoTexto" aria-live="polite"></span>
@@ -163,6 +163,10 @@
         </div>
       </section>
     </div>
+  </dialog>
+  <dialog id="visorPolo" aria-label="Foto ampliada">
+    <form method="dialog" class="ficha-cerrar"><button type="submit">Cerrar foto</button></form>
+    <div id="fotoAmpliada"></div>
   </dialog>
     <div class="cart-toast" id="cartToast" role="status" aria-live="polite" hidden></div>
 
@@ -303,6 +307,6 @@
   <script src="../src/supabase-config.js?v=1"></script>
   <script src="../src/registro-web.js?v=5"></script>
   <script src="catalogo-core.js?v=3"></script>
-  <script src="polos.js?v=52"></script>
+  <script src="polos.js?v=53"></script>
 </body>
 </html>
