@@ -344,3 +344,4 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
 #resultadoPolos{color:var(--gris);font-size:14px;margin:14px 0}
 .accion-tarjeta{display:inline-block;margin-top:8px;text-decoration:underline}
 @media(max-width:560px){.tienda-filtros{grid-template-columns:repeat(2,minmax(0,1fr))}.tienda-filtros label:first-child{grid-column:1/-1}.portada-carrusel .hero-fotos{aspect-ratio:1.32}.portada-carrusel .hero-polo{width:55%}}
+.cab .marca{align-items:center;flex-shrink:0}.cab .marca img{width:clamp(65px,7vw,88px);height:auto}
