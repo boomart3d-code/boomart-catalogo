@@ -821,6 +821,114 @@
           "alto": 1367
         }
       ]
+    },
+    {
+      "id": "seiya-de-pegaso",
+      "nombre": "Seiya de Pegaso",
+      "tema": "Saint Seiya",
+      "texto": "Seiya con su armadura de Pegaso en la espalda, una figura chibi en el pecho y el emblema de Pegaso en la manga.",
+      "tipo": "B",
+      "color": "blanco",
+      "precio": 50,
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "prenda": "unisex",
+      "fotos": [
+        {
+          "archivo": "img/saint-seiya/seiya-de-pegaso/01-espalda-grada.webp",
+          "titulo": "Espalda en la grada",
+          "ancho": 588,
+          "alto": 887
+        },
+        {
+          "archivo": "img/saint-seiya/seiya-de-pegaso/02-frente-balon.webp",
+          "titulo": "Frente con el balón",
+          "ancho": 588,
+          "alto": 887
+        },
+        {
+          "archivo": "img/saint-seiya/seiya-de-pegaso/03-frente-cancha.webp",
+          "titulo": "Frente en movimiento",
+          "ancho": 587,
+          "alto": 887
+        },
+        {
+          "archivo": "img/saint-seiya/seiya-de-pegaso/04-detalle-pecho.webp",
+          "titulo": "Detalle del estampado del pecho",
+          "ancho": 578,
+          "alto": 897
+        },
+        {
+          "archivo": "img/saint-seiya/seiya-de-pegaso/05-detalle-espalda.webp",
+          "titulo": "Detalle del estampado de espalda",
+          "ancho": 603,
+          "alto": 897
+        },
+        {
+          "archivo": "img/saint-seiya/seiya-de-pegaso/06-detalle-manga.webp",
+          "titulo": "Detalle de la manga derecha",
+          "ancho": 551,
+          "alto": 897
+        }
+      ]
+    },
+    {
+      "id": "ikki-de-fenix",
+      "nombre": "Ikki de Fénix",
+      "tema": "Saint Seiya",
+      "texto": "Ikki entre llamas en el pecho, una figura de Fénix en la espalda alta y un emblema alado en la manga.",
+      "tipo": "A",
+      "color": "negro",
+      "precio": 50,
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "prenda": "unisex",
+      "fotos": [
+        {
+          "archivo": "img/saint-seiya/ikki-de-fenix/01-frente-taller.webp",
+          "titulo": "Frente en el banco de trabajo",
+          "ancho": 658,
+          "alto": 897
+        },
+        {
+          "archivo": "img/saint-seiya/ikki-de-fenix/02-frente-taburete.webp",
+          "titulo": "Frente en el taburete",
+          "ancho": 568,
+          "alto": 897
+        },
+        {
+          "archivo": "img/saint-seiya/ikki-de-fenix/03-espalda-puerta.webp",
+          "titulo": "Espalda junto a la puerta",
+          "ancho": 579,
+          "alto": 897
+        },
+        {
+          "archivo": "img/saint-seiya/ikki-de-fenix/04-detalle-pecho.webp",
+          "titulo": "Detalle del estampado del pecho",
+          "ancho": 1088,
+          "alto": 897
+        },
+        {
+          "archivo": "img/saint-seiya/ikki-de-fenix/05-detalle-espalda.webp",
+          "titulo": "Detalle de la espalda alta",
+          "ancho": 580,
+          "alto": 897
+        },
+        {
+          "archivo": "img/saint-seiya/ikki-de-fenix/06-detalle-manga.webp",
+          "titulo": "Detalle de la manga izquierda",
+          "ancho": 576,
+          "alto": 897
+        }
+      ]
     }
   ],
   "avatares": [],
