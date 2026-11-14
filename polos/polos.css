@@ -278,7 +278,7 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
 .hero-txt{padding:0}
 .hero .etiqueta{display:flex;align-items:center;gap:12px}
 .hero .etiqueta::before{content:"";width:28px;height:2px;background:var(--acento)}
-.hero h1{font-size:clamp(68px,8.3vw,142px);line-height:.86;letter-spacing:-.012em}
+.hero h1{font-size:clamp(38px,4.55vw,76px);line-height:.86;letter-spacing:-.012em}
 .hero .lead{max-width:37ch;margin-top:25px}
 .hero-acc{margin-top:25px}
 .hero-fotos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);align-items:start;gap:clamp(10px,1.45vw,24px);background:none}
@@ -306,7 +306,7 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
 @keyframes entrada-editorial{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @media(max-width:850px){
  .hero{width:min(100% - 40px,680px);grid-template-columns:1fr;gap:24px;padding-top:calc(var(--cab) + 28px)}
- .hero h1{font-size:clamp(64px,13vw,110px)}
+ .hero h1{font-size:clamp(32px,8.8vw,70px)}
  .hero .lead{margin-top:15px}
  .hero-acc{margin-top:18px}
  .grilla{grid-template-columns:repeat(2,minmax(0,1fr))}
