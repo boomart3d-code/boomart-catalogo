@@ -5,6 +5,84 @@
   "material_objetivo_interno": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
   "productos": [
     {
+      "fotos": [
+        {
+          "ancho": 496,
+          "alto": 620,
+          "titulo": "Espalda en giro · Sofía",
+          "archivo": "img/travesia-nocturna/05-sofia-giro-espalda.webp"
+        },
+        {
+          "ancho": 496,
+          "alto": 620,
+          "titulo": "Contrapicado frontal · Renzo",
+          "archivo": "img/travesia-nocturna/02-renzo-contrapicado-frente.webp"
+        },
+        {
+          "ancho": 496,
+          "alto": 620,
+          "titulo": "Espalda completa · Marisol",
+          "archivo": "img/travesia-nocturna/07-marisol-espalda.webp"
+        },
+        {
+          "ancho": 496,
+          "alto": 620,
+          "titulo": "Frente en tres cuartos · Mateo",
+          "archivo": "img/travesia-nocturna/04-mateo-tres-cuartos-frente.webp"
+        },
+        {
+          "ancho": 496,
+          "alto": 620,
+          "titulo": "Contrapicado frontal · Marisol",
+          "archivo": "img/travesia-nocturna/06-marisol-contrapicado-frente.webp"
+        },
+        {
+          "ancho": 496,
+          "alto": 620,
+          "titulo": "Espalda en giro · Mateo",
+          "archivo": "img/travesia-nocturna/01-mateo-giro-espalda.webp"
+        },
+        {
+          "ancho": 496,
+          "alto": 620,
+          "titulo": "Espalda completa · Renzo",
+          "archivo": "img/travesia-nocturna/03-renzo-espalda.webp"
+        },
+        {
+          "ancho": 496,
+          "alto": 620,
+          "titulo": "Frente en tres cuartos · Sofía",
+          "archivo": "img/travesia-nocturna/08-sofia-tres-cuartos-frente.webp"
+        },
+        {
+          "ancho": 496,
+          "alto": 620,
+          "titulo": "Detalle del estampado de espalda",
+          "archivo": "img/travesia-nocturna/03-detalle-espalda.webp"
+        },
+        {
+          "ancho": 496,
+          "alto": 620,
+          "titulo": "Detalle del pecho y cuello",
+          "archivo": "img/travesia-nocturna/04-detalle-pecho.webp"
+        }
+      ],
+      "tipo": "B",
+      "prenda": "unisex",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "texto": "Luna turquesa y crema con las Reliquias de la Muerte en la espalda. Detalle a juego en el pecho y mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "tema": "Harry Potter",
+      "precio": 50,
+      "id": "harry-potter-negro",
+      "color": "negro",
+      "nombre": "Harry Potter · Travesía nocturna"
+    },
+    {
       "precio": 50,
       "texto": "Estampado principal en la espalda y detalle en el pecho.",
       "color": "negro",

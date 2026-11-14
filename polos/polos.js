@@ -51,6 +51,7 @@
   }
   function openProduct(product) {
     selected = product;
+    $("temaFicha").textContent = product.tema;
     $("nombreFicha").textContent = product.nombre;
     $("precioFicha").textContent = price(product.precio) + " por unidad";
     $("descripcionFicha").textContent = product.texto;
@@ -127,7 +128,7 @@
     window.addEventListener("hashchange", route);
     route();
   }
-  fetch("data/polos.json?v=dragon-ball-1").then(r => {
+  fetch("data/polos.json?v=travesia-1").then(r => {
     if (!r.ok) throw new Error("Error de catálogo");
     return r.json();
   }).then(init).catch(() => {
