@@ -929,6 +929,60 @@
           "alto": 897
         }
       ]
+    },
+    {
+      "id": "shun-de-andromeda",
+      "nombre": "Shun de Andrómeda",
+      "tema": "Saint Seiya",
+      "texto": "Shun y sus cadenas en la espalda, un retrato centrado en el pecho y el emblema de Andrómeda en la manga.",
+      "tipo": "B",
+      "color": "blanco",
+      "precio": 50,
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "prenda": "unisex",
+      "fotos": [
+        {
+          "archivo": "img/saint-seiya/shun-de-andromeda/03-espalda-columna.webp",
+          "titulo": "Espalda junto a la columna",
+          "ancho": 585,
+          "alto": 887
+        },
+        {
+          "archivo": "img/saint-seiya/shun-de-andromeda/01-frente-anden.webp",
+          "titulo": "Frente en el andén",
+          "ancho": 584,
+          "alto": 887
+        },
+        {
+          "archivo": "img/saint-seiya/shun-de-andromeda/02-frente-banco.webp",
+          "titulo": "Frente en el banco",
+          "ancho": 584,
+          "alto": 887
+        },
+        {
+          "archivo": "img/saint-seiya/shun-de-andromeda/04-detalle-pecho.webp",
+          "titulo": "Detalle del pecho",
+          "ancho": 584,
+          "alto": 887
+        },
+        {
+          "archivo": "img/saint-seiya/shun-de-andromeda/05-detalle-espalda.webp",
+          "titulo": "Detalle de la espalda",
+          "ancho": 593,
+          "alto": 887
+        },
+        {
+          "archivo": "img/saint-seiya/shun-de-andromeda/06-detalle-manga.webp",
+          "titulo": "Detalle de la manga derecha",
+          "ancho": 574,
+          "alto": 887
+        }
+      ]
     }
   ],
   "avatares": [],
