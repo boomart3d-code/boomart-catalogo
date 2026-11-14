@@ -270,3 +270,55 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
 #misPolos{max-width:calc(100% - 24px);padding:1rem;border:0}
 #listaSeleccion li{margin:.5rem 0}#listaSeleccion button{margin-left:.5rem}
 @media(max-width:650px){.ficha-producto{grid-template-columns:1fr}.hero-fotos img{max-height:62dvh}.foto-ficha img{max-height:55dvh}}
+/* Portada y colección de autor */
+:root{--marfil:#f4f0e8;--marfil-2:#faf8f3;--tinta:#0b0b0b;--gris:#625c53;--linea:#ded6c9;--acento:#e1132f}
+.cab{background:rgba(244,240,232,.94);gap:clamp(16px,3vw,40px)}
+.cab .seleccion-cab{margin-left:auto}
+.hero{width:min(1440px,100% - 80px);margin-inline:auto;min-height:auto;grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr);gap:clamp(32px,5vw,86px);align-items:center;padding:calc(var(--cab) + clamp(26px,4vw,60px)) 0 clamp(34px,5vw,74px)}
+.hero-txt{padding:0}
+.hero .etiqueta{display:flex;align-items:center;gap:12px}
+.hero .etiqueta::before{content:"";width:28px;height:2px;background:var(--acento)}
+.hero h1{font-size:clamp(68px,8.3vw,142px);line-height:.86;letter-spacing:-.012em}
+.hero .lead{max-width:37ch;margin-top:25px}
+.hero-acc{margin-top:25px}
+.hero-fotos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);align-items:start;gap:clamp(10px,1.45vw,24px);background:none}
+.hero-polo{min-width:0;display:block;text-decoration:none}
+.hero-polo:nth-child(2){margin-top:clamp(16px,3vw,52px)}
+.hero-polo img,.producto-card img{display:block;width:100%;height:auto;max-height:none;aspect-ratio:4/5;object-fit:contain;background:var(--arena)}
+.hero-polo span{display:block;padding:10px 0;border-bottom:1px solid var(--linea);font-size:clamp(11px,1.05vw,14px);line-height:1.35;font-weight:600}
+.hero-polo:hover span,.producto-card:hover h3{color:var(--acento)}
+.beneficios{border-block:1px solid var(--linea)}
+#coleccion{background:var(--marfil-2)}
+.grilla{grid-template-columns:repeat(3,minmax(0,1fr))}
+.producto-card{overflow:hidden;background:transparent;border-bottom:1px solid var(--linea);padding-bottom:1.25rem}
+.producto-card h3,.producto-card p{margin-inline:0}
+.producto-card h3{margin-top:.85rem;font-size:clamp(23px,2.3vw,36px)}
+.producto-card p{font-size:14px;color:var(--gris)}
+.foto-ficha{background:var(--arena)}
+.foto-ficha img{background:transparent}
+@media(prefers-reduced-motion:no-preference){
+ .hero-txt,.hero-polo{animation:entrada-editorial .72s var(--ease) both}
+ .hero-polo:nth-child(2){animation-delay:.12s}
+ .producto-card h3,.hero-polo span{transition:color .25s}
+ .preparar-entrada{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease),transform .65s var(--ease)}
+ .preparar-entrada.visible,.preparar-entrada:focus-within{opacity:1;transform:none}
+}
+@keyframes entrada-editorial{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(max-width:850px){
+ .hero{width:min(100% - 40px,680px);grid-template-columns:1fr;gap:24px;padding-top:calc(var(--cab) + 28px)}
+ .hero h1{font-size:clamp(64px,13vw,110px)}
+ .hero .lead{margin-top:15px}
+ .hero-acc{margin-top:18px}
+ .grilla{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:420px){
+ .hero{width:calc(100% - 32px)}
+ .hero-polo:nth-child(2){margin-top:12px}
+ .producto-card h3{font-size:22px}
+}
+@supports (animation-timeline: view()){
+ @media(prefers-reduced-motion:no-preference) and (min-width:851px){
+  .hero-polo img{animation:salida-de-portada linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
+ }
+}
+@keyframes salida-de-portada{to{transform:translateY(-12px);opacity:.92}}

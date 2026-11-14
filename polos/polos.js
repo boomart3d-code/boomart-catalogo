@@ -89,6 +89,23 @@
     $("consultarSeleccion").hidden = saved.length === 0;
     $("consultarSeleccion").href = wa("Hola BoomArt. Quiero consultar por estos polos:\n" + saved.map(CATALOGO_UI.mensaje).join("\n"));
   }
+
+  function entradasAlDesplazar() {
+    if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    }, {threshold: 0.06});
+    for (const node of document.querySelectorAll(".producto-card, #proceso .proceso article, #prenda .prenda-grid article")) {
+      if (node.getBoundingClientRect().top < innerHeight) continue;
+      node.classList.add("preparar-entrada");
+      observer.observe(node);
+    }
+  }
+
   function init(next) {
     data = next;
     try {
@@ -96,7 +113,16 @@
       if (Array.isArray(stored)) saved = stored.filter(v => v && data.productos.some(p => p.id === v.id && p.tallas.includes(v.talla)));
     } catch {}
     remember();
-    $("heroFotos").replaceChildren(...data.productos.slice(0, 2).map(p => image(p.fotos[0], p.nombre, false)));
+    $("heroFotos").replaceChildren(...data.productos.slice(0, 2).map(p => {
+      const link = document.createElement("a");
+      link.className = "hero-polo";
+      link.href = "#/p/" + p.id;
+      const caption = document.createElement("span");
+      caption.textContent = p.nombre;
+      link.append(image(p.fotos[0], p.nombre + " · " + p.fotos[0].titulo, false), caption);
+      return link;
+    }));
+
     $("grilla").replaceChildren(...data.productos.map(p => {
       const a = document.createElement("a");
       a.className = "producto-card";
@@ -108,6 +134,7 @@
       a.append(image(p.fotos[0], p.nombre), title, meta);
       return a;
     }));
+    entradasAlDesplazar();
     const promo = data.promocion;
     if (promo) {
       $("packLanzamiento").hidden = false;
