@@ -432,3 +432,72 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
   .polos-store .cab .marca { gap: 6px; }
   .polos-store .cab .seleccion-cab { padding-inline: 9px; }
 }
+/* El carrito y el pago de Polos comparten la paleta de la tienda. */
+.polos-store :is(.cart-drawer, .checkout-dialog, .cart-toast) {
+  color-scheme: light;
+  --red: #242424;
+  --red-dark: #3c3c3c;
+  --gold: #414141;
+  --muted: #555;
+  --line: #d2cdc4;
+  --ink: #f4f0e8;
+  --panel: #faf8f3;
+  accent-color: #242424;
+  font-family: Inter, system-ui, sans-serif;
+}
+.polos-store .checkout-shell {
+  --black: #f4f0e8;
+  --muted: #555;
+  --line: #d2cdc4;
+  --gold: #414141;
+}
+.polos-store :is(.checkout-brand, .brand-context) .ba-mark {
+  width: 46px;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+.polos-store :is(.cart-drawer, .checkout-dialog) h2 {
+  font-family: var(--display-font);
+  font-weight: 600;
+  line-height: 1.1;
+}
+.polos-store :is(.cart-drawer, .checkout-dialog) :is(.field, .reg-form, .cart-line-info, .payment-method) {
+  font-size: .875rem;
+  line-height: 1.45;
+}
+.polos-store :is(.cart-drawer, .checkout-dialog) :is(
+  .summary-line, .reg-email-hint, .reg-choice small
+) { color: #555; }
+.polos-store :is(.cart-drawer, .checkout-dialog) :is(
+  .link-button, .reg-agency-change, .reg-agency-option, .reg-pickup,
+  .reg-agency-option small, .reg-agency-chosen small, .reg-agency-empty,
+  .reg-privacy, .coupon-discount, .coupon-discount strong, .summary-row.advance strong
+) { color: #262626; }
+.polos-store .checkout-dialog :is(
+  .summary-row.advance, .reg-choice.is-selected, .form-error, .form-success,
+  .payment-method.is-selected, .reg-agency-chosen
+) {
+  background: #e7e3db;
+  color: #242424;
+}
+.polos-store .checkout-dialog :is(.reg-choice, .reg-agency-option) {
+  border-color: #bcb8b1;
+}
+.polos-store :is(#cartToggle, .cart-drawer *, .checkout-dialog *):focus-visible {
+  outline: 2px solid #404040;
+  outline-offset: 2px;
+}
+.polos-store .checkout-dialog :is(input, select, textarea):focus,
+.polos-store .checkout-dialog .reg-choice:focus-within {
+  border-color: #404040;
+  box-shadow: 0 0 0 3px #40404024;
+}
+.polos-store .checkout-dialog :is(.delivery-terms p, .payment-qr-missing, .payment-phone, .payment-qr-hint) {
+  color: #555;
+}
+.polos-store .checkout-dialog .payment-qr {
+  background: #faf8f3;
+  color: #242424;
+}
+.polos-store .checkout-dialog .payment-qr img { background: white; }
