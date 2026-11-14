@@ -1,7 +1,5 @@
 (() => {
   const $ = (id) => document.getElementById(id);
-  const wa = (message) => "https://wa.me/51925666542?text=" + encodeURIComponent(message);
-  const key = "boomart.polos.seleccion";
   const image = (shot, alt, lazy = true) => {
     const img = document.createElement("img");
     Object.assign(img, {src: shot.archivo, alt, width: shot.ancho, height: shot.alto, loading: lazy ? "lazy" : "eager"});
@@ -17,14 +15,8 @@
   let data;
   let selected;
   let shotIndex = 0;
-  let saved = [];
   const price = (amount) => "S/ " + amount;
   const details = $("ficha");
-  const choice = $("misPolos");
-  function remember() {
-    try { localStorage.setItem(key, JSON.stringify(saved)); } catch {}
-    $("abrirSeleccion").textContent = "Mi selección (" + saved.length + ")";
-  }
   function showShot(index) {
     const photos = selected.fotos;
     shotIndex = (index + photos.length) % photos.length;
@@ -35,19 +27,6 @@
     $("fotoFicha").setAttribute("aria-label", "Abrir imagen al tamaño original");
     $("fotoTexto").textContent = shot.titulo + " · " + (shotIndex + 1) + " de " + photos.length;
     for (const [i, b] of [...$("miniaturas").children].entries()) b.setAttribute("aria-pressed", String(i === shotIndex));
-  }
-  function configureOrder() {
-    const talla = $("tallaFicha").value;
-    const entry = CATALOGO_UI.variante(selected, "unisex", talla);
-    const pedir = $("pedirPolo");
-    if (!talla) return;
-    pedir.href = wa("Hola BoomArt. Quiero pedir " + CATALOGO_UI.mensaje(entry) + ".");
-    $("guardarPolo").textContent = saved.some(v => v.clave === entry.clave) ? "Guardado en mi selección" : "Guardar en mi selección";
-    $("guardarPolo").onclick = () => {
-      if (!saved.some(v => v.clave === entry.clave)) saved.push(entry);
-      remember();
-      configureOrder();
-    };
   }
   function openProduct(product) {
     selected = product;
@@ -65,7 +44,6 @@
       return b;
     }));
     showShot(0);
-    configureOrder();
     if (!details.open) details.showModal();
   }
   function route() {
@@ -74,22 +52,6 @@
     if (product) openProduct(product);
     else if (details.open) details.close();
   }
-  function displaySelection() {
-    const items = $("listaSeleccion");
-    items.replaceChildren(...saved.map((v) => {
-      const li = document.createElement("li");
-      li.append(CATALOGO_UI.mensaje(v), button("Quitar", () => {
-        saved = saved.filter(p => p.clave !== v.clave);
-        remember();
-        displaySelection();
-      }));
-      return li;
-    }));
-    $("seleccionVacia").hidden = saved.length > 0;
-    $("consultarSeleccion").hidden = saved.length === 0;
-    $("consultarSeleccion").href = wa("Hola BoomArt. Quiero consultar por estos polos:\n" + saved.map(CATALOGO_UI.mensaje).join("\n"));
-  }
-
   function entradasAlDesplazar() {
     if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const observer = new IntersectionObserver((entries) => {
@@ -216,11 +178,24 @@
 
   function init(next) {
     data = next;
+    window.BOOMART_PRODUCTS = data.productos.map(p => ({
+      id: p.id, name: p.nombre, regularPrice: p.precio, category: p.tema,
+      image: p.fotos[0].archivo, tallas: p.tallas
+    }));
+    window.BOOMART_POLOS_PROMOTION = data.promocion;
     try {
-      const stored = JSON.parse(localStorage.getItem(key) || "[]");
-      if (Array.isArray(stored)) saved = stored.filter(v => v && data.productos.some(p => p.id === v.id && p.tallas.includes(v.talla)));
+      const legacyKey = "boomart.polos.seleccion";
+      const saved = JSON.parse(localStorage.getItem(legacyKey) || "[]");
+      if (Array.isArray(saved)) {
+        if (!localStorage.getItem("boomart_polos_cart_v1")) {
+          for (const entry of saved) {
+            if (entry) window.BoomartCart.add(entry.id, entry.talla, 1);
+          }
+        }
+        localStorage.removeItem(legacyKey);
+      }
     } catch {}
-    remember();
+    window.BoomartCart.refresh();
     iniciarCarrusel();
     iniciarBusqueda();
     entradasAlDesplazar();
@@ -229,10 +204,13 @@
       $("packLanzamiento").hidden = false;
       $("packLanzamiento").textContent = "Pack de lanzamiento · " + promo.cantidad + " polos por " + price(promo.precio);
     }
-    $("abrirSeleccion").onclick = () => { displaySelection(); choice.showModal(); };
+    $("agregarPolo").onclick = () => {
+      window.BoomartCart.add(selected.id, $("tallaFicha").value, 1);
+      details.close();
+      $("cartToggle").click();
+    };
     $("anteriorFoto").onclick = () => showShot(shotIndex - 1);
     $("siguienteFoto").onclick = () => showShot(shotIndex + 1);
-    $("tallaFicha").onchange = configureOrder;
     details.addEventListener("keydown", (e) => {
       if (e.target.tagName === "SELECT") return;
       if (e.key === "ArrowLeft") showShot(shotIndex - 1);

@@ -11,9 +11,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="polos.css?v=36">
+  <link rel="stylesheet" href="../src/styles.css?v=69">
+  <link rel="stylesheet" href="polos.css?v=37">
 </head>
-<body>
+<body class="polos-store">
   <header class="cab" id="cab">
     <a class="marca" href="#/" aria-label="BoomArt polos, inicio"><img src="boomart-calado.png" alt="" width="1200" height="601"><i>Polos</i></a>
     <nav class="nav" aria-label="Secciones">
@@ -23,7 +24,8 @@
       <a href="#tallas" data-ir>Tallas</a>
     </nav>
     <span class="privado">Algodón pima</span>
-  <button class="seleccion-cab" id="abrirSeleccion" type="button">Mi selección (0)</button></header>
+  <button class="seleccion-cab" id="cartToggle" type="button" aria-controls="cartDrawer" aria-expanded="false">Carrito <span id="cartCount" hidden>0</span></button>
+  <button id="cartFloatToggle" type="button" hidden><span id="cartCountFloat"></span></button></header>
 
   <main id="app">
     <!-- PORTADA -->
@@ -154,20 +156,150 @@
         <label for="tallaFicha">Talla unisex</label> <select id="tallaFicha"></select>
         <p>Consulta las medidas por WhatsApp antes de pedir.</p>
         <div class="ficha-acciones">
-          <a id="pedirPolo" class="btn btn-osc" target="_blank" rel="noopener">Pedir por WhatsApp</a>
-          <button id="guardarPolo" type="button">Guardar en mi selección</button>
+          <button id="agregarPolo" type="button" class="btn btn-osc">Agregar al carrito</button>
         </div>
       </section>
     </div>
   </dialog>
-  <dialog id="misPolos" aria-labelledby="tituloSeleccion">
-    <form method="dialog" class="ficha-cerrar"><button type="submit">Cerrar selección</button></form>
-    <h2 id="tituloSeleccion">Mi selección</h2>
-    <p id="seleccionVacia">Aún no has guardado ningún polo de la colección.</p>
-    <ul id="listaSeleccion"></ul>
-    <a id="consultarSeleccion" class="btn btn-osc" target="_blank" rel="noopener">Consultar mi selección</a>
-  </dialog>
+    <div class="cart-toast" id="cartToast" role="status" aria-live="polite" hidden></div>
+
+    <div class="cart-backdrop" id="cartBackdrop" hidden></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compra" hidden>
+      <div class="cart-drawer-header">
+        <div class="brand-context">
+          <img class="ba-mark" src="../assets/brand/boomart-icon-asistente.png?v=1" alt="">
+          <div><span>COMPRA EN BOOMART</span><h2>Tu carrito</h2></div>
+        </div>
+        <button type="button" class="icon-button" id="closeCart" aria-label="Cerrar carrito">×</button>
+      </div>
+      <div class="cart-drawer-body" id="cartLines"></div>
+      <div class="cart-drawer-footer">
+        <div class="cart-total-row coupon-row" id="cartCouponRow" hidden>
+          <span>Subtotal</span>
+          <strong id="cartSubtotalDisplay">S/0.00</strong>
+        </div>
+        <div class="cart-total-row coupon-row coupon-discount" id="cartDiscountRow" hidden>
+          <span>Descuento por packs</span>
+          <strong id="cartDiscountDisplay">-S/0.00</strong>
+        </div>
+        <div class="cart-total-row">
+          <span>Total de productos</span>
+          <strong id="cartTotalDisplay">S/0.00</strong>
+        </div>
+        <p class="cart-pack-progress" id="cartPackProgress" role="status"></p>
+        <p class="cart-note">El envío se coordina aparte según tu destino, no está incluido.</p>
+        <button type="button" class="button primary full" id="startCheckout" disabled>Ir a pagar</button>
+        <button type="button" class="link-button" id="clearCartBtn">Vaciar carrito</button>
+      </div>
+    </aside>
+
+    <dialog class="checkout-dialog" id="checkoutDialog" aria-label="Completar pedido">
+      <div class="checkout-shell">
+        <button class="icon-button close-modal" id="closeCheckout" type="button" aria-label="Cerrar">×</button>
+        <div class="checkout-brand" aria-label="Compra en BoomArt">
+          <img class="ba-mark" src="../assets/brand/boomart-icon-asistente.png?v=1" alt="">
+          <span>COMPRA EN BOOMART</span>
+        </div>
+        <ol class="checkout-progress" aria-label="Pasos de tu pedido">
+          <li data-checkout-progress="customer" class="is-active" aria-current="step">1. Datos del pedido</li>
+          <li data-checkout-progress="payment">2. Resumen y pago</li>
+        </ol>
+
+        <section class="checkout-step" data-step="customer">
+          <p class="eyebrow">Paso 1 de 2 · Datos del pedido</p>
+          <h2 id="checkoutRegTitle" tabindex="-1">Completa los datos de tu pedido</h2>
+          <p class="field-hint" id="checkoutRegHint">Los necesitamos para registrar tu pedido, preparar tu comprobante y coordinar la entrega. No necesitas crear una contraseña.</p>
+          <p class="checkout-cart-context" id="checkoutCartContext"></p>
+          <!-- Registro obligatorio para comprar (2026-10-15): el formulario lo pinta
+               src/registro-web.js (mismos datos que /registro-cliente/). -->
+          <div id="checkoutRegistro"></div>
+          <div class="checkout-actions">
+            <button type="button" class="button secondary" data-back-to-cart>Volver al carrito</button>
+          </div>
+        </section>
+
+        <section class="checkout-step" data-step="payment" hidden>
+          <p class="eyebrow">Paso 2 de 2 · Resumen y pago</p>
+          <h2 tabindex="-1">Revisa tu pedido y elige cómo pagar</h2>
+          <div class="checkout-customer-review">
+            <h3>Tus datos</h3>
+            <p id="summaryCustomer"></p>
+            <button type="button" class="link-button" data-back-to="customer">Editar datos y entrega</button>
+          </div>
+          <h3>Tu pedido</h3>
+          <div class="summary-lines" id="summaryLines"></div>
+          <div class="summary-totals">
+            <div class="summary-row coupon-row" id="summaryCouponRow" hidden>
+              <span>Subtotal</span>
+              <strong id="summarySubtotal"></strong>
+            </div>
+            <div class="summary-row coupon-row coupon-discount" id="summaryDiscountRow" hidden>
+              <span>Descuento por packs</span>
+              <strong id="summaryDiscount"></strong>
+            </div>
+            <div class="summary-row">
+              <span>Total de productos</span>
+              <strong id="summaryTotal"></strong>
+            </div>
+            <div class="summary-row advance">
+              <span>Pagas ahora</span>
+              <strong id="summaryAdvance"></strong>
+            </div>
+            <div class="summary-row">
+              <span>Saldo pendiente</span>
+              <strong id="summaryBalance"></strong>
+            </div>
+            <div class="summary-row shipping">
+              <span id="summaryShippingLabel">Envío</span>
+              <strong id="summaryShippingValue">Costo por coordinar, no incluido</strong>
+            </div>
+          </div>
+          <div class="delivery-terms" id="deliveryTerms"></div>
+          <h3 class="checkout-payment-title">Elige cómo pagar</h3>
+          <p class="field-hint">¿Cuánto quieres pagar ahora?</p>
+          <div class="payment-methods payment-amount-options" role="group" aria-label="Monto a pagar ahora">
+            <button type="button" class="payment-method is-selected" data-pay-mode="advance" aria-pressed="true">Reserva 50%<br><strong data-pay-mode-amount="advance"></strong></button>
+            <button type="button" class="payment-method" data-pay-mode="full" aria-pressed="false">Pago total 100%<br><strong data-pay-mode-amount="full"></strong></button>
+          </div>
+          <p class="field-hint" id="paymentAmountHint">Pagarás ahora exactamente <strong id="paymentAdvanceAmount"></strong>. Elige tu método de pago:</p>
+
+          <div class="payment-methods" role="group" aria-label="Método de pago">
+            <button type="button" class="payment-method" data-payment-method="yape" aria-pressed="false">Yape</button>
+            <button type="button" class="payment-method" data-payment-method="plin" aria-pressed="false">Plin</button>
+            <button type="button" class="payment-method" data-payment-method="interbank" aria-pressed="false">Cuenta Interbank</button>
+            <button type="button" class="payment-method" data-payment-method="bcp" aria-pressed="false">Cuenta BCP</button>
+            <button type="button" class="payment-method" data-payment-method="tarjeta" aria-pressed="false">Tarjeta crédito/débito</button>
+          </div>
+
+          <div class="payment-detail" id="paymentDetail"></div>
+
+          <p class="payment-disclaimer" id="paymentDisclaimer">Este código QR no confirma tu pago automáticamente. BoomArt valida cada pago de forma manual antes de iniciar la fabricación.</p>
+
+          <div class="checkout-actions">
+            <button type="button" class="button secondary" data-back-to="customer">Editar mis datos</button>
+            <button type="button" class="button whatsapp full" id="confirmWhatsapp" disabled>Ya pagué: continuar por WhatsApp</button>
+          </div>
+        </section>
+
+        <section class="checkout-step" data-step="done" hidden>
+          <p class="eyebrow">Pedido enviado a WhatsApp</p>
+          <h2 tabindex="-1">Revisa y envía tu mensaje</h2>
+          <p id="doneText">Se abrió WhatsApp con tu pedido ya redactado. Revisa el mensaje, pulsa <strong>Enviar</strong> dentro de WhatsApp y adjunta la foto de tu comprobante de pago. Tu pedido queda pendiente de validación por BoomArt.</p>
+          <a class="button whatsapp full" id="reopenWhatsapp" target="_blank" rel="noreferrer">Abrir WhatsApp de nuevo</a>
+          <div class="checkout-actions">
+            <button type="button" class="button secondary full" data-close-checkout>Cerrar</button>
+          </div>
+        </section>
+      </div>
+    </dialog>
+
+  <script src="../src/checkout-config.js?v=9"></script>
+  <script src="../src/cart.js?v=15"></script>
+  <script src="../src/checkout.js?v=36"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="../src/supabase-config.js?v=1"></script>
+  <script src="../src/registro-web.js?v=5"></script>
   <script src="catalogo-core.js?v=3"></script>
-  <script src="polos.js?v=49"></script>
+  <script src="polos.js?v=50"></script>
 </body>
 </html>

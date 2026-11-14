@@ -8,7 +8,8 @@
 (function () {
   "use strict";
 
-  const STORAGE_KEY = "boomart_cart_v1";
+  const polos = document.body.classList.contains("polos-store");
+  const STORAGE_KEY = polos ? "boomart_polos_cart_v1" : "boomart_cart_v1";
   // Cupon de bienvenida (pedido de Adrian, 2026-09-29): 10% para clientes
   // logueados que todavia no lo usaron. La elegibilidad real vive en
   // Supabase; account.js la refleja aqui via localStorage (misma llave
@@ -89,6 +90,10 @@
   // "adulto" | "nino" para productos con tamaños.
   function resolveVariant(product, variantKey) {
     if (!product) return null;
+    if (product.tallas) {
+      if (!product.tallas.includes(variantKey)) return null;
+      return { variantKey, variantLabel: `Talla ${variantKey}`, unitPrice: Number(product.regularPrice) };
+    }
     if (product.modelOptions?.length) {
       const parts = String(variantKey || "").split(":");
       // Los carritos existentes con adulto/nino conservan la máscara clásica.
@@ -212,14 +217,20 @@
   function getTotals(lines) {
     const resolvedLines = lines || getResolvedLines();
     const subtotalCents = resolvedLines.reduce((sum, line) => sum + toCents(line.unitPrice) * line.quantity, 0);
-    const couponApplied = resolvedLines.length > 0 && readCouponEligible();
-    const discountCents = couponApplied ? Math.round(subtotalCents * WELCOME_COUPON_RATE) : 0;
+    const itemCount = resolvedLines.reduce((sum, line) => sum + line.quantity, 0);
+    const promo = window.BOOMART_POLOS_PROMOTION;
+    const couponApplied = !polos && itemCount > 0 && readCouponEligible();
+    const packDiscountCents = polos && promo
+      ? Math.floor(itemCount / promo.cantidad) * Math.max(0, toCents(50 * promo.cantidad - promo.precio))
+      : 0;
+    const discountCents = couponApplied ? Math.round(subtotalCents * WELCOME_COUPON_RATE) : packDiscountCents;
     const totalCents = subtotalCents - discountCents;
     const rate = Number((window.BOOMART_CHECKOUT && window.BOOMART_CHECKOUT.advanceRate) || 0.5);
     const advanceCents = Math.round(totalCents * rate);
     const balanceCents = totalCents - advanceCents;
     return {
-      itemCount: resolvedLines.reduce((sum, line) => sum + line.quantity, 0),
+      itemCount,
+      packDiscount: fromCents(packDiscountCents),
       subtotal: fromCents(subtotalCents),
       couponApplied,
       discount: fromCents(discountCents),

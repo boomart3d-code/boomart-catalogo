@@ -31,7 +31,7 @@ window.BOOMART_CHECKOUT = {
       type: "qr",
       label: "Yape",
       holder: "Mónica Carina Molina Escalona",
-      qrImage: "assets/payments/yape-qr.jpeg",
+      qrImage: "/assets/payments/yape-qr.jpeg",
       phone: "928026092",
       available: true
     },
@@ -39,7 +39,7 @@ window.BOOMART_CHECKOUT = {
       type: "qr",
       label: "Plin",
       holder: "Mónica Carina Molina Escalona",
-      qrImage: "assets/payments/plin-qr.jpeg",
+      qrImage: "/assets/payments/plin-qr.jpeg",
       phone: "928026092",
       available: true
     },

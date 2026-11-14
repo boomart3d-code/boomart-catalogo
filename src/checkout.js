@@ -8,6 +8,7 @@
   "use strict";
 
   const CHECKOUT = window.BOOMART_CHECKOUT || {};
+  const polos = document.body.classList.contains("polos-store");
   const money = (value) => `S/${Number(value || 0).toFixed(2)}`;
   const esc = (value) => String(value ?? "").replace(/[&<>"']/g,
     (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -164,7 +165,7 @@
       cartLinesEl.innerHTML = cartState.lines.map(cartLineMarkup).join("");
     }
 
-    const couponApplied = Boolean(cartState.totals.couponApplied);
+    const couponApplied = cartState.totals.discount > 0;
     cartCouponRow.hidden = !couponApplied;
     cartDiscountRow.hidden = !couponApplied;
     if (couponApplied) {
@@ -173,6 +174,15 @@
     }
     cartTotalDisplay.textContent = money(cartState.totals.total);
     startCheckoutBtn.disabled = cartState.lines.length === 0;
+    const packProgress = document.querySelector("#cartPackProgress");
+    const promo = window.BOOMART_POLOS_PROMOTION;
+    if (packProgress && promo) {
+      const count = cartState.totals.itemCount;
+      const remaining = promo.cantidad - count % promo.cantidad;
+      packProgress.textContent = count === 0 || remaining === promo.cantidad
+        ? `${promo.cantidad} polos por ${money(promo.precio)}`
+        : `Agrega ${remaining} ${remaining === 1 ? "polo" : "polos"} para ${count >= promo.cantidad ? "otro pack" : "activar el pack"}.`;
+    }
   };
 
   const openCart = () => {
@@ -537,7 +547,7 @@
     const cartContext = document.querySelector("#checkoutCartContext");
     if (cartContext) {
       const totals = window.BoomartCart.getState().totals;
-      cartContext.textContent = `${totals.itemCount} producto${totals.itemCount === 1 ? "" : "s"} · Total de productos: ${money(totals.total)} · En el siguiente paso verás el pago y tu cupón, si corresponde.`;
+      cartContext.textContent = `${totals.itemCount} producto${totals.itemCount === 1 ? "" : "s"} · Total de productos: ${money(totals.total)}${polos ? "" : " · En el siguiente paso verás el pago y tu cupón, si corresponde."}`;
     }
     reg.render(checkoutRegistroEl, {
       context: "checkout",
@@ -609,9 +619,10 @@
       )
       .join("");
     const couponApplied = plan.couponApplied;
-    summaryCouponRow.hidden = !couponApplied;
-    summaryDiscountRow.hidden = !couponApplied;
-    if (couponApplied) {
+    const showDiscount = couponApplied || state.totals.packDiscount > 0;
+    summaryCouponRow.hidden = !showDiscount;
+    summaryDiscountRow.hidden = !showDiscount;
+    if (showDiscount) {
       summarySubtotalEl.textContent = money(state.totals.subtotal);
       summaryDiscountEl.textContent = `-${money(state.totals.discount)}`;
     }
@@ -652,7 +663,7 @@
   function paymentPlan(state) {
     const t = state.totals;
     const card = isCardPayment();
-    const baseCents = Math.round((card ? t.subtotal : t.total) * 100);
+    const baseCents = Math.round((card && !polos ? t.subtotal : t.total) * 100);
     const advanceCents = Math.round(baseCents * t.advanceRate);
     return {
       card,
@@ -839,6 +850,28 @@
 
   function orderPayload(state, plan, code) {
     const method = selectedMethodConfig();
+    const promo = window.BOOMART_POLOS_PROMOTION;
+    let packedUnits = state.totals.packDiscount
+      ? Math.floor(state.totals.itemCount / promo.cantidad) * promo.cantidad
+      : 0;
+    const items = state.lines.flatMap((line) => {
+      const item = {
+        id: line.productId,
+        nombre: line.name,
+        variante: line.variantLabel || "",
+        variante_clave: line.variantKey || "",
+        cantidad: line.quantity,
+        precio: line.unitPrice
+      };
+      const packed = Math.min(packedUnits, line.quantity);
+      packedUnits -= packed;
+      if (!packed) return [item];
+      // Studio recalcula el total a partir de los precios unitarios enviados.
+      const discounted = { ...item, cantidad: packed, precio: promo.precio / promo.cantidad };
+      return packed === line.quantity
+        ? [discounted]
+        : [discounted, { ...item, cantidad: line.quantity - packed }];
+    });
     return {
       codigo: code,
       metodo: selectedPaymentMethod || "",
@@ -846,16 +879,9 @@
       modalidad: payMode === "full" ? "total" : "adelanto",
       tarjeta: Boolean(plan.card),
       destino: destinationLabel(),
-      total: plan.card ? state.totals.subtotal : state.totals.total,
+      total: plan.base,
       monto_a_pagar: plan.pay,
-      items: state.lines.map((line) => ({
-        id: line.productId,
-        nombre: line.name,
-        variante: line.variantLabel || "",
-        variante_clave: line.variantKey || "",
-        cantidad: line.quantity,
-        precio: line.unitPrice
-      }))
+      items
     };
   }
 
@@ -869,7 +895,7 @@
     const values = {
       nombre: customer.name,
       apellido: customer.lastName,
-      pedido: `${items}\nTotal de productos: ${money(plan.base)}`,
+      pedido: `${items}${state.totals.packDiscount ? `\nDescuento por packs: -${money(state.totals.packDiscount)}` : ""}\nTotal de productos: ${money(plan.base)}`,
       modalidad: payMode === "full" ? "pago total (100%)" : "reserva del 50%",
       monto: money(plan.pay),
       pasarela: selectedMethodConfig().gateway || "la pasarela de pago",
@@ -897,10 +923,10 @@ Código de pedido: ${code}`;
     const docType = customer.docType;
     const docNumber = customer.docNumber;
     const docLine = docType && docNumber ? [`Documento para boleta: ${DOC_TYPE_LABELS[docType] || docType} ${docNumber}`] : [];
-    const couponLines = state.totals.couponApplied
+    const couponLines = state.totals.discount > 0
       ? [
           `Subtotal: ${money(state.totals.subtotal)}`,
-          `Cupón de bienvenida (-10%): -${money(state.totals.discount)}`
+          `${polos ? "Descuento por packs" : "Cupón de bienvenida (-10%)"}: -${money(state.totals.discount)}`
         ]
       : [];
 

@@ -345,3 +345,58 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
 .accion-tarjeta{display:inline-block;margin-top:8px;text-decoration:underline}
 @media(max-width:560px){.tienda-filtros{grid-template-columns:repeat(2,minmax(0,1fr))}.tienda-filtros label:first-child{grid-column:1/-1}.portada-carrusel .hero-fotos{aspect-ratio:1.32}.portada-carrusel .hero-polo{width:55%}}
 .cab .marca{align-items:center;flex-shrink:0}.cab .marca img{width:clamp(65px,7vw,88px);height:auto}
+.polos-store .cart-drawer,
+.polos-store .checkout-dialog,
+.polos-store .checkout-shell {
+  --black: #f4f0e8;
+  --white: #171410;
+  --muted: #625c53;
+  --line: #ded6c9;
+  --gold: #493b2e;
+  background: #f4f0e8;
+  color: #171410;
+}
+.polos-store .cart-line,
+.polos-store .checkout-customer-review,
+.polos-store .payment-detail,
+.polos-store .delivery-terms,
+.polos-store .checkout-shell .payment-method,
+.polos-store .checkout-shell input,
+.polos-store .checkout-shell select,
+.polos-store .checkout-shell textarea {
+  background: #faf8f3;
+  color: #171410;
+  border-color: #bfb4a4;
+}
+.polos-store .checkout-shell .payment-method.is-selected {
+  box-shadow: inset 0 0 0 2px #171410;
+}
+.polos-store .cart-drawer .primary,
+.polos-store .checkout-shell .primary,
+.polos-store .checkout-shell .whatsapp {
+  background: #171410;
+  color: #fffaf2;
+  border-radius: 999px;
+}
+.polos-store .cart-line-media img { object-fit: contain; }
+.polos-store .cart-pack-progress { font-size: .875rem; color: #493b2e; }
+.polos-store #cartFloatToggle[hidden] { display: none; }
+.polos-store #cartCount:not([hidden]) {
+  margin-inline-start: .35rem;
+  font-variant-numeric: tabular-nums;
+}
+.polos-store .checkout-progress li,
+.polos-store .checkout-cart-context,
+.polos-store .checkout-shell .reg-hint,
+.polos-store .checkout-shell .field small,
+.polos-store .checkout-shell .payment-disclaimer {
+  color: #625c53;
+}
+.polos-store .checkout-progress .is-active,
+.polos-store .checkout-shell .icon-button,
+.polos-store .checkout-shell .button.secondary,
+.polos-store .cart-drawer .icon-button,
+.polos-store .cart-drawer .qty-btn {
+  color: #171410;
+}
+.polos-store .checkout-progress .is-complete { border-color: #625c53; }
