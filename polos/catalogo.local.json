@@ -450,10 +450,10 @@
           "ancho": 360
         },
         {
-          "archivo": "img/dragon-ball/goku-super-saiyajin-blue-4.webp",
-          "alto": 452,
-          "titulo": "Detalle del pecho y cuello",
-          "ancho": 360
+          "archivo": "img/dragon-ball/goku-super-saiyajin-blue-detalle-pecho-v2.webp",
+          "alto": 550,
+          "titulo": "Detalle del estampado del pecho",
+          "ancho": 440
         },
         {
           "archivo": "img/dragon-ball/goku-super-saiyajin-blue-referencia-espalda.webp",
@@ -462,10 +462,10 @@
           "ancho": 2048
         },
         {
-          "archivo": "img/dragon-ball/goku-super-saiyajin-blue-referencia-frente.webp",
-          "alto": 2560,
-          "titulo": "Referencia del estampado de pecho",
-          "ancho": 2048
+          "archivo": "img/dragon-ball/goku-super-saiyajin-blue-frente-estudio-v2.webp",
+          "alto": 1402,
+          "titulo": "Frente en estudio",
+          "ancho": 1122
         }
       ],
       "tallas": [
