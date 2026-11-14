@@ -176,11 +176,18 @@
     pintar();
   }
 
+  function cartPhoto(product) {
+    const detail = product.tipo === "A"
+      ? /detalle.*(pecho|lechuza y el castillo)/i
+      : /detalle.*(espalda|estampado principal)/i;
+    return product.fotos.find(shot => detail.test(shot.titulo)) || product.fotos[0];
+  }
+
   function init(next) {
     data = next;
     window.BOOMART_PRODUCTS = data.productos.map(p => ({
       id: p.id, name: p.nombre, regularPrice: p.precio, category: p.tema,
-      image: p.fotos[0].archivo, tallas: p.tallas
+      image: cartPhoto(p).archivo, tallas: p.tallas
     }));
     window.BOOMART_POLOS_PROMOTION = data.promocion;
     try {

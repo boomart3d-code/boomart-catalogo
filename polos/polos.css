@@ -378,7 +378,34 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
   color: #fffaf2;
   border-radius: 999px;
 }
+.polos-store .cab .seleccion-cab {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  min-height: 44px;
+  padding-inline: .75rem;
+  border-radius: 999px;
+  background: #171410;
+  color: #fffaf2;
+  text-decoration: none;
+  letter-spacing: 0;
+}
+.polos-store .cab .seleccion-cab:hover { background: #40362d; }
+.polos-store .cab .seleccion-cab:focus-visible { outline-offset: 3px; }
+.polos-store .cart-line {
+  grid-template-columns: 84px minmax(0, 1fr) auto;
+}
+.polos-store .cart-line-media {
+  width: 84px;
+  height: 100px;
+  background: #ece4d8;
+}
 .polos-store .cart-line-media img { object-fit: contain; }
+@media (max-width: 360px) {
+  .polos-store .cab .seleccion-cab { gap: .3rem; padding-inline: .55rem; }
+  .polos-store .cart-line { grid-template-columns: 64px minmax(0, 1fr) auto; }
+  .polos-store .cart-line-media { width: 64px; height: 84px; }
+}
 .polos-store .cart-pack-progress { font-size: .875rem; color: #493b2e; }
 .polos-store #cartFloatToggle[hidden] { display: none; }
 .polos-store #cartCount:not([hidden]) {
@@ -400,3 +427,8 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
   color: #171410;
 }
 .polos-store .checkout-progress .is-complete { border-color: #625c53; }
+@media (max-width: 480px) {
+  .polos-store .cab { padding-inline: 12px; gap: 8px; }
+  .polos-store .cab .marca { gap: 6px; }
+  .polos-store .cab .seleccion-cab { padding-inline: 9px; }
+}

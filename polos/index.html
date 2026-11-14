@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../src/styles.css?v=69">
-  <link rel="stylesheet" href="polos.css?v=37">
+  <link rel="stylesheet" href="polos.css?v=38">
 </head>
 <body class="polos-store">
   <header class="cab" id="cab">
@@ -24,7 +24,10 @@
       <a href="#tallas" data-ir>Tallas</a>
     </nav>
     <span class="privado">Algodón pima</span>
-  <button class="seleccion-cab" id="cartToggle" type="button" aria-controls="cartDrawer" aria-expanded="false">Carrito <span id="cartCount" hidden>0</span></button>
+  <button class="seleccion-cab" id="cartToggle" type="button" aria-controls="cartDrawer" aria-expanded="false">
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l3 12h11l3-9H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+    <span>Carrito de compras</span><span id="cartCount" hidden>0</span>
+  </button>
   <button id="cartFloatToggle" type="button" hidden><span id="cartCountFloat"></span></button></header>
 
   <main id="app">
@@ -164,11 +167,11 @@
     <div class="cart-toast" id="cartToast" role="status" aria-live="polite" hidden></div>
 
     <div class="cart-backdrop" id="cartBackdrop" hidden></div>
-    <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compra" hidden>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compras" hidden>
       <div class="cart-drawer-header">
         <div class="brand-context">
           <img class="ba-mark" src="../assets/brand/boomart-icon-asistente.png?v=1" alt="">
-          <div><span>COMPRA EN BOOMART</span><h2>Tu carrito</h2></div>
+          <div><span>COMPRA EN BOOMART</span><h2>Carrito de compras</h2></div>
         </div>
         <button type="button" class="icon-button" id="closeCart" aria-label="Cerrar carrito">×</button>
       </div>
@@ -300,6 +303,6 @@
   <script src="../src/supabase-config.js?v=1"></script>
   <script src="../src/registro-web.js?v=5"></script>
   <script src="catalogo-core.js?v=3"></script>
-  <script src="polos.js?v=50"></script>
+  <script src="polos.js?v=51"></script>
 </body>
 </html>
