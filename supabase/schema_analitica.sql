@@ -40,7 +40,8 @@ create table if not exists public.web_eventos (
   constraint web_eventos_tipo_chk check (tipo in (
     'visita', 'ver_producto', 'filtrar', 'buscar', 'agregar_carrito',
     'abrir_carrito', 'iniciar_compra', 'pedido_whatsapp', 'clic_whatsapp',
-    'compartir', 'tiempo'
+    'compartir', 'tiempo',
+    'me_gusta', 'quitar_me_gusta'
   ))
 );
 

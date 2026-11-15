@@ -11,6 +11,10 @@
 --
 -- Requiere que la Edge Function `track` acepte los tipos me_gusta y
 -- quitar_me_gusta (supabase/functions/track/index.ts).
+--
+-- La tabla tambien debe aceptarlos: web_eventos_tipo_chk los incluye desde la
+-- migracion analitica_web_eventos_tipos_me_gusta (15-nov-2026; ver la lista en
+-- schema_analitica.sql). Sin eso, el lote entero que trae un corazon se rechaza.
 
 create or replace function public.panel_polos_gustan(
   p_desde timestamptz,
