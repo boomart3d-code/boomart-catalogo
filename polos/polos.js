@@ -183,6 +183,8 @@
     pintarCorazon($("favoritoFicha"), product);
     if (!details.open) details.showModal();
     details.scrollTop = 0;
+    // En celular las fotos son una fila que se desliza: cada polo empieza en su primera foto.
+    $("fotosFicha").scrollLeft = 0;
     if (inicial > 0) $("fotosFicha").children[inicial].scrollIntoView({block: "nearest", inline: "center"});
     medir("ver_producto", {p: product.id, o: "polos"});
   }
