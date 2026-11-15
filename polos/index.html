@@ -12,26 +12,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../src/styles.css?v=69">
-  <link rel="stylesheet" href="polos.css?v=46">
+  <link rel="stylesheet" href="polos.css?v=47">
 </head>
 <body class="polos-store">
   <header class="cab" id="cab">
+    <button class="menu-cab" id="abrirMenu" type="button" aria-label="Abrir el menú" aria-haspopup="dialog">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
     <a class="marca" href="#/" aria-label="BoomArt polos, inicio"><img src="boomart-calado.png" alt="" width="1200" height="601"><i>Polos</i></a>
-    <nav class="nav" aria-label="Secciones">
-      <a href="#coleccion" data-ir>Colección</a>
-      <a href="#proceso" data-ir>Cómo se hace</a>
-      <a href="#prenda" data-ir>La prenda</a>
-      <a href="#tallas" data-ir>Tallas</a>
-    </nav>
-    <span class="privado">Algodón pima</span>
+    <nav class="nav" id="navColecciones" aria-label="Colecciones"></nav>
   <div class="cab-acciones">
-  <button class="favoritos-cab" id="verFavoritos" type="button" aria-label="Ver mis favoritos">
+  <button class="favoritos-cab" id="verFavoritos" type="button" aria-label="Ver mis favoritos" title="Mis favoritos">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
     <span id="favoritosCount" hidden>0</span>
   </button>
-  <button class="seleccion-cab" id="cartToggle" type="button" aria-controls="cartDrawer" aria-expanded="false">
+  <button class="seleccion-cab" id="cartToggle" type="button" aria-controls="cartDrawer" aria-expanded="false" title="Carrito de compras">
     <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l3 12h11l3-9H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
-    <span>Carrito de compras</span><span id="cartCount" hidden>0</span>
+    <span class="sr-only">Carrito de compras</span><span id="cartCount" hidden>0</span>
   </button>
   </div>
   <button id="cartFloatToggle" type="button" hidden><span id="cartCountFloat"></span></button></header>
@@ -146,18 +143,22 @@
   <footer class="pie">
     <div class="cont pie-in">
       <div><p class="pie-marca">BOOMART <i>Polos</i></p><p>Polos de autor, desde Lima.</p></div>
+      <nav aria-label="Información"><p class="pie-t">Información</p><div class="pie-enlaces"><a href="#prenda">La prenda</a><a href="#tallas">Guía de tallas</a><a href="#proceso">Cómo se hace</a><a href="#preguntas">Preguntas frecuentes</a></div></nav>
       <div><p class="pie-t">Contacto</p><a href="https://wa.me/51925666542?text=Hola%20BoomArt%20%F0%9F%91%8B%20Quiero%20consultar%20por%20los%20polos" target="_blank" rel="noopener">WhatsApp · +51 925 666 542</a></div>
       <div><p class="pie-t">Pedidos</p><p class="pie-n">Consulta disponibilidad y coordina tu pedido por WhatsApp.</p></div>
     </div>
   </footer>
 
   <dialog id="ficha" aria-labelledby="nombreFicha">
-    <form method="dialog" class="ficha-barra">
-      <button type="submit" class="ficha-volver">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
-        <span>Volver a la colección</span>
-      </button>
-    </form>
+    <div class="ficha-barra">
+      <form method="dialog">
+        <button type="submit" class="ficha-volver" aria-label="Volver a la colección">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+          <span>Volver</span>
+        </button>
+      </form>
+      <nav class="ruta" aria-label="Estás en"><ol id="rutaFicha"></ol></nav>
+    </div>
     <div class="ficha-producto">
       <section class="ficha-galeria" aria-label="Fotos del polo">
         <div class="ficha-fotos" id="fotosFicha"></div>
@@ -202,6 +203,26 @@
       <div class="parecidos" id="parecidosFicha"></div>
     </section>
   </dialog>
+  <dialog id="menuPolos" class="panel-lateral panel-izquierda" aria-labelledby="menuTitulo">
+    <div class="panel-cab">
+      <h2 id="menuTitulo">Menú</h2>
+      <form method="dialog"><button type="submit" class="panel-cerrar" aria-label="Cerrar el menú">×</button></form>
+    </div>
+    <nav class="menu-grupo" aria-labelledby="menuColeccionesT">
+      <h3 id="menuColeccionesT">Colecciones</h3>
+      <div class="menu-lista" id="menuColecciones"></div>
+    </nav>
+    <nav class="menu-grupo" aria-labelledby="menuInformacionT">
+      <h3 id="menuInformacionT">Información</h3>
+      <div class="menu-lista">
+        <a href="#prenda">La prenda</a>
+        <a href="#tallas">Guía de tallas</a>
+        <a href="#proceso">Cómo se hace</a>
+        <a href="#preguntas">Preguntas frecuentes</a>
+      </div>
+    </nav>
+  </dialog>
+
   <dialog id="guiaTallas" class="panel-lateral" aria-labelledby="guiaTitulo">
     <div class="panel-cab">
       <h2 id="guiaTitulo">Guía de tallas</h2>
@@ -354,7 +375,7 @@
   <script src="../src/supabase-config.js?v=1"></script>
   <script src="../src/registro-web.js?v=5"></script>
   <script src="catalogo-core.js?v=3"></script>
-  <script src="polos.js?v=59"></script>
+  <script src="polos.js?v=60"></script>
   <!-- Medicion propia y anonima (panel privado): visitas, polos vistos, carrito y corazones.
        En Polos NO se carga el pixel de Meta: track.js lo omite cuando window.fbq ya existe.
        Para activarlo aqui, quitar la linea del fbq vacio. -->

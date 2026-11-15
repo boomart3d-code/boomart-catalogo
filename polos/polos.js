@@ -30,6 +30,25 @@
   let soloFavoritos = false;
   let pintarColeccion = () => {};
 
+  // Navegacion: cada coleccion tiene su enlace (#/c/harry-potter); «todos» es la coleccion completa.
+  const slug = (texto) => texto.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const rutaDe = (tema) => "#/c/" + (tema === "todos" ? "todos" : slug(tema));
+  let temaActual = () => "todos";
+  let elegirColeccion = () => {};
+  // La ficha abierta desde una tarjeta vuelve al mismo lugar de la grilla; desde otro sitio, al inicio de la coleccion.
+  let desdeGrilla = false;
+  function pintarRuta(lista, partes) {
+    lista.replaceChildren(...partes.map(([texto, href]) => {
+      const li = document.createElement("li");
+      const nodo = document.createElement(href ? "a" : "span");
+      nodo.textContent = texto;
+      if (href) nodo.href = href;
+      else nodo.setAttribute("aria-current", "page");
+      li.append(nodo);
+      return li;
+    }));
+  }
+
   function iconoCorazon() {
     const ns = "http://www.w3.org/2000/svg";
     const svg = document.createElementNS(ns, "svg");
@@ -159,6 +178,7 @@
     $("descripcionFicha").textContent = product.texto;
     $("materialFicha").textContent = product.material;
     $("colorFicha").textContent = "Polo " + product.color;
+    pintarRuta($("rutaFicha"), [["Polos", rutaDe("todos")], [product.tema, rutaDe(product.tema)], [product.nombre, null]]);
     corte = "";
     talla = "";
     pintarOpciones();
@@ -191,8 +211,16 @@
   function route() {
     const m = location.hash.match(/^#\/p\/([a-z0-9-]+)(?:\/probador)?$/);
     const product = m && data.productos.find(p => p.id === m[1]);
-    if (product) openProduct(product);
-    else if (details.open) details.close();
+    if (product) return openProduct(product);
+    const c = location.hash.match(/^#\/c\/([a-z0-9-]+)$/);
+    const tema = c && ([...new Set(data.productos.map(p => p.tema))].find(name => slug(name) === c[1]) || "todos");
+    // Volver (boton Atras o la ruta) a la coleccion que ya se estaba viendo no mueve la grilla ni borra la busqueda.
+    const regreso = details.open && desdeGrilla && tema === temaActual();
+    if (details.open) details.close();
+    if (!c || regreso) return;
+    // Un enlace de coleccion lleva al inicio de esa coleccion.
+    elegirColeccion(tema);
+    $("coleccion").scrollIntoView();
   }
   function entradasAlDesplazar() {
     if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -291,13 +319,41 @@
       pestanas.push([name, name, data.productos.filter(p => p.tema === name).length]);
     }
     $("coleccionesPolo").replaceChildren(...pestanas.map(([valor, texto, cantidad]) => {
-      const b = button(texto, () => { tema = valor; pintar(); });
+      const b = button(texto, () => {
+        tema = valor;
+        pintar();
+        // La direccion acompana a la pestana, para poder compartir el enlace de una coleccion.
+        history.replaceState(null, "", rutaDe(tema));
+      });
       b.dataset.tema = valor;
       const n = document.createElement("span");
       n.textContent = cantidad;
       b.append(n);
       return b;
     }));
+    // Las mismas colecciones, como enlaces: en la cabecera y en el menu lateral (con su cantidad).
+    const enlaces = (conCantidad) => pestanas.map(([valor, texto, cantidad]) => {
+      const a = document.createElement("a");
+      a.href = rutaDe(valor);
+      a.dataset.tema = valor;
+      a.textContent = valor === "todos" ? "Todos los polos" : texto;
+      if (conCantidad) {
+        const n = document.createElement("span");
+        n.textContent = cantidad;
+        a.append(n);
+      }
+      return a;
+    });
+    $("navColecciones").replaceChildren(...enlaces(false));
+    $("menuColecciones").replaceChildren(...enlaces(true));
+    temaActual = () => tema;
+    // Llegar por un enlace de coleccion muestra la coleccion entera: sin busqueda ni filtro de favoritos.
+    elegirColeccion = (valor) => {
+      tema = valor;
+      search.value = "";
+      soloFavoritos = false;
+      pintar();
+    };
 
     const cards = new Map();
     const cerrarTarjetas = [];
@@ -388,7 +444,10 @@
       };
       cerrarTarjetas.push(cerrar);
       // Al abrir la ficha desde la tarjeta, el mouse queda sobre el dialogo: se cierra aqui.
-      a.addEventListener("click", cerrar);
+      a.addEventListener("click", () => {
+        cerrar();
+        desdeGrilla = true;
+      });
       cell.addEventListener("pointerenter", (event) => {
         if (event.pointerType !== "mouse" || !conMouse.matches || p.fotos.length < 2) return;
         armarTira();
@@ -403,6 +462,10 @@
       // Una tarjeta que sale de la grilla no recibe «pointerleave»: se cierra antes de moverla.
       for (const cerrar of cerrarTarjetas) cerrar();
       for (const b of $("coleccionesPolo").children) b.setAttribute("aria-pressed", String(b.dataset.tema === tema));
+      for (const a of [...$("navColecciones").children, ...$("menuColecciones").children]) {
+        if (a.dataset.tema === tema && tema !== "todos") a.setAttribute("aria-current", "true");
+        else a.removeAttribute("aria-current");
+      }
       $("grilla").replaceChildren(...list.map(p => cards.get(p.id)));
       const total = list.length === 1 ? "1 polo" : list.length + " polos";
       $("resultadoPolos").textContent = !soloFavoritos ? total : list.length ? "Tus favoritos: " + total : "Tus favoritos";
@@ -434,6 +497,7 @@
       sort.value = "";
       soloFavoritos = false;
       pintar();
+      history.replaceState(null, "", rutaDe(tema));
       search.focus();
     };
     pintar();
@@ -524,7 +588,22 @@
       $("cartToggle").click();
     };
     details.addEventListener("close", () => {
-      if (location.hash.startsWith("#/p/")) location.hash = "#coleccion";
+      const quedarse = desdeGrilla;
+      desdeGrilla = false;
+      if (!location.hash.startsWith("#/p/")) return;
+      // Al salir de la ficha la direccion vuelve a la coleccion que se estaba viendo.
+      history.replaceState(null, "", rutaDe(temaActual()));
+      if (!quedarse) $("coleccion").scrollIntoView();
+    });
+    // Menu lateral (pantallas angostas): un clic fuera lo cierra y cada enlace lo cierra al navegar.
+    $("abrirMenu").onclick = () => $("menuPolos").showModal();
+    $("menuPolos").addEventListener("click", (event) => {
+      if (event.target === $("menuPolos") || event.target.closest("a")) $("menuPolos").close();
+    });
+    // Un enlace de coleccion que ya es la direccion actual no dispara «hashchange»: se atiende aqui.
+    document.addEventListener("click", (event) => {
+      const a = event.target.closest?.('a[href^="#/c/"]');
+      if (a && a.getAttribute("href") === location.hash) route();
     });
     window.addEventListener("hashchange", route);
     route();

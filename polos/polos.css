@@ -933,8 +933,6 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
   margin-left: auto;
 }
 .cab .cab-acciones .seleccion-cab { margin-left: 0; }
-/* Con el corazon en la cabecera, el menu necesita el espacio de la etiqueta en pantallas medianas. */
-@media (max-width: 1180px) { .cab .privado { display: none; } }
 .favoritos-cab {
   display: inline-flex;
   align-items: center;
@@ -951,11 +949,6 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
   font-variant-numeric: tabular-nums;
 }
 .favoritos-cab:hover { border-color: var(--tinta); }
-/* Celulares: el corazon rojo ya avisa que hay favoritos; el numero cede su espacio al carrito. */
-@media (max-width: 400px) {
-  .favoritos-cab { width: 44px; padding: 0; }
-  .favoritos-cab #favoritosCount { display: none; }
-}
 @media (max-width: 350px) { .cab .marca i { display: none; } }
 .resultado-fila {
   display: flex;
@@ -1001,3 +994,156 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
     65% { transform: scale(.92); }
   }
 }
+
+/* ───── Etapa 3: navegación ─────
+   La cabecera lleva al comprador por colecciones; lo informativo vive en el menú y en el pie.
+   En pantallas angostas las colecciones pasan a un menú lateral. */
+.cab .nav { gap: clamp(18px, 2.2vw, 32px); }
+.nav a[aria-current="true"] { color: var(--tinta); border-color: var(--tinta); }
+.menu-cab {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  margin-left: -10px;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--tinta);
+  cursor: pointer;
+}
+.menu-cab:hover { background: var(--arena); }
+.menu-cab svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+}
+@media (max-width: 980px) {
+  .menu-cab { display: inline-flex; }
+  .polos-store .cab { justify-content: flex-start; gap: 6px; }
+}
+
+/* Corazón y carrito: dos botones del mismo tamaño, cada uno con su contador en una esquina. */
+.polos-store .cab .cab-acciones :is(.favoritos-cab, .seleccion-cab) {
+  position: relative;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
+}
+.polos-store .cab .cab-acciones :is(#favoritosCount, #cartCount) {
+  position: absolute;
+  top: -3px;
+  right: -5px;
+  box-sizing: border-box;
+  min-width: 19px;
+  height: 19px;
+  margin: 0;
+  padding: 0 4px;
+  border: 1px solid var(--tinta);
+  border-radius: 999px;
+  background: var(--marfil-2);
+  color: var(--tinta);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 17px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Ruta de la ficha: Polos / colección / polo. El nombre del polo se recorta si no cabe. */
+.ficha-barra { gap: 4px; }
+/* La tienda general define «nav» como fila alineada a la derecha y en color claro: aquí no aplica. */
+:is(.ruta, .menu-grupo, .pie nav) { display: block; color: inherit; font-size: inherit; }
+.ruta { min-width: 0; flex: 1; }
+.ruta ol {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  margin: 0;
+  padding: 0 12px 0 0;
+  list-style: none;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.ruta li { flex-shrink: 0; }
+.ruta li + li::before { content: "/"; margin-inline: 9px; color: #b3a999; }
+.ruta li:last-child { flex-shrink: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.ruta a {
+  display: inline-block;
+  padding-block: 12px;
+  color: var(--gris);
+  text-decoration: none;
+}
+.ruta a:hover { color: var(--tinta); text-decoration: underline; text-underline-offset: 4px; }
+.ruta [aria-current] { color: var(--tinta); font-weight: 600; }
+.ficha-volver { flex-shrink: 0; }
+.ficha-barra form { display: flex; }
+.ficha-barra form::after {
+  content: "";
+  align-self: center;
+  width: 1px;
+  height: 20px;
+  margin: 0 12px 0 4px;
+  background: var(--linea);
+}
+
+/* Menú lateral: entra por la izquierda, del lado del botón que lo abre. */
+.panel-izquierda { inset: 0 auto 0 0; width: min(380px, 88%); }
+.menu-grupo { margin-top: 26px; }
+.menu-grupo h3 {
+  margin: 0 0 6px;
+  color: var(--gris);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.4;
+  text-transform: none;
+}
+.menu-lista { display: grid; }
+.menu-lista a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 52px;
+  border-bottom: 1px solid var(--linea);
+  color: var(--tinta);
+  text-decoration: none;
+}
+#menuColecciones a {
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+#menuColecciones a span {
+  color: var(--gris);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.menu-lista a[aria-current="true"] { border-bottom-color: var(--tinta); }
+.menu-lista a:hover { border-bottom-color: var(--tinta); }
+@media (prefers-reduced-motion: no-preference) {
+  .panel-izquierda[open] { animation: panel-entra-izq .28s var(--ease); }
+  @keyframes panel-entra-izq { from { transform: translateX(-28px); opacity: 0; } }
+}
+
+/* Pie: los enlaces informativos que salieron de la cabecera. */
+.pie-in { grid-template-columns: 1.2fr 1fr 1fr 1.2fr; }
+.pie-enlaces { display: grid; justify-items: start; gap: 4px; margin-top: 4px; }
+.pie-enlaces a { padding-block: 5px; }
+@media (max-width: 980px) { .pie-in { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .pie-in { grid-template-columns: 1fr; } }
