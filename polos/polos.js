@@ -14,7 +14,6 @@
   };
   let data;
   let selected;
-  let shotIndex = 0;
   let fotoInicial = 0;
   const price = (amount) => "S/ " + amount;
   const details = $("ficha");
@@ -84,36 +83,53 @@
     }
   }
 
-  function showShot(index) {
-    const photos = selected.fotos;
-    shotIndex = (index + photos.length) % photos.length;
-    const shot = photos[shotIndex];
-    const img = image(shot, selected.nombre + " · " + shot.titulo, false);
-    $("fotoFicha").replaceChildren(img);
-    $("fotoFicha").onclick = () => {
-      $("fotoAmpliada").replaceChildren(img.cloneNode());
-      $("visorPolo").showModal();
-    };
-    $("fotoTexto").textContent = shot.titulo + " · " + (shotIndex + 1) + " de " + photos.length;
-    for (const [i, b] of [...$("miniaturas").children].entries()) b.setAttribute("aria-pressed", String(i === shotIndex));
+  // Fotos de la ficha: cuadricula de fotos grandes (en celular, una fila que se desliza).
+  // En computadora se ven las cuatro primeras y un boton muestra el resto.
+  const FOTOS_A_LA_VISTA = 4;
+  function pintarFotos(product, inicial) {
+    const caja = $("fotosFicha");
+    caja.classList.toggle("todas", inicial >= FOTOS_A_LA_VISTA);
+    caja.replaceChildren(...product.fotos.map((shot, i) => {
+      const alt = product.nombre + " · " + shot.titulo;
+      const b = button("", () => {
+        $("fotoAmpliada").replaceChildren(image(shot, alt, false));
+        $("visorPolo").showModal();
+      });
+      b.className = "ficha-foto";
+      b.setAttribute("aria-label", "Ampliar foto: " + shot.titulo);
+      b.append(image(shot, alt, i >= 2));
+      return b;
+    }));
+    const resto = product.fotos.length - FOTOS_A_LA_VISTA;
+    $("masFotos").hidden = resto <= 0 || caja.classList.contains("todas");
+    $("masFotos").textContent = resto === 1 ? "Ver 1 foto más" : "Ver " + resto + " fotos más";
   }
-  function updateSizeDetail() {
-    const size = data.medidas[$("corteFicha").value]?.[$("tallaFicha").value];
+
+  // Corte y talla se eligen con botones. Nada viene marcado: cada polo se elige de nuevo.
+  let corte = "";
+  let talla = "";
+  const medidasElegidas = () => data.medidas[corte]?.[talla];
+
+  function pintarOpciones() {
+    for (const input of $("corteFicha").querySelectorAll("input")) input.checked = input.value === corte;
+    const sizes = data.medidas[corte];
+    $("tallasFicha").replaceChildren(...selected.tallas.map(size => {
+      const label = document.createElement("label");
+      const input = document.createElement("input");
+      Object.assign(input, {type: "radio", name: "tallaFicha", value: size, checked: size === talla, disabled: Boolean(corte) && !sizes?.[size]});
+      const text = document.createElement("span");
+      text.textContent = size;
+      label.append(input, text);
+      return label;
+    }));
+    const size = medidasElegidas();
+    $("medidasFicha").classList.remove("falta");
     $("medidasFicha").textContent = size
       ? `Pecho ${size.pecho} cm · Largo ${size.largo} cm · Hombros ${size.hombros} cm · Manga ${size.manga} cm`
-      : "Elige corte y talla para ver las medidas.";
-    $("agregarPolo").disabled = !size;
+      : "";
   }
 
-  function updateSizes() {
-    const sizes = data.medidas[$("corteFicha").value];
-    $("tallaFicha").replaceChildren(new Option("Elige la talla", ""),
-      ...selected.tallas.filter(talla => sizes?.[talla]).map(talla => new Option(talla, talla)));
-    $("tallaFicha").disabled = !sizes;
-    updateSizeDetail();
-  }
-
-  function renderSizeGuide() {
+  function renderSizeGuide(container) {
     for (const [cut, sizes] of Object.entries(data.medidas)) {
       const table = document.createElement("table");
       table.createCaption().textContent = cut === "hombre" ? "Hombre" : "Mujer";
@@ -131,7 +147,7 @@
           row.insertCell().textContent = value;
         }
       }
-      $("guiasCorte").append(table);
+      container.append(table);
     }
   }
 
@@ -143,19 +159,31 @@
     $("descripcionFicha").textContent = product.texto;
     $("materialFicha").textContent = product.material;
     $("colorFicha").textContent = "Polo " + product.color;
-    $("corteFicha").value = "";
-    updateSizes();
-    $("miniaturas").replaceChildren(...product.fotos.map((shot, i) => {
-      const b = button("", () => showShot(i));
-      b.setAttribute("aria-label", shot.titulo);
-      b.append(image(shot, ""));
-      return b;
-    }));
-    // Si se llego desde una miniatura de la galeria, la ficha abre en esa foto.
-    showShot(fotoInicial < product.fotos.length ? fotoInicial : 0);
+    corte = "";
+    talla = "";
+    pintarOpciones();
+    // Si se llego desde una miniatura de la galeria, la ficha muestra esa foto.
+    const inicial = fotoInicial < product.fotos.length ? fotoInicial : 0;
     fotoInicial = 0;
+    pintarFotos(product, inicial);
+    // Otros polos de la misma coleccion.
+    const parecidos = data.productos.filter(p => p.tema === product.tema && p !== product).slice(0, 4);
+    $("parecidosFicha").replaceChildren(...parecidos.map(p => {
+      const a = document.createElement("a");
+      a.className = "parecido";
+      a.href = "#/p/" + p.id;
+      const precio = document.createElement("p");
+      precio.textContent = price(p.precio);
+      const nombre = document.createElement("h4");
+      nombre.textContent = p.nombre;
+      a.append(image(p.fotos[0], p.nombre), precio, nombre);
+      return a;
+    }));
+    $("parecidosSeccion").hidden = parecidos.length === 0;
     pintarCorazon($("favoritoFicha"), product);
     if (!details.open) details.showModal();
+    details.scrollTop = 0;
+    if (inicial > 0) $("fotosFicha").children[inicial].scrollIntoView({block: "nearest", inline: "center"});
     medir("ver_producto", {p: product.id, o: "polos"});
   }
   function route() {
@@ -448,7 +476,8 @@
     } catch { /* sin memoria: se empieza sin favoritos */ }
     $("favoritoFicha").onclick = () => alternarFavorito(selected, "ficha", $("favoritoFicha"));
     pintarContadorFavoritos();
-    renderSizeGuide();
+    renderSizeGuide($("guiasCorte"));
+    renderSizeGuide($("guiasPanel"));
     iniciarCarrusel();
     iniciarBusqueda();
     entradasAlDesplazar();
@@ -457,22 +486,41 @@
       $("packLanzamiento").hidden = false;
       $("packLanzamiento").textContent = "Pack de lanzamiento · " + promo.cantidad + " polos por " + price(promo.precio);
     }
-    $("corteFicha").onchange = updateSizes;
-    $("tallaFicha").onchange = updateSizeDetail;
+    $("corteFicha").onchange = (event) => {
+      corte = event.target.value;
+      if (talla && !medidasElegidas()) talla = "";
+      pintarOpciones();
+      $("corteFicha").querySelector("input:checked")?.focus();
+    };
+    $("tallasFicha").onchange = (event) => {
+      talla = event.target.value;
+      pintarOpciones();
+      $("tallasFicha").querySelector("input:checked")?.focus();
+    };
+    $("masFotos").onclick = () => {
+      $("fotosFicha").classList.add("todas");
+      $("masFotos").hidden = true;
+      $("fotosFicha").children[FOTOS_A_LA_VISTA]?.focus();
+    };
+    // Guia de tallas: panel lateral encima de la ficha. Un clic fuera del panel lo cierra.
+    $("abrirGuia").onclick = () => $("guiaTallas").showModal();
+    $("guiaTallas").addEventListener("click", (event) => {
+      if (event.target === $("guiaTallas")) $("guiaTallas").close();
+    });
     $("agregarPolo").onclick = () => {
-      const variante = `${$("corteFicha").value}:${$("tallaFicha").value}`;
+      if (!medidasElegidas()) {
+        // Sin corte o talla, el boton explica que falta y lleva el foco a esa opcion.
+        $("medidasFicha").textContent = corte ? "Elige tu talla para agregarlo al carrito." : "Elige tu corte y tu talla para agregarlo al carrito.";
+        $("medidasFicha").classList.add("falta");
+        (corte ? $("tallasFicha") : $("corteFicha")).querySelector("input:not(:disabled)")?.focus();
+        return;
+      }
+      const variante = `${corte}:${talla}`;
       window.BoomartCart.add(selected.id, variante, 1);
       medir("agregar_carrito", {p: selected.id, c: 1, v: selected.precio, o: "ficha", d: {variante}});
       details.close();
       $("cartToggle").click();
     };
-    $("anteriorFoto").onclick = () => showShot(shotIndex - 1);
-    $("siguienteFoto").onclick = () => showShot(shotIndex + 1);
-    details.addEventListener("keydown", (e) => {
-      if (e.target.tagName === "SELECT") return;
-      if (e.key === "ArrowLeft") showShot(shotIndex - 1);
-      if (e.key === "ArrowRight") showShot(shotIndex + 1);
-    });
     details.addEventListener("close", () => {
       if (location.hash.startsWith("#/p/")) location.hash = "#coleccion";
     });

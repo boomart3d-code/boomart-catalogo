@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../src/styles.css?v=69">
-  <link rel="stylesheet" href="polos.css?v=45">
+  <link rel="stylesheet" href="polos.css?v=46">
 </head>
 <body class="polos-store">
   <header class="cab" id="cab">
@@ -152,26 +152,35 @@
   </footer>
 
   <dialog id="ficha" aria-labelledby="nombreFicha">
-    <form method="dialog" class="ficha-cerrar"><button type="submit">Cerrar ficha</button></form>
+    <form method="dialog" class="ficha-barra">
+      <button type="submit" class="ficha-volver">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        <span>Volver a la colección</span>
+      </button>
+    </form>
     <div class="ficha-producto">
-      <section aria-label="Fotos del polo">
-        <button id="fotoFicha" class="foto-ficha" type="button" aria-label="Ampliar foto"></button>
-        <div class="controles-foto">
-          <button id="anteriorFoto" type="button" aria-label="Foto anterior">←</button>
-          <span id="fotoTexto" aria-live="polite"></span>
-          <button id="siguienteFoto" type="button" aria-label="Foto siguiente">→</button>
-        </div>
-        <div id="miniaturas" aria-label="Elegir foto"></div><p class="nota">Imágenes ilustrativas de la sesión y del diseño.</p>
+      <section class="ficha-galeria" aria-label="Fotos del polo">
+        <div class="ficha-fotos" id="fotosFicha"></div>
+        <button id="masFotos" type="button" class="mas-fotos" hidden></button>
+        <p class="nota">Imágenes ilustrativas de la sesión y del diseño. Toca una foto para ampliarla.</p>
       </section>
-      <section>
+      <section class="ficha-compra" aria-label="Elegir y comprar">
         <p class="etiqueta" id="temaFicha"></p>
         <h2 id="nombreFicha"></h2>
-        <p id="colorFicha"></p><p id="precioFicha" class="precio"></p>
-        <p id="descripcionFicha"></p><p id="materialFicha"></p>
-        <div class="opciones-polo">
-          <label for="corteFicha">Corte <select id="corteFicha"><option value="">Elige el corte</option><option value="mujer">Mujer</option><option value="hombre">Hombre</option></select></label>
-          <label for="tallaFicha">Talla <select id="tallaFicha" disabled></select></label>
-        </div>
+        <p id="precioFicha" class="precio"></p>
+        <p id="colorFicha"></p>
+        <fieldset class="opcion" id="corteFicha">
+          <legend>Corte</legend>
+          <div class="opcion-botones">
+            <label><input type="radio" name="corteFicha" value="mujer"><span>Mujer</span></label>
+            <label><input type="radio" name="corteFicha" value="hombre"><span>Hombre</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="opcion">
+          <legend>Talla</legend>
+          <div class="opcion-botones" id="tallasFicha"></div>
+          <button type="button" class="enlace-guia" id="abrirGuia">Guía de tallas</button>
+        </fieldset>
         <p id="medidasFicha" aria-live="polite"></p>
         <div class="ficha-acciones">
           <button id="agregarPolo" type="button" class="btn btn-osc">Agregar al carrito</button>
@@ -181,7 +190,25 @@
           </button>
         </div>
       </section>
+      <div class="acordeon ficha-secciones">
+        <details open><summary>Descripción</summary><p id="descripcionFicha"></p></details>
+        <details><summary>La prenda</summary><p id="materialFicha"></p></details>
+        <details><summary>Cuidados</summary><p>Espera 24 a 48 horas antes del primer lavado, para que el estampado termine de curar. Lávalo del revés, en ciclo suave con agua fría (hasta 30 °C) y detergente suave; sin lejía ni suavizante. Sécalo a la sombra o en secadora a temperatura baja. Si lo planchas, hazlo del revés, a temperatura media-baja y sin pasar la plancha sobre el estampado.</p></details>
+        <details><summary>Entrega</summary><p>Despachamos tu pedido dentro de las 24 horas de confirmarlo. Podemos coordinar el envío para ese mismo día o, a más tardar, para el día siguiente. El costo de envío se coordina y se paga aparte al courier.</p></details>
+      </div>
     </div>
+    <section class="ficha-parecidos" id="parecidosSeccion" aria-labelledby="parecidosTitulo">
+      <h3 id="parecidosTitulo">Quizá también te guste</h3>
+      <div class="parecidos" id="parecidosFicha"></div>
+    </section>
+  </dialog>
+  <dialog id="guiaTallas" class="panel-lateral" aria-labelledby="guiaTitulo">
+    <div class="panel-cab">
+      <h2 id="guiaTitulo">Guía de tallas</h2>
+      <form method="dialog"><button type="submit" class="panel-cerrar" aria-label="Cerrar la guía de tallas">×</button></form>
+    </div>
+    <p>Compara las medidas de cada corte con las de un polo que te quede bien. Las medidas están en centímetros.</p>
+    <div id="guiasPanel"></div>
   </dialog>
   <dialog id="visorPolo" aria-label="Foto ampliada">
     <form method="dialog" class="ficha-cerrar"><button type="submit">Cerrar foto</button></form>
@@ -327,7 +354,7 @@
   <script src="../src/supabase-config.js?v=1"></script>
   <script src="../src/registro-web.js?v=5"></script>
   <script src="catalogo-core.js?v=3"></script>
-  <script src="polos.js?v=57"></script>
+  <script src="polos.js?v=58"></script>
   <!-- Medicion propia y anonima (panel privado): visitas, polos vistos, carrito y corazones.
        En Polos NO se carga el pixel de Meta: track.js lo omite cuando window.fbq ya existe.
        Para activarlo aqui, quitar la linea del fbq vacio. -->
