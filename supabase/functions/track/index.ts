@@ -30,6 +30,8 @@ const TIPOS = new Set([
   "visita", "ver_producto", "filtrar", "buscar", "agregar_carrito",
   "abrir_carrito", "iniciar_compra", "pedido_whatsapp", "clic_whatsapp",
   "compartir", "tiempo",
+  // Corazon de /polos/: guardar o quitar un polo de favoritos (producto = id del polo).
+  "me_gusta", "quitar_me_gusta",
 ]);
 const BOT_RE =
   /bot|crawl|spider|slurp|headless|lighthouse|facebookexternalhit|meta-externalagent|preview|python|curl|wget|httpclient|axios|node-fetch|go-http/i;

@@ -575,3 +575,124 @@ button.foto-ficha {
 #guiasCorte table + table { margin-top: 1rem; }
 #guiasCorte caption { text-align: left; font-weight: 700; padding-bottom: .4rem; }
 #guiasCorte :is(th, td) { text-align: left; padding: .4rem .2rem; border-bottom: 1px solid var(--linea); }
+
+/* Favoritos: corazon en cada polo, en la ficha y en la cabecera. */
+.producto-celda { position: relative; min-width: 0; }
+:is(.favorito, .favoritos-cab, .favoritos-filtro, .favorito-ficha) {
+  color: var(--tinta);
+  font-family: inherit;
+  cursor: pointer;
+}
+:is(.favorito, .favoritos-cab, .favoritos-filtro, .favorito-ficha) svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: fill .2s;
+}
+/* Guardado: la silueta sigue en negro y se llena de un rojo calido y translucido,
+   que deja ver la foto (pedido de Adrian, 15-nov-2026: sutil, sin circulo ni rojo intenso). */
+:is(.favorito, .favoritos-cab, .favorito-ficha).guardado svg { fill: rgb(181 56 47 / .55); }
+:is(.favorito, .favoritos-cab, .favoritos-filtro):focus-visible {
+  outline: 2px solid var(--tinta);
+  outline-offset: 3px;
+}
+/* Sobre la foto: solo la silueta. El area tactil mide 44 px pero no se ve. */
+.favorito {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+}
+/* Un contorno marfil muy fino, debajo, mantiene visible la silueta negra sobre fotos oscuras. */
+.favorito .halo { fill: none; stroke: rgb(250 248 243 / .7); stroke-width: 3.4; }
+@media (any-hover: hover) and (any-pointer: fine) {
+  .favorito:not(.guardado):hover svg { fill: rgb(181 56 47 / .2); }
+}
+.cab-acciones {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+.cab .cab-acciones .seleccion-cab { margin-left: 0; }
+/* Con el corazon en la cabecera, el menu necesita el espacio de la etiqueta en pantallas medianas. */
+@media (max-width: 1180px) { .cab .privado { display: none; } }
+.favoritos-cab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 11px;
+  border: 1px solid var(--linea-f);
+  border-radius: 999px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.favoritos-cab:hover { border-color: var(--tinta); }
+/* Celulares: el corazon rojo ya avisa que hay favoritos; el numero cede su espacio al carrito. */
+@media (max-width: 400px) {
+  .favoritos-cab { width: 44px; padding: 0; }
+  .favoritos-cab #favoritosCount { display: none; }
+}
+@media (max-width: 350px) { .cab .marca i { display: none; } }
+.resultado-fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+  margin: 14px 0;
+}
+.resultado-fila #resultadoPolos { margin: 0; }
+.favoritos-filtro {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--linea-f);
+  border-radius: 999px;
+  background: var(--marfil-2);
+  font-size: 14px;
+  font-weight: 600;
+}
+.favoritos-filtro[hidden] { display: none; }
+.favoritos-filtro:hover { border-color: var(--tinta); }
+.favoritos-filtro.activo {
+  border-color: var(--tinta);
+  background: var(--tinta);
+  color: var(--marfil-2);
+}
+.favoritos-filtro.activo svg { display: none; }
+/* En la ficha, los dos botones miden lo mismo: lado a lado o apilados. */
+.ficha-acciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  align-items: stretch;
+}
+.ficha-acciones .btn { min-height: 52px; padding-inline: 16px; }
+.favorito-ficha:hover { background: var(--arena); }
+@media (prefers-reduced-motion: no-preference) {
+  .latido svg { animation: latido .45s var(--ease); }
+  @keyframes latido {
+    35% { transform: scale(1.32); }
+    65% { transform: scale(.92); }
+  }
+}

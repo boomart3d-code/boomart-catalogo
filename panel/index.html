@@ -170,6 +170,7 @@
   <script src="../src/supabase-config.js?v=1"></script>
   <script src="recorridos.js?v=5"></script>
   <script src="visitas-chatgpt.js?v=1"></script>
+  <script src="polos-gustan.js?v=1"></script>
   <script>
     (function () {
       "use strict";
@@ -476,7 +477,7 @@
             <td>${r.vistas ? fmtPct(r.agregados, r.vistas) : "—"}</td><td>${fmt(r.wa)}</td><td>${fmt(r.compartidos)}</td></tr>`;
         });
         if (!pr.length) html += `<tr><td colspan="6" style="text-align:center;color:var(--muted)">Todavía nadie abrió un producto en este período</td></tr>`;
-        html += `</tbody></table></div>`;
+        html += `</tbody></table></div><section id="polosGustan"></section>`;
 
         // Dias y horas
         const dias = d.dias || [];
@@ -521,6 +522,7 @@
         const args = {p_desde:rr.desde,p_hasta:rr.hasta,p_solo_peru:$("#chkPeru").checked};
         window.BoomartVisitasChatgpt(sb, args, $("#visitasChatgpt"), entradaLabel);
         window.BoomartRecorridos(sb, args, $("#recorridos"), nombreProducto);
+        window.BoomartPolosGustan(sb, args, $("#polosGustan"));
       };
 
       // ---------- Carga de datos ----------

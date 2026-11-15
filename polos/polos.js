@@ -17,6 +17,72 @@
   let shotIndex = 0;
   const price = (amount) => "S/ " + amount;
   const details = $("ficha");
+
+  // Medicion propia (src/track.js). Siempre opcional: si no cargo, la tienda sigue igual.
+  const medir = (name, props) => {
+    try { window.BoomartTrack?.event(name, props); } catch { /* medir nunca rompe la tienda */ }
+  };
+
+  // Favoritos: el corazon de cada polo. Se recuerdan en este dispositivo, sin registro.
+  const FAVORITOS_KEY = "boomart_polos_favoritos_v1";
+  const favoritos = new Set();
+  const corazones = new Map();
+  let soloFavoritos = false;
+  let pintarColeccion = () => {};
+
+  function iconoCorazon() {
+    const ns = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("aria-hidden", "true");
+    // Dos trazos iguales: abajo un contorno claro (para fotos oscuras) y encima la silueta.
+    for (const clase of ["halo", "silueta"]) {
+      const path = document.createElementNS(ns, "path");
+      path.setAttribute("class", clase);
+      path.setAttribute("d", "M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z");
+      svg.append(path);
+    }
+    return svg;
+  }
+
+  function pintarCorazon(boton, product) {
+    const guardado = favoritos.has(product.id);
+    boton.classList.toggle("guardado", guardado);
+    const texto = boton.querySelector("span");
+    if (texto) texto.textContent = guardado ? "Guardado en favoritos" : "Guardar en favoritos";
+    else boton.setAttribute("aria-pressed", String(guardado));
+  }
+
+  function pintarContadorFavoritos() {
+    const n = favoritos.size;
+    $("favoritosCount").textContent = n;
+    $("favoritosCount").hidden = n === 0;
+    $("verFavoritos").classList.toggle("guardado", n > 0);
+    $("verFavoritos").setAttribute("aria-label", n === 1 ? "Ver mis favoritos: 1 polo" : "Ver mis favoritos: " + n + " polos");
+  }
+
+  function alternarFavorito(product, origen, boton) {
+    const guardar = !favoritos.has(product.id);
+    if (guardar) favoritos.add(product.id);
+    else favoritos.delete(product.id);
+    try { localStorage.setItem(FAVORITOS_KEY, JSON.stringify([...favoritos])); } catch { /* sin memoria: vale mientras dure la visita */ }
+    medir(guardar ? "me_gusta" : "quitar_me_gusta", {p: product.id, o: origen});
+    const tarjeta = corazones.get(product.id);
+    if (tarjeta) pintarCorazon(tarjeta, product);
+    if (selected === product) pintarCorazon($("favoritoFicha"), product);
+    if (guardar) {
+      boton.classList.remove("latido");
+      void boton.offsetWidth;
+      boton.classList.add("latido");
+    }
+    pintarContadorFavoritos();
+    pintarColeccion();
+    // Al quitar un favorito desde su lista, la tarjeta desaparece: el foco pasa al boton de la lista.
+    if (!guardar && soloFavoritos && origen === "tarjeta") {
+      ($("alternarFavoritos").hidden ? $("limpiarPolos") : $("alternarFavoritos")).focus();
+    }
+  }
+
   function showShot(index) {
     const photos = selected.fotos;
     shotIndex = (index + photos.length) % photos.length;
@@ -85,7 +151,9 @@
       return b;
     }));
     showShot(0);
+    pintarCorazon($("favoritoFicha"), product);
     if (!details.open) details.showModal();
+    medir("ver_producto", {p: product.id, o: "polos"});
   }
   function route() {
     const m = location.hash.match(/^#\/p\/([a-z0-9-]+)(?:\/probador)?$/);
@@ -102,7 +170,7 @@
         observer.unobserve(entry.target);
       }
     }, {threshold: 0.06});
-    for (const node of document.querySelectorAll(".producto-card, #proceso .proceso article, #prenda .prenda-grid article")) {
+    for (const node of document.querySelectorAll(".producto-celda, #proceso .proceso article, #prenda .prenda-grid article")) {
       if (node.getBoundingClientRect().top < innerHeight) continue;
       node.classList.add("preparar-entrada");
       observer.observe(node);
@@ -209,21 +277,54 @@
         });
       }
       a.append(media, title, meta, action);
-      cards.set(p.id, a);
+      // El corazon va fuera del enlace: un boton dentro de un enlace no es valido.
+      const heart = document.createElement("button");
+      heart.type = "button";
+      heart.className = "favorito";
+      heart.setAttribute("aria-label", "Guardar en favoritos: " + p.nombre);
+      heart.append(iconoCorazon());
+      heart.onclick = () => alternarFavorito(p, "tarjeta", heart);
+      pintarCorazon(heart, p);
+      corazones.set(p.id, heart);
+      const cell = document.createElement("div");
+      cell.className = "producto-celda";
+      cell.append(a, heart);
+      cards.set(p.id, cell);
     }
     function pintar() {
-      const list = CATALOGO_UI.filtrar(data.productos, {busqueda: search.value, tema: themes.value, orden: sort.value});
+      let list = CATALOGO_UI.filtrar(data.productos, {busqueda: search.value, tema: themes.value, orden: sort.value});
+      if (soloFavoritos) list = list.filter(p => favoritos.has(p.id));
       $("grilla").replaceChildren(...list.map(p => cards.get(p.id)));
-      $("resultadoPolos").textContent = list.length === 1 ? "1 polo" : list.length + " polos";
+      const total = list.length === 1 ? "1 polo" : list.length + " polos";
+      $("resultadoPolos").textContent = !soloFavoritos ? total : list.length ? "Tus favoritos: " + total : "Tus favoritos";
       $("sinPolos").hidden = list.length !== 0;
+      $("sinPolosTexto").textContent = !soloFavoritos ? "No encontramos polos con esos filtros."
+        : favoritos.size ? "Ninguno de tus favoritos coincide con esos filtros."
+        : "Aún no tienes favoritos. Toca el corazón de un polo para guardarlo aquí.";
+      $("alternarFavoritosTexto").textContent = soloFavoritos ? "Ver todos los polos"
+        : favoritos.size ? "Ver mis favoritos (" + favoritos.size + ")" : "Ver mis favoritos";
+      $("alternarFavoritos").classList.toggle("activo", soloFavoritos);
+      // Sin resultados en favoritos, «Ver todos los polos» ya aparece en el aviso de abajo.
+      $("alternarFavoritos").hidden = soloFavoritos && list.length === 0;
     }
+    pintarColeccion = pintar;
     search.addEventListener("input", pintar);
     themes.addEventListener("change", pintar);
     sort.addEventListener("change", pintar);
+    $("alternarFavoritos").onclick = () => {
+      soloFavoritos = !soloFavoritos;
+      pintar();
+    };
+    $("verFavoritos").onclick = () => {
+      soloFavoritos = true;
+      pintar();
+      $("coleccion").scrollIntoView();
+    };
     $("limpiarPolos").onclick = () => {
       search.value = "";
       themes.value = "todos";
       sort.value = "";
+      soloFavoritos = false;
       pintar();
       search.focus();
     };
@@ -259,6 +360,16 @@
       }
     } catch {}
     window.BoomartCart.refresh();
+    try {
+      const saved = JSON.parse(localStorage.getItem(FAVORITOS_KEY) || "[]");
+      if (Array.isArray(saved)) {
+        for (const id of saved) {
+          if (data.productos.some(p => p.id === id)) favoritos.add(id);
+        }
+      }
+    } catch { /* sin memoria: se empieza sin favoritos */ }
+    $("favoritoFicha").onclick = () => alternarFavorito(selected, "ficha", $("favoritoFicha"));
+    pintarContadorFavoritos();
     renderSizeGuide();
     iniciarCarrusel();
     iniciarBusqueda();
@@ -271,7 +382,9 @@
     $("corteFicha").onchange = updateSizes;
     $("tallaFicha").onchange = updateSizeDetail;
     $("agregarPolo").onclick = () => {
-      window.BoomartCart.add(selected.id, `${$("corteFicha").value}:${$("tallaFicha").value}`, 1);
+      const variante = `${$("corteFicha").value}:${$("tallaFicha").value}`;
+      window.BoomartCart.add(selected.id, variante, 1);
+      medir("agregar_carrito", {p: selected.id, c: 1, v: selected.precio, o: "ficha", d: {variante}});
       details.close();
       $("cartToggle").click();
     };
