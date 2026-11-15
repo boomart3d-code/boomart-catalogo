@@ -254,14 +254,14 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
 .producto-card{display:block;text-decoration:none;color:inherit;background:#faf8f3;padding-bottom:1rem}
 .producto-card h3,.producto-card p{margin:.45rem 1rem 0}
 .producto-card img,.foto-ficha img{background:#171717}
-.producto-card:focus-visible,dialog :focus-visible{outline:2px solid #e1132f;outline-offset:3px}
+.producto-card:focus-visible,dialog :focus-visible{outline:2px solid var(--tinta);outline-offset:3px}
 #ficha{width:min(1120px,calc(100% - 24px));max-height:calc(100dvh - 24px);border:0;background:#faf8f3;color:#0b0b0b;padding:1rem;overflow:auto}
 #ficha::backdrop,#misPolos::backdrop{background:#0009}
 .ficha-producto{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1rem,4vw,3rem)}
 .ficha-producto h2{margin:0}.foto-ficha{display:block}.foto-ficha img{max-height:66dvh}
 #miniaturas{display:flex;gap:.5rem;overflow:auto;padding:4px}
 #miniaturas button{flex:0 0 58px;padding:0;border:1px solid #a9a198}
-#miniaturas button[aria-pressed=true]{border:2px solid #e1132f}
+#miniaturas button[aria-pressed=true]{border:2px solid var(--tinta)}
 #miniaturas img{width:100%;height:auto;display:block}
 .controles-foto,.ficha-acciones{display:flex;gap:.65rem;align-items:center;flex-wrap:wrap;margin-block:.75rem}
 .ficha-acciones a,.ficha-acciones button{max-width:100%}
@@ -271,7 +271,8 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
 #listaSeleccion li{margin:.5rem 0}#listaSeleccion button{margin-left:.5rem}
 @media(max-width:650px){.ficha-producto{grid-template-columns:1fr}.hero-fotos img{max-height:62dvh}.foto-ficha img{max-height:55dvh}}
 /* Portada y colección de autor */
-:root{--marfil:#f4f0e8;--marfil-2:#faf8f3;--tinta:#0b0b0b;--gris:#625c53;--linea:#ded6c9;--acento:#e1132f}
+:root{--marfil:#f4f0e8;--marfil-2:#faf8f3;--tinta:#0b0b0b;--gris:#625c53;--linea:#ded6c9;--acento:var(--tinta)}
+/* Polos va en marfil y negro, sin rojo (pedido de Adrian, 15-nov-2026): el acento es la misma tinta. */
 .cab{background:rgba(244,240,232,.94);gap:clamp(16px,3vw,40px)}
 .cab .seleccion-cab{margin-left:auto}
 .hero{width:min(1440px,100% - 80px);margin-inline:auto;min-height:auto;grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr);gap:clamp(32px,5vw,86px);align-items:center;padding:calc(var(--cab) + clamp(26px,4vw,60px)) 0 clamp(34px,5vw,74px)}
