@@ -15,6 +15,7 @@
   let data;
   let selected;
   let shotIndex = 0;
+  let fotoInicial = 0;
   const price = (amount) => "S/ " + amount;
   const details = $("ficha");
 
@@ -150,7 +151,9 @@
       b.append(image(shot, ""));
       return b;
     }));
-    showShot(0);
+    // Si se llego desde una miniatura de la galeria, la ficha abre en esa foto.
+    showShot(fotoInicial < product.fotos.length ? fotoInicial : 0);
+    fotoInicial = 0;
     pintarCorazon($("favoritoFicha"), product);
     if (!details.open) details.showModal();
     medir("ver_producto", {p: product.id, o: "polos"});
@@ -248,35 +251,94 @@
 
   function iniciarBusqueda() {
     const search = $("buscarPolo");
-    const themes = $("coleccionPolo");
     const sort = $("ordenPolo");
-    for (const name of new Set(data.productos.map(p => p.tema))) themes.add(new Option(name, name));
+    const conMouse = matchMedia("(hover: hover) and (pointer: fine)");
+
+    // Pestanas por coleccion: «Ver todo» y una por cada tema, con su cantidad.
+    let tema = "todos";
+    const pestanas = [["todos", "Ver todo", data.productos.length]];
+    for (const name of new Set(data.productos.map(p => p.tema))) {
+      pestanas.push([name, name, data.productos.filter(p => p.tema === name).length]);
+    }
+    $("coleccionesPolo").replaceChildren(...pestanas.map(([valor, texto, cantidad]) => {
+      const b = button(texto, () => { tema = valor; pintar(); });
+      b.dataset.tema = valor;
+      const n = document.createElement("span");
+      n.textContent = cantidad;
+      b.append(n);
+      return b;
+    }));
+
     const cards = new Map();
+    const cerrarTarjetas = [];
     for (const p of data.productos) {
       const a = document.createElement("a");
       a.className = "producto-card";
       a.href = "#/p/" + p.id;
-      const title = document.createElement("h3");
-      title.textContent = p.nombre;
-      const meta = document.createElement("p");
-      meta.textContent = p.tema + " · " + price(p.precio);
-      const action = document.createElement("span");
-      action.className = "accion-tarjeta";
-      action.textContent = "Ver polo →";
       const media = document.createElement("div");
       media.className = "producto-fotos";
       media.append(image(p.fotos[0], p.nombre));
-      if (p.fotos[1] && matchMedia("(any-hover: hover) and (any-pointer: fine)").matches) {
-        media.addEventListener("pointerenter", (event) => {
-          if (event.pointerType !== "mouse" || media.querySelector(".producto-foto-siguiente")) return;
-          const preview = image(p.fotos[1], "", false);
-          preview.className = "producto-foto-siguiente";
-          preview.setAttribute("aria-hidden", "true");
-          media.append(preview);
-          preview.decode().then(() => preview.classList.add("lista")).catch(() => preview.remove());
+      const tira = document.createElement("div");
+      tira.className = "producto-tira";
+      tira.setAttribute("aria-hidden", "true");
+      const precio = document.createElement("p");
+      precio.className = "producto-precio";
+      precio.textContent = price(p.precio);
+      const title = document.createElement("h3");
+      title.textContent = p.nombre;
+      const meta = document.createElement("p");
+      meta.className = "producto-detalle";
+      meta.textContent = p.tema;
+      const prenda = document.createElement("p");
+      prenda.className = "producto-detalle";
+      prenda.textContent = "Polo " + p.color;
+      a.append(media, tira, precio, title, meta, prenda);
+
+      // Con mouse: la tarjeta se despliega con miniaturas y cada una cambia la foto grande.
+      // Las fotos extra se cargan recien al pasar el mouse por la tarjeta.
+      const capas = new Map();
+      let actual = 0;
+      const ver = (i) => {
+        actual = i;
+        for (const mini of tira.children) mini.classList.toggle("activa", mini.dataset.foto === String(i));
+        for (const [k, capa] of capas) capa.classList.toggle("lista", k === i && capa.dataset.cargada === "1");
+        if (i === 0 || capas.has(i)) return;
+        const capa = image(p.fotos[i], "", false);
+        capa.className = "producto-foto-vista";
+        capa.setAttribute("aria-hidden", "true");
+        capas.set(i, capa);
+        media.append(capa);
+        capa.decode().then(() => {
+          capa.dataset.cargada = "1";
+          capa.classList.toggle("lista", actual === i);
+        }).catch(() => {
+          capa.remove();
+          capas.delete(i);
         });
-      }
-      a.append(media, title, meta, action);
+      };
+      const armarTira = () => {
+        // Miniatura de 52 px + 6 px de separacion; si no caben todas, la ultima casilla dice cuantas faltan.
+        const caben = Math.max(2, Math.floor((media.clientWidth + 6) / 58));
+        if (tira.dataset.caben === String(caben)) return;
+        tira.dataset.caben = caben;
+        const visibles = p.fotos.length > caben ? caben - 1 : p.fotos.length;
+        const minis = p.fotos.slice(0, visibles).map((shot, i) => {
+          const mini = document.createElement("span");
+          mini.className = "producto-mini";
+          mini.dataset.foto = i;
+          mini.append(image(shot, "", false));
+          mini.addEventListener("pointerenter", () => ver(i));
+          mini.addEventListener("click", () => { fotoInicial = i; });
+          return mini;
+        });
+        if (p.fotos.length > visibles) {
+          const mas = document.createElement("span");
+          mas.className = "producto-mini-mas";
+          mas.textContent = "+" + (p.fotos.length - visibles);
+          minis.push(mas);
+        }
+        tira.replaceChildren(...minis);
+      };
       // El corazon va fuera del enlace: un boton dentro de un enlace no es valido.
       const heart = document.createElement("button");
       heart.type = "button";
@@ -290,10 +352,27 @@
       cell.className = "producto-celda";
       cell.append(a, heart);
       cards.set(p.id, cell);
+      const cerrar = () => {
+        cell.classList.remove("abierta");
+        ver(0);
+      };
+      cerrarTarjetas.push(cerrar);
+      // Al abrir la ficha desde la tarjeta, el mouse queda sobre el dialogo: se cierra aqui.
+      a.addEventListener("click", cerrar);
+      cell.addEventListener("pointerenter", (event) => {
+        if (event.pointerType !== "mouse" || !conMouse.matches || p.fotos.length < 2) return;
+        armarTira();
+        cell.classList.add("abierta");
+        ver(1);
+      });
+      cell.addEventListener("pointerleave", cerrar);
     }
     function pintar() {
-      let list = CATALOGO_UI.filtrar(data.productos, {busqueda: search.value, tema: themes.value, orden: sort.value});
+      let list = CATALOGO_UI.filtrar(data.productos, {busqueda: search.value, tema, orden: sort.value});
       if (soloFavoritos) list = list.filter(p => favoritos.has(p.id));
+      // Una tarjeta que sale de la grilla no recibe «pointerleave»: se cierra antes de moverla.
+      for (const cerrar of cerrarTarjetas) cerrar();
+      for (const b of $("coleccionesPolo").children) b.setAttribute("aria-pressed", String(b.dataset.tema === tema));
       $("grilla").replaceChildren(...list.map(p => cards.get(p.id)));
       const total = list.length === 1 ? "1 polo" : list.length + " polos";
       $("resultadoPolos").textContent = !soloFavoritos ? total : list.length ? "Tus favoritos: " + total : "Tus favoritos";
@@ -309,7 +388,6 @@
     }
     pintarColeccion = pintar;
     search.addEventListener("input", pintar);
-    themes.addEventListener("change", pintar);
     sort.addEventListener("change", pintar);
     $("alternarFavoritos").onclick = () => {
       soloFavoritos = !soloFavoritos;
@@ -322,7 +400,7 @@
     };
     $("limpiarPolos").onclick = () => {
       search.value = "";
-      themes.value = "todos";
+      tema = "todos";
       sort.value = "";
       soloFavoritos = false;
       pintar();

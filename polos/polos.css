@@ -502,18 +502,115 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
 }
 .polos-store .checkout-dialog .payment-qr img { background: white; }
 .producto-fotos { position: relative; }
-.producto-card .producto-foto-siguiente {
+/* Foto que se muestra encima de la principal al pasar el mouse por la tarjeta o por una miniatura. */
+.producto-card .producto-foto-vista {
   position: absolute;
   inset: 0;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 280ms ease-in-out;
+  transition: opacity 160ms ease-out;
 }
-@media (any-hover: hover) and (any-pointer: fine) {
-  .producto-fotos:hover .producto-foto-siguiente.lista { opacity: 1; }
-}
+.producto-card .producto-foto-vista.lista { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
-  .producto-card .producto-foto-siguiente { transition: none; }
+  .producto-card .producto-foto-vista { transition: none; }
+}
+
+/* Galeria: precio primero, cuatro columnas y tarjeta que se despliega con miniaturas. */
+.grilla {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(30px, 3.4vw, 48px) clamp(12px, 1.6vw, 22px);
+}
+@media (max-width: 1100px) { .grilla { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 850px) { .grilla { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.producto-card { overflow: visible; padding-bottom: 0; border-bottom: 0; }
+.producto-card:hover h3 { color: inherit; }
+.producto-card .producto-precio {
+  margin: .75rem 0 0;
+  color: var(--tinta);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.producto-card h3 { margin-top: .2rem; font-size: clamp(19px, 1.6vw, 23px); line-height: 1.12; }
+.producto-card .producto-detalle { margin: .25rem 0 0; font-size: 13px; line-height: 1.35; }
+.producto-celda { --tira: 80px; }
+.producto-tira { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  /* Sitio para que la ultima fila se despliegue sin pisar la seccion siguiente. */
+  .grilla { margin-bottom: 24px; }
+  /* El margen negativo compensa la tira: la fila no crece y la tarjeta se monta sobre la de abajo. */
+  .producto-celda.abierta { z-index: 4; margin-bottom: calc(-1 * var(--tira)); }
+  .producto-celda.abierta::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    z-index: -1;
+    border: 1px solid #171410;
+    background: var(--marfil-2);
+  }
+  .producto-celda.abierta .producto-tira {
+    display: flex;
+    gap: 6px;
+    box-sizing: border-box;
+    height: var(--tira);
+    padding-top: 10px;
+    overflow: hidden;
+  }
+  .producto-mini {
+    flex: 0 0 52px;
+    height: 70px;
+    box-sizing: border-box;
+    border-bottom: 2px solid transparent;
+  }
+  .producto-mini.activa { border-bottom-color: #171410; }
+  .producto-card .producto-mini img { width: 52px; height: 65px; }
+  .producto-mini-mas {
+    align-self: center;
+    padding-left: 4px;
+    color: var(--gris);
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+
+/* Pestanas por coleccion. */
+.colecciones {
+  display: flex;
+  gap: clamp(20px, 3vw, 36px);
+  margin-top: 22px;
+  border-bottom: 1px solid var(--linea);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.colecciones::-webkit-scrollbar { display: none; }
+.colecciones button {
+  flex: none;
+  min-height: 46px;
+  margin-bottom: -1px;
+  padding: 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--gris);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.colecciones button:hover { color: var(--tinta); }
+.colecciones button[aria-pressed="true"] { border-bottom-color: #171410; color: var(--tinta); }
+.colecciones button:focus-visible { outline: 2px solid var(--tinta); outline-offset: -2px; }
+.colecciones button span {
+  margin-left: 6px;
+  color: var(--gris);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.tienda-filtros { grid-template-columns: minmax(0, 1fr) minmax(0, 220px); }
+@media (max-width: 560px) {
+  .tienda-filtros { grid-template-columns: minmax(0, 1fr) minmax(0, 150px); }
+  .tienda-filtros label:first-child { grid-column: auto; }
 }
 @media (max-width: 650px) {
   #ficha {

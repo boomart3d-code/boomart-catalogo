@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../src/styles.css?v=69">
-  <link rel="stylesheet" href="polos.css?v=44">
+  <link rel="stylesheet" href="polos.css?v=45">
 </head>
 <body class="polos-store">
   <header class="cab" id="cab">
@@ -75,9 +75,9 @@
           <div><p class="etiqueta">Colección</p><h2>Elige tu diseño</h2></div>
         </div>
         <aside class="pack-lanzamiento" id="packLanzamiento" aria-label="Promoción de lanzamiento" hidden></aside>
+        <div class="colecciones" id="coleccionesPolo" role="group" aria-label="Colecciones"></div>
         <div class="tienda-filtros">
           <label>Buscar un polo<input id="buscarPolo" type="search" placeholder="Nombre, personaje o colección"></label>
-          <label>Colección<select id="coleccionPolo"><option value="todos">Todas las colecciones</option></select></label>
           <label>Orden<select id="ordenPolo"><option value="">Destacados</option><option value="nombre">Nombre A–Z</option></select></label>
         </div>
         <div class="resultado-fila">
@@ -327,7 +327,7 @@
   <script src="../src/supabase-config.js?v=1"></script>
   <script src="../src/registro-web.js?v=5"></script>
   <script src="catalogo-core.js?v=3"></script>
-  <script src="polos.js?v=56"></script>
+  <script src="polos.js?v=57"></script>
   <!-- Medicion propia y anonima (panel privado): visitas, polos vistos, carrito y corazones.
        En Polos NO se carga el pixel de Meta: track.js lo omite cuando window.fbq ya existe.
        Para activarlo aqui, quitar la linea del fbq vacio. -->
