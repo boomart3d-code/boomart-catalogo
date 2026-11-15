@@ -14,7 +14,8 @@
   };
   let data;
   let selected;
-  let fotoInicial = 0;
+  // Foto con la que abre la ficha cuando se llega desde una miniatura (-1: la primera).
+  let fotoInicial = -1;
   const price = (amount) => "S/ " + amount;
   const details = $("ficha");
 
@@ -37,6 +38,90 @@
   let elegirColeccion = () => {};
   // La ficha abierta desde una tarjeta vuelve al mismo lugar de la grilla; desde otro sitio, al inicio de la coleccion.
   let desdeGrilla = false;
+  // Modelo de las fotos: «m» mujer, «h» hombre o «» (como vienen). El dato vive en data/fotos-genero.json.
+  const MODELO_KEY = "boomart_polos_modelo_v1";
+  let generos = null;
+  let modelo = "";
+  const generoDe = (shot) => generos ? generos.fotos[shot.archivo] || generos.modelos[shot.titulo.split(" · ")[1]] || "" : "";
+  // Orden de las fotos de un polo: primero las del modelo elegido y luego el resto, como estaban.
+  function ordenFotos(p) {
+    const todas = p.fotos.map((_, i) => i);
+    if (!modelo) return todas;
+    const primero = todas.filter(i => generoDe(p.fotos[i]) === modelo);
+    return primero.length ? [...primero, ...todas.filter(i => !primero.includes(i))] : todas;
+  }
+  const aplicarModelo = [];
+
+  // Tarjeta pequena de un polo: «Quiza tambien te guste», «Completa tu pack» y «Vistos recientemente».
+  function miniPolo(p) {
+    const a = document.createElement("a");
+    a.className = "parecido";
+    a.href = "#/p/" + p.id;
+    const precio = document.createElement("p");
+    precio.textContent = price(p.precio);
+    const nombre = document.createElement("h4");
+    nombre.textContent = p.nombre;
+    a.append(image(p.fotos[ordenFotos(p)[0]], p.nombre), precio, nombre);
+    return a;
+  }
+
+  // Barra de compra fija de la ficha: se muestra cuando «Agregar al carrito» no esta a la vista.
+  let revisarCompraFija = () => {};
+
+  // Vistos recientemente: los ultimos polos abiertos en este dispositivo.
+  const VISTOS_KEY = "boomart_polos_vistos_v1";
+  let vistos = [];
+  const polosVistos = () => vistos.map(id => data.productos.find(p => p.id === id)).filter(Boolean);
+  function pintarVistosPagina() {
+    const lista = polosVistos().slice(0, 4);
+    $("vistosPaginaLista").replaceChildren(...lista.map(miniPolo));
+    $("vistosPagina").hidden = lista.length === 0;
+  }
+  function anotarVisto(id) {
+    vistos = [id, ...vistos.filter(otro => otro !== id)].slice(0, 8);
+    try { localStorage.setItem(VISTOS_KEY, JSON.stringify(vistos)); } catch { /* sin memoria: solo dura esta visita */ }
+    pintarVistosPagina();
+  }
+
+  // Pack de lanzamiento: misma regla que el carrito (cada grupo de N polos lleva el precio del pack).
+  function estadoPack() {
+    const promo = data.promocion;
+    if (!promo) return null;
+    const cantidad = window.BoomartCart.getState().totals.itemCount;
+    const resto = cantidad % promo.cantidad;
+    return {promo, cantidad, resto, faltan: promo.cantidad - resto, packs: Math.floor(cantidad / promo.cantidad)};
+  }
+  function textoPack(e) {
+    const oferta = e.promo.cantidad + " polos por " + price(e.promo.precio);
+    const faltan = e.faltan === 1 ? "Te falta 1" : "Te faltan " + e.faltan;
+    if (e.cantidad === 0) return "Pack de lanzamiento: " + oferta + ".";
+    if (e.resto === 0) return e.packs === 1 ? "Pack completo: " + oferta + "." : e.packs + " packs completos, cada uno de " + oferta + ".";
+    if (e.packs === 0) return "Llevas " + (e.resto === 1 ? "1 polo" : e.resto + " polos") + " en el carrito. " + faltan + " para el pack de " + oferta + ".";
+    return "Ya tienes " + (e.packs === 1 ? "1 pack" : e.packs + " packs") + ". " + faltan + " para otro pack de " + oferta + ".";
+  }
+  function pintarPack() {
+    const e = estadoPack();
+    if (!e) return;
+    const pasos = () => {
+      const fila = document.createElement("div");
+      fila.className = "pack-pasos";
+      fila.setAttribute("aria-hidden", "true");
+      for (let i = 0; i < e.promo.cantidad; i++) {
+        const paso = document.createElement("i");
+        if (e.cantidad && (e.resto === 0 || i < e.resto)) paso.className = "hecho";
+        fila.append(paso);
+      }
+      return fila;
+    };
+    $("packFicha").hidden = false;
+    $("packFichaTexto").textContent = textoPack(e);
+    $("packFichaPasos").replaceWith(Object.assign(pasos(), {id: "packFichaPasos"}));
+    const aviso = document.createElement("span");
+    aviso.textContent = e.cantidad ? textoPack(e) : "Pack de lanzamiento · " + e.promo.cantidad + " polos por " + price(e.promo.precio);
+    $("packLanzamiento").hidden = false;
+    $("packLanzamiento").replaceChildren(...(e.cantidad ? [aviso, pasos()] : [aviso]));
+  }
+
   function pintarRuta(lista, partes) {
     lista.replaceChildren(...partes.map(([texto, href]) => {
       const li = document.createElement("li");
@@ -105,10 +190,11 @@
   // Fotos de la ficha: cuadricula de fotos grandes (en celular, una fila que se desliza).
   // En computadora se ven las cuatro primeras y un boton muestra el resto.
   const FOTOS_A_LA_VISTA = 4;
-  function pintarFotos(product, inicial) {
+  function pintarFotos(product, orden, inicial) {
     const caja = $("fotosFicha");
     caja.classList.toggle("todas", inicial >= FOTOS_A_LA_VISTA);
-    caja.replaceChildren(...product.fotos.map((shot, i) => {
+    caja.replaceChildren(...orden.map((indice, i) => {
+      const shot = product.fotos[indice];
       const alt = product.nombre + " · " + shot.titulo;
       const b = button("", () => {
         $("fotoAmpliada").replaceChildren(image(shot, alt, false));
@@ -124,7 +210,8 @@
     $("masFotos").textContent = resto === 1 ? "Ver 1 foto más" : "Ver " + resto + " fotos más";
   }
 
-  // Corte y talla se eligen con botones. Nada viene marcado: cada polo se elige de nuevo.
+  // Corte y talla se eligen con botones y cada polo se elige de nuevo. Solo viene marcado el corte
+  // cuando el comprador ya eligio ver la coleccion en mujer o en hombre.
   let corte = "";
   let talla = "";
   const medidasElegidas = () => data.medidas[corte]?.[talla];
@@ -146,6 +233,10 @@
     $("medidasFicha").textContent = size
       ? `Pecho ${size.pecho} cm · Largo ${size.largo} cm · Hombros ${size.hombros} cm · Manga ${size.manga} cm`
       : "";
+    // La barra de compra fija repite el polo y lo elegido.
+    $("compraFijaNombre").textContent = selected.nombre;
+    $("compraFijaDetalle").textContent = price(selected.precio) + " · "
+      + (size ? (corte === "hombre" ? "Hombre" : "Mujer") + " · Talla " + talla : corte ? "Elige tu talla" : "Elige corte y talla");
   }
 
   function renderSizeGuide(container) {
@@ -179,33 +270,43 @@
     $("materialFicha").textContent = product.material;
     $("colorFicha").textContent = "Polo " + product.color;
     pintarRuta($("rutaFicha"), [["Polos", rutaDe("todos")], [product.tema, rutaDe(product.tema)], [product.nombre, null]]);
-    corte = "";
+    // Quien ve la coleccion en mujer o en hombre llega con ese corte marcado; puede cambiarlo.
+    corte = modelo === "h" && data.medidas.hombre ? "hombre" : modelo === "m" && data.medidas.mujer ? "mujer" : "";
     talla = "";
     pintarOpciones();
-    // Si se llego desde una miniatura de la galeria, la ficha muestra esa foto.
-    const inicial = fotoInicial < product.fotos.length ? fotoInicial : 0;
-    fotoInicial = 0;
-    pintarFotos(product, inicial);
-    // Otros polos de la misma coleccion.
-    const parecidos = data.productos.filter(p => p.tema === product.tema && p !== product).slice(0, 4);
-    $("parecidosFicha").replaceChildren(...parecidos.map(p => {
-      const a = document.createElement("a");
-      a.className = "parecido";
-      a.href = "#/p/" + p.id;
-      const precio = document.createElement("p");
-      precio.textContent = price(p.precio);
-      const nombre = document.createElement("h4");
-      nombre.textContent = p.nombre;
-      a.append(image(p.fotos[0], p.nombre), precio, nombre);
-      return a;
-    }));
+    // Las fotos siguen el modelo elegido. Si se llego desde una miniatura de la galeria, la ficha abre en esa foto.
+    const orden = ordenFotos(product);
+    const inicial = fotoInicial >= 0 ? Math.max(0, orden.indexOf(fotoInicial)) : 0;
+    fotoInicial = -1;
+    pintarFotos(product, orden, inicial);
+    // Con el pack a medias se sugieren polos que aun no estan en el carrito; si no, otros de la misma coleccion.
+    const pack = estadoPack();
+    const otros = data.productos.filter(p => p !== product);
+    const delTema = (lista) => [...lista.filter(p => p.tema === product.tema), ...lista.filter(p => p.tema !== product.tema)];
+    let parecidos = otros.filter(p => p.tema === product.tema).slice(0, 4);
+    const completar = Boolean(pack && pack.resto > 0);
+    if (completar) {
+      const enCarrito = new Set(window.BoomartCart.getState().lines.map(line => line.productId));
+      parecidos = delTema(otros.filter(p => !enCarrito.has(p.id))).slice(0, 4);
+      $("parecidosNota").textContent = textoPack(pack);
+    }
+    $("parecidosTitulo").textContent = completar ? "Completa tu pack" : "Quizá también te guste";
+    $("parecidosNota").hidden = !completar;
+    $("parecidosFicha").replaceChildren(...parecidos.map(miniPolo));
     $("parecidosSeccion").hidden = parecidos.length === 0;
+    pintarPack();
+    // Vistos recientemente: los anteriores a este polo que no esten ya sugeridos arriba.
+    const antes = polosVistos().filter(p => p !== product && !parecidos.includes(p)).slice(0, 4);
+    $("vistosFicha").replaceChildren(...antes.map(miniPolo));
+    $("vistosFichaSeccion").hidden = antes.length === 0;
+    anotarVisto(product.id);
     pintarCorazon($("favoritoFicha"), product);
     if (!details.open) details.showModal();
     details.scrollTop = 0;
     // En celular las fotos son una fila que se desliza: cada polo empieza en su primera foto.
     $("fotosFicha").scrollLeft = 0;
     if (inicial > 0) $("fotosFicha").children[inicial].scrollIntoView({block: "nearest", inline: "center"});
+    revisarCompraFija();
     medir("ver_producto", {p: product.id, o: "polos"});
   }
   function route() {
@@ -314,6 +415,21 @@
 
     // Pestanas por coleccion: «Ver todo» y una por cada tema, con su cantidad.
     let tema = "todos";
+    // Color del polo: «» es todos. Los botones salen de los colores que hay en la coleccion.
+    let color = "";
+    const marcarColor = () => {
+      for (const input of $("coloresPolo").querySelectorAll("input")) input.checked = input.value === color;
+    };
+    $("coloresPolo").replaceChildren(...[{id: "", nombre: "Todos"}, ...data.colores.filter(c => data.productos.some(p => p.color === c.id))].map(c => {
+      const label = document.createElement("label");
+      const input = document.createElement("input");
+      Object.assign(input, {type: "radio", name: "colorPolo", value: c.id});
+      const text = document.createElement("span");
+      text.textContent = c.nombre;
+      label.append(input, text);
+      return label;
+    }));
+    marcarColor();
     const pestanas = [["todos", "Ver todo", data.productos.length]];
     for (const name of new Set(data.productos.map(p => p.tema))) {
       pestanas.push([name, name, data.productos.filter(p => p.tema === name).length]);
@@ -351,6 +467,8 @@
     elegirColeccion = (valor) => {
       tema = valor;
       search.value = "";
+      color = "";
+      marcarColor();
       soloFavoritos = false;
       pintar();
     };
@@ -363,7 +481,10 @@
       a.href = "#/p/" + p.id;
       const media = document.createElement("div");
       media.className = "producto-fotos";
-      media.append(image(p.fotos[0], p.nombre));
+      // «orden» son los indices de las fotos del polo: primero las del modelo elegido.
+      let orden = ordenFotos(p);
+      const base = image(p.fotos[orden[0]], p.nombre);
+      media.append(base);
       const tira = document.createElement("div");
       tira.className = "producto-tira";
       tira.setAttribute("aria-hidden", "true");
@@ -389,7 +510,7 @@
         for (const mini of tira.children) mini.classList.toggle("activa", mini.dataset.foto === String(i));
         for (const [k, capa] of capas) capa.classList.toggle("lista", k === i && capa.dataset.cargada === "1");
         if (i === 0 || capas.has(i)) return;
-        const capa = image(p.fotos[i], "", false);
+        const capa = image(p.fotos[orden[i]], "", false);
         capa.className = "producto-foto-vista";
         capa.setAttribute("aria-hidden", "true");
         capas.set(i, capa);
@@ -407,24 +528,35 @@
         const caben = Math.max(2, Math.floor((media.clientWidth + 6) / 58));
         if (tira.dataset.caben === String(caben)) return;
         tira.dataset.caben = caben;
-        const visibles = p.fotos.length > caben ? caben - 1 : p.fotos.length;
-        const minis = p.fotos.slice(0, visibles).map((shot, i) => {
+        const visibles = orden.length > caben ? caben - 1 : orden.length;
+        const minis = orden.slice(0, visibles).map((indice, i) => {
+          const shot = p.fotos[indice];
           const mini = document.createElement("span");
           mini.className = "producto-mini";
           mini.dataset.foto = i;
           mini.append(image(shot, "", false));
           mini.addEventListener("pointerenter", () => ver(i));
-          mini.addEventListener("click", () => { fotoInicial = i; });
+          mini.addEventListener("click", () => { fotoInicial = indice; });
           return mini;
         });
-        if (p.fotos.length > visibles) {
+        if (orden.length > visibles) {
           const mas = document.createElement("span");
           mas.className = "producto-mini-mas";
-          mas.textContent = "+" + (p.fotos.length - visibles);
+          mas.textContent = "+" + (orden.length - visibles);
           minis.push(mas);
         }
         tira.replaceChildren(...minis);
       };
+      aplicarModelo.push(() => {
+        orden = ordenFotos(p);
+        const shot = p.fotos[orden[0]];
+        Object.assign(base, {src: shot.archivo, width: shot.ancho, height: shot.alto});
+        for (const capa of capas.values()) capa.remove();
+        capas.clear();
+        delete tira.dataset.caben;
+        tira.replaceChildren();
+        actual = 0;
+      });
       // El corazon va fuera del enlace: un boton dentro de un enlace no es valido.
       const heart = document.createElement("button");
       heart.type = "button";
@@ -458,6 +590,7 @@
     }
     function pintar() {
       let list = CATALOGO_UI.filtrar(data.productos, {busqueda: search.value, tema, orden: sort.value});
+      if (color) list = list.filter(p => p.color === color);
       if (soloFavoritos) list = list.filter(p => favoritos.has(p.id));
       // Una tarjeta que sale de la grilla no recibe «pointerleave»: se cierra antes de moverla.
       for (const cerrar of cerrarTarjetas) cerrar();
@@ -481,6 +614,21 @@
     }
     pintarColeccion = pintar;
     search.addEventListener("input", pintar);
+    $("colorPolo").onchange = (event) => {
+      color = event.target.value;
+      pintar();
+    };
+    // Ver los polos en mujer o en hombre: cambia la foto de cada tarjeta y se recuerda en este dispositivo.
+    if (generos) {
+      $("modeloPolo").hidden = false;
+      for (const input of $("modeloPolo").querySelectorAll("input")) input.checked = input.value === modelo;
+      $("modeloPolo").onchange = (event) => {
+        modelo = event.target.value;
+        try { localStorage.setItem(MODELO_KEY, modelo); } catch { /* sin memoria: vale para esta visita */ }
+        for (const cambiar of aplicarModelo) cambiar();
+        pintarVistosPagina();
+      };
+    }
     sort.addEventListener("change", pintar);
     $("alternarFavoritos").onclick = () => {
       soloFavoritos = !soloFavoritos;
@@ -495,6 +643,8 @@
       search.value = "";
       tema = "todos";
       sort.value = "";
+      color = "";
+      marcarColor();
       soloFavoritos = false;
       pintar();
       history.replaceState(null, "", rutaDe(tema));
@@ -540,6 +690,12 @@
         }
       }
     } catch { /* sin memoria: se empieza sin favoritos */ }
+    try {
+      const guardado = localStorage.getItem(MODELO_KEY);
+      if (generos && (guardado === "h" || guardado === "m")) modelo = guardado;
+      const saved = JSON.parse(localStorage.getItem(VISTOS_KEY) || "[]");
+      if (Array.isArray(saved)) vistos = saved.filter(id => typeof id === "string").slice(0, 8);
+    } catch { /* sin memoria: se empieza de cero */ }
     $("favoritoFicha").onclick = () => alternarFavorito(selected, "ficha", $("favoritoFicha"));
     pintarContadorFavoritos();
     renderSizeGuide($("guiasCorte"));
@@ -547,11 +703,34 @@
     iniciarCarrusel();
     iniciarBusqueda();
     entradasAlDesplazar();
-    const promo = data.promocion;
-    if (promo) {
-      $("packLanzamiento").hidden = false;
-      $("packLanzamiento").textContent = "Pack de lanzamiento · " + promo.cantidad + " polos por " + price(promo.precio);
-    }
+    // El aviso del pack sigue al carrito: cuantos polos van y cuantos faltan.
+    pintarPack();
+    window.BoomartCart.subscribe(pintarPack);
+    pintarVistosPagina();
+    // Un polo abierto desde «Vistos recientemente» vuelve al mismo lugar de la pagina.
+    $("vistosPagina").addEventListener("click", (event) => {
+      if (event.target.closest("a")) desdeGrilla = true;
+    });
+    // Compra fija: aparece cuando «Agregar al carrito» no esta a la vista y hace lo mismo que ese boton.
+    $("compraFijaBoton").onclick = () => {
+      const falta = !medidasElegidas();
+      $("agregarPolo").click();
+      if (falta) {
+        (corte ? $("tallasFicha") : $("corteFicha")).scrollIntoView({
+          block: "center",
+          behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+        });
+      }
+    };
+    revisarCompraFija = () => {
+      // Se descuenta abajo la franja que tapa la propia barra.
+      const boton = $("agregarPolo").getBoundingClientRect();
+      const aLaVista = boton.bottom > 0 && boton.top < details.clientHeight - 72;
+      $("compraFija").classList.toggle("visible", !aLaVista);
+      $("compraFija").inert = aLaVista;
+    };
+    details.addEventListener("scroll", revisarCompraFija, {passive: true});
+    window.addEventListener("resize", revisarCompraFija);
     $("corteFicha").onchange = (event) => {
       corte = event.target.value;
       if (talla && !medidasElegidas()) talla = "";
@@ -588,6 +767,8 @@
       $("cartToggle").click();
     };
     details.addEventListener("close", () => {
+      // Si para cuando llega este aviso ya se abrio otro polo, la ficha sigue en uso: no hay nada que cerrar.
+      if (details.open) return;
       const quedarse = desdeGrilla;
       desdeGrilla = false;
       if (!location.hash.startsWith("#/p/")) return;
@@ -608,10 +789,17 @@
     window.addEventListener("hashchange", route);
     route();
   }
-  fetch("data/polos.json?v=nombres-goku-1").then(r => {
-    if (!r.ok) throw new Error("Error de catálogo");
-    return r.json();
-  }).then(init).catch(() => {
+  Promise.all([
+    fetch("data/polos.json?v=nombres-goku-1").then(r => {
+      if (!r.ok) throw new Error("Error de catálogo");
+      return r.json();
+    }),
+    // Genero del modelo de cada foto. Si falta, la tienda funciona igual, sin «Ver los polos en».
+    fetch("data/fotos-genero.json?v=1").then(r => r.ok ? r.json() : null).catch(() => null)
+  ]).then(([catalogo, fotos]) => {
+    generos = fotos && fotos.fotos && fotos.modelos ? fotos : null;
+    init(catalogo);
+  }).catch(() => {
     $("grilla").textContent = "No pudimos cargar la colección. Intenta recargar la página.";
   });
 })();

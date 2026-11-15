@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../src/styles.css?v=69">
-  <link rel="stylesheet" href="polos.css?v=47">
+  <link rel="stylesheet" href="polos.css?v=48">
 </head>
 <body class="polos-store">
   <header class="cab" id="cab">
@@ -77,6 +77,20 @@
           <label>Buscar un polo<input id="buscarPolo" type="search" placeholder="Nombre, personaje o colección"></label>
           <label>Orden<select id="ordenPolo"><option value="">Destacados</option><option value="nombre">Nombre A–Z</option></select></label>
         </div>
+        <div class="vista-filtros">
+          <fieldset class="opcion" id="modeloPolo" hidden>
+            <legend>Ver los polos en</legend>
+            <div class="opcion-botones">
+              <label><input type="radio" name="modeloPolo" value="" checked><span>Ambos</span></label>
+              <label><input type="radio" name="modeloPolo" value="m"><span>Mujer</span></label>
+              <label><input type="radio" name="modeloPolo" value="h"><span>Hombre</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="opcion" id="colorPolo">
+            <legend>Color del polo</legend>
+            <div class="opcion-botones" id="coloresPolo"></div>
+          </fieldset>
+        </div>
         <div class="resultado-fila">
           <p id="resultadoPolos" role="status"></p>
           <button id="alternarFavoritos" class="favoritos-filtro" type="button">
@@ -86,6 +100,10 @@
         </div>
         <div id="sinPolos" hidden><p id="sinPolosTexto">No encontramos polos con esos filtros.</p><button id="limpiarPolos" type="button">Ver todos los polos</button></div>
         <div class="grilla" id="grilla"></div>
+        <section class="vistos" id="vistosPagina" aria-labelledby="vistosPaginaT" hidden>
+          <h3 id="vistosPaginaT">Vistos recientemente</h3>
+          <div class="parecidos" id="vistosPaginaLista"></div>
+        </section>
       </div>
     </section>
 
@@ -190,6 +208,10 @@
             <span>Guardar en favoritos</span>
           </button>
         </div>
+        <div class="pack-ficha" id="packFicha" hidden>
+          <p id="packFichaTexto"></p>
+          <div class="pack-pasos" id="packFichaPasos" aria-hidden="true"></div>
+        </div>
       </section>
       <div class="acordeon ficha-secciones">
         <details open><summary>Descripción</summary><p id="descripcionFicha"></p></details>
@@ -200,8 +222,20 @@
     </div>
     <section class="ficha-parecidos" id="parecidosSeccion" aria-labelledby="parecidosTitulo">
       <h3 id="parecidosTitulo">Quizá también te guste</h3>
+      <p id="parecidosNota" hidden></p>
       <div class="parecidos" id="parecidosFicha"></div>
     </section>
+    <section class="ficha-parecidos" id="vistosFichaSeccion" aria-labelledby="vistosFichaT" hidden>
+      <h3 id="vistosFichaT">Vistos recientemente</h3>
+      <div class="parecidos" id="vistosFicha"></div>
+    </section>
+    <div class="compra-fija" id="compraFija" inert>
+      <div>
+        <p id="compraFijaNombre"></p>
+        <p id="compraFijaDetalle"></p>
+      </div>
+      <button type="button" class="btn btn-osc" id="compraFijaBoton">Agregar al carrito</button>
+    </div>
   </dialog>
   <dialog id="menuPolos" class="panel-lateral panel-izquierda" aria-labelledby="menuTitulo">
     <div class="panel-cab">
@@ -375,7 +409,7 @@
   <script src="../src/supabase-config.js?v=1"></script>
   <script src="../src/registro-web.js?v=5"></script>
   <script src="catalogo-core.js?v=3"></script>
-  <script src="polos.js?v=60"></script>
+  <script src="polos.js?v=61"></script>
   <!-- Medicion propia y anonima (panel privado): visitas, polos vistos, carrito y corazones.
        En Polos NO se carga el pixel de Meta: track.js lo omite cuando window.fbq ya existe.
        Para activarlo aqui, quitar la linea del fbq vacio. -->
