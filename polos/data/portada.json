@@ -1,0 +1,11 @@
+{
+  "_nota": "Polos del carrusel de portada, en orden. «foto» es la ruta exacta de una foto de ese polo en polos.json; debe mostrar el estampado principal. Si la foto ya no existe se usa la primera del polo; si el polo ya no existe, se salta.",
+  "polos": [
+    { "id": "gryffindor", "foto": "img/harry-potter/gryffindor/01-espalda-y-manga-mueble.webp" },
+    { "id": "black-goku", "foto": "img/dragon-ball/black-goku-3.webp" },
+    { "id": "shiryu-de-dragon", "foto": "img/saint-seiya/shiryu-de-dragon/01-muro.webp" },
+    { "id": "harry-potter-negro", "foto": "img/travesia-nocturna/01-sofia-espalda-v3.webp" },
+    { "id": "goku-nino-1", "foto": "img/dragon-ball/goku-nino-1-1.webp" },
+    { "id": "shun-de-andromeda", "foto": "img/saint-seiya/shun-de-andromeda/03-espalda-columna.webp" }
+  ]
+}

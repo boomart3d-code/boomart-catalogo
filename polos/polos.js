@@ -13,6 +13,8 @@
     return b;
   };
   let data;
+  // Polos del carrusel de portada (data/portada.json).
+  let portada = null;
   let selected;
   // Foto con la que abre la ficha cuando se llega desde una miniatura (-1: la primera).
   let fotoInicial = -1;
@@ -342,43 +344,81 @@
   }
 
 
+  // Portada: una sola foto a la vez, que se funde con la siguiente. La barra activa marca el tiempo
+  // (lo fija el CSS en --vitrina-tiempo) y, al llenarse, pasa al polo siguiente.
   function iniciarCarrusel() {
-    const rail = $("heroFotos");
-    const products = data.productos;
-    if (!products.length) return;
+    const rail = $("vitrinaFotos");
+    const region = $("vitrina");
+    // Los polos y sus fotos vienen de data/portada.json. Si falta, van los primeros de la coleccion.
+    let elegidos = (portada || []).map(entrada => {
+      const product = data.productos.find(p => p.id === entrada.id);
+      return product && {product, indice: Math.max(0, product.fotos.findIndex(shot => shot.archivo === entrada.foto))};
+    }).filter(Boolean);
+    if (elegidos.length < 2) elegidos = data.productos.slice(0, 6).map(product => ({product, indice: 0}));
+    if (!elegidos.length) return;
     let active = 0;
-    const slides = products.map((product, index) => {
+    const slides = elegidos.map(({product, indice}, i) => {
       const link = document.createElement("a");
-      link.className = "hero-polo";
+      link.className = "vitrina-foto";
       link.href = "#/p/" + product.id;
-      link.append(image(product.fotos[0], product.nombre, index > 2 && index !== products.length - 1));
-      link.addEventListener("click", (event) => {
-        if (index === active || event.ctrlKey || event.metaKey) return;
-        event.preventDefault();
-        show(index);
-      });
+      const shot = product.fotos[indice];
+      const img = image(shot, product.nombre, false);
+      // Solo la primera foto se pide de inmediato; las demas, cuando la pagina termino de cargar.
+      if (i > 0) {
+        img.removeAttribute("src");
+        img.dataset.src = shot.archivo;
+      }
+      link.append(img);
+      // La ficha abre en la misma foto que se vio en la portada.
+      link.addEventListener("click", () => { fotoInicial = indice; });
       return link;
+    });
+    const cargarResto = () => {
+      for (const slide of slides) {
+        const img = slide.querySelector("img[data-src]");
+        if (!img) continue;
+        img.src = img.dataset.src;
+        delete img.dataset.src;
+      }
+    };
+    if (document.readyState === "complete") cargarResto();
+    else window.addEventListener("load", cargarResto, {once: true});
+    const barras = elegidos.map(({product}, i) => {
+      const b = button("", () => show(i));
+      b.setAttribute("aria-label", "Ver " + product.nombre);
+      b.append(document.createElement("i"));
+      return b;
     });
     function show(index) {
       const n = slides.length;
       active = (index + n) % n;
       slides.forEach((slide, i) => {
-        const delta = (i - active + n) % n;
-        const position = delta === 0 ? "actual" : delta === 1 ? "siguiente" : delta === n - 1 ? "anterior" : "fuera";
-        slide.dataset.posicion = position;
-        slide.tabIndex = position === "actual" ? 0 : -1;
-        slide.setAttribute("aria-hidden", String(position !== "actual"));
+        slide.classList.toggle("actual", i === active);
+        slide.tabIndex = i === active ? 0 : -1;
+        slide.setAttribute("aria-hidden", String(i !== active));
       });
-      const product = products[active];
-      $("poloDestacado").textContent = product.nombre + " · " + price(product.precio);
+      barras.forEach((b, i) => {
+        b.classList.toggle("vista", i < active);
+        b.classList.remove("activa");
+        b.setAttribute("aria-current", String(i === active));
+      });
+      // Leer el ancho obliga a reiniciar la animacion de la barra aunque sea el mismo polo.
+      void barras[active].offsetWidth;
+      barras[active].classList.add("activa");
+      const {product} = elegidos[active];
+      $("temaDestacado").textContent = product.tema;
+      $("poloDestacado").textContent = product.nombre;
+      $("precioDestacado").textContent = price(product.precio);
       $("verDestacado").href = "#/p/" + product.id;
-      $("posicionCarrusel").textContent = (active + 1) + " / " + n;
     }
     rail.replaceChildren(...slides);
+    $("barrasCarrusel").replaceChildren(...barras);
+    $("barrasCarrusel").hidden = slides.length < 2;
+    $("verDestacado").addEventListener("click", () => { fotoInicial = elegidos[active].indice; });
     $("carruselAnterior").onclick = () => show(active - 1);
     $("carruselSiguiente").onclick = () => show(active + 1);
     $("carruselAnterior").disabled = $("carruselSiguiente").disabled = slides.length < 2;
-    rail.parentElement.addEventListener("keydown", (event) => {
+    region.addEventListener("keydown", (event) => {
       if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
       event.preventDefault();
       const refocus = rail.contains(document.activeElement);
@@ -397,17 +437,24 @@
     }, {passive:true});
     show(0);
     if (slides.length < 2 || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const region = rail.parentElement;
-    let playing = true;
+    // Al llenarse la barra pasa al siguiente. Si hay una ventana abierta, la portada ya no se ve
+    // o la foto siguiente aun no cargo, la barra vuelve a empezar en el mismo polo.
+    $("barrasCarrusel").addEventListener("animationend", () => {
+      const siguiente = slides[(active + 1) % slides.length].querySelector("img");
+      const libre = !document.querySelector("dialog[open]")
+        && $("cartToggle").getAttribute("aria-expanded") !== "true"
+        && region.getBoundingClientRect().bottom > 0
+        && siguiente.complete && siguiente.naturalWidth > 0;
+      show(libre ? active + 1 : active);
+    });
+    // Pausa a pedido. Con mouse encima o con el teclado dentro, el CSS ya detiene la barra.
     const toggle = $("pausarCarrusel");
     toggle.hidden = false;
     toggle.onclick = () => {
-      playing = !playing;
-      toggle.textContent = playing ? "Pausar" : "Reproducir";
+      const pausa = region.classList.toggle("en-pausa");
+      toggle.setAttribute("aria-label", pausa ? "Reanudar el carrusel" : "Pausar el carrusel");
+      toggle.querySelector("path").setAttribute("d", pausa ? "M8 5L18.5 12L8 19Z" : "M8.5 5V19M15.5 5V19");
     };
-    setInterval(() => {
-      if (playing && !document.hidden && !details.open && !choice.open && !region.matches(":hover, :focus-within") && region.getBoundingClientRect().bottom > 0) show(active - 1);
-    }, 5600);
   }
 
   function iniciarBusqueda() {
@@ -797,9 +844,12 @@
       return r.json();
     }),
     // Genero del modelo de cada foto. Si falta, la tienda funciona igual, sin «Ver los polos en».
-    fetch("data/fotos-genero.json?v=1").then(r => r.ok ? r.json() : null).catch(() => null)
-  ]).then(([catalogo, fotos]) => {
+    fetch("data/fotos-genero.json?v=1").then(r => r.ok ? r.json() : null).catch(() => null),
+    // Polos y fotos del carrusel de portada. Si falta, van los primeros de la coleccion.
+    fetch("data/portada.json?v=1").then(r => r.ok ? r.json() : null).catch(() => null)
+  ]).then(([catalogo, fotos, vitrina]) => {
     generos = fotos && fotos.fotos && fotos.modelos ? fotos : null;
+    portada = vitrina && Array.isArray(vitrina.polos) ? vitrina.polos : null;
     init(catalogo);
   }).catch(() => {
     $("grilla").textContent = "No pudimos cargar la colección. Intenta recargar la página.";

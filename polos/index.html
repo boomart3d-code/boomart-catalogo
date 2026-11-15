@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../src/styles.css?v=69">
-  <link rel="stylesheet" href="polos.css?v=50">
+  <link rel="stylesheet" href="polos.css?v=51">
 </head>
 <body class="polos-store">
   <header class="cab" id="cab">
@@ -44,15 +44,19 @@
           <a class="btn btn-osc" href="#coleccion" data-ir>Ver la colección</a>
         </div>
       </div>
-      <section class="portada-carrusel" aria-label="Polos destacados" aria-roledescription="carrusel">
-        <div class="hero-fotos" id="heroFotos"></div>
-        <div class="carrusel-pie">
-          <div><p id="poloDestacado"></p><a id="verDestacado">Ver este polo →</a></div>
-          <div class="carrusel-mandos">
+      <section class="vitrina" id="vitrina" aria-label="Polos destacados" aria-roledescription="carrusel">
+        <div class="vitrina-fotos" id="vitrinaFotos"></div>
+        <div class="vitrina-barras" id="barrasCarrusel"></div>
+        <div class="vitrina-pie">
+          <a class="vitrina-texto" id="verDestacado">
+            <span id="temaDestacado"></span>
+            <strong id="poloDestacado"></strong>
+            <span id="precioDestacado"></span>
+          </a>
+          <div class="vitrina-mandos">
             <button id="carruselAnterior" type="button" aria-label="Polo anterior"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4.5L7.5 12L15 19.5"/></svg></button>
-            <span id="posicionCarrusel"></span>
+            <button id="pausarCarrusel" type="button" aria-label="Pausar el carrusel" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 5V19M15.5 5V19"/></svg></button>
             <button id="carruselSiguiente" type="button" aria-label="Polo siguiente"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5L16.5 12L9 19.5"/></svg></button>
-            <button id="pausarCarrusel" type="button" hidden>Pausar</button>
           </div>
         </div>
       </section>
@@ -409,7 +413,7 @@
   <script src="../src/supabase-config.js?v=1"></script>
   <script src="../src/registro-web.js?v=5"></script>
   <script src="catalogo-core.js?v=3"></script>
-  <script src="polos.js?v=62"></script>
+  <script src="polos.js?v=63"></script>
   <!-- Medicion propia y anonima (panel privado): visitas, polos vistos, carrito y corazones.
        En Polos NO se carga el pixel de Meta: track.js lo omite cuando window.fbq ya existe.
        Para activarlo aqui, quitar la linea del fbq vacio. -->

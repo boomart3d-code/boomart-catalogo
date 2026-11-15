@@ -1227,3 +1227,94 @@ svg.ico .lleno { fill: currentColor; stroke: none; }
 .carrusel-mandos button { display: inline-grid; place-items: center; }
 /* Los botones que antes llevaban un signo de texto centran ahora su icono. */
 .panel-cerrar { display: grid; place-items: center; }
+
+/* ───── Portada: vitrina de una sola foto ─────
+   Una foto protagonista, completa, que se funde con la siguiente. Debajo, una barra por polo:
+   la activa se llena en el tiempo de --vitrina-tiempo y al terminar pasa al siguiente polo. */
+.hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+/* El ancho sale del alto disponible (foto 4:5), para que foto, barras y texto midan lo mismo
+   y todo quepa en la primera pantalla. */
+.vitrina {
+  --vitrina-tiempo: 1.5s;
+  width: 100%;
+  min-width: 0;
+  max-width: clamp(260px, calc(62svh * .8), 520px);
+  justify-self: center;
+  margin-inline: auto;
+}
+.vitrina-fotos {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  touch-action: pan-y;
+}
+.vitrina-foto {
+  position: absolute;
+  inset: 0;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .45s var(--ease), visibility 0s .45s;
+}
+.vitrina-foto.actual { z-index: 1; opacity: 1; visibility: visible; transition: opacity .45s var(--ease); }
+.vitrina-foto img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.vitrina-foto:focus-visible { outline: 2px solid var(--tinta); outline-offset: 3px; }
+.vitrina-barras { display: flex; gap: 6px; margin-top: 14px; }
+.vitrina-barras[hidden] { display: none; }
+/* Cada barra es una linea de 2 px con 24 px de alto para tocarla comodamente. */
+.vitrina-barras button {
+  position: relative;
+  flex: 1;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.vitrina-barras button::before,
+.vitrina-barras i { content: ""; position: absolute; inset: 11px 0; }
+.vitrina-barras button::before { background: var(--linea-f); }
+.vitrina-barras i { background: #171410; transform: scaleX(0); transform-origin: left; }
+.vitrina-barras .vista i,
+.vitrina-barras .activa i { transform: scaleX(1); }
+.vitrina-barras .activa i { animation: vitrina-avance var(--vitrina-tiempo) linear; }
+.vitrina.en-pausa .activa i,
+.vitrina:has(:focus-visible) .activa i { animation-play-state: paused; }
+@media (hover: hover) and (pointer: fine) {
+  .vitrina:hover .activa i { animation-play-state: paused; }
+}
+@keyframes vitrina-avance { from { transform: scaleX(0); } }
+.vitrina-barras button:focus-visible { outline: 2px solid var(--tinta); outline-offset: 2px; }
+/* En pantallas angostas los mandos bajan a su propia fila y el nombre conserva el ancho completo. */
+.vitrina-pie { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 12px 16px; margin-top: 10px; }
+.vitrina-texto { display: grid; flex: 1 1 200px; gap: 3px; min-width: 0; color: inherit; text-decoration: none; }
+#temaDestacado { color: var(--gris); font-size: 13px; line-height: 1.4; }
+/* El nombre reserva siempre dos lineas, para que la pagina no salte al cambiar de polo. */
+#poloDestacado {
+  min-height: 2em;
+  font-family: var(--display);
+  font-size: clamp(24px, 2.3vw, 32px);
+  font-weight: 600;
+  letter-spacing: .01em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+#precioDestacado { font-size: 15px; font-weight: 600; line-height: 1.4; }
+.vitrina-mandos { display: flex; flex-shrink: 0; gap: 8px; }
+.vitrina-mandos button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--linea-f);
+  border-radius: 50%;
+  background: none;
+  color: var(--tinta);
+  cursor: pointer;
+}
+.vitrina-mandos button[hidden] { display: none; }
+.vitrina-mandos button:hover { border-color: var(--tinta); }
+.vitrina-mandos button:focus-visible { outline: 2px solid var(--tinta); outline-offset: 3px; }
+@media (max-width: 850px) {
+  .hero { grid-template-columns: 1fr; }
+}
