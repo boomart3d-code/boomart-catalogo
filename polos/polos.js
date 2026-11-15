@@ -137,13 +137,15 @@
   function iconoCorazon() {
     const ns = "http://www.w3.org/2000/svg";
     const svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("class", "ico");
     svg.setAttribute("viewBox", "0 0 24 24");
     svg.setAttribute("aria-hidden", "true");
-    // Dos trazos iguales: abajo un contorno claro (para fotos oscuras) y encima la silueta.
+    // Corazon geometrico, de lineas rectas. Dos trazos iguales: abajo un contorno claro
+    // (para fotos oscuras) y encima la silueta.
     for (const clase of ["halo", "silueta"]) {
       const path = document.createElementNS(ns, "path");
       path.setAttribute("class", clase);
-      path.setAttribute("d", "M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z");
+      path.setAttribute("d", "M12 20.5L3.5 11.5V7L7 3.5H10L12 6L14 3.5H17L20.5 7V11.5Z");
       svg.append(path);
     }
     return svg;

@@ -12,22 +12,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../src/styles.css?v=69">
-  <link rel="stylesheet" href="polos.css?v=48">
+  <link rel="stylesheet" href="polos.css?v=49">
 </head>
 <body class="polos-store">
   <header class="cab" id="cab">
     <button class="menu-cab" id="abrirMenu" type="button" aria-label="Abrir el menú" aria-haspopup="dialog">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7H20M4 12H20M4 17H20"/></svg>
     </button>
     <a class="marca" href="#/" aria-label="BoomArt polos, inicio"><img src="boomart-calado.png" alt="" width="1200" height="601"><i>Polos</i></a>
     <nav class="nav" id="navColecciones" aria-label="Colecciones"></nav>
   <div class="cab-acciones">
   <button class="favoritos-cab" id="verFavoritos" type="button" aria-label="Ver mis favoritos" title="Mis favoritos">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5L3.5 11.5V7L7 3.5H10L12 6L14 3.5H17L20.5 7V11.5Z"/></svg>
     <span id="favoritosCount" hidden>0</span>
   </button>
   <button class="seleccion-cab" id="cartToggle" type="button" aria-controls="cartDrawer" aria-expanded="false" title="Carrito de compras">
-    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l3 12h11l3-9H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3.5H5L8 15H19L21.8 6.8H5.9"/><path class="lleno" d="M9.3 17.9L11.1 19.7L9.3 21.5L7.5 19.7ZM17.7 17.9L19.5 19.7L17.7 21.5L15.9 19.7Z"/></svg>
     <span class="sr-only">Carrito de compras</span><span id="cartCount" hidden>0</span>
   </button>
   </div>
@@ -49,9 +49,9 @@
         <div class="carrusel-pie">
           <div><p id="poloDestacado"></p><a id="verDestacado">Ver este polo →</a></div>
           <div class="carrusel-mandos">
-            <button id="carruselAnterior" type="button" aria-label="Polo anterior">←</button>
+            <button id="carruselAnterior" type="button" aria-label="Polo anterior"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4.5L7.5 12L15 19.5"/></svg></button>
             <span id="posicionCarrusel"></span>
-            <button id="carruselSiguiente" type="button" aria-label="Polo siguiente">→</button>
+            <button id="carruselSiguiente" type="button" aria-label="Polo siguiente"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5L16.5 12L9 19.5"/></svg></button>
             <button id="pausarCarrusel" type="button" hidden>Pausar</button>
           </div>
         </div>
@@ -94,7 +94,7 @@
         <div class="resultado-fila">
           <p id="resultadoPolos" role="status"></p>
           <button id="alternarFavoritos" class="favoritos-filtro" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5L3.5 11.5V7L7 3.5H10L12 6L14 3.5H17L20.5 7V11.5Z"/></svg>
             <span id="alternarFavoritosTexto">Ver mis favoritos</span>
           </button>
         </div>
@@ -171,7 +171,7 @@
     <div class="ficha-barra">
       <form method="dialog">
         <button type="submit" class="ficha-volver" aria-label="Volver a la colección">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4.5L7.5 12L15 19.5"/></svg>
           <span>Volver</span>
         </button>
       </form>
@@ -204,7 +204,7 @@
         <div class="ficha-acciones">
           <button id="agregarPolo" type="button" class="btn btn-osc">Agregar al carrito</button>
           <button id="favoritoFicha" type="button" class="btn favorito-ficha">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5L3.5 11.5V7L7 3.5H10L12 6L14 3.5H17L20.5 7V11.5Z"/></svg>
             <span>Guardar en favoritos</span>
           </button>
         </div>
@@ -240,7 +240,7 @@
   <dialog id="menuPolos" class="panel-lateral panel-izquierda" aria-labelledby="menuTitulo">
     <div class="panel-cab">
       <h2 id="menuTitulo">Menú</h2>
-      <form method="dialog"><button type="submit" class="panel-cerrar" aria-label="Cerrar el menú">×</button></form>
+      <form method="dialog"><button type="submit" class="panel-cerrar" aria-label="Cerrar el menú"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 5.5L18.5 18.5M18.5 5.5L5.5 18.5"/></svg></button></form>
     </div>
     <nav class="menu-grupo" aria-labelledby="menuColeccionesT">
       <h3 id="menuColeccionesT">Colecciones</h3>
@@ -260,7 +260,7 @@
   <dialog id="guiaTallas" class="panel-lateral" aria-labelledby="guiaTitulo">
     <div class="panel-cab">
       <h2 id="guiaTitulo">Guía de tallas</h2>
-      <form method="dialog"><button type="submit" class="panel-cerrar" aria-label="Cerrar la guía de tallas">×</button></form>
+      <form method="dialog"><button type="submit" class="panel-cerrar" aria-label="Cerrar la guía de tallas"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 5.5L18.5 18.5M18.5 5.5L5.5 18.5"/></svg></button></form>
     </div>
     <p>Compara las medidas de cada corte con las de un polo que te quede bien. Las medidas están en centímetros.</p>
     <div id="guiasPanel"></div>
@@ -278,7 +278,7 @@
           <img class="ba-mark" src="boomart-calado.png" alt="">
           <div><span>COMPRA EN BOOMART</span><h2>Carrito de compras</h2></div>
         </div>
-        <button type="button" class="icon-button" id="closeCart" aria-label="Cerrar carrito">×</button>
+        <button type="button" class="icon-button" id="closeCart" aria-label="Cerrar carrito"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 5.5L18.5 18.5M18.5 5.5L5.5 18.5"/></svg></button>
       </div>
       <div class="cart-drawer-body" id="cartLines"></div>
       <div class="cart-drawer-footer">
@@ -304,7 +304,7 @@
 
     <dialog class="checkout-dialog" id="checkoutDialog" aria-label="Completar pedido">
       <div class="checkout-shell">
-        <button class="icon-button close-modal" id="closeCheckout" type="button" aria-label="Cerrar">×</button>
+        <button class="icon-button close-modal" id="closeCheckout" type="button" aria-label="Cerrar"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 5.5L18.5 18.5M18.5 5.5L5.5 18.5"/></svg></button>
         <div class="checkout-brand" aria-label="Compra en BoomArt">
           <img class="ba-mark" src="boomart-calado.png" alt="">
           <span>COMPRA EN BOOMART</span>
@@ -409,7 +409,7 @@
   <script src="../src/supabase-config.js?v=1"></script>
   <script src="../src/registro-web.js?v=5"></script>
   <script src="catalogo-core.js?v=3"></script>
-  <script src="polos.js?v=61"></script>
+  <script src="polos.js?v=62"></script>
   <!-- Medicion propia y anonima (panel privado): visitas, polos vistos, carrito y corazones.
        En Polos NO se carga el pixel de Meta: track.js lo omite cuando window.fbq ya existe.
        Para activarlo aqui, quitar la linea del fbq vacio. -->

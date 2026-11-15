@@ -895,13 +895,13 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
   fill: none;
   stroke: currentColor;
   stroke-width: 1.7;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
   transition: fill .2s;
 }
-/* Guardado: la silueta sigue en negro y se llena de un rojo calido y translucido,
-   que deja ver la foto (pedido de Adrian, 15-nov-2026: sutil, sin circulo ni rojo intenso). */
-:is(.favorito, .favoritos-cab, .favorito-ficha).guardado svg { fill: rgb(181 56 47 / .55); }
+/* Corazon geometrico y sin rojo (pedido de Adrian, 15-nov-2026): sin tocar es solo el contorno;
+   guardado se llena del mismo color del trazo (negro; marfil dentro del boton negro de la cabecera). */
+:is(.favorito, .favoritos-cab, .favorito-ficha).guardado svg { fill: currentColor; }
 :is(.favorito, .favoritos-cab, .favoritos-filtro):focus-visible {
   outline: 2px solid var(--tinta);
   outline-offset: 3px;
@@ -924,7 +924,7 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
 /* Un contorno marfil muy fino, debajo, mantiene visible la silueta negra sobre fotos oscuras. */
 .favorito .halo { fill: none; stroke: rgb(250 248 243 / .7); stroke-width: 3.4; }
 @media (any-hover: hover) and (any-pointer: fine) {
-  .favorito:not(.guardado):hover svg { fill: rgb(181 56 47 / .2); }
+  .favorito:not(.guardado):hover svg { fill: rgb(23 20 16 / .22); }
 }
 .cab-acciones {
   display: flex;
@@ -941,14 +941,16 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
   min-width: 44px;
   height: 44px;
   padding: 0 11px;
-  border: 1px solid var(--linea-f);
+  border: 0;
   border-radius: 999px;
-  background: transparent;
+  background: #171410;
+  color: #fffaf2;
   font-size: 13px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
 }
-.favoritos-cab:hover { border-color: var(--tinta); }
+/* Mismo estilo que el carrito: boton negro con el dibujo en lineas claras. */
+.favoritos-cab:hover { background: #40362d; }
 @media (max-width: 350px) { .cab .marca i { display: none; } }
 .resultado-fila {
   display: flex;
@@ -1202,3 +1204,25 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;letter-spaci
 #compraFijaDetalle { color: var(--gris); font-size: 13px; line-height: 1.35; }
 .compra-fija .btn { flex-shrink: 0; min-height: 48px; padding: 0 18px; letter-spacing: .06em; }
 @media (max-width: 360px) { .compra-fija .btn { padding-inline: 12px; font-size: 12px; } }
+
+/* ───── Iconos de Polos: un solo estilo (pedido de Adrian, 15-nov-2026) ─────
+   Todos los iconos de la pagina comparten forma, tamano y color:
+   - geometricos: solo lineas rectas y cortes a 45 grados, esquinas vivas, sin curvas;
+   - cuadricula de 24, trazo de 1.7, 20 px de lado;
+   - un solo color, el del texto: tinta sobre marfil y marfil sobre los botones negros. Nada de rojo.
+   Un icono nuevo se dibuja con estas mismas reglas y lleva la clase «ico».
+   Las partes pequenas que van rellenas (las ruedas del carrito) llevan «lleno». */
+svg.ico {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+svg.ico .lleno { fill: currentColor; stroke: none; }
+.carrusel-mandos button { display: inline-grid; place-items: center; }
+/* Los botones que antes llevaban un signo de texto centran ahora su icono. */
+.panel-cerrar { display: grid; place-items: center; }
