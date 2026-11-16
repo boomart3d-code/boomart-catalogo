@@ -65,7 +65,21 @@
       },
     })));
     const dialog = h("div", { class: "dialog" + (wide ? " wide" : ""), role: "dialog", "aria-modal": "true", "aria-label": title }, h("h2", { text: title }), body, footer);
-    const overlay = h("div", { class: "overlay", onclick: (event) => { if (event.target === overlay) close(); } }, dialog);
+    // Cerrar tocando el fondo SOLO si el clic empieza y termina en el fondo (si no, arrastrar para seleccionar texto y soltar afuera cerraba todo),
+    // y NUNCA en un cuadro con campos para escribir (se perderia lo escrito): ahi solo cierran Escape o «Cancelar».
+    let bajoEnFondo = false;
+    let sueltoEnFondo = false;
+    const overlay = h("div", {
+      class: "overlay",
+      onpointerdown: (event) => { bajoEnFondo = event.target === overlay; },
+      onpointerup: (event) => { sueltoEnFondo = event.target === overlay; },
+      onclick: (event) => {
+        const limpio = event.target === overlay && bajoEnFondo && sueltoEnFondo;
+        bajoEnFondo = false;
+        sueltoEnFondo = false;
+        if (limpio && !dialog.querySelector("input, textarea, select")) close();
+      },
+    }, dialog);
     host.append(overlay);
     document.addEventListener("keydown", onKey);
     const first = dialog.querySelector("input, textarea, select, button");
@@ -312,24 +326,52 @@
     ]);
   }
 
+  // El enlace y el WhatsApp se corrigen solos: «Random Figures» -> random-figures; «+51 925 666 542» -> 51925666542; «925666542» -> 51925666542.
+  const limpiarEnlace = (valor) => valor.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 39);
+  const limpiarWhatsapp = (valor) => {
+    const digitos = valor.replace(/\D/g, "");
+    return /^9\d{8}$/.test(digitos) ? "51" + digitos : digitos;
+  };
+
   function newSellerDialog() {
     const fields = {
       name: h("input", { type: "text", maxlength: 80, placeholder: "Random Figures" }),
-      slug: h("input", { type: "text", maxlength: 39, placeholder: "random-figures", spellcheck: "false", autocapitalize: "none" }),
-      whatsapp: h("input", { type: "text", inputmode: "numeric", maxlength: 15, placeholder: "51999999999" }),
+      slug: h("input", { type: "text", maxlength: 60, placeholder: "random-figures", spellcheck: "false", autocapitalize: "none" }),
+      whatsapp: h("input", { type: "text", inputmode: "tel", maxlength: 25, placeholder: "51999999999" }),
       address: h("input", { type: "text", maxlength: 200, placeholder: "C.C. Arenales, pisos 1 y 5" }),
       hours: h("input", { type: "text", maxlength: 200, placeholder: "Lunes a sabado, 10:00 a 20:00" }),
       about: h("textarea", { maxlength: 500 }),
     };
+    const aviso = h("p", { class: "error", role: "alert", hidden: true });
+    const mostrar = (texto) => { aviso.textContent = texto; aviso.hidden = !texto; };
+    fields.name.addEventListener("blur", () => { if (!fields.slug.value.trim()) fields.slug.value = limpiarEnlace(fields.name.value); });
+    fields.slug.addEventListener("blur", () => { fields.slug.value = limpiarEnlace(fields.slug.value); });
+    fields.whatsapp.addEventListener("blur", () => { fields.whatsapp.value = limpiarWhatsapp(fields.whatsapp.value); });
     const row = (label, node) => h("div", {}, h("label", { text: label }), node);
     openDialog("Nuevo vendedor", h("div", { class: "form-grid" },
-      row("Nombre de la tienda", fields.name), row("Direccion corta para el enlace (minusculas, numeros y guiones)", fields.slug),
-      row("WhatsApp de ventas (solo digitos, con codigo de pais)", fields.whatsapp), row("Direccion", fields.address), row("Horario", fields.hours), row("Sobre la tienda", fields.about)), [
+      row("Nombre de la tienda", fields.name), row("Direccion corta para el enlace (se corrige sola: minusculas, numeros y guiones)", fields.slug),
+      row("WhatsApp de ventas (con codigo de pais; se limpia solo)", fields.whatsapp), row("Direccion", fields.address), row("Horario", fields.hours), row("Sobre la tienda", fields.about), aviso), [
       { label: "Cancelar" },
       { label: "Crear vendedor", primary: true, keepOpen: true, run: async (close) => {
-        const body = { slug: fields.slug.value.trim().toLowerCase(), name: fields.name.value.trim() };
-        for (const key of ["whatsapp", "address", "hours", "about"]) if (fields[key].value.trim()) body[key] = fields[key].value.trim();
-        try { await callAdmin("/sellers/create", body); toast("Vendedor creado."); close(); renderVendedores(); } catch (e) { toast(friendlyError(e), true); }
+        mostrar("");
+        const name = fields.name.value.trim();
+        const slug = limpiarEnlace(fields.slug.value.trim() || name);
+        const whatsapp = limpiarWhatsapp(fields.whatsapp.value);
+        fields.slug.value = slug;
+        fields.whatsapp.value = whatsapp;
+        if (name.length < 2) { mostrar("Escribe el nombre de la tienda (al menos 2 letras)."); fields.name.focus(); return; }
+        if (slug.length < 2) { mostrar("El enlace necesita al menos 2 letras o numeros."); fields.slug.focus(); return; }
+        if (whatsapp && !/^[0-9]{9,15}$/.test(whatsapp)) { mostrar("El WhatsApp debe tener entre 9 y 15 digitos, con codigo de pais (ej. 51925666542)."); fields.whatsapp.focus(); return; }
+        const body = { slug, name };
+        if (whatsapp) body.whatsapp = whatsapp;
+        for (const key of ["address", "hours", "about"]) if (fields[key].value.trim()) body[key] = fields[key].value.trim();
+        try { await callAdmin("/sellers/create", body); toast("Vendedor creado."); close(); renderVendedores(); }
+        catch (e) {   // el cuadro NO se cierra: lo escrito se conserva
+          const texto = friendlyError(e);
+          const claro = /choca con los datos existentes/.test(texto) ? "Ya existe una tienda con ese enlace. Escribe un enlace distinto." : texto;
+          mostrar(claro);
+          toast(claro, true);
+        }
       } },
     ]);
   }

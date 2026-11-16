@@ -181,7 +181,19 @@
     const dialog = h("div", { class: "detail", role: "dialog", "aria-modal": "true", "aria-label": row.title },
       h("button", { class: "detail-close", type: "button", text: "Cerrar", onclick: close }),
       h("div", { class: "gallery" }, h("div", { class: "gallery-main" }, main), photos.length > 1 ? thumbs : null), info);
-    const overlay = h("div", { class: "overlay", onclick: (event) => { if (event.target === overlay) close(); } }, dialog);
+    let bajoEnFondo = false;
+    let sueltoEnFondo = false;
+    const overlay = h("div", {
+      class: "overlay",
+      onpointerdown: (event) => { bajoEnFondo = event.target === overlay; },
+      onpointerup: (event) => { sueltoEnFondo = event.target === overlay; },
+      onclick: (event) => {
+        const limpio = event.target === overlay && bajoEnFondo && sueltoEnFondo;   // arrastrar para seleccionar y soltar afuera no la cierra
+        bajoEnFondo = false;
+        sueltoEnFondo = false;
+        if (limpio) close();
+      },
+    }, dialog);
     host.append(overlay);
     document.body.style.overflow = "hidden";
     document.addEventListener("keydown", onKey);

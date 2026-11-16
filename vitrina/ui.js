@@ -206,7 +206,18 @@
       const cerrar = (v) => { valor = v; if (dlg.open) dlg.close(); };
       dlg.addEventListener("close", () => { document.body.classList.remove("con-hoja"); dlg.remove(); resolver(valor); });
       dlg.addEventListener("cancel", (e) => { if (bloqueada()) { e.preventDefault(); return; } valor = undefined; });
-      dlg.addEventListener("click", (e) => { if (e.target === dlg && opts.cerrarAlTocarFuera !== false && !bloqueada()) cerrar(undefined); });
+      // Tocar fuera cierra SOLO si el toque empieza y termina en el fondo: arrastrar para seleccionar lo escrito y soltar afuera
+      // cerraba la hoja y borraba lo escrito. Una hoja con campos para escribir nunca se cierra tocando afuera.
+      let bajoFuera = false;
+      let sueltoFuera = false;
+      dlg.addEventListener("pointerdown", (e) => { bajoFuera = e.target === dlg; });
+      dlg.addEventListener("pointerup", (e) => { sueltoFuera = e.target === dlg; });
+      dlg.addEventListener("click", (e) => {
+        const limpio = e.target === dlg && bajoFuera && sueltoFuera;
+        bajoFuera = false;
+        sueltoFuera = false;
+        if (limpio && opts.cerrarAlTocarFuera !== false && !bloqueada() && !dlg.querySelector("input, textarea, select")) cerrar(undefined);
+      });
       dlg.append(...[].concat(construir(cerrar, dlg)).filter(Boolean));
       document.body.append(dlg);
       document.body.classList.add("con-hoja");
