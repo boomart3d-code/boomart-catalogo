@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Etapa 1: la vitrina todavia no se enlaza desde boomart.pe ni se promociona, y no pide ventas. Se indexa recien en el lanzamiento. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https://ugywzvnokdsikiczvwdx.supabase.co; connect-src https://ugywzvnokdsikiczvwdx.supabase.co; base-uri 'none'; form-action 'none'">
+  <title>Random Figures en BoomArt</title>
+  <meta name="description" content="Figuras y coleccionables de Random Figures, vitrina en BoomArt.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body data-tienda="random-figures">
+  <header class="site-header">
+    <a class="logo-link" href="https://boomart.pe/" aria-label="BoomArt, ir al inicio"><img src="assets/logo.svg" alt="BoomArt" class="logo"></a>
+    <p class="header-note">Vitrina de BoomArt</p>
+  </header>
+
+  <main>
+    <section class="shop-head" aria-live="polite">
+      <h1 id="shop-name">Cargando tienda…</h1>
+      <p id="shop-about" class="shop-about" hidden></p>
+      <p id="shop-meta" class="shop-meta" hidden></p>
+      <p class="seller-note">Vendido y enviado por la tienda. BoomArt solo muestra los productos.</p>
+      <p class="prelaunch" id="prelaunch" hidden>Estamos preparando la vitrina: muy pronto podras pedir tus productos desde aqui.</p>
+    </section>
+
+    <section class="filters" aria-label="Buscar y filtrar">
+      <div class="search-row">
+        <label class="sr-only" for="search">Buscar productos</label>
+        <input id="search" type="search" placeholder="Buscar (ej.: Harry Potter)" autocomplete="off" maxlength="60">
+        <label class="sr-only" for="sort">Ordenar</label>
+        <select id="sort">
+          <option value="new">Mas nuevos</option>
+          <option value="price_asc">Precio: menor a mayor</option>
+          <option value="price_desc">Precio: mayor a menor</option>
+        </select>
+      </div>
+      <div id="chips-sections" class="chips" role="group" aria-label="Secciones"></div>
+      <div id="chips-collections" class="chips chips-sub" role="group" aria-label="Colecciones" hidden></div>
+    </section>
+
+    <p id="results-info" class="results-info" aria-live="polite"></p>
+    <section id="grid" class="grid" aria-label="Productos"></section>
+    <div class="more-wrap"><button id="more" class="btn" type="button" hidden>Ver mas productos</button></div>
+    <p id="empty" class="empty" hidden></p>
+  </main>
+
+  <footer class="site-footer">
+    <p>Una vitrina de <a href="https://boomart.pe/">boomart.pe</a></p>
+  </footer>
+
+  <div id="overlay-host"></div>
+
+  <script src="config.js"></script>
+  <script src="vendor/supabase-js-2.117.2.umd.js"></script>
+  <script src="app.js?v=1"></script>
+</body>
+</html>

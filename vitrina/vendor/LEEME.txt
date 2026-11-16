@@ -1,0 +1,6 @@
+Libreria de terceros fijada (no se carga de internet para que la pagina de entrada no dependa de un CDN ni de su cambio).
+Archivo:   supabase-js-2.117.2.umd.js
+Origen:    paquete npm @supabase/supabase-js@2.117.2, dist/umd/supabase.js (licencia MIT)
+SHA-256:   59d39487c3589843b410322d8a3d562ce022aba1e5ccb16898ef3fb2a0da2ecd
+Para actualizarla: bajar el paquete nuevo, copiar dist/umd/supabase.js con el nuevo nombre, actualizar este archivo, el <script> de index.html
+y volver a correr las pruebas (test_socios_sql_estatico.py comprueba que la huella coincide).

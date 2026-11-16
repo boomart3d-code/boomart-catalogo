@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob: data: https://ugywzvnokdsikiczvwdx.supabase.co; connect-src https://ugywzvnokdsikiczvwdx.supabase.co; base-uri 'none'; form-action 'none'">
+  <title>Vitrina · Panel de BoomArt</title>
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+  <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+
+  <main id="view-login" class="login" hidden>
+    <form id="login-form" class="login-card" autocomplete="on" novalidate>
+      <img src="../assets/logo.svg" alt="BoomArt" class="login-logo">
+      <h1>Panel de la vitrina</h1>
+      <p class="muted">Solo para el equipo de BoomArt.</p>
+      <label for="login-user">Usuario</label>
+      <input id="login-user" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+      <label for="login-pass">Contraseña</label>
+      <input id="login-pass" name="password" type="password" autocomplete="current-password" required>
+      <p id="login-error" class="error" role="alert" hidden></p>
+      <button id="login-submit" class="btn primary" type="submit">Entrar</button>
+    </form>
+  </main>
+
+  <div id="view-app" hidden>
+    <header class="topbar">
+      <div class="brand"><img src="../assets/logo.svg" alt="" class="brand-logo"><strong>Vitrina</strong><span class="muted">Panel de BoomArt</span></div>
+      <nav class="tabs" aria-label="Secciones">
+        <button class="tab" id="tab-validar" data-tab="validar" type="button">Para validar <span class="badge" id="badge-validar" hidden>0</span></button>
+        <button class="tab" id="tab-vendedores" data-tab="vendedores" type="button">Vendedores</button>
+        <button class="tab" id="tab-productos" data-tab="productos" type="button">Productos</button>
+        <button class="tab" id="tab-registro" data-tab="registro" type="button">Registro</button>
+      </nav>
+      <div class="who"><span id="who-name" class="muted"></span><button id="btn-logout" class="btn small" type="button">Salir</button></div>
+    </header>
+    <main class="content">
+      <section id="t-validar" class="panel" hidden></section>
+      <section id="t-vendedores" class="panel" hidden></section>
+      <section id="t-productos" class="panel" hidden></section>
+      <section id="t-registro" class="panel" hidden></section>
+    </main>
+  </div>
+
+  <div id="dialog-host"></div>
+
+  <script src="../config.js"></script>
+  <script src="../vendor/supabase-js-2.117.2.umd.js"></script>
+  <script src="app.js?v=1"></script>
+</body>
+</html>

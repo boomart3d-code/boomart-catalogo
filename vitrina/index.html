@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0B0B0B">
+  <!-- Politica de contenido estricta: solo scripts y estilos propios (sin codigo ni estilos en linea), conexion solo a la API de la vitrina
+       e imagenes propias, de la camara (blob:) y de las fotos firmadas del almacen. La direccion de la API se mantiene aqui y en config.js;
+       si cambia una, cambia la otra. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob: data: https://ugywzvnokdsikiczvwdx.supabase.co; connect-src https://ugywzvnokdsikiczvwdx.supabase.co; base-uri 'none'; form-action 'none'">
+  <title>Mi vitrina · Random Figures</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+  <div id="avisos" class="avisos" role="status" aria-live="polite"></div>
+
+  <!-- Entrar -->
+  <main id="vista-entrar" class="entrar" hidden>
+    <img class="entrar__logo" src="assets/logo.svg" alt="BoomArt" width="104" height="104">
+    <h1>Mi vitrina</h1>
+    <p class="entrar__texto">Entra con tu usuario y tu clave.</p>
+    <form id="form-entrar" class="entrar__form" autocomplete="on" novalidate>
+      <div class="campo">
+        <label class="campo__etiqueta" for="entrar-usuario">Usuario</label>
+        <input id="entrar-usuario" class="entrada" name="username" type="text" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="next" required>
+      </div>
+      <div class="campo">
+        <label class="campo__etiqueta" for="entrar-clave">Clave</label>
+        <div class="clave">
+          <input id="entrar-clave" class="entrada" name="password" type="password" autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="go" required>
+          <button id="entrar-ojo" class="clave__ojo" type="button" aria-label="Mostrar la clave" aria-pressed="false"></button>
+        </div>
+      </div>
+      <p id="entrar-error" class="error" role="alert" hidden></p>
+      <button id="entrar-boton" class="btn btn--primario btn--bloque" type="submit">Entrar</button>
+    </form>
+    <p class="entrar__ayuda">¿No puedes entrar? Escríbele a Adrián, de BoomArt.</p>
+  </main>
+
+  <!-- Aplicacion -->
+  <div id="vista-app" hidden>
+    <header class="barra">
+      <button id="barra-atras" class="barra__atras" type="button" hidden></button>
+      <img id="barra-logo" class="barra__logo" src="assets/logo.svg" alt="" width="40" height="40">
+      <div class="barra__titulo">
+        <strong id="barra-titulo">Mi vitrina</strong>
+        <span id="barra-sub"></span>
+      </div>
+    </header>
+    <div id="aviso-red" class="aviso-red" role="status" hidden>No hay internet. Lo que escribas se queda en tu celular; cuando vuelva la señal toca «Guardar» otra vez.</div>
+    <main id="contenido" class="contenido" tabindex="-1"></main>
+    <nav class="nav" aria-label="Menú principal">
+      <a class="nav__boton" href="#/inicio" data-nav="inicio"><span class="nav__icono" data-icono="inicio"></span><span>Inicio</span></a>
+      <a class="nav__boton" href="#/publicar" data-nav="publicar"><span class="nav__icono" data-icono="publicar"></span><span>Publicar</span></a>
+      <a class="nav__boton" href="#/stock" data-nav="stock"><span class="nav__icono" data-icono="stock"></span><span>Stock</span></a>
+      <a class="nav__boton" href="#/productos" data-nav="productos"><span class="nav__icono" data-icono="productos"></span><span>Productos</span></a>
+      <a class="nav__boton" href="#/mas" data-nav="mas"><span class="nav__icono" data-icono="mas"></span><span>Más</span></a>
+    </nav>
+  </div>
+
+  <script src="vendor/supabase-js-2.117.2.umd.js"></script>
+  <script src="config.js?v=1"></script>
+  <script src="util.js?v=1"></script>
+  <script src="imagen.js?v=1"></script>
+  <script src="borrador.js?v=1"></script>
+  <script src="datos.js?v=1"></script>
+  <script src="ui.js?v=1"></script>
+  <script src="fotos.js?v=1"></script>
+  <script src="app.js?v=1"></script>
+  <script src="pantallas-inicio.js?v=1"></script>
+  <script src="pantalla-publicar.js?v=1"></script>
+  <script src="pantallas-productos.js?v=1"></script>
+  <script src="pantalla-stock.js?v=1"></script>
+  <script src="pantalla-categorias.js?v=1"></script>
+  <script src="arranque.js?v=1"></script>
+</body>
+</html>
