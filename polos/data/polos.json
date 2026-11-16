@@ -13,6 +13,84 @@
   ],
   "productos": [
     {
+      "id": "zelda-true-heroes-never-die",
+      "nombre": "Zelda True Heroes Never Die",
+      "tema": "Legend of Zelda",
+      "precio": 50,
+      "color": "negro",
+      "prenda": "unisex",
+      "tipo": "A",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "texto": "El espíritu de Hyrule en un diseño de inspiración universitaria en el pecho, con un emblema en la espalda alta. Mangas lisas.",
+      "fotos": [
+        {
+          "archivo": "img/legend-of-zelda/true-heroes-never-die/01-hombre-frente.webp",
+          "titulo": "Frente · Hombre",
+          "ancho": 1083,
+          "alto": 1452
+        },
+        {
+          "archivo": "img/legend-of-zelda/true-heroes-never-die/02-mujer-frente.webp",
+          "titulo": "Frente · Mujer",
+          "ancho": 1083,
+          "alto": 1453
+        },
+        {
+          "archivo": "img/legend-of-zelda/true-heroes-never-die/03-hombre-espalda.webp",
+          "titulo": "Espalda · Hombre",
+          "ancho": 1083,
+          "alto": 1453
+        },
+        {
+          "archivo": "img/legend-of-zelda/true-heroes-never-die/04-mujer-espalda.webp",
+          "titulo": "Espalda · Mujer",
+          "ancho": 1083,
+          "alto": 1453
+        },
+        {
+          "archivo": "img/legend-of-zelda/true-heroes-never-die/05-hombre-lateral.webp",
+          "titulo": "Vista lateral · Hombre",
+          "ancho": 1083,
+          "alto": 1452
+        },
+        {
+          "archivo": "img/legend-of-zelda/true-heroes-never-die/06-mujer-lateral.webp",
+          "titulo": "Vista lateral · Mujer",
+          "ancho": 1083,
+          "alto": 1452
+        },
+        {
+          "archivo": "img/legend-of-zelda/true-heroes-never-die/07-hombre-extendido-frente.webp",
+          "titulo": "Polo extendido de frente · Hombre",
+          "ancho": 1083,
+          "alto": 1452
+        },
+        {
+          "archivo": "img/legend-of-zelda/true-heroes-never-die/08-mujer-extendido-frente.webp",
+          "titulo": "Polo extendido de frente · Mujer",
+          "ancho": 1083,
+          "alto": 1452
+        },
+        {
+          "archivo": "img/legend-of-zelda/true-heroes-never-die/09-hombre-extendido-espalda.webp",
+          "titulo": "Polo extendido de espalda · Hombre",
+          "ancho": 1083,
+          "alto": 1452
+        },
+        {
+          "archivo": "img/legend-of-zelda/true-heroes-never-die/10-mujer-extendido-espalda.webp",
+          "titulo": "Polo extendido de espalda · Mujer",
+          "ancho": 1083,
+          "alto": 1452
+        }
+      ]
+    },
+    {
       "fotos": [
         {
           "archivo": "img/travesia-nocturna/01-sofia-espalda-v3.webp",
