@@ -37,8 +37,19 @@
 
   // ---------------------------------------------------------------- sesion
   async function sesion() {
-    const { data } = await sb.auth.getSession();
-    return data.session || null;
+    const { data, error } = await sb.auth.getSession();
+    if (data.session) return data.session;
+    // Sin senal no se pudo renovar el permiso, pero la sesion guardada sigue valida: NO se debe pedir la clave otra vez.
+    if (error && (error.name === "AuthRetryableFetchError" || error.status === 0 || /failed to fetch|network|load failed/i.test(String(error.message || "")))) {
+      throw { message: "sin conexion", code: "sin_red", status: 0 };
+    }
+    if (!error && root.navigator && root.navigator.onLine === false && tieneSesionGuardada()) throw { message: "sin conexion", code: "sin_red", status: 0 };
+    return null;
+  }
+
+  /** ¿Hay una sesion guardada en este celular? (solo mira si existe, no la usa). */
+  function tieneSesionGuardada() {
+    try { return !!root.localStorage.getItem("vitrina-marcos-auth"); } catch { return false; }
   }
 
   async function entrar(usuario, clave) {
@@ -263,7 +274,7 @@
 
   root.VitrinaDatos = {
     sb, BUCKET, normalizar,
-    sesion, entrar, salir, cargarTienda, guardarTienda,
+    sesion, tieneSesionGuardada, entrar, salir, cargarTienda, guardarTienda,
     secciones, colecciones, crearSeccion, crearColeccion, renombrarSeccion, renombrarColeccion, borrarSeccion, borrarColeccion, conteoPorCategoria,
     contarEstados, listarProductos, productosSinEnviar, productosConCambios, obtenerProducto, productoExiste, crearProducto, actualizarProducto, borrarProducto,
     subirArchivo, quitarArchivos, insertarFoto, borrarFilaFoto, moverFoto, urlsFirmadas, olvidarFirmadas,

@@ -21,6 +21,7 @@
     { re: /^\/mas$/, pantalla: "mas", nav: "mas" },
     { re: /^\/mas\/tienda$/, pantalla: "tienda", nav: "mas" },
     { re: /^\/mas\/ayuda$/, pantalla: "ayuda", nav: "mas" },
+    { re: /^\/mas\/instalar$/, pantalla: "instalar", nav: "mas" },
   ];
 
   const App = {
@@ -74,8 +75,44 @@
 
   // ---------------------------------------------------------------- vistas
   function mostrarVista(cual) {
+    document.body.classList.remove("esperando-senal");
     $("vista-entrar").hidden = cual !== "entrar";
     $("vista-app").hidden = cual !== "app";
+  }
+
+  // ---------------------------------------------------------------- clave guardada en el celular
+  // La sesion abierta ya se guarda sola y se renueva; esto es un respaldo: si el navegador (Chrome en Android) guardo el usuario y la clave,
+  // los ofrece y, si hace falta volver a entrar, entra sin que Marcos escriba nada. Si el navegador no lo permite, no pasa nada.
+  const hayGestorDeClaves = () => !!(root.PasswordCredential && root.navigator.credentials && root.navigator.credentials.store && root.navigator.credentials.get);
+
+  function guardarClaveEnNavegador(usuario, clave) {
+    if (!hayGestorDeClaves()) return;
+    try {
+      root.navigator.credentials.store(new root.PasswordCredential({ id: usuario.trim(), password: clave, name: App.tienda ? App.tienda.name : "Mi vitrina" })).catch(() => {});
+    } catch { /* nada */ }
+  }
+
+  /** Solo al abrir la aplicacion sin sesion: prueba con la clave que el navegador tenga guardada (sin preguntar). Devuelve true si entro. */
+  async function entrarConClaveGuardada() {
+    if (!hayGestorDeClaves() || root.navigator.onLine === false) return false;
+    try {
+      const guardada = await root.navigator.credentials.get({ password: true, mediation: "silent" });
+      if (!guardada || !guardada.id || !guardada.password) return false;
+      await D.entrar(guardada.id, guardada.password);
+      await iniciarSesion();
+      return true;
+    } catch { return false; }
+  }
+
+  // Sin internet al abrir: la sesion guardada sigue valida, asi que NO se pide la clave; se espera la senal.
+  let esperandoSenal = false;
+  function esperarSenal() {
+    mostrarVista("app");
+    document.body.classList.add("esperando-senal");
+    $("contenido").replaceChildren(UI.panelError("No hay internet por ahora. Tu sesión sigue abierta: en cuanto vuelva la señal, tu vitrina se abre sola.", () => arrancarSesion()));
+    if (esperandoSenal) return;
+    esperandoSenal = true;
+    window.addEventListener("online", () => { esperandoSenal = false; if (!App.tienda) arrancarSesion(); }, { once: true });
   }
 
   function mostrarEntrar(mensaje) {
@@ -112,6 +149,7 @@
         await D.entrar(usuario, clave);
         await iniciarSesion();
       });
+      guardarClaveEnNavegador(usuario, clave);
       $("entrar-clave").value = "";
     } catch (err) {
       mostrarErrorEntrar(err && err.amable ? err.amable : U.mensajeEntrar(err));
@@ -132,16 +170,38 @@
       throw { amable: resultado.problema, cuenta: true };
     }
     App.tienda = resultado.tienda;
+    if (root.VitrinaPWA) root.VitrinaPWA.pedirAlmacenamientoFirme();     // que el celular no borre la sesion guardada
     prepararBarra();
     mostrarVista("app");
     if (!location.hash || location.hash === "#" || location.hash === "#/") history.replaceState(null, "", "#/inicio");
     await mostrarRuta();
   }
 
+  const ESPERA_SESION_MS = 8000;      // sin senal, la libreria reintenta muchas veces: pasado este tiempo se avisa en vez de dejar la pantalla en blanco
+
   async function arrancarSesion() {
+    // Si el celular ya tiene una sesion guardada se muestra «Abriendo…» al instante (no la pantalla de entrar ni una pantalla en blanco).
+    if (D.tieneSesionGuardada()) {
+      mostrarVista("app");
+      $("contenido").replaceChildren(UI.cargando("Abriendo tu vitrina…"));
+    }
     let sesion = null;
-    try { sesion = await D.sesion(); } catch { sesion = null; }
-    if (!sesion) { mostrarEntrar(""); return; }
+    let seCansoDeEsperar = false;
+    const pedido = D.sesion();
+    // Si la red tardo demasiado (se mostro el aviso) y luego responde, se abre sola; si no, quedaria esperando a que Marcos toque «Reintentar».
+    // Solo lo hace la llamada que se canso de esperar y solo una vez: asi no se encadenan arranques.
+    pedido.then(() => { if (seCansoDeEsperar && document.body.classList.contains("esperando-senal")) arrancarSesion(); }, () => { /* el error se atiende abajo */ });
+    try {
+      sesion = await Promise.race([pedido, new Promise((_, rechazar) => setTimeout(() => rechazar({ code: "sin_red", espera: true }), ESPERA_SESION_MS))]);
+    } catch (err) {
+      if (err && err.code === "sin_red") { seCansoDeEsperar = !!err.espera; esperarSenal(); return; }
+      sesion = null;
+    }
+    if (!sesion) {
+      if (await entrarConClaveGuardada()) return;
+      mostrarEntrar("");
+      return;
+    }
     mostrarVista("app");
     $("contenido").replaceChildren(UI.cargando("Abriendo tu vitrina…"));
     try {
@@ -158,6 +218,8 @@
     if (!seguro) return;
     App.guardia = null;
     await D.salir();
+    // «Salir» es salir de verdad: el navegador no debe volver a entrar solo con la clave guardada.
+    try { if (root.navigator.credentials && root.navigator.credentials.preventSilentAccess) await root.navigator.credentials.preventSilentAccess(); } catch { /* nada */ }
     App.limpiarSesion();
     history.replaceState(null, "", location.pathname + location.search);
     $("entrar-usuario").value = "";

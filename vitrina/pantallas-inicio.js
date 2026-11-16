@@ -1,5 +1,5 @@
 /*
- * Pantallas: Inicio, Más, Mi tienda y Ayuda.
+ * Pantallas: Inicio, Más, Mi tienda, Ayuda e Instalar en el celular.
  */
 (function (root) {
   "use strict";
@@ -18,6 +18,30 @@
   function fichaNumero(clave, numero, texto, alerta) {
     return h("a", { class: `numero${alerta && numero > 0 ? " numero--alerta" : ""}`, href: `#/productos?f=${clave}`, "aria-label": `${texto}: ${numero}. Tocar para ver.` },
       h("span", { class: "numero__valor", text: String(numero) }), h("span", { class: "numero__texto", text: texto }));
+  }
+
+  // ---------------------------------------------------------------- instalar en el celular
+  /** Aviso de Inicio: solo en celular, solo si todavia no esta instalada y no se dijo «Ahora no» hace poco. */
+  function tarjetaInstalar() {
+    const PWA = root.VitrinaPWA;
+    if (!PWA || PWA.estaInstalada() || PWA.pospuesto()) return null;
+    if (!(PWA.puedeInstalarYa() || PWA.esAndroid() || PWA.esIphone())) return null;     // en computadora no se ofrece
+    const caja = h("section", { class: "instalar-aviso", "aria-label": "Instalar en tu celular" });
+    const instalar = h("button", { class: "btn btn--primario", type: "button" }, icono("descargar", 22), "Instalar");
+    const luego = h("button", { class: "btn btn--claro", type: "button", text: "Ahora no" });
+    instalar.addEventListener("click", async () => {
+      if (!PWA.puedeInstalarYa()) { App.ir("#/mas/instalar"); return; }
+      const resultado = await PWA.instalar();
+      if (resultado === "aceptada") { caja.remove(); avisar("Listo. Busca el ícono «Mi vitrina» en la pantalla de inicio de tu celular. ✔"); }
+      else if (resultado === "no_disponible") App.ir("#/mas/instalar");
+    });
+    luego.addEventListener("click", () => { PWA.posponer(); caja.remove(); });
+    caja.append(
+      h("div", { class: "instalar-aviso__cabeza" },
+        h("span", { class: "instalar-aviso__icono" }, icono("celular", 28)),
+        h("div", {}, h("strong", { text: "Ponla en tu celular" }), h("p", { text: "Con un ícono en tu pantalla entras directo, sin buscarla en Google y sin escribir tu clave cada vez." }))),
+      h("div", { class: "fila-botones" }, instalar, luego));
+    return caja;
   }
 
   // ---------------------------------------------------------------- Inicio
@@ -44,6 +68,8 @@
         botonGrande("#/publicar", "publicar", "Publicar un producto", "Con fotos, precio y cantidad", "grande--principal"),
         botonGrande("#/stock", "stock", "Mi stock", "Cambiar cuántos tienes"),
         botonGrande("#/productos", "productos", "Mis productos", "Ver, cambiar o borrar")));
+      const instalarAviso = tarjetaInstalar();
+      if (instalarAviso) raiz.append(instalarAviso);
 
       if (conteos.status === "fulfilled") {
         const c = conteos.value;
@@ -90,6 +116,7 @@
           filaMenu({ href: "#/mas/tienda", nombreIcono: "tienda", titulo: "Mi tienda", texto: "Dirección, horario y WhatsApp" }),
           filaMenu({ href: "#/categorias", nombreIcono: "carpeta", titulo: "Categorías", texto: "Secciones y colecciones" }),
           filaMenu({ href: "#/mas/ayuda", nombreIcono: "ayuda", titulo: "Ayuda", texto: "Cómo usar tu vitrina" }),
+          root.VitrinaPWA && !root.VitrinaPWA.estaInstalada() ? filaMenu({ href: "#/mas/instalar", nombreIcono: "celular", titulo: "Instalar en mi celular", texto: "Un ícono para entrar directo" }) : null,
           filaMenu({ nombreIcono: "salir", titulo: "Salir", texto: "Cerrar tu sesión", alTocar: () => App.salir(), peligro: true })),
         h("p", { class: "ayuda ayuda--centro", text: `Tienda: ${App.tienda.name}` }));
     },
@@ -135,6 +162,50 @@
         }
       });
       raiz.append(h("h1", { text: "Mi tienda" }), form);
+    },
+  };
+
+  // ---------------------------------------------------------------- Instalar en el celular
+  const PASOS_INSTALAR = [
+    ["Abre el menú de Chrome", "Toca los tres puntitos ⋮ que están arriba, a la derecha de la pantalla."],
+    ["Toca «Instalar aplicación»", "Si no la ves, toca «Agregar a la pantalla principal»."],
+    ["Confirma", "Toca «Instalar». En unos segundos aparece el ícono «Mi vitrina» en la pantalla de inicio de tu celular."],
+    ["Entra una sola vez", "Abre el ícono y escribe tu usuario y tu clave. Desde entonces se abre directo, sin pedírtelos. Solo te los volverá a pedir si tocas «Salir» en el menú Más."],
+  ];
+
+  App.pantallas.instalar = {
+    async montar(raiz) {
+      App.barra({ atras: "#/mas" });
+      const PWA = root.VitrinaPWA;
+      raiz.append(h("h1", { text: "Instalar en tu celular" }));
+      if (PWA && PWA.estaInstalada()) {
+        raiz.append(h("div", { class: "nota" }, icono("visto", 26),
+          h("div", {}, h("strong", { text: "Ya está instalada." }), h("p", { text: "Entras tocando el ícono «Mi vitrina» de la pantalla de inicio. No hace falta que hagas nada más." }))));
+        return undefined;
+      }
+      raiz.append(h("p", { class: "subtitulo", text: "Así entras desde un ícono, como cualquier otra aplicación del celular." }));
+      const zonaBoton = h("div", { class: "instalar-boton" });
+      const pintar = () => {
+        const instalar = PWA && PWA.puedeInstalarYa()
+          ? h("button", { class: "btn btn--primario btn--bloque btn--alto", type: "button" }, icono("descargar", 24), "Instalar ahora") : null;
+        if (instalar) instalar.addEventListener("click", async () => {
+          const resultado = await PWA.instalar();
+          if (resultado === "aceptada") { avisar("Listo. Busca el ícono «Mi vitrina» en la pantalla de inicio de tu celular. ✔"); App.ir("#/mas"); }
+        });
+        zonaBoton.replaceChildren(...(instalar ? [instalar, h("p", { class: "ayuda ayuda--centro", text: "Si prefieres hacerlo a mano, los pasos están abajo." })] : []));
+      };
+      pintar();
+      raiz.append(zonaBoton,
+        h("ol", { class: "pasos-ayuda" }, PASOS_INSTALAR.map(([titulo, texto], i) => h("li", { class: "paso-ayuda" },
+          h("span", { class: "paso-ayuda__num", "aria-hidden": "true", text: String(i + 1) }),
+          h("div", {}, h("h2", { text: titulo }), h("p", { text: texto }))))));
+      if (PWA && PWA.esIphone()) {
+        raiz.append(h("div", { class: "nota" }, h("strong", { text: "¿Tienes iPhone?" }),
+          h("p", { text: "Abre esta página en Safari, toca el botón Compartir (el cuadrado con la flecha) y luego «Agregar a inicio»." })));
+      }
+      raiz.append(h("div", { class: "nota" }, icono("candado", 24),
+        h("div", {}, h("strong", { text: "Tu clave está a salvo." }), h("p", { text: "La aplicación guarda tu sesión solo en tu celular. Si algún día cambias de celular o BoomArt restablece tu clave, tendrás que entrar de nuevo." }))));
+      return { limpiar: PWA ? PWA.alCambiar(pintar) : undefined };
     },
   };
 

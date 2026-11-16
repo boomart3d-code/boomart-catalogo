@@ -9,10 +9,17 @@
   <!-- Politica de contenido estricta: solo scripts y estilos propios (sin codigo ni estilos en linea), conexion solo a la API de la vitrina
        e imagenes propias, de la camara (blob:) y de las fotos firmadas del almacen. La direccion de la API se mantiene aqui y en config.js;
        si cambia una, cambia la otra. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob: data: https://ugywzvnokdsikiczvwdx.supabase.co; connect-src https://ugywzvnokdsikiczvwdx.supabase.co; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob: data: https://ugywzvnokdsikiczvwdx.supabase.co; connect-src https://ugywzvnokdsikiczvwdx.supabase.co; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
   <title>Mi vitrina · Random Figures</title>
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="icon" href="assets/icono-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/icono-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Mi vitrina">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
   <div id="avisos" class="avisos" role="status" aria-live="polite"></div>
@@ -63,14 +70,15 @@
 
   <script src="vendor/supabase-js-2.117.2.umd.js"></script>
   <script src="config.js?v=1"></script>
+  <script src="pwa.js?v=1"></script>
   <script src="util.js?v=1"></script>
   <script src="imagen.js?v=1"></script>
   <script src="borrador.js?v=1"></script>
-  <script src="datos.js?v=1"></script>
-  <script src="ui.js?v=1"></script>
+  <script src="datos.js?v=2"></script>
+  <script src="ui.js?v=2"></script>
   <script src="fotos.js?v=1"></script>
-  <script src="app.js?v=1"></script>
-  <script src="pantallas-inicio.js?v=1"></script>
+  <script src="app.js?v=2"></script>
+  <script src="pantallas-inicio.js?v=2"></script>
   <script src="pantalla-publicar.js?v=1"></script>
   <script src="pantallas-productos.js?v=1"></script>
   <script src="pantalla-stock.js?v=1"></script>

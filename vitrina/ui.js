@@ -62,6 +62,8 @@
     tienda: ["M4 9 5.5 4h13L20 9M4 9v11h16V9M4 9a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0A2.7 2.7 0 0 0 20 9M9.5 20v-5h5v5"],
     reintentar: ["M20 11a8 8 0 0 0-14.5-4M4 5v4h4M4 13a8 8 0 0 0 14.5 4M20 19v-4h-4"],
     candado: [["rect", { x: 5, y: 11, width: 14, height: 9, rx: 2 }], "M8 11V8a4 4 0 0 1 8 0v3"],
+    celular: [["rect", { x: 6.5, y: 2.5, width: 11, height: 19, rx: 2.4 }], "M11 18.5h2"],
+    descargar: ["M12 4v11M7.5 10.5 12 15l4.5-4.5M5 20h14"],
   };
 
   function icono(nombre, tam) {

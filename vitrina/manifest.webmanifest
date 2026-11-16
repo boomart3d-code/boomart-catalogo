@@ -1,0 +1,20 @@
+{
+  "name": "Mi vitrina · BoomArt",
+  "short_name": "Mi vitrina",
+  "description": "Tu tienda en BoomArt: publica productos con fotos, cambia tu stock y manda a validar.",
+  "lang": "es-PE",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F5F1E9",
+  "theme_color": "#0B0B0B",
+  "categories": ["business", "shopping"],
+  "icons": [
+    { "src": "assets/icono-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icono-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/icono-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
