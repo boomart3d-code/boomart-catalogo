@@ -44,7 +44,7 @@ test('cada ficha ofrece precio, descripción, talla y fotos en HTML visible, con
     const product=schema(html)['@graph'].find(n=>n['@type']==='Product');
     assert.equal(product.offers.price,p.precio);assert.equal(product.offers.priceCurrency,'PEN');
     assert.equal(product.description,p.texto);assert.deepEqual(product.size,p.tallas);
-    assert.ok(product.image.length>0);assert.ok(!product.aggregateRating);assert.ok(!product.offers.availability);
+    assert.ok(product.image.length>0);assert.ok(!product.aggregateRating);assert.equal(product.offers.availability,'https://schema.org/InStock');
     assert.ok(html.includes('Consultar este polo por WhatsApp'));
   }
 });
@@ -60,6 +60,35 @@ test('las colecciones incluyen solo los diseños correspondientes y títulos ind
     titles.add(html.match(/<title>(.*?)<\/title>/)[1]);
   }
   assert.equal(titles.size,4);
+});
+
+test('Shopping distingue cada talla y corte y mantiene precio e imagen del catálogo',async()=>{
+  const feed=await read('polos/feed-google.xml');
+  const items=[...feed.matchAll(/<item>([\s\S]*?)<\/item>/g)].map(m=>m[1]);
+  const value=(item,key)=>item.match(new RegExp(`<g:${key}>([\\s\\S]*?)<\\/g:${key}>`))?.[1].replaceAll('&amp;','&');
+  const expected=data.productos.reduce((n,p)=>n+Object.values(data.medidas).reduce((n,s)=>n+p.tallas.filter(x=>s[x]).length,0),0);
+  assert.equal(items.length,expected);
+  assert.equal(new Set(items.map(i=>value(i,'id'))).size,expected);
+  for(const item of items){
+    const url=new URL(value(item,'link'));
+    const product=SEO.route(url.href,data.productos).product;
+    assert.ok(product);assert.ok(data.medidas[url.searchParams.get('corte')]?.[url.searchParams.get('talla')]);
+    assert.equal(value(item,'size'),url.searchParams.get('talla'));
+    assert.equal(value(item,'price'),product.precio.toFixed(2)+' PEN');
+    assert.equal(value(item,'availability'),'in_stock');assert.ok(product.fotos.some(f=>SEO.absolute(f.archivo)===value(item,'image_link')));
+    assert.ok(value(item,'id').length<=50);assert.equal(value(item,'return_policy_label'),'polos');
+    assert.doesNotMatch(item,/<g:(?:shipping|shipping_price|gtin|mpn)>/);
+  }
+});
+
+test('condiciones y medidas son legibles sin JavaScript y separan preferencia de defecto',async()=>{
+  const policy=text(await read('polos/cambios-y-devoluciones/index.html'));
+  for(const phrase of ['24 horas','sin uso','sin lavar','etiqueta','3 días hábiles','no limitan tus derechos','BoomArt cubre el transporte'])assert.ok(policy.includes(phrase),phrase);
+  const guide=await read('polos/guia-de-tallas/index.html');
+  assert.equal((guide.match(/<table>/g)||[]).length,2);
+  for(const cut of Object.values(data.medidas))for(const d of Object.values(cut))assert.ok(guide.includes(`<td>${d.pecho}</td>`));
+  const product=await read(SEO.productPath(data.productos[0].id).slice(1)+'index.html');
+  assert.ok(product.includes('Revisa las medidas antes de comprar'));
 });
 
 test('sitemap e IndexNow descubren las páginas reales de Polos; nunca fragmentos',async()=>{

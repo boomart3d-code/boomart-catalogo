@@ -6,6 +6,13 @@
   const collectionPath = theme => !theme || theme === 'todos' ? '/polos/' : '/polos/coleccion/' + slug(theme) + '/';
   const productPath = id => '/polos/diseno/' + id + '/';
   const absolute = value => new URL(value, SITE + '/polos/').href;
+  const collectionIntros = {
+    'Saint Seiya':'Polos inspirados en los Caballeros del Zodiaco. Compara los diseños y sus estampados de pecho y espalda, con mangas lisas, en algodón pima peinado 20/1.',
+    'Dragon Ball':'Encuentra diseños de Dragon Ball y explora sus fotos de frente y espalda. Polos de algodón pima peinado 20/1, con mangas lisas y cortes de hombre y mujer.',
+    'Harry Potter':'Explora los diseños de Hogwarts y sus casas. Cada ficha muestra el color de la prenda y los detalles del estampado, con tallas S, M y L para hombre y mujer.',
+    'Legend of Zelda':'Lleva una referencia a Hyrule en tu día a día. Descubre los diseños de Legend of Zelda, revisa sus estampados y compara las medidas antes de elegir tu talla.'
+  };
+  const collectionIntro = theme => collectionIntros[theme] || `Diseños de ${theme} para llevar tu universo favorito contigo. Explora las fotos, elige corte y talla y prepara tu pedido.`;
   function route(url, products) {
     const u = new URL(url, SITE);
     const legacyProduct = u.hash.match(/^#\/p\/([a-z0-9-]+)(?:\/probador)?$/);
@@ -37,7 +44,7 @@
     if (page.product) {
       const p = page.product;
       const product = {'@type':'Product','@id':meta.url+'#product',url:meta.url,name:'Polo '+p.nombre,description:p.texto,image:p.fotos.slice(0,4).map(f=>absolute(f.archivo)),brand:{'@type':'Brand',name:'BoomArt'},color:p.color,material:p.material,size:p.tallas};
-      if (Number.isFinite(p.precio) && p.precio > 0) product.offers = {'@type':'Offer',url:meta.url,price:p.precio,priceCurrency:'PEN',itemCondition:'https://schema.org/NewCondition',seller:{'@id':SITE+'/#store'}};
+      if (Number.isFinite(p.precio) && p.precio > 0) product.offers = {'@type':'Offer',url:meta.url,price:p.precio,priceCurrency:'PEN',availability:'https://schema.org/InStock',itemCondition:'https://schema.org/NewCondition',seller:{'@id':SITE+'/#store'},hasMerchantReturnPolicy:{'@type':'MerchantReturnPolicy',applicableCountry:'PE',returnPolicyCategory:'https://schema.org/MerchantReturnFiniteReturnWindow',merchantReturnDays:1,returnMethod:'https://schema.org/ReturnByMail',returnFees:'https://schema.org/ReturnShippingFees',merchantReturnLink:SITE+'/polos/cambios-y-devoluciones/'}};
       graph[0].mainEntity = {'@id':product['@id']};
       graph.push(product);
     } else {
@@ -46,7 +53,7 @@
     }
     return {'@context':'https://schema.org','@graph':graph};
   }
-  const api = {SITE,slug,collectionPath,productPath,absolute,route,metadata,schemas};
+  const api = {SITE,slug,collectionPath,productPath,absolute,route,metadata,schemas,collectionIntro};
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.BoomartPolosSEO = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this);

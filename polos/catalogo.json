@@ -2,6 +2,10 @@
   "marca": "BoomArt",
   "url": "https://boomart.pe/polos/",
   "moneda": "PEN",
+  "preparacion": "Prendas base disponibles. Estampado al recibir el pedido; despacho el mismo día o al siguiente de confirmar.",
+  "condiciones": "https://boomart.pe/polos/cambios-y-devoluciones/",
+  "guia_tallas": "https://boomart.pe/polos/guia-de-tallas/",
+  "cuidados": "https://boomart.pe/polos/cuidados/",
   "productos": [
     {
       "id": "zelda-true-heroes-never-die",

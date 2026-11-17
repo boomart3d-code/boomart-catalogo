@@ -18,3 +18,8 @@
 #ficha .nota a{text-decoration:underline;text-underline-offset:4px}
 .ficha-compra #colorFicha{color:var(--gris);font-size:14px}
 @media(max-width:600px){.ruta-pagina{padding-top:80px}.polos-store .ruta-pagina+.hero{padding-top:24px}}
+.guia-cab{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:24px;border-bottom:1px solid var(--linea)}
+.guia-cab .marca{position:static;transform:none;align-items:center;flex-shrink:0}.guia-cab .marca img{width:88px;height:auto}.guia-cab a{color:inherit}.guia-cab>a:last-child{font-size:14px;text-align:right}
+.guia-contenido{max-width:860px;padding-block:40px;line-height:1.75}.guia-contenido h1{font-size:clamp(30px,5vw,50px);line-height:1.15;margin:24px 0}.guia-contenido h2{font-size:25px;margin:32px 0 12px}.guia-contenido p{margin:16px 0}.guia-contenido ol{padding-left:24px}.guia-contenido nav{font-size:13px;overflow-wrap:anywhere}.guia-contenido a,.guia-pie a,.cart-note a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.tabla-deslizable{max-width:100%;overflow-x:auto}.tabla-deslizable table{width:100%;border-collapse:collapse;margin:20px 0}.tabla-deslizable caption{text-align:left;font-weight:700}.tabla-deslizable td,.tabla-deslizable th{padding:10px 7px;border-bottom:1px solid var(--linea);text-align:left}
+.guia-pie{padding-block:28px;border-top:1px solid var(--linea);font-size:13px}.guia-pie nav{display:flex;flex-wrap:wrap;gap:16px}.guia-pie p{margin-top:20px}

@@ -1,9 +1,19 @@
 (() => {
   const $ = (id) => document.getElementById(id);
   const SEO = window.BoomartPolosSEO;
-  const image = (shot, alt, lazy = true) => {
+  const setImage = (img, shot, kind='card') => {
+    const variants=window.BOOMART_POLOS_IMAGES?.[shot.archivo]||[];
+    img.removeAttribute('srcset');img.removeAttribute('sizes');
+    if(variants.length && kind!=='zoom') {
+      img.srcset=[...variants,[shot.ancho,shot.archivo]].map(([w,f])=>`${f} ${w}w`).join(', ');
+      img.sizes=kind==='hero'?'(max-width:700px) 80vw, 420px':kind==='main'?'(max-width:700px) 90vw, 400px':kind==='thumb'?'80px':'(max-width:700px) 45vw, 280px';
+    }
+    Object.assign(img,{src:kind==='zoom'?shot.archivo:variants.find(([w])=>w>=360)?.[1]||shot.archivo,width:shot.ancho,height:shot.alto});
+  };
+  const image = (shot, alt, lazy = true, kind='card') => {
     const img = document.createElement("img");
-    Object.assign(img, {src: shot.archivo, alt, width: shot.ancho, height: shot.alto, loading: lazy ? "lazy" : "eager"});
+    Object.assign(img, {alt, loading: lazy ? "lazy" : "eager",decoding:'async'});
+    setImage(img,shot,kind);
     return img;
   };
   const button = (label, action) => {
@@ -215,12 +225,12 @@
       const shot = product.fotos[indice];
       const alt = product.nombre + " · " + shot.titulo;
       const b = button("", () => {
-        $("fotoAmpliada").replaceChildren(image(shot, alt, false));
+        $("fotoAmpliada").replaceChildren(image(shot, alt, false,'zoom'));
         $("visorPolo").showModal();
       });
       b.className = "ficha-foto";
       b.setAttribute("aria-label", "Ampliar foto: " + shot.titulo);
-      b.append(image(shot, alt, i >= 2));
+      b.append(image(shot, alt, i >= 2,'main'));
       return b;
     }));
     const resto = product.fotos.length - FOTOS_A_LA_VISTA;
@@ -258,6 +268,7 @@
   }
 
   function renderSizeGuide(container) {
+    container.replaceChildren();
     if (data.medidas_provisionales) {
       const note = document.createElement('p');
       note.className = 'nota';
@@ -297,6 +308,10 @@
     // Quien ve la coleccion en mujer o en hombre llega con ese corte marcado; puede cambiarlo.
     corte = modelo === "h" && data.medidas.hombre ? "hombre" : modelo === "m" && data.medidas.mujer ? "mujer" : "";
     talla = "";
+    const requested = new URLSearchParams(location.search);
+    if (data.medidas[requested.get('corte')]?.[requested.get('talla')] && product.tallas.includes(requested.get('talla'))) {
+      corte = requested.get('corte'); talla = requested.get('talla');
+    }
     pintarOpciones();
     // Las fotos siguen el modelo elegido. Si se llego desde una miniatura de la galeria, la ficha abre en esa foto.
     const orden = ordenFotos(product);
@@ -362,7 +377,7 @@
     heading('nombreFicha', page.type === 'product' ? 'h1' : 'h2');
     $('tituloColeccion').textContent = page.type === 'collection' ? 'Polos de ' + page.theme : 'Elige tu diseño';
     $('introColeccion').textContent = page.type === 'collection'
-      ? `Diseños de ${page.theme} para llevar tu universo favorito contigo. Explora las fotos, elige corte y talla y prepara tu pedido.`
+      ? SEO.collectionIntro(page.theme)
       : 'Diseños para compartir lo que te apasiona. Explora cada polo, revisa sus fotos y elige tu corte y talla.';
     pintarRuta($('rutaPagina'), [['BoomArt','/'], ['Polos',page.type === 'home' ? null : '/polos/'], ...(page.type === 'collection' ? [[page.theme,null]] : [])]);
   }
@@ -423,10 +438,11 @@
       link.className = "vitrina-foto";
       link.href = rutaProducto(product.id);
       const shot = product.fotos[indice];
-      const img = image(shot, product.nombre, false);
+      const img = i===0 ? image(shot, product.nombre, false,'hero') : document.createElement('img');
+      if(i===0)img.fetchPriority='high';
       // Solo la primera foto se pide de inmediato; las demas, cuando la pagina termino de cargar.
       if (i > 0) {
-        img.removeAttribute("src");
+        Object.assign(img,{alt:product.nombre,width:shot.ancho,height:shot.alto,decoding:'async'});
         img.dataset.src = shot.archivo;
       }
       link.append(img);
@@ -436,7 +452,7 @@
     });
     const cargarFoto = (index) => {
       const img = slides[(index + slides.length) % slides.length].querySelector('img[data-src]');
-      if (img) { img.src = img.dataset.src; delete img.dataset.src; }
+      if (img) { const shot=elegidos[(index+slides.length)%slides.length]; setImage(img,shot.product.fotos[shot.indice],'hero'); delete img.dataset.src; }
     };
     const barras = elegidos.map(({product}, i) => {
       const b = button("", () => show(i));
@@ -641,7 +657,7 @@
           const mini = document.createElement("span");
           mini.className = "producto-mini";
           mini.dataset.foto = i;
-          mini.append(image(shot, "", false));
+          mini.append(image(shot, "", false,'thumb'));
           mini.addEventListener("pointerenter", () => ver(i));
           mini.addEventListener("click", () => { fotoInicial = indice; });
           return mini;
@@ -657,7 +673,7 @@
       aplicarModelo.push(() => {
         orden = ordenFotos(p);
         const shot = p.fotos[orden[0]];
-        Object.assign(base, {src: shot.archivo, width: shot.ancho, height: shot.alto});
+        setImage(base,shot);
         for (const capa of capas.values()) capa.remove();
         capas.clear();
         delete tira.dataset.caben;
