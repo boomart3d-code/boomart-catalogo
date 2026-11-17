@@ -465,6 +465,12 @@
           "titulo": "Detalle del boleto en la espalda",
           "ancho": 763,
           "alto": 1024
+        },
+        {
+          "archivo": "img/extendidos-aprobados-20261116/hogwarts-blanco-sin-etiqueta.webp",
+          "titulo": "Polo extendido · Frente",
+          "ancho": 1536,
+          "alto": 1024
         }
       ]
     },
