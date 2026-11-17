@@ -1,12 +1,12 @@
 # Polos: SEO, lectura IA y páginas propias
 
-Codex · 17 de noviembre de 2026 · **Candidato local listo para revisar; no publicado**.
+Codex · 17 de noviembre de 2026 · **Versión aprobada por Adrián para publicar**. Implementación `5ffb96af`; el resultado del despliegue y las comprobaciones públicas quedan en el relevo `BA-4a8f1938d976`.
 
-Encargo de Adrián: resolver los problemas de la auditoría de Polos y mejorar su preparación para buscadores e IA. La autorización de publicación anterior correspondía a la conexión desde la portada; esta versión nueva espera su aprobación.
+Encargo de Adrián: resolver los problemas de la auditoría de Polos y mejorar su preparación para buscadores e IA. Tras revisar la entrega, autorizó esta publicación con «tienes mi consentimiento hazlo».
 
 - Worktree: `D:/BOOMART-ENTREGAS/web-polos-seo-20261117`.
 - Rama: `codex/polos-seo-20261117`, basada en `4167e6d3` de `origin/main`.
-- Reserva: `BA-863b0e947f78`.
+- Reservas: preparación `BA-863b0e947f78`; publicación `BA-4a8f1938d976`.
 - Vista previa: `http://127.0.0.1:4175/polos/`.
 - Ejemplo: `http://127.0.0.1:4175/polos/diseno/harry-potter-negro/`.
 
@@ -34,6 +34,6 @@ El constructor general también regenera los derivados existentes del catálogo 
 - Generación estable comprobada en fixtures; retirada de páginas limitada al inventario y carpetas propias; rechazo de rutas fuera de Polos. Sintaxis y `git diff --check` correctos.
 - Capturas: `D:/BOOMART-ENTREGAS/polos-seo-20261117/coleccion-escritorio.jpg`, `ficha-escritorio.jpg` y `ficha-movil.jpg`.
 
-## Publicación y comprobación externa pendientes
+## Publicación y comprobación externa
 
-Obtener la aprobación de Adrián para publicar el candidato. Antes de integrar, hacer fetch y revisar cambios remotos concurrentes. Tras publicar, esperar Pages, comprobar los 23 HTML y los recursos de descubrimiento públicos, y revisar la recepción de IndexNow. Solicitar/revisar rastreo con Search Console y Bing Webmaster Tools cuando haya acceso: no se ha confirmado indexación efectiva ni se promete una posición en buscadores.
+Publicación autorizada. Fetch previo sin cambios remotos posteriores a `4167e6d3`. Enviar la implementación aprobada, esperar Pages, comprobar los 23 HTML y los recursos de descubrimiento públicos y registrar la recepción de IndexNow en el relevo de publicación. Solicitar/revisar rastreo con Search Console y Bing Webmaster Tools cuando haya acceso: no se ha confirmado indexación efectiva ni se promete una posición en buscadores.
