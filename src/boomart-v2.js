@@ -37,7 +37,7 @@
       const t=themes[c]||{};
       // Solo universos que tienen su propia colección de polos: conserva la intención del visitante.
       const polosCollection = {'Saint Seiya':'saint-seiya','Harry Potter':'harry-potter','Zelda':'legend-of-zelda'}[c];
-      const polosLink = polosCollection ? `<a class="polos-context-link" href="polos/#/c/${polosCollection}">Este universo también en polos <span aria-hidden="true"> ↗</span></a>` : '';
+      const polosLink = polosCollection ? `<a class="polos-context-link" href="polos/coleccion/${polosCollection}/">Este universo también en polos <span aria-hidden="true"> ↗</span></a>` : '';
       document.querySelector('#searchInput').placeholder=home?'Encuentra tu próxima pieza…':c==='Todos'?'Buscar en todo el catálogo…':`Buscar en ${t.short||c}…`;
       if(!header.hidden&&!header.children.length){const p=products.find(p=>p.category===c),src=t.image||p?.image;header.dataset.tone=t.tone||'figures';header.innerHTML=`<div class="v2-category-copy"><button type="button" data-v2-home class="v2-breadcrumb">Inicio / Colecciones <span aria-hidden="true">↗</span></button><p class="v2-kicker">${esc(t.short||c)}</p><h1>${t.title||esc(c)}</h1><p>${esc(t.copy||'Piezas hechas a pedido para tu colección.')}</p>${t.notice?`<small class="v2-product-notice">${esc(t.notice)}</small>`:''}${window.BoomArtAmbience.markup(t)}${polosLink}</div><div class="v2-category-art"><img ${image(src,'main')} alt="${esc(t.short||c)}" decoding="async"></div>`;}
       let tools=document.querySelector('#v2Tools');if(!tools){tools=document.createElement('div');tools.id='v2Tools';document.querySelector('#productGrid').before(tools);}

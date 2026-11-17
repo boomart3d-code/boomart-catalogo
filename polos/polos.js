@@ -1,5 +1,6 @@
 (() => {
   const $ = (id) => document.getElementById(id);
+  const SEO = window.BoomartPolosSEO;
   const image = (shot, alt, lazy = true) => {
     const img = document.createElement("img");
     Object.assign(img, {src: shot.archivo, alt, width: shot.ancho, height: shot.alto, loading: lazy ? "lazy" : "eager"});
@@ -19,7 +20,15 @@
   // Foto con la que abre la ficha cuando se llega desde una miniatura (-1: la primera).
   let fotoInicial = -1;
   const price = (amount) => "S/ " + amount;
-  const details = $("ficha");
+  let details = $("ficha");
+  function activateDetails() {
+    if (details.tagName !== 'SECTION') return;
+    const dialog = document.createElement('dialog');
+    for (const attr of details.attributes) dialog.setAttribute(attr.name, attr.value);
+    dialog.append(...details.childNodes);
+    details.replaceWith(dialog);
+    details = dialog;
+  }
 
   // Medicion propia (src/track.js). Siempre opcional: si no cargo, la tienda sigue igual.
   const medir = (name, props) => {
@@ -35,11 +44,15 @@
 
   // Navegacion: cada coleccion tiene su enlace (#/c/harry-potter); «todos» es la coleccion completa.
   const slug = (texto) => texto.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-  const rutaDe = (tema) => "#/c/" + (tema === "todos" ? "todos" : slug(tema));
+  const rutaDe = tema => SEO.collectionPath(tema);
+  const rutaProducto = id => SEO.productPath(id);
+  let carruselIniciado = false;
+  function asegurarCarrusel() { if (!carruselIniciado) { carruselIniciado = true; iniciarCarrusel(); } }
   let temaActual = () => "todos";
   let elegirColeccion = () => {};
   // La ficha abierta desde una tarjeta vuelve al mismo lugar de la grilla; desde otro sitio, al inicio de la coleccion.
   let desdeGrilla = false;
+  let collectionScroll = 0;
   // Modelo de las fotos: «m» mujer, «h» hombre o «» (como vienen). El dato vive en data/fotos-genero.json.
   const MODELO_KEY = "boomart_polos_modelo_v1";
   let generos = null;
@@ -58,7 +71,7 @@
   function miniPolo(p) {
     const a = document.createElement("a");
     a.className = "parecido";
-    a.href = "#/p/" + p.id;
+    a.href = rutaProducto(p.id);
     const precio = document.createElement("p");
     precio.textContent = price(p.precio);
     const nombre = document.createElement("h4");
@@ -157,8 +170,9 @@
     const guardado = favoritos.has(product.id);
     boton.classList.toggle("guardado", guardado);
     const texto = boton.querySelector("span");
+    boton.setAttribute("aria-pressed", String(guardado));
     if (texto) texto.textContent = guardado ? "Guardado en favoritos" : "Guardar en favoritos";
-    else boton.setAttribute("aria-pressed", String(guardado));
+    else boton.setAttribute('aria-label', (guardado ? 'Quitar de favoritos: ' : 'Guardar en favoritos: ') + product.nombre);
   }
 
   function pintarContadorFavoritos() {
@@ -244,6 +258,12 @@
   }
 
   function renderSizeGuide(container) {
+    if (data.medidas_provisionales) {
+      const note = document.createElement('p');
+      note.className = 'nota';
+      note.textContent = 'Medidas referenciales de la prenda. Confirma tu talla con BoomArt antes de pedir.';
+      container.append(note);
+    }
     for (const [cut, sizes] of Object.entries(data.medidas)) {
       const table = document.createElement("table");
       table.createCaption().textContent = cut === "hombre" ? "Hombre" : "Mujer";
@@ -272,7 +292,7 @@
     $("precioFicha").textContent = price(product.precio) + " por unidad";
     $("descripcionFicha").textContent = product.texto;
     $("materialFicha").textContent = product.material;
-    $("colorFicha").textContent = "Polo " + product.color;
+    $("colorFicha").textContent = "Polo " + product.color + " · Mangas lisas";
     pintarRuta($("rutaFicha"), [["Polos", rutaDe("todos")], [product.tema, rutaDe(product.tema)], [product.nombre, null]]);
     // Quien ve la coleccion en mujer o en hombre llega con ese corte marcado; puede cambiarlo.
     corte = modelo === "h" && data.medidas.hombre ? "hombre" : modelo === "m" && data.medidas.mujer ? "mujer" : "";
@@ -313,19 +333,60 @@
     revisarCompraFija();
     medir("ver_producto", {p: product.id, o: "polos"});
   }
-  function route() {
-    const m = location.hash.match(/^#\/p\/([a-z0-9-]+)(?:\/probador)?$/);
-    const product = m && data.productos.find(p => p.id === m[1]);
-    if (product) return openProduct(product);
-    const c = location.hash.match(/^#\/c\/([a-z0-9-]+)$/);
-    const tema = c && ([...new Set(data.productos.map(p => p.tema))].find(name => slug(name) === c[1]) || "todos");
-    // Volver (boton Atras o la ruta) a la coleccion que ya se estaba viendo no mueve la grilla ni borra la busqueda.
-    const regreso = details.open && desdeGrilla && tema === temaActual();
+  function heading(id, tag) {
+    const old = $(id);
+    if (!old || old.tagName.toLowerCase() === tag) return;
+    const node = document.createElement(tag);
+    node.id = old.id; node.innerHTML = old.innerHTML;
+    old.replaceWith(node);
+  }
+  function updatePageMetadata(page) {
+    const meta = SEO.metadata(page, data.productos);
+    document.title = meta.title;
+    for (const [selector, value] of [
+      ['meta[name="description"]', meta.description],
+      ['meta[property="og:title"]', meta.title],
+      ['meta[property="og:description"]', meta.description],
+      ['meta[property="og:url"]', meta.url],
+      ['meta[property="og:image"]', meta.image],
+      ['meta[property="og:image:alt"]', page.product?.nombre || 'Colección de polos BoomArt'],
+      ['meta[property="og:type"]', page.product ? 'product' : 'website']
+    ]) document.querySelector(selector)?.setAttribute('content', value);
+    document.querySelector('link[rel="canonical"]').href = meta.url;
+    $('polosSchema').textContent = JSON.stringify(SEO.schemas(page, data.productos));
+    document.body.dataset.seoPage = page.type;
+    $('app').hidden = page.type === 'product';
+    document.querySelector('footer.pie').hidden = page.type === 'product';
+    heading('tituloPortada', page.type === 'home' ? 'h1' : 'h2');
+    heading('tituloColeccion', page.type === 'collection' ? 'h1' : 'h2');
+    heading('nombreFicha', page.type === 'product' ? 'h1' : 'h2');
+    $('tituloColeccion').textContent = page.type === 'collection' ? 'Polos de ' + page.theme : 'Elige tu diseño';
+    $('introColeccion').textContent = page.type === 'collection'
+      ? `Diseños de ${page.theme} para llevar tu universo favorito contigo. Explora las fotos, elige corte y talla y prepara tu pedido.`
+      : 'Diseños para compartir lo que te apasiona. Explora cada polo, revisa sus fotos y elige tu corte y talla.';
+    pintarRuta($('rutaPagina'), [['BoomArt','/'], ['Polos',page.type === 'home' ? null : '/polos/'], ...(page.type === 'collection' ? [[page.theme,null]] : [])]);
+  }
+  function navigate(url, {replace = false, keepPosition = false} = {}) {
+    history[replace ? 'replaceState' : 'pushState'](null, '', url);
+    route(keepPosition);
+  }
+  function route(keepPosition = false) {
+    const page = SEO.route(location.href, data.productos);
+    if (page.product && !details.open && !$('app').hidden) collectionScroll = window.scrollY;
+    // Compatibilidad con todos los enlaces publicados con #/p/ y #/c/.
+    if (/^#\/[pc]\//.test(location.hash)) history.replaceState(null, '', page.path);
+    updatePageMetadata(page);
+    if (page.product) return openProduct(page.product);
+    const regreso = details.open && desdeGrilla && page.theme === temaActual();
     if (details.open) details.close();
-    if (!c || regreso) return;
-    // Un enlace de coleccion lleva al inicio de esa coleccion.
-    elegirColeccion(tema);
-    $("coleccion").scrollIntoView();
+    if (keepPosition || regreso) {
+      window.scrollTo({top:collectionScroll, behavior:'instant'});
+      return;
+    }
+    elegirColeccion(page.theme);
+    if (page.type === 'home') asegurarCarrusel();
+    if (page.type === 'collection') $('coleccion').scrollIntoView();
+    else if (!location.hash) window.scrollTo(0, 0);
   }
   function entradasAlDesplazar() {
     if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -360,7 +421,7 @@
     const slides = elegidos.map(({product, indice}, i) => {
       const link = document.createElement("a");
       link.className = "vitrina-foto";
-      link.href = "#/p/" + product.id;
+      link.href = rutaProducto(product.id);
       const shot = product.fotos[indice];
       const img = image(shot, product.nombre, false);
       // Solo la primera foto se pide de inmediato; las demas, cuando la pagina termino de cargar.
@@ -373,16 +434,10 @@
       link.addEventListener("click", () => { fotoInicial = indice; });
       return link;
     });
-    const cargarResto = () => {
-      for (const slide of slides) {
-        const img = slide.querySelector("img[data-src]");
-        if (!img) continue;
-        img.src = img.dataset.src;
-        delete img.dataset.src;
-      }
+    const cargarFoto = (index) => {
+      const img = slides[(index + slides.length) % slides.length].querySelector('img[data-src]');
+      if (img) { img.src = img.dataset.src; delete img.dataset.src; }
     };
-    if (document.readyState === "complete") cargarResto();
-    else window.addEventListener("load", cargarResto, {once: true});
     const barras = elegidos.map(({product}, i) => {
       const b = button("", () => show(i));
       b.setAttribute("aria-label", "Ver " + product.nombre);
@@ -392,6 +447,8 @@
     function show(index) {
       const n = slides.length;
       active = (index + n) % n;
+      cargarFoto(active);
+      cargarFoto(active + 1);
       slides.forEach((slide, i) => {
         slide.classList.toggle("actual", i === active);
         slide.tabIndex = i === active ? 0 : -1;
@@ -409,7 +466,7 @@
       $("temaDestacado").textContent = product.tema;
       $("poloDestacado").textContent = product.nombre;
       $("precioDestacado").textContent = price(product.precio);
-      $("verDestacado").href = "#/p/" + product.id;
+      $("verDestacado").href = rutaProducto(product.id);
     }
     rail.replaceChildren(...slides);
     $("barrasCarrusel").replaceChildren(...barras);
@@ -489,6 +546,7 @@
         pintar();
         // La direccion acompana a la pestana, para poder compartir el enlace de una coleccion.
         history.replaceState(null, "", rutaDe(tema));
+        updatePageMetadata(SEO.route(location.href, data.productos));
       });
       b.dataset.tema = valor;
       const n = document.createElement("span");
@@ -527,7 +585,7 @@
     for (const p of data.productos) {
       const a = document.createElement("a");
       a.className = "producto-card";
-      a.href = "#/p/" + p.id;
+      a.href = rutaProducto(p.id);
       const media = document.createElement("div");
       media.className = "producto-fotos";
       // «orden» son los indices de las fotos del polo: primero las del modelo elegido.
@@ -697,6 +755,7 @@
       soloFavoritos = false;
       pintar();
       history.replaceState(null, "", rutaDe(tema));
+      updatePageMetadata(SEO.route(location.href, data.productos));
       search.focus();
     };
     pintar();
@@ -711,6 +770,7 @@
 
   function init(next) {
     data = next;
+    activateDetails();
     window.BOOMART_PRODUCTS = data.productos.map(p => ({
       id: p.id, name: p.nombre, regularPrice: p.precio, category: p.tema,
       image: cartPhoto(p).archivo, tallas: p.tallas,
@@ -749,7 +809,13 @@
     pintarContadorFavoritos();
     renderSizeGuide($("guiasCorte"));
     renderSizeGuide($("guiasPanel"));
-    iniciarCarrusel();
+    if (details.hasAttribute("data-prerendered")) {
+      details.close();
+      details.removeAttribute("data-prerendered");
+      details.querySelector('[data-static-back]')?.remove();
+      $('consultaEstatica')?.remove();
+    }
+    if (SEO.route(location.href, data.productos).type === "home") asegurarCarrusel();
     iniciarBusqueda();
     entradasAlDesplazar();
     // El aviso del pack sigue al carrito: cuantos polos van y cuantos faltan.
@@ -816,30 +882,33 @@
       $("cartToggle").click();
     };
     details.addEventListener("close", () => {
-      // Si para cuando llega este aviso ya se abrio otro polo, la ficha sigue en uso: no hay nada que cerrar.
-      if (details.open) return;
+      if (details.open || SEO.route(location.href, data.productos).type !== 'product') return;
       const quedarse = desdeGrilla;
+      const theme = quedarse ? temaActual() : selected.tema;
       desdeGrilla = false;
-      if (!location.hash.startsWith("#/p/")) return;
-      // Al salir de la ficha la direccion vuelve a la coleccion que se estaba viendo.
-      history.replaceState(null, "", rutaDe(temaActual()));
-      if (!quedarse) $("coleccion").scrollIntoView();
+      navigate(rutaDe(theme), {replace:true, keepPosition:quedarse});
     });
     // Menu lateral (pantallas angostas): un clic fuera lo cierra y cada enlace lo cierra al navegar.
     $("abrirMenu").onclick = () => $("menuPolos").showModal();
     $("menuPolos").addEventListener("click", (event) => {
       if (event.target === $("menuPolos") || event.target.closest("a")) $("menuPolos").close();
     });
-    // Un enlace de coleccion que ya es la direccion actual no dispara «hashchange»: se atiende aqui.
-    document.addEventListener("click", (event) => {
-      const a = event.target.closest?.('a[href^="#/c/"]');
-      if (a && a.getAttribute("href") === location.hash) route();
+    // Las URL son páginas HTML reales. En esta pestaña se mejora la navegación sin recargar.
+    document.addEventListener('click', event => {
+      const a = event.target.closest?.('a[href]');
+      if (!a || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || a.target || a.hasAttribute('download')) return;
+      const u = new URL(a.href);
+      if (u.origin !== location.origin || u.search || u.hash || !/^\/polos\/(?:$|(?:diseno|coleccion)\/[a-z0-9-]+\/$)/.test(u.pathname)) return;
+      event.preventDefault();
+      if (u.pathname === location.pathname) route();
+      else navigate(u.pathname);
     });
-    window.addEventListener("hashchange", route);
+    window.addEventListener('popstate', () => route());
+    window.addEventListener('hashchange', () => { if (/^#\/[pc]\//.test(location.hash)) route(); });
     route();
   }
   Promise.all([
-    fetch("data/polos.json?v=nombres-goku-1").then(r => {
+    fetch("data/polos.json?v=" + encodeURIComponent(document.body.dataset.catalogRevision || 'seo-20261117')).then(r => {
       if (!r.ok) throw new Error("Error de catálogo");
       return r.json();
     }),
@@ -852,6 +921,7 @@
     portada = vitrina && Array.isArray(vitrina.polos) ? vitrina.polos : null;
     init(catalogo);
   }).catch(() => {
-    $("grilla").textContent = "No pudimos cargar la colección. Intenta recargar la página.";
+    // El HTML inicial sigue siendo útil si falla la conexión del catálogo interactivo.
+    if (!$("grilla").children.length) $("grilla").textContent = "No pudimos cargar la colección. Intenta recargar la página.";
   });
 })();

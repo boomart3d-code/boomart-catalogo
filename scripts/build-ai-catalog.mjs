@@ -26,6 +26,7 @@ import { SOCIAL_URLS, socialBandHtml, socialFooterHtml } from "./social-links.mj
 import { videoUploadDate } from "./video-upload-date.mjs";
 import { validateAdsConfig, classifyProduct, buildGroupsDoc, openAiAvailability } from "./ads-taxonomy.mjs";
 import { validatePlazos, plazoOf } from "./plazos.mjs";
+import { buildPolos } from "./build-polos-seo.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://boomart.pe";
@@ -2343,6 +2344,7 @@ function sitemapEntries(products) {
   const cats = groupByCategory(products).map(([cat]) => cat);
   return [
     { loc: `${SITE}/`, priority: "1.0", changefreq: "weekly" },
+    ...polosSEO.sitemap,
     { loc: `${SITE}/catalogo.html`, priority: "0.9", changefreq: "weekly" },
     { loc: `${SITE}/impresion-3d-personalizada/`, priority: "0.9", changefreq: "monthly" },
     { loc: `${SITE}/merchandising-corporativo/`, priority: "0.9", changefreq: "monthly" },
@@ -2413,6 +2415,7 @@ async function syncSocialBlocks() {
 
 /* ---------------------------------------------------------------- main */
 const [products, reviews] = await Promise.all([loadProducts(), loadReviews()]);
+const polosSEO = await buildPolos(ROOT);
 const ratingLd = buildRatingLd(reviews);
 // El feed de OpenAI se arma una sola vez: el archivo de metadatos lleva la huella de ESTE contenido.
 const openaiJsonl = buildOpenAiJsonl(products);
@@ -2424,8 +2427,8 @@ const [productPageCount, categoryPageCount] = await Promise.all([
   writeCategoryPages(products, ratingLd),
   writeFile(path.join(ROOT, "catalogo.html"), buildHtml(products, ratingLd, reviews)),
   writeFile(path.join(ROOT, "catalogo.json"), buildJson(products) + "\n"),
-  writeFile(path.join(ROOT, "llms.txt"), buildLlms(products, reviews)),
-  writeFile(path.join(ROOT, "llms-full.txt"), buildLlmsFull(products)),
+  writeFile(path.join(ROOT, "llms.txt"), buildLlms(products, reviews) + "\n\n" + polosSEO.summary),
+  writeFile(path.join(ROOT, "llms-full.txt"), buildLlmsFull(products) + "\n\n" + polosSEO.full),
   writeFile(path.join(ROOT, "feed-google.xml"), buildGoogleFeed(products)),
   writeFile(path.join(ROOT, "feed-meta.csv"), buildMetaFeed(products)),
   writeFile(path.join(ROOT, "feed-openai.jsonl"), openaiJsonl),

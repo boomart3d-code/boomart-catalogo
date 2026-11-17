@@ -55,4 +55,17 @@
 - Facebook: https://www.facebook.com/boom.art.873521/
 - TikTok: https://www.tiktok.com/@boomart.3d
 - Ubicacion: Bellavista, Callao, Peru
-- Actualizado: 2026-11-13
+- Actualizado: 2026-11-17
+
+
+## BoomArt Polos
+
+Polos de Saint Seiya, Dragon Ball, Harry Potter y Legend of Zelda. Tallas S, M y L; precios en soles (PEN). Entrega y disponibilidad se coordinan con BoomArt.
+
+- [Tienda de polos](https://boomart.pe/polos/): 18 diseños con fotos y precios.
+- [Catálogo de polos en JSON](https://boomart.pe/polos/catalogo.json).
+- [Catálogo de polos en texto](https://boomart.pe/polos/llms.txt).
+- [Polos de Legend of Zelda](https://boomart.pe/polos/coleccion/legend-of-zelda/).
+- [Polos de Harry Potter](https://boomart.pe/polos/coleccion/harry-potter/).
+- [Polos de Dragon Ball](https://boomart.pe/polos/coleccion/dragon-ball/).
+- [Polos de Saint Seiya](https://boomart.pe/polos/coleccion/saint-seiya/).

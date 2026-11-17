@@ -55,6 +55,7 @@
     <link rel="stylesheet" href="src/boomart-v2.css?v=15">
     <link rel="stylesheet" href="src/product-skins.css?v=2">
     <link rel="stylesheet" href="src/category-sharing.css?v=1">
+    <link rel="stylesheet" href="src/polos-bridge.css?v=1">
 
     <script type="application/ld+json">
     {
@@ -111,6 +112,7 @@
         <input type="search" id="quickSearchInput" placeholder="Buscar productos..." autocomplete="off">
       </div>
       <div class="quick-nav-actions">
+        <a class="polos-nav-link" href="polos/">Polos <span aria-hidden="true">↗</span></a>
         <button type="button" class="quick-nav-btn" id="quickSearchToggle" aria-label="Buscar en el catálogo">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/>
@@ -141,6 +143,10 @@
       <div class="quick-nav-panel" id="quickCategoriesPanel" hidden>
         <p class="quick-nav-panel-title">Productos</p>
         <div class="quick-nav-list" id="quickCategoriesList"></div>
+        <a class="quick-nav-service" href="polos/">
+          <span class="quick-nav-service-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="miter"><path d="M8 3 3 6l2 5 3-1v11h8V10l3 1 2-5-5-3c0 4-8 4-8 0Z"/></svg></span>
+          <span><strong>BoomArt Polos</strong><small>Tu universo favorito, para llevar puesto</small></span>
+        </a>
         <div class="quick-nav-panel-divider" aria-hidden="true"></div>
         <p class="quick-nav-panel-title">Servicios BoomArt</p>
         <a class="quick-nav-service quick-nav-service-featured" href="merchandising-corporativo/">
@@ -241,6 +247,29 @@
       </section>
 
 
+
+      <section class="polos-bridge" id="boomart-polos" aria-labelledby="polosBridgeTitle">
+        <div class="polos-bridge-copy">
+          <p class="polos-bridge-kicker">Descubre BoomArt Polos</p>
+          <h2 id="polosBridgeTitle">Tu universo.<br><em>También se lleva puesto.</em></h2>
+          <p>De las piezas que coleccionas a los polos que cuentan tu historia. Explora otra forma de vivir lo que te apasiona.</p>
+          <a class="polos-bridge-cta" href="polos/">Explorar BoomArt Polos <span aria-hidden="true">↗</span></a>
+        </div>
+        <nav class="polos-bridge-collections" aria-label="Colecciones de BoomArt Polos">
+          <a class="polos-bridge-card" href="polos/coleccion/saint-seiya/">
+            <img src="polos/img/saint-seiya/shiryu-de-dragon/01-muro.webp" alt="Polo negro con Shiryu de Dragón en la espalda" width="645" height="809" loading="lazy" decoding="async">
+            <span><strong>Saint Seiya</strong><small>Ver polos <span aria-hidden="true">↗</span></small></span>
+          </a>
+          <a class="polos-bridge-card" href="polos/coleccion/harry-potter/">
+            <img src="polos/img/harry-potter/gryffindor/06-espalda-en-giro.webp" alt="Polo blanco con diseño de Gryffindor en la espalda" width="622" height="628" loading="lazy" decoding="async">
+            <span><strong>Harry Potter</strong><small>Ver polos <span aria-hidden="true">↗</span></small></span>
+          </a>
+          <a class="polos-bridge-card" href="polos/coleccion/dragon-ball/">
+            <img src="polos/img/dragon-ball/black-goku-3.webp" alt="Polo con diseño de Black Goku de Dragon Ball" width="402" height="504" loading="lazy" decoding="async">
+            <span><strong>Dragon Ball</strong><small>Ver polos <span aria-hidden="true">↗</span></small></span>
+          </a>
+        </nav>
+      </section>
 
       <section class="catalog-section" id="catalogo" aria-labelledby="catalogTitle">
         <div class="catalog-head">
@@ -479,6 +508,7 @@
           <li><a href="categoria/zelda/" data-filter="Zelda" data-scroll>Zelda</a></li>
         </ul>
         <ul class="footer-links">
+          <li><a href="polos/">BoomArt Polos · Explora la colección</a></li>
           <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="politicas.html">Políticas de compra, envío y privacidad</a></li>
           <li><a href="libro-de-reclamaciones.html">Libro de Reclamaciones</a></li>
@@ -673,17 +703,17 @@
 
     <script src="src/image-sources.js?v=005d94d709c3"></script>
     <script src="src/responsive-images.js?v=1"></script>
-    <script src="src/checkout-config.js?v=8"></script>
+    <script src="src/checkout-config.js?v=9"></script>
     <script src="src/track.js?v=6"></script>
-    <script src="src/cart.js?v=14"></script>
+    <script src="src/cart.js?v=15"></script>
     <script src="src/products.js?v=5"></script>
     <script src="src/category-ambience.js?v=1"></script>
-    <script src="src/boomart-v2.js?v=8"></script>
+    <script src="src/boomart-v2.js?v=10"></script>
     <script src="src/product-skins.js?v=2"></script>
     <script src="src/app.js?v=73"></script>
     <script src="src/category-sharing.js?v=1" defer></script>
 
-    <script src="src/checkout.js?v=35"></script>
+    <script src="src/checkout.js?v=36"></script>
     <script src="src/products-loader.js?v=5"></script>
     <script src="src/reviews.js?v=6"></script>
     <script src="src/reviews-loader.js?v=2"></script>
@@ -695,7 +725,7 @@
          cargar, el resto de la web sigue funcionando igual. -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
     <script src="src/supabase-config.js?v=1"></script>
-    <script src="src/registro-web.js?v=4"></script>
+    <script src="src/registro-web.js?v=5"></script>
       <script>document.addEventListener("click",function(e){var l=e.target.closest&&e.target.closest('a[href^="#"]');if(!l)return;var id=l.getAttribute("href").slice(1);e.preventDefault();var t=id?document.getElementById(id):null;if(t){t.scrollIntoView({behavior:"smooth",block:"start"});}else{window.scrollTo({top:0,behavior:"smooth"});}if(id){history.replaceState(history.state,"",location.pathname+location.search+"#"+id);}},true);</script>
   </body>
 </html>

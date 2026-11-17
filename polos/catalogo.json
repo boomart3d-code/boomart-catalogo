@@ -1,0 +1,451 @@
+{
+  "marca": "BoomArt",
+  "url": "https://boomart.pe/polos/",
+  "moneda": "PEN",
+  "productos": [
+    {
+      "id": "zelda-true-heroes-never-die",
+      "nombre": "Zelda True Heroes Never Die",
+      "url": "https://boomart.pe/polos/diseno/zelda-true-heroes-never-die/",
+      "coleccion": "Legend of Zelda",
+      "color": "negro",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "El espíritu de Hyrule en un diseño de inspiración universitaria en el pecho, con un emblema en la espalda alta. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/legend-of-zelda/true-heroes-never-die/01-hombre-frente.webp",
+        "https://boomart.pe/polos/img/legend-of-zelda/true-heroes-never-die/02-mujer-frente.webp",
+        "https://boomart.pe/polos/img/legend-of-zelda/true-heroes-never-die/03-hombre-espalda.webp",
+        "https://boomart.pe/polos/img/legend-of-zelda/true-heroes-never-die/04-mujer-espalda.webp",
+        "https://boomart.pe/polos/img/legend-of-zelda/true-heroes-never-die/05-hombre-lateral.webp",
+        "https://boomart.pe/polos/img/legend-of-zelda/true-heroes-never-die/06-mujer-lateral.webp",
+        "https://boomart.pe/polos/img/legend-of-zelda/true-heroes-never-die/07-hombre-extendido-frente.webp",
+        "https://boomart.pe/polos/img/legend-of-zelda/true-heroes-never-die/08-mujer-extendido-frente.webp",
+        "https://boomart.pe/polos/img/legend-of-zelda/true-heroes-never-die/09-hombre-extendido-espalda.webp",
+        "https://boomart.pe/polos/img/legend-of-zelda/true-heroes-never-die/10-mujer-extendido-espalda.webp"
+      ]
+    },
+    {
+      "id": "harry-potter-negro",
+      "nombre": "Harry Potter · Travesía nocturna",
+      "url": "https://boomart.pe/polos/diseno/harry-potter-negro/",
+      "coleccion": "Harry Potter",
+      "color": "negro",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "Luna turquesa y crema con las Reliquias de la Muerte en la espalda. Detalle a juego en el pecho. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/travesia-nocturna/01-sofia-espalda-v3.webp",
+        "https://boomart.pe/polos/img/travesia-nocturna/02-renzo-contrapicado-frente.webp",
+        "https://boomart.pe/polos/img/travesia-nocturna/02-marisol-espalda-v3.webp",
+        "https://boomart.pe/polos/img/travesia-nocturna/04-frente-hombre.webp",
+        "https://boomart.pe/polos/img/travesia-nocturna/06-marisol-contrapicado-frente.webp",
+        "https://boomart.pe/polos/img/travesia-nocturna/03-mateo-espalda-v3.webp",
+        "https://boomart.pe/polos/img/travesia-nocturna/04-renzo-espalda-v3.webp",
+        "https://boomart.pe/polos/img/travesia-nocturna/08-frente-sofia.webp",
+        "https://boomart.pe/polos/img/travesia-nocturna/05-detalle-espalda-v3.webp",
+        "https://boomart.pe/polos/img/travesia-nocturna/10-detalle-pecho-hombre.webp",
+        "https://boomart.pe/polos/img/extendidos-aprobados-20261116/harry-potter-negro.webp"
+      ]
+    },
+    {
+      "id": "gryffindor",
+      "nombre": "Gryffindor · León dorado",
+      "url": "https://boomart.pe/polos/diseno/gryffindor/",
+      "coleccion": "Harry Potter",
+      "color": "blanco",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "El león de Gryffindor en grande sobre la espalda, con un detalle discreto en el pecho. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/harry-potter/gryffindor/01-espalda-y-manga-mueble.webp",
+        "https://boomart.pe/polos/img/harry-potter/gryffindor/02-pecho-y-manga-mueble.webp",
+        "https://boomart.pe/polos/img/harry-potter/gryffindor/03-espalda-caminando.webp",
+        "https://boomart.pe/polos/img/harry-potter/gryffindor/04-pecho-apoyada-mesa.webp",
+        "https://boomart.pe/polos/img/harry-potter/gryffindor/05-frente-contrapicado.webp",
+        "https://boomart.pe/polos/img/harry-potter/gryffindor/06-espalda-en-giro.webp",
+        "https://boomart.pe/polos/img/extendidos-aprobados-20261116/gryffindor.webp"
+      ]
+    },
+    {
+      "id": "slytherin",
+      "nombre": "Slytherin · Serpiente esmeralda",
+      "url": "https://boomart.pe/polos/diseno/slytherin/",
+      "coleccion": "Harry Potter",
+      "color": "negro",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "La serpiente de Slytherin en grande sobre la espalda, con el escudo de la casa en el pecho. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/harry-potter/slytherin/01-espalda-y-manga-consola.webp",
+        "https://boomart.pe/polos/img/harry-potter/slytherin/02-pecho-y-manga-banco.webp",
+        "https://boomart.pe/polos/img/harry-potter/slytherin/03-espalda-en-giro.webp",
+        "https://boomart.pe/polos/img/harry-potter/slytherin/04-frente-en-consola.webp",
+        "https://boomart.pe/polos/img/harry-potter/slytherin/05-detalle-pecho-y-manga.webp",
+        "https://boomart.pe/polos/img/harry-potter/slytherin/06-detalle-espalda.webp",
+        "https://boomart.pe/polos/img/extendidos-aprobados-20261116/slytherin.webp"
+      ]
+    },
+    {
+      "id": "hufflepuff",
+      "nombre": "Hufflepuff · Tejón heráldico",
+      "url": "https://boomart.pe/polos/diseno/hufflepuff/",
+      "coleccion": "Harry Potter",
+      "color": "negro",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "El tejón de Hufflepuff enmarcado en dorado sobre la espalda, con el escudo de la casa en el pecho. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/harry-potter/hufflepuff/01-espalda-y-manga-taburete.webp",
+        "https://boomart.pe/polos/img/harry-potter/hufflepuff/02-pecho-y-manga-sillon.webp",
+        "https://boomart.pe/polos/img/harry-potter/hufflepuff/03-espalda-en-escalon.webp",
+        "https://boomart.pe/polos/img/harry-potter/hufflepuff/04-frente-en-contrapicado.webp",
+        "https://boomart.pe/polos/img/harry-potter/hufflepuff/05-pecho-y-manga-mesa.webp",
+        "https://boomart.pe/polos/img/harry-potter/hufflepuff/06-espalda-y-manga-mesa.webp",
+        "https://boomart.pe/polos/img/harry-potter/hufflepuff/07-detalle-manga-derecha.webp",
+        "https://boomart.pe/polos/img/extendidos-aprobados-20261116/hufflepuff.webp"
+      ]
+    },
+    {
+      "id": "ravenclaw",
+      "nombre": "Ravenclaw · Escudo del águila",
+      "url": "https://boomart.pe/polos/diseno/ravenclaw/",
+      "coleccion": "Harry Potter",
+      "color": "blanco",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "Escudo de Ravenclaw en la espalda y águila centrada en el pecho. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/harry-potter/ravenclaw/01-espalda-baranda.webp",
+        "https://boomart.pe/polos/img/harry-potter/ravenclaw/02-frente-sentada-en-piedra.webp",
+        "https://boomart.pe/polos/img/harry-potter/ravenclaw/03-frente-caminando.webp",
+        "https://boomart.pe/polos/img/harry-potter/ravenclaw/04-espalda-junto-a-columna.webp",
+        "https://boomart.pe/polos/img/harry-potter/ravenclaw/05-detalle-pecho.webp",
+        "https://boomart.pe/polos/img/harry-potter/ravenclaw/06-detalle-espalda.webp",
+        "https://boomart.pe/polos/img/extendidos-aprobados-20261116/ravenclaw.webp"
+      ]
+    },
+    {
+      "id": "hogwarts-blanco",
+      "nombre": "Hogwarts en acuarela",
+      "url": "https://boomart.pe/polos/diseno/hogwarts-blanco/",
+      "coleccion": "Harry Potter",
+      "color": "blanco",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "Lechuza y castillo en acuarela en el pecho. Boleto del Hogwarts Express en la espalda alta. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/harry-potter/hogwarts-blanco/01-frente-consola.webp",
+        "https://boomart.pe/polos/img/harry-potter/hogwarts-blanco/02-frente-sillon.webp",
+        "https://boomart.pe/polos/img/harry-potter/hogwarts-blanco/03-espalda-ventana.webp",
+        "https://boomart.pe/polos/img/harry-potter/hogwarts-blanco/04-detalle-pecho.webp",
+        "https://boomart.pe/polos/img/harry-potter/hogwarts-blanco/05-detalle-boleto.webp",
+        "https://boomart.pe/polos/img/extendidos-aprobados-20261116/hogwarts-blanco-sin-etiqueta.webp"
+      ]
+    },
+    {
+      "id": "black-goku",
+      "nombre": "Black Goku",
+      "url": "https://boomart.pe/polos/diseno/black-goku/",
+      "coleccion": "Dragon Ball",
+      "color": "negro",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "Estampado principal en la espalda y detalle en el pecho. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/dragon-ball/black-goku-1.webp",
+        "https://boomart.pe/polos/img/dragon-ball/black-goku-2.webp",
+        "https://boomart.pe/polos/img/dragon-ball/black-goku-3.webp",
+        "https://boomart.pe/polos/img/dragon-ball/black-goku-4.webp",
+        "https://boomart.pe/polos/img/dragon-ball/black-goku-5.webp",
+        "https://boomart.pe/polos/img/dragon-ball/black-goku-referencia-espalda.webp",
+        "https://boomart.pe/polos/img/dragon-ball/black-goku-referencia-frente.webp",
+        "https://boomart.pe/polos/img/extendidos-aprobados-20261116/black-goku.webp"
+      ]
+    },
+    {
+      "id": "urban-goku-1",
+      "nombre": "Goku · Pulso urbano",
+      "url": "https://boomart.pe/polos/diseno/urban-goku-1/",
+      "coleccion": "Dragon Ball",
+      "color": "blanco",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "Estampado principal en la espalda y detalle en el pecho. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/dragon-ball/urban-goku-1-1.webp",
+        "https://boomart.pe/polos/img/dragon-ball/urban-goku-1-2.webp",
+        "https://boomart.pe/polos/img/dragon-ball/urban-goku-1-3.webp",
+        "https://boomart.pe/polos/img/dragon-ball/urban-goku-1-4.webp",
+        "https://boomart.pe/polos/img/dragon-ball/urban-goku-1-5.webp",
+        "https://boomart.pe/polos/img/dragon-ball/urban-goku-1-referencia-espalda.webp",
+        "https://boomart.pe/polos/img/dragon-ball/urban-goku-1-referencia-frente.webp",
+        "https://boomart.pe/polos/img/extendidos-aprobados-20261116/urban-goku-1.webp"
+      ]
+    },
+    {
+      "id": "goku-super-saiyajin-blue",
+      "nombre": "Goku Super Saiyajin Blue",
+      "url": "https://boomart.pe/polos/diseno/goku-super-saiyajin-blue/",
+      "coleccion": "Dragon Ball",
+      "color": "negro",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "Estampado principal en la espalda y detalle en el pecho. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/dragon-ball/goku-super-saiyajin-blue-1.webp",
+        "https://boomart.pe/polos/img/dragon-ball/goku-super-saiyajin-blue-2.webp",
+        "https://boomart.pe/polos/img/dragon-ball/goku-super-saiyajin-blue-3.webp",
+        "https://boomart.pe/polos/img/dragon-ball/goku-super-saiyajin-blue-detalle-pecho-v2.webp",
+        "https://boomart.pe/polos/img/dragon-ball/goku-super-saiyajin-blue-referencia-espalda.webp",
+        "https://boomart.pe/polos/img/dragon-ball/goku-super-saiyajin-blue-frente-estudio-v2.webp",
+        "https://boomart.pe/polos/img/extendidos-aprobados-20261116/goku-super-saiyajin-blue.webp"
+      ]
+    },
+    {
+      "id": "goku-nino-1",
+      "nombre": "Goku Niño · Bajo el sol rojo",
+      "url": "https://boomart.pe/polos/diseno/goku-nino-1/",
+      "coleccion": "Dragon Ball",
+      "color": "blanco",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "Estampado principal en la espalda y detalle en el pecho. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/dragon-ball/goku-nino-1-1.webp",
+        "https://boomart.pe/polos/img/dragon-ball/goku-nino-1-2.webp",
+        "https://boomart.pe/polos/img/dragon-ball/goku-nino-1-3.webp",
+        "https://boomart.pe/polos/img/dragon-ball/goku-nino-1-4.webp",
+        "https://boomart.pe/polos/img/dragon-ball/goku-nino-1-5.webp",
+        "https://boomart.pe/polos/img/dragon-ball/goku-nino-1-referencia-espalda.webp",
+        "https://boomart.pe/polos/img/dragon-ball/goku-nino-1-referencia-frente.webp",
+        "https://boomart.pe/polos/img/extendidos-aprobados-20261116/goku-nino-1.webp"
+      ]
+    },
+    {
+      "id": "goku-1",
+      "nombre": "Goku · Tinta carmesí",
+      "url": "https://boomart.pe/polos/diseno/goku-1/",
+      "coleccion": "Dragon Ball",
+      "color": "blanco",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "Estampado principal en la espalda y detalle en el pecho. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/dragon-ball/goku-1-1.webp",
+        "https://boomart.pe/polos/img/dragon-ball/goku-1-2.webp",
+        "https://boomart.pe/polos/img/dragon-ball/goku-1-3.webp",
+        "https://boomart.pe/polos/img/dragon-ball/goku-1-4.webp",
+        "https://boomart.pe/polos/img/dragon-ball/goku-1-5.webp",
+        "https://boomart.pe/polos/img/dragon-ball/goku-1-referencia-espalda.webp",
+        "https://boomart.pe/polos/img/dragon-ball/goku-1-referencia-frente.webp",
+        "https://boomart.pe/polos/img/extendidos-aprobados-20261116/goku-1.webp"
+      ]
+    },
+    {
+      "id": "cinco-caballeros-de-bronce",
+      "nombre": "Los cinco Caballeros de Bronce",
+      "url": "https://boomart.pe/polos/diseno/cinco-caballeros-de-bronce/",
+      "coleccion": "Saint Seiya",
+      "color": "negro",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "Los cinco Caballeros de Bronce de perfil en la espalda, con un estampado vertical en el pecho. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/saint-seiya/cinco-caballeros-de-bronce/01-espalda-barra.webp",
+        "https://boomart.pe/polos/img/saint-seiya/cinco-caballeros-de-bronce/02-frente-puerta.webp",
+        "https://boomart.pe/polos/img/saint-seiya/cinco-caballeros-de-bronce/03-frente-ventana.webp",
+        "https://boomart.pe/polos/img/saint-seiya/cinco-caballeros-de-bronce/04-detalle-espalda.webp",
+        "https://boomart.pe/polos/img/saint-seiya/cinco-caballeros-de-bronce/05-detalle-manga.webp",
+        "https://boomart.pe/polos/img/saint-seiya/cinco-caballeros-de-bronce/06-pecho-ventana.webp",
+        "https://boomart.pe/polos/img/saint-seiya/cinco-caballeros-de-bronce/07-detalle-frontal.webp",
+        "https://boomart.pe/polos/img/extendidos-aprobados-20261116/cinco-caballeros-de-bronce.webp"
+      ]
+    },
+    {
+      "id": "hyoga-de-cisne",
+      "nombre": "Hyoga de Cisne",
+      "url": "https://boomart.pe/polos/diseno/hyoga-de-cisne/",
+      "coleccion": "Saint Seiya",
+      "color": "negro",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "Hyoga con su armadura azul en la espalda y una figura centrada en el pecho. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/saint-seiya/hyoga-de-cisne/01-mirando-al-mar.webp",
+        "https://boomart.pe/polos/img/saint-seiya/hyoga-de-cisne/02-escaleras.webp",
+        "https://boomart.pe/polos/img/saint-seiya/hyoga-de-cisne/03-paseo.webp",
+        "https://boomart.pe/polos/img/saint-seiya/hyoga-de-cisne/04-detalle-pecho.webp",
+        "https://boomart.pe/polos/img/saint-seiya/hyoga-de-cisne/05-detalle-espalda.webp",
+        "https://boomart.pe/polos/img/saint-seiya/hyoga-de-cisne/06-detalle-manga.webp",
+        "https://boomart.pe/polos/img/extendidos-aprobados-20261116/hyoga-de-cisne.webp"
+      ]
+    },
+    {
+      "id": "shiryu-de-dragon",
+      "nombre": "Shiryu de Dragón",
+      "url": "https://boomart.pe/polos/diseno/shiryu-de-dragon/",
+      "coleccion": "Saint Seiya",
+      "color": "negro",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "Shiryu con el dragón turquesa en la espalda y la armadura del Dragón en el pecho. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/saint-seiya/shiryu-de-dragon/01-muro.webp",
+        "https://boomart.pe/polos/img/saint-seiya/shiryu-de-dragon/02-porton.webp",
+        "https://boomart.pe/polos/img/saint-seiya/shiryu-de-dragon/03-banco.webp",
+        "https://boomart.pe/polos/img/saint-seiya/shiryu-de-dragon/04-detalle-pecho.webp",
+        "https://boomart.pe/polos/img/saint-seiya/shiryu-de-dragon/05-detalle-espalda.webp",
+        "https://boomart.pe/polos/img/saint-seiya/shiryu-de-dragon/06-detalle-manga.webp",
+        "https://boomart.pe/polos/img/extendidos-aprobados-20261116/shiryu-de-dragon.webp"
+      ]
+    },
+    {
+      "id": "seiya-de-pegaso",
+      "nombre": "Seiya de Pegaso",
+      "url": "https://boomart.pe/polos/diseno/seiya-de-pegaso/",
+      "coleccion": "Saint Seiya",
+      "color": "blanco",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "Seiya con su armadura de Pegaso en la espalda y una figura chibi en el pecho. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/saint-seiya/seiya-de-pegaso/01-espalda-grada.webp",
+        "https://boomart.pe/polos/img/saint-seiya/seiya-de-pegaso/02-frente-balon.webp",
+        "https://boomart.pe/polos/img/saint-seiya/seiya-de-pegaso/03-frente-cancha.webp",
+        "https://boomart.pe/polos/img/saint-seiya/seiya-de-pegaso/04-detalle-pecho.webp",
+        "https://boomart.pe/polos/img/saint-seiya/seiya-de-pegaso/05-detalle-espalda.webp",
+        "https://boomart.pe/polos/img/saint-seiya/seiya-de-pegaso/06-detalle-manga.webp",
+        "https://boomart.pe/polos/img/extendidos-aprobados-20261116/seiya-de-pegaso.webp"
+      ]
+    },
+    {
+      "id": "ikki-de-fenix",
+      "nombre": "Ikki de Fénix",
+      "url": "https://boomart.pe/polos/diseno/ikki-de-fenix/",
+      "coleccion": "Saint Seiya",
+      "color": "negro",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "Ikki entre llamas en el pecho y una figura de Fénix en la espalda alta. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/saint-seiya/ikki-de-fenix/01-frente-taller.webp",
+        "https://boomart.pe/polos/img/saint-seiya/ikki-de-fenix/02-frente-taburete.webp",
+        "https://boomart.pe/polos/img/saint-seiya/ikki-de-fenix/03-espalda-puerta.webp",
+        "https://boomart.pe/polos/img/saint-seiya/ikki-de-fenix/04-detalle-pecho.webp",
+        "https://boomart.pe/polos/img/saint-seiya/ikki-de-fenix/05-detalle-espalda.webp",
+        "https://boomart.pe/polos/img/saint-seiya/ikki-de-fenix/06-detalle-manga.webp",
+        "https://boomart.pe/polos/img/extendidos-aprobados-20261116/ikki-de-fenix.webp"
+      ]
+    },
+    {
+      "id": "shun-de-andromeda",
+      "nombre": "Shun de Andrómeda",
+      "url": "https://boomart.pe/polos/diseno/shun-de-andromeda/",
+      "coleccion": "Saint Seiya",
+      "color": "blanco",
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "precio": 50,
+      "descripcion": "Shun y sus cadenas en la espalda, con un retrato centrado en el pecho. Mangas lisas.",
+      "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
+      "imagenes": [
+        "https://boomart.pe/polos/img/saint-seiya/shun-de-andromeda/03-espalda-columna.webp",
+        "https://boomart.pe/polos/img/saint-seiya/shun-de-andromeda/01-frente-anden.webp",
+        "https://boomart.pe/polos/img/saint-seiya/shun-de-andromeda/02-frente-banco.webp",
+        "https://boomart.pe/polos/img/saint-seiya/shun-de-andromeda/04-detalle-pecho.webp",
+        "https://boomart.pe/polos/img/saint-seiya/shun-de-andromeda/05-detalle-espalda.webp",
+        "https://boomart.pe/polos/img/saint-seiya/shun-de-andromeda/06-detalle-manga.webp",
+        "https://boomart.pe/polos/img/extendidos-aprobados-20261116/shun-de-andromeda.webp"
+      ]
+    }
+  ]
+}

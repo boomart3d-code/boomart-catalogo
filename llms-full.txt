@@ -5,7 +5,7 @@ Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion bajo pedido: 
 (cada pieza indica el suyo), desde la validacion del adelanto (50%). Pedidos por WhatsApp: https://wa.me/51925666542
 
 Total de piezas: 104
-Actualizado: 2026-11-13
+Actualizado: 2026-11-17
 Fuente estructurada: https://boomart.pe/catalogo.json
 
 ---
@@ -1591,3 +1591,214 @@ Pesebre Minimalista: una escena de nacimiento de líneas limpias y acabado facet
 - Ficha: https://boomart.pe/producto/pesebre-tejido/
 
 Pesebre Tejido: María y José junto a la cuna del Niño, con una textura que imita el tejido a mano. Mide aproximadamente 10 cm de alto, está impreso en 3D con PLA+ y se prepara a pedido. Puedes solicitarlo en distintas combinaciones de colores; las fotografías muestran algunas opciones.
+
+
+## BoomArt Polos
+
+Polos de Saint Seiya, Dragon Ball, Harry Potter y Legend of Zelda. Tallas S, M y L; precios en soles (PEN). Entrega y disponibilidad se coordinan con BoomArt.
+
+- [Tienda de polos](https://boomart.pe/polos/): 18 diseños con fotos y precios.
+- [Catálogo de polos en JSON](https://boomart.pe/polos/catalogo.json).
+- [Catálogo de polos en texto](https://boomart.pe/polos/llms.txt).
+- [Polos de Legend of Zelda](https://boomart.pe/polos/coleccion/legend-of-zelda/).
+- [Polos de Harry Potter](https://boomart.pe/polos/coleccion/harry-potter/).
+- [Polos de Dragon Ball](https://boomart.pe/polos/coleccion/dragon-ball/).
+- [Polos de Saint Seiya](https://boomart.pe/polos/coleccion/saint-seiya/).
+
+### Polo Zelda True Heroes Never Die
+
+El espíritu de Hyrule en un diseño de inspiración universitaria en el pecho, con un emblema en la espalda alta. Mangas lisas.
+
+- Colección: Legend of Zelda
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: negro
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/zelda-true-heroes-never-die/
+
+### Polo Harry Potter · Travesía nocturna
+
+Luna turquesa y crema con las Reliquias de la Muerte en la espalda. Detalle a juego en el pecho. Mangas lisas.
+
+- Colección: Harry Potter
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: negro
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/harry-potter-negro/
+
+### Polo Gryffindor · León dorado
+
+El león de Gryffindor en grande sobre la espalda, con un detalle discreto en el pecho. Mangas lisas.
+
+- Colección: Harry Potter
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: blanco
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/gryffindor/
+
+### Polo Slytherin · Serpiente esmeralda
+
+La serpiente de Slytherin en grande sobre la espalda, con el escudo de la casa en el pecho. Mangas lisas.
+
+- Colección: Harry Potter
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: negro
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/slytherin/
+
+### Polo Hufflepuff · Tejón heráldico
+
+El tejón de Hufflepuff enmarcado en dorado sobre la espalda, con el escudo de la casa en el pecho. Mangas lisas.
+
+- Colección: Harry Potter
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: negro
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/hufflepuff/
+
+### Polo Ravenclaw · Escudo del águila
+
+Escudo de Ravenclaw en la espalda y águila centrada en el pecho. Mangas lisas.
+
+- Colección: Harry Potter
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: blanco
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/ravenclaw/
+
+### Polo Hogwarts en acuarela
+
+Lechuza y castillo en acuarela en el pecho. Boleto del Hogwarts Express en la espalda alta. Mangas lisas.
+
+- Colección: Harry Potter
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: blanco
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/hogwarts-blanco/
+
+### Polo Black Goku
+
+Estampado principal en la espalda y detalle en el pecho. Mangas lisas.
+
+- Colección: Dragon Ball
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: negro
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/black-goku/
+
+### Polo Goku · Pulso urbano
+
+Estampado principal en la espalda y detalle en el pecho. Mangas lisas.
+
+- Colección: Dragon Ball
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: blanco
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/urban-goku-1/
+
+### Polo Goku Super Saiyajin Blue
+
+Estampado principal en la espalda y detalle en el pecho. Mangas lisas.
+
+- Colección: Dragon Ball
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: negro
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/goku-super-saiyajin-blue/
+
+### Polo Goku Niño · Bajo el sol rojo
+
+Estampado principal en la espalda y detalle en el pecho. Mangas lisas.
+
+- Colección: Dragon Ball
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: blanco
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/goku-nino-1/
+
+### Polo Goku · Tinta carmesí
+
+Estampado principal en la espalda y detalle en el pecho. Mangas lisas.
+
+- Colección: Dragon Ball
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: blanco
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/goku-1/
+
+### Polo Los cinco Caballeros de Bronce
+
+Los cinco Caballeros de Bronce de perfil en la espalda, con un estampado vertical en el pecho. Mangas lisas.
+
+- Colección: Saint Seiya
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: negro
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/cinco-caballeros-de-bronce/
+
+### Polo Hyoga de Cisne
+
+Hyoga con su armadura azul en la espalda y una figura centrada en el pecho. Mangas lisas.
+
+- Colección: Saint Seiya
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: negro
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/hyoga-de-cisne/
+
+### Polo Shiryu de Dragón
+
+Shiryu con el dragón turquesa en la espalda y la armadura del Dragón en el pecho. Mangas lisas.
+
+- Colección: Saint Seiya
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: negro
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/shiryu-de-dragon/
+
+### Polo Seiya de Pegaso
+
+Seiya con su armadura de Pegaso en la espalda y una figura chibi en el pecho. Mangas lisas.
+
+- Colección: Saint Seiya
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: blanco
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/seiya-de-pegaso/
+
+### Polo Ikki de Fénix
+
+Ikki entre llamas en el pecho y una figura de Fénix en la espalda alta. Mangas lisas.
+
+- Colección: Saint Seiya
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: negro
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/ikki-de-fenix/
+
+### Polo Shun de Andrómeda
+
+Shun y sus cadenas en la espalda, con un retrato centrado en el pecho. Mangas lisas.
+
+- Colección: Saint Seiya
+- Precio publicado: PEN 50.00
+- Tallas: S, M, L
+- Color: blanco
+- Material: Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.
+- Ver diseño: https://boomart.pe/polos/diseno/shun-de-andromeda/

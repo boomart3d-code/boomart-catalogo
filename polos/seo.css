@@ -1,0 +1,20 @@
+/* Extensión de la tienda existente: contenido inicial y páginas con URL propia. */
+.ruta-pagina{padding-top:92px;font-size:12px;line-height:1.6;color:var(--gris)}
+.ruta-pagina a{display:inline-flex;align-items:center;min-height:36px;text-underline-offset:4px}
+.ruta-pagina ol{display:flex;flex-wrap:wrap;gap:0 8px;align-items:center;list-style:none;margin:0;padding:0}
+.ruta-pagina li{display:inline-flex;align-items:center;gap:8px;list-style:none}
+.ruta-pagina li+li::before{content:"/";color:var(--gris)}
+.polos-store .ruta-pagina + .hero{padding-top:32px}
+.coleccion-intro{max-width:65ch;margin:0 0 24px;color:var(--gris);font-size:15px}
+.colecciones>a{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;color:var(--gris);font-size:13px;text-decoration:none;border-bottom:2px solid transparent}
+.colecciones>a:hover{border-bottom-color:var(--tinta)}
+[data-seo-page="collection"] #inicio.hero,[data-seo-page="collection"] .beneficios{display:none}
+[data-seo-page="collection"] #coleccion{padding-top:32px}
+[data-seo-page="collection"] #tituloColeccion{font-size:clamp(36px,5vw,64px)}
+.ficha-compra h1{font-size:clamp(30px,3vw,44px)}
+#ficha[data-prerendered]{position:fixed;z-index:70}
+#ficha[data-prerendered] .ficha-volver[type="submit"]{display:none}
+#ficha[data-prerendered] .ficha-acciones,#ficha[data-prerendered] .ficha-compra fieldset,#ficha[data-prerendered] .enlace-guia{display:none}
+#ficha .nota a{text-decoration:underline;text-underline-offset:4px}
+.ficha-compra #colorFicha{color:var(--gris);font-size:14px}
+@media(max-width:600px){.ruta-pagina{padding-top:80px}.polos-store .ruta-pagina+.hero{padding-top:24px}}

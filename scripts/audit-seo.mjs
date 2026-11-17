@@ -54,6 +54,13 @@ await Promise.all(Array.from({length: 6}, async () => {
         if (/\p{Extended_Pictographic}/u.test(p?.name || '')) issues.push('Emoji en el nombre del Product');
         if (!h1[0] || !html.includes('<main class="pp">')) issues.push('Ficha no presente en HTML');
       }
+      if (pathname.startsWith('/polos/diseno/')) {
+        const p = nodes.find(n => n['@type'] === 'Product');
+        if (!p?.name || !p.image?.length || !p.description || !p.offers) issues.push('Polo sin Product completo');
+        if (p?.offers?.priceCurrency !== 'PEN' || !(Number(p?.offers?.price) > 0)) issues.push('Precio del polo invalido');
+        if (!/<section data-prerendered="true" id="ficha"/.test(html)) issues.push('Ficha del polo ausente del HTML inicial');
+        if (!html.includes('id="precioFicha"') || !html.includes('id="descripcionFicha"')) issues.push('Datos del polo ausentes');
+      }
       if (!/<html[^>]*\blang=["']es-PE["']/i.test(html)) issues.push('Idioma distinto de es-PE');
       const links = [...html.matchAll(/<a\b[^>]*href=["']([^"']+)["']/gi)].map(m => new URL(m[1].replace(/&amp;/g, '&'), url).href);
       if (url === `${SITE}/`) {

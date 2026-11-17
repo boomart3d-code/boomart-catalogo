@@ -74,7 +74,10 @@ test("catalogo.json, catalogo.html y llms-full.txt muestran el plazo de cada pro
     assert.ok(t.includes(SENCILLO) && t.includes(ELABORADO));
     assert.ok(!/48 horas utiles|~48/.test(t.replace(/Produccion de 24 a 48 horas utiles/g, "")), "queda un 48 horas viejo");
   }
-  assert.equal((llms.match(/- Fabricación bajo pedido: /g) || []).length, llms.match(/^### /gm).length);
+  // Los plazos de impresión 3D no se trasladan a la nueva colección de prendas.
+  const [llms3d, polos] = llms.split('\n## BoomArt Polos\n');
+  assert.equal((llms3d.match(/- Fabricación bajo pedido: /g) || []).length, llms3d.match(/^### /gm).length);
+  assert.doesNotMatch(polos || '', /- Fabricación bajo pedido: /);
 });
 
 test("cada ficha de producto dice su plazo y la condicion de hecho a pedido, sin stock", async () => {
