@@ -1,10 +1,10 @@
 # Acceso a BoomArt Polos desde la portada
 
-Codex, 17 de noviembre de 2026. Candidato local listo para revisión; **no publicado**.
+Codex, 17 de noviembre de 2026. Versión aprobada por Adrián para publicar mediante su indicación «publica». Implementación: `47ea1205`. El resultado del despliegue se registra en el relevo `BA-af2dae8c1150`.
 
 - Worktree: `D:/BOOMART-ENTREGAS/web-universo-polos-20261117`.
 - Rama: `codex/integracion-polos-portada-20261117`, basada en `origin/main` (`9330b3d4`).
-- Reserva: `BA-cde71bb5b57c`.
+- Reservas: preparación `BA-cde71bb5b57c`; publicación `BA-af2dae8c1150`.
 - Vista previa: `http://127.0.0.1:4173/#boomart-polos`.
 
 ## Resultado
@@ -24,4 +24,4 @@ CSS acotado en `src/polos-bridge.css?v=1`. JavaScript de la portada incrementado
 
 ## Siguiente paso
 
-Esperar la aprobación de Adrián para publicar esta versión. Antes de integrar, hacer fetch y revisar cambios posteriores de `origin/main`; no incluir cambios locales del checkout canónico. GitHub Pages publica al enviar a `main`.
+Publicación autorizada. Fetch previo sin cambios remotos posteriores a `9330b3d4`. Enviar el candidato aprobado a `main`, comprobar GitHub Pages y los accesos en producción; registrar SHA y resultado en el relevo de publicación. No incluir cambios locales del checkout canónico.
