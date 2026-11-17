@@ -26,3 +26,15 @@ CUA: Mujer/L seleccionada, agregada al carrito S/50 y retirada al finalizar. Fot
 - PageSpeed previo: móvil86 rendimiento/100 accesibilidad/100 recomendaciones/100SEO; laboratorio LCP4.2s. CrUX solo del origen, no atribuirlo a esta URL. Medir tras publicar imágenes.
 
 Registrar resultado público y cuentas en relevo final. No prometer indexación, posiciones, ventas o fotos físicas no verificadas.
+
+## Cierre comprobado
+
+Publicado:81c166a6 (implementación),44b20be5 (Analytics tras cargar contenido),29c56929 (políticas generales distinguen Polos de piezas3D). Bot7c14a918 actualizó lastmod/sitemap. Pages44172036750 y generador44172037112 del ajuste Analytics terminaron success; publicación de políticas y texto verificados por HTTP200. Auditoría pública final150 páginas/0 errores. IndexNow recibió27 URL conHTTP200, además del workflow44172215884 success.
+
+Merchant Center importó108 variantes en la fuente10797289318 «BoomArt Polos · diseños, cortes y tallas», fichas gratuitas, Perú/español, actualización diaria. Fuente3D104 conservada. Cuenta al cierre:212 productos,200 aprobados,12 en revisión,0 limitados,0 rechazados:96 nuevas variantes aprobadas y12 pendientes de Google. «Requiere atención» no muestra incidencias. Excepción de devolución `polos`,policy9502697877:1 día, solo nuevos, por correo, transporte del cliente, sin tarifa de reposición. Se guardó y queda sujeta a verificación de Google. Plazo de reembolso en web3 días hábiles; campo numérico ambiguo de Merchant se dejó sin completar para no convertirlo en días calendario.
+
+Bing quedó verificado por meta. El sitemap reenviado devolvió DNS Failure en el primer intento; dominio validado con respuestas correctas en resolutores públicos Google y Cloudflare (4 registros A de GitHub Pages). Sin cambiar DNS de producción, se reenviaron150 URL mediante sitemap; último estado observado Processing. IndexNow aceptado no prueba indexación. No hay confirmación de indexación completa Google/Bing. Search Console aceptó solicitudes para raíz, Harry Potter/Dragon Ball/Zelda y ficha harry-potter-negro; Saint Seiya dio error de servicio al solicitar, cubierta por sitemap e IndexNow.
+
+PageSpeed final17/11 18:24 Lima, móvil:76 rendimiento,100 accesibilidad,100 recomendaciones,100SEO,3/3 navegación de agentes; FCP1.7s,LCP5.3s,TBT50ms,CLS0. La entrega de imágenes reduce el ahorro potencial señalado de1874KiB a76KiB, pero no se afirma mejora global de puntuación (varía y LCP sigue siendo oportunidad). CrUX del origen no es evidencia propia de Polos. No se inventaron fotos físicas, medidas verificadas ni reseñas. Toda información que depende de revisión externa queda identificada aquí.
+
+Evidencias adicionales: `merchant-108-polos.png`, `merchant-resultados.png`, `merchant-politica-polos.png`, `merchant-estado-final.txt`, `bing-sitemap.png`, `bing-estado-final.txt`, `pagespeed-final.txt`, `auditoria-publicada-final.json`, `politica-publicada.png` en la carpeta de entregas. No hay acción adicional del propietario necesaria para lo implementado; revisiones/indexación dependen de las plataformas.
