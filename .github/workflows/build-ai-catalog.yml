@@ -14,6 +14,11 @@ on:
       - "scripts/build-ai-catalog.mjs"
       - "scripts/build-polos-seo.mjs"
       - "scripts/polos-info.mjs"
+      - "scripts/polos-performance.test.mjs"
+      - "scripts/test-checkout-two-steps.mjs"
+      - "polos/registro-loader.js"
+      - "polos/fonts.css"
+      - "polos/fonts/**"
       - "scripts/build-polos-images.mjs"
       - "polos/img/**"
       - "scripts/polos-seo.test.mjs"
@@ -89,6 +94,7 @@ jobs:
         run: |
           node --test scripts/indexnow.test.mjs
           node --test scripts/polos-seo.test.mjs
+          node --test scripts/polos-performance.test.mjs scripts/test-checkout-two-steps.mjs
           node scripts/audit-seo.mjs
           node scripts/validate-feeds.mjs
           node --test scripts/openai-feed.test.mjs scripts/openai-hosted.test.mjs scripts/plazos.test.mjs scripts/ads-disponibilidad.test.mjs

@@ -80,7 +80,7 @@ export async function buildPolos(root=ROOT) {
     } else if (page.type === 'home') {
       const first=portada.polos?.[0];
       const p=products.find(p=>p.id===first?.id)||list[0], f=p.fotos.find(f=>f.archivo===first?.foto)||p.fotos[0];
-      html=fill(html,'vitrinaFotos',`<a class="vitrina-foto actual" href="${SEO.productPath(p.id)}">${image(p,f,false,'hero')}</a>`);
+      html=fill(html,'vitrinaFotos',`<a class="vitrina-foto actual" data-polo-id="${esc(p.id)}" data-photo="${esc(f.archivo)}" href="${SEO.productPath(p.id)}">${image(p,f,false,'hero')}</a>`);
       html=fill(html,'temaDestacado',p.tema);
       html=fill(html,'poloDestacado',p.nombre);
       html=fill(html,'precioDestacado',`S/ ${p.precio}`);

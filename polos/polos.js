@@ -433,19 +433,24 @@
     if (elegidos.length < 2) elegidos = data.productos.slice(0, 6).map(product => ({product, indice: 0}));
     if (!elegidos.length) return;
     let active = 0;
+    const first = rail.firstElementChild;
+    const keepFirst = first?.dataset.poloId === elegidos[0].product.id
+      && first.dataset.photo === elegidos[0].product.fotos[elegidos[0].indice].archivo
+      && first.querySelector('img');
     const slides = elegidos.map(({product, indice}, i) => {
-      const link = document.createElement("a");
-      link.className = "vitrina-foto";
+      const reuse = i === 0 && keepFirst;
+      const link = reuse ? first : document.createElement("a");
+      link.className = i === 0 ? "vitrina-foto actual" : "vitrina-foto";
       link.href = rutaProducto(product.id);
       const shot = product.fotos[indice];
-      const img = i===0 ? image(shot, product.nombre, false,'hero') : document.createElement('img');
+      const img = reuse ? first.querySelector('img') : i===0 ? image(shot, product.nombre, false,'hero') : document.createElement('img');
       if(i===0)img.fetchPriority='high';
       // Solo la primera foto se pide de inmediato; las demas, cuando la pagina termino de cargar.
       if (i > 0) {
         Object.assign(img,{alt:product.nombre,width:shot.ancho,height:shot.alto,decoding:'async'});
         img.dataset.src = shot.archivo;
       }
-      link.append(img);
+      if (!reuse) link.append(img);
       // La ficha abre en la misma foto que se vio en la portada.
       link.addEventListener("click", () => { fotoInicial = indice; });
       return link;
@@ -484,7 +489,9 @@
       $("precioDestacado").textContent = price(product.precio);
       $("verDestacado").href = rutaProducto(product.id);
     }
-    rail.replaceChildren(...slides);
+    // La primera imagen ya es visible desde HTML: no desmontarla ni reiniciar su pintado.
+    if (keepFirst) rail.append(...slides.slice(1));
+    else rail.replaceChildren(...slides);
     $("barrasCarrusel").replaceChildren(...barras);
     $("barrasCarrusel").hidden = slides.length < 2;
     $("verDestacado").addEventListener("click", () => { fotoInicial = elegidos[active].indice; });

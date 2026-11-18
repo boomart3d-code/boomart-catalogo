@@ -65,11 +65,11 @@ const refreshSource = checkout.slice(checkout.indexOf("function refreshPaymentAm
 function paymentContext(coupon) {
   const storage = new Map();
   const window = { BOOMART_PRODUCTS: products, localStorage: { getItem: k => storage.get(k) ?? null, setItem: (k, v) => storage.set(k, v), removeItem: k => storage.delete(k) } };
-  vm.runInNewContext(cartSource, { window });
+  vm.runInNewContext(cartSource, { window, document: { body: { classList: { contains: () => false } } } });
   storage.set("boomart_customer_v1", JSON.stringify({ couponEligible: coupon }));
   window.BoomartCart.add("castillo-de-hogwarts", null, 1);
   window.BoomartCart.add("templo-aries", "combo", 1);
-  const ctx = { window, card: false, payMode: "advance", customer: { name: "Cliente de Prueba", phone: "900000001", email: "cliente@example.test", destination: "lima", deliveryMethod: "indriver" },
+  const ctx = { window, polos: false, card: false, payMode: "advance", customer: { name: "Cliente de Prueba", phone: "900000001", email: "cliente@example.test", destination: "lima", deliveryMethod: "indriver" },
     CHECKOUT: { deliveryTerms: { lima: { summary: "Entrega local", balanceCondition: "Saldo pendiente de validación" } } },
     destinationLabel: () => 'Destino <img src=x onerror="alert(1)">',
     money: n => `S/${Number(n || 0).toFixed(2)}`,

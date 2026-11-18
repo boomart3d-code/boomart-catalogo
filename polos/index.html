@@ -30,9 +30,7 @@
   <title>Polos de anime y fantasía en Perú | BoomArt</title>
   <meta name="description" content="Polos de Saint Seiya, Dragon Ball, Harry Potter y Zelda. Explora diseños, fotos, tallas S, M y L y precios en soles. Envíos a todo el Perú.">
   <link rel="icon" type="image/svg+xml" href="../assets/boomart-mark.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fonts.css?v=1">
   <link rel="stylesheet" href="../src/styles.css?v=69">
   <link rel="stylesheet" href="polos.css?v=53">
   <link rel="stylesheet" href="seo.css?v=2">
@@ -71,7 +69,7 @@
         </div>
       </div>
       <section class="vitrina" id="vitrina" aria-label="Polos destacados" aria-roledescription="carrusel">
-        <div class="vitrina-fotos" id="vitrinaFotos"><a class="vitrina-foto actual" href="/polos/diseno/gryffindor/"><img src="img/responsive/c9ced3167b4773e9-360w.webp" srcset="img/responsive/c9ced3167b4773e9-180w.webp 180w, img/responsive/c9ced3167b4773e9-360w.webp 360w, img/responsive/c9ced3167b4773e9-720w.webp 720w, img/harry-potter/gryffindor/01-espalda-y-manga-mueble.webp 765w" sizes="(max-width:700px) 80vw, 420px" alt="Gryffindor · León dorado · Espalda y manga mueble · Gabriel" width="765" height="1024" loading="eager" decoding="async" fetchpriority="high"></a></div>
+        <div class="vitrina-fotos" id="vitrinaFotos"><a class="vitrina-foto actual" data-polo-id="gryffindor" data-photo="img/harry-potter/gryffindor/01-espalda-y-manga-mueble.webp" href="/polos/diseno/gryffindor/"><img src="img/responsive/c9ced3167b4773e9-360w.webp" srcset="img/responsive/c9ced3167b4773e9-180w.webp 180w, img/responsive/c9ced3167b4773e9-360w.webp 360w, img/responsive/c9ced3167b4773e9-720w.webp 720w, img/harry-potter/gryffindor/01-espalda-y-manga-mueble.webp 765w" sizes="(max-width:700px) 80vw, 420px" alt="Gryffindor · León dorado · Espalda y manga mueble · Gabriel" width="765" height="1024" loading="eager" decoding="async" fetchpriority="high"></a></div>
         <div class="vitrina-barras" id="barrasCarrusel"></div>
         <div class="vitrina-pie">
           <a class="vitrina-texto" id="verDestacado">
@@ -459,13 +457,12 @@
   <script src="../src/checkout-config.js?v=9"></script>
   <script src="../src/cart.js?v=16"></script>
   <script src="../src/checkout.js?v=37"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
   <script src="../src/supabase-config.js?v=1"></script>
-  <script src="../src/registro-web.js?v=5"></script>
+  <script src="registro-loader.js?v=1"></script>
   <script src="catalogo-core.js?v=3"></script>
   <script src="seo-core.js?v=2"></script>
   <script src="imagenes.js?v=207f6a683fd5"></script>
-  <script src="polos.js?v=65"></script>
+  <script src="polos.js?v=66"></script>
   <!-- Medicion propia y anonima (panel privado): visitas, polos vistos, carrito y corazones.
        En Polos NO se carga el pixel de Meta: track.js lo omite cuando window.fbq ya existe.
        Para activarlo aqui, quitar la linea del fbq vacio. -->

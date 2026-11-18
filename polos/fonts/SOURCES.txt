@@ -1,0 +1,4 @@
+barlow-condensed-500-460f141ec8.woff2 | 21424 bytes | https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B4-Lwz3bWuQ.woff2
+barlow-condensed-600-215a93c696.woff2 | 22308 bytes | https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B4873z3bWuQ.woff2
+barlow-condensed-700-3787a5a419.woff2 | 22444 bytes | https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2
+inter-latin-3100e775e8.woff2 | 48256 bytes | https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2
