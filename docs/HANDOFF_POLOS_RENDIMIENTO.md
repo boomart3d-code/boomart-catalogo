@@ -21,4 +21,12 @@ Codex · 17/11/2026 Lima · Reserva BA-b6539323062f, sesión codex-polos-rendimi
 
 ## Publicación y medición
 
-Pendiente de completar con el resultado de Pages y PageSpeed público. Referencia previa en `docs/HANDOFF_POLOS_VISIBILIDAD.md`: móvil76,FCP1.7s,LCP5.3s,TBT50ms,CLS0. No atribuir datos CrUX del origen a Polos ni prometer una puntuación fija. Comparar varias mediciones de la misma URL/dispositivo después del despliegue.
+Implementación99248e69 publicada en main. Pages44209485678, generador44209485571 e IndexNow44209616638 terminaron completed/success. Auditoría pública150 páginas/0 errores. Nuevos scripts,CSS y cuatro WOFF2 públicos responden200; se conservan seis diapositivas, intervalo2.5s y registro pesado ausente del arranque.
+
+Dos consultas PageSpeed de la URL pública,17/11/2026 19:39 Lima, dispositivo móvil Moto G Power/4G lenta/Lighthouse13.6: **98 rendimiento,100 accesibilidad,100 recomendaciones,100SEO,3/3 navegación con agentes**, en ambas consultas. FCP1.1s,LCP2.3s,TBT10ms,CLS0.011,Speed Index2.7s.
+
+- InformeA: https://pagespeed.web.dev/analysis/https-boomart-pe-polos/inl0aufxly?form_factor=mobile
+- InformeB: https://pagespeed.web.dev/analysis/https-boomart-pe-polos/e7sbtjwfbn?form_factor=mobile
+- Referencia previa en `docs/HANDOFF_POLOS_VISIBILIDAD.md`: móvil76,FCP1.7s,LCP5.3s,TBT50ms,CLS0. Datos de laboratorio, sujetos a variación. No atribuir CrUX del origen a Polos ni garantizar98 para todas las visitas.
+
+Evidencia final: `pagespeed-98.png`, `pagespeed-a.txt`, `pagespeed-b.txt`, `informes.json`, `portada-publicada.png`, `recursos-publicados.json`, `auditoria-publicada.json` en la carpeta de entregas. Todos los bloqueos/interceptaciones y tamaños temporales del navegador retirados. Permanece abierto el informeA como resultado para Adrián. Sin acciones pendientes del propietario. No se activan anuncios, automatizaciones ni nuevas conexiones.
