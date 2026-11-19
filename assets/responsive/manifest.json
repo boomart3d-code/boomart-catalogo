@@ -3761,6 +3761,120 @@
       ]
     ]
   },
+  "assets/products/figura-chibi-harry-potter-espalda.webp": {
+    "w": 1000,
+    "h": 1333,
+    "src": "assets/products/figura-chibi-harry-potter-espalda.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-harry-potter-espalda-f250fff1a6fc-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-harry-potter-espalda-f250fff1a6fc-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-harry-potter-espalda-f250fff1a6fc-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-harry-potter-frente.webp": {
+    "w": 1000,
+    "h": 1333,
+    "src": "assets/products/figura-chibi-harry-potter-frente.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-harry-potter-frente-2dfb8b21b664-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-harry-potter-frente-2dfb8b21b664-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-harry-potter-frente-2dfb8b21b664-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-harry-potter-perfil.webp": {
+    "w": 1000,
+    "h": 1333,
+    "src": "assets/products/figura-chibi-harry-potter-perfil.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-harry-potter-perfil-34b17fcb8664-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-harry-potter-perfil-34b17fcb8664-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-harry-potter-perfil-34b17fcb8664-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-harry-potter-portada.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/figura-chibi-harry-potter-portada.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-harry-potter-portada-0a1bc1b4c1d1-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-harry-potter-portada-0a1bc1b4c1d1-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-harry-potter-portada-0a1bc1b4c1d1-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-harry-potter-tres-cuartos-izquierda.webp": {
+    "w": 1000,
+    "h": 1333,
+    "src": "assets/products/figura-chibi-harry-potter-tres-cuartos-izquierda.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-harry-potter-tres-cuartos-izquierda-bc7364c6c69f-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-harry-potter-tres-cuartos-izquierda-bc7364c6c69f-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-harry-potter-tres-cuartos-izquierda-bc7364c6c69f-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-harry-potter-tres-cuartos.webp": {
+    "w": 1000,
+    "h": 1333,
+    "src": "assets/products/figura-chibi-harry-potter-tres-cuartos.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-harry-potter-tres-cuartos-9fad1765b5d8-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-harry-potter-tres-cuartos-9fad1765b5d8-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-harry-potter-tres-cuartos-9fad1765b5d8-720w.webp"
+      ]
+    ]
+  },
   "assets/products/lampara-lunar-hogwarts-2.webp": {
     "w": 1600,
     "h": 1068,

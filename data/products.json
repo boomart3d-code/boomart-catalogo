@@ -3065,5 +3065,34 @@
     "imageAlt": "Palomera con forma de la cabeza de Dr. Doom: rostro metálico plateado con remaches y capucha verde, con la tapa ovalada cerrada",
     "detailText": "Palomera con la cabeza de Dr. Doom: rostro metálico plateado con remaches, capucha verde y una tapa ovalada que se abre. Impresa en 3D con PLA+ y preparada a pedido. En la foto con la mano puedes ver una referencia del tamaño.",
     "description": "Palomera Dr. Doom: la cabeza del villano de Marvel con su rostro metálico plateado, los remaches, la capucha verde y una tapa ovalada que se abre. Impresa en 3D con PLA+ y preparada a pedido. En la foto con la mano puedes ver una referencia del tamaño."
+  },
+  {
+    "id": "figura-chibi-harry-potter",
+    "name": "Figura Chibi de Harry · Harry Potter",
+    "category": "Harry Potter",
+    "tags": [
+      "Harry Potter",
+      "Chibi",
+      "Figuras",
+      "Coleccionables",
+      "Gryffindor",
+      "Regalos"
+    ],
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 50,
+    "featured": true,
+    "image": "assets/products/figura-chibi-harry-potter-portada.webp",
+    "gallery": [
+      "assets/products/figura-chibi-harry-potter-portada.webp",
+      "assets/products/figura-chibi-harry-potter-frente.webp",
+      "assets/products/figura-chibi-harry-potter-tres-cuartos.webp",
+      "assets/products/figura-chibi-harry-potter-perfil.webp",
+      "assets/products/figura-chibi-harry-potter-espalda.webp",
+      "assets/products/figura-chibi-harry-potter-tres-cuartos-izquierda.webp"
+    ],
+    "imageAlt": "Figura chibi de Harry Potter impresa en 3D: cabello castaño alborotado, gafas redondas, ojos verdes y la cicatriz del rayo, túnica negra con el escudo de Gryffindor, chaleco gris, corbata roja y la varita en la mano",
+    "detailText": "Harry Potter en versión chibi, con sus gafas redondas, la cicatriz del rayo, el uniforme de Gryffindor y su varita en la mano. Impresa en 3D con PLA+ y hecha a pedido. En las fotos puedes verla de frente, de perfil y de espaldas.",
+    "description": "Harry Potter en versión chibi: cabeza grande, cabello alborotado, gafas redondas, ojos verdes y la cicatriz del rayo en la frente. Viste el uniforme de Gryffindor —túnica negra con el escudo de la casa, chaleco gris y corbata roja— y lleva su varita en la mano. Una figura simpática para tu escritorio o tu repisa, y un regalo ideal para quien vuelve a Hogwarts con cada película. Impresa en 3D con PLA+ y hecha a pedido, con envíos a todo el Perú."
   }
 ]
