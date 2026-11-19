@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "id": "cinco-caballeros-de-bronce",
+ "revision": "493fda65aaab",
+ "variante": {
+  "corte": "mujer",
+  "talla": "M",
+  "color": "negro"
+ },
+ "estado": "generado",
+ "vista": {
+  "nombre": "Vista 360°",
+  "tipo": "secuencia",
+  "referencial": true,
+  "aviso": "Vista de referencia en talla M; las medidas de la prenda son referenciales."
+ },
+ "poster": "poster-74b005fac4.webp",
+ "cuadros": {
+  "ancho": 720,
+  "alto": 900,
+  "cantidad": 24,
+  "azimutes_grados": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "inicio_indice": 12,
+  "archivos": [
+   "360/mujer-m-negro/f000-2af16b97da.webp",
+   "360/mujer-m-negro/f001-c8ed30e360.webp",
+   "360/mujer-m-negro/f002-fa302377cd.webp",
+   "360/mujer-m-negro/f003-9913a1cc44.webp",
+   "360/mujer-m-negro/f004-bc6b22fdc4.webp",
+   "360/mujer-m-negro/f005-8cff790b1f.webp",
+   "360/mujer-m-negro/f006-4f8e3da7ac.webp",
+   "360/mujer-m-negro/f007-d7012b42bf.webp",
+   "360/mujer-m-negro/f008-52e5413c47.webp",
+   "360/mujer-m-negro/f009-09ab080ce6.webp",
+   "360/mujer-m-negro/f010-711c302f51.webp",
+   "360/mujer-m-negro/f011-2a087a9bfd.webp",
+   "360/mujer-m-negro/f012-cbb2bcee35.webp",
+   "360/mujer-m-negro/f013-beb590ca86.webp",
+   "360/mujer-m-negro/f014-a27802cfcf.webp",
+   "360/mujer-m-negro/f015-19358acef8.webp",
+   "360/mujer-m-negro/f016-c66346b8aa.webp",
+   "360/mujer-m-negro/f017-af25e11918.webp",
+   "360/mujer-m-negro/f018-3ab4bfe3bc.webp",
+   "360/mujer-m-negro/f019-a838b57c24.webp",
+   "360/mujer-m-negro/f020-4daef19111.webp",
+   "360/mujer-m-negro/f021-cd16a9fc2c.webp",
+   "360/mujer-m-negro/f022-2fcf084297.webp",
+   "360/mujer-m-negro/f023-d35a5d677e.webp"
+  ]
+ },
+ "detalle": {
+  "espalda": {
+   "archivo": "detalle/mujer-m-negro/espalda-85eb6a9627.webp",
+   "ancho_px": 1138,
+   "alto_px": 1280,
+   "ancho_cm": 24.545,
+   "alto_cm": 27.61
+  },
+  "pecho_pequeno": {
+   "archivo": "detalle/mujer-m-negro/pecho_pequeno-092be46ff6.webp",
+   "ancho_px": 816,
+   "alto_px": 1280,
+   "ancho_cm": 13.064,
+   "alto_cm": 20.498
+  }
+ }
+}

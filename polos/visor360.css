@@ -1,0 +1,23 @@
+/* Estilos del visor 360°; aislados del carrito y del checkout (todo bajo .v360). El control va DEBAJO de la foto: nada tapa el polo. */
+.v360 { width: 100%; max-width: 560px; margin: 0 auto; }
+.v360-lienzo { position: relative; width: 100%; overflow: hidden; border-radius: 12px; background: #f3eee4; touch-action: pan-y; cursor: grab;
+  user-select: none; -webkit-user-select: none; }
+.v360-arrastrando { cursor: grabbing; }
+.v360-img { display: block; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.v360-aviso { position: absolute; top: 8px; left: 8px; right: 8px; margin: 0; font-family: inherit; font-size: 13px; line-height: 1.3; color: #333; text-align: center; }
+.v360-btn { font-family: inherit; font-size: 14px; font-weight: 600; padding: 10px 14px; min-height: 44px; min-width: 44px; border: 1px solid rgba(0,0,0,.25);
+  border-radius: 999px; background: rgba(255,255,255,.9); color: #16130f; cursor: pointer; }
+/* Una sola fila: Frente · rueda · Espalda. La rueda se ve fina (24 px) pero su zona tactil mide 44 px de alto. */
+.v360-control { display: flex; align-items: center; justify-content: center; gap: 4px; padding: 6px 8px 0; }
+.v360-rueda { flex: 0 1 216px; min-width: 124px; height: 44px; display: flex; align-items: center; gap: 7px; padding: 0 4px; cursor: grab; touch-action: pan-y;
+  user-select: none; -webkit-user-select: none; border-radius: 22px; color: #9a9385; font-size: 15px; line-height: 1; }
+.v360-rueda::before { content: "‹"; }
+.v360-rueda::after { content: "›"; }
+.v360-rueda:focus-visible { outline: 2px solid #16130f; outline-offset: 0; }
+.v360-rueda-lona { flex: 1 1 auto; min-width: 0; height: 24px; border-radius: 12px; pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(92,83,68,.30), 0 1px 2px rgba(0,0,0,.10); }
+.v360-marca { font-family: inherit; font-size: 11.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; min-height: 44px; min-width: 76px; padding: 0 6px;
+  flex: 0 0 auto; white-space: nowrap;
+  border: 0; background: none; color: #6b655a; cursor: pointer; }
+.v360-marca:hover { color: #16130f; }
+.v360-marca:focus-visible { outline: 2px solid #16130f; outline-offset: -2px; }

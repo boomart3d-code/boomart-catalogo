@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "id": "gryffindor",
+ "revision": "c0af86a8ac06",
+ "variante": {
+  "corte": "mujer",
+  "talla": "M",
+  "color": "blanco"
+ },
+ "estado": "generado",
+ "vista": {
+  "nombre": "Vista 360°",
+  "tipo": "secuencia",
+  "referencial": true,
+  "aviso": "Vista de referencia en talla M; las medidas de la prenda son referenciales."
+ },
+ "poster": "poster-4a386254ea.webp",
+ "cuadros": {
+  "ancho": 720,
+  "alto": 900,
+  "cantidad": 24,
+  "azimutes_grados": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "inicio_indice": 12,
+  "archivos": [
+   "360/mujer-m-blanco/f000-11ac4fee80.webp",
+   "360/mujer-m-blanco/f001-1d29d8c59a.webp",
+   "360/mujer-m-blanco/f002-317c9a7232.webp",
+   "360/mujer-m-blanco/f003-8f242c1859.webp",
+   "360/mujer-m-blanco/f004-a160305148.webp",
+   "360/mujer-m-blanco/f005-bcb278a668.webp",
+   "360/mujer-m-blanco/f006-e14eec9a9e.webp",
+   "360/mujer-m-blanco/f007-e9cc2bb710.webp",
+   "360/mujer-m-blanco/f008-bf7dfe8a91.webp",
+   "360/mujer-m-blanco/f009-807884c8a0.webp",
+   "360/mujer-m-blanco/f010-9c49448416.webp",
+   "360/mujer-m-blanco/f011-c1c537a7c6.webp",
+   "360/mujer-m-blanco/f012-8f996ddcee.webp",
+   "360/mujer-m-blanco/f013-a5804afddc.webp",
+   "360/mujer-m-blanco/f014-661ad70b71.webp",
+   "360/mujer-m-blanco/f015-28afd5a7bf.webp",
+   "360/mujer-m-blanco/f016-6e06e0ba3e.webp",
+   "360/mujer-m-blanco/f017-6d08d3f1d9.webp",
+   "360/mujer-m-blanco/f018-c51034b232.webp",
+   "360/mujer-m-blanco/f019-913ffb6495.webp",
+   "360/mujer-m-blanco/f020-0c7765ca58.webp",
+   "360/mujer-m-blanco/f021-79b7b197db.webp",
+   "360/mujer-m-blanco/f022-925b205a43.webp",
+   "360/mujer-m-blanco/f023-e81961a91c.webp"
+  ]
+ },
+ "detalle": {
+  "pecho_pequeno": {
+   "archivo": "detalle/mujer-m-blanco/pecho_pequeno-0954e2af48.webp",
+   "ancho_px": 1280,
+   "alto_px": 454,
+   "ancho_cm": 11.718,
+   "alto_cm": 4.157
+  },
+  "espalda": {
+   "archivo": "detalle/mujer-m-blanco/espalda-931bfd01f1.webp",
+   "ancho_px": 719,
+   "alto_px": 1280,
+   "ancho_cm": 20.227,
+   "alto_cm": 35.992
+  }
+ }
+}

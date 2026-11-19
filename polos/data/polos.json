@@ -88,7 +88,19 @@
           "ancho": 1083,
           "alto": 1452
         }
-      ]
+      ],
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/zelda-true-heroes-never-die/756986e3c6b8/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/zelda-true-heroes-never-die/a888cd549779/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     },
     {
       "fotos": [
@@ -160,7 +172,19 @@
       "precio": 50,
       "id": "harry-potter-negro",
       "color": "negro",
-      "nombre": "Harry Potter · Travesía nocturna"
+      "nombre": "Harry Potter · Travesía nocturna",
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/harry-potter-negro/7bf2d2345b0b/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/harry-potter-negro/eb314f317272/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     },
     {
       "id": "gryffindor",
@@ -202,7 +226,19 @@
           "ancho": 1084,
           "alto": 1451
         }
-      ]
+      ],
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/gryffindor/7e5a47ccf503/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/gryffindor/c0af86a8ac06/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     },
     {
       "id": "slytherin",
@@ -232,7 +268,19 @@
           "ancho": 1084,
           "alto": 1451
         }
-      ]
+      ],
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/slytherin/5f87027fdc0a/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/slytherin/59a85bfc6dd0/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     },
     {
       "id": "hufflepuff",
@@ -268,7 +316,19 @@
           "ancho": 1536,
           "alto": 1024
         }
-      ]
+      ],
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/hufflepuff/92fca000b873/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/hufflepuff/f81d2584cf79/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     },
     {
       "id": "ravenclaw",
@@ -328,7 +388,19 @@
           "ancho": 1199,
           "alto": 1312
         }
-      ]
+      ],
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/ravenclaw/9d09a0d50c04/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/ravenclaw/6e871eb0bdc4/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     },
     {
       "id": "hogwarts-blanco",
@@ -382,7 +454,19 @@
           "ancho": 1536,
           "alto": 1024
         }
-      ]
+      ],
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/hogwarts-blanco/1f076b861f9e/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/hogwarts-blanco/963e6de124bd/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     },
     {
       "precio": 50,
@@ -442,7 +526,19 @@
       "prenda": "unisex",
       "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
       "tema": "Dragon Ball",
-      "id": "black-goku"
+      "id": "black-goku",
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/black-goku/9dab69d3ab9a/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/black-goku/0b0b59edf10b/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     },
     {
       "precio": 50,
@@ -508,7 +604,19 @@
       "prenda": "unisex",
       "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
       "tema": "Dragon Ball",
-      "id": "urban-goku-1"
+      "id": "urban-goku-1",
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/urban-goku-1/d7c0dac2ba96/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/urban-goku-1/24cd1d1bcf3c/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     },
     {
       "precio": 50,
@@ -568,7 +676,19 @@
       "prenda": "unisex",
       "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
       "tema": "Dragon Ball",
-      "id": "goku-super-saiyajin-blue"
+      "id": "goku-super-saiyajin-blue",
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/goku-super-saiyajin-blue/979c8c58dcf7/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/goku-super-saiyajin-blue/023649cf19d7/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     },
     {
       "precio": 50,
@@ -634,7 +754,19 @@
       "prenda": "unisex",
       "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
       "tema": "Dragon Ball",
-      "id": "goku-nino-1"
+      "id": "goku-nino-1",
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/goku-nino-1/c7b85ce1ede5/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/goku-nino-1/587480bf1d4d/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     },
     {
       "precio": 50,
@@ -694,7 +826,19 @@
       "prenda": "unisex",
       "material": "Algodón pima peinado de calidad premium, con hilado 20/1. De tacto suave, superficie uniforme y caída natural.",
       "tema": "Dragon Ball",
-      "id": "goku-1"
+      "id": "goku-1",
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/goku-1/6d177c877efb/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/goku-1/3162cbe17400/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     },
     {
       "id": "cinco-caballeros-de-bronce",
@@ -736,7 +880,19 @@
           "ancho": 1199,
           "alto": 1312
         }
-      ]
+      ],
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/cinco-caballeros-de-bronce/46051e075e47/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/cinco-caballeros-de-bronce/493fda65aaab/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     },
     {
       "id": "hyoga-de-cisne",
@@ -778,7 +934,19 @@
           "ancho": 1199,
           "alto": 1312
         }
-      ]
+      ],
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/hyoga-de-cisne/3f254bad52cb/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/hyoga-de-cisne/075d9781ceac/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     },
     {
       "id": "shiryu-de-dragon",
@@ -826,7 +994,19 @@
           "ancho": 1120,
           "alto": 1405
         }
-      ]
+      ],
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/shiryu-de-dragon/82fec27ab59f/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/shiryu-de-dragon/090ea159fbe0/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     },
     {
       "id": "seiya-de-pegaso",
@@ -874,7 +1054,19 @@
           "ancho": 1199,
           "alto": 1312
         }
-      ]
+      ],
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/seiya-de-pegaso/53e40cdc1d25/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/seiya-de-pegaso/af0e13c7e9b9/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     },
     {
       "id": "ikki-de-fenix",
@@ -916,7 +1108,19 @@
           "ancho": 1500,
           "alto": 1049
         }
-      ]
+      ],
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/ikki-de-fenix/fcd9b7290f61/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/ikki-de-fenix/461a6d397860/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     },
     {
       "id": "shun-de-andromeda",
@@ -958,7 +1162,19 @@
           "ancho": 1199,
           "alto": 1312
         }
-      ]
+      ],
+      "vista360": {
+        "hombre": {
+          "manifest": "vista360/shun-de-andromeda/54127710016d/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        },
+        "mujer": {
+          "manifest": "vista360/shun-de-andromeda/22a4d9b7016c/manifest.json",
+          "talla": "M",
+          "nota": "Vista 360° de referencia en talla M. Las medidas de la prenda son referenciales."
+        }
+      }
     }
   ],
   "avatares": [],

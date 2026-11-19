@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "id": "goku-super-saiyajin-blue",
+ "revision": "979c8c58dcf7",
+ "variante": {
+  "corte": "hombre",
+  "talla": "M",
+  "color": "negro"
+ },
+ "estado": "generado",
+ "vista": {
+  "nombre": "Vista 360°",
+  "tipo": "secuencia",
+  "referencial": true,
+  "aviso": "Vista de referencia en talla M; las medidas de la prenda son referenciales."
+ },
+ "poster": "poster-fcdbf99f2c.webp",
+ "cuadros": {
+  "ancho": 720,
+  "alto": 900,
+  "cantidad": 24,
+  "azimutes_grados": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "inicio_indice": 12,
+  "archivos": [
+   "360/hombre-m-negro/f000-abc5f4b9ab.webp",
+   "360/hombre-m-negro/f001-da2c0cf6bb.webp",
+   "360/hombre-m-negro/f002-a282aa5bb5.webp",
+   "360/hombre-m-negro/f003-b7b69dd767.webp",
+   "360/hombre-m-negro/f004-6acd6743c8.webp",
+   "360/hombre-m-negro/f005-f7b85ceceb.webp",
+   "360/hombre-m-negro/f006-8d830bab7a.webp",
+   "360/hombre-m-negro/f007-4336191246.webp",
+   "360/hombre-m-negro/f008-04bd329d7b.webp",
+   "360/hombre-m-negro/f009-bbb1752cfb.webp",
+   "360/hombre-m-negro/f010-d0291f36a6.webp",
+   "360/hombre-m-negro/f011-05ab24c6bb.webp",
+   "360/hombre-m-negro/f012-187d4cc761.webp",
+   "360/hombre-m-negro/f013-ad33b9a872.webp",
+   "360/hombre-m-negro/f014-9d7aa2d6c0.webp",
+   "360/hombre-m-negro/f015-f1279bd1ab.webp",
+   "360/hombre-m-negro/f016-d4da86707f.webp",
+   "360/hombre-m-negro/f017-86840cd0a2.webp",
+   "360/hombre-m-negro/f018-c9275950a9.webp",
+   "360/hombre-m-negro/f019-ecacaba05a.webp",
+   "360/hombre-m-negro/f020-1900a32240.webp",
+   "360/hombre-m-negro/f021-d7bd04c128.webp",
+   "360/hombre-m-negro/f022-e68f798e8b.webp",
+   "360/hombre-m-negro/f023-02c07c01fe.webp"
+  ]
+ },
+ "detalle": {
+  "espalda": {
+   "archivo": "detalle/hombre-m-negro/espalda-5af6069678.webp",
+   "ancho_px": 916,
+   "alto_px": 1280,
+   "ancho_cm": 27.068,
+   "alto_cm": 37.812
+  },
+  "pecho_pequeno": {
+   "archivo": "detalle/hombre-m-negro/pecho_pequeno-f8986cb6aa.webp",
+   "ancho_px": 1126,
+   "alto_px": 1280,
+   "ancho_cm": 9.906,
+   "alto_cm": 11.261
+  }
+ }
+}

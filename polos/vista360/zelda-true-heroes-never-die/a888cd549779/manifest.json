@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "id": "zelda-true-heroes-never-die",
+ "revision": "a888cd549779",
+ "variante": {
+  "corte": "mujer",
+  "talla": "M",
+  "color": "negro"
+ },
+ "estado": "generado",
+ "vista": {
+  "nombre": "Vista 360°",
+  "tipo": "secuencia",
+  "referencial": true,
+  "aviso": "Vista de referencia en talla M; las medidas de la prenda son referenciales."
+ },
+ "poster": "poster-e82350fba9.webp",
+ "cuadros": {
+  "ancho": 720,
+  "alto": 900,
+  "cantidad": 24,
+  "azimutes_grados": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "inicio_indice": 12,
+  "archivos": [
+   "360/mujer-m-negro/f000-0f25cd2dab.webp",
+   "360/mujer-m-negro/f001-0113f27b5f.webp",
+   "360/mujer-m-negro/f002-a565b50ba4.webp",
+   "360/mujer-m-negro/f003-4232ed92bc.webp",
+   "360/mujer-m-negro/f004-7067d44ec4.webp",
+   "360/mujer-m-negro/f005-c8b7f1dddf.webp",
+   "360/mujer-m-negro/f006-6654b34dd3.webp",
+   "360/mujer-m-negro/f007-94ba4b7256.webp",
+   "360/mujer-m-negro/f008-815c50ed4b.webp",
+   "360/mujer-m-negro/f009-3e758686c2.webp",
+   "360/mujer-m-negro/f010-7faf28500e.webp",
+   "360/mujer-m-negro/f011-a45928dbea.webp",
+   "360/mujer-m-negro/f012-57c7431727.webp",
+   "360/mujer-m-negro/f013-8094ec9e43.webp",
+   "360/mujer-m-negro/f014-427448f4f9.webp",
+   "360/mujer-m-negro/f015-ed6ffa5328.webp",
+   "360/mujer-m-negro/f016-49c407e6f5.webp",
+   "360/mujer-m-negro/f017-939edfdbca.webp",
+   "360/mujer-m-negro/f018-92ccb963bd.webp",
+   "360/mujer-m-negro/f019-38adf7b564.webp",
+   "360/mujer-m-negro/f020-3e33dcc706.webp",
+   "360/mujer-m-negro/f021-015874c1da.webp",
+   "360/mujer-m-negro/f022-7c6dca50e6.webp",
+   "360/mujer-m-negro/f023-7a495181f7.webp"
+  ]
+ },
+ "detalle": {
+  "pecho": {
+   "archivo": "detalle/mujer-m-negro/pecho-ca77cb7c11.webp",
+   "ancho_px": 953,
+   "alto_px": 1280,
+   "ancho_cm": 22.073,
+   "alto_cm": 29.642
+  },
+  "espalda_alta": {
+   "archivo": "detalle/mujer-m-negro/espalda_alta-992ccb0eba.webp",
+   "ancho_px": 773,
+   "alto_px": 767,
+   "ancho_cm": 6.545,
+   "alto_cm": 6.494
+  }
+ }
+}

@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "id": "zelda-true-heroes-never-die",
+ "revision": "756986e3c6b8",
+ "variante": {
+  "corte": "hombre",
+  "talla": "M",
+  "color": "negro"
+ },
+ "estado": "generado",
+ "vista": {
+  "nombre": "Vista 360°",
+  "tipo": "secuencia",
+  "referencial": true,
+  "aviso": "Vista de referencia en talla M; las medidas de la prenda son referenciales."
+ },
+ "poster": "poster-b31f273309.webp",
+ "cuadros": {
+  "ancho": 720,
+  "alto": 900,
+  "cantidad": 24,
+  "azimutes_grados": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "inicio_indice": 12,
+  "archivos": [
+   "360/hombre-m-negro/f000-f29db48324.webp",
+   "360/hombre-m-negro/f001-6bf2e03585.webp",
+   "360/hombre-m-negro/f002-714eb7c289.webp",
+   "360/hombre-m-negro/f003-816f47f197.webp",
+   "360/hombre-m-negro/f004-3cfcbc9d05.webp",
+   "360/hombre-m-negro/f005-2334849627.webp",
+   "360/hombre-m-negro/f006-b78f6cae9d.webp",
+   "360/hombre-m-negro/f007-e6adbda44d.webp",
+   "360/hombre-m-negro/f008-e8924f78ce.webp",
+   "360/hombre-m-negro/f009-4eda64d526.webp",
+   "360/hombre-m-negro/f010-fae6985315.webp",
+   "360/hombre-m-negro/f011-68fd71f3fd.webp",
+   "360/hombre-m-negro/f012-e930aa3de6.webp",
+   "360/hombre-m-negro/f013-6669d50a24.webp",
+   "360/hombre-m-negro/f014-035c293c74.webp",
+   "360/hombre-m-negro/f015-7e06e9dbcf.webp",
+   "360/hombre-m-negro/f016-890c8af79a.webp",
+   "360/hombre-m-negro/f017-75bee6079d.webp",
+   "360/hombre-m-negro/f018-43a5f1eef6.webp",
+   "360/hombre-m-negro/f019-bb4d9bb957.webp",
+   "360/hombre-m-negro/f020-f4dd237c3f.webp",
+   "360/hombre-m-negro/f021-a2461ac473.webp",
+   "360/hombre-m-negro/f022-b9575cff27.webp",
+   "360/hombre-m-negro/f023-adc8f83225.webp"
+  ]
+ },
+ "detalle": {
+  "pecho": {
+   "archivo": "detalle/hombre-m-negro/pecho-614811d1f3.webp",
+   "ancho_px": 953,
+   "alto_px": 1280,
+   "ancho_cm": 25.51,
+   "alto_cm": 34.256
+  },
+  "espalda_alta": {
+   "archivo": "detalle/hombre-m-negro/espalda_alta-bebf1a1608.webp",
+   "ancho_px": 893,
+   "alto_px": 887,
+   "ancho_cm": 7.561,
+   "alto_cm": 7.51
+  }
+ }
+}

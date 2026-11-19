@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "id": "ikki-de-fenix",
+ "revision": "461a6d397860",
+ "variante": {
+  "corte": "mujer",
+  "talla": "M",
+  "color": "negro"
+ },
+ "estado": "generado",
+ "vista": {
+  "nombre": "Vista 360°",
+  "tipo": "secuencia",
+  "referencial": true,
+  "aviso": "Vista de referencia en talla M; las medidas de la prenda son referenciales."
+ },
+ "poster": "poster-1fa66cdce1.webp",
+ "cuadros": {
+  "ancho": 720,
+  "alto": 900,
+  "cantidad": 24,
+  "azimutes_grados": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "inicio_indice": 12,
+  "archivos": [
+   "360/mujer-m-negro/f000-9dc0c618c8.webp",
+   "360/mujer-m-negro/f001-4203289426.webp",
+   "360/mujer-m-negro/f002-e456662f65.webp",
+   "360/mujer-m-negro/f003-14c4fc9810.webp",
+   "360/mujer-m-negro/f004-3481c5e8e5.webp",
+   "360/mujer-m-negro/f005-a54f0d56d3.webp",
+   "360/mujer-m-negro/f006-3d59c3fe74.webp",
+   "360/mujer-m-negro/f007-1da11dfea7.webp",
+   "360/mujer-m-negro/f008-8ec397b45e.webp",
+   "360/mujer-m-negro/f009-318370a886.webp",
+   "360/mujer-m-negro/f010-c349f9597e.webp",
+   "360/mujer-m-negro/f011-15dd117fd7.webp",
+   "360/mujer-m-negro/f012-d703a7e7bd.webp",
+   "360/mujer-m-negro/f013-ff2f0e6416.webp",
+   "360/mujer-m-negro/f014-80de19d87f.webp",
+   "360/mujer-m-negro/f015-64d95f3deb.webp",
+   "360/mujer-m-negro/f016-6d4c4bdf3a.webp",
+   "360/mujer-m-negro/f017-02c6d70cad.webp",
+   "360/mujer-m-negro/f018-143464d46d.webp",
+   "360/mujer-m-negro/f019-2ca35f91be.webp",
+   "360/mujer-m-negro/f020-207a27ec9f.webp",
+   "360/mujer-m-negro/f021-658013fb86.webp",
+   "360/mujer-m-negro/f022-b3fac269e8.webp",
+   "360/mujer-m-negro/f023-e1da4c14b5.webp"
+  ]
+ },
+ "detalle": {
+  "espalda_alta": {
+   "archivo": "detalle/mujer-m-negro/espalda_alta-4cc2991c3d.webp",
+   "ancho_px": 518,
+   "alto_px": 1280,
+   "ancho_cm": 4.403,
+   "alto_cm": 10.888
+  },
+  "pecho": {
+   "archivo": "detalle/mujer-m-negro/pecho-f7b46cb1cc.webp",
+   "ancho_px": 906,
+   "alto_px": 1280,
+   "ancho_cm": 22.09,
+   "alto_cm": 31.2
+  }
+ }
+}

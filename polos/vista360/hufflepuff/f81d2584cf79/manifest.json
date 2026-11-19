@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "id": "hufflepuff",
+ "revision": "f81d2584cf79",
+ "variante": {
+  "corte": "mujer",
+  "talla": "M",
+  "color": "negro"
+ },
+ "estado": "generado",
+ "vista": {
+  "nombre": "Vista 360°",
+  "tipo": "secuencia",
+  "referencial": true,
+  "aviso": "Vista de referencia en talla M; las medidas de la prenda son referenciales."
+ },
+ "poster": "poster-b65085a809.webp",
+ "cuadros": {
+  "ancho": 720,
+  "alto": 900,
+  "cantidad": 24,
+  "azimutes_grados": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "inicio_indice": 12,
+  "archivos": [
+   "360/mujer-m-negro/f000-cae907fe8d.webp",
+   "360/mujer-m-negro/f001-bcafc0b655.webp",
+   "360/mujer-m-negro/f002-348499f73a.webp",
+   "360/mujer-m-negro/f003-231c546e14.webp",
+   "360/mujer-m-negro/f004-5cc3e0c66b.webp",
+   "360/mujer-m-negro/f005-7abea70cd1.webp",
+   "360/mujer-m-negro/f006-3f4c8269a1.webp",
+   "360/mujer-m-negro/f007-1ad10b9c08.webp",
+   "360/mujer-m-negro/f008-38c3c0cbb6.webp",
+   "360/mujer-m-negro/f009-b85502d964.webp",
+   "360/mujer-m-negro/f010-f0fbc39450.webp",
+   "360/mujer-m-negro/f011-da82411375.webp",
+   "360/mujer-m-negro/f012-8e84f01584.webp",
+   "360/mujer-m-negro/f013-43c16c8cdb.webp",
+   "360/mujer-m-negro/f014-994c0c1f87.webp",
+   "360/mujer-m-negro/f015-96b452aa65.webp",
+   "360/mujer-m-negro/f016-a5f9fa5ad5.webp",
+   "360/mujer-m-negro/f017-45a865a274.webp",
+   "360/mujer-m-negro/f018-1e9d471d55.webp",
+   "360/mujer-m-negro/f019-2d7801baf7.webp",
+   "360/mujer-m-negro/f020-70cb9b6f22.webp",
+   "360/mujer-m-negro/f021-167cf24c51.webp",
+   "360/mujer-m-negro/f022-7b260d5410.webp",
+   "360/mujer-m-negro/f023-8dde598735.webp"
+  ]
+ },
+ "detalle": {
+  "espalda": {
+   "archivo": "detalle/mujer-m-negro/espalda-99e80ca383.webp",
+   "ancho_px": 747,
+   "alto_px": 1280,
+   "ancho_cm": 18.796,
+   "alto_cm": 32.173
+  },
+  "pecho_pequeno": {
+   "archivo": "detalle/mujer-m-negro/pecho_pequeno-b7fc02f776.webp",
+   "ancho_px": 599,
+   "alto_px": 773,
+   "ancho_cm": 5.072,
+   "alto_cm": 6.545
+  }
+ }
+}

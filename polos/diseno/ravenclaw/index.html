@@ -33,10 +33,10 @@
   <link rel="stylesheet" href="fonts.css?v=1">
   <link rel="stylesheet" href="../src/styles.css?v=69">
   <link rel="stylesheet" href="polos.css?v=53">
-  <link rel="stylesheet" href="seo.css?v=2">
+  <link rel="stylesheet" href="seo.css?v=3">
   <link rel="stylesheet" href="../src/polos-bridge.css?v=1">
 </head>
-<body class="polos-store" data-seo-page="product" data-catalog-revision="e69105030ddb">
+<body class="polos-store" data-seo-page="product" data-catalog-revision="944eccb0dae3">
   <header class="cab" id="cab">
     <button class="menu-cab" id="abrirMenu" type="button" aria-label="Abrir el menú" aria-haspopup="dialog">
       <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7H20M4 12H20M4 17H20"/></svg>
@@ -211,6 +211,11 @@
     </div>
     <div class="ficha-producto">
       <section class="ficha-galeria" aria-label="Fotos del polo">
+        <div class="ficha-360" id="ficha360" hidden>
+          <button id="ver360" type="button" class="btn" aria-expanded="false" aria-controls="visor360Caja">Ver en 360°</button>
+          <div id="visor360Caja" hidden></div>
+          <p class="nota" id="nota360" hidden></p>
+        </div>
         <div class="ficha-fotos" id="fotosFicha"><a class="ficha-foto" href="img/harry-potter/ravenclaw/01-espalda-baranda.webp"><img src="img/responsive/90531f0fda206dc4-360w.webp" srcset="img/responsive/90531f0fda206dc4-180w.webp 180w, img/responsive/90531f0fda206dc4-360w.webp 360w, img/responsive/90531f0fda206dc4-720w.webp 720w, img/harry-potter/ravenclaw/01-espalda-baranda.webp 765w" sizes="(max-width:700px) 90vw, 400px" alt="Ravenclaw · Escudo del águila · Espalda baranda · Gabriel" width="765" height="1024" loading="eager" decoding="async" fetchpriority="high"></a><a class="ficha-foto" href="img/harry-potter/ravenclaw/02-frente-sentada-en-piedra.webp"><img src="img/responsive/a0a3438104b6c986-360w.webp" srcset="img/responsive/a0a3438104b6c986-180w.webp 180w, img/responsive/a0a3438104b6c986-360w.webp 360w, img/responsive/a0a3438104b6c986-720w.webp 720w, img/harry-potter/ravenclaw/02-frente-sentada-en-piedra.webp 763w" sizes="(max-width:700px) 90vw, 400px" alt="Ravenclaw · Escudo del águila · Frente sentada en piedra · Sofía" width="763" height="1024" loading="lazy" decoding="async"></a><a class="ficha-foto" href="img/harry-potter/ravenclaw/03-frente-caminando.webp"><img src="img/responsive/b988f42934ee8a7c-360w.webp" srcset="img/responsive/b988f42934ee8a7c-180w.webp 180w, img/responsive/b988f42934ee8a7c-360w.webp 360w, img/harry-potter/ravenclaw/03-frente-caminando.webp 595w" sizes="(max-width:700px) 90vw, 400px" alt="Ravenclaw · Escudo del águila · Frente caminando · Gabriel" width="595" height="652" loading="lazy" decoding="async"></a><a class="ficha-foto" href="img/harry-potter/ravenclaw/04-espalda-junto-a-columna.webp"><img src="img/responsive/68e6f29386e4899e-360w.webp" srcset="img/responsive/68e6f29386e4899e-180w.webp 180w, img/responsive/68e6f29386e4899e-360w.webp 360w, img/harry-potter/ravenclaw/04-espalda-junto-a-columna.webp 595w" sizes="(max-width:700px) 90vw, 400px" alt="Ravenclaw · Escudo del águila · Espalda junto a columna · Sofía" width="595" height="652" loading="lazy" decoding="async"></a></div>
         <button id="masFotos" type="button" class="mas-fotos" hidden></button>
         <p class="nota">Imágenes ilustrativas de la sesión y del diseño. Toca una foto para ampliarla.</p>
@@ -446,7 +451,7 @@
   <script src="catalogo-core.js?v=3"></script>
   <script src="seo-core.js?v=2"></script>
   <script src="imagenes.js?v=1be53fd98e2a"></script>
-  <script src="polos.js?v=66"></script>
+  <script src="polos.js?v=73"></script>
   <!-- Medicion propia y anonima (panel privado): visitas, polos vistos, carrito y corazones.
        En Polos NO se carga el pixel de Meta: track.js lo omite cuando window.fbq ya existe.
        Para activarlo aqui, quitar la linea del fbq vacio. -->

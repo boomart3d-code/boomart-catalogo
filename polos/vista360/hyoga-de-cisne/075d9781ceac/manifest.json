@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "id": "hyoga-de-cisne",
+ "revision": "075d9781ceac",
+ "variante": {
+  "corte": "mujer",
+  "talla": "M",
+  "color": "negro"
+ },
+ "estado": "generado",
+ "vista": {
+  "nombre": "Vista 360°",
+  "tipo": "secuencia",
+  "referencial": true,
+  "aviso": "Vista de referencia en talla M; las medidas de la prenda son referenciales."
+ },
+ "poster": "poster-0c21bf8bfc.webp",
+ "cuadros": {
+  "ancho": 720,
+  "alto": 900,
+  "cantidad": 24,
+  "azimutes_grados": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "inicio_indice": 12,
+  "archivos": [
+   "360/mujer-m-negro/f000-913f58f8e5.webp",
+   "360/mujer-m-negro/f001-84e2e86e9a.webp",
+   "360/mujer-m-negro/f002-2e52d8f4a8.webp",
+   "360/mujer-m-negro/f003-f1d28f9a7e.webp",
+   "360/mujer-m-negro/f004-271546ddf4.webp",
+   "360/mujer-m-negro/f005-772e6213a5.webp",
+   "360/mujer-m-negro/f006-319bf87818.webp",
+   "360/mujer-m-negro/f007-2bae9db8a4.webp",
+   "360/mujer-m-negro/f008-773f2837b1.webp",
+   "360/mujer-m-negro/f009-54f5afcb57.webp",
+   "360/mujer-m-negro/f010-ac8c2d6695.webp",
+   "360/mujer-m-negro/f011-64c2f72e2a.webp",
+   "360/mujer-m-negro/f012-34625c9156.webp",
+   "360/mujer-m-negro/f013-39fba78ab5.webp",
+   "360/mujer-m-negro/f014-930fe7a888.webp",
+   "360/mujer-m-negro/f015-cfee796881.webp",
+   "360/mujer-m-negro/f016-3f15bbf6ca.webp",
+   "360/mujer-m-negro/f017-3dcbe19362.webp",
+   "360/mujer-m-negro/f018-ca11d0bf4e.webp",
+   "360/mujer-m-negro/f019-58b0a87d89.webp",
+   "360/mujer-m-negro/f020-75c23622d7.webp",
+   "360/mujer-m-negro/f021-da9768905c.webp",
+   "360/mujer-m-negro/f022-e42edc6c8c.webp",
+   "360/mujer-m-negro/f023-ae8a169896.webp"
+  ]
+ },
+ "detalle": {
+  "espalda": {
+   "archivo": "detalle/mujer-m-negro/espalda-496bf82451.webp",
+   "ancho_px": 741,
+   "alto_px": 1280,
+   "ancho_cm": 18.94,
+   "alto_cm": 32.724
+  },
+  "pecho_pequeno": {
+   "archivo": "detalle/mujer-m-negro/pecho_pequeno-66e88f16d6.webp",
+   "ancho_px": 898,
+   "alto_px": 1280,
+   "ancho_cm": 8.509,
+   "alto_cm": 12.133
+  }
+ }
+}

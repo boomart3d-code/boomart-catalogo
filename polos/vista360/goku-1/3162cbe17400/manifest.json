@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "id": "goku-1",
+ "revision": "3162cbe17400",
+ "variante": {
+  "corte": "mujer",
+  "talla": "M",
+  "color": "blanco"
+ },
+ "estado": "generado",
+ "vista": {
+  "nombre": "Vista 360°",
+  "tipo": "secuencia",
+  "referencial": true,
+  "aviso": "Vista de referencia en talla M; las medidas de la prenda son referenciales."
+ },
+ "poster": "poster-778c62488d.webp",
+ "cuadros": {
+  "ancho": 720,
+  "alto": 900,
+  "cantidad": 24,
+  "azimutes_grados": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "inicio_indice": 12,
+  "archivos": [
+   "360/mujer-m-blanco/f000-5a5c7949ef.webp",
+   "360/mujer-m-blanco/f001-75e668cc63.webp",
+   "360/mujer-m-blanco/f002-985cdd9d60.webp",
+   "360/mujer-m-blanco/f003-ee89483617.webp",
+   "360/mujer-m-blanco/f004-ff42221126.webp",
+   "360/mujer-m-blanco/f005-8f18aa33d5.webp",
+   "360/mujer-m-blanco/f006-0cd908e2eb.webp",
+   "360/mujer-m-blanco/f007-8dbc1ac60c.webp",
+   "360/mujer-m-blanco/f008-acaafe868c.webp",
+   "360/mujer-m-blanco/f009-95238d2797.webp",
+   "360/mujer-m-blanco/f010-2cd170b7ac.webp",
+   "360/mujer-m-blanco/f011-becdb6fa2b.webp",
+   "360/mujer-m-blanco/f012-dcdca733d7.webp",
+   "360/mujer-m-blanco/f013-2bf11e925c.webp",
+   "360/mujer-m-blanco/f014-9f6dc6d304.webp",
+   "360/mujer-m-blanco/f015-15b3344b13.webp",
+   "360/mujer-m-blanco/f016-e459f19d96.webp",
+   "360/mujer-m-blanco/f017-38dbe2d481.webp",
+   "360/mujer-m-blanco/f018-8ccd4edbf9.webp",
+   "360/mujer-m-blanco/f019-8bddc1024e.webp",
+   "360/mujer-m-blanco/f020-fd78ae71c3.webp",
+   "360/mujer-m-blanco/f021-64e80b676b.webp",
+   "360/mujer-m-blanco/f022-0787c5eb32.webp",
+   "360/mujer-m-blanco/f023-cc58e3fee8.webp"
+  ]
+ },
+ "detalle": {
+  "espalda": {
+   "archivo": "detalle/mujer-m-blanco/espalda-d7fa885623.webp",
+   "ancho_px": 896,
+   "alto_px": 1280,
+   "ancho_cm": 22.919,
+   "alto_cm": 32.724
+  },
+  "pecho_pequeno": {
+   "archivo": "detalle/mujer-m-blanco/pecho_pequeno-e02a2cfe7a.webp",
+   "ancho_px": 963,
+   "alto_px": 988,
+   "ancho_cm": 8.153,
+   "alto_cm": 8.365
+  }
+ }
+}

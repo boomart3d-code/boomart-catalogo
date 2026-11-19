@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "id": "hogwarts-blanco",
+ "revision": "963e6de124bd",
+ "variante": {
+  "corte": "mujer",
+  "talla": "M",
+  "color": "blanco"
+ },
+ "estado": "generado",
+ "vista": {
+  "nombre": "Vista 360°",
+  "tipo": "secuencia",
+  "referencial": true,
+  "aviso": "Vista de referencia en talla M; las medidas de la prenda son referenciales."
+ },
+ "poster": "poster-7f842d52a0.webp",
+ "cuadros": {
+  "ancho": 720,
+  "alto": 900,
+  "cantidad": 24,
+  "azimutes_grados": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "inicio_indice": 12,
+  "archivos": [
+   "360/mujer-m-blanco/f000-b867d37a5e.webp",
+   "360/mujer-m-blanco/f001-ec99f4e278.webp",
+   "360/mujer-m-blanco/f002-1abc7d1bae.webp",
+   "360/mujer-m-blanco/f003-6c99f233ef.webp",
+   "360/mujer-m-blanco/f004-8b547c98ff.webp",
+   "360/mujer-m-blanco/f005-12fded6115.webp",
+   "360/mujer-m-blanco/f006-c50dae361b.webp",
+   "360/mujer-m-blanco/f007-d0d1929d06.webp",
+   "360/mujer-m-blanco/f008-903a535997.webp",
+   "360/mujer-m-blanco/f009-f13dc40a1e.webp",
+   "360/mujer-m-blanco/f010-bc2602d473.webp",
+   "360/mujer-m-blanco/f011-affb988a3d.webp",
+   "360/mujer-m-blanco/f012-8bbbf77022.webp",
+   "360/mujer-m-blanco/f013-e1bc325612.webp",
+   "360/mujer-m-blanco/f014-c4f6368322.webp",
+   "360/mujer-m-blanco/f015-0493729ea8.webp",
+   "360/mujer-m-blanco/f016-08e9b42246.webp",
+   "360/mujer-m-blanco/f017-55193a5358.webp",
+   "360/mujer-m-blanco/f018-924b77f555.webp",
+   "360/mujer-m-blanco/f019-76614b499a.webp",
+   "360/mujer-m-blanco/f020-1c260c88fb.webp",
+   "360/mujer-m-blanco/f021-ce855074ae.webp",
+   "360/mujer-m-blanco/f022-f858a2f92a.webp",
+   "360/mujer-m-blanco/f023-03bcf5f29e.webp"
+  ]
+ },
+ "detalle": {
+  "pecho": {
+   "archivo": "detalle/mujer-m-blanco/pecho-c43be26a87.webp",
+   "ancho_px": 1251,
+   "alto_px": 1280,
+   "ancho_cm": 24.003,
+   "alto_cm": 24.57
+  },
+  "espalda_alta": {
+   "archivo": "detalle/mujer-m-blanco/espalda_alta-afef322efa.webp",
+   "ancho_px": 1085,
+   "alto_px": 521,
+   "ancho_cm": 9.186,
+   "alto_cm": 4.411
+  }
+ }
+}

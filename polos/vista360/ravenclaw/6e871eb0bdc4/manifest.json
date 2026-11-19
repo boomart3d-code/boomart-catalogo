@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "id": "ravenclaw",
+ "revision": "6e871eb0bdc4",
+ "variante": {
+  "corte": "mujer",
+  "talla": "M",
+  "color": "blanco"
+ },
+ "estado": "generado",
+ "vista": {
+  "nombre": "Vista 360°",
+  "tipo": "secuencia",
+  "referencial": true,
+  "aviso": "Vista de referencia en talla M; las medidas de la prenda son referenciales."
+ },
+ "poster": "poster-945c942316.webp",
+ "cuadros": {
+  "ancho": 720,
+  "alto": 900,
+  "cantidad": 24,
+  "azimutes_grados": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "inicio_indice": 12,
+  "archivos": [
+   "360/mujer-m-blanco/f000-73342796f0.webp",
+   "360/mujer-m-blanco/f001-8336507734.webp",
+   "360/mujer-m-blanco/f002-24a17432ba.webp",
+   "360/mujer-m-blanco/f003-10b47bf38d.webp",
+   "360/mujer-m-blanco/f004-9e783a635f.webp",
+   "360/mujer-m-blanco/f005-8a3ef9227e.webp",
+   "360/mujer-m-blanco/f006-061f2ea177.webp",
+   "360/mujer-m-blanco/f007-a231f58156.webp",
+   "360/mujer-m-blanco/f008-de0966861a.webp",
+   "360/mujer-m-blanco/f009-3876bd7ccf.webp",
+   "360/mujer-m-blanco/f010-99f300198e.webp",
+   "360/mujer-m-blanco/f011-09bb7b6443.webp",
+   "360/mujer-m-blanco/f012-6c673c5235.webp",
+   "360/mujer-m-blanco/f013-3639474ddb.webp",
+   "360/mujer-m-blanco/f014-a0cfcf8aa8.webp",
+   "360/mujer-m-blanco/f015-f6c847b2c5.webp",
+   "360/mujer-m-blanco/f016-d3da0a97bc.webp",
+   "360/mujer-m-blanco/f017-b791061fe0.webp",
+   "360/mujer-m-blanco/f018-e4074f1559.webp",
+   "360/mujer-m-blanco/f019-71f4448a62.webp",
+   "360/mujer-m-blanco/f020-b5a5364168.webp",
+   "360/mujer-m-blanco/f021-50cf7eb620.webp",
+   "360/mujer-m-blanco/f022-e31b3d83b2.webp",
+   "360/mujer-m-blanco/f023-66b06f97d0.webp"
+  ]
+ },
+ "detalle": {
+  "pecho_pequeno": {
+   "archivo": "detalle/mujer-m-blanco/pecho_pequeno-e1f9f0e1b9.webp",
+   "ancho_px": 889,
+   "alto_px": 998,
+   "ancho_cm": 7.527,
+   "alto_cm": 8.45
+  },
+  "espalda": {
+   "archivo": "detalle/mujer-m-blanco/espalda-c443007288.webp",
+   "ancho_px": 1007,
+   "alto_px": 1280,
+   "ancho_cm": 24.545,
+   "alto_cm": 31.183
+  }
+ }
+}

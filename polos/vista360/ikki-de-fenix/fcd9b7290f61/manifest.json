@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "id": "ikki-de-fenix",
+ "revision": "fcd9b7290f61",
+ "variante": {
+  "corte": "hombre",
+  "talla": "M",
+  "color": "negro"
+ },
+ "estado": "generado",
+ "vista": {
+  "nombre": "Vista 360°",
+  "tipo": "secuencia",
+  "referencial": true,
+  "aviso": "Vista de referencia en talla M; las medidas de la prenda son referenciales."
+ },
+ "poster": "poster-bf7b9f3196.webp",
+ "cuadros": {
+  "ancho": 720,
+  "alto": 900,
+  "cantidad": 24,
+  "azimutes_grados": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "inicio_indice": 12,
+  "archivos": [
+   "360/hombre-m-negro/f000-f661241258.webp",
+   "360/hombre-m-negro/f001-a00d5416db.webp",
+   "360/hombre-m-negro/f002-bac305a64b.webp",
+   "360/hombre-m-negro/f003-6ab47ed45f.webp",
+   "360/hombre-m-negro/f004-3c9678105f.webp",
+   "360/hombre-m-negro/f005-81bb95638d.webp",
+   "360/hombre-m-negro/f006-6d8c9374b8.webp",
+   "360/hombre-m-negro/f007-a2e6ccb618.webp",
+   "360/hombre-m-negro/f008-8cfa85bf50.webp",
+   "360/hombre-m-negro/f009-1c81c62baf.webp",
+   "360/hombre-m-negro/f010-8db80ffe59.webp",
+   "360/hombre-m-negro/f011-02469ef547.webp",
+   "360/hombre-m-negro/f012-8295ad0c23.webp",
+   "360/hombre-m-negro/f013-f0fd03d4a5.webp",
+   "360/hombre-m-negro/f014-8adff70fa7.webp",
+   "360/hombre-m-negro/f015-30c06ed924.webp",
+   "360/hombre-m-negro/f016-18975208fa.webp",
+   "360/hombre-m-negro/f017-b1c04c6f38.webp",
+   "360/hombre-m-negro/f018-44e6616b6a.webp",
+   "360/hombre-m-negro/f019-310ed7ab64.webp",
+   "360/hombre-m-negro/f020-3898fa98dc.webp",
+   "360/hombre-m-negro/f021-70e16bcc11.webp",
+   "360/hombre-m-negro/f022-90f41715e8.webp",
+   "360/hombre-m-negro/f023-522624f941.webp"
+  ]
+ },
+ "detalle": {
+  "espalda_alta": {
+   "archivo": "detalle/hombre-m-negro/espalda_alta-7deb3fa47b.webp",
+   "ancho_px": 517,
+   "alto_px": 1280,
+   "ancho_cm": 5.088,
+   "alto_cm": 12.59
+  },
+  "pecho": {
+   "archivo": "detalle/hombre-m-negro/pecho-4066f0a535.webp",
+   "ancho_px": 906,
+   "alto_px": 1280,
+   "ancho_cm": 25.527,
+   "alto_cm": 36.051
+  }
+ }
+}

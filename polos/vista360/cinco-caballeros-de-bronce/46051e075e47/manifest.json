@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "id": "cinco-caballeros-de-bronce",
+ "revision": "46051e075e47",
+ "variante": {
+  "corte": "hombre",
+  "talla": "M",
+  "color": "negro"
+ },
+ "estado": "generado",
+ "vista": {
+  "nombre": "Vista 360°",
+  "tipo": "secuencia",
+  "referencial": true,
+  "aviso": "Vista de referencia en talla M; las medidas de la prenda son referenciales."
+ },
+ "poster": "poster-58728c7d02.webp",
+ "cuadros": {
+  "ancho": 720,
+  "alto": 900,
+  "cantidad": 24,
+  "azimutes_grados": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "inicio_indice": 12,
+  "archivos": [
+   "360/hombre-m-negro/f000-4722b15727.webp",
+   "360/hombre-m-negro/f001-18c2c9fb61.webp",
+   "360/hombre-m-negro/f002-143b6eff2b.webp",
+   "360/hombre-m-negro/f003-8105f74293.webp",
+   "360/hombre-m-negro/f004-a5245a899f.webp",
+   "360/hombre-m-negro/f005-d81dd6aac2.webp",
+   "360/hombre-m-negro/f006-7e83297d9b.webp",
+   "360/hombre-m-negro/f007-394dd733f1.webp",
+   "360/hombre-m-negro/f008-935f695929.webp",
+   "360/hombre-m-negro/f009-c471481163.webp",
+   "360/hombre-m-negro/f010-722875dfdd.webp",
+   "360/hombre-m-negro/f011-9103e615ec.webp",
+   "360/hombre-m-negro/f012-6aa69196fa.webp",
+   "360/hombre-m-negro/f013-86efbc9415.webp",
+   "360/hombre-m-negro/f014-c34d6dcc98.webp",
+   "360/hombre-m-negro/f015-4ff24aa0c1.webp",
+   "360/hombre-m-negro/f016-705df124dc.webp",
+   "360/hombre-m-negro/f017-6e8137b0e3.webp",
+   "360/hombre-m-negro/f018-f83d9767af.webp",
+   "360/hombre-m-negro/f019-78ebbbed49.webp",
+   "360/hombre-m-negro/f020-bef6bf39b8.webp",
+   "360/hombre-m-negro/f021-4cbbce0225.webp",
+   "360/hombre-m-negro/f022-f44e9e8dc7.webp",
+   "360/hombre-m-negro/f023-6fcea5a160.webp"
+  ]
+ },
+ "detalle": {
+  "espalda": {
+   "archivo": "detalle/hombre-m-negro/espalda-853bf12570.webp",
+   "ancho_px": 1137,
+   "alto_px": 1280,
+   "ancho_cm": 28.363,
+   "alto_cm": 31.911
+  },
+  "pecho_pequeno": {
+   "archivo": "detalle/hombre-m-negro/pecho_pequeno-85a4acbfcd.webp",
+   "ancho_px": 817,
+   "alto_px": 1280,
+   "ancho_cm": 7.637,
+   "alto_cm": 11.972
+  }
+ }
+}

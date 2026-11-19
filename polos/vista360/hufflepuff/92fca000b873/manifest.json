@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "id": "hufflepuff",
+ "revision": "92fca000b873",
+ "variante": {
+  "corte": "hombre",
+  "talla": "M",
+  "color": "negro"
+ },
+ "estado": "generado",
+ "vista": {
+  "nombre": "Vista 360°",
+  "tipo": "secuencia",
+  "referencial": true,
+  "aviso": "Vista de referencia en talla M; las medidas de la prenda son referenciales."
+ },
+ "poster": "poster-af5e3e1a77.webp",
+ "cuadros": {
+  "ancho": 720,
+  "alto": 900,
+  "cantidad": 24,
+  "azimutes_grados": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "inicio_indice": 12,
+  "archivos": [
+   "360/hombre-m-negro/f000-f3f6477ec3.webp",
+   "360/hombre-m-negro/f001-bb0814b4e2.webp",
+   "360/hombre-m-negro/f002-f1996cfa05.webp",
+   "360/hombre-m-negro/f003-cf394e5df0.webp",
+   "360/hombre-m-negro/f004-adbafdb295.webp",
+   "360/hombre-m-negro/f005-08cdc34de0.webp",
+   "360/hombre-m-negro/f006-1971d1bdc5.webp",
+   "360/hombre-m-negro/f007-de7406dbf8.webp",
+   "360/hombre-m-negro/f008-2736c43d49.webp",
+   "360/hombre-m-negro/f009-da724e881e.webp",
+   "360/hombre-m-negro/f010-33960e11b9.webp",
+   "360/hombre-m-negro/f011-5df5a348d8.webp",
+   "360/hombre-m-negro/f012-e4daa4cff1.webp",
+   "360/hombre-m-negro/f013-dc51f575a6.webp",
+   "360/hombre-m-negro/f014-8077067338.webp",
+   "360/hombre-m-negro/f015-f2ad5c900c.webp",
+   "360/hombre-m-negro/f016-cbe98e2568.webp",
+   "360/hombre-m-negro/f017-bbfb979476.webp",
+   "360/hombre-m-negro/f018-3c21c4e072.webp",
+   "360/hombre-m-negro/f019-caf70e18a1.webp",
+   "360/hombre-m-negro/f020-15b5fb0ae5.webp",
+   "360/hombre-m-negro/f021-86529e23f6.webp",
+   "360/hombre-m-negro/f022-3a27e17489.webp",
+   "360/hombre-m-negro/f023-d028883606.webp"
+  ]
+ },
+ "detalle": {
+  "espalda": {
+   "archivo": "detalle/hombre-m-negro/espalda-6f68b86345.webp",
+   "ancho_px": 747,
+   "alto_px": 1280,
+   "ancho_cm": 21.717,
+   "alto_cm": 37.177
+  },
+  "pecho_pequeno": {
+   "archivo": "detalle/hombre-m-negro/pecho_pequeno-654b9c7bb8.webp",
+   "ancho_px": 693,
+   "alto_px": 894,
+   "ancho_cm": 5.867,
+   "alto_cm": 7.569
+  }
+ }
+}

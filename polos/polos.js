@@ -238,6 +238,60 @@
     $("masFotos").textContent = resto === 1 ? "Ver 1 foto más" : "Ver " + resto + " fotos más";
   }
 
+  // Vista 360°: aparece solo si el polo trae una secuencia para el corte elegido (campo vista360 de data/polos.json).
+  // El visor (JS y CSS) y sus imagenes se piden recien al pulsar el boton: abrir la tienda no descarga nada de esto.
+  let visor360 = null, carga360 = null;
+  const vista360De = (p) => {
+    const v = p && p.vista360;
+    if (!v) return null;
+    return corte ? v[corte] || null : Object.values(v)[0] || null;   // sin corte elegido se ofrece la unica secuencia disponible
+  };
+  function cerrar360() {
+    if (visor360) { visor360.cerrar(); visor360 = null; }
+    const caja = $("visor360Caja"), boton = $("ver360");
+    if (!caja || !boton) return;
+    caja.hidden = true;
+    boton.setAttribute("aria-expanded", "false");
+    boton.textContent = "Ver en 360°";
+  }
+  function pintar360() {
+    cerrar360();
+    const bloque = $("ficha360");
+    if (!bloque) return;
+    const v = vista360De(selected);
+    bloque.hidden = !v;
+    $("nota360").hidden = !v || !v.nota;
+    $("nota360").textContent = (v && v.nota) || "";
+  }
+  function cargarVisor360() {
+    if (window.Visor360) return Promise.resolve();
+    if (carga360) return carga360;
+    carga360 = new Promise((ok, mal) => {
+      const css = document.createElement("link");
+      css.rel = "stylesheet";
+      css.href = "visor360.css?v=6";
+      const js = document.createElement("script");
+      js.src = "visor360.js?v=7";
+      js.onload = ok;
+      js.onerror = () => { carga360 = null; mal(new Error("visor360")); };
+      document.head.append(css, js);
+    });
+    return carga360;
+  }
+  function alternar360() {
+    if (visor360) { cerrar360(); return; }
+    const v = vista360De(selected), boton = $("ver360");
+    if (!v) return;
+    boton.disabled = true;
+    cargarVisor360().then(() => {
+      $("visor360Caja").hidden = false;
+      visor360 = window.Visor360.abrir($("visor360Caja"), v.manifest);
+      boton.setAttribute("aria-expanded", "true");
+      boton.textContent = "Cerrar vista 360°";
+    }).catch(() => { boton.textContent = "No se pudo cargar el 360°. Reintentar"; })
+      .finally(() => { boton.disabled = false; });
+  }
+
   // Corte y talla se eligen con botones y cada polo se elige de nuevo. Solo viene marcado el corte
   // cuando el comprador ya eligio ver la coleccion en mujer o en hombre.
   let corte = "";
@@ -318,6 +372,7 @@
     const inicial = fotoInicial >= 0 ? Math.max(0, orden.indexOf(fotoInicial)) : 0;
     fotoInicial = -1;
     pintarFotos(product, orden, inicial);
+    pintar360();
     // Con el pack a medias se sugieren polos que aun no estan en el carrito; si no, otros de la misma coleccion.
     const pack = estadoPack();
     const otros = data.productos.filter(p => p !== product);
@@ -829,6 +884,7 @@
       if (Array.isArray(saved)) vistos = saved.filter(id => typeof id === "string").slice(0, 8);
     } catch { /* sin memoria: se empieza de cero */ }
     $("favoritoFicha").onclick = () => alternarFavorito(selected, "ficha", $("favoritoFicha"));
+    if ($("ver360")) $("ver360").onclick = alternar360;
     pintarContadorFavoritos();
     renderSizeGuide($("guiasCorte"));
     renderSizeGuide($("guiasPanel"));
@@ -873,6 +929,7 @@
       corte = event.target.value;
       if (talla && !medidasElegidas()) talla = "";
       pintarOpciones();
+      pintar360();
       $("corteFicha").querySelector("input:checked")?.focus();
     };
     $("tallasFicha").onchange = (event) => {
@@ -905,6 +962,7 @@
       $("cartToggle").click();
     };
     details.addEventListener("close", () => {
+      cerrar360();
       if (details.open || SEO.route(location.href, data.productos).type !== 'product') return;
       const quedarse = desdeGrilla;
       const theme = quedarse ? temaActual() : selected.tema;

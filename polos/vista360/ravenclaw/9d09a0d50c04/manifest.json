@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "id": "ravenclaw",
+ "revision": "9d09a0d50c04",
+ "variante": {
+  "corte": "hombre",
+  "talla": "M",
+  "color": "blanco"
+ },
+ "estado": "generado",
+ "vista": {
+  "nombre": "Vista 360°",
+  "tipo": "secuencia",
+  "referencial": true,
+  "aviso": "Vista de referencia en talla M; las medidas de la prenda son referenciales."
+ },
+ "poster": "poster-d1c85ec963.webp",
+ "cuadros": {
+  "ancho": 720,
+  "alto": 900,
+  "cantidad": 24,
+  "azimutes_grados": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "inicio_indice": 12,
+  "archivos": [
+   "360/hombre-m-blanco/f000-ddcd5daa01.webp",
+   "360/hombre-m-blanco/f001-fb57c35c24.webp",
+   "360/hombre-m-blanco/f002-483c7142b7.webp",
+   "360/hombre-m-blanco/f003-4bc614475a.webp",
+   "360/hombre-m-blanco/f004-002022c24d.webp",
+   "360/hombre-m-blanco/f005-ecfdf4f733.webp",
+   "360/hombre-m-blanco/f006-96d890b9a5.webp",
+   "360/hombre-m-blanco/f007-d366bf6ed1.webp",
+   "360/hombre-m-blanco/f008-50ce6a70dd.webp",
+   "360/hombre-m-blanco/f009-928e08d51c.webp",
+   "360/hombre-m-blanco/f010-dbd7f8eaea.webp",
+   "360/hombre-m-blanco/f011-124c8f5555.webp",
+   "360/hombre-m-blanco/f012-242ff159aa.webp",
+   "360/hombre-m-blanco/f013-efc90548c9.webp",
+   "360/hombre-m-blanco/f014-63efa5ce87.webp",
+   "360/hombre-m-blanco/f015-5111a546de.webp",
+   "360/hombre-m-blanco/f016-ee0bd34ea9.webp",
+   "360/hombre-m-blanco/f017-f4c4414710.webp",
+   "360/hombre-m-blanco/f018-55744c66d6.webp",
+   "360/hombre-m-blanco/f019-85bc1e5816.webp",
+   "360/hombre-m-blanco/f020-6a9ecbc08d.webp",
+   "360/hombre-m-blanco/f021-8dc22ad8d5.webp",
+   "360/hombre-m-blanco/f022-9db173d095.webp",
+   "360/hombre-m-blanco/f023-3061254ff5.webp"
+  ]
+ },
+ "detalle": {
+  "pecho_pequeno": {
+   "archivo": "detalle/hombre-m-blanco/pecho_pequeno-79a56b1bb8.webp",
+   "ancho_px": 900,
+   "alto_px": 1010,
+   "ancho_cm": 7.62,
+   "alto_cm": 8.551
+  },
+  "espalda": {
+   "archivo": "detalle/hombre-m-blanco/espalda-85bda26975.webp",
+   "ancho_px": 1007,
+   "alto_px": 1280,
+   "ancho_cm": 28.363,
+   "alto_cm": 36.034
+  }
+ }
+}

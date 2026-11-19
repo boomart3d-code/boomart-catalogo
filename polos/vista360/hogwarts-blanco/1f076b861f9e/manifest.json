@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "id": "hogwarts-blanco",
+ "revision": "1f076b861f9e",
+ "variante": {
+  "corte": "hombre",
+  "talla": "M",
+  "color": "blanco"
+ },
+ "estado": "generado",
+ "vista": {
+  "nombre": "Vista 360°",
+  "tipo": "secuencia",
+  "referencial": true,
+  "aviso": "Vista de referencia en talla M; las medidas de la prenda son referenciales."
+ },
+ "poster": "poster-ce0c2e6285.webp",
+ "cuadros": {
+  "ancho": 720,
+  "alto": 900,
+  "cantidad": 24,
+  "azimutes_grados": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "inicio_indice": 12,
+  "archivos": [
+   "360/hombre-m-blanco/f000-e6f32804cf.webp",
+   "360/hombre-m-blanco/f001-7c7f86c1fa.webp",
+   "360/hombre-m-blanco/f002-24822d98d4.webp",
+   "360/hombre-m-blanco/f003-818a13dc7e.webp",
+   "360/hombre-m-blanco/f004-b5d80bafa9.webp",
+   "360/hombre-m-blanco/f005-7eba2e16da.webp",
+   "360/hombre-m-blanco/f006-bbcd3fbed0.webp",
+   "360/hombre-m-blanco/f007-4ec8a33a1c.webp",
+   "360/hombre-m-blanco/f008-5242a68a86.webp",
+   "360/hombre-m-blanco/f009-adb34b945a.webp",
+   "360/hombre-m-blanco/f010-60f23a7a73.webp",
+   "360/hombre-m-blanco/f011-cfa2586b58.webp",
+   "360/hombre-m-blanco/f012-ab4821bb4c.webp",
+   "360/hombre-m-blanco/f013-46f17b9681.webp",
+   "360/hombre-m-blanco/f014-01db2b39dc.webp",
+   "360/hombre-m-blanco/f015-670a1ed7f8.webp",
+   "360/hombre-m-blanco/f016-2cfa852a1c.webp",
+   "360/hombre-m-blanco/f017-4f9b46d6f9.webp",
+   "360/hombre-m-blanco/f018-97364f75f9.webp",
+   "360/hombre-m-blanco/f019-72f1412e2d.webp",
+   "360/hombre-m-blanco/f020-c9e1a8277d.webp",
+   "360/hombre-m-blanco/f021-e74235b50d.webp",
+   "360/hombre-m-blanco/f022-253f7ddee9.webp",
+   "360/hombre-m-blanco/f023-310dfee051.webp"
+  ]
+ },
+ "detalle": {
+  "pecho": {
+   "archivo": "detalle/hombre-m-blanco/pecho-2c189e7977.webp",
+   "ancho_px": 1250,
+   "alto_px": 1280,
+   "ancho_cm": 25.527,
+   "alto_cm": 26.137
+  },
+  "espalda_alta": {
+   "archivo": "detalle/hombre-m-blanco/espalda_alta-a44739e249.webp",
+   "ancho_px": 893,
+   "alto_px": 429,
+   "ancho_cm": 7.561,
+   "alto_cm": 3.632
+  }
+ }
+}

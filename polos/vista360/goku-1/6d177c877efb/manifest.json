@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "id": "goku-1",
+ "revision": "6d177c877efb",
+ "variante": {
+  "corte": "hombre",
+  "talla": "M",
+  "color": "blanco"
+ },
+ "estado": "generado",
+ "vista": {
+  "nombre": "Vista 360°",
+  "tipo": "secuencia",
+  "referencial": true,
+  "aviso": "Vista de referencia en talla M; las medidas de la prenda son referenciales."
+ },
+ "poster": "poster-6d255ae2e5.webp",
+ "cuadros": {
+  "ancho": 720,
+  "alto": 900,
+  "cantidad": 24,
+  "azimutes_grados": [
+   0,
+   15,
+   30,
+   45,
+   60,
+   75,
+   90,
+   105,
+   120,
+   135,
+   150,
+   165,
+   180,
+   195,
+   210,
+   225,
+   240,
+   255,
+   270,
+   285,
+   300,
+   315,
+   330,
+   345
+  ],
+  "inicio_indice": 12,
+  "archivos": [
+   "360/hombre-m-blanco/f000-37ceba777e.webp",
+   "360/hombre-m-blanco/f001-c0f31db5aa.webp",
+   "360/hombre-m-blanco/f002-758dcde469.webp",
+   "360/hombre-m-blanco/f003-49ad157b7f.webp",
+   "360/hombre-m-blanco/f004-cbf06be5fe.webp",
+   "360/hombre-m-blanco/f005-bd4f3b06a9.webp",
+   "360/hombre-m-blanco/f006-ececc683d3.webp",
+   "360/hombre-m-blanco/f007-6edd913816.webp",
+   "360/hombre-m-blanco/f008-d88239295f.webp",
+   "360/hombre-m-blanco/f009-d26f519681.webp",
+   "360/hombre-m-blanco/f010-91c5abac00.webp",
+   "360/hombre-m-blanco/f011-1f1570bd47.webp",
+   "360/hombre-m-blanco/f012-8c79140d37.webp",
+   "360/hombre-m-blanco/f013-9a8d46bd7b.webp",
+   "360/hombre-m-blanco/f014-9f3e8dbd9a.webp",
+   "360/hombre-m-blanco/f015-f75b895395.webp",
+   "360/hombre-m-blanco/f016-b523c99404.webp",
+   "360/hombre-m-blanco/f017-c06e05e69f.webp",
+   "360/hombre-m-blanco/f018-25741ac397.webp",
+   "360/hombre-m-blanco/f019-001e01baa7.webp",
+   "360/hombre-m-blanco/f020-318557919a.webp",
+   "360/hombre-m-blanco/f021-97da3b27d2.webp",
+   "360/hombre-m-blanco/f022-e0c157943e.webp",
+   "360/hombre-m-blanco/f023-b7a004ed91.webp"
+  ]
+ },
+ "detalle": {
+  "espalda": {
+   "archivo": "detalle/hombre-m-blanco/espalda-17f0656f29.webp",
+   "ancho_px": 897,
+   "alto_px": 1280,
+   "ancho_cm": 26.492,
+   "alto_cm": 37.812
+  },
+  "pecho_pequeno": {
+   "archivo": "detalle/hombre-m-blanco/pecho_pequeno-dbba8d1472.webp",
+   "ancho_px": 1113,
+   "alto_px": 1142,
+   "ancho_cm": 9.423,
+   "alto_cm": 9.669
+  }
+ }
+}
