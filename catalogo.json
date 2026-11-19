@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 104,
+  "count": 105,
   "products": [
     {
       "id": "skins-zelda-nintendo-switch-2",
@@ -3821,6 +3821,42 @@
       ],
       "url": "https://boomart.pe/producto/palomera-dr-doom/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Palomera%20Dr.%20Doom%20%C2%B7%20Marvel"
+    },
+    {
+      "id": "figura-chibi-harry-potter",
+      "name": "Figura Chibi de Harry · Harry Potter",
+      "category": "Harry Potter",
+      "tags": [
+        "Harry Potter",
+        "Chibi",
+        "Figuras",
+        "Coleccionables",
+        "Gryffindor",
+        "Regalos"
+      ],
+      "description": "Harry Potter en versión chibi: cabeza grande, cabello alborotado, gafas redondas, ojos verdes y la cicatriz del rayo en la frente. Viste el uniforme de Gryffindor —túnica negra con el escudo de la casa, chaleco gris y corbata roja— y lleva su varita en la mano. Una figura simpática para tu escritorio o tu repisa, y un regalo ideal para quien vuelve a Hogwarts con cada película. Impresa en 3D con PLA+ y hecha a pedido, con envíos a todo el Perú.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
+      "priceCurrency": "PEN",
+      "priceFrom": 50,
+      "pricing": [
+        "Precio: S/50"
+      ],
+      "image": "https://boomart.pe/assets/products/figura-chibi-harry-potter-portada.webp",
+      "gallery": [
+        "https://boomart.pe/assets/products/figura-chibi-harry-potter-portada.webp",
+        "https://boomart.pe/assets/products/figura-chibi-harry-potter-frente.webp",
+        "https://boomart.pe/assets/products/figura-chibi-harry-potter-tres-cuartos.webp",
+        "https://boomart.pe/assets/products/figura-chibi-harry-potter-perfil.webp",
+        "https://boomart.pe/assets/products/figura-chibi-harry-potter-espalda.webp",
+        "https://boomart.pe/assets/products/figura-chibi-harry-potter-tres-cuartos-izquierda.webp"
+      ],
+      "url": "https://boomart.pe/producto/figura-chibi-harry-potter/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Figura%20Chibi%20de%20Harry%20%C2%B7%20Harry%20Potter"
     }
   ]
 }

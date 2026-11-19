@@ -726,5 +726,12 @@
     "width": 960,
     "height": 1200,
     "bytes": 94143
+  },
+  "figura-chibi-harry-potter": {
+    "source": "assets/products/figura-chibi-harry-potter-portada.webp",
+    "hash": "f3eb9bcb8f38e51e",
+    "width": 960,
+    "height": 1200,
+    "bytes": 99124
   }
 }
