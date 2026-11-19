@@ -117,12 +117,6 @@
           "archivo": "img/travesia-nocturna/04-frente-hombre.webp"
         },
         {
-          "ancho": 496,
-          "alto": 620,
-          "titulo": "Contrapicado frontal · Marisol",
-          "archivo": "img/travesia-nocturna/06-marisol-contrapicado-frente.webp"
-        },
-        {
           "archivo": "img/travesia-nocturna/03-mateo-espalda-v3.webp",
           "titulo": "Espalda en giro · Mateo",
           "ancho": 1122,
@@ -133,12 +127,6 @@
           "titulo": "Espalda completa · Renzo",
           "ancho": 1122,
           "alto": 1402
-        },
-        {
-          "ancho": 1122,
-          "alto": 1402,
-          "titulo": "Vista frontal · Sofía",
-          "archivo": "img/travesia-nocturna/08-frente-sofia.webp"
         },
         {
           "archivo": "img/travesia-nocturna/05-detalle-espalda-v3.webp",
@@ -191,27 +179,9 @@
       "prenda": "unisex",
       "fotos": [
         {
-          "archivo": "img/harry-potter/gryffindor/01-espalda-y-manga-mueble.webp",
-          "titulo": "Espalda y manga mueble · Gabriel",
-          "ancho": 765,
-          "alto": 1024
-        },
-        {
-          "archivo": "img/harry-potter/gryffindor/02-pecho-y-manga-mueble.webp",
-          "titulo": "Pecho y manga mueble · Sofía",
-          "ancho": 763,
-          "alto": 1024
-        },
-        {
           "archivo": "img/harry-potter/gryffindor/03-espalda-caminando.webp",
           "titulo": "Espalda caminando · Gabriel",
           "ancho": 618,
-          "alto": 626
-        },
-        {
-          "archivo": "img/harry-potter/gryffindor/04-pecho-apoyada-mesa.webp",
-          "titulo": "Pecho apoyada mesa · Sofía",
-          "ancho": 622,
           "alto": 626
         },
         {
@@ -251,36 +221,6 @@
       "prenda": "unisex",
       "fotos": [
         {
-          "archivo": "img/harry-potter/slytherin/01-espalda-y-manga-consola.webp",
-          "titulo": "Espalda y manga consola · Gabriel",
-          "ancho": 765,
-          "alto": 1024
-        },
-        {
-          "archivo": "img/harry-potter/slytherin/02-pecho-y-manga-banco.webp",
-          "titulo": "Pecho y manga banco · Sofía",
-          "ancho": 764,
-          "alto": 1024
-        },
-        {
-          "archivo": "img/harry-potter/slytherin/03-espalda-en-giro.webp",
-          "titulo": "Espalda en giro · Sofía",
-          "ancho": 600,
-          "alto": 638
-        },
-        {
-          "archivo": "img/harry-potter/slytherin/04-frente-en-consola.webp",
-          "titulo": "Frente en consola · Gabriel",
-          "ancho": 601,
-          "alto": 638
-        },
-        {
-          "archivo": "img/harry-potter/slytherin/05-detalle-pecho-y-manga.webp",
-          "titulo": "Detalle pecho y manga · Sofía",
-          "ancho": 600,
-          "alto": 638
-        },
-        {
           "archivo": "img/harry-potter/slytherin/06-detalle-espalda.webp",
           "titulo": "Detalle espalda · Gabriel",
           "ancho": 601,
@@ -311,18 +251,6 @@
       "prenda": "unisex",
       "fotos": [
         {
-          "archivo": "img/harry-potter/hufflepuff/01-espalda-y-manga-taburete.webp",
-          "titulo": "Espalda y manga taburete · Gabriel",
-          "ancho": 765,
-          "alto": 1024
-        },
-        {
-          "archivo": "img/harry-potter/hufflepuff/02-pecho-y-manga-sillon.webp",
-          "titulo": "Pecho y manga sillon · Sofía",
-          "ancho": 763,
-          "alto": 1024
-        },
-        {
           "archivo": "img/harry-potter/hufflepuff/03-espalda-en-escalon.webp",
           "titulo": "Espalda en escalon · Sofía",
           "ancho": 595,
@@ -333,24 +261,6 @@
           "titulo": "Frente en contrapicado · Gabriel",
           "ancho": 595,
           "alto": 652
-        },
-        {
-          "archivo": "img/harry-potter/hufflepuff/05-pecho-y-manga-mesa.webp",
-          "titulo": "Pecho y manga mesa · Sofía",
-          "ancho": 595,
-          "alto": 652
-        },
-        {
-          "archivo": "img/harry-potter/hufflepuff/06-espalda-y-manga-mesa.webp",
-          "titulo": "Espalda y manga mesa · Gabriel",
-          "ancho": 595,
-          "alto": 652
-        },
-        {
-          "archivo": "img/harry-potter/hufflepuff/07-detalle-manga-derecha.webp",
-          "titulo": "Detalle manga derecha · Gabriel",
-          "ancho": 1122,
-          "alto": 1402
         },
         {
           "archivo": "img/extendidos-aprobados-20261116/hufflepuff.webp",
@@ -485,12 +395,6 @@
           "archivo": "img/dragon-ball/black-goku-1.webp",
           "alto": 504,
           "titulo": "Estampado de espalda",
-          "ancho": 402
-        },
-        {
-          "archivo": "img/dragon-ball/black-goku-2.webp",
-          "alto": 504,
-          "titulo": "Vista de la sesión",
           "ancho": 402
         },
         {
@@ -746,12 +650,6 @@
           "ancho": 396
         },
         {
-          "archivo": "img/dragon-ball/goku-1-2.webp",
-          "alto": 494,
-          "titulo": "Detalle frontal puesto",
-          "ancho": 394
-        },
-        {
           "archivo": "img/dragon-ball/goku-1-3.webp",
           "alto": 496,
           "titulo": "Espalda en movimiento",
@@ -815,33 +713,9 @@
       "prenda": "unisex",
       "fotos": [
         {
-          "archivo": "img/saint-seiya/cinco-caballeros-de-bronce/01-espalda-barra.webp",
-          "titulo": "Espalda junto a la barra",
-          "ancho": 577,
-          "alto": 897
-        },
-        {
-          "archivo": "img/saint-seiya/cinco-caballeros-de-bronce/02-frente-puerta.webp",
-          "titulo": "Frente en la entrada",
-          "ancho": 580,
-          "alto": 897
-        },
-        {
-          "archivo": "img/saint-seiya/cinco-caballeros-de-bronce/03-frente-ventana.webp",
-          "titulo": "Frente junto a la ventana",
-          "ancho": 579,
-          "alto": 897
-        },
-        {
           "archivo": "img/saint-seiya/cinco-caballeros-de-bronce/04-detalle-espalda.webp",
           "titulo": "Detalle del estampado de espalda",
           "ancho": 556,
-          "alto": 1024
-        },
-        {
-          "archivo": "img/saint-seiya/cinco-caballeros-de-bronce/05-detalle-manga.webp",
-          "titulo": "Detalle de la manga derecha",
-          "ancho": 453,
           "alto": 1024
         },
         {
@@ -881,20 +755,8 @@
       "prenda": "unisex",
       "fotos": [
         {
-          "archivo": "img/saint-seiya/hyoga-de-cisne/01-mirando-al-mar.webp",
-          "titulo": "Espalda frente al mar",
-          "ancho": 587,
-          "alto": 887
-        },
-        {
           "archivo": "img/saint-seiya/hyoga-de-cisne/02-escaleras.webp",
           "titulo": "Frente en las escaleras",
-          "ancho": 587,
-          "alto": 887
-        },
-        {
-          "archivo": "img/saint-seiya/hyoga-de-cisne/03-paseo.webp",
-          "titulo": "Paseo junto al mar",
           "ancho": 587,
           "alto": 887
         },
@@ -908,12 +770,6 @@
           "archivo": "img/saint-seiya/hyoga-de-cisne/05-detalle-espalda.webp",
           "titulo": "Detalle del estampado de espalda",
           "ancho": 622,
-          "alto": 836
-        },
-        {
-          "archivo": "img/saint-seiya/hyoga-de-cisne/06-detalle-manga.webp",
-          "titulo": "Detalle de la manga derecha",
-          "ancho": 621,
           "alto": 836
         },
         {
@@ -953,12 +809,6 @@
           "alto": 809
         },
         {
-          "archivo": "img/saint-seiya/shiryu-de-dragon/03-banco.webp",
-          "titulo": "Frente en el banco",
-          "ancho": 642,
-          "alto": 809
-        },
-        {
           "archivo": "img/saint-seiya/shiryu-de-dragon/04-detalle-pecho.webp",
           "titulo": "Detalle del estampado del pecho",
           "ancho": 1254,
@@ -969,12 +819,6 @@
           "titulo": "Detalle del estampado de espalda",
           "ancho": 1197,
           "alto": 1315
-        },
-        {
-          "archivo": "img/saint-seiya/shiryu-de-dragon/06-detalle-manga.webp",
-          "titulo": "Detalle de la manga izquierda",
-          "ancho": 1151,
-          "alto": 1367
         },
         {
           "archivo": "img/extendidos-aprobados-20261116/shiryu-de-dragon.webp",
@@ -1013,12 +857,6 @@
           "alto": 887
         },
         {
-          "archivo": "img/saint-seiya/seiya-de-pegaso/03-frente-cancha.webp",
-          "titulo": "Frente en movimiento",
-          "ancho": 587,
-          "alto": 887
-        },
-        {
           "archivo": "img/saint-seiya/seiya-de-pegaso/04-detalle-pecho.webp",
           "titulo": "Detalle del estampado del pecho",
           "ancho": 578,
@@ -1028,12 +866,6 @@
           "archivo": "img/saint-seiya/seiya-de-pegaso/05-detalle-espalda.webp",
           "titulo": "Detalle del estampado de espalda",
           "ancho": 603,
-          "alto": 897
-        },
-        {
-          "archivo": "img/saint-seiya/seiya-de-pegaso/06-detalle-manga.webp",
-          "titulo": "Detalle de la manga derecha",
-          "ancho": 551,
           "alto": 897
         },
         {
@@ -1061,18 +893,6 @@
       "prenda": "unisex",
       "fotos": [
         {
-          "archivo": "img/saint-seiya/ikki-de-fenix/01-frente-taller.webp",
-          "titulo": "Frente en el banco de trabajo",
-          "ancho": 658,
-          "alto": 897
-        },
-        {
-          "archivo": "img/saint-seiya/ikki-de-fenix/02-frente-taburete.webp",
-          "titulo": "Frente en el taburete",
-          "ancho": 568,
-          "alto": 897
-        },
-        {
           "archivo": "img/saint-seiya/ikki-de-fenix/03-espalda-puerta.webp",
           "titulo": "Espalda junto a la puerta",
           "ancho": 579,
@@ -1088,12 +908,6 @@
           "archivo": "img/saint-seiya/ikki-de-fenix/05-detalle-espalda.webp",
           "titulo": "Detalle de la espalda alta",
           "ancho": 580,
-          "alto": 897
-        },
-        {
-          "archivo": "img/saint-seiya/ikki-de-fenix/06-detalle-manga.webp",
-          "titulo": "Detalle de la manga izquierda",
-          "ancho": 576,
           "alto": 897
         },
         {
@@ -1127,18 +941,6 @@
           "alto": 887
         },
         {
-          "archivo": "img/saint-seiya/shun-de-andromeda/01-frente-anden.webp",
-          "titulo": "Frente en el andén",
-          "ancho": 584,
-          "alto": 887
-        },
-        {
-          "archivo": "img/saint-seiya/shun-de-andromeda/02-frente-banco.webp",
-          "titulo": "Frente en el banco",
-          "ancho": 584,
-          "alto": 887
-        },
-        {
           "archivo": "img/saint-seiya/shun-de-andromeda/04-detalle-pecho.webp",
           "titulo": "Detalle del pecho",
           "ancho": 584,
@@ -1148,12 +950,6 @@
           "archivo": "img/saint-seiya/shun-de-andromeda/05-detalle-espalda.webp",
           "titulo": "Detalle de la espalda",
           "ancho": 593,
-          "alto": 887
-        },
-        {
-          "archivo": "img/saint-seiya/shun-de-andromeda/06-detalle-manga.webp",
-          "titulo": "Detalle de la manga derecha",
-          "ancho": 574,
           "alto": 887
         },
         {

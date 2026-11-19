@@ -191,16 +191,6 @@
       "img/responsive/3eacfe7da0eba3d0-720w.webp"
     ]
   ],
-  "img/travesia-nocturna/06-marisol-contrapicado-frente.webp": [
-    [
-      180,
-      "img/responsive/521edb51fc845d49-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/521edb51fc845d49-360w.webp"
-    ]
-  ],
   "img/travesia-nocturna/03-mateo-espalda-v3.webp": [
     [
       180,
@@ -227,20 +217,6 @@
     [
       720,
       "img/responsive/42dea1b0681aa3ca-720w.webp"
-    ]
-  ],
-  "img/travesia-nocturna/08-frente-sofia.webp": [
-    [
-      180,
-      "img/responsive/824cd7c106fdd9cd-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/824cd7c106fdd9cd-360w.webp"
-    ],
-    [
-      720,
-      "img/responsive/824cd7c106fdd9cd-720w.webp"
     ]
   ],
   "img/travesia-nocturna/05-detalle-espalda-v3.webp": [
@@ -281,34 +257,6 @@
       "img/responsive/248aaebc09bd1824-720w.webp"
     ]
   ],
-  "img/harry-potter/gryffindor/01-espalda-y-manga-mueble.webp": [
-    [
-      180,
-      "img/responsive/c9ced3167b4773e9-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/c9ced3167b4773e9-360w.webp"
-    ],
-    [
-      720,
-      "img/responsive/c9ced3167b4773e9-720w.webp"
-    ]
-  ],
-  "img/harry-potter/gryffindor/02-pecho-y-manga-mueble.webp": [
-    [
-      180,
-      "img/responsive/654cc97523d66a9e-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/654cc97523d66a9e-360w.webp"
-    ],
-    [
-      720,
-      "img/responsive/654cc97523d66a9e-720w.webp"
-    ]
-  ],
   "img/harry-potter/gryffindor/03-espalda-caminando.webp": [
     [
       180,
@@ -317,16 +265,6 @@
     [
       360,
       "img/responsive/cb0965ab375979f5-360w.webp"
-    ]
-  ],
-  "img/harry-potter/gryffindor/04-pecho-apoyada-mesa.webp": [
-    [
-      180,
-      "img/responsive/8fb48da4ffedd555-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/8fb48da4ffedd555-360w.webp"
     ]
   ],
   "img/harry-potter/gryffindor/05-frente-contrapicado.webp": [
@@ -363,64 +301,6 @@
       "img/responsive/25780b0c4fcc04d0-720w.webp"
     ]
   ],
-  "img/harry-potter/slytherin/01-espalda-y-manga-consola.webp": [
-    [
-      180,
-      "img/responsive/90c091296abb2a68-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/90c091296abb2a68-360w.webp"
-    ],
-    [
-      720,
-      "img/responsive/90c091296abb2a68-720w.webp"
-    ]
-  ],
-  "img/harry-potter/slytherin/02-pecho-y-manga-banco.webp": [
-    [
-      180,
-      "img/responsive/2fd39a085511e5a7-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/2fd39a085511e5a7-360w.webp"
-    ],
-    [
-      720,
-      "img/responsive/2fd39a085511e5a7-720w.webp"
-    ]
-  ],
-  "img/harry-potter/slytherin/03-espalda-en-giro.webp": [
-    [
-      180,
-      "img/responsive/7204df390cb5afad-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/7204df390cb5afad-360w.webp"
-    ]
-  ],
-  "img/harry-potter/slytherin/04-frente-en-consola.webp": [
-    [
-      180,
-      "img/responsive/19668e06b91a6ef6-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/19668e06b91a6ef6-360w.webp"
-    ]
-  ],
-  "img/harry-potter/slytherin/05-detalle-pecho-y-manga.webp": [
-    [
-      180,
-      "img/responsive/7e5d73647342984b-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/7e5d73647342984b-360w.webp"
-    ]
-  ],
   "img/harry-potter/slytherin/06-detalle-espalda.webp": [
     [
       180,
@@ -445,34 +325,6 @@
       "img/responsive/432ab9b318e2556f-720w.webp"
     ]
   ],
-  "img/harry-potter/hufflepuff/01-espalda-y-manga-taburete.webp": [
-    [
-      180,
-      "img/responsive/96daadd354da0541-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/96daadd354da0541-360w.webp"
-    ],
-    [
-      720,
-      "img/responsive/96daadd354da0541-720w.webp"
-    ]
-  ],
-  "img/harry-potter/hufflepuff/02-pecho-y-manga-sillon.webp": [
-    [
-      180,
-      "img/responsive/6aa5121e23fafad4-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/6aa5121e23fafad4-360w.webp"
-    ],
-    [
-      720,
-      "img/responsive/6aa5121e23fafad4-720w.webp"
-    ]
-  ],
   "img/harry-potter/hufflepuff/03-espalda-en-escalon.webp": [
     [
       180,
@@ -491,40 +343,6 @@
     [
       360,
       "img/responsive/74f07f3ae1122bcf-360w.webp"
-    ]
-  ],
-  "img/harry-potter/hufflepuff/05-pecho-y-manga-mesa.webp": [
-    [
-      180,
-      "img/responsive/750d4daa07c19189-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/750d4daa07c19189-360w.webp"
-    ]
-  ],
-  "img/harry-potter/hufflepuff/06-espalda-y-manga-mesa.webp": [
-    [
-      180,
-      "img/responsive/5a953dca0dd09d37-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/5a953dca0dd09d37-360w.webp"
-    ]
-  ],
-  "img/harry-potter/hufflepuff/07-detalle-manga-derecha.webp": [
-    [
-      180,
-      "img/responsive/3e5bf10c7695388d-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/3e5bf10c7695388d-360w.webp"
-    ],
-    [
-      720,
-      "img/responsive/3e5bf10c7695388d-720w.webp"
     ]
   ],
   "img/extendidos-aprobados-20261116/hufflepuff.webp": [
@@ -703,16 +521,6 @@
     [
       360,
       "img/responsive/b2dea989c5c58ef3-360w.webp"
-    ]
-  ],
-  "img/dragon-ball/black-goku-2.webp": [
-    [
-      180,
-      "img/responsive/41887e66cc1a4eff-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/41887e66cc1a4eff-360w.webp"
     ]
   ],
   "img/dragon-ball/black-goku-3.webp": [
@@ -1059,16 +867,6 @@
       "img/responsive/a026e7ec4de0ee2c-360w.webp"
     ]
   ],
-  "img/dragon-ball/goku-1-2.webp": [
-    [
-      180,
-      "img/responsive/b53dada021fd9583-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/b53dada021fd9583-360w.webp"
-    ]
-  ],
   "img/dragon-ball/goku-1-3.webp": [
     [
       180,
@@ -1141,36 +939,6 @@
       "img/responsive/71183c664061216e-720w.webp"
     ]
   ],
-  "img/saint-seiya/cinco-caballeros-de-bronce/01-espalda-barra.webp": [
-    [
-      180,
-      "img/responsive/f468ecf3da1fb052-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/f468ecf3da1fb052-360w.webp"
-    ]
-  ],
-  "img/saint-seiya/cinco-caballeros-de-bronce/02-frente-puerta.webp": [
-    [
-      180,
-      "img/responsive/cfc2116f849d6d9c-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/cfc2116f849d6d9c-360w.webp"
-    ]
-  ],
-  "img/saint-seiya/cinco-caballeros-de-bronce/03-frente-ventana.webp": [
-    [
-      180,
-      "img/responsive/f61fb18b1ea92d64-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/f61fb18b1ea92d64-360w.webp"
-    ]
-  ],
   "img/saint-seiya/cinco-caballeros-de-bronce/04-detalle-espalda.webp": [
     [
       180,
@@ -1179,16 +947,6 @@
     [
       360,
       "img/responsive/186f21c451b3f5c9-360w.webp"
-    ]
-  ],
-  "img/saint-seiya/cinco-caballeros-de-bronce/05-detalle-manga.webp": [
-    [
-      180,
-      "img/responsive/fe372b9b1c05fdd8-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/fe372b9b1c05fdd8-360w.webp"
     ]
   ],
   "img/saint-seiya/cinco-caballeros-de-bronce/06-pecho-ventana.webp": [
@@ -1229,16 +987,6 @@
       "img/responsive/069185b393cfdd72-720w.webp"
     ]
   ],
-  "img/saint-seiya/hyoga-de-cisne/01-mirando-al-mar.webp": [
-    [
-      180,
-      "img/responsive/218c523589183e3f-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/218c523589183e3f-360w.webp"
-    ]
-  ],
   "img/saint-seiya/hyoga-de-cisne/02-escaleras.webp": [
     [
       180,
@@ -1247,16 +995,6 @@
     [
       360,
       "img/responsive/8a098a7bcdfe2cac-360w.webp"
-    ]
-  ],
-  "img/saint-seiya/hyoga-de-cisne/03-paseo.webp": [
-    [
-      180,
-      "img/responsive/0db93bd0bf325b59-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/0db93bd0bf325b59-360w.webp"
     ]
   ],
   "img/saint-seiya/hyoga-de-cisne/04-detalle-pecho.webp": [
@@ -1277,16 +1015,6 @@
     [
       360,
       "img/responsive/c2ae3f54e30cd472-360w.webp"
-    ]
-  ],
-  "img/saint-seiya/hyoga-de-cisne/06-detalle-manga.webp": [
-    [
-      180,
-      "img/responsive/055618119d099355-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/055618119d099355-360w.webp"
     ]
   ],
   "img/extendidos-aprobados-20261116/hyoga-de-cisne.webp": [
@@ -1323,16 +1051,6 @@
       "img/responsive/c3ea83866a29d543-360w.webp"
     ]
   ],
-  "img/saint-seiya/shiryu-de-dragon/03-banco.webp": [
-    [
-      180,
-      "img/responsive/ea6b00c7b9d95f8f-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/ea6b00c7b9d95f8f-360w.webp"
-    ]
-  ],
   "img/saint-seiya/shiryu-de-dragon/04-detalle-pecho.webp": [
     [
       180,
@@ -1359,20 +1077,6 @@
     [
       720,
       "img/responsive/186b2e3b887b6d4b-720w.webp"
-    ]
-  ],
-  "img/saint-seiya/shiryu-de-dragon/06-detalle-manga.webp": [
-    [
-      180,
-      "img/responsive/f6f7c62b7a3a4545-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/f6f7c62b7a3a4545-360w.webp"
-    ],
-    [
-      720,
-      "img/responsive/f6f7c62b7a3a4545-720w.webp"
     ]
   ],
   "img/extendidos-aprobados-20261116/shiryu-de-dragon.webp": [
@@ -1409,16 +1113,6 @@
       "img/responsive/2acc1b53c66d4ddb-360w.webp"
     ]
   ],
-  "img/saint-seiya/seiya-de-pegaso/03-frente-cancha.webp": [
-    [
-      180,
-      "img/responsive/f65fcd9680b8acff-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/f65fcd9680b8acff-360w.webp"
-    ]
-  ],
   "img/saint-seiya/seiya-de-pegaso/04-detalle-pecho.webp": [
     [
       180,
@@ -1439,16 +1133,6 @@
       "img/responsive/8a445379b7e378b2-360w.webp"
     ]
   ],
-  "img/saint-seiya/seiya-de-pegaso/06-detalle-manga.webp": [
-    [
-      180,
-      "img/responsive/4532b318dd881e34-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/4532b318dd881e34-360w.webp"
-    ]
-  ],
   "img/extendidos-aprobados-20261116/seiya-de-pegaso.webp": [
     [
       180,
@@ -1461,26 +1145,6 @@
     [
       720,
       "img/responsive/54a4f67d857bc197-720w.webp"
-    ]
-  ],
-  "img/saint-seiya/ikki-de-fenix/01-frente-taller.webp": [
-    [
-      180,
-      "img/responsive/ed2e059bcfbb25e6-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/ed2e059bcfbb25e6-360w.webp"
-    ]
-  ],
-  "img/saint-seiya/ikki-de-fenix/02-frente-taburete.webp": [
-    [
-      180,
-      "img/responsive/c07e2b000ffa8c5a-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/c07e2b000ffa8c5a-360w.webp"
     ]
   ],
   "img/saint-seiya/ikki-de-fenix/03-espalda-puerta.webp": [
@@ -1517,16 +1181,6 @@
       "img/responsive/026ade23cf402622-360w.webp"
     ]
   ],
-  "img/saint-seiya/ikki-de-fenix/06-detalle-manga.webp": [
-    [
-      180,
-      "img/responsive/93fb7524b0476f4a-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/93fb7524b0476f4a-360w.webp"
-    ]
-  ],
   "img/extendidos-aprobados-20261116/ikki-de-fenix.webp": [
     [
       180,
@@ -1551,26 +1205,6 @@
       "img/responsive/834614667ad223a9-360w.webp"
     ]
   ],
-  "img/saint-seiya/shun-de-andromeda/01-frente-anden.webp": [
-    [
-      180,
-      "img/responsive/c93c0c1d441c9cd7-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/c93c0c1d441c9cd7-360w.webp"
-    ]
-  ],
-  "img/saint-seiya/shun-de-andromeda/02-frente-banco.webp": [
-    [
-      180,
-      "img/responsive/cb3751598eefd745-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/cb3751598eefd745-360w.webp"
-    ]
-  ],
   "img/saint-seiya/shun-de-andromeda/04-detalle-pecho.webp": [
     [
       180,
@@ -1589,16 +1223,6 @@
     [
       360,
       "img/responsive/07112869ea05ae03-360w.webp"
-    ]
-  ],
-  "img/saint-seiya/shun-de-andromeda/06-detalle-manga.webp": [
-    [
-      180,
-      "img/responsive/4039a84e7f869b9a-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/4039a84e7f869b9a-360w.webp"
     ]
   ],
   "img/extendidos-aprobados-20261116/shun-de-andromeda.webp": [
