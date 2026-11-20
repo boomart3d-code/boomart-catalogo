@@ -645,10 +645,28 @@
           "alto": 1024
         },
         {
+          "archivo": "img/saint-seiya/cinco-caballeros-de-bronce/20-hombre-frente.webp",
+          "titulo": "Frente en la cafetería · Hombre",
+          "ancho": 1200,
+          "alto": 1500
+        },
+        {
           "archivo": "img/saint-seiya/cinco-caballeros-de-bronce/06-pecho-ventana.webp",
           "titulo": "Pecho junto a la ventana",
           "ancho": 509,
           "alto": 1024
+        },
+        {
+          "archivo": "img/saint-seiya/cinco-caballeros-de-bronce/21-hombre-espalda.webp",
+          "titulo": "Espalda en la cafetería · Hombre",
+          "ancho": 1200,
+          "alto": 1500
+        },
+        {
+          "archivo": "img/saint-seiya/cinco-caballeros-de-bronce/23-hombre-34-espalda.webp",
+          "titulo": "Espalda en giro · Hombre",
+          "ancho": 1200,
+          "alto": 1500
         },
         {
           "archivo": "img/saint-seiya/cinco-caballeros-de-bronce/07-detalle-frontal.webp",
@@ -675,20 +693,38 @@
       "prenda": "unisex",
       "fotos": [
         {
-          "archivo": "img/saint-seiya/hyoga-de-cisne/02-escaleras.webp",
-          "titulo": "Frente en las escaleras",
-          "ancho": 587,
-          "alto": 887
-        },
-        {
-          "archivo": "img/saint-seiya/hyoga-de-cisne/04-detalle-pecho.webp",
-          "titulo": "Detalle del estampado del pecho",
-          "ancho": 622,
-          "alto": 836
+          "archivo": "img/saint-seiya/hyoga-de-cisne/20-hombre-frente.webp",
+          "titulo": "Frente en el malecón · Hombre",
+          "ancho": 1200,
+          "alto": 1500
         },
         {
           "archivo": "img/saint-seiya/hyoga-de-cisne/05-detalle-espalda.webp",
           "titulo": "Detalle del estampado de espalda",
+          "ancho": 622,
+          "alto": 836
+        },
+        {
+          "archivo": "img/saint-seiya/hyoga-de-cisne/21-hombre-espalda.webp",
+          "titulo": "Espalda en el malecón · Hombre",
+          "ancho": 1200,
+          "alto": 1500
+        },
+        {
+          "archivo": "img/saint-seiya/hyoga-de-cisne/20-mujer-frente.webp",
+          "titulo": "Frente junto al mar · Mujer",
+          "ancho": 1200,
+          "alto": 1500
+        },
+        {
+          "archivo": "img/saint-seiya/hyoga-de-cisne/23-hombre-34-espalda.webp",
+          "titulo": "Espalda en giro · Hombre",
+          "ancho": 1200,
+          "alto": 1500
+        },
+        {
+          "archivo": "img/saint-seiya/hyoga-de-cisne/04-detalle-pecho.webp",
+          "titulo": "Detalle del estampado del pecho",
           "ancho": 622,
           "alto": 836
         }
@@ -717,10 +753,22 @@
           "alto": 809
         },
         {
+          "archivo": "img/saint-seiya/shiryu-de-dragon/22-mujer-34-frente.webp",
+          "titulo": "Tres cuartos junto al portón · Mujer",
+          "ancho": 1200,
+          "alto": 1500
+        },
+        {
           "archivo": "img/saint-seiya/shiryu-de-dragon/02-porton.webp",
           "titulo": "Frente junto al portón",
           "ancho": 644,
           "alto": 809
+        },
+        {
+          "archivo": "img/saint-seiya/shiryu-de-dragon/21-mujer-espalda.webp",
+          "titulo": "Espalda junto al muro · Mujer",
+          "ancho": 1200,
+          "alto": 1500
         },
         {
           "archivo": "img/saint-seiya/shiryu-de-dragon/04-detalle-pecho.webp",
@@ -759,21 +807,33 @@
           "alto": 887
         },
         {
+          "archivo": "img/saint-seiya/seiya-de-pegaso/05-detalle-espalda.webp",
+          "titulo": "Detalle del estampado de espalda",
+          "ancho": 603,
+          "alto": 897
+        },
+        {
           "archivo": "img/saint-seiya/seiya-de-pegaso/02-frente-balon.webp",
           "titulo": "Frente con el balón",
           "ancho": 588,
           "alto": 887
         },
         {
+          "archivo": "img/saint-seiya/seiya-de-pegaso/20-mujer-frente.webp",
+          "titulo": "Frente en la cancha · Mujer",
+          "ancho": 1200,
+          "alto": 1500
+        },
+        {
+          "archivo": "img/saint-seiya/seiya-de-pegaso/23-hombre-34-espalda.webp",
+          "titulo": "Espalda en giro en la cancha · Hombre",
+          "ancho": 1200,
+          "alto": 1500
+        },
+        {
           "archivo": "img/saint-seiya/seiya-de-pegaso/04-detalle-pecho.webp",
           "titulo": "Detalle del estampado del pecho",
           "ancho": 578,
-          "alto": 897
-        },
-        {
-          "archivo": "img/saint-seiya/seiya-de-pegaso/05-detalle-espalda.webp",
-          "titulo": "Detalle del estampado de espalda",
-          "ancho": 603,
           "alto": 897
         }
       ]
@@ -799,6 +859,30 @@
           "titulo": "Espalda junto a la puerta",
           "ancho": 579,
           "alto": 897
+        },
+        {
+          "archivo": "img/saint-seiya/ikki-de-fenix/20-mujer-frente.webp",
+          "titulo": "Frente en el taller · Mujer",
+          "ancho": 1200,
+          "alto": 1500
+        },
+        {
+          "archivo": "img/saint-seiya/ikki-de-fenix/20-hombre-frente.webp",
+          "titulo": "Frente en el taller · Hombre",
+          "ancho": 1200,
+          "alto": 1500
+        },
+        {
+          "archivo": "img/saint-seiya/ikki-de-fenix/21-mujer-espalda.webp",
+          "titulo": "Espalda en el taller · Mujer",
+          "ancho": 1200,
+          "alto": 1500
+        },
+        {
+          "archivo": "img/saint-seiya/ikki-de-fenix/22-mujer-34-frente.webp",
+          "titulo": "Tres cuartos junto a la puerta · Mujer",
+          "ancho": 1200,
+          "alto": 1500
         },
         {
           "archivo": "img/saint-seiya/ikki-de-fenix/04-detalle-pecho.webp",
@@ -837,15 +921,33 @@
           "alto": 887
         },
         {
-          "archivo": "img/saint-seiya/shun-de-andromeda/04-detalle-pecho.webp",
-          "titulo": "Detalle del pecho",
-          "ancho": 584,
-          "alto": 887
+          "archivo": "img/saint-seiya/shun-de-andromeda/20-hombre-frente.webp",
+          "titulo": "Frente en el andén · Hombre",
+          "ancho": 1200,
+          "alto": 1500
         },
         {
           "archivo": "img/saint-seiya/shun-de-andromeda/05-detalle-espalda.webp",
           "titulo": "Detalle de la espalda",
           "ancho": 593,
+          "alto": 887
+        },
+        {
+          "archivo": "img/saint-seiya/shun-de-andromeda/21-hombre-espalda.webp",
+          "titulo": "Espalda en el andén · Hombre",
+          "ancho": 1200,
+          "alto": 1500
+        },
+        {
+          "archivo": "img/saint-seiya/shun-de-andromeda/20-mujer-frente.webp",
+          "titulo": "Frente en el andén · Mujer",
+          "ancho": 1200,
+          "alto": 1500
+        },
+        {
+          "archivo": "img/saint-seiya/shun-de-andromeda/04-detalle-pecho.webp",
+          "titulo": "Detalle del pecho",
+          "ancho": 584,
           "alto": 887
         }
       ]

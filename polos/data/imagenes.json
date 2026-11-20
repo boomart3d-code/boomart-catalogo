@@ -949,6 +949,20 @@
       "img/responsive/186f21c451b3f5c9-360w.webp"
     ]
   ],
+  "img/saint-seiya/cinco-caballeros-de-bronce/20-hombre-frente.webp": [
+    [
+      180,
+      "img/responsive/6e5cdbf4ffc36e5b-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/6e5cdbf4ffc36e5b-360w.webp"
+    ],
+    [
+      720,
+      "img/responsive/6e5cdbf4ffc36e5b-720w.webp"
+    ]
+  ],
   "img/saint-seiya/cinco-caballeros-de-bronce/06-pecho-ventana.webp": [
     [
       180,
@@ -957,6 +971,34 @@
     [
       360,
       "img/responsive/5fa76477262629ea-360w.webp"
+    ]
+  ],
+  "img/saint-seiya/cinco-caballeros-de-bronce/21-hombre-espalda.webp": [
+    [
+      180,
+      "img/responsive/c9d602ea4dd15ac7-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/c9d602ea4dd15ac7-360w.webp"
+    ],
+    [
+      720,
+      "img/responsive/c9d602ea4dd15ac7-720w.webp"
+    ]
+  ],
+  "img/saint-seiya/cinco-caballeros-de-bronce/23-hombre-34-espalda.webp": [
+    [
+      180,
+      "img/responsive/c229671db4694c28-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/c229671db4694c28-360w.webp"
+    ],
+    [
+      720,
+      "img/responsive/c229671db4694c28-720w.webp"
     ]
   ],
   "img/saint-seiya/cinco-caballeros-de-bronce/07-detalle-frontal.webp": [
@@ -987,24 +1029,18 @@
       "img/responsive/069185b393cfdd72-720w.webp"
     ]
   ],
-  "img/saint-seiya/hyoga-de-cisne/02-escaleras.webp": [
+  "img/saint-seiya/hyoga-de-cisne/20-hombre-frente.webp": [
     [
       180,
-      "img/responsive/8a098a7bcdfe2cac-180w.webp"
+      "img/responsive/c2732d10e5442a0d-180w.webp"
     ],
     [
       360,
-      "img/responsive/8a098a7bcdfe2cac-360w.webp"
-    ]
-  ],
-  "img/saint-seiya/hyoga-de-cisne/04-detalle-pecho.webp": [
-    [
-      180,
-      "img/responsive/9f5b2b3de30a3722-180w.webp"
+      "img/responsive/c2732d10e5442a0d-360w.webp"
     ],
     [
-      360,
-      "img/responsive/9f5b2b3de30a3722-360w.webp"
+      720,
+      "img/responsive/c2732d10e5442a0d-720w.webp"
     ]
   ],
   "img/saint-seiya/hyoga-de-cisne/05-detalle-espalda.webp": [
@@ -1015,6 +1051,58 @@
     [
       360,
       "img/responsive/c2ae3f54e30cd472-360w.webp"
+    ]
+  ],
+  "img/saint-seiya/hyoga-de-cisne/21-hombre-espalda.webp": [
+    [
+      180,
+      "img/responsive/2d59df8ed6f2aa1d-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/2d59df8ed6f2aa1d-360w.webp"
+    ],
+    [
+      720,
+      "img/responsive/2d59df8ed6f2aa1d-720w.webp"
+    ]
+  ],
+  "img/saint-seiya/hyoga-de-cisne/20-mujer-frente.webp": [
+    [
+      180,
+      "img/responsive/3015077c753cd234-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/3015077c753cd234-360w.webp"
+    ],
+    [
+      720,
+      "img/responsive/3015077c753cd234-720w.webp"
+    ]
+  ],
+  "img/saint-seiya/hyoga-de-cisne/23-hombre-34-espalda.webp": [
+    [
+      180,
+      "img/responsive/a0bd66c0409a74cf-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/a0bd66c0409a74cf-360w.webp"
+    ],
+    [
+      720,
+      "img/responsive/a0bd66c0409a74cf-720w.webp"
+    ]
+  ],
+  "img/saint-seiya/hyoga-de-cisne/04-detalle-pecho.webp": [
+    [
+      180,
+      "img/responsive/9f5b2b3de30a3722-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/9f5b2b3de30a3722-360w.webp"
     ]
   ],
   "img/extendidos-aprobados-20261116/hyoga-de-cisne.webp": [
@@ -1041,6 +1129,20 @@
       "img/responsive/9e370555f4810e5a-360w.webp"
     ]
   ],
+  "img/saint-seiya/shiryu-de-dragon/22-mujer-34-frente.webp": [
+    [
+      180,
+      "img/responsive/035969779b787fa3-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/035969779b787fa3-360w.webp"
+    ],
+    [
+      720,
+      "img/responsive/035969779b787fa3-720w.webp"
+    ]
+  ],
   "img/saint-seiya/shiryu-de-dragon/02-porton.webp": [
     [
       180,
@@ -1049,6 +1151,20 @@
     [
       360,
       "img/responsive/c3ea83866a29d543-360w.webp"
+    ]
+  ],
+  "img/saint-seiya/shiryu-de-dragon/21-mujer-espalda.webp": [
+    [
+      180,
+      "img/responsive/254bb139dfc0a4c8-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/254bb139dfc0a4c8-360w.webp"
+    ],
+    [
+      720,
+      "img/responsive/254bb139dfc0a4c8-720w.webp"
     ]
   ],
   "img/saint-seiya/shiryu-de-dragon/04-detalle-pecho.webp": [
@@ -1103,6 +1219,16 @@
       "img/responsive/b2104279a1afedac-360w.webp"
     ]
   ],
+  "img/saint-seiya/seiya-de-pegaso/05-detalle-espalda.webp": [
+    [
+      180,
+      "img/responsive/8a445379b7e378b2-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/8a445379b7e378b2-360w.webp"
+    ]
+  ],
   "img/saint-seiya/seiya-de-pegaso/02-frente-balon.webp": [
     [
       180,
@@ -1113,6 +1239,34 @@
       "img/responsive/2acc1b53c66d4ddb-360w.webp"
     ]
   ],
+  "img/saint-seiya/seiya-de-pegaso/20-mujer-frente.webp": [
+    [
+      180,
+      "img/responsive/02592a03eed8dc47-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/02592a03eed8dc47-360w.webp"
+    ],
+    [
+      720,
+      "img/responsive/02592a03eed8dc47-720w.webp"
+    ]
+  ],
+  "img/saint-seiya/seiya-de-pegaso/23-hombre-34-espalda.webp": [
+    [
+      180,
+      "img/responsive/5b86ca07c38ded69-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/5b86ca07c38ded69-360w.webp"
+    ],
+    [
+      720,
+      "img/responsive/5b86ca07c38ded69-720w.webp"
+    ]
+  ],
   "img/saint-seiya/seiya-de-pegaso/04-detalle-pecho.webp": [
     [
       180,
@@ -1121,16 +1275,6 @@
     [
       360,
       "img/responsive/04d904beadf1314d-360w.webp"
-    ]
-  ],
-  "img/saint-seiya/seiya-de-pegaso/05-detalle-espalda.webp": [
-    [
-      180,
-      "img/responsive/8a445379b7e378b2-180w.webp"
-    ],
-    [
-      360,
-      "img/responsive/8a445379b7e378b2-360w.webp"
     ]
   ],
   "img/extendidos-aprobados-20261116/seiya-de-pegaso.webp": [
@@ -1155,6 +1299,62 @@
     [
       360,
       "img/responsive/300cb4690c2d57aa-360w.webp"
+    ]
+  ],
+  "img/saint-seiya/ikki-de-fenix/20-mujer-frente.webp": [
+    [
+      180,
+      "img/responsive/3f3f43fa931903d7-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/3f3f43fa931903d7-360w.webp"
+    ],
+    [
+      720,
+      "img/responsive/3f3f43fa931903d7-720w.webp"
+    ]
+  ],
+  "img/saint-seiya/ikki-de-fenix/20-hombre-frente.webp": [
+    [
+      180,
+      "img/responsive/7c4c1d7013b9d8a9-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/7c4c1d7013b9d8a9-360w.webp"
+    ],
+    [
+      720,
+      "img/responsive/7c4c1d7013b9d8a9-720w.webp"
+    ]
+  ],
+  "img/saint-seiya/ikki-de-fenix/21-mujer-espalda.webp": [
+    [
+      180,
+      "img/responsive/9d50cd94c97fec41-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/9d50cd94c97fec41-360w.webp"
+    ],
+    [
+      720,
+      "img/responsive/9d50cd94c97fec41-720w.webp"
+    ]
+  ],
+  "img/saint-seiya/ikki-de-fenix/22-mujer-34-frente.webp": [
+    [
+      180,
+      "img/responsive/b95f5997473dad5b-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/b95f5997473dad5b-360w.webp"
+    ],
+    [
+      720,
+      "img/responsive/b95f5997473dad5b-720w.webp"
     ]
   ],
   "img/saint-seiya/ikki-de-fenix/04-detalle-pecho.webp": [
@@ -1205,14 +1405,18 @@
       "img/responsive/834614667ad223a9-360w.webp"
     ]
   ],
-  "img/saint-seiya/shun-de-andromeda/04-detalle-pecho.webp": [
+  "img/saint-seiya/shun-de-andromeda/20-hombre-frente.webp": [
     [
       180,
-      "img/responsive/86a76bb8d6576523-180w.webp"
+      "img/responsive/7eb51e1b85f11b7c-180w.webp"
     ],
     [
       360,
-      "img/responsive/86a76bb8d6576523-360w.webp"
+      "img/responsive/7eb51e1b85f11b7c-360w.webp"
+    ],
+    [
+      720,
+      "img/responsive/7eb51e1b85f11b7c-720w.webp"
     ]
   ],
   "img/saint-seiya/shun-de-andromeda/05-detalle-espalda.webp": [
@@ -1223,6 +1427,44 @@
     [
       360,
       "img/responsive/07112869ea05ae03-360w.webp"
+    ]
+  ],
+  "img/saint-seiya/shun-de-andromeda/21-hombre-espalda.webp": [
+    [
+      180,
+      "img/responsive/2b51a62bbe2ec902-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/2b51a62bbe2ec902-360w.webp"
+    ],
+    [
+      720,
+      "img/responsive/2b51a62bbe2ec902-720w.webp"
+    ]
+  ],
+  "img/saint-seiya/shun-de-andromeda/20-mujer-frente.webp": [
+    [
+      180,
+      "img/responsive/d3530d7256e211f3-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/d3530d7256e211f3-360w.webp"
+    ],
+    [
+      720,
+      "img/responsive/d3530d7256e211f3-720w.webp"
+    ]
+  ],
+  "img/saint-seiya/shun-de-andromeda/04-detalle-pecho.webp": [
+    [
+      180,
+      "img/responsive/86a76bb8d6576523-180w.webp"
+    ],
+    [
+      360,
+      "img/responsive/86a76bb8d6576523-360w.webp"
     ]
   ],
   "img/extendidos-aprobados-20261116/shun-de-andromeda.webp": [
