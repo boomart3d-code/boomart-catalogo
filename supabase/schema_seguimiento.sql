@@ -19,12 +19,12 @@ create table if not exists seguimiento_pedidos (
   venta_id integer not null,
   etapa text not null default 'tomado' check (etapa in (
     'tomado', 'fabricacion', 'postproduccion', 'pintado', 'empaquetado',
-    'listo_envio', 'listo_recojo', 'enviado_shalom', 'cerrado'
+    'listo_envio', 'listo_recojo', 'enviado_shalom', 'enviado_olva', 'cerrado'
   )),
   -- [{"nombre": "...", "etapa": "..."}] para pedidos con varios productos en
   -- etapas distintas. Vacio si el pedido es de un solo producto.
   productos jsonb not null default '[]'::jsonb,
-  metodo_envio text not null check (metodo_envio in ('local', 'recojo', 'shalom')),
+  metodo_envio text not null check (metodo_envio in ('local', 'recojo', 'shalom', 'olva')),
   -- A pedido explicito de Adrian (2026-09-23): nombre del cliente y
   -- direccion de envio (o agencia Shalom, ya resuelta por Studio) SI se
   -- muestran en la pagina publica. DNI, correo, telefono y dinero

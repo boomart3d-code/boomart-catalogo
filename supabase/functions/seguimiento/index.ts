@@ -37,8 +37,11 @@ const sb = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
 const ETAPAS_VALIDAS = new Set([
   "tomado", "fabricacion", "postproduccion", "pintado", "empaquetado",
-  "listo_envio", "listo_recojo", "enviado_shalom", "cerrado",
+  "listo_envio", "listo_recojo", "enviado_shalom", "enviado_olva", "cerrado",
 ]);
+
+// Metodos de envio que la tabla acepta (check seguimiento_pedidos_metodo_envio_check).
+const METODOS_VALIDOS = new Set(["local", "recojo", "shalom", "olva"]);
 
 // CORS: el GET publico lo llama el navegador del cliente directo desde
 // boomart.pe (o desde donde sea que se pruebe), asi que la respuesta
@@ -136,8 +139,12 @@ async function handleActualizarEtapa(body: Record<string, unknown>) {
   }
   const existente = await getActivoPorVenta(ventaId);
   if (!existente) return json({ actualizado: false, razon: "sin_seguimiento_activo" });
+  const metodo = typeof body.metodo_envio === "string" && METODOS_VALIDOS.has(body.metodo_envio)
+    ? body.metodo_envio
+    : existente.metodo_envio;
   const { error } = await sb.from(TABLE).update({
     etapa,
+    metodo_envio: metodo,
     productos: body.productos ?? existente.productos,
     nombre_cliente: body.nombre_cliente ?? existente.nombre_cliente,
     direccion_envio: body.direccion_envio ?? existente.direccion_envio,

@@ -22,6 +22,7 @@
     listo_envio: "Listo para envío",
     listo_recojo: "Listo para recojo",
     enviado_shalom: "Enviado por Shalom",
+    enviado_olva: "Enviado por Olva",
   };
 
   // Iconos por etapa (trazo simple, heredan color via currentColor) y check
@@ -38,6 +39,7 @@
     listo_envio: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="13" height="9"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="6" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>',
     listo_recojo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7"/><path d="M5 9v10h14V9"/></svg>',
     enviado_shalom: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="13" height="9"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="6" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>',
+    enviado_olva: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="13" height="9"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="6" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>',
   };
 
   // Que pasos mostrar segun el metodo de envio -- local nunca muestra un
@@ -47,6 +49,7 @@
     local: ["tomado", "fabricacion", "postproduccion", "pintado", "empaquetado", "listo_envio"],
     recojo: ["tomado", "fabricacion", "postproduccion", "pintado", "empaquetado", "listo_recojo"],
     shalom: ["tomado", "fabricacion", "postproduccion", "pintado", "empaquetado", "listo_envio", "enviado_shalom"],
+    olva: ["tomado", "fabricacion", "postproduccion", "pintado", "empaquetado", "listo_envio", "enviado_olva"],
   };
 
   const loadingEl = document.querySelector("#trackerLoading");
@@ -57,6 +60,7 @@
   const updatedEl = document.querySelector("#trackerUpdated");
   const stepsEl = document.querySelector("#trackerSteps");
   const shalomNoteEl = document.querySelector("#trackerShalomNote");
+  const olvaNoteEl = document.querySelector("#trackerOlvaNote");
   const direccionWrapEl = document.querySelector("#trackerDireccion");
   const direccionTextoEl = document.querySelector("#trackerDireccionTexto");
   const productsWrapEl = document.querySelector("#trackerProducts");
@@ -197,6 +201,7 @@
     renderSteps(data.metodo_envio, data.etapa, data.pintado_aplica !== false);
     renderProducts(data.productos);
     shalomNoteEl.hidden = data.etapa !== "enviado_shalom";
+    if (olvaNoteEl) olvaNoteEl.hidden = data.etapa !== "enviado_olva";
 
     const precioTotal = Number(data.precio_total || 0);
     if (precioTotal > 0) {
