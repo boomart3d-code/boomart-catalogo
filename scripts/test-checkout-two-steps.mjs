@@ -116,6 +116,58 @@ test("el resumen trata el destino como texto y no describe envío cuando se elig
   assert.doesNotMatch(ctx.deliveryTermsEl.innerHTML, /Entrega local/);
 });
 
+test("Olva: opción de entrega propia que comparte el bloque de agencia con Shalom", () => {
+  assert.ok(registration.includes('name="delivery_method" value="olva"'));
+  assert.match(registration, /olva-agencias\.json/);
+  assert.match(registration, /const block = m === "olva" \? "shalom" : m;/);
+  // deliveryFromProfile traduce un perfil Olva a destino provincias, con su tipo de punto.
+  const fn = registration.slice(registration.indexOf("function deliveryFromProfile("), registration.indexOf("  async function loadProfile("));
+  const ctx = vm.createContext({ kind: "" });
+  vm.runInContext(`function olvaKind() { return kind; }\n${fn}`, ctx);
+  const perfil = { delivery_method: "olva", shalom_name: "AGENTE CARAVELI", shalom_address: "AV. PERU NRO 104", shalom_department: "Arequipa", shalom_province: "Caraveli", shalom_district: "Caraveli" };
+  ctx.kind = "Agente";
+  const agente = ctx.deliveryFromProfile(perfil);
+  assert.equal(agente.method, "olva");
+  assert.equal(agente.destination, "provincias");
+  assert.equal(agente.olvaKind, "Agente");
+  assert.equal(agente.provDepartment, "Arequipa");
+  assert.match(agente.label, /^Olva \(agente\) — AGENTE CARAVELI — Caraveli, Caraveli, Arequipa$/);
+  ctx.kind = "";
+  assert.match(ctx.deliveryFromProfile(perfil).label, /^Olva — AGENTE CARAVELI/);
+  assert.equal(ctx.deliveryFromProfile({ ...perfil, delivery_method: "shalom" }).method, "shalom");
+  assert.match(ctx.deliveryFromProfile({ ...perfil, delivery_method: "shalom" }).label, /^Shalom — /);
+});
+
+test("Olva: condiciones propias y aviso de pago del envío antes del despacho con agentes", async () => {
+  const config = {};
+  vm.runInNewContext(await read("src/checkout-config.js"), { window: config });
+  const terms = config.BOOMART_CHECKOUT.deliveryTerms;
+  assert.match(terms.olva.summary, /por Olva/);
+  assert.match(terms.olva.balanceCondition, /clave de recojo/);
+  assert.doesNotMatch(JSON.stringify(terms.olva), /Shalom|S\/\s*\d/, "sin mencionar Shalom ni montos de envío");
+  assert.match(terms.provincias.summary, /por Shalom/, "Shalom conserva sus condiciones");
+
+  const ctx = paymentContext(false);
+  ctx.CHECKOUT = { deliveryTerms: terms };
+  ctx.destinationLabel = () => "Olva — punto de prueba";
+  const html = (deliveryMethod, olvaKind, destination = "provincias") => {
+    Object.assign(ctx.customer, { deliveryMethod, olvaKind, destination });
+    ctx.refreshPaymentAmounts();
+    return ctx.deliveryTermsEl.innerHTML;
+  };
+  const agente = html("olva", "Agente");
+  assert.ok(agente.includes(ctx.esc(terms.olva.summary)));
+  assert.ok(agente.includes(ctx.esc(terms.olva.agentNote)), "con agente se avisa el pago previo del envío");
+  const tienda = html("olva", "Tienda");
+  assert.ok(tienda.includes(ctx.esc(terms.olva.balanceCondition)));
+  assert.equal(tienda.includes("agente Olva: los agentes"), false, "con tienda no hay aviso de agente");
+  assert.equal(tienda.includes(ctx.esc(terms.olva.agentNoteUnknown)), false);
+  assert.ok(html("olva", "").includes(ctx.esc(terms.olva.agentNoteUnknown)), "sin saber el tipo, aviso general");
+  const shalom = html("shalom", "");
+  assert.ok(shalom.includes(ctx.esc(terms.provincias.summary)));
+  assert.equal(/Olva/.test(shalom.replace("Olva — punto de prueba", "")), false, "Shalom no muestra textos de Olva");
+});
+
 test("no se crea una compra confirmada desde el checkout; los pedidos siguen por validar", () => {
   assert.match(checkout, /boomart:order-sent/);
   assert.doesNotMatch(checkout, /event_name\s*:\s*["']Purchase|confirmado_en|meta_compra_confirmar/);

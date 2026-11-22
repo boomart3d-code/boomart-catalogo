@@ -103,6 +103,21 @@ window.BOOMART_CHECKOUT = {
         "El despacho se realiza por Shalom. Tras despachar, BoomArt te envía foto del comprobante de envío y de la caja rotulada; el costo del envío se coordina por WhatsApp y no está incluido en estos importes.",
       balanceCondition:
         "Pagarás el saldo de los productos y, tras validarlo, BoomArt te entregará el código de recojo en la agencia Shalom."
+    },
+    // Envío por Olva (delivery_method "olva"): mismo esquema que Shalom. Regla de Adrián
+    // (2026-11-22): los agentes Olva no aceptan pago del envío en destino, así que con un
+    // agente el envío se paga antes de despachar. agentNote se muestra si el punto elegido
+    // es un agente; agentNoteUnknown, si no se pudo saber si es tienda o agente.
+    olva: {
+      label: "Provincias",
+      summary:
+        "El despacho se realiza por Olva. Tras despachar, BoomArt te envía foto del comprobante de envío y de la caja rotulada; el costo del envío se coordina por WhatsApp y no está incluido en estos importes.",
+      balanceCondition:
+        "Pagarás el saldo de los productos cuando recibas la foto del comprobante de envío y, tras validarlo, BoomArt te entregará la clave de recojo en tu tienda o agente Olva.",
+      agentNote:
+        "Elegiste un agente Olva: los agentes no aceptan pago del envío en destino, así que el envío se paga a BoomArt antes de despachar tu pedido.",
+      agentNoteUnknown:
+        "Si tu punto de recojo es un agente Olva (y no una tienda Olva), el envío se paga a BoomArt antes de despachar tu pedido: los agentes no aceptan pago en destino."
     }
   }
 };

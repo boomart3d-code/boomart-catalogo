@@ -33,6 +33,7 @@ const DOC_LABELS: Record<string, string> = { dni: "DNI", ce: "Carné de extranje
 const DELIVERY_LABELS: Record<string, string> = {
   indriver: "Envío local (InDrive)",
   shalom: "Envío por Shalom",
+  olva: "Envío por Olva",
   pickup: "Recojo coordinado",
 };
 
@@ -55,7 +56,7 @@ function deliveryText(c: any): string {
   if (c.delivery_method === "indriver") {
     return [c.local_district, c.local_address, c.local_reference].filter(Boolean).join(" · ") || "(sin dirección)";
   }
-  if (c.delivery_method === "shalom") {
+  if (c.delivery_method === "shalom" || c.delivery_method === "olva") {
     const place = [c.shalom_district, c.shalom_province, c.shalom_department].filter(Boolean).join(", ");
     return [c.shalom_name, c.shalom_address, place].filter(Boolean).join(" · ") || "(sin agencia)";
   }

@@ -38,7 +38,7 @@ const bootstrap = `(() => {
     if (name === 'registro_web_perfil') return {data:profile,error:null};
     if (name === 'registro_web_guardar') {
       if (failSave) { failSave=false; return {data:null,error:{code:'TEST'}}; }
-      const nuevo=!profile, d=args.p_data, local=d.delivery_method==='indriver', agency=d.delivery_method==='shalom';
+      const nuevo=!profile, d=args.p_data, local=d.delivery_method==='indriver', agency=d.delivery_method==='shalom'||d.delivery_method==='olva';
       profile={...d,local_district:local?d.local_district:'',local_address:local?d.local_address:'',local_reference:local?d.local_reference:'',
         shalom_name:agency?d.shalom_name:'',shalom_address:agency?d.shalom_address:'',shalom_department:agency?d.shalom_department:'',
         shalom_province:agency?d.shalom_province:'',shalom_district:agency?d.shalom_district:'',cupon_disponible:true};

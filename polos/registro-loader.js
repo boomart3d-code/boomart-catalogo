@@ -25,7 +25,7 @@
     if (!pending) pending = (async () => {
       if (!window.supabase?.createClient) await script('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js');
       if (!window.supabase?.createClient) throw new Error('Registro no disponible');
-      await script('/src/registro-web.js?v=5');
+      await script('/src/registro-web.js?v=6');
       if (window.BoomartRegistro === bridge) throw new Error('Registro no disponible');
       return window.BoomartRegistro;
     })().catch(error => { pending = null; throw error; });

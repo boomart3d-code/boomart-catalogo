@@ -541,6 +541,7 @@
     customer.addressDetail = d.addressDetail || "";
     customer.deliveryLabel = d.label || "";
     customer.deliveryMethod = d.method || "";
+    customer.olvaKind = d.olvaKind || "";
     customer.docType = perfil.document_type || "";
     customer.docNumber = perfil.document_number || "";
   }
@@ -649,7 +650,14 @@
     if (summaryShippingLabel) summaryShippingLabel.textContent = pickup ? "Recojo" : "Envío";
     if (summaryShippingValue) summaryShippingValue.textContent = pickup ? "Previa coordinación" : "Costo por coordinar, no incluido";
 
-    const terms = (CHECKOUT.deliveryTerms || {})[customer.destination];
+    // Olva tiene sus propias condiciones (mismo esquema que Shalom). Los agentes Olva no
+    // aceptan pago del envío en destino: se avisa siempre que el punto no sea una tienda.
+    const allTerms = CHECKOUT.deliveryTerms || {};
+    const olva = customer.deliveryMethod === "olva" && allTerms.olva;
+    const terms = olva ? allTerms.olva : allTerms[customer.destination];
+    const agentNote = !olva || customer.olvaKind === "Tienda"
+      ? ""
+      : customer.olvaKind === "Agente" ? terms.agentNote : terms.agentNoteUnknown;
     deliveryTermsEl.innerHTML = pickup
       ? `<p class="delivery-terms-title">${esc(destinationLabel())}</p><p>Coordinaremos por WhatsApp la fecha y el horario de recojo.</p>`
       : terms
@@ -658,6 +666,7 @@
         <p>${esc(terms.summary)}</p>
         ${polos ? "<p>Despacho dentro de las 24 horas de confirmado el pedido.</p>" : ""}
         <p>${esc(terms.balanceCondition)}</p>
+        ${agentNote ? `<p><strong>${esc(agentNote)}</strong></p>` : ""}
       `
       : "";
   }

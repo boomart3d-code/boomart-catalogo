@@ -31,7 +31,24 @@
   const TOKEN_KEY = "boomart_reg_token_v1";
   const CUSTOMER_KEY = "boomart_customer_v1";
   const DRAFT_KEY = "boomart_reg_draft_v1";
-  const AGENCIES_URL = "/registro-cliente/shalom-agencias.json";
+  // Shalom y Olva comparten el bloque de agencia; cada una tiene su catálogo.
+  // En el de Olva cada punto dice si es "Tienda" (propia) o "Agente" (negocio aliado).
+  const AGENCIES_URLS = {
+    shalom: "/registro-cliente/shalom-agencias.json",
+    olva: "/registro-cliente/olva-agencias.json?v=2"
+  };
+  const isAgencyMethod = (m) => m === "shalom" || m === "olva";
+  // Estilos propios de la opción Olva (cuatro formas de entrega en rejilla 2×2 y aviso de
+  // agente). Van aquí y no en src/styles.css para no invalidar la caché de todo el sitio.
+  if (!document.querySelector("#reg-olva-style")) {
+    const style = document.createElement("style");
+    style.id = "reg-olva-style";
+    style.textContent = "@media (min-width:521px){.reg-choices{grid-template-columns:repeat(2,minmax(0,1fr))}}"
+      + ".reg-agent-note{margin:8px 0 0;padding:10px 12px;border-left:4px solid #b9893f;background:rgba(185,137,63,.12);font-weight:600}";
+    document.head.appendChild(style);
+  }
+  // Regla de Adrián (2026-11-22): los agentes Olva no aceptan pago del envío en destino.
+  const OLVA_AGENT_NOTE = "Elegiste un agente Olva: los agentes no aceptan pago del envío en destino, así que el envío se paga a BoomArt antes de despachar tu pedido.";
   const PICKUP_TEXT = "Jr. E. García Calderón 127 Dpto. 302, San José - Bellavista, Callao. Atención únicamente previa coordinación por WhatsApp; no es una tienda abierta al público.";
 
   const storage = (() => {
@@ -168,6 +185,23 @@
           .filter(Boolean).join(" — ")
       };
     }
+    if (m === "olva") {
+      // Mismas columnas de agencia que Shalom. `olvaKind` ("Tienda" | "Agente" | "")
+      // sale del catálogo si ya está cargado; con "" el checkout usa el texto general.
+      const kind = olvaKind(p.shalom_name, p.shalom_address);
+      return {
+        method: m,
+        destination: "provincias",
+        limaDistrict: "",
+        provDepartment: p.shalom_department || "",
+        provProvince: p.shalom_province || "",
+        addressDetail: [p.shalom_name, p.shalom_address].filter(Boolean).join(" · "),
+        olvaKind: kind,
+        label: [kind ? `Olva (${kind.toLowerCase()})` : "Olva", p.shalom_name,
+          [p.shalom_district, p.shalom_province, p.shalom_department].filter(Boolean).join(", ")]
+          .filter(Boolean).join(" — ")
+      };
+    }
     if (m === "pickup") {
       return {
         method: m,
@@ -213,19 +247,36 @@
     return result;
   }
 
-  // ---------- Agencias Shalom (mismo buscador que /registro-cliente/) ----------
+  // ---------- Agencias Shalom y Olva (mismo buscador que /registro-cliente/) ----------
 
-  let agenciesPromise = null;
-  function agencies() {
-    if (!agenciesPromise) {
-      agenciesPromise = fetch(AGENCIES_URL)
+  const agenciesPromises = {};
+  const agenciesLoaded = {};
+  function agencies(carrier) {
+    const key = carrier === "olva" ? "olva" : "shalom";
+    if (!agenciesPromises[key]) {
+      agenciesPromises[key] = fetch(AGENCIES_URLS[key])
         .then((r) => (r.ok ? r.json() : []))
-        .catch(() => []);
+        .catch(() => [])
+        .then((list) => {
+          agenciesLoaded[key] = Array.isArray(list) ? list : [];
+          return agenciesLoaded[key];
+        });
     }
-    return agenciesPromise;
+    return agenciesPromises[key];
   }
 
   const fold = (s) => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+
+  // "Tienda" | "Agente" del punto Olva guardado en el perfil (que solo conserva nombre y
+  // dirección); "" si el catálogo aún no cargó o el punto ya no figura en él.
+  function olvaKind(nombre, direccion) {
+    const list = agenciesLoaded.olva;
+    if (!list || !nombre) return "";
+    const n = fold(nombre).trim();
+    const d = fold(direccion).trim();
+    const hit = list.find((a) => fold(a.nombre).trim() === n && fold(a.direccion).trim() === d);
+    return hit && hit.tipo ? hit.tipo : "";
+  }
 
   // ---------- Formulario ----------
 
@@ -270,9 +321,11 @@
     const v = { ...p, ...(profile ? {} : draft || {}) };
     const docType = v.document_type || "dni";
     const method = v.delivery_method || "";
-    let chosenAgency = method === "shalom" && v.shalom_name
+    let chosenAgency = isAgencyMethod(method) && v.shalom_name
       ? { nombre: v.shalom_name, direccion: v.shalom_address, departamento: v.shalom_department, provincia: v.shalom_province, distrito: v.shalom_district }
       : null;
+    // A qué empresa pertenece la agencia elegida: al cambiar entre Shalom y Olva se descarta.
+    let agencyCarrier = isAgencyMethod(method) ? method : "";
     const deliveryHint = opts.requireDelivery
       ? "Elige una opción. Si no tienes la dirección a la mano, puedes dejarla en blanco: la coordinamos por WhatsApp."
       : "Opcional, pero nos ayuda a atenderte más rápido. Si no la tienes a la mano, la coordinamos por WhatsApp.";
@@ -318,6 +371,7 @@
           <div class="reg-choices" role="radiogroup" aria-labelledby="reg-delivery-title-${esc(opts.context || "cuenta")}">
             <label class="reg-choice"><input type="radio" name="delivery_method" value="indriver"${method === "indriver" ? " checked" : ""}><b>Envío local</b><small>Lima y Callao · InDrive</small></label>
             <label class="reg-choice"><input type="radio" name="delivery_method" value="shalom"${method === "shalom" ? " checked" : ""}><b>Envío por Shalom</b><small>A una agencia en provincias</small></label>
+            <label class="reg-choice"><input type="radio" name="delivery_method" value="olva"${method === "olva" ? " checked" : ""}><b>Envío por Olva</b><small>A una tienda o agente en provincias</small></label>
             <label class="reg-choice"><input type="radio" name="delivery_method" value="pickup"${method === "pickup" ? " checked" : ""}><b>Recojo</b><small>Coordinado con BoomArt</small></label>
           </div>
           <div class="reg-delivery" data-delivery="indriver" hidden>
@@ -328,11 +382,12 @@
             <label class="field"><span>Referencia</span><input name="local_reference" maxlength="200" value="${esc(v.local_reference)}"></label>
           </div>
           <div class="reg-delivery" data-delivery="shalom" hidden>
-            <label class="field"><span>Busca tu agencia Shalom</span>
+            <label class="field"><span class="reg-agency-label">Busca tu agencia Shalom</span>
               <input class="reg-agency-search" autocomplete="off" placeholder="Distrito, provincia, agencia o dirección">
             </label>
             <div class="reg-agency-results" role="listbox"></div>
             <div class="reg-agency-chosen" hidden></div>
+            <p class="reg-hint reg-agent-note" role="note" hidden>${esc(OLVA_AGENT_NOTE)}</p>
           </div>
           <p class="reg-delivery reg-pickup" data-delivery="pickup" hidden><b>Recojo en taller privado:</b> ${PICKUP_TEXT}</p>
         </fieldset>
@@ -358,11 +413,22 @@
       return (el.value || "").trim();
     };
 
+    const agencyLabelEl = container.querySelector(".reg-agency-label");
+    const agentNoteEl = container.querySelector(".reg-agent-note");
+    // Nombre del punto con su tipo cuando es de Olva: "TIENDA X · Tienda Olva".
+    const agencyTitle = (a) => `<b>${esc(a.nombre)}${a.tipo ? ` · ${esc(a.tipo)} Olva` : ""}</b>`;
+
     function showChosen() {
+      // Una agencia Olva que vino del perfil no trae su tipo: se completa del catálogo.
+      if (chosenAgency && agencyCarrier === "olva" && !chosenAgency.tipo) {
+        const kind = olvaKind(chosenAgency.nombre, chosenAgency.direccion);
+        if (kind) chosenAgency = { ...chosenAgency, tipo: kind };
+      }
       chosenEl.hidden = !chosenAgency;
       chosenEl.innerHTML = chosenAgency
-        ? `<b>${esc(chosenAgency.nombre)}</b><span>${esc(chosenAgency.direccion)}</span><small>${esc([chosenAgency.distrito, chosenAgency.provincia, chosenAgency.departamento].filter(Boolean).join(", "))}</small><button type="button" class="reg-agency-change">Cambiar agencia</button>`
+        ? `${agencyTitle(chosenAgency)}<span>${esc(chosenAgency.direccion)}</span><small>${esc([chosenAgency.distrito, chosenAgency.provincia, chosenAgency.departamento].filter(Boolean).join(", "))}</small><button type="button" class="reg-agency-change">Cambiar agencia</button>`
         : "";
+      if (agentNoteEl) agentNoteEl.hidden = !(chosenAgency && agencyCarrier === "olva" && chosenAgency.tipo === "Agente");
       search.closest(".field").hidden = Boolean(chosenAgency);
       const change = chosenEl.querySelector(".reg-agency-change");
       if (change) change.addEventListener("click", () => {
@@ -375,13 +441,29 @@
 
     function syncDelivery() {
       const m = value("delivery_method");
+      // Olva usa el mismo bloque de agencia que Shalom (data-delivery="shalom").
+      const block = m === "olva" ? "shalom" : m;
       container.querySelectorAll("[data-delivery]").forEach((el) => {
-        el.hidden = el.dataset.delivery !== m;
+        el.hidden = el.dataset.delivery !== block;
       });
       container.querySelectorAll(".reg-choice").forEach((el) => {
         el.classList.toggle("is-selected", el.querySelector("input").checked);
       });
-      if (m === "shalom") agencies();
+      if (!isAgencyMethod(m)) return;
+      if (agencyCarrier && agencyCarrier !== m) {
+        // La agencia elegida era de la otra empresa: se descarta.
+        chosenAgency = null;
+        search.value = "";
+        results.innerHTML = "";
+      }
+      const changed = agencyCarrier !== m;
+      agencyCarrier = m;
+      if (agencyLabelEl) agencyLabelEl.textContent = m === "olva" ? "Busca tu tienda o agente Olva" : "Busca tu agencia Shalom";
+      if (changed) showChosen();
+      // Al cargar el catálogo de Olva se completa el tipo (tienda/agente) de la agencia guardada.
+      agencies(m).then(() => {
+        if (agencyCarrier === "olva" && chosenAgency && !chosenAgency.tipo) showChosen();
+      });
     }
 
     function values() {
@@ -411,19 +493,21 @@
         results.innerHTML = "";
         if (q.length < 2) return;
         const words = q.split(/\s+/);
-        const list = (await agencies()).filter((a) => {
+        const carrier = agencyCarrier;
+        const list = (await agencies(carrier)).filter((a) => {
           const hay = fold(Object.values(a).join(" "));
           return words.every((w) => hay.includes(w));
         }).slice(0, 20);
+        if (carrier !== agencyCarrier) return; // cambió de empresa mientras cargaba
         if (!list.length) {
-          results.innerHTML = `<p class="reg-agency-empty">No encontramos esa agencia. Prueba con tu distrito o provincia.</p>`;
+          results.innerHTML = `<p class="reg-agency-empty">No encontramos ${carrier === "olva" ? "ese punto de Olva" : "esa agencia"}. Prueba con tu distrito o provincia.</p>`;
           return;
         }
         list.forEach((a) => {
           const b = document.createElement("button");
           b.type = "button";
           b.className = "reg-agency-option";
-          b.innerHTML = `<b>${esc(a.nombre)}</b><small>${esc([a.distrito, a.provincia, a.departamento].filter(Boolean).join(", "))}</small><small>${esc(a.direccion)}</small>`;
+          b.innerHTML = `${agencyTitle(a)}<small>${esc([a.distrito, a.provincia, a.departamento].filter(Boolean).join(", "))}</small><small>${esc(a.direccion)}</small>`;
           b.addEventListener("click", () => {
             chosenAgency = a;
             results.innerHTML = "";
@@ -460,6 +544,8 @@
       const original = submitBtn.textContent;
       submitBtn.textContent = "Guardando…";
       try {
+        // Con Olva, el catálogo debe estar cargado para saber si el punto es tienda o agente.
+        if (data.delivery_method === "olva") await agencies("olva");
         const result = await saveProfile({ ...data, phone: normalizePhone(data.phone) }, opts.context || "");
         if (typeof opts.onSaved === "function") opts.onSaved(result);
       } catch (err) {
