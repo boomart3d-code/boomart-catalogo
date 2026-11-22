@@ -16,5 +16,6 @@ fi
 
 docker cp "$(cygpath -w "$ROOT/migrations/202610140001_registro_clientes.sql")" "$NAME:/tmp/202610140001_registro_clientes.sql"
 docker cp "$(cygpath -w "$ROOT/migrations/202610140002_registro_clientes_endurecer.sql")" "$NAME:/tmp/202610140002_registro_clientes_endurecer.sql"
+docker cp "$(cygpath -w "$ROOT/migrations/202611220001_registro_cliente_olva.sql")" "$NAME:/tmp/202611220001_registro_cliente_olva.sql"
 docker cp "$(cygpath -w "$HERE/registro_clientes.test.sql")" "$NAME:/tmp/registro_clientes.test.sql"
 docker exec "$NAME" psql -U supabase_admin -h localhost -d postgres -v ON_ERROR_STOP=1 -f /tmp/registro_clientes.test.sql 2>&1

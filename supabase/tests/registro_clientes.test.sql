@@ -234,4 +234,46 @@ do $$ declare r jsonb; n int; begin
   perform t.ok((r ->> 'vencidos')::int = 0 and (r ->> 'borradores_borrados')::int = 0, 'correr la limpieza dos veces no cambia nada más');
 end $$;
 
+\echo '== 8. Envío por Olva (migración 202611220001)'
+do $$ begin
+  set local role anon;
+  perform t.ok(t.error_guardar(repeat('1', 32), t.datos('{"delivery_method":"olva","shalom_name":"TIENDA CHACHAPOYAS","shalom_address":"JR. ORTIZ ARRIETA 270","shalom_department":"Amazonas","shalom_province":"Chachapoyas","shalom_district":"Chachapoyas"}'), true) = 'Datos no válidos', 'antes de la migración, Olva se rechaza');
+  reset role;
+end $$;
+
+\i /tmp/202611220001_registro_cliente_olva.sql
+\i /tmp/202611220001_registro_cliente_olva.sql
+
+do $$ declare r jsonb; s public.customer_profile_submissions; n int; begin
+  set local role anon;
+  perform t.ok(t.error_guardar(repeat('2', 32), t.datos('{"delivery_method":"olva","shalom_name":"TIENDA CHACHAPOYAS","shalom_address":"JR. ORTIZ ARRIETA 270","shalom_province":"Chachapoyas"}'), true) = 'Elige tu tienda o agente Olva de la lista', 'Olva sin departamento se rechaza con su propio mensaje');
+  perform t.ok(t.error_guardar(repeat('3', 32), t.datos('{"delivery_method":"olva"}'), true) like '%Olva%', 'Olva sin agencia elegida se rechaza');
+  r := public.registro_cliente_guardar(repeat('4', 32), t.datos('{"delivery_method":"olva","shalom_name":"TIENDA CHACHAPOYAS","shalom_address":"JR. ORTIZ ARRIETA 270","shalom_department":"Amazonas","shalom_province":"Chachapoyas","shalom_district":"Chachapoyas"}'), true);
+  reset role;
+  perform t.ok(r ->> 'status' = 'complete' and (r ->> 'import_code') like 'BA-%', 'Olva con todos los datos se acepta y recibe código');
+  select * into s from public.customer_profile_submissions where import_code = r ->> 'import_code';
+  perform t.ok(s.delivery_method = 'olva' and s.shalom_name = 'TIENDA CHACHAPOYAS' and s.shalom_address = 'JR. ORTIZ ARRIETA 270'
+               and s.shalom_department = 'Amazonas' and s.shalom_province = 'Chachapoyas' and s.shalom_district = 'Chachapoyas',
+               'el registro Olva guarda la agencia en las columnas de agencia');
+  set local role anon;
+  perform t.ok(t.error_guardar(repeat('5', 32), t.datos('{"delivery_method":"shalom","shalom_name":"Terminal","shalom_address":"Av. X 1","shalom_province":"Arequipa"}'), true) = 'Elige tu agencia Shalom de la lista', 'Shalom conserva su mensaje');
+  perform t.ok(t.error_guardar(repeat('6', 32), t.datos('{"delivery_method":"shalom","shalom_name":"Terminal","shalom_address":"Av. X 1","shalom_department":"Arequipa","shalom_province":"Arequipa","shalom_district":"Cercado"}'), true) is null, 'Shalom completo se sigue aceptando');
+  perform t.ok(t.error_guardar(repeat('7', 32), t.datos(), true) is null, 'InDrive se sigue aceptando');
+  perform t.ok(t.error_guardar(repeat('8', 32), t.datos('{"delivery_method":"pickup"}'), true) is null, 'recojo se sigue aceptando');
+  perform t.ok(t.error_guardar(repeat('9', 32), t.datos('{"delivery_method":"dhl"}'), true) = 'Datos no válidos', 'una forma de entrega desconocida se sigue rechazando');
+  reset role;
+  begin
+    update public.customer_profile_submissions set delivery_method = 'dhl' where id = s.id;
+    perform t.ok(false, 'la tabla no debe aceptar una forma de entrega desconocida');
+  exception when check_violation then
+    perform t.ok(true, 'la tabla rechaza una forma de entrega desconocida');
+  end;
+  select count(*) into n from pg_proc p join pg_namespace ns on ns.oid = p.pronamespace
+   where ns.nspname = 'public' and p.proname in ('registro_cliente_guardar', '_registro_cliente_error');
+  perform t.ok(n = 2, 'aplicar la migración dos veces no duplica funciones');
+  perform t.ok(not has_function_privilege('anon', 'public._registro_cliente_error(text,text,text,text,text,text,text,text,text,text,text,text)', 'execute')
+               and has_function_privilege('anon', 'public.registro_cliente_guardar(text,jsonb,boolean)', 'execute'),
+               'los permisos de las funciones no cambian');
+end $$;
+
 \echo '== TODAS LAS PRUEBAS PASARON =='
