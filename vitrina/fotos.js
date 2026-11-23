@@ -48,48 +48,58 @@
   /**
    * Deja el servidor igual que la lista `items` (en ese orden) y borra lo de `quitados`.
    * Si algo falla lanza el error y deja `hecho` al dia: llamar otra vez continua donde se quedo.
-   * `alAvanzar(texto)` se llama antes de cada paso (para mostrar progreso) y `alGuardarEstado()` tras cada paso terminado.
+   * `alAvanzar(texto)` se llama antes de cada paso (para mostrar progreso), `alGuardarEstado()` tras cada paso terminado y
+   * `alProgreso(hechos, total)` con la cuenta de pasos (para la barra «3 de 13»). Si la red falla, cada paso se reintenta solo
+   * y el texto cambia a «La conexión está lenta. Reintentando…».
    */
-  async function sincronizar({ vendedorId, productoId, items, quitados, alAvanzar, alGuardarEstado }) {
+  async function sincronizar({ vendedorId, productoId, items, quitados, alAvanzar, alGuardarEstado, alProgreso }) {
     const datos = D();
-    const aviso = (texto) => { if (alAvanzar) alAvanzar(texto); };
-    const guardado = () => { if (alGuardarEstado) alGuardarEstado(); };
+    const total = U.pasosDeSincronizacion(items, quitados);
+    let hechos = 0;
+    let textoActual = "";
+    const aviso = (texto) => { textoActual = texto; if (alAvanzar) alAvanzar(texto); };
+    const guardado = () => { hechos += 1; if (alProgreso) alProgreso(hechos, total); if (alGuardarEstado) alGuardarEstado(); };
+    datos.alReintentar = (numero, de) => { if (alAvanzar) alAvanzar(`${textoActual.replace(/…$/, "")} · La conexión está lenta, reintentando (${numero} de ${de})…`); };
+    if (alProgreso) alProgreso(0, total);
+    try {
+      for (const foto of quitados.slice()) {
+        aviso("Quitando una foto…");
+        const rutas = rutasDe(vendedorId, productoId, foto);
+        const archivos = [];
+        if (foto.remoto || foto.hecho.archivo) archivos.push(rutas.path);
+        if (foto.remoto || foto.hecho.mini) archivos.push(rutas.thumb_path);
+        await datos.quitarArchivos(archivos);
+        if (foto.remoto || foto.hecho.fila) await datos.borrarFilaFoto(foto.id);
+        quitados.splice(quitados.indexOf(foto), 1);
+        guardado();
+      }
 
-    for (const foto of quitados.slice()) {
-      aviso("Quitando una foto…");
-      const rutas = rutasDe(vendedorId, productoId, foto);
-      const archivos = [];
-      if (foto.remoto || foto.hecho.archivo) archivos.push(rutas.path);
-      if (foto.remoto || foto.hecho.mini) archivos.push(rutas.thumb_path);
-      await datos.quitarArchivos(archivos);
-      if (foto.remoto || foto.hecho.fila) await datos.borrarFilaFoto(foto.id);
-      quitados.splice(quitados.indexOf(foto), 1);
-      guardado();
-    }
-
-    for (let i = 0; i < items.length; i += 1) {
-      const foto = items[i];
-      const rutas = rutasDe(vendedorId, productoId, foto);
-      const nombre = items.length > 1 ? `foto ${i + 1} de ${items.length}` : "la foto";
-      if (!foto.hecho.archivo) {
-        aviso(`Subiendo ${nombre}…`);
-        await datos.subirArchivo(rutas.path, foto.blob, foto.mime);
-        foto.hecho.archivo = true; guardado();
+      for (let i = 0; i < items.length; i += 1) {
+        const foto = items[i];
+        const rutas = rutasDe(vendedorId, productoId, foto);
+        const nombre = items.length > 1 ? `foto ${i + 1} de ${items.length}` : "la foto";
+        if (!foto.hecho.archivo) {
+          aviso(`Subiendo ${nombre}…`);
+          await datos.subirArchivo(rutas.path, foto.blob, foto.mime);
+          foto.hecho.archivo = true; guardado();
+        }
+        if (!foto.hecho.mini) {
+          aviso(`Subiendo la miniatura de la ${nombre.replace(/^la /, "")}…`);
+          await datos.subirArchivo(rutas.thumb_path, foto.thumb, foto.mime);
+          foto.hecho.mini = true; guardado();
+        }
+        if (!foto.hecho.fila) {
+          aviso(`Guardando ${nombre}…`);
+          await datos.insertarFoto({ id: foto.id, product_id: productoId, seller_id: vendedorId, position: i, path: rutas.path, thumb_path: rutas.thumb_path, bytes: foto.bytes });
+          foto.hecho.fila = true; foto.posicion = i; guardado();
+        } else if (foto.posicion !== i) {
+          aviso("Ordenando las fotos…");
+          await datos.moverFoto(foto.id, i);
+          foto.posicion = i; guardado();
+        }
       }
-      if (!foto.hecho.mini) {
-        aviso(`Subiendo la miniatura de la ${nombre.replace(/^la /, "")}…`);
-        await datos.subirArchivo(rutas.thumb_path, foto.thumb, foto.mime);
-        foto.hecho.mini = true; guardado();
-      }
-      if (!foto.hecho.fila) {
-        aviso(`Guardando ${nombre}…`);
-        await datos.insertarFoto({ id: foto.id, product_id: productoId, seller_id: vendedorId, position: i, path: rutas.path, thumb_path: rutas.thumb_path, bytes: foto.bytes });
-        foto.hecho.fila = true; foto.posicion = i; guardado();
-      } else if (foto.posicion !== i) {
-        aviso("Ordenando las fotos…");
-        await datos.moverFoto(foto.id, i);
-        foto.posicion = i; guardado();
-      }
+    } finally {
+      datos.alReintentar = null;
     }
   }
 

@@ -266,7 +266,7 @@
               original = { ...form };
             }
             if (F.hayCambios(fotos, quitados)) {
-              await F.sincronizar({ vendedorId: App.tienda.id, productoId: p.id, items: fotos, quitados, alAvanzar: avance });
+              await F.sincronizar({ vendedorId: App.tienda.id, productoId: p.id, items: fotos, quitados, alAvanzar: avance, alProgreso: avance.progreso });
               if (estadoRevision !== "borrador") { avance("Marcando el producto como «Sin enviar»…"); const fila = await D.actualizarProducto(p.id, { review_state: "borrador" }); estadoRevision = fila.review_state; }
             }
           },

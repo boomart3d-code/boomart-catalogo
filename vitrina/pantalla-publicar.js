@@ -334,7 +334,7 @@
     }
     await F.sincronizar({
       vendedorId: App.tienda.id, productoId: b.productoId, items: b.fotos, quitados: b.quitados,
-      alAvanzar: avance, alGuardarEstado: persistirYa,
+      alAvanzar: avance, alGuardarEstado: persistirYa, alProgreso: avance.progreso,
     });
   }
 

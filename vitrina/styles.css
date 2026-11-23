@@ -225,6 +225,12 @@ dialog.hoja--completa[open] { display: flex; }
 .hoja__form .hoja__titulo, .hoja__form .hoja__botones { margin: 0; }
 .hoja__espera { display: flex; align-items: center; gap: 16px; padding: 10px 0; }
 .hoja__espera .hoja__texto { margin: 0; font-weight: 500; }
+.hoja__avance { width: 100%; height: 12px; margin: 4px 0 0; border: 0; border-radius: 6px; overflow: hidden; accent-color: var(--rojo); background: var(--lienzo); }
+.hoja__avance::-webkit-progress-bar { background: var(--lienzo); border-radius: 6px; }
+.hoja__avance::-webkit-progress-value { background: var(--rojo); border-radius: 6px; transition: width 0.25s ease; }
+.hoja__avance::-moz-progress-bar { background: var(--rojo); border-radius: 6px; }
+.hoja__cuenta { margin: 6px 0 0; font-size: 0.9rem; color: var(--piedra); }
+.hoja__lento { margin: 10px 0 0; padding: 10px 12px; border-radius: 10px; background: var(--ambar-fondo); color: var(--ambar); font-size: 0.95rem; line-height: 1.4; }
 .hoja__error { display: flex; flex-direction: column; gap: 8px; }
 
 .elegir { display: flex; flex-direction: column; min-height: 0; flex: 1; }

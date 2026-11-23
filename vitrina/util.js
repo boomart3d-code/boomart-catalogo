@@ -40,6 +40,92 @@
     return estadoCrudo === 0 && texto === "" && !codigo;     // la libreria responde estado 0 y sin mensaje cuando no hubo respuesta
   }
 
+  // ---------------------------------------------------------------- red lenta: tiempo limite, reintentos y avance
+  // Sin tiempo limite, una conexion que se queda colgada deja la rueda girando para siempre sin avisar nada.
+  const MARCA_TIEMPO = "TIMEOUT_RED";
+  const LIMITE_NORMAL_MS = 25000;       // consultas y respuestas pequenas
+  const LIMITE_SUBIDA_MS = 45000;       // subir una foto (hasta 300 KB: alcanza incluso con senal muy debil)
+  const ESPERAS_REINTENTO_MS = [1500, 4000];
+
+  function esTiempoAgotado(texto) {
+    return String(texto || "").indexOf(MARCA_TIEMPO) !== -1;
+  }
+
+  /** ¿Vale la pena intentarlo otra vez solo? Si: no hubo conexion, se acabo el tiempo o el servidor estaba saturado (502/503/504). */
+  function esErrorReintentable(err) {
+    if (!err) return false;
+    const crudo = typeof err === "string" ? err : String(err.message || err.msg || "");
+    const estado = Number(err.status || err.statusCode || 0) || 0;
+    if (estado === 502 || estado === 503 || estado === 504) return true;
+    if (estado >= 400) return false;
+    return esFalloDeRed(crudo, err.status, String(err.code || ""));
+  }
+
+  function esCuerpoPesado(cuerpo) {
+    if (!cuerpo || typeof cuerpo !== "object") return false;
+    return (typeof Blob !== "undefined" && cuerpo instanceof Blob) || (typeof FormData !== "undefined" && cuerpo instanceof FormData)
+      || (typeof ArrayBuffer !== "undefined" && (cuerpo instanceof ArrayBuffer || ArrayBuffer.isView(cuerpo)));
+  }
+
+  /**
+   * Envuelve `fetch` para que ningun pedido espere mas de un limite (mas largo cuando lleva una foto).
+   * Si se acaba el tiempo lanza un error con la marca TIMEOUT_RED; si quien llama ya traia su propia señal de cancelacion, se respeta.
+   */
+  function conLimiteDeTiempo(fetchBase, opciones) {
+    const o = opciones || {};
+    const normal = o.normalMs || LIMITE_NORMAL_MS;
+    const subida = o.subidaMs || LIMITE_SUBIDA_MS;
+    return function fetchConLimite(entrada, init) {
+      const pedido = init || {};
+      const control = new AbortController();
+      let vencio = false;
+      const reloj = setTimeout(() => { vencio = true; control.abort(); }, esCuerpoPesado(pedido.body) ? subida : normal);
+      const origen = pedido.signal;
+      if (origen) {
+        if (origen.aborted) control.abort();
+        else origen.addEventListener("abort", () => control.abort(), { once: true });
+      }
+      return fetchBase(entrada, { ...pedido, signal: control.signal }).then(
+        (respuesta) => { clearTimeout(reloj); return respuesta; },
+        (error) => {
+          clearTimeout(reloj);
+          if (vencio) throw new TypeError(`${MARCA_TIEMPO}: la conexión tardó demasiado`);
+          throw error;
+        });
+    };
+  }
+
+  /**
+   * Repite `trabajo` si falla por la red (no por un dato malo). `alReintentar(numeroDelIntento, total)` avisa a la pantalla.
+   * Solo para operaciones que se pueden repetir sin dañar nada (subir un archivo que ya existe cuenta como exito).
+   */
+  async function reintentar(trabajo, opciones) {
+    const o = opciones || {};
+    const esperas = o.esperasMs || ESPERAS_REINTENTO_MS;
+    const dormir = o.dormir || ((ms) => new Promise((resolver) => setTimeout(resolver, ms)));
+    for (let intento = 0; ; intento += 1) {
+      try {
+        return await trabajo();
+      } catch (error) {
+        if (intento >= esperas.length || !esErrorReintentable(error)) throw error;
+        if (o.alReintentar) o.alReintentar(intento + 2, esperas.length + 1);
+        await dormir(esperas[intento]);
+      }
+    }
+  }
+
+  /** Cuantos pasos tiene guardar las fotos (para mostrar «3 de 13»): quitar, subir foto, subir miniatura y guardar fila u ordenar. */
+  function pasosDeSincronizacion(items, quitados) {
+    let n = Array.isArray(quitados) ? quitados.length : 0;
+    (Array.isArray(items) ? items : []).forEach((foto, i) => {
+      const hecho = (foto && foto.hecho) || {};
+      if (!hecho.archivo) n += 1;
+      if (!hecho.mini) n += 1;
+      if (!hecho.fila || foto.posicion !== i) n += 1;
+    });
+    return n;
+  }
+
   const GENERICO = "Algo salió mal. Intenta de nuevo en un momento.";
 
   /**
@@ -58,6 +144,7 @@
       if (e[1] === "FORBIDDEN") return "Eso solo lo puede hacer BoomArt.";
       return capitalizar(e[2]);
     }
+    if (esTiempoAgotado(crudo)) return "La conexión está muy lenta y se cortó. No se perdió nada: intenta de nuevo con mejor señal.";
     if (esFalloDeRed(crudo, err.status, codigo)) return "No hay internet en este momento. No se perdió nada: cuando vuelva la señal, intenta de nuevo.";
     if (codigo === "23505") return ctx.duplicado || "Ya existe uno con ese nombre. Usa otro nombre.";
     if (codigo === "23503") return "Esa sección o colección ya no existe. Vuelve a elegirla.";
@@ -296,6 +383,7 @@
   return {
     MAX_FOTOS, MAX_BYTES_SERVIDOR, OBJETIVO_PRINCIPAL, OBJETIVO_MINIATURA, LADO_PRINCIPAL, LADO_MINIATURA, PRECIO_MAXIMO, CANTIDAD_MAXIMA,
     FILTROS, capitalizar, limpiarMensaje, mensajeAmable, mensajeEntrar, plural,
+    esTiempoAgotado, esErrorReintentable, conLimiteDeTiempo, reintentar, pasosDeSincronizacion, LIMITE_NORMAL_MS, LIMITE_SUBIDA_MS,
     parsePrecio, formatoSoles, parseEntero, parseWhatsapp,
     tamanoImagen, intentosCompresion, formatoDeBlob, rutasFoto, moverAlPrincipio, fotoPortada,
     normalizarNombre, distancia, nombresParecidos, escaparLike,

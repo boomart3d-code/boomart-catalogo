@@ -14,7 +14,13 @@
     db: { schema: "vitrina" },
     // storageKey propio: asi la sesion de Marcos no se mezcla con la del panel de BoomArt (/admin/) si se prueban en el mismo navegador
     auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: false, storageKey: "vitrina-marcos-auth" },
+    // Ningun pedido espera para siempre: si la señal se queda colgada, a los 25 s (45 s con foto) se corta con un aviso claro.
+    global: { fetch: U.conLimiteDeTiempo((...args) => root.fetch(...args)) },
   });
+
+  // Los pasos de fotos se pueden repetir sin dañar nada: si falla la red se reintenta solo (hasta 3 veces) y se avisa a la pantalla.
+  const avisoReintento = (numero, de) => { if (api.alReintentar) api.alReintentar(numero, de); };
+  const repetible = (trabajo) => U.reintentar(trabajo, { alReintentar: avisoReintento });
 
   function normalizar(error, estado) {
     return {
@@ -219,38 +225,44 @@
   }
 
   // ---------------------------------------------------------------- fotos
-  async function subirArchivo(ruta, blob, mime) {
-    let res;
-    try { res = await sb.storage.from(BUCKET).upload(ruta, blob, { contentType: mime, upsert: false }); } catch (e) { throw normalizar(e, 0); }
-    if (res.error) {
-      const mensaje = String(res.error.message || "");
-      if (/already exists|duplicate/i.test(mensaje) || String(res.error.statusCode) === "409") return;   // ya estaba subido: reintento seguro
-      throw normalizar(res.error, res.error.statusCode || res.error.status);
-    }
+  function subirArchivo(ruta, blob, mime) {
+    return repetible(async () => {
+      let res;
+      try { res = await sb.storage.from(BUCKET).upload(ruta, blob, { contentType: mime, upsert: false }); } catch (e) { throw normalizar(e, 0); }
+      if (res.error) {
+        const mensaje = String(res.error.message || "");
+        if (/already exists|duplicate/i.test(mensaje) || String(res.error.statusCode) === "409") return;   // ya estaba subido: reintento seguro
+        throw normalizar(res.error, res.error.statusCode || res.error.status);
+      }
+    });
   }
 
-  async function quitarArchivos(rutas) {
-    if (!rutas.length) return;
-    let res;
-    try { res = await sb.storage.from(BUCKET).remove(rutas); } catch (e) { throw normalizar(e, 0); }
-    if (res.error) throw normalizar(res.error, res.error.statusCode || res.error.status);
+  function quitarArchivos(rutas) {
+    if (!rutas.length) return Promise.resolve();
+    return repetible(async () => {
+      let res;
+      try { res = await sb.storage.from(BUCKET).remove(rutas); } catch (e) { throw normalizar(e, 0); }
+      if (res.error) throw normalizar(res.error, res.error.statusCode || res.error.status);
+    });
   }
 
-  async function insertarFoto(fila) {
-    try {
-      await q(sb.from("product_photos").insert(fila));
-    } catch (e) {
-      if (e.code === "23505") return;       // la fila ya estaba (reintento tras un corte): esta bien
-      throw e;
-    }
+  function insertarFoto(fila) {
+    return repetible(async () => {
+      try {
+        await q(sb.from("product_photos").insert(fila));
+      } catch (e) {
+        if (e.code === "23505") return;       // la fila ya estaba (reintento tras un corte): esta bien
+        throw e;
+      }
+    });
   }
 
-  async function borrarFilaFoto(id) {
-    await q(sb.from("product_photos").delete().eq("id", id));
+  function borrarFilaFoto(id) {
+    return repetible(() => q(sb.from("product_photos").delete().eq("id", id)));
   }
 
-  async function moverFoto(id, posicion) {
-    await q(sb.from("product_photos").update({ position: posicion }).eq("id", id));
+  function moverFoto(id, posicion) {
+    return repetible(() => q(sb.from("product_photos").update({ position: posicion }).eq("id", id)));
   }
 
   // Las fotos de borrador son privadas: se muestran con direcciones firmadas (1 hora), pedidas en lote y guardadas en memoria.
@@ -272,7 +284,8 @@
 
   function olvidarFirmadas() { firmadas.clear(); }
 
-  root.VitrinaDatos = {
+  const api = root.VitrinaDatos = {
+    alReintentar: null,       // la pantalla de guardado lo pone para mostrar «reintentando…» (lo usa fotos.js)
     sb, BUCKET, normalizar,
     sesion, tieneSesionGuardada, entrar, salir, cargarTienda, guardarTienda,
     secciones, colecciones, crearSeccion, crearColeccion, renombrarSeccion, renombrarColeccion, borrarSeccion, borrarColeccion, conteoPorCategoria,

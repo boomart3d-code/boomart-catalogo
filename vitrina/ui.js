@@ -8,6 +8,7 @@
   const D = () => root.VitrinaDatos;
   const SVG = "http://www.w3.org/2000/svg";
   let secuencia = 0;
+  const ESPERA_LENTA_MS = 10000;     // si un paso tarda mas que esto sin avanzar, se avisa que la conexion esta lenta
 
   // ---------------------------------------------------------------- crear elementos
   function h(etiqueta, props, ...hijos) {
@@ -261,20 +262,40 @@
       const rueda = h("span", { class: "rueda rueda--grande", "aria-hidden": "true" });
       const error = h("div", { class: "hoja__error", hidden: true });
       const botones = h("div", { class: "hoja__botones", hidden: true });
-      abrirHoja((cerrar) => { cerrarHoja = cerrar; return [tituloEl, h("div", { class: "hoja__espera" }, rueda, estado), error, botones]; }, { bloqueo, etiqueta: titulo });
+      // Avance: barra y «3 de 13» (solo si el trabajo informa su avance) y un aviso si un paso tarda demasiado.
+      const barra = h("progress", { class: "hoja__avance", max: "100", "aria-label": "Avance", hidden: true });
+      barra.value = 0;
+      const cuenta = h("p", { class: "hoja__cuenta", "aria-hidden": "true", hidden: true });
+      const lento = h("p", { class: "hoja__lento", role: "status", hidden: true, text: "La conexión está lenta. Sigue esperando y no cierres esta pantalla: no se pierde nada." });
+      abrirHoja((cerrar) => { cerrarHoja = cerrar; return [tituloEl, h("div", { class: "hoja__espera" }, rueda, estado), barra, cuenta, lento, error, botones]; }, { bloqueo, etiqueta: titulo });
+
+      let reloj = null;
+      const vigilar = () => { clearTimeout(reloj); lento.hidden = true; reloj = setTimeout(() => { lento.hidden = false; }, ESPERA_LENTA_MS); };
+      const dejarDeVigilar = () => { clearTimeout(reloj); lento.hidden = true; };
+      const avance = (texto) => { estado.textContent = texto; vigilar(); };
+      avance.progreso = (hechos, total) => {
+        if (!(total > 0)) return;
+        barra.hidden = false; cuenta.hidden = false;
+        barra.value = Math.round((hechos / total) * 100);
+        cuenta.textContent = `${Math.min(hechos, total)} de ${total} pasos`;
+      };
 
       async function intentar() {
         bloqueo.activo = true; botones.hidden = true; error.hidden = true; rueda.hidden = false; tituloEl.textContent = titulo;
+        barra.hidden = true; cuenta.hidden = true; vigilar();
         try {
-          const valor = await trabajo((texto) => { estado.textContent = texto; });
+          const valor = await trabajo(avance);
+          dejarDeVigilar();
           bloqueo.activo = false;
           cerrarHoja();
           resolver({ ok: true, valor });
         } catch (err) {
+          dejarDeVigilar();
           bloqueo.activo = false;
           const app = root.VitrinaApp;
           if (app && app.esErrorDeSesion(err)) { cerrarHoja(); resolver({ ok: false, error: err, sesion: true }); return; }
           tituloEl.textContent = "No se pudo terminar";
+          barra.hidden = true; cuenta.hidden = true;
           rueda.hidden = true;
           estado.textContent = "";
           error.hidden = false;
