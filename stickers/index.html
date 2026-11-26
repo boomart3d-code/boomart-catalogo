@@ -165,6 +165,8 @@
           <p class="sf-file sf-hide" id="vName"></p>
           <div id="vBox" class="sf-hide">
             <video id="vid" playsinline controls></video>
+            <img id="gifImg" class="sf-hide" alt="Vista previa de tu GIF" style="display:block;width:100%;max-height:300px;object-fit:contain;border-radius:8px;background:#000;margin:14px auto 0">
+            <p class="sf-hint sf-hide" id="noPrev" style="margin-top:14px">Tu navegador no puede mostrar la vista previa de este video, pero igual puedes crear tu sticker.</p>
             <p class="sf-hint" style="margin-top:14px"><b>Ahora elige qué parte quieres.</b> Mueve las barras y toca «Ver cómo queda».</p>
             <div class="sf-sl">
               <div class="sf-sl-top"><label for="vStart">¿Desde qué segundo?</label><output id="vStartO">0.0 s</output></div>
@@ -299,8 +301,8 @@
       <a class="button secondary" href="https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%20el%20cat%C3%A1logo%20de%20productos%203D." target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/umd/ffmpeg.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/util@0.12.1/dist/umd/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/umd/ffmpeg.js" integrity="sha384-HJcOheArWWImG8iIDY0pbuK4nyRXZYGkzfaCq+ghw2CcjBlDShKWGpC9sTL42Lcu" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/util@0.12.1/dist/umd/index.js" integrity="sha384-77TSno5UBOIFbP0dHjJN2umKfrf22jDQ8tKw2BfJqKvoJfUsWnmtW6a5LlkDVdNu" crossorigin="anonymous"></script>
     <script>
     (() => {
       const $ = id => document.getElementById(id);
@@ -356,31 +358,52 @@
           $('aStartO').textContent = fmt(+$('aStart').value);
         }
       }
-      ['vStart', 'dur', 'aStart'].forEach(id => $(id).addEventListener('input', () => { refreshSliders(); stopPrev(); if (id === 'vStart') vid.currentTime = +$('vStart').value; }));
+      ['vStart', 'dur', 'aStart'].forEach(id => $(id).addEventListener('input', () => { refreshSliders(); stopPrev(); if (id === 'vStart' && !noPreview) vid.currentTime = +$('vStart').value; }));
 
+      // GIF o video que el navegador no puede mostrar: se crea igual, sin vista previa del clip.
+      let noPreview = false, autoSwitched = false;
+      function showVideoUI(f) {
+        $('vBox').classList.remove('sf-hide');
+        $('vName').textContent = '✓ ' + f.name; $('vName').classList.remove('sf-hide');
+        $('pickV').textContent = 'Cambiar video';
+        refreshSliders();
+        setLocked($('c2'), false); setLocked($('c3'), false);
+        updateSteps();
+        probeP = warmUp().then(probeAudio).catch(() => {});
+      }
+      function startNoPreview(f, isGif) {
+        noPreview = true;
+        vid.onloadedmetadata = vid.onerror = null;
+        vid.removeAttribute('src'); vid.load();
+        vid.classList.add('sf-hide'); $('prev').classList.add('sf-hide');
+        $('gifImg').classList.toggle('sf-hide', !isGif);
+        $('noPrev').classList.toggle('sf-hide', isGif);
+        vDur = 10; $('vStart').max = 10; $('dur').max = 10; $('vStart').value = 0; $('dur').value = 5;
+        showVideoUI(f);
+      }
       $('fileV').addEventListener('change', e => {
         const f = e.target.files[0]; if (!f) return;
-        showErr('');
+        showErr(''); stopPrev();
         if (f.size > MAX_INPUT) { showErr('Ese video es muy pesado (más de 300 MB). Elige uno más corto.'); return; }
         vFile = f; wBlob = mBlob = null; $('out').classList.add('sf-hide');
-        vid.src = URL.createObjectURL(f);
+        const url = URL.createObjectURL(f);
+        if (f.type === 'image/gif' || /\.gif$/i.test(f.name)) { $('gifImg').src = url; startNoPreview(f, true); return; }
+        noPreview = false;
+        vid.classList.remove('sf-hide'); $('prev').classList.remove('sf-hide');
+        $('gifImg').classList.add('sf-hide'); $('noPrev').classList.add('sf-hide');
         vid.onloadedmetadata = () => {
           vDur = vid.duration && isFinite(vid.duration) ? vid.duration : 10;
+          $('vStart').max = 10; $('dur').max = 10;
           $('vStart').value = 0; $('dur').value = Math.min(5, Math.max(1, Math.floor(vDur * 2) / 2));
-          $('vBox').classList.remove('sf-hide');
-          $('vName').textContent = '✓ ' + f.name; $('vName').classList.remove('sf-hide');
-          $('pickV').textContent = 'Cambiar video';
-          refreshSliders();
-          setLocked($('c2'), false); setLocked($('c3'), false);
-          updateSteps();
-          probeP = warmUp().then(probeAudio).catch(() => {});
+          showVideoUI(f);
         };
-        vid.onerror = () => showErr('No pude leer ese video. Prueba con otro, de preferencia MP4.');
+        vid.onerror = () => startNoPreview(f, false);
+        vid.src = url;
       });
 
       // ---- sonido ----
       document.querySelectorAll('input[name=snd]').forEach(r => r.addEventListener('change', () => {
-        soundTouched = true;
+        soundTouched = true; autoSwitched = false;
         $('aBox').classList.toggle('sf-hide', mode() !== 'file');
         stopPrev(); updateSteps();
       }));
@@ -405,6 +428,7 @@
         stopPrev();
         const s = +$('vStart').value, d = +$('dur').value, as = +$('aStart').value, m = mode();
         const useAud = m === 'file' && aFile;
+        if (noPreview) { if (useAud) { aud.currentTime = as; aud.play().catch(() => {}); } return; }
         const start = () => {
           vid.currentTime = s; vid.muted = m !== 'video'; vid.play().catch(() => {});
           if (useAud) { aud.currentTime = as; aud.play().catch(() => {}); }
@@ -471,11 +495,21 @@
           const p = await useFile('/pin', f, 'probe.' + ext(f));
           logBuf = ''; await ff.exec(['-i', p]);
           vHasAudio = /Stream #\d+:\d+.*Audio:/.test(logBuf);
+          const dm = logBuf.match(/Duration: (\d+):(\d+):(\d+(?:\.\d+)?)/);
+          if (noPreview && dm && f === vFile) {
+            vDur = (+dm[1]) * 3600 + (+dm[2]) * 60 + (+dm[3]);
+            $('dur').value = Math.min(+$('dur').value, Math.max(1, Math.floor(vDur * 2) / 2));
+            refreshSliders();
+          }
         } catch (_) { vHasAudio = true; }
         await cleanup(['probe.' + ext(f)]);
         $('chVideo').classList.toggle('off', !vHasAudio);
         $('sndVideoHint').textContent = vHasAudio ? 'Usamos el audio que ya trae tu clip.' : 'Este video no trae sonido. Elige otra canción o audio.';
-        if (!vHasAudio && mode() === 'video') { document.querySelector('input[name=snd][value=file]').checked = true; $('aBox').classList.remove('sf-hide'); updateSteps(); }
+        if (!vHasAudio && mode() === 'video') {
+          document.querySelector('input[name=snd][value=file]').checked = true; $('aBox').classList.remove('sf-hide'); autoSwitched = true; updateSteps();
+        } else if (vHasAudio && autoSwitched && mode() === 'file' && !aFile) {
+          document.querySelector('input[name=snd][value=video]').checked = true; $('aBox').classList.add('sf-hide'); autoSwitched = false; updateSteps();
+        }
       }
 
       const BASE_VF = {
