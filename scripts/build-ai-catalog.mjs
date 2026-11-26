@@ -664,6 +664,8 @@ ${reviewsSectionHtml(reviews)}      <section id="contacto-final">
         <p><a href="mailto:contacto@boomart.pe">contacto@boomart.pe</a></p>
 ${socialFooterHtml()}
         <ul class="footer-links">
+          <li><a href="amigo-secreto/">Amigo Secreto gratis</a></li>
+          <li><a href="test/caballeros-de-oro/">Test de Caballeros de Oro</a></li>
           <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="politicas.html">Politicas de compra, envio y privacidad</a></li>
           <li><a href="libro-de-reclamaciones.html">Libro de Reclamaciones</a></li>
@@ -1569,6 +1571,8 @@ function buildProductPage(p, all, ratingLd) {
 ${socialFooterHtml()}
         <ul class="footer-links">
           <li><a href="${rel}catalogo.html">Catálogo completo</a></li>
+          <li><a href="${rel}amigo-secreto/">Amigo Secreto gratis</a></li>
+          <li><a href="${rel}test/caballeros-de-oro/">Test de Caballeros de Oro</a></li>
           <li><a href="${rel}nosotros.html">Nosotros</a></li>
           <li><a href="${rel}politicas.html">Políticas de compra, envío y privacidad</a></li>
           <li><a href="${rel}libro-de-reclamaciones.html">Libro de Reclamaciones</a></li>
@@ -2094,6 +2098,8 @@ ${socialFooterHtml()}
         </ul>
         <ul class="footer-links">
           <li><a href="${rel}catalogo.html">Catálogo completo</a></li>
+          <li><a href="${rel}amigo-secreto/">Amigo Secreto gratis</a></li>
+          <li><a href="${rel}test/caballeros-de-oro/">Test de Caballeros de Oro</a></li>
           <li><a href="${rel}nosotros.html">Nosotros</a></li>
           <li><a href="${rel}politicas.html">Políticas de compra, envío y privacidad</a></li>
           <li><a href="${rel}libro-de-reclamaciones.html">Libro de Reclamaciones</a></li>
