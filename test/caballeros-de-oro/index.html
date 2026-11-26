@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM5C8Q1394"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HM5C8Q1394');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>¿Qué Caballero de Oro eres? Test de Saint Seiya | BoomArt</title>
+    <meta name="description" content="Responde 8 preguntas y descubre qué Caballero de Oro de Saint Seiya eres. Comparte tu resultado en tu estado de WhatsApp y reta a tus amigos.">
+    <link rel="canonical" href="https://boomart.pe/test/caballeros-de-oro/">
+    <link rel="icon" type="image/svg+xml" href="../../assets/boomart-mark.svg?v=7">
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="../../assets/boomart-mark-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/app-icon-180.png">
+    <link rel="manifest" href="../../site.webmanifest">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BoomArt">
+    <meta property="og:title" content="¿Qué Caballero de Oro eres? Test de Saint Seiya">
+    <meta property="og:description" content="8 preguntas para descubrir tu Caballero de Oro. ¿Te atreves?">
+    <meta property="og:url" content="https://boomart.pe/test/caballeros-de-oro/">
+    <meta property="og:image" content="https://boomart.pe/assets/og-saintseiya.jpg">
+    <meta property="og:locale" content="es_PE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="¿Qué Caballero de Oro eres? Test de Saint Seiya">
+    <meta name="twitter:image" content="https://boomart.pe/assets/og-saintseiya.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../src/styles.css?v=69">
+
+    <style>
+      /* Solo para esta pagina. Pensada primero para celular. */
+      .site-header { position: static; }
+      .qz-wrap { max-width: 620px; margin: 0 auto; padding: clamp(20px, 5vw, 48px) 16px 80px; }
+      .qz-wrap h1 { margin: 0 0 10px; font-size: clamp(2.1rem, 9vw, 3.4rem); line-height: 1; }
+      .qz-wrap .lead { color: var(--muted); font-size: 1.02rem; line-height: 1.55; margin: 0 0 18px; }
+      .qz-hide { display: none !important; }
+      .qz-gold { color: var(--gold); }
+      .qz-card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin-bottom: 14px; }
+      .qz-big { width: 100%; min-height: 56px; font-size: 1.05rem; }
+      .qz-signs { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 6px 0 18px; font-size: 1.5rem; color: var(--gold); letter-spacing: 2px; }
+      .qz-meta { display: flex; gap: 14px; justify-content: center; color: var(--muted); font-size: .9rem; margin: 0 0 18px; }
+
+      .qz-progress { height: 8px; background: rgba(255,255,255,.1); border-radius: 99px; overflow: hidden; }
+      .qz-progress i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #a8843c, var(--gold)); transition: width .3s; }
+      .qz-step { color: var(--muted); font-size: .85rem; font-weight: 700; margin: 10px 0 6px; }
+      .qz-q { font: 800 clamp(1.5rem, 6.5vw, 2rem) / 1.12 var(--display-font); margin: 0 0 16px; }
+      .qz-opts { display: grid; gap: 10px; }
+      .qz-opt { text-align: left; min-height: 58px; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.03); color: #fff; font: 600 1rem/1.35 Inter, sans-serif; cursor: pointer; transition: border-color .15s, background .15s, transform .1s; }
+      .qz-opt:hover { border-color: var(--gold); }
+      .qz-opt:active { transform: scale(.98); }
+      .qz-opt.pick { border-color: var(--gold); background: rgba(214,178,104,.16); }
+      .qz-back { background: none; border: 0; color: var(--muted); font: 700 .9rem Inter, sans-serif; margin-top: 14px; cursor: pointer; padding: 8px 0; }
+      .qz-anim { animation: qz-in .28s ease both; }
+      @keyframes qz-in { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+
+      .qz-res { text-align: center; }
+      .qz-res .qz-pre { color: var(--muted); font-weight: 700; margin: 0; }
+      .qz-glyph { font-size: clamp(5rem, 28vw, 8rem); line-height: 1; color: var(--gold); margin: 6px 0 0; text-shadow: 0 0 40px rgba(214,178,104,.35); }
+      .qz-name { font: 900 clamp(2.4rem, 12vw, 3.6rem) / 1 var(--display-font); margin: 6px 0 2px; }
+      .qz-house { color: var(--gold); font-weight: 800; margin: 0 0 12px; letter-spacing: .03em; }
+      .qz-traits { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 0 0 14px; }
+      .qz-traits span { border: 1px solid rgba(214,178,104,.5); color: #fff; border-radius: 99px; padding: 5px 12px; font-size: .88rem; font-weight: 700; }
+      .qz-desc { color: #dfdad3; line-height: 1.6; margin: 0 auto; max-width: 46ch; }
+      .qz-friend { background: rgba(214,178,104,.1); border: 1px solid rgba(214,178,104,.4); border-radius: 12px; padding: 12px 14px; margin: 0 0 16px; color: #fff; font-weight: 600; text-align: center; }
+      .qz-actions { display: grid; gap: 10px; margin-top: 18px; }
+      .qz-actions .button { min-height: 52px; }
+      .qz-wa { background: #1fa855; color: #fff; }
+      .qz-wa:hover { background: #22bd60; }
+      .qz-all { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
+      .qz-all div { background: rgba(255,255,255,.03); border: 1px solid var(--line); border-radius: 10px; padding: 10px 6px; text-align: center; font-size: .78rem; line-height: 1.3; }
+      .qz-all div b { display: block; font-size: 1.4rem; color: var(--gold); font-weight: 400; }
+      .qz-all div.me { border-color: var(--gold); background: rgba(214,178,104,.12); }
+      .qz-note { color: var(--muted); font-size: .8rem; line-height: 1.5; margin-top: 26px; text-align: center; }
+      .qz-err { color: var(--gold); font-size: .9rem; margin-top: 8px; }
+      @media (prefers-reduced-motion: reduce) { .qz-anim { animation: none; } }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="BoomArt inicio">
+        <img class="brand-logo" src="../../assets/boomart-logo.svg" alt="BoomArt">
+        <span>
+          <strong>BOOM ART</strong>
+          <small>Catálogo 3D</small>
+        </span>
+      </a>
+      <nav aria-label="Secciones del sitio">
+        <a href="../../index.html#catalogo">Catálogo</a>
+        <a href="../../politicas.html">Políticas</a>
+        <a href="https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%20el%20cat%C3%A1logo%20de%20productos%203D." target="_blank" rel="noreferrer">WhatsApp</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="qz-wrap">
+        <!-- Inicio -->
+        <section id="start" style="text-align:center">
+          <p class="eyebrow">Test de Saint Seiya</p>
+          <h1>¿Qué Caballero de Oro eres?</h1>
+          <div class="qz-signs" aria-hidden="true">♈︎♉︎♊︎♋︎♌︎♍︎♎︎♏︎♐︎♑︎♒︎♓︎</div>
+          <div class="qz-friend qz-hide" id="friendBox"></div>
+          <p class="lead">Responde con sinceridad y descubre cuál de los doce guardianes del Santuario va contigo. Luego comparte tu resultado y reta a tus amigos.</p>
+          <p class="qz-meta"><span>8 preguntas</span><span>·</span><span>1 minuto</span></p>
+          <button type="button" class="button primary qz-big" id="go">Empezar el test</button>
+        </section>
+
+        <!-- Preguntas -->
+        <section id="quiz" class="qz-hide" aria-live="polite">
+          <div class="qz-progress"><i id="bar"></i></div>
+          <p class="qz-step" id="step"></p>
+          <div id="qbox"></div>
+          <button type="button" class="qz-back" id="back">← Pregunta anterior</button>
+        </section>
+
+        <!-- Resultado -->
+        <section id="result" class="qz-hide qz-res">
+          <div class="qz-card">
+            <p class="qz-pre" id="resPre">Tu Caballero de Oro es</p>
+            <p class="qz-glyph" id="resGlyph" aria-hidden="true"></p>
+            <h2 class="qz-name" id="resName"></h2>
+            <p class="qz-house" id="resHouse"></p>
+            <div class="qz-traits" id="resTraits"></div>
+            <p class="qz-desc" id="resDesc"></p>
+          </div>
+          <div class="qz-actions">
+            <button type="button" class="button primary" id="shareImg">Compartir en mi estado</button>
+            <a class="button qz-wa" id="challenge" target="_blank" rel="noopener">Reta a tus amigos por WhatsApp</a>
+            <button type="button" class="button ghost" id="again">Hacer el test de nuevo</button>
+          </div>
+          <p class="qz-err" id="err" role="alert"></p>
+          <div class="qz-card" style="margin-top:18px;text-align:left">
+            <h3 style="margin:0">Los 12 Caballeros de Oro</h3>
+            <div class="qz-all" id="all"></div>
+          </div>
+        </section>
+
+        <p class="qz-note">Test hecho por fans, solo para divertirse. Saint Seiya y sus personajes pertenecen a sus respectivos dueños; este test no está afiliado a ellos.</p>
+      </div>
+    </main>
+
+    <footer class="footer" id="contacto">
+      <div>
+        <strong>BOOM ART</strong>
+        <p>Piezas hechas a pedido. Consulta disponibilidad, colores, acabados y tiempos de entrega por WhatsApp.</p>
+        <p><a href="mailto:contacto@boomart.pe">✉️ contacto@boomart.pe</a></p>
+        <ul class="footer-links">
+          <li><a href="../../nosotros.html">Nosotros</a></li>
+          <li><a href="../../politicas.html">Políticas de compra, envío y privacidad</a></li>
+          <li><a href="../../libro-de-reclamaciones.html">Libro de Reclamaciones</a></li>
+        </ul>
+      </div>
+      <a class="button secondary" href="https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%20el%20cat%C3%A1logo%20de%20productos%203D." target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+    </footer>
+
+    <script>
+    (() => {
+      const $ = id => document.getElementById(id);
+      const track = (name, params) => { try { if (window.gtag) gtag('event', name, params || {}); } catch (_) {} };
+      const VS = '︎'; // fuerza el símbolo del signo como texto (no emoji)
+
+      // ---------- los 12 resultados ----------
+      const R = {
+        aries:       { name: 'Mu de Aries', glyph: '♈', house: 'Casa de Aries · 1.ª casa', traits: ['Sereno', 'Habilidoso', 'Leal'], desc: 'Tranquilo por fuera y firme por dentro. Eres de los que arreglan lo que otros rompen y prefieren resolver con calma antes que con gritos.' },
+        tauro:       { name: 'Aldebarán de Tauro', glyph: '♉', house: 'Casa de Tauro · 2.ª casa', traits: ['Fuerte', 'Noble', 'Protector'], desc: 'Tu fuerza está al servicio de los demás. Tienes un gran corazón, valoras la buena compañía y nadie pasa por encima de los tuyos.' },
+        geminis:     { name: 'Saga de Géminis', glyph: '♊', house: 'Casa de Géminis · 3.ª casa', traits: ['Carismático', 'Ambicioso', 'Intenso'], desc: 'Naciste para liderar. Tienes un magnetismo difícil de ignorar y una mente que siempre va dos pasos adelante. Tu reto: elegir siempre tu lado luminoso.' },
+        cancer:      { name: 'Death Mask de Cáncer', glyph: '♋', house: 'Casa de Cáncer · 4.ª casa', traits: ['Directo', 'Irreverente', 'Competitivo'], desc: 'Dices lo que piensas, sin filtro y sin pedir permiso. Tu humor es único y no te asusta nada; eso sí, que nadie te subestime.' },
+        leo:         { name: 'Aioria de Leo', glyph: '♌', house: 'Casa de Leo · 5.ª casa', traits: ['Valiente', 'Apasionado', 'Justo'], desc: 'Eres pura energía y valor. Defiendes lo que es justo con todo lo que tienes, y cuando algo te importa, lo das todo, rápido como un relámpago.' },
+        virgo:       { name: 'Shaka de Virgo', glyph: '♍', house: 'Casa de Virgo · 6.ª casa', traits: ['Reflexivo', 'Espiritual', 'Imperturbable'], desc: 'Ves lo que otros no ven. Prefieres pensar antes de hablar, buscas el sentido profundo de las cosas y muy pocas cosas logran sacarte de tu paz.' },
+        libra:       { name: 'Dohko de Libra', glyph: '♎', house: 'Casa de Libra · 7.ª casa', traits: ['Equilibrado', 'Paciente', 'Buen consejero'], desc: 'Eres la voz sabia del grupo. Escuchas, mides cada lado y siempre encuentras la balanza justa. Todos te buscan cuando necesitan un consejo.' },
+        escorpio:    { name: 'Milo de Escorpio', glyph: '♏', house: 'Casa de Escorpio · 8.ª casa', traits: ['Intenso', 'Orgulloso', 'Leal'], desc: 'Tu palabra vale oro. Eres intenso en todo lo que haces, orgulloso de tus principios y de una lealtad que no se negocia.' },
+        sagitario:   { name: 'Aioros de Sagitario', glyph: '♐', house: 'Casa de Sagitario · 9.ª casa', traits: ['Heroico', 'Generoso', 'Idealista'], desc: 'Eres de los que dan la cara por los demás sin esperar nada a cambio. Tu ejemplo inspira y tu flecha siempre apunta a lo correcto.' },
+        capricornio: { name: 'Shura de Capricornio', glyph: '♑', house: 'Casa de Capricornio · 10.ª casa', traits: ['Disciplinado', 'Firme', 'Leal'], desc: 'Constancia y disciplina son tu espada. Cuando te comprometes con algo, lo cumples; tus decisiones son claras y cortan como Excalibur.' },
+        acuario:     { name: 'Camus de Acuario', glyph: '♒', house: 'Casa de Acuario · 11.ª casa', traits: ['Sereno', 'Perfeccionista', 'Mentor'], desc: 'Pareces frío, pero quien te conoce sabe que tienes un gran corazón. Eres perfeccionista, mantienes la cabeza fría y enseñas con el ejemplo.' },
+        piscis:      { name: 'Afrodita de Piscis', glyph: '♓', house: 'Casa de Piscis · 12.ª casa', traits: ['Elegante', 'Seguro', 'Detallista'], desc: 'Tienes estilo y lo sabes. Cuidas cada detalle, confías plenamente en ti y no le temes a destacar. Tu belleza tiene espinas.' },
+      };
+      const ORDER = ['aries', 'tauro', 'geminis', 'cancer', 'leo', 'virgo', 'libra', 'escorpio', 'sagitario', 'capricornio', 'acuario', 'piscis'];
+
+      // ---------- preguntas: cada opción suma 1 punto a 3 caballeros ----------
+      // Cada caballero aparece una vez por pregunta: los 12 tienen la misma posibilidad
+      // (simulado: cada uno sale entre 7,8 % y 9 % con respuestas al azar). Empate: gana el de la última respuesta.
+      const Q = [
+        { q: 'Ante una injusticia, tú…', o: [
+          ['Te lanzas a defender sin pensarlo dos veces', ['leo', 'sagitario', 'tauro']],
+          ['Observas, analizas y actúas en el momento justo', ['virgo', 'acuario', 'libra']],
+          ['La resuelves a tu manera, aunque no sea "lo correcto"', ['cancer', 'geminis', 'escorpio']],
+          ['Pones orden con calma y firmeza', ['aries', 'capricornio', 'piscis']] ] },
+        { q: 'Tu plan ideal de fin de semana:', o: [
+          ['Entrenar o hacer algo que me exija', ['capricornio', 'leo', 'escorpio']],
+          ['Leer, meditar o estar en silencio', ['virgo', 'acuario', 'aries']],
+          ['Ser el centro del plan y organizar a todos', ['geminis', 'piscis', 'cancer']],
+          ['Reunión con familia y amigos, buena comida', ['tauro', 'libra', 'sagitario']] ] },
+        { q: 'Tus amigos te describen como…', o: [
+          ['El más leal del grupo', ['escorpio', 'capricornio', 'tauro']],
+          ['El que da los mejores consejos', ['libra', 'aries', 'acuario']],
+          ['El que tiene más estilo y seguridad', ['piscis', 'geminis', 'cancer']],
+          ['El que inspira con su ejemplo', ['sagitario', 'leo', 'virgo']] ] },
+        { q: '¿Qué es lo que más te molesta?', o: [
+          ['La traición', ['escorpio', 'sagitario', 'tauro']],
+          ['La impaciencia y el ruido', ['virgo', 'aries', 'libra']],
+          ['Que me subestimen', ['cancer', 'geminis', 'leo']],
+          ['La mediocridad y el mal gusto', ['piscis', 'acuario', 'capricornio']] ] },
+        { q: 'Si pudieras tener un poder, elegirías…', o: [
+          ['Una fuerza imparable', ['tauro', 'leo', 'sagitario']],
+          ['Controlar todo con la mente', ['geminis', 'virgo', 'aries']],
+          ['Una precisión letal', ['acuario', 'capricornio', 'escorpio']],
+          ['Un poder misterioso que nadie entiende', ['cancer', 'piscis', 'libra']] ] },
+        { q: 'En un equipo, tú eres…', o: [
+          ['El líder', ['geminis', 'sagitario', 'leo']],
+          ['El estratega', ['libra', 'acuario', 'virgo']],
+          ['El que ejecuta y no falla', ['capricornio', 'escorpio', 'cancer']],
+          ['El que aporta lo que falta y le da el toque final', ['aries', 'tauro', 'piscis']] ] },
+        { q: 'Elige un lugar para vivir:', o: [
+          ['Montañas lejanas y silenciosas', ['aries', 'libra', 'acuario']],
+          ['Un templo antiguo lleno de historia', ['virgo', 'geminis', 'sagitario']],
+          ['Un lugar lleno de flores y buena vista', ['piscis', 'tauro', 'escorpio']],
+          ['Cerca de una arena de combate', ['leo', 'capricornio', 'cancer']] ] },
+        { q: '¿Qué frase te representa más?', o: [
+          ['"Hasta el final, por los míos"', ['sagitario', 'tauro', 'capricornio']],
+          ['"La calma es mi mayor fuerza"', ['virgo', 'aries', 'acuario']],
+          ['"Nadie me dice qué hacer"', ['cancer', 'geminis', 'piscis']],
+          ['"Vivo todo con pasión"', ['leo', 'escorpio', 'libra']] ] },
+      ];
+
+      let answers = [];
+      const base = location.origin + location.pathname;
+
+      // Si llegas por el enlace de un amigo (#r=leo), se muestra su resultado como reto.
+      const fm = location.hash.match(/^#r=([a-z]+)$/);
+      if (fm && R[fm[1]]) {
+        const box = $('friendBox');
+        box.textContent = 'A tu amigo le salió ' + R[fm[1]].name + ' ' + R[fm[1]].glyph + VS + '. ¿Y a ti?';
+        box.classList.remove('qz-hide');
+      }
+
+      $('go').addEventListener('click', () => { answers = []; $('start').classList.add('qz-hide'); $('quiz').classList.remove('qz-hide'); showQ(); track('test_inicio', { test: 'caballeros_oro' }); });
+      $('back').addEventListener('click', () => { if (answers.length) { answers.pop(); showQ(); } else { $('quiz').classList.add('qz-hide'); $('start').classList.remove('qz-hide'); } });
+      $('again').addEventListener('click', () => { history.replaceState(null, '', base); $('result').classList.add('qz-hide'); $('start').classList.remove('qz-hide'); $('friendBox').classList.add('qz-hide'); window.scrollTo({ top: 0 }); });
+
+      function showQ() {
+        const i = answers.length;
+        if (i >= Q.length) return finish();
+        $('bar').style.width = (i / Q.length * 100) + '%';
+        $('step').textContent = 'Pregunta ' + (i + 1) + ' de ' + Q.length;
+        const box = $('qbox'); box.textContent = '';
+        const wrap = document.createElement('div'); wrap.className = 'qz-anim';
+        const h = document.createElement('h2'); h.className = 'qz-q'; h.textContent = Q[i].q;
+        const opts = document.createElement('div'); opts.className = 'qz-opts';
+        Q[i].o.forEach(([label], k) => {
+          const b = document.createElement('button'); b.type = 'button'; b.className = 'qz-opt'; b.textContent = label;
+          b.addEventListener('click', () => {
+            opts.querySelectorAll('.qz-opt').forEach(x => x.disabled = true);
+            b.classList.add('pick');
+            answers.push(k);
+            setTimeout(showQ, 220);
+          });
+          opts.appendChild(b);
+        });
+        wrap.append(h, opts); box.appendChild(wrap);
+        $('back').textContent = i ? '← Pregunta anterior' : '← Volver al inicio';
+        window.scrollTo({ top: $('quiz').getBoundingClientRect().top + scrollY - 10 });
+      }
+
+      function score() {
+        const pts = Object.fromEntries(ORDER.map(k => [k, 0]));
+        const last = Object.fromEntries(ORDER.map(k => [k, -1]));
+        answers.forEach((k, i) => Q[i].o[k][1].forEach(key => { pts[key] += 1; last[key] = i; }));
+        const max = Math.max(...Object.values(pts));
+        let top = ORDER.filter(k => pts[k] === max);
+        if (top.length > 1) { const l = Math.max(...top.map(k => last[k])); top = top.filter(k => last[k] === l); }
+        return top[Math.floor(Math.random() * top.length)];
+      }
+
+      function finish() {
+        $('bar').style.width = '100%';
+        const key = score();
+        showResult(key);
+        history.replaceState(null, '', base + '#r=' + key);
+        track('test_resultado', { test: 'caballeros_oro', resultado: key });
+      }
+
+      let current = null;
+      function showResult(key) {
+        current = key;
+        const r = R[key];
+        $('quiz').classList.add('qz-hide'); $('start').classList.add('qz-hide'); $('result').classList.remove('qz-hide');
+        $('resGlyph').textContent = r.glyph + VS;
+        $('resName').textContent = r.name;
+        $('resHouse').textContent = r.house;
+        const tr = $('resTraits'); tr.textContent = '';
+        r.traits.forEach(t => { const s = document.createElement('span'); s.textContent = t; tr.appendChild(s); });
+        $('resDesc').textContent = r.desc;
+        $('challenge').href = 'https://wa.me/?text=' + encodeURIComponent('Hice el test de Saint Seiya y me salió ' + r.name + ' ' + r.glyph + VS + ' 🏆\n¿Qué Caballero de Oro eres tú? Descúbrelo aquí 👉 ' + base + '#r=' + key);
+        const all = $('all'); all.textContent = '';
+        ORDER.forEach(k => { const d = document.createElement('div'); if (k === key) d.className = 'me'; const b = document.createElement('b'); b.textContent = R[k].glyph + VS; d.append(b, document.createTextNode(R[k].name)); all.appendChild(d); });
+        $('err').textContent = '';
+        window.scrollTo({ top: 0 });
+      }
+      $('challenge').addEventListener('click', () => track('test_reto', { test: 'caballeros_oro' }));
+
+      // ---------- imagen vertical para el estado (1080 x 1920) ----------
+      async function makeImage(key) {
+        const r = R[key];
+        try { await Promise.all([document.fonts.load('900 120px "Barlow Condensed"'), document.fonts.load('700 40px Inter'), document.fonts.load('800 40px Inter')]); } catch (_) {}
+        const W = 1080, H = 1920, cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+        const cx = cv.getContext('2d');
+        const g = cx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, '#16100a'); g.addColorStop(.55, '#0b0b0b'); g.addColorStop(1, '#000');
+        cx.fillStyle = g; cx.fillRect(0, 0, W, H);
+        const rg = cx.createRadialGradient(W / 2, 700, 40, W / 2, 700, 620); rg.addColorStop(0, 'rgba(214,178,104,.35)'); rg.addColorStop(1, 'rgba(214,178,104,0)');
+        cx.fillStyle = rg; cx.fillRect(0, 0, W, H);
+        cx.strokeStyle = 'rgba(214,178,104,.55)'; cx.lineWidth = 4; cx.strokeRect(50, 50, W - 100, H - 100);
+        cx.textAlign = 'center'; cx.fillStyle = '#d6b268';
+        cx.font = '700 46px Inter, sans-serif'; cx.fillText('MI CABALLERO DE ORO ES', W / 2, 250);
+        cx.font = '420px serif'; cx.fillText(r.glyph + VS, W / 2, 900);
+        cx.fillStyle = '#ffffff';
+        let size = 150; cx.font = `900 ${size}px "Barlow Condensed", Arial Narrow, sans-serif`;
+        while (cx.measureText(r.name.toUpperCase()).width > W - 160 && size > 70) { size -= 6; cx.font = `900 ${size}px "Barlow Condensed", Arial Narrow, sans-serif`; }
+        cx.fillText(r.name.toUpperCase(), W / 2, 1120);
+        cx.fillStyle = '#d6b268'; cx.font = '800 44px Inter, sans-serif'; cx.fillText(r.house.toUpperCase(), W / 2, 1200);
+        let tsize = 44, widths, total;
+        do { // achica los rasgos hasta que quepan dentro del marco
+          cx.font = `700 ${tsize}px Inter, sans-serif`;
+          widths = r.traits.map(t => cx.measureText(t).width + tsize * 1.4);
+          total = widths.reduce((a, b) => a + b, 0) + 24 * (r.traits.length - 1);
+          tsize -= 2;
+        } while (total > W - 180 && tsize > 26);
+        let x = (W - total) / 2;
+        r.traits.forEach((t, i) => {
+          const w = widths[i];
+          cx.strokeStyle = 'rgba(214,178,104,.8)'; cx.lineWidth = 3;
+          roundRect(cx, x, 1270, w, 84, 42); cx.stroke();
+          cx.fillStyle = '#fff'; cx.fillText(t, x + w / 2, 1327);
+          x += w + 24;
+        });
+        cx.fillStyle = '#dfdad3'; cx.font = '500 40px Inter, sans-serif';
+        wrapText(cx, r.desc, W / 2, 1480, W - 220, 56, 4);
+        cx.fillStyle = '#d6b268'; cx.font = '800 42px Inter, sans-serif'; cx.fillText('¿Y tú cuál eres?', W / 2, 1760);
+        cx.fillStyle = '#aaa39a'; cx.font = '600 34px Inter, sans-serif'; cx.fillText('Haz el test en boomart.pe/test', W / 2, 1816);
+        return new Promise(res => cv.toBlob(res, 'image/png'));
+      }
+      function roundRect(cx, x, y, w, h, r) { cx.beginPath(); cx.moveTo(x + r, y); cx.arcTo(x + w, y, x + w, y + h, r); cx.arcTo(x + w, y + h, x, y + h, r); cx.arcTo(x, y + h, x, y, r); cx.arcTo(x, y, x + w, y, r); cx.closePath(); }
+      function wrapText(cx, text, x, y, maxW, lh, maxLines) {
+        const words = text.split(' '); let line = '', n = 0;
+        for (let i = 0; i < words.length; i++) {
+          const test = line ? line + ' ' + words[i] : words[i];
+          if (cx.measureText(test).width > maxW && line) { cx.fillText(line, x, y + n * lh); n++; line = words[i]; if (n >= maxLines) return; }
+          else line = test;
+        }
+        if (line && n < maxLines) cx.fillText(line, x, y + n * lh);
+      }
+      $('shareImg').addEventListener('click', async () => {
+        if (!current) return;
+        const btn = $('shareImg'); btn.disabled = true; const label = btn.textContent; btn.textContent = 'Preparando imagen…';
+        try {
+          const blob = await makeImage(current);
+          const file = new File([blob], 'mi-caballero-de-oro.png', { type: 'image/png' });
+          let shared = false;
+          if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            try { await navigator.share({ files: [file], text: 'Me salió ' + R[current].name + '. ¿Y a ti? ' + base }); shared = true; }
+            catch (e) { shared = e && e.name === 'AbortError'; }
+          }
+          if (!shared) {
+            const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'mi-caballero-de-oro.png';
+            document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+            $('err').textContent = 'Guardamos la imagen en tu teléfono: súbela a tu estado de WhatsApp desde la galería.';
+          }
+          track('test_compartir_imagen', { test: 'caballeros_oro' });
+        } catch (_) { $('err').textContent = 'No se pudo preparar la imagen. Inténtalo de nuevo.'; }
+        finally { btn.disabled = false; btn.textContent = label; }
+      });
+    })();
+    </script>
+    <script src="../../src/track.js?v=6" defer></script>
+  </body>
+</html>
