@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM5C8Q1394"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HM5C8Q1394');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Amigo Secreto por WhatsApp: sorteo gratis y sin registro | BoomArt</title>
+    <meta name="description" content="Organiza tu Amigo Secreto en un minuto: escribe los nombres, sortea y envía a cada uno su enlace privado por WhatsApp. Gratis, sin registro y sin guardar datos.">
+    <link rel="canonical" href="https://boomart.pe/amigo-secreto/">
+    <link rel="icon" type="image/svg+xml" href="../assets/boomart-mark.svg?v=7">
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="../assets/boomart-mark-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/app-icon-180.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BoomArt">
+    <meta property="og:title" content="Amigo Secreto por WhatsApp: sorteo gratis y sin registro">
+    <meta property="og:description" content="Escribe los nombres, sortea y envía a cada uno su enlace secreto por WhatsApp. Sin registro.">
+    <meta property="og:url" content="https://boomart.pe/amigo-secreto/">
+    <meta property="og:image" content="https://boomart.pe/assets/boomart-og.jpg">
+    <meta property="og:locale" content="es_PE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Amigo Secreto por WhatsApp: sorteo gratis y sin registro">
+    <meta name="twitter:image" content="https://boomart.pe/assets/boomart-og.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/styles.css?v=69">
+
+    <style>
+      /* Solo para esta pagina (mismo criterio que nosotros.html y stickers). Pensada primero para celular. */
+      .site-header { position: static; }
+      .as-wrap { max-width: 620px; margin: 0 auto; padding: clamp(20px, 5vw, 48px) 16px 80px; }
+      .as-wrap h1 { margin: 0 0 10px; font-size: clamp(2rem, 8vw, 3.2rem); line-height: 1; }
+      .as-wrap .lead { color: var(--muted); font-size: 1.02rem; line-height: 1.55; margin: 0 0 18px; }
+      .as-hide { display: none !important; }
+      .as-card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 14px; }
+      .as-card h2 { font-size: 1.15rem; margin: 0 0 4px; display: flex; gap: 10px; align-items: center; }
+      .as-n { background: var(--red); color: #fff; width: 26px; height: 26px; border-radius: 50%; display: inline-grid; place-items: center; font: 800 .85rem Inter, sans-serif; flex: none; }
+      .as-hint { color: var(--muted); font-size: .9rem; line-height: 1.5; margin: 4px 0 10px; }
+      .as-hint b { color: #fff; }
+      .as-field { display: block; margin-top: 10px; }
+      .as-field > span { display: block; font-size: .88rem; font-weight: 700; margin-bottom: 6px; }
+      .as-in { width: 100%; min-height: 46px; padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.18); background: #111; color: #fff; font: 1rem Inter, sans-serif; }
+      .as-in:focus { outline: 2px solid var(--red); outline-offset: 1px; border-color: transparent; }
+      textarea.as-in { min-height: 84px; resize: vertical; }
+      .as-grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .as-money { position: relative; }
+      .as-money::before { content: "S/"; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); font-weight: 700; pointer-events: none; }
+      .as-money .as-in { padding-left: 36px; }
+      .as-row { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+      .as-row .as-in { flex: 1; min-width: 0; }
+      .as-row .as-num { width: 26px; flex: none; text-align: center; color: var(--muted); font-weight: 700; font-size: .85rem; }
+      .as-x { flex: none; width: 46px; height: 46px; border-radius: 8px; border: 1px solid var(--line); background: transparent; color: #fff; font-size: 1.2rem; cursor: pointer; }
+      .as-x:hover { border-color: var(--red); }
+      .as-row select.as-in { padding-right: 6px; }
+      .as-row .as-sep { color: var(--muted); font-size: .85rem; flex: none; }
+      .as-add { margin-top: 10px; width: 100%; min-height: 46px; }
+      .as-big { width: 100%; min-height: 56px; font-size: 1.05rem; }
+      .as-err { color: var(--gold); font-size: .95rem; margin-top: 10px; line-height: 1.5; }
+      .as-count { font-size: .85rem; color: var(--muted); margin-top: 8px; }
+
+      .as-list { list-style: none; margin: 10px 0 0; padding: 0; }
+      .as-list li { display: flex; align-items: center; gap: 8px; padding: 10px 0; border-top: 1px solid var(--line); flex-wrap: wrap; }
+      .as-list li:first-child { border-top: 0; }
+      .as-list .who { flex: 1 1 120px; min-width: 0; font-weight: 700; overflow-wrap: anywhere; }
+      .as-list .who small { display: block; font-weight: 500; color: var(--muted); font-size: .78rem; }
+      .as-list .button { min-height: 44px; padding: 0 14px; font-size: .9rem; }
+      .as-list li.sent .who small { color: #7fd69a; }
+      .as-wa { background: #1fa855; color: #fff; }
+      .as-wa:hover { background: #22bd60; }
+      .as-progress { height: 8px; background: rgba(255,255,255,.1); border-radius: 99px; overflow: hidden; margin-top: 10px; }
+      .as-progress i { display: block; height: 100%; width: 0; background: #1fa855; transition: width .25s; }
+      .as-note { font-size: .88rem; color: #dfdad3; background: rgba(255,255,255,.04); border-radius: 8px; padding: 12px 14px; margin-top: 12px; line-height: 1.55; }
+      .as-note b { color: #fff; }
+      .as-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+      .as-actions .button { flex: 1 1 170px; min-height: 48px; }
+
+      /* Vista del participante */
+      .as-me { text-align: center; }
+      .as-me .as-event { font: 800 1rem Inter, sans-serif; color: var(--gold); letter-spacing: .02em; margin: 0 0 6px; }
+      .as-me h1 { margin-bottom: 6px; }
+      .as-gift { position: relative; display: grid; place-items: center; width: min(78vw, 300px); aspect-ratio: 1 / 1; margin: 18px auto 10px; border: 0; border-radius: 20px; cursor: pointer; background: radial-gradient(circle at 50% 40%, #2a0b10, #120406); box-shadow: 0 20px 60px rgba(225,19,47,.25); color: #fff; font: inherit; }
+      .as-gift svg { width: 62%; height: auto; animation: as-wiggle 1.8s ease-in-out infinite; }
+      .as-gift span { position: absolute; bottom: 16px; left: 0; right: 0; font-weight: 800; font-size: .98rem; }
+      @keyframes as-wiggle { 0%, 100% { transform: rotate(0); } 10% { transform: rotate(-6deg); } 20% { transform: rotate(6deg); } 30% { transform: rotate(-3deg); } 40% { transform: rotate(0); } }
+      .as-reveal { animation: as-pop .5s cubic-bezier(.2, 1.4, .4, 1) both; }
+      .as-reveal .as-to { font-size: .95rem; color: var(--muted); margin: 18px 0 4px; }
+      .as-reveal .as-name { font: 900 clamp(2.4rem, 13vw, 4.2rem) / 1 var(--display-font); color: #fff; margin: 0; overflow-wrap: anywhere; }
+      @keyframes as-pop { from { transform: scale(.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+      .as-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 18px 0 0; text-align: left; }
+      .as-facts div { background: rgba(255,255,255,.04); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+      .as-facts dt { font-size: .75rem; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+      .as-facts dd { margin: 2px 0 0; font-weight: 800; font-size: 1rem; }
+      .as-facts .wide { grid-column: 1 / -1; }
+      .as-facts .wide dd { font-weight: 500; font-size: .95rem; line-height: 1.45; }
+      #confetti { position: fixed; inset: 0; pointer-events: none; z-index: 900; }
+
+      .as-info h2 { font-size: 1.3rem; margin: 36px 0 12px; }
+      .as-info h3 { color: var(--gold); font-size: 1.02rem; margin: 20px 0 6px; }
+      .as-info p, .as-info li { color: #dfdad3; line-height: 1.65; }
+      @media (prefers-reduced-motion: reduce) { .as-gift svg { animation: none; } .as-reveal { animation: none; } }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="BoomArt inicio">
+        <img class="brand-logo" src="../assets/boomart-logo.svg" alt="BoomArt">
+        <span>
+          <strong>BOOM ART</strong>
+          <small>Catálogo 3D</small>
+        </span>
+      </a>
+      <nav aria-label="Secciones del sitio">
+        <a href="../index.html#catalogo">Catálogo</a>
+        <a href="../politicas.html">Políticas</a>
+        <a href="https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%20el%20cat%C3%A1logo%20de%20productos%203D." target="_blank" rel="noreferrer">WhatsApp</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="as-wrap">
+
+        <!-- ================= Organizador ================= -->
+        <div id="org">
+          <p class="eyebrow">Herramienta gratis de BoomArt</p>
+          <h1>Amigo Secreto por WhatsApp</h1>
+          <p class="lead">Escribe los nombres, sortea y envía a cada persona su <b>enlace secreto</b> por WhatsApp. Cada uno ve solo a quién le regala. Gratis, sin registro y sin guardar datos.</p>
+
+          <div id="setup">
+            <section class="as-card">
+              <h2><span class="as-n">1</span> El intercambio</h2>
+              <label class="as-field"><span>Nombre del Amigo Secreto</span>
+                <input class="as-in" id="evName" maxlength="60" placeholder="Ej.: Navidad de la familia" autocomplete="off">
+              </label>
+              <div class="as-grid2">
+                <label class="as-field"><span>Fecha del intercambio</span>
+                  <input class="as-in" id="evDate" type="date">
+                </label>
+                <label class="as-field"><span>Presupuesto</span>
+                  <span class="as-money"><input class="as-in" id="evBudget" type="number" inputmode="numeric" min="0" step="1" placeholder="50"></span>
+                </label>
+              </div>
+              <label class="as-field"><span>Nota para todos <small style="color:var(--muted);font-weight:500">(opcional)</small></span>
+                <textarea class="as-in" id="evNote" maxlength="240" placeholder="Ej.: El intercambio es en casa de la abuela a las 8 p. m."></textarea>
+              </label>
+            </section>
+
+            <section class="as-card">
+              <h2><span class="as-n">2</span> Participantes</h2>
+              <p class="as-hint">Escribe un nombre por casilla. Mínimo 3 personas.</p>
+              <div id="people"></div>
+              <button type="button" class="button ghost as-add" id="addPerson">+ Agregar participante</button>
+              <p class="as-count" id="peopleCount"></p>
+            </section>
+
+            <section class="as-card">
+              <h2><span class="as-n">3</span> Excepciones <small style="color:var(--muted);font:500 .85rem Inter,sans-serif">(opcional)</small></h2>
+              <p class="as-hint">¿Hay parejas o hermanos que no deben tocarse entre sí? Agrégalos aquí.</p>
+              <div id="excl"></div>
+              <button type="button" class="button ghost as-add" id="addExcl">+ Agregar excepción</button>
+            </section>
+
+            <button type="button" class="button primary as-big" id="draw">Hacer el sorteo</button>
+            <div class="as-err" id="err" role="alert"></div>
+          </div>
+
+          <!-- Resultado para el organizador -->
+          <section class="as-card as-hide" id="res">
+            <h2>¡Sorteo listo! Envía cada enlace</h2>
+            <p class="as-hint">Toca <b>«Enviar»</b> junto a cada nombre y elige a esa persona en WhatsApp. Envíalo por <b>chat privado</b>, no en el grupo.</p>
+            <div class="as-progress"><i id="sentBar"></i></div>
+            <p class="as-count" id="sentCount"></p>
+            <ul class="as-list" id="links"></ul>
+            <div class="as-note"><b>Para que siga siendo secreto:</b> no abras los enlaces de los demás, porque verías a quién le tocó. Si alguien pierde su enlace, vuelve a esta página en este mismo teléfono y reenvíaselo.</div>
+            <div class="as-actions">
+              <button type="button" class="button ghost" id="editDraw">Cambiar datos y volver a sortear</button>
+              <button type="button" class="button ghost" id="newDraw">Nuevo Amigo Secreto</button>
+            </div>
+          </section>
+        </div>
+
+        <!-- ================= Participante ================= -->
+        <div id="me" class="as-me as-hide">
+          <p class="as-event" id="meEvent"></p>
+          <h1 id="meHello">Hola</h1>
+          <p class="lead" id="meLead">Asegúrate de que nadie esté mirando tu pantalla.</p>
+          <button type="button" class="as-gift" id="gift" aria-label="Descubrir a quién le regalas">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="26" width="48" height="32" rx="3" fill="#e1132f"/><rect x="4" y="18" width="56" height="12" rx="3" fill="#ff3348"/><rect x="28" y="18" width="8" height="40" fill="#d6b268"/><path d="M32 18c-4-8-14-10-14-3 0 5 9 4 14 3zm0 0c4-8 14-10 14-3 0 5-9 4-14 3z" fill="none" stroke="#d6b268" stroke-width="3.5" stroke-linejoin="round"/></svg>
+            <span>Toca para descubrir</span>
+          </button>
+          <div id="revealed" class="as-hide">
+            <div class="as-reveal">
+              <p class="as-to">Te tocó regalarle a</p>
+              <p class="as-name" id="meName"></p>
+            </div>
+            <dl class="as-facts" id="facts"></dl>
+            <p class="as-hint" style="margin-top:16px">🤫 Guarda el secreto hasta el día del intercambio.</p>
+
+            <section class="as-card" style="text-align:left;margin-top:16px">
+              <h2>Tu lista de deseos</h2>
+              <p class="as-hint">Escribe qué te gustaría recibir y envíala al grupo, así tu amigo secreto tendrá pistas.</p>
+              <textarea class="as-in" id="wish" maxlength="300" placeholder="Ej.: un libro de fantasía, una taza bonita, algo de Harry Potter…"></textarea>
+              <button type="button" class="button as-wa as-big" id="sendWish" style="margin-top:10px">Enviar mi lista por WhatsApp</button>
+            </section>
+          </div>
+          <div class="as-err" id="meErr" role="alert"></div>
+          <div class="as-actions" style="margin-top:20px">
+            <a class="button ghost" href="./" id="ownOne">Organiza tu propio Amigo Secreto</a>
+          </div>
+        </div>
+
+        <div class="as-info" id="info">
+          <h2>Cómo funciona el Amigo Secreto por WhatsApp</h2>
+          <ol>
+            <li>Escribe el nombre del intercambio, la fecha, el presupuesto y los participantes.</li>
+            <li>Si hay parejas que no deben tocarse, agrégalas como excepción.</li>
+            <li>Toca «Hacer el sorteo» y envía a cada persona su enlace secreto por WhatsApp.</li>
+            <li>Cada uno abre su enlace, toca el regalo y descubre a quién le regala.</li>
+          </ol>
+          <h3>¿Se guarda algún dato?</h3>
+          <p>No. No hay registro ni base de datos: cada resultado viaja dentro de su propio enlace. Solo este teléfono recuerda tu sorteo, para que puedas reenviar un enlace si alguien lo pierde.</p>
+          <h3>¿El organizador puede ver a quién le tocó cada uno?</h3>
+          <p>No en la lista de envío: ahí solo aparecen los nombres de quienes reciben cada enlace. Pero si abre el enlace de otra persona, lo vería, así que pídele que no lo haga.</p>
+          <h3>¿Qué pasa si vuelvo a sortear?</h3>
+          <p>Se crea un sorteo nuevo y los enlaces anteriores dejan de valer. Tendrás que enviar los enlaces nuevos a todos.</p>
+          <h3>¿Cuántas personas pueden participar?</h3>
+          <p>Desde 3 hasta 60 personas.</p>
+        </div>
+      </div>
+    </main>
+
+    <canvas id="confetti" aria-hidden="true"></canvas>
+
+    <footer class="footer" id="contacto">
+      <div>
+        <strong>BOOM ART</strong>
+        <p>Piezas hechas a pedido. Consulta disponibilidad, colores, acabados y tiempos de entrega por WhatsApp.</p>
+        <p><a href="mailto:contacto@boomart.pe">✉️ contacto@boomart.pe</a></p>
+        <ul class="footer-links">
+          <li><a href="../nosotros.html">Nosotros</a></li>
+          <li><a href="../politicas.html">Políticas de compra, envío y privacidad</a></li>
+          <li><a href="../libro-de-reclamaciones.html">Libro de Reclamaciones</a></li>
+        </ul>
+      </div>
+      <a class="button secondary" href="https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%20el%20cat%C3%A1logo%20de%20productos%203D." target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+    </footer>
+
+    <script>
+    (() => {
+      const $ = id => document.getElementById(id);
+      const MAX_P = 60, MIN_P = 3, STORE = 'boomart.amigoSecreto.v1';
+      const track = (name, params) => { try { if (window.gtag) gtag('event', name, params || {}); } catch (_) {} };
+      const pageURL = location.origin + location.pathname;
+
+      // ---------- enlace secreto: el resultado viaja cifrado (ofuscado) dentro del enlace ----------
+      // Va después del "#", así que nunca llega a ningún servidor.
+      const b64u = bytes => btoa(String.fromCharCode(...bytes)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+      const unb64u = s => Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((s.length + 3) % 4)), c => c.charCodeAt(0));
+      function pack(obj) {
+        const data = new TextEncoder().encode(JSON.stringify(obj));
+        const key = crypto.getRandomValues(new Uint8Array(8));
+        const out = new Uint8Array(1 + key.length + data.length);
+        out[0] = 1; out.set(key, 1);
+        for (let i = 0; i < data.length; i++) out[1 + key.length + i] = data[i] ^ key[i % key.length] ^ (i * 31 & 255);
+        return b64u(out);
+      }
+      function unpack(s) {
+        const b = unb64u(s);
+        if (b[0] !== 1) throw new Error('version');
+        const key = b.slice(1, 9), data = b.slice(9);
+        const plain = data.map((x, i) => x ^ key[i % key.length] ^ (i * 31 & 255));
+        return JSON.parse(new TextDecoder().decode(plain));
+      }
+
+      const fmtDate = d => { if (!d) return ''; try { return new Date(d + 'T12:00:00').toLocaleDateString('es-PE', { weekday: 'long', day: 'numeric', month: 'long' }); } catch (_) { return d; } };
+
+      // ---------- vista del participante ----------
+      window.addEventListener('hashchange', () => location.reload());
+      const m = location.hash.match(/^#s=([A-Za-z0-9_-]+)$/);
+      if (m) { showParticipant(m[1]); return; }
+
+      // ---------- organizador: estado (solo en este teléfono) ----------
+      let st = { e: '', d: '', b: '', n: '', people: ['', '', ''], excl: [], result: null };
+      try { const raw = localStorage.getItem(STORE); if (raw) st = Object.assign(st, JSON.parse(raw)); } catch (_) {}
+      const save = () => { try { localStorage.setItem(STORE, JSON.stringify(st)); } catch (_) {} };
+
+      const evName = $('evName'), evDate = $('evDate'), evBudget = $('evBudget'), evNote = $('evNote');
+      evName.value = st.e; evDate.value = st.d; evBudget.value = st.b; evNote.value = st.n;
+      [[evName, 'e'], [evDate, 'd'], [evBudget, 'b'], [evNote, 'n']].forEach(([el, k]) => el.addEventListener('input', () => { st[k] = el.value; save(); }));
+
+      function renderPeople(focusIdx) {
+        const box = $('people'); box.textContent = '';
+        st.people.forEach((name, i) => {
+          const row = document.createElement('div'); row.className = 'as-row';
+          const num = document.createElement('span'); num.className = 'as-num'; num.textContent = i + 1;
+          const inp = document.createElement('input'); inp.className = 'as-in'; inp.maxLength = 40; inp.value = name;
+          inp.placeholder = ['Ej.: Ana', 'Ej.: Luis', 'Ej.: Carmen'][i] || 'Nombre';
+          inp.setAttribute('aria-label', 'Participante ' + (i + 1)); inp.autocomplete = 'off'; inp.enterKeyHint = 'next';
+          inp.addEventListener('input', () => { st.people[i] = inp.value; save(); renderCount(); renderExclOptions(); });
+          inp.addEventListener('keydown', e => {
+            if (e.key !== 'Enter') return;
+            e.preventDefault();
+            if (i === st.people.length - 1) addPerson(); else box.querySelectorAll('input')[i + 1].focus();
+          });
+          const x = document.createElement('button'); x.type = 'button'; x.className = 'as-x'; x.textContent = '×';
+          x.setAttribute('aria-label', 'Quitar participante ' + (i + 1));
+          x.disabled = st.people.length <= MIN_P;
+          x.addEventListener('click', () => { st.people.splice(i, 1); st.excl = st.excl.filter(p => p[0] !== i && p[1] !== i).map(p => p.map(k => k > i ? k - 1 : k)); save(); renderPeople(); renderExcl(); });
+          row.append(num, inp, x); box.appendChild(row);
+        });
+        renderCount();
+        if (focusIdx !== undefined) box.querySelectorAll('input')[focusIdx].focus();
+      }
+      function addPerson() {
+        if (st.people.length >= MAX_P) { showErr('El máximo es ' + MAX_P + ' participantes.'); return; }
+        st.people.push(''); save(); renderPeople(st.people.length - 1); renderExclOptions();
+      }
+      function renderCount() {
+        const n = st.people.filter(x => x.trim()).length;
+        $('peopleCount').textContent = n + (n === 1 ? ' participante' : ' participantes');
+      }
+      $('addPerson').addEventListener('click', addPerson);
+
+      // excepciones: pares que no se pueden tocar entre sí
+      function personOptions(sel, value) {
+        sel.textContent = '';
+        const o0 = document.createElement('option'); o0.value = ''; o0.textContent = 'Elige…'; sel.appendChild(o0);
+        st.people.forEach((p, i) => { if (!p.trim()) return; const o = document.createElement('option'); o.value = i; o.textContent = p.trim(); sel.appendChild(o); });
+        sel.value = value === undefined || value === null ? '' : String(value);
+      }
+      function renderExcl() {
+        const box = $('excl'); box.textContent = '';
+        st.excl.forEach((pair, k) => {
+          const row = document.createElement('div'); row.className = 'as-row';
+          const a = document.createElement('select'); a.className = 'as-in'; a.setAttribute('aria-label', 'Persona');
+          const sep = document.createElement('span'); sep.className = 'as-sep'; sep.textContent = 'y';
+          const b = document.createElement('select'); b.className = 'as-in'; b.setAttribute('aria-label', 'No se toca con');
+          personOptions(a, pair[0]); personOptions(b, pair[1]);
+          a.addEventListener('change', () => { st.excl[k][0] = a.value === '' ? null : +a.value; save(); });
+          b.addEventListener('change', () => { st.excl[k][1] = b.value === '' ? null : +b.value; save(); });
+          const x = document.createElement('button'); x.type = 'button'; x.className = 'as-x'; x.textContent = '×'; x.setAttribute('aria-label', 'Quitar excepción');
+          x.addEventListener('click', () => { st.excl.splice(k, 1); save(); renderExcl(); });
+          row.append(a, sep, b, x); box.appendChild(row);
+        });
+      }
+      function renderExclOptions() {
+        $('excl').querySelectorAll('.as-row').forEach((row, k) => { const [a, b] = row.querySelectorAll('select'); personOptions(a, st.excl[k][0]); personOptions(b, st.excl[k][1]); });
+      }
+      $('addExcl').addEventListener('click', () => { st.excl.push([null, null]); save(); renderExcl(); });
+
+      const showErr = t => { $('err').textContent = t || ''; };
+
+      // ---------- sorteo ----------
+      // Asigna a cada persona alguien distinto de sí misma y de sus excepciones (búsqueda con vuelta atrás, al azar).
+      function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = crypto.getRandomValues(new Uint32Array(1))[0] % (i + 1); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+      function solve(n, banned) {
+        for (let attempt = 0; attempt < 200; attempt++) {
+          const order = shuffle([...Array(n).keys()]);
+          const used = new Array(n).fill(false), to = new Array(n).fill(-1);
+          let steps = 0;
+          const go = k => {
+            if (k === n) return true;
+            if (++steps > 20000) return false;
+            const g = order[k];
+            for (const r of shuffle([...Array(n).keys()])) {
+              if (used[r] || r === g || banned.has(g + ',' + r)) continue;
+              used[r] = true; to[g] = r;
+              if (go(k + 1)) return true;
+              used[r] = false; to[g] = -1;
+            }
+            return false;
+          };
+          if (go(0)) return to;
+        }
+        return null;
+      }
+
+      $('draw').addEventListener('click', () => {
+        showErr('');
+        const idx = [], names = [];
+        st.people.forEach((p, i) => { const t = p.trim().replace(/\s+/g, ' '); if (t) { idx.push(i); names.push(t); } });
+        if (names.length < MIN_P) { showErr('Escribe al menos 3 nombres.'); return; }
+        const lower = names.map(x => x.toLocaleLowerCase('es'));
+        const dup = lower.find((x, i) => lower.indexOf(x) !== i);
+        if (dup) { showErr('Hay un nombre repetido: «' + names[lower.indexOf(dup)] + '». Agrega un apellido o inicial para diferenciarlos.'); return; }
+        const pos = new Map(idx.map((v, k) => [v, k]));
+        const banned = new Set();
+        st.excl.forEach(([a, b]) => {
+          if (a === null || b === null || a === b || !pos.has(a) || !pos.has(b)) return;
+          banned.add(pos.get(a) + ',' + pos.get(b)); banned.add(pos.get(b) + ',' + pos.get(a));
+        });
+        const to = solve(names.length, banned);
+        if (!to) { showErr('Con esas excepciones no hay forma de sortear. Quita alguna excepción o agrega más participantes.'); return; }
+        const base = { v: 1, e: evName.value.trim().slice(0, 60), d: evDate.value, b: evBudget.value ? String(Math.max(0, Math.round(+evBudget.value))) : '', n: evNote.value.trim().slice(0, 240) };
+        st.result = { at: Date.now(), list: names.map((g, k) => ({ g, link: pageURL + '#s=' + pack(Object.assign({}, base, { g, r: names[to[k]] })), sent: false })) };
+        save();
+        track('amigo_secreto_sorteo', { participantes: names.length, excepciones: banned.size / 2 });
+        showResult();
+      });
+
+      // ---------- envío de enlaces ----------
+      function inviteText(item) {
+        const ev = evName.value.trim();
+        const lines = ['🎁 *Amigo Secreto' + (ev ? ' «' + ev + '»' : '') + '*', '', 'Hola ' + item.g + ', aquí está tu enlace secreto. Ábrelo cuando nadie te vea 🤫', item.link];
+        const extra = [];
+        if (evBudget.value) extra.push('Presupuesto: S/ ' + Math.round(+evBudget.value));
+        if (evDate.value) extra.push('Intercambio: ' + fmtDate(evDate.value));
+        if (extra.length) lines.push('', extra.join(' · '));
+        return lines.join('\n');
+      }
+      function showResult() {
+        $('setup').classList.add('as-hide'); $('res').classList.remove('as-hide'); $('info').classList.add('as-hide');
+        const ul = $('links'); ul.textContent = '';
+        st.result.list.forEach((item, k) => {
+          const li = document.createElement('li'); li.classList.toggle('sent', item.sent);
+          const who = document.createElement('div'); who.className = 'who'; who.textContent = item.g;
+          const small = document.createElement('small'); small.textContent = item.sent ? '✓ Enviado' : 'Pendiente'; who.appendChild(small);
+          const wa = document.createElement('a'); wa.className = 'button as-wa'; wa.textContent = item.sent ? 'Reenviar' : 'Enviar';
+          wa.href = 'https://wa.me/?text=' + encodeURIComponent(inviteText(item)); wa.target = '_blank'; wa.rel = 'noopener';
+          wa.setAttribute('aria-label', 'Enviar su enlace a ' + item.g + ' por WhatsApp');
+          wa.addEventListener('click', () => { markSent(k); track('amigo_secreto_envio'); });
+          const cp = document.createElement('button'); cp.type = 'button'; cp.className = 'button ghost'; cp.textContent = 'Copiar';
+          cp.setAttribute('aria-label', 'Copiar el mensaje para ' + item.g);
+          cp.addEventListener('click', async () => {
+            const ok = await copy(inviteText(item));
+            cp.textContent = ok ? '¡Copiado!' : 'No se pudo'; setTimeout(() => { cp.textContent = 'Copiar'; }, 1600);
+            if (ok) markSent(k, true);
+          });
+          li.append(who, wa, cp); ul.appendChild(li);
+        });
+        renderSent();
+        window.scrollTo({ top: $('res').getBoundingClientRect().top + scrollY - 10 });
+      }
+      function markSent(k, rerender) {
+        if (st.result.list[k].sent) return;
+        st.result.list[k].sent = true; save();
+        setTimeout(showResultQuiet, rerender ? 0 : 400);
+      }
+      function showResultQuiet() { const y = scrollY; showResult(); window.scrollTo({ top: y }); }
+      function renderSent() {
+        const total = st.result.list.length, sent = st.result.list.filter(x => x.sent).length;
+        $('sentBar').style.width = (sent / total * 100) + '%';
+        $('sentCount').textContent = sent === total ? '✓ ¡Enviaste todos los enlaces! (' + total + ')' : sent + ' de ' + total + ' enlaces enviados';
+      }
+      async function copy(text) {
+        try { await navigator.clipboard.writeText(text); return true; } catch (_) {}
+        try { const ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); const ok = document.execCommand('copy'); ta.remove(); return ok; } catch (_) { return false; }
+      }
+      $('editDraw').addEventListener('click', () => {
+        if (st.result.list.some(x => x.sent) && !confirm('Si vuelves a sortear, los enlaces que ya enviaste dejarán de valer y tendrás que enviar los nuevos a todos. ¿Continuar?')) return;
+        st.result = null; save();
+        $('res').classList.add('as-hide'); $('setup').classList.remove('as-hide'); $('info').classList.remove('as-hide');
+        window.scrollTo({ top: 0 });
+      });
+      $('newDraw').addEventListener('click', () => {
+        if (!confirm('¿Empezar un Amigo Secreto nuevo? Se borrará el sorteo actual de este teléfono.')) return;
+        st = { e: '', d: '', b: '', n: '', people: ['', '', ''], excl: [], result: null }; save();
+        evName.value = evDate.value = evBudget.value = evNote.value = '';
+        renderPeople(); renderExcl();
+        $('res').classList.add('as-hide'); $('setup').classList.remove('as-hide'); $('info').classList.remove('as-hide');
+        window.scrollTo({ top: 0 });
+      });
+
+      renderPeople(); renderExcl();
+      if (st.result && st.result.list && st.result.list.length) showResult();
+
+      // ---------- funciones del participante ----------
+      function showParticipant(code) {
+        $('org').classList.add('as-hide'); $('info').classList.add('as-hide'); $('me').classList.remove('as-hide');
+        document.title = 'Tu Amigo Secreto | BoomArt';
+        let data;
+        try { data = unpack(code); if (!data.g || !data.r) throw new Error('incompleto'); }
+        catch (_) {
+          $('meHello').textContent = 'Este enlace no funciona';
+          $('meLead').textContent = 'Puede que se haya copiado incompleto. Pídele a quien organizó el Amigo Secreto que te lo vuelva a enviar.';
+          $('gift').classList.add('as-hide');
+          return;
+        }
+        $('meEvent').textContent = data.e ? 'Amigo Secreto «' + data.e + '»' : 'Amigo Secreto';
+        $('meHello').textContent = 'Hola, ' + data.g;
+        const facts = $('facts');
+        const fact = (label, value, wide) => { if (!value) return; const d = document.createElement('div'); if (wide) d.className = 'wide'; const dt = document.createElement('dt'); dt.textContent = label; const dd = document.createElement('dd'); dd.textContent = value; d.append(dt, dd); facts.appendChild(d); };
+        fact('Presupuesto', data.b ? 'S/ ' + data.b : '');
+        fact('Intercambio', data.d ? fmtDate(data.d) : '');
+        fact('Nota', data.n, true);
+        $('gift').addEventListener('click', () => {
+          $('gift').classList.add('as-hide'); $('meLead').classList.add('as-hide');
+          $('meName').textContent = data.r;
+          $('revealed').classList.remove('as-hide');
+          confetti();
+          track('amigo_secreto_revelado');
+        }, { once: true });
+        $('sendWish').addEventListener('click', () => {
+          const w = $('wish').value.trim();
+          if (!w) { $('meErr').textContent = 'Escribe primero qué te gustaría recibir.'; $('wish').focus(); return; }
+          $('meErr').textContent = '';
+          const text = '🎁 *Mi lista de deseos' + (data.e ? ' para el Amigo Secreto «' + data.e + '»' : ' para el Amigo Secreto') + '*\n\n' + w + '\n\n_' + data.g + '_';
+          window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank', 'noopener');
+          track('amigo_secreto_deseos');
+        });
+      }
+
+      // Confeti breve al descubrir el nombre (respeta "reducir movimiento").
+      function confetti() {
+        if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const cv = $('confetti'), cx = cv.getContext('2d'), dpr = Math.min(2, window.devicePixelRatio || 1);
+        cv.width = innerWidth * dpr; cv.height = innerHeight * dpr;
+        const colors = ['#e1132f', '#d6b268', '#ffffff', '#ff3348', '#1fa855'];
+        const parts = Array.from({ length: 140 }, () => ({ x: Math.random() * cv.width, y: -Math.random() * cv.height * 0.4, vx: (Math.random() - .5) * 3 * dpr, vy: (2 + Math.random() * 4) * dpr, s: (4 + Math.random() * 6) * dpr, r: Math.random() * 6, vr: (Math.random() - .5) * .3, c: colors[Math.floor(Math.random() * colors.length)] }));
+        const t0 = performance.now();
+        (function frame(t) {
+          cx.clearRect(0, 0, cv.width, cv.height);
+          parts.forEach(p => { p.x += p.vx; p.y += p.vy; p.r += p.vr; cx.save(); cx.translate(p.x, p.y); cx.rotate(p.r); cx.fillStyle = p.c; cx.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2); cx.restore(); });
+          if (t - t0 < 3200) requestAnimationFrame(frame); else cx.clearRect(0, 0, cv.width, cv.height);
+        })(t0);
+      }
+    })();
+    </script>
+    <script src="../src/track.js?v=6" defer></script>
+  </body>
+</html>
