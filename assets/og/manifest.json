@@ -733,5 +733,12 @@
     "width": 960,
     "height": 1200,
     "bytes": 99124
+  },
+  "nacimiento-minimalista": {
+    "source": "assets/products/nacimiento-minimalista-navidad-hero.jpg",
+    "hash": "1ebd6a6437f753ae",
+    "width": 960,
+    "height": 1200,
+    "bytes": 96364
   }
 }

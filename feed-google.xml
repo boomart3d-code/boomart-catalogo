@@ -3,7 +3,7 @@
   <channel>
     <title>BoomArt - Catalogo de productos</title>
     <link>https://boomart.pe/</link>
-    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-11-22.</description>
+    <description>Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Peru. Actualizado 2026-11-26.</description>
     <item>
       <g:id>skins-zelda-nintendo-switch-2</g:id>
       <g:title>Skins 3D Zelda para base de carga Nintendo Switch 2 · Colección Hyrule</g:title>
@@ -1773,6 +1773,21 @@
       <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
       <g:product_type>Harry Potter</g:product_type>
+    </item>
+    <item>
+      <g:id>nacimiento-minimalista</g:id>
+      <g:title>Nacimiento minimalista</g:title>
+      <g:description>Dale un toque cálido y sereno a tu Navidad con este nacimiento de diseño minimalista y textura acanalada, ideal para decorar una mesa, repisa o rincón especial de tu hogar. Fabricado en impresión 3D con PLA, con figuras principales de aproximadamente 10 a 15 cm de alto, según la pieza. Incluye el ángel, los personajes del nacimiento, dos animalitos, la cuna y el bebé. S/100 por el juego de figuras. No incluye cabañita o portal con estrella, bandeja de madera con asas, arco con estrella iluminada, bases de exhibición ni decoración de las fotos. Fabricado bajo pedido en impresion 3D (PLA), acabado y detallado a mano. Fabricacion: 24 a 48 horas. Envios a todo el Peru.</g:description>
+      <g:link>https://boomart.pe/producto/nacimiento-minimalista/</g:link>
+      <g:image_link>https://boomart.pe/assets/products/nacimiento-minimalista-navidad-hero.jpg</g:image_link>
+      <g:additional_image_link>https://boomart.pe/assets/products/nacimiento-minimalista-foto-real.jpg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>100.00 PEN</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>BoomArt</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Arts &amp; Entertainment &gt; Hobbies &amp; Creative Arts &gt; Collectibles</g:google_product_category>
+      <g:product_type>Navidad</g:product_type>
     </item>
   </channel>
 </rss>

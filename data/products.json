@@ -3095,5 +3095,33 @@
     "imageAlt": "Figura chibi de Harry Potter impresa en 3D: cabello castaño alborotado, gafas redondas, ojos verdes y la cicatriz del rayo, túnica negra con el escudo de Gryffindor, chaleco gris, corbata roja y la varita en la mano",
     "detailText": "Harry Potter en versión chibi, con sus gafas redondas, la cicatriz del rayo, el uniforme de Gryffindor y su varita en la mano. Mide unos 20 cm de alto. Impresa en 3D con PLA+ y hecha a pedido. En las fotos puedes verla de frente, de perfil y de espaldas.",
     "description": "Harry Potter en versión chibi: cabeza grande, cabello alborotado, gafas redondas, ojos verdes y la cicatriz del rayo en la frente. Viste el uniforme de Gryffindor —túnica negra con el escudo de la casa, chaleco gris y corbata roja— y lleva su varita en la mano. Una figura simpática para tu escritorio o tu repisa, y un regalo ideal para quien vuelve a Hogwarts con cada película. Mide aproximadamente 20 cm de alto. Impresa en 3D con PLA+ y hecha a pedido, con envíos a todo el Perú."
+  },
+  {
+    "id": "nacimiento-minimalista",
+    "name": "Nacimiento minimalista",
+    "category": "Navidad",
+    "tags": [
+      "Navidad",
+      "Nacimiento",
+      "Pesebre",
+      "Belén",
+      "Diseño minimalista",
+      "Decoración navideña"
+    ],
+    "material": "PLA",
+    "grammaticalGender": "masculino",
+    "availability": "A pedido",
+    "regularPrice": 100,
+    "featured": true,
+    "image": "assets/products/nacimiento-minimalista-navidad-hero.jpg",
+    "gallery": [
+      "assets/products/nacimiento-minimalista-navidad-hero.jpg",
+      "assets/products/nacimiento-minimalista-foto-real.jpg"
+    ],
+    "height": "Figuras principales: entre 10 y 15 cm de alto aproximadamente, según la pieza",
+    "imageAlt": "Nacimiento minimalista de figuras blancas acanaladas: ángel, personajes, dos animalitos y el bebé en su cuna, sobre una mesa clara",
+    "detailText": "Juego de figuras independientes impreso en 3D con PLA, de líneas suaves y textura acanalada. Incluye el ángel, los personajes del nacimiento, dos animalitos, la cuna y el bebé. Las figuras principales miden aproximadamente entre 10 y 15 cm de alto; el bebé, la cuna y los animalitos son de menor tamaño. El precio de S/100 corresponde únicamente al juego de figuras. No incluye cabañita o portal con estrella, bandeja de madera con asas, arco con estrella iluminada, bases de exhibición ni otros elementos decorativos.",
+    "description": "Dale un toque cálido y sereno a tu Navidad con este nacimiento de diseño minimalista y textura acanalada, ideal para decorar una mesa, repisa o rincón especial de tu hogar. Fabricado en impresión 3D con PLA, con figuras principales de aproximadamente 10 a 15 cm de alto, según la pieza. Incluye el ángel, los personajes del nacimiento, dos animalitos, la cuna y el bebé. S/100 por el juego de figuras. No incluye cabañita o portal con estrella, bandeja de madera con asas, arco con estrella iluminada, bases de exhibición ni decoración de las fotos.",
+    "notice": "S/100 incluye solo las figuras. No incluye cabañita o portal, bandeja de madera, arco con estrella iluminada ni bases decorativas."
   }
 ]

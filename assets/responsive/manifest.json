@@ -5738,6 +5738,48 @@
       ]
     ]
   },
+  "assets/products/nacimiento-minimalista-foto-real.webp": {
+    "w": 1600,
+    "h": 1200,
+    "src": "assets/products/nacimiento-minimalista-foto-real.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/nacimiento-minimalista-foto-real-1a494fc121f7-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/nacimiento-minimalista-foto-real-1a494fc121f7-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/nacimiento-minimalista-foto-real-1a494fc121f7-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/nacimiento-minimalista-foto-real-1a494fc121f7-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/nacimiento-minimalista-navidad-hero.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/nacimiento-minimalista-navidad-hero.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/nacimiento-minimalista-navidad-hero-41181299928f-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/nacimiento-minimalista-navidad-hero-41181299928f-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/nacimiento-minimalista-navidad-hero-41181299928f-720w.webp"
+      ]
+    ]
+  },
   "assets/products/ocarina-colores-referencia.webp": {
     "w": 1122,
     "h": 1402,

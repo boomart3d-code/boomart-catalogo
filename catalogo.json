@@ -3,7 +3,7 @@
   "url": "https://boomart.pe/",
   "description": "Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao, Peru. Envios a todo el pais.",
   "currency": "PEN",
-  "updated": "2026-11-22",
+  "updated": "2026-11-26",
   "contact": {
     "whatsapp": "https://wa.me/51925666542",
     "email": "contacto@boomart.pe",
@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 105,
+  "count": 106,
   "products": [
     {
       "id": "skins-zelda-nintendo-switch-2",
@@ -3857,6 +3857,38 @@
       ],
       "url": "https://boomart.pe/producto/figura-chibi-harry-potter/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Figura%20Chibi%20de%20Harry%20%C2%B7%20Harry%20Potter"
+    },
+    {
+      "id": "nacimiento-minimalista",
+      "name": "Nacimiento minimalista",
+      "category": "Navidad",
+      "tags": [
+        "Navidad",
+        "Nacimiento",
+        "Pesebre",
+        "Belén",
+        "Diseño minimalista",
+        "Decoración navideña"
+      ],
+      "description": "Dale un toque cálido y sereno a tu Navidad con este nacimiento de diseño minimalista y textura acanalada, ideal para decorar una mesa, repisa o rincón especial de tu hogar. Fabricado en impresión 3D con PLA, con figuras principales de aproximadamente 10 a 15 cm de alto, según la pieza. Incluye el ángel, los personajes del nacimiento, dos animalitos, la cuna y el bebé. S/100 por el juego de figuras. No incluye cabañita o portal con estrella, bandeja de madera con asas, arco con estrella iluminada, bases de exhibición ni decoración de las fotos.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
+      "priceCurrency": "PEN",
+      "priceFrom": 100,
+      "pricing": [
+        "Precio: S/100"
+      ],
+      "image": "https://boomart.pe/assets/products/nacimiento-minimalista-navidad-hero.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/nacimiento-minimalista-navidad-hero.jpg",
+        "https://boomart.pe/assets/products/nacimiento-minimalista-foto-real.jpg"
+      ],
+      "url": "https://boomart.pe/producto/nacimiento-minimalista/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Nacimiento%20minimalista"
     }
   ]
 }
