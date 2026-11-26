@@ -159,9 +159,14 @@
 
         <section class="sf-card" id="c1">
           <h2><span class="sf-n">1</span> Elige tu video</h2>
-          <p class="sf-hint">Toca el botón y escoge un video o GIF de tu galería. Mientras más corto, más rápido se crea.</p>
-          <label class="button primary sf-big" id="pickV" for="fileV">Elegir video o GIF</label>
+          <p class="sf-hint">Escoge un video o GIF de tu galería, o graba uno ahora con tu cámara.</p>
+          <div class="sf-actions" style="margin-top:0">
+            <label class="button primary sf-big" id="pickV" for="fileV">Elegir de mi galería</label>
+            <label class="button ghost sf-big" id="camV" for="fileVcam">Grabar un video</label>
+          </div>
           <input type="file" id="fileV" accept="video/*,image/gif">
+          <input type="file" id="fileVcam" accept="video/*" capture="environment">
+          <p class="sf-hint" style="margin-top:10px">No necesitas editarlo antes: lo reducimos solos a 512 × 512, el tamaño de los stickers.</p>
           <p class="sf-file sf-hide" id="vName"></p>
           <div id="vBox" class="sf-hide">
             <video id="vid" playsinline controls></video>
@@ -186,19 +191,25 @@
           <p class="sf-lock">Primero elige tu video en el paso 1.</p>
           <div class="sf-body">
             <p class="sf-hint">¿Qué quieres que se escuche en tu sticker?</p>
-            <label class="sf-choice" id="chVideo"><input type="radio" name="snd" value="video" checked><span><b>El sonido de mi video</b><small id="sndVideoHint">Usamos el audio que ya trae tu clip.</small></span></label>
-            <label class="sf-choice"><input type="radio" name="snd" value="file"><span><b>Otra canción o audio</b><small>Elige un archivo de audio de tu celular.</small></span></label>
+            <label class="sf-choice" id="chVideo"><input type="radio" name="snd" value="video" checked><span><b>El sonido original del video</b><small id="sndVideoHint">Usamos el audio que ya trae tu clip.</small></span></label>
+            <label class="sf-choice"><input type="radio" name="snd" value="file"><span><b>Una canción o audio de mi celular</b><small>Elige un archivo de audio que tengas guardado.</small></span></label>
             <div class="sf-sub sf-hide" id="aBox">
               <label class="button ghost sf-big" for="fileA" id="pickA">Elegir audio</label>
               <input type="file" id="fileA" accept="audio/*">
               <p class="sf-file sf-hide" id="aName"></p>
               <p class="sf-hint">En iPhone el audio debe estar guardado en la app Archivos. En Android, en tu celular o en Descargas.</p>
-              <div id="aOpts" class="sf-hide">
-                <audio id="aud" controls></audio>
-                <div class="sf-sl">
-                  <div class="sf-sl-top"><label for="aStart">¿Desde qué parte del audio?</label><output id="aStartO">0.0 s</output></div>
-                  <input type="range" id="aStart" min="0" max="10" step="0.1" value="0">
-                </div>
+            </div>
+            <label class="sf-choice" id="chRec"><input type="radio" name="snd" value="rec"><span><b>Grabar mi voz o un sonido</b><small>Graba con el micrófono mientras ves tu clip.</small></span></label>
+            <div class="sf-sub sf-hide" id="rBox">
+              <p class="sf-hint" style="margin-top:0" id="recInfo">Tu clip se reproduce en silencio mientras grabas, para que tu voz coincida con la imagen. La grabación dura lo mismo que tu sticker.</p>
+              <button type="button" class="button primary sf-big" id="recBtn">Empezar a grabar</button>
+              <p class="sf-status" id="recStatus" role="status" aria-live="polite"></p>
+            </div>
+            <div id="aOpts" class="sf-hide">
+              <audio id="aud" controls></audio>
+              <div class="sf-sl">
+                <div class="sf-sl-top"><label for="aStart">¿Desde qué parte del audio?</label><output id="aStartO">0.0 s</output></div>
+                <input type="range" id="aStart" min="0" max="10" step="0.1" value="0">
               </div>
             </div>
             <label class="sf-choice"><input type="radio" name="snd" value="none"><span><b>Sin sonido</b><small>Solo la imagen en movimiento.</small></span></label>
@@ -271,8 +282,8 @@
         <div class="sf-info">
           <h2>Cómo hacer un sticker animado para WhatsApp</h2>
           <ol>
-            <li>Elige un video o GIF de tu galería y marca la parte que quieres (hasta 10 segundos).</li>
-            <li>Elige el sonido: el del video, otra canción o ninguno.</li>
+            <li>Elige un video o GIF de tu galería, o grábalo con tu cámara, y marca la parte que quieres (hasta 10 segundos).</li>
+            <li>Elige el sonido: el original del video, una canción de tu celular, tu voz grabada o ninguno.</li>
             <li>Toca «Crear mi sticker», guarda el clip y úsalo en el creador de stickers de WhatsApp.</li>
           </ol>
           <h3>¿Mis videos se suben a internet?</h3>
@@ -281,6 +292,8 @@
           <p>El sticker animado sale en formato WebP de 512 × 512 píxeles y se ajusta para pesar menos de 500 KB, el límite de WhatsApp para stickers animados.</p>
           <h3>¿Funciona en iPhone y Android?</h3>
           <p>Sí, en el navegador de ambos (Safari en iPhone, Chrome en Android). La primera vez descarga el motor de conversión, unos 30 MB, así que conviene tener buena conexión. Con clips cortos funciona mejor.</p>
+          <h3>¿Por qué me pide permiso para el micrófono?</h3>
+          <p>Solo si eliges «Grabar mi voz o un sonido». La grabación se queda en tu celular y se usa únicamente para tu sticker.</p>
           <h3>Usa música y videos propios o con permiso</h3>
           <p>Cada persona es responsable de los archivos que convierte. Usa material propio o que tengas permiso de usar.</p>
         </div>
@@ -314,7 +327,8 @@
       const isAndroid = /Android/i.test(navigator.userAgent);
       const track = (name, params) => { try { if (window.gtag) gtag('event', name, params || {}); } catch (_) {} };
 
-      let vFile = null, aFile = null, vDur = 0, aDur = 0, vHasAudio = true, probeP = null;
+      // songFile: audio elegido del celular. recFile: audio grabado con el micrófono.
+      let vFile = null, songFile = null, recFile = null, vDur = 0, aDur = 0, vHasAudio = true, probeP = null;
       let ff = null, ffReady = null, logBuf = '';
       let wBlob = null, mBlob = null, urls = [], soundTouched = false;
 
@@ -325,11 +339,16 @@
       const setBar = p => { $('bar').style.display = 'block'; $('barI').style.width = Math.max(0, Math.min(100, p)) + '%'; };
       const showErr = t => { $('err').textContent = t || ''; };
       const mode = () => document.querySelector('input[name=snd]:checked').value;
+      const curAudio = () => mode() === 'file' ? songFile : mode() === 'rec' ? recFile : null;
+      const canRecord = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
 
       if (!window.WebAssembly || !window.Worker) {
         $('support').textContent = 'Tu navegador es muy antiguo para esta herramienta. Actualízalo o prueba con Chrome (Android) o Safari (iPhone).';
-        $('pickV').classList.add('sf-hide');
+        $('pickV').classList.add('sf-hide'); $('camV').classList.add('sf-hide');
       }
+      // "Grabar un video" solo tiene sentido en celular o tablet (en PC abriría el explorador de archivos).
+      if (!(window.matchMedia && matchMedia('(pointer: coarse)').matches)) $('camV').classList.add('sf-hide');
+      if (!canRecord) { $('chRec').classList.add('sf-hide'); }
 
       // ---- pasos y bloqueos ----
       function setLocked(el, locked) { el.classList.toggle('locked', locked); el.inert = locked; }
@@ -338,7 +357,8 @@
         [['st1', d1], ['st2', d2], ['st3', d3]].forEach(([id, done]) => $(id).classList.toggle('done', done));
         const cur = !d1 ? 'st1' : !d2 ? 'st2' : !d3 ? 'st3' : null;
         ['st1', 'st2', 'st3'].forEach(id => $(id).classList.toggle('active', id === cur));
-        $('go').disabled = !(vFile && (mode() !== 'file' || aFile));
+        const m = mode();
+        $('go').disabled = !(vFile && (m === 'video' || m === 'none' || curAudio()) && !recording);
       }
 
       // ---- video ----
@@ -351,7 +371,7 @@
         if (+$('dur').value > +$('dur').max) $('dur').value = $('dur').max;
         $('vStartO').textContent = fmt(+$('vStart').value);
         $('durO').textContent = fmt(+$('dur').value);
-        if (aFile) {
+        if (curAudio()) {
           const am = Math.max(0, aDur - +$('dur').value);
           $('aStart').max = am.toFixed(1);
           if (+$('aStart').value > am) $('aStart').value = am;
@@ -365,7 +385,7 @@
       function showVideoUI(f) {
         $('vBox').classList.remove('sf-hide');
         $('vName').textContent = '✓ ' + f.name; $('vName').classList.remove('sf-hide');
-        $('pickV').textContent = 'Cambiar video';
+        $('pickV').textContent = 'Elegir otro video'; $('camV').textContent = 'Grabar otro';
         refreshSliders();
         setLocked($('c2'), false); setLocked($('c3'), false);
         updateSteps();
@@ -381,9 +401,11 @@
         vDur = 10; $('vStart').max = 10; $('dur').max = 10; $('vStart').value = 0; $('dur').value = 5;
         showVideoUI(f);
       }
-      $('fileV').addEventListener('change', e => {
-        const f = e.target.files[0]; if (!f) return;
-        showErr(''); stopPrev();
+      $('fileV').addEventListener('change', e => onVideo(e.target.files[0]));
+      $('fileVcam').addEventListener('change', e => onVideo(e.target.files[0]));
+      function onVideo(f) {
+        if (!f) return;
+        showErr(''); stopPrev(); if (recording) stopRecording();
         if (f.size > MAX_INPUT) { showErr('Ese video es muy pesado (más de 300 MB). Elige uno más corto.'); return; }
         vFile = f; wBlob = mBlob = null; $('out').classList.add('sf-hide');
         const url = URL.createObjectURL(f);
@@ -399,26 +421,100 @@
         };
         vid.onerror = () => startNoPreview(f, false);
         vid.src = url;
-      });
+      }
 
       // ---- sonido ----
+      // Muestra el reproductor y la barra "desde qué parte" para el audio de la opción elegida.
+      let audURL = null;
+      function showAudio() {
+        const m = mode(), a = curAudio();
+        $('aBox').classList.toggle('sf-hide', m !== 'file');
+        $('rBox').classList.toggle('sf-hide', m !== 'rec');
+        if (m === 'file') $('aBox').appendChild($('aOpts'));
+        if (m === 'rec') $('rBox').appendChild($('aOpts'));
+        if (!a) { $('aOpts').classList.add('sf-hide'); return; }
+        if (audURL) URL.revokeObjectURL(audURL);
+        audURL = URL.createObjectURL(a);
+        aDur = a === recFile ? recDur : 30;
+        aud.onloadedmetadata = () => {
+          if (aud.duration && isFinite(aud.duration)) aDur = aud.duration;
+          refreshSliders();
+        };
+        aud.onerror = () => showErr('No pude leer ese audio. Prueba con un MP3 o M4A.');
+        aud.src = audURL;
+        $('aStart').value = 0;
+        $('aOpts').classList.remove('sf-hide');
+        refreshSliders();
+      }
       document.querySelectorAll('input[name=snd]').forEach(r => r.addEventListener('change', () => {
-        soundTouched = true; autoSwitched = false;
-        $('aBox').classList.toggle('sf-hide', mode() !== 'file');
-        stopPrev(); updateSteps();
+        soundTouched = true; autoSwitched = false; showErr('');
+        if (recording && mode() !== 'rec') stopRecording();
+        stopPrev(); showAudio(); updateSteps();
       }));
       $('fileA').addEventListener('change', e => {
         const f = e.target.files[0]; if (!f) return;
-        aFile = f; aud.src = URL.createObjectURL(f); soundTouched = true;
-        aud.onloadedmetadata = () => {
-          aDur = aud.duration && isFinite(aud.duration) ? aud.duration : 30;
-          $('aStart').value = 0;
-          $('aOpts').classList.remove('sf-hide');
-          $('aName').textContent = '✓ ' + f.name; $('aName').classList.remove('sf-hide');
-          $('pickA').textContent = 'Cambiar audio';
-          refreshSliders(); updateSteps();
+        songFile = f; soundTouched = true; showErr('');
+        $('aName').textContent = '✓ ' + f.name; $('aName').classList.remove('sf-hide');
+        $('pickA').textContent = 'Cambiar audio';
+        showAudio(); updateSteps();
+      });
+
+      // ---- grabar con el micrófono ----
+      let recording = false, recorder = null, recStream = null, recTimer = null, recDur = 0;
+      function pickMime() {
+        const opts = ['audio/webm;codecs=opus', 'audio/mp4', 'audio/webm', 'audio/ogg;codecs=opus'];
+        if (!MediaRecorder.isTypeSupported) return '';
+        return opts.find(t => MediaRecorder.isTypeSupported(t)) || '';
+      }
+      function stopRecording() { if (recorder && recorder.state === 'recording') recorder.stop(); }
+      $('recBtn').addEventListener('click', async () => {
+        if (recording) { stopRecording(); return; }
+        showErr('');
+        try {
+          recStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        } catch (e) {
+          $('recStatus').textContent = 'No pudimos usar el micrófono. Revisa que el navegador tenga permiso para usarlo e inténtalo de nuevo.';
+          track('sticker_mic_denegado');
+          return;
+        }
+        const mime = pickMime();
+        let r;
+        try { r = mime ? new MediaRecorder(recStream, { mimeType: mime }) : new MediaRecorder(recStream); }
+        catch (_) { r = new MediaRecorder(recStream); }
+        recorder = r;
+        const chunks = [];
+        const d = +$('dur').value, s = +$('vStart').value;
+        r.ondataavailable = ev => { if (ev.data && ev.data.size) chunks.push(ev.data); };
+        r.onstop = () => {
+          clearInterval(recTimer); recording = false;
+          recStream.getTracks().forEach(t => t.stop());
+          vid.pause(); vid.muted = false;
+          const elapsed = (performance.now() - t0) / 1000;
+          const type = (r.mimeType || mime || 'audio/webm').split(';')[0];
+          const blob = new Blob(chunks, { type });
+          $('recBtn').textContent = 'Grabar de nuevo';
+          $('recBtn').classList.remove('ghost'); $('recBtn').classList.add('primary');
+          if (blob.size < 800 || elapsed < 0.4) { $('recStatus').textContent = 'No se grabó nada. Toca el botón y habla cerca del celular.'; updateSteps(); return; }
+          const extA = /mp4|aac|m4a/.test(type) ? 'm4a' : /ogg/.test(type) ? 'ogg' : 'webm';
+          recFile = new File([blob], 'grabacion.' + extA, { type });
+          recDur = Math.min(elapsed, d + 0.5);
+          soundTouched = true;
+          $('recStatus').textContent = '✓ Grabación lista (' + fmt(recDur) + '). Escúchala o toca «Probar con el sonido».';
+          showAudio(); updateSteps();
+          track('sticker_grabacion', { segundos: Math.round(recDur) });
         };
-        aud.onerror = () => showErr('No pude leer ese audio. Prueba con un MP3 o M4A.');
+        // El clip se reproduce en silencio desde el segundo elegido para grabar sincronizado.
+        stopPrev();
+        if (!noPreview) { vid.muted = true; vid.currentTime = s; vid.play().catch(() => {}); }
+        const t0 = performance.now();
+        r.start(250);
+        recording = true; updateSteps();
+        $('recBtn').textContent = 'Detener';
+        recTimer = setInterval(() => {
+          const el = (performance.now() - t0) / 1000;
+          $('recStatus').textContent = '● Grabando… ' + fmt(Math.min(el, d)) + ' de ' + fmt(d);
+          if (el >= d) stopRecording();
+        }, 100);
       });
 
       // ---- vista previa ----
@@ -427,7 +523,7 @@
       function preview() {
         stopPrev();
         const s = +$('vStart').value, d = +$('dur').value, as = +$('aStart').value, m = mode();
-        const useAud = m === 'file' && aFile;
+        const useAud = (m === 'file' || m === 'rec') && !!curAudio();
         if (noPreview) { if (useAud) { aud.currentTime = as; aud.play().catch(() => {}); } return; }
         const start = () => {
           vid.currentTime = s; vid.muted = m !== 'video'; vid.play().catch(() => {});
@@ -504,11 +600,11 @@
         } catch (_) { vHasAudio = true; }
         await cleanup(['probe.' + ext(f)]);
         $('chVideo').classList.toggle('off', !vHasAudio);
-        $('sndVideoHint').textContent = vHasAudio ? 'Usamos el audio que ya trae tu clip.' : 'Este video no trae sonido. Elige otra canción o audio.';
+        $('sndVideoHint').textContent = vHasAudio ? 'Usamos el audio que ya trae tu clip.' : 'Este video no trae sonido. Elige una canción o graba tu voz.';
         if (!vHasAudio && mode() === 'video') {
-          document.querySelector('input[name=snd][value=file]').checked = true; $('aBox').classList.remove('sf-hide'); autoSwitched = true; updateSteps();
-        } else if (vHasAudio && autoSwitched && mode() === 'file' && !aFile) {
-          document.querySelector('input[name=snd][value=video]').checked = true; $('aBox').classList.add('sf-hide'); autoSwitched = false; updateSteps();
+          document.querySelector('input[name=snd][value=file]').checked = true; autoSwitched = true; showAudio(); updateSteps();
+        } else if (vHasAudio && autoSwitched && mode() === 'file' && !songFile) {
+          document.querySelector('input[name=snd][value=video]').checked = true; autoSwitched = false; showAudio(); updateSteps();
         }
       }
 
@@ -519,10 +615,65 @@
       const webpVf = (fit, fps) => fit === 'fill' ? `fps=${fps}` : `fps=${fps},format=rgba,pad=512:512:(ow-iw)/2:(oh-ih)/2:color=0x00000000`;
       const mp4Vf = fit => fit === 'fill' ? 'format=yuv420p' : 'pad=512:512:(ow-iw)/2:(oh-ih)/2:color=black,format=yuv420p';
 
+      // Reduce el tramo elegido a 512 px reproduciéndolo con el reproductor del navegador (decodifica
+      // con el hardware del celular: un video 4K de iPhone tarda lo que dura el tramo) y tomando
+      // 24 cuadros por segundo en un canvas. Devuelve los cuadros JPEG o null si no se puede.
+      async function captureFrames(fit, s, d) {
+        if (noPreview || !('requestVideoFrameCallback' in HTMLVideoElement.prototype)) return null;
+        const vw = vid.videoWidth, vh = vid.videoHeight;
+        if (!vw || !vh) return null;
+        const FPS = 24, total = Math.max(1, Math.round(d * FPS));
+        let cw, ch, sx = 0, sy = 0, sw = vw, sh = vh;
+        if (fit === 'fill') { cw = ch = 512; const side = Math.min(vw, vh); sw = sh = side; sx = (vw - side) / 2; sy = (vh - side) / 2; }
+        else { const k = Math.min(512 / vw, 512 / vh); cw = Math.max(2, Math.floor(vw * k / 2) * 2); ch = Math.max(2, Math.floor(vh * k / 2) * 2); }
+        const cv = document.createElement('canvas'); cv.width = cw; cv.height = ch;
+        const cx = cv.getContext('2d');
+        try { for (const n of await ff.listDir('/')) if (/^f\d{4}\.jpg$/.test(n.name)) await ff.deleteFile(n.name); } catch (_) {}
+        stopPrev();
+        const hadControls = vid.controls;
+        vid.controls = false; vid.muted = true;
+        try {
+          await new Promise((res, rej) => {
+            const t = setTimeout(() => rej(new Error('seek')), 6000);
+            vid.addEventListener('seeked', () => { clearTimeout(t); res(); }, { once: true });
+            vid.currentTime = s;
+          });
+          const frames = []; let k = 0, cur = null;
+          await new Promise((resolve, reject) => {
+            let dog = setTimeout(() => reject(new Error('sin cuadros')), 4000);
+            const onFrame = (now, meta) => {
+              clearTimeout(dog); dog = setTimeout(() => reject(new Error('se detuvo')), 3000);
+              const t = meta.mediaTime - s;
+              let drew = false;
+              while (k < total && k / FPS <= t + 0.004) {
+                if (!drew) { cx.drawImage(vid, sx, sy, sw, sh, 0, 0, cw, ch); cur = new Promise(r => cv.toBlob(r, 'image/jpeg', 0.92)); drew = true; }
+                frames[k++] = cur;
+              }
+              setBar(5 + (k / total) * 20);
+              if (k >= total || vid.ended) { clearTimeout(dog); resolve(); return; }
+              vid.requestVideoFrameCallback(onFrame);
+            };
+            vid.requestVideoFrameCallback(onFrame);
+            vid.play().catch(reject);
+          });
+          vid.pause();
+          if (!k) return null;
+          while (k < total && cur) frames[k++] = cur;
+          const blobs = await Promise.all(frames);
+          return blobs.every(Boolean) ? blobs : null;
+        } catch (_) {
+          vid.pause();
+          return null;
+        } finally {
+          vid.controls = hadControls; vid.muted = false;
+        }
+      }
+
       $('go').addEventListener('click', async () => {
         if (!vFile) return;
-        const m = mode();
-        if (m === 'file' && !aFile) { showErr('Elige un audio en el paso 2, o cambia a «Sin sonido».'); return; }
+        const m = mode(), aSrc = curAudio();
+        if (m === 'file' && !aSrc) { showErr('Elige un audio en el paso 2, o cambia a «Sin sonido».'); return; }
+        if (m === 'rec' && !aSrc) { showErr('Graba tu sonido en el paso 2, o cambia a «Sin sonido».'); return; }
         stopPrev(); showErr(''); $('out').classList.add('sf-hide');
         $('go').disabled = true; $('prev').disabled = true; $('prev2').disabled = true;
         const s = (+$('vStart').value).toFixed(2), d = (+$('dur').value).toFixed(2), as = (+$('aStart').value).toFixed(2);
@@ -532,16 +683,33 @@
           await warmUp(); if (probeP) await probeP;
           setBar(2); setStatus('Leyendo tu video…');
           const inV = await useFile('/vin', vFile, 'in_v.' + ext(vFile));
-          const inA = m === 'file' ? await useFile('/ain', aFile, 'in_a.' + ext(aFile)) : null;
+          const inA = aSrc ? await useFile('/ain', aSrc, 'in_a.' + ext(aSrc)) : null;
           const useVideoAudio = m === 'video' && vHasAudio;
 
-          // 0) una sola lectura del video original: clip base de 512x512 (rápido para los pasos siguientes)
-          setStatus('Preparando tu clip…');
-          const onB = ({ progress }) => setBar(5 + Math.min(1, Math.max(0, progress)) * 20);
-          ff.on('progress', onB);
-          const rb = await ff.exec(['-ss', s, '-t', d, '-i', inV, '-vf', BASE_VF[fit], '-an', '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '16', '-pix_fmt', 'yuv420p', 'base.mp4']);
-          ff.off('progress', onB);
+          // 0) Clip base de 512x512, el tamaño mínimo de un sticker. Primero intenta con el reproductor
+          //    del propio celular (rápido, usa su hardware); si no se puede, lo hace el motor (más lento).
+          setStatus('Reduciendo tu video al tamaño de sticker…');
+          let rb = -1, frameNames = [];
+          const frames = await captureFrames(fit, +s, +d);
+          if (frames) {
+            for (let i = 0; i < frames.length; i++) {
+              const n = 'f' + String(i).padStart(4, '0') + '.jpg';
+              await ff.writeFile(n, new Uint8Array(await frames[i].arrayBuffer()));
+              frameNames.push(n);
+            }
+            rb = await ff.exec(['-framerate', '24', '-i', 'f%04d.jpg', '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '16', '-pix_fmt', 'yuv420p', 'base.mp4']);
+            for (const n of frameNames) { try { await ff.deleteFile(n); } catch (_) {} }
+            frameNames = [];
+            if (rb !== 0) { try { await ff.deleteFile('base.mp4'); } catch (_) {} }
+          }
+          if (rb !== 0) {
+            const onB = ({ progress }) => setBar(5 + Math.min(1, Math.max(0, progress)) * 20);
+            ff.on('progress', onB);
+            rb = await ff.exec(['-ss', s, '-t', d, '-i', inV, '-vf', BASE_VF[fit], '-an', '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '16', '-pix_fmt', 'yuv420p', 'base.mp4']);
+            ff.off('progress', onB);
+          }
           if (rb !== 0) throw new Error('base');
+          const metodo = frames ? 'navegador' : 'motor';
 
           // 1) sticker webp: baja la calidad hasta que pese menos de 500 KB
           const ladder = [[20, 70], [15, 60], [15, 50], [12, 45], [10, 40], [10, 30], [8, 25], [8, 15]];
@@ -597,7 +765,7 @@
           $('out').classList.remove('sf-hide');
           setBar(100); setStatus('¡Listo!');
           updateSteps();
-          track('sticker_creado', { sonido: audioOn ? (inA ? 'audio_subido' : 'del_video') : 'sin_sonido', peso_ok: wOk ? 'si' : 'no', sistema: isIOS ? 'ios' : isAndroid ? 'android' : 'otro' });
+          track('sticker_creado', { sonido: audioOn ? (m === 'rec' ? 'grabado' : inA ? 'audio_subido' : 'del_video') : 'sin_sonido', peso_ok: wOk ? 'si' : 'no', sistema: isIOS ? 'ios' : isAndroid ? 'android' : 'otro', metodo });
           $('out').scrollIntoView({ behavior: 'smooth', block: 'start' });
         } catch (e) {
           console.error(e);
