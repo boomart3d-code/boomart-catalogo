@@ -124,6 +124,21 @@
       .sf-info h3 { color: var(--gold); font-size: 1.02rem; margin: 20px 0 6px; }
       .sf-info p, .sf-info li { color: #dfdad3; line-height: 1.65; }
       .sf-hide { display: none !important; }
+
+      /* Aviso de espera: aparece abajo cuando algo tarda y se va solo al terminar. */
+      .sf-busy { position: fixed; left: 50%; bottom: max(16px, env(safe-area-inset-bottom)); transform: translateX(-50%); width: min(520px, calc(100% - 32px)); z-index: 1000; display: flex; gap: 14px; align-items: center; background: #1d1d1d; border: 1px solid rgba(225,19,47,.6); border-radius: 14px; padding: 14px 16px; box-shadow: 0 18px 50px rgba(0,0,0,.55); }
+      .sf-busy[hidden] { display: none; }
+      .sf-spin { width: 34px; height: 34px; flex: none; border-radius: 50%; border: 4px solid rgba(255,255,255,.15); border-top-color: var(--red); animation: sf-rot .8s linear infinite; }
+      .sf-busy-txt { flex: 1; min-width: 0; }
+      .sf-busy-txt b { display: block; font-size: .98rem; color: #fff; }
+      .sf-busy-txt span { display: block; font-size: .85rem; color: #dfdad3; line-height: 1.4; margin-top: 2px; }
+      .sf-busy-bar { position: relative; height: 8px; background: rgba(255,255,255,.12); border-radius: 99px; overflow: hidden; margin-top: 8px; }
+      .sf-busy-bar i { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--red); border-radius: 99px; transition: width .25s; }
+      .sf-busy-bar.indet i { width: 35%; animation: sf-indet 1.2s ease-in-out infinite; }
+      .sf-busy-pct { flex: none; font-weight: 800; color: var(--gold); font-variant-numeric: tabular-nums; min-width: 3ch; text-align: right; }
+      @keyframes sf-rot { to { transform: rotate(360deg); } }
+      @keyframes sf-indet { 0% { left: -35%; } 100% { left: 100%; } }
+      @media (prefers-reduced-motion: reduce) { .sf-spin { animation-duration: 2.4s; } .sf-busy-bar.indet i { animation: none; width: 100%; opacity: .5; } }
       @media (max-width: 480px) { .sf-res { gap: 8px; } .sf-res figcaption { font-size: .78rem; } .sf-tag { font-size: .72rem; } .sf-box { padding: 4px; } }
     </style>
   </head>
@@ -300,6 +315,16 @@
       </div>
     </main>
 
+    <div class="sf-busy" id="busy" role="status" aria-live="polite" hidden>
+      <div class="sf-spin" aria-hidden="true"></div>
+      <div class="sf-busy-txt">
+        <b id="busyTitle">Estamos trabajando en tu sticker</b>
+        <span id="busyMsg">Espera unos segundos, por favor.</span>
+        <div class="sf-busy-bar indet" id="busyBarWrap"><i id="busyBar"></i></div>
+      </div>
+      <span class="sf-busy-pct" id="busyPct"></span>
+    </div>
+
     <footer class="footer" id="contacto">
       <div>
         <strong>BOOM ART</strong>
@@ -335,8 +360,39 @@
       const vid = $('vid'), aud = $('aud');
       const fmt = n => n.toFixed(1) + ' s';
       const kb = b => (b / 1024).toFixed(0) + ' KB';
-      const setStatus = t => { $('status').textContent = t; };
-      const setBar = p => { $('bar').style.display = 'block'; $('barI').style.width = Math.max(0, Math.min(100, p)) + '%'; };
+      // ---- aviso de espera ----
+      // start(): lo muestra si la tarea dura más de `delay` ms (0 = de inmediato). end(): lo quita.
+      // Si empieza otra tarea, reemplaza a la anterior (un solo aviso a la vez).
+      const busy = (() => {
+        let token = 0, timer = null, guard = null;
+        const el = $('busy');
+        function pct(p) {
+          const has = typeof p === 'number' && isFinite(p);
+          $('busyBarWrap').classList.toggle('indet', !has);
+          $('busyBar').style.width = has ? Math.max(2, Math.min(100, p)) + '%' : '';
+          $('busyPct').textContent = has ? Math.round(Math.min(100, p)) + '%' : '';
+        }
+        return {
+          start(title, msg, delay = 1500, maxMs = 0) {
+            const my = ++token;
+            clearTimeout(timer); clearTimeout(guard);
+            $('busyTitle').textContent = title; $('busyMsg').textContent = msg; pct(null);
+            if (delay <= 0) el.hidden = false;
+            else timer = setTimeout(() => { if (my === token) el.hidden = false; }, delay);
+            if (maxMs) guard = setTimeout(() => this.end(my), maxMs);
+            return my;
+          },
+          msg(m) { if (m) $('busyMsg').textContent = m; },
+          pct,
+          end(my) {
+            if (my !== undefined && my !== token) return;
+            token++; clearTimeout(timer); clearTimeout(guard); el.hidden = true;
+          },
+        };
+      })();
+      let creating = false;
+      const setStatus = t => { $('status').textContent = t; if (creating && t) busy.msg(t + ' Espera unos segundos, por favor.'); };
+      const setBar = p => { $('bar').style.display = 'block'; $('barI').style.width = Math.max(0, Math.min(100, p)) + '%'; if (creating) busy.pct(p); };
       const showErr = t => { $('err').textContent = t || ''; };
       const mode = () => document.querySelector('input[name=snd]:checked').value;
       const curAudio = () => mode() === 'file' ? songFile : mode() === 'rec' ? recFile : null;
@@ -381,8 +437,9 @@
       ['vStart', 'dur', 'aStart'].forEach(id => $(id).addEventListener('input', () => { refreshSliders(); stopPrev(); if (id === 'vStart' && !noPreview) vid.currentTime = +$('vStart').value; }));
 
       // GIF o video que el navegador no puede mostrar: se crea igual, sin vista previa del clip.
-      let noPreview = false, autoSwitched = false;
+      let noPreview = false, autoSwitched = false, videoTk = null;
       function showVideoUI(f) {
+        busy.end(videoTk);
         $('vBox').classList.remove('sf-hide');
         $('vName').textContent = '✓ ' + f.name; $('vName').classList.remove('sf-hide');
         $('pickV').textContent = 'Elegir otro video'; $('camV').textContent = 'Grabar otro';
@@ -407,6 +464,7 @@
         if (!f) return;
         showErr(''); stopPrev(); if (recording) stopRecording();
         if (f.size > MAX_INPUT) { showErr('Ese video es muy pesado (más de 300 MB). Elige uno más corto.'); return; }
+        videoTk = busy.start('Cargando tu video', 'Espera unos segundos, por favor. Si tu video es pesado puede tardar un poco.', 1500, 30000);
         vFile = f; wBlob = mBlob = null; $('out').classList.add('sf-hide');
         const url = URL.createObjectURL(f);
         if (f.type === 'image/gif' || /\.gif$/i.test(f.name)) { $('gifImg').src = url; startNoPreview(f, true); return; }
@@ -436,11 +494,13 @@
         if (audURL) URL.revokeObjectURL(audURL);
         audURL = URL.createObjectURL(a);
         aDur = a === recFile ? recDur : 30;
+        const aTk = busy.start('Cargando tu audio', 'Espera unos segundos, por favor.', 1500, 20000);
         aud.onloadedmetadata = () => {
+          busy.end(aTk);
           if (aud.duration && isFinite(aud.duration)) aDur = aud.duration;
           refreshSliders();
         };
-        aud.onerror = () => showErr('No pude leer ese audio. Prueba con un MP3 o M4A.');
+        aud.onerror = () => { busy.end(aTk); showErr('No pude leer ese audio. Prueba con un MP3 o M4A.'); };
         aud.src = audURL;
         $('aStart').value = 0;
         $('aOpts').classList.remove('sf-hide');
@@ -676,6 +736,8 @@
         if (m === 'rec' && !aSrc) { showErr('Graba tu sonido en el paso 2, o cambia a «Sin sonido».'); return; }
         stopPrev(); showErr(''); $('out').classList.add('sf-hide');
         $('go').disabled = true; $('prev').disabled = true; $('prev2').disabled = true;
+        creating = true;
+        const goTk = busy.start('Estamos creando tu sticker', 'Espera unos segundos, por favor. No cierres esta pantalla.', 0);
         const s = (+$('vStart').value).toFixed(2), d = (+$('dur').value).toFixed(2), as = (+$('aStart').value).toFixed(2);
         const fit = document.querySelector('input[name=fit]:checked').value;
         try {
@@ -774,6 +836,7 @@
           setStatus('');
           track('sticker_error');
         } finally {
+          creating = false; busy.end(goTk);
           await keepAwake(false);
           $('prev').disabled = false; $('prev2').disabled = false; updateSteps();
         }
