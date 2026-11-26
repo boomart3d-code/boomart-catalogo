@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM5C8Q1394"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HM5C8Q1394');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fábrica de stickers con sonido para WhatsApp | BoomArt</title>
+    <meta name="description" content="Crea gratis tu sticker animado para WhatsApp a partir de un video o GIF y prepara el audio que quieras. Se hace en tu celular o PC: tus archivos no se suben a ningún servidor.">
+    <link rel="canonical" href="https://boomart.pe/stickers/">
+    <link rel="icon" type="image/svg+xml" href="../assets/boomart-mark.svg?v=7">
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="../assets/boomart-mark-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/app-icon-180.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BoomArt">
+    <meta property="og:title" content="Fábrica de stickers con sonido para WhatsApp | BoomArt">
+    <meta property="og:description" content="Convierte un clip en sticker animado para WhatsApp y prepara su audio. Gratis y sin subir tus archivos.">
+    <meta property="og:url" content="https://boomart.pe/stickers/">
+    <meta property="og:image" content="https://boomart.pe/assets/boomart-og.jpg">
+    <meta property="og:locale" content="es_PE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fábrica de stickers con sonido para WhatsApp | BoomArt">
+    <meta name="twitter:image" content="https://boomart.pe/assets/boomart-og.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/styles.css?v=69">
+
+    <style>
+      /* Solo para esta pagina (mismo criterio que nosotros.html y seguimiento). Pensada primero para celular. */
+      .site-header { position: static; }
+      .sf-wrap { max-width: 640px; margin: 0 auto; padding: clamp(24px, 6vw, 56px) clamp(16px, 4vw, 28px) 80px; }
+      .sf-wrap h1 { margin: 0 0 10px; font-size: clamp(2.1rem, 8vw, 3.4rem); line-height: 1; }
+      .sf-wrap .lead { color: var(--muted); font-size: 1.05rem; line-height: 1.55; margin: 0 0 22px; }
+
+      /* Pasos arriba */
+      .sf-steps { display: flex; gap: 8px; list-style: none; margin: 0 0 18px; padding: 0; }
+      .sf-steps li { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; font-size: .82rem; color: var(--muted); font-weight: 600; line-height: 1.25; }
+      .sf-steps .dot { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; border: 2px solid var(--line); font-weight: 800; color: var(--muted); background: transparent; }
+      .sf-steps li.active { color: #fff; }
+      .sf-steps li.active .dot { border-color: var(--red); color: #fff; background: var(--red); }
+      .sf-steps li.done .dot { border-color: var(--gold); color: #141414; background: var(--gold); }
+      .sf-steps li.done { color: #dfdad3; }
+
+      .sf-card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; margin-bottom: 14px; }
+      .sf-card.locked { opacity: .45; }
+      .sf-card h2 { font-size: 1.2rem; margin: 0 0 4px; display: flex; gap: 10px; align-items: center; }
+      .sf-n { background: var(--red); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: inline-grid; place-items: center; font: 800 .9rem Inter, sans-serif; flex: none; }
+      .sf-hint { color: var(--muted); font-size: .92rem; line-height: 1.5; margin: 6px 0 12px; }
+      .sf-lock { display: none; color: var(--gold); font-size: .9rem; margin: 4px 0 0; }
+      .sf-card.locked .sf-lock { display: block; }
+      .sf-card.locked .sf-body { display: none; }
+
+      .sf-big { width: 100%; min-height: 56px; font-size: 1.05rem; }
+      .sf-file { font-size: .9rem; color: #dfdad3; margin: 10px 0 0; overflow-wrap: anywhere; }
+      .sf-card input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+      .sf-card video { display: block; width: 100%; max-height: 300px; border-radius: 8px; background: #000; margin: 14px auto 0; }
+      .sf-card audio { width: 100%; margin-top: 12px; }
+
+      .sf-sl { margin-top: 16px; }
+      .sf-sl-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+      .sf-sl-top label { font-weight: 700; font-size: .98rem; }
+      .sf-sl-top output { font-variant-numeric: tabular-nums; color: var(--gold); font-weight: 800; }
+      .sf-sl .sf-hint { margin: 2px 0 0; font-size: .85rem; }
+      .sf-card input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 36px; background: transparent; margin: 4px 0 0; }
+      .sf-card input[type=range]::-webkit-slider-runnable-track { height: 6px; background: rgba(255,255,255,.22); border-radius: 99px; }
+      .sf-card input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 30px; height: 30px; border-radius: 50%; background: var(--red); border: 3px solid #fff; margin-top: -12px; }
+      .sf-card input[type=range]::-moz-range-track { height: 6px; background: rgba(255,255,255,.22); border-radius: 99px; }
+      .sf-card input[type=range]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: var(--red); border: 3px solid #fff; }
+
+      .sf-choice { display: flex; gap: 12px; align-items: flex-start; border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin-top: 10px; cursor: pointer; }
+      .sf-choice input { accent-color: var(--red); width: 22px; height: 22px; margin: 2px 0 0; flex: none; }
+      .sf-choice b { display: block; font-size: 1rem; }
+      .sf-choice small { display: block; color: var(--muted); line-height: 1.4; margin-top: 2px; }
+      .sf-choice:has(input:checked) { border-color: var(--red); background: rgba(225,19,47,.08); }
+      .sf-choice.off { opacity: .5; }
+      .sf-sub { margin: 10px 0 0 6px; padding: 14px; border-left: 3px solid var(--red); background: rgba(255,255,255,.03); border-radius: 0 10px 10px 0; }
+
+      .sf-more { margin-top: 16px; }
+      .sf-more summary { cursor: pointer; font-weight: 700; padding: 6px 0; }
+      .sf-seg { display: grid; gap: 8px; margin-top: 8px; }
+      .sf-seg label { border: 1px solid var(--line); border-radius: 8px; padding: 12px; cursor: pointer; font-size: .95rem; display: flex; gap: 10px; align-items: flex-start; }
+      .sf-seg input { accent-color: var(--red); width: 20px; height: 20px; margin: 1px 0 0; flex: none; }
+      .sf-seg small { display: block; color: var(--muted); }
+
+      .sf-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+      .sf-actions .button { flex: 1 1 180px; min-height: 50px; }
+      .sf-bar { height: 10px; background: rgba(255,255,255,.1); border-radius: 99px; overflow: hidden; margin-top: 16px; display: none; }
+      .sf-bar i { display: block; height: 100%; width: 0; background: var(--red); transition: width .2s; }
+      .sf-status { color: #fff; font-size: .95rem; margin-top: 8px; min-height: 1.3em; }
+      .sf-warn { color: var(--gold); font-size: .9rem; margin-top: 4px; }
+      .sf-err { color: var(--gold); font-size: .95rem; margin-top: 8px; line-height: 1.5; }
+
+      .sf-res { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 12px; }
+      .sf-res figure { margin: 0; text-align: center; }
+      .sf-box { background: repeating-conic-gradient(rgba(255,255,255,.07) 0% 25%, transparent 0% 50%) 0 0 / 16px 16px; border-radius: 10px; padding: 8px; }
+      .sf-box img, .sf-box video { width: 100%; max-width: 256px; display: block; margin: 0 auto; border-radius: 6px; }
+      .sf-res figcaption { color: var(--muted); font-size: .85rem; margin: 8px 0 0; line-height: 1.4; }
+      .sf-tag { display: inline-block; padding: 1px 8px; border-radius: 99px; font-size: .78rem; background: rgba(255,255,255,.08); color: #fff; margin-top: 4px; }
+      .sf-tag.warn { color: var(--gold); }
+      .sf-next { margin: 18px 0 0; padding: 0; list-style: none; counter-reset: n; }
+      .sf-next > li { counter-increment: n; position: relative; padding: 0 0 16px 44px; color: #dfdad3; line-height: 1.55; }
+      .sf-next > li::before { content: counter(n); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--red); color: #fff; display: grid; place-items: center; font-weight: 800; }
+      .sf-next b { color: #fff; }
+      .sf-next .sf-actions { margin-top: 10px; }
+      .sf-opt { border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin-top: 12px; }
+      .sf-opt h3 { margin: 0 0 4px; font-size: 1.02rem; color: #fff; }
+      .sf-opt p { margin: 0; color: #dfdad3; font-size: .92rem; line-height: 1.5; }
+      .sf-note { font-size: .9rem; color: #dfdad3; background: rgba(255,255,255,.04); border-radius: 8px; padding: 12px 14px; margin-top: 4px; line-height: 1.55; }
+      .sf-note b { color: #fff; }
+
+      .sf-cta { border-color: rgba(225,19,47,.5); }
+      .sf-cta p { color: #dfdad3; margin: 8px 0 0; line-height: 1.55; }
+      .sf-info h2 { font-size: 1.3rem; margin: 36px 0 12px; }
+      .sf-info h3 { color: var(--gold); font-size: 1.02rem; margin: 20px 0 6px; }
+      .sf-info p, .sf-info li { color: #dfdad3; line-height: 1.65; }
+      .sf-hide { display: none !important; }
+      @media (max-width: 480px) { .sf-res { gap: 8px; } .sf-res figcaption { font-size: .78rem; } .sf-tag { font-size: .72rem; } .sf-box { padding: 4px; } }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="BoomArt inicio">
+        <img class="brand-logo" src="../assets/boomart-logo.svg" alt="BoomArt">
+        <span>
+          <strong>BOOM ART</strong>
+          <small>Catálogo 3D</small>
+        </span>
+      </a>
+      <nav aria-label="Secciones del sitio">
+        <a href="../index.html#catalogo">Catálogo</a>
+        <a href="../politicas.html">Políticas</a>
+        <a href="https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%20el%20cat%C3%A1logo%20de%20productos%203D." target="_blank" rel="noreferrer">WhatsApp</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="sf-wrap">
+        <p class="eyebrow">Herramienta gratis de BoomArt</p>
+        <h1>Fábrica de stickers con sonido para WhatsApp</h1>
+        <p class="lead">Convierte un video corto en sticker animado y elige el sonido que quieres. Son 3 pasos y se hace desde tu celular. Tus archivos no se suben a ningún servidor.</p>
+
+        <ol class="sf-steps" aria-label="Pasos">
+          <li id="st1" class="active"><span class="dot">1</span>Elige tu video</li>
+          <li id="st2"><span class="dot">2</span>Elige el sonido</li>
+          <li id="st3"><span class="dot">3</span>Crea y guarda</li>
+        </ol>
+
+        <div class="sf-err" id="support" role="alert"></div>
+
+        <section class="sf-card" id="c1">
+          <h2><span class="sf-n">1</span> Elige tu video</h2>
+          <p class="sf-hint">Toca el botón y escoge un video o GIF de tu galería. Mientras más corto, más rápido se crea.</p>
+          <label class="button primary sf-big" id="pickV" for="fileV">Elegir video o GIF</label>
+          <input type="file" id="fileV" accept="video/*,image/gif">
+          <p class="sf-file sf-hide" id="vName"></p>
+          <div id="vBox" class="sf-hide">
+            <video id="vid" playsinline controls></video>
+            <p class="sf-hint" style="margin-top:14px"><b>Ahora elige qué parte quieres.</b> Mueve las barras y toca «Ver cómo queda».</p>
+            <div class="sf-sl">
+              <div class="sf-sl-top"><label for="vStart">¿Desde qué segundo?</label><output id="vStartO">0.0 s</output></div>
+              <input type="range" id="vStart" min="0" max="10" step="0.1" value="0">
+            </div>
+            <div class="sf-sl">
+              <div class="sf-sl-top"><label for="dur">¿Cuánto dura?</label><output id="durO">5.0 s</output></div>
+              <input type="range" id="dur" min="1" max="10" step="0.5" value="5">
+              <p class="sf-hint">Entre 3 y 6 segundos queda mejor y pesa menos.</p>
+            </div>
+            <div class="sf-actions"><button type="button" class="button ghost" id="prev">Ver cómo queda</button></div>
+          </div>
+        </section>
+
+        <section class="sf-card locked" id="c2" inert>
+          <h2><span class="sf-n">2</span> Elige el sonido</h2>
+          <p class="sf-lock">Primero elige tu video en el paso 1.</p>
+          <div class="sf-body">
+            <p class="sf-hint">¿Qué quieres que se escuche en tu sticker?</p>
+            <label class="sf-choice" id="chVideo"><input type="radio" name="snd" value="video" checked><span><b>El sonido de mi video</b><small id="sndVideoHint">Usamos el audio que ya trae tu clip.</small></span></label>
+            <label class="sf-choice"><input type="radio" name="snd" value="file"><span><b>Otra canción o audio</b><small>Elige un archivo de audio de tu celular.</small></span></label>
+            <div class="sf-sub sf-hide" id="aBox">
+              <label class="button ghost sf-big" for="fileA" id="pickA">Elegir audio</label>
+              <input type="file" id="fileA" accept="audio/*">
+              <p class="sf-file sf-hide" id="aName"></p>
+              <p class="sf-hint">En iPhone el audio debe estar guardado en la app Archivos. En Android, en tu celular o en Descargas.</p>
+              <div id="aOpts" class="sf-hide">
+                <audio id="aud" controls></audio>
+                <div class="sf-sl">
+                  <div class="sf-sl-top"><label for="aStart">¿Desde qué parte del audio?</label><output id="aStartO">0.0 s</output></div>
+                  <input type="range" id="aStart" min="0" max="10" step="0.1" value="0">
+                </div>
+              </div>
+            </div>
+            <label class="sf-choice"><input type="radio" name="snd" value="none"><span><b>Sin sonido</b><small>Solo la imagen en movimiento.</small></span></label>
+            <div class="sf-actions"><button type="button" class="button ghost" id="prev2">Probar con el sonido</button></div>
+          </div>
+        </section>
+
+        <section class="sf-card locked" id="c3" inert>
+          <h2><span class="sf-n">3</span> Crea tu sticker</h2>
+          <p class="sf-lock">Primero elige tu video en el paso 1.</p>
+          <div class="sf-body">
+            <p class="sf-hint">Toca el botón y espera unos segundos. <b>No cierres ni cambies de app</b> mientras se crea.</p>
+            <details class="sf-more">
+              <summary>Más opciones (encuadre)</summary>
+              <div class="sf-seg" role="radiogroup" aria-label="Encuadre">
+                <label><input type="radio" name="fit" value="fill" checked><span>Llenar el cuadro<small>Recorta los bordes del video. Recomendado.</small></span></label>
+                <label><input type="radio" name="fit" value="fit"><span>Mostrar todo el video<small>Deja bordes transparentes en el sticker.</small></span></label>
+              </div>
+            </details>
+            <button class="button primary sf-big" id="go" disabled style="margin-top:16px">Crear mi sticker</button>
+            <div class="sf-bar" id="bar"><i id="barI"></i></div>
+            <div class="sf-status" id="status" role="status" aria-live="polite"></div>
+            <div class="sf-err" id="err" role="alert"></div>
+          </div>
+        </section>
+
+        <section class="sf-card sf-hide" id="out">
+          <h2>¡Listo! Ahora llévalo a WhatsApp</h2>
+          <div class="sf-res">
+            <figure>
+              <div class="sf-box"><img id="oImg" alt="Vista previa del sticker animado"></div>
+              <figcaption>Sticker animado (sin sonido)<br><span class="sf-tag" id="wTag"></span></figcaption>
+            </figure>
+            <figure>
+              <div class="sf-box"><video id="oVid" controls loop playsinline></video></div>
+              <figcaption>Clip con sonido<br><span class="sf-tag" id="mTag"></span></figcaption>
+            </figure>
+          </div>
+          <p class="sf-hint" style="margin-top:16px">Elige cómo quieres llevarlo a WhatsApp:</p>
+          <div class="sf-opt">
+            <h3>Enviarlo ahora a un chat</h3>
+            <p>Abre tu lista de apps y elige WhatsApp. Sale el sticker animado, sin sonido.</p>
+            <div class="sf-actions">
+              <button type="button" class="button primary" id="shareW">Compartir en WhatsApp</button>
+              <button type="button" class="button ghost" id="dlW">Guardar sticker (.webp)</button>
+            </div>
+          </div>
+          <div class="sf-opt">
+            <h3>Con sonido, desde el creador de stickers</h3>
+            <p id="tipSave">Guarda este clip en tu celular. Luego, en WhatsApp, crea el sticker eligiendo ese video y conserva el audio.</p>
+            <div class="sf-actions">
+              <button type="button" class="button primary sf-hide" id="share">Guardar o compartir clip con sonido</button>
+              <button type="button" class="button ghost" id="dlM">Descargar clip (.mp4)</button>
+            </div>
+          </div>
+          <div class="sf-note"><b>Importante:</b> el sonido en stickers es una función de WhatsApp que se está activando poco a poco. Si aún no te aparece, tu sticker igual se mueve, solo que sin sonido. Según tu versión de WhatsApp, el sticker enviado puede llegar como sticker o como imagen animada.</div>
+        </section>
+
+        <section class="sf-card sf-cta" id="cta">
+          <h2>Hecho por BoomArt</h2>
+          <p>Diseñamos y fabricamos en Perú figuras y decoración 3D de cultura pop: templos de Saint Seiya, cascos, Harry Potter, Marvel y más. Si te gustó la herramienta, entra a ver la tienda.</p>
+          <div class="sf-actions">
+            <a class="button primary" href="../index.html#catalogo" data-sf="cta-catalogo">Ver el catálogo</a>
+            <a class="button ghost" href="../saintseiya/" data-sf="cta-saintseiya">Saint Seiya</a>
+            <a class="button ghost" href="https://www.instagram.com/boomart_3d/" target="_blank" rel="noopener noreferrer" data-sf="cta-instagram">Instagram</a>
+            <a class="button ghost" href="https://www.tiktok.com/@boomart.3d" target="_blank" rel="noopener noreferrer" data-sf="cta-tiktok">TikTok</a>
+          </div>
+        </section>
+
+        <div class="sf-info">
+          <h2>Cómo hacer un sticker animado para WhatsApp</h2>
+          <ol>
+            <li>Elige un video o GIF de tu galería y marca la parte que quieres (hasta 10 segundos).</li>
+            <li>Elige el sonido: el del video, otra canción o ninguno.</li>
+            <li>Toca «Crear mi sticker», guarda el clip y úsalo en el creador de stickers de WhatsApp.</li>
+          </ol>
+          <h3>¿Mis videos se suben a internet?</h3>
+          <p>No. La conversión ocurre dentro de tu navegador. BoomArt no recibe, guarda ni ve tus videos ni tus audios.</p>
+          <h3>¿Qué tamaño tiene el sticker?</h3>
+          <p>El sticker animado sale en formato WebP de 512 × 512 píxeles y se ajusta para pesar menos de 500 KB, el límite de WhatsApp para stickers animados.</p>
+          <h3>¿Funciona en iPhone y Android?</h3>
+          <p>Sí, en el navegador de ambos (Safari en iPhone, Chrome en Android). La primera vez descarga el motor de conversión, unos 30 MB, así que conviene tener buena conexión. Con clips cortos funciona mejor.</p>
+          <h3>Usa música y videos propios o con permiso</h3>
+          <p>Cada persona es responsable de los archivos que convierte. Usa material propio o que tengas permiso de usar.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer" id="contacto">
+      <div>
+        <strong>BOOM ART</strong>
+        <p>Piezas hechas a pedido. Consulta disponibilidad, colores, acabados y tiempos de entrega por WhatsApp.</p>
+        <p><a href="mailto:contacto@boomart.pe">✉️ contacto@boomart.pe</a></p>
+        <ul class="footer-links">
+          <li><a href="../nosotros.html">Nosotros</a></li>
+          <li><a href="../politicas.html">Políticas de compra, envío y privacidad</a></li>
+          <li><a href="../libro-de-reclamaciones.html">Libro de Reclamaciones</a></li>
+        </ul>
+      </div>
+      <a class="button secondary" href="https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%20el%20cat%C3%A1logo%20de%20productos%203D." target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/umd/ffmpeg.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/util@0.12.1/dist/umd/index.js"></script>
+    <script>
+    (() => {
+      const $ = id => document.getElementById(id);
+      const MAX_BYTES = 500 * 1024;
+      const MAX_INPUT = 300 * 1024 * 1024;
+      const CORE = 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/esm';
+      const WORKER = 'https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/umd/814.ffmpeg.js';
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      const isAndroid = /Android/i.test(navigator.userAgent);
+      const track = (name, params) => { try { if (window.gtag) gtag('event', name, params || {}); } catch (_) {} };
+
+      let vFile = null, aFile = null, vDur = 0, aDur = 0, vHasAudio = true, probeP = null;
+      let ff = null, ffReady = null, logBuf = '';
+      let wBlob = null, mBlob = null, urls = [], soundTouched = false;
+
+      const vid = $('vid'), aud = $('aud');
+      const fmt = n => n.toFixed(1) + ' s';
+      const kb = b => (b / 1024).toFixed(0) + ' KB';
+      const setStatus = t => { $('status').textContent = t; };
+      const setBar = p => { $('bar').style.display = 'block'; $('barI').style.width = Math.max(0, Math.min(100, p)) + '%'; };
+      const showErr = t => { $('err').textContent = t || ''; };
+      const mode = () => document.querySelector('input[name=snd]:checked').value;
+
+      if (!window.WebAssembly || !window.Worker) {
+        $('support').textContent = 'Tu navegador es muy antiguo para esta herramienta. Actualízalo o prueba con Chrome (Android) o Safari (iPhone).';
+        $('pickV').classList.add('sf-hide');
+      }
+
+      // ---- pasos y bloqueos ----
+      function setLocked(el, locked) { el.classList.toggle('locked', locked); el.inert = locked; }
+      function updateSteps() {
+        const d1 = !!vFile, d2 = d1 && soundTouched, d3 = !!wBlob;
+        [['st1', d1], ['st2', d2], ['st3', d3]].forEach(([id, done]) => $(id).classList.toggle('done', done));
+        const cur = !d1 ? 'st1' : !d2 ? 'st2' : !d3 ? 'st3' : null;
+        ['st1', 'st2', 'st3'].forEach(id => $(id).classList.toggle('active', id === cur));
+        $('go').disabled = !(vFile && (mode() !== 'file' || aFile));
+      }
+
+      // ---- video ----
+      function refreshSliders() {
+        const maxStart = Math.max(0, vDur - 1);
+        $('vStart').max = maxStart.toFixed(1);
+        if (+$('vStart').value > maxStart) $('vStart').value = maxStart;
+        const room = Math.max(1, Math.min(10, vDur - +$('vStart').value));
+        $('dur').max = (Math.floor(room * 2) / 2 || 1);
+        if (+$('dur').value > +$('dur').max) $('dur').value = $('dur').max;
+        $('vStartO').textContent = fmt(+$('vStart').value);
+        $('durO').textContent = fmt(+$('dur').value);
+        if (aFile) {
+          const am = Math.max(0, aDur - +$('dur').value);
+          $('aStart').max = am.toFixed(1);
+          if (+$('aStart').value > am) $('aStart').value = am;
+          $('aStartO').textContent = fmt(+$('aStart').value);
+        }
+      }
+      ['vStart', 'dur', 'aStart'].forEach(id => $(id).addEventListener('input', () => { refreshSliders(); stopPrev(); if (id === 'vStart') vid.currentTime = +$('vStart').value; }));
+
+      $('fileV').addEventListener('change', e => {
+        const f = e.target.files[0]; if (!f) return;
+        showErr('');
+        if (f.size > MAX_INPUT) { showErr('Ese video es muy pesado (más de 300 MB). Elige uno más corto.'); return; }
+        vFile = f; wBlob = mBlob = null; $('out').classList.add('sf-hide');
+        vid.src = URL.createObjectURL(f);
+        vid.onloadedmetadata = () => {
+          vDur = vid.duration && isFinite(vid.duration) ? vid.duration : 10;
+          $('vStart').value = 0; $('dur').value = Math.min(5, Math.max(1, Math.floor(vDur * 2) / 2));
+          $('vBox').classList.remove('sf-hide');
+          $('vName').textContent = '✓ ' + f.name; $('vName').classList.remove('sf-hide');
+          $('pickV').textContent = 'Cambiar video';
+          refreshSliders();
+          setLocked($('c2'), false); setLocked($('c3'), false);
+          updateSteps();
+          probeP = warmUp().then(probeAudio).catch(() => {});
+        };
+        vid.onerror = () => showErr('No pude leer ese video. Prueba con otro, de preferencia MP4.');
+      });
+
+      // ---- sonido ----
+      document.querySelectorAll('input[name=snd]').forEach(r => r.addEventListener('change', () => {
+        soundTouched = true;
+        $('aBox').classList.toggle('sf-hide', mode() !== 'file');
+        stopPrev(); updateSteps();
+      }));
+      $('fileA').addEventListener('change', e => {
+        const f = e.target.files[0]; if (!f) return;
+        aFile = f; aud.src = URL.createObjectURL(f); soundTouched = true;
+        aud.onloadedmetadata = () => {
+          aDur = aud.duration && isFinite(aud.duration) ? aud.duration : 30;
+          $('aStart').value = 0;
+          $('aOpts').classList.remove('sf-hide');
+          $('aName').textContent = '✓ ' + f.name; $('aName').classList.remove('sf-hide');
+          $('pickA').textContent = 'Cambiar audio';
+          refreshSliders(); updateSteps();
+        };
+        aud.onerror = () => showErr('No pude leer ese audio. Prueba con un MP3 o M4A.');
+      });
+
+      // ---- vista previa ----
+      let tmr = null;
+      function stopPrev() { clearInterval(tmr); vid.pause(); aud.pause(); vid.muted = false; }
+      function preview() {
+        stopPrev();
+        const s = +$('vStart').value, d = +$('dur').value, as = +$('aStart').value, m = mode();
+        const useAud = m === 'file' && aFile;
+        const start = () => {
+          vid.currentTime = s; vid.muted = m !== 'video'; vid.play().catch(() => {});
+          if (useAud) { aud.currentTime = as; aud.play().catch(() => {}); }
+        };
+        start();
+        tmr = setInterval(() => { if (vid.currentTime >= s + d || vid.ended) start(); }, 100);
+      }
+      $('prev').addEventListener('click', preview);
+      $('prev2').addEventListener('click', preview);
+      vid.addEventListener('pause', () => { if (!vid.seeking) { clearInterval(tmr); aud.pause(); } });
+
+      // ---- motor de video (ffmpeg en el navegador) ----
+      function warmUp() {
+        if (ffReady) return ffReady;
+        ffReady = (async () => {
+          setStatus('Preparando el motor de video (solo la primera vez, ~30 MB)…');
+          const { FFmpeg } = FFmpegWASM, { toBlobURL } = FFmpegUtil;
+          ff = new FFmpeg();
+          ff.on('log', ({ message }) => { logBuf += message + '\n'; });
+          await ff.load({
+            coreURL: await toBlobURL(CORE + '/ffmpeg-core.js', 'text/javascript'),
+            wasmURL: await toBlobURL(CORE + '/ffmpeg-core.wasm', 'application/wasm'),
+            classWorkerURL: await toBlobURL(WORKER, 'text/javascript'),
+          });
+          setStatus('');
+        })().catch(e => { ffReady = null; showErr('No se pudo cargar el motor de video. Revisa tu conexión y recarga la página.'); setStatus(''); throw e; });
+        return ffReady;
+      }
+
+      const ext = f => (f.name.split('.').pop() || 'bin').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 5) || 'bin';
+
+      // Pantalla encendida mientras se crea (el celular pausa la pestaña si se apaga).
+      let wake = null;
+      async function keepAwake(on) {
+        try {
+          if (on) { if ('wakeLock' in navigator) wake = await navigator.wakeLock.request('screen'); }
+          else if (wake) { await wake.release(); wake = null; }
+        } catch (_) {}
+      }
+
+      // Monta el archivo sin copiarlo entero a la memoria (clave en celulares). Si falla, lo copia.
+      const mounted = [];
+      async function useFile(dir, file, name) {
+        const f = new File([file], name, { type: file.type });
+        try {
+          try { await ff.createDir(dir); } catch (_) {}
+          await ff.mount('WORKERFS', { files: [f] }, dir);
+          mounted.push(dir);
+          return dir + '/' + name;
+        } catch (_) {
+          await ff.writeFile(name, await FFmpegUtil.fetchFile(file));
+          return name;
+        }
+      }
+      async function cleanup(extra) {
+        for (const d of mounted.splice(0)) { try { await ff.unmount(d); } catch (_) {} try { await ff.deleteDir(d); } catch (_) {} }
+        for (const f of extra) { try { await ff.deleteFile(f); } catch (_) {} }
+      }
+
+      // ¿El video trae sonido? Se averigua apenas carga el motor.
+      async function probeAudio() {
+        const f = vFile; if (!f) return;
+        try {
+          const p = await useFile('/pin', f, 'probe.' + ext(f));
+          logBuf = ''; await ff.exec(['-i', p]);
+          vHasAudio = /Stream #\d+:\d+.*Audio:/.test(logBuf);
+        } catch (_) { vHasAudio = true; }
+        await cleanup(['probe.' + ext(f)]);
+        $('chVideo').classList.toggle('off', !vHasAudio);
+        $('sndVideoHint').textContent = vHasAudio ? 'Usamos el audio que ya trae tu clip.' : 'Este video no trae sonido. Elige otra canción o audio.';
+        if (!vHasAudio && mode() === 'video') { document.querySelector('input[name=snd][value=file]').checked = true; $('aBox').classList.remove('sf-hide'); updateSteps(); }
+      }
+
+      const BASE_VF = {
+        fill: 'fps=24,scale=512:512:force_original_aspect_ratio=increase,crop=512:512,setsar=1,format=yuv420p',
+        fit: 'fps=24,scale=512:512:force_original_aspect_ratio=decrease,scale=trunc(iw/2)*2:trunc(ih/2)*2,setsar=1,format=yuv420p',
+      };
+      const webpVf = (fit, fps) => fit === 'fill' ? `fps=${fps}` : `fps=${fps},format=rgba,pad=512:512:(ow-iw)/2:(oh-ih)/2:color=0x00000000`;
+      const mp4Vf = fit => fit === 'fill' ? 'format=yuv420p' : 'pad=512:512:(ow-iw)/2:(oh-ih)/2:color=black,format=yuv420p';
+
+      $('go').addEventListener('click', async () => {
+        if (!vFile) return;
+        const m = mode();
+        if (m === 'file' && !aFile) { showErr('Elige un audio en el paso 2, o cambia a «Sin sonido».'); return; }
+        stopPrev(); showErr(''); $('out').classList.add('sf-hide');
+        $('go').disabled = true; $('prev').disabled = true; $('prev2').disabled = true;
+        const s = (+$('vStart').value).toFixed(2), d = (+$('dur').value).toFixed(2), as = (+$('aStart').value).toFixed(2);
+        const fit = document.querySelector('input[name=fit]:checked').value;
+        try {
+          await keepAwake(true);
+          await warmUp(); if (probeP) await probeP;
+          setBar(2); setStatus('Leyendo tu video…');
+          const inV = await useFile('/vin', vFile, 'in_v.' + ext(vFile));
+          const inA = m === 'file' ? await useFile('/ain', aFile, 'in_a.' + ext(aFile)) : null;
+          const useVideoAudio = m === 'video' && vHasAudio;
+
+          // 0) una sola lectura del video original: clip base de 512x512 (rápido para los pasos siguientes)
+          setStatus('Preparando tu clip…');
+          const onB = ({ progress }) => setBar(5 + Math.min(1, Math.max(0, progress)) * 20);
+          ff.on('progress', onB);
+          const rb = await ff.exec(['-ss', s, '-t', d, '-i', inV, '-vf', BASE_VF[fit], '-an', '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '16', '-pix_fmt', 'yuv420p', 'base.mp4']);
+          ff.off('progress', onB);
+          if (rb !== 0) throw new Error('base');
+
+          // 1) sticker webp: baja la calidad hasta que pese menos de 500 KB
+          const ladder = [[20, 70], [15, 60], [15, 50], [12, 45], [10, 40], [10, 30], [8, 25], [8, 15]];
+          const first = +d <= 3 ? 0 : +d <= 6 ? 1 : 3;
+          let wData = null;
+          for (let i = first; i < ladder.length; i++) {
+            const [fps, q] = ladder[i];
+            setStatus('Creando el sticker animado…');
+            const onP = ({ progress }) => setBar(25 + ((i - first + Math.min(1, Math.max(0, progress))) / (ladder.length - first)) * 40);
+            ff.on('progress', onP);
+            await ff.exec(['-i', 'base.mp4', '-vf', webpVf(fit, fps), '-loop', '0', '-c:v', 'libwebp', '-q:v', String(q), '-compression_level', '4', '-an', 'out.webp']);
+            ff.off('progress', onP);
+            wData = await ff.readFile('out.webp');
+            if (wData.length <= MAX_BYTES * 0.97) break;
+          }
+          wBlob = new Blob([wData], { type: 'image/webp' });
+
+          // 2) clip mp4 con sonido
+          setStatus('Creando el clip con sonido…');
+          const args = ['-i', 'base.mp4'];
+          if (inA) args.push('-ss', as, '-t', d, '-i', inA, '-map', '0:v:0', '-map', '1:a:0');
+          else if (useVideoAudio) args.push('-ss', s, '-t', d, '-i', inV, '-map', '0:v:0', '-map', '1:a:0');
+          else args.push('-map', '0:v:0', '-an');
+          const audioOn = !!(inA || useVideoAudio);
+          args.push('-vf', mp4Vf(fit), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '28', '-pix_fmt', 'yuv420p');
+          if (audioOn) args.push('-c:a', 'aac', '-b:a', '96k', '-ac', '2', '-af', `afade=t=in:d=0.05,afade=t=out:st=${Math.max(0, d - 0.25)}:d=0.25`);
+          args.push('-t', d, '-movflags', '+faststart', 'out.mp4');
+          const onP2 = ({ progress }) => setBar(65 + Math.min(1, Math.max(0, progress)) * 33);
+          ff.on('progress', onP2);
+          const rm = await ff.exec(args);
+          ff.off('progress', onP2);
+          if (rm !== 0) throw new Error('mp4');
+          mBlob = new Blob([await ff.readFile('out.mp4')], { type: 'video/mp4' });
+          await cleanup(['base.mp4', 'out.webp', 'out.mp4']);
+
+          urls.forEach(u => URL.revokeObjectURL(u)); urls = [];
+          const wu = URL.createObjectURL(wBlob), mu = URL.createObjectURL(mBlob); urls.push(wu, mu);
+          $('oImg').src = wu; $('oVid').src = mu;
+          const wOk = wBlob.size <= MAX_BYTES;
+          $('wTag').textContent = kb(wBlob.size) + (wOk ? ' · cabe en WhatsApp' : ' · pasa de 500 KB');
+          $('wTag').className = 'sf-tag' + (wOk ? '' : ' warn');
+          $('mTag').textContent = kb(mBlob.size) + (audioOn ? ' · con sonido' : ' · sin sonido');
+          $('mTag').className = 'sf-tag' + (audioOn ? '' : ' warn');
+          const canShareFile = (blob, name) => !!(navigator.canShare && navigator.canShare({ files: [new File([blob], name, { type: blob.type })] }));
+          $('shareW').classList.toggle('sf-hide', !canShareFile(wBlob, 'sticker-boomart.webp'));
+          $('share').classList.toggle('sf-hide', !canShareFile(mBlob, 'sticker-con-sonido-boomart.mp4'));
+          $('tipSave').textContent = isIOS
+            ? 'Toca el botón y elige «Guardar video»: quedará en tus Fotos. Luego, en WhatsApp, crea el sticker eligiendo ese video y conserva el audio.'
+            : isAndroid
+              ? 'Guárdalo con el botón: lo encontrarás en tu galería o en Descargas. Luego, en WhatsApp, crea el sticker eligiendo ese video y conserva el audio.'
+              : 'Descárgalo y pásalo a tu celular. Luego, en WhatsApp, crea el sticker eligiendo ese video y conserva el audio.';
+          showErr(wOk ? '' : 'El sticker quedó por encima de 500 KB. Prueba con menos segundos o con «Llenar el cuadro».');
+          $('out').classList.remove('sf-hide');
+          setBar(100); setStatus('¡Listo!');
+          updateSteps();
+          track('sticker_creado', { sonido: audioOn ? (inA ? 'audio_subido' : 'del_video') : 'sin_sonido', peso_ok: wOk ? 'si' : 'no', sistema: isIOS ? 'ios' : isAndroid ? 'android' : 'otro' });
+          $('out').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } catch (e) {
+          console.error(e);
+          try { await cleanup(['base.mp4', 'out.webp', 'out.mp4']); } catch (_) {}
+          showErr('Algo falló al crear el sticker. Prueba con un clip más corto (3 a 5 segundos) o con otro video.');
+          setStatus('');
+          track('sticker_error');
+        } finally {
+          await keepAwake(false);
+          $('prev').disabled = false; $('prev2').disabled = false; updateSteps();
+        }
+      });
+
+      function save(blob, name) {
+        const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name;
+        document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+      }
+      $('dlW').addEventListener('click', () => { if (wBlob) { save(wBlob, 'sticker-boomart.webp'); track('sticker_descarga', { tipo: 'webp' }); } });
+      $('dlM').addEventListener('click', () => { if (mBlob) { save(mBlob, 'sticker-con-sonido-boomart.mp4'); track('sticker_descarga', { tipo: 'mp4' }); } });
+      async function shareBlob(blob, name, tipo) {
+        try { await navigator.share({ files: [new File([blob], name, { type: blob.type })] }); track('sticker_compartido', { tipo }); }
+        catch (e) { if (e && e.name !== 'AbortError') showErr('No se pudo abrir el menú de compartir. Usa «Guardar» o «Descargar».'); }
+      }
+      $('shareW').addEventListener('click', () => wBlob && shareBlob(wBlob, 'sticker-boomart.webp', 'webp'));
+      $('share').addEventListener('click', () => mBlob && shareBlob(mBlob, 'sticker-con-sonido-boomart.mp4', 'mp4'));
+      document.querySelectorAll('[data-sf]').forEach(a => a.addEventListener('click', () => track('sticker_cta', { destino: a.dataset.sf })));
+      updateSteps();
+    })();
+    </script>
+    <script src="../src/track.js?v=5" defer></script>
+  </body>
+</html>
