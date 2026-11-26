@@ -80,4 +80,10 @@ revoke all on public.amigo_secreto_sorteos from anon, authenticated;
 revoke all on public.amigo_secreto_participantes from anon, authenticated;
 revoke all on public.contactos_marketing from anon, authenticated;
 
+-- En este proyecto las tablas nuevas no reciben permisos automáticos: solo la función
+-- (service role) lee y escribe, igual que reclamos y clientes_web_correos.
+grant select, insert, update, delete on public.amigo_secreto_sorteos to service_role;
+grant select, insert, update, delete on public.amigo_secreto_participantes to service_role;
+grant select, insert, update, delete on public.contactos_marketing to service_role;
+
 commit;

@@ -4,7 +4,7 @@
 export const SITE = "https://boomart.pe";
 export const MIN_P = 3;
 export const MAX_P = 60;
-export const CODIGO_DESCUENTO = "AMIGO15";
+export const CODIGO_DESCUENTO = "AMIGO10";
 export const WHATSAPP = "https://wa.me/51925666542";
 // Texto exacto que acepta quien toca "Sí, quiero recibir ofertas" (se guarda con la fecha).
 export const TEXTO_CONSENTIMIENTO =
@@ -184,7 +184,7 @@ export function correoParticipante(s: Sorteo, i: number, receptor: string, ideas
 <tr><td style="padding:6px 0;border-top:1px solid #EEF0F3;font-size:14px"><a href="${esc(x.url)}?${utm}" style="color:#111111;text-decoration:none">${esc(x.name)}</a></td>
 <td align="right" style="padding:6px 0;border-top:1px solid #EEF0F3;font-size:14px;white-space:nowrap;color:#5F5F63">desde S/ ${esc(x.priceFrom)}</td></tr>`).join("")}
 </table>
-<p style="margin:10px 0 0;font-size:12px;color:#8A8A8F">Si eliges su regalo en BoomArt, menciona el código <b>${CODIGO_DESCUENTO}</b> al pedirlo por WhatsApp y obtén 15 % de descuento.</p>` : "";
+<p style="margin:10px 0 0;font-size:12px;color:#8A8A8F">Si eliges su regalo en BoomArt, menciona el código <b>${CODIGO_DESCUENTO}</b> al pedirlo por WhatsApp y obtén 10 % de descuento.</p>` : "";
   const html = plantilla(
     `<p style="margin:0 0 12px">Hola ${esc(pila(p.nombre))},</p>
 <p style="margin:0 0 16px">${esc(s.organizador.nombre)} te incluyó en el Amigo Secreto <b>${esc(nombreEvento(s))}</b>.</p>
@@ -200,7 +200,7 @@ ${ideasHtml}
 Si no lo tocas, no volveremos a escribirte: tu correo solo se usó para este sorteo.</td></tr></table>`,
     `Recibes este correo porque ${esc(s.organizador.nombre)} te incluyó en el Amigo Secreto «${esc(s.evento)}» organizado con la herramienta gratuita de BoomArt. Tus datos se borran después del intercambio.`,
   );
-  const ideasTxt = ideas.length ? `\nIdeas de regalo:\n${ideas.map((x) => `- ${x.name} (desde S/ ${x.priceFrom}): ${x.url}`).join("\n")}\nCódigo ${CODIGO_DESCUENTO}: 15 % de descuento pidiendo por WhatsApp.\n` : "";
+  const ideasTxt = ideas.length ? `\nIdeas de regalo:\n${ideas.map((x) => `- ${x.name} (desde S/ ${x.priceFrom}): ${x.url}`).join("\n")}\nCódigo ${CODIGO_DESCUENTO}: 10 % de descuento pidiendo por WhatsApp.\n` : "";
   const text = `Hola ${pila(p.nombre)}:\n${s.organizador.nombre} te incluyó en el Amigo Secreto «${s.evento}».\nTe tocó regalarle a: ${receptor}\n${s.presupuesto ? `Presupuesto: S/ ${s.presupuesto}\n` : ""}${s.fecha ? `Intercambio: ${fechaLarga(s.fecha)}\n` : ""}${s.nota ? `Nota: ${s.nota}\n` : ""}Guarda el secreto.\n${ideasTxt}\n¿Quieres recibir ofertas de BoomArt? ${ofertasUrl}`;
   return { to: p.email, subject, html, text };
 }

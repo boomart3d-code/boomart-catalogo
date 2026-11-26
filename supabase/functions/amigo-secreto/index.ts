@@ -11,7 +11,7 @@
 //  * "baja"      -> deja de recibir ofertas.
 //
 // Decisiones de Adrián (2026-11-26): base de correos solo con permiso de cada persona; descuento
-// con el código AMIGO15 mencionado por WhatsApp (no toca el carrito); estos correos NO llevan
+// con el código AMIGO10 (10 %) mencionado por WhatsApp (no toca el carrito); estos correos NO llevan
 // copia oculta a boomart.3d@gmail.com, para no revelar las parejas.
 //
 // Desplegar con: supabase functions deploy amigo-secreto --no-verify-jwt
