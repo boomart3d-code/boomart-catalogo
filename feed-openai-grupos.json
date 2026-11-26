@@ -6,7 +6,7 @@
   "temas": [
     {
       "tema": "anime",
-      "productos": 39,
+      "productos": 40,
       "filtroEtiqueta": {
         "field": "ads_metadata.custom_label_0",
         "operator": "in",
@@ -113,11 +113,17 @@
     },
     {
       "product_category": "Anime > Saint Seiya > Cajas de Pandora",
-      "productos": 2,
+      "productos": 3,
       "item_ids": [
         "set-12-cajas-de-pandora-con-pedestales",
         "pandora-box-caballeros-dorados",
-        "pandora-box-caballeros-dorados-set-completo"
+        "pandora-box-caballeros-dorados-set-completo",
+        "pandora-box-santos-de-bronce",
+        "pandora-box-santos-de-bronce-dragon",
+        "pandora-box-santos-de-bronce-fenix",
+        "pandora-box-santos-de-bronce-cisne",
+        "pandora-box-santos-de-bronce-andromeda",
+        "pandora-box-santos-de-bronce-set"
       ]
     },
     {
@@ -375,8 +381,8 @@
       "nombre": "Anime y Saint Seiya",
       "descripcion": "Templos del Zodiaco, altares exhibidores, Pandora Box, cascos y tiaras de Saint Seiya.",
       "sugerenciaContexto": "Personas que buscan figuras, decoracion o regalos de Saint Seiya (Caballeros del Zodiaco) y anime clasico en Peru.",
-      "productos": 39,
-      "filas": 88,
+      "productos": 40,
+      "filas": 94,
       "precioMinPEN": 20,
       "precioMaxPEN": 1500,
       "filtroItemId": {
@@ -453,6 +459,12 @@
           "set-12-cajas-de-pandora-con-pedestales",
           "pandora-box-caballeros-dorados",
           "pandora-box-caballeros-dorados-set-completo",
+          "pandora-box-santos-de-bronce",
+          "pandora-box-santos-de-bronce-dragon",
+          "pandora-box-santos-de-bronce-fenix",
+          "pandora-box-santos-de-bronce-cisne",
+          "pandora-box-santos-de-bronce-andromeda",
+          "pandora-box-santos-de-bronce-set",
           "casco-de-pegaso-saint-seiya",
           "tiara-de-pegaso-saint-seiya",
           "tiara-de-ikki-de-fenix-saint-seiya",
@@ -495,6 +507,7 @@
         "set-santuario-15-piezas",
         "set-12-cajas-de-pandora-con-pedestales",
         "pandora-box-caballeros-dorados",
+        "pandora-box-santos-de-bronce",
         "casco-de-pegaso-saint-seiya",
         "tiara-de-pegaso-saint-seiya",
         "tiara-de-ikki-de-fenix-saint-seiya",
@@ -894,8 +907,8 @@
       "nombre": "Ideas de regalo",
       "descripcion": "Piezas hasta S/100, toda la categoria Navidad y productos marcados como regalo.",
       "sugerenciaContexto": "Personas que buscan un regalo original para fans de anime, videojuegos, cine o decoracion.",
-      "productos": 57,
-      "filas": 61,
+      "productos": 58,
+      "filas": 67,
       "precioMinPEN": 20,
       "precioMaxPEN": 220,
       "filtroItemId": {
@@ -910,6 +923,12 @@
           "set-de-12-templos-mini",
           "pandora-box-caballeros-dorados",
           "pandora-box-caballeros-dorados-set-completo",
+          "pandora-box-santos-de-bronce",
+          "pandora-box-santos-de-bronce-dragon",
+          "pandora-box-santos-de-bronce-fenix",
+          "pandora-box-santos-de-bronce-cisne",
+          "pandora-box-santos-de-bronce-andromeda",
+          "pandora-box-santos-de-bronce-set",
           "tiara-de-pegaso-saint-seiya",
           "tiara-de-ikki-de-fenix-saint-seiya",
           "altar-exhibidor-aries",
@@ -972,6 +991,7 @@
         "torre-del-reloj-saint-seiya",
         "set-de-12-templos-mini",
         "pandora-box-caballeros-dorados",
+        "pandora-box-santos-de-bronce",
         "tiara-de-pegaso-saint-seiya",
         "tiara-de-ikki-de-fenix-saint-seiya",
         "altar-exhibidor-aries",

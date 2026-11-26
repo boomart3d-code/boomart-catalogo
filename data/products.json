@@ -951,6 +951,134 @@
     "description": "Las Pandora Box de los 12 Caballeros Dorados, de Aries a Piscis, fabricadas en PLA Silk dorado (6.5 × 5 × 5 cm cada una). Se venden sin pedestal. Llévate el set completo de 12 por S/200 o elige solo el signo (o los signos) que quieras, a S/20 cada uno. Hechas a pedido, con envíos a todo el Perú."
   },
   {
+    "id": "pandora-box-santos-de-bronce",
+    "name": "Pandora Box · Santos de Bronce · Saint Seiya",
+    "category": "Saint Seiya",
+    "tags": [
+      "Saint Seiya",
+      "Pandora Box",
+      "Santos de Bronce",
+      "Caballeros de Bronce",
+      "Pegaso",
+      "Dragón",
+      "Fénix",
+      "Cisne",
+      "Andrómeda",
+      "Cromo"
+    ],
+    "height": "6.5 cm de alto × 6 cm de ancho cada una",
+    "material": "Impresión 3D con pintura cromo",
+    "availability": "A pedido",
+    "regularPrice": 20,
+    "image": "assets/products/pandora-box-santos-de-bronce-set.jpg",
+    "gallery": [
+      "assets/products/pandora-box-santos-de-bronce-set.jpg",
+      "assets/products/pandora-box-santos-de-bronce-set-original.jpg",
+      "assets/products/pandora-box-santos-de-bronce-pegaso.jpg",
+      "assets/products/pandora-box-santos-de-bronce-dragon.jpg",
+      "assets/products/pandora-box-santos-de-bronce-fenix.jpg",
+      "assets/products/pandora-box-santos-de-bronce-cisne.jpg",
+      "assets/products/pandora-box-santos-de-bronce-andromeda.jpg",
+      "assets/products/pandora-box-santos-de-bronce-pegaso-original.jpg",
+      "assets/products/pandora-box-santos-de-bronce-dragon-original.jpg",
+      "assets/products/pandora-box-santos-de-bronce-fenix-original.jpg",
+      "assets/products/pandora-box-santos-de-bronce-cisne-original.jpg",
+      "assets/products/pandora-box-santos-de-bronce-andromeda-original.jpg"
+    ],
+    "modelOptions": [
+      {
+        "id": "pegaso",
+        "name": "Pandora Box de Pegaso",
+        "regularPrice": 20,
+        "gallery": [
+          "assets/products/pandora-box-santos-de-bronce-pegaso.jpg",
+          "assets/products/pandora-box-santos-de-bronce-pegaso-original.jpg",
+          "assets/products/pandora-box-santos-de-bronce-set.jpg",
+          "assets/products/pandora-box-santos-de-bronce-dragon.jpg",
+          "assets/products/pandora-box-santos-de-bronce-fenix.jpg",
+          "assets/products/pandora-box-santos-de-bronce-cisne.jpg",
+          "assets/products/pandora-box-santos-de-bronce-andromeda.jpg"
+        ]
+      },
+      {
+        "id": "dragon",
+        "name": "Pandora Box de Dragón",
+        "regularPrice": 20,
+        "gallery": [
+          "assets/products/pandora-box-santos-de-bronce-dragon.jpg",
+          "assets/products/pandora-box-santos-de-bronce-dragon-original.jpg",
+          "assets/products/pandora-box-santos-de-bronce-set.jpg",
+          "assets/products/pandora-box-santos-de-bronce-pegaso.jpg",
+          "assets/products/pandora-box-santos-de-bronce-fenix.jpg",
+          "assets/products/pandora-box-santos-de-bronce-cisne.jpg",
+          "assets/products/pandora-box-santos-de-bronce-andromeda.jpg"
+        ]
+      },
+      {
+        "id": "fenix",
+        "name": "Pandora Box de Fénix",
+        "regularPrice": 20,
+        "gallery": [
+          "assets/products/pandora-box-santos-de-bronce-fenix.jpg",
+          "assets/products/pandora-box-santos-de-bronce-fenix-original.jpg",
+          "assets/products/pandora-box-santos-de-bronce-set.jpg",
+          "assets/products/pandora-box-santos-de-bronce-pegaso.jpg",
+          "assets/products/pandora-box-santos-de-bronce-dragon.jpg",
+          "assets/products/pandora-box-santos-de-bronce-cisne.jpg",
+          "assets/products/pandora-box-santos-de-bronce-andromeda.jpg"
+        ]
+      },
+      {
+        "id": "cisne",
+        "name": "Pandora Box de Cisne",
+        "regularPrice": 20,
+        "gallery": [
+          "assets/products/pandora-box-santos-de-bronce-cisne.jpg",
+          "assets/products/pandora-box-santos-de-bronce-cisne-original.jpg",
+          "assets/products/pandora-box-santos-de-bronce-set.jpg",
+          "assets/products/pandora-box-santos-de-bronce-pegaso.jpg",
+          "assets/products/pandora-box-santos-de-bronce-dragon.jpg",
+          "assets/products/pandora-box-santos-de-bronce-fenix.jpg",
+          "assets/products/pandora-box-santos-de-bronce-andromeda.jpg"
+        ]
+      },
+      {
+        "id": "andromeda",
+        "name": "Pandora Box de Andrómeda",
+        "regularPrice": 20,
+        "gallery": [
+          "assets/products/pandora-box-santos-de-bronce-andromeda.jpg",
+          "assets/products/pandora-box-santos-de-bronce-andromeda-original.jpg",
+          "assets/products/pandora-box-santos-de-bronce-set.jpg",
+          "assets/products/pandora-box-santos-de-bronce-pegaso.jpg",
+          "assets/products/pandora-box-santos-de-bronce-dragon.jpg",
+          "assets/products/pandora-box-santos-de-bronce-fenix.jpg",
+          "assets/products/pandora-box-santos-de-bronce-cisne.jpg"
+        ]
+      },
+      {
+        "id": "set",
+        "name": "Set completo · 5 Pandora Box de bronce",
+        "regularPrice": 80,
+        "gallery": [
+          "assets/products/pandora-box-santos-de-bronce-set.jpg",
+          "assets/products/pandora-box-santos-de-bronce-set-original.jpg",
+          "assets/products/pandora-box-santos-de-bronce-pegaso.jpg",
+          "assets/products/pandora-box-santos-de-bronce-dragon.jpg",
+          "assets/products/pandora-box-santos-de-bronce-fenix.jpg",
+          "assets/products/pandora-box-santos-de-bronce-cisne.jpg",
+          "assets/products/pandora-box-santos-de-bronce-andromeda.jpg",
+          "assets/products/pandora-box-santos-de-bronce-pegaso-original.jpg",
+          "assets/products/pandora-box-santos-de-bronce-dragon-original.jpg",
+          "assets/products/pandora-box-santos-de-bronce-fenix-original.jpg",
+          "assets/products/pandora-box-santos-de-bronce-cisne-original.jpg",
+          "assets/products/pandora-box-santos-de-bronce-andromeda-original.jpg"
+        ]
+      }
+    ],
+    "description": "Las cinco Pandora Box de los Santos de Bronce de Saint Seiya: Pegaso, Dragón, Fénix, Cisne y Andrómeda. Piezas impresas en 3D y pintadas con cromo, con sus emblemas en relieve. Cada caja mide 6.5 cm de alto × 6 cm de ancho. Elige tu caballero a S/20 por unidad o lleva el set completo de las cinco por S/80. Las medidas y los precios corresponden a las cajas; los soportes de exhibición de las fotos no están incluidos."
+  },
+  {
     "id": "casco-de-pegaso-saint-seiya",
     "name": "Casco de Pegaso V1 · Saint Seiya",
     "category": "Saint Seiya",

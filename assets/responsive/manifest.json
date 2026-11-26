@@ -6606,6 +6606,234 @@
       ]
     ]
   },
+  "assets/products/pandora-box-santos-de-bronce-andromeda-original.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/pandora-box-santos-de-bronce-andromeda-original.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pandora-box-santos-de-bronce-andromeda-original-b7e9c826ea28-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pandora-box-santos-de-bronce-andromeda-original-b7e9c826ea28-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pandora-box-santos-de-bronce-andromeda-original-b7e9c826ea28-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pandora-box-santos-de-bronce-andromeda.webp": {
+    "w": 1086,
+    "h": 1448,
+    "src": "assets/products/pandora-box-santos-de-bronce-andromeda.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pandora-box-santos-de-bronce-andromeda-d766cf5766f3-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pandora-box-santos-de-bronce-andromeda-d766cf5766f3-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pandora-box-santos-de-bronce-andromeda-d766cf5766f3-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pandora-box-santos-de-bronce-cisne-original.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/pandora-box-santos-de-bronce-cisne-original.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pandora-box-santos-de-bronce-cisne-original-583ae8f1355e-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pandora-box-santos-de-bronce-cisne-original-583ae8f1355e-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pandora-box-santos-de-bronce-cisne-original-583ae8f1355e-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pandora-box-santos-de-bronce-cisne.webp": {
+    "w": 1086,
+    "h": 1448,
+    "src": "assets/products/pandora-box-santos-de-bronce-cisne.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pandora-box-santos-de-bronce-cisne-70ed36787635-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pandora-box-santos-de-bronce-cisne-70ed36787635-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pandora-box-santos-de-bronce-cisne-70ed36787635-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pandora-box-santos-de-bronce-dragon-original.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/pandora-box-santos-de-bronce-dragon-original.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pandora-box-santos-de-bronce-dragon-original-b5b03207db0d-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pandora-box-santos-de-bronce-dragon-original-b5b03207db0d-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pandora-box-santos-de-bronce-dragon-original-b5b03207db0d-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pandora-box-santos-de-bronce-dragon.webp": {
+    "w": 1086,
+    "h": 1448,
+    "src": "assets/products/pandora-box-santos-de-bronce-dragon.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pandora-box-santos-de-bronce-dragon-eed2c90c1ca1-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pandora-box-santos-de-bronce-dragon-eed2c90c1ca1-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pandora-box-santos-de-bronce-dragon-eed2c90c1ca1-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pandora-box-santos-de-bronce-fenix-original.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/pandora-box-santos-de-bronce-fenix-original.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pandora-box-santos-de-bronce-fenix-original-448670518c92-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pandora-box-santos-de-bronce-fenix-original-448670518c92-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pandora-box-santos-de-bronce-fenix-original-448670518c92-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pandora-box-santos-de-bronce-fenix.webp": {
+    "w": 1086,
+    "h": 1448,
+    "src": "assets/products/pandora-box-santos-de-bronce-fenix.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pandora-box-santos-de-bronce-fenix-33ebdb386ba9-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pandora-box-santos-de-bronce-fenix-33ebdb386ba9-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pandora-box-santos-de-bronce-fenix-33ebdb386ba9-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pandora-box-santos-de-bronce-pegaso-original.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/pandora-box-santos-de-bronce-pegaso-original.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pandora-box-santos-de-bronce-pegaso-original-f195d8d6d3e2-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pandora-box-santos-de-bronce-pegaso-original-f195d8d6d3e2-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pandora-box-santos-de-bronce-pegaso-original-f195d8d6d3e2-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pandora-box-santos-de-bronce-pegaso.webp": {
+    "w": 1086,
+    "h": 1448,
+    "src": "assets/products/pandora-box-santos-de-bronce-pegaso.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pandora-box-santos-de-bronce-pegaso-e8efb20cdfdc-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pandora-box-santos-de-bronce-pegaso-e8efb20cdfdc-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pandora-box-santos-de-bronce-pegaso-e8efb20cdfdc-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pandora-box-santos-de-bronce-set-original.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/pandora-box-santos-de-bronce-set-original.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pandora-box-santos-de-bronce-set-original-8f25dc1b524b-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pandora-box-santos-de-bronce-set-original-8f25dc1b524b-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pandora-box-santos-de-bronce-set-original-8f25dc1b524b-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/pandora-box-santos-de-bronce-set.webp": {
+    "w": 1086,
+    "h": 1448,
+    "src": "assets/products/pandora-box-santos-de-bronce-set.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/pandora-box-santos-de-bronce-set-fa5bf1bf7f94-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/pandora-box-santos-de-bronce-set-fa5bf1bf7f94-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/pandora-box-santos-de-bronce-set-fa5bf1bf7f94-720w.webp"
+      ]
+    ]
+  },
   "assets/products/pato-lucas-kratos-god-of-war-hero-v2.webp": {
     "w": 1122,
     "h": 1402,

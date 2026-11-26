@@ -153,6 +153,13 @@
     "height": 1200,
     "bytes": 165633
   },
+  "pandora-box-santos-de-bronce": {
+    "source": "assets/products/pandora-box-santos-de-bronce-set.jpg",
+    "hash": "c80f2f9e6496ef6a",
+    "width": 900,
+    "height": 1200,
+    "bytes": 174028
+  },
   "casco-de-pegaso-saint-seiya": {
     "source": "assets/products/casco-de-pegaso-saint-seiya-natural-v1.jpg",
     "hash": "6587015f95f24763",
@@ -743,9 +750,9 @@
   },
   "nacimiento-en-relieve": {
     "source": "assets/products/nacimiento-en-relieve-portada-marfil.jpg",
-    "hash": "4c26b59a417a57bc",
+    "hash": "99d6b66b944f0dcc",
     "width": 960,
     "height": 1200,
-    "bytes": 79051
+    "bytes": 76746
   }
 }

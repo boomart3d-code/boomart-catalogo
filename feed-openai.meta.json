@@ -2,12 +2,12 @@
   "version": 1,
   "generadoEl": "2026-11-26",
   "moneda": "PEN",
-  "productos": 107,
-  "filas": 159,
-  "gruposDeVariantes": 16,
+  "productos": 108,
+  "filas": 165,
+  "gruposDeVariantes": 17,
   "filasPorTema": {
     "gaming": 13,
-    "anime": 88,
+    "anime": 94,
     "cine-y-series": 10,
     "cosplay": 24,
     "coleccionables": 3,
@@ -15,13 +15,13 @@
     "deportes": 4
   },
   "filasPorDisponibilidad": {
-    "backorder": 158,
+    "backorder": 164,
     "unknown": 1
   },
-  "filasElegiblesParaAnuncios": 158,
-  "sha256Jsonl": "447ee4fb48f1f9980509ea5fa8470ad3d3765b5f2b32bba5a483e44d1f3bef23",
-  "sha256Csv": "fd3655e77a9301ee89cf51d90f4746b9932220477521ea69bb342176c1713ae4",
-  "sha256Txt": "8f5d752c5db583ce61c1131e29c6faec9dd6368d3ed84ef9f2256a185748beb2",
+  "filasElegiblesParaAnuncios": 164,
+  "sha256Jsonl": "364eebf956fad3f041f9cf6bd8e8045dc84e4dd22a2648c65ac9e134da580605",
+  "sha256Csv": "3569815ff933efcbf3c235860c9b1ea3564dcf41135bbf77f68e9c78cdf9f7c6",
+  "sha256Txt": "2052afc9bbcc57babec06745a63911c9cb0fe0dd4fbce7a95adf7d3fea249b2f",
   "archivos": {
     "csv": "https://boomart.pe/feed-openai.csv",
     "txt": "https://boomart.pe/feed-openai.txt",

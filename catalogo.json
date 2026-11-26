@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 107,
+  "count": 108,
   "products": [
     {
       "id": "skins-zelda-nintendo-switch-2",
@@ -1105,6 +1105,148 @@
       ],
       "url": "https://boomart.pe/producto/pandora-box-caballeros-dorados/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Pandora%20Box%20%C2%B7%2012%20Caballeros%20Dorados%20(sin%20pedestal)%20%C2%B7%20Saint%20Seiya"
+    },
+    {
+      "id": "pandora-box-santos-de-bronce",
+      "name": "Pandora Box · Santos de Bronce · Saint Seiya",
+      "category": "Saint Seiya",
+      "tags": [
+        "Saint Seiya",
+        "Pandora Box",
+        "Santos de Bronce",
+        "Caballeros de Bronce",
+        "Pegaso",
+        "Dragón",
+        "Fénix",
+        "Cisne",
+        "Andrómeda",
+        "Cromo"
+      ],
+      "description": "Las cinco Pandora Box de los Santos de Bronce de Saint Seiya: Pegaso, Dragón, Fénix, Cisne y Andrómeda. Piezas impresas en 3D y pintadas con cromo, con sus emblemas en relieve. Cada caja mide 6.5 cm de alto × 6 cm de ancho. Elige tu caballero a S/20 por unidad o lleva el set completo de las cinco por S/80. Las medidas y los precios corresponden a las cajas; los soportes de exhibición de las fotos no están incluidos.",
+      "material": "Impresión 3D con pintura cromo",
+      "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
+      "priceCurrency": "PEN",
+      "priceFrom": 20,
+      "pricing": [
+        "Pandora Box de Pegaso: S/20",
+        "Pandora Box de Dragón: S/20",
+        "Pandora Box de Fénix: S/20",
+        "Pandora Box de Cisne: S/20",
+        "Pandora Box de Andrómeda: S/20",
+        "Set completo · 5 Pandora Box de bronce: S/80"
+      ],
+      "image": "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-set.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-set.jpg",
+        "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-set-original.jpg",
+        "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-pegaso.jpg",
+        "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-dragon.jpg",
+        "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-fenix.jpg",
+        "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-cisne.jpg",
+        "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-andromeda.jpg",
+        "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-pegaso-original.jpg",
+        "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-dragon-original.jpg",
+        "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-fenix-original.jpg",
+        "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-cisne-original.jpg",
+        "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-andromeda-original.jpg"
+      ],
+      "modelOptions": [
+        {
+          "id": "pegaso",
+          "name": "Pandora Box de Pegaso",
+          "regularPrice": 20,
+          "gallery": [
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-pegaso.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-pegaso-original.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-set.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-dragon.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-fenix.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-cisne.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-andromeda.jpg"
+          ]
+        },
+        {
+          "id": "dragon",
+          "name": "Pandora Box de Dragón",
+          "regularPrice": 20,
+          "gallery": [
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-dragon.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-dragon-original.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-set.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-pegaso.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-fenix.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-cisne.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-andromeda.jpg"
+          ]
+        },
+        {
+          "id": "fenix",
+          "name": "Pandora Box de Fénix",
+          "regularPrice": 20,
+          "gallery": [
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-fenix.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-fenix-original.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-set.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-pegaso.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-dragon.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-cisne.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-andromeda.jpg"
+          ]
+        },
+        {
+          "id": "cisne",
+          "name": "Pandora Box de Cisne",
+          "regularPrice": 20,
+          "gallery": [
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-cisne.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-cisne-original.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-set.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-pegaso.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-dragon.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-fenix.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-andromeda.jpg"
+          ]
+        },
+        {
+          "id": "andromeda",
+          "name": "Pandora Box de Andrómeda",
+          "regularPrice": 20,
+          "gallery": [
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-andromeda.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-andromeda-original.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-set.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-pegaso.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-dragon.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-fenix.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-cisne.jpg"
+          ]
+        },
+        {
+          "id": "set",
+          "name": "Set completo · 5 Pandora Box de bronce",
+          "regularPrice": 80,
+          "gallery": [
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-set.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-set-original.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-pegaso.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-dragon.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-fenix.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-cisne.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-andromeda.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-pegaso-original.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-dragon-original.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-fenix-original.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-cisne-original.jpg",
+            "https://boomart.pe/assets/products/pandora-box-santos-de-bronce-andromeda-original.jpg"
+          ]
+        }
+      ],
+      "url": "https://boomart.pe/producto/pandora-box-santos-de-bronce/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Pandora%20Box%20%C2%B7%20Santos%20de%20Bronce%20%C2%B7%20Saint%20Seiya"
     },
     {
       "id": "casco-de-pegaso-saint-seiya",
