@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fábrica de stickers con sonido para WhatsApp | BoomArt</title>
-    <meta name="description" content="Crea gratis tu sticker animado para WhatsApp a partir de un video o GIF y prepara el audio que quieras. Se hace en tu celular o PC: tus archivos no se suben a ningún servidor.">
+    <meta name="description" content="Crea gratis tu sticker animado para WhatsApp a partir de un video: elige el momento viéndolo y escuchándolo, agrega una canción o tu voz y envíalo. Todo en tu celular, sin subir tus archivos.">
     <link rel="canonical" href="https://boomart.pe/stickers/">
     <link rel="icon" type="image/svg+xml" href="../assets/boomart-mark.svg?v=7">
     <link rel="alternate icon" type="image/png" sizes="32x32" href="../assets/boomart-mark-32.png">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="BoomArt">
     <meta property="og:title" content="Fábrica de stickers con sonido para WhatsApp | BoomArt">
-    <meta property="og:description" content="Convierte un clip en sticker animado para WhatsApp y prepara su audio. Gratis y sin subir tus archivos.">
+    <meta property="og:description" content="Convierte un video en sticker animado para WhatsApp y ponle el sonido que quieras. Gratis y sin subir tus archivos.">
     <meta property="og:url" content="https://boomart.pe/stickers/">
     <meta property="og:image" content="https://boomart.pe/assets/boomart-og.jpg">
     <meta property="og:locale" content="es_PE">
@@ -38,94 +38,117 @@
     <style>
       /* Solo para esta pagina (mismo criterio que nosotros.html y seguimiento). Pensada primero para celular. */
       .site-header { position: static; }
-      .sf-wrap { max-width: 640px; margin: 0 auto; padding: clamp(24px, 6vw, 56px) clamp(16px, 4vw, 28px) 80px; }
-      .sf-wrap h1 { margin: 0 0 10px; font-size: clamp(2.1rem, 8vw, 3.4rem); line-height: 1; }
-      .sf-wrap .lead { color: var(--muted); font-size: 1.05rem; line-height: 1.55; margin: 0 0 22px; }
-
-      /* Pasos arriba */
-      .sf-steps { display: flex; gap: 8px; list-style: none; margin: 0 0 18px; padding: 0; }
-      .sf-steps li { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; font-size: .82rem; color: var(--muted); font-weight: 600; line-height: 1.25; }
-      .sf-steps .dot { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; border: 2px solid var(--line); font-weight: 800; color: var(--muted); background: transparent; }
+      .sf-wrap { max-width: 640px; margin: 0 auto; padding: clamp(20px, 5vw, 48px) 16px 80px; }
+      .sf-wrap h1 { margin: 0 0 10px; font-size: clamp(2rem, 8vw, 3.3rem); line-height: 1; }
+      .sf-wrap .lead { color: var(--muted); font-size: 1.02rem; line-height: 1.55; margin: 0 0 20px; }
+      .sf-hide { display: none !important; }
+      .sf-steps { display: flex; gap: 6px; list-style: none; margin: 0 0 12px; padding: 0; }
+      .sf-steps li { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; font-size: .78rem; color: var(--muted); font-weight: 600; line-height: 1.2; }
+      .sf-steps .dot { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; border: 2px solid var(--line); font-weight: 800; }
       .sf-steps li.active { color: #fff; }
-      .sf-steps li.active .dot { border-color: var(--red); color: #fff; background: var(--red); }
-      .sf-steps li.done .dot { border-color: var(--gold); color: #141414; background: var(--gold); }
-      .sf-steps li.done { color: #dfdad3; }
-
-      .sf-card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; margin-bottom: 14px; }
-      .sf-card.locked { opacity: .45; }
-      .sf-card h2 { font-size: 1.2rem; margin: 0 0 4px; display: flex; gap: 10px; align-items: center; }
-      .sf-n { background: var(--red); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: inline-grid; place-items: center; font: 800 .9rem Inter, sans-serif; flex: none; }
-      .sf-hint { color: var(--muted); font-size: .92rem; line-height: 1.5; margin: 6px 0 12px; }
-      .sf-lock { display: none; color: var(--gold); font-size: .9rem; margin: 4px 0 0; }
-      .sf-card.locked .sf-lock { display: block; }
-      .sf-card.locked .sf-body { display: none; }
-
+      .sf-steps li.active .dot { border-color: var(--red); background: var(--red); color: #fff; }
+      .sf-steps li.done .dot { border-color: var(--gold); background: var(--gold); color: #141414; }
+      .sf-nav { display: flex; gap: 10px; margin-top: 4px; }
+      .sf-nav .button { min-height: 54px; }
+      .sf-nav .sf-next { flex: 2; font-size: 1.02rem; }
+      .sf-nav .sf-back { flex: 1; }
+      .sf-card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 14px; }
+      .sf-card h2 { font-size: 1.15rem; margin: 0 0 4px; display: flex; gap: 10px; align-items: center; }
+      .sf-n { background: var(--red); color: #fff; width: 26px; height: 26px; border-radius: 50%; display: inline-grid; place-items: center; font: 800 .85rem Inter, sans-serif; flex: none; }
+      .sf-hint { color: var(--muted); font-size: .9rem; line-height: 1.5; margin: 4px 0 10px; }
+      .sf-hint b { color: #fff; }
+      .sf-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+      .sf-actions .button { flex: 1 1 160px; min-height: 50px; }
       .sf-big { width: 100%; min-height: 56px; font-size: 1.05rem; }
-      .sf-file { font-size: .9rem; color: #dfdad3; margin: 10px 0 0; overflow-wrap: anywhere; }
-      .sf-card input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
-      .sf-card video { display: block; width: 100%; max-height: 300px; border-radius: 8px; background: #000; margin: 14px auto 0; }
-      .sf-card audio { width: 100%; margin-top: 12px; }
+      .sf-card input[type=file], .sf-file-in { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+      .sf-err { color: var(--gold); font-size: .93rem; margin-top: 8px; line-height: 1.5; }
 
-      .sf-sl { margin-top: 16px; }
-      .sf-sl-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
-      .sf-sl-top label { font-weight: 700; font-size: .98rem; }
-      .sf-sl-top output { font-variant-numeric: tabular-nums; color: var(--gold); font-weight: 800; }
-      .sf-sl .sf-hint { margin: 2px 0 0; font-size: .85rem; }
-      .sf-card input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 36px; background: transparent; margin: 4px 0 0; }
-      .sf-card input[type=range]::-webkit-slider-runnable-track { height: 6px; background: rgba(255,255,255,.22); border-radius: 99px; }
-      .sf-card input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 30px; height: 30px; border-radius: 50%; background: var(--red); border: 3px solid #fff; margin-top: -12px; }
-      .sf-card input[type=range]::-moz-range-track { height: 6px; background: rgba(255,255,255,.22); border-radius: 99px; }
-      .sf-card input[type=range]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: var(--red); border: 3px solid #fff; }
+      /* ---------- Vista previa fija ---------- */
+      .sf-stage { position: sticky; top: 0; z-index: 30; margin: 0 -16px 14px; padding: 10px 16px 10px; background: rgba(8,8,8,.97); border-bottom: 1px solid var(--line); backdrop-filter: blur(6px); }
+      .sf-stage-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 8px; font-size: .85rem; color: var(--muted); }
+      .sf-stage-top b { color: #fff; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 55vw; }
+      .sf-link { background: none; border: 0; color: var(--gold); font: 700 .85rem Inter, sans-serif; padding: 6px 0; cursor: pointer; text-decoration: underline; }
+      .sf-frame { position: relative; width: min(100%, 34vh, 340px); aspect-ratio: 1 / 1; margin: 0 auto; border-radius: 12px; overflow: hidden; background: #000; cursor: pointer; }
+      .sf-frame video, .sf-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+      .sf-frame.fit { background: repeating-conic-gradient(#2a2a2a 0% 25%, #1a1a1a 0% 50%) 0 0 / 18px 18px; }
+      .sf-frame.fit video, .sf-frame.fit img { object-fit: contain; }
+      .sf-play { position: absolute; inset: 0; margin: auto; width: 66px; height: 66px; border-radius: 50%; border: 2px solid #fff; background: rgba(0,0,0,.55); display: grid; place-items: center; transition: opacity .2s; pointer-events: none; }
+      .sf-play svg { width: 26px; height: 26px; fill: #fff; margin-left: 4px; }
+      .sf-frame.playing .sf-play { opacity: 0; }
+      .sf-badge { position: absolute; left: 8px; bottom: 8px; background: rgba(0,0,0,.65); color: #fff; font-size: .75rem; font-weight: 700; padding: 3px 8px; border-radius: 99px; pointer-events: none; }
+      .sf-stage-bot { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 8px; font-size: .88rem; }
+      .sf-stage-bot .sf-time { color: #fff; font-weight: 700; font-variant-numeric: tabular-nums; }
+      .sf-stage-bot .sf-snd { color: var(--muted); }
 
-      .sf-choice { display: flex; gap: 12px; align-items: flex-start; border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin-top: 10px; cursor: pointer; }
-      .sf-choice input { accent-color: var(--red); width: 22px; height: 22px; margin: 2px 0 0; flex: none; }
-      .sf-choice b { display: block; font-size: 1rem; }
-      .sf-choice small { display: block; color: var(--muted); line-height: 1.4; margin-top: 2px; }
-      .sf-choice:has(input:checked) { border-color: var(--red); background: rgba(225,19,47,.08); }
-      .sf-choice.off { opacity: .5; }
-      .sf-sub { margin: 10px 0 0 6px; padding: 14px; border-left: 3px solid var(--red); background: rgba(255,255,255,.03); border-radius: 0 10px 10px 0; }
+      /* ---------- Línea de tiempo del video ---------- */
+      .sf-tl { position: relative; height: 58px; border-radius: 8px; overflow: hidden; background: #222; touch-action: pan-y; user-select: none; -webkit-user-select: none; margin-top: 4px; }
+      .sf-tl canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+      .sf-tl-dim { position: absolute; top: 0; bottom: 0; background: rgba(0,0,0,.62); pointer-events: none; }
+      .sf-tl-win { position: absolute; top: 0; bottom: 0; border: 3px solid var(--red); border-radius: 8px; box-shadow: 0 0 0 1px rgba(0,0,0,.5); cursor: grab; touch-action: none; }
+      .sf-tl-win:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+      .sf-tl-win::before, .sf-tl-win::after { content: ""; position: absolute; top: 50%; width: 4px; height: 22px; margin-top: -11px; background: #fff; border-radius: 2px; }
+      .sf-tl-win::before { left: 3px; } .sf-tl-win::after { right: 3px; }
+      .sf-tl-head { position: absolute; top: 0; bottom: 0; width: 2px; background: #fff; pointer-events: none; display: none; }
+      .sf-tl-labels { display: flex; justify-content: space-between; font-size: .75rem; color: var(--muted); margin-top: 4px; font-variant-numeric: tabular-nums; }
+      .sf-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+      .sf-row > span { font-size: .9rem; font-weight: 700; margin-right: 4px; }
+      .sf-chip { min-width: 46px; min-height: 40px; padding: 0 12px; border-radius: 99px; border: 1px solid var(--line); background: transparent; color: #fff; font: 700 .92rem Inter, sans-serif; cursor: pointer; }
+      .sf-chip[aria-pressed="true"] { background: var(--red); border-color: var(--red); }
+      .sf-chip:disabled { opacity: .35; cursor: not-allowed; }
+      .sf-nudge { display: flex; gap: 8px; margin-top: 10px; }
+      .sf-nudge .button { flex: 1; min-height: 42px; font-size: .9rem; }
 
-      .sf-more { margin-top: 16px; }
-      .sf-more summary { cursor: pointer; font-weight: 700; padding: 6px 0; }
-      .sf-seg { display: grid; gap: 8px; margin-top: 8px; }
-      .sf-seg label { border: 1px solid var(--line); border-radius: 8px; padding: 12px; cursor: pointer; font-size: .95rem; display: flex; gap: 10px; align-items: flex-start; }
-      .sf-seg input { accent-color: var(--red); width: 20px; height: 20px; margin: 1px 0 0; flex: none; }
-      .sf-seg small { display: block; color: var(--muted); }
+      /* ---------- Sonido ---------- */
+      .sf-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 6px; }
+      .sf-tile { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; text-align: left; min-height: 74px; padding: 12px; border-radius: 10px; border: 1px solid var(--line); background: rgba(255,255,255,.03); color: #fff; cursor: pointer; font: inherit; }
+      .sf-tile b { font-size: .95rem; }
+      .sf-tile small { color: var(--muted); font-size: .78rem; line-height: 1.35; }
+      .sf-tile[aria-pressed="true"] { border-color: var(--red); background: rgba(225,19,47,.12); box-shadow: inset 0 0 0 1px var(--red); }
+      .sf-tile:disabled { opacity: .4; cursor: not-allowed; }
+      .sf-vol { margin-top: 12px; padding: 12px; border: 1px solid var(--line); border-radius: 10px; }
+      .sf-vol.off { opacity: .5; }
+      .sf-vol-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+      .sf-vol-top b { font-size: 1rem; }
+      .sf-vol-pct { color: var(--gold); font-weight: 800; font-variant-numeric: tabular-nums; min-width: 4ch; text-align: right; }
+      .sf-vol-row { display: flex; gap: 10px; align-items: center; }
+      .sf-vol-row input[type=range] { flex: 1; min-width: 0; }
+      .sf-vol-name { font-size: .88rem; font-weight: 700; white-space: nowrap; }
+      .sf-tiles3 { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 8px; }
+      .sf-tiles3 .sf-tile { min-height: 66px; padding: 10px 8px; }
+      .sf-tiles3 .sf-tile b { font-size: .88rem; }
+      .sf-panel { margin-top: 12px; padding: 12px; border-radius: 10px; background: rgba(255,255,255,.04); }
+      .sf-file { font-size: .88rem; color: #dfdad3; margin: 0 0 8px; overflow-wrap: anywhere; }
+      .sf-wave { position: relative; height: 64px; margin-top: 8px; border-radius: 8px; background: #191919; overflow: hidden; }
+      .sf-wave-scroll { position: absolute; inset: 0; overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+      .sf-wave-scroll::-webkit-scrollbar { display: none; }
+      .sf-wave-scroll canvas { display: block; height: 64px; }
+      .sf-wave-win { position: absolute; top: 0; bottom: 0; border: 3px solid var(--red); border-radius: 8px; background: rgba(225,19,47,.14); pointer-events: none; }
+      .sf-wave-lbl { display: flex; justify-content: space-between; font-size: .8rem; color: var(--muted); margin-top: 6px; }
+      .sf-wave-lbl b { color: #fff; font-variant-numeric: tabular-nums; }
+      .sf-rec-status { min-height: 1.3em; margin-top: 8px; font-size: .92rem; color: #fff; }
+      .sf-seg { display: flex; gap: 8px; margin-top: 6px; }
+      .sf-seg .sf-chip { flex: 1; }
 
-      .sf-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
-      .sf-actions .button { flex: 1 1 180px; min-height: 50px; }
-      .sf-bar { height: 10px; background: rgba(255,255,255,.1); border-radius: 99px; overflow: hidden; margin-top: 16px; display: none; }
-      .sf-bar i { display: block; height: 100%; width: 0; background: var(--red); transition: width .2s; }
-      .sf-status { color: #fff; font-size: .95rem; margin-top: 8px; min-height: 1.3em; }
-      .sf-warn { color: var(--gold); font-size: .9rem; margin-top: 4px; }
-      .sf-err { color: var(--gold); font-size: .95rem; margin-top: 8px; line-height: 1.5; }
-
-      .sf-res { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 12px; }
+      /* ---------- Resultado ---------- */
+      .sf-res { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 10px; }
       .sf-res figure { margin: 0; text-align: center; }
-      .sf-box { background: repeating-conic-gradient(rgba(255,255,255,.07) 0% 25%, transparent 0% 50%) 0 0 / 16px 16px; border-radius: 10px; padding: 8px; }
-      .sf-box img, .sf-box video { width: 100%; max-width: 256px; display: block; margin: 0 auto; border-radius: 6px; }
-      .sf-res figcaption { color: var(--muted); font-size: .85rem; margin: 8px 0 0; line-height: 1.4; }
-      .sf-tag { display: inline-block; padding: 1px 8px; border-radius: 99px; font-size: .78rem; background: rgba(255,255,255,.08); color: #fff; margin-top: 4px; }
+      .sf-box { background: repeating-conic-gradient(rgba(255,255,255,.07) 0% 25%, transparent 0% 50%) 0 0 / 16px 16px; border-radius: 10px; padding: 6px; }
+      .sf-box img, .sf-box video { width: 100%; max-width: 240px; display: block; margin: 0 auto; border-radius: 6px; }
+      .sf-res figcaption { color: var(--muted); font-size: .8rem; margin-top: 6px; line-height: 1.35; }
+      .sf-tag { display: inline-block; padding: 1px 8px; border-radius: 99px; font-size: .74rem; background: rgba(255,255,255,.08); color: #fff; margin-top: 4px; }
       .sf-tag.warn { color: var(--gold); }
-      .sf-next { margin: 18px 0 0; padding: 0; list-style: none; counter-reset: n; }
-      .sf-next > li { counter-increment: n; position: relative; padding: 0 0 16px 44px; color: #dfdad3; line-height: 1.55; }
-      .sf-next > li::before { content: counter(n); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--red); color: #fff; display: grid; place-items: center; font-weight: 800; }
-      .sf-next b { color: #fff; }
-      .sf-next .sf-actions { margin-top: 10px; }
       .sf-opt { border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin-top: 12px; }
       .sf-opt h3 { margin: 0 0 4px; font-size: 1.02rem; color: #fff; }
-      .sf-opt p { margin: 0; color: #dfdad3; font-size: .92rem; line-height: 1.5; }
-      .sf-note { font-size: .9rem; color: #dfdad3; background: rgba(255,255,255,.04); border-radius: 8px; padding: 12px 14px; margin-top: 4px; line-height: 1.55; }
+      .sf-opt p { margin: 0; color: #dfdad3; font-size: .9rem; line-height: 1.5; }
+      .sf-steps-mini { margin: 10px 0 0; padding-left: 20px; color: #dfdad3; font-size: .9rem; line-height: 1.55; }
+      .sf-note { font-size: .86rem; color: #dfdad3; background: rgba(255,255,255,.04); border-radius: 8px; padding: 12px 14px; margin-top: 12px; line-height: 1.55; }
       .sf-note b { color: #fff; }
 
-      .sf-cta { border-color: rgba(225,19,47,.5); }
-      .sf-cta p { color: #dfdad3; margin: 8px 0 0; line-height: 1.55; }
       .sf-info h2 { font-size: 1.3rem; margin: 36px 0 12px; }
       .sf-info h3 { color: var(--gold); font-size: 1.02rem; margin: 20px 0 6px; }
       .sf-info p, .sf-info li { color: #dfdad3; line-height: 1.65; }
-      .sf-hide { display: none !important; }
 
-      /* Aviso de espera: aparece abajo cuando algo tarda y se va solo al terminar. */
+      /* ---------- Aviso de espera ---------- */
       .sf-busy { position: fixed; left: 50%; bottom: max(16px, env(safe-area-inset-bottom)); transform: translateX(-50%); width: min(520px, calc(100% - 32px)); z-index: 1000; display: flex; gap: 14px; align-items: center; background: #1d1d1d; border: 1px solid rgba(225,19,47,.6); border-radius: 14px; padding: 14px 16px; box-shadow: 0 18px 50px rgba(0,0,0,.55); }
       .sf-busy[hidden] { display: none; }
       .sf-spin { width: 34px; height: 34px; flex: none; border-radius: 50%; border: 4px solid rgba(255,255,255,.15); border-top-color: var(--red); animation: sf-rot .8s linear infinite; }
@@ -139,7 +162,6 @@
       @keyframes sf-rot { to { transform: rotate(360deg); } }
       @keyframes sf-indet { 0% { left: -35%; } 100% { left: 100%; } }
       @media (prefers-reduced-motion: reduce) { .sf-spin { animation-duration: 2.4s; } .sf-busy-bar.indet i { animation: none; width: 100%; opacity: .5; } }
-      @media (max-width: 480px) { .sf-res { gap: 8px; } .sf-res figcaption { font-size: .78rem; } .sf-tag { font-size: .72rem; } .sf-box { padding: 4px; } }
     </style>
   </head>
   <body>
@@ -160,155 +182,188 @@
 
     <main>
       <div class="sf-wrap">
-        <p class="eyebrow">Herramienta gratis de BoomArt</p>
-        <h1>Fábrica de stickers con sonido para WhatsApp</h1>
-        <p class="lead">Convierte un video corto en sticker animado y elige el sonido que quieres. Son 3 pasos y se hace desde tu celular. Tus archivos no se suben a ningún servidor.</p>
-
+        <div id="intro">
+          <p class="eyebrow">Herramienta gratis de BoomArt</p>
+          <h1>Fábrica de stickers con sonido para WhatsApp</h1>
+          <p class="lead">Elige un video, marca el momento viéndolo y escuchándolo, ponle el sonido que quieras y envíalo a WhatsApp. Todo en una sola pantalla y desde tu celular. Tus archivos no se suben a ningún servidor.</p>
+        </div>
         <ol class="sf-steps" aria-label="Pasos">
-          <li id="st1" class="active"><span class="dot">1</span>Elige tu video</li>
-          <li id="st2"><span class="dot">2</span>Elige el sonido</li>
-          <li id="st3"><span class="dot">3</span>Crea y guarda</li>
+          <li id="st1" class="active"><span class="dot">1</span>Elige el momento</li>
+          <li id="st2"><span class="dot">2</span>Ponle sonido</li>
+          <li id="st3"><span class="dot">3</span>Envíalo a WhatsApp</li>
         </ol>
-
         <div class="sf-err" id="support" role="alert"></div>
 
-        <section class="sf-card" id="c1">
-          <h2><span class="sf-n">1</span> Elige tu video</h2>
-          <p class="sf-hint">Escoge un video o GIF de tu galería, o graba uno ahora con tu cámara.</p>
-          <div class="sf-actions" style="margin-top:0">
+        <!-- Paso 1a: subir video -->
+        <section class="sf-card" id="upload">
+          <h2>Empieza con un video</h2>
+          <p class="sf-hint">Escoge un video o GIF de tu galería, o graba uno ahora con tu cámara. No necesitas editarlo: aquí eliges el momento.</p>
+          <div class="sf-actions" style="margin-top:4px">
             <label class="button primary sf-big" id="pickV" for="fileV">Elegir de mi galería</label>
             <label class="button ghost sf-big" id="camV" for="fileVcam">Grabar un video</label>
           </div>
-          <input type="file" id="fileV" accept="video/*,image/gif">
-          <input type="file" id="fileVcam" accept="video/*" capture="environment">
-          <p class="sf-hint" style="margin-top:10px">No necesitas editarlo antes: lo reducimos solos a 512 × 512, el tamaño de los stickers.</p>
-          <p class="sf-file sf-hide" id="vName"></p>
-          <div id="vBox" class="sf-hide">
-            <video id="vid" playsinline controls></video>
-            <img id="gifImg" class="sf-hide" alt="Vista previa de tu GIF" style="display:block;width:100%;max-height:300px;object-fit:contain;border-radius:8px;background:#000;margin:14px auto 0">
-            <p class="sf-hint sf-hide" id="noPrev" style="margin-top:14px">Tu navegador no puede mostrar la vista previa de este video, pero igual puedes crear tu sticker.</p>
-            <p class="sf-hint" style="margin-top:14px"><b>Ahora elige qué parte quieres.</b> Mueve las barras y toca «Ver cómo queda».</p>
-            <div class="sf-sl">
-              <div class="sf-sl-top"><label for="vStart">¿Desde qué segundo?</label><output id="vStartO">0.0 s</output></div>
-              <input type="range" id="vStart" min="0" max="10" step="0.1" value="0">
-            </div>
-            <div class="sf-sl">
-              <div class="sf-sl-top"><label for="dur">¿Cuánto dura?</label><output id="durO">5.0 s</output></div>
-              <input type="range" id="dur" min="1" max="10" step="0.5" value="5">
-              <p class="sf-hint">Entre 3 y 6 segundos queda mejor y pesa menos.</p>
-            </div>
-            <div class="sf-actions"><button type="button" class="button ghost" id="prev">Ver cómo queda</button></div>
-          </div>
+          <input class="sf-file-in" type="file" id="fileV" accept="video/*,image/gif">
+          <input class="sf-file-in" type="file" id="fileVcam" accept="video/*" capture="environment">
+          <div class="sf-actions sf-hide" id="backWrap"><button type="button" class="button ghost" id="backEditor">Volver a mi sticker</button></div>
         </section>
 
-        <section class="sf-card locked" id="c2" inert>
-          <h2><span class="sf-n">2</span> Elige el sonido</h2>
-          <p class="sf-lock">Primero elige tu video en el paso 1.</p>
-          <div class="sf-body">
-            <p class="sf-hint">¿Qué quieres que se escuche en tu sticker?</p>
-            <label class="sf-choice" id="chVideo"><input type="radio" name="snd" value="video" checked><span><b>El sonido original del video</b><small id="sndVideoHint">Usamos el audio que ya trae tu clip.</small></span></label>
-            <label class="sf-choice"><input type="radio" name="snd" value="file"><span><b>Una canción o audio de mi celular</b><small>Elige un archivo de audio que tengas guardado.</small></span></label>
-            <div class="sf-sub sf-hide" id="aBox">
-              <label class="button ghost sf-big" for="fileA" id="pickA">Elegir audio</label>
-              <input type="file" id="fileA" accept="audio/*">
-              <p class="sf-file sf-hide" id="aName"></p>
-              <p class="sf-hint">En iPhone el audio debe estar guardado en la app Archivos. En Android, en tu celular o en Descargas.</p>
+        <!-- 2. Editor en una sola pantalla -->
+        <div id="editor" class="sf-hide">
+          <div class="sf-stage" id="stage">
+            <div class="sf-stage-top"><b id="vName"></b><button type="button" class="sf-link" id="changeV">Cambiar video</button></div>
+            <div class="sf-frame" id="frame" role="button" tabindex="0" aria-label="Reproducir o pausar la vista previa del sticker">
+              <video id="vid" playsinline preload="auto"></video>
+              <img id="gifImg" class="sf-hide" alt="Vista previa de tu GIF">
+              <span class="sf-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></span>
+              <span class="sf-badge">Así se verá tu sticker</span>
             </div>
-            <label class="sf-choice" id="chRec"><input type="radio" name="snd" value="rec"><span><b>Grabar mi voz o un sonido</b><small>Graba con el micrófono mientras ves tu clip.</small></span></label>
-            <div class="sf-sub sf-hide" id="rBox">
-              <p class="sf-hint" style="margin-top:0" id="recInfo">Tu clip se reproduce en silencio mientras grabas, para que tu voz coincida con la imagen. La grabación dura lo mismo que tu sticker.</p>
+            <div class="sf-stage-bot"><span class="sf-time" id="selLbl">0,0 s – 5,0 s</span><span class="sf-snd" id="sndLbl">· Sonido original</span></div>
+          </div>
+
+          <!-- Paso 1: elegir el momento -->
+          <section class="sf-card" id="s1">
+            <h2><span class="sf-n">1</span> Elige el momento</h2>
+            <p class="sf-hint" id="tlHint">Arrastra el <b>recuadro rojo</b> sobre tu video. Al soltarlo, verás y escucharás ese momento arriba.</p>
+            <div class="sf-tl" id="tl">
+              <canvas id="tlCanvas"></canvas>
+              <div class="sf-tl-dim" id="tlDimL" style="left:0"></div>
+              <div class="sf-tl-dim" id="tlDimR" style="right:0"></div>
+              <div class="sf-tl-win" id="tlWin" role="slider" tabindex="0" aria-label="Momento del video para el sticker" aria-valuemin="0"></div>
+              <div class="sf-tl-head" id="tlHead"></div>
+            </div>
+            <div class="sf-tl-labels"><span>0:00</span><span id="tlEnd">0:00</span></div>
+            <div class="sf-nudge">
+              <button type="button" class="button ghost" id="nudgeL" aria-label="Mover medio segundo antes">◀ 0,5 s</button>
+              <button type="button" class="button ghost" id="nudgeR" aria-label="Mover medio segundo después">0,5 s ▶</button>
+            </div>
+            <div class="sf-row" role="group" aria-label="Duración del sticker"><span>Duración:</span><span id="chips" style="display:contents"></span></div>
+            <p class="sf-hint" style="margin-bottom:0">Entre 3 y 6 segundos queda mejor y pesa menos.</p>
+            <div class="sf-row" style="margin-top:16px"><span>Encuadre:</span></div>
+            <div class="sf-seg" role="group" aria-label="Encuadre">
+              <button type="button" class="sf-chip" data-fit="fill" aria-pressed="true">Llenar el cuadro</button>
+              <button type="button" class="sf-chip" data-fit="fit" aria-pressed="false">Video completo</button>
+            </div>
+          </section>
+          <div class="sf-nav" id="nav1">
+            <button type="button" class="button primary sf-next" id="to2">Listo, ahora el sonido →</button>
+          </div>
+
+          <!-- Paso 2: ponerle sonido -->
+          <section class="sf-card sf-hide" id="s2">
+            <h2><span class="sf-n">2</span> Ponle sonido</h2>
+            <p class="sf-hint">Elige qué se escucha. Toca el video de arriba para ver y escuchar tu sticker con ese sonido.</p>
+            <div class="sf-vol" id="vVolBox">
+              <div class="sf-vol-top"><b>Sonido del video</b><span class="sf-vol-pct" id="vVolO">100%</span></div>
+              <p class="sf-hint" id="tVideoHint" style="margin:2px 0 4px">Sube, baja o silencia el audio original de tu video.</p>
+              <div class="sf-vol-row">
+                <input type="range" id="vVol" min="0" max="150" step="5" value="100" aria-label="Volumen del sonido del video">
+                <button type="button" class="sf-chip" id="vMute" aria-pressed="false">Silenciar</button>
+              </div>
+            </div>
+            <div class="sf-vol">
+              <div class="sf-vol-top"><b>Agregar otro sonido</b></div>
+              <div class="sf-tiles sf-tiles3" role="group" aria-label="Agregar otro sonido">
+                <button type="button" class="sf-tile" data-snd="none" aria-pressed="true"><b>Ninguno</b><small>Solo el del video</small></button>
+                <button type="button" class="sf-tile" data-snd="file" aria-pressed="false"><b>Una canción</b><small>De tu celular</small></button>
+                <button type="button" class="sf-tile" data-snd="rec" aria-pressed="false" id="tRec"><b>Grabar mi voz</b><small>Con el micrófono</small></button>
+              </div>
+
+            <div class="sf-panel sf-hide" id="pSong">
+              <p class="sf-file" id="songName"></p>
+              <label class="button ghost sf-big" for="fileA" id="pickA">Elegir canción o audio</label>
+              <input class="sf-file-in" type="file" id="fileA" accept="audio/*">
+              <div id="waveBox" class="sf-hide">
+                <p class="sf-hint" style="margin:10px 0 0">Desliza la onda de lado a lado para elegir <b>qué parte de la canción</b> suena. Suena junto con tu video arriba.</p>
+                <div class="sf-wave" id="wave">
+                  <div class="sf-wave-scroll" id="waveScroll" tabindex="0" aria-label="Elegir parte de la canción"><canvas id="waveCanvas"></canvas></div>
+                  <div class="sf-wave-win" id="waveWin"></div>
+                </div>
+                <div class="sf-wave-lbl"><span>Desde <b id="waveFrom">0:00</b></span><span>Dura <b id="waveDur">5,0 s</b></span></div>
+              </div>
+              <p class="sf-hint" style="margin:10px 0 0">En iPhone la canción debe estar en la app Archivos. En Android, en tu celular o en Descargas.</p>
+            </div>
+
+            <div class="sf-panel sf-hide" id="pRec">
+              <p class="sf-hint" style="margin-top:0">Toca grabar: tu video se reproduce arriba en silencio para que tu voz coincida con la imagen. Se detiene solo al llegar a la duración del sticker.</p>
               <button type="button" class="button primary sf-big" id="recBtn">Empezar a grabar</button>
-              <p class="sf-status" id="recStatus" role="status" aria-live="polite"></p>
+              <p class="sf-rec-status" id="recStatus" role="status" aria-live="polite"></p>
             </div>
-            <div id="aOpts" class="sf-hide">
-              <audio id="aud" controls></audio>
-              <div class="sf-sl">
-                <div class="sf-sl-top"><label for="aStart">¿Desde qué parte del audio?</label><output id="aStartO">0.0 s</output></div>
-                <input type="range" id="aStart" min="0" max="10" step="0.1" value="0">
-              </div>
+            <div class="sf-vol-row sf-hide" id="eVolBox" style="margin-top:12px">
+              <span class="sf-vol-name" id="eVolLbl">Volumen</span>
+              <input type="range" id="eVol" min="0" max="200" step="5" value="100" aria-label="Volumen del sonido agregado">
+              <span class="sf-vol-pct" id="eVolO">100%</span>
             </div>
-            <label class="sf-choice"><input type="radio" name="snd" value="none"><span><b>Sin sonido</b><small>Solo la imagen en movimiento.</small></span></label>
-            <div class="sf-actions"><button type="button" class="button ghost" id="prev2">Probar con el sonido</button></div>
-          </div>
-        </section>
+            </div>
 
-        <section class="sf-card locked" id="c3" inert>
-          <h2><span class="sf-n">3</span> Crea tu sticker</h2>
-          <p class="sf-lock">Primero elige tu video en el paso 1.</p>
-          <div class="sf-body">
-            <p class="sf-hint">Toca el botón y espera unos segundos. <b>No cierres ni cambies de app</b> mientras se crea.</p>
-            <details class="sf-more">
-              <summary>Más opciones (encuadre)</summary>
-              <div class="sf-seg" role="radiogroup" aria-label="Encuadre">
-                <label><input type="radio" name="fit" value="fill" checked><span>Llenar el cuadro<small>Recorta los bordes del video. Recomendado.</small></span></label>
-                <label><input type="radio" name="fit" value="fit"><span>Mostrar todo el video<small>Deja bordes transparentes en el sticker.</small></span></label>
-              </div>
-            </details>
-            <button class="button primary sf-big" id="go" disabled style="margin-top:16px">Crear mi sticker</button>
-            <div class="sf-bar" id="bar"><i id="barI"></i></div>
-            <div class="sf-status" id="status" role="status" aria-live="polite"></div>
-            <div class="sf-err" id="err" role="alert"></div>
+          </section>
+          <div class="sf-nav sf-hide" id="nav2">
+            <button type="button" class="button ghost sf-back" id="back1">← Momento</button>
+            <button type="button" class="button primary sf-next" id="go">Listo, crear mi sticker →</button>
           </div>
-        </section>
+          <p class="sf-hint sf-hide" id="goHint" style="text-align:center">Al tocar «crear», espera unos segundos y no cierres esta pantalla.</p>
+          <div class="sf-err" id="err" role="alert"></div>
+        </div>
 
+        <!-- Paso 3: enviar -->
         <section class="sf-card sf-hide" id="out">
-          <h2>¡Listo! Ahora llévalo a WhatsApp</h2>
+          <h2><span class="sf-n">3</span> ¡Listo! Envíalo a WhatsApp</h2>
           <div class="sf-res">
             <figure>
               <div class="sf-box"><img id="oImg" alt="Vista previa del sticker animado"></div>
-              <figcaption>Sticker animado (sin sonido)<br><span class="sf-tag" id="wTag"></span></figcaption>
+              <figcaption>Sticker animado<br><span class="sf-tag" id="wTag"></span></figcaption>
             </figure>
             <figure>
               <div class="sf-box"><video id="oVid" controls loop playsinline></video></div>
-              <figcaption>Clip con sonido<br><span class="sf-tag" id="mTag"></span></figcaption>
+              <figcaption>Video con sonido<br><span class="sf-tag" id="mTag"></span></figcaption>
             </figure>
           </div>
-          <p class="sf-hint" style="margin-top:16px">Elige cómo quieres llevarlo a WhatsApp:</p>
-          <div class="sf-opt">
-            <h3>Enviarlo ahora a un chat</h3>
-            <p>Abre tu lista de apps y elige WhatsApp. Sale el sticker animado, sin sonido.</p>
-            <div class="sf-actions">
-              <button type="button" class="button primary" id="shareW">Compartir en WhatsApp</button>
-              <button type="button" class="button ghost" id="dlW">Guardar sticker (.webp)</button>
-            </div>
-          </div>
-          <div class="sf-opt">
-            <h3>Con sonido, desde el creador de stickers</h3>
-            <p id="tipSave">Guarda este clip en tu celular. Luego, en WhatsApp, crea el sticker eligiendo ese video y conserva el audio.</p>
-            <div class="sf-actions">
-              <button type="button" class="button primary sf-hide" id="share">Guardar o compartir clip con sonido</button>
-              <button type="button" class="button ghost" id="dlM">Descargar clip (.mp4)</button>
-            </div>
-          </div>
-          <div class="sf-note"><b>Importante:</b> el sonido en stickers es una función de WhatsApp que se está activando poco a poco. Si aún no te aparece, tu sticker igual se mueve, solo que sin sonido. Según tu versión de WhatsApp, el sticker enviado puede llegar como sticker o como imagen animada.</div>
-        </section>
 
-        <section class="sf-card sf-cta" id="cta">
-          <h2>Hecho por BoomArt</h2>
-          <p>Diseñamos y fabricamos en Perú figuras y decoración 3D de cultura pop: templos de Saint Seiya, cascos, Harry Potter, Marvel y más. Si te gustó la herramienta, entra a ver la tienda.</p>
+          <div class="sf-opt">
+            <h3>Enviar como sticker</h3>
+            <p>Se abre tu lista de apps: elige <b>WhatsApp</b> y el chat. Va el sticker animado (sin sonido).</p>
+            <div class="sf-actions">
+              <button type="button" class="button primary" id="shareW">Enviar sticker a WhatsApp</button>
+              <button type="button" class="button ghost" id="dlW">Guardar sticker</button>
+            </div>
+          </div>
+
+          <div class="sf-opt">
+            <h3>Sticker con sonido</h3>
+            <p>El sonido solo lo puede poner WhatsApp, con su creador de stickers. Te guiamos:</p>
+            <ol class="sf-steps-mini">
+              <li id="tipSave">Guarda el video con sonido en tu celular.</li>
+              <li>Toca «Abrir WhatsApp», entra a un chat y abre los stickers.</li>
+              <li>Toca «Crear» y elige el video que guardaste. Conserva el sonido.</li>
+            </ol>
+            <div class="sf-actions">
+              <button type="button" class="button primary" id="saveM">Guardar video con sonido</button>
+              <a class="button ghost" id="openWA" href="whatsapp://send" data-sf="abrir-whatsapp">Abrir WhatsApp</a>
+            </div>
+          </div>
+
+          <div class="sf-note"><b>Importante:</b> una página web no puede guardar stickers directamente en WhatsApp; solo las apps instaladas pueden hacerlo. El sonido en stickers es una función nueva de WhatsApp que se está activando poco a poco: si aún no te aparece, tu sticker igual se mueve, solo que sin sonido.</div>
           <div class="sf-actions">
-            <a class="button primary" href="../index.html#catalogo" data-sf="cta-catalogo">Ver el catálogo</a>
-            <a class="button ghost" href="../saintseiya/" data-sf="cta-saintseiya">Saint Seiya</a>
-            <a class="button ghost" href="https://www.instagram.com/boomart_3d/" target="_blank" rel="noopener noreferrer" data-sf="cta-instagram">Instagram</a>
-            <a class="button ghost" href="https://www.tiktok.com/@boomart.3d" target="_blank" rel="noopener noreferrer" data-sf="cta-tiktok">TikTok</a>
+            <button type="button" class="button ghost" id="editAgain">← Cambiar el sonido</button>
+            <button type="button" class="button ghost" id="newOne">Hacer otro sticker</button>
           </div>
         </section>
 
         <div class="sf-info">
           <h2>Cómo hacer un sticker animado para WhatsApp</h2>
           <ol>
-            <li>Elige un video o GIF de tu galería, o grábalo con tu cámara, y marca la parte que quieres (hasta 10 segundos).</li>
-            <li>Elige el sonido: el original del video, una canción de tu celular, tu voz grabada o ninguno.</li>
-            <li>Toca «Crear mi sticker», guarda el clip y úsalo en el creador de stickers de WhatsApp.</li>
+            <li>Elige un video o GIF de tu galería, o grábalo con tu cámara.</li>
+            <li>Arrastra el recuadro rojo para elegir el momento: lo ves y lo escuchas en la vista previa.</li>
+            <li>Elige el sonido: el original, una canción, tu voz grabada o ninguno.</li>
+            <li>Toca «Crear mi sticker» y envíalo a WhatsApp.</li>
           </ol>
           <h3>¿Mis videos se suben a internet?</h3>
-          <p>No. La conversión ocurre dentro de tu navegador. BoomArt no recibe, guarda ni ve tus videos ni tus audios.</p>
+          <p>No. La conversión ocurre dentro de tu navegador. BoomArt no recibe, guarda ni ve tus videos, audios ni grabaciones.</p>
+          <h3>¿Por qué el sticker con sonido se hace en WhatsApp?</h3>
+          <p>WhatsApp solo deja agregar stickers desde su propia app o desde apps instaladas. Por eso te damos el video ya recortado y con su sonido, listo para su creador de stickers.</p>
           <h3>¿Qué tamaño tiene el sticker?</h3>
           <p>El sticker animado sale en formato WebP de 512 × 512 píxeles y se ajusta para pesar menos de 500 KB, el límite de WhatsApp para stickers animados.</p>
           <h3>¿Funciona en iPhone y Android?</h3>
-          <p>Sí, en el navegador de ambos (Safari en iPhone, Chrome en Android). La primera vez descarga el motor de conversión, unos 30 MB, así que conviene tener buena conexión. Con clips cortos funciona mejor.</p>
-          <h3>¿Por qué me pide permiso para el micrófono?</h3>
-          <p>Solo si eliges «Grabar mi voz o un sonido». La grabación se queda en tu celular y se usa únicamente para tu sticker.</p>
+          <p>Sí, en el navegador de ambos (Safari en iPhone, Chrome en Android). La primera vez descarga el motor de conversión, unos 30 MB, así que conviene tener buena conexión.</p>
           <h3>Usa música y videos propios o con permiso</h3>
           <p>Cada persona es responsable de los archivos que convierte. Usa material propio o que tengas permiso de usar.</p>
         </div>
@@ -348,21 +403,94 @@
       const MAX_INPUT = 300 * 1024 * 1024;
       const CORE = 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/esm';
       const WORKER = 'https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/umd/814.ffmpeg.js';
+      const DURS = [2, 3, 4, 5, 6, 8, 10];
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
       const isAndroid = /Android/i.test(navigator.userAgent);
       const track = (name, params) => { try { if (window.gtag) gtag('event', name, params || {}); } catch (_) {} };
 
-      // songFile: audio elegido del celular. recFile: audio grabado con el micrófono.
-      let vFile = null, songFile = null, recFile = null, vDur = 0, aDur = 0, vHasAudio = true, probeP = null;
+      // ---------- estado ----------
+      let vFile = null, vURL = null, vDur = 0, vHasAudio = true, noPreview = false, probeP = null, autoNone = false;
+      let selStart = 0, selDur = 5, audStart = 0;
+      // sndMode = sonido agregado: 'none' | 'file' (canción) | 'rec' (voz grabada). Se mezcla con el del video.
+      let sndMode = 'none', fitMode = 'fill', vidVol = 1, vidVolPrev = 1, extraVol = 1;
+      let songFile = null, songDur = 0, recFile = null, recDur = 0;
       let ff = null, ffReady = null, logBuf = '';
-      let wBlob = null, mBlob = null, urls = [], soundTouched = false;
+      let wBlob = null, mBlob = null, outURLs = [], creating = false;
 
-      const vid = $('vid'), aud = $('aud');
-      const fmt = n => n.toFixed(1) + ' s';
+      const vid = $('vid');
+      const aud = new Audio(); aud.preload = 'auto';
+      const fmtS = n => n.toFixed(1).replace('.', ',') + ' s';
+      const fmtClock = n => { n = Math.max(0, n); const m = Math.floor(n / 60), s = Math.floor(n % 60); return m + ':' + String(s).padStart(2, '0'); };
       const kb = b => (b / 1024).toFixed(0) + ' KB';
-      // ---- aviso de espera ----
-      // start(): lo muestra si la tarea dura más de `delay` ms (0 = de inmediato). end(): lo quita.
-      // Si empieza otra tarea, reemplaza a la anterior (un solo aviso a la vez).
+      const showErr = t => { $('err').textContent = t || ''; };
+      const curAudio = () => sndMode === 'file' ? songFile : sndMode === 'rec' ? recFile : null;
+      // En la pantalla 1 la vista previa suena con el audio original; en la 2, con el sonido elegido.
+      let step = 1;
+      const effAudio = () => step === 1 ? null : curAudio();
+
+      // Volúmenes: el navegador del iPhone no deja cambiar el volumen de un video directamente,
+      // así que el sonido pasa por el motor de audio del navegador (Web Audio) con un control por fuente.
+      let actx = null, gV = null, gA = null, graphOK = false;
+      function ensureGraph() {
+        if (actx) { if (actx.state === 'suspended') actx.resume().catch(() => {}); return; }
+        try {
+          const C = window.AudioContext || window.webkitAudioContext;
+          actx = new C();
+          gV = actx.createGain(); gA = actx.createGain();
+          actx.createMediaElementSource(vid).connect(gV).connect(actx.destination);
+          actx.createMediaElementSource(aud).connect(gA).connect(actx.destination);
+          graphOK = true;
+          if (actx.state === 'suspended') actx.resume().catch(() => {});
+        } catch (_) { graphOK = false; }
+      }
+      function applyVolumes() {
+        const v = step === 1 ? 1 : vidVol, a = extraVol;
+        if (graphOK) { gV.gain.value = v; gA.gain.value = a; }
+        else { try { vid.volume = Math.min(1, v); aud.volume = Math.min(1, a); } catch (_) {} }
+        vid.muted = !vHasAudio || v < 0.001;
+      }
+      const pctTxt = x => Math.round(x * 100) + '%';
+      function updateSndLbl() {
+        if (step === 1) { $('sndLbl').textContent = vHasAudio ? '· Sonido original' : '· Video sin sonido'; return; }
+        const parts = [];
+        if (vHasAudio && vidVol > 0.001) parts.push('Video ' + pctTxt(vidVol));
+        if (curAudio() && extraVol > 0.001) parts.push((sndMode === 'rec' ? 'Tu voz ' : 'Canción ') + pctTxt(extraVol));
+        $('sndLbl').textContent = '· ' + (parts.length ? parts.join(' + ') : 'Sin sonido');
+      }
+      function setVideoAudioUI() {
+        $('vVolBox').classList.toggle('off', !vHasAudio);
+        $('vVol').disabled = !vHasAudio; $('vMute').disabled = !vHasAudio;
+        $('tVideoHint').textContent = vHasAudio ? 'Sube, baja o silencia el audio original de tu video.' : 'Tu video no trae sonido. Agrega una canción o graba tu voz.';
+      }
+      function setVidVol(x) {
+        vidVol = x;
+        $('vVol').value = Math.round(x * 100); $('vVolO').textContent = pctTxt(x);
+        $('vMute').setAttribute('aria-pressed', String(x < 0.001));
+        $('vMute').textContent = x < 0.001 ? 'Activar' : 'Silenciar';
+        applyVolumes(); updateSndLbl();
+      }
+      $('vVol').addEventListener('input', e => { ensureGraph(); setVidVol(+e.target.value / 100); if (+e.target.value > 0) vidVolPrev = vidVol; });
+      $('vMute').addEventListener('click', () => { ensureGraph(); if (vidVol > 0.001) { vidVolPrev = vidVol; setVidVol(0); } else setVidVol(vidVolPrev || 1); if (!looping) playLoop(); });
+      $('eVol').addEventListener('input', e => { ensureGraph(); extraVol = +e.target.value / 100; $('eVolO').textContent = pctTxt(extraVol); applyVolumes(); updateSndLbl(); });
+      function goStep(n) {
+        step = n; stopLoop(); showErr('');
+        const inEditor = n === 1 || n === 2;
+        $('editor').classList.toggle('sf-hide', !inEditor);
+        $('upload').classList.add('sf-hide');
+        $('s1').classList.toggle('sf-hide', n !== 1); $('nav1').classList.toggle('sf-hide', n !== 1);
+        $('s2').classList.toggle('sf-hide', n !== 2); $('nav2').classList.toggle('sf-hide', n !== 2); $('goHint').classList.toggle('sf-hide', n !== 2);
+        $('out').classList.toggle('sf-hide', n !== 3);
+        ['st1', 'st2', 'st3'].forEach((id, i) => { $(id).classList.toggle('active', i + 1 === n); $(id).classList.toggle('done', i + 1 < n); });
+        updateSndLbl(); applyVolumes();
+        const target = inEditor ? $('editor') : $('out');
+        if (inEditor) layoutAll();
+        if (n === 1 && vFile && stripW !== tl.clientWidth) buildFilmstrip();
+        window.scrollTo({ top: target.getBoundingClientRect().top + scrollY - 4 });
+      }
+      const canRecord = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+
+      // ---------- aviso de espera ----------
+      // start(): se muestra si la tarea dura más de `delay` ms (0 = de inmediato). end(): se quita.
       const busy = (() => {
         let token = 0, timer = null, guard = null;
         const el = $('busy');
@@ -390,137 +518,339 @@
           },
         };
       })();
-      let creating = false;
-      const setStatus = t => { $('status').textContent = t; if (creating && t) busy.msg(t + ' Espera unos segundos, por favor.'); };
-      const setBar = p => { $('bar').style.display = 'block'; $('barI').style.width = Math.max(0, Math.min(100, p)) + '%'; if (creating) busy.pct(p); };
-      const showErr = t => { $('err').textContent = t || ''; };
-      const mode = () => document.querySelector('input[name=snd]:checked').value;
-      const curAudio = () => mode() === 'file' ? songFile : mode() === 'rec' ? recFile : null;
-      const canRecord = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+      const setStatus = t => { if (creating && t) busy.msg(t + ' Espera unos segundos, por favor.'); };
+      const setBar = p => { if (creating) busy.pct(p); };
 
       if (!window.WebAssembly || !window.Worker) {
         $('support').textContent = 'Tu navegador es muy antiguo para esta herramienta. Actualízalo o prueba con Chrome (Android) o Safari (iPhone).';
         $('pickV').classList.add('sf-hide'); $('camV').classList.add('sf-hide');
       }
-      // "Grabar un video" solo tiene sentido en celular o tablet (en PC abriría el explorador de archivos).
       if (!(window.matchMedia && matchMedia('(pointer: coarse)').matches)) $('camV').classList.add('sf-hide');
-      if (!canRecord) { $('chRec').classList.add('sf-hide'); }
+      if (!canRecord) $('tRec').classList.add('sf-hide');
 
-      // ---- pasos y bloqueos ----
-      function setLocked(el, locked) { el.classList.toggle('locked', locked); el.inert = locked; }
-      function updateSteps() {
-        const d1 = !!vFile, d2 = d1 && soundTouched, d3 = !!wBlob;
-        [['st1', d1], ['st2', d2], ['st3', d3]].forEach(([id, done]) => $(id).classList.toggle('done', done));
-        const cur = !d1 ? 'st1' : !d2 ? 'st2' : !d3 ? 'st3' : null;
-        ['st1', 'st2', 'st3'].forEach(id => $(id).classList.toggle('active', id === cur));
-        const m = mode();
-        $('go').disabled = !(vFile && (m === 'video' || m === 'none' || curAudio()) && !recording);
-      }
+      // ---------- 1. subir video ----------
+      $('fileV').addEventListener('change', e => onVideo(e.target.files[0]));
+      $('fileVcam').addEventListener('change', e => onVideo(e.target.files[0]));
+      $('changeV').addEventListener('click', () => { stopLoop(); $('editor').classList.add('sf-hide'); $('upload').classList.remove('sf-hide'); $('backWrap').classList.toggle('sf-hide', !vFile); $('upload').scrollIntoView({ block: 'start' }); });
+      $('backEditor').addEventListener('click', () => goStep(1));
+      $('to2').addEventListener('click', () => goStep(2));
+      $('back1').addEventListener('click', () => goStep(1));
 
-      // ---- video ----
-      function refreshSliders() {
-        const maxStart = Math.max(0, vDur - 1);
-        $('vStart').max = maxStart.toFixed(1);
-        if (+$('vStart').value > maxStart) $('vStart').value = maxStart;
-        const room = Math.max(1, Math.min(10, vDur - +$('vStart').value));
-        $('dur').max = (Math.floor(room * 2) / 2 || 1);
-        if (+$('dur').value > +$('dur').max) $('dur').value = $('dur').max;
-        $('vStartO').textContent = fmt(+$('vStart').value);
-        $('durO').textContent = fmt(+$('dur').value);
-        if (curAudio()) {
-          const am = Math.max(0, aDur - +$('dur').value);
-          $('aStart').max = am.toFixed(1);
-          if (+$('aStart').value > am) $('aStart').value = am;
-          $('aStartO').textContent = fmt(+$('aStart').value);
-        }
+      let videoTk = null, stripTok = 0;
+      function onVideo(f) {
+        if (!f) return;
+        showErr(''); stopLoop(); if (recording) stopRecording();
+        if (f.size > MAX_INPUT) { $('support').textContent = 'Ese video es muy pesado (más de 300 MB). Elige uno más corto.'; return; }
+        $('support').textContent = '';
+        videoTk = busy.start('Cargando tu video', 'Espera unos segundos, por favor. Si tu video es pesado puede tardar un poco.', 1500, 30000);
+        vFile = f; wBlob = mBlob = null;
+        if (vURL) URL.revokeObjectURL(vURL);
+        vURL = URL.createObjectURL(f);
+        $('vName').textContent = f.name;
+        const isGif = f.type === 'image/gif' || /\.gif$/i.test(f.name);
+        if (isGif) { $('gifImg').src = vURL; startNoPreview(true); return; }
+        noPreview = false;
+        vid.classList.remove('sf-hide'); $('gifImg').classList.add('sf-hide');
+        vid.onloadedmetadata = () => { vDur = vid.duration && isFinite(vid.duration) ? vid.duration : 10; enterEditor(); };
+        vid.onerror = () => startNoPreview(false);
+        vid.src = vURL + '#t=0.001';
       }
-      ['vStart', 'dur', 'aStart'].forEach(id => $(id).addEventListener('input', () => { refreshSliders(); stopPrev(); if (id === 'vStart' && !noPreview) vid.currentTime = +$('vStart').value; }));
-
-      // GIF o video que el navegador no puede mostrar: se crea igual, sin vista previa del clip.
-      let noPreview = false, autoSwitched = false, videoTk = null;
-      function showVideoUI(f) {
-        busy.end(videoTk);
-        $('vBox').classList.remove('sf-hide');
-        $('vName').textContent = '✓ ' + f.name; $('vName').classList.remove('sf-hide');
-        $('pickV').textContent = 'Elegir otro video'; $('camV').textContent = 'Grabar otro';
-        refreshSliders();
-        setLocked($('c2'), false); setLocked($('c3'), false);
-        updateSteps();
-        probeP = warmUp().then(probeAudio).catch(() => {});
-      }
-      function startNoPreview(f, isGif) {
+      function startNoPreview(isGif) {
         noPreview = true;
         vid.onloadedmetadata = vid.onerror = null;
         vid.removeAttribute('src'); vid.load();
-        vid.classList.add('sf-hide'); $('prev').classList.add('sf-hide');
+        vid.classList.add('sf-hide');
         $('gifImg').classList.toggle('sf-hide', !isGif);
-        $('noPrev').classList.toggle('sf-hide', isGif);
-        vDur = 10; $('vStart').max = 10; $('dur').max = 10; $('vStart').value = 0; $('dur').value = 5;
-        showVideoUI(f);
+        vDur = 10;
+        enterEditor();
       }
-      $('fileV').addEventListener('change', e => onVideo(e.target.files[0]));
-      $('fileVcam').addEventListener('change', e => onVideo(e.target.files[0]));
-      function onVideo(f) {
-        if (!f) return;
-        showErr(''); stopPrev(); if (recording) stopRecording();
-        if (f.size > MAX_INPUT) { showErr('Ese video es muy pesado (más de 300 MB). Elige uno más corto.'); return; }
-        videoTk = busy.start('Cargando tu video', 'Espera unos segundos, por favor. Si tu video es pesado puede tardar un poco.', 1500, 30000);
-        vFile = f; wBlob = mBlob = null; $('out').classList.add('sf-hide');
-        const url = URL.createObjectURL(f);
-        if (f.type === 'image/gif' || /\.gif$/i.test(f.name)) { $('gifImg').src = url; startNoPreview(f, true); return; }
-        noPreview = false;
-        vid.classList.remove('sf-hide'); $('prev').classList.remove('sf-hide');
-        $('gifImg').classList.add('sf-hide'); $('noPrev').classList.add('sf-hide');
-        vid.onloadedmetadata = () => {
-          vDur = vid.duration && isFinite(vid.duration) ? vid.duration : 10;
-          $('vStart').max = 10; $('dur').max = 10;
-          $('vStart').value = 0; $('dur').value = Math.min(5, Math.max(1, Math.floor(vDur * 2) / 2));
-          showVideoUI(f);
-        };
-        vid.onerror = () => startNoPreview(f, false);
-        vid.src = url;
+      function enterEditor() {
+        busy.end(videoTk);
+        $('intro').classList.add('sf-hide');
+        const isGifNow = !$('gifImg').classList.contains('sf-hide');
+        $('tlHint').innerHTML = noPreview && isGifNow
+          ? 'Tu GIF se ve arriba. Arrastra el <b>recuadro rojo</b> para elegir qué parte usar.'
+          : noPreview
+          ? 'Tu navegador no puede mostrar este video, pero igual puedes crear tu sticker. Arrastra el <b>recuadro rojo</b> para elegir el momento.'
+          : 'Arrastra el <b>recuadro rojo</b> sobre tu video. Al soltarlo, verás y escucharás ese momento arriba.';
+        selStart = 0;
+        selDur = DURS.filter(x => x <= Math.max(2, vDur)).reduce((a, x) => x <= 5 ? x : a, 2);
+        if (vDur < 2) selDur = Math.max(0.5, Math.floor(vDur * 2) / 2);
+        vHasAudio = true; setVideoAudioUI();
+        buildChips(); setSnd(sndMode, true);
+        goStep(1);
+        buildFilmstrip();
+        probeP = warmUp().then(probeAudio).catch(() => {});
       }
 
-      // ---- sonido ----
-      // Muestra el reproductor y la barra "desde qué parte" para el audio de la opción elegida.
-      let audURL = null;
-      function showAudio() {
-        const m = mode(), a = curAudio();
-        $('aBox').classList.toggle('sf-hide', m !== 'file');
-        $('rBox').classList.toggle('sf-hide', m !== 'rec');
-        if (m === 'file') $('aBox').appendChild($('aOpts'));
-        if (m === 'rec') $('rBox').appendChild($('aOpts'));
-        if (!a) { $('aOpts').classList.add('sf-hide'); return; }
-        if (audURL) URL.revokeObjectURL(audURL);
-        audURL = URL.createObjectURL(a);
-        aDur = a === recFile ? recDur : 30;
-        const aTk = busy.start('Cargando tu audio', 'Espera unos segundos, por favor.', 1500, 20000);
-        aud.onloadedmetadata = () => {
-          busy.end(aTk);
-          if (aud.duration && isFinite(aud.duration)) aDur = aud.duration;
-          refreshSliders();
-        };
-        aud.onerror = () => { busy.end(aTk); showErr('No pude leer ese audio. Prueba con un MP3 o M4A.'); };
-        aud.src = audURL;
-        $('aStart').value = 0;
-        $('aOpts').classList.remove('sf-hide');
-        refreshSliders();
+      // ---------- línea de tiempo ----------
+      const tl = $('tl'), win = $('tlWin');
+      function clampSel() {
+        selDur = Math.min(selDur, Math.max(0.5, vDur));
+        selStart = Math.min(Math.max(0, selStart), Math.max(0, vDur - selDur));
       }
-      document.querySelectorAll('input[name=snd]').forEach(r => r.addEventListener('change', () => {
-        soundTouched = true; autoSwitched = false; showErr('');
-        if (recording && mode() !== 'rec') stopRecording();
-        stopPrev(); showAudio(); updateSteps();
-      }));
-      $('fileA').addEventListener('change', e => {
-        const f = e.target.files[0]; if (!f) return;
-        songFile = f; soundTouched = true; showErr('');
-        $('aName').textContent = '✓ ' + f.name; $('aName').classList.remove('sf-hide');
-        $('pickA').textContent = 'Cambiar audio';
-        showAudio(); updateSteps();
+      function layoutTimeline() {
+        clampSel();
+        const w = tl.clientWidth || 1;
+        const realW = vDur ? (selDur / vDur) * w : w;
+        const shownW = Math.max(30, realW);
+        const left = vDur ? (selStart / vDur) * w : 0;
+        const l = Math.min(left, w - shownW);
+        win.style.left = l + 'px'; win.style.width = shownW + 'px';
+        $('tlDimL').style.width = Math.max(0, l) + 'px';
+        $('tlDimR').style.width = Math.max(0, w - l - shownW) + 'px';
+        win.setAttribute('aria-valuemax', Math.max(0, vDur - selDur).toFixed(1));
+        win.setAttribute('aria-valuenow', selStart.toFixed(1));
+        win.setAttribute('aria-valuetext', 'Desde ' + fmtS(selStart) + ' hasta ' + fmtS(selStart + selDur));
+        $('tlEnd').textContent = fmtClock(vDur);
+        $('selLbl').textContent = fmtS(selStart) + ' – ' + fmtS(selStart + selDur);
+      }
+      function layoutAll() { layoutTimeline(); layoutWave(); }
+
+      let drag = null, seekT = 0;
+      tl.addEventListener('pointerdown', e => {
+        if (!vDur) return;
+        const r = tl.getBoundingClientRect(), x = e.clientX - r.left;
+        const wl = parseFloat(win.style.left) || 0, ww = parseFloat(win.style.width) || 0;
+        const inside = x >= wl && x <= wl + ww;
+        const offset = inside ? x - wl : ww / 2;
+        drag = { id: e.pointerId, offset, wasPlaying: looping };
+        stopLoop();
+        tl.setPointerCapture(e.pointerId);
+        moveTo(x - offset, r.width, ww);
+        e.preventDefault();
+      });
+      tl.addEventListener('pointermove', e => {
+        if (!drag || e.pointerId !== drag.id) return;
+        const r = tl.getBoundingClientRect();
+        moveTo(e.clientX - r.left - drag.offset, r.width, parseFloat(win.style.width) || 0);
+      });
+      const endDrag = e => { if (!drag || e.pointerId !== drag.id) return; drag = null; playLoop(); };
+      tl.addEventListener('pointerup', endDrag);
+      tl.addEventListener('pointercancel', endDrag);
+      function moveTo(px, w, ww) {
+        const usable = Math.max(1, w - ww);
+        const maxStart = Math.max(0, vDur - selDur);
+        selStart = Math.round(Math.min(1, Math.max(0, px / usable)) * maxStart * 10) / 10;
+        layoutTimeline();
+        // muestra el cuadro de ese segundo mientras arrastras
+        const now = performance.now();
+        if (!noPreview && now - seekT > 80) { seekT = now; try { if (vid.fastSeek) vid.fastSeek(selStart); else vid.currentTime = selStart; } catch (_) {} }
+      }
+      function nudge(dt) { selStart += dt; clampSel(); layoutTimeline(); playLoop(); }
+      $('nudgeL').addEventListener('click', () => nudge(-0.5));
+      $('nudgeR').addEventListener('click', () => nudge(0.5));
+      win.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft') { nudge(-0.5); e.preventDefault(); }
+        if (e.key === 'ArrowRight') { nudge(0.5); e.preventDefault(); }
       });
 
-      // ---- grabar con el micrófono ----
-      let recording = false, recorder = null, recStream = null, recTimer = null, recDur = 0;
+      function buildChips() {
+        const box = $('chips'); box.textContent = '';
+        const opts = DURS.filter(x => x <= vDur + 0.05);
+        if (!opts.length) opts.push(Math.max(0.5, Math.floor(vDur * 2) / 2));
+        if (!opts.includes(selDur)) selDur = opts.reduce((a, x) => x <= 5 ? x : a, opts[0]);
+        opts.forEach(x => {
+          const b = document.createElement('button');
+          b.type = 'button'; b.className = 'sf-chip'; b.textContent = (Number.isInteger(x) ? x : x.toFixed(1).replace('.', ',')) + ' s';
+          b.setAttribute('aria-pressed', String(x === selDur));
+          b.addEventListener('click', () => {
+            selDur = x;
+            box.querySelectorAll('.sf-chip').forEach(c => c.setAttribute('aria-pressed', String(c === b)));
+            layoutAll(); playLoop();
+          });
+          box.appendChild(b);
+        });
+      }
+
+      // Tira de fotogramas: un segundo video invisible salta a varios puntos y se dibujan en el canvas.
+      let stripW = -1;
+      async function buildFilmstrip() {
+        const w = tl.clientWidth, h = tl.clientHeight;
+        if (!w) return; // la línea de tiempo no se ve (otra pantalla): se dibuja al volver
+        const my = ++stripTok;
+        stripW = w;
+        const cv = $('tlCanvas');
+        const dpr = Math.min(2, window.devicePixelRatio || 1);
+        cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+        const cx = cv.getContext('2d');
+        cx.fillStyle = '#2a2a2a'; cx.fillRect(0, 0, cv.width, cv.height);
+        if (noPreview) {
+          if (!$('gifImg').classList.contains('sf-hide')) {
+            const img = $('gifImg'); await (img.decode ? img.decode().catch(() => {}) : Promise.resolve());
+            const n = Math.max(4, Math.round(w / (h * 0.9))), tw = cv.width / n;
+            for (let i = 0; i < n; i++) drawCover(cx, img, img.naturalWidth, img.naturalHeight, i * tw, 0, tw, cv.height);
+          }
+          return;
+        }
+        const tv = document.createElement('video');
+        tv.muted = true; tv.playsInline = true; tv.preload = 'auto'; tv.src = vURL;
+        const ready = await new Promise(res => {
+          let done = false; const fin = v => { if (!done) { done = true; res(v); } };
+          tv.addEventListener('loadeddata', () => fin(true), { once: true });
+          tv.addEventListener('error', () => fin(false), { once: true });
+          setTimeout(() => { tv.play().then(() => tv.pause()).catch(() => {}); }, 1200); // iPhone: carga datos al reproducir en silencio
+          setTimeout(() => fin(tv.readyState >= 2), 6000);
+        });
+        if (!ready || my !== stripTok) { tv.removeAttribute('src'); tv.load(); return; }
+        const n = Math.max(4, Math.round(w / (h * 0.9))), tw = cv.width / n;
+        for (let i = 0; i < n; i++) {
+          if (my !== stripTok) break;
+          const t = Math.min(vDur - 0.05, ((i + 0.5) / n) * vDur);
+          const ok = await new Promise(res => { const tt = setTimeout(() => res(false), 2500); tv.addEventListener('seeked', () => { clearTimeout(tt); res(true); }, { once: true }); tv.currentTime = Math.max(0, t); });
+          if (ok) drawCover(cx, tv, tv.videoWidth, tv.videoHeight, i * tw, 0, tw, cv.height);
+        }
+        tv.removeAttribute('src'); tv.load();
+      }
+      function drawCover(cx, src, sw0, sh0, dx, dy, dw, dh) {
+        if (!sw0 || !sh0) return;
+        const k = Math.max(dw / sw0, dh / sh0), sw = dw / k, sh = dh / k;
+        try { cx.drawImage(src, (sw0 - sw) / 2, (sh0 - sh) / 2, sw, sh, Math.floor(dx), dy, Math.ceil(dw), dh); } catch (_) {}
+      }
+
+      // ---------- vista previa en bucle (imagen + sonido elegidos) ----------
+      let looping = false, raf = 0;
+      const frame = $('frame');
+      function playLoop() {
+        stopLoop();
+        if (recording || !vFile || step === 3) return;
+        const a = effAudio(), useAud = !!a;
+        if (noPreview) {
+          if (useAud) { aud.currentTime = audStart; aud.play().catch(() => {}); looping = true; frame.classList.add('playing'); raf = requestAnimationFrame(tickAudioOnly); }
+          return;
+        }
+        looping = true; frame.classList.add('playing');
+        ensureGraph(); applyVolumes();
+        vid.currentTime = selStart;
+        vid.play().catch(() => { stopLoop(); });
+        if (useAud) { aud.currentTime = audStart; aud.play().catch(() => {}); } else aud.pause();
+        $('tlHead').style.display = 'block';
+        raf = requestAnimationFrame(tick);
+      }
+      function tick() {
+        if (!looping) return;
+        const t = vid.currentTime;
+        if (t >= selStart + selDur - 0.02 || vid.ended || t < selStart - 0.3) {
+          vid.currentTime = selStart;
+          if (effAudio()) { aud.currentTime = audStart; aud.play().catch(() => {}); }
+        } else if (effAudio() && !aud.paused) {
+          const want = audStart + (t - selStart);
+          if (Math.abs(aud.currentTime - want) > 0.3) aud.currentTime = want;
+        }
+        const w = tl.clientWidth;
+        $('tlHead').style.left = (vDur ? (t / vDur) * w : 0) + 'px';
+        raf = requestAnimationFrame(tick);
+      }
+      function tickAudioOnly() {
+        if (!looping) return;
+        if (aud.currentTime >= audStart + selDur || aud.ended) { aud.currentTime = audStart; aud.play().catch(() => {}); }
+        raf = requestAnimationFrame(tickAudioOnly);
+      }
+      function stopLoop() {
+        looping = false; cancelAnimationFrame(raf);
+        vid.pause(); aud.pause();
+        frame.classList.remove('playing');
+        $('tlHead').style.display = 'none';
+      }
+      frame.addEventListener('click', () => { if (recording) return; looping ? stopLoop() : playLoop(); });
+      frame.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); frame.click(); } });
+      document.addEventListener('visibilitychange', () => { if (document.hidden && !creating) stopLoop(); });
+
+      // ---------- 2. sonido ----------
+      document.querySelectorAll('.sf-tile').forEach(t => t.addEventListener('click', () => {
+        ensureGraph();
+        const m = t.dataset.snd;
+        if (m === 'file' && !songFile) { setSnd('file'); $('fileA').click(); return; }
+        setSnd(m); if (m !== 'rec') playLoop(); else stopLoop();
+      }));
+      function setSnd(m, silent) {
+        if (recording && m !== 'rec') stopRecording();
+        sndMode = m;
+        document.querySelectorAll('.sf-tile').forEach(t => t.setAttribute('aria-pressed', String(t.dataset.snd === m)));
+        $('pSong').classList.toggle('sf-hide', m !== 'file');
+        $('pRec').classList.toggle('sf-hide', m !== 'rec');
+        const a = curAudio();
+        $('eVolBox').classList.toggle('sf-hide', !a);
+        $('eVolLbl').textContent = m === 'rec' ? 'Volumen de tu voz' : 'Volumen de la canción';
+        updateSndLbl();
+        if (a && aud.dataset.for !== a.name + a.size) { if (aud.src) URL.revokeObjectURL(aud.src); aud.src = URL.createObjectURL(a); aud.dataset.for = a.name + a.size; }
+        audStart = m === 'file' ? waveStart() : 0;
+        if (m === 'file') layoutWave();
+        if (!silent) showErr('');
+      }
+      $('fileA').addEventListener('change', async e => {
+        const f = e.target.files[0]; if (!f) return;
+        songFile = f; e.target.value = '';
+        $('songName').textContent = '✓ ' + f.name;
+        $('pickA').textContent = 'Cambiar canción';
+        const tk = busy.start('Cargando tu canción', 'Espera unos segundos, por favor.', 1500, 30000);
+        songDur = await new Promise(res => { const a = new Audio(); a.preload = 'metadata'; a.onloadedmetadata = () => res(isFinite(a.duration) ? a.duration : 0); a.onerror = () => res(0); a.src = URL.createObjectURL(f); });
+        await buildWave(f);
+        busy.end(tk);
+        $('waveBox').classList.remove('sf-hide');
+        $('waveScroll').scrollLeft = 0;
+        setSnd('file'); layoutWave(); playLoop();
+      });
+
+      // Onda de la canción: se desliza bajo una ventana fija (como la música de Instagram).
+      let peaks = null, pps = 30;
+      async function buildWave(f) {
+        peaks = null;
+        if (f.size > 25 * 1024 * 1024) return;
+        try {
+          const buf = await f.arrayBuffer();
+          const Ctx = window.OfflineAudioContext || window.webkitOfflineAudioContext;
+          const ac = new Ctx(1, 1, 8000);
+          const ab = await new Promise((res, rej) => { const p = ac.decodeAudioData(buf, res, rej); if (p && p.then) p.then(res, rej); });
+          const ch = ab.getChannelData(0), step = Math.max(1, Math.floor(ab.sampleRate / 20)); // 20 picos por segundo
+          peaks = new Float32Array(Math.ceil(ch.length / step));
+          for (let i = 0; i < peaks.length; i++) { let m = 0; const end = Math.min(ch.length, (i + 1) * step); for (let j = i * step; j < end; j += 4) { const v = Math.abs(ch[j]); if (v > m) m = v; } peaks[i] = m; }
+          const mx = Math.max(0.01, ...peaks.slice(0, 20000)); for (let i = 0; i < peaks.length; i++) peaks[i] = Math.min(1, peaks[i] / mx);
+          if (!songDur) songDur = ab.duration;
+        } catch (_) { peaks = null; }
+      }
+      const WIN_LEFT = 20;
+      function layoutWave() {
+        if (!songFile || $('waveBox').classList.contains('sf-hide') && sndMode !== 'file') return;
+        const box = $('wave'), sc = $('waveScroll'), cv = $('waveCanvas');
+        const cw = box.clientWidth || 300;
+        const dur = Math.max(selDur, songDur || selDur);
+        pps = Math.min((cw * 0.55) / selDur, 16000 / dur);
+        const winW = selDur * pps;
+        const width = Math.round(WIN_LEFT + dur * pps + (cw - WIN_LEFT - winW));
+        const keep = audStart;
+        const dpr = Math.min(2, window.devicePixelRatio || 1);
+        cv.style.width = width + 'px'; cv.width = Math.min(32000, Math.round(width * dpr)); cv.height = Math.round(64 * dpr);
+        const cx = cv.getContext('2d'), k = cv.width / width;
+        cx.clearRect(0, 0, cv.width, cv.height);
+        const mid = cv.height / 2;
+        for (let x = 0; x < dur * pps; x += 3) {
+          const t = x / pps;
+          const v = peaks ? peaks[Math.min(peaks.length - 1, Math.floor(t * 20))] || 0 : 0.25 + 0.15 * Math.sin(t * 3);
+          const hgt = Math.max(2, v * (cv.height * 0.8));
+          cx.fillStyle = 'rgba(255,255,255,.55)';
+          cx.fillRect((WIN_LEFT + x) * k, mid - hgt / 2, 2 * k, hgt);
+        }
+        cx.fillStyle = 'rgba(214,178,104,.9)'; cx.font = (11 * dpr) + 'px Inter, sans-serif';
+        for (let s = 0; s <= dur; s += (dur > 120 ? 30 : 10)) cx.fillText(fmtClock(s), (WIN_LEFT + s * pps + 3) * k, 12 * dpr);
+        const ww = $('waveWin'); ww.style.left = WIN_LEFT + 'px'; ww.style.width = winW + 'px';
+        sc.scrollLeft = keep * pps;
+        $('waveDur').textContent = fmtS(selDur);
+        $('waveFrom').textContent = fmtClock(keep);
+      }
+      function waveStart() { return Math.max(0, Math.min(($('waveScroll').scrollLeft || 0) / pps, Math.max(0, (songDur || 0) - selDur))); }
+      let waveT = 0;
+      $('waveScroll').addEventListener('scroll', () => {
+        audStart = waveStart();
+        $('waveFrom').textContent = fmtClock(audStart);
+        if (looping) aud.pause();
+        clearTimeout(waveT);
+        waveT = setTimeout(() => { if (sndMode === 'file') playLoop(); }, 280);
+      }, { passive: true });
+      window.addEventListener('resize', () => { clearTimeout(window.__sfR); window.__sfR = setTimeout(() => { if (vFile) { layoutAll(); buildFilmstrip(); } }, 200); });
+
+      // ---------- grabar con el micrófono ----------
+      let recording = false, recorder = null, recStream = null, recTimer = null;
       function pickMime() {
         const opts = ['audio/webm;codecs=opus', 'audio/mp4', 'audio/webm', 'audio/ogg;codecs=opus'];
         if (!MediaRecorder.isTypeSupported) return '';
@@ -530,77 +860,55 @@
       $('recBtn').addEventListener('click', async () => {
         if (recording) { stopRecording(); return; }
         showErr('');
-        try {
-          recStream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        } catch (e) {
-          $('recStatus').textContent = 'No pudimos usar el micrófono. Revisa que el navegador tenga permiso para usarlo e inténtalo de nuevo.';
-          track('sticker_mic_denegado');
-          return;
-        }
+        try { recStream = await navigator.mediaDevices.getUserMedia({ audio: true }); }
+        catch (e) { $('recStatus').textContent = 'No pudimos usar el micrófono. Revisa que el navegador tenga permiso para usarlo e inténtalo de nuevo.'; track('sticker_mic_denegado'); return; }
         const mime = pickMime();
         let r;
         try { r = mime ? new MediaRecorder(recStream, { mimeType: mime }) : new MediaRecorder(recStream); }
         catch (_) { r = new MediaRecorder(recStream); }
         recorder = r;
-        const chunks = [];
-        const d = +$('dur').value, s = +$('vStart').value;
+        const chunks = [], d = selDur;
         r.ondataavailable = ev => { if (ev.data && ev.data.size) chunks.push(ev.data); };
         r.onstop = () => {
           clearInterval(recTimer); recording = false;
           recStream.getTracks().forEach(t => t.stop());
-          vid.pause(); vid.muted = false;
+          vid.pause(); frame.classList.remove('playing');
           const elapsed = (performance.now() - t0) / 1000;
           const type = (r.mimeType || mime || 'audio/webm').split(';')[0];
           const blob = new Blob(chunks, { type });
           $('recBtn').textContent = 'Grabar de nuevo';
-          $('recBtn').classList.remove('ghost'); $('recBtn').classList.add('primary');
-          if (blob.size < 800 || elapsed < 0.4) { $('recStatus').textContent = 'No se grabó nada. Toca el botón y habla cerca del celular.'; updateSteps(); return; }
+          if (blob.size < 800 || elapsed < 0.4) { $('recStatus').textContent = 'No se grabó nada. Toca el botón y habla cerca del celular.'; return; }
           const extA = /mp4|aac|m4a/.test(type) ? 'm4a' : /ogg/.test(type) ? 'ogg' : 'webm';
-          recFile = new File([blob], 'grabacion.' + extA, { type });
+          recFile = new File([blob], 'grabacion-' + Date.now() + '.' + extA, { type });
           recDur = Math.min(elapsed, d + 0.5);
-          soundTouched = true;
-          $('recStatus').textContent = '✓ Grabación lista (' + fmt(recDur) + '). Escúchala o toca «Probar con el sonido».';
-          showAudio(); updateSteps();
+          $('recStatus').textContent = '✓ Grabación lista (' + fmtS(recDur) + '). Toca el video de arriba para verla y escucharla.';
+          setSnd('rec'); playLoop();
           track('sticker_grabacion', { segundos: Math.round(recDur) });
         };
-        // El clip se reproduce en silencio desde el segundo elegido para grabar sincronizado.
-        stopPrev();
-        if (!noPreview) { vid.muted = true; vid.currentTime = s; vid.play().catch(() => {}); }
+        stopLoop();
+        if (!noPreview) { vid.muted = true; vid.currentTime = selStart; vid.play().catch(() => {}); frame.classList.add('playing'); }
         const t0 = performance.now();
         r.start(250);
-        recording = true; updateSteps();
+        recording = true;
         $('recBtn').textContent = 'Detener';
         recTimer = setInterval(() => {
           const el = (performance.now() - t0) / 1000;
-          $('recStatus').textContent = '● Grabando… ' + fmt(Math.min(el, d)) + ' de ' + fmt(d);
+          $('recStatus').textContent = '● Grabando… ' + fmtS(Math.min(el, d)) + ' de ' + fmtS(d);
           if (el >= d) stopRecording();
         }, 100);
       });
 
-      // ---- vista previa ----
-      let tmr = null;
-      function stopPrev() { clearInterval(tmr); vid.pause(); aud.pause(); vid.muted = false; }
-      function preview() {
-        stopPrev();
-        const s = +$('vStart').value, d = +$('dur').value, as = +$('aStart').value, m = mode();
-        const useAud = (m === 'file' || m === 'rec') && !!curAudio();
-        if (noPreview) { if (useAud) { aud.currentTime = as; aud.play().catch(() => {}); } return; }
-        const start = () => {
-          vid.currentTime = s; vid.muted = m !== 'video'; vid.play().catch(() => {});
-          if (useAud) { aud.currentTime = as; aud.play().catch(() => {}); }
-        };
-        start();
-        tmr = setInterval(() => { if (vid.currentTime >= s + d || vid.ended) start(); }, 100);
-      }
-      $('prev').addEventListener('click', preview);
-      $('prev2').addEventListener('click', preview);
-      vid.addEventListener('pause', () => { if (!vid.seeking) { clearInterval(tmr); aud.pause(); } });
+      // ---------- encuadre ----------
+      document.querySelectorAll('[data-fit]').forEach(b => b.addEventListener('click', () => {
+        fitMode = b.dataset.fit;
+        document.querySelectorAll('[data-fit]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+        frame.classList.toggle('fit', fitMode === 'fit');
+      }));
 
-      // ---- motor de video (ffmpeg en el navegador) ----
+      // ---------- motor de video (ffmpeg en el navegador) ----------
       function warmUp() {
         if (ffReady) return ffReady;
         ffReady = (async () => {
-          setStatus('Preparando el motor de video (solo la primera vez, ~30 MB)…');
           const { FFmpeg } = FFmpegWASM, { toBlobURL } = FFmpegUtil;
           ff = new FFmpeg();
           ff.on('log', ({ message }) => { logBuf += message + '\n'; });
@@ -609,14 +917,10 @@
             wasmURL: await toBlobURL(CORE + '/ffmpeg-core.wasm', 'application/wasm'),
             classWorkerURL: await toBlobURL(WORKER, 'text/javascript'),
           });
-          setStatus('');
-        })().catch(e => { ffReady = null; showErr('No se pudo cargar el motor de video. Revisa tu conexión y recarga la página.'); setStatus(''); throw e; });
+        })().catch(e => { ffReady = null; showErr('No se pudo cargar el motor de video. Revisa tu conexión y recarga la página.'); throw e; });
         return ffReady;
       }
-
       const ext = f => (f.name.split('.').pop() || 'bin').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 5) || 'bin';
-
-      // Pantalla encendida mientras se crea (el celular pausa la pestaña si se apaga).
       let wake = null;
       async function keepAwake(on) {
         try {
@@ -624,7 +928,6 @@
           else if (wake) { await wake.release(); wake = null; }
         } catch (_) {}
       }
-
       // Monta el archivo sin copiarlo entero a la memoria (clave en celulares). Si falla, lo copia.
       const mounted = [];
       async function useFile(dir, file, name) {
@@ -643,8 +946,7 @@
         for (const d of mounted.splice(0)) { try { await ff.unmount(d); } catch (_) {} try { await ff.deleteDir(d); } catch (_) {} }
         for (const f of extra) { try { await ff.deleteFile(f); } catch (_) {} }
       }
-
-      // ¿El video trae sonido? Se averigua apenas carga el motor.
+      // ¿El video trae sonido? (y duración, si el navegador no la pudo leer)
       async function probeAudio() {
         const f = vFile; if (!f) return;
         try {
@@ -654,18 +956,12 @@
           const dm = logBuf.match(/Duration: (\d+):(\d+):(\d+(?:\.\d+)?)/);
           if (noPreview && dm && f === vFile) {
             vDur = (+dm[1]) * 3600 + (+dm[2]) * 60 + (+dm[3]);
-            $('dur').value = Math.min(+$('dur').value, Math.max(1, Math.floor(vDur * 2) / 2));
-            refreshSliders();
+            buildChips(); layoutAll();
           }
         } catch (_) { vHasAudio = true; }
         await cleanup(['probe.' + ext(f)]);
-        $('chVideo').classList.toggle('off', !vHasAudio);
-        $('sndVideoHint').textContent = vHasAudio ? 'Usamos el audio que ya trae tu clip.' : 'Este video no trae sonido. Elige una canción o graba tu voz.';
-        if (!vHasAudio && mode() === 'video') {
-          document.querySelector('input[name=snd][value=file]').checked = true; autoSwitched = true; showAudio(); updateSteps();
-        } else if (vHasAudio && autoSwitched && mode() === 'file' && !songFile) {
-          document.querySelector('input[name=snd][value=video]').checked = true; autoSwitched = false; showAudio(); updateSteps();
-        }
+        if (f !== vFile) return;
+        setVideoAudioUI(); updateSndLbl(); applyVolumes();
       }
 
       const BASE_VF = {
@@ -675,9 +971,7 @@
       const webpVf = (fit, fps) => fit === 'fill' ? `fps=${fps}` : `fps=${fps},format=rgba,pad=512:512:(ow-iw)/2:(oh-ih)/2:color=0x00000000`;
       const mp4Vf = fit => fit === 'fill' ? 'format=yuv420p' : 'pad=512:512:(ow-iw)/2:(oh-ih)/2:color=black,format=yuv420p';
 
-      // Reduce el tramo elegido a 512 px reproduciéndolo con el reproductor del navegador (decodifica
-      // con el hardware del celular: un video 4K de iPhone tarda lo que dura el tramo) y tomando
-      // 24 cuadros por segundo en un canvas. Devuelve los cuadros JPEG o null si no se puede.
+      // Reduce el tramo a 512 px con el reproductor del navegador (usa el hardware del celular).
       async function captureFrames(fit, s, d) {
         if (noPreview || !('requestVideoFrameCallback' in HTMLVideoElement.prototype)) return null;
         const vw = vid.videoWidth, vh = vid.videoHeight;
@@ -689,9 +983,8 @@
         const cv = document.createElement('canvas'); cv.width = cw; cv.height = ch;
         const cx = cv.getContext('2d');
         try { for (const n of await ff.listDir('/')) if (/^f\d{4}\.jpg$/.test(n.name)) await ff.deleteFile(n.name); } catch (_) {}
-        stopPrev();
-        const hadControls = vid.controls;
-        vid.controls = false; vid.muted = true;
+        stopLoop();
+        vid.muted = true;
         try {
           await new Promise((res, rej) => {
             const t = setTimeout(() => rej(new Error('seek')), 6000);
@@ -721,35 +1014,32 @@
           while (k < total && cur) frames[k++] = cur;
           const blobs = await Promise.all(frames);
           return blobs.every(Boolean) ? blobs : null;
-        } catch (_) {
-          vid.pause();
-          return null;
-        } finally {
-          vid.controls = hadControls; vid.muted = false;
-        }
+        } catch (_) { vid.pause(); return null; }
+        finally { vid.muted = false; }
       }
 
+      // ---------- 3. crear ----------
       $('go').addEventListener('click', async () => {
-        if (!vFile) return;
-        const m = mode(), aSrc = curAudio();
-        if (m === 'file' && !aSrc) { showErr('Elige un audio en el paso 2, o cambia a «Sin sonido».'); return; }
-        if (m === 'rec' && !aSrc) { showErr('Graba tu sonido en el paso 2, o cambia a «Sin sonido».'); return; }
-        stopPrev(); showErr(''); $('out').classList.add('sf-hide');
-        $('go').disabled = true; $('prev').disabled = true; $('prev2').disabled = true;
-        creating = true;
+        if (!vFile || creating) return;
+        const m = sndMode, aSrc = curAudio();
+        if (m === 'file' && !aSrc) { showErr('Elige una canción en el paso 2, o cambia a «Sin sonido».'); return; }
+        if (m === 'rec' && !aSrc) { showErr('Graba tu voz en el paso 2, o cambia a «Sin sonido».'); return; }
+        if (recording) stopRecording();
+        stopLoop(); showErr('');
+        $('go').disabled = true; creating = true;
         const goTk = busy.start('Estamos creando tu sticker', 'Espera unos segundos, por favor. No cierres esta pantalla.', 0);
-        const s = (+$('vStart').value).toFixed(2), d = (+$('dur').value).toFixed(2), as = (+$('aStart').value).toFixed(2);
-        const fit = document.querySelector('input[name=fit]:checked').value;
+        const s = selStart.toFixed(2), d = selDur.toFixed(2), as = audStart.toFixed(2), fit = fitMode;
         try {
           await keepAwake(true);
+          setStatus('Preparando el motor de video…');
           await warmUp(); if (probeP) await probeP;
           setBar(2); setStatus('Leyendo tu video…');
           const inV = await useFile('/vin', vFile, 'in_v.' + ext(vFile));
           const inA = aSrc ? await useFile('/ain', aSrc, 'in_a.' + ext(aSrc)) : null;
-          const useVideoAudio = m === 'video' && vHasAudio;
+          const vv = vidVol, ev = extraVol;
+          const useV = vHasAudio && vv > 0.001;
+          const useA = !!inA && ev > 0.001;
 
-          // 0) Clip base de 512x512, el tamaño mínimo de un sticker. Primero intenta con el reproductor
-          //    del propio celular (rápido, usa su hardware); si no se puede, lo hace el motor (más lento).
           setStatus('Reduciendo tu video al tamaño de sticker…');
           let rb = -1, frameNames = [];
           const frames = await captureFrames(fit, +s, +d);
@@ -761,7 +1051,6 @@
             }
             rb = await ff.exec(['-framerate', '24', '-i', 'f%04d.jpg', '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '16', '-pix_fmt', 'yuv420p', 'base.mp4']);
             for (const n of frameNames) { try { await ff.deleteFile(n); } catch (_) {} }
-            frameNames = [];
             if (rb !== 0) { try { await ff.deleteFile('base.mp4'); } catch (_) {} }
           }
           if (rb !== 0) {
@@ -773,7 +1062,6 @@
           if (rb !== 0) throw new Error('base');
           const metodo = frames ? 'navegador' : 'motor';
 
-          // 1) sticker webp: baja la calidad hasta que pese menos de 500 KB
           const ladder = [[20, 70], [15, 60], [15, 50], [12, 45], [10, 40], [10, 30], [8, 25], [8, 15]];
           const first = +d <= 3 ? 0 : +d <= 6 ? 1 : 3;
           let wData = null;
@@ -789,73 +1077,103 @@
           }
           wBlob = new Blob([wData], { type: 'image/webp' });
 
-          // 2) clip mp4 con sonido
-          setStatus('Creando el clip con sonido…');
-          const args = ['-i', 'base.mp4'];
-          if (inA) args.push('-ss', as, '-t', d, '-i', inA, '-map', '0:v:0', '-map', '1:a:0');
-          else if (useVideoAudio) args.push('-ss', s, '-t', d, '-i', inV, '-map', '0:v:0', '-map', '1:a:0');
-          else args.push('-map', '0:v:0', '-an');
-          const audioOn = !!(inA || useVideoAudio);
-          args.push('-vf', mp4Vf(fit), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '28', '-pix_fmt', 'yuv420p');
-          if (audioOn) args.push('-c:a', 'aac', '-b:a', '96k', '-ac', '2', '-af', `afade=t=in:d=0.05,afade=t=out:st=${Math.max(0, d - 0.25)}:d=0.25`);
-          args.push('-t', d, '-movflags', '+faststart', 'out.mp4');
+          setStatus('Poniéndole el sonido…');
+          // Mezcla: sonido del video y sonido agregado, cada uno con su volumen.
+          const buildArgs = (useNormalize) => {
+            const args = ['-i', 'base.mp4'], chains = [`[0:v]${mp4Vf(fit)}[vout]`], labels = [];
+            let idx = 1;
+            const fmtA = 'aformat=sample_rates=44100:channel_layouts=stereo';
+            if (useV) { args.push('-ss', s, '-t', d, '-i', inV); chains.push(`[${idx}:a]${fmtA},volume=${vv.toFixed(2)}[av]`); labels.push('[av]'); idx++; }
+            if (useA) { args.push('-ss', as, '-t', d, '-i', inA); chains.push(`[${idx}:a]${fmtA},volume=${ev.toFixed(2)}[ae]`); labels.push('[ae]'); idx++; }
+            const fades = `afade=t=in:d=0.05,afade=t=out:st=${Math.max(0, d - 0.25)}:d=0.25`;
+            if (labels.length === 2) chains.push(`[av][ae]amix=inputs=2:duration=longest${useNormalize ? ':normalize=0' : ''},alimiter=limit=0.97,${fades}[aout]`);
+            else if (labels.length === 1) chains.push(`${labels[0]}alimiter=limit=0.97,${fades}[aout]`);
+            args.push('-filter_complex', chains.join(';'), '-map', '[vout]');
+            if (labels.length) args.push('-map', '[aout]', '-c:a', 'aac', '-b:a', '96k');
+            args.push('-c:v', 'libx264', '-preset', 'veryfast', '-crf', '28', '-pix_fmt', 'yuv420p', '-t', d, '-movflags', '+faststart', 'out.mp4');
+            return args;
+          };
+          const audioOn = useV || useA;
           const onP2 = ({ progress }) => setBar(65 + Math.min(1, Math.max(0, progress)) * 33);
           ff.on('progress', onP2);
-          const rm = await ff.exec(args);
+          let rm = await ff.exec(buildArgs(true));
+          if (rm !== 0 && useV && useA) { try { await ff.deleteFile('out.mp4'); } catch (_) {} rm = await ff.exec(buildArgs(false)); }
           ff.off('progress', onP2);
           if (rm !== 0) throw new Error('mp4');
           mBlob = new Blob([await ff.readFile('out.mp4')], { type: 'video/mp4' });
           await cleanup(['base.mp4', 'out.webp', 'out.mp4']);
 
-          urls.forEach(u => URL.revokeObjectURL(u)); urls = [];
-          const wu = URL.createObjectURL(wBlob), mu = URL.createObjectURL(mBlob); urls.push(wu, mu);
-          $('oImg').src = wu; $('oVid').src = mu;
-          const wOk = wBlob.size <= MAX_BYTES;
-          $('wTag').textContent = kb(wBlob.size) + (wOk ? ' · cabe en WhatsApp' : ' · pasa de 500 KB');
-          $('wTag').className = 'sf-tag' + (wOk ? '' : ' warn');
-          $('mTag').textContent = kb(mBlob.size) + (audioOn ? ' · con sonido' : ' · sin sonido');
-          $('mTag').className = 'sf-tag' + (audioOn ? '' : ' warn');
-          const canShareFile = (blob, name) => !!(navigator.canShare && navigator.canShare({ files: [new File([blob], name, { type: blob.type })] }));
-          $('shareW').classList.toggle('sf-hide', !canShareFile(wBlob, 'sticker-boomart.webp'));
-          $('share').classList.toggle('sf-hide', !canShareFile(mBlob, 'sticker-con-sonido-boomart.mp4'));
-          $('tipSave').textContent = isIOS
-            ? 'Toca el botón y elige «Guardar video»: quedará en tus Fotos. Luego, en WhatsApp, crea el sticker eligiendo ese video y conserva el audio.'
-            : isAndroid
-              ? 'Guárdalo con el botón: lo encontrarás en tu galería o en Descargas. Luego, en WhatsApp, crea el sticker eligiendo ese video y conserva el audio.'
-              : 'Descárgalo y pásalo a tu celular. Luego, en WhatsApp, crea el sticker eligiendo ese video y conserva el audio.';
-          showErr(wOk ? '' : 'El sticker quedó por encima de 500 KB. Prueba con menos segundos o con «Llenar el cuadro».');
-          $('out').classList.remove('sf-hide');
-          setBar(100); setStatus('¡Listo!');
-          updateSteps();
-          track('sticker_creado', { sonido: audioOn ? (m === 'rec' ? 'grabado' : inA ? 'audio_subido' : 'del_video') : 'sin_sonido', peso_ok: wOk ? 'si' : 'no', sistema: isIOS ? 'ios' : isAndroid ? 'android' : 'otro', metodo });
-          $('out').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          showResult(audioOn);
+          track('sticker_creado', { sonido: [useV ? 'video' : '', useA ? (m === 'rec' ? 'voz' : 'cancion') : ''].filter(Boolean).join('+') || 'sin_sonido', peso_ok: wBlob.size <= MAX_BYTES ? 'si' : 'no', sistema: isIOS ? 'ios' : isAndroid ? 'android' : 'otro', metodo });
         } catch (e) {
           console.error(e);
           try { await cleanup(['base.mp4', 'out.webp', 'out.mp4']); } catch (_) {}
-          showErr('Algo falló al crear el sticker. Prueba con un clip más corto (3 a 5 segundos) o con otro video.');
-          setStatus('');
+          showErr('Algo falló al crear el sticker. Prueba con un momento más corto (3 a 5 segundos) o con otro video.');
           track('sticker_error');
         } finally {
           creating = false; busy.end(goTk);
           await keepAwake(false);
-          $('prev').disabled = false; $('prev2').disabled = false; updateSteps();
+          $('go').disabled = false;
         }
       });
 
+      // ---------- resultado ----------
+      const canShareFile = (blob, name) => { try { return !!(navigator.canShare && navigator.canShare({ files: [new File([blob], name, { type: blob.type })] })); } catch (_) { return false; } };
+      function showResult(audioOn) {
+        outURLs.forEach(u => URL.revokeObjectURL(u)); outURLs = [];
+        const wu = URL.createObjectURL(wBlob), mu = URL.createObjectURL(mBlob); outURLs.push(wu, mu);
+        $('oImg').src = wu; $('oVid').src = mu;
+        const wOk = wBlob.size <= MAX_BYTES;
+        $('wTag').textContent = kb(wBlob.size) + (wOk ? ' · cabe en WhatsApp' : ' · pasa de 500 KB');
+        $('wTag').className = 'sf-tag' + (wOk ? '' : ' warn');
+        $('mTag').textContent = kb(mBlob.size) + (audioOn ? ' · con sonido' : ' · sin sonido');
+        $('mTag').className = 'sf-tag' + (audioOn ? '' : ' warn');
+        $('tipSave').textContent = isIOS
+          ? 'Toca «Guardar video con sonido» y elige «Guardar video»: quedará en tus Fotos.'
+          : isAndroid
+            ? 'Toca «Guardar video con sonido»: quedará en tu galería o en Descargas.'
+            : 'Guarda el video con sonido y pásalo a tu celular.';
+        if (!wOk) $('wTag').title = 'Prueba con menos segundos o con «Llenar el cuadro».';
+        goStep(3);
+      }
       function save(blob, name) {
         const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name;
         document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
       }
-      $('dlW').addEventListener('click', () => { if (wBlob) { save(wBlob, 'sticker-boomart.webp'); track('sticker_descarga', { tipo: 'webp' }); } });
-      $('dlM').addEventListener('click', () => { if (mBlob) { save(mBlob, 'sticker-con-sonido-boomart.mp4'); track('sticker_descarga', { tipo: 'mp4' }); } });
       async function shareBlob(blob, name, tipo) {
-        try { await navigator.share({ files: [new File([blob], name, { type: blob.type })] }); track('sticker_compartido', { tipo }); }
-        catch (e) { if (e && e.name !== 'AbortError') showErr('No se pudo abrir el menú de compartir. Usa «Guardar» o «Descargar».'); }
+        try { await navigator.share({ files: [new File([blob], name, { type: blob.type })] }); track('sticker_compartido', { tipo }); return true; }
+        catch (e) { return e && e.name === 'AbortError'; }
       }
-      $('shareW').addEventListener('click', () => wBlob && shareBlob(wBlob, 'sticker-boomart.webp', 'webp'));
-      $('share').addEventListener('click', () => mBlob && shareBlob(mBlob, 'sticker-con-sonido-boomart.mp4', 'mp4'));
+      $('shareW').addEventListener('click', async () => {
+        if (!wBlob) return;
+        const name = 'sticker-boomart.webp';
+        if (canShareFile(wBlob, name) && await shareBlob(wBlob, name, 'webp')) return;
+        save(wBlob, name); track('sticker_descarga', { tipo: 'webp' });
+      });
+      $('dlW').addEventListener('click', () => { if (wBlob) { save(wBlob, 'sticker-boomart.webp'); track('sticker_descarga', { tipo: 'webp' }); } });
+      // En celular, "Guardar" abre el menú del sistema (en iPhone: «Guardar video» lo deja en Fotos).
+      $('saveM').addEventListener('click', async () => {
+        if (!mBlob) return;
+        const name = 'sticker-con-sonido-boomart.mp4';
+        if ((isIOS || isAndroid) && canShareFile(mBlob, name)) { if (await shareBlob(mBlob, name, 'mp4')) return; }
+        save(mBlob, name); track('sticker_descarga', { tipo: 'mp4' });
+      });
+      // Abrir WhatsApp: app instalada (whatsapp://) y, si no abre, su página.
+      $('openWA').addEventListener('click', e => {
+        track('sticker_abrir_whatsapp');
+        if (!(isIOS || isAndroid)) { e.preventDefault(); window.open('https://web.whatsapp.com/', '_blank', 'noopener'); return; }
+        const t = Date.now();
+        setTimeout(() => { if (!document.hidden && Date.now() - t < 2500) location.href = 'https://wa.me/'; }, 1500);
+      });
+      $('editAgain').addEventListener('click', () => goStep(2));
+      $('newOne').addEventListener('click', () => {
+        step = 1; stopLoop();
+        $('out').classList.add('sf-hide'); $('editor').classList.add('sf-hide');
+        $('intro').classList.remove('sf-hide'); $('upload').classList.remove('sf-hide'); $('backWrap').classList.add('sf-hide');
+        ['st1', 'st2', 'st3'].forEach((id, i) => { $(id).classList.toggle('active', i === 0); $(id).classList.remove('done'); });
+        vFile = null; $('fileV').value = ''; $('fileVcam').value = ''; window.scrollTo({ top: 0 });
+      });
       document.querySelectorAll('[data-sf]').forEach(a => a.addEventListener('click', () => track('sticker_cta', { destino: a.dataset.sf })));
-      updateSteps();
     })();
     </script>
     <script src="../src/track.js?v=6" defer></script>
