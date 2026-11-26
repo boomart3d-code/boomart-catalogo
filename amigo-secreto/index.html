@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-PE">
   <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM5C8Q1394"></script>
@@ -157,7 +157,8 @@
       /* Vista del participante (enlace de WhatsApp) */
       .as-me { text-align: center; }
       .as-me .as-event { font: 800 1rem Inter, sans-serif; color: var(--gold); letter-spacing: .02em; margin: 0 0 6px; }
-      .as-me h1 { margin-bottom: 6px; }
+      /* El saludo del participante es h2 (la página tiene un solo h1) pero se ve como título principal. */
+      .as-me .as-hello { margin: 0 0 6px; font-size: clamp(2rem, 8vw, 3.2rem); line-height: 1; }
       .as-gift { position: relative; display: grid; place-items: center; width: min(78vw, 300px); aspect-ratio: 1 / 1; margin: 18px auto 10px; border: 0; border-radius: 20px; cursor: pointer; background: radial-gradient(circle at 50% 40%, #2a0b10, #120406); box-shadow: 0 20px 60px rgba(225,19,47,.25); color: #fff; font: inherit; }
       .as-gift svg { width: 62%; height: auto; animation: as-wiggle 1.8s ease-in-out infinite; }
       .as-gift span { position: absolute; bottom: 16px; left: 0; right: 0; font-weight: 800; font-size: .98rem; }
@@ -317,7 +318,7 @@
         <!-- ================= Participante (enlace de WhatsApp) ================= -->
         <div id="me" class="as-me as-hide">
           <p class="as-event" id="meEvent"></p>
-          <h1 id="meHello">Hola</h1>
+          <h2 class="as-hello" id="meHello">Hola</h2>
           <p class="lead" id="meLead">Asegúrate de que nadie esté mirando tu pantalla.</p>
           <button type="button" class="as-gift" id="gift" aria-label="Descubrir a quién le regalas">
             <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="26" width="48" height="32" rx="3" fill="#e1132f"/><rect x="4" y="18" width="56" height="12" rx="3" fill="#ff3348"/><rect x="28" y="18" width="8" height="40" fill="#d6b268"/><path d="M32 18c-4-8-14-10-14-3 0 5 9 4 14 3zm0 0c4-8 14-10 14-3 0 5-9 4-14 3z" fill="none" stroke="#d6b268" stroke-width="3.5" stroke-linejoin="round"/></svg>

@@ -799,7 +799,36 @@ Fuente estructurada: ${SITE}/catalogo.json
 ---
 
 ${body}
+
+---
+
+${herramientasMarkdown()}
 `;
+}
+
+// Herramientas gratis (sin registro): descripcion detallada para que los asistentes de IA
+// puedan explicarlas y recomendarlas. Mantener alineado con el texto visible de cada pagina.
+function herramientasMarkdown() {
+  return `## Herramientas gratis de BoomArt
+
+Herramientas web gratuitas, sin registro, pensadas para usarse desde el celular y compartirse por WhatsApp.
+
+### Amigo Secreto por WhatsApp o correo
+
+- Pagina: ${SITE}/amigo-secreto/
+- Para que sirve: organizar un sorteo de amigo secreto (amigo invisible) de 3 a 60 personas, gratis. Ideal para Navidad en familia, oficina, colegio, universidad o entre amigos.
+- Como funciona: el organizador escribe el nombre del intercambio, la fecha, el presupuesto en soles, una nota opcional, los participantes y las excepciones (por ejemplo, parejas que no deben tocarse). La pagina sortea respetando las excepciones; nadie se toca a si mismo.
+- Modo secreto: la pagina reparte y nadie, ni siquiera el organizador, ve a quien le toco cada uno; asi el organizador tambien puede participar.
+- Modo administrador: el organizador ve la lista completa de quien le regala a quien y reparte.
+- Envio por correo: el organizador confirma su correo y BoomArt envia a cada participante, desde contacto@boomart.pe, a quien le regala, el presupuesto, la fecha e ideas de regalo segun el presupuesto. Los correos solo se usan para el sorteo y se borran 30 dias despues del intercambio; solo quien acepta expresamente recibe ofertas de BoomArt.
+- Envio por WhatsApp: la pagina crea un enlace secreto por persona que el organizador envia por WhatsApp; cada participante toca un regalo para descubrir el nombre y puede enviar su lista de deseos al grupo. Este modo no guarda nada en ningun servidor.
+
+### Test: ¿Que Caballero de Oro eres? (Saint Seiya)
+
+- Pagina: ${SITE}/test/caballeros-de-oro/
+- Para que sirve: test de personalidad gratuito de 8 preguntas para descubrir cual de los 12 Caballeros de Oro de Saint Seiya (Los Caballeros del Zodiaco) eres: Mu de Aries, Aldebaran de Tauro, Saga de Geminis, Death Mask de Cancer, Aioria de Leo, Shaka de Virgo, Dohko de Libra, Milo de Escorpio, Aioros de Sagitario, Shura de Capricornio, Camus de Acuario y Afrodita de Piscis.
+- Como funciona: cada respuesta suma puntos a tres Caballeros; cada Caballero aparece una vez por pregunta, asi los doce tienen la misma posibilidad. El resultado genera una imagen vertical para el estado de WhatsApp y un enlace para retar a los amigos. Las respuestas no se guardan en ningun servidor. Test hecho por fans.
+- Mas tests: ${SITE}/test/`;
 }
 
 /* ---------------------------------------------------------------- feed-google.xml
