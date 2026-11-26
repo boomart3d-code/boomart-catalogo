@@ -237,7 +237,7 @@
               <button type="button" class="button ghost" id="nudgeR" aria-label="Mover medio segundo después">0,5 s ▶</button>
             </div>
             <div class="sf-row" role="group" aria-label="Duración del sticker"><span>Duración:</span><span id="chips" style="display:contents"></span></div>
-            <p class="sf-hint" style="margin-bottom:0">Entre 3 y 6 segundos queda mejor y pesa menos.</p>
+            <p class="sf-hint" style="margin-bottom:0">Máximo 5 segundos: es lo que WhatsApp conserva del sonido en un sticker hecho con video.</p>
             <div class="sf-row" style="margin-top:16px"><span>Encuadre:</span></div>
             <div class="sf-seg" role="group" aria-label="Encuadre">
               <button type="button" class="sf-chip" data-fit="fill" aria-pressed="true">Llenar el cuadro</button>
@@ -306,42 +306,47 @@
 
         <!-- Paso 3: enviar -->
         <section class="sf-card sf-hide" id="out">
-          <h2><span class="sf-n">3</span> ¡Listo! Envíalo a WhatsApp</h2>
-          <div class="sf-res">
-            <figure>
-              <div class="sf-box"><img id="oImg" alt="Vista previa del sticker animado"></div>
-              <figcaption>Sticker animado<br><span class="sf-tag" id="wTag"></span></figcaption>
-            </figure>
-            <figure>
-              <div class="sf-box"><video id="oVid" controls loop playsinline></video></div>
-              <figcaption>Video con sonido<br><span class="sf-tag" id="mTag"></span></figcaption>
-            </figure>
-          </div>
+          <h2><span class="sf-n">3</span> Conviértelo en sticker con sonido</h2>
+          <p class="sf-hint">Tu video ya está recortado y con su sonido. Ahora WhatsApp lo convierte en sticker con sonido, como los que tienen el ícono del parlante.</p>
+          <div class="sf-box" style="max-width:260px;margin:10px auto 0"><video id="oVid" controls loop playsinline></video></div>
+          <p class="sf-hint" style="text-align:center;margin-top:6px"><span class="sf-tag" id="mTag"></span></p>
 
           <div class="sf-opt">
-            <h3>Enviar como sticker</h3>
-            <p>Se abre tu lista de apps: elige <b>WhatsApp</b> y el chat. Va el sticker animado (sin sonido).</p>
+            <h3>Paso A · Guarda el video</h3>
+            <p id="tipSave">Toca el botón para guardarlo en tu celular.</p>
             <div class="sf-actions">
-              <button type="button" class="button primary" id="shareW">Enviar sticker a WhatsApp</button>
-              <button type="button" class="button ghost" id="dlW">Guardar sticker</button>
+              <button type="button" class="button primary sf-big" id="saveM">Guardar video en mi celular</button>
             </div>
           </div>
 
           <div class="sf-opt">
-            <h3>Sticker con sonido</h3>
-            <p>El sonido solo lo puede poner WhatsApp, con su creador de stickers. Te guiamos:</p>
+            <h3>Paso B · Crea el sticker en WhatsApp</h3>
             <ol class="sf-steps-mini">
-              <li id="tipSave">Guarda el video con sonido en tu celular.</li>
-              <li>Toca «Abrir WhatsApp», entra a un chat y abre los stickers.</li>
-              <li>Toca «Crear» y elige el video que guardaste. Conserva el sonido.</li>
+              <li>Toca «Abrir WhatsApp» y entra a cualquier chat.</li>
+              <li>Toca el ícono de <b>stickers</b> y luego <b>«Crear sticker»</b>.</li>
+              <li>Elige el video que acabas de guardar.</li>
+              <li>Toca el ícono de <b>Sonido</b> (arriba) y elige <b>mantener el sonido original</b>.</li>
+              <li>Envíalo: queda guardado en tus stickers.</li>
             </ol>
             <div class="sf-actions">
-              <button type="button" class="button primary" id="saveM">Guardar video con sonido</button>
-              <a class="button ghost" id="openWA" href="whatsapp://send" data-sf="abrir-whatsapp">Abrir WhatsApp</a>
+              <a class="button primary sf-big" id="openWA" href="whatsapp://send" data-sf="abrir-whatsapp">Abrir WhatsApp</a>
             </div>
           </div>
 
-          <div class="sf-note"><b>Importante:</b> una página web no puede guardar stickers directamente en WhatsApp; solo las apps instaladas pueden hacerlo. El sonido en stickers es una función nueva de WhatsApp que se está activando poco a poco: si aún no te aparece, tu sticker igual se mueve, solo que sin sonido.</div>
+          <div class="sf-note"><b>¿No ves el ícono de Sonido en WhatsApp?</b> Los stickers con sonido empezaron a llegar en noviembre de 2026 y WhatsApp los activa poco a poco, por cuenta. Actualiza WhatsApp; si aún no te aparece, igual puedes crear el sticker (se moverá, sin sonido) y probar más adelante.</div>
+
+          <details class="sf-more" style="margin-top:14px">
+            <summary>Otra opción: sticker animado sin sonido</summary>
+            <div class="sf-opt">
+              <div class="sf-box" style="max-width:180px;margin:0 auto"><img id="oImg" alt="Vista previa del sticker animado"></div>
+              <p style="text-align:center;margin-top:6px"><span class="sf-tag" id="wTag"></span></p>
+              <p>Se envía como imagen animada de sticker (formato WebP), sin sonido. Según tu teléfono, puede llegar como sticker o como imagen.</p>
+              <div class="sf-actions">
+                <button type="button" class="button ghost" id="shareW">Enviar a WhatsApp</button>
+                <button type="button" class="button ghost" id="dlW">Guardar archivo</button>
+              </div>
+            </div>
+          </details>
           <div class="sf-actions">
             <button type="button" class="button ghost" id="editAgain">← Cambiar el sonido</button>
             <button type="button" class="button ghost" id="newOne">Hacer otro sticker</button>
@@ -354,14 +359,14 @@
             <li>Elige un video o GIF de tu galería, o grábalo con tu cámara.</li>
             <li>Arrastra el recuadro rojo para elegir el momento: lo ves y lo escuchas en la vista previa.</li>
             <li>Elige el sonido: el original, una canción, tu voz grabada o ninguno.</li>
-            <li>Toca «Crear mi sticker» y envíalo a WhatsApp.</li>
+            <li>Toca «Crear mi sticker», guarda el video y conviértelo en sticker con sonido en el creador de stickers de WhatsApp.</li>
           </ol>
           <h3>¿Mis videos se suben a internet?</h3>
           <p>No. La conversión ocurre dentro de tu navegador. BoomArt no recibe, guarda ni ve tus videos, audios ni grabaciones.</p>
-          <h3>¿Por qué el sticker con sonido se hace en WhatsApp?</h3>
-          <p>WhatsApp solo deja agregar stickers desde su propia app o desde apps instaladas. Por eso te damos el video ya recortado y con su sonido, listo para su creador de stickers.</p>
-          <h3>¿Qué tamaño tiene el sticker?</h3>
-          <p>El sticker animado sale en formato WebP de 512 × 512 píxeles y se ajusta para pesar menos de 500 KB, el límite de WhatsApp para stickers animados.</p>
+          <h3>¿Por qué el último paso se hace en WhatsApp?</h3>
+          <p>Los stickers con sonido solo se pueden crear dentro de WhatsApp: ninguna página ni app externa puede hacerlo. Por eso te damos el video ya recortado, con su sonido mezclado y de máximo 5 segundos, listo para su creador de stickers.</p>
+          <h3>¿Por qué máximo 5 segundos?</h3>
+          <p>WhatsApp conserva hasta 5 segundos del sonido cuando el sticker se crea a partir de un video.</p>
           <h3>¿Funciona en iPhone y Android?</h3>
           <p>Sí, en el navegador de ambos (Safari en iPhone, Chrome en Android). La primera vez descarga el motor de conversión, unos 30 MB, así que conviene tener buena conexión.</p>
           <h3>Usa música y videos propios o con permiso</h3>
@@ -403,7 +408,7 @@
       const MAX_INPUT = 300 * 1024 * 1024;
       const CORE = 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/esm';
       const WORKER = 'https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/umd/814.ffmpeg.js';
-      const DURS = [2, 3, 4, 5, 6, 8, 10];
+      const DURS = [2, 3, 4, 5]; // WhatsApp conserva hasta 5 s de sonido en stickers hechos con video
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
       const isAndroid = /Android/i.test(navigator.userAgent);
       const track = (name, params) => { try { if (window.gtag) gtag('event', name, params || {}); } catch (_) {} };
@@ -1129,10 +1134,10 @@
         $('mTag').textContent = kb(mBlob.size) + (audioOn ? ' · con sonido' : ' · sin sonido');
         $('mTag').className = 'sf-tag' + (audioOn ? '' : ' warn');
         $('tipSave').textContent = isIOS
-          ? 'Toca «Guardar video con sonido» y elige «Guardar video»: quedará en tus Fotos.'
+          ? 'Toca el botón y elige «Guardar video»: quedará en tus Fotos.'
           : isAndroid
-            ? 'Toca «Guardar video con sonido»: quedará en tu galería o en Descargas.'
-            : 'Guarda el video con sonido y pásalo a tu celular.';
+            ? 'Toca el botón: el video quedará en tu galería (o en Descargas).'
+            : 'Descárgalo y pásalo a tu celular, o abre esta página desde tu celular.';
         if (!wOk) $('wTag').title = 'Prueba con menos segundos o con «Llenar el cuadro».';
         goStep(3);
       }
