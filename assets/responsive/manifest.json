@@ -5738,6 +5738,113 @@
       ]
     ]
   },
+  "assets/products/nacimiento-minimalista-figuras-beige.webp": {
+    "w": 1600,
+    "h": 1205,
+    "src": "assets/products/nacimiento-minimalista-figuras-beige.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/nacimiento-minimalista-figuras-beige-07f88403ec0e-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/nacimiento-minimalista-figuras-beige-07f88403ec0e-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/nacimiento-minimalista-figuras-beige-07f88403ec0e-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/nacimiento-minimalista-figuras-beige-07f88403ec0e-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/nacimiento-minimalista-figuras-con-arco-referencial.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/nacimiento-minimalista-figuras-con-arco-referencial.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/nacimiento-minimalista-figuras-con-arco-referencial-6bbae312f3fc-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/nacimiento-minimalista-figuras-con-arco-referencial-6bbae312f3fc-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/nacimiento-minimalista-figuras-con-arco-referencial-6bbae312f3fc-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/nacimiento-minimalista-figuras-con-portal-referencial.webp": {
+    "w": 1600,
+    "h": 1200,
+    "src": "assets/products/nacimiento-minimalista-figuras-con-portal-referencial.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/nacimiento-minimalista-figuras-con-portal-referencial-9c5d72bb7d23-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/nacimiento-minimalista-figuras-con-portal-referencial-9c5d72bb7d23-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/nacimiento-minimalista-figuras-con-portal-referencial-9c5d72bb7d23-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/nacimiento-minimalista-figuras-con-portal-referencial-9c5d72bb7d23-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/nacimiento-minimalista-figuras-en-bandeja-referencial.webp": {
+    "w": 909,
+    "h": 673,
+    "src": "assets/products/nacimiento-minimalista-figuras-en-bandeja-referencial.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/nacimiento-minimalista-figuras-en-bandeja-referencial-e2fe11a0ba49-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/nacimiento-minimalista-figuras-en-bandeja-referencial-e2fe11a0ba49-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/nacimiento-minimalista-figuras-en-bandeja-referencial-e2fe11a0ba49-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/nacimiento-minimalista-figuras-sobre-mesa.webp": {
+    "w": 1600,
+    "h": 900,
+    "src": "assets/products/nacimiento-minimalista-figuras-sobre-mesa.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/nacimiento-minimalista-figuras-sobre-mesa-781d02264d95-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/nacimiento-minimalista-figuras-sobre-mesa-781d02264d95-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/nacimiento-minimalista-figuras-sobre-mesa-781d02264d95-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/nacimiento-minimalista-figuras-sobre-mesa-781d02264d95-1200w.webp"
+      ]
+    ]
+  },
   "assets/products/nacimiento-minimalista-foto-real.webp": {
     "w": 1600,
     "h": 1200,
