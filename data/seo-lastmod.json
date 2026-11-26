@@ -3,6 +3,7 @@
   "pages": {
     "/": {"hash":"b00e17283fc5","lastmod":"2026-11-26"},
     "/Halloween/": {"hash":"bb570e3d0844","lastmod":"2026-11-26"},
+    "/amigo-secreto/": {"hash":"6957efbccdea","lastmod":"2026-11-26"},
     "/catalogo.html": {"hash":"f1d0608fbe8f","lastmod":"2026-11-26"},
     "/categoria/figuras-coleccionables/": {"hash":"94fbbdea93a3","lastmod":"2026-11-26"},
     "/categoria/halloween/": {"hash":"502bcd57a1d0","lastmod":"2026-11-26"},
@@ -153,6 +154,8 @@
     "/producto/tiara-de-pegaso-saint-seiya/": {"hash":"488c963c0942","lastmod":"2026-11-26"},
     "/producto/torre-del-reloj-saint-seiya/": {"hash":"24f9290fb1c4","lastmod":"2026-11-26"},
     "/producto/visor-de-cyclops/": {"hash":"6add9e821485","lastmod":"2026-11-26"},
-    "/producto/zkull-urban/": {"hash":"0a3937dab191","lastmod":"2026-11-26"}
+    "/producto/zkull-urban/": {"hash":"0a3937dab191","lastmod":"2026-11-26"},
+    "/test/": {"hash":"a77c490cb7f9","lastmod":"2026-11-26"},
+    "/test/caballeros-de-oro/": {"hash":"00783c6c01b5","lastmod":"2026-11-26"}
   }
 }

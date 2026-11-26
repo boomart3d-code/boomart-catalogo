@@ -30,6 +30,48 @@
     <meta name="twitter:title" content="¿Qué Caballero de Oro eres? Test de Saint Seiya">
     <meta name="twitter:image" content="https://boomart.pe/assets/og-saintseiya.jpg">
 
+    <!-- Datos estructurados para buscadores y asistentes de IA (deben coincidir con el texto visible). -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://boomart.pe/test/caballeros-de-oro/#app",
+          "name": "¿Qué Caballero de Oro eres? Test de Saint Seiya",
+          "alternateName": ["Test de Caballeros de Oro", "¿Qué Caballero del Zodiaco eres?", "Test de Saint Seiya"],
+          "url": "https://boomart.pe/test/caballeros-de-oro/",
+          "description": "Test gratuito de 8 preguntas para descubrir cuál de los 12 Caballeros de Oro de Saint Seiya (Caballeros del Zodiaco) eres. Genera una imagen para el estado de WhatsApp y un enlace para retar a los amigos. Test hecho por fans.",
+          "applicationCategory": "EntertainmentApplication",
+          "genre": "Test de personalidad",
+          "operatingSystem": "Web (Android, iPhone y computadora)",
+          "inLanguage": "es-PE",
+          "isAccessibleForFree": true,
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PEN" },
+          "about": { "@type": "CreativeWorkSeries", "name": "Saint Seiya (Los Caballeros del Zodiaco)" },
+          "publisher": { "@type": "Organization", "name": "BoomArt", "url": "https://boomart.pe/" }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "¿Cuántos resultados tiene el test?", "acceptedAnswer": { "@type": "Answer", "text": "Doce, uno por cada Caballero de Oro: Mu de Aries, Aldebarán de Tauro, Saga de Géminis, Death Mask de Cáncer, Aioria de Leo, Shaka de Virgo, Dohko de Libra, Milo de Escorpio, Aioros de Sagitario, Shura de Capricornio, Camus de Acuario y Afrodita de Piscis." } },
+            { "@type": "Question", "name": "¿Cómo se calcula el resultado?", "acceptedAnswer": { "@type": "Answer", "text": "Cada respuesta suma puntos a tres Caballeros. Cada Caballero aparece una vez en cada pregunta, así que los doce tienen la misma posibilidad de salir. Gana el que suma más puntos." } },
+            { "@type": "Question", "name": "¿Se guardan mis respuestas?", "acceptedAnswer": { "@type": "Answer", "text": "No. El test se resuelve en tu propio teléfono o computadora y no se envían tus respuestas a ningún servidor." } },
+            { "@type": "Question", "name": "¿Cómo comparto mi resultado?", "acceptedAnswer": { "@type": "Answer", "text": "Al terminar, toca «Compartir en mi estado» para guardar o compartir una imagen vertical lista para el estado de WhatsApp, o «Reta a tus amigos» para enviarles el enlace del test con tu resultado." } }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "BoomArt", "item": "https://boomart.pe/" },
+            { "@type": "ListItem", "position": 2, "name": "Tests de personajes", "item": "https://boomart.pe/test/" },
+            { "@type": "ListItem", "position": 3, "name": "¿Qué Caballero de Oro eres?", "item": "https://boomart.pe/test/caballeros-de-oro/" }
+          ]
+        }
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -80,6 +122,11 @@
       .qz-all div.me { border-color: var(--gold); background: rgba(214,178,104,.12); }
       .qz-note { color: var(--muted); font-size: .8rem; line-height: 1.5; margin-top: 26px; text-align: center; }
       .qz-err { color: var(--gold); font-size: .9rem; margin-top: 8px; }
+      .qz-info { margin-top: 34px; border-top: 1px solid var(--line); padding-top: 8px; }
+      .qz-info h2 { font-size: 1.3rem; margin: 18px 0 10px; }
+      .qz-info h3 { color: var(--gold); font-size: 1.02rem; margin: 18px 0 6px; }
+      .qz-info p { color: #dfdad3; line-height: 1.65; margin: 0 0 8px; }
+      .qz-info a { color: var(--gold); text-decoration: underline; }
       @media (prefers-reduced-motion: reduce) { .qz-anim { animation: none; } }
     </style>
   </head>
@@ -140,6 +187,20 @@
             <h3 style="margin:0">Los 12 Caballeros de Oro</h3>
             <div class="qz-all" id="all"></div>
           </div>
+        </section>
+
+        <section class="qz-info" id="about">
+          <h2>Sobre el test de los Caballeros de Oro</h2>
+          <p>Este test de Saint Seiya (Los Caballeros del Zodiaco) tiene 8 preguntas sobre tu forma de ser y te asigna uno de los 12 Caballeros de Oro que protegen las casas del Santuario.</p>
+          <h3>¿Cuántos resultados tiene el test?</h3>
+          <p>Doce, uno por cada Caballero de Oro: Mu de Aries, Aldebarán de Tauro, Saga de Géminis, Death Mask de Cáncer, Aioria de Leo, Shaka de Virgo, Dohko de Libra, Milo de Escorpio, Aioros de Sagitario, Shura de Capricornio, Camus de Acuario y Afrodita de Piscis.</p>
+          <h3>¿Cómo se calcula el resultado?</h3>
+          <p>Cada respuesta suma puntos a tres Caballeros. Cada Caballero aparece una vez en cada pregunta, así que los doce tienen la misma posibilidad de salir. Gana el que suma más puntos.</p>
+          <h3>¿Se guardan mis respuestas?</h3>
+          <p>No. El test se resuelve en tu propio teléfono o computadora y no se envían tus respuestas a ningún servidor.</p>
+          <h3>¿Cómo comparto mi resultado?</h3>
+          <p>Al terminar, toca «Compartir en mi estado» para guardar o compartir una imagen vertical lista para el estado de WhatsApp, o «Reta a tus amigos» para enviarles el enlace del test con tu resultado.</p>
+          <p><a href="../">Ver más tests de personajes</a></p>
         </section>
 
         <p class="qz-note">Test hecho por fans, solo para divertirse. Saint Seiya y sus personajes pertenecen a sus respectivos dueños; este test no está afiliado a ellos.</p>

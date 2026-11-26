@@ -30,6 +30,55 @@
     <meta name="twitter:title" content="Amigo Secreto por WhatsApp: sorteo gratis y sin registro">
     <meta name="twitter:image" content="https://boomart.pe/assets/boomart-og.jpg">
 
+    <!-- Datos estructurados para buscadores y asistentes de IA (deben coincidir con el texto visible). -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://boomart.pe/amigo-secreto/#app",
+          "name": "Amigo Secreto por WhatsApp",
+          "alternateName": ["Sorteo de amigo secreto online", "Amigo invisible por WhatsApp", "Sorteo de amigo secreto gratis"],
+          "url": "https://boomart.pe/amigo-secreto/",
+          "description": "Herramienta gratuita para organizar un Amigo Secreto (amigo invisible) por WhatsApp, sin registro. El organizador escribe los nombres, el presupuesto en soles, la fecha y las excepciones; la página hace el sorteo y genera un enlace secreto por persona para enviarlo por WhatsApp. Cada participante ve solo a quién le regala.",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Web (Android, iPhone y computadora)",
+          "browserRequirements": "Navegador moderno con JavaScript",
+          "inLanguage": "es-PE",
+          "isAccessibleForFree": true,
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PEN" },
+          "featureList": [
+            "Sorteo de 3 a 60 participantes",
+            "Excepciones para parejas o personas que no deben tocarse",
+            "Enlace secreto por persona para enviar por WhatsApp",
+            "Presupuesto en soles, fecha y nota del intercambio",
+            "Lista de deseos para enviar al grupo",
+            "Sin registro y sin guardar datos en servidores"
+          ],
+          "publisher": { "@type": "Organization", "name": "BoomArt", "url": "https://boomart.pe/" }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "¿Se guarda algún dato?", "acceptedAnswer": { "@type": "Answer", "text": "No. No hay registro ni base de datos: cada resultado viaja dentro de su propio enlace. Solo el teléfono del organizador recuerda el sorteo, para que pueda reenviar un enlace si alguien lo pierde." } },
+            { "@type": "Question", "name": "¿El organizador puede ver a quién le tocó cada uno?", "acceptedAnswer": { "@type": "Answer", "text": "No en la lista de envío: ahí solo aparecen los nombres de quienes reciben cada enlace. Pero si abre el enlace de otra persona, lo vería, así que se le pide que no lo haga." } },
+            { "@type": "Question", "name": "¿Qué pasa si vuelvo a sortear?", "acceptedAnswer": { "@type": "Answer", "text": "Se crea un sorteo nuevo y los enlaces anteriores dejan de valer. Hay que enviar los enlaces nuevos a todos." } },
+            { "@type": "Question", "name": "¿Cuántas personas pueden participar?", "acceptedAnswer": { "@type": "Answer", "text": "Desde 3 hasta 60 personas." } },
+            { "@type": "Question", "name": "¿Es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Es gratis y no necesitas crear una cuenta ni instalar ninguna aplicación: funciona desde el navegador del celular o la computadora." } }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "BoomArt", "item": "https://boomart.pe/" },
+            { "@type": "ListItem", "position": 2, "name": "Amigo Secreto por WhatsApp", "item": "https://boomart.pe/amigo-secreto/" }
+          ]
+        }
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -227,13 +276,15 @@
             <li>Cada uno abre su enlace, toca el regalo y descubre a quién le regala.</li>
           </ol>
           <h3>¿Se guarda algún dato?</h3>
-          <p>No. No hay registro ni base de datos: cada resultado viaja dentro de su propio enlace. Solo este teléfono recuerda tu sorteo, para que puedas reenviar un enlace si alguien lo pierde.</p>
+          <p>No. No hay registro ni base de datos: cada resultado viaja dentro de su propio enlace. Solo el teléfono del organizador recuerda el sorteo, para que pueda reenviar un enlace si alguien lo pierde.</p>
           <h3>¿El organizador puede ver a quién le tocó cada uno?</h3>
-          <p>No en la lista de envío: ahí solo aparecen los nombres de quienes reciben cada enlace. Pero si abre el enlace de otra persona, lo vería, así que pídele que no lo haga.</p>
+          <p>No en la lista de envío: ahí solo aparecen los nombres de quienes reciben cada enlace. Pero si abre el enlace de otra persona, lo vería, así que se le pide que no lo haga.</p>
           <h3>¿Qué pasa si vuelvo a sortear?</h3>
-          <p>Se crea un sorteo nuevo y los enlaces anteriores dejan de valer. Tendrás que enviar los enlaces nuevos a todos.</p>
+          <p>Se crea un sorteo nuevo y los enlaces anteriores dejan de valer. Hay que enviar los enlaces nuevos a todos.</p>
           <h3>¿Cuántas personas pueden participar?</h3>
           <p>Desde 3 hasta 60 personas.</p>
+          <h3>¿Es gratis?</h3>
+          <p>Sí. Es gratis y no necesitas crear una cuenta ni instalar ninguna aplicación: funciona desde el navegador del celular o la computadora.</p>
         </div>
       </div>
     </main>

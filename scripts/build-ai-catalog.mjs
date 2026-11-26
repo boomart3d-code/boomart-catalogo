@@ -735,6 +735,14 @@ function buildLlms(products, reviews = []) {
 - [Nosotros](${SITE}/nosotros.html): quienes somos y como trabajamos.
 - [Politicas](${SITE}/politicas.html): compra, envio y privacidad.
 
+## Herramientas gratis
+
+Herramientas web gratuitas de BoomArt, sin registro y sin servidor: todo se procesa en el navegador del usuario y no se guardan datos personales. Pensadas para usarse desde el celular y compartirse por WhatsApp.
+
+- [Amigo Secreto por WhatsApp](${SITE}/amigo-secreto/): sorteo de amigo secreto (amigo invisible) online, gratis y sin registro. El organizador escribe los nombres, el presupuesto en soles, la fecha y las excepciones (por ejemplo, parejas que no deben tocarse); la pagina sortea y genera un enlace secreto por persona para enviarlo por WhatsApp. Cada participante ve solo a quien le regala y puede enviar su lista de deseos. De 3 a 60 personas. Ideal para Navidad en familia, oficina o salon.
+- [Tests de personajes](${SITE}/test/): tests rapidos para descubrir que personaje eres y compartir el resultado en el estado de WhatsApp.
+- [Test: ¿Que Caballero de Oro eres? (Saint Seiya)](${SITE}/test/caballeros-de-oro/): 8 preguntas para descubrir cual de los 12 Caballeros de Oro de Saint Seiya (Caballeros del Zodiaco) eres, de Mu de Aries a Afrodita de Piscis. Genera una imagen para el estado de WhatsApp y un enlace para retar a los amigos. Test hecho por fans, gratis.
+
 ## Categorias
 
 ${cats}
@@ -2363,6 +2371,11 @@ function sitemapEntries(products) {
     { loc: `${SITE}/nosotros.html`, priority: "0.5", changefreq: "monthly" },
     { loc: `${SITE}/politicas.html`, priority: "0.3", changefreq: "yearly" },
     { loc: `${SITE}/libro-de-reclamaciones.html`, priority: "0.2", changefreq: "yearly" },
+    // Herramientas gratis (sin servidor). /stickers/ queda fuera hasta que WhatsApp
+    // libere para todos la creacion de stickers con sonido.
+    { loc: `${SITE}/amigo-secreto/`, priority: "0.6", changefreq: "monthly" },
+    { loc: `${SITE}/test/`, priority: "0.5", changefreq: "monthly" },
+    { loc: `${SITE}/test/caballeros-de-oro/`, priority: "0.6", changefreq: "monthly" },
   ];
 }
 
