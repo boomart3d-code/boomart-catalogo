@@ -5738,6 +5738,128 @@
       ]
     ]
   },
+  "assets/products/nacimiento-en-relieve-detalle-pastores-y-burrito.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/nacimiento-en-relieve-detalle-pastores-y-burrito.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/nacimiento-en-relieve-detalle-pastores-y-burrito-b1109e760585-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/nacimiento-en-relieve-detalle-pastores-y-burrito-b1109e760585-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/nacimiento-en-relieve-detalle-pastores-y-burrito-b1109e760585-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/nacimiento-en-relieve-detalle-reyes-y-buey.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/nacimiento-en-relieve-detalle-reyes-y-buey.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/nacimiento-en-relieve-detalle-reyes-y-buey-669af100a642-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/nacimiento-en-relieve-detalle-reyes-y-buey-669af100a642-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/nacimiento-en-relieve-detalle-reyes-y-buey-669af100a642-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/nacimiento-en-relieve-detalle-sagrada-familia.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/nacimiento-en-relieve-detalle-sagrada-familia.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/nacimiento-en-relieve-detalle-sagrada-familia-03f15282793a-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/nacimiento-en-relieve-detalle-sagrada-familia-03f15282793a-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/nacimiento-en-relieve-detalle-sagrada-familia-03f15282793a-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/nacimiento-en-relieve-portada-marfil.webp": {
+    "w": 1122,
+    "h": 1402,
+    "src": "assets/products/nacimiento-en-relieve-portada-marfil.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/nacimiento-en-relieve-portada-marfil-8362f444b074-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/nacimiento-en-relieve-portada-marfil-8362f444b074-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/nacimiento-en-relieve-portada-marfil-8362f444b074-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/nacimiento-en-relieve-vista-completa-marfil.webp": {
+    "w": 1448,
+    "h": 1086,
+    "src": "assets/products/nacimiento-en-relieve-vista-completa-marfil.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/nacimiento-en-relieve-vista-completa-marfil-458cd35ef145-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/nacimiento-en-relieve-vista-completa-marfil-458cd35ef145-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/nacimiento-en-relieve-vista-completa-marfil-458cd35ef145-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/nacimiento-en-relieve-vista-completa-marfil-458cd35ef145-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/nacimiento-en-relieve-vista-posterior.webp": {
+    "w": 1448,
+    "h": 1086,
+    "src": "assets/products/nacimiento-en-relieve-vista-posterior.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/nacimiento-en-relieve-vista-posterior-0c5c9105a7b4-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/nacimiento-en-relieve-vista-posterior-0c5c9105a7b4-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/nacimiento-en-relieve-vista-posterior-0c5c9105a7b4-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/nacimiento-en-relieve-vista-posterior-0c5c9105a7b4-1200w.webp"
+      ]
+    ]
+  },
   "assets/products/nacimiento-minimalista-figuras-beige.webp": {
     "w": 1600,
     "h": 1205,

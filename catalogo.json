@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 106,
+  "count": 107,
   "products": [
     {
       "id": "skins-zelda-nintendo-switch-2",
@@ -3894,6 +3894,43 @@
       ],
       "url": "https://boomart.pe/producto/nacimiento-minimalista/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Nacimiento%20minimalista"
+    },
+    {
+      "id": "nacimiento-en-relieve",
+      "name": "Nacimiento en Relieve · 5 piezas",
+      "category": "Navidad",
+      "tags": [
+        "Navidad",
+        "Nacimiento",
+        "Pesebre",
+        "Belén",
+        "Relieve",
+        "Casitas",
+        "Decoración navideña"
+      ],
+      "description": "Un nacimiento de cinco piezas con forma de casita que reúne la Sagrada Familia, los Reyes Magos, pastores y animales en una escena de líneas suaves y figuras en relieve. Su acabado texturizado en tono marfil aporta un detalle cálido a tu mesa, repisa o rincón navideño. Mide aproximadamente 12 cm de alto y está fabricado en impresión 3D con PLA. S/45 por el juego de cinco piezas. La decoración de ambiente de las fotos no está incluida.",
+      "material": "PLA",
+      "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
+      "priceCurrency": "PEN",
+      "priceFrom": 45,
+      "pricing": [
+        "Precio: S/45"
+      ],
+      "image": "https://boomart.pe/assets/products/nacimiento-en-relieve-portada-marfil.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/nacimiento-en-relieve-portada-marfil.jpg",
+        "https://boomart.pe/assets/products/nacimiento-en-relieve-vista-completa-marfil.jpg",
+        "https://boomart.pe/assets/products/nacimiento-en-relieve-detalle-sagrada-familia.jpg",
+        "https://boomart.pe/assets/products/nacimiento-en-relieve-detalle-reyes-y-buey.jpg",
+        "https://boomart.pe/assets/products/nacimiento-en-relieve-detalle-pastores-y-burrito.jpg",
+        "https://boomart.pe/assets/products/nacimiento-en-relieve-vista-posterior.jpg"
+      ],
+      "url": "https://boomart.pe/producto/nacimiento-en-relieve/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Nacimiento%20en%20Relieve%20%C2%B7%205%20piezas"
     }
   ]
 }

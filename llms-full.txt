@@ -4,7 +4,7 @@ Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Cal
 Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion bajo pedido: 24 a 48 horas en las piezas sencillas y 3 a 5 días en las elaboradas
 (cada pieza indica el suyo), desde la validacion del adelanto (50%). Pedidos por WhatsApp: https://wa.me/51925666542
 
-Total de piezas: 106
+Total de piezas: 107
 Actualizado: 2026-11-26
 Fuente estructurada: https://boomart.pe/catalogo.json
 
@@ -1617,6 +1617,19 @@ Pesebre Tejido: María y José junto a la cuna del Niño, con una textura que im
 - Ficha: https://boomart.pe/producto/nacimiento-minimalista/
 
 Dale un toque cálido y sereno a tu Navidad con este nacimiento de diseño minimalista y textura acanalada, ideal para decorar una mesa, repisa o rincón especial de tu hogar. Fabricado en impresión 3D con PLA, con figuras principales de aproximadamente 10 a 15 cm de alto, según la pieza. Incluye el ángel, los personajes del nacimiento, dos animalitos, la cuna y el bebé. S/100 por el juego de figuras. No incluye cabañita o portal con estrella, bandeja de madera con asas, arco con estrella iluminada, bases de exhibición ni decoración de las fotos.
+
+### Nacimiento en Relieve · 5 piezas
+
+- Categoria: Navidad
+- Precio: S/45
+- Material: PLA
+- Disponibilidad: A pedido
+- Fabricación bajo pedido: 24 a 48 horas
+- Etiquetas: Navidad, Nacimiento, Pesebre, Belén, Relieve, Casitas, Decoración navideña
+- Imagen: https://boomart.pe/assets/products/nacimiento-en-relieve-portada-marfil.jpg
+- Ficha: https://boomart.pe/producto/nacimiento-en-relieve/
+
+Un nacimiento de cinco piezas con forma de casita que reúne la Sagrada Familia, los Reyes Magos, pastores y animales en una escena de líneas suaves y figuras en relieve. Su acabado texturizado en tono marfil aporta un detalle cálido a tu mesa, repisa o rincón navideño. Mide aproximadamente 12 cm de alto y está fabricado en impresión 3D con PLA. S/45 por el juego de cinco piezas. La decoración de ambiente de las fotos no está incluida.
 
 
 ## BoomArt Polos

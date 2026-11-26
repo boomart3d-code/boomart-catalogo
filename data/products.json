@@ -3128,5 +3128,37 @@
     "detailText": "Juego de figuras independientes impreso en 3D con PLA, de líneas suaves y textura acanalada. Incluye el ángel, los personajes del nacimiento, dos animalitos, la cuna y el bebé. Las figuras principales miden aproximadamente entre 10 y 15 cm de alto; el bebé, la cuna y los animalitos son de menor tamaño. El precio de S/100 corresponde únicamente al juego de figuras. No incluye cabañita o portal con estrella, bandeja de madera con asas, arco con estrella iluminada, bases de exhibición ni otros elementos decorativos.",
     "description": "Dale un toque cálido y sereno a tu Navidad con este nacimiento de diseño minimalista y textura acanalada, ideal para decorar una mesa, repisa o rincón especial de tu hogar. Fabricado en impresión 3D con PLA, con figuras principales de aproximadamente 10 a 15 cm de alto, según la pieza. Incluye el ángel, los personajes del nacimiento, dos animalitos, la cuna y el bebé. S/100 por el juego de figuras. No incluye cabañita o portal con estrella, bandeja de madera con asas, arco con estrella iluminada, bases de exhibición ni decoración de las fotos.",
     "notice": "S/100 incluye solo las figuras. No incluye cabañita o portal, bandeja de madera, arco con estrella iluminada ni bases decorativas."
+  },
+  {
+    "id": "nacimiento-en-relieve",
+    "name": "Nacimiento en Relieve · 5 piezas",
+    "category": "Navidad",
+    "tags": [
+      "Navidad",
+      "Nacimiento",
+      "Pesebre",
+      "Belén",
+      "Relieve",
+      "Casitas",
+      "Decoración navideña"
+    ],
+    "material": "PLA",
+    "grammaticalGender": "masculino",
+    "availability": "A pedido",
+    "regularPrice": 45,
+    "featured": true,
+    "image": "assets/products/nacimiento-en-relieve-portada-marfil.jpg",
+    "gallery": [
+      "assets/products/nacimiento-en-relieve-portada-marfil.jpg",
+      "assets/products/nacimiento-en-relieve-vista-completa-marfil.jpg",
+      "assets/products/nacimiento-en-relieve-detalle-sagrada-familia.jpg",
+      "assets/products/nacimiento-en-relieve-detalle-reyes-y-buey.jpg",
+      "assets/products/nacimiento-en-relieve-detalle-pastores-y-burrito.jpg",
+      "assets/products/nacimiento-en-relieve-vista-posterior.jpg"
+    ],
+    "height": "Altura aproximada del conjunto: 12 cm",
+    "imageAlt": "Nacimiento en relieve color marfil, formado por cinco piezas con forma de casita y escenas de la Sagrada Familia, los Reyes Magos, pastores y animales",
+    "detailText": "Nacimiento formado por cinco piezas independientes con forma de casita y figuras integradas en relieve. La pieza central representa a la Sagrada Familia; las laterales reúnen a los Reyes Magos, los pastores y los animales del pesebre. Su acabado texturizado en tono marfil resalta las formas sencillas de cada escena. Altura aproximada del conjunto: 12 cm. Fabricado en impresión 3D con PLA. El precio de S/45 corresponde al juego de cinco piezas; la mesa, las luces y la decoración de ambiente de las fotografías no están incluidas.",
+    "description": "Un nacimiento de cinco piezas con forma de casita que reúne la Sagrada Familia, los Reyes Magos, pastores y animales en una escena de líneas suaves y figuras en relieve. Su acabado texturizado en tono marfil aporta un detalle cálido a tu mesa, repisa o rincón navideño. Mide aproximadamente 12 cm de alto y está fabricado en impresión 3D con PLA. S/45 por el juego de cinco piezas. La decoración de ambiente de las fotos no está incluida."
   }
 ]

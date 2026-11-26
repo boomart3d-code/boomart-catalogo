@@ -28,7 +28,7 @@
     },
     {
       "tema": "decoracion",
-      "productos": 16,
+      "productos": 17,
       "filtroEtiqueta": {
         "field": "ads_metadata.custom_label_0",
         "operator": "in",
@@ -314,7 +314,7 @@
     },
     {
       "product_category": "Decoracion > Navidad",
-      "productos": 7,
+      "productos": 8,
       "item_ids": [
         "tazon-de-galletas-santa",
         "bandeja-dulces-arbol-navideno",
@@ -322,7 +322,8 @@
         "cascanueces-de-navidad",
         "pesebre-minimalista",
         "pesebre-tejido",
-        "nacimiento-minimalista"
+        "nacimiento-minimalista",
+        "nacimiento-en-relieve"
       ]
     },
     {
@@ -568,8 +569,8 @@
       "nombre": "Decoracion",
       "descripcion": "Macetas, decoracion navidena, lamparas y piezas de exhibicion para el hogar.",
       "sugerenciaContexto": "Personas que decoran su casa, escritorio o mesa con piezas tematicas, macetas o decoracion navidena.",
-      "productos": 54,
-      "filas": 102,
+      "productos": 55,
+      "filas": 103,
       "precioMinPEN": 44,
       "precioMaxPEN": 1500,
       "filtroItemId": {
@@ -677,7 +678,8 @@
           "pesebre-minimalista",
           "pesebre-tejido",
           "palomera-dr-doom",
-          "nacimiento-minimalista"
+          "nacimiento-minimalista",
+          "nacimiento-en-relieve"
         ]
       },
       "productIds": [
@@ -734,7 +736,8 @@
         "pesebre-minimalista",
         "pesebre-tejido",
         "palomera-dr-doom",
-        "nacimiento-minimalista"
+        "nacimiento-minimalista",
+        "nacimiento-en-relieve"
       ]
     },
     {
@@ -891,8 +894,8 @@
       "nombre": "Ideas de regalo",
       "descripcion": "Piezas hasta S/100, toda la categoria Navidad y productos marcados como regalo.",
       "sugerenciaContexto": "Personas que buscan un regalo original para fans de anime, videojuegos, cine o decoracion.",
-      "productos": 56,
-      "filas": 60,
+      "productos": 57,
+      "filas": 61,
       "precioMinPEN": 20,
       "precioMaxPEN": 220,
       "filtroItemId": {
@@ -958,7 +961,8 @@
           "pesebre-minimalista",
           "pesebre-tejido",
           "figura-chibi-harry-potter",
-          "nacimiento-minimalista"
+          "nacimiento-minimalista",
+          "nacimiento-en-relieve"
         ]
       },
       "productIds": [
@@ -1017,7 +1021,8 @@
         "pesebre-minimalista",
         "pesebre-tejido",
         "figura-chibi-harry-potter",
-        "nacimiento-minimalista"
+        "nacimiento-minimalista",
+        "nacimiento-en-relieve"
       ]
     },
     {
@@ -1202,9 +1207,9 @@
       "nombre": "Temporada: Navidad",
       "descripcion": "Toda la categoria Navidad (nacimientos, pesebres, cascanueces, mesa navidena).",
       "sugerenciaContexto": "Personas que preparan la decoracion o la mesa de Navidad.",
-      "productos": 7,
-      "filas": 7,
-      "precioMinPEN": 55,
+      "productos": 8,
+      "filas": 8,
+      "precioMinPEN": 45,
       "precioMaxPEN": 220,
       "filtroItemId": {
         "field": "item_id",
@@ -1216,7 +1221,8 @@
           "cascanueces-de-navidad",
           "pesebre-minimalista",
           "pesebre-tejido",
-          "nacimiento-minimalista"
+          "nacimiento-minimalista",
+          "nacimiento-en-relieve"
         ]
       },
       "productIds": [
@@ -1226,7 +1232,8 @@
         "cascanueces-de-navidad",
         "pesebre-minimalista",
         "pesebre-tejido",
-        "nacimiento-minimalista"
+        "nacimiento-minimalista",
+        "nacimiento-en-relieve"
       ]
     },
     {

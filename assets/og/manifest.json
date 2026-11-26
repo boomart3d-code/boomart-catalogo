@@ -740,5 +740,12 @@
     "width": 960,
     "height": 1200,
     "bytes": 92662
+  },
+  "nacimiento-en-relieve": {
+    "source": "assets/products/nacimiento-en-relieve-portada-marfil.jpg",
+    "hash": "4c26b59a417a57bc",
+    "width": 960,
+    "height": 1200,
+    "bytes": 79051
   }
 }
