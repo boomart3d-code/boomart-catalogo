@@ -925,6 +925,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://boomart.pe/historias/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boomart.pe/historias/vitrina-de-saint-seiya/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://boomart.pe/politicas.html</loc>
     <lastmod>2026-11-27</lastmod>
     <changefreq>yearly</changefreq>

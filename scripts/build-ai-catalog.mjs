@@ -737,6 +737,11 @@ function buildLlms(products, reviews = []) {
 - [Nosotros](${SITE}/nosotros.html): quienes somos y como trabajamos.
 - [Politicas](${SITE}/politicas.html): compra, envio y privacidad.
 
+## Historias del taller
+
+- [Historias del taller](${SITE}/historias/): casos reales de piezas de impresión 3D hechas a pedido en BoomArt, Perú.
+- [Una vitrina de Saint Seiya que sigue creciendo](${SITE}/historias/vitrina-de-saint-seiya/): Cajas de Pandora, pilares, pedestales, bases y accesorios personalizados para exhibir figuras y completar dioramas de Los Caballeros del Zodiaco. El coleccionista arma las escenas y BoomArt fabrica las piezas a medida.
+
 ## Herramientas gratis
 
 Herramientas gratuitas de BoomArt, sin registro. En Amigo Secreto, el modo WhatsApp genera los enlaces en el navegador. El modo correo utiliza las direcciones de los participantes para enviar el resultado según las [políticas de privacidad](${SITE}/politicas.html#amigo-secreto).
@@ -2089,7 +2094,7 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
         <span class="category-share-feedback" role="status" aria-live="polite"></span>
       </div>
       <div class="cat-intro">
-        ${meta.intro.map((t) => `<p>${esc(t)}</p>`).join("\n        ")}
+        ${meta.intro.map((t) => `<p>${esc(t)}</p>`).join("\n        ")}${cat === "Saint Seiya" ? `\n        <p><a href="${rel}historias/vitrina-de-saint-seiya/"><strong>Una vitrina de Saint Seiya que sigue creciendo</strong></a> · Así ayudamos a un coleccionista a completar sus dioramas.</p>` : ""}
       </div>
 
       <p class="cat-count">${list.length} ${list.length === 1 ? "pieza" : "piezas"} en ${esc(clean)}</p>
@@ -2417,6 +2422,8 @@ function sitemapEntries(products) {
       changefreq: "monthly",
     })),
     { loc: `${SITE}/nosotros.html`, priority: "0.5", changefreq: "monthly" },
+    { loc: `${SITE}/historias/`, priority: "0.6", changefreq: "monthly" },
+    { loc: `${SITE}/historias/vitrina-de-saint-seiya/`, priority: "0.6", changefreq: "monthly" },
     { loc: `${SITE}/politicas.html`, priority: "0.3", changefreq: "yearly" },
     { loc: `${SITE}/libro-de-reclamaciones.html`, priority: "0.2", changefreq: "yearly" },
     // Herramientas gratis (sin servidor). /stickers/ queda fuera hasta que WhatsApp

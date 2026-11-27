@@ -22,6 +22,11 @@
 - [Nosotros](https://boomart.pe/nosotros.html): quienes somos y como trabajamos.
 - [Politicas](https://boomart.pe/politicas.html): compra, envio y privacidad.
 
+## Historias del taller
+
+- [Historias del taller](https://boomart.pe/historias/): casos reales de piezas de impresión 3D hechas a pedido en BoomArt, Perú.
+- [Una vitrina de Saint Seiya que sigue creciendo](https://boomart.pe/historias/vitrina-de-saint-seiya/): Cajas de Pandora, pilares, pedestales, bases y accesorios personalizados para exhibir figuras y completar dioramas de Los Caballeros del Zodiaco. El coleccionista arma las escenas y BoomArt fabrica las piezas a medida.
+
 ## Herramientas gratis
 
 Herramientas gratuitas de BoomArt, sin registro. En Amigo Secreto, el modo WhatsApp genera los enlaces en el navegador. El modo correo utiliza las direcciones de los participantes para enviar el resultado según las [políticas de privacidad](https://boomart.pe/politicas.html#amigo-secreto).
