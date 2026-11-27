@@ -7,6 +7,9 @@ const FIGURE_GALLERY = "/radar/galeria-figuras/";
 const FIGURE_CHECK_DATE = "2026-11-27";
 const FIGURE_LINES = { "myth-cloth-ex": "Myth Cloth EX", vintage: "Vintage · Saint Cloth Series", appendix: "Saint Cloth Myth Appendix" };
 const PRICE = new Intl.NumberFormat("es-PE");
+const ESTIMATE = new Intl.NumberFormat("es-PE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const EXCHANGE = { JPY: { usd: 0.00627, pen: 0.02170 }, CNY: { usd: 0.1502, pen: 0.5211 } };
+const estimate = (amount, currency) => `≈ US$ ${ESTIMATE.format(amount * EXCHANGE[currency].usd)} · S/ ${ESTIMATE.format(amount * EXCHANGE[currency].pen)}`;
 const SECTIONS = {
   figuras: "Figuras", manga: "Manga", anime: "Anime y cine",
   videojuegos: "Videojuegos", aniversarios: "Aniversarios", curiosidades: "Curiosidades",
@@ -267,14 +270,14 @@ function figureCard(figure, index, posts) {
       <p>${escape(description)}</p>
       <dl class="radar-figure-prices">
         <div>
-          <dt>Japón</dt>
-          <dd><strong>¥${PRICE.format(japan.price)}</strong><a href="${escape(source)}">${escape(japan.seller)}</a><span>${escape(japan.status)}</span></dd>
-          ${shop ? `<dd><strong>¥${PRICE.format(shop.price)}</strong><a href="${escape(shop.url)}">${escape(shop.seller)}</a><span>${escape(shop.status)}</span></dd>` : ""}
+          <dt>Japón · yenes (JPY)</dt>
+          <dd><strong>¥${PRICE.format(japan.price)}</strong><span>${estimate(japan.price, "JPY")}</span><a href="${escape(source)}">${escape(japan.seller)}</a><span>${escape(japan.status)}</span></dd>
+          ${shop ? `<dd><strong>¥${PRICE.format(shop.price)}</strong><span>${estimate(shop.price, "JPY")}</span><a href="${escape(shop.url)}">${escape(shop.seller)}</a><span>${escape(shop.status)}</span></dd>` : ""}
         </div>
         <div>
-          <dt>China continental</dt>
+          <dt>China continental · yuanes (CNY)</dt>
           <dd>
-            ${china?.price ? `<strong>${PRICE.format(china.price)} CNY</strong>` : '<b>Precio por confirmar</b>'}
+            ${china?.price ? `<strong>${PRICE.format(china.price)} CNY</strong><span>${estimate(china.price, "CNY")}</span>` : '<b>Precio por confirmar</b>'}
             ${china ? `<a href="${escape(china.url)}">${escape(china.seller)}</a><span>${escape(china.status)}</span>` : '<a href="#tiendas-china">Ver tiendas oficiales en China</a>'}
           </dd>
         </div>
@@ -323,7 +326,8 @@ function figureGallery(figures, posts) {
           <nav aria-label="En esta página"><a href="#figuras">Ver figuras</a><a href="#tiendas">Ver tiendas</a></nav>
         </header>
         <section id="figuras" aria-label="Figuras y precios">
-          <p class="radar-gallery-date">Precios consultados el <time datetime="${FIGURE_CHECK_DATE}">${dateText(FIGURE_CHECK_DATE)}</time>. Los importes están en yenes japoneses (JPY) o yuanes chinos (CNY). El envío y los cargos de importación se consultan aparte.</p>
+          <p class="radar-gallery-date">Precios consultados el <time datetime="${FIGURE_CHECK_DATE}">${dateText(FIGURE_CHECK_DATE)}</time>. Los importes están en yenes japoneses (JPY) o yuanes chinos (CNY). Las cifras en dólares y soles son estimaciones al tipo de cambio referencial del 27 de noviembre de 2026. El envío y los cargos de importación se consultan aparte.</p>
+          <p class="radar-gallery-date">Cambio usado por unidad: 1 yen ≈ US$ 0,00627 y S/ 0,02170 · 1 yuan ≈ US$ 0,1502 y S/ 0,5211. Fuentes: <a href="https://www.xe.com/currencyconverter/convert/?Amount=1&amp;From=JPY&amp;To=USD">XE</a>, <a href="https://wise.com/in/currency-converter/jpy-to-pen-rate/history/undefined">Wise</a>, <a href="https://waverate.app/rates/cny-to-usd">WaveRate</a> y <a href="https://www.exchange-rates.org/converter/cny-pen">Exchange Rates</a>.</p>
           <form class="radar-filters" id="radar-filters" data-item="figura" hidden>
             <label>Buscar una figura <input type="search" name="buscar" placeholder="Pegaso, Atena, EX METAL…"></label>
             <label>Línea <select name="tema"><option value="">Todas las líneas</option>${Object.entries(FIGURE_LINES).map(([key, label]) => `<option value="${key}">${label}</option>`).join("")}</select></label>
