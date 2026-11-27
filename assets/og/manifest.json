@@ -749,11 +749,11 @@
     "bytes": 94143
   },
   "figura-chibi-harry-potter": {
-    "source": "assets/products/figura-chibi-harry-potter-portada.webp",
-    "hash": "f3eb9bcb8f38e51e",
+    "source": "assets/products/figura-chibi-harry-potter-repisa.webp",
+    "hash": "860ede9403c585ae",
     "width": 960,
     "height": 1200,
-    "bytes": 99124
+    "bytes": 79511
   },
   "nacimiento-minimalista": {
     "source": "assets/products/nacimiento-minimalista-navidad-hero.jpg",
@@ -768,5 +768,82 @@
     "width": 960,
     "height": 1200,
     "bytes": 76746
+  },
+  "figura-chibi-severus-snape": {
+    "source": "assets/products/figura-chibi-severus-snape-repisa.webp",
+    "hash": "a58ee00ddf6d584a",
+    "width": 960,
+    "height": 1200,
+    "bytes": 76613
+  },
+  "figura-chibi-luna-lovegood": {
+    "source": "assets/products/figura-chibi-luna-lovegood-repisa.webp",
+    "hash": "0338b128b6a3657d",
+    "width": 960,
+    "height": 1200,
+    "bytes": 78156
+  },
+  "figura-chibi-minerva-mcgonagall": {
+    "source": "assets/products/figura-chibi-minerva-mcgonagall-repisa.webp",
+    "hash": "7cde5884e783bcd2",
+    "width": 960,
+    "height": 1200,
+    "bytes": 73032
+  },
+  "figura-chibi-albus-dumbledore": {
+    "source": "assets/products/figura-chibi-albus-dumbledore-repisa.webp",
+    "hash": "139fdaf2add397f9",
+    "width": 960,
+    "height": 1200,
+    "bytes": 77464
+  },
+  "figura-chibi-rubeus-hagrid": {
+    "source": "assets/products/figura-chibi-rubeus-hagrid-repisa.webp",
+    "hash": "f4e077c28f9b2da2",
+    "width": 960,
+    "height": 1200,
+    "bytes": 79815
+  },
+  "figura-chibi-draco-malfoy": {
+    "source": "assets/products/figura-chibi-draco-malfoy-repisa.webp",
+    "hash": "2c2eb0a21c5edd14",
+    "width": 960,
+    "height": 1200,
+    "bytes": 71892
+  },
+  "figura-chibi-hermione-granger": {
+    "source": "assets/products/figura-chibi-hermione-granger-repisa.webp",
+    "hash": "c15ffcda3491dd32",
+    "width": 960,
+    "height": 1200,
+    "bytes": 75637
+  },
+  "figura-chibi-ron-weasley": {
+    "source": "assets/products/figura-chibi-ron-weasley-repisa.webp",
+    "hash": "73bd3ddb0e7c89ca",
+    "width": 960,
+    "height": 1200,
+    "bytes": 75687
+  },
+  "figura-chibi-voldemort": {
+    "source": "assets/products/figura-chibi-voldemort-repisa.webp",
+    "hash": "1fe19fbd72cd027c",
+    "width": 960,
+    "height": 1200,
+    "bytes": 73640
+  },
+  "figura-chibi-dobby": {
+    "source": "assets/products/figura-chibi-dobby-repisa.webp",
+    "hash": "79406a467c5538e3",
+    "width": 960,
+    "height": 1200,
+    "bytes": 72467
+  },
+  "figura-chibi-sirius-black": {
+    "source": "assets/products/figura-chibi-sirius-black-repisa.webp",
+    "hash": "ccafba07fda1de91",
+    "width": 960,
+    "height": 1200,
+    "bytes": 78543
   }
 }
