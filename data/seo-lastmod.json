@@ -1,8 +1,8 @@
 {
   "version": 1,
   "pages": {
-    "/": {"hash":"8fa584283386","lastmod":"2026-11-27"},
-    "/Halloween/": {"hash":"afbdf0e7635c","lastmod":"2026-11-27"},
+    "/": {"hash":"56a7d0919353","lastmod":"2026-11-27"},
+    "/Halloween/": {"hash":"996e03b7f76c","lastmod":"2026-11-27"},
     "/amigo-secreto/": {"hash":"89fb169d13bf","lastmod":"2026-11-27"},
     "/catalogo.html": {"hash":"e98d12e91eca","lastmod":"2026-11-27"},
     "/categoria/figuras-coleccionables/": {"hash":"ca17b00ceb23","lastmod":"2026-11-27"},
@@ -12,7 +12,7 @@
     "/categoria/marvel-dc/": {"hash":"4c6a9054785f","lastmod":"2026-11-27"},
     "/categoria/mundial-de-futbol/": {"hash":"3525c0d7ce0e","lastmod":"2026-11-27"},
     "/categoria/navidad/": {"hash":"cc701a69af3b","lastmod":"2026-11-27"},
-    "/categoria/saint-seiya/": {"hash":"336aee6f0f64","lastmod":"2026-11-27"},
+    "/categoria/saint-seiya/": {"hash":"1a3ffe077fe3","lastmod":"2026-11-27"},
     "/categoria/series-y-peliculas/": {"hash":"363bdb8251a2","lastmod":"2026-11-27"},
     "/categoria/soportes-de-mandos/": {"hash":"59b98ec64296","lastmod":"2026-11-27"},
     "/categoria/zelda/": {"hash":"baa8b40eb5f9","lastmod":"2026-11-27"},
@@ -160,6 +160,13 @@
     "/producto/torre-del-reloj-saint-seiya/": {"hash":"6e68e61d7f0e","lastmod":"2026-11-27"},
     "/producto/visor-de-cyclops/": {"hash":"55c5c53f1b4e","lastmod":"2026-11-27"},
     "/producto/zkull-urban/": {"hash":"3990cee398d6","lastmod":"2026-11-27"},
+    "/radar/": {"hash":"008e50bbc97f","lastmod":"2026-11-27"},
+    "/radar/archivo-soldiers-soul-saint-seiya/": {"hash":"bc1a8e78dc58","lastmod":"2026-11-27"},
+    "/radar/blokees-galaxy-05-hades-caja-sorpresa/": {"hash":"9f5e6cd5e505","lastmod":"2026-11-27"},
+    "/radar/cuarenta-anos-anime-saint-seiya/": {"hash":"dcacf7b67d8d","lastmod":"2026-11-27"},
+    "/radar/knights-of-the-zodiac-anime-cgi-y-pelicula/": {"hash":"708474687a90","lastmod":"2026-11-27"},
+    "/radar/manga-final-edition-y-next-dimension/": {"hash":"68f68ebbafc1","lastmod":"2026-11-27"},
+    "/radar/pegaso-seiya-primera-armadura-myth-cloth-ex/": {"hash":"d1ace5b48f69","lastmod":"2026-11-27"},
     "/test/": {"hash":"52750e606243","lastmod":"2026-11-26"},
     "/test/caballeros-de-oro/": {"hash":"ced160246b3e","lastmod":"2026-11-26"}
   }

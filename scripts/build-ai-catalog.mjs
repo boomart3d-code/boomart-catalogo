@@ -27,6 +27,7 @@ import { videoUploadDate } from "./video-upload-date.mjs";
 import { validateAdsConfig, classifyProduct, buildGroupsDoc, openAiAvailability } from "./ads-taxonomy.mjs";
 import { validatePlazos, plazoOf } from "./plazos.mjs";
 import { buildPolos } from "./build-polos-seo.mjs";
+import { radarLlms, radarSitemap, readRadarPosts, renderRadar } from "./radar-content.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://boomart.pe";
@@ -736,6 +737,10 @@ function buildLlms(products, reviews = []) {
 - [Halloween](${SITE}/Halloween/): mascaras, cascos y decoracion tematica.
 - [Nosotros](${SITE}/nosotros.html): quienes somos y como trabajamos.
 - [Politicas](${SITE}/politicas.html): compra, envio y privacidad.
+
+## Radar Saint Seiya Perú
+
+${radarLlms(radarPosts)}
 
 ## Historias del taller
 
@@ -2094,7 +2099,7 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
         <span class="category-share-feedback" role="status" aria-live="polite"></span>
       </div>
       <div class="cat-intro">
-        ${meta.intro.map((t) => `<p>${esc(t)}</p>`).join("\n        ")}${cat === "Saint Seiya" ? `\n        <p><a href="${rel}historias/vitrina-de-saint-seiya/"><strong>Una vitrina de Saint Seiya que sigue creciendo</strong></a> · Así ayudamos a un coleccionista a completar sus dioramas.</p>` : ""}
+        ${meta.intro.map((t) => `<p>${esc(t)}</p>`).join("\n        ")}${cat === "Saint Seiya" ? `\n        <p><a href="${rel}historias/vitrina-de-saint-seiya/"><strong>Una vitrina de Saint Seiya que sigue creciendo</strong></a> · Así ayudamos a un coleccionista a completar sus dioramas.</p>\n        <p><a href="${rel}radar/"><strong>Radar Saint Seiya Perú</strong></a> · Noticias, lanzamientos y conversación para coleccionistas.</p>` : ""}
       </div>
 
       <p class="cat-count">${list.length} ${list.length === 1 ? "pieza" : "piezas"} en ${esc(clean)}</p>
@@ -2406,6 +2411,7 @@ function sitemapEntries(products) {
   return [
     { loc: `${SITE}/`, priority: "1.0", changefreq: "weekly" },
     ...polosSEO.sitemap,
+    ...radarSitemap(radarPosts),
     { loc: `${SITE}/catalogo.html`, priority: "0.9", changefreq: "weekly" },
     { loc: `${SITE}/impresion-3d-personalizada/`, priority: "0.9", changefreq: "monthly" },
     { loc: `${SITE}/merchandising-corporativo/`, priority: "0.9", changefreq: "monthly" },
@@ -2484,6 +2490,7 @@ async function syncSocialBlocks() {
 /* ---------------------------------------------------------------- main */
 const [products, reviews] = await Promise.all([loadProducts(), loadReviews()]);
 const polosSEO = await buildPolos(ROOT);
+const radarPosts = await readRadarPosts(ROOT);
 const ratingLd = buildRatingLd(reviews);
 // El feed de OpenAI se arma una sola vez: el archivo de metadatos lleva la huella de ESTE contenido.
 const openaiJsonl = buildOpenAiJsonl(products);
@@ -2518,6 +2525,7 @@ await writeFile(indexFile, await readFile(indexFile, 'utf8'));
 // Despues de actualizar index.html: /Halloween/ es una copia de la portada.
 await writeHalloweenCampaignPage(products);
 await writeSaintSeiyaCampaignPage(products);
+await renderRadar(ROOT, radarPosts);
 // El sitemap va al final: su lastmod sale de la huella de las paginas ya escritas.
 await writeFile(path.join(ROOT, "sitemap.xml"), await buildSitemapXml(products));
 

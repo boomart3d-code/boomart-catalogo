@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es-PE">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moderación del Radar | BoomArt</title>
+    <meta name="description" content="Bandeja de moderación de Radar Saint Seiya Perú.">
+    <meta name="robots" content="noindex,follow">
+    <link rel="icon" type="image/svg+xml" href="/assets/boomart-mark.svg?v=7">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/styles.css?v=69">
+    <link rel="stylesheet" href="/src/radar.css?v=1">
+    <script src="/vitrina/vendor/supabase-js-2.117.2.umd.js" defer></script>
+    <script src="/src/supabase-config.js" defer></script>
+    <script type="module" src="/src/radar-moderar.js?v=1"></script>
+  </head>
+  <body class="radar-site">
+    <a class="radar-skip" href="#contenido">Ir al contenido</a>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="BoomArt inicio"><img class="brand-logo" src="/assets/boomart-logo.svg" alt=""><span><strong>BoomArt</strong></span></a>
+      <nav aria-label="Secciones de BoomArt">
+        <a href="/radar/">Radar Saint Seiya</a>
+        <a href="/historias/">Historias</a>
+        <a href="/categoria/saint-seiya/">Catálogo</a>
+      </nav>
+    </header>
+    <main class="radar" id="contenido" data-radar-moderation>
+      <div class="radar-wrap radar-reading">
+        <a class="radar-back" href="/radar/">← Volver al Radar</a>
+        <h1>Moderación del Radar</h1>
+        <p data-preview class="radar-preview" hidden>Vista de prueba. Solo aparecen participaciones de este navegador.</p>
+        <p data-session class="radar-session" hidden><button class="radar-text-button" type="button" data-sign-out>Cerrar sesión</button></p>
+        <p data-status class="radar-feedback" role="status">Comprobando acceso…</p>
+        <div data-login class="radar-login" hidden>
+    <form data-sign-in>
+      <label>Correo electrónico <input name="correo" type="email" autocomplete="email" required maxlength="254"></label>
+      <button class="radar-action" type="submit">Entrar con mi correo</button>
+      <p class="radar-small" data-login-hint>Te enviaremos un enlace de acceso. En la conversación se verá tu alias.</p>
+    </form>
+  </div>
+        <section data-queue hidden aria-label="Bandeja de moderación"></section>
+      </div>
+    </main>
+    <footer class="radar-footer">
+      <div class="radar-wrap">
+        <p>Radar Saint Seiya Perú · Un proyecto editorial independiente de BoomArt</p>
+        <nav aria-label="Enlaces del Radar"><a href="/radar/feed.xml">Suscríbete por RSS</a><a href="/politicas.html">Privacidad</a><a href="mailto:contacto@boomart.pe">Contacta a la redacción</a></nav>
+      </div>
+    </footer>
+  </body>
+</html>
