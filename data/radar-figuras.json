@@ -1,0 +1,228 @@
+[
+  {
+    "id": "pegaso-primera-armadura-ex",
+    "line": "myth-cloth-ex",
+    "name": "Seiya de Pegaso",
+    "edition": "Primera armadura de Bronce · Cuerpo EX METAL",
+    "description": "El nuevo Pegaso EX mide 17 cm y rediseña la articulación de los hombros para recrear poses del anime.",
+    "details": [
+      "Tres expresiones intercambiables, cabello alternativo y dos pares de manos.",
+      "La armadura también se monta sobre el soporte con forma de Pegaso.",
+      "Código JAN 4573102722638."
+    ],
+    "japan": {
+      "price": 17600,
+      "seller": "Tamashii Nations",
+      "status": "Lanzamiento anunciado para el 19 de diciembre de 2026."
+    },
+    "shop": {
+      "price": 14960,
+      "seller": "AmiAmi",
+      "status": "Precio listado con la preventa cerrada.",
+      "url": "https://www.amiami.jp/top/detail/detail?gcode=FIGURE-204431"
+    },
+    "china": {
+      "seller": "Bandai China",
+      "status": "El anuncio local presenta la figura y remite a cada tienda para conocer el importe en China continental.",
+      "url": "https://www.sina.cn/news/detail/5316275023646953.html"
+    },
+    "photos": [
+      {
+        "src": "https://tamashiiweb.com/storage/images/products/main/74dd91d5-db9c-4784-9f49-840f5f7253e0.webp",
+        "alt": "Vista completa de Seiya con la primera armadura en la línea Myth Cloth EX",
+        "width": 960,
+        "height": 1200
+      },
+      {
+        "src": "https://tamashiiweb.com/storage/images/products/sub/b2093c9f-088e-40ad-8847-15cca1817c86.webp",
+        "alt": "Seiya Myth Cloth EX en pose de combate con las piernas separadas",
+        "width": 960,
+        "height": 1200
+      }
+    ],
+    "post": "pegaso-seiya-primera-armadura-myth-cloth-ex",
+    "source": "https://tamashiiweb.com/item/15905/",
+    "cover": {
+      "src": "https://tamashiiweb.com/storage/images/products/thumbnail/df428284-2dae-4c18-8049-abf7454fd4ac.webp",
+      "alt": "Primer plano del Seiya de Pegaso Myth Cloth EX con casco, peto plateado y traje rojo",
+      "width": 600,
+      "height": 600
+    }
+  },
+  {
+    "id": "pegaso-reedicion-vintage",
+    "line": "vintage",
+    "name": "Seiya de Pegaso",
+    "edition": "Saint Cloth Series · Primera tirada con caja",
+    "description": "La reedición de 12 cm recupera las proporciones del juguete clásico e incluye piezas para armar la Pandora Box en la primera tirada.",
+    "details": [
+      "Armadura con partes de metal fundido y soporte para montarla en forma de objeto.",
+      "La primera tirada añade la caja de armadura para ensamblar y su base.",
+      "Código JAN 4573102736673."
+    ],
+    "japan": {
+      "price": 11000,
+      "seller": "Tamashii Nations",
+      "status": "Lanzamiento anunciado para enero de 2027."
+    },
+    "shop": {
+      "price": 9900,
+      "seller": "AmiAmi",
+      "status": "Precio listado con la preventa cerrada.",
+      "url": "https://www.amiami.jp/top/detail/detail?gcode=FIGURE-207361"
+    },
+    "photos": [
+      {
+        "src": "https://tamashiiweb.com/storage/images/products/main/188c3830-613b-4881-9585-3091627e2c97.webp",
+        "alt": "Vista completa de la reedición vintage de Seiya de Pegaso",
+        "width": 960,
+        "height": 1200
+      },
+      {
+        "src": "https://tamashiiweb.com/storage/images/products/sub/485d6cee-90c0-4582-9dbe-8dd8cb6d204f.webp",
+        "alt": "Seiya en traje rojo con la caja azul de la primera edición a la espalda",
+        "width": 960,
+        "height": 1200
+      }
+    ],
+    "source": "https://tamashiiweb.com/item/16024/",
+    "cover": {
+      "src": "https://tamashiiweb.com/storage/images/products/thumbnail/c8f997aa-48f8-4464-a6a5-db592757b124.webp",
+      "alt": "Pegaso de la reedición Saint Cloth Series con casco de dos puntas doradas",
+      "width": 600,
+      "height": 600
+    }
+  },
+  {
+    "id": "seiya-sagitario-armadura-divina",
+    "line": "myth-cloth-ex",
+    "name": "Seiya de Sagitario",
+    "edition": "Armadura divina · 40.º aniversario",
+    "description": "La versión de 17 cm recrea la armadura divina de Sagitario vista en Zodiac Brave.",
+    "details": [
+      "Cuerpo adaptado del Pegaso con armadura divina, con piezas específicas de cabello y casco.",
+      "La imagen corresponde a la ficha de Japón."
+    ],
+    "japan": {
+      "price": 27500,
+      "seller": "Tamashii Web Shop",
+      "status": "Precio del sorteo japonés. Despacho anunciado para octubre de 2026."
+    },
+    "china": {
+      "price": 1415,
+      "seller": "Tamashii Nations · Evento de Pekín",
+      "status": "Precio histórico de la Premium Gold Edition en el evento del 1 al 22 de noviembre de 2026.",
+      "url": "https://www.sina.cn/news/detail/5359054929008452.html"
+    },
+    "comparison": "Bandai presentó la oferta de Pekín como Premium Gold Edition. La ficha japonesa corresponde a su sorteo. La equivalencia entre ambas ediciones queda por comprobar.",
+    "source": "https://tamashiiweb.com/item/16115/",
+    "cover": {
+      "src": "https://tamashiiweb.com/storage/images/products/thumbnail/faef28b7-72d3-43c0-b273-5caf0c674d42.webp",
+      "alt": "Vista oficial japonesa de Seiya de Sagitario Myth Cloth EX con armadura divina dorada",
+      "width": 1200,
+      "height": 1200
+    }
+  },
+  {
+    "id": "atena-original-color-edition",
+    "line": "myth-cloth-ex",
+    "name": "Atena",
+    "edition": "Original Color Edition · Tamashii Nation 2026",
+    "description": "Atena mide 16 cm y viste una armadura con acabado dorado. Incluye una expresión llorando para la escena de Elíseos.",
+    "details": [
+      "Cuatro expresiones intercambiables, cabello alternativo y efecto para el báculo.",
+      "La segunda ronda del sorteo general se anunció del 27 al 30 de noviembre de 2026."
+    ],
+    "japan": {
+      "price": 25300,
+      "seller": "Premium Bandai Japón",
+      "status": "Precio del sorteo. Despacho anunciado para abril de 2027."
+    },
+    "post": "atena-original-color-edition-sorteo-noviembre-2026",
+    "source": "https://tamashiiweb.com/item/16269/",
+    "cover": {
+      "src": "https://tamashiiweb.com/storage/images/products/thumbnail/02f712eb-bf8f-4ef2-87c7-33b62be21738.webp",
+      "alt": "Atena Original Color Edition con armadura dorada, escudo y báculo",
+      "width": 1200,
+      "height": 1200
+    }
+  },
+  {
+    "id": "aioria-leo-armadura-divina-ex-metal",
+    "line": "myth-cloth-ex",
+    "name": "Aioria de Leo",
+    "edition": "Armadura divina · EX Metal Edition",
+    "description": "Figura de 18 cm inspirada en Soul of Gold, con cuerpo EX METAL y expresiones revisadas.",
+    "details": [
+      "Tres expresiones, cuatro pares de manos y flequillo intercambiable.",
+      "Incluye soporte para exhibir la armadura en forma de objeto."
+    ],
+    "japan": {
+      "price": 26400,
+      "seller": "Tamashii Web Shop",
+      "status": "Despacho anunciado para abril de 2027."
+    },
+    "post": "leo-aiolia-armadura-divina-ex-metal-preventa-2026",
+    "source": "https://tamashiiweb.com/item/16260/",
+    "cover": {
+      "src": "https://tamashiiweb.com/storage/images/products/thumbnail/caca2d74-42f9-4679-ab33-a633452ccfbc.webp",
+      "alt": "Aioria de Leo en su edición EX Metal con armadura dorada y alas",
+      "width": 1200,
+      "height": 1200
+    }
+  },
+  {
+    "id": "shiryu-dragon-armadura-divina-ex",
+    "line": "myth-cloth-ex",
+    "name": "Shiryu de Dragón",
+    "edition": "Armadura divina · Myth Cloth EX",
+    "description": "Shiryu mide 17,5 cm y usa un molde basado en la versión animada de la armadura divina.",
+    "details": [
+      "Tres expresiones, tres pares de manos y piezas de cabello intercambiables.",
+      "Incluye soporte para montar el objeto de Dragón."
+    ],
+    "japan": {
+      "price": 29700,
+      "seller": "Tamashii Nations",
+      "status": "Lanzamiento anunciado para febrero de 2027."
+    },
+    "source": "https://tamashiiweb.com/item/16038/",
+    "cover": {
+      "src": "https://tamashiiweb.com/storage/images/products/thumbnail/db01e8a6-1cf5-49bb-a43d-ea7946d61d64.webp",
+      "alt": "Shiryu con casco y armadura divina de Dragón en tonos verdes",
+      "width": 600,
+      "height": 600
+    }
+  },
+  {
+    "id": "armaduras-bronce-appendix",
+    "line": "appendix",
+    "name": "Armaduras de Bronce",
+    "edition": "Appendix · Objetos en colores originales y dorados",
+    "description": "Las armaduras de Pegaso, Dragón, Cisne, Andrómeda y Fénix se presentan en forma de objeto, con acabado original o dorado.",
+    "details": [
+      "Aproximadamente 9 cm con la base, según la ficha oficial.",
+      "Cada caja sorpresa trae uno de los diez diseños."
+    ],
+    "japan": {
+      "price": 1650,
+      "seller": "Tamashii Nations Store",
+      "status": "Precio por caja individual. Lanzamiento japonés del 13 de noviembre de 2026."
+    },
+    "photos": [
+      {
+        "src": "https://tamashiiweb.com/store/tokyo/assets_c/2026/11/DSC07741-thumb-720xauto-8499.jpg",
+        "alt": "La colección Appendix de Bronce reunida en sus acabados de color original y dorado",
+        "width": 720,
+        "height": 540
+      }
+    ],
+    "source": "https://tamashiiweb.com/item/16131/",
+    "cover": {
+      "src": "https://tamashiiweb.com/storage/images/products/thumbnail/90ff7d1c-ce4c-41c0-bdc5-ed1e92d12794.webp",
+      "alt": "Diez armaduras de Bronce en forma de objeto sobre pedestales de constelación",
+      "width": 600,
+      "height": 600
+    }
+  }
+]

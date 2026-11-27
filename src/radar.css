@@ -280,6 +280,71 @@
 .radar-footer nav { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 11px 20px; font-size: .9rem; }
 .radar-footer a { text-decoration: underline; text-underline-offset: 3px; }
 
+
+.radar-gallery .radar-masthead {
+  padding: clamp(24px, 5.4vw, 64px);
+  border: 0;
+  background: var(--gallery-carbon);
+  color: var(--gallery-ivory);
+}
+.radar-gallery .radar-masthead span, .radar-gallery .radar-masthead .radar-label,
+.radar-gallery .radar-masthead a { color: #ffabb6; }
+.radar-gallery .radar-masthead a:focus-visible { outline-color: #ffabb6; }
+.radar-gallery .radar-masthead .radar-label { margin: 0 0 12px; font-size: .8rem; }
+.radar-gallery-date { max-width: 76ch; font-size: .9rem; color: var(--radar-muted); }
+.radar-figure-grid, .radar-figure-stores {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 3vw, 34px);
+}
+.radar-figure-card, .radar-figure-stores > div {
+  border: 1px solid var(--radar-border);
+  background: #fffdf9;
+}
+.radar-figure-card, .radar-gallery #figuras, .radar-gallery #tiendas-china { scroll-margin-top: 105px; }
+.radar-figure-cover {
+  display: grid;
+  place-items: center;
+  background: #171617;
+}
+.radar-figure-cover img {
+  display: block;
+  width: 100%;
+  height: clamp(230px, 36vw, 440px);
+  object-fit: contain;
+}
+.radar-figure-copy, .radar-figure-stores > div { padding: clamp(14px, 2.5vw, 27px); }
+.radar-figure-copy h2 { font-size: clamp(2rem, 3.5vw, 3.25rem); text-wrap: initial; }
+.radar-figure-edition { margin: 5px 0 0; font-weight: 700; color: var(--radar-muted); }
+.radar-figure-prices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+.radar-figure-prices > div { min-width: 0; padding: clamp(10px, 1.5vw, 16px); background: var(--radar-soft); border: 1px solid var(--radar-border); }
+.radar-figure-prices dt { font-size: .81rem; font-weight: 800; }
+.radar-figure-prices dd { display: grid; gap: 6px; margin: 9px 0 0; line-height: 1.4; font-size: .85rem; }
+.radar-figure-prices dd + dd { border-top: 1px solid var(--radar-border); padding-top: 10px; margin-top: 10px; }
+.radar-figure-prices strong { font-size: clamp(1.18rem, 2.2vw, 1.75rem); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.radar-figure-prices span, .radar-figure-comparison { color: var(--radar-muted); }
+.radar-figure-comparison { font-size: .87rem; }
+.radar-figure-details { margin-top: 16px; }
+.radar-figure-details summary { padding-block: 7px; cursor: pointer; color: var(--radar-red); font-weight: 800; }
+.radar-figure-details summary:focus-visible { outline: 2px solid var(--radar-red); outline-offset: 3px; }
+.radar-figure-thumbnails { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.radar-figure-thumbnails img { display: block; width: 100%; height: auto; }
+.radar-figure-links { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 8px 16px; margin-top: 10px; font-size: .85rem; }
+.radar-figure-copy a, .radar-figure-stores a { color: var(--radar-red); text-decoration: underline; text-underline-offset: 3px; }
+.radar-figure-stores { margin-top: 16px; }
+.radar-figure-stores li, .radar-figure-details li { margin-block: 8px; line-height: 1.5; }
+.radar-figure-stores ul, .radar-figure-details ul { padding-inline-start: 19px; }
+
+@media (max-width: 700px) {
+  .radar-figure-grid, .radar-figure-stores { grid-template-columns: minmax(0, 1fr); }
+  .radar-figure-cover img { height: min(84vw, 400px); }
+}
+
 @media (max-width: 840px) {
   .radar-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

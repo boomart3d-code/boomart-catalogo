@@ -3,6 +3,10 @@ import path from "node:path";
 
 const SITE = "https://boomart.pe";
 const SOCIAL_IMAGE = "/assets/boomart-og.jpg";
+const FIGURE_GALLERY = "/radar/galeria-figuras/";
+const FIGURE_CHECK_DATE = "2026-11-27";
+const FIGURE_LINES = { "myth-cloth-ex": "Myth Cloth EX", vintage: "Vintage · Saint Cloth Series", appendix: "Saint Cloth Myth Appendix" };
+const PRICE = new Intl.NumberFormat("es-PE");
 const SECTIONS = {
   figuras: "Figuras", manga: "Manga", anime: "Anime y cine",
   videojuegos: "Videojuegos", aniversarios: "Aniversarios", curiosidades: "Curiosidades",
@@ -52,6 +56,29 @@ export async function readRadarPosts(root) {
   return posts.sort((a, b) => b.date.localeCompare(a.date));
 }
 
+async function readRadarFigures(root) {
+  const figures = JSON.parse(await readFile(path.join(root, "data/radar-figuras.json"), "utf8"));
+  if (!Array.isArray(figures) || !figures.length) throw new Error("El Radar necesita al menos una ficha de figura.");
+  const ids = new Set();
+  const validPhoto = (photo) => photo?.alt && hasHttps(photo.src)
+    && Number.isInteger(photo.width) && Number.isInteger(photo.height) && photo.width > 0 && photo.height > 0;
+  const validPrice = (price) => Number.isFinite(price) && price > 0;
+  const validListing = (listing) => listing?.seller && listing.status;
+  for (const { id, line, name, edition, description, cover, source, japan, shop, china, photos, details } of figures) {
+    if (typeof id !== "string" || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id) || ids.has(id)
+      || !Object.hasOwn(FIGURE_LINES, line) || !name || !edition || !description
+      || !validPhoto(cover) || !hasHttps(source) || !Array.isArray(details) || !details.length
+      || !validListing(japan) || !validPrice(japan.price)
+      || (shop && (!validListing(shop) || !validPrice(shop.price) || !hasHttps(shop.url)))
+      || (china && (!validListing(china) || !hasHttps(china.url) || (china.price !== undefined && !validPrice(china.price))))
+      || (photos && (!Array.isArray(photos) || !photos.every(validPhoto)))) {
+      throw new Error(`Ficha de figura inválida: ${id}`);
+    }
+    ids.add(id);
+  }
+  return figures;
+}
+
 export function radarHomeBlock(posts) {
   const cards = posts.slice(0, 3).map(post => `<article>
               <a class="home-radar-note" href="${route(post)}">
@@ -70,6 +97,7 @@ export function radarHomeBlock(posts) {
             </div>
             <nav class="home-radar-links" aria-label="Novedades y taller">
               <a class="home-radar-all" href="/radar/">Ver todas las novedades</a>
+              <a href="${FIGURE_GALLERY}">Galería de figuras</a>
               <a href="/nosotros.html">Conoce BoomArt</a>
             </nav>
           </div>
@@ -82,19 +110,20 @@ export function radarHomeBlock(posts) {
 }
 
 export function radarSitemap(posts) {
-  return ["/radar/", ...posts.map(route)].map(url => ({ loc: SITE + url, priority: "0.6", changefreq: url === "/radar/" ? "daily" : "monthly" }));
+  return ["/radar/", FIGURE_GALLERY, ...posts.map(route)].map(url => ({ loc: SITE + url, priority: "0.6", changefreq: url === "/radar/" ? "daily" : "monthly" }));
 }
 
 export function radarLlms(posts) {
   return [
     "- [Radar Saint Seiya Perú](https://boomart.pe/radar/): portal editorial de BoomArt con novedades de figuras licenciadas, manga, anime, cine y videojuegos, aniversarios y curiosidades. Incluye fuentes y distingue el lanzamiento de la llegada a Perú.",
+    `- [Galería de figuras de Saint Seiya](${SITE + FIGURE_GALLERY}): fichas en español con fotos oficiales, ediciones, tiendas y precios de Japón y China continental en sus monedas de origen.`,
     ...posts.slice(0, 5).map(post => `- [${post.title}](${SITE + route(post)}): ${post.description}`),
   ].join("\n");
 }
 
 function siteFrame({ title, description, url, schema, content, cover, modules = [], privatePage = false }) {
   const meta = privatePage ? '<meta name="robots" content="noindex,follow">' : `<link rel="canonical" href="${SITE + url}">
-    <meta property="og:type" content="${url === "/radar/" ? "website" : "article"}">
+    <meta property="og:type" content="${schema["@type"] === "Article" ? "article" : "website"}">
     <meta property="og:title" content="${escape(title)}">
     <meta property="og:description" content="${escape(description)}">
     <meta property="og:url" content="${SITE + url}">
@@ -106,7 +135,7 @@ function siteFrame({ title, description, url, schema, content, cover, modules = 
   const needsCommunity = modules.includes("radar-comunidad") || modules.includes("radar-moderar");
   const scripts = [
     ...(needsCommunity ? ['<script src="/vitrina/vendor/supabase-js-2.117.2.umd.js" defer></script>', '<script src="/src/supabase-config.js" defer></script>'] : []),
-    ...modules.map(name => `<script type="module" src="/src/${name}.js?v=${name === "radar-comunidad" ? 3 : 2}"></script>`),
+    ...modules.map(name => `<script type="module" src="/src/${name}.js?v=${name === "radar-moderar" ? 2 : 3}"></script>`),
   ].join("\n    ");
   return `<!doctype html>
 <html lang="es-PE">
@@ -121,7 +150,7 @@ function siteFrame({ title, description, url, schema, content, cover, modules = 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles.css?v=69">
-    <link rel="stylesheet" href="/src/radar.css?v=3">
+    <link rel="stylesheet" href="/src/radar.css?v=4">
     ${scripts}
   </head>
   <body class="radar-site">
@@ -130,6 +159,7 @@ function siteFrame({ title, description, url, schema, content, cover, modules = 
       <a class="brand" href="/" aria-label="BoomArt inicio"><img class="brand-logo" src="/assets/boomart-logo.svg" alt=""><span><strong>BoomArt</strong></span></a>
       <nav aria-label="Secciones de BoomArt">
         <a href="/radar/"${url === "/radar/" ? ' aria-current="page"' : ""}>Radar Saint Seiya</a>
+        <a href="${FIGURE_GALLERY}"${url === FIGURE_GALLERY ? ' aria-current="page"' : ""}>Galería</a>
         <a href="/historias/">Historias</a>
         <a href="/categoria/saint-seiya/">Catálogo</a>
       </nav>
@@ -178,7 +208,7 @@ function homepage(posts) {
         <div class="radar-masthead">
           <h1>Radar Saint Seiya <span>Perú</span></h1>
           <p>Noticias, fechas y hallazgos para quienes coleccionan, leen y siguen Los Caballeros del Zodiaco.</p>
-          <nav aria-label="En esta página"><a href="#ultimas-notas">Últimas notas</a><a href="#calendario">Calendario</a></nav>
+          <nav aria-label="En esta página"><a href="#ultimas-notas">Últimas notas</a><a href="#calendario">Calendario</a><a href="${FIGURE_GALLERY}">Galería de figuras</a></nav>
         </div>
         ${feature(posts[0])}
         <section class="radar-folio" id="ultimas-notas" aria-labelledby="titulo-notas">
@@ -213,6 +243,115 @@ function homepage(posts) {
           <h2>Del anuncio a la vitrina</h2>
           <p>Explora cómo un coleccionista arma sus escenas con las piezas que encarga al taller.</p>
           <a href="/historias/vitrina-de-saint-seiya/">Leer la historia de su vitrina <span aria-hidden="true">→</span></a>
+        </section>
+      </div>
+    </main>`,
+  });
+}
+
+function figureImage(photo, priority = false) {
+  return `<img src="${escape(photo.src)}" alt="${escape(photo.alt)}" width="${photo.width}" height="${photo.height}" ${priority ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
+}
+
+function figureCard(figure, index, posts) {
+  const { id, line, name, edition, description, cover, source, japan, shop, china, comparison, photos, details, post } = figure;
+  const note = posts.find(candidate => candidate.slug === post);
+  return `<article class="radar-figure-card" id="${id}" data-section="${line}">
+    <a class="radar-figure-cover" href="${escape(source)}" aria-label="Fotos oficiales de ${escape(name)} · ${escape(edition)}">
+      ${figureImage(cover, index === 0)}
+    </a>
+    <div class="radar-figure-copy">
+      <p class="radar-label">${FIGURE_LINES[line]}</p>
+      <h2>${escape(name)}</h2>
+      <p class="radar-figure-edition">${escape(edition)}</p>
+      <p>${escape(description)}</p>
+      <dl class="radar-figure-prices">
+        <div>
+          <dt>Japón</dt>
+          <dd><strong>¥${PRICE.format(japan.price)}</strong><a href="${escape(source)}">${escape(japan.seller)}</a><span>${escape(japan.status)}</span></dd>
+          ${shop ? `<dd><strong>¥${PRICE.format(shop.price)}</strong><a href="${escape(shop.url)}">${escape(shop.seller)}</a><span>${escape(shop.status)}</span></dd>` : ""}
+        </div>
+        <div>
+          <dt>China continental</dt>
+          <dd>
+            ${china?.price ? `<strong>${PRICE.format(china.price)} CNY</strong>` : '<b>Precio por confirmar</b>'}
+            ${china ? `<a href="${escape(china.url)}">${escape(china.seller)}</a><span>${escape(china.status)}</span>` : '<a href="#tiendas-china">Ver tiendas oficiales en China</a>'}
+          </dd>
+        </div>
+      </dl>
+      ${comparison ? `<p class="radar-figure-comparison">${escape(comparison)}</p>` : ""}
+      <details class="radar-figure-details">
+        <summary>${photos?.length ? "Detalles y más fotos" : "Detalles de la figura"}</summary>
+        <ul>${details.map(detail => `<li>${escape(detail)}</li>`).join("")}</ul>
+        ${photos?.length ? `<div class="radar-figure-thumbnails">
+          ${photos.map(photo => `<a href="${escape(photo.src)}">${figureImage(photo)}</a>`).join("")}
+        </div>` : ""}
+      </details>
+      <nav class="radar-figure-links" aria-label="Más sobre ${escape(name)} · ${escape(edition)}">
+        <a href="${escape(source)}">Galería oficial de Tamashii Nations</a>
+        ${note ? `<a href="${route(note)}">Leer nota en el Radar</a>` : ""}
+      </nav>
+    </div>
+  </article>`;
+}
+
+function figureGallery(figures, posts) {
+  const title = "Galería de figuras de Saint Seiya";
+  const description = "Fotos oficiales de Myth Cloth EX, reediciones vintage y armaduras de Saint Seiya. Compara precios y tiendas de Japón y China continental.";
+  return siteFrame({
+    title, description, url: FIGURE_GALLERY, cover: figures[0].cover,
+    schema: {
+      "@type": "CollectionPage", name: title, description,
+      url: SITE + FIGURE_GALLERY, inLanguage: "es-PE", publisher, dateModified: FIGURE_CHECK_DATE,
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: figures.map((figure, index) => ({
+          "@type": "ListItem", position: index + 1,
+          name: `${figure.name} · ${figure.edition}`,
+          url: `${SITE}${FIGURE_GALLERY}#${figure.id}`,
+          image: imageUrl(figure.cover), description: figure.description,
+        })),
+      },
+    },
+    modules: ["radar-indice"],
+    content: `<main id="contenido" class="radar radar-gallery">
+      <div class="radar-wrap">
+        <header class="radar-masthead">
+          <p class="radar-label">Radar Saint Seiya Perú</p>
+          <h1>Galería de figuras <span>Saint Seiya</span></h1>
+          <p>Explora las fotos y compara las ediciones, los precios y las condiciones de venta en Japón y China continental.</p>
+          <nav aria-label="En esta página"><a href="#figuras">Ver figuras</a><a href="#tiendas">Ver tiendas</a></nav>
+        </header>
+        <section id="figuras" aria-label="Figuras y precios">
+          <p class="radar-gallery-date">Precios consultados el <time datetime="${FIGURE_CHECK_DATE}">${dateText(FIGURE_CHECK_DATE)}</time>. Los importes están en yenes japoneses (JPY) o yuanes chinos (CNY). El envío y los cargos de importación se consultan aparte.</p>
+          <form class="radar-filters" id="radar-filters" data-item="figura" hidden>
+            <label>Buscar una figura <input type="search" name="buscar" placeholder="Pegaso, Atena, EX METAL…"></label>
+            <label>Línea <select name="tema"><option value="">Todas las líneas</option>${Object.entries(FIGURE_LINES).map(([key, label]) => `<option value="${key}">${label}</option>`).join("")}</select></label>
+          </form>
+          <p class="radar-feedback" id="radar-filter-status" role="status" hidden></p>
+          <div class="radar-figure-grid" id="radar-cards">
+            ${figures.map((figure, index) => figureCard(figure, index, posts)).join("\n")}
+          </div>
+        </section>
+        <section class="radar-folio" id="tiendas" aria-labelledby="titulo-tiendas">
+          <h2 id="titulo-tiendas">Dónde consultar precios y stock</h2>
+          <div class="radar-figure-stores">
+            <div>
+              <h3>Japón</h3>
+              <ul>
+                <li><a href="https://www.amiami.jp/">AmiAmi</a> lista el precio de tienda y el estado de la preventa.</li>
+                <li><a href="https://p-bandai.jp/tamashiiwebshouten/">Tamashii Web Shop</a> publica exclusivas, sorteos y condiciones de compra en Japón.</li>
+              </ul>
+            </div>
+            <div id="tiendas-china">
+              <h3>China continental</h3>
+              <ul>
+                <li><a href="https://tamashiiweb.com/store/shanghai/">Tamashii Nations Store Shanghai</a> publica novedades de su tienda en Shanghái.</li>
+                <li>Las <a href="https://www.sina.cn/news/detail/5287905841906126.html">tiendas oficiales anunciadas por Bandai China</a> incluyen Tmall, JD y su minitienda.</li>
+              </ul>
+              <p>En una preventa, <span lang="zh-Hans">定金</span> indica el adelanto, <span lang="zh-Hans">尾款</span> el saldo y <span lang="zh-Hans">全款</span> el precio completo.</p>
+            </div>
+          </div>
         </section>
       </div>
     </main>`,
@@ -358,8 +497,10 @@ ${items.join("\n")}
 }
 
 export async function renderRadar(root, posts) {
+  const figures = await readRadarFigures(root);
   const pages = new Map([
     ["radar/index.html", homepage(posts)],
+    [`${FIGURE_GALLERY.slice(1)}index.html`, figureGallery(figures, posts)],
     ["radar/moderacion/index.html", moderationPage()],
     ["radar/feed.xml", rss(posts)],
     ...posts.map(post => [`radar/${post.slug}/index.html`, article(post)]),
