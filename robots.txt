@@ -23,6 +23,8 @@ User-agent: Google-Extended
 User-agent: Applebot-Extended
 User-agent: anthropic-ai
 User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
 User-agent: Claude-Web
 User-agent: PerplexityBot
 User-agent: Perplexity-User

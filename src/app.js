@@ -367,6 +367,12 @@ const priceMarkup = (product) => {
 // y modalPricing mas abajo, que ya reusan priceMarkup()/addToCartMarkup()).
 // Toda la tarjeta abre la ficha al tocarla, no solo la foto o el nombre.
 const gridPriceMarkup = (product) => {
+  if (product.id === "pandora-box-santos-de-bronce") {
+    const set = product.modelOptions?.find((model) => model.id === "set");
+    if (set) {
+      return `<div class="simple-price"><strong>${formatPrice(product.regularPrice)} c/u</strong> · set ${formatPrice(set.regularPrice)}</div>`;
+    }
+  }
   if (product.templePricing) {
     // Se publica el precio del combo; las piezas sueltas se eligen en la ficha.
     return `

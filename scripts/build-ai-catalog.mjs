@@ -644,10 +644,10 @@ ${sections}
 ${reviewsSectionHtml(reviews)}      <section id="contacto-final">
         <h2>Como comprar</h2>
         <p>
-          Todas las piezas se fabrican a pedido en impresion 3D (PLA+/PETG),
+          El catálogo reúne piezas de impresión 3D. Las fichas indican los materiales confirmados. Fabricamos a pedido,
           con acabado y detallado a mano. Fabricacion bajo pedido: ${PLAZO_GENERAL}
           (cada pieza indica el suyo), desde la validacion del adelanto (50%). El envio se coordina aparte por
-          WhatsApp: a domicilio en Lima y Callao, y por agencia Shalom a provincias.
+          WhatsApp: a domicilio en Lima y Callao, y por Shalom u Olva a provincias.
         </p>
         <p><a href="${WHATSAPP}" target="_blank" rel="noreferrer">Escribir a BoomArt por WhatsApp</a> &middot;
            <a href="mailto:contacto@boomart.pe">contacto@boomart.pe</a> &middot;
@@ -739,7 +739,7 @@ function buildLlms(products, reviews = []) {
 
 ## Herramientas gratis
 
-Herramientas web gratuitas de BoomArt, sin registro y sin servidor: todo se procesa en el navegador del usuario y no se guardan datos personales. Pensadas para usarse desde el celular y compartirse por WhatsApp.
+Herramientas gratuitas de BoomArt, sin registro. En Amigo Secreto, el modo WhatsApp genera los enlaces en el navegador. El modo correo utiliza las direcciones de los participantes para enviar el resultado según las [políticas de privacidad](${SITE}/politicas.html#amigo-secreto).
 
 - [Amigo Secreto por WhatsApp o correo](${SITE}/amigo-secreto/): sorteo de amigo secreto (amigo invisible) online y gratis. El organizador escribe los nombres, el presupuesto en soles, la fecha y las excepciones (por ejemplo, parejas que no deben tocarse). Modo secreto: la pagina reparte y nadie, ni siquiera el organizador, ve las parejas, asi el organizador tambien puede participar. Modo administrador: el organizador ve la lista completa. Los resultados llegan por correo (BoomArt envia a cada participante a quien le regala, con ideas de regalo segun el presupuesto) o por WhatsApp (un enlace secreto por persona). De 3 a 60 personas. Ideal para Navidad en familia, oficina, colegio o universidad.
 - [Tests de personajes](${SITE}/test/): tests rapidos para descubrir que personaje eres y compartir el resultado en el estado de WhatsApp.
@@ -775,8 +775,8 @@ function buildLlmsFull(products) {
 
 - Categoria: ${p.category}
 - ${priceStr}
-- Material: ${p.material || "PLA"}
-- Disponibilidad: ${p.availability || "A pedido"}
+- Material: ${p.material || "Por confirmar"}
+- Disponibilidad: ${p.availability || "Consultar"}
 - Fabricación bajo pedido: ${plazo(p).texto}${tags ? `\n- Etiquetas: ${tags}` : ""}
 - Imagen: ${abs(p.image || (p.gallery && p.gallery[0]))}
 - Ficha: ${SITE}/producto/${p.id}/
@@ -849,7 +849,7 @@ function buildGoogleFeed(products) {
         .slice(0, 10)
         .map((g) => `      <g:additional_image_link>${esc(g)}</g:additional_image_link>`)
         .join("\n");
-      const desc = `${tidyText(p.description || p.name)} Fabricado bajo pedido en impresion 3D (${p.material || "PLA"}), acabado y detallado a mano. Fabricacion: ${plazo(p).texto}. Envios a todo el Peru.`;
+      const desc = `${tidyText(p.description || p.name)} Fabricado bajo pedido en impresión 3D${p.material ? ` (${p.material})` : ""}. Fabricacion: ${plazo(p).texto}. Envíos a todo el Perú.`;
       return `    <item>
       <g:id>${esc(p.id)}</g:id>
       <g:title>${esc(machineName(p))}</g:title>
@@ -903,7 +903,7 @@ function buildMetaFeed(products) {
     const gallery = (p.gallery || []).filter(Boolean).map(abs);
     const main = abs(p.image) || gallery[0];
     const extra = gallery.filter((g) => g !== main).slice(0, 20).join(",");
-    const desc = `${tidyText(p.description || p.name)} Fabricado bajo pedido en impresion 3D (${p.material || "PLA"}). Fabricacion: ${plazo(p).texto}. Envios a todo el Peru.`;
+    const desc = `${tidyText(p.description || p.name)} Fabricado bajo pedido en impresión 3D${p.material ? ` (${p.material})` : ""}. Fabricacion: ${plazo(p).texto}. Envíos a todo el Perú.`;
     return [
       p.id,
       machineName(p),
@@ -978,7 +978,7 @@ function buildOpenAiRows(products) {
         item_id: o.sku,
         ...(variants ? { offer_id: o.sku, group_id: `grupo-${p.id}`, listing_has_variations: true, variant_dict: { Opción: o.label } } : {}),
         title: clampWords(variants ? `${machineName(p)} — ${o.label}` : machineName(p), 150),
-        description: `${lead}${base}${variants ? ` Opción de compra: ${o.label}.` : ""} Fabricado en impresión 3D (${p.material || "PLA"}). Envíos a todo el Perú.`.slice(0, 5000),
+        description: `${lead}${base}${variants ? ` Opción de compra: ${o.label}.` : ""} Fabricado en impresión 3D${p.material ? ` (${p.material})` : ""}. Envíos a todo el Perú.`.slice(0, 5000),
         url: `${SITE}/producto/${p.id}/`,
         brand: "BoomArt",
         seller_name: "BoomArt",
@@ -1217,6 +1217,13 @@ function productLd(p) {
   };
   if (!ld.offers) delete ld.offers;
   if (p.material) ld.material = p.material;
+  if (p.availability === "A pedido") {
+    ld.additionalProperty = {
+      "@type": "PropertyValue",
+      name: "Fabricación",
+      value: `A pedido · ${plazo(p).texto} estimados`,
+    };
+  }
   // Video corto del producto (campo opcional "video"): Google puede mostrarlo
   // en sus resultados de video.
   if (p.video && p.video.src) {
@@ -1440,7 +1447,7 @@ function buildProductPage(p, all, ratingLd) {
     : "";
 
   const ratingStr = ratingLd && ratingLd.aggregateRating
-    ? `<p class="pp-rating">&#9733; ${ratingLd.aggregateRating.ratingValue} / 5 &middot; <a href="${rel}opinion/">${ratingLd.aggregateRating.reviewCount} opiniones de clientes</a></p>`
+    ? `<p class="pp-rating">&#9733; ${ratingLd.aggregateRating.ratingValue} / 5 &middot; <a href="${rel}opinion/">${ratingLd.aggregateRating.reviewCount} opiniones sobre BoomArt</a></p>`
     : "";
 
   const priceMeta =
@@ -1524,6 +1531,9 @@ function buildProductPage(p, all, ratingLd) {
           ${productNotice(p) ? `<p class="pp-notice">⚠️ ${esc(productNotice(p))}</p>` : ""}
           ${ratingStr}
           ${priceBlockHtml(p)}
+          <p class="pp-facts">${p.availability === "A pedido"
+            ? `Disponible para pedir. Fabricación estimada: ${esc(plazo(p).texto)}.`
+            : "Consulta disponibilidad por WhatsApp."} <a href="${rel}politicas.html#envios">Condiciones de envío</a></p>
           <p class="pp-coupon">🎁 10% en tu primera compra registrándote</p>
           <div class="pp-cta">
             <a class="button primary" id="ppShop" href="${esc(shop)}">Ver en la tienda y agregar al carrito</a>
@@ -1541,12 +1551,12 @@ function buildProductPage(p, all, ratingLd) {
 
       <div class="pp-body">
         <h2>Detalle de la pieza</h2>
-        <p>${p.detailText ? esc(p.detailText) : `${esc(p.name)} es una ${esc(ctx)}, diseñada y fabricada por BoomArt en ${esc(p.height && /cm/i.test(p.height) ? p.height + ", " : "")}Perú. Se imprime en 3D en ${esc(p.material || "PLA+")}, con acabado y pintura a mano según la pieza, así que es un objeto hecho especialmente para tu pedido &mdash; puedes pedir un color, tamaño o detalle distinto y lo coordinamos por WhatsApp.`}</p>
+        <p>${p.detailText ? esc(p.detailText) : `${esc(p.name)} es una ${esc(ctx)} de BoomArt${p.material ? `, con ${esc(p.material)}` : ""}. Consulta por WhatsApp las opciones de personalización y acabado.`}</p>
         ${p.tags && p.tags.length ? `<p>Relacionada con: ${p.tags.map((t) => esc(t)).join(", ")}.</p>` : ""}
         <h2>Producción y tiempos</h2>
         <p>Cada pieza se produce a pedido. La fabricación toma aproximadamente <strong>${esc(plazo(p).texto)}</strong> desde que confirmas tu compra. No trabajamos con stock: esto nos permite ajustar cada figura a lo que pides.</p>
         <h2>Envío y entrega</h2>
-        <p>Entregamos a domicilio en Lima y Callao coordinando por WhatsApp, y a provincias por la agencia Shalom. El costo del envío se coordina por WhatsApp y se paga aparte, directo al courier, al momento del despacho. <a href="${rel}politicas.html">Ver políticas de compra y envío</a>.</p>
+        <p>Coordinamos entregas en Lima y Callao y envíos a provincias por Shalom u Olva. El costo del transporte se coordina por WhatsApp y se paga aparte. <a href="${rel}politicas.html#envios">Ver condiciones de envío y recojo</a>.</p>
         <h2>Cómo comprar</h2>
         <p><a href="${esc(shop)}">${p.grammaticalGender === "masculino" ? "Agrégalo" : "Agrégala"} al carrito en la tienda BoomArt</a> o <a href="${esc(wa)}" target="_blank" rel="noreferrer nofollow">escríbenos por WhatsApp</a> para consultar disponibilidad y coordinar tu pedido.</p>
       </div>
@@ -1781,7 +1791,7 @@ const CATEGORY_META = {
     title: "Figuras de Saint Seiya (Caballeros del Zodiaco) en 3D · Perú | BoomArt",
     intro: [
       "En BoomArt somos referentes en Perú en figuras y réplicas decorativas de Saint Seiya (Caballeros del Zodiaco). Aquí están los 12 templos de las Casas del Zodiaco del Santuario de Athena, las Cajas de Pandora con pedestal, cascos a escala, bustos y esculturas de Atena, dioramas de los caballeros de bronce y sets completos de colección.",
-      "Todas las piezas se imprimen en 3D y se detallan a mano, con acabado tipo piedra envejecida que resalta la arquitectura de cada templo. Se fabrican a pedido: eliges el signo y si quieres el templo solo, la Caja de Pandora o el combo completo.",
+      "Los templos tienen un acabado tipo piedra envejecida. Las Pandora Box de los Santos de Bronce están pintadas con cromo y se pueden pedir por unidad o en set de cinco. Las opciones y los acabados de cada pieza figuran en su ficha.",
       "Hechas en Lima y Callao, con envíos a todo el Perú. Escríbenos por WhatsApp para consultar disponibilidad, combos y tiempos de entrega.",
     ],
   },
@@ -1969,10 +1979,13 @@ function buildCategoryPage(cat, list, all, ratingLd, options = {}) {
   const cards = list
     .map((p) => {
       const price = priceInfo(p);
-      const pr =
-        price.from != null
-          ? (p.signPicker ? `desde S/${price.from}` : `S/${price.from}`)
-          : "Consultar";
+      const set = p.id === "pandora-box-santos-de-bronce"
+        ? p.modelOptions?.find((model) => model.id === "set")
+        : null;
+      const pr = price.from == null ? "Consultar"
+        : set ? `S/${price.from} c/u · set S/${set.regularPrice}`
+        : p.signPicker || (p.modelOptions?.some((model) => !model.addon && model.regularPrice > price.from))
+          ? `Desde S/${price.from}` : `S/${price.from}`;
       const img = `${rel}${String((p.gallery && p.gallery[0]) || p.image).replace(/^\/+/, "")}`;
       return `        <a class="cat-card" href="${rel}producto/${esc(p.id)}/">
           <img src="${esc(toWebp(img))}" alt="${esc(p.name)}" loading="lazy" decoding="async" width="240" height="240">

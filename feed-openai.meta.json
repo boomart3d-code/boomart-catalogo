@@ -19,9 +19,9 @@
     "unknown": 1
   },
   "filasElegiblesParaAnuncios": 166,
-  "sha256Jsonl": "367bd91a392b3110465a29f3bbf59e35d47f1850abff02087aa54c9a697ad797",
-  "sha256Csv": "8e98f5603ca0365cc09ed74a4cb45a0df0a0ba8a0255fa73874a4001e9e1dd85",
-  "sha256Txt": "78ab292347639f1d07f0eb5a7ba136b52cc509a8b261147dfa0c2d4af6f4e83b",
+  "sha256Jsonl": "f8ad0ad40df56f50f0c81444a092979d5dfaa054e67c374383e50631c949ec2f",
+  "sha256Csv": "499e33730d4979f623bcf931bd00f579f89f090689c43dd51c049803bfb6ddac",
+  "sha256Txt": "6ab02e6b3712dc9f96e6f984496e95e59e773b094ab75c847068768ae136cd9c",
   "archivos": {
     "csv": "https://boomart.pe/feed-openai.csv",
     "txt": "https://boomart.pe/feed-openai.txt",

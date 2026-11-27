@@ -1343,7 +1343,7 @@ Palomera Dr. Doom: la cabeza del villano de Marvel con su rostro metálico plate
 
 - Categoria: Figuras Coleccionables
 - Precio: S/200
-- Material: PLA
+- Material: Por confirmar
 - Disponibilidad: A pedido
 - Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Super Mario, Mario Bros, Nintendo, Palomera, Yoshi
@@ -1356,7 +1356,7 @@ Palomera de Yoshi inspirada en Super Mario. El personaje sostiene un huevo blanc
 
 - Categoria: Figuras Coleccionables
 - Precio: S/200
-- Material: PLA
+- Material: Por confirmar
 - Disponibilidad: A pedido
 - Fabricación bajo pedido: 3 a 5 días
 - Etiquetas: Super Mario, Mario Bros, Nintendo, Palomera, Koopa, Bowser
@@ -1597,7 +1597,7 @@ Decora la mesa navideña y presenta tus dulces con esta bandeja giratoria en for
 - Categoria: Navidad
 - Precio: S/85
 - Material: PLA+
-- Disponibilidad: A pedido
+- Disponibilidad: Consultar
 - Fabricación bajo pedido: 24 a 48 horas
 - Etiquetas: Navidad, Belén, Pesebre, Nacimiento, Iluminación LED, Decoración navideña
 - Imagen: https://boomart.pe/assets/products/belen-iluminado-hero-v2.webp
