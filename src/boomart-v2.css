@@ -334,3 +334,125 @@ a.v2-hero-product {display:flex;align-items:center;justify-content:center;}
 .design-v2 .custom-order-card input::placeholder,.design-v2 .custom-order-card textarea::placeholder,.design-v2 .reviews-section .review-form-card input::placeholder,.design-v2 .reviews-section .review-form-card textarea::placeholder {color:#8a8379;opacity:1;}
 .design-v2 .custom-order-card input:focus,.design-v2 .custom-order-card textarea:focus,.design-v2 .reviews-section .review-form-card input:focus,.design-v2 .reviews-section .review-form-card select:focus,.design-v2 .reviews-section .review-form-card textarea:focus {outline:none;border-color:#0b0b0b;box-shadow:0 0 0 3px rgba(201,162,92,.35);}
 .design-v2 .custom-order-card .custom-order-hint {color:#5f5952;}
+
+
+.home-radar {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: clamp(32px, 5.5vw, 72px) 5vw;
+  scroll-margin-top: 64px;
+}
+
+.home-radar-inner {
+  padding: clamp(18px, 4vw, 48px);
+  color: #f4f0e8;
+  background: #241a26;
+  border-top: 4px solid #c9a25c;
+}
+
+.home-radar-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px 36px;
+  margin-bottom: 24px;
+}
+
+.home-radar-header h2 {
+  margin: 0;
+  color: inherit;
+  font: 800 clamp(2.5rem, 5vw, 4.5rem)/.95 "Barlow Condensed", sans-serif;
+}
+
+.home-radar-header p {
+  max-width: 44ch;
+  margin: 10px 0 0;
+  color: #e1d6dd;
+}
+
+.home-radar-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+}
+
+.home-radar-links a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  color: inherit;
+  font-size: .83rem;
+  font-weight: 700;
+}
+
+.home-radar-links .home-radar-all {
+  padding: 0 14px;
+  color: #241a26;
+  background: #ffe0a5;
+  text-decoration: none;
+}
+
+.home-radar-links a:hover,
+.home-radar-note:hover h3 {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.home-radar a:focus-visible {
+  outline: 2px solid #ffe0a5;
+  outline-offset: 3px;
+}
+
+.home-radar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.home-radar-note {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  background: #322635;
+  border: 1px solid #604c5f;
+}
+
+.home-radar-note img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #171319;
+}
+
+.home-radar-note div { padding: 11px 14px 14px; }
+
+.home-radar-note p {
+  margin: 0 0 3px;
+  color: #f2cc8e;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.home-radar-note h3 {
+  margin: 0;
+  color: inherit;
+  font: 700 clamp(1.2rem, 2.2vw, 1.65rem)/1.08 "Barlow Condensed", sans-serif;
+}
+
+@media (max-width: 680px) {
+  .home-radar-grid { grid-template-columns: minmax(0, 1fr); }
+
+  .home-radar-note {
+    display: grid;
+    grid-template-columns: minmax(74px, 25%) minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .home-radar-note img { height: 100%; min-height: 82px; }
+  .home-radar-note div { padding: 10px; }
+}

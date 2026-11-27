@@ -52,6 +52,35 @@ export async function readRadarPosts(root) {
   return posts.sort((a, b) => b.date.localeCompare(a.date));
 }
 
+export function radarHomeBlock(posts) {
+  const cards = posts.slice(0, 3).map(post => `<article>
+              <a class="home-radar-note" href="${route(post)}">
+                <img src="${escape(post.cover.src)}" width="${post.cover.width}" height="${post.cover.height}" alt="" loading="lazy" decoding="async">
+                <div><p>${escape(post.type)}</p><h3>${escape(post.title)}</h3></div>
+              </a>
+            </article>`).join("\n            ");
+
+  return `
+      <section class="home-radar" id="radar-saint-seiya" aria-labelledby="homeRadarTitle">
+        <div class="home-radar-inner">
+          <div class="home-radar-header">
+            <div>
+              <h2 id="homeRadarTitle">Radar Saint Seiya Perú</h2>
+              <p>Noticias de Los Caballeros del Zodiaco para coleccionistas de Perú.</p>
+            </div>
+            <nav class="home-radar-links" aria-label="Novedades y taller">
+              <a class="home-radar-all" href="/radar/">Ver todas las novedades</a>
+              <a href="/nosotros.html">Conoce BoomArt</a>
+            </nav>
+          </div>
+          <div class="home-radar-grid">
+            ${cards}
+          </div>
+        </div>
+      </section>
+      `;
+}
+
 export function radarSitemap(posts) {
   return ["/radar/", ...posts.map(route)].map(url => ({ loc: SITE + url, priority: "0.6", changefreq: url === "/radar/" ? "daily" : "monthly" }));
 }
@@ -109,7 +138,7 @@ function siteFrame({ title, description, url, schema, content, cover, modules = 
     <footer class="radar-footer">
       <div class="radar-wrap">
         <p>Radar Saint Seiya Perú · Un proyecto editorial independiente de BoomArt</p>
-        <nav aria-label="Enlaces del Radar"><a href="/radar/feed.xml">Suscríbete por RSS</a><a href="/politicas.html">Privacidad</a><a href="mailto:contacto@boomart.pe">Contacta a la redacción</a></nav>
+        <nav aria-label="Enlaces del Radar"><a href="/nosotros.html">Conoce BoomArt</a><a href="/radar/feed.xml">Suscríbete por RSS</a><a href="/politicas.html">Privacidad</a><a href="mailto:contacto@boomart.pe">Contacta a la redacción</a></nav>
       </div>
     </footer>
   </body>

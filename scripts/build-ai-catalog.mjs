@@ -27,7 +27,7 @@ import { videoUploadDate } from "./video-upload-date.mjs";
 import { validateAdsConfig, classifyProduct, buildGroupsDoc, openAiAvailability } from "./ads-taxonomy.mjs";
 import { validatePlazos, plazoOf } from "./plazos.mjs";
 import { buildPolos } from "./build-polos-seo.mjs";
-import { radarLlms, radarSitemap, readRadarPosts, renderRadar } from "./radar-content.mjs";
+import { radarHomeBlock, radarLlms, radarSitemap, readRadarPosts, renderRadar } from "./radar-content.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://boomart.pe";
@@ -2211,6 +2211,7 @@ async function writeCampaignLanding(products, cfg) {
   const a = htmlEscape;
 
   let html = await readFile(path.join(ROOT, "index.html"), "utf8");
+  html = html.replace(/^ *<!-- BOOMART:RADAR_HOME:START -->[\s\S]*?<!-- BOOMART:RADAR_HOME:END -->\r?\n\r?\n/gm, "");
   const eol = html.includes("\r\n") ? "\r\n" : "\n";
   const headExtra = [
     `    <base href="/">`,
@@ -2521,6 +2522,7 @@ const reviewsBlocksUpdated = await injectReviewsBlocks(reviews);
 const socialBlocksUpdated = await syncSocialBlocks();
 // Las fotos de portada tambien se actualizan cuando opiniones/redes no cambiaron.
 const indexFile = path.join(ROOT, 'index.html');
+await replaceMarkedBlock(indexFile, "RADAR_HOME", radarHomeBlock(radarPosts));
 await writeFile(indexFile, await readFile(indexFile, 'utf8'));
 // Despues de actualizar index.html: /Halloween/ es una copia de la portada.
 await writeHalloweenCampaignPage(products);
