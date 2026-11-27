@@ -113,3 +113,13 @@ test("correo de confirmación y de suscripción llevan sus enlaces", () => {
   const u = correoSuscripcion("Ana Prueba", "ana@ejemplo.test", "https://boomart.pe/amigo-secreto/?baja=XYZ");
   assert.match(u.html, /\?baja=XYZ/);
 });
+
+test("participante y organizador reciben la invitación a organizar otro sorteo; la confirmación no", () => {
+  const s = validar(base()).sorteo;
+  const enlace = /amigo-secreto\/\?utm_source=amigo-secreto&(amp;)?utm_medium=email&(amp;)?utm_campaign=organiza-el-tuyo/;
+  const p = correoParticipante(s, 0, s.participantes[1].nombre, [], "https://boomart.pe/amigo-secreto/?ofertas=T");
+  assert.match(p.html, enlace); assert.match(p.text, enlace);
+  const r = correoResumen(s, [1, 2, 3, 0], []);
+  assert.match(r.html, enlace); assert.match(r.text, enlace);
+  assert.doesNotMatch(correoConfirmacion(s, "https://boomart.pe/amigo-secreto/?confirmar=A").html, /organiza-el-tuyo/);
+});

@@ -153,6 +153,13 @@ const boton = (url: string, texto: string, color = "#FF3030") =>
 
 export type Correo = { to: string; subject: string; html: string; text: string };
 
+// Invitación a organizar otro sorteo: cada correo llega a gente que puede tener su propio grupo.
+export const urlOrganiza = (medio: string) =>
+  `${SITE}/amigo-secreto/?utm_source=amigo-secreto&utm_medium=${medio}&utm_campaign=organiza-el-tuyo`;
+const invitaHtml = (pregunta: string) =>
+  `<p style="margin:16px 0 0;font-size:13px;color:#5F5F63">${pregunta} <a href="${esc(urlOrganiza("email"))}" style="color:#FF3030;font-weight:700">Organiza tu Amigo Secreto gratis</a>: sorteo por correo o WhatsApp en un minuto.</p>`;
+const invitaTxt = (pregunta: string) => `\n\n${pregunta} Organiza tu Amigo Secreto gratis: ${urlOrganiza("email")}`;
+
 // 1) Al organizador: confirmar que el correo es suyo antes de enviar nada.
 export function correoConfirmacion(s: Sorteo, url: string): Correo {
   const subject = `Confirma tu Amigo Secreto «${s.evento}»`;
@@ -197,11 +204,12 @@ ${datos ? `<p style="margin:16px 0 0;font-size:14px">${datos}</p>` : ""}
 ${ideasHtml}
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:22px;background:#F7F7F8;border-radius:8px"><tr><td style="padding:14px 16px;font-size:13px;color:#5F5F63">
 ¿Quieres recibir ofertas y novedades de BoomArt? <a href="${esc(ofertasUrl)}" style="color:#FF3030;font-weight:700">Sí, quiero recibirlas</a>.<br>
-Si no lo tocas, no volveremos a escribirte: tu correo solo se usó para este sorteo.</td></tr></table>`,
+Si no lo tocas, no volveremos a escribirte: tu correo solo se usó para este sorteo.</td></tr></table>
+${invitaHtml("¿Tienes otro grupo (familia, oficina, colegio)?")}`,
     `Recibes este correo porque ${esc(s.organizador.nombre)} te incluyó en el Amigo Secreto «${esc(s.evento)}» organizado con la herramienta gratuita de BoomArt. Tus datos se borran después del intercambio.`,
   );
   const ideasTxt = ideas.length ? `\nIdeas de regalo:\n${ideas.map((x) => `- ${x.name} (desde S/ ${x.priceFrom}): ${x.url}`).join("\n")}\nCódigo ${CODIGO_DESCUENTO}: 10 % de descuento pidiendo por WhatsApp.\n` : "";
-  const text = `Hola ${pila(p.nombre)}:\n${s.organizador.nombre} te incluyó en el Amigo Secreto «${s.evento}».\nTe tocó regalarle a: ${receptor}\n${s.presupuesto ? `Presupuesto: S/ ${s.presupuesto}\n` : ""}${s.fecha ? `Intercambio: ${fechaLarga(s.fecha)}\n` : ""}${s.nota ? `Nota: ${s.nota}\n` : ""}Guarda el secreto.\n${ideasTxt}\n¿Quieres recibir ofertas de BoomArt? ${ofertasUrl}`;
+  const text = `Hola ${pila(p.nombre)}:\n${s.organizador.nombre} te incluyó en el Amigo Secreto «${s.evento}».\nTe tocó regalarle a: ${receptor}\n${s.presupuesto ? `Presupuesto: S/ ${s.presupuesto}\n` : ""}${s.fecha ? `Intercambio: ${fechaLarga(s.fecha)}\n` : ""}${s.nota ? `Nota: ${s.nota}\n` : ""}Guarda el secreto.\n${ideasTxt}\n¿Quieres recibir ofertas de BoomArt? ${ofertasUrl}${invitaTxt("¿Tienes otro grupo?")}`;
   return { to: p.email, subject, html, text };
 }
 
@@ -218,11 +226,12 @@ export function correoResumen(s: Sorteo, to: number[], fallidos: number[]): Corr
 ${s.modo === "admin" ? `<p style="margin:0 0 8px">Como administrador, esta es la lista completa. Guárdala por si alguien pierde su correo:</p>` : `<p style="margin:0 0 8px">Nadie, ni siquiera tú, puede ver a quién le tocó cada uno. Recibieron su correo:</p>`}
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-size:14px">${s.participantes.map((_, i) => fila(i)).join("")}</table>
 ${fallidos.length ? `<p style="margin:14px 0 0;color:#FF3030;font-size:13px">No se pudo enviar a: ${fallidos.map((i) => esc(s.participantes[i].nombre)).join(", ")}. Revisa esos correos.</p>` : ""}
-<p style="margin:14px 0 0;font-size:13px;color:#5F5F63">Pide a todos que revisen también la carpeta de spam o promociones.</p>`,
+<p style="margin:14px 0 0;font-size:13px;color:#5F5F63">Pide a todos que revisen también la carpeta de spam o promociones.</p>
+${invitaHtml("¿Te toca organizar otro (la familia, la oficina)?")}`,
     "Recibes este correo porque organizaste un Amigo Secreto con la herramienta gratuita de BoomArt.",
   );
   const text = `Enviamos ${ok} de ${s.participantes.length} correos del Amigo Secreto «${s.evento}».` +
-    (s.modo === "admin" ? "\n" + s.participantes.map((p, i) => `${p.nombre} -> ${s.participantes[to[i]].nombre}`).join("\n") : "\nNadie puede ver a quién le tocó cada uno.");
+    (s.modo === "admin" ? "\n" + s.participantes.map((p, i) => `${p.nombre} -> ${s.participantes[to[i]].nombre}`).join("\n") : "\nNadie puede ver a quién le tocó cada uno.") + invitaTxt("¿Te toca organizar otro?");
   return { to: s.organizador.email, subject, html, text };
 }
 

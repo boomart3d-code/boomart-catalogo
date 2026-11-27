@@ -613,6 +613,7 @@
         if (F.b.value) extra.push('Presupuesto: S/ ' + Math.round(+F.b.value));
         if (F.d.value) extra.push('Intercambio: ' + fmtDate(F.d.value));
         if (extra.length) lines.push('', extra.join(' · '));
+        lines.push('', '_¿Otro grupo? Sortea gratis en boomart.pe/amigo-secreto_');
         return lines.join('\n');
       }
       function showResult() {
@@ -727,7 +728,7 @@
           const w = $('wish').value.trim();
           if (!w) { $('meErr').textContent = 'Escribe primero qué te gustaría recibir.'; $('wish').focus(); return; }
           $('meErr').textContent = '';
-          const text = '🎁 *Mi lista de deseos' + (data.e ? ' para el Amigo Secreto «' + data.e + '»' : ' para el Amigo Secreto') + '*\n\n' + w + '\n\n_' + data.g + '_';
+          const text = '🎁 *Mi lista de deseos' + (data.e ? ' para el Amigo Secreto «' + data.e + '»' : ' para el Amigo Secreto') + '*\n\n' + w + '\n\n_' + data.g + '_\n\n_Sorteo hecho gratis en boomart.pe/amigo-secreto_';
           window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank', 'noopener');
           track('amigo_secreto_deseos');
         });
