@@ -153,7 +153,7 @@ function siteFrame({ title, description, url, schema, content, cover, modules = 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles.css?v=69">
-    <link rel="stylesheet" href="/src/radar.css?v=4">
+    <link rel="stylesheet" href="/src/radar.css?v=5">
     ${scripts}
   </head>
   <body class="radar-site">
