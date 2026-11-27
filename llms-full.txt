@@ -4,8 +4,8 @@ Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Cal
 Envios a todo el pais. Precios en soles peruanos (S/). Fabricacion bajo pedido: 24 a 48 horas en las piezas sencillas y 3 a 5 días en las elaboradas
 (cada pieza indica el suyo), desde la validacion del adelanto (50%). Pedidos por WhatsApp: https://wa.me/51925666542
 
-Total de piezas: 108
-Actualizado: 2026-11-26
+Total de piezas: 110
+Actualizado: 2026-11-27
 Fuente estructurada: https://boomart.pe/catalogo.json
 
 ---
@@ -1338,6 +1338,32 @@ Elige tu versión: Cíclope clásico, en amarillo y rojo, o Cíclope táctico (B
 Palomera Dr. Doom: la cabeza del villano de Marvel con su rostro metálico plateado, los remaches, la capucha verde y una tapa ovalada que se abre. Impresa en 3D con PLA+ y preparada a pedido. En la foto con la mano puedes ver una referencia del tamaño.
 
 ## Figuras Coleccionables
+
+### Palomera de Yoshi · Super Mario
+
+- Categoria: Figuras Coleccionables
+- Precio: S/200
+- Material: PLA
+- Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
+- Etiquetas: Super Mario, Mario Bros, Nintendo, Palomera, Yoshi
+- Imagen: https://boomart.pe/assets/products/palomera-yoshi-super-mario-frente.jpg
+- Ficha: https://boomart.pe/producto/palomera-yoshi-super-mario/
+
+Palomera de Yoshi inspirada en Super Mario. El personaje sostiene un huevo blanco con manchas verdes que funciona como recipiente, con tapa abatible para abrirlo y cerrarlo. Combina los colores verde, blanco, rojo y marrón y los detalles característicos de Yoshi. Precio por unidad: S/200.
+
+### Palomera de Koopa/Bowser · Super Mario
+
+- Categoria: Figuras Coleccionables
+- Precio: S/200
+- Material: PLA
+- Disponibilidad: A pedido
+- Fabricación bajo pedido: 3 a 5 días
+- Etiquetas: Super Mario, Mario Bros, Nintendo, Palomera, Koopa, Bowser
+- Imagen: https://boomart.pe/assets/products/palomera-koopa-bowser-super-mario-frente.jpg
+- Ficha: https://boomart.pe/producto/palomera-koopa-bowser-super-mario/
+
+Palomera de Koopa/Bowser inspirada en Super Mario. La figura sostiene un recipiente blanco con rostro en relieve y aro verde. El personaje destaca por su cuerpo amarillo, cabeza verde, cabello rojo y caparazón con púas blancas. Precio por unidad: S/200.
 
 ### Mario Billy · Saw (El Juego del Miedo)
 

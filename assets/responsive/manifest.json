@@ -6237,6 +6237,158 @@
       ]
     ]
   },
+  "assets/products/palomera-koopa-bowser-super-mario-detalle-frontal-original.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/palomera-koopa-bowser-super-mario-detalle-frontal-original.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-detalle-frontal-original-e9fb689907ff-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-detalle-frontal-original-e9fb689907ff-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-detalle-frontal-original-e9fb689907ff-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-koopa-bowser-super-mario-detalle-frontal.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/palomera-koopa-bowser-super-mario-detalle-frontal.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-detalle-frontal-a08d74c6c36f-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-detalle-frontal-a08d74c6c36f-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-detalle-frontal-a08d74c6c36f-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-koopa-bowser-super-mario-frente-original.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/palomera-koopa-bowser-super-mario-frente-original.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-frente-original-b932d0d92282-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-frente-original-b932d0d92282-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-frente-original-b932d0d92282-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-koopa-bowser-super-mario-frente.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/palomera-koopa-bowser-super-mario-frente.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-frente-95bcc185965d-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-frente-95bcc185965d-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-frente-95bcc185965d-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-koopa-bowser-super-mario-lateral-original.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/palomera-koopa-bowser-super-mario-lateral-original.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-lateral-original-0945a0aaad11-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-lateral-original-0945a0aaad11-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-lateral-original-0945a0aaad11-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-koopa-bowser-super-mario-lateral.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/palomera-koopa-bowser-super-mario-lateral.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-lateral-89bc3ab9489e-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-lateral-89bc3ab9489e-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-lateral-89bc3ab9489e-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-koopa-bowser-super-mario-posterior-original.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/palomera-koopa-bowser-super-mario-posterior-original.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-posterior-original-6d2638ba9d3d-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-posterior-original-6d2638ba9d3d-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-posterior-original-6d2638ba9d3d-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-koopa-bowser-super-mario-posterior.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/palomera-koopa-bowser-super-mario-posterior.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-posterior-5f8518204804-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-posterior-5f8518204804-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-koopa-bowser-super-mario-posterior-5f8518204804-720w.webp"
+      ]
+    ]
+  },
   "assets/products/palomera-spiderman-hero-v2.webp": {
     "w": 1200,
     "h": 1500,
@@ -6272,6 +6424,120 @@
       [
         720,
         "assets/responsive/products/palomera-spiderman-9ea0514037e6-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-yoshi-super-mario-abierta-original.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/palomera-yoshi-super-mario-abierta-original.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-yoshi-super-mario-abierta-original-69d65beed0a8-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-yoshi-super-mario-abierta-original-69d65beed0a8-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-yoshi-super-mario-abierta-original-69d65beed0a8-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-yoshi-super-mario-abierta.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/palomera-yoshi-super-mario-abierta.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-yoshi-super-mario-abierta-2046a5646daf-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-yoshi-super-mario-abierta-2046a5646daf-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-yoshi-super-mario-abierta-2046a5646daf-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-yoshi-super-mario-frente-original.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/palomera-yoshi-super-mario-frente-original.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-yoshi-super-mario-frente-original-b72568c1c46b-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-yoshi-super-mario-frente-original-b72568c1c46b-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-yoshi-super-mario-frente-original-b72568c1c46b-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-yoshi-super-mario-frente.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/palomera-yoshi-super-mario-frente.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-yoshi-super-mario-frente-16f08de09cc4-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-yoshi-super-mario-frente-16f08de09cc4-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-yoshi-super-mario-frente-16f08de09cc4-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-yoshi-super-mario-posterior-original.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/palomera-yoshi-super-mario-posterior-original.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-yoshi-super-mario-posterior-original-eee3157dfed3-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-yoshi-super-mario-posterior-original-eee3157dfed3-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-yoshi-super-mario-posterior-original-eee3157dfed3-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/palomera-yoshi-super-mario-posterior.webp": {
+    "w": 1200,
+    "h": 1600,
+    "src": "assets/products/palomera-yoshi-super-mario-posterior.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/palomera-yoshi-super-mario-posterior-cb770d17238f-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/palomera-yoshi-super-mario-posterior-cb770d17238f-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/palomera-yoshi-super-mario-posterior-cb770d17238f-720w.webp"
       ]
     ]
   },

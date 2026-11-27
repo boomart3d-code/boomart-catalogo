@@ -3,7 +3,7 @@
   "url": "https://boomart.pe/",
   "description": "Figuras coleccionables y decoracion impresa en 3D, hechas a pedido en Lima y Callao, Peru. Envios a todo el pais.",
   "currency": "PEN",
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "contact": {
     "whatsapp": "https://wa.me/51925666542",
     "email": "contacto@boomart.pe",
@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 108,
+  "count": 110,
   "products": [
     {
       "id": "skins-zelda-nintendo-switch-2",
@@ -2140,6 +2140,79 @@
       ],
       "url": "https://boomart.pe/producto/palomera-spiderman/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Palomera%20Spider-Man%20%C2%B7%20Marvel"
+    },
+    {
+      "id": "palomera-yoshi-super-mario",
+      "name": "Palomera de Yoshi · Super Mario",
+      "category": "Figuras Coleccionables",
+      "tags": [
+        "Super Mario",
+        "Mario Bros",
+        "Nintendo",
+        "Palomera",
+        "Yoshi"
+      ],
+      "description": "Palomera de Yoshi inspirada en Super Mario. El personaje sostiene un huevo blanco con manchas verdes que funciona como recipiente, con tapa abatible para abrirlo y cerrarlo. Combina los colores verde, blanco, rojo y marrón y los detalles característicos de Yoshi. Precio por unidad: S/200.",
+      "material": null,
+      "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
+      "priceCurrency": "PEN",
+      "priceFrom": 200,
+      "pricing": [
+        "Precio: S/200"
+      ],
+      "image": "https://boomart.pe/assets/products/palomera-yoshi-super-mario-frente.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/palomera-yoshi-super-mario-frente.jpg",
+        "https://boomart.pe/assets/products/palomera-yoshi-super-mario-frente-original.jpg",
+        "https://boomart.pe/assets/products/palomera-yoshi-super-mario-posterior.jpg",
+        "https://boomart.pe/assets/products/palomera-yoshi-super-mario-abierta.jpg",
+        "https://boomart.pe/assets/products/palomera-yoshi-super-mario-posterior-original.jpg",
+        "https://boomart.pe/assets/products/palomera-yoshi-super-mario-abierta-original.jpg"
+      ],
+      "url": "https://boomart.pe/producto/palomera-yoshi-super-mario/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Palomera%20de%20Yoshi%20%C2%B7%20Super%20Mario"
+    },
+    {
+      "id": "palomera-koopa-bowser-super-mario",
+      "name": "Palomera de Koopa/Bowser · Super Mario",
+      "category": "Figuras Coleccionables",
+      "tags": [
+        "Super Mario",
+        "Mario Bros",
+        "Nintendo",
+        "Palomera",
+        "Koopa",
+        "Bowser"
+      ],
+      "description": "Palomera de Koopa/Bowser inspirada en Super Mario. La figura sostiene un recipiente blanco con rostro en relieve y aro verde. El personaje destaca por su cuerpo amarillo, cabeza verde, cabello rojo y caparazón con púas blancas. Precio por unidad: S/200.",
+      "material": null,
+      "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "elaborado",
+        "texto": "3 a 5 días"
+      },
+      "priceCurrency": "PEN",
+      "priceFrom": 200,
+      "pricing": [
+        "Precio: S/200"
+      ],
+      "image": "https://boomart.pe/assets/products/palomera-koopa-bowser-super-mario-frente.jpg",
+      "gallery": [
+        "https://boomart.pe/assets/products/palomera-koopa-bowser-super-mario-frente.jpg",
+        "https://boomart.pe/assets/products/palomera-koopa-bowser-super-mario-frente-original.jpg",
+        "https://boomart.pe/assets/products/palomera-koopa-bowser-super-mario-lateral.jpg",
+        "https://boomart.pe/assets/products/palomera-koopa-bowser-super-mario-posterior.jpg",
+        "https://boomart.pe/assets/products/palomera-koopa-bowser-super-mario-detalle-frontal.jpg",
+        "https://boomart.pe/assets/products/palomera-koopa-bowser-super-mario-lateral-original.jpg",
+        "https://boomart.pe/assets/products/palomera-koopa-bowser-super-mario-posterior-original.jpg",
+        "https://boomart.pe/assets/products/palomera-koopa-bowser-super-mario-detalle-frontal-original.jpg"
+      ],
+      "url": "https://boomart.pe/producto/palomera-koopa-bowser-super-mario/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Palomera%20de%20Koopa%2FBowser%20%C2%B7%20Super%20Mario"
     },
     {
       "id": "mario-billy-saw",

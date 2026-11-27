@@ -4,7 +4,7 @@
 
 ## Catalogo
 
-- [Catalogo completo (HTML, texto plano)](https://boomart.pe/catalogo.html): las 108 piezas con descripcion, material y precios.
+- [Catalogo completo (HTML, texto plano)](https://boomart.pe/catalogo.html): las 110 piezas con descripcion, material y precios.
 - [Catalogo en Markdown](https://boomart.pe/llms-full.txt): mismo contenido en un solo archivo de texto.
 - [Feed JSON](https://boomart.pe/catalogo.json): datos estructurados (precios, imagenes, categorias).
 - [Feed Google/Pinterest (XML)](https://boomart.pe/feed-google.xml): formato Google Merchant Center.
@@ -39,7 +39,7 @@ Herramientas web gratuitas de BoomArt, sin registro y sin servidor: todo se proc
 - 🎃 Halloween: 27 piezas
 - Harry Potter: 7 piezas
 - Marvel & DC: 9 piezas
-- Figuras Coleccionables: 3 piezas
+- Figuras Coleccionables: 5 piezas
 - Macetas: 8 piezas
 - Mundial de Fútbol: 4 piezas
 - Navidad: 8 piezas
@@ -63,7 +63,7 @@ Herramientas web gratuitas de BoomArt, sin registro y sin servidor: todo se proc
 - Facebook: https://www.facebook.com/boom.art.873521/
 - TikTok: https://www.tiktok.com/@boomart.3d
 - Ubicacion: Bellavista, Callao, Peru
-- Actualizado: 2026-11-26
+- Actualizado: 2026-11-27
 
 
 ## BoomArt Polos

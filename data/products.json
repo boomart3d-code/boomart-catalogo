@@ -1741,6 +1741,57 @@
     "description": "Palomera temática de Spider-Man para tu noche de películas: práctica, resistente y con el diseño arácnido que todo fan de Marvel reconoce."
   },
   {
+    "id": "palomera-yoshi-super-mario",
+    "name": "Palomera de Yoshi · Super Mario",
+    "category": "Figuras Coleccionables",
+    "tags": [
+      "Super Mario",
+      "Mario Bros",
+      "Nintendo",
+      "Palomera",
+      "Yoshi"
+    ],
+    "availability": "A pedido",
+    "regularPrice": 200,
+    "image": "assets/products/palomera-yoshi-super-mario-frente.jpg",
+    "gallery": [
+      "assets/products/palomera-yoshi-super-mario-frente.jpg",
+      "assets/products/palomera-yoshi-super-mario-frente-original.jpg",
+      "assets/products/palomera-yoshi-super-mario-posterior.jpg",
+      "assets/products/palomera-yoshi-super-mario-abierta.jpg",
+      "assets/products/palomera-yoshi-super-mario-posterior-original.jpg",
+      "assets/products/palomera-yoshi-super-mario-abierta-original.jpg"
+    ],
+    "description": "Palomera de Yoshi inspirada en Super Mario. El personaje sostiene un huevo blanco con manchas verdes que funciona como recipiente, con tapa abatible para abrirlo y cerrarlo. Combina los colores verde, blanco, rojo y marrón y los detalles característicos de Yoshi. Precio por unidad: S/200."
+  },
+  {
+    "id": "palomera-koopa-bowser-super-mario",
+    "name": "Palomera de Koopa/Bowser · Super Mario",
+    "category": "Figuras Coleccionables",
+    "tags": [
+      "Super Mario",
+      "Mario Bros",
+      "Nintendo",
+      "Palomera",
+      "Koopa",
+      "Bowser"
+    ],
+    "availability": "A pedido",
+    "regularPrice": 200,
+    "image": "assets/products/palomera-koopa-bowser-super-mario-frente.jpg",
+    "gallery": [
+      "assets/products/palomera-koopa-bowser-super-mario-frente.jpg",
+      "assets/products/palomera-koopa-bowser-super-mario-frente-original.jpg",
+      "assets/products/palomera-koopa-bowser-super-mario-lateral.jpg",
+      "assets/products/palomera-koopa-bowser-super-mario-posterior.jpg",
+      "assets/products/palomera-koopa-bowser-super-mario-detalle-frontal.jpg",
+      "assets/products/palomera-koopa-bowser-super-mario-lateral-original.jpg",
+      "assets/products/palomera-koopa-bowser-super-mario-posterior-original.jpg",
+      "assets/products/palomera-koopa-bowser-super-mario-detalle-frontal-original.jpg"
+    ],
+    "description": "Palomera de Koopa/Bowser inspirada en Super Mario. La figura sostiene un recipiente blanco con rostro en relieve y aro verde. El personaje destaca por su cuerpo amarillo, cabeza verde, cabello rojo y caparazón con púas blancas. Precio por unidad: S/200."
+  },
+  {
     "id": "mario-billy-saw",
     "name": "Mario Billy · Saw (El Juego del Miedo)",
     "category": "Figuras Coleccionables",
