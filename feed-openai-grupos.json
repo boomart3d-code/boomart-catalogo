@@ -27,6 +27,17 @@
       }
     },
     {
+      "tema": "cine-y-series",
+      "productos": 20,
+      "filtroEtiqueta": {
+        "field": "ads_metadata.custom_label_0",
+        "operator": "in",
+        "values": [
+          "cine-y-series"
+        ]
+      }
+    },
+    {
       "tema": "decoracion",
       "productos": 17,
       "filtroEtiqueta": {
@@ -45,17 +56,6 @@
         "operator": "in",
         "values": [
           "gaming"
-        ]
-      }
-    },
-    {
-      "tema": "cine-y-series",
-      "productos": 10,
-      "filtroEtiqueta": {
-        "field": "ads_metadata.custom_label_0",
-        "operator": "in",
-        "values": [
-          "cine-y-series"
         ]
       }
     },
@@ -215,11 +215,21 @@
     },
     {
       "product_category": "Cine y series > Harry Potter",
-      "productos": 3,
+      "productos": 13,
       "item_ids": [
         "fawkes-fenix-de-dumbledore",
         "castillo-de-hogwarts",
-        "figura-chibi-harry-potter"
+        "figura-chibi-harry-potter",
+        "figura-chibi-severus-snape",
+        "figura-chibi-luna-lovegood",
+        "figura-chibi-minerva-mcgonagall",
+        "figura-chibi-albus-dumbledore",
+        "figura-chibi-rubeus-hagrid",
+        "figura-chibi-draco-malfoy",
+        "figura-chibi-hermione-granger",
+        "figura-chibi-ron-weasley",
+        "figura-chibi-voldemort",
+        "figura-chibi-dobby"
       ]
     },
     {
@@ -760,8 +770,8 @@
       "nombre": "Coleccionables",
       "descripcion": "Figuras, altares para Myth Cloth, templos, esculturas y piezas de coleccion.",
       "sugerenciaContexto": "Coleccionistas que buscan figuras, exhibidores y piezas de edicion limitada hechas a pedido.",
-      "productos": 43,
-      "filas": 92,
+      "productos": 53,
+      "filas": 102,
       "precioMinPEN": 20,
       "precioMaxPEN": 1500,
       "filtroItemId": {
@@ -859,7 +869,17 @@
           "zkull-urban",
           "pato-lucas-kratos-god-of-war",
           "ocarina-zelda",
-          "figura-chibi-harry-potter"
+          "figura-chibi-harry-potter",
+          "figura-chibi-severus-snape",
+          "figura-chibi-luna-lovegood",
+          "figura-chibi-minerva-mcgonagall",
+          "figura-chibi-albus-dumbledore",
+          "figura-chibi-rubeus-hagrid",
+          "figura-chibi-draco-malfoy",
+          "figura-chibi-hermione-granger",
+          "figura-chibi-ron-weasley",
+          "figura-chibi-voldemort",
+          "figura-chibi-dobby"
         ]
       },
       "productIds": [
@@ -905,7 +925,17 @@
         "zkull-urban",
         "pato-lucas-kratos-god-of-war",
         "ocarina-zelda",
-        "figura-chibi-harry-potter"
+        "figura-chibi-harry-potter",
+        "figura-chibi-severus-snape",
+        "figura-chibi-luna-lovegood",
+        "figura-chibi-minerva-mcgonagall",
+        "figura-chibi-albus-dumbledore",
+        "figura-chibi-rubeus-hagrid",
+        "figura-chibi-draco-malfoy",
+        "figura-chibi-hermione-granger",
+        "figura-chibi-ron-weasley",
+        "figura-chibi-voldemort",
+        "figura-chibi-dobby"
       ]
     },
     {
@@ -913,8 +943,8 @@
       "nombre": "Ideas de regalo",
       "descripcion": "Piezas hasta S/100, toda la categoria Navidad y productos marcados como regalo.",
       "sugerenciaContexto": "Personas que buscan un regalo original para fans de anime, videojuegos, cine o decoracion.",
-      "productos": 58,
-      "filas": 67,
+      "productos": 68,
+      "filas": 77,
       "precioMinPEN": 20,
       "precioMaxPEN": 220,
       "filtroItemId": {
@@ -987,7 +1017,17 @@
           "pesebre-tejido",
           "figura-chibi-harry-potter",
           "nacimiento-minimalista",
-          "nacimiento-en-relieve"
+          "nacimiento-en-relieve",
+          "figura-chibi-severus-snape",
+          "figura-chibi-luna-lovegood",
+          "figura-chibi-minerva-mcgonagall",
+          "figura-chibi-albus-dumbledore",
+          "figura-chibi-rubeus-hagrid",
+          "figura-chibi-draco-malfoy",
+          "figura-chibi-hermione-granger",
+          "figura-chibi-ron-weasley",
+          "figura-chibi-voldemort",
+          "figura-chibi-dobby"
         ]
       },
       "productIds": [
@@ -1048,7 +1088,17 @@
         "pesebre-tejido",
         "figura-chibi-harry-potter",
         "nacimiento-minimalista",
-        "nacimiento-en-relieve"
+        "nacimiento-en-relieve",
+        "figura-chibi-severus-snape",
+        "figura-chibi-luna-lovegood",
+        "figura-chibi-minerva-mcgonagall",
+        "figura-chibi-albus-dumbledore",
+        "figura-chibi-rubeus-hagrid",
+        "figura-chibi-draco-malfoy",
+        "figura-chibi-hermione-granger",
+        "figura-chibi-ron-weasley",
+        "figura-chibi-voldemort",
+        "figura-chibi-dobby"
       ]
     },
     {
@@ -1134,8 +1184,8 @@
       "nombre": "Cine y series",
       "descripcion": "Harry Potter, Marvel, DC, Star Wars y otras piezas de cine y series.",
       "sugerenciaContexto": "Fans de Harry Potter, Marvel, DC o Star Wars que buscan piezas de coleccion o decoracion.",
-      "productos": 27,
-      "filas": 28,
+      "productos": 37,
+      "filas": 38,
       "precioMinPEN": 44,
       "precioMaxPEN": 398,
       "filtroItemId": {
@@ -1169,7 +1219,17 @@
           "soporte-mando-deadpool",
           "mascara-de-john-wick",
           "palomera-dr-doom",
-          "figura-chibi-harry-potter"
+          "figura-chibi-harry-potter",
+          "figura-chibi-severus-snape",
+          "figura-chibi-luna-lovegood",
+          "figura-chibi-minerva-mcgonagall",
+          "figura-chibi-albus-dumbledore",
+          "figura-chibi-rubeus-hagrid",
+          "figura-chibi-draco-malfoy",
+          "figura-chibi-hermione-granger",
+          "figura-chibi-ron-weasley",
+          "figura-chibi-voldemort",
+          "figura-chibi-dobby"
         ]
       },
       "productIds": [
@@ -1199,7 +1259,17 @@
         "soporte-mando-deadpool",
         "mascara-de-john-wick",
         "palomera-dr-doom",
-        "figura-chibi-harry-potter"
+        "figura-chibi-harry-potter",
+        "figura-chibi-severus-snape",
+        "figura-chibi-luna-lovegood",
+        "figura-chibi-minerva-mcgonagall",
+        "figura-chibi-albus-dumbledore",
+        "figura-chibi-rubeus-hagrid",
+        "figura-chibi-draco-malfoy",
+        "figura-chibi-hermione-granger",
+        "figura-chibi-ron-weasley",
+        "figura-chibi-voldemort",
+        "figura-chibi-dobby"
       ]
     },
     {

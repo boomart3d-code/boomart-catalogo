@@ -3761,6 +3761,367 @@
       ]
     ]
   },
+  "assets/products/figura-chibi-albus-dumbledore-01.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-albus-dumbledore-01.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-albus-dumbledore-01-6ca80afc0d5d-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-albus-dumbledore-01-6ca80afc0d5d-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-albus-dumbledore-01-6ca80afc0d5d-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-albus-dumbledore-02.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-albus-dumbledore-02.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-albus-dumbledore-02-7a54188f2f24-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-albus-dumbledore-02-7a54188f2f24-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-albus-dumbledore-02-7a54188f2f24-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-albus-dumbledore-03.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-albus-dumbledore-03.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-albus-dumbledore-03-ed1058abfe63-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-albus-dumbledore-03-ed1058abfe63-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-albus-dumbledore-03-ed1058abfe63-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-albus-dumbledore-04.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-albus-dumbledore-04.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-albus-dumbledore-04-ed50b558594c-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-albus-dumbledore-04-ed50b558594c-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-albus-dumbledore-04-ed50b558594c-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-albus-dumbledore-repisa.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/figura-chibi-albus-dumbledore-repisa.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-albus-dumbledore-repisa-ee1f790d07c0-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-albus-dumbledore-repisa-ee1f790d07c0-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-albus-dumbledore-repisa-ee1f790d07c0-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-dobby-01.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-dobby-01.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-dobby-01-8a832d7d7037-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-dobby-01-8a832d7d7037-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-dobby-01-8a832d7d7037-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-dobby-02.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-dobby-02.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-dobby-02-452d7b76adad-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-dobby-02-452d7b76adad-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-dobby-02-452d7b76adad-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-dobby-03.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-dobby-03.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-dobby-03-5b75025928be-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-dobby-03-5b75025928be-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-dobby-03-5b75025928be-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-dobby-04.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-dobby-04.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-dobby-04-8843dc58293e-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-dobby-04-8843dc58293e-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-dobby-04-8843dc58293e-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-dobby-repisa.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/figura-chibi-dobby-repisa.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-dobby-repisa-c0bed4d1c4f1-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-dobby-repisa-c0bed4d1c4f1-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-dobby-repisa-c0bed4d1c4f1-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-draco-malfoy-01.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-draco-malfoy-01.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-draco-malfoy-01-6234abf16d05-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-draco-malfoy-01-6234abf16d05-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-draco-malfoy-01-6234abf16d05-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-draco-malfoy-02.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-draco-malfoy-02.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-draco-malfoy-02-1b9e0b2bf556-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-draco-malfoy-02-1b9e0b2bf556-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-draco-malfoy-02-1b9e0b2bf556-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-draco-malfoy-03.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-draco-malfoy-03.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-draco-malfoy-03-cd4e226745f3-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-draco-malfoy-03-cd4e226745f3-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-draco-malfoy-03-cd4e226745f3-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-draco-malfoy-04.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-draco-malfoy-04.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-draco-malfoy-04-0051265cfa48-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-draco-malfoy-04-0051265cfa48-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-draco-malfoy-04-0051265cfa48-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-draco-malfoy-repisa.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/figura-chibi-draco-malfoy-repisa.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-draco-malfoy-repisa-2896dc4cc09c-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-draco-malfoy-repisa-2896dc4cc09c-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-draco-malfoy-repisa-2896dc4cc09c-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-harry-potter-01.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-harry-potter-01.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-harry-potter-01-e16205da98aa-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-harry-potter-01-e16205da98aa-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-harry-potter-01-e16205da98aa-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-harry-potter-02.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-harry-potter-02.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-harry-potter-02-53fb826c0346-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-harry-potter-02-53fb826c0346-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-harry-potter-02-53fb826c0346-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-harry-potter-03.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-harry-potter-03.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-harry-potter-03-683269300a6d-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-harry-potter-03-683269300a6d-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-harry-potter-03-683269300a6d-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-harry-potter-04.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-harry-potter-04.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-harry-potter-04-87dc6efebec1-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-harry-potter-04-87dc6efebec1-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-harry-potter-04-87dc6efebec1-720w.webp"
+      ]
+    ]
+  },
   "assets/products/figura-chibi-harry-potter-espalda.webp": {
     "w": 1000,
     "h": 1333,
@@ -3837,6 +4198,25 @@
       ]
     ]
   },
+  "assets/products/figura-chibi-harry-potter-repisa.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/figura-chibi-harry-potter-repisa.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-harry-potter-repisa-67f04d9b67ca-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-harry-potter-repisa-67f04d9b67ca-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-harry-potter-repisa-67f04d9b67ca-720w.webp"
+      ]
+    ]
+  },
   "assets/products/figura-chibi-harry-potter-tres-cuartos-izquierda.webp": {
     "w": 1000,
     "h": 1333,
@@ -3872,6 +4252,690 @@
       [
         720,
         "assets/responsive/products/figura-chibi-harry-potter-tres-cuartos-9fad1765b5d8-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-hermione-granger-01.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-hermione-granger-01.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-hermione-granger-01-48b483848370-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-hermione-granger-01-48b483848370-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-hermione-granger-01-48b483848370-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-hermione-granger-02.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-hermione-granger-02.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-hermione-granger-02-ba092575a644-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-hermione-granger-02-ba092575a644-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-hermione-granger-02-ba092575a644-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-hermione-granger-03.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-hermione-granger-03.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-hermione-granger-03-b0f7e558c9e1-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-hermione-granger-03-b0f7e558c9e1-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-hermione-granger-03-b0f7e558c9e1-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-hermione-granger-04.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-hermione-granger-04.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-hermione-granger-04-a6742e9e6fc3-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-hermione-granger-04-a6742e9e6fc3-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-hermione-granger-04-a6742e9e6fc3-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-hermione-granger-repisa.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/figura-chibi-hermione-granger-repisa.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-hermione-granger-repisa-043cba81b7ef-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-hermione-granger-repisa-043cba81b7ef-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-hermione-granger-repisa-043cba81b7ef-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-luna-lovegood-01.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-luna-lovegood-01.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-luna-lovegood-01-ef60daf3c383-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-luna-lovegood-01-ef60daf3c383-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-luna-lovegood-01-ef60daf3c383-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-luna-lovegood-02.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-luna-lovegood-02.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-luna-lovegood-02-711cfba6810f-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-luna-lovegood-02-711cfba6810f-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-luna-lovegood-02-711cfba6810f-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-luna-lovegood-03.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-luna-lovegood-03.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-luna-lovegood-03-1a3fd3b4ba18-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-luna-lovegood-03-1a3fd3b4ba18-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-luna-lovegood-03-1a3fd3b4ba18-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-luna-lovegood-04.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-luna-lovegood-04.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-luna-lovegood-04-75c17d56379c-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-luna-lovegood-04-75c17d56379c-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-luna-lovegood-04-75c17d56379c-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-luna-lovegood-repisa.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/figura-chibi-luna-lovegood-repisa.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-luna-lovegood-repisa-c81d4abc9f83-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-luna-lovegood-repisa-c81d4abc9f83-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-luna-lovegood-repisa-c81d4abc9f83-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-minerva-mcgonagall-01.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-minerva-mcgonagall-01.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-01-372269218a1b-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-01-372269218a1b-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-01-372269218a1b-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-minerva-mcgonagall-02.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-minerva-mcgonagall-02.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-02-0bccd96ad554-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-02-0bccd96ad554-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-02-0bccd96ad554-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-minerva-mcgonagall-03.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-minerva-mcgonagall-03.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-03-4ed13cbe0cf8-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-03-4ed13cbe0cf8-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-03-4ed13cbe0cf8-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-minerva-mcgonagall-04.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-minerva-mcgonagall-04.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-04-c2c854b6b0c3-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-04-c2c854b6b0c3-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-04-c2c854b6b0c3-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-minerva-mcgonagall-05.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-minerva-mcgonagall-05.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-05-7be91843050d-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-05-7be91843050d-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-05-7be91843050d-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-minerva-mcgonagall-repisa.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/figura-chibi-minerva-mcgonagall-repisa.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-repisa-c7065202f8f2-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-repisa-c7065202f8f2-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-minerva-mcgonagall-repisa-c7065202f8f2-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-ron-weasley-01.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-ron-weasley-01.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-ron-weasley-01-507865868405-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-ron-weasley-01-507865868405-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-ron-weasley-01-507865868405-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-ron-weasley-02.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-ron-weasley-02.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-ron-weasley-02-ff8480f8b3bd-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-ron-weasley-02-ff8480f8b3bd-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-ron-weasley-02-ff8480f8b3bd-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-ron-weasley-03.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-ron-weasley-03.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-ron-weasley-03-bce5399b8bde-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-ron-weasley-03-bce5399b8bde-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-ron-weasley-03-bce5399b8bde-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-ron-weasley-04.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-ron-weasley-04.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-ron-weasley-04-586a5e1f2bac-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-ron-weasley-04-586a5e1f2bac-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-ron-weasley-04-586a5e1f2bac-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-ron-weasley-repisa.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/figura-chibi-ron-weasley-repisa.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-ron-weasley-repisa-7afa22ddb501-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-ron-weasley-repisa-7afa22ddb501-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-ron-weasley-repisa-7afa22ddb501-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-rubeus-hagrid-01.webp": {
+    "w": 1000,
+    "h": 750,
+    "src": "assets/products/figura-chibi-rubeus-hagrid-01.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-rubeus-hagrid-01-31c73d5a7513-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-rubeus-hagrid-01-31c73d5a7513-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-rubeus-hagrid-01-31c73d5a7513-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-rubeus-hagrid-02.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-rubeus-hagrid-02.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-rubeus-hagrid-02-75f16fbbe791-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-rubeus-hagrid-02-75f16fbbe791-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-rubeus-hagrid-02-75f16fbbe791-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-rubeus-hagrid-03.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-rubeus-hagrid-03.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-rubeus-hagrid-03-6d55065a5639-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-rubeus-hagrid-03-6d55065a5639-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-rubeus-hagrid-03-6d55065a5639-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-rubeus-hagrid-04.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-rubeus-hagrid-04.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-rubeus-hagrid-04-56b3403f4f88-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-rubeus-hagrid-04-56b3403f4f88-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-rubeus-hagrid-04-56b3403f4f88-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-rubeus-hagrid-repisa.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/figura-chibi-rubeus-hagrid-repisa.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-rubeus-hagrid-repisa-9bc5731a0a8d-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-rubeus-hagrid-repisa-9bc5731a0a8d-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-rubeus-hagrid-repisa-9bc5731a0a8d-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-severus-snape-01.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-severus-snape-01.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-severus-snape-01-11ee46bdd3c0-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-severus-snape-01-11ee46bdd3c0-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-severus-snape-01-11ee46bdd3c0-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-severus-snape-02.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-severus-snape-02.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-severus-snape-02-c0534ad46597-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-severus-snape-02-c0534ad46597-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-severus-snape-02-c0534ad46597-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-severus-snape-03.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-severus-snape-03.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-severus-snape-03-2bf38e1eaa02-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-severus-snape-03-2bf38e1eaa02-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-severus-snape-03-2bf38e1eaa02-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-severus-snape-04.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-severus-snape-04.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-severus-snape-04-2c63eb8256f0-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-severus-snape-04-2c63eb8256f0-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-severus-snape-04-2c63eb8256f0-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-severus-snape-repisa.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/figura-chibi-severus-snape-repisa.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-severus-snape-repisa-3ee16762878f-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-severus-snape-repisa-3ee16762878f-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-severus-snape-repisa-3ee16762878f-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-voldemort-01.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-voldemort-01.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-voldemort-01-5b6e4984fe64-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-voldemort-01-5b6e4984fe64-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-voldemort-01-5b6e4984fe64-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-voldemort-02.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-voldemort-02.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-voldemort-02-5bddf74b324f-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-voldemort-02-5bddf74b324f-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-voldemort-02-5bddf74b324f-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-voldemort-03.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-voldemort-03.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-voldemort-03-c8cdbed1ce7e-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-voldemort-03-c8cdbed1ce7e-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-voldemort-03-c8cdbed1ce7e-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-voldemort-04.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-voldemort-04.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-voldemort-04-ca0d6bbd8068-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-voldemort-04-ca0d6bbd8068-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-voldemort-04-ca0d6bbd8068-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-voldemort-repisa.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/figura-chibi-voldemort-repisa.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-voldemort-repisa-78d7e1e89e24-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-voldemort-repisa-78d7e1e89e24-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-voldemort-repisa-78d7e1e89e24-720w.webp"
       ]
     ]
   },
