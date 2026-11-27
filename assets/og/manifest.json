@@ -358,17 +358,17 @@
   },
   "palomera-yoshi-super-mario": {
     "source": "assets/products/palomera-yoshi-super-mario-frente.jpg",
-    "hash": "e71f363c1dd6b6d2",
+    "hash": "7f18cd894512a96b",
     "width": 900,
     "height": 1200,
-    "bytes": 73476
+    "bytes": 72770
   },
   "palomera-koopa-bowser-super-mario": {
     "source": "assets/products/palomera-koopa-bowser-super-mario-frente.jpg",
-    "hash": "7fcd21ac273e56db",
+    "hash": "7cefad0802a1970e",
     "width": 900,
     "height": 1200,
-    "bytes": 73228
+    "bytes": 72283
   },
   "mario-billy-saw": {
     "source": "assets/products/mario-billy-saw-hero-v2.webp",
