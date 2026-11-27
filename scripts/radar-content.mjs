@@ -21,10 +21,14 @@ const isDate = (value) => typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.tes
   && new Date(value).toJSON()?.slice(0, 10) === value;
 const validLink = ({ url, label }) => typeof label === "string" && label.trim() && hasHttps(url);
 
-function validPhoto(photo) {
-  return /^\/assets\/radar\/prensa\/[\w.-]+$/.test(photo.src) && !photo.src.includes("..")
-    && photo.alt && photo.caption && photo.credit && hasHttps(photo.source) && hasHttps(photo.original)
-    && Number.isInteger(photo.width) && Number.isInteger(photo.height) && photo.width > 0 && photo.height > 0;
+const imageUrl = (image) => new URL(image.src, SITE).href;
+
+function validImage(image) {
+  if (!image || !image.alt || !image.caption || !image.credit || !hasHttps(image.source)) return false;
+  const pressAsset = typeof image.src === "string" && /^\/assets\/radar\/prensa\/[\w.-]+$/.test(image.src)
+    && !image.src.includes("..") && hasHttps(image.original);
+  return (pressAsset || hasHttps(image.src))
+    && Number.isInteger(image.width) && Number.isInteger(image.height) && image.width > 0 && image.height > 0;
 }
 
 export async function readRadarPosts(root) {
@@ -36,8 +40,8 @@ export async function readRadarPosts(root) {
     const sources = Array.isArray(post.sources) && post.sources.length && post.sources.every(validLink);
     const text = [post.title, post.type, post.description, post.question].every(value => typeof value === "string" && value.trim());
     const paragraphs = Array.isArray(post.paragraphs) && post.paragraphs.length && post.paragraphs.every(value => typeof value === "string" && value.trim());
-    const cover = !post.cover || validPhoto(post.cover);
-    const gallery = !post.gallery || (Array.isArray(post.gallery) && post.gallery.every(validPhoto));
+    const cover = validImage(post.cover);
+    const gallery = !post.gallery || (Array.isArray(post.gallery) && post.gallery.every(validImage));
     const media = !post.mediaLinks || (Array.isArray(post.mediaLinks) && post.mediaLinks.every(validLink));
     const date = isDate(post.date) && (!post.announcementDate || isDate(post.announcementDate));
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(post.slug) || seen.has(post.slug) ||
@@ -65,7 +69,7 @@ function siteFrame({ title, description, url, schema, content, cover, modules = 
     <meta property="og:title" content="${escape(title)}">
     <meta property="og:description" content="${escape(description)}">
     <meta property="og:url" content="${SITE + url}">
-    <meta property="og:image" content="${SITE + (cover?.src || SOCIAL_IMAGE)}">${cover ? `\n    <meta property="og:image:alt" content="${escape(cover.alt)}">` : ""}
+    <meta property="og:image" content="${escape(cover ? imageUrl(cover) : SITE + SOCIAL_IMAGE)}">${cover ? `\n    <meta property="og:image:alt" content="${escape(cover.alt)}">` : ""}
     <meta property="og:locale" content="es_PE">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="alternate" type="application/rss+xml" title="Radar Saint Seiya Perú" href="/radar/feed.xml">
@@ -113,23 +117,23 @@ function siteFrame({ title, description, url, schema, content, cover, modules = 
 `;
 }
 
-function pressImage(photo, className, priority = false) {
+function editorialImage(photo, className, priority = false) {
   const loading = priority ? 'fetchpriority="high"' : 'loading="lazy"';
   return `<figure class="${className}">
-      <img src="${photo.src}" width="${photo.width}" height="${photo.height}" alt="${escape(photo.alt)}" ${loading}>
+      <img src="${escape(photo.src)}" width="${photo.width}" height="${photo.height}" alt="${escape(photo.alt)}" ${loading}>
       <figcaption>${escape(photo.caption)} <a href="${escape(photo.source)}">${escape(photo.credit)}</a></figcaption>
     </figure>`;
 }
 
 function feature(post) {
-  return `<article class="radar-feature${post.cover ? "" : " radar-feature-text"}">
+  return `<article class="radar-feature">
     <div class="radar-feature-copy">
       <p class="radar-label">${escape(post.type)}</p>
       <h2><a href="${route(post)}">${escape(post.title)}</a></h2>
       <p>${escape(post.description)}</p>
       <a class="radar-action" href="${route(post)}">Leer la nota <span aria-hidden="true">→</span></a>
     </div>
-    ${post.cover ? pressImage(post.cover, "radar-feature-photo", true) : ""}
+    ${editorialImage(post.cover, "radar-feature-photo", true)}
   </article>`;
 }
 
@@ -157,7 +161,7 @@ function homepage(posts) {
           <p class="radar-feedback" id="radar-filter-status" role="status" hidden></p>
           <div class="radar-cards" id="radar-cards">
             ${posts.map(post => `<article class="radar-card" data-section="${post.category}">
-              ${post.cover ? `<img class="radar-card-photo" src="${post.cover.src}" width="${post.cover.width}" height="${post.cover.height}" alt="${escape(post.cover.alt)}" loading="lazy">` : ""}
+              <img class="radar-card-photo" src="${escape(post.cover.src)}" width="${post.cover.width}" height="${post.cover.height}" alt="${escape(post.cover.alt)}" loading="lazy">
               <p class="radar-label">${SECTIONS[post.category]} · ${escape(post.type)}</p>
               <h3><a href="${route(post)}">${escape(post.title)}</a></h3>
               <p>${escape(post.description)}</p>
@@ -231,8 +235,8 @@ function community(post) {
 }
 
 function article(post) {
-  const image = post.cover ? pressImage(post.cover, "radar-article-cover", true) : "";
-  const gallery = (post.gallery || []).map(photo => pressImage(photo, "radar-article-cover")).join("\n");
+  const image = editorialImage(post.cover, "radar-article-cover", true);
+  const gallery = (post.gallery || []).map(photo => editorialImage(photo, "radar-article-cover")).join("\n");
   const media = post.mediaLinks?.length ? `<section class="radar-sources" aria-label="Material visual oficial">
     <h2>Material visual oficial</h2>
     <ul>${post.mediaLinks.map(source => `<li><a href="${escape(source.url)}">${escape(source.label)}</a></li>`).join("")}</ul>
@@ -245,7 +249,7 @@ function article(post) {
     title: post.title, description: post.description, url: route(post), cover: post.cover, modules: ["radar-comunidad"],
     schema: {
       "@type": "Article", headline: post.title, description: post.description,
-      ...(post.cover ? { image: [SITE + post.cover.src, ...(post.gallery || []).map(photo => SITE + photo.src)] } : {}),
+      image: [post.cover, ...(post.gallery || [])].map(imageUrl),
       datePublished: post.date, inLanguage: "es-PE", author: publisher, publisher,
       mainEntityOfPage: { "@type": "WebPage", "@id": SITE + route(post) }, about: "Saint Seiya",
       citation: post.sources.map(source => source.url),

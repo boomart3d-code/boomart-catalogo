@@ -108,6 +108,15 @@
         "url": "https://tamashiiweb.com/item/16260/?wovn=jp"
       }
     ],
+    "cover": {
+      "src": "https://tamashiiweb.com/storage/images/products/thumbnail/caca2d74-42f9-4679-ab33-a633452ccfbc.webp",
+      "alt": "Figura de Aioria de Leo con armadura divina dorada y alas desplegadas",
+      "width": 1200,
+      "height": 1200,
+      "caption": "Fotografía oficial de Aioria de Leo con armadura divina, versión Saint Cloth Myth EX Metal Edition.",
+      "credit": "Bandai Spirits / Tamashii Nations · © Masami Kurumada / Shueisha · Toei Animation",
+      "source": "https://tamashiiweb.com/item/16260/?wovn=en"
+    },
     "paragraphs": [
       "Tamashii Nations anunció a Aioria de Leo con su armadura divina de Saint Seiya: Soul of Gold. La ficha identifica la figura como EX METAL EDITION y señala que el cuerpo utiliza piezas metálicas fundidas en las articulaciones de codos y rodillas.",
       "La tienda japonesa indica que la preventa se abrió el 13 de noviembre de 2026, con cierre anunciado para el 29 del mismo mes. El precio de referencia en Japón es ¥26.400 con impuestos, sin envío. El despacho se anuncia para abril de 2027.",
@@ -185,13 +194,27 @@
         "url": "https://admin.akitashoten.co.jp/red/backnumber"
       }
     ],
+    "cover": {
+      "src": "/assets/radar/prensa/champion-red-dark-wing-final.jpg",
+      "alt": "Ilustración de Saint Seiya Dark Wing con dos personajes entre flores y el título de la obra",
+      "width": 836,
+      "height": 1200,
+      "caption": "Ilustración difundida por Akita Shoten para anunciar el capítulo final de Dark Wing en Champion RED.",
+      "credit": "Akita Shoten · Masami Kurumada, Kenji Saitō y Shinshū Ueda",
+      "source": "https://prtimes.jp/main/html/rd/p/000000933.000040601.html",
+      "original": "https://prcdn.freetls.fastly.net/release_image/40601/933/40601-933-31b62e63ca2ef445a3c80a9061868d1c-836x1200.jpg"
+    },
     "paragraphs": [
-      "Akita Shoten lista Saint Seiya: Dark Wing en el número de enero de 2027 de Champion RED, publicado en Japón el 19 de noviembre de 2026.",
+      "Akita Shoten lista Saint Seiya: Dark Wing en el número de enero de 2027 de Champion RED, publicado en Japón el 19 de noviembre de 2026. La editorial presenta esa entrega como el capítulo final del manga.",
       "La ficha de la revista acredita a Masami Kurumada, Kenji Saitō y Shinshū Ueda. Dark Wing es el título que hay que buscar en el índice de este número.",
       "El mes impreso en la revista y su fecha de puesta a la venta son distintos. Para identificar el ejemplar en una importación, usa «Champion RED, número de enero de 2027» y confirma su índice con el vendedor."
     ],
     "question": "¿Qué derivación de Saint Seiya sigues en manga y cuál recomendarías para empezar?",
     "sources": [
+      {
+        "label": "Anuncio oficial de Akita Shoten sobre el capítulo final",
+        "url": "https://prtimes.jp/main/html/rd/p/000000933.000040601.html"
+      },
       {
         "label": "Hemeroteca oficial de Champion RED en Akita Shoten",
         "url": "https://admin.akitashoten.co.jp/red/backnumber"
@@ -243,6 +266,15 @@
     "market": "Japón",
     "release": "2026-12",
     "peru": "Llegada por verificar",
+    "cover": {
+      "src": "https://tamashiiweb.com/storage/images/products/thumbnail/df428284-2dae-4c18-8049-abf7454fd4ac.webp",
+      "alt": "Figura de Seiya con la primera armadura de bronce de Pegaso, peto plateado y traje rojo",
+      "width": 600,
+      "height": 600,
+      "caption": "Fotografía oficial de Seiya de Pegaso con la primera armadura de bronce y cuerpo EX METAL.",
+      "credit": "Bandai Spirits / Tamashii Nations · © Masami Kurumada / Shueisha · Toei Animation",
+      "source": "https://tamashiiweb.com/item/15905/?wovn=en"
+    },
     "paragraphs": [
       "Tamashii Nations incluye a Pegasus Seiya [First Bronze Cloth] en su calendario de diciembre de 2026. La ficha lo presenta como un lanzamiento de venta general y especifica un cuerpo EX METAL y una armadura nueva para esta edición.",
       "Al pedir información en una tienda peruana, conviene usar el nombre completo de la edición y confirmar la fecha de llegada. Seiya tiene distintas armaduras y ediciones, así que el nombre del personaje por sí solo puede llevar a una reserva diferente.",
@@ -269,6 +301,26 @@
     "date": "2026-11-27",
     "title": "Blokees Galaxy 05 lleva la saga de Hades a sus cajas sorpresa",
     "description": "La colección oficial The Hades Invasion reúne nueve diseños. La marca explica cómo funciona la caja individual y la variante especial.",
+    "cover": {
+      "src": "https://www.bbcw.com/images/product/BLK535426.jpg",
+      "alt": "Exhibidor de cajas sorpresa y figuras de Blokees Saint Seiya Galaxy Version 05 The Hades Invasion",
+      "width": 500,
+      "height": 500,
+      "caption": "Imagen promocional de la colección Galaxy Version 05, con su exhibidor y las figuras de The Hades Invasion.",
+      "credit": "Blokees · Ficha del distribuidor BBCW",
+      "source": "https://www.bbcw.com/pre-order-sheets/pre-order-sheet-10-30-2026/blokees-model-kits-saint-seiya-gv-05-the-hades-invasion-9pc-blind-box-display"
+    },
+    "gallery": [
+      {
+        "src": "https://blokees.com/cdn/shop/files/2_56032813-0f2b-4b1a-94f3-c385b32a109c.webp?width=800",
+        "alt": "Exhibidor verde y morado de Blokees Galaxy Version 05 con las cajas individuales dentro",
+        "width": 800,
+        "height": 800,
+        "caption": "Imagen oficial de la presentación de la caja que reúne las unidades sorpresa.",
+        "credit": "Blokees",
+        "source": "https://blokees.com/products/saint-seiya-galaxy-version-the-hades-invasion"
+      }
+    ],
     "paragraphs": [
       "En su ficha oficial, Blokees presenta Galaxy Version 05: The Hades Invasion como una colección licenciada inspirada en la saga de Hades. La marca enumera nueve diseños y señala que existe la posibilidad de obtener una variante especial.",
       "Cada caja individual contiene una figura al azar. Si tu prioridad es un personaje concreto, revisa si la oferta corresponde a una caja cerrada, un set o una figura ya identificada.",
@@ -296,6 +348,26 @@
     "date": "2026-11-27",
     "title": "Final Edition y Next Dimension son dos lecturas distintas de Saint Seiya",
     "description": "La editorial japonesa identifica las dos colecciones por separado. Una guía rápida para distinguirlas antes de pedir un tomo.",
+    "cover": {
+      "src": "https://c.bookwalker.jp/fbf054593fcfd18c324a89b75265d87/t_700x780.jpg",
+      "alt": "Portada japonesa del tomo 16 de Saint Seiya Final Edition con un caballero de armadura dorada",
+      "width": 548,
+      "height": 780,
+      "caption": "Portada del tomo 16 de Final Edition, la edición revisada del manga original.",
+      "credit": "Akita Shoten · Masami Kurumada · Portada vía BOOK☆WALKER",
+      "source": "https://bookwalker.jp/de0575958a-02b8-420f-8191-403217b8b4ec/"
+    },
+    "gallery": [
+      {
+        "src": "https://c.bookwalker.jp/e2e57b4d81a3cf91604e68717839f91/t_700x780.jpg",
+        "alt": "Portada japonesa del tomo 16 de Saint Seiya Next Dimension con un personaje de túnica blanca",
+        "width": 548,
+        "height": 780,
+        "caption": "Portada del tomo 16 de Next Dimension, el último volumen de esta continuación.",
+        "credit": "Akita Shoten · Masami Kurumada · Portada vía BOOK☆WALKER",
+        "source": "https://bookwalker.jp/defdb013a5-5295-4629-94d1-6ef1ff18eaf1/"
+      }
+    ],
     "paragraphs": [
       "Final Edition es una edición del manga original de Masami Kurumada. Akita Shoten indica que su primer volumen incorpora Episode.0. En el catálogo japonés consultado, la editorial lista dieciséis volúmenes.",
       "Next Dimension es una continuación escrita por Kurumada. La historia enlaza a Seiya y la batalla contra Hades con una Guerra Santa de otra época. La ficha editorial identifica el volumen 16 como el cierre de esa serie.",
@@ -320,6 +392,15 @@
     "date": "2026-11-27",
     "title": "Cuarenta años del anime clásico de Saint Seiya",
     "description": "Toei fecha la producción de la serie original en 1986. Volvemos al comienzo y a sus 114 episodios.",
+    "cover": {
+      "src": "https://www.toei-animation.com/wp-content/uploads/2019/02/saint_seiya_product.jpg",
+      "alt": "Seiya, Shiryu, Hyoga, Shun e Ikki en una ilustración promocional del anime clásico Saint Seiya",
+      "width": 540,
+      "height": 432,
+      "caption": "Arte del catálogo oficial de Toei Animation para el anime de televisión estrenado en 1986.",
+      "credit": "Toei Animation · © Masami Kurumada / Shueisha",
+      "source": "https://www.toei-animation.com/catalog/saint-seiya/"
+    },
     "paragraphs": [
       "En 2026 se cumplen cuarenta años del anime clásico de Saint Seiya. Toei Animation sitúa su producción en 1986 y registra 114 episodios en la ficha de la serie.",
       "La adaptación llevó a la televisión el manga de Masami Kurumada. El catálogo de Toei conserva por separado el anime clásico y producciones posteriores como Omega, Soul of Gold, Saintia Sho y The Lost Canvas.",
@@ -344,6 +425,15 @@
     "date": "2026-11-27",
     "title": "El regreso de los Santos Dorados en Saint Seiya: Soldiers’ Soul",
     "description": "Recordamos el videojuego de 2015 y la conexión entre las armaduras divinas de los Santos Dorados y Soul of Gold.",
+    "cover": {
+      "src": "https://i.ytimg.com/vi/BirdaZMvKe4/hqdefault.jpg",
+      "alt": "Caballero con armadura azul en una imagen del tráiler de Saint Seiya Soldiers’ Soul",
+      "width": 480,
+      "height": 360,
+      "caption": "Miniatura del tráiler oficial de lanzamiento del videojuego Saint Seiya: Soldiers’ Soul (2015).",
+      "credit": "Bandai Namco Entertainment America",
+      "source": "https://www.youtube.com/watch?v=BirdaZMvKe4"
+    },
     "paragraphs": [
       "Saint Seiya: Soldiers’ Soul es un videojuego de Bandai Namco de 2015. La página oficial destaca el regreso de los Santos Dorados con armaduras divinas, un punto de encuentro con el anime Soul of Gold.",
       "Para los coleccionistas, estas versiones abren una idea para la vitrina: reunir al mismo personaje en su armadura clásica y en su versión divina, con una nota que explique de dónde viene cada una.",
@@ -368,6 +458,26 @@
     "date": "2026-11-27",
     "title": "Knights of the Zodiac en pantalla, de la serie CGI a la película",
     "description": "Toei y Sony usan un título parecido para dos adaptaciones publicadas en años distintos. Una guía para ubicarlas antes de buscarlas.",
+    "cover": {
+      "src": "https://i.ytimg.com/vi/RNA4E3AuGIk/hqdefault.jpg",
+      "alt": "Primer plano de Seiya con armadura en la serie animada por computadora Knights of the Zodiac",
+      "width": 480,
+      "height": 360,
+      "caption": "Miniatura del tráiler oficial de la serie animada de Toei anunciada para 2019.",
+      "credit": "Netflix / Toei Animation",
+      "source": "https://www.youtube.com/watch?v=RNA4E3AuGIk"
+    },
+    "gallery": [
+      {
+        "src": "https://i.ytimg.com/vi/Sko0o_KoBHY/hqdefault.jpg",
+        "alt": "Mackenyu como Seiya con armadura en el tráiler de Knights of the Zodiac",
+        "width": 480,
+        "height": 360,
+        "caption": "Miniatura del tráiler oficial de la película de acción real de 2023, con Mackenyu como Seiya.",
+        "credit": "Sony Pictures Entertainment",
+        "source": "https://www.youtube.com/watch?v=Sko0o_KoBHY"
+      }
+    ],
     "paragraphs": [
       "Toei Animation presentó en 2019 una nueva versión animada por computadora de Saint Seiya. El anuncio original indicaba que los primeros seis episodios llegarían a Netflix en julio de ese año.",
       "Knights of the Zodiac también es el título con que Sony Pictures ficha la película de acción real de 2023, protagonizada por Mackenyu como Seiya.",
