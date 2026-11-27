@@ -4,7 +4,7 @@
 
 ## Catalogo
 
-- [Catalogo completo (HTML, texto plano)](https://boomart.pe/catalogo.html): las 120 piezas con descripcion, material y precios.
+- [Catalogo completo (HTML, texto plano)](https://boomart.pe/catalogo.html): las 121 piezas con descripcion, material y precios.
 - [Catalogo en Markdown](https://boomart.pe/llms-full.txt): mismo contenido en un solo archivo de texto.
 - [Feed JSON](https://boomart.pe/catalogo.json): datos estructurados (precios, imagenes, categorias).
 - [Feed Google/Pinterest (XML)](https://boomart.pe/feed-google.xml): formato Google Merchant Center.
@@ -52,7 +52,7 @@ Herramientas gratuitas de BoomArt, sin registro. En Amigo Secreto, el modo Whats
 - Zelda: 5 piezas
 - Saint Seiya: 40 piezas
 - 🎃 Halloween: 27 piezas
-- Harry Potter: 17 piezas
+- Harry Potter: 18 piezas
 - Marvel & DC: 9 piezas
 - Figuras Coleccionables: 5 piezas
 - Macetas: 8 piezas

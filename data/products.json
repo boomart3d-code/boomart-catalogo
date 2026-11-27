@@ -3664,5 +3664,41 @@
     "imageAlt": "Figura chibi de Dobby en una repisa exhibidora de madera",
     "detailText": "Dobby en versión chibi, con sus grandes orejas, ojos expresivos y túnica sencilla. Una figura decorativa del querido elfo doméstico para sumar a tu colección del mundo mágico. Mide 20 cm de alto. Impresa en 3D en PLA+ y hecha a pedido. Precio por una figura individual. Fotos referenciales del modelo. Envíos a todo el Perú.",
     "description": "Dobby en versión chibi, con sus grandes orejas, ojos expresivos y túnica sencilla. Una figura decorativa del querido elfo doméstico para sumar a tu colección del mundo mágico. Mide 20 cm de alto. Impresa en 3D en PLA+ y hecha a pedido. Precio por una figura individual. Fotos referenciales del modelo. Envíos a todo el Perú."
+  },
+  {
+    "id": "figura-chibi-sirius-black",
+    "name": "Figura Chibi de Sirius Black · Harry Potter",
+    "category": "Harry Potter",
+    "tags": [
+      "Harry Potter",
+      "Chibi",
+      "Figuras",
+      "Coleccionables",
+      "Sirius Black",
+      "Regalos"
+    ],
+    "height": "22 cm de alto aprox.",
+    "material": "PLA+",
+    "availability": "A pedido",
+    "regularPrice": 50,
+    "featured": true,
+    "image": "assets/products/figura-chibi-sirius-black-repisa.webp",
+    "gallery": [
+      "assets/products/figura-chibi-sirius-black-repisa.webp",
+      "assets/products/figura-chibi-sirius-black-01.webp",
+      "assets/products/figura-chibi-sirius-black-02.webp",
+      "assets/products/figura-chibi-sirius-black-03.webp",
+      "assets/products/figura-chibi-sirius-black-04.webp"
+    ],
+    "imageAlt": "Figura chibi de Sirius Black en una repisa exhibidora de madera",
+    "detailText": "Sirius Black en versión chibi, con su cabello oscuro, barba, abrigo y varita. Una figura decorativa del padrino de Harry para completar tu colección del mundo mágico. Mide 22 cm de alto aproximadamente. Impresa en 3D en PLA+ y hecha a pedido. Precio por una figura individual. Fotos referenciales del modelo. Envíos a todo el Perú.",
+    "description": "Sirius Black en versión chibi, con su cabello oscuro, barba, abrigo y varita. Una figura decorativa del padrino de Harry para completar tu colección del mundo mágico. Mide 22 cm de alto aproximadamente. Impresa en 3D en PLA+ y hecha a pedido. Precio por una figura individual. Fotos referenciales del modelo. Envíos a todo el Perú.",
+    "video": {
+      "src": "assets/products/videos/figura-chibi-sirius-black.mp4",
+      "poster": "assets/products/figura-chibi-sirius-black-repisa.webp",
+      "title": "Sirius Black · Figura chibi de Harry Potter",
+      "description": "Vista de la figura chibi de Sirius Black.",
+      "uploadDate": "2026-11-27"
+    }
   }
 ]

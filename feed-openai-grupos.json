@@ -28,7 +28,7 @@
     },
     {
       "tema": "cine-y-series",
-      "productos": 20,
+      "productos": 21,
       "filtroEtiqueta": {
         "field": "ads_metadata.custom_label_0",
         "operator": "in",
@@ -215,7 +215,7 @@
     },
     {
       "product_category": "Cine y series > Harry Potter",
-      "productos": 13,
+      "productos": 14,
       "item_ids": [
         "fawkes-fenix-de-dumbledore",
         "castillo-de-hogwarts",
@@ -229,7 +229,8 @@
         "figura-chibi-hermione-granger",
         "figura-chibi-ron-weasley",
         "figura-chibi-voldemort",
-        "figura-chibi-dobby"
+        "figura-chibi-dobby",
+        "figura-chibi-sirius-black"
       ]
     },
     {
@@ -770,8 +771,8 @@
       "nombre": "Coleccionables",
       "descripcion": "Figuras, altares para Myth Cloth, templos, esculturas y piezas de coleccion.",
       "sugerenciaContexto": "Coleccionistas que buscan figuras, exhibidores y piezas de edicion limitada hechas a pedido.",
-      "productos": 53,
-      "filas": 102,
+      "productos": 54,
+      "filas": 103,
       "precioMinPEN": 20,
       "precioMaxPEN": 1500,
       "filtroItemId": {
@@ -879,7 +880,8 @@
           "figura-chibi-hermione-granger",
           "figura-chibi-ron-weasley",
           "figura-chibi-voldemort",
-          "figura-chibi-dobby"
+          "figura-chibi-dobby",
+          "figura-chibi-sirius-black"
         ]
       },
       "productIds": [
@@ -935,7 +937,8 @@
         "figura-chibi-hermione-granger",
         "figura-chibi-ron-weasley",
         "figura-chibi-voldemort",
-        "figura-chibi-dobby"
+        "figura-chibi-dobby",
+        "figura-chibi-sirius-black"
       ]
     },
     {
@@ -943,8 +946,8 @@
       "nombre": "Ideas de regalo",
       "descripcion": "Piezas hasta S/100, toda la categoria Navidad y productos marcados como regalo.",
       "sugerenciaContexto": "Personas que buscan un regalo original para fans de anime, videojuegos, cine o decoracion.",
-      "productos": 68,
-      "filas": 77,
+      "productos": 69,
+      "filas": 78,
       "precioMinPEN": 20,
       "precioMaxPEN": 220,
       "filtroItemId": {
@@ -1027,7 +1030,8 @@
           "figura-chibi-hermione-granger",
           "figura-chibi-ron-weasley",
           "figura-chibi-voldemort",
-          "figura-chibi-dobby"
+          "figura-chibi-dobby",
+          "figura-chibi-sirius-black"
         ]
       },
       "productIds": [
@@ -1098,7 +1102,8 @@
         "figura-chibi-hermione-granger",
         "figura-chibi-ron-weasley",
         "figura-chibi-voldemort",
-        "figura-chibi-dobby"
+        "figura-chibi-dobby",
+        "figura-chibi-sirius-black"
       ]
     },
     {
@@ -1184,8 +1189,8 @@
       "nombre": "Cine y series",
       "descripcion": "Harry Potter, Marvel, DC, Star Wars y otras piezas de cine y series.",
       "sugerenciaContexto": "Fans de Harry Potter, Marvel, DC o Star Wars que buscan piezas de coleccion o decoracion.",
-      "productos": 37,
-      "filas": 38,
+      "productos": 38,
+      "filas": 39,
       "precioMinPEN": 44,
       "precioMaxPEN": 398,
       "filtroItemId": {
@@ -1229,7 +1234,8 @@
           "figura-chibi-hermione-granger",
           "figura-chibi-ron-weasley",
           "figura-chibi-voldemort",
-          "figura-chibi-dobby"
+          "figura-chibi-dobby",
+          "figura-chibi-sirius-black"
         ]
       },
       "productIds": [
@@ -1269,7 +1275,8 @@
         "figura-chibi-hermione-granger",
         "figura-chibi-ron-weasley",
         "figura-chibi-voldemort",
-        "figura-chibi-dobby"
+        "figura-chibi-dobby",
+        "figura-chibi-sirius-black"
       ]
     },
     {

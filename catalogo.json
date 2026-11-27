@@ -11,7 +11,7 @@
     "facebook": "https://www.facebook.com/boom.art.873521/",
     "tiktok": "https://www.tiktok.com/@boomart.3d"
   },
-  "count": 120,
+  "count": 121,
   "products": [
     {
       "id": "skins-zelda-nintendo-switch-2",
@@ -4496,6 +4496,41 @@
       ],
       "url": "https://boomart.pe/producto/figura-chibi-dobby/",
       "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Figura%20Chibi%20de%20Dobby%20%C2%B7%20Harry%20Potter"
+    },
+    {
+      "id": "figura-chibi-sirius-black",
+      "name": "Figura Chibi de Sirius Black · Harry Potter",
+      "category": "Harry Potter",
+      "tags": [
+        "Harry Potter",
+        "Chibi",
+        "Figuras",
+        "Coleccionables",
+        "Sirius Black",
+        "Regalos"
+      ],
+      "description": "Sirius Black en versión chibi, con su cabello oscuro, barba, abrigo y varita. Una figura decorativa del padrino de Harry para completar tu colección del mundo mágico. Mide 22 cm de alto aproximadamente. Impresa en 3D en PLA+ y hecha a pedido. Precio por una figura individual. Fotos referenciales del modelo. Envíos a todo el Perú.",
+      "material": "PLA+",
+      "availability": "A pedido",
+      "fabricacion": {
+        "nivel": "sencillo",
+        "texto": "24 a 48 horas"
+      },
+      "priceCurrency": "PEN",
+      "priceFrom": 50,
+      "pricing": [
+        "Precio: S/50"
+      ],
+      "image": "https://boomart.pe/assets/products/figura-chibi-sirius-black-repisa.webp",
+      "gallery": [
+        "https://boomart.pe/assets/products/figura-chibi-sirius-black-repisa.webp",
+        "https://boomart.pe/assets/products/figura-chibi-sirius-black-01.webp",
+        "https://boomart.pe/assets/products/figura-chibi-sirius-black-02.webp",
+        "https://boomart.pe/assets/products/figura-chibi-sirius-black-03.webp",
+        "https://boomart.pe/assets/products/figura-chibi-sirius-black-04.webp"
+      ],
+      "url": "https://boomart.pe/producto/figura-chibi-sirius-black/",
+      "whatsapp": "https://wa.me/51925666542?text=Hola%20BoomArt%2C%20quiero%20consultar%20por%3A%20Figura%20Chibi%20de%20Sirius%20Black%20%C2%B7%20Harry%20Potter"
     }
   ]
 }

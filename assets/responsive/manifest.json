@@ -4844,6 +4844,101 @@
       ]
     ]
   },
+  "assets/products/figura-chibi-sirius-black-01.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-sirius-black-01.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-sirius-black-01-1140dac1d2ee-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-sirius-black-01-1140dac1d2ee-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-sirius-black-01-1140dac1d2ee-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-sirius-black-02.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-sirius-black-02.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-sirius-black-02-79b224f66ab6-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-sirius-black-02-79b224f66ab6-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-sirius-black-02-79b224f66ab6-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-sirius-black-03.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-sirius-black-03.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-sirius-black-03-5b9242a2b721-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-sirius-black-03-5b9242a2b721-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-sirius-black-03-5b9242a2b721-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-sirius-black-04.webp": {
+    "w": 1000,
+    "h": 1778,
+    "src": "assets/products/figura-chibi-sirius-black-04.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-sirius-black-04-275bd0f0e2ae-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-sirius-black-04-275bd0f0e2ae-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-sirius-black-04-275bd0f0e2ae-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/figura-chibi-sirius-black-repisa.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/figura-chibi-sirius-black-repisa.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/figura-chibi-sirius-black-repisa-8f1640415fa5-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/figura-chibi-sirius-black-repisa-8f1640415fa5-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/figura-chibi-sirius-black-repisa-8f1640415fa5-720w.webp"
+      ]
+    ]
+  },
   "assets/products/figura-chibi-voldemort-01.webp": {
     "w": 1000,
     "h": 1778,
