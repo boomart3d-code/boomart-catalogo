@@ -21,10 +21,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles.css?v=69">
-    <link rel="stylesheet" href="/src/radar.css?v=2">
+    <link rel="stylesheet" href="/src/radar.css?v=3">
     <script src="/vitrina/vendor/supabase-js-2.117.2.umd.js" defer></script>
     <script src="/src/supabase-config.js" defer></script>
-    <script type="module" src="/src/radar-comunidad.js?v=2"></script>
+    <script type="module" src="/src/radar-comunidad.js?v=3"></script>
   </head>
   <body class="radar-site">
     <a class="radar-skip" href="#contenido">Ir al contenido</a>
@@ -88,6 +88,10 @@
     </form>
   </div>
     <div data-community-content hidden>
+      <div class="radar-reactions" data-like-group hidden>
+        <button class="radar-action radar-action-secondary" type="button" aria-pressed="false">Me gusta</button>
+        <span class="radar-small" data-like-count role="status"></span>
+      </div>
       <form data-vote class="radar-rating">
         <fieldset><legend>Valora la nota</legend>
         <div class="radar-stars"><label><input type="radio" name="rating" value="1" aria-label="1 de 5 estrellas"><span aria-hidden="true">★</span></label><label><input type="radio" name="rating" value="2" aria-label="2 de 5 estrellas"><span aria-hidden="true">★</span></label><label><input type="radio" name="rating" value="3" aria-label="3 de 5 estrellas"><span aria-hidden="true">★</span></label><label><input type="radio" name="rating" value="4" aria-label="4 de 5 estrellas"><span aria-hidden="true">★</span></label><label><input type="radio" name="rating" value="5" aria-label="5 de 5 estrellas"><span aria-hidden="true">★</span></label></div></fieldset>

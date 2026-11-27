@@ -19,6 +19,8 @@ $$;
 set local role anon;
 select pg_temp.check_radar(jsonb_array_length(public.radar_discussion('nota-prueba')->'entries') = 0, 'lectura anónima');
 select pg_temp.check_radar(not has_table_privilege(current_user, 'public.radar_entries', 'select'), 'sin acceso a autores');
+select pg_temp.check_radar(not has_table_privilege(current_user, 'public.radar_likes', 'select'), 'sin acceso a quienes reaccionan');
+select pg_temp.check_radar(not has_function_privilege(current_user, 'public.radar_set_like(text,boolean)', 'execute'), 'Me gusta requiere sesión');
 select pg_temp.check_radar(not has_function_privilege(current_user, 'public.radar_submit_entry(text,text,text,uuid,uuid,text)', 'execute'), 'no hay escritura anónima');
 
 reset role;
@@ -63,6 +65,17 @@ select pg_temp.check_radar(
   public.radar_submit_entry('nota-prueba', 'Fénix', 'Así armé mi diorama.',
     '00000000-0000-4000-8000-000000000044', null, '00000000-0000-4000-8000-000000000044.jpg')
   = current_setting('radar.test.entry')::uuid, 'reintentar devuelve el mismo aporte');
+select public.radar_set_like('nota-prueba', true);
+select public.radar_set_like('nota-prueba', true);
+select pg_temp.check_radar(
+  public.radar_discussion('nota-prueba')->>'likes' = '1' and
+  public.radar_discussion('nota-prueba')->>'my_like' = 'true', 'Me gusta idempotente por lector y nota');
+select public.radar_set_like('nota-prueba', false);
+select public.radar_set_like('nota-prueba', false);
+select pg_temp.check_radar(
+  public.radar_discussion('nota-prueba')->>'likes' = '0' and
+  public.radar_discussion('nota-prueba')->>'my_like' = 'false', 'Me gusta se puede retirar');
+select public.radar_set_like('nota-prueba', true);
 select public.radar_rate('nota-prueba', 5::smallint);
 select public.radar_rate('nota-prueba', 4::smallint);
 select pg_temp.check_radar(public.radar_discussion('nota-prueba')->>'votes' = '1' and
@@ -72,6 +85,10 @@ reset role;
 set local role anon;
 set local request.jwt.claim.sub = '';
 select pg_temp.check_radar(jsonb_array_length(public.radar_discussion('nota-prueba')->'entries') = 0, 'pendiente no público');
+select pg_temp.check_radar(
+  public.radar_discussion('nota-prueba')->>'likes' = '1' and
+  public.radar_discussion('nota-prueba')->>'my_like' = 'false', 'agregado público sin revelar el autor');
+select pg_temp.check_radar(public.radar_discussion('otra-nota')->>'likes' = '0', 'cada nota tiene su propio contador');
 select pg_temp.check_radar(not public.radar_may_read_photo('00000000-0000-4000-8000-000000000044.jpg'), 'foto pendiente no pública');
 select pg_temp.check_radar(not exists(select 1 from storage.objects where bucket_id = 'radar-fotos'), 'Storage aplica la política de lectura');
 
@@ -116,6 +133,6 @@ set local role anon;
 set local request.jwt.claim.sub = '';
 select pg_temp.check_radar(jsonb_array_length(public.radar_discussion('nota-prueba')->'entries') = 0, 'ocultar padre retira conversación');
 select pg_temp.check_radar(not public.radar_may_read_photo('00000000-0000-4000-8000-000000000044.jpg'), 'ocultar retira acceso a foto');
-select 'Radar: pruebas de permisos, moderación, fotos, reportes, respuestas y votos completadas.';
+select 'Radar: pruebas de permisos, moderación, fotos, reportes, respuestas, votos y Me gusta completadas.';
 
 rollback;

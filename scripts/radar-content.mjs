@@ -106,7 +106,7 @@ function siteFrame({ title, description, url, schema, content, cover, modules = 
   const needsCommunity = modules.includes("radar-comunidad") || modules.includes("radar-moderar");
   const scripts = [
     ...(needsCommunity ? ['<script src="/vitrina/vendor/supabase-js-2.117.2.umd.js" defer></script>', '<script src="/src/supabase-config.js" defer></script>'] : []),
-    ...modules.map(name => `<script type="module" src="/src/${name}.js?v=2"></script>`),
+    ...modules.map(name => `<script type="module" src="/src/${name}.js?v=${name === "radar-comunidad" ? 3 : 2}"></script>`),
   ].join("\n    ");
   return `<!doctype html>
 <html lang="es-PE">
@@ -121,7 +121,7 @@ function siteFrame({ title, description, url, schema, content, cover, modules = 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles.css?v=69">
-    <link rel="stylesheet" href="/src/radar.css?v=2">
+    <link rel="stylesheet" href="/src/radar.css?v=3">
     ${scripts}
   </head>
   <body class="radar-site">
@@ -239,6 +239,10 @@ function community(post) {
     <p data-status class="radar-feedback" role="status">Cargando conversación…</p>
     ${loginForm()}
     <div data-community-content hidden>
+      <div class="radar-reactions" data-like-group hidden>
+        <button class="radar-action radar-action-secondary" type="button" aria-pressed="false">Me gusta</button>
+        <span class="radar-small" data-like-count role="status"></span>
+      </div>
       <form data-vote class="radar-rating">
         <fieldset><legend>Valora la nota</legend>
         <div class="radar-stars">${[1, 2, 3, 4, 5].map(n => `<label><input type="radio" name="rating" value="${n}" aria-label="${n} de 5 estrellas"><span aria-hidden="true">★</span></label>`).join("")}</div></fieldset>

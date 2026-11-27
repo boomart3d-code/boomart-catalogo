@@ -46,7 +46,20 @@ async function run() {
     await page.goto(article);
     await expect(page.locator("[data-entries]")).toContainText("Aún no hay aportes");
 
+    const like = page.getByRole("button", { name: "Me gusta" });
+    await like.click();
+    await expect(page.getByLabel("Correo electrónico")).toBeFocused();
     await signIn(page, "lector@demo.test");
+    await like.click();
+    await expect(like).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator("[data-like-count]")).toHaveText("1 Me gusta");
+    await page.reload();
+    await expect(like).toHaveAttribute("aria-pressed", "true");
+    await like.click();
+    await expect(like).toHaveAttribute("aria-pressed", "false");
+    await expect(page.locator("[data-like-count]")).toHaveText("0 Me gusta");
+    await like.click();
+    await expect(like).toHaveAttribute("aria-pressed", "true");
     await page.getByRole("radio", { name: "5 de 5 estrellas" }).check();
     await page.getByRole("button", { name: "Guardar voto" }).click();
     await expect(page.locator("[data-rating-result]")).toContainText("5 / 5 · 1 voto");
@@ -75,6 +88,8 @@ async function run() {
     await expect(page.locator("[data-entries]")).toContainText("Fénix de prueba");
     await expect(page.locator("[data-entries] img")).toHaveCount(1);
     await signIn(page, "otro-lector@demo.test");
+    await expect(like).toHaveAttribute("aria-pressed", "false");
+    await expect(page.locator("[data-like-count]")).toHaveText("1 Me gusta");
     await page.getByRole("button", { name: "Responder" }).click();
     await expect(page.locator("[data-reply-label]")).toContainText("Fénix de prueba");
     await page.getByLabel("Alias público").fill("Dragón de prueba");
@@ -104,7 +119,7 @@ async function run() {
     assert.deepEqual(errors, []);
 
     const editorial = await browser.newPage();
-    await editorial.route("**/radar-demo.js?v=1", (route) => route.fulfill({
+    await editorial.route("**/radar-demo.js?v=2", (route) => route.fulfill({
       contentType: "text/javascript",
       body: `export function demoApi() {
         return { preview: true, watch() {}, session: async () => null,
@@ -131,7 +146,7 @@ async function run() {
       await expect(readOnly.getByRole("heading", { name: "Fuentes" })).toBeVisible();
       await context.close();
     }
-    console.log("Radar: filtros, estrellas, foto, aprobación, respuesta, reporte y ocultación. Lectura sin JavaScript en 320, 390 y 1366 px.");
+    console.log("Radar: filtros, estrellas, Me gusta, foto, aprobación, respuesta, reporte y ocultación. Lectura sin JavaScript en 320, 390 y 1366 px.");
   } finally {
     await browser.close();
   }

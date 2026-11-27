@@ -254,6 +254,9 @@
 .radar-login form, .radar-comment-form { display: grid; gap: 13px; }
 .radar-login form button, .radar-comment-form button { justify-self: start; }
 .radar-login p, .radar-comment-form p { margin: 0; }
+.radar-reactions:not([hidden]) { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 18px; }
+.radar-reactions button[aria-pressed="true"] { background: var(--radar-red); color: #fff; }
+.radar-reactions button:disabled { opacity: .65; cursor: wait; }
 .radar-rating { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: flex-end; margin: 20px 0 28px; }
 .radar-rating fieldset { padding: 0; border: 0; margin: 0; min-width: 0; }
 .radar-rating legend { font-size: .9rem; font-weight: 800; padding: 0; }

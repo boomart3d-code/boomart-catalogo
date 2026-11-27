@@ -42,11 +42,15 @@ export function demoApi() {
     discussion: async (slug) => {
       const state = read();
       const votes = state.votes.filter(vote => vote.slug === slug);
+      const likes = (state.likes ?? []).filter(like => like.slug === slug);
+      const author = session()?.user.id;
       return {
         entries: state.entries.filter(entry => entry.post_slug === slug && visible(state, entry)),
         votes: votes.length,
         average: votes.length ? votes.reduce((sum, vote) => sum + vote.rating, 0) / votes.length : null,
-        my_rating: votes.find(vote => vote.author === session()?.user.id)?.rating,
+        my_rating: votes.find(vote => vote.author === author)?.rating,
+        likes: likes.length,
+        my_like: likes.some(like => like.author === author),
       };
     },
     vote: async (slug, rating) => {
@@ -54,6 +58,13 @@ export function demoApi() {
       const state = read();
       state.votes = state.votes.filter(vote => vote.slug !== slug || vote.author !== author);
       state.votes.push({ slug, rating, author });
+      write(state);
+    },
+    like: async (slug, liked) => {
+      const author = activeAccount();
+      const state = read();
+      state.likes = (state.likes ?? []).filter(like => like.slug !== slug || like.author !== author);
+      if (liked) state.likes.push({ slug, author });
       write(state);
     },
     upload: async (request, file) => {

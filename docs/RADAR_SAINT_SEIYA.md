@@ -7,7 +7,7 @@ Un portal editorial de BoomArt para seguir los anuncios de Los Caballeros del Zo
 - Portada con notas, buscador, filtro por tema, calendario de lanzamientos y canal RSS.
 - Cobertura de figuras licenciadas, manga, anime y cine, videojuegos, aniversarios y curiosidades.
 - Fichas legibles sin JavaScript, con enlaces a las fuentes y su propia dirección para compartir.
-- Lectura pública. Los lectores entran por correo para valorar una nota de una a cinco estrellas, comentar, responder, subir una foto propia o enviar un reporte.
+- Lectura pública. Los lectores entran por correo para valorar una nota de una a cinco estrellas, pulsar Me gusta, comentar, responder, subir una foto propia o enviar un reporte. Cada persona puede agregar o retirar su Me gusta en una nota.
 - Bandeja privada de moderación. Un aporte se publica al aprobarlo. El equipo también puede atender reportes y ocultar comentarios o fotos.
 - Los autores aparecen con el alias que elijan. Los correos de acceso quedan en el sistema de autenticación.
 
@@ -41,9 +41,9 @@ El generador `node scripts/build-ai-catalog.mjs` produce la portada, cada artíc
 
 - Revisar el portal en la vista local y acordar quién moderará los primeros aportes.
 - Verificar los permisos del proyecto Supabase, las redirecciones de inicio de sesión para artículos y moderación, y un envío real de correo desde la configuración del entorno de destino.
-- Aplicar `supabase/migrations/202611270001_radar_comunidad.sql` en el entorno aprobado. Registrar en `radar_moderators` las cuentas autorizadas por su identificador de Auth. La sección de moderación queda fuera del sitemap.
+- Aplicar `supabase/migrations/202611270001_radar_comunidad.sql` y luego `supabase/migrations/202611270002_radar_me_gusta.sql` en el entorno aprobado. Registrar en `radar_moderators` las cuentas autorizadas por su identificador de Auth. La sección de moderación queda fuera del sitemap.
 - Acordar un canal para solicitudes de retiro y una rutina de limpieza de fotos subidas que quedaron sin aporte. Las fotos se guardan en un depósito privado. Los enlaces para mostrar fotos aprobadas caducan a los tres minutos.
-- Publicar el portal y probar con cuentas de verificación un voto, un comentario y una foto antes de invitar a terceros. La difusión en grupos y foros sigue el permiso de sus administradores.
+- Publicar el portal y probar con cuentas de verificación un voto, un Me gusta, un comentario y una foto antes de invitar a terceros. La difusión en grupos y foros sigue el permiso de sus administradores.
 
 ## Qué mirar después del estreno
 

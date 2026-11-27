@@ -2,7 +2,7 @@ const BUCKET = "radar-fotos";
 
 export async function radarApi() {
   if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === "[::1]") {
-    const { demoApi } = await import("./radar-demo.js?v=1");
+    const { demoApi } = await import("./radar-demo.js?v=2");
     return demoApi();
   }
   if (document.readyState === "loading") {
@@ -35,6 +35,7 @@ export async function radarApi() {
     signOut: async () => unwrap(await sb.auth.signOut()),
     discussion: (slug) => rpc("discussion", { p_slug: slug }),
     vote: (slug, rating) => rpc("rate", { p_slug: slug, p_rating: rating }),
+    like: (slug, liked) => rpc("set_like", { p_slug: slug, p_liked: liked }),
     report: (id, reason) => rpc("report", { p_entry: id, p_reason: reason }),
     queue: () => rpc("moderation_queue"),
     review: (id, state) => rpc("moderate", { p_entry: id, p_state: state }),

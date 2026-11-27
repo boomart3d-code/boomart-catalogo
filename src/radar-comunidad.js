@@ -1,4 +1,4 @@
-import { radarApi } from "./radar-api.js?v=1";
+import { radarApi } from "./radar-api.js?v=2";
 import { connectSession, element, entryCard, jpegForUpload, labelFor, reasons } from "./radar-ui.js?v=1";
 
 const copy = document.querySelector("[data-copy-link]");
@@ -20,6 +20,9 @@ const slug = root.dataset.radarTopic;
 const status = root.querySelector("[data-status]");
 const entries = root.querySelector("[data-entries]");
 const voteForm = root.querySelector("[data-vote]");
+const likeGroup = root.querySelector("[data-like-group]");
+const likeButton = likeGroup.querySelector("button");
+const likeCount = likeGroup.querySelector("[data-like-count]");
 const send = root.querySelector("[data-contribution]");
 const replyLabel = send.querySelector("[data-reply-label]");
 const cancelReply = send.querySelector("[data-cancel-reply]");
@@ -49,7 +52,7 @@ async function run() {
   }
 
   function focusLogin() {
-    status.textContent = "Entra con tu correo para votar, responder o reportar.";
+    status.textContent = "Entra con tu correo para participar.";
     root.querySelector("[data-sign-in] input").focus();
   }
 
@@ -139,6 +142,9 @@ async function run() {
         ? points.format(Number(data.average)) + " / 5 · " + data.votes + (data.votes === 1 ? " voto" : " votos")
         : "Aún sin valoraciones.";
       for (const input of voteForm.elements.rating) input.checked = Number(input.value) === data.my_rating;
+      likeGroup.hidden = !Number.isInteger(data.likes);
+      likeButton.setAttribute("aria-pressed", String(data.my_like === true));
+      likeCount.textContent = points.format(data.likes ?? 0) + " Me gusta";
       available = true;
       showParticipation();
       if (status.textContent === "Cargando conversación…") status.textContent = "";
@@ -166,6 +172,21 @@ async function run() {
   }
 
   connectSession(root, api, updateSession);
+
+  likeButton.addEventListener("click", async () => {
+    if (!session) { focusLogin(); return; }
+    const liked = likeButton.getAttribute("aria-pressed") !== "true";
+    likeButton.disabled = true;
+    try {
+      await api.like(slug, liked);
+      status.textContent = "";
+      await refresh();
+    } catch (error) {
+      status.textContent = labelFor(error);
+    } finally {
+      likeButton.disabled = false;
+    }
+  });
 
   voteForm.addEventListener("submit", async (event) => {
     event.preventDefault();
