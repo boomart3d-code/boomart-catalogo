@@ -334,6 +334,11 @@
 .radar-figure-details summary:focus-visible { outline: 2px solid var(--radar-red); outline-offset: 3px; }
 .radar-figure-thumbnails { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .radar-figure-thumbnails img { display: block; width: 100%; height: auto; }
+.radar-figure-zoom { padding: 0; border: 0; background: transparent; cursor: zoom-in; }
+.radar-photo-dialog { max-width: min(94vw, 1000px); max-height: 94vh; padding: 12px; border: 0; background: #181616; color: white; }
+.radar-photo-dialog::backdrop { background: rgb(0 0 0 / 85%); }
+.radar-photo-dialog img { display: block; max-width: 100%; max-height: 82vh; width: auto; height: auto; margin: auto; }
+.radar-photo-dialog button { display: block; margin: 0 0 8px auto; padding: 8px 14px; cursor: pointer; }
 .radar-figure-links { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 8px 16px; margin-top: 10px; font-size: .85rem; }
 .radar-figure-copy a, .radar-figure-stores a { color: var(--radar-red); text-decoration: underline; text-underline-offset: 3px; }
 .radar-figure-stores { margin-top: 16px; }

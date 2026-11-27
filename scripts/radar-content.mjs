@@ -183,7 +183,7 @@ function editorialImage(photo, className, priority = false) {
   const loading = priority ? 'fetchpriority="high"' : 'loading="lazy"';
   return `<figure class="${className}">
       <img src="${escape(photo.src)}" width="${photo.width}" height="${photo.height}" alt="${escape(photo.alt)}" ${loading}>
-      <figcaption>${escape(photo.caption)} <a href="${escape(photo.source)}">${escape(photo.credit)}</a></figcaption>
+      <figcaption>${escape(photo.caption)} ${escape(photo.credit)}</figcaption>
     </figure>`;
 }
 
@@ -260,9 +260,9 @@ function figureCard(figure, index, posts) {
   const { id, line, name, edition, description, cover, source, japan, shop, china, comparison, photos, details, post } = figure;
   const note = posts.find(candidate => candidate.slug === post);
   return `<article class="radar-figure-card" id="${id}" data-section="${line}">
-    <a class="radar-figure-cover" href="${escape(source)}" aria-label="Fotos oficiales de ${escape(name)} · ${escape(edition)}">
+    <div class="radar-figure-cover">
       ${figureImage(cover, index === 0)}
-    </a>
+    </div>
     <div class="radar-figure-copy">
       <p class="radar-label">${FIGURE_LINES[line]}</p>
       <h2>${escape(name)}</h2>
@@ -271,14 +271,14 @@ function figureCard(figure, index, posts) {
       <dl class="radar-figure-prices">
         <div>
           <dt>Japón · yenes (JPY)</dt>
-          <dd><strong>¥${PRICE.format(japan.price)}</strong><span>${estimate(japan.price, "JPY")}</span><a href="${escape(source)}">${escape(japan.seller)}</a><span>${escape(japan.status)}</span></dd>
-          ${shop ? `<dd><strong>¥${PRICE.format(shop.price)}</strong><span>${estimate(shop.price, "JPY")}</span><a href="${escape(shop.url)}">${escape(shop.seller)}</a><span>${escape(shop.status)}</span></dd>` : ""}
+          <dd><strong>¥${PRICE.format(japan.price)}</strong><span>${estimate(japan.price, "JPY")}</span><span>${escape(japan.seller)}</span><span>${escape(japan.status)}</span></dd>
+          ${shop ? `<dd><strong>¥${PRICE.format(shop.price)}</strong><span>${estimate(shop.price, "JPY")}</span><span>${escape(shop.seller)}</span><span>${escape(shop.status)}</span></dd>` : ""}
         </div>
         <div>
           <dt>China continental · yuanes (CNY)</dt>
           <dd>
             ${china?.price ? `<strong>${PRICE.format(china.price)} CNY</strong><span>${estimate(china.price, "CNY")}</span>` : '<b>Precio por confirmar</b>'}
-            ${china ? `<a href="${escape(china.url)}">${escape(china.seller)}</a><span>${escape(china.status)}</span>` : '<a href="#tiendas-china">Ver tiendas oficiales en China</a>'}
+            ${china ? `<span>${escape(china.seller)}</span><span>${escape(china.status)}</span>` : '<a href="#tiendas-china">Ver tiendas oficiales en China</a>'}
           </dd>
         </div>
       </dl>
@@ -287,11 +287,11 @@ function figureCard(figure, index, posts) {
         <summary>${photos?.length ? "Detalles y más fotos" : "Detalles de la figura"}</summary>
         <ul>${details.map(detail => `<li>${escape(detail)}</li>`).join("")}</ul>
         ${photos?.length ? `<div class="radar-figure-thumbnails">
-          ${photos.map(photo => `<a href="${escape(photo.src)}">${figureImage(photo)}</a>`).join("")}
+          ${photos.map(photo => `<button type="button" class="radar-figure-zoom" aria-label="Ampliar ${escape(photo.alt)}">${figureImage(photo)}</button>`).join("")}
         </div>` : ""}
       </details>
       <nav class="radar-figure-links" aria-label="Más sobre ${escape(name)} · ${escape(edition)}">
-        <a href="${escape(source)}">Galería oficial de Tamashii Nations</a>
+        <span>Fotografías: Tamashii Nations</span>
         ${note ? `<a href="${route(note)}">Leer nota en el Radar</a>` : ""}
       </nav>
     </div>
@@ -316,7 +316,7 @@ function figureGallery(figures, posts) {
         })),
       },
     },
-    modules: ["radar-indice"],
+    modules: ["radar-indice", "radar-galeria"],
     content: `<main id="contenido" class="radar radar-gallery">
       <div class="radar-wrap">
         <header class="radar-masthead">
@@ -327,7 +327,7 @@ function figureGallery(figures, posts) {
         </header>
         <section id="figuras" aria-label="Figuras y precios">
           <p class="radar-gallery-date">Precios consultados el <time datetime="${FIGURE_CHECK_DATE}">${dateText(FIGURE_CHECK_DATE)}</time>. Los importes están en yenes japoneses (JPY) o yuanes chinos (CNY). Las cifras en dólares y soles son estimaciones al tipo de cambio referencial del 27 de noviembre de 2026. El envío y los cargos de importación se consultan aparte.</p>
-          <p class="radar-gallery-date">Cambio usado por unidad: 1 yen ≈ US$ 0,00627 y S/ 0,02170 · 1 yuan ≈ US$ 0,1502 y S/ 0,5211. Fuentes: <a href="https://www.xe.com/currencyconverter/convert/?Amount=1&amp;From=JPY&amp;To=USD">XE</a>, <a href="https://wise.com/in/currency-converter/jpy-to-pen-rate/history/undefined">Wise</a>, <a href="https://waverate.app/rates/cny-to-usd">WaveRate</a> y <a href="https://www.exchange-rates.org/converter/cny-pen">Exchange Rates</a>.</p>
+          <p class="radar-gallery-date">Cambio usado por unidad: 1 yen ≈ US$ 0,00627 y S/ 0,02170 · 1 yuan ≈ US$ 0,1502 y S/ 0,5211. Fuentes: XE, Wise, WaveRate y Exchange Rates.</p>
           <form class="radar-filters" id="radar-filters" data-item="figura" hidden>
             <label>Buscar una figura <input type="search" name="buscar" placeholder="Pegaso, Atena, EX METAL…"></label>
             <label>Línea <select name="tema"><option value="">Todas las líneas</option>${Object.entries(FIGURE_LINES).map(([key, label]) => `<option value="${key}">${label}</option>`).join("")}</select></label>
@@ -337,21 +337,22 @@ function figureGallery(figures, posts) {
             ${figures.map((figure, index) => figureCard(figure, index, posts)).join("\n")}
           </div>
         </section>
+        <dialog class="radar-photo-dialog" aria-label="Fotografía ampliada"><button type="button" aria-label="Cerrar fotografía">Cerrar ×</button><img alt=""></dialog>
         <section class="radar-folio" id="tiendas" aria-labelledby="titulo-tiendas">
           <h2 id="titulo-tiendas">Dónde consultar precios y stock</h2>
           <div class="radar-figure-stores">
             <div>
               <h3>Japón</h3>
               <ul>
-                <li><a href="https://www.amiami.jp/">AmiAmi</a> lista el precio de tienda y el estado de la preventa.</li>
-                <li><a href="https://p-bandai.jp/tamashiiwebshouten/">Tamashii Web Shop</a> publica exclusivas, sorteos y condiciones de compra en Japón.</li>
+                <li>AmiAmi lista el precio de tienda y el estado de la preventa.</li>
+                <li>Tamashii Web Shop publica exclusivas, sorteos y condiciones de compra en Japón.</li>
               </ul>
             </div>
             <div id="tiendas-china">
               <h3>China continental</h3>
               <ul>
-                <li><a href="https://tamashiiweb.com/store/shanghai/">Tamashii Nations Store Shanghai</a> publica novedades de su tienda en Shanghái.</li>
-                <li>Las <a href="https://www.sina.cn/news/detail/5287905841906126.html">tiendas oficiales anunciadas por Bandai China</a> incluyen Tmall, JD y su minitienda.</li>
+                <li>Tamashii Nations Store Shanghai publica novedades de su tienda en Shanghái.</li>
+                <li>Las tiendas oficiales anunciadas por Bandai China incluyen Tmall, JD y su minitienda.</li>
               </ul>
               <p>En una preventa, <span lang="zh-Hans">定金</span> indica el adelanto, <span lang="zh-Hans">尾款</span> el saldo y <span lang="zh-Hans">全款</span> el precio completo.</p>
             </div>
@@ -415,7 +416,7 @@ function article(post) {
   const gallery = (post.gallery || []).map(photo => editorialImage(photo, "radar-article-cover")).join("\n");
   const media = post.mediaLinks?.length ? `<section class="radar-sources" aria-label="Material visual oficial">
     <h2>Material visual oficial</h2>
-    <ul>${post.mediaLinks.map(source => `<li><a href="${escape(source.url)}">${escape(source.label)}</a></li>`).join("")}</ul>
+    <ul>${post.mediaLinks.map(source => `<li>${escape(source.label)}</li>`).join("")}</ul>
   </section>` : "";
   const facts = post.release || post.peru ? `<dl class="radar-facts">
       ${post.release ? `<div><dt>Lanzamiento anunciado</dt><dd>${monthText(post.release)} · ${escape(post.market)}</dd></div>` : ""}
@@ -447,12 +448,11 @@ function article(post) {
           ${media}
           <section class="radar-sources" aria-labelledby="titulo-fuentes">
             <h2 id="titulo-fuentes">Fuentes</h2>
-            <ul>${post.sources.map(source => `<li><a href="${escape(source.url)}">${escape(source.label)}</a></li>`).join("")}</ul>
+            <ul>${post.sources.map(source => `<li>${escape(source.label)}</li>`).join("")}</ul>
           </section>
           <nav class="radar-share" aria-label="Compartir la nota">
             <strong>Compartir</strong>
-            <a href="https://wa.me/?text=${encodeURIComponent(`${post.title} ${SITE + route(post)}`)}">WhatsApp</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SITE + route(post))}">Facebook</a>
+
             <button class="radar-text-button" type="button" data-copy-link data-url="${SITE + route(post)}" hidden>Copiar enlace</button><span data-copy-status role="status"></span>
           </nav>
         </article>
