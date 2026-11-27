@@ -15,13 +15,13 @@ Un portal editorial de BoomArt para seguir los anuncios de Los Caballeros del Zo
 
 1. **Revisar fuentes.** Priorizar sitios de fabricantes, editoriales, estudios, desarrolladores y cuentas públicas de autores que se puedan verificar. Guardar el enlace directo y la fecha de consulta.
 2. **Decidir el tipo de nota.** Publicar un anuncio, una actualización peruana, una guía o una pieza de archivo. Podemos tener una nota diaria aunque ese día se use material de archivo claramente fechado.
-3. **Contar qué cambió y por qué importa.** Usar resumen propio. Distinguir el anuncio oficial, su mercado y fecha, y el estado en Perú. En precios locales, indicar moneda, comercio y fecha de comprobación. Atribuir citas y usar fotos propias o material autorizado.
+3. **Contar qué cambió y por qué importa.** Usar resumen propio. Distinguir el anuncio oficial, su mercado y fecha, y el estado en Perú. En precios locales, indicar moneda, comercio y fecha de comprobación. Atribuir citas y usar fotos propias o material autorizado. Cada imagen de prensa conserva en los datos su archivo original, crédito, pie y comunicado de origen. PR TIMES limita este material a la cobertura informativa para medios. Si la fuente solo ofrece una galería del fabricante, se enlaza desde la nota. [Condiciones de PR TIMES](https://prtimes.jp/main/html/kiyaku)
 4. **Abrir una conversación.** Cerrar con una pregunta breve que se pueda responder desde la experiencia del lector. Dar seguimiento a los comentarios y aprobar fotos con permiso de sus autores.
 5. **Preparar la difusión.** Escribir un texto breve para el grupo o foro, aportar un dato concreto y enlazar la nota completa. Publicar donde permitan compartir enlaces. Usar una pieza propia para redes de BoomArt y un texto ajustado a cada comunidad.
 
 ### Ejemplo de difusión para el estreno
 
-> Tamashii puso en el calendario de diciembre la primera armadura de Bronce de Pegaso Seiya en Myth Cloth EX. Si estás pensando reservarla, fíjate en el nombre de la edición: hay varias versiones de Pegaso. Dejamos la fuente y el estado de llegada a Perú en el Radar. ¿Cuál versión pondrías en tu vitrina?
+> En Japón, la Atena Original Color Edition entra al sorteo del 27 al 30 de noviembre. La edición trae un rostro llorando para recrear la escena con Hades en Elíseos. En el Radar están las fechas, la foto de prensa y lo que sabemos sobre su llegada a Perú. ¿Cómo la exhibirías?
 
 Añadir a ese texto el enlace público de la nota cuando el portal esté activo.
 
@@ -35,7 +35,7 @@ Añadir a ese texto el enlace público de la nota cuando el portal esté activo.
 
 La redacción trabaja en `data/radar-noticias.json`. Cada nota tiene un identificador estable, tema, tipo, fecha, título, bajada, texto, pregunta y enlaces a las fuentes. Los lanzamientos pueden incluir un mes, su mercado y el estado peruano. Una corrección conserva el mismo identificador para que el enlace se mantenga.
 
-El generador `node scripts/build-ai-catalog.mjs` produce la portada, cada artículo, la bandeja, el RSS, el sitemap y el resumen de `llms.txt`. Estos documentos se verifican con `node scripts/audit-seo.mjs`. La primera versión contiene seis notas con fuentes. El contenido inicial y sus próximos cambios deben revisarse desde la vista local antes de ir a producción.
+El generador `node scripts/build-ai-catalog.mjs` produce la portada, cada artículo, la bandeja, el RSS, el sitemap y el resumen de `llms.txt`. Estos documentos se verifican con `node scripts/audit-seo.mjs`. La vista de prueba contiene doce notas con fuentes y distingue las novedades de las guías y el archivo. El contenido inicial y sus próximos cambios deben revisarse desde la vista local antes de ir a producción.
 
 ## Puesta en marcha
 

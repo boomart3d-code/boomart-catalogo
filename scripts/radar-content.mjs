@@ -2,8 +2,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const SITE = "https://boomart.pe";
-const COVER = "/assets/hero/santuario.webp";
-const SOCIAL_IMAGE = "/assets/og/set-santuario-15-piezas.jpg";
+const SOCIAL_IMAGE = "/assets/boomart-og.jpg";
 const SECTIONS = {
   figuras: "Figuras", manga: "Manga", anime: "Anime y cine",
   videojuegos: "Videojuegos", aniversarios: "Aniversarios", curiosidades: "Curiosidades",
@@ -17,6 +16,16 @@ const route = (post) => `/radar/${post.slug}/`;
 const dateText = (day) => DAY.format(new Date(`${day}T12:00:00Z`));
 const monthText = (month) => MONTH.format(new Date(`${month}-01T12:00:00Z`));
 const publisher = { "@type": "Organization", name: "BoomArt", url: `${SITE}/` };
+const hasHttps = (value) => typeof value === "string" && /^https:\/\//.test(value) && URL.canParse(value);
+const isDate = (value) => typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value)
+  && new Date(value).toJSON()?.slice(0, 10) === value;
+const validLink = ({ url, label }) => typeof label === "string" && label.trim() && hasHttps(url);
+
+function validPhoto(photo) {
+  return /^\/assets\/radar\/prensa\/[\w.-]+$/.test(photo.src) && !photo.src.includes("..")
+    && photo.alt && photo.caption && photo.credit && hasHttps(photo.source) && hasHttps(photo.original)
+    && Number.isInteger(photo.width) && Number.isInteger(photo.height) && photo.width > 0 && photo.height > 0;
+}
 
 export async function readRadarPosts(root) {
   const posts = JSON.parse(await readFile(path.join(root, "data/radar-noticias.json"), "utf8"));
@@ -24,16 +33,16 @@ export async function readRadarPosts(root) {
   const seen = new Set();
   for (const post of posts) {
     const calendar = !post.release || (/^\d{4}-(0[1-9]|1[0-2])$/.test(post.release) && post.market);
-    const sources = Array.isArray(post.sources) && post.sources.length && post.sources.every(({ url, label }) =>
-      typeof label === "string" && label.trim() && /^https:\/\//.test(url) && new URL(url).protocol === "https:");
+    const sources = Array.isArray(post.sources) && post.sources.length && post.sources.every(validLink);
     const text = [post.title, post.type, post.description, post.question].every(value => typeof value === "string" && value.trim());
     const paragraphs = Array.isArray(post.paragraphs) && post.paragraphs.length && post.paragraphs.every(value => typeof value === "string" && value.trim());
-    const cover = !post.cover || (/^\/assets\/[\w./-]+$/.test(post.cover.src) && !post.cover.src.includes("..") &&
-      post.cover.alt && post.cover.caption && Number.isInteger(post.cover.width) && Number.isInteger(post.cover.height) &&
-      post.cover.width > 0 && post.cover.height > 0);
+    const cover = !post.cover || validPhoto(post.cover);
+    const gallery = !post.gallery || (Array.isArray(post.gallery) && post.gallery.every(validPhoto));
+    const media = !post.mediaLinks || (Array.isArray(post.mediaLinks) && post.mediaLinks.every(validLink));
+    const date = isDate(post.date) && (!post.announcementDate || isDate(post.announcementDate));
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(post.slug) || seen.has(post.slug) ||
-        !Object.hasOwn(SECTIONS, post.category) || !/^\d{4}-\d{2}-\d{2}$/.test(post.date) ||
-        !calendar || !sources || !text || !paragraphs || !cover) throw new Error(`Nota del Radar inválida: ${post.slug}`);
+        !Object.hasOwn(SECTIONS, post.category) || !date ||
+        !calendar || !sources || !text || !paragraphs || !cover || !gallery || !media) throw new Error(`Nota del Radar inválida: ${post.slug}`);
     seen.add(post.slug);
   }
   return posts.sort((a, b) => b.date.localeCompare(a.date));
@@ -50,13 +59,13 @@ export function radarLlms(posts) {
   ].join("\n");
 }
 
-function siteFrame({ title, description, url, schema, content, modules = [], privatePage = false }) {
+function siteFrame({ title, description, url, schema, content, cover, modules = [], privatePage = false }) {
   const meta = privatePage ? '<meta name="robots" content="noindex,follow">' : `<link rel="canonical" href="${SITE + url}">
     <meta property="og:type" content="${url === "/radar/" ? "website" : "article"}">
     <meta property="og:title" content="${escape(title)}">
     <meta property="og:description" content="${escape(description)}">
     <meta property="og:url" content="${SITE + url}">
-    <meta property="og:image" content="${SITE + SOCIAL_IMAGE}">
+    <meta property="og:image" content="${SITE + (cover?.src || SOCIAL_IMAGE)}">${cover ? `\n    <meta property="og:image:alt" content="${escape(cover.alt)}">` : ""}
     <meta property="og:locale" content="es_PE">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="alternate" type="application/rss+xml" title="Radar Saint Seiya Perú" href="/radar/feed.xml">
@@ -64,7 +73,7 @@ function siteFrame({ title, description, url, schema, content, modules = [], pri
   const needsCommunity = modules.includes("radar-comunidad") || modules.includes("radar-moderar");
   const scripts = [
     ...(needsCommunity ? ['<script src="/vitrina/vendor/supabase-js-2.117.2.umd.js" defer></script>', '<script src="/src/supabase-config.js" defer></script>'] : []),
-    ...modules.map(name => `<script type="module" src="/src/${name}.js?v=1"></script>`),
+    ...modules.map(name => `<script type="module" src="/src/${name}.js?v=2"></script>`),
   ].join("\n    ");
   return `<!doctype html>
 <html lang="es-PE">
@@ -79,7 +88,7 @@ function siteFrame({ title, description, url, schema, content, modules = [], pri
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles.css?v=69">
-    <link rel="stylesheet" href="/src/radar.css?v=1">
+    <link rel="stylesheet" href="/src/radar.css?v=2">
     ${scripts}
   </head>
   <body class="radar-site">
@@ -104,25 +113,30 @@ function siteFrame({ title, description, url, schema, content, modules = [], pri
 `;
 }
 
+function pressImage(photo, className, priority = false) {
+  const loading = priority ? 'fetchpriority="high"' : 'loading="lazy"';
+  return `<figure class="${className}">
+      <img src="${photo.src}" width="${photo.width}" height="${photo.height}" alt="${escape(photo.alt)}" ${loading}>
+      <figcaption>${escape(photo.caption)} <a href="${escape(photo.source)}">${escape(photo.credit)}</a></figcaption>
+    </figure>`;
+}
+
 function feature(post) {
-  return `<article class="radar-feature">
+  return `<article class="radar-feature${post.cover ? "" : " radar-feature-text"}">
     <div class="radar-feature-copy">
       <p class="radar-label">${escape(post.type)}</p>
       <h2><a href="${route(post)}">${escape(post.title)}</a></h2>
       <p>${escape(post.description)}</p>
       <a class="radar-action" href="${route(post)}">Leer la nota <span aria-hidden="true">→</span></a>
     </div>
-    <figure>
-      <img src="${COVER}" width="1000" height="641" alt="Conjunto de templos del Santuario, Torre del Reloj y Atena del catálogo de BoomArt" fetchpriority="high">
-      <figcaption>El Santuario en miniatura · Foto del catálogo de BoomArt</figcaption>
-    </figure>
+    ${post.cover ? pressImage(post.cover, "radar-feature-photo", true) : ""}
   </article>`;
 }
 
 function homepage(posts) {
   const calendar = posts.filter(post => post.release).sort((a, b) => a.release.localeCompare(b.release));
   return siteFrame({
-    title: "Radar Saint Seiya Perú", url: "/radar/",
+    title: "Radar Saint Seiya Perú", url: "/radar/", cover: posts[0].cover,
     description: "Noticias de Saint Seiya para coleccionistas de Perú. Nuevas figuras, manga, anime, cine, videojuegos, aniversarios y curiosidades.",
     schema: { "@type": "Blog", name: "Radar Saint Seiya Perú", url: `${SITE}/radar/`, inLanguage: "es-PE", publisher },
     modules: ["radar-indice"],
@@ -143,6 +157,7 @@ function homepage(posts) {
           <p class="radar-feedback" id="radar-filter-status" role="status" hidden></p>
           <div class="radar-cards" id="radar-cards">
             ${posts.map(post => `<article class="radar-card" data-section="${post.category}">
+              ${post.cover ? `<img class="radar-card-photo" src="${post.cover.src}" width="${post.cover.width}" height="${post.cover.height}" alt="${escape(post.cover.alt)}" loading="lazy">` : ""}
               <p class="radar-label">${SECTIONS[post.category]} · ${escape(post.type)}</p>
               <h3><a href="${route(post)}">${escape(post.title)}</a></h3>
               <p>${escape(post.description)}</p>
@@ -216,18 +231,21 @@ function community(post) {
 }
 
 function article(post) {
-  const image = post.cover ? `<figure class="radar-article-cover">
-        <img src="${post.cover.src}" alt="${escape(post.cover.alt)}" width="${post.cover.width}" height="${post.cover.height}">
-        <figcaption>${escape(post.cover.caption)}</figcaption>
-      </figure>` : "";
+  const image = post.cover ? pressImage(post.cover, "radar-article-cover", true) : "";
+  const gallery = (post.gallery || []).map(photo => pressImage(photo, "radar-article-cover")).join("\n");
+  const media = post.mediaLinks?.length ? `<section class="radar-sources" aria-label="Material visual oficial">
+    <h2>Material visual oficial</h2>
+    <ul>${post.mediaLinks.map(source => `<li><a href="${escape(source.url)}">${escape(source.label)}</a></li>`).join("")}</ul>
+  </section>` : "";
   const facts = post.release || post.peru ? `<dl class="radar-facts">
       ${post.release ? `<div><dt>Lanzamiento anunciado</dt><dd>${monthText(post.release)} · ${escape(post.market)}</dd></div>` : ""}
       ${post.peru ? `<div><dt>En Perú</dt><dd>${escape(post.peru)}</dd></div>` : ""}
     </dl>` : "";
   return siteFrame({
-    title: post.title, description: post.description, url: route(post), modules: ["radar-comunidad"],
+    title: post.title, description: post.description, url: route(post), cover: post.cover, modules: ["radar-comunidad"],
     schema: {
-      "@type": "Article", headline: post.title, description: post.description, image: [SITE + SOCIAL_IMAGE],
+      "@type": "Article", headline: post.title, description: post.description,
+      ...(post.cover ? { image: [SITE + post.cover.src, ...(post.gallery || []).map(photo => SITE + photo.src)] } : {}),
       datePublished: post.date, inLanguage: "es-PE", author: publisher, publisher,
       mainEntityOfPage: { "@type": "WebPage", "@id": SITE + route(post) }, about: "Saint Seiya",
       citation: post.sources.map(source => source.url),
@@ -240,11 +258,13 @@ function article(post) {
             <p class="radar-label">${SECTIONS[post.category]} · ${escape(post.type)}</p>
             <h1>${escape(post.title)}</h1>
             <p class="radar-lead">${escape(post.description)}</p>
-            <p class="radar-byline">Redacción BoomArt · <time datetime="${post.date}">${dateText(post.date)}</time></p>
+            <p class="radar-byline">Redacción BoomArt · <time datetime="${post.date}">${dateText(post.date)}</time>${post.announcementDate ? ` · Fuente fechada el <time datetime="${post.announcementDate}">${dateText(post.announcementDate)}</time>` : ""}</p>
           </header>
           ${facts}
           ${image}
           <div class="radar-prose">${post.paragraphs.map(paragraph => `<p>${escape(paragraph)}</p>`).join("\n          ")}</div>
+          ${gallery}
+          ${media}
           <section class="radar-sources" aria-labelledby="titulo-fuentes">
             <h2 id="titulo-fuentes">Fuentes</h2>
             <ul>${post.sources.map(source => `<li><a href="${escape(source.url)}">${escape(source.label)}</a></li>`).join("")}</ul>

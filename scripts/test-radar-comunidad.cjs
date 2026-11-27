@@ -26,11 +26,21 @@ async function run() {
     page.on("pageerror", error => errors.push(error.message));
 
     await page.goto(base + "/radar/");
+    const leadPhoto = page.locator(".radar-feature img");
+    await expect(leadPhoto).toHaveAttribute("src", "/assets/radar/prensa/atena-original-color-bandai.jpg");
+    assert.ok(await leadPhoto.evaluate(img => img.complete && img.naturalWidth > 0));
+    await page.getByRole("link", { name: "Leer la nota" }).click();
+    await expect(page.locator(".radar-article-cover figcaption")).toContainText("Bandai Spirits");
+    const preview = await page.locator('meta[property="og:image"]').getAttribute("content");
+    assert.ok(preview.endsWith("/atena-original-color-bandai.jpg"));
+    await page.goto(base + "/radar/");
     await page.getByLabel("Buscar una nota").fill("BLOKEES");
     await expect(page.locator("#radar-cards article:visible")).toHaveCount(1);
     await page.getByLabel("Buscar una nota").clear();
     await page.getByLabel("Tema").selectOption("manga");
-    await expect(page.locator("#radar-cards article:visible")).toHaveCount(1);
+    const mangaCards = page.locator("#radar-cards article:visible");
+    assert.ok(await mangaCards.count() > 0);
+    assert.ok((await mangaCards.evaluateAll(cards => cards.map(card => card.dataset.section))).every(section => section === "manga"));
     await page.getByLabel("Buscar una nota").fill("figura-inexistente");
     await expect(page.getByRole("status")).toHaveText("No encontramos notas con esos filtros.");
     await page.goto(article);
@@ -92,6 +102,21 @@ async function run() {
     await page.goto(article);
     await expect(page.locator("[data-entries]")).toContainText("Aún no hay aportes");
     assert.deepEqual(errors, []);
+
+    const editorial = await browser.newPage();
+    await editorial.route("**/radar-demo.js?v=1", (route) => route.fulfill({
+      contentType: "text/javascript",
+      body: `export function demoApi() {
+        return { preview: true, watch() {}, session: async () => null,
+          discussion: async () => { throw { code: "PGRST202" }; }
+        };
+      }`,
+    }));
+    await editorial.goto(article);
+    await expect(editorial.getByRole("heading", { name: "Fuentes" })).toBeVisible();
+    await expect(editorial.locator("[data-status]")).toContainText("aún no está habilitada");
+    await expect(editorial.locator("[data-sign-in]")).toBeHidden();
+    await editorial.close();
 
     for (const width of [320, 390, 1366]) {
       const context = await browser.newContext({ viewport: { width, height: 800 }, javaScriptEnabled: false });

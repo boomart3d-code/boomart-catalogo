@@ -34,6 +34,7 @@ async function run() {
   const api = await radarApi();
   const points = new Intl.NumberFormat("es-PE", { maximumFractionDigits: 1 });
   let session;
+  let available = false;
   let reply = null;
   let requestId = null;
   let photoKey = null;
@@ -119,6 +120,13 @@ async function run() {
     entries.replaceChildren(container);
   }
 
+  function showParticipation() {
+    root.querySelector("[data-login]").hidden = !available || Boolean(session);
+    root.querySelector("[data-session]").hidden = !available || !session;
+    root.querySelector("[data-community-content]").hidden = !available;
+    send.hidden = !available || !session;
+  }
+
   async function refresh() {
     const version = ++revision;
     try {
@@ -131,9 +139,14 @@ async function run() {
         ? points.format(Number(data.average)) + " / 5 · " + data.votes + (data.votes === 1 ? " voto" : " votos")
         : "Aún sin valoraciones.";
       for (const input of voteForm.elements.rating) input.checked = Number(input.value) === data.my_rating;
-      root.querySelector("[data-community-content]").hidden = false;
+      available = true;
+      showParticipation();
+      if (status.textContent === "Cargando conversación…") status.textContent = "";
     } catch (error) {
-      if (version === revision) status.textContent = labelFor(error);
+      if (version !== revision) return;
+      available = false;
+      showParticipation();
+      status.textContent = labelFor(error);
     }
   }
 
@@ -147,10 +160,8 @@ async function run() {
       photoKey = null;
       photoConsent.hidden = true;
     }
-    root.querySelector("[data-login]").hidden = Boolean(session);
-    root.querySelector("[data-session]").hidden = !session;
-    send.hidden = !session;
-    status.textContent = "";
+    showParticipation();
+    status.textContent = available ? "" : "Cargando conversación…";
     await refresh();
   }
 
