@@ -3994,6 +3994,25 @@
       ]
     ]
   },
+  "assets/products/dragon-ball-majin-buu-detalle.webp": {
+    "w": 820,
+    "h": 850,
+    "src": "assets/products/dragon-ball-majin-buu-detalle.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-majin-buu-detalle-64a638d1c55a-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-majin-buu-detalle-64a638d1c55a-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/dragon-ball-majin-buu-detalle-64a638d1c55a-720w.webp"
+      ]
+    ]
+  },
   "assets/products/dragon-ball-majin-buu-mini-daima-01.webp": {
     "w": 1200,
     "h": 1500,
@@ -4089,6 +4108,25 @@
       ]
     ]
   },
+  "assets/products/dragon-ball-vegeta-adulto-vista-lateral.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/dragon-ball-vegeta-adulto-vista-lateral.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-vegeta-adulto-vista-lateral-970caaeedbd8-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-vegeta-adulto-vista-lateral-970caaeedbd8-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/dragon-ball-vegeta-adulto-vista-lateral-970caaeedbd8-720w.webp"
+      ]
+    ]
+  },
   "assets/products/dragon-ball-vegeta-mini-daima-repisa.webp": {
     "w": 1000,
     "h": 1300,
@@ -4162,6 +4200,25 @@
       [
         720,
         "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-repisa-7dbc35d86d9a-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/dragon-ball-vegeta-ssj3-vista-frontal.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/dragon-ball-vegeta-ssj3-vista-frontal.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-vegeta-ssj3-vista-frontal-946cf81a5e4e-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-vegeta-ssj3-vista-frontal-946cf81a5e4e-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/dragon-ball-vegeta-ssj3-vista-frontal-946cf81a5e4e-720w.webp"
       ]
     ]
   },
@@ -12946,6 +13003,21 @@
       [
         720,
         "assets/responsive/hero/dr-doom-cutout-v2-1b7c733fadd5-720w.webp"
+      ]
+    ]
+  },
+  "assets/hero/dragon-ball-goku-ssj4-transparente.webp": {
+    "w": 418,
+    "h": 1100,
+    "src": "assets/hero/dragon-ball-goku-ssj4-transparente.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/hero/dragon-ball-goku-ssj4-transparente-1da910b59ba6-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/hero/dragon-ball-goku-ssj4-transparente-1da910b59ba6-360w.webp"
       ]
     ]
   },
