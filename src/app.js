@@ -478,7 +478,7 @@ const SEASON_LABEL = "🎃 Halloween";
 // se agrega sola al final. CATEGORY_LABELS cambia solo el nombre que se ve (el valor
 // interno y los enlaces /categoria/<slug>/ no cambian).
 const CATEGORY_ORDER = [
-  "Saint Seiya", "Harry Potter", "Marvel & DC", "Navidad", "🎃 Halloween", "Mundial de Fútbol",
+  "Saint Seiya", "Dragon Ball", "Harry Potter", "Marvel & DC", "Navidad", "🎃 Halloween", "Mundial de Fútbol",
   "Macetas", "Soportes de Mandos", "Figuras Coleccionables", "Zelda",
 ];
 const CATEGORY_LABELS = { "🎃 Halloween": "Cascos, Máscaras y Cosplay" };

@@ -11,6 +11,7 @@
     { "tema": "anime", "ruta": ["Anime", "Saint Seiya", "Cajas de Pandora"], "categorias": ["Saint Seiya"], "etiquetas": ["Cajas De Pandora", "Pandora Box"] },
     { "tema": "anime", "ruta": ["Anime", "Saint Seiya", "Esculturas y bustos"], "categorias": ["Saint Seiya"], "etiquetas": ["Esculturas"] },
     { "tema": "anime", "ruta": ["Anime", "Saint Seiya"], "categorias": ["Saint Seiya"] },
+    { "tema": "anime", "ruta": ["Anime", "Dragon Ball"], "categorias": ["Dragon Ball"] },
 
     { "tema": "gaming", "ruta": ["Gaming", "Zelda"], "categorias": ["Zelda"] },
     { "tema": "gaming", "ruta": ["Gaming", "Soportes de mando"], "categorias": ["Soportes de Mandos"] },
@@ -38,8 +39,8 @@
   "grupos": [
     {
       "id": "anime",
-      "nombre": "Anime y Saint Seiya",
-      "descripcion": "Templos del Zodiaco, altares exhibidores, Pandora Box, cascos y tiaras de Saint Seiya.",
+      "nombre": "Anime, Saint Seiya y Dragon Ball",
+      "descripcion": "Figuras y combos de Dragon Ball, templos del Zodiaco, altares exhibidores, Pandora Box, cascos y tiaras de Saint Seiya.",
       "sugerenciaContexto": "Personas que buscan figuras, decoracion o regalos de Saint Seiya (Caballeros del Zodiaco) y anime clasico en Peru.",
       "reglas": [{ "temas": ["anime"] }]
     },

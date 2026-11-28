@@ -1107,6 +1107,7 @@ const CAT_CONTEXT = {
   "Saint Seiya":
     "pieza decorativa para coleccionistas de Saint Seiya (Caballeros del Zodiaco)",
   "Harry Potter": "pieza decorativa para fans de Harry Potter y el mundo mágico",
+  "Dragon Ball": "figura decorativa de Dragon Ball para fans del anime y coleccionistas",
   "Marvel & DC": "figura de colección del universo Marvel y DC",
   "Series y Peliculas": "figura de colección de cine y series",
   "Series y Películas": "figura de colección de cine y series",
@@ -1803,6 +1804,15 @@ const CATEGORY_META = {
       "En BoomArt somos referentes en Perú en figuras y réplicas decorativas de Saint Seiya (Caballeros del Zodiaco). Aquí están los 12 templos de las Casas del Zodiaco del Santuario de Athena, las Cajas de Pandora con pedestal, cascos a escala, bustos y esculturas de Atena, dioramas de los caballeros de bronce y sets completos de colección.",
       "Los templos tienen un acabado tipo piedra envejecida. Las Pandora Box de los Santos de Bronce están pintadas con cromo y se pueden pedir por unidad o en set de cinco. Las opciones y los acabados de cada pieza figuran en su ficha.",
       "Hechas en Lima y Callao, con envíos a todo el Perú. Escríbenos por WhatsApp para consultar disponibilidad, combos y tiempos de entrega.",
+    ],
+  },
+  "Dragon Ball": {
+    h1: "Figuras y combos de Dragon Ball impresos en 3D",
+    title: "Figuras Dragon Ball Daima y combos en 3D · Perú | BoomArt",
+    intro: [
+      "Goku, Vegeta, Piccolo y Majin Buu en distintas versiones de Dragon Ball Daima. Explora las figuras individuales, las transformaciones Super Saiyajin y los combos para tu colección.",
+      "Figuras individuales a S/100. Los combos tienen 10% de descuento: dos figuras por S/180, tres por S/270 y cuatro por S/360. Cada ficha detalla los personajes incluidos y las medidas disponibles.",
+      "Piezas decorativas hechas a pedido en impresión 3D en PLA, con sus bases de modelo. Fabricadas en Perú, con envíos a todo el país. La repisa de las fotografías es ambientación y no está incluida.",
     ],
   },
   "Harry Potter": {
