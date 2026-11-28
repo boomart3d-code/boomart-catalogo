@@ -3747,6 +3747,44 @@
       ]
     ]
   },
+  "assets/products/dragon-ball-goku-adulto-daima-reseña-16.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/dragon-ball-goku-adulto-daima-reseña-16.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-goku-adulto-daima-reseña-16-cbc522c01df0-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-goku-adulto-daima-reseña-16-cbc522c01df0-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/dragon-ball-goku-adulto-daima-reseña-16-cbc522c01df0-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/dragon-ball-goku-adulto-daima-reseña-2.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/dragon-ball-goku-adulto-daima-reseña-2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-goku-adulto-daima-reseña-2-cec2df162ef3-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-goku-adulto-daima-reseña-2-cec2df162ef3-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/dragon-ball-goku-adulto-daima-reseña-2-cec2df162ef3-720w.webp"
+      ]
+    ]
+  },
   "assets/products/dragon-ball-goku-adulto-ssj4-daima-02.webp": {
     "w": 1200,
     "h": 1500,
@@ -3842,6 +3880,36 @@
       ]
     ]
   },
+  "assets/products/dragon-ball-goku-mini-vista-individual-2.webp": {
+    "w": 520,
+    "h": 890,
+    "src": "assets/products/dragon-ball-goku-mini-vista-individual-2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-goku-mini-vista-individual-2-4867fde1e42c-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-goku-mini-vista-individual-2-4867fde1e42c-360w.webp"
+      ]
+    ]
+  },
+  "assets/products/dragon-ball-goku-mini-vista-individual-3.webp": {
+    "w": 500,
+    "h": 820,
+    "src": "assets/products/dragon-ball-goku-mini-vista-individual-3.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-goku-mini-vista-individual-3-b5d3ab33de08-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-goku-mini-vista-individual-3-b5d3ab33de08-360w.webp"
+      ]
+    ]
+  },
   "assets/products/dragon-ball-goku-nino-ssj3-daima-02.webp": {
     "w": 1200,
     "h": 1500,
@@ -3934,6 +4002,25 @@
       [
         720,
         "assets/responsive/products/dragon-ball-goku-nino-ssj4-daima-repisa-a3d65eb38bf0-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/dragon-ball-goku-nino-ssj4-daima-reseña-6.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/dragon-ball-goku-nino-ssj4-daima-reseña-6.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-goku-nino-ssj4-daima-reseña-6-f719f79920be-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-goku-nino-ssj4-daima-reseña-6-f719f79920be-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/dragon-ball-goku-nino-ssj4-daima-reseña-6-f719f79920be-720w.webp"
       ]
     ]
   },
@@ -4070,6 +4157,25 @@
       ]
     ]
   },
+  "assets/products/dragon-ball-majin-buu-mini-daima-reseña-2.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/dragon-ball-majin-buu-mini-daima-reseña-2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-reseña-2-3a4bdd3abe33-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-reseña-2-3a4bdd3abe33-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-reseña-2-3a4bdd3abe33-720w.webp"
+      ]
+    ]
+  },
   "assets/products/dragon-ball-piccolo-mini-daima-repisa.webp": {
     "w": 1200,
     "h": 1500,
@@ -4089,6 +4195,32 @@
       ]
     ]
   },
+  "assets/products/dragon-ball-piccolo-mini-vista-individual-2.webp": {
+    "w": 430,
+    "h": 850,
+    "src": "assets/products/dragon-ball-piccolo-mini-vista-individual-2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-piccolo-mini-vista-individual-2-39a3f75482e3-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-piccolo-mini-vista-individual-2-39a3f75482e3-360w.webp"
+      ]
+    ]
+  },
+  "assets/products/dragon-ball-piccolo-mini-vista-individual-3.webp": {
+    "w": 335,
+    "h": 700,
+    "src": "assets/products/dragon-ball-piccolo-mini-vista-individual-3.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-piccolo-mini-vista-individual-3-4b21b0299761-120w.webp"
+      ]
+    ]
+  },
   "assets/products/dragon-ball-vegeta-adulto-daima-repisa.webp": {
     "w": 1200,
     "h": 1500,
@@ -4105,6 +4237,25 @@
       [
         720,
         "assets/responsive/products/dragon-ball-vegeta-adulto-daima-repisa-a61074b59f13-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/dragon-ball-vegeta-adulto-daima-reseña-7.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/dragon-ball-vegeta-adulto-daima-reseña-7.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-vegeta-adulto-daima-reseña-7-fa66449e4f88-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-vegeta-adulto-daima-reseña-7-fa66449e4f88-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/dragon-ball-vegeta-adulto-daima-reseña-7-fa66449e4f88-720w.webp"
       ]
     ]
   },
@@ -4143,6 +4294,36 @@
       [
         720,
         "assets/responsive/products/dragon-ball-vegeta-mini-daima-repisa-c1524e5fca7d-720w.webp"
+      ]
+    ]
+  },
+  "assets/products/dragon-ball-vegeta-mini-vista-individual-2.webp": {
+    "w": 460,
+    "h": 890,
+    "src": "assets/products/dragon-ball-vegeta-mini-vista-individual-2.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-vegeta-mini-vista-individual-2-83fd5d04f1b9-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-vegeta-mini-vista-individual-2-83fd5d04f1b9-360w.webp"
+      ]
+    ]
+  },
+  "assets/products/dragon-ball-vegeta-mini-vista-individual-3.webp": {
+    "w": 470,
+    "h": 820,
+    "src": "assets/products/dragon-ball-vegeta-mini-vista-individual-3.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-vegeta-mini-vista-individual-3-4d9dfa8149b6-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-vegeta-mini-vista-individual-3-4d9dfa8149b6-360w.webp"
       ]
     ]
   },
