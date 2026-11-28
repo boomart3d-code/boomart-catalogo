@@ -3406,6 +3406,25 @@
       ]
     ]
   },
+  "assets/products/dragon-ball-combo-cuatro-personajes-mini-portada-ampliada.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/dragon-ball-combo-cuatro-personajes-mini-portada-ampliada.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-portada-ampliada-5e28b0149af8-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-portada-ampliada-5e28b0149af8-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-portada-ampliada-5e28b0149af8-720w.webp"
+      ]
+    ]
+  },
   "assets/products/dragon-ball-combo-cuatro-personajes-mini-repisa.webp": {
     "w": 1600,
     "h": 1000,
@@ -3426,6 +3445,25 @@
       [
         1200,
         "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-repisa-6e0125750b06-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/dragon-ball-combo-goku-adulto-mini-portada-ampliada.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/dragon-ball-combo-goku-adulto-mini-portada-ampliada.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-combo-goku-adulto-mini-portada-ampliada-69911e2e2cbc-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-combo-goku-adulto-mini-portada-ampliada-69911e2e2cbc-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/dragon-ball-combo-goku-adulto-mini-portada-ampliada-69911e2e2cbc-720w.webp"
       ]
     ]
   },
@@ -3472,6 +3510,25 @@
       [
         1200,
         "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-01-991b6c86b58c-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/dragon-ball-combo-goku-cuatro-formas-portada-ampliada.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/dragon-ball-combo-goku-cuatro-formas-portada-ampliada.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-portada-ampliada-35cb1f0abb7e-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-portada-ampliada-35cb1f0abb7e-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-portada-ampliada-35cb1f0abb7e-720w.webp"
       ]
     ]
   },
@@ -3544,6 +3601,25 @@
       ]
     ]
   },
+  "assets/products/dragon-ball-combo-goku-ssj4-adulto-mini-portada-ampliada.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/dragon-ball-combo-goku-ssj4-adulto-mini-portada-ampliada.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-portada-ampliada-d331679be62e-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-portada-ampliada-d331679be62e-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-portada-ampliada-d331679be62e-720w.webp"
+      ]
+    ]
+  },
   "assets/products/dragon-ball-combo-goku-ssj4-adulto-mini-repisa.webp": {
     "w": 1600,
     "h": 1000,
@@ -3587,6 +3663,25 @@
       [
         1200,
         "assets/responsive/products/dragon-ball-combo-goku-tres-formas-01-d329a741de79-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/dragon-ball-combo-goku-tres-formas-portada-ampliada.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/dragon-ball-combo-goku-tres-formas-portada-ampliada.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-combo-goku-tres-formas-portada-ampliada-f5be0af0cf94-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-combo-goku-tres-formas-portada-ampliada-f5be0af0cf94-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/dragon-ball-combo-goku-tres-formas-portada-ampliada-f5be0af0cf94-720w.webp"
       ]
     ]
   },
@@ -3636,6 +3731,25 @@
       ]
     ]
   },
+  "assets/products/dragon-ball-combo-goku-vegeta-adultos-portada-ampliada.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/dragon-ball-combo-goku-vegeta-adultos-portada-ampliada.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-portada-ampliada-cb4668fecbf8-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-portada-ampliada-cb4668fecbf8-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-portada-ampliada-cb4668fecbf8-720w.webp"
+      ]
+    ]
+  },
   "assets/products/dragon-ball-combo-goku-vegeta-adultos-repisa.webp": {
     "w": 1600,
     "h": 1000,
@@ -3656,6 +3770,25 @@
       [
         1200,
         "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-repisa-3ce610718c5f-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/dragon-ball-combo-goku-vegeta-mini-portada-ampliada.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/dragon-ball-combo-goku-vegeta-mini-portada-ampliada.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-mini-portada-ampliada-4a0ad1e6cace-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-mini-portada-ampliada-4a0ad1e6cace-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-mini-portada-ampliada-4a0ad1e6cace-720w.webp"
       ]
     ]
   },
@@ -3702,6 +3835,25 @@
       [
         1200,
         "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-01-ea106a387270-1200w.webp"
+      ]
+    ]
+  },
+  "assets/products/dragon-ball-combo-trio-goku-vegeta-piccolo-portada-ampliada.webp": {
+    "w": 1200,
+    "h": 1500,
+    "src": "assets/products/dragon-ball-combo-trio-goku-vegeta-piccolo-portada-ampliada.webp",
+    "v": [
+      [
+        120,
+        "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-portada-ampliada-d40dbcd154da-120w.webp"
+      ],
+      [
+        360,
+        "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-portada-ampliada-d40dbcd154da-360w.webp"
+      ],
+      [
+        720,
+        "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-portada-ampliada-d40dbcd154da-720w.webp"
       ]
     ]
   },

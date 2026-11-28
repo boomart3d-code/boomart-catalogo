@@ -1,3 +1,7 @@
+# Portadas de combos ampliadas
+
+Se ajustó el encuadre de las ocho portadas de combos para aprovechar el espacio blanco y mostrar figuras y bases más grandes, conservando el contenido original. Las fichas individuales y fotos adicionales conservan sus imágenes. Revisión visual de las ocho portadas y seis pruebas de imágenes adaptables aprobadas.
+
 # Corrección de galerías individuales
 
 Adrián indicó que las fichas individuales no deben mostrar otros personajes ni empaques. Se retiraron las imágenes grupales de las 11 fichas, luego se añadieron vistas individuales de fotos del diseñador y de reseñas; se descartaron máscaras con bases o cabezas cortadas. Cada ficha individual tiene 3 imágenes sin duplicados binarios y sin imágenes grupales. Algunas vistas de Goku adulto y mini SSJ4 muestran figura sin montar; su descripción confirma base incluida. Los combos conservan fotos del conjunto y de cada integrante. Fecha 2026-11-27.
@@ -25,6 +29,7 @@ Fondo uniforme de repisa de madera con luz natural en portadas y galerías; sin 
 Nueva categoría en metadatos, navegación, portada/directorio y feeds (anime). Descripciones, sitemap y miniaturas adaptables regeneradas. Los121 registros anteriores permanecen idénticos. No se modificó Studio, BD, clientes ni ventas.
 
 Trabajo aislado en D:/BOOMART-ENTREGAS/web-dragon-ball-20261127; reserva BA-4aaf680d3315. Entrega con fuentes, medidas y resultados: C:/Users/osore/Documents/Codex/2026-11-27/https-makerworld-com-es-models-3491423/outputs/dragon-ball/PUBLICACION-DRAGON-BALL.md. El estado final de publicación se registra en el relevo central.
+
 
 
 
