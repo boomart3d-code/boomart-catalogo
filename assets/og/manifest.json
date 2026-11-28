@@ -845,5 +845,138 @@
     "width": 960,
     "height": 1200,
     "bytes": 78543
+  },
+  "dragon-ball-goku-nino-ssj3-daima": {
+    "source": "assets/products/dragon-ball-goku-nino-ssj3-daima-repisa.webp",
+    "hash": "5d77df09c98ae914",
+    "width": 960,
+    "height": 1200,
+    "bytes": 72334
+  },
+  "dragon-ball-goku-adulto-ssj4-daima": {
+    "source": "assets/products/dragon-ball-goku-adulto-ssj4-daima-repisa.webp",
+    "hash": "70b4b6c3b1f3fd8c",
+    "width": 960,
+    "height": 1200,
+    "bytes": 51633
+  },
+  "dragon-ball-goku-nino-super-saiyajin-daima": {
+    "source": "assets/products/dragon-ball-goku-nino-super-saiyajin-daima-repisa.webp",
+    "hash": "1853412f8cffd4ed",
+    "width": 960,
+    "height": 1200,
+    "bytes": 45987
+  },
+  "dragon-ball-vegeta-adulto-daima": {
+    "source": "assets/products/dragon-ball-vegeta-adulto-daima-repisa.webp",
+    "hash": "37082a4868806381",
+    "width": 960,
+    "height": 1200,
+    "bytes": 33462
+  },
+  "dragon-ball-goku-nino-ssj4-daima": {
+    "source": "assets/products/dragon-ball-goku-nino-ssj4-daima-repisa.webp",
+    "hash": "2700ce34d8f23393",
+    "width": 960,
+    "height": 1200,
+    "bytes": 53501
+  },
+  "dragon-ball-vegeta-nino-ssj3-daima": {
+    "source": "assets/products/dragon-ball-vegeta-nino-ssj3-daima-repisa.webp",
+    "hash": "eea8430e79eb6cd2",
+    "width": 960,
+    "height": 1200,
+    "bytes": 38628
+  },
+  "dragon-ball-majin-buu-mini-daima": {
+    "source": "assets/products/dragon-ball-majin-buu-mini-daima-repisa.webp",
+    "hash": "86fe5b304900c3ff",
+    "width": 960,
+    "height": 1200,
+    "bytes": 56459
+  },
+  "dragon-ball-piccolo-mini-daima": {
+    "source": "assets/products/dragon-ball-piccolo-mini-daima-repisa.webp",
+    "hash": "1df1e328f453bc6b",
+    "width": 960,
+    "height": 1200,
+    "bytes": 46202
+  },
+  "dragon-ball-goku-adulto-daima": {
+    "source": "assets/products/dragon-ball-goku-adulto-daima-repisa.webp",
+    "hash": "6426e29fcd0cbfb0",
+    "width": 960,
+    "height": 1200,
+    "bytes": 47915
+  },
+  "dragon-ball-vegeta-mini-daima": {
+    "source": "assets/products/dragon-ball-vegeta-mini-daima-repisa.webp",
+    "hash": "5ce8a6f0c896d437",
+    "width": 923,
+    "height": 1200,
+    "bytes": 41685
+  },
+  "dragon-ball-goku-mini-daima": {
+    "source": "assets/products/dragon-ball-goku-mini-daima-repisa.webp",
+    "hash": "f6c6396fcfa01d9d",
+    "width": 960,
+    "height": 1200,
+    "bytes": 61436
+  },
+  "dragon-ball-combo-goku-vegeta-mini": {
+    "source": "assets/products/dragon-ball-combo-goku-vegeta-mini-repisa.webp",
+    "hash": "8ce2695248d6a97b",
+    "width": 1200,
+    "height": 750,
+    "bytes": 49386
+  },
+  "dragon-ball-combo-goku-adulto-mini": {
+    "source": "assets/products/dragon-ball-combo-goku-adulto-mini-repisa.webp",
+    "hash": "3a40bff6dd2df083",
+    "width": 1200,
+    "height": 750,
+    "bytes": 31844
+  },
+  "dragon-ball-combo-goku-vegeta-adultos": {
+    "source": "assets/products/dragon-ball-combo-goku-vegeta-adultos-repisa.webp",
+    "hash": "5ad78099d69d9ab7",
+    "width": 1200,
+    "height": 750,
+    "bytes": 35830
+  },
+  "dragon-ball-combo-goku-ssj4-adulto-mini": {
+    "source": "assets/products/dragon-ball-combo-goku-ssj4-adulto-mini-repisa.webp",
+    "hash": "faab0293e661c139",
+    "width": 1200,
+    "height": 750,
+    "bytes": 35189
+  },
+  "dragon-ball-combo-trio-goku-vegeta-piccolo": {
+    "source": "assets/products/dragon-ball-combo-trio-goku-vegeta-piccolo-repisa.webp",
+    "hash": "3e757311c1c954b1",
+    "width": 1200,
+    "height": 750,
+    "bytes": 68755
+  },
+  "dragon-ball-combo-goku-tres-formas": {
+    "source": "assets/products/dragon-ball-combo-goku-tres-formas-repisa.webp",
+    "hash": "faacd46d1688e915",
+    "width": 1200,
+    "height": 750,
+    "bytes": 54022
+  },
+  "dragon-ball-combo-cuatro-personajes-mini": {
+    "source": "assets/products/dragon-ball-combo-cuatro-personajes-mini-repisa.webp",
+    "hash": "bc00b6a502391a58",
+    "width": 1200,
+    "height": 750,
+    "bytes": 68660
+  },
+  "dragon-ball-combo-goku-cuatro-formas": {
+    "source": "assets/products/dragon-ball-combo-goku-cuatro-formas-repisa.webp",
+    "hash": "84536e396afe979d",
+    "width": 1200,
+    "height": 750,
+    "bytes": 66408
   }
 }
