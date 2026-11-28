@@ -924,59 +924,59 @@
     "bytes": 61436
   },
   "dragon-ball-combo-goku-vegeta-mini": {
-    "source": "assets/products/dragon-ball-combo-goku-vegeta-mini-repisa.webp",
-    "hash": "8ce2695248d6a97b",
-    "width": 1200,
-    "height": 750,
-    "bytes": 49386
+    "source": "assets/products/dragon-ball-combo-goku-vegeta-mini-portada-ampliada.webp",
+    "hash": "fdd75e043c5ac4bb",
+    "width": 960,
+    "height": 1200,
+    "bytes": 63087
   },
   "dragon-ball-combo-goku-adulto-mini": {
-    "source": "assets/products/dragon-ball-combo-goku-adulto-mini-repisa.webp",
-    "hash": "3a40bff6dd2df083",
-    "width": 1200,
-    "height": 750,
-    "bytes": 31844
+    "source": "assets/products/dragon-ball-combo-goku-adulto-mini-portada-ampliada.webp",
+    "hash": "e950be815cec99ca",
+    "width": 960,
+    "height": 1200,
+    "bytes": 58150
   },
   "dragon-ball-combo-goku-vegeta-adultos": {
-    "source": "assets/products/dragon-ball-combo-goku-vegeta-adultos-repisa.webp",
-    "hash": "5ad78099d69d9ab7",
-    "width": 1200,
-    "height": 750,
-    "bytes": 35830
+    "source": "assets/products/dragon-ball-combo-goku-vegeta-adultos-portada-ampliada.webp",
+    "hash": "920a107e3d0af462",
+    "width": 960,
+    "height": 1200,
+    "bytes": 66364
   },
   "dragon-ball-combo-goku-ssj4-adulto-mini": {
-    "source": "assets/products/dragon-ball-combo-goku-ssj4-adulto-mini-repisa.webp",
-    "hash": "faab0293e661c139",
-    "width": 1200,
-    "height": 750,
-    "bytes": 35189
+    "source": "assets/products/dragon-ball-combo-goku-ssj4-adulto-mini-portada-ampliada.webp",
+    "hash": "962a9d0072dda7e3",
+    "width": 960,
+    "height": 1200,
+    "bytes": 69600
   },
   "dragon-ball-combo-trio-goku-vegeta-piccolo": {
-    "source": "assets/products/dragon-ball-combo-trio-goku-vegeta-piccolo-repisa.webp",
-    "hash": "3e757311c1c954b1",
-    "width": 1200,
-    "height": 750,
-    "bytes": 68755
+    "source": "assets/products/dragon-ball-combo-trio-goku-vegeta-piccolo-portada-ampliada.webp",
+    "hash": "9beb6b5de7d9d9d2",
+    "width": 960,
+    "height": 1200,
+    "bytes": 51874
   },
   "dragon-ball-combo-goku-tres-formas": {
-    "source": "assets/products/dragon-ball-combo-goku-tres-formas-repisa.webp",
-    "hash": "faacd46d1688e915",
-    "width": 1200,
-    "height": 750,
-    "bytes": 54022
+    "source": "assets/products/dragon-ball-combo-goku-tres-formas-portada-ampliada.webp",
+    "hash": "53d39d9c2fcd7aa6",
+    "width": 960,
+    "height": 1200,
+    "bytes": 54585
   },
   "dragon-ball-combo-cuatro-personajes-mini": {
-    "source": "assets/products/dragon-ball-combo-cuatro-personajes-mini-repisa.webp",
-    "hash": "bc00b6a502391a58",
-    "width": 1200,
-    "height": 750,
-    "bytes": 68660
+    "source": "assets/products/dragon-ball-combo-cuatro-personajes-mini-portada-ampliada.webp",
+    "hash": "f5600ac191ed4eb3",
+    "width": 960,
+    "height": 1200,
+    "bytes": 51024
   },
   "dragon-ball-combo-goku-cuatro-formas": {
-    "source": "assets/products/dragon-ball-combo-goku-cuatro-formas-repisa.webp",
-    "hash": "84536e396afe979d",
-    "width": 1200,
-    "height": 750,
-    "bytes": 66408
+    "source": "assets/products/dragon-ball-combo-goku-cuatro-formas-portada-ampliada.webp",
+    "hash": "ce8897bf7cad2a91",
+    "width": 960,
+    "height": 1200,
+    "bytes": 48804
   }
 }
