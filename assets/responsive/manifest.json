@@ -3384,287 +3384,347 @@
     ]
   },
   "assets/products/dragon-ball-combo-cuatro-personajes-mini-01.webp": {
-    "w": 1200,
-    "h": 1500,
+    "w": 1600,
+    "h": 1000,
     "src": "assets/products/dragon-ball-combo-cuatro-personajes-mini-01.webp",
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-01-c093490aafc5-120w.webp"
+        "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-01-6e0125750b06-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-01-c093490aafc5-360w.webp"
+        "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-01-6e0125750b06-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-01-c093490aafc5-720w.webp"
+        "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-01-6e0125750b06-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-01-6e0125750b06-1200w.webp"
       ]
     ]
   },
   "assets/products/dragon-ball-combo-cuatro-personajes-mini-repisa.webp": {
-    "w": 1200,
-    "h": 795,
+    "w": 1600,
+    "h": 1000,
     "src": "assets/products/dragon-ball-combo-cuatro-personajes-mini-repisa.webp",
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-repisa-4527b8557487-120w.webp"
+        "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-repisa-6e0125750b06-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-repisa-4527b8557487-360w.webp"
+        "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-repisa-6e0125750b06-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-repisa-4527b8557487-720w.webp"
+        "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-repisa-6e0125750b06-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/dragon-ball-combo-cuatro-personajes-mini-repisa-6e0125750b06-1200w.webp"
       ]
     ]
   },
   "assets/products/dragon-ball-combo-goku-adulto-mini-repisa.webp": {
-    "w": 1200,
-    "h": 1270,
+    "w": 1600,
+    "h": 1000,
     "src": "assets/products/dragon-ball-combo-goku-adulto-mini-repisa.webp",
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-combo-goku-adulto-mini-repisa-28271ccb2f5b-120w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-adulto-mini-repisa-506878c601bc-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-combo-goku-adulto-mini-repisa-28271ccb2f5b-360w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-adulto-mini-repisa-506878c601bc-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-combo-goku-adulto-mini-repisa-28271ccb2f5b-720w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-adulto-mini-repisa-506878c601bc-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/dragon-ball-combo-goku-adulto-mini-repisa-506878c601bc-1200w.webp"
       ]
     ]
   },
   "assets/products/dragon-ball-combo-goku-cuatro-formas-01.webp": {
-    "w": 1200,
-    "h": 1500,
+    "w": 1600,
+    "h": 1000,
     "src": "assets/products/dragon-ball-combo-goku-cuatro-formas-01.webp",
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-01-6587cf9bbabf-120w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-01-991b6c86b58c-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-01-6587cf9bbabf-360w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-01-991b6c86b58c-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-01-6587cf9bbabf-720w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-01-991b6c86b58c-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-01-991b6c86b58c-1200w.webp"
       ]
     ]
   },
   "assets/products/dragon-ball-combo-goku-cuatro-formas-repisa.webp": {
-    "w": 1200,
-    "h": 817,
+    "w": 1600,
+    "h": 1000,
     "src": "assets/products/dragon-ball-combo-goku-cuatro-formas-repisa.webp",
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-repisa-aee2326c1033-120w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-repisa-991b6c86b58c-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-repisa-aee2326c1033-360w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-repisa-991b6c86b58c-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-repisa-aee2326c1033-720w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-repisa-991b6c86b58c-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/dragon-ball-combo-goku-cuatro-formas-repisa-991b6c86b58c-1200w.webp"
       ]
     ]
   },
   "assets/products/dragon-ball-combo-goku-ssj4-adulto-mini-01.webp": {
-    "w": 1200,
-    "h": 1500,
+    "w": 1600,
+    "h": 1000,
     "src": "assets/products/dragon-ball-combo-goku-ssj4-adulto-mini-01.webp",
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-01-0eabb596ecee-120w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-01-0c3aed7ca409-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-01-0eabb596ecee-360w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-01-0c3aed7ca409-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-01-0eabb596ecee-720w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-01-0c3aed7ca409-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-01-0c3aed7ca409-1200w.webp"
       ]
     ]
   },
   "assets/products/dragon-ball-combo-goku-ssj4-adulto-mini-02.webp": {
-    "w": 1200,
-    "h": 1500,
+    "w": 1600,
+    "h": 1000,
     "src": "assets/products/dragon-ball-combo-goku-ssj4-adulto-mini-02.webp",
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-02-547fe20378ca-120w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-02-e5488ae3c52b-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-02-547fe20378ca-360w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-02-e5488ae3c52b-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-02-547fe20378ca-720w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-02-e5488ae3c52b-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-02-e5488ae3c52b-1200w.webp"
       ]
     ]
   },
   "assets/products/dragon-ball-combo-goku-ssj4-adulto-mini-repisa.webp": {
-    "w": 1200,
-    "h": 1270,
+    "w": 1600,
+    "h": 1000,
     "src": "assets/products/dragon-ball-combo-goku-ssj4-adulto-mini-repisa.webp",
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-repisa-40347718b340-120w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-repisa-0c3aed7ca409-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-repisa-40347718b340-360w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-repisa-0c3aed7ca409-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-repisa-40347718b340-720w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-repisa-0c3aed7ca409-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/dragon-ball-combo-goku-ssj4-adulto-mini-repisa-0c3aed7ca409-1200w.webp"
       ]
     ]
   },
   "assets/products/dragon-ball-combo-goku-tres-formas-01.webp": {
-    "w": 1200,
-    "h": 1500,
+    "w": 1600,
+    "h": 1000,
     "src": "assets/products/dragon-ball-combo-goku-tres-formas-01.webp",
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-combo-goku-tres-formas-01-29d6df30ae13-120w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-tres-formas-01-d329a741de79-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-combo-goku-tres-formas-01-29d6df30ae13-360w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-tres-formas-01-d329a741de79-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-combo-goku-tres-formas-01-29d6df30ae13-720w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-tres-formas-01-d329a741de79-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/dragon-ball-combo-goku-tres-formas-01-d329a741de79-1200w.webp"
       ]
     ]
   },
   "assets/products/dragon-ball-combo-goku-tres-formas-repisa.webp": {
-    "w": 1200,
-    "h": 996,
+    "w": 1600,
+    "h": 1000,
     "src": "assets/products/dragon-ball-combo-goku-tres-formas-repisa.webp",
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-combo-goku-tres-formas-repisa-c030f5c63c11-120w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-tres-formas-repisa-d329a741de79-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-combo-goku-tres-formas-repisa-c030f5c63c11-360w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-tres-formas-repisa-d329a741de79-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-combo-goku-tres-formas-repisa-c030f5c63c11-720w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-tres-formas-repisa-d329a741de79-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/dragon-ball-combo-goku-tres-formas-repisa-d329a741de79-1200w.webp"
       ]
     ]
   },
   "assets/products/dragon-ball-combo-goku-vegeta-adultos-01.webp": {
-    "w": 1200,
-    "h": 1500,
+    "w": 1600,
+    "h": 1000,
     "src": "assets/products/dragon-ball-combo-goku-vegeta-adultos-01.webp",
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-01-2edd359a5563-120w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-01-3ce610718c5f-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-01-2edd359a5563-360w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-01-3ce610718c5f-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-01-2edd359a5563-720w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-01-3ce610718c5f-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-01-3ce610718c5f-1200w.webp"
       ]
     ]
   },
   "assets/products/dragon-ball-combo-goku-vegeta-adultos-repisa.webp": {
-    "w": 1200,
-    "h": 1270,
+    "w": 1600,
+    "h": 1000,
     "src": "assets/products/dragon-ball-combo-goku-vegeta-adultos-repisa.webp",
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-repisa-e687fdff8383-120w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-repisa-3ce610718c5f-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-repisa-e687fdff8383-360w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-repisa-3ce610718c5f-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-repisa-e687fdff8383-720w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-repisa-3ce610718c5f-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-adultos-repisa-3ce610718c5f-1200w.webp"
       ]
     ]
   },
   "assets/products/dragon-ball-combo-goku-vegeta-mini-repisa.webp": {
-    "w": 1200,
-    "h": 1270,
+    "w": 1600,
+    "h": 1000,
     "src": "assets/products/dragon-ball-combo-goku-vegeta-mini-repisa.webp",
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-combo-goku-vegeta-mini-repisa-abe14cd9eb8a-120w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-mini-repisa-f61c48b75aef-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-combo-goku-vegeta-mini-repisa-abe14cd9eb8a-360w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-mini-repisa-f61c48b75aef-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-combo-goku-vegeta-mini-repisa-abe14cd9eb8a-720w.webp"
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-mini-repisa-f61c48b75aef-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/dragon-ball-combo-goku-vegeta-mini-repisa-f61c48b75aef-1200w.webp"
       ]
     ]
   },
   "assets/products/dragon-ball-combo-trio-goku-vegeta-piccolo-01.webp": {
-    "w": 1200,
-    "h": 1500,
+    "w": 1600,
+    "h": 1000,
     "src": "assets/products/dragon-ball-combo-trio-goku-vegeta-piccolo-01.webp",
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-01-5d5776f28bad-120w.webp"
+        "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-01-ea106a387270-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-01-5d5776f28bad-360w.webp"
+        "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-01-ea106a387270-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-01-5d5776f28bad-720w.webp"
+        "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-01-ea106a387270-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-01-ea106a387270-1200w.webp"
       ]
     ]
   },
   "assets/products/dragon-ball-combo-trio-goku-vegeta-piccolo-repisa.webp": {
-    "w": 1200,
-    "h": 1010,
+    "w": 1600,
+    "h": 1000,
     "src": "assets/products/dragon-ball-combo-trio-goku-vegeta-piccolo-repisa.webp",
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-repisa-b019808a3b5d-120w.webp"
+        "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-repisa-ea106a387270-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-repisa-b019808a3b5d-360w.webp"
+        "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-repisa-ea106a387270-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-repisa-b019808a3b5d-720w.webp"
+        "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-repisa-ea106a387270-720w.webp"
+      ],
+      [
+        1200,
+        "assets/responsive/products/dragon-ball-combo-trio-goku-vegeta-piccolo-repisa-ea106a387270-1200w.webp"
       ]
     ]
   },
@@ -3675,15 +3735,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-goku-adulto-daima-repisa-bf5abf555e8f-120w.webp"
+        "assets/responsive/products/dragon-ball-goku-adulto-daima-repisa-301414725284-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-goku-adulto-daima-repisa-bf5abf555e8f-360w.webp"
+        "assets/responsive/products/dragon-ball-goku-adulto-daima-repisa-301414725284-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-goku-adulto-daima-repisa-bf5abf555e8f-720w.webp"
+        "assets/responsive/products/dragon-ball-goku-adulto-daima-repisa-301414725284-720w.webp"
       ]
     ]
   },
@@ -3694,15 +3754,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-02-8352b6e65a08-120w.webp"
+        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-02-cc705f028e72-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-02-8352b6e65a08-360w.webp"
+        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-02-cc705f028e72-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-02-8352b6e65a08-720w.webp"
+        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-02-cc705f028e72-720w.webp"
       ]
     ]
   },
@@ -3713,15 +3773,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-03-8d34ddfcaa90-120w.webp"
+        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-03-bff4f42f3d0e-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-03-8d34ddfcaa90-360w.webp"
+        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-03-bff4f42f3d0e-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-03-8d34ddfcaa90-720w.webp"
+        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-03-bff4f42f3d0e-720w.webp"
       ]
     ]
   },
@@ -3732,15 +3792,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-repisa-05fa6df6342d-120w.webp"
+        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-repisa-6909cb7bca9e-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-repisa-05fa6df6342d-360w.webp"
+        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-repisa-6909cb7bca9e-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-repisa-05fa6df6342d-720w.webp"
+        "assets/responsive/products/dragon-ball-goku-adulto-ssj4-daima-repisa-6909cb7bca9e-720w.webp"
       ]
     ]
   },
@@ -3751,15 +3811,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-goku-mini-daima-02-2e6ba69755ed-120w.webp"
+        "assets/responsive/products/dragon-ball-goku-mini-daima-02-26f6a23ef54e-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-goku-mini-daima-02-2e6ba69755ed-360w.webp"
+        "assets/responsive/products/dragon-ball-goku-mini-daima-02-26f6a23ef54e-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-goku-mini-daima-02-2e6ba69755ed-720w.webp"
+        "assets/responsive/products/dragon-ball-goku-mini-daima-02-26f6a23ef54e-720w.webp"
       ]
     ]
   },
@@ -3770,15 +3830,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-goku-mini-daima-repisa-7a89d5fd47cb-120w.webp"
+        "assets/responsive/products/dragon-ball-goku-mini-daima-repisa-a6ac7861c0bb-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-goku-mini-daima-repisa-7a89d5fd47cb-360w.webp"
+        "assets/responsive/products/dragon-ball-goku-mini-daima-repisa-a6ac7861c0bb-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-goku-mini-daima-repisa-7a89d5fd47cb-720w.webp"
+        "assets/responsive/products/dragon-ball-goku-mini-daima-repisa-a6ac7861c0bb-720w.webp"
       ]
     ]
   },
@@ -3789,15 +3849,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-02-ba5db19acb44-120w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-02-383d8f27294d-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-02-ba5db19acb44-360w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-02-383d8f27294d-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-02-ba5db19acb44-720w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-02-383d8f27294d-720w.webp"
       ]
     ]
   },
@@ -3808,15 +3868,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-03-855cdc1e86b0-120w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-03-33c899657bbd-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-03-855cdc1e86b0-360w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-03-33c899657bbd-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-03-855cdc1e86b0-720w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-03-33c899657bbd-720w.webp"
       ]
     ]
   },
@@ -3827,15 +3887,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-repisa-a465f62a9a5d-120w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-repisa-be85d054f7d0-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-repisa-a465f62a9a5d-360w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-repisa-be85d054f7d0-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-repisa-a465f62a9a5d-720w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-ssj3-daima-repisa-be85d054f7d0-720w.webp"
       ]
     ]
   },
@@ -3846,15 +3906,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-goku-nino-ssj4-daima-02-1a15e7107361-120w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-ssj4-daima-02-dd7c6be91523-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-goku-nino-ssj4-daima-02-1a15e7107361-360w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-ssj4-daima-02-dd7c6be91523-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-goku-nino-ssj4-daima-02-1a15e7107361-720w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-ssj4-daima-02-dd7c6be91523-720w.webp"
       ]
     ]
   },
@@ -3865,15 +3925,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-goku-nino-ssj4-daima-repisa-98ae41c4a989-120w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-ssj4-daima-repisa-a3d65eb38bf0-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-goku-nino-ssj4-daima-repisa-98ae41c4a989-360w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-ssj4-daima-repisa-a3d65eb38bf0-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-goku-nino-ssj4-daima-repisa-98ae41c4a989-720w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-ssj4-daima-repisa-a3d65eb38bf0-720w.webp"
       ]
     ]
   },
@@ -3884,15 +3944,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-02-25fcdf6a2d86-120w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-02-97cb9ce1d0a6-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-02-25fcdf6a2d86-360w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-02-97cb9ce1d0a6-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-02-25fcdf6a2d86-720w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-02-97cb9ce1d0a6-720w.webp"
       ]
     ]
   },
@@ -3903,15 +3963,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-03-06eb19323b0c-120w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-03-7b860c13326a-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-03-06eb19323b0c-360w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-03-7b860c13326a-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-03-06eb19323b0c-720w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-03-7b860c13326a-720w.webp"
       ]
     ]
   },
@@ -3922,15 +3982,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-repisa-1919fb0658e8-120w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-repisa-a5a3cb220427-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-repisa-1919fb0658e8-360w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-repisa-a5a3cb220427-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-repisa-1919fb0658e8-720w.webp"
+        "assets/responsive/products/dragon-ball-goku-nino-super-saiyajin-daima-repisa-a5a3cb220427-720w.webp"
       ]
     ]
   },
@@ -3941,15 +4001,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-01-0d88c0a9a81b-120w.webp"
+        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-01-fe8ee54422f5-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-01-0d88c0a9a81b-360w.webp"
+        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-01-fe8ee54422f5-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-01-0d88c0a9a81b-720w.webp"
+        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-01-fe8ee54422f5-720w.webp"
       ]
     ]
   },
@@ -3960,15 +4020,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-02-f8e043b4e656-120w.webp"
+        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-02-670453eeda47-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-02-f8e043b4e656-360w.webp"
+        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-02-670453eeda47-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-02-f8e043b4e656-720w.webp"
+        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-02-670453eeda47-720w.webp"
       ]
     ]
   },
@@ -3979,15 +4039,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-repisa-afcf4c5a4f3e-120w.webp"
+        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-repisa-d46c25d1cd9b-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-repisa-afcf4c5a4f3e-360w.webp"
+        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-repisa-d46c25d1cd9b-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-repisa-afcf4c5a4f3e-720w.webp"
+        "assets/responsive/products/dragon-ball-majin-buu-mini-daima-repisa-d46c25d1cd9b-720w.webp"
       ]
     ]
   },
@@ -3998,15 +4058,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-piccolo-mini-daima-repisa-d701d0f1f34d-120w.webp"
+        "assets/responsive/products/dragon-ball-piccolo-mini-daima-repisa-fa4802845d7d-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-piccolo-mini-daima-repisa-d701d0f1f34d-360w.webp"
+        "assets/responsive/products/dragon-ball-piccolo-mini-daima-repisa-fa4802845d7d-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-piccolo-mini-daima-repisa-d701d0f1f34d-720w.webp"
+        "assets/responsive/products/dragon-ball-piccolo-mini-daima-repisa-fa4802845d7d-720w.webp"
       ]
     ]
   },
@@ -4017,34 +4077,34 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-vegeta-adulto-daima-repisa-144d2e6db9d0-120w.webp"
+        "assets/responsive/products/dragon-ball-vegeta-adulto-daima-repisa-a61074b59f13-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-vegeta-adulto-daima-repisa-144d2e6db9d0-360w.webp"
+        "assets/responsive/products/dragon-ball-vegeta-adulto-daima-repisa-a61074b59f13-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-vegeta-adulto-daima-repisa-144d2e6db9d0-720w.webp"
+        "assets/responsive/products/dragon-ball-vegeta-adulto-daima-repisa-a61074b59f13-720w.webp"
       ]
     ]
   },
   "assets/products/dragon-ball-vegeta-mini-daima-repisa.webp": {
-    "w": 1200,
-    "h": 1500,
+    "w": 1000,
+    "h": 1300,
     "src": "assets/products/dragon-ball-vegeta-mini-daima-repisa.webp",
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-vegeta-mini-daima-repisa-8c9905b4fee8-120w.webp"
+        "assets/responsive/products/dragon-ball-vegeta-mini-daima-repisa-c1524e5fca7d-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-vegeta-mini-daima-repisa-8c9905b4fee8-360w.webp"
+        "assets/responsive/products/dragon-ball-vegeta-mini-daima-repisa-c1524e5fca7d-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-vegeta-mini-daima-repisa-8c9905b4fee8-720w.webp"
+        "assets/responsive/products/dragon-ball-vegeta-mini-daima-repisa-c1524e5fca7d-720w.webp"
       ]
     ]
   },
@@ -4055,15 +4115,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-02-e9e4cd3ffa25-120w.webp"
+        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-02-7dbc35d86d9a-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-02-e9e4cd3ffa25-360w.webp"
+        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-02-7dbc35d86d9a-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-02-e9e4cd3ffa25-720w.webp"
+        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-02-7dbc35d86d9a-720w.webp"
       ]
     ]
   },
@@ -4074,15 +4134,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-03-ce637028c3ff-120w.webp"
+        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-03-54e8008d13be-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-03-ce637028c3ff-360w.webp"
+        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-03-54e8008d13be-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-03-ce637028c3ff-720w.webp"
+        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-03-54e8008d13be-720w.webp"
       ]
     ]
   },
@@ -4093,15 +4153,15 @@
     "v": [
       [
         120,
-        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-repisa-a24c9779aee2-120w.webp"
+        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-repisa-7dbc35d86d9a-120w.webp"
       ],
       [
         360,
-        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-repisa-a24c9779aee2-360w.webp"
+        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-repisa-7dbc35d86d9a-360w.webp"
       ],
       [
         720,
-        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-repisa-a24c9779aee2-720w.webp"
+        "assets/responsive/products/dragon-ball-vegeta-nino-ssj3-daima-repisa-7dbc35d86d9a-720w.webp"
       ]
     ]
   },

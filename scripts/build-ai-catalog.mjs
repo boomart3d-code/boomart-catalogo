@@ -1812,7 +1812,7 @@ const CATEGORY_META = {
     intro: [
       "Goku, Vegeta, Piccolo y Majin Buu en distintas versiones de Dragon Ball Daima. Explora las figuras individuales, las transformaciones Super Saiyajin y los combos para tu colección.",
       "Figuras individuales a S/100. Los combos tienen 10% de descuento: dos figuras por S/180, tres por S/270 y cuatro por S/360. Cada ficha detalla los personajes incluidos y las medidas disponibles.",
-      "Piezas decorativas hechas a pedido en impresión 3D en PLA, con sus bases de modelo. Fabricadas en Perú, con envíos a todo el país. La repisa de las fotografías es ambientación y no está incluida.",
+      "Piezas decorativas hechas a pedido en impresión 3D en PLA, con sus bases de modelo. Fabricadas en Perú, con envíos a todo el país.",
     ],
   },
   "Harry Potter": {

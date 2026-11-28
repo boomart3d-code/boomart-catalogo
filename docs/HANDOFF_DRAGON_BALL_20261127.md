@@ -1,3 +1,7 @@
+# Actualización: estilo blanco aprobado por Adrián
+
+Se aplicó blanco a las 11 figuras y 8 combos. Se corrigió Vegeta mini tras detectar una franja sobre el brazo y un fragmento de Piccolo; se conservó la base. Se recuperó el soporte de Vegeta SSJ3 y se excluyeron vistas con plataformas adicionales. Los combos usan fotos originales de conjuntos. Precios y tamaños verificados; 45 pruebas aprobadas. Las secciones históricas siguientes describen estados anteriores al trabajo final.
+
 # Dragon Ball · Codex · 2026-11-27
 
 ## Estado actual: NO PUBLICADO; propuesta visual pendiente
@@ -13,3 +17,4 @@ Fondo uniforme de repisa de madera con luz natural en portadas y galerías; sin 
 Nueva categoría en metadatos, navegación, portada/directorio y feeds (anime). Descripciones, sitemap y miniaturas adaptables regeneradas. Los121 registros anteriores permanecen idénticos. No se modificó Studio, BD, clientes ni ventas.
 
 Trabajo aislado en D:/BOOMART-ENTREGAS/web-dragon-ball-20261127; reserva BA-4aaf680d3315. Entrega con fuentes, medidas y resultados: C:/Users/osore/Documents/Codex/2026-11-27/https-makerworld-com-es-models-3491423/outputs/dragon-ball/PUBLICACION-DRAGON-BALL.md. El estado final de publicación se registra en el relevo central.
+
