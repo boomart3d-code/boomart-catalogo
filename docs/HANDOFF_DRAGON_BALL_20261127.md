@@ -1,3 +1,7 @@
+# Radar secundario y colección Dragon Ball
+
+Se movió el bloque Radar al final del contenido principal y se muestra en inicio y Saint Seiya, no en otras categorías. Se añadió una zona destacada de Dragon Ball con cuatro productos, un encabezado propio de categoría y enlace contextual a polos Dragon Ball. Se revisaron inicio y categoría Dragon Ball a 390 y 1280 px; Saint Seiya conserva Radar; 25 pruebas de imágenes y feeds aprobadas. La prueba separada de comunidad Radar no arrancó por dependencia playwright/test ausente; no forma parte de este cambio visual.
+
 # Portadas de combos ampliadas
 
 Se ajustó el encuadre de las ocho portadas de combos para aprovechar el espacio blanco y mostrar figuras y bases más grandes, conservando el contenido original. Las fichas individuales y fotos adicionales conservan sus imágenes. Revisión visual de las ocho portadas y seis pruebas de imágenes adaptables aprobadas.
@@ -29,6 +33,7 @@ Fondo uniforme de repisa de madera con luz natural en portadas y galerías; sin 
 Nueva categoría en metadatos, navegación, portada/directorio y feeds (anime). Descripciones, sitemap y miniaturas adaptables regeneradas. Los121 registros anteriores permanecen idénticos. No se modificó Studio, BD, clientes ni ventas.
 
 Trabajo aislado en D:/BOOMART-ENTREGAS/web-dragon-ball-20261127; reserva BA-4aaf680d3315. Entrega con fuentes, medidas y resultados: C:/Users/osore/Documents/Codex/2026-11-27/https-makerworld-com-es-models-3491423/outputs/dragon-ball/PUBLICACION-DRAGON-BALL.md. El estado final de publicación se registra en el relevo central.
+
 
 
 

@@ -129,6 +129,8 @@ body.design-v2 {--v2-ink:#171512;--v2-paper:#f4f0e8;--v2-line:#d9d1c4;background
 #v2Category {position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);min-height:370px;margin:0 -5vw 32px;padding:36px 5vw;background:#e6dfd1;overflow:hidden;}
 #v2Category[hidden],#v2Tools[hidden] {display:none;}
 #v2Category[data-tone="cosmos"] {background:#28231f;color:#f4f0e8;}
+#v2Category[data-tone="dragon"] {background:#eee4d4;color:#241b14;}
+#v2Category[data-tone="dragon"] h1 em {color:#a64a1e;}
 #v2Category[data-tone="hyrule"] {background:#203c31;color:#f4f0e8;}
 #v2Category[data-tone="christmas"] {background:#ead9c4;}
 #v2Category[data-tone="christmas"] .v2-kicker {color:#8b281d;}
@@ -337,6 +339,7 @@ a.v2-hero-product {display:flex;align-items:center;justify-content:center;}
 .design-v2 .custom-order-card .custom-order-hint {color:#5f5952;}
 
 
+.home-radar[hidden] {display:none!important;}
 .home-radar {
   max-width: 1360px;
   margin: 0 auto;
